@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-RUN_LOG="${1:-${ROOT}/_truth/run_log.jsonl}"
+RUN_LOG="${ROOT}/_truth/run_log.jsonl"
 
 if [[ ! -f "$RUN_LOG" ]]; then
   echo "run log not found: $RUN_LOG" >&2
