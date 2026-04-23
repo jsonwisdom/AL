@@ -1,0 +1,29 @@
+{
+  "version": "1.0",
+  "targets": [
+    {
+      "source_id": "apple_privacy_page",
+      "watcher_path": "watchers/apple/watch.sh",
+      "url": "https://www.apple.com/legal/privacy/",
+      "class": "platform",
+      "enabled": true,
+      "cadence_minutes": 60
+    },
+    {
+      "source_id": "usa_gov_homepage",
+      "watcher_path": "watchers/gov/watch.sh",
+      "url": "https://www.usa.gov/",
+      "class": "government",
+      "enabled": true,
+      "cadence_minutes": 60
+    },
+    {
+      "source_id": "cloudflare_plans_page",
+      "watcher_path": "watchers/econ/watch.sh",
+      "url": "https://www.cloudflare.com/plans/",
+      "class": "economic",
+      "enabled": true,
+      "cadence_minutes": 60
+    }
+  ]
+}
