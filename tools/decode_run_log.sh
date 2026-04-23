@@ -1,51 +1,43 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-RUN_LOG="${ROOT}/_truth/run_log.jsonl"
+RUN_LOG="${1:-_truth/run_log.jsonl}"
 
 if [[ ! -f "$RUN_LOG" ]]; then
-  echo "run log not found: $RUN_LOG" >&2
+  echo "Usage: decode_run_log.sh [_truth/run_log.jsonl]" >&2
   exit 1
 fi
 
-if [[ ! -s "$RUN_LOG" ]]; then
-  echo "run log is empty: $RUN_LOG"
-  exit 0
-fi
+echo "=== ALMS RUN LOG DECODER ==="
+echo ""
 
-jq -c '.' "$RUN_LOG" | while read -r line; do
-  ts="$(jq -r '.ts // ""' <<<"$line")"
-  source_id="$(jq -r '.source_id // ""' <<<"$line")"
-  status="$(jq -r '.status // ""' <<<"$line")"
-  event="$(jq -r '.event // ""' <<<"$line")"
-  reason="$(jq -r '.reason // ""' <<<"$line")"
-  watcher_path="$(jq -r '.watcher_path // ""' <<<"$line")"
-  output_b64="$(jq -r '.output_b64 // ""' <<<"$line")"
+while IFS= read -r line; do
+  TS="$(printf '%s' "$line" | jq -r '.ts')"
+  SOURCE="$(printf '%s' "$line" | jq -r '.source_id')"
+  STATUS="$(printf '%s' "$line" | jq -r '.status')"
+  EVENT="$(printf '%s' "$line" | jq -r '.event // ""')"
+  B64="$(printf '%s' "$line" | jq -r '.output_b64 // ""')"
 
-  decoded=""
-  if [[ -n "$output_b64" ]]; then
-    decoded="$(printf '%s' "$output_b64" | base64 --decode 2>/dev/null || true)"
+  printf "[%s] %s | %s | %s\n" "$TS" "$SOURCE" "$STATUS" "$EVENT"
+
+  if [[ -n "$B64" && "$B64" != "null" ]]; then
+    DECODED_JSON="$(printf '%s' "$B64" | base64 -d 2>/dev/null || true)"
+    if [[ -n "$DECODED_JSON" ]]; then
+      printf "  DECODED: %s\n" "$DECODED_JSON"
+    fi
   fi
 
-  printf '%s | %s | %s' "$ts" "$source_id" "$status"
-
-  if [[ -n "$event" ]]; then
-    printf ' | event=%s' "$event"
+  if [[ "$STATUS" == "FAIL" ]]; then
+    REASON="$(printf '%s' "$line" | jq -r '.reason // "unknown"')"
+    printf "  REASON: %s\n" "$REASON"
   fi
 
-  if [[ -n "$reason" ]]; then
-    printf ' | reason=%s' "$reason"
+  VERIFIED="$(printf '%s' "$line" | jq -r '.verified_hash // ""' 2>/dev/null || true)"
+  if [[ -n "$VERIFIED" && "$VERIFIED" != "null" ]]; then
+    printf "  VERIFIED: %s\n" "$VERIFIED"
   fi
 
-  if [[ -n "$watcher_path" ]]; then
-    printf ' | watcher_path=%s' "$watcher_path"
-  fi
+  echo ""
+done < "$RUN_LOG"
 
-  if [[ -n "$decoded" ]]; then
-    compact_decoded="$(printf '%s' "$decoded" | tr '\n' ' ' | sed 's/[[:space:]]\+/ /g; s/^ //; s/ $//')"
-    printf ' | decoded=%s' "$compact_decoded"
-  fi
-
-  printf '\n'
-done
+echo "=== END ==="
