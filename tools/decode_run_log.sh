@@ -14,12 +14,10 @@ if [[ ! -s "$RUN_LOG" ]]; then
   exit 0
 fi
 
-declare -A COUNTS=(
-  [NO_CHANGE]=0
-  [CHANGE_DETECTED]=0
-  [FAIL]=0
-  [OTHER]=0
-)
+count_no_change=0
+count_change_detected=0
+count_fail=0
+count_other=0
 
 line_no=0
 while IFS= read -r line; do
@@ -36,7 +34,7 @@ while IFS= read -r line; do
   }' <<<"$line" 2>/dev/null || true)"
 
   if [[ -z "$parsed" ]]; then
-    COUNTS[OTHER]=$((COUNTS[OTHER] + 1))
+    count_other=$((count_other + 1))
     printf 'line=%d | INVALID_JSON | raw=%s\n' "$line_no" "$line"
     continue
   fi
@@ -57,12 +55,16 @@ while IFS= read -r line; do
   outcome="OTHER"
   if [[ "$status" == "FAIL" ]]; then
     outcome="FAIL"
+    count_fail=$((count_fail + 1))
   elif [[ "$event" == "NO_CHANGE" ]]; then
     outcome="NO_CHANGE"
+    count_no_change=$((count_no_change + 1))
   elif [[ "$event" == "CHANGE_DETECTED" ]]; then
     outcome="CHANGE_DETECTED"
+    count_change_detected=$((count_change_detected + 1))
+  else
+    count_other=$((count_other + 1))
   fi
-  COUNTS[$outcome]=$((COUNTS[$outcome] + 1))
 
   printf '%s | %s | status=%s | outcome=%s' "$ts" "$source_id" "$status" "$outcome"
 
@@ -87,4 +89,4 @@ while IFS= read -r line; do
 done < "$RUN_LOG"
 
 printf '\nSummary: NO_CHANGE=%d CHANGE_DETECTED=%d FAIL=%d OTHER=%d\n' \
-  "${COUNTS[NO_CHANGE]}" "${COUNTS[CHANGE_DETECTED]}" "${COUNTS[FAIL]}" "${COUNTS[OTHER]}"
+  "$count_no_change" "$count_change_detected" "$count_fail" "$count_other"
