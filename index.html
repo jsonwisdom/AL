@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-store" />
+  <title>ALMS Chain Explorer</title>
+  <style>
+    :root { --bg:#070b0a; --panel:#0d1512; --line:#1f3b31; --green:#00ff88; --muted:#7fb69c; --yellow:#ffd166; --red:#ff5c7a; --blue:#6ecbff; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace; background:radial-gradient(circle at top,#11241d,var(--bg) 45%); color:var(--green); padding:18px; }
+    header,.card,.table-wrap { border:1px solid var(--line); background:rgba(13,21,18,.9); border-radius:16px; }
+    header { padding:18px; margin-bottom:18px; box-shadow:0 0 30px rgba(0,255,136,.08); }
+    h1 { margin:0; font-size:clamp(24px,5vw,44px); }
+    .subtitle, .label, footer, .small { color:var(--muted); }
+    .subtitle { line-height:1.5; margin-top:8px; }
+    .grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin-bottom:14px; }
+    .card { padding:14px; min-height:92px; }
+    .label { font-size:12px; text-transform:uppercase; letter-spacing:.08em; }
+    .value { font-size:22px; margin-top:8px; word-break:break-word; }
+    .ok { color:var(--green); } .warn { color:var(--yellow); } .bad { color:var(--red); } .blue { color:var(--blue); }
+    .controls { display:flex; gap:10px; flex-wrap:wrap; margin:14px 0; }
+    input,select,button { background:#07100d; border:1px solid var(--line); color:var(--green); padding:10px 12px; border-radius:12px; font:inherit; }
+    input { flex:1; min-width:220px; } button { cursor:pointer; } button:hover { border-color:var(--green); }
+    table { width:100%; border-collapse:collapse; }
+    th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+    th { color:var(--muted); position:sticky; top:0; background:#0d1512; z-index:1; }
+    tr:hover { background:rgba(0,255,136,.05); }
+    .hash { max-width:320px; overflow-wrap:anywhere; color:#d7ffe9; }
+    .pill { display:inline-block; border:1px solid currentColor; border-radius:999px; padding:3px 8px; font-size:12px; }
+    .table-wrap { overflow:auto; max-height:62vh; }
+    a { color:var(--green); }
+    footer { margin-top:18px; line-height:1.5; }
+    @media (max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+    @media (max-width:560px){.grid{grid-template-columns:1fr;} th:nth-child(4),td:nth-child(4){display:none;}}
+  </style>
+</head>
+<body>
+<header><h1>ALMS — Public Chain Explorer</h1><div class="subtitle">Browser replay verification for 100 linked ALMS receipts. Web Crypto recomputes SHA-256 from each receipt's hash_input and checks PREV continuity.</div></header>
+<section class="grid"><div class="card"><div class="label">Loaded receipts</div><div class="value" id="count">…</div></div><div class="card"><div class="label">Latest hash</div><div class="value hash" id="latest">…</div></div><div class="card"><div class="label">Hash verification</div><div class="value" id="hashState">…</div></div><div class="card"><div class="label">PREV chain</div><div class="value" id="chainState">…</div></div></section>
+<section class="grid"><div class="card"><div class="label">MATCH</div><div class="value ok" id="matchCount">0</div></div><div class="card"><div class="label">CONTESTED</div><div class="value warn" id="contestedCount">0</div></div><div class="card"><div class="label">MISMATCH</div><div class="value bad" id="mismatchCount">0</div></div><div class="card"><div class="label">Checkpoint</div><div class="value blue">alms-100</div></div></section>
+<div class="controls"><input id="search" placeholder="Search claim, id, hash…" /><select id="statusFilter"><option value="ALL">ALL</option><option value="MATCH">MATCH</option><option value="CONTESTED">CONTESTED</option><option value="MISMATCH">MISMATCH</option></select><button id="verifyBtn">Replay Verify</button></div>
+<div class="table-wrap"><table><thead><tr><th>ID</th><th>Status</th><th>Vector</th><th>Claim</th><th>Hash</th><th>Verify</th><th>PREV</th></tr></thead><tbody id="rows"></tbody></table></div>
+<footer>Repo: <a href="https://github.com/jsonwisdom/AL">github.com/jsonwisdom/AL</a> · Latest receipt: <a href="receipts/alms_0100_receipt.json">#0100</a> · Verifier: <a href="verify.sh">verify.sh</a></footer>
+<script>
+const pad=n=>String(n).padStart(4,'0'); const receiptPath=n=>`receipts/alms_${pad(n)}_receipt.json`; let receipts=[]; let verified=new Map();
+async function sha256Hex(str){const bytes=new TextEncoder().encode(str); const digest=await crypto.subtle.digest('SHA-256',bytes); return [...new Uint8Array(digest)].map(b=>b.toString(16).padStart(2,'0')).join('');}
+async function loadReceipts(){const jobs=[]; for(let i=1;i<=100;i++){jobs.push(fetch(receiptPath(i)).then(async r=>r.ok?await r.json():null).catch(()=>null));} receipts=(await Promise.all(jobs)).filter(Boolean).sort((a,b)=>a.id.localeCompare(b.id)); render();}
+function statusClass(s){return s==='MATCH'?'ok':s==='MISMATCH'?'bad':'warn';}
+function chainOkAt(i){if(i===0)return true; return receipts[i].prev_hash===receipts[i-1].hash;}
+function render(){const q=document.getElementById('search').value.toLowerCase(); const sf=document.getElementById('statusFilter').value; const filtered=receipts.filter(r=>{const hay=JSON.stringify(r).toLowerCase(); return (sf==='ALL'||r.status===sf)&&hay.includes(q);}); const counts=receipts.reduce((a,r)=>(a[r.status]=(a[r.status]||0)+1,a),{}); const latest=receipts[receipts.length-1]; const chainBreaks=receipts.map((_,i)=>chainOkAt(i)).filter(x=>!x).length; const hashFailures=[...verified.values()].filter(v=>v===false).length; document.getElementById('count').textContent=receipts.length; document.getElementById('latest').textContent=latest?latest.hash:'none'; document.getElementById('chainState').innerHTML=chainBreaks===0?'<span class="ok">INTACT</span>':`<span class="bad">${chainBreaks} BREAKS</span>`; document.getElementById('hashState').innerHTML=verified.size===0?'<span class="warn">not replayed</span>':hashFailures===0?'<span class="ok">PASS</span>':`<span class="bad">${hashFailures} FAIL</span>`; document.getElementById('matchCount').textContent=counts.MATCH||0; document.getElementById('contestedCount').textContent=counts.CONTESTED||0; document.getElementById('mismatchCount').textContent=counts.MISMATCH||0; document.getElementById('rows').innerHTML=filtered.map(r=>{const idx=receipts.indexOf(r); const num=Number(r.id.match(/#(\d+)/)?.[1]||0); const v=verified.has(r.id)?(verified.get(r.id)?'<span class="ok">PASS</span>':'<span class="bad">FAIL</span>'):'<span class="small">pending</span>'; const prev=chainOkAt(idx)?'<span class="ok">OK</span>':'<span class="bad">BREAK</span>'; return `<tr><td><a href="${receiptPath(num)}">${r.id}</a></td><td><span class="pill ${statusClass(r.status)}">${r.status}</span></td><td>${JSON.stringify(r.vector)}</td><td>${r.claim||'<span class="small">claim in hash_input</span>'}</td><td class="hash">${r.hash}</td><td>${v}</td><td>${prev}</td></tr>`;}).join('');}
+async function replayVerify(){document.getElementById('hashState').innerHTML='<span class="warn">running…</span>'; for(const r of receipts){const computed=await sha256Hex(r.hash_input||''); verified.set(r.id,computed===r.hash);} render();}
+document.getElementById('search').addEventListener('input',render); document.getElementById('statusFilter').addEventListener('change',render); document.getElementById('verifyBtn').addEventListener('click',replayVerify); loadReceipts();
+</script>
+</body>
+</html>
