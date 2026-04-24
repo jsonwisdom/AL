@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ALMS Dashboard</title>
+  <style>
+    body { font-family: monospace; background:#0b0b0b; color:#00ff88; padding:20px; }
+    .card { border:1px solid #00ff88; padding:15px; margin-bottom:15px; }
+    .title { font-size:24px; }
+    a { color:#00ff88; }
+  </style>
+</head>
+<body>
+  <div class="title">ALMS — Public Verification Dashboard</div>
+  <div id="app"></div>
+
+<script>
+fetch('receipts.json')
+  .then(r => r.json())
+  .then(data => {
+    const el = document.getElementById('app');
+    el.innerHTML = `
+      <div class="card">
+        <b>System:</b> ${data.system}<br>
+        <b>Claims:</b> ${data.claim_count}<br>
+        <b>Checkpoint:</b> ${data.checkpoint}<br>
+        <b>Chain:</b> ${data.chain_status}
+      </div>
+
+      <div class="card">
+        <b>Latest Claim:</b><br>
+        ${data.latest.id}<br>
+        ${data.latest.claim}<br>
+        <b>Hash:</b> ${data.latest.hash}
+      </div>
+
+      <div class="card">
+        <b>Status Distribution</b><br>
+        MATCH: ${data.distribution.MATCH}<br>
+        CONTESTED: ${data.distribution.CONTESTED}<br>
+        MISMATCH: ${data.distribution.MISMATCH}
+      </div>
+
+      <div class="card">
+        <a href="${data.links.latest_receipt}">Latest Receipt</a><br>
+        <a href="${data.links.repo}">Repo</a>
+      </div>
+    `;
+  });
+</script>
+</body>
+</html>
