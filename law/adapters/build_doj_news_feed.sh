@@ -1,74 +1,55 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-URL="${DOJ_NEWS_URL:-https://www.justice.gov/news}"
 OUT="_truth/law/doj/doj_news_feed.json"
 STATE="_truth/law/doj/doj_news_state.json"
 LOG="_truth/logs/doj_news_adapter.log"
 TS="$(date -u +%FT%TZ)"
-
 mkdir -p _truth/law/doj _truth/logs
 
-TMP_HTML="$(mktemp)"
-TMP_LINES="$(mktemp)"
-trap 'rm -f "$TMP_HTML" "$TMP_LINES"' EXIT
-
-curl -fsSL "$URL" -o "$TMP_HTML"
-
-grep -Eo 'href="[^"]+"' "$TMP_HTML" \
-  | sed 's/^href="//;s/"$//' \
-  | grep -E '/opa/pr/|/usao-' || true \
-  | sed 's#^/#https://www.justice.gov/#' \
-  | sort -u \
-  | head -n 50 > "$TMP_LINES"
-
-COUNT="$(wc -l < "$TMP_LINES" | tr -d ' ')"
 CANON="_truth/law/doj/doj_news_urls.canonical.txt"
-cp "$TMP_LINES" "$CANON"
+TMP="$(mktemp)"
+trap 'rm -f "$TMP"' EXIT
 
+: > "$TMP"
+
+for page in 1 2 3 4 5; do
+  curl -fsSL "https://www.justice.gov/sitemap.xml?page=$page" \
+    | grep -Eo '<loc>https://www.justice.gov/(opa/pr|usao-[^<]+)[^<]*</loc>' \
+    | sed 's#<loc>##;s#</loc>##' >> "$TMP" || true
+done
+
+sort -u "$TMP" | head -n 100 > "$CANON"
+COUNT="$(wc -l < "$CANON" | tr -d ' ')"
 HASH="$(sha256sum "$CANON" | awk '{print $1}')"
 PREV_HASH="INIT"
 [ -f "$STATE" ] && PREV_HASH="$(jq -r '.hash // "INIT"' "$STATE")"
 
 if [ "$COUNT" = "0" ]; then
-  EVENT="EMPTY"
-  VISIBILITY="YELLOW"
-  REASON="source fetched but no DOJ news URLs matched extractor"
+  EVENT="EMPTY"; VISIBILITY="YELLOW"; REASON="sitemap fetched but no DOJ release URLs matched"
 elif [ "$HASH" = "$PREV_HASH" ]; then
-  EVENT="QUIET"
-  VISIBILITY="GREEN"
-  REASON="no_new_doj_news_urls_detected"
+  EVENT="QUIET"; VISIBILITY="GREEN"; REASON="no_new_doj_release_urls_detected"
 else
-  EVENT="ALERT"
-  VISIBILITY="GREEN"
-  REASON="doj_news_url_set_changed"
+  EVENT="ALERT"; VISIBILITY="GREEN"; REASON="doj_release_url_set_changed"
 fi
 
 jq -n \
-  --arg ts "$TS" \
-  --arg source "$URL" \
-  --arg hash "$HASH" \
-  --arg prev_hash "$PREV_HASH" \
-  --arg event "$EVENT" \
-  --arg visibility "$VISIBILITY" \
-  --arg reason "$REASON" \
-  --argjson count "$COUNT" \
-  --rawfile urls "$CANON" \
+  --arg ts "$TS" --arg hash "$HASH" --arg prev "$PREV_HASH" \
+  --arg event "$EVENT" --arg visibility "$VISIBILITY" --arg reason "$REASON" \
+  --argjson count "$COUNT" --rawfile urls "$CANON" \
   '{
-    observer:"doj_news_adapter_v1",
+    observer:"doj_sitemap_adapter_v1",
     generated_at:$ts,
-    source:$source,
+    source:"https://www.justice.gov/sitemap.xml?page=1..5",
     hash:$hash,
-    previous_hash:$prev_hash,
+    previous_hash:$prev,
     status:{visibility:$visibility,event:$event,reason:$reason},
     count:$count,
-    urls:($urls | split("\n") | map(select(length > 0)))
+    urls:($urls|split("\n")|map(select(length>0)))
   }' > "$OUT.tmp"
 
 mv "$OUT.tmp" "$OUT"
-
-jq -n --arg ts "$TS" --arg hash "$HASH" --arg source "$URL" \
-  '{updated_at:$ts, hash:$hash, source:$source}' > "$STATE.tmp"
+jq -n --arg ts "$TS" --arg hash "$HASH" '{updated_at:$ts,hash:$hash}' > "$STATE.tmp"
 mv "$STATE.tmp" "$STATE"
 
-echo "$TS DOJ_ADAPTER_$EVENT visibility=$VISIBILITY hash=$HASH count=$COUNT reason=$REASON" | tee -a "$LOG"
+echo "$TS DOJ_SITEMAP_$EVENT visibility=$VISIBILITY count=$COUNT hash=$HASH" | tee -a "$LOG"
