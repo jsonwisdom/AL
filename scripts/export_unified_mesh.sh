@@ -10,12 +10,14 @@ mkdir -p _truth/base site
 NITRO_FILE="_truth/base/nitro_observer_feed.json"
 SYSTEMCONFIG_FILE="_truth/base/systemconfig_observer_feed.json"
 PORTAL_FILE="_truth/base/optimismportal_observer_feed.json"
+BRIDGE_FILE="_truth/base/l1standardbridge_observer_feed.json"
 
 jq -n \
   --arg ts "$TS" \
   --slurpfile nitro "$NITRO_FILE" \
   --slurpfile systemconfig "$SYSTEMCONFIG_FILE" \
   --slurpfile portal "$PORTAL_FILE" \
+  --slurpfile bridge "$BRIDGE_FILE" \
   '
   def raw_status($x):
     if $x == null then "UNKNOWN"
@@ -33,16 +35,19 @@ jq -n \
   ($nitro[0] // null) as $n |
   ($systemconfig[0] // null) as $s |
   ($portal[0] // null) as $p |
-  (norm(raw_status($n))) as $nitro_status |
+  ($bridge[0] // null) as $b |
   (norm(raw_status($s))) as $systemconfig_status |
   (norm(raw_status($p))) as $portal_status |
-  ([$systemconfig_status, $portal_status, $nitro_status]) as $v |
+  (norm(raw_status($b))) as $bridge_status |
+  (norm(raw_status($n))) as $nitro_status |
+  ([$systemconfig_status, $portal_status, $bridge_status, $nitro_status]) as $v |
   {
     generated_at: $ts,
     observer: "base_unified_mesh",
     spine: {
       l1_systemconfig: $systemconfig_status,
       l1_optimismportal: $portal_status,
+      l1_standardbridge: $bridge_status,
       l2_nitro_verifier: $nitro_status
     },
     global: (
@@ -57,6 +62,7 @@ jq -n \
     details: {
       systemconfig: $s,
       portal: $p,
+      bridge: $b,
       nitro: $n
     }
   }' > "$OUT.tmp"
@@ -64,5 +70,5 @@ jq -n \
 mv "$OUT.tmp" "$OUT"
 cp "$OUT" "$SITE_OUT"
 
-echo "$TS UNIFIED_MESH_BUILT $OUT -> $SITE_OUT"
+echo "$TS UNIFIED_MESH_BUILT_WITH_BRIDGE $OUT -> $SITE_OUT"
 jq '.spine, .global' "$OUT"
