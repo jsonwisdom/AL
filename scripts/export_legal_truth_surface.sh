@@ -14,7 +14,7 @@ jq -n \
   '
   def vis_manual($m):
     if $m == null then "YELLOW"
-    elif ($m.status.visibility == "GREEN") then "GREEN"
+    elif (($m.status.visibility // "YELLOW") == "GREEN") then "GREEN"
     else "YELLOW"
     end;
 
@@ -25,13 +25,10 @@ jq -n \
 
   ($manual[0] // null) as $m |
   ($ingestor[0] // null) as $i |
-
   (vis_manual($m)) as $doj_status |
   (vis_ingestor($i; "cases")) as $cases_status |
   (vis_ingestor($i; "lawbooks")) as $law_status |
-
   ([$doj_status, $cases_status, $law_status]) as $v |
-
   {
     observer: "legal_truth_surface_v1",
     generated_at: $ts,
@@ -40,14 +37,15 @@ jq -n \
       cases: $cases_status,
       lawbooks: $law_status
     },
-    global:
+    global: (
       if ($v | index("RED")) then
         {visibility:"RED", reason:"one_or_more_layers_red", status_color:"🔴"}
       elif ($v | index("YELLOW")) then
         {visibility:"YELLOW", reason:"degraded_or_missing_visibility", status_color:"🟡"}
       else
         {visibility:"GREEN", reason:"all_layers_green", status_color:"🟢"}
-      end,
+      end
+    ),
     details: {
       doj_manual: $m,
       ingestor: $i
