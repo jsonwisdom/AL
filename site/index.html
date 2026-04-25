@@ -1,52 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>ALMS Dashboard</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>CPV Dashboard</title>
   <style>
-    body { font-family: monospace; background:#0b0b0b; color:#00ff88; padding:20px; }
-    .card { border:1px solid #00ff88; padding:15px; margin-bottom:15px; }
-    .title { font-size:24px; }
-    a { color:#00ff88; }
+    body{font-family:system-ui;background:#0b0f14;color:#e6edf3;padding:16px}
+    .card{background:#111827;border-radius:12px;padding:16px;margin-bottom:12px}
+    .k{opacity:.7} .v{font-weight:700;font-size:20px}
+    .row{display:flex;justify-content:space-between;margin:6px 0}
+    .hash{font-family:monospace;font-size:12px;word-break:break-all}
   </style>
 </head>
 <body>
-  <div class="title">ALMS — Public Verification Dashboard</div>
-  <div id="app"></div>
+  <div class="card">
+    <div class="v">Jay Math CPV</div>
+    <div class="k">Compounding Public Value</div>
+  </div>
+
+  <div id="cpv" class="card">Loading…</div>
 
 <script>
-fetch('receipts.json')
-  .then(r => r.json())
-  .then(data => {
-    const el = document.getElementById('app');
-    el.innerHTML = `
-      <div class="card">
-        <b>System:</b> ${data.system}<br>
-        <b>Claims:</b> ${data.claim_count}<br>
-        <b>Checkpoint:</b> ${data.checkpoint}<br>
-        <b>Chain:</b> ${data.chain_status}
-      </div>
+async function load(){
+  const res = await fetch('cpv-feed.json?ts=' + Date.now());
+  const data = await res.json();
 
-      <div class="card">
-        <b>Latest Claim:</b><br>
-        ${data.latest.id}<br>
-        ${data.latest.claim}<br>
-        <b>Hash:</b> ${data.latest.hash}
-      </div>
+  const p = data.cpv_receipt.payload;
+  const h = data.cpv_receipt.hash;
 
-      <div class="card">
-        <b>Status Distribution</b><br>
-        MATCH: ${data.distribution.MATCH}<br>
-        CONTESTED: ${data.distribution.CONTESTED}<br>
-        MISMATCH: ${data.distribution.MISMATCH}
-      </div>
-
-      <div class="card">
-        <a href="${data.links.latest_receipt}">Latest Receipt</a><br>
-        <a href="${data.links.repo}">Repo</a>
-      </div>
-    `;
-  });
+  document.getElementById('cpv').innerHTML = `
+    <div class="row"><div class="k">CPV Index</div><div class="v">${p.cpv_index}</div></div>
+    <div class="row"><div class="k">Velocity</div><div>${p.state_velocity}</div></div>
+    <div class="row"><div class="k">Verified $</div><div>$${p.verified_math_usd.toLocaleString()}</div></div>
+    <div class="row"><div class="k">Multiplier</div><div>${p.human_multiplier}</div></div>
+    <div class="row"><div class="k">Window</div><div>${p.time_window}</div></div>
+    <div class="row"><div class="k">Computed</div><div>${p.computed_at}</div></div>
+    <div class="k">Hash</div>
+    <div class="hash">${h}</div>
+  `;
+}
+load();
 </script>
 </body>
 </html>
