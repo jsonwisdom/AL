@@ -1,0 +1,21 @@
+{
+  "observer": "openclaw",
+  "source": "https://github.com/openclaw/openclaw/releases/tag/v2026.4.24",
+  "release": "v2026.4.24",
+  "claim": "Open-source coding-agent tooling is accelerating",
+  "receipt_type": "github_release_observer_leaf",
+  "pipeline_touch": false,
+  "status": "recorded_external_signal",
+  "checks": {
+    "tag_exists": "observed",
+    "commit_hash_recorded": "pending_verified_capture",
+    "release_notes_captured": "pending",
+    "diff_vs_previous_release": "pending"
+  },
+  "benchmark": {
+    "metric": "agent_quality",
+    "formula": "useful_changes - hallucinated_changes - broken_commands",
+    "activation": "sandbox_only"
+  },
+  "thesis": "Agents create velocity. Receipts create trust. The winner is the fastest verified operator."
+}
