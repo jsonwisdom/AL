@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Base Observer Mesh</title>
+  <style>
+    body{font-family:Arial;background:#0b0f14;color:#e8eef7;margin:24px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
+    .card{background:#121923;border:1px solid #263244;border-radius:16px;padding:18px;margin-bottom:16px}
+    .ok{color:#40ff9f}.warn{color:#ffd166}.bad{color:#ff5c7a}
+    code{word-break:break-all;color:#9ad7ff}
+    h1{margin-bottom:4px} small{color:#9aa8b8}
+  </style>
+</head>
+<body>
+  <h1>⚡ Base Observer Mesh</h1>
+  <small>Nitro + L1 SystemConfig trust surface</small>
+
+  <div id="global" class="card">Loading...</div>
+
+  <h2>Nitro Observer</h2>
+  <div class="grid">
+    <div class="card" id="nitro-mainnet"></div>
+    <div class="card" id="nitro-sepolia"></div>
+  </div>
+
+  <h2>L1 SystemConfig</h2>
+  <div class="grid">
+    <div class="card" id="sys-mainnet"></div>
+    <div class="card" id="sys-sepolia"></div>
+  </div>
+
+<script>
+async function json(path){
+  const r = await fetch(path + "?ts=" + Date.now());
+  return await r.json();
+}
+
+function nitroStatus(n){
+  const ZERO = "0x0000000000000000000000000000000000000000";
+  const live = n.revoker_live || "READ_ERROR";
+  const calls = n.revoke_call_state.total_revoke_calls || 0;
+
+  if (calls > 0 || (live !== ZERO && live !== "READ_ERROR")) return ["RED", "bad"];
+  if (live === "READ_ERROR") return ["YELLOW", "warn"];
+  return ["GREEN", "ok"];
+}
+
+function renderNitro(name, n){
+  const [st, cls] = nitroStatus(n);
+  const live = n.revoker_live || "READ_ERROR";
+  return `
+    <h3 class="${cls}">${st} — ${name}</h3>
+    <p>Event revoker: <code>${n.revoker_event_state.last_revoker}</code></p>
+    <p>Live revoker: <code>${live}</code></p>
+    <p>revokeCert calls: <code>${n.revoke_call_state.total_revoke_calls}</code></p>
+    <p>Confidence: <code>${live==="READ_ERROR" ? "DEGRADED" : "FULL"}</code></p>
+    <p>State: <strong>${live==="READ_ERROR" ? "DEGRADED VISIBILITY" : "VERIFIED"}</strong></p>
+    <p>Last checked: <code>${n.revoke_call_state.last_checked_at}</code></p>
+  `;
+}
+
+function sysStatus(s){
+  if ((s.status || "").startsWith("RED")) return ["RED", "bad"];
+  if ((s.status || "").startsWith("YELLOW") || s.owner_live==="READ_ERROR" || s.implementation_live==="READ_ERROR") return ["YELLOW", "warn"];
+  return ["GREEN", "ok"];
+}
+
+function renderSystemConfig(name, s){
+  const [st, cls] = sysStatus(s);
+  return `
+    <h3 class="${cls}">${st} — ${name}</h3>
+    <p>Status: <code>${s.status}</code></p>
+    <p>Contract: <code>${s.contract}</code></p>
+    <p>Owner: <code>${s.owner_live}</code></p>
+    <p>Implementation: <code>${s.implementation_live}</code></p>
+    <p>Code hash: <code>${s.code_hash}</code></p>
+    <p>Block: <code>${s.last_block}</code></p>
+    <p>Last checked: <code>${s.last_checked_at}</code></p>
+  `;
+}
+
+async function load(){
+  const nitro = await json("./nitro-feed.json");
+  const sysMain = await json("./systemconfig-mainnet.json");
+  const sysSep = await json("./systemconfig-sepolia.json");
+
+  const nMain = nitro.networks.base_mainnet;
+  const nSep = nitro.networks.base_sepolia;
+
+  document.getElementById("nitro-mainnet").innerHTML = renderNitro("Base Mainnet", nMain);
+  document.getElementById("nitro-sepolia").innerHTML = renderNitro("Base Sepolia", nSep);
+  document.getElementById("sys-mainnet").innerHTML = renderSystemConfig("Ethereum Mainnet", sysMain);
+  document.getElementById("sys-sepolia").innerHTML = renderSystemConfig("Ethereum Sepolia", sysSep);
+
+  const states = [nitroStatus(nMain)[0], nitroStatus(nSep)[0], sysStatus(sysMain)[0], sysStatus(sysSep)[0]];
+  const global = states.includes("RED") ? ["RED: MUTATION DETECTED", "bad"] :
+                 states.includes("YELLOW") ? ["YELLOW: DEGRADED VISIBILITY", "warn"] :
+                 ["GREEN: ALL VERIFIED CLEAN", "ok"];
+
+  document.getElementById("global").innerHTML = `
+    <h2 class="${global[1]}">${global[0]}</h2>
+    <p>Nitro generated: <code>${nitro.generated_at}</code></p>
+    <p>Mesh panels: <code>Nitro + L1 SystemConfig</code></p>
+  `;
+}
+
+load();
+setInterval(load, 60000);
+</script>
+</body>
+</html>
