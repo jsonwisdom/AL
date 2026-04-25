@@ -1,0 +1,25 @@
+{
+  "sources": [
+    {
+      "id": "doj_press_releases",
+      "type": "public_json_or_html",
+      "lane": "doj",
+      "url": "https://www.justice.gov/news",
+      "status": "seed"
+    },
+    {
+      "id": "courtlistener_opinions",
+      "type": "public_api",
+      "lane": "cases",
+      "url": "https://www.courtlistener.com/api/rest/v4/opinions/",
+      "status": "seed"
+    },
+    {
+      "id": "us_code_house",
+      "type": "public_law",
+      "lane": "lawbooks",
+      "url": "https://uscode.house.gov/download/download.shtml",
+      "status": "seed"
+    }
+  ]
+}
