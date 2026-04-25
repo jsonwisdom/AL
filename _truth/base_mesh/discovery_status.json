@@ -1,0 +1,13 @@
+{
+  "mesh": "base_multi_contract_observer",
+  "status": "DISCOVERY_STARTED",
+  "doctrine": {
+    "green": "verified clean live state",
+    "yellow": "visibility degraded or getter unavailable",
+    "red": "mutation or unexpected critical state"
+  },
+  "official_sources": [
+    "https://docs.base.org/base-chain/network-information/base-contracts",
+    "https://github.com/base/contract-deployments"
+  ]
+}
