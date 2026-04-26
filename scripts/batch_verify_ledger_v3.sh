@@ -48,7 +48,7 @@ claims_count="$(find "$ROOT/data" -maxdepth 2 -name claims.json | wc -l | tr -d 
   exit 1
 }
 
-prev_hash="$(tail -n 1 "$LEDGER" | jq -r '.entry_hash // "GENESIS"' 2>/dev/null || echo "GENESIS")"
+prev_hash="$(tail -n 1 "$LEDGER" | jq -r 'if .entry_hash == null or .entry_hash == "" then "GENESIS" else .entry_hash end' 2>/dev/null || echo "GENESIS")"
 log_hash="$(sha256sum "$LOG" | awk '{print $1}')"
 data_hash="$(find "$ROOT/data" -type f -name claims.json -print0 | sort -z | xargs -0 sha256sum | sha256sum | awk '{print $1}')"
 results_hash="$(sha256sum "$RUNS" | awk '{print $1}')"
