@@ -1,12 +1,34 @@
 {
   "leaf_id": "mn_068",
-  "model": "mn_budget_pending_claim_v1",
+  "model": "mn_budget_expenditure_hhs_v1",
   "source": {
     "agency": "Minnesota Management and Budget",
     "document": "February 2026 Budget and Economic Forecast",
-    "claim_type": "PENDING_SOURCE_EXTRACTION"
+    "line_hint": 68,
+    "claim_type": "expenditure_line_item"
   },
-  "status": "PENDING",
-  "reason": "No verified source claim extracted yet.",
-  "fields": []
+  "fields": [
+    {
+      "id": "health_human_services",
+      "canonical_claim": "Health & Human Services                                  25,808,265",
+      "tests": [
+        {
+          "id": "exact_match",
+          "claim_text": "Health & Human Services                                  25,808,265"
+        },
+        {
+          "id": "wrong_value",
+          "claim_text": "Health & Human Services                                  25,808,266"
+        },
+        {
+          "id": "normalized_number",
+          "claim_text": "Health & Human Services 25808265"
+        },
+        {
+          "id": "wrong_label",
+          "claim_text": "Human Services & Health                                  25,808,265"
+        }
+      ]
+    }
+  ]
 }
