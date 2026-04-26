@@ -1,0 +1,24 @@
+{
+  "leaf_id": "la_002",
+  "model": "linear_algebra_solvability_v1",
+  "fields": [
+    {
+      "id": "ax_equals_b_solvable",
+      "canonical_claim": "A=[[1,2],[2,4]], b=[3,6], Ax=b is solvable",
+      "tests": [
+        {
+          "id": "exact_match",
+          "claim_text": "A=[[1,2],[2,4]], b=[3,6], Ax=b is solvable"
+        },
+        {
+          "id": "wrong_unsolvable",
+          "claim_text": "A=[[1,2],[2,4]], b=[3,6], Ax=b is not solvable"
+        },
+        {
+          "id": "wrong_b_value",
+          "claim_text": "A=[[1,2],[2,4]], b=[3,7], Ax=b is solvable"
+        }
+      ]
+    }
+  ]
+}
