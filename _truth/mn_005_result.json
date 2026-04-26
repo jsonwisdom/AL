@@ -1,0 +1,24 @@
+{
+  "ground_state": {
+    "constraints": {
+      "claim_integrity": true,
+      "source_binding": true
+    },
+    "fields": {
+      "source_bound_claim": {
+        "accepted": [
+          "exact_match"
+        ],
+        "rejected": [
+          "wrong_source",
+          "unbound_claim",
+          "wrong_claim"
+        ]
+      }
+    },
+    "status": "VERIFIED",
+    "total_energy": 0
+  },
+  "leaf_id": "mn_005",
+  "model": "mn_budget_source_binding_v1"
+}
