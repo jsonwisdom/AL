@@ -1,0 +1,20 @@
+{
+  "ground_state": {
+    "fields": {
+      "general_fund_balance_format": {
+        "accepted": [
+          "exact_match"
+        ],
+        "rejected": [
+          "comma_format",
+          "decimal_billions",
+          "approximate_language"
+        ]
+      }
+    },
+    "status": "VERIFIED",
+    "total_energy": 0
+  },
+  "leaf_id": "mn_002",
+  "model": "mn_budget_normalization_guard_v1"
+}
