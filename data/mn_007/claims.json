@@ -1,31 +1,31 @@
 {
   "leaf_id": "mn_007",
-  "model": "mn_budget_surplus_label_v1",
+  "model": "mn_budget_balance_forward_v1",
   "source": {
     "agency": "Minnesota Management and Budget",
     "document": "February 2026 Budget and Economic Forecast",
-    "claim_type": "surplus_deficit_label"
+    "page_hint": "General Fund Balance Analysis"
   },
   "fields": [
     {
-      "id": "surplus_label_line",
-      "canonical_claim": "General Fund Balance         3 670 799 surplus",
+      "id": "balance_forward_prior_year",
+      "canonical_claim": "Balance Forward From Prior Year                             10,272,943",
       "tests": [
         {
           "id": "exact_match",
-          "claim_text": "General Fund Balance         3 670 799 surplus"
+          "claim_text": "Balance Forward From Prior Year                             10,272,943"
         },
         {
-          "id": "missing_label",
-          "claim_text": "General Fund Balance         3 670 799"
+          "id": "wrong_value",
+          "claim_text": "Balance Forward From Prior Year                             10,272,944"
         },
         {
-          "id": "wrong_label",
-          "claim_text": "General Fund Balance         3 670 799 deficit"
+          "id": "normalized_number",
+          "claim_text": "Balance Forward From Prior Year 10272943"
         },
         {
-          "id": "normalized_text",
-          "claim_text": "General Fund Balance 3,670,799 surplus"
+          "id": "comma_removed",
+          "claim_text": "Balance Forward From Prior Year                             10272943"
         }
       ]
     }

@@ -1,18 +1,14 @@
 {
   "ground_state": {
-    "constraints": {
-      "format_exact": true,
-      "label_present": true
-    },
     "fields": {
-      "surplus_label_line": {
+      "balance_forward_prior_year": {
         "accepted": [
           "exact_match"
         ],
         "rejected": [
-          "missing_label",
-          "wrong_label",
-          "normalized_text"
+          "wrong_value",
+          "normalized_number",
+          "comma_removed"
         ]
       }
     },
@@ -20,5 +16,5 @@
     "total_energy": 0
   },
   "leaf_id": "mn_007",
-  "model": "mn_budget_surplus_label_v1"
+  "model": "mn_budget_balance_forward_v1"
 }
