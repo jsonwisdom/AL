@@ -1,5 +1,9 @@
 {
   "ground_state": {
+    "constraints": {
+      "balance_identity": true,
+      "multi_claim_exactness": true
+    },
     "fields": {
       "balance_claim": {
         "accepted": [
@@ -26,7 +30,8 @@
         ]
       }
     },
-    "total_energy": -15.0
+    "status": "VERIFIED",
+    "total_energy": 0
   },
   "leaf_id": "mn_004",
   "model": "mn_budget_multi_claim_consistency_v1"
