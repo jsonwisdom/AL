@@ -18,3 +18,16 @@ site/feed.log
 _truth/detect/
 _truth/detect/
 _truth/detect/
+
+# ALMS runtime noise
+_truth/tmp/
+_truth/logs/
+_truth/*_result.json
+
+# optional if you want clean repo
+_truth/*_receipt.json
+
+# local experiments
+data/leaf003/
+qubo/
+sources/
