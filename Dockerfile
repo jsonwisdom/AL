@@ -11,4 +11,4 @@ COPY anchors ./anchors
 
 ENV PORT=8080
 
-CMD ["python3", "server_full.py"]
+CMD ["uvicorn", "server_full:app", "--host", "0.0.0.0", "--port", "8080"]
