@@ -1,0 +1,33 @@
+{
+  "ground_state": {
+    "fields": {
+      "balance_claim": {
+        "accepted": [
+          "exact_match"
+        ],
+        "rejected": [
+          "wrong_value"
+        ]
+      },
+      "expenses_claim": {
+        "accepted": [
+          "exact_match"
+        ],
+        "rejected": [
+          "wrong_value"
+        ]
+      },
+      "revenue_claim": {
+        "accepted": [
+          "exact_match"
+        ],
+        "rejected": [
+          "wrong_value"
+        ]
+      }
+    },
+    "total_energy": -15.0
+  },
+  "leaf_id": "mn_004",
+  "model": "mn_budget_multi_claim_consistency_v1"
+}

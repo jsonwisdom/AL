@@ -1,0 +1,35 @@
+{
+  "leaf_id": "mn_004",
+  "model": "mn_budget_multi_claim_consistency_v1",
+  "source": {
+    "agency": "Minnesota Management and Budget",
+    "document": "February 2026 Budget and Economic Forecast",
+    "claim_type": "multi_claim_consistency"
+  },
+  "fields": [
+    {
+      "id": "revenue_claim",
+      "canonical_claim": "revenue=4000000",
+      "tests": [
+        { "id": "exact_match", "claim_text": "revenue=4000000" },
+        { "id": "wrong_value", "claim_text": "revenue=3999999" }
+      ]
+    },
+    {
+      "id": "expenses_claim",
+      "canonical_claim": "expenses=330000",
+      "tests": [
+        { "id": "exact_match", "claim_text": "expenses=330000" },
+        { "id": "wrong_value", "claim_text": "expenses=331000" }
+      ]
+    },
+    {
+      "id": "balance_claim",
+      "canonical_claim": "balance=3670000",
+      "tests": [
+        { "id": "exact_match", "claim_text": "balance=3670000" },
+        { "id": "wrong_value", "claim_text": "balance=3671000" }
+      ]
+    }
+  ]
+}
