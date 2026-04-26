@@ -1,12 +1,33 @@
 {
   "leaf_id": "mn_007",
-  "model": "mn_budget_pending_claim_v1",
+  "model": "mn_budget_surplus_label_v1",
   "source": {
     "agency": "Minnesota Management and Budget",
     "document": "February 2026 Budget and Economic Forecast",
-    "claim_type": "PENDING_SOURCE_EXTRACTION"
+    "claim_type": "surplus_deficit_label"
   },
-  "status": "PENDING",
-  "reason": "No verified source claim extracted yet.",
-  "fields": []
+  "fields": [
+    {
+      "id": "surplus_label_line",
+      "canonical_claim": "General Fund Balance         3 670 799 surplus",
+      "tests": [
+        {
+          "id": "exact_match",
+          "claim_text": "General Fund Balance         3 670 799 surplus"
+        },
+        {
+          "id": "missing_label",
+          "claim_text": "General Fund Balance         3 670 799"
+        },
+        {
+          "id": "wrong_label",
+          "claim_text": "General Fund Balance         3 670 799 deficit"
+        },
+        {
+          "id": "normalized_text",
+          "claim_text": "General Fund Balance 3,670,799 surplus"
+        }
+      ]
+    }
+  ]
 }

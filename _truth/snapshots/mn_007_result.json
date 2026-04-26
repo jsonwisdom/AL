@@ -1,0 +1,24 @@
+{
+  "ground_state": {
+    "constraints": {
+      "format_exact": true,
+      "label_present": true
+    },
+    "fields": {
+      "surplus_label_line": {
+        "accepted": [
+          "exact_match"
+        ],
+        "rejected": [
+          "missing_label",
+          "wrong_label",
+          "normalized_text"
+        ]
+      }
+    },
+    "status": "VERIFIED",
+    "total_energy": 0
+  },
+  "leaf_id": "mn_007",
+  "model": "mn_budget_surplus_label_v1"
+}
