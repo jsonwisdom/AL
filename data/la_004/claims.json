@@ -1,0 +1,13 @@
+{
+  "leaf_id": "la_004",
+  "model": "linear_algebra_eigen_v1",
+  "fields": [{
+    "id": "eigenvector_check",
+    "canonical_claim": "A=[[2,0],[0,3]], v=[1,0], lambda=2 satisfies Av=lambda v",
+    "tests": [
+      {"id":"exact_match","claim_text":"A=[[2,0],[0,3]], v=[1,0], lambda=2 satisfies Av=lambda v"},
+      {"id":"wrong_lambda","claim_text":"A=[[2,0],[0,3]], v=[1,0], lambda=3 satisfies Av=lambda v"},
+      {"id":"wrong_vector","claim_text":"A=[[2,0],[0,3]], v=[0,1], lambda=2 satisfies Av=lambda v"}
+    ]
+  }]
+}

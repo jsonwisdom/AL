@@ -1,0 +1,19 @@
+{
+  "ground_state": {
+    "fields": {
+      "dot_product_zero": {
+        "accepted": [
+          "exact_match"
+        ],
+        "rejected": [
+          "wrong_not_orthogonal",
+          "wrong_vectors"
+        ]
+      }
+    },
+    "total_energy": 0,
+    "status": "VERIFIED"
+  },
+  "leaf_id": "la_005",
+  "model": "linear_algebra_orthogonal_v1"
+}
