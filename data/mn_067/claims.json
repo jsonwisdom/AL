@@ -1,12 +1,34 @@
 {
   "leaf_id": "mn_067",
-  "model": "mn_budget_pending_claim_v1",
+  "model": "mn_budget_expenditure_property_tax_aids_v1",
   "source": {
     "agency": "Minnesota Management and Budget",
     "document": "February 2026 Budget and Economic Forecast",
-    "claim_type": "PENDING_SOURCE_EXTRACTION"
+    "line_hint": 67,
+    "claim_type": "expenditure_line_item"
   },
-  "status": "PENDING",
-  "reason": "No verified source claim extracted yet.",
-  "fields": []
+  "fields": [
+    {
+      "id": "property_tax_aids_credits",
+      "canonical_claim": "Property Tax Aids & Credits                               4,840,970",
+      "tests": [
+        {
+          "id": "exact_match",
+          "claim_text": "Property Tax Aids & Credits                               4,840,970"
+        },
+        {
+          "id": "wrong_value",
+          "claim_text": "Property Tax Aids & Credits                               4,840,971"
+        },
+        {
+          "id": "normalized_number",
+          "claim_text": "Property Tax Aids & Credits 4840970"
+        },
+        {
+          "id": "wrong_label",
+          "claim_text": "Property Tax Credits & Aids                               4,840,970"
+        }
+      ]
+    }
+  ]
 }
