@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body style="background:black;color:#00ff88;font-family:monospace">
+
+<h2>MERKLE VERIFIER</h2>
+
+<select id="leaf"></select>
+<button onclick="verify()">VERIFY</button>
+
+<pre id="out"></pre>
+
+<script>
+let DATA;
+
+async function load(){
+  DATA = await fetch('../merkle_proofs.json').then(r=>r.json());
+  const sel = document.getElementById('leaf');
+  DATA.leaves.forEach(l=>{
+    const o=document.createElement('option');
+    o.value=l.leaf_hash;
+    o.textContent=l.leaf_id;
+    sel.appendChild(o);
+  });
+}
+
+async function sha256hex(txt){
+  const buf=new TextEncoder().encode(txt);
+  const h=await crypto.subtle.digest('SHA-256',buf);
+  return [...new Uint8Array(h)].map(b=>b.toString(16).padStart(2,'0')).join('');
+}
+
+async function verify(){
+  const sel=document.getElementById('leaf').value;
+  const root=DATA.merkle_root;
+
+  // no proof path yet (stage 1)
+  document.getElementById('out').textContent =
+    "Leaf: "+sel+"\nRoot: "+root+"\n(Status: placeholder)";
+}
+
+load();
+</script>
+
+</body>
+</html>
