@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ALMS Alerts</title>
+<style>
+body { background:#000; color:#0f0; font-family:monospace; padding:40px; }
+h1 { margin-bottom:20px; }
+.counts { margin-bottom:20px; }
+.alert { color:#ff4444; }
+.watch { color:#ffaa00; }
+.info  { color:#00ffff; }
+.event { margin-bottom:8px; }
+</style>
+</head>
+<body>
+
+<h1>⚙️ ALMS ALERTS</h1>
+
+<div class="counts">
+ALERT: <span id="alertCount">0</span> |
+WATCH: <span id="watchCount">0</span> |
+INFO: <span id="infoCount">0</span>
+</div>
+
+<div id="events"></div>
+
+<script>
+fetch('../_truth/alerts/alerts.jsonl')
+.then(r => r.text())
+.then(text => {
+  const lines = text.trim().split('\n').filter(Boolean);
+
+  let alert = 0, watch = 0, info = 0;
+
+  const container = document.getElementById('events');
+
+  lines.reverse().forEach(line => {
+    let e;
+    try { e = JSON.parse(line); } catch { return; }
+
+    const div = document.createElement('div');
+    div.className = 'event';
+
+    let label = e.severity || "INFO";
+
+    if (label === "ALERT") {
+      div.classList.add('alert');
+      alert++;
+    } else if (label === "WATCH") {
+      div.classList.add('watch');
+      watch++;
+    } else {
+      div.classList.add('info');
+      info++;
+    }
+
+    let textLine = `[${e.ts}] ${label}`;
+
+    if (e.raw?.change_type) textLine += ` → ${e.raw.change_type}`;
+    if (e.raw?.file) textLine += ` → ${e.raw.file}`;
+
+    div.textContent = textLine;
+
+    container.appendChild(div);
+  });
+
+  document.getElementById('alertCount').textContent = alert;
+  document.getElementById('watchCount').textContent = watch;
+  document.getElementById('infoCount').textContent = info;
+});
+</script>
+
+</body>
+</html>

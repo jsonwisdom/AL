@@ -37,3 +37,42 @@
     "status": "TOMBSTONED"
   }
 }
+{
+  "ts": "2026-04-27T16:10:36Z",
+  "type": "",
+  "severity": "INFO",
+  "raw": {
+    "ts": "2026-04-27T16:10:36Z",
+    "change_type": "NO_CHANGE",
+    "hash_pre": "a5b138b0528231f4f29c4576bb08057159d3480009e51c04c8137f9ea8795cf1",
+    "hash_post": "a5b138b0528231f4f29c4576bb08057159d3480009e51c04c8137f9ea8795cf1"
+  }
+}
+{
+  "ts": "2026-04-27T16:13:38Z",
+  "type": "MULTIRUN_CHECK",
+  "severity": "INFO",
+  "raw": {
+    "ts": "2026-04-27T16:13:38Z",
+    "type": "MULTIRUN_CHECK",
+    "script": "auto_root.sh",
+    "status": "MULTIRUN_OK",
+    "count": 1,
+    "window_seconds": 300,
+    "threshold": 3
+  }
+}
+{
+  "ts": "2026-04-27T16:12:09Z",
+  "type": "TOMBSTONE",
+  "severity": "WATCH",
+  "raw": {
+    "ts": "2026-04-27T16:12:09Z",
+    "type": "TOMBSTONE",
+    "file": "test_delete.txt",
+    "reason": "test run",
+    "sha256": "f2ca1bb6c7e907d06dafe4687e579fce76b37e4e93b7605022da52e6ccc26fd2",
+    "git_head": "00667da107a0222a1096b840448f998d3b633773",
+    "status": "TOMBSTONED"
+  }
+}
