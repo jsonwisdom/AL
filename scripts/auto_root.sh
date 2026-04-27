@@ -102,3 +102,7 @@ echo "STATUS_UPDATED"
 ./scripts/write_last_run.sh
 echo "STATUS_UPDATED"
 
+
+# --- ROOT HISTORY ---
+./scripts/append_root_history.sh
+
