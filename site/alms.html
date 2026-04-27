@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ALMS Root</title>
+<style>
+body { background:#000; color:#0f0; font-family:monospace; padding:40px; }
+.hash { color:#0ff; }
+</style>
+</head>
+<body>
+
+<h1>⚙️ ALMS ROOT</h1>
+
+<p>System: ALMS</p>
+
+<p>Root Hash:</p>
+<pre class="hash" id="hash"></pre>
+
+<p>Receipts:</p>
+<pre id="data"></pre>
+
+<script>
+fetch('../_truth/root/alms_root.json')
+.then(r => r.json())
+.then(d => {
+  document.getElementById('hash').textContent = d.root_sha256;
+  document.getElementById('data').textContent =
+    JSON.stringify(d.root.receipts, null, 2);
+});
+</script>
+
+</body>
+</html>
