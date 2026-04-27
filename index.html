@@ -43,7 +43,16 @@
 <section class="card" style="margin-bottom:14px;"><div class="label">Fuel-to-Food Backfill Anchor</div><div class="small">IPFS anchored batch — verifiable outside the ALMS receipt chain.</div><br><b>Status:</b> <span class="ok">IPFS_ANCHORED</span><br><b>Leaf Count:</b> 3<br><br><b>CID:</b><br><span class="hash">bafkreidd5zm6gwqkwscg2jck34bakqe6tct237pftvqbv4njjxonh4ieme</span><br><br><b>Merkle Root:</b><br><span class="hash">cad549f24bec742fd1f6bd280e3202921fa2dd6a11f82eb36ff9ecd990303546</span><br><br><a href="https://gateway.pinata.cloud/ipfs/bafkreidd5zm6gwqkwscg2jck34bakqe6tct237pftvqbv4njjxonh4ieme" target="_blank" rel="noopener noreferrer">Open IPFS Anchor</a></section>
 <div class="controls"><input id="search" placeholder="Search claim, id, hash…" /><select id="statusFilter"><option value="ALL">ALL</option><option value="MATCH">MATCH</option><option value="CONTESTED">CONTESTED</option><option value="MISMATCH">MISMATCH</option></select><button id="verifyBtn">Replay Verify</button></div>
 <div class="table-wrap"><table><thead><tr><th>ID</th><th>Status</th><th>Vector</th><th>Claim</th><th>Hash</th><th>Verify</th><th>PREV</th></tr></thead><tbody id="rows"></tbody></table></div>
-<footer>Repo: <a href="https://github.com/jsonwisdom/AL">github.com/jsonwisdom/AL</a> · Latest receipt: <a href="receipts/alms_0100_receipt.json">#0100</a> · Verifier: <a href="verify.sh">verify.sh</a></footer>
+<footer>
+  Repo: <a href="https://github.com/jsonwisdom/AL">github.com/jsonwisdom/AL</a>
+  · Latest receipt: <a href="receipts/alms_0100_receipt.json">#0100</a>
+  · Verifier: <a href="verify.sh">verify.sh</a>
+  <br>
+  VCLP: <strong>VERIFIED</strong>
+  · Last published ledger head: <code>sha256:a7074bb3bc54a896e737f4d0360d425d68a9a9571086c99d6fa254c16df065c6</code>
+  <br>
+  Last claim: <code>Nitro observer baseline verified: revoker_live=0x0000000000000000000000000000000000000000 revoke_calls=0</code>
+</footer>
 <script>
 const pad=n=>String(n).padStart(4,'0'); const receiptPath=n=>`receipts/alms_${pad(n)}_receipt.json`; let receipts=[]; let verified=new Map();
 async function sha256Hex(str){const bytes=new TextEncoder().encode(str); const digest=await crypto.subtle.digest('SHA-256',bytes); return [...new Uint8Array(digest)].map(b=>b.toString(16).padStart(2,'0')).join('');}
