@@ -1,11 +1,5 @@
 [
   {
-    "ts": "2026-04-27T16:10:36Z",
-    "change_type": "NO_CHANGE",
-    "hash_pre": "a5b138b0528231f4f29c4576bb08057159d3480009e51c04c8137f9ea8795cf1",
-    "hash_post": "a5b138b0528231f4f29c4576bb08057159d3480009e51c04c8137f9ea8795cf1"
-  },
-  {
     "ts": "2026-04-27T16:12:09Z",
     "type": "TOMBSTONE",
     "file": "test_delete.txt",
@@ -15,12 +9,10 @@
     "status": "TOMBSTONED"
   },
   {
-    "ts": "2026-04-27T16:13:38Z",
-    "type": "MULTIRUN_CHECK",
-    "script": "auto_root.sh",
-    "status": "MULTIRUN_OK",
-    "count": 1,
-    "window_seconds": 300,
-    "threshold": 3
+    "change_type": "NO_CHANGE",
+    "hash_post": "a5b138b0528231f4f29c4576bb08057159d3480009e51c04c8137f9ea8795cf1",
+    "hash_pre": "a5b138b0528231f4f29c4576bb08057159d3480009e51c04c8137f9ea8795cf1",
+    "ts": "2026-04-27T17:46:26Z",
+    "type": "ROOT_EVENT"
   }
 ]
