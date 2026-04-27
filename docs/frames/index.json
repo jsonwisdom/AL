@@ -1,0 +1,21 @@
+{
+  "version": "vNext",
+  "image": "https://jsonwisdom.github.io/AL/frames/master_terminal.svg",
+  "buttons": [
+    {
+      "label": "🛡️ VERIFY (JSON)",
+      "action": "link",
+      "target": "https://ipfs.io/ipfs/bafybeicmw4dr7gbgrjuap65zrumvx6not24h5q6bwrd47zjxaeixzgbone/audit-dashboard.json"
+    },
+    {
+      "label": "📂 LEDGER (HTML)",
+      "action": "link",
+      "target": "https://ipfs.io/ipfs/bafybeicmw4dr7gbgrjuap65zrumvx6not24h5q6bwrd47zjxaeixzgbone/audit-dashboard.html"
+    },
+    {
+      "label": "📝 SUBMIT",
+      "action": "link",
+      "target": "https://github.com/jsonwisdom/AL/issues/new/choose"
+    }
+  ]
+}
