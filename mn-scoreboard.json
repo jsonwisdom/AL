@@ -1,0 +1,59 @@
+{
+  "system": "Tri-State Auditing System",
+  "identity": "jaywisdom.base.eth",
+  "state": "MN",
+  "language_mode": "american_vernacular",
+  "last_updated": "2026-04-27T00:00:00Z",
+  "status_rules": {
+    "GREEN": "Receipts match. The claim holds.",
+    "YELLOW": "Record is missing, late, unclear, or not independently pinned yet.",
+    "RED": "Receipts contradict the claim or show a critical system risk."
+  },
+  "scoring_rules": {
+    "verified_law_claim": 15,
+    "verified_court_record": 25,
+    "audit_contradiction": 40,
+    "statute_misuse_exposed": 50,
+    "critical_system_risk": 100
+  },
+  "systems": {
+    "law": {
+      "label": "MN Law",
+      "status": "YELLOW",
+      "plain_english": "The law lane checks what the statute actually says, not what somebody says it says.",
+      "entries": []
+    },
+    "judiciary": {
+      "label": "MN Judiciary",
+      "status": "RED",
+      "plain_english": "The court lane checks bail, conditions, orders, charges, and case outcomes against the record.",
+      "entries": [
+        {
+          "case_id": "MN_JUDICIARY_001",
+          "title": "Passport retained after higher bail option",
+          "claim": "A defendant facing charges kept his passport by taking the higher bond option with no travel restrictions, then reportedly fled the country.",
+          "vernacular": "The system let him keep the door open, then acted shocked when he walked through it.",
+          "checks": {
+            "bail_amounts_reported": true,
+            "passport_condition_reported": true,
+            "travel_restriction_gap_reported": true,
+            "court_record_pinned": false,
+            "news_source_pinned": false
+          },
+          "status": "RED",
+          "reason": "Critical risk pattern reported, but official court record and source hash still need pinning.",
+          "impact_score": 100
+        }
+      ]
+    },
+    "audit": {
+      "label": "MN Audit",
+      "status": "YELLOW",
+      "plain_english": "The audit lane checks whether official claims survive the auditor's receipts.",
+      "entries": []
+    }
+  },
+  "global_status": "RED",
+  "global_reason": "One judiciary entry is marked RED because it describes a critical system-risk pattern.",
+  "motto": "Trust is culture. Verification is infrastructure."
+}
