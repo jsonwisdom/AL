@@ -2,31 +2,40 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>ALMS Root</title>
+<title>ALMS</title>
 <style>
 body { background:#000; color:#0f0; font-family:monospace; padding:40px; }
 .hash { color:#0ff; }
+.good { color:#0f0; }
+.bad { color:#f00; }
 </style>
 </head>
 <body>
 
-<h1>⚙️ ALMS ROOT</h1>
-
-<p>System: ALMS</p>
+<h1>⚙️ ALMS SYSTEM</h1>
 
 <p>Root Hash:</p>
 <pre class="hash" id="hash"></pre>
 
-<p>Receipts:</p>
+<p>Total Leaves: <span id="count"></span></p>
+<p>PASS Count: <span class="good" id="pass"></span></p>
+
+<h3>Receipts</h3>
 <pre id="data"></pre>
 
 <script>
 fetch('../_truth/root/alms_root.json')
 .then(r => r.json())
 .then(d => {
+  const receipts = d.root.receipts;
+
   document.getElementById('hash').textContent = d.root_sha256;
+  document.getElementById('count').textContent = receipts.length;
+  document.getElementById('pass').textContent =
+    receipts.filter(x => x.status === "PASS").length;
+
   document.getElementById('data').textContent =
-    JSON.stringify(d.root.receipts, null, 2);
+    JSON.stringify(receipts, null, 2);
 });
 </script>
 
