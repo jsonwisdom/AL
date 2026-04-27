@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ALMS Timeline</title>
+<style>
+body { background:#000; color:#0f0; font-family:monospace; padding:40px; }
+.event { margin-bottom: 10px; }
+.hash { color:#0ff; }
+.alert { color:#f00; }
+</style>
+</head>
+<body>
+
+<h1>⚙️ ALMS TIMELINE</h1>
+
+<p>Total Events: <span id="count"></span></p>
+
+<div id="events"></div>
+
+<script>
+fetch('../_truth/timeline/timeline.json')
+.then(r => r.json())
+.then(data => {
+  document.getElementById('count').textContent = data.length;
+
+  const container = document.getElementById('events');
+
+  data.reverse().forEach(e => {
+    const div = document.createElement('div');
+    div.className = 'event';
+
+    let text = `[${e.ts}] ${e.type || "UNKNOWN"}`;
+
+    if (e.change_type) text += ` → ${e.change_type}`;
+    if (e.status) text += ` → ${e.status}`;
+    if (e.file) text += ` → ${e.file}`;
+
+    div.textContent = text;
+
+    if (e.status && e.status.includes("ALERT")) {
+      div.classList.add('alert');
+    }
+
+    container.appendChild(div);
+  });
+});
+</script>
+
+</body>
+</html>
