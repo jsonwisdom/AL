@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>ALMS Dashboard</title>
-  <style>
-    body { font-family: monospace; background:#0b0b0b; color:#00ff88; padding:20px; }
-    .card { border:1px solid #00ff88; padding:15px; margin-bottom:15px; }
-    .title { font-size:24px; }
-    .mono { word-break: break-all; }
-    .status { color:#9cff9c; font-weight:bold; }
-    button { background:#0b0b0b; color:#00ff88; border:1px solid #00ff88; padding:8px 12px; cursor:pointer; }
-    button:hover { background:#00331f; }
-    a { color:#00ff88; }
-  </style>
+<meta charset="UTF-8">
+<title>ALMS Dashboard</title>
+<style>
+body{font-family:monospace;background:#0b0b0b;color:#00ff88;padding:20px}
+.card{border:1px solid #00ff88;padding:15px;margin-bottom:15px}
+.mono{word-break:break-all}
+.status{color:#9cff9c;font-weight:bold}
+button{background:#0b0b0b;color:#00ff88;border:1px solid #00ff88;padding:8px;cursor:pointer}
+</style>
 </head>
 <body>
-<div class="title">ALMS — Public Verification Dashboard</div>
-<div id="app"></div>
+
+<h2>ALMS — Verified Anchor</h2>
+<div id="app">loading...</div>
 
 <script>
 async function sha256Hex(text){
@@ -29,44 +27,44 @@ function stable(v){
   if(Array.isArray(v)) return '['+v.map(stable).join(',')+']';
   return '{'+Object.keys(v).sort().map(k=>JSON.stringify(k)+':'+stable(v[k])).join(',')+'}';
 }
-async function verify(anchor){
-  const el=document.getElementById('verify-result');
-  el.textContent="VERIFYING...";
+
+const anchor={
+  cid:"bafkreidd5zm6gwqkwscg2jck34bakqe6tct237pftvqbv4njjxonh4ieme",
+  root:"cad549f24bec742fd1f6bd280e3202921fa2dd6a11f82eb36ff9ecd990303546",
+  leaf_count:3,
+  url:"https://gateway.pinata.cloud/ipfs/bafkreidd5zm6gwqkwscg2jck34bakqe6tct237pftvqbv4njjxonh4ieme"
+};
+
+async function verify(){
+  const el=document.getElementById('result');
+  el.textContent="verifying...";
   try{
-    const r=await fetch(anchor.gateway_url,{cache:'no-store'});
-    const j=await r.json();
-    const okRoot=j.merkle_root_sha256===anchor.merkle_root_sha256;
-    const okCount=Number(j.leaf_count)===Number(anchor.leaf_count);
+    const j=await fetch(anchor.url).then(r=>r.json());
+    const okRoot=j.merkle_root_sha256===anchor.root;
+    const okCount=j.leaf_count===anchor.leaf_count;
     const hash=await sha256Hex(stable(j));
+
     el.innerHTML=`
-      <b>Result:</b> ${okRoot&&okCount?'<span class="status">PASS</span>':'FAIL'}<br>
-      Root match: ${okRoot}<br>
-      Count match: ${okCount}<br>
-      <b>Computed SHA256:</b><br><span class="mono">${hash}</span>
+      status: ${okRoot&&okCount?"PASS":"FAIL"}<br>
+      root_match: ${okRoot}<br>
+      count_match: ${okCount}<br>
+      sha256: ${hash}
     `;
-  }catch(e){ el.textContent="ERROR: "+e.message; }
+  }catch(e){
+    el.textContent="error: "+e.message;
+  }
 }
-fetch('receipts.json').then(r=>r.json()).then(data=>{
-  window.DATA=data;
-  const a=data.backfill_anchor;
-  document.getElementById('app').innerHTML=`
-    <div class="card">
-      <b>System:</b> ${data.system}<br>
-      <b>Claims:</b> ${data.claim_count}<br>
-      <b>Checkpoint:</b> ${data.checkpoint}
-    </div>
-    ${a?`
-    <div class="card">
-      <b>Backfill Anchor</b><br>
-      Status: <span class="status">${a.status}</span><br><br>
-      Root:<br><span class="mono">${a.merkle_root_sha256}</span><br><br>
-      CID:<br><span class="mono">${a.cid}</span><br><br>
-      <button onclick="verify(window.DATA.backfill_anchor)">Verify IPFS Anchor</button>
-      <div id="verify-result">Not run</div><br>
-      <a href="${a.gateway_url}" target="_blank">Open IPFS</a>
-    </div>`:''}
-  `;
-});
+
+document.getElementById('app').innerHTML=`
+<div class="card">
+CID:<br><span class="mono">${anchor.cid}</span><br><br>
+Root:<br><span class="mono">${anchor.root}</span><br><br>
+<button onclick="verify()">Verify Anchor</button>
+<div id="result">not run</div><br>
+<a href="${anchor.url}" target="_blank">open ipfs</a>
+</div>
+`;
 </script>
+
 </body>
 </html>
