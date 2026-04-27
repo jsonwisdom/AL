@@ -1,0 +1,40 @@
+name: ALMS Auto Root
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: alms-auto-root
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Run ALMS cycle
+        run: |
+          chmod +x scripts/*.sh
+          ./scripts/validate_jsonl.sh
+          ./scripts/auto_root.sh
+
+      - name: Commit changes (if any)
+        run: |
+          git config user.name "alms-bot"
+          git config user.email "bot@users.noreply.github.com"
+
+          if [[ -n $(git status --porcelain) ]]; then
+            git add .
+            git commit -m "ALMS auto-run update"
+            git push
+          else
+            echo "No changes"
+          fi
