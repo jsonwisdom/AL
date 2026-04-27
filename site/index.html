@@ -1,45 +1,72 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>CPV Dashboard</title>
+  <meta charset="UTF-8">
+  <title>ALMS Dashboard</title>
   <style>
-    body{font-family:system-ui;background:#0b0f14;color:#e6edf3;padding:16px}
-    .card{background:#111827;border-radius:12px;padding:16px;margin-bottom:12px}
-    .k{opacity:.7} .v{font-weight:700;font-size:20px}
-    .row{display:flex;justify-content:space-between;margin:6px 0}
-    .hash{font-family:monospace;font-size:12px;word-break:break-all}
+    body { font-family: monospace; background:#0b0b0b; color:#00ff88; padding:20px; }
+    .card { border:1px solid #00ff88; padding:15px; margin-bottom:15px; }
+    .title { font-size:24px; }
+    .mono { word-break: break-all; }
+    .status { color:#9cff9c; font-weight:bold; }
+    button { background:#0b0b0b; color:#00ff88; border:1px solid #00ff88; padding:8px 12px; cursor:pointer; }
+    button:hover { background:#00331f; }
+    a { color:#00ff88; }
   </style>
 </head>
 <body>
-  <div class="card">
-    <div class="v">Jay Math CPV</div>
-    <div class="k">Compounding Public Value</div>
-  </div>
-
-  <div id="cpv" class="card">Loading…</div>
+<div class="title">ALMS — Public Verification Dashboard</div>
+<div id="app"></div>
 
 <script>
-async function load(){
-  const res = await fetch('cpv-feed.json?ts=' + Date.now());
-  const data = await res.json();
-
-  const p = data.cpv_receipt.payload;
-  const h = data.cpv_receipt.hash;
-
-  document.getElementById('cpv').innerHTML = `
-    <div class="row"><div class="k">CPV Index</div><div class="v">${p.cpv_index}</div></div>
-    <div class="row"><div class="k">Velocity</div><div>${p.state_velocity}</div></div>
-    <div class="row"><div class="k">Verified $</div><div>$${p.verified_math_usd.toLocaleString()}</div></div>
-    <div class="row"><div class="k">Multiplier</div><div>${p.human_multiplier}</div></div>
-    <div class="row"><div class="k">Window</div><div>${p.time_window}</div></div>
-    <div class="row"><div class="k">Computed</div><div>${p.computed_at}</div></div>
-    <div class="k">Hash</div>
-    <div class="hash">${h}</div>
-  `;
+async function sha256Hex(text){
+  const b=new TextEncoder().encode(text);
+  const h=await crypto.subtle.digest('SHA-256',b);
+  return [...new Uint8Array(h)].map(x=>x.toString(16).padStart(2,'0')).join('');
 }
-load();
+function stable(v){
+  if(v===null||typeof v!=='object') return JSON.stringify(v);
+  if(Array.isArray(v)) return '['+v.map(stable).join(',')+']';
+  return '{'+Object.keys(v).sort().map(k=>JSON.stringify(k)+':'+stable(v[k])).join(',')+'}';
+}
+async function verify(anchor){
+  const el=document.getElementById('verify-result');
+  el.textContent="VERIFYING...";
+  try{
+    const r=await fetch(anchor.gateway_url,{cache:'no-store'});
+    const j=await r.json();
+    const okRoot=j.merkle_root_sha256===anchor.merkle_root_sha256;
+    const okCount=Number(j.leaf_count)===Number(anchor.leaf_count);
+    const hash=await sha256Hex(stable(j));
+    el.innerHTML=`
+      <b>Result:</b> ${okRoot&&okCount?'<span class="status">PASS</span>':'FAIL'}<br>
+      Root match: ${okRoot}<br>
+      Count match: ${okCount}<br>
+      <b>Computed SHA256:</b><br><span class="mono">${hash}</span>
+    `;
+  }catch(e){ el.textContent="ERROR: "+e.message; }
+}
+fetch('receipts.json').then(r=>r.json()).then(data=>{
+  window.DATA=data;
+  const a=data.backfill_anchor;
+  document.getElementById('app').innerHTML=`
+    <div class="card">
+      <b>System:</b> ${data.system}<br>
+      <b>Claims:</b> ${data.claim_count}<br>
+      <b>Checkpoint:</b> ${data.checkpoint}
+    </div>
+    ${a?`
+    <div class="card">
+      <b>Backfill Anchor</b><br>
+      Status: <span class="status">${a.status}</span><br><br>
+      Root:<br><span class="mono">${a.merkle_root_sha256}</span><br><br>
+      CID:<br><span class="mono">${a.cid}</span><br><br>
+      <button onclick="verify(window.DATA.backfill_anchor)">Verify IPFS Anchor</button>
+      <div id="verify-result">Not run</div><br>
+      <a href="${a.gateway_url}" target="_blank">Open IPFS</a>
+    </div>`:''}
+  `;
+});
 </script>
 </body>
 </html>
