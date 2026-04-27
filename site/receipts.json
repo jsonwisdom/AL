@@ -19,10 +19,23 @@
     "CONTESTED": 44,
     "MISMATCH": 26
   },
+  "backfill_anchor": {
+    "id": "fuel_food_2021_2022_backfill",
+    "title": "Fuel-to-Food Backfill Anchor",
+    "status": "IPFS_ANCHORED",
+    "cid": "bafkreidd5zm6gwqkwscg2jck34bakqe6tct237pftvqbv4njjxonh4ieme",
+    "ipfs_uri": "ipfs://bafkreidd5zm6gwqkwscg2jck34bakqe6tct237pftvqbv4njjxonh4ieme",
+    "gateway_url": "https://gateway.pinata.cloud/ipfs/bafkreidd5zm6gwqkwscg2jck34bakqe6tct237pftvqbv4njjxonh4ieme",
+    "merkle_root_sha256": "cad549f24bec742fd1f6bd280e3202921fa2dd6a11f82eb36ff9ecd990303546",
+    "leaf_count": 3,
+    "model": "backfill_merkle_batch_v0.1",
+    "timestamp_utc": "2026-04-26T23:05:28Z"
+  },
   "links": {
     "latest_receipt": "../receipts/alms_0100_receipt.json",
     "verify_script": "../verify.sh",
     "repo": "https://github.com/jsonwisdom/AL",
-    "tag": "https://github.com/jsonwisdom/AL/releases/tag/alms-100"
+    "tag": "https://github.com/jsonwisdom/AL/releases/tag/alms-100",
+    "backfill_anchor": "https://gateway.pinata.cloud/ipfs/bafkreidd5zm6gwqkwscg2jck34bakqe6tct237pftvqbv4njjxonh4ieme"
   }
 }
