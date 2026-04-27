@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<body style="background:black;color:#00ff88;font-family:monospace">
+
+<h2>ANCHOR VERIFIER</h2>
+
+<div>
+  ENS Value (ALMS_CHECKPOINT:...):
+  <br>
+  <input id="ens" style="width:100%" placeholder="ALMS_CHECKPOINT:...">
+</div>
+
+<br>
+<button onclick="run()">VERIFY</button>
+
+<pre id="out"></pre>
+
+<script>
+function getParam(name){
+  return new URLSearchParams(window.location.search).get(name);
+}
+
+async function sha256hex(buf){
+  const hash = await crypto.subtle.digest('SHA-256', buf);
+  return [...new Uint8Array(hash)].map(b=>b.toString(16).padStart(2,'0')).join('');
+}
+
+async function run(){
+  try{
+    let val = document.getElementById("ens").value || getParam("hash");
+
+    if(!val){
+      document.getElementById("out").textContent = "ERROR: missing ENS value";
+      return;
+    }
+
+    val = val.replace("ALMS_CHECKPOINT:", "").trim();
+
+    const txt = await fetch('../anchor_canon.json').then(r=>r.text());
+    const enc = new TextEncoder().encode(txt);
+
+    const h = await sha256hex(enc);
+
+    const ok = (h === val);
+
+    document.getElementById("out").textContent =
+      "Computed: " + h + "\n" +
+      "Expected: " + val + "\n\n" +
+      "RESULT: " + (ok ? "PASS" : "MISMATCH");
+
+  } catch(e){
+    document.getElementById("out").textContent = "ERROR: " + e;
+  }
+}
+
+// preload from URL
+const p = getParam("hash");
+if(p){
+  document.getElementById("ens").value = p;
+  run();
+}
+</script>
+
+</body>
+</html>
