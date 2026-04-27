@@ -97,3 +97,8 @@ echo "AUTO_ROOT_COMPLETE"
 cp _truth/status/last_run.json status.json
 echo "STATUS_UPDATED"
 
+
+# --- FINALIZE STATUS ---
+./scripts/write_last_run.sh
+echo "STATUS_UPDATED"
+

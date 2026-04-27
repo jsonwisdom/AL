@@ -1,16 +1,15 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-OUT="_truth/status/last_run.json"
-PUB="status.json"
-
 mkdir -p _truth/status
 
 NOW="$(date -u +%FT%TZ)"
 COMMIT="$(git rev-parse HEAD)"
 ROOT_HASH="$(jq -r '.root_sha256' _truth/root/alms_root.json)"
 
-jq -n \
+TMP="$(mktemp)"
+
+jq -cS -n \
   --arg t "$NOW" \
   --arg c "$COMMIT" \
   --arg r "$ROOT_HASH" \
@@ -20,8 +19,9 @@ jq -n \
     root_sha256: $r,
     runner: "github-actions",
     status: "OK"
-  }' > "$OUT"
+  }' > "$TMP"
 
-cp "$OUT" "$PUB"
+mv "$TMP" _truth/status/last_run.json
+cp _truth/status/last_run.json status.json
 
 echo "LAST_RUN_WRITTEN $NOW"
