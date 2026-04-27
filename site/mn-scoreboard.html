@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>MN Tri-State Auditing System</title>
+  <style>
+    body { background:#000; color:#0f0; font-family:monospace; }
+    .red { color:#ff3b3b; }
+    .yellow { color:#ffd60a; }
+    .green { color:#00ff99; }
+    .box { border:1px solid #0f0; padding:10px; margin:10px; }
+  </style>
+</head>
+<body>
+  <h1>MINNESOTA — TRI-STATE AUDIT</h1>
+  <div id="global"></div>
+  <div id="systems"></div>
+
+  <script>
+    fetch('mn-scoreboard.json')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('global').innerHTML =
+          `<div class="box">
+            GLOBAL STATUS: <span class="${data.global_status.toLowerCase()}">${data.global_status}</span><br>
+            ${data.global_reason}
+          </div>`;
+
+        let systemsHTML = '';
+        for (let key in data.systems) {
+          let sys = data.systems[key];
+          systemsHTML += `<div class="box">
+            <h2>${sys.label} — <span class="${sys.status.toLowerCase()}">${sys.status}</span></h2>
+            <p>${sys.plain_english}</p>`;
+
+          sys.entries.forEach(e => {
+            systemsHTML += `<div>
+              <b>${e.title}</b><br>
+              Claim: ${e.claim}<br>
+              Status: <span class="${e.status.toLowerCase()}">${e.status}</span><br>
+              ${e.vernacular}<br>
+              Score: ${e.impact_score}
+            </div><hr>`;
+          });
+
+          systemsHTML += `</div>`;
+        }
+
+        document.getElementById('systems').innerHTML = systemsHTML;
+      });
+  </script>
+</body>
+</html>
