@@ -2,69 +2,88 @@
 set -euo pipefail
 
 OUT="merkle_proofs.json"
-TMP="$(mktemp)"
 
-# Collect leaves (sorted, deterministic)
-mapfile -t LEAVES < <(
+# --- LOAD LEAVES (deterministic) ---
+mapfile -t PAIRS < <(
   jq -r '.leaf_id + " " + .canonical_sha256' \
   _truth/receipts/*.receipt.json | LC_ALL=C sort
 )
 
-# Extract hashes only
-HASHES=()
-for L in "${LEAVES[@]}"; do
-  HASHES+=("$(echo "$L" | awk '{print $2}')")
+LEAF_IDS=()
+LEVEL=()
+
+for P in "${PAIRS[@]}"; do
+  LEAF_IDS+=("$(echo "$P" | awk '{print $1}')")
+  LEVEL+=("$(echo "$P" | awk '{print $2}')")
 done
 
-# Build tree layers
-TREE=()
-TREE+=("${HASHES[@]}")
+N=${#LEVEL[@]}
 
-LEVEL=("${HASHES[@]}")
-PROOFS=()
+# --- INIT PROOF STORAGE ---
+declare -A PROOFS
 
-while [ "${#LEVEL[@]}" -gt 1 ]; do
+for ((i=0;i<N;i++)); do
+  PROOFS[$i]=""
+done
+
+# --- BUILD TREE + PROOFS ---
+CURRENT=("${LEVEL[@]}")
+
+while [ "${#CURRENT[@]}" -gt 1 ]; do
   NEXT=()
-  for ((i=0; i<${#LEVEL[@]}; i+=2)); do
-    LEFT="${LEVEL[i]}"
-    if [ $((i+1)) -lt ${#LEVEL[@]} ]; then
-      RIGHT="${LEVEL[i+1]}"
+  LEN=${#CURRENT[@]}
+
+  for ((i=0;i<LEN;i+=2)); do
+    LEFT="${CURRENT[i]}"
+    
+    if [ $((i+1)) -lt $LEN ]; then
+      RIGHT="${CURRENT[i+1]}"
     else
       RIGHT="$LEFT"
+    fi
+
+    # record proof
+    if [ $((i+1)) -lt $LEN ]; then
+      PROOFS[$i]+=" {\"side\":\"right\",\"hash\":\"$RIGHT\"},"
+      PROOFS[$((i+1))]+=" {\"side\":\"left\",\"hash\":\"$LEFT\"},"
     fi
 
     PARENT=$(printf "%s%s" "$LEFT" "$RIGHT" | sha256sum | awk '{print $1}')
     NEXT+=("$PARENT")
   done
-  LEVEL=("${NEXT[@]}")
+
+  CURRENT=("${NEXT[@]}")
 done
 
-MERKLE_ROOT="${LEVEL[0]}"
+MERKLE_ROOT="${CURRENT[0]}"
 
-# Build JSON output
+# --- OUTPUT JSON ---
 {
   echo "{"
+  echo "\"algorithm\":\"sha256_hex_concat_v1\","
   echo "\"merkle_root\":\"$MERKLE_ROOT\","
-  echo "\"leaf_count\":${#HASHES[@]},"
+  echo "\"leaf_count\":$N,"
   echo "\"leaves\":["
-  
-  for i in "${!LEAVES[@]}"; do
-    ID=$(echo "${LEAVES[$i]}" | awk '{print $1}')
-    H=$(echo "${LEAVES[$i]}" | awk '{print $2}')
-    
+
+  for ((i=0;i<N;i++)); do
+    ID="${LEAF_IDS[$i]}"
+    H="${LEVEL[$i]}"
+    P="${PROOFS[$i]}"
+
+    # trim trailing comma
+    P="${P%,}"
+
     echo "{"
     echo "\"leaf_id\":\"$ID\","
     echo "\"leaf_hash\":\"$H\","
-    echo "\"proof\":[]"
+    echo "\"proof\":[ $P ]"
     echo "}"
-    
-    if [ "$i" -lt $((${#LEAVES[@]}-1)) ]; then
-      echo ","
-    fi
+
+    if [ $i -lt $((N-1)) ]; then echo ","; fi
   done
 
   echo "]"
   echo "}"
 } > "$OUT"
 
-echo "MERKLE_ROOT_BUILT $MERKLE_ROOT leaves=${#HASHES[@]}"
+echo "MERKLE_PROOFS_OK root=$MERKLE_ROOT leaves=$N"
