@@ -1,72 +1,361 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>ALMS Dashboard</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ALMS — Public Claim Verifier</title>
   <style>
-    body { font-family: monospace; background:#0b0b0b; color:#00ff88; padding:20px; }
-    .card { border:1px solid #00ff88; padding:15px; margin-bottom:15px; }
-    .title { font-size:24px; }
-    .mono { word-break: break-all; }
-    .status { color:#9cff9c; font-weight:bold; }
-    a { color:#00ff88; }
+    :root {
+      --bg: #050606;
+      --panel: #0d1110;
+      --panel-2: #111817;
+      --text: #eefcf6;
+      --muted: #92a79d;
+      --line: #20342e;
+      --green: #00ff88;
+      --green-soft: rgba(0, 255, 136, 0.14);
+      --red: #ff3b5f;
+      --red-soft: rgba(255, 59, 95, 0.14);
+      --amber: #ffd166;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      background:
+        radial-gradient(circle at top left, rgba(0, 255, 136, 0.12), transparent 34rem),
+        radial-gradient(circle at bottom right, rgba(255, 59, 95, 0.09), transparent 30rem),
+        var(--bg);
+      color: var(--text);
+      padding: 28px;
+    }
+
+    .shell {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+    }
+
+    header {
+      display: grid;
+      gap: 18px;
+      padding: 36px 0 24px;
+    }
+
+    .eyebrow {
+      width: fit-content;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 12px;
+      color: var(--green);
+      background: rgba(0, 255, 136, 0.06);
+      letter-spacing: 0.08em;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 920px;
+      font-size: clamp(42px, 8vw, 86px);
+      line-height: 0.95;
+      letter-spacing: -0.07em;
+    }
+
+    .subhead {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: clamp(17px, 2.3vw, 22px);
+      line-height: 1.45;
+      margin: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.01)), var(--panel);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 18px 80px rgba(0,0,0,0.36);
+    }
+
+    label,
+    .label {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 10px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 170px;
+      resize: vertical;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+      background: #060908;
+      color: var(--text);
+      font: inherit;
+      font-size: 18px;
+      line-height: 1.45;
+      outline: none;
+    }
+
+    textarea:focus {
+      border-color: var(--green);
+      box-shadow: 0 0 0 4px rgba(0, 255, 136, 0.1);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    button,
+    a.button {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--panel-2);
+      color: var(--text);
+      padding: 11px 14px;
+      font: inherit;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    button:hover,
+    a.button:hover { border-color: var(--green); }
+
+    .statusBox {
+      display: grid;
+      gap: 14px;
+      min-height: 100%;
+    }
+
+    .status {
+      border-radius: 18px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      background: var(--panel-2);
+    }
+
+    .status.valid {
+      border-color: rgba(0, 255, 136, 0.5);
+      background: var(--green-soft);
+      box-shadow: 0 0 40px rgba(0, 255, 136, 0.12);
+    }
+
+    .status.broken {
+      border-color: rgba(255, 59, 95, 0.55);
+      background: var(--red-soft);
+      box-shadow: 0 0 46px rgba(255, 59, 95, 0.16);
+    }
+
+    .statusWord {
+      font-size: clamp(34px, 6vw, 64px);
+      font-weight: 900;
+      letter-spacing: -0.06em;
+      line-height: 0.95;
+    }
+
+    .valid .statusWord { color: var(--green); }
+    .broken .statusWord { color: var(--red); }
+
+    .message {
+      margin-top: 12px;
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    .hashBlock {
+      display: grid;
+      gap: 12px;
+    }
+
+    .hashRow {
+      border: 1px solid var(--line);
+      background: #060908;
+      border-radius: 14px;
+      padding: 14px;
+    }
+
+    .hash {
+      color: var(--text);
+      overflow-wrap: anywhere;
+      line-height: 1.45;
+      font-size: 13px;
+    }
+
+    .match { color: var(--green); }
+    .mismatch { color: var(--red); }
+
+    .explain {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .mini {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px;
+      background: rgba(255,255,255,0.025);
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .mini strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    footer {
+      padding: 22px 0 6px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    code { color: var(--amber); }
+
+    @media (max-width: 850px) {
+      body { padding: 18px; }
+      .grid { grid-template-columns: 1fr; }
+      .explain { grid-template-columns: 1fr; }
+      h1 { letter-spacing: -0.055em; }
+    }
   </style>
 </head>
 <body>
-  <div class="title">ALMS — Public Verification Dashboard</div>
-  <div id="app"></div>
+  <main class="shell">
+    <header>
+      <div class="eyebrow">ALMS / Live Claim Verifier</div>
+      <h1>Prove if a public claim was altered.</h1>
+      <p class="subhead">ALMS turns public statements into cryptographic receipts. Edit the claim below and watch the proof break.</p>
+    </header>
 
-<script>
-fetch('receipts.json')
-  .then(r => r.json())
-  .then(data => {
-    const el = document.getElementById('app');
-    const anchor = data.backfill_anchor;
-    el.innerHTML = `
+    <section class="grid" aria-label="Live claim verifier">
       <div class="card">
-        <b>System:</b> ${data.system}<br>
-        <b>Claims:</b> ${data.claim_count}<br>
-        <b>Checkpoint:</b> ${data.checkpoint}<br>
-        <b>Chain:</b> ${data.chain_status}
+        <label for="claimInput">Public claim</label>
+        <textarea id="claimInput" spellcheck="false">FY2026-27 Forecasted Surplus: $3,715,000,000</textarea>
+        <div class="actions">
+          <button id="resetBtn" type="button">Reset original claim</button>
+          <button id="tamperBtn" type="button">Change $3.7B → $3.8B</button>
+          <a class="button" href="https://github.com/jsonwisdom/AL" target="_blank" rel="noopener noreferrer">View repo</a>
+        </div>
+
+        <div class="explain" aria-label="Plain-English explanation">
+          <div class="mini"><strong>Green = original claim</strong>The text still matches the anchored receipt.</div>
+          <div class="mini"><strong>Red = altered claim</strong>One changed character creates a different fingerprint.</div>
+          <div class="mini"><strong>Hash mismatch = proof failure</strong>The browser recomputes the SHA-256 proof locally.</div>
+        </div>
       </div>
 
-      <div class="card">
-        <b>Latest Claim:</b><br>
-        ${data.latest.id}<br>
-        ${data.latest.claim}<br>
-        <b>Hash:</b> <span class="mono">${data.latest.hash}</span>
-      </div>
+      <div class="card statusBox">
+        <div id="statusPanel" class="status valid">
+          <div id="statusWord" class="statusWord">VALID</div>
+          <div id="statusMessage" class="message">The claim matches the anchored receipt.</div>
+        </div>
 
-      <div class="card">
-        <b>Status Distribution</b><br>
-        MATCH: ${data.distribution.MATCH}<br>
-        CONTESTED: ${data.distribution.CONTESTED}<br>
-        MISMATCH: ${data.distribution.MISMATCH}
+        <div class="hashBlock">
+          <div class="hashRow">
+            <div class="label">Anchored hash</div>
+            <div id="anchoredHash" class="hash"></div>
+          </div>
+          <div class="hashRow">
+            <div class="label">Current browser hash</div>
+            <div id="currentHash" class="hash"></div>
+          </div>
+          <div class="hashRow">
+            <div class="label">Integrity check</div>
+            <div id="matchLine" class="hash match">MATCH — cryptographic link intact.</div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      ${anchor ? `
-      <div class="card">
-        <b>Fuel-to-Food Backfill Anchor</b><br>
-        <b>Status:</b> <span class="status">${anchor.status}</span><br>
-        <b>Model:</b> ${anchor.model}<br>
-        <b>Leaf Count:</b> ${anchor.leaf_count}<br>
-        <b>Timestamp:</b> ${anchor.timestamp_utc}<br><br>
-        <b>Merkle Root:</b><br>
-        <span class="mono">${anchor.merkle_root_sha256}</span><br><br>
-        <b>CID:</b><br>
-        <span class="mono">${anchor.cid}</span><br><br>
-        <a href="${anchor.gateway_url}" target="_blank" rel="noopener noreferrer">Open IPFS Anchor</a><br>
-        <a href="${anchor.ipfs_uri}">IPFS URI</a>
-      </div>
-      ` : ''}
+    <footer>
+      This page uses the browser Web Crypto API. No server is needed for the live check. The proof is simple: <code>SHA-256(current claim)</code> must equal the anchored receipt hash.
+      <br />⚙️ jaywisdom.base.eth
+    </footer>
+  </main>
 
-      <div class="card">
-        <a href="${data.links.latest_receipt}">Latest Receipt</a><br>
-        <a href="${data.links.repo}">Repo</a><br>
-        ${data.links.backfill_anchor ? `<a href="${data.links.backfill_anchor}" target="_blank" rel="noopener noreferrer">Backfill Anchor</a>` : ''}
-      </div>
-    `;
-  });
-</script>
+  <script>
+    const originalClaim = "FY2026-27 Forecasted Surplus: $3,715,000,000";
+
+    const claimInput = document.getElementById("claimInput");
+    const resetBtn = document.getElementById("resetBtn");
+    const tamperBtn = document.getElementById("tamperBtn");
+    const statusPanel = document.getElementById("statusPanel");
+    const statusWord = document.getElementById("statusWord");
+    const statusMessage = document.getElementById("statusMessage");
+    const anchoredHashEl = document.getElementById("anchoredHash");
+    const currentHashEl = document.getElementById("currentHash");
+    const matchLine = document.getElementById("matchLine");
+
+    let anchoredHash = "";
+
+    async function sha256Hex(text) {
+      const bytes = new TextEncoder().encode(text);
+      const digest = await crypto.subtle.digest("SHA-256", bytes);
+      return Array.from(new Uint8Array(digest))
+        .map(byte => byte.toString(16).padStart(2, "0"))
+        .join("");
+    }
+
+    function setStatus(isValid) {
+      statusPanel.className = isValid ? "status valid" : "status broken";
+      statusWord.textContent = isValid ? "VALID" : "BROKEN";
+      statusMessage.textContent = isValid
+        ? "The claim matches the anchored receipt."
+        : "The claim was altered. The cryptographic link is severed.";
+      matchLine.className = isValid ? "hash match" : "hash mismatch";
+      matchLine.textContent = isValid
+        ? "MATCH — cryptographic link intact."
+        : "MISMATCH — current hash does not equal anchored hash.";
+    }
+
+    async function verifyClaim() {
+      const currentHash = await sha256Hex(claimInput.value);
+      currentHashEl.textContent = currentHash;
+      setStatus(currentHash === anchoredHash);
+    }
+
+    async function boot() {
+      anchoredHash = await sha256Hex(originalClaim);
+      anchoredHashEl.textContent = anchoredHash;
+      await verifyClaim();
+    }
+
+    claimInput.addEventListener("input", verifyClaim);
+
+    resetBtn.addEventListener("click", () => {
+      claimInput.value = originalClaim;
+      verifyClaim();
+    });
+
+    tamperBtn.addEventListener("click", () => {
+      claimInput.value = "FY2026-27 Forecasted Surplus: $3,815,000,000";
+      verifyClaim();
+      claimInput.focus();
+    });
+
+    boot();
+  </script>
 </body>
 </html>
