@@ -15,9 +15,10 @@ let DATA;
 async function load(){
   DATA = await fetch('../merkle_proofs.json').then(r=>r.json());
   const sel = document.getElementById('leaf');
+
   DATA.leaves.forEach(l=>{
     const o=document.createElement('option');
-    o.value=l.leaf_hash;
+    o.value=l.leaf_id;
     o.textContent=l.leaf_id;
     sel.appendChild(o);
   });
@@ -30,12 +31,26 @@ async function sha256hex(txt){
 }
 
 async function verify(){
-  const sel=document.getElementById('leaf').value;
-  const root=DATA.merkle_root;
+  const id=document.getElementById('leaf').value;
+  const leaf=DATA.leaves.find(l=>l.leaf_id===id);
 
-  // no proof path yet (stage 1)
+  let h=leaf.leaf_hash;
+
+  for(const step of leaf.proof){
+    if(step.side==="right"){
+      h = await sha256hex(h + step.hash);
+    } else {
+      h = await sha256hex(step.hash + h);
+    }
+  }
+
+  const ok = (h === DATA.merkle_root);
+
   document.getElementById('out').textContent =
-    "Leaf: "+sel+"\nRoot: "+root+"\n(Status: placeholder)";
+    "Leaf: "+leaf.leaf_id+"\n"+
+    "Computed: "+h+"\n"+
+    "Expected: "+DATA.merkle_root+"\n"+
+    "Result: "+(ok ? "PASS" : "MISMATCH");
 }
 
 load();
