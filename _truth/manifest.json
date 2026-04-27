@@ -1,0 +1,11 @@
+{
+  "dataset": "AL_verification_ledger",
+  "ledger_file": "_truth/ledger.jsonl",
+  "patterns_file": "_truth/patterns.json",
+  "version": "1.0",
+  "runtime": {
+    "emitter": "studio/watchers/claim_emitter.sh",
+    "format": "compact_jsonl",
+    "prev_hash_rule": "sha256(previous complete JSON ledger line without newline)"
+  }
+}
