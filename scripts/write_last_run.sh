@@ -11,6 +11,12 @@ MERKLE_ROOT="$(jq -r '.merkle_root // "UNKNOWN"' merkle_proofs.json 2>/dev/null 
 LEAF_COUNT="$(jq -r '.leaf_count // 0' merkle_proofs.json 2>/dev/null || echo "0")"
 ALG="sha256_hex_concat_v1"
 
+# Consensus from convergence.json
+CONSENSUS="false"
+if [ -f site/convergence.json ]; then
+  CONSENSUS="$(jq -r '.consensus' site/convergence.json)"
+fi
+
 TMP="$(mktemp)"
 
 jq -cS -n \
@@ -20,6 +26,7 @@ jq -cS -n \
   --arg mr "$MERKLE_ROOT" \
   --arg alg "$ALG" \
   --argjson lc "$LEAF_COUNT" \
+  --argjson con "$CONSENSUS" \
   '{
     last_run: $t,
     commit: $c,
@@ -27,6 +34,7 @@ jq -cS -n \
     merkle_root: $mr,
     merkle_algorithm: $alg,
     leaf_count: $lc,
+    consensus: $con,
     runner: "github-actions",
     status: "OK"
   }' > "$TMP"
@@ -34,4 +42,4 @@ jq -cS -n \
 mv "$TMP" _truth/status/last_run.json
 cp _truth/status/last_run.json status.json
 
-echo "LAST_RUN_WRITTEN $NOW"
+echo "LAST_RUN_WRITTEN consensus=$CONSENSUS"
