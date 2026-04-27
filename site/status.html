@@ -37,6 +37,8 @@ a { color: #00ff88; }
 <div class="block">Commit: <span id="commit"></span></div>
 <div class="block">Runner: <span id="runner"></span></div>
 
+<div class="block">Root Check: <span id="rootcheck"></span></div>
+
 <div class="block">
 Links:
 <br><a href="../status.json">status.json</a>
@@ -76,6 +78,29 @@ async function load() {
 
 load();
 setInterval(load, 30000);
+
+async function verifyRoot(){
+ try{
+  const s = await fetch("../status.json").then(r=>r.json());
+  const r = await fetch("../alms_root.json").then(r=>r.json());
+
+  const el = document.getElementById("rootcheck");
+
+  if(s.root_sha256 === r.root_sha256){
+    el.textContent = "PASS";
+    el.className = "live pulse";
+  } else {
+    el.textContent = "MISMATCH";
+    el.className = "stale pulse";
+  }
+
+ } catch {
+  const el = document.getElementById("rootcheck");
+  el.textContent = "ERROR";
+ }
+}
+
+verifyRoot();
 </script>
 
 </body>
