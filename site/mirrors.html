@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body style="background:black;color:#00ff88;font-family:monospace">
+
+<h2>ALMS MIRROR CONVERGENCE</h2>
+<pre id="out">Loading...</pre>
+
+<script>
+async function load(){
+  try{
+    const data = await fetch('../mirrors.json').then(r=>r.json());
+
+    let total = data.length;
+    let ok = data.filter(x=>x.result==="CONVERGED").length;
+    let bad = total - ok;
+
+    let txt = "";
+    txt += "TOTAL: " + total + "\n";
+    txt += "CONVERGED: " + ok + "\n";
+    txt += "MISMATCH: " + bad + "\n\n";
+
+    data.forEach(m=>{
+      txt += m.mirror_id + " → " + m.result + "\n";
+      txt += "  local:  " + m.local_root_sha256 + "\n";
+      txt += "  public: " + m.public_root_sha256 + "\n\n";
+    });
+
+    document.getElementById("out").textContent = txt;
+
+  } catch(e){
+    document.getElementById("out").textContent = "ERROR: " + e;
+  }
+}
+
+load();
+</script>
+
+</body>
+</html>
