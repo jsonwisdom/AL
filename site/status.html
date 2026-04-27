@@ -37,7 +37,7 @@ a { color: #00ff88; }
 <div class="block">Commit: <span id="commit"></span></div>
 <div class="block">Runner: <span id="runner"></span></div>
 
-<div class="block">Root Check: <span id="rootcheck"></span></div>
+<div class="block">Root Check: <span id="rootcheck"></span><br>Browser Check: <span id="browsercheck"></span></div>
 
 <div class="block">
 Links:
@@ -101,6 +101,36 @@ async function verifyRoot(){
 }
 
 verifyRoot();
+
+async function sha256hex(buf){
+ const hash = await crypto.subtle.digest("SHA-256", buf);
+ return Array.from(new Uint8Array(hash)).map(b=>b.toString(16).padStart(2,"0")).join("");
+}
+
+async function verifyBrowserRoot(){
+ try{
+  const s = await fetch("../status.json").then(r=>r.json());
+  const txt = await fetch("../root_input.json").then(r=>r.text());
+
+  const enc = new TextEncoder().encode(txt);
+  const h = await sha256hex(enc);
+
+  const el = document.getElementById("browsercheck");
+
+  if(h === s.root_sha256){
+    el.textContent = "PASS";
+    el.className = "live pulse";
+  } else {
+    el.textContent = "MISMATCH";
+    el.className = "stale pulse";
+  }
+
+ } catch {
+  document.getElementById("browsercheck").textContent = "ERROR";
+ }
+}
+
+verifyBrowserRoot();
 </script>
 
 </body>
