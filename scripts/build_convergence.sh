@@ -2,16 +2,16 @@
 set -euo pipefail
 
 MIRROR_DIR="site/mirrors"
-OUT="site/convergence.json"
+OUT="convergence.json"
 TMP="$(mktemp)"
 
-# Validate all mirror JSON
+# Validate all mirror JSON silently
 for f in "$MIRROR_DIR"/*.json; do
   jq . "$f" >/dev/null 2>&1 || { echo "INVALID_MIRROR $f"; exit 1; }
 done
 
 # Aggregate
-if compgen -G "$MIRROR_DIR/*.json" > /dev/null; then
+if compgen -G "$MIRROR_DIR/*.json" > /dev/null 2>&1; then
   jq -s '
     {
       nodes: .,
@@ -25,7 +25,6 @@ if compgen -G "$MIRROR_DIR/*.json" > /dev/null; then
     }
   ' "$MIRROR_DIR"/*.json > "$TMP"
 else
-  # No mirrors
   jq -n '{
     nodes: [],
     root_set: [],
