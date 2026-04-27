@@ -1,71 +1,81 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>ALMS Status</title>
+<meta charset="utf-8">
+<title>ALMS STATUS</title>
 <style>
-body { background:#000; color:#0f0; font-family:monospace; padding:40px; }
-.badge { font-size:20px; margin-bottom:20px; padding:10px; display:inline-block; }
-.green { color:#00ff00; }
-.red { color:#ff4444; }
-.yellow { color:#ffaa00; }
-.hash { color:#00ffff; }
+body {
+  background: black;
+  color: #00ff88;
+  font-family: monospace;
+  padding: 20px;
+}
+.live { color: #00ff88; }
+.stale { color: #ff3b3b; }
+.pulse {
+  animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+.block { margin-top: 15px; }
+.hash { color: #6ecbff; }
+a { color: #00ff88; }
 </style>
 </head>
 <body>
 
 <h1>⚙️ ALMS STATUS</h1>
 
-<div id="badge" class="badge">LOADING...</div>
+<div id="state" class="pulse">LOADING...</div>
 
-<div>
-Last Run: <span id="last"></span><br>
-Age (min): <span id="age"></span><br>
-Root: <span id="hash" class="hash"></span><br>
-Commit: <span id="commit"></span><br>
-Runner: <span id="runner"></span>
+<div class="block">Last Run: <span id="last"></span></div>
+<div class="block">Age (min): <span id="age"></span></div>
+<div class="block">Root: <span id="root" class="hash"></span></div>
+<div class="block">Commit: <span id="commit"></span></div>
+<div class="block">Runner: <span id="runner"></span></div>
+
+<div class="block">
+Links:
+<br><a href="../status.json">status.json</a>
+<br><a href="../site/alms.html">ALMS Explorer</a>
 </div>
 
 <script>
-const STALE_MINUTES = 20;
+async function load() {
+  try {
+    const res = await fetch('../status.json');
+    const j = await res.json();
 
-fetch('../status.json')
-.then(r => r.json())
-.then(d => {
-  const last = new Date(d.last_run);
-  const now = new Date();
+    const last = new Date(j.last_run);
+    const now = new Date();
+    const age = Math.floor((now - last) / 60000);
 
-  const ageMs = now - last;
-  const ageMin = Math.floor(ageMs / 60000);
+    document.getElementById('last').textContent = j.last_run;
+    document.getElementById('age').textContent = age;
+    document.getElementById('root').textContent = j.root_sha256.slice(0,16) + '...';
+    document.getElementById('commit').textContent = j.commit.slice(0,12);
+    document.getElementById('runner').textContent = j.runner;
 
-  let status = "UNKNOWN";
-  let color = "yellow";
+    const state = document.getElementById('state');
 
-  if (!isNaN(ageMin)) {
-    if (ageMin <= STALE_MINUTES) {
-      status = "LIVE";
-      color = "green";
+    if (age > 10) {
+      state.textContent = 'STALE';
+      state.className = 'stale pulse';
     } else {
-      status = "STALE";
-      color = "red";
+      state.textContent = 'LIVE';
+      state.className = 'live pulse';
     }
+
+  } catch (e) {
+    document.getElementById('state').textContent = 'ERROR';
   }
+}
 
-  const badge = document.getElementById('badge');
-  badge.textContent = status;
-  badge.className = "badge " + color;
-
-  document.getElementById('last').textContent = d.last_run;
-  document.getElementById('age').textContent = ageMin;
-  document.getElementById('hash').textContent = d.root_sha256.slice(0,16) + "...";
-  document.getElementById('commit').textContent = d.commit.slice(0,12);
-  document.getElementById('runner').textContent = d.runner;
-})
-.catch(() => {
-  const badge = document.getElementById('badge');
-  badge.textContent = "ERROR";
-  badge.className = "badge red";
-});
+load();
+setInterval(load, 30000);
 </script>
 
 </body>
