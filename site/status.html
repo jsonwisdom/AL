@@ -29,7 +29,7 @@ Runner: <span id="runner"></span>
 <script>
 const STALE_MINUTES = 20;
 
-fetch('../_truth/status/last_run.json')
+fetch('./status.json')
 .then(r => r.json())
 .then(d => {
   const last = new Date(d.last_run);
