@@ -1,0 +1,22 @@
+{
+  "leaf_id":"gov_ncc_001",
+  "schema":"gov_ncc_event_v1",
+  "source":{
+    "platform":"X",
+    "account":"@DOLOIG",
+    "account_name":"U.S. Department of Labor Office of Inspector General",
+    "posted_date":"2026-04-26",
+    "url":"https://x.com/doloig/status/2048548793671413833",
+    "quote":"Last week, DOL OIG officially joined the Homeland Security Task Force's National Coordination Center as an investigative partner. Acting Deputy Assistant Inspector General Lisa Anderson represented the Office of Investigations at the historic signing of the NCC Charter!"
+  },
+  "claim":{
+    "actor":"DOL OIG",
+    "action":"joined",
+    "partner":"Homeland Security Task Force National Coordination Center",
+    "event":"NCC Charter signing"
+  },
+  "verification":{
+    "status":"ASSERTED",
+    "risk":"coordination_without_public_shared_state"
+  }
+}
