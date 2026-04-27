@@ -7,6 +7,8 @@
     body { font-family: monospace; background:#0b0b0b; color:#00ff88; padding:20px; }
     .card { border:1px solid #00ff88; padding:15px; margin-bottom:15px; }
     .title { font-size:24px; }
+    .mono { word-break: break-all; }
+    .status { color:#9cff9c; font-weight:bold; }
     a { color:#00ff88; }
   </style>
 </head>
@@ -19,6 +21,7 @@ fetch('receipts.json')
   .then(r => r.json())
   .then(data => {
     const el = document.getElementById('app');
+    const anchor = data.backfill_anchor;
     el.innerHTML = `
       <div class="card">
         <b>System:</b> ${data.system}<br>
@@ -31,7 +34,7 @@ fetch('receipts.json')
         <b>Latest Claim:</b><br>
         ${data.latest.id}<br>
         ${data.latest.claim}<br>
-        <b>Hash:</b> ${data.latest.hash}
+        <b>Hash:</b> <span class="mono">${data.latest.hash}</span>
       </div>
 
       <div class="card">
@@ -41,9 +44,26 @@ fetch('receipts.json')
         MISMATCH: ${data.distribution.MISMATCH}
       </div>
 
+      ${anchor ? `
+      <div class="card">
+        <b>Fuel-to-Food Backfill Anchor</b><br>
+        <b>Status:</b> <span class="status">${anchor.status}</span><br>
+        <b>Model:</b> ${anchor.model}<br>
+        <b>Leaf Count:</b> ${anchor.leaf_count}<br>
+        <b>Timestamp:</b> ${anchor.timestamp_utc}<br><br>
+        <b>Merkle Root:</b><br>
+        <span class="mono">${anchor.merkle_root_sha256}</span><br><br>
+        <b>CID:</b><br>
+        <span class="mono">${anchor.cid}</span><br><br>
+        <a href="${anchor.gateway_url}" target="_blank" rel="noopener noreferrer">Open IPFS Anchor</a><br>
+        <a href="${anchor.ipfs_uri}">IPFS URI</a>
+      </div>
+      ` : ''}
+
       <div class="card">
         <a href="${data.links.latest_receipt}">Latest Receipt</a><br>
-        <a href="${data.links.repo}">Repo</a>
+        <a href="${data.links.repo}">Repo</a><br>
+        ${data.links.backfill_anchor ? `<a href="${data.links.backfill_anchor}" target="_blank" rel="noopener noreferrer">Backfill Anchor</a>` : ''}
       </div>
     `;
   });
