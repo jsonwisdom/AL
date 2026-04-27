@@ -33,16 +33,8 @@
       padding: 28px;
     }
 
-    .shell {
-      width: min(1120px, 100%);
-      margin: 0 auto;
-    }
-
-    header {
-      display: grid;
-      gap: 18px;
-      padding: 36px 0 24px;
-    }
+    .shell { width: min(1120px, 100%); margin: 0 auto; }
+    header { display: grid; gap: 18px; padding: 36px 0 24px; }
 
     .eyebrow {
       width: fit-content;
@@ -87,8 +79,7 @@
       box-shadow: 0 18px 80px rgba(0,0,0,0.36);
     }
 
-    label,
-    .label {
+    label, .label {
       display: block;
       color: var(--muted);
       font-size: 13px;
@@ -112,20 +103,10 @@
       outline: none;
     }
 
-    textarea:focus {
-      border-color: var(--green);
-      box-shadow: 0 0 0 4px rgba(0, 255, 136, 0.1);
-    }
+    textarea:focus { border-color: var(--green); box-shadow: 0 0 0 4px rgba(0, 255, 136, 0.1); }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
 
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 14px;
-    }
-
-    button,
-    a.button {
+    button, a.button {
       border: 1px solid var(--line);
       border-radius: 999px;
       background: var(--panel-2);
@@ -136,14 +117,8 @@
       text-decoration: none;
     }
 
-    button:hover,
-    a.button:hover { border-color: var(--green); }
-
-    .statusBox {
-      display: grid;
-      gap: 14px;
-      min-height: 100%;
-    }
+    button:hover, a.button:hover { border-color: var(--green); }
+    .statusBox { display: grid; gap: 14px; min-height: 100%; }
 
     .status {
       border-radius: 18px;
@@ -152,17 +127,8 @@
       background: var(--panel-2);
     }
 
-    .status.valid {
-      border-color: rgba(0, 255, 136, 0.5);
-      background: var(--green-soft);
-      box-shadow: 0 0 40px rgba(0, 255, 136, 0.12);
-    }
-
-    .status.broken {
-      border-color: rgba(255, 59, 95, 0.55);
-      background: var(--red-soft);
-      box-shadow: 0 0 46px rgba(255, 59, 95, 0.16);
-    }
+    .status.valid { border-color: rgba(0, 255, 136, 0.5); background: var(--green-soft); box-shadow: 0 0 40px rgba(0, 255, 136, 0.12); }
+    .status.broken { border-color: rgba(255, 59, 95, 0.55); background: var(--red-soft); box-shadow: 0 0 46px rgba(255, 59, 95, 0.16); }
 
     .statusWord {
       font-size: clamp(34px, 6vw, 64px);
@@ -173,17 +139,8 @@
 
     .valid .statusWord { color: var(--green); }
     .broken .statusWord { color: var(--red); }
-
-    .message {
-      margin-top: 12px;
-      color: var(--text);
-      line-height: 1.4;
-    }
-
-    .hashBlock {
-      display: grid;
-      gap: 12px;
-    }
+    .message { margin-top: 12px; color: var(--text); line-height: 1.4; }
+    .hashBlock { display: grid; gap: 12px; }
 
     .hashRow {
       border: 1px solid var(--line);
@@ -192,45 +149,14 @@
       padding: 14px;
     }
 
-    .hash {
-      color: var(--text);
-      overflow-wrap: anywhere;
-      line-height: 1.45;
-      font-size: 13px;
-    }
-
+    .hash { color: var(--text); overflow-wrap: anywhere; line-height: 1.45; font-size: 13px; }
     .match { color: var(--green); }
     .mismatch { color: var(--red); }
 
-    .explain {
-      margin-top: 18px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-
-    .mini {
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 14px;
-      background: rgba(255,255,255,0.025);
-      color: var(--muted);
-      line-height: 1.4;
-    }
-
-    .mini strong {
-      display: block;
-      color: var(--text);
-      margin-bottom: 6px;
-    }
-
-    footer {
-      padding: 22px 0 6px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
+    .explain { margin-top: 18px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .mini { border: 1px solid var(--line); border-radius: 16px; padding: 14px; background: rgba(255,255,255,0.025); color: var(--muted); line-height: 1.4; }
+    .mini strong { display: block; color: var(--text); margin-bottom: 6px; }
+    footer { padding: 22px 0 6px; color: var(--muted); font-size: 13px; line-height: 1.5; }
     code { color: var(--amber); }
 
     @media (max-width: 850px) {
@@ -244,7 +170,7 @@
 <body>
   <main class="shell">
     <header>
-      <div class="eyebrow">ALMS / Live Claim Verifier</div>
+      <div class="eyebrow" id="sourceBadge">ALMS / Live Claim Verifier</div>
       <h1>Prove if a public claim was altered.</h1>
       <p class="subhead">ALMS turns public statements into cryptographic receipts. Edit the claim below and watch the proof break.</p>
     </header>
@@ -252,10 +178,11 @@
     <section class="grid" aria-label="Live claim verifier">
       <div class="card">
         <label for="claimInput">Public claim</label>
-        <textarea id="claimInput" spellcheck="false">FY2026-27 Forecasted Surplus: $3,715,000,000</textarea>
+        <textarea id="claimInput" spellcheck="false">Loading ALMS receipt...</textarea>
         <div class="actions">
-          <button id="resetBtn" type="button">Reset original claim</button>
-          <button id="tamperBtn" type="button">Change $3.7B → $3.8B</button>
+          <button id="resetBtn" type="button">Reset anchored claim</button>
+          <button id="tamperBtn" type="button">Tamper with claim</button>
+          <a class="button" id="receiptLink" href="receipts.json" target="_blank" rel="noopener noreferrer">Open receipt source</a>
           <a class="button" href="https://github.com/jsonwisdom/AL" target="_blank" rel="noopener noreferrer">View repo</a>
         </div>
 
@@ -273,30 +200,22 @@
         </div>
 
         <div class="hashBlock">
-          <div class="hashRow">
-            <div class="label">Anchored hash</div>
-            <div id="anchoredHash" class="hash"></div>
-          </div>
-          <div class="hashRow">
-            <div class="label">Current browser hash</div>
-            <div id="currentHash" class="hash"></div>
-          </div>
-          <div class="hashRow">
-            <div class="label">Integrity check</div>
-            <div id="matchLine" class="hash match">MATCH — cryptographic link intact.</div>
-          </div>
+          <div class="hashRow"><div class="label">Anchored hash</div><div id="anchoredHash" class="hash"></div></div>
+          <div class="hashRow"><div class="label">Current browser hash</div><div id="currentHash" class="hash"></div></div>
+          <div class="hashRow"><div class="label">Integrity check</div><div id="matchLine" class="hash match">MATCH — cryptographic link intact.</div></div>
         </div>
       </div>
     </section>
 
     <footer>
-      This page uses the browser Web Crypto API. No server is needed for the live check. The proof is simple: <code>SHA-256(current claim)</code> must equal the anchored receipt hash.
+      This page uses the browser Web Crypto API. No server is needed for the live check. The proof is simple: <code>SHA-256(current claim)</code> must equal the receipt hash loaded from <code>site/receipts.json</code>.
       <br />⚙️ jaywisdom.base.eth
     </footer>
   </main>
 
   <script>
-    const originalClaim = "FY2026-27 Forecasted Surplus: $3,715,000,000";
+    const fallbackClaim = "FY2026-27 Forecasted Surplus: $3,715,000,000";
+    const fallbackHash = "";
 
     const claimInput = document.getElementById("claimInput");
     const resetBtn = document.getElementById("resetBtn");
@@ -307,27 +226,24 @@
     const anchoredHashEl = document.getElementById("anchoredHash");
     const currentHashEl = document.getElementById("currentHash");
     const matchLine = document.getElementById("matchLine");
+    const sourceBadge = document.getElementById("sourceBadge");
+    const receiptLink = document.getElementById("receiptLink");
 
-    let anchoredHash = "";
+    let anchoredClaim = fallbackClaim;
+    let anchoredHash = fallbackHash;
 
     async function sha256Hex(text) {
       const bytes = new TextEncoder().encode(text);
       const digest = await crypto.subtle.digest("SHA-256", bytes);
-      return Array.from(new Uint8Array(digest))
-        .map(byte => byte.toString(16).padStart(2, "0"))
-        .join("");
+      return Array.from(new Uint8Array(digest)).map(byte => byte.toString(16).padStart(2, "0")).join("");
     }
 
     function setStatus(isValid) {
       statusPanel.className = isValid ? "status valid" : "status broken";
       statusWord.textContent = isValid ? "VALID" : "BROKEN";
-      statusMessage.textContent = isValid
-        ? "The claim matches the anchored receipt."
-        : "The claim was altered. The cryptographic link is severed.";
+      statusMessage.textContent = isValid ? "The claim matches the anchored receipt." : "The claim was altered. The cryptographic link is severed.";
       matchLine.className = isValid ? "hash match" : "hash mismatch";
-      matchLine.textContent = isValid
-        ? "MATCH — cryptographic link intact."
-        : "MISMATCH — current hash does not equal anchored hash.";
+      matchLine.textContent = isValid ? "MATCH — cryptographic link intact." : "MISMATCH — current hash does not equal anchored hash.";
     }
 
     async function verifyClaim() {
@@ -336,24 +252,39 @@
       setStatus(currentHash === anchoredHash);
     }
 
+    function mutateClaim(text) {
+      if (/\d/.test(text)) return text.replace(/\d(?!.*\d)/, digit => digit === "9" ? "8" : String(Number(digit) + 1));
+      return text + " [altered]";
+    }
+
+    async function loadReceipt() {
+      try {
+        const response = await fetch("receipts.json", { cache: "no-store" });
+        if (!response.ok) throw new Error("receipt fetch failed");
+        const data = await response.json();
+        if (!data.latest || !data.latest.claim || !data.latest.hash) throw new Error("receipt missing latest claim/hash");
+
+        anchoredClaim = data.latest.claim;
+        anchoredHash = data.latest.hash;
+        sourceBadge.textContent = `ALMS / ${data.checkpoint || "Receipt Loaded"}`;
+        if (data.links && data.links.latest_receipt) receiptLink.href = data.links.latest_receipt;
+      } catch (error) {
+        anchoredClaim = fallbackClaim;
+        anchoredHash = await sha256Hex(fallbackClaim);
+        sourceBadge.textContent = "ALMS / Demo Fallback";
+      }
+    }
+
     async function boot() {
-      anchoredHash = await sha256Hex(originalClaim);
+      await loadReceipt();
+      claimInput.value = anchoredClaim;
       anchoredHashEl.textContent = anchoredHash;
       await verifyClaim();
     }
 
     claimInput.addEventListener("input", verifyClaim);
-
-    resetBtn.addEventListener("click", () => {
-      claimInput.value = originalClaim;
-      verifyClaim();
-    });
-
-    tamperBtn.addEventListener("click", () => {
-      claimInput.value = "FY2026-27 Forecasted Surplus: $3,815,000,000";
-      verifyClaim();
-      claimInput.focus();
-    });
+    resetBtn.addEventListener("click", () => { claimInput.value = anchoredClaim; verifyClaim(); });
+    tamperBtn.addEventListener("click", () => { claimInput.value = mutateClaim(anchoredClaim); verifyClaim(); claimInput.focus(); });
 
     boot();
   </script>
