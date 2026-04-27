@@ -1,0 +1,19 @@
+{
+  "case_id": "fuel_food_2021_2022_lag_validation",
+  "model": "supply_chain_stress_propagation_v0.1",
+  "hypothesis": "energy/logistics stress can precede food price stress by 120-210 days",
+  "windows": {
+    "diesel_energy": "2021-01-01_to_2022-06-30",
+    "fertilizer_inputs": "2021-01-01_to_2022-06-30",
+    "planting": "2021-03-01_to_2021-07-31",
+    "harvest": "2021-07-01_to_2021-12-31",
+    "urban_food_prices": "2022-01-01_to_2022-06-30"
+  },
+  "sources": {
+    "EIA": ["distillate stocks", "diesel retail price", "refinery utilization"],
+    "USDA": ["crop progress", "WASDE", "food price outlook"],
+    "BLS": ["CPI food at home", "CPI cereals bakery", "CPI meats eggs"],
+    "NOAA": ["drought monitor"],
+    "FRED": ["natural gas price", "fertilizer proxy series if available"]
+  }
+}
