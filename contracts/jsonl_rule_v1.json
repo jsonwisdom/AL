@@ -1,0 +1,8 @@
+{
+  "rule": "jsonl_v1",
+  "invariant": "one_json_object_per_line",
+  "writers": "must_use_jq_-cS",
+  "readers": "must_normalize_with_jq_-c",
+  "invalid_if": "jq -c . file fails",
+  "applies_to": "_truth/**/*.jsonl"
+}
