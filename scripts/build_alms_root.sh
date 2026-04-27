@@ -31,3 +31,11 @@ COUNT="$(jq '.root.receipts | length' "$OUT")"
 echo "ALMS_ROOT_OK leaves=$COUNT hash=$HASH file=$OUT"
 
 rm -f "$TMP"
+
+# --- EXPORT CANONICAL ROOT INPUT ---
+CANON_FILE="root_input.json"
+
+jq -cS '.root' _truth/root/alms_root.json > "$CANON_FILE"
+
+echo "ROOT_INPUT_EXPORTED $CANON_FILE"
+
