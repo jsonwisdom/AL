@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<body style="background:black;color:#00ff88;font-family:monospace">
+
+<h2>LEAF VERIFIER</h2>
+
+<pre id="out">Loading...</pre>
+
+<script>
+function getParam(name){
+  return new URLSearchParams(window.location.search).get(name);
+}
+
+async function sha256hex(txt){
+  const buf = new TextEncoder().encode(txt);
+  const h = await crypto.subtle.digest('SHA-256', buf);
+  return [...new Uint8Array(h)].map(b=>b.toString(16).padStart(2,'0')).join('');
+}
+
+async function run(){
+  const leafId = getParam("leaf");
+
+  if(!leafId){
+    document.getElementById("out").textContent = "ERROR: missing ?leaf=";
+    return;
+  }
+
+  try{
+    const data = await fetch('../merkle_proofs.json').then(r=>r.json());
+    const leaf = data.leaves.find(l => l.leaf_id === leafId);
+
+    if(!leaf){
+      document.getElementById("out").textContent = "ERROR: leaf not found";
+      return;
+    }
+
+    let h = leaf.leaf_hash;
+
+    for(const step of leaf.proof){
+      if(step.side === "right"){
+        h = await sha256hex(h + step.hash);
+      } else {
+        h = await sha256hex(step.hash + h);
+      }
+    }
+
+    const ok = (h === data.merkle_root);
+
+    document.getElementById("out").textContent =
+      "Leaf ID: " + leaf.leaf_id + "\n" +
+      "Leaf Hash: " + leaf.leaf_hash + "\n\n" +
+      "Computed Root: " + h + "\n" +
+      "Expected Root: " + data.merkle_root + "\n\n" +
+      "RESULT: " + (ok ? "PASS" : "MISMATCH");
+
+  } catch(e){
+    document.getElementById("out").textContent = "ERROR: " + e;
+  }
+}
+
+run();
+</script>
+
+</body>
+</html>
