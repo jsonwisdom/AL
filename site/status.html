@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ALMS Status</title>
+<style>
+body { background:#000; color:#0f0; font-family:monospace; padding:40px; }
+.badge { font-size:18px; margin-bottom:20px; }
+.hash { color:#0ff; }
+</style>
+</head>
+<body>
+
+<h1>⚙️ ALMS STATUS</h1>
+
+<div class="badge">
+Last Run: <span id="last"></span><br>
+Root: <span id="hash" class="hash"></span><br>
+Commit: <span id="commit"></span><br>
+Runner: <span id="runner"></span>
+</div>
+
+<script>
+fetch('../_truth/status/last_run.json')
+.then(r => r.json())
+.then(d => {
+  document.getElementById('last').textContent = d.last_run;
+  document.getElementById('hash').textContent = d.root_sha256.slice(0,16) + "...";
+  document.getElementById('commit').textContent = d.commit.slice(0,12);
+  document.getElementById('runner').textContent = d.runner;
+});
+</script>
+
+</body>
+</html>
