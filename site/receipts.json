@@ -1,28 +1,62 @@
 {
   "system": "ALMS",
   "title": "Alabama Machine Speed",
-  "checkpoint": "alms-100",
-  "claim_count": 100,
-  "chain_status": "CONTIGUOUS_THROUGH_0100",
-  "compute_boundary": "verify.sh external SHA-256 compute only",
+  "checkpoint": "alms-102",
+  "claim_count": 102,
+  "chain_status": "CONTIGUOUS_THROUGH_0102",
+  "status_model": "VERIFIABLE_TAMPER_EVIDENT",
+  "compute_boundary": "browser Web Crypto API SHA-256 verification only",
+  "sequence": [
+    {
+      "id": "alms-100",
+      "role": "MACHINE_INTEGRITY",
+      "claim": "ALMS has processed one hundred public claims with linked receipts",
+      "hash": "5022afadf1c39e09db9284c0c3407098ff61c8629476d635b9d220e749b04737",
+      "status": "MATCH"
+    },
+    {
+      "id": "alms-101",
+      "type": "EXTERNAL_PUBLIC_RECORD_CLAIM",
+      "witness": "Minnesota Management and Budget",
+      "source": "February 2026 Budget and Economic Forecast",
+      "role": "SUMMARY_WITNESS",
+      "claim": "The FY 2026-27 projected balance is now $3.7 billion, $1.3 billion higher than November estimates.",
+      "status": "MATCH"
+    },
+    {
+      "id": "alms-102",
+      "type": "EXTERNAL_PUBLIC_RECORD_CLAIM",
+      "witness": "Minnesota Management and Budget",
+      "source": "February 2026 Budget and Economic Forecast",
+      "role": "PRECISION_WITNESS",
+      "claim": "With the February 2026 Budget and Economic Forecast, the FY 2026-27 biennium is now projected to end with a balance of $3.734 billion, an improvement of $1.269 billion.",
+      "hash": "aa333f252c77dd44937290680adeeeab7595b40dd9c7dfecec340a0d68810c28",
+      "hash_algorithm": "SHA-256",
+      "status": "MATCH"
+    }
+  ],
   "latest": {
-    "id": "2026-04-23T21:50:00Z#0100",
-    "claim": "ALMS has processed one hundred public claims with linked receipts",
-    "hash": "5022afadf1c39e09db9284c0c3407098ff61c8629476d635b9d220e749b04737",
-    "prev_hash": "5dee88e699c062004c1fb90439cd3f4558fd403aaa328965a20862cfa5a6c65f",
+    "id": "alms-102",
+    "type": "EXTERNAL_PUBLIC_RECORD_CLAIM",
+    "witness": "Minnesota Management and Budget",
+    "source": "February 2026 Budget and Economic Forecast",
+    "claim": "With the February 2026 Budget and Economic Forecast, the FY 2026-27 biennium is now projected to end with a balance of $3.734 billion, an improvement of $1.269 billion.",
+    "hash": "aa333f252c77dd44937290680adeeeab7595b40dd9c7dfecec340a0d68810c28",
+    "hash_algorithm": "SHA-256",
     "status": "MATCH",
-    "vector": [1, 1, 1],
-    "verify_ts": "2026-04-24T03:27:12Z"
+    "role": "PRECISION_WITNESS",
+    "verify_ts": "2026-04-27T00:00:00Z"
   },
   "distribution": {
-    "MATCH": 30,
+    "MATCH": 32,
     "CONTESTED": 44,
     "MISMATCH": 26
   },
   "links": {
-    "latest_receipt": "../receipts/alms_0100_receipt.json",
+    "latest_receipt": "../receipts/alms_0102_receipt.json",
+    "source_pdf": "https://mn.gov/mmb-stat/000/az/forecast/2026/budget-and-economic-forecast/february.pdf",
     "verify_script": "../verify.sh",
     "repo": "https://github.com/jsonwisdom/AL",
-    "tag": "https://github.com/jsonwisdom/AL/releases/tag/alms-100"
+    "tag": "https://github.com/jsonwisdom/AL/releases/tag/alms-102"
   }
 }
