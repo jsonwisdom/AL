@@ -5,29 +5,66 @@
 <title>ALMS Status</title>
 <style>
 body { background:#000; color:#0f0; font-family:monospace; padding:40px; }
-.badge { font-size:18px; margin-bottom:20px; }
-.hash { color:#0ff; }
+.badge { font-size:20px; margin-bottom:20px; padding:10px; display:inline-block; }
+.green { color:#00ff00; }
+.red { color:#ff4444; }
+.yellow { color:#ffaa00; }
+.hash { color:#00ffff; }
 </style>
 </head>
 <body>
 
 <h1>⚙️ ALMS STATUS</h1>
 
-<div class="badge">
+<div id="badge" class="badge">LOADING...</div>
+
+<div>
 Last Run: <span id="last"></span><br>
+Age (min): <span id="age"></span><br>
 Root: <span id="hash" class="hash"></span><br>
 Commit: <span id="commit"></span><br>
 Runner: <span id="runner"></span>
 </div>
 
 <script>
+const STALE_MINUTES = 20;
+
 fetch('../_truth/status/last_run.json')
 .then(r => r.json())
 .then(d => {
+  const last = new Date(d.last_run);
+  const now = new Date();
+
+  const ageMs = now - last;
+  const ageMin = Math.floor(ageMs / 60000);
+
+  let status = "UNKNOWN";
+  let color = "yellow";
+
+  if (!isNaN(ageMin)) {
+    if (ageMin <= STALE_MINUTES) {
+      status = "LIVE";
+      color = "green";
+    } else {
+      status = "STALE";
+      color = "red";
+    }
+  }
+
+  const badge = document.getElementById('badge');
+  badge.textContent = status;
+  badge.className = "badge " + color;
+
   document.getElementById('last').textContent = d.last_run;
+  document.getElementById('age').textContent = ageMin;
   document.getElementById('hash').textContent = d.root_sha256.slice(0,16) + "...";
   document.getElementById('commit').textContent = d.commit.slice(0,12);
   document.getElementById('runner').textContent = d.runner;
+})
+.catch(() => {
+  const badge = document.getElementById('badge');
+  badge.textContent = "ERROR";
+  badge.className = "badge red";
 });
 </script>
 
