@@ -1,0 +1,36 @@
+{
+  "manifestation_types": [
+    "alert",
+    "report",
+    "audit",
+    "court_order",
+    "hearing",
+    "broadcast",
+    "dashboard",
+    "agency_statement",
+    "news_post"
+  ],
+  "tri_state": [
+    "RESOLVED",
+    "MISSING_ATTESTATION",
+    "NON_RESPONSIVE"
+  ],
+  "responsibility_fields": [
+    "claimant",
+    "operator",
+    "vendor",
+    "oversight_body"
+  ],
+  "rules": [
+    "No claim is trusted without verification",
+    "Restraint scores higher than accusation",
+    "Source must be locked before classification"
+  ],
+  "movie_wisdom": [
+    "Matrix: wake up = verify",
+    "Minority Report: prediction is not proof",
+    "Truman Show: environment is not evidence",
+    "They Live: decode signals",
+    "12 Angry Men: one verified doubt matters"
+  ]
+}
