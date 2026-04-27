@@ -1,0 +1,36 @@
+{
+  "leaf_id": "leaf003",
+  "fields": [
+    {
+      "id": "revenue",
+      "canonical_claim": "Revenue         4 000 000",
+      "canonical_value": 4000000,
+      "tests": [
+        {"id": "exact_match", "claim_text": "Revenue         4 000 000", "value": 4000000},
+        {"id": "wrong_value", "claim_text": "Revenue         3 900 000", "value": 3900000}
+      ]
+    },
+    {
+      "id": "expenses",
+      "canonical_claim": "Expenses          330 000",
+      "canonical_value": 330000,
+      "tests": [
+        {"id": "exact_match", "claim_text": "Expenses          330 000", "value": 330000},
+        {"id": "wrong_value", "claim_text": "Expenses        9 000 000", "value": 9000000}
+      ]
+    },
+    {
+      "id": "balance",
+      "canonical_claim": "General Fund Balance         3 670 000",
+      "canonical_value": 3670000,
+      "tests": [
+        {"id": "exact_match", "claim_text": "General Fund Balance         3 670 000", "value": 3670000},
+        {"id": "wrong_value", "claim_text": "General Fund Balance        -5 000 000", "value": -5000000}
+      ]
+    }
+  ],
+  "computed_constraints": [
+    {"id": "balance_identity", "formula": "balance == revenue - expenses", "weight": 100},
+    {"id": "solvency_constraint", "formula": "expenses <= revenue", "weight": 75}
+  ]
+}

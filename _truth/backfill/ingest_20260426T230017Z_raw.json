@@ -1,0 +1,10 @@
+{
+  "timestamp_utc": "2026-04-26T23:00:17Z",
+  "model": "backfill_ingest_v0.1",
+  "data": {
+    "diesel": "date,padd2_stocks,padd3_stocks,diesel_price,refinery_util\n2021-05-01,1.0,1.0,1.0,1.0\n2021-05-15,0.82,0.88,1.12,0.91\n2021-06-01,0.75,0.80,1.20,0.89",
+    "planting": "date,corn_planted,soy_planted,five_year_avg\n2021-04-15,0.40,0.35,0.50\n2021-05-01,0.65,0.60,0.75\n2021-05-20,0.78,0.72,0.90",
+    "harvest": "",
+    "cpi": "date,cpi_food_home,cpi_cereals\n2022-01-01,1.05,1.08\n2022-02-01,1.09,1.15\n2022-03-01,1.14,1.22"
+  }
+}

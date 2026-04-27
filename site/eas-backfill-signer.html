@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>EAS Backfill Signer</title></head>
+<body style="font-family:monospace;background:#050505;color:#9cff9c;padding:24px">
+<h2>EAS Backfill Signer — Base</h2>
+<button id="connect">Connect Wallet</button>
+<button id="register">Register Schema</button>
+<button id="attest">Attest Backfill Root</button>
+<pre id="out"></pre>
+
+<script type="module">
+import { ethers } from "https://cdn.jsdelivr.net/npm/ethers@6.13.4/+esm";
+
+const out = (x)=>document.getElementById("out").textContent += x + "\n";
+
+const EAS="0x4200000000000000000000000000000000000021";
+const REG="0x4200000000000000000000000000000000000020";
+const ZERO="0x0000000000000000000000000000000000000000000000000000000000000000";
+
+const merkleRoot="0xcad549f24bec742fd1f6bd280e3202921fa2dd6a11f82eb36ff9ecd990303546";
+const model="backfill_merkle_batch_v0.1";
+const leafCount=3;
+const batchPath="_truth/backfill/backfill_merkle_20260426T230528Z.json";
+
+let provider, signer, address, schemaUID;
+
+async function setup(){
+  provider = new ethers.BrowserProvider(window.ethereum);
+  await provider.send("wallet_switchEthereumChain", [{ chainId: "0x2105" }]);
+  signer = await provider.getSigner();
+  address = await signer.getAddress();
+  out("wallet: " + address);
+}
+
+document.getElementById("connect").onclick = setup;
+
+document.getElementById("register").onclick = async()=>{
+  if(!signer) await setup();
+  const abi=[
+    "function register(string schema,address resolver,bool revocable) returns (bytes32)",
+    "event Registered(bytes32 indexed uid,address indexed registerer,string schema,address resolver,bool revocable)"
+  ];
+  const c=new ethers.Contract(REG,abi,signer);
+  const tx=await c.register(
+    "bytes32 merkleRoot,string model,uint256 leafCount,string batchPath",
+    ethers.ZeroAddress,
+    true
+  );
+  out("schema tx: "+tx.hash);
+  const r=await tx.wait();
+  const iface=new ethers.Interface(abi);
+  for(const log of r.logs){
+    try{
+      const p=iface.parseLog(log);
+      if(p.name==="Registered"){
+        schemaUID=p.args.uid;
+        out("SCHEMA_UID: "+schemaUID);
+      }
+    }catch(e){}
+  }
+};
+
+document.getElementById("attest").onclick = async()=>{
+  if(!signer) await setup();
+  if(!schemaUID){
+    schemaUID=prompt("Paste schema UID:");
+  }
+
+  const coder=ethers.AbiCoder.defaultAbiCoder();
+  const data=coder.encode(
+    ["bytes32","string","uint256","string"],
+    [merkleRoot,model,leafCount,batchPath]
+  );
+
+  const abi=[
+    "function attest((bytes32 schema,(address recipient,uint64 expirationTime,bool revocable,bytes32 refUID,bytes data,uint256 value) data)) payable returns (bytes32)"
+  ];
+  const c=new ethers.Contract(EAS,abi,signer);
+  const tx=await c.attest({
+    schema:schemaUID,
+    data:{
+      recipient:address,
+      expirationTime:0,
+      revocable:true,
+      refUID:ZERO,
+      data:data,
+      value:0
+    }
+  });
+  out("attest tx: "+tx.hash);
+  await tx.wait();
+  out("ATTESTED");
+};
+</script>
+</body>
+</html>

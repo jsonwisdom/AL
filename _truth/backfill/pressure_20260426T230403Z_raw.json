@@ -1,0 +1,50 @@
+{
+  "case": "fuel_food_2021_2022",
+  "doctrine": "edges fail first; prices show later",
+  "edges": {
+    "edge_1_diesel": {
+      "pressure": 0.75,
+      "status": "YELLOW"
+    },
+    "edge_3_planting_velocity": {
+      "pressure": 0.75,
+      "status": "YELLOW"
+    },
+    "edge_4_harvest_output": {
+      "pressure": 0.75,
+      "status": "YELLOW"
+    },
+    "edge_5_urban_food_price": {
+      "pressure": 0.75,
+      "status": "YELLOW"
+    }
+  },
+  "inputs": {
+    "cpi_latest": {
+      "cpi_cereals": "1.22",
+      "cpi_food_home": "1.14",
+      "date": "2022-03-01"
+    },
+    "diesel_latest": {
+      "date": "2021-06-01",
+      "diesel_price": "1.20",
+      "padd2_stocks": "0.75",
+      "padd3_stocks": "0.80",
+      "refinery_util": "0.89"
+    },
+    "harvest_latest": {
+      "crop_condition": "0.78",
+      "date": "2021-10-20",
+      "harvest_progress": "0.82"
+    },
+    "planting_latest": {
+      "corn_planted": "0.78",
+      "date": "2021-05-20",
+      "five_year_avg": "0.90",
+      "soy_planted": "0.72"
+    }
+  },
+  "model": "fuel_food_backfill_pressure_engine_v0.1",
+  "status": "PRESSURES_COMPUTED",
+  "timestamp_utc": "2026-04-26T23:04:03Z"
+}

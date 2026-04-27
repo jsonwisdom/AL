@@ -1,0 +1,60 @@
+{
+  "leaf_id": "leaf003",
+  "model": "truth_energy_qubo_numeric_v1",
+  "ground_state": {
+    "total_energy": 0,
+    "fields": {
+      "revenue": {
+        "energy": 0,
+        "bits": [
+          1,
+          0
+        ],
+        "accepted": [
+          "exact_match"
+        ],
+        "rejected": [
+          "wrong_value"
+        ],
+        "value": 4000000
+      },
+      "expenses": {
+        "energy": 0,
+        "bits": [
+          1,
+          0
+        ],
+        "accepted": [
+          "exact_match"
+        ],
+        "rejected": [
+          "wrong_value"
+        ],
+        "value": 330000
+      },
+      "balance": {
+        "energy": 0,
+        "bits": [
+          1,
+          0
+        ],
+        "accepted": [
+          "exact_match"
+        ],
+        "rejected": [
+          "wrong_value"
+        ],
+        "value": 3670000
+      }
+    },
+    "values": {
+      "revenue": 4000000,
+      "expenses": 330000,
+      "balance": 3670000
+    },
+    "constraints": {
+      "balance_identity": true,
+      "solvency_constraint": true
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "leaf_id": "leaf003",
+  "model": "neal_real_qubo_matrix_v1",
+  "ground_state": {
+    "total_energy": 0,
+    "fields": {
+      "revenue": {
+        "accepted": [
+          "exact_match"
+        ],
+        "rejected": [
+          "wrong_value"
+        ],
+        "value": 4000000
+      },
+      "expenses": {
+        "accepted": [
+          "exact_match"
+        ],
+        "rejected": [
+          "wrong_value"
+        ],
+        "value": 330000
+      },
+      "balance": {
+        "accepted": [
+          "exact_match"
+        ],
+        "rejected": [
+          "wrong_value"
+        ],
+        "value": 3670000
+      }
+    },
+    "values": {
+      "revenue": 4000000,
+      "expenses": 330000,
+      "balance": 3670000
+    },
+    "constraints": {
+      "balance_identity": true,
+      "solvency_constraint": true
+    }
+  },
+  "sampler": {
+    "name": "dwave-neal",
+    "mode": "real_qubo_matrix",
+    "raw_energy": -150.0
+  }
+}

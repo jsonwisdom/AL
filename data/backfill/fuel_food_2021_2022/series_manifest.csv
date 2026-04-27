@@ -1,0 +1,12 @@
+edge,source,metric,series_or_dataset,window_start,window_end,notes
+edge_1_diesel,EIA,distillate_stocks,PADD_2_DISTILLATE_STOCKS,2021-01-01,2022-06-30,midwest diesel inventory proxy
+edge_1_diesel,EIA,distillate_stocks,PADD_3_DISTILLATE_STOCKS,2021-01-01,2022-06-30,gulf supply proxy
+edge_1_diesel,EIA,diesel_price,US_ON_HIGHWAY_DIESEL_PRICE,2021-01-01,2022-06-30,national retail diesel stress
+edge_1_diesel,EIA,refinery_utilization,US_REFINERY_UTILIZATION,2021-01-01,2022-06-30,refining throughput proxy
+edge_2_fertilizer,FRED,natural_gas_price,NATURAL_GAS_PRICE_PROXY,2021-01-01,2022-06-30,fertilizer input cost proxy
+edge_3_planting,USDA_NASS,corn_planted,CORN_PERCENT_PLANTED,2021-03-01,2021-07-31,crop progress vs 5yr avg
+edge_3_planting,USDA_NASS,soy_planted,SOY_PERCENT_PLANTED,2021-03-01,2021-07-31,crop progress vs 5yr avg
+edge_4_harvest,USDA,crop_condition,CORN_GOOD_EXCELLENT,2021-07-01,2021-12-31,yield condition proxy
+edge_4_harvest,USDA,harvest_progress,CORN_PERCENT_HARVESTED,2021-09-01,2021-12-31,harvest velocity proxy
+edge_5_food_price,BLS,cpi_food_home,CPI_FOOD_AT_HOME,2022-01-01,2022-06-30,consumer price stress
+edge_5_food_price,BLS,cpi_cereals,CPI_CEREALS_BAKERY,2022-01-01,2022-06-30,grain-linked retail category
