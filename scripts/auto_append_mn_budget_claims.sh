@@ -8,6 +8,8 @@ AUTO_COMMIT="${AUTO_COMMIT:-0}"
 AUTO_PUSH="${AUTO_PUSH:-0}"
 BRANCH="${BRANCH:-master}"
 HASH_REGISTRY="${HASH_REGISTRY:-data/claim_hashes.txt}"
+MIN_VALID_AMOUNT="${MIN_VALID_AMOUNT:-1000}"
+FLAG_ROUND_MILLIONS="${FLAG_ROUND_MILLIONS:-1}"
 
 SOURCE_HASH="sha256:c4ac46e46b80b42a6abc24edbe0480ac4983cb0090a758bd7458b2ea62faca69"
 EXTRACT_HASH="sha256:da5ad1bbe192eae56c96cf574025b8f915839d29c78c69e8d6b98a0ad9d7d917"
@@ -62,6 +64,29 @@ while IFS=$'\t' read -r line_hint label value claim_text; do
   if grep -q "^${claim_key_hash}[[:space:]]" "$HASH_REGISTRY"; then
     echo "AUTO_DEDUPE_SKIP hash=$claim_key_hash line=$line_hint label=$label value=$value"
     continue
+  fi
+
+  amount_num="$(printf '%s' "$value" | tr -d ',')"
+
+  if ! [[ "$amount_num" =~ ^[0-9]+$ ]]; then
+    echo "AUTO_CONFIDENCE_REJECT reason=invalid_amount value=$value label=$label"
+    continue
+  fi
+
+  if [ "$amount_num" -lt "$MIN_VALID_AMOUNT" ]; then
+    echo "AUTO_CONFIDENCE_REJECT reason=amount_too_small value=$value label=$label"
+    continue
+  fi
+
+  case "$(printf '%s' "$label" | tr '[:upper:]' '[:lower:]')" in
+    *total*|*summary*)
+      echo "AUTO_CONFIDENCE_REJECT reason=derived_label label=$label"
+      continue
+      ;;
+  esac
+
+  if [ "$FLAG_ROUND_MILLIONS" = "1" ] && [ $((amount_num % 1000000)) -eq 0 ]; then
+    echo "AUTO_CONFIDENCE_FLAG reason=round_million value=$value label=$label"
   fi
 
   if already_manifested "$claim_text"; then
