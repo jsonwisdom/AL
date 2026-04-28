@@ -57,7 +57,30 @@ next_num() {
 
 added=0
 while IFS=$'\t' read -r line_hint label value claim_text; do
-  [ -n "${claim_text:-}" ] || continue
+  if [ -z "${line_hint:-}" ] || [ -z "${label:-}" ] || [ -z "${value:-}" ] || [ -z "${claim_text:-}" ]; then
+    echo "AUTO_SCHEMA_REJECT reason=missing_columns line_hint=${line_hint:-} label=${label:-} value=${value:-}"
+    continue
+  fi
+
+  if ! [[ "$line_hint" =~ ^[0-9]+$ ]]; then
+    echo "AUTO_SCHEMA_REJECT reason=invalid_line_hint line_hint=$line_hint label=$label"
+    continue
+  fi
+
+  if [[ -z "${label// }" ]]; then
+    echo "AUTO_SCHEMA_REJECT reason=empty_label line=$line_hint"
+    continue
+  fi
+
+  if ! [[ "$value" =~ [0-9] ]]; then
+    echo "AUTO_SCHEMA_REJECT reason=no_digits_in_value value=$value label=$label"
+    continue
+  fi
+
+  if [[ "$claim_text" != *"$label"* ]] || [[ "$claim_text" != *"$value"* ]]; then
+    echo "AUTO_SCHEMA_REJECT reason=claim_text_mismatch line=$line_hint label=$label value=$value"
+    continue
+  fi
 
   claim_key_hash="$(printf '%s|%s|%s' "$label" "$value" "$SOURCE_HASH" | sha256sum | awk '{print $1}')"
 
