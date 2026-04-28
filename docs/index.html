@@ -1,136 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ALMS Agent Income Matrix</title>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AL — Public Verification</title>
   <style>
-    :root { --bg:#070b0a; --panel:#0d1512; --line:#1f3b31; --green:#00ff88; --muted:#7fb69c; --yellow:#ffd166; --red:#ff5c7a; --blue:#6ecbff; }
-    * { box-sizing:border-box; }
-    body { margin:0; font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace; background:radial-gradient(circle at top,#11241d,var(--bg) 45%); color:var(--green); padding:18px; }
-    header,.panel { border:1px solid var(--line); background:rgba(13,21,18,.88); padding:18px; border-radius:18px; margin-bottom:16px; box-shadow:0 0 30px rgba(0,255,136,.08); }
-    h1 { margin:0; font-size:clamp(24px,5vw,44px); letter-spacing:-1px; }
-    h2 { margin:0 0 10px 0; }
-    p { color:var(--muted); line-height:1.5; }
-    .grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin:14px 0; }
-    .card { border:1px solid var(--line); background:rgba(7,16,13,.8); padding:14px; border-radius:14px; min-height:92px; }
-    .label { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.08em; }
-    .value { font-size:22px; margin-top:8px; word-break:break-word; }
-    table { width:100%; border-collapse:collapse; margin-top:12px; }
-    th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; }
-    th { color:var(--muted); }
-    .ok { color:var(--green); } .warn { color:var(--yellow); } .bad { color:var(--red); } .blue { color:var(--blue); }
-    footer { color:var(--muted); margin-top:18px; }
-    a { color:var(--green); }
-    @media (max-width:900px){ .grid{grid-template-columns:repeat(2,minmax(0,1fr));} }
-    @media (max-width:560px){ .grid{grid-template-columns:1fr;} }
+    body { margin: 0; background: #070b0a; color: #e8fff3; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    main { max-width: 980px; margin: 0 auto; padding: 32px 18px; }
+    .card { border: 1px solid #1f3b31; border-radius: 16px; padding: 18px; background: #0d1512; margin: 18px 0; }
+    h1, h2 { color: #00ff88; }
+    .ok { color: #00ff88; }
+    .muted { color: #8bb8a0; }
+    code { color: #ffd166; overflow-wrap: anywhere; }
+    a { color: #6ecbff; }
+    .grid { display: grid; grid-template-columns: 180px 1fr; gap: 8px 14px; }
   </style>
 </head>
 <body>
-  <header>
-    <h1>ALMS — Agent Income Matrix</h1>
-    <p>Verification > narrative. Receipts > claims. Runtime payments turn truth into a competitive market.</p>
-  </header>
+<main>
+  <h1>AL — Public Verification</h1>
+  <p class="muted">Claim → source bytes → extracted line → hash → ledger → verifier.</p>
 
-  <section class="panel">
-    <h2>⚙️ Pay-Per-Truth Loop</h2>
+  <section class="card">
+    <h2>✅ Verified MN Claim #001</h2>
     <div class="grid">
-      <div class="card"><div class="label">INPUT</div><div class="value">Claim</div></div>
-      <div class="card"><div class="label">CALL</div><div class="value">Extract / Verify</div></div>
-      <div class="card"><div class="label">PAY</div><div class="value">x402 per call</div></div>
-      <div class="card"><div class="label">OUTPUT</div><div class="value">RESOLVED / DRIFT / FAIL</div></div>
+      <div>Status</div><div class="ok">source_anchored / ledger_verified</div>
+      <div>Claim ID</div><div><code>mn_20260428T012659Z_9a552847</code></div>
+      <div>Claim Text</div><div><code>Health & Human Services                                  25,808,265</code></div>
+      <div>Agency</div><div>Minnesota Management and Budget</div>
+      <div>Document</div><div>February 2026 Budget and Economic Forecast</div>
+      <div>Line Hint</div><div><code>68</code></div>
+      <div>Source PDF Hash</div><div><code>sha256:c4ac46e46b80b42a6abc24edbe0480ac4983cb0090a758bd7458b2ea62faca69</code></div>
+      <div>Extract Hash</div><div><code>sha256:da5ad1bbe192eae56c96cf574025b8f915839d29c78c69e8d6b98a0ad9d7d917</code></div>
+      <div>Claim Text Hash</div><div><code>sha256:9a5528472631772e87fb52e392c064d4ece561b6c8439e7eb432643443e54137</code></div>
     </div>
+    <p>
+      <a href="../claims/mn/mn_001_hhs.canonical.json">Canonical JSON</a> ·
+      <a href="../_truth/ledger.jsonl">VCLP Ledger</a> ·
+      <a href="../sources/mn/mmb-feb-2026-forecast.pdf">Source PDF</a>
+    </p>
   </section>
 
-  <section class="panel">
-    <h2>⚡ Live Truth Market Dashboard</h2>
-    <div class="grid">
-      <div class="card"><div class="label">Top Agent</div><div class="value ok" id="topAgent">loading…</div></div>
-      <div class="card"><div class="label">Routing Weight</div><div class="value blue" id="topWeight">…</div></div>
-      <div class="card"><div class="label">Accuracy</div><div class="value ok" id="topAccuracy">…</div></div>
-      <div class="card"><div class="label">Avg Cost</div><div class="value warn" id="topCost">…</div></div>
-    </div>
-    <table>
-      <thead><tr><th>Agent</th><th>Receipts</th><th>Avg Accuracy</th><th>Consistency</th><th>Avg Cost</th><th>Routing Weight</th></tr></thead>
-      <tbody id="leaderboard"><tr><td colspan="6">loading leaderboard…</td></tr></tbody>
-    </table>
+  <section class="card">
+    <h2>Local Verification</h2>
+    <p>Clone the repo and run:</p>
+    <pre><code>bash verify.sh</code></pre>
+    <p class="ok">Expected result: ✅ chain valid — all checks passed</p>
   </section>
 
-  <section class="panel">
-    <h2>📈 Market Heartbeat</h2>
-    <p>Multi-agent routing weight over time. Points are router decisions; tooltip shows the selected round context.</p>
-    <canvas id="chart"></canvas>
-  </section>
-
-  <footer>
-    ⚙️ jaywisdom.base.eth · <a href="agent-income.json">agent-income.json</a> · <a href="../_truth/routing/leaderboard.json">leaderboard.json</a> · <a href="routing-history.json">routing-history.json</a>
-  </footer>
-
-<script>
-let chart;
-async function loadLeaderboard(){
-  try {
-    const res = await fetch('../_truth/routing/leaderboard.json', {cache:'no-store'});
-    const data = await res.json();
-    if(!Array.isArray(data) || data.length === 0){
-      document.getElementById('topAgent').textContent='fallback';
-      document.getElementById('topWeight').textContent='0';
-      document.getElementById('topAccuracy').textContent='n/a';
-      document.getElementById('topCost').textContent='n/a';
-      document.getElementById('leaderboard').innerHTML='<tr><td colspan="6">No paid scored agents yet. Run scripts/router.sh CLAIM_ID.</td></tr>';
-      return;
-    }
-    const top=data[0];
-    document.getElementById('topAgent').textContent=top.agent_id;
-    document.getElementById('topWeight').textContent=Number(top.routing_weight).toFixed(4);
-    document.getElementById('topAccuracy').textContent=Number(top.avg_accuracy).toFixed(4);
-    document.getElementById('topCost').textContent='$'+Number(top.avg_cost_usd).toFixed(4);
-    document.getElementById('leaderboard').innerHTML=data.map(a=>`<tr><td>${a.agent_id}</td><td>${a.receipts}</td><td>${Number(a.avg_accuracy).toFixed(4)}</td><td>${Number(a.consistency||0).toFixed(4)}</td><td>$${Number(a.avg_cost_usd).toFixed(4)}</td><td>${Number(a.routing_weight).toFixed(4)}</td></tr>`).join('');
-  } catch(e){
-    document.getElementById('leaderboard').innerHTML='<tr><td colspan="6">Leaderboard not generated yet.</td></tr>';
-  }
-}
-async function loadChart(){
-  try {
-    const res = await fetch('routing-history.json', {cache:'no-store'});
-    const history = await res.json();
-    const labels = history.map((d,i)=>d.claim_id || `round_${i+1}`);
-    const agents = [...new Set(history.flatMap(d => (d.leaderboard || []).map(a => a.agent_id)))];
-    const datasets = agents.map(agent => ({
-      label: agent,
-      data: history.map(d => {
-        const row = (d.leaderboard || []).find(a => a.agent_id === agent);
-        return row ? Number(row.routing_weight) : null;
-      }),
-      borderWidth: 2,
-      tension: 0.25,
-      pointRadius: history.map(d => d.selected_agent === agent ? 5 : 2)
-    }));
-    const ctx = document.getElementById('chart');
-    if(chart) chart.destroy();
-    chart = new Chart(ctx, {
-      type: 'line',
-      data: { labels, datasets },
-      options: {
-        responsive:true,
-        interaction:{mode:'nearest', intersect:false},
-        plugins:{
-          tooltip:{ callbacks:{ afterBody(items){
-            const idx = items[0].dataIndex;
-            const d = history[idx];
-            const selected = (d.leaderboard || []).find(a => a.agent_id === d.selected_agent) || {};
-            return [`winner: ${d.selected_agent}`, `consistency: ${Number(selected.consistency||0).toFixed(4)}`, `decay: ${Number(selected.avg_decay_factor||0).toFixed(4)}`, `rep: ${Number(selected.reputation_multiplier||0).toFixed(4)}`, `raw: ${Number(selected.raw_routing_weight||0).toFixed(4)}`, `decayed: ${Number(selected.decayed_routing_weight||0).toFixed(4)}`];
-          }}}
-        },
-        scales:{ y:{ beginAtZero:true } }
-      }
-    });
-  } catch(e){ console.log('No routing history yet'); }
-}
-function refresh(){ loadLeaderboard(); loadChart(); }
-refresh();
-setInterval(refresh, 15000);
-</script>
+  <footer class="muted">⚙️ jaywisdom.base.eth · Verification &gt; narrative</footer>
+</main>
 </body>
 </html>
