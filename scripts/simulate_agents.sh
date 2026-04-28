@@ -15,8 +15,14 @@ for i in $(seq 1 $ITERATIONS); do
   bash scripts/router.sh "$CLAIM_ID"
 
   # Adaptive step every 10 rounds using real leaderboard signals.
+  # Rank is assigned only after explicit routing_weight sort, never implicit JSON order.
   if (( i % 10 == 0 )); then
-    jq -r '.[] | [.agent_id, (1 + (input_line_number - 1)), (.avg_decay_factor // 1), (.reputation_multiplier // 1)] | @tsv' _truth/routing/leaderboard.json \
+    jq -r '
+      sort_by(.routing_weight) | reverse
+      | to_entries[]
+      | [.value.agent_id, (.key + 1), (.value.avg_decay_factor // 1), (.value.reputation_multiplier // 1)]
+      | @tsv
+    ' _truth/routing/leaderboard.json \
       | while IFS=$'\t' read -r AGENT RANK DECAY REP; do
           bash scripts/adapt_agent.sh "$AGENT" "$RANK" "$DECAY" "$REP"
           jq -c --arg round "$i" '. + {round:($round|tonumber), snapshot_ts:now|todateiso8601}' "agents/${AGENT}_profile.json" >> "$PROFILE_HISTORY"
