@@ -17,6 +17,12 @@ jobs:
       - name: Validate ALMS production receipts
         run: bash scripts/audit/validate_receipts.sh
 
+      - name: Build ALMS receipt ledger
+        run: bash scripts/ledger/build_receipt_ledger.sh
+
+      - name: Verify ALMS receipt ledger
+        run: bash scripts/ledger/verify_receipt_ledger.sh
+
       - name: Build daily JSON audit report
         run: bash scripts/audit/build_ipfs_daily_json_report.sh
 
@@ -27,6 +33,6 @@ jobs:
         run: |
           git config user.name "alms-audit-bot"
           git config user.email "actions@github.com"
-          git add _truth/audit docs/audit
+          git add _truth/ledger _truth/audit docs/audit
           git commit -m "Add daily ALMS JSON audit report" || exit 0
           git push
