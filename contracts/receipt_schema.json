@@ -5,17 +5,7 @@
   "description": "Canonical, tamper-evident, replayable receipt for Machine Speed ALMS V2",
   "type": "object",
   "additionalProperties": false,
-  "required": [
-    "receipt_id",
-    "schema_version",
-    "input_hash",
-    "normalized_hash",
-    "transform_version",
-    "invariant_version",
-    "verdict",
-    "valid_as_of",
-    "replay_cmd"
-  ],
+  "required": ["receipt_id", "schema_version", "input_hash", "normalized_hash", "transform_version", "invariant_version", "verdict", "valid_as_of", "replay_cmd"],
   "properties": {
     "receipt_id": { "type": "string", "pattern": "^ALMS-MS-\\d{3,}$" },
     "schema_version": { "type": "string", "const": "2.0" },
@@ -46,6 +36,7 @@
               "scale": { "type": "string" },
               "unit": { "type": "string", "enum": ["number", "percent", "usd"] },
               "base_value": { "type": "string" },
+              "source_anchor": { "type": ["string", "null"] },
               "start": { "type": "integer", "minimum": 0 },
               "end": { "type": "integer", "minimum": 0 }
             }
@@ -67,56 +58,39 @@
         }
       }
     },
-    "verdict": {
-      "type": "string",
-      "enum": ["VERIFIED", "FALSE", "MISLEADING", "UNVERIFIED", "NEEDS_MORE_EVIDENCE"]
-    },
-    "verdict_reason": { "type": "string" },
-    "failure_states": {
-      "type": "array",
-      "uniqueItems": true,
-      "items": {
-        "type": "string",
-        "enum": ["SOURCE_TIMEOUT", "FORMAT_DRIFT", "INVARIANT_CONFLICT", "AMBIGUOUS_ENTITY", "NON_REPRODUCIBLE"]
-      }
-    },
-    "invariants_results": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "required": ["id", "passed"],
-        "additionalProperties": false,
-        "properties": {
-          "id": { "type": "string" },
-          "passed": { "type": "boolean" },
-          "details": { "type": "string" }
-        }
-      }
-    },
-    "proofs": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "required": ["source_url", "fetch_timestamp", "content_hash"],
-        "additionalProperties": false,
-        "properties": {
-          "source_url": { "type": "string", "format": "uri" },
-          "archived_cid": { "type": "string" },
-          "fetch_timestamp": { "type": "string", "format": "date-time" },
-          "content_hash": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
-          "status": { "type": "string", "enum": ["LIVE", "ARCHIVED", "TIMEOUT"] }
-        }
-      }
-    },
-    "valid_as_of": { "type": "string", "format": "date-time" },
-    "replay_cmd": { "type": "string" },
-    "environment": {
+    "source_match": {
       "type": "object",
       "additionalProperties": false,
+      "required": ["checker_version", "passed", "results"],
       "properties": {
-        "verifier_version": { "type": "string" },
-        "git_commit": { "type": "string" }
+        "checker_version": { "type": "string", "const": "alms_source_match_v1" },
+        "passed": { "type": "boolean" },
+        "results": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["index", "raw", "unit", "base_value", "scale", "source_anchor", "matched"],
+            "properties": {
+              "index": { "type": "integer", "minimum": 0 },
+              "raw": { "type": "string" },
+              "unit": { "type": "string", "enum": ["number", "percent", "usd"] },
+              "base_value": { "type": "string" },
+              "scale": { "type": "string" },
+              "source_anchor": { "type": ["string", "null"] },
+              "matched": { "type": "boolean" }
+            }
+          }
+        }
       }
-    }
+    },
+    "verdict": { "type": "string", "enum": ["VERIFIED", "FALSE", "MISLEADING", "UNVERIFIED", "NEEDS_MORE_EVIDENCE"] },
+    "verdict_reason": { "type": "string" },
+    "failure_states": { "type": "array", "uniqueItems": true, "items": { "type": "string", "enum": ["SOURCE_TIMEOUT", "FORMAT_DRIFT", "INVARIANT_CONFLICT", "AMBIGUOUS_ENTITY", "NON_REPRODUCIBLE"] } },
+    "invariants_results": { "type": "array", "items": { "type": "object", "required": ["id", "passed"], "additionalProperties": false, "properties": { "id": { "type": "string" }, "passed": { "type": "boolean" }, "details": { "type": "string" } } } },
+    "proofs": { "type": "array", "items": { "type": "object", "required": ["source_url", "fetch_timestamp", "content_hash"], "additionalProperties": false, "properties": { "source_url": { "type": "string", "format": "uri" }, "archived_cid": { "type": "string" }, "fetch_timestamp": { "type": "string", "format": "date-time" }, "content_hash": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" }, "status": { "type": "string", "enum": ["LIVE", "ARCHIVED", "TIMEOUT"] } } } },
+    "valid_as_of": { "type": "string", "format": "date-time" },
+    "replay_cmd": { "type": "string" },
+    "environment": { "type": "object", "additionalProperties": false, "properties": { "verifier_version": { "type": "string" }, "git_commit": { "type": "string" } } }
   }
 }
