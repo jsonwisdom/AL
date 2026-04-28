@@ -14,11 +14,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Validate ALMS production receipts
+        run: bash scripts/audit/validate_receipts.sh
+
       - name: Build daily JSON audit report
         run: bash scripts/audit/build_ipfs_daily_json_report.sh
 
-      - name: Verify daily JSON audit report
-        run: bash scripts/audit/verify_ipfs_daily_json_report.sh
+      - name: Verify daily JSON audit report deeply
+        run: bash scripts/audit/verify_ipfs_daily_json_report.sh --deep
 
       - name: Commit audit report
         run: |
