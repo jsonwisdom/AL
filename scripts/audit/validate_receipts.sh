@@ -6,10 +6,14 @@ SCHEMA="$ROOT/schema.json"
 
 test -f "$SCHEMA"
 
-FOUND=0
+mapfile -t RECEIPTS < <(find "$ROOT" -maxdepth 1 -type f -name 'CLAIM_*.json' | LC_ALL=C sort)
 
-find "$ROOT" -maxdepth 1 -type f -name 'CLAIM_*.json' | LC_ALL=C sort | while read -r f; do
-  FOUND=1
+if [ "${#RECEIPTS[@]}" -eq 0 ]; then
+  echo "ALMS_RECEIPTS_EMPTY root=$ROOT"
+  exit 0
+fi
+
+for f in "${RECEIPTS[@]}"; do
 
   python3 -m json.tool "$f" >/dev/null
   jq -e 'type == "object"' "$f" >/dev/null
@@ -64,8 +68,4 @@ find "$ROOT" -maxdepth 1 -type f -name 'CLAIM_*.json' | LC_ALL=C sort | while re
   echo "ALMS_RECEIPT_OK file=$f claim_id=$claim_id verdict=$verdict"
 done
 
-if [ "$FOUND" = "0" ]; then
-  echo "ALMS_RECEIPTS_EMPTY root=$ROOT"
-else
-  echo "ALMS_RECEIPTS_VALIDATE_OK root=$ROOT"
-fi
+echo "ALMS_RECEIPTS_VALIDATE_OK root=$ROOT count=${#RECEIPTS[@]}"
