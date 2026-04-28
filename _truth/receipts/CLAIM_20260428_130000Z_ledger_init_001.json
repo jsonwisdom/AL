@@ -1,0 +1,20 @@
+{
+  "claim_id": "CLAIM_20260428_130000Z_ledger_init_001",
+  "timestamp_utc": "2026-04-28T13:00:00Z",
+  "actor": "jaywisdom.base",
+  "nonce": "ledger-init-001",
+  "inputs": {
+    "source": "_truth/receipts/*.json",
+    "domain": "meme_court_flywheel",
+    "claim_type": "ledger_initialization",
+    "ordered_by": "LC_ALL=C filename sort"
+  },
+  "outputs": {
+    "statement": "ALMS ledger initialized as the ordered append-only view of production receipts.",
+    "ledger_path": "_truth/ledger/2026-04.jsonl",
+    "builder": "scripts/ledger/build_receipt_ledger.sh",
+    "validator": "scripts/ledger/verify_receipt_ledger.sh",
+    "doctrine": "Receipts become ordered memory before Merkle roots and EAS anchors."
+  },
+  "verdict": "VERIFIED"
+}
