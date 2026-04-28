@@ -1,7 +1,7 @@
 {
   "version": "2026.04",
   "jurisdiction": "MN",
-  "generated_at": "2026-04-28T01:45:00Z",
+  "generated_at": "generated_by_scripts/build_verified_claims_manifest.sh",
   "verifier": "AL VCLP",
   "ledger": "../_truth/ledger.jsonl",
   "source": {
@@ -45,6 +45,17 @@
       "canonical_json": "../claims/mn/mn_003_e12_education.canonical.json",
       "ledger_entry": "../_truth/ledger.jsonl",
       "text_hash": "sha256:c7ce1052106ac40377a1f2691270ecdc3a7d22bab7998c93492aeeef2d204c48"
+    },
+    {
+      "claim_number": "004",
+      "claim_id": "mn_20260428T020159Z_23d3dc76",
+      "claim_text": "Higher Education                                          4,015,828",
+      "claim_type": "budget_line_item",
+      "line_hint": 66,
+      "status": "source_anchored",
+      "canonical_json": "../claims/mn/mn_004_higher_education.canonical.json",
+      "ledger_entry": "../_truth/ledger.jsonl",
+      "text_hash": "sha256:23d3dc765b29804719e0984a4caacd452473bdc0d5fe39c22ab4433423eedab1"
     }
   ]
 }
