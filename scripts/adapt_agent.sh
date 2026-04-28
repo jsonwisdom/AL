@@ -15,20 +15,29 @@ command -v jq >/dev/null 2>&1 || { echo "ADAPT_FAIL missing_jq" >&2; exit 2; }
 ACC=$(jq -r '.accuracy_target' "$PROFILE")
 COST=$(jq -r '.cost_target' "$PROFILE")
 
-ADAPT_BUDGET=0.05
+# v2 damped mutation: max ~3% absolute move per adaptation.
+MAX_STEP=0.03
 
-if [ "$CURRENT_RANK" -eq 1 ]; then
-  NEW_ACC=$(awk "BEGIN {print ($ACC + ($ADAPT_BUDGET * 0.6))}")
-  NEW_COST=$(awk "BEGIN {print ($COST + ($ADAPT_BUDGET * 0.3))}")
-  STRAT="leader_precision"
+# Strategy selection from real signals.
+# attack: challenger with weak reputation attacks price and lifts accuracy.
+# defend: leader under decay pressure protects quality.
+# stabilize: any agent with low rep slows down and buys reliability.
+if (( $(awk "BEGIN {print ($REPUTATION_MULT < 1.12)}") )); then
+  STRAT="stabilize"
+  NEW_ACC=$(awk "BEGIN {print $ACC + ($MAX_STEP * 0.8)}")
+  NEW_COST=$(awk "BEGIN {print $COST + ($MAX_STEP * 0.5)}")
+elif [ "$CURRENT_RANK" -gt 1 ]; then
+  STRAT="attack"
+  NEW_ACC=$(awk "BEGIN {print $ACC + ($MAX_STEP * 0.6)}")
+  NEW_COST=$(awk "BEGIN {print $COST - ($MAX_STEP * 0.8)}")
+elif (( $(awk "BEGIN {print ($RECENT_DECAY_PRESSURE < 0.85)}") )); then
+  STRAT="defend"
+  NEW_ACC=$(awk "BEGIN {print $ACC + ($MAX_STEP * 1.0)}")
+  NEW_COST=$(awk "BEGIN {print $COST + ($MAX_STEP * 0.4)}")
 else
-  if (( $(awk "BEGIN {print ($RECENT_DECAY_PRESSURE < 0.7)}") )); then
-    NEW_COST=$(awk "BEGIN {print ($COST - ($ADAPT_BUDGET * 0.7))}")
-  else
-    NEW_COST=$COST
-  fi
-  NEW_ACC=$(awk "BEGIN {print ($ACC + ($ADAPT_BUDGET * 0.4))}")
-  STRAT="challenger_efficiency"
+  STRAT="hold"
+  NEW_ACC="$ACC"
+  NEW_COST="$COST"
 fi
 
 # clamp
@@ -40,9 +49,9 @@ jq -n \
   --argjson acc "$NEW_ACC" \
   --argjson cost "$NEW_COST" \
   --arg strat "$STRAT" \
-  --arg reason "rank_${CURRENT_RANK}_decay_${RECENT_DECAY_PRESSURE}" \
+  --arg reason "v2_rank_${CURRENT_RANK}_decay_${RECENT_DECAY_PRESSURE}_rep_${REPUTATION_MULT}" \
   '{agent_id:$id, accuracy_target:$acc, cost_target:$cost, strategy:$strat, last_reason:$reason}' > "$TMP"
 
 mv "$TMP" "$PROFILE"
 
-echo "ADAPT_OK agent=$AGENT_ID acc=$NEW_ACC cost=$NEW_COST strat=$STRAT"
+echo "ADAPT_OK agent=$AGENT_ID acc=$NEW_ACC cost=$NEW_COST strat=$STRAT rep=$REPUTATION_MULT decay=$RECENT_DECAY_PRESSURE"
