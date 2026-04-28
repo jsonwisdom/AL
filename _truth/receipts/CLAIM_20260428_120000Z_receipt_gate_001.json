@@ -1,0 +1,28 @@
+{
+  "claim_id": "CLAIM_20260428_120000Z_receipt_gate_001",
+  "timestamp_utc": "2026-04-28T12:00:00Z",
+  "actor": "jaywisdom.base",
+  "nonce": "receipt-gate-001",
+  "inputs": {
+    "source": "jsonwisdom/AL",
+    "domain": "meme_court_flywheel",
+    "observed_files": [
+      "_truth/receipts/schema.json",
+      "scripts/audit/validate_receipts.sh",
+      ".github/workflows/alms-daily-json-audit.yml"
+    ],
+    "claim_type": "repo_control_plane_state"
+  },
+  "outputs": {
+    "statement": "The ALMS Daily JSON Audit workflow validates production receipts before building and deep-verifying the daily audit report.",
+    "expected_ci_order": [
+      "validate_receipts",
+      "build_daily_json_audit_report",
+      "verify_daily_json_audit_report_deep",
+      "commit_audit_report"
+    ],
+    "production_genesis": "_truth/receipts",
+    "doctrine": "Only valid receipts enter the audit flywheel."
+  },
+  "verdict": "VERIFIED"
+}
