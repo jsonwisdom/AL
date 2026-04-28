@@ -14,35 +14,30 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Ensure core scripts are executable
+      - name: Ensure scripts executable
         run: |
           chmod +x verify.sh || true
           find scripts -type f -name "*.sh" -exec chmod +x {} \; || true
-          find docs -type f -name "*.sh" -exec chmod +x {} \; || true
 
       - name: Run core AL verification
-        run: |
-          bash verify.sh
+        run: bash verify.sh
 
-      - name: Check receipt JSON syntax
-        run: |
-          if [ -d receipts ]; then
-            find receipts -type f -name "*.json" -print0 | xargs -0 -r -n1 jq empty
-          fi
+      - name: Build manifest (source of truth)
+        run: bash scripts/build_verified_claims_manifest.sh
 
-      - name: Check claim JSON syntax
+      - name: Check manifest matches committed file
         run: |
-          if [ -d claims ]; then
-            find claims -type f -name "*.json" -print0 | xargs -0 -r -n1 jq empty
-          fi
+          git diff --exit-code docs/verified-claims.json || (echo "MANIFEST_DRIFT" && exit 1)
 
-      - name: Check verified claims manifest
-        run: |
-          bash scripts/check_verified_claims_manifest.sh
+      - name: Run manifest integrity check
+        run: bash scripts/check_verified_claims_manifest.sh
 
-      - name: Verify public proof artifacts exist
+      - name: Validate JSON files
         run: |
-          test -f verify.sh
-          test -d docs
-          test -d receipts
+          find claims -type f -name "*.json" -print0 | xargs -0 -r -n1 jq empty
+          jq empty docs/verified-claims.json
+
+      - name: Check public artifacts
+        run: |
+          test -f docs/index.html
           test -f docs/verified-claims.json
