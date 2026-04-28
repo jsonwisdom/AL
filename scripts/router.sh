@@ -5,6 +5,7 @@ CLAIM_ID="${1:-}"
 RECEIPTS_DIR="${RECEIPTS_DIR:-receipts}"
 OUT_DIR="${OUT_DIR:-_truth/routing}"
 LEDGER="$OUT_DIR/leaderboard.json"
+HISTORY="$OUT_DIR/history.jsonl"
 DECAY_LAMBDA="${DECAY_LAMBDA:-0.1}"
 REPUTATION_ALPHA="${REPUTATION_ALPHA:-0.25}"
 NOW_EPOCH="${NOW_EPOCH:-$(date -u +%s)}"
@@ -20,22 +21,16 @@ command -v sha256sum >/dev/null 2>&1 || { echo "ROUTER_FAIL reason=missing_sha25
 
 mkdir -p "$OUT_DIR"
 TMP="$(mktemp)"
-trap 'rm -f "$TMP"' EXIT
+DECISION_TMP="$(mktemp)"
+trap 'rm -f "$TMP" "$DECISION_TMP"' EXIT
 
-# Final routing fitness:
-# final_weight = avg(decayed routing.weight) * reputation_multiplier
-# reputation_multiplier = 1 + (REPUTATION_ALPHA * avg_accuracy * consistency)
-# consistency = 1 - avg(abs(score - avg_accuracy))
-# This rewards steady correctness without letting stale receipts dominate.
 jq -s \
   --argjson now "$NOW_EPOCH" \
   --argjson lambda "$DECAY_LAMBDA" \
   --argjson repalpha "$REPUTATION_ALPHA" \
   '
   def ts_to_epoch:
-    if . == null then $now
-    else (try (fromdateiso8601) catch $now)
-    end;
+    if . == null then $now else (try (fromdateiso8601) catch $now) end;
 
   map(select(.schema == "agent_income_receipt_v1"))
   | map(select(.payment.paid == true))
@@ -100,8 +95,10 @@ jq -n \
   --arg hash_input "$HASH_INPUT" \
   --arg hash "$HASH" \
   --slurpfile leaderboard "$TMP" \
-  '{schema:$schema, decision_id:$decision_id, claim_id:$claim_id, selected_agent:$selected_agent, routing_weight:$routing_weight, timestamp:$timestamp, decay:{type:"exponential", lambda_per_day:($decay_lambda|tonumber)}, reputation:{type:"avg_accuracy_times_consistency", alpha:($reputation_alpha|tonumber)}, leaderboard:$leaderboard[0], hash_input:$hash_input, hash:$hash}' \
-  | tee "$OUT_DIR/${DECISION_ID}.json" >/dev/null
+  '{schema:$schema, decision_id:$decision_id, claim_id:$claim_id, selected_agent:$selected_agent, routing_weight:$routing_weight, timestamp:$timestamp, decay:{type:"exponential", lambda_per_day:($decay_lambda|tonumber)}, reputation:{type:"avg_accuracy_times_consistency", alpha:($reputation_alpha|tonumber)}, leaderboard:$leaderboard[0], hash_input:$hash_input, hash:$hash}' > "$DECISION_TMP"
 
+cp "$DECISION_TMP" "$OUT_DIR/${DECISION_ID}.json"
 cp "$TMP" "$LEDGER"
+jq -c '{timestamp, claim_id, selected_agent, routing_weight, leaderboard}' "$DECISION_TMP" >> "$HISTORY"
+
 echo "ROUTER_OK claim=$CLAIM_ID selected_agent=$WINNER weight=$WEIGHT decay_lambda=$DECAY_LAMBDA reputation_alpha=$REPUTATION_ALPHA hash=$HASH"
