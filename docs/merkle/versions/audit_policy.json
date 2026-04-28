@@ -1,0 +1,10 @@
+{
+  "policy_id": "ALMS_MERKLE_VERSION_AUDIT_POLICY",
+  "system": "Jay's Wisdom of Zero Trust",
+  "epoch": "2026-04",
+  "locked_version": "2026-04-v1",
+  "active_version": "2026-04-v2-pending",
+  "daily_audit_scope": "FULL_CURRENT_RECEIPT_SET",
+  "eas_verification_scope": "LOCKED_VERSION_ONLY",
+  "rule": "Daily audit tracks active memory. EAS verification checks frozen anchors. Do not reinterpret locked roots with later receipts."
+}
