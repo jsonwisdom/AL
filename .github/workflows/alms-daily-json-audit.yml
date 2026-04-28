@@ -29,6 +29,12 @@ jobs:
       - name: Verify ALMS Merkle root
         run: bash scripts/merkle/verify_merkle_root.sh
 
+      - name: Build ALMS EAS Merkle anchor payload
+        run: bash scripts/eas/build_merkle_anchor_payload.sh
+
+      - name: Verify ALMS EAS Merkle anchor payload
+        run: bash scripts/eas/verify_merkle_anchor_payload.sh
+
       - name: Build daily JSON audit report
         run: bash scripts/audit/build_ipfs_daily_json_report.sh
 
@@ -39,6 +45,6 @@ jobs:
         run: |
           git config user.name "alms-audit-bot"
           git config user.email "actions@github.com"
-          git add _truth/ledger _truth/merkle _truth/audit docs/audit
+          git add _truth/ledger _truth/merkle _truth/eas _truth/audit docs/audit
           git commit -m "Add daily ALMS JSON audit report" || exit 0
           git push
