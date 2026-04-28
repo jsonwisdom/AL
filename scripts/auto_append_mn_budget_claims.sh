@@ -17,15 +17,25 @@ EXTRACT_HASH="sha256:da5ad1bbe192eae56c96cf574025b8f915839d29c78c69e8d6b98a0ad9d
 command -v jq >/dev/null 2>&1 || { echo "AUTO_APPEND_FAIL reason=missing_jq" >&2; exit 2; }
 command -v sha256sum >/dev/null 2>&1 || { echo "AUTO_APPEND_FAIL reason=missing_sha256sum" >&2; exit 2; }
 
+git_guard() {
+  git rev-parse --is-inside-work-tree >/dev/null 2>&1 || { echo "AUTO_GIT_FAIL reason=not_git_repo" >&2; exit 1; }
+}
+
+if [ "$DRY_RUN" = "0" ]; then
+  git_guard
+  if [ -n "$(git status --porcelain)" ]; then
+    echo "AUTO_APPEND_FAIL reason=dirty_worktree"
+    echo "Uncommitted changes detected. Refusing to auto-append."
+    git status --short
+    exit 1
+  fi
+fi
+
 test -f "$CANDIDATES" || { echo "AUTO_APPEND_FAIL reason=missing_candidates path=$CANDIDATES" >&2; exit 1; }
 
 mkdir -p claims/mn
 mkdir -p "$(dirname "$HASH_REGISTRY")"
 touch "$HASH_REGISTRY"
-
-git_guard() {
-  git rev-parse --is-inside-work-tree >/dev/null 2>&1 || { echo "AUTO_GIT_FAIL reason=not_git_repo" >&2; exit 1; }
-}
 
 slugify() {
   printf '%s' "$1" \
@@ -191,7 +201,6 @@ bash scripts/build_verified_claims_manifest.sh
 bash scripts/check_verified_claims_manifest.sh
 
 if [ "$AUTO_COMMIT" = "1" ]; then
-  git_guard
   if [ "$added" -eq 0 ]; then
     echo "AUTO_COMMIT_SKIP reason=no_new_claims"
   else
