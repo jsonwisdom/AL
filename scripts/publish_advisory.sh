@@ -109,3 +109,12 @@ jq -cn \
   }' > "$IPFS_OUT"
 
 echo "ADVISORY_PUBLISH_OK cid=$CID root=sha256:$ROOT commit=$COMMIT archive=$ARCHIVE sha256=$ARCHIVE_SHA256"
+
+echo "VERIFY_START"
+
+if ./scripts/verify_advisory.sh _truth/ipfs/latest_advisory_index.json; then
+  echo "PUBLISH_VERIFY_OK cid=$CID"
+else
+  echo "FAIL publish_verification_failed"
+  exit 1
+fi
