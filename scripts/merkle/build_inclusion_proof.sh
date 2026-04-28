@@ -70,17 +70,27 @@ while [ "$(wc -l < "$TMP/current.txt" | tr -d ' ')" -gt 1 ]; do
     DUPLICATED=false
   fi
 
-  PARENT="$(printf '%s%s' "$TARGET" "$SIBLING" | sha256sum | awk '{print $1}')"
+  if [ "$INDEX" -le "$SIBLING_INDEX" ]; then
+    PARENT_INPUT_LEFT="$TARGET"
+    PARENT_INPUT_RIGHT="$SIBLING"
+  else
+    PARENT_INPUT_LEFT="$SIBLING"
+    PARENT_INPUT_RIGHT="$TARGET"
+  fi
+
+  PARENT="$(printf '%s%s' "$PARENT_INPUT_LEFT" "$PARENT_INPUT_RIGHT" | sha256sum | awk '{print $1}')"
 
   jq -cn \
     --argjson level "$LEVEL" \
     --arg node "$TARGET" \
     --arg sibling "$SIBLING" \
     --arg parent "$PARENT" \
+    --arg parent_input_left "$PARENT_INPUT_LEFT" \
+    --arg parent_input_right "$PARENT_INPUT_RIGHT" \
     --argjson node_index "$INDEX" \
     --argjson sibling_index "$SIBLING_INDEX" \
     --argjson duplicated "$DUPLICATED" \
-    '{level:$level,node:$node,sibling:$sibling,parent:$parent,node_index:$node_index,sibling_index:$sibling_index,duplicated:$duplicated}' >> "$PROOF_JSONL"
+    '{level:$level,node:$node,sibling:$sibling,parent:$parent,parent_input_left:$parent_input_left,parent_input_right:$parent_input_right,node_index:$node_index,sibling_index:$sibling_index,duplicated:$duplicated}' >> "$PROOF_JSONL"
 
   : > "$TMP/next.txt"
   i=0

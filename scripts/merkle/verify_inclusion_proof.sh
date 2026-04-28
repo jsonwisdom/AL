@@ -33,7 +33,25 @@ for i in $(seq 0 $((COUNT - 1))); do
     exit 1
   fi
 
-  ACTUAL_PARENT="$(printf '%s%s' "$TARGET" "$SIBLING" | sha256sum | awk '{print $1}')"
+  PARENT_INPUT_LEFT="$(jq -r ".proof_path[$i].parent_input_left // empty" "$PROOF")"
+  PARENT_INPUT_RIGHT="$(jq -r ".proof_path[$i].parent_input_right // empty" "$PROOF")"
+
+  if [ -z "$PARENT_INPUT_LEFT" ] || [ -z "$PARENT_INPUT_RIGHT" ]; then
+    echo "ALMS_INCLUSION_VERIFY_FAIL missing_parent_inputs step=$i"
+    exit 1
+  fi
+
+  if [ "$PARENT_INPUT_LEFT" != "$TARGET" ] && [ "$PARENT_INPUT_RIGHT" != "$TARGET" ]; then
+    echo "ALMS_INCLUSION_VERIFY_FAIL parent_inputs_do_not_include_target step=$i target=$TARGET"
+    exit 1
+  fi
+
+  if [ "$PARENT_INPUT_LEFT" != "$SIBLING" ] && [ "$PARENT_INPUT_RIGHT" != "$SIBLING" ]; then
+    echo "ALMS_INCLUSION_VERIFY_FAIL parent_inputs_do_not_include_sibling step=$i sibling=$SIBLING"
+    exit 1
+  fi
+
+  ACTUAL_PARENT="$(printf '%s%s' "$PARENT_INPUT_LEFT" "$PARENT_INPUT_RIGHT" | sha256sum | awk '{print $1}')"
   if [ "$PARENT" != "$ACTUAL_PARENT" ]; then
     echo "ALMS_INCLUSION_VERIFY_FAIL parent_mismatch step=$i expected=$PARENT actual=$ACTUAL_PARENT"
     exit 1
