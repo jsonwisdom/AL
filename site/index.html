@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html>
-<body style="background:black;color:#00ff88;font-family:monospace">
+<head>
+<meta charset="utf-8">
+<title>ALMS LIVE</title>
+<style>
+body { background:#050505; color:#00ff88; font-family:monospace; padding:40px; }
+.box { border:1px solid #00ff88; padding:20px; margin-bottom:20px; }
+</style>
+</head>
+<body>
 
-<h2>ALMS STATUS</h2>
-<pre id="out">Loading...</pre>
+<h1>ALMS LIVE ⚙️</h1>
+
+<div class="box">
+<pre id="data">Loading...</pre>
+</div>
 
 <script>
-async function load(){
-  const r = await fetch('../status.json');
-  const d = await r.json();
-
-  let consensus = d.consensus ? "TRUE" : "SPLIT";
-  let color = d.consensus ? "#00ff88" : "#ff0044";
-
-  document.getElementById("out").innerHTML =
-    "STATUS: " + d.status + "\n" +
-    "LAST RUN: " + d.last_run + "\n" +
-    "ROOT: " + d.root_sha256 + "\n" +
-    "MERKLE ROOT: " + d.merkle_root + "\n" +
-    "LEAF COUNT: " + d.leaf_count + "\n\n" +
-    "CONSENSUS: <span style='color:" + color + ";font-weight:bold'>" + consensus + "</span>";
-}
-
-load();
+fetch('live.json')
+  .then(r=>r.json())
+  .then(d=>{
+    document.getElementById('data').textContent = JSON.stringify(d,null,2);
+  });
 </script>
+
 </body>
 </html>
