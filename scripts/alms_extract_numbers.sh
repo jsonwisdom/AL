@@ -8,7 +8,12 @@
 #   - canonicalizes decimals such as 3.70 -> 3.7
 #   - normalizes common scale words and abbreviations into base_value
 #   - preserves appearance order for deterministic replay
-#   - emits source_anchor for source-presence invariant checks
+#   - emits per-number source_anchor for source-presence invariant checks
+#
+# Anchor markers v1.1:
+#   [source:inline]       applies to nearest preceding number
+#   [source:sentence:s1]  applies to nearest preceding number
+#   [source:citation:r1]  applies to nearest preceding number
 #
 # This is still not external truth verification. It is numeric meaning locking.
 # =============================================================================
@@ -18,10 +23,12 @@ set -euo pipefail
 usage() {
   cat <<'EOF'
 Usage:
-  echo "Minnesota projects a $3.7 billion balance. [source:inline]" | scripts/alms_extract_numbers.sh
+  echo "Balance $3.7 billion [source:citation:mmb]. Margin 42% [source:inline]" | scripts/alms_extract_numbers.sh
 
-Anchor marker v1:
+Anchor markers v1.1:
   [source:inline]
+  [source:sentence:s1]
+  [source:citation:ref1]
 
 Outputs JSON:
   {
@@ -55,7 +62,8 @@ import sys
 getcontext().prec = 50
 text = sys.argv[1]
 
-anchor_inline = bool(re.search(r'\[source:inline\]', text, re.IGNORECASE))
+anchor_pattern = re.compile(r'\[source:(?P<kind>inline|sentence:[A-Za-z0-9_.-]+|citation:[A-Za-z0-9_.-]+)\]', re.IGNORECASE)
+anchors = [(m.start(), m.end(), m.group('kind').lower()) for m in anchor_pattern.finditer(text)]
 
 scale_aliases = {
     'k': 'thousand', 'thousand': 'thousand',
@@ -68,7 +76,7 @@ scale_multipliers = {
     '': Decimal('1'), 'thousand': Decimal('1000'), 'million': Decimal('1000000'),
     'billion': Decimal('1000000000'), 'trillion': Decimal('1000000000000'),
 }
-pattern = re.compile(
+number_pattern = re.compile(
     r'(?P<prefix>[$])?'
     r'(?<![A-Za-z0-9.])'
     r'(?P<number>\d+(?:,\d{3})*(?:\.\d+)?|\d*\.\d+)'
@@ -81,8 +89,23 @@ def canonical_decimal(value: Decimal) -> str:
         return str(value.quantize(Decimal('1')))
     return format(value.normalize(), 'f')
 
+def anchor_for_number(num_end: int, next_num_start):
+    candidates = []
+    for start, end, kind in anchors:
+        if start < num_end:
+            continue
+        if next_num_start is not None and start > next_num_start:
+            continue
+        # v1.1: anchor must appear before the next number and within nearby inline window.
+        if start - num_end <= 120:
+            candidates.append((start, kind))
+    if not candidates:
+        return None
+    return sorted(candidates, key=lambda x: x[0])[0][1]
+
+matches = list(number_pattern.finditer(text))
 numbers = []
-for idx, match in enumerate(pattern.finditer(text)):
+for idx, match in enumerate(matches):
     raw = match.group(0)
     cleaned = match.group('number').replace(',', '')
     percent = bool(match.group('percent'))
@@ -95,6 +118,7 @@ for idx, match in enumerate(pattern.finditer(text)):
     unit = 'percent' if percent else ('usd' if match.group('prefix') else 'number')
     multiplier = Decimal('1') if percent else scale_multipliers.get(scale, Decimal('1'))
     base_value_decimal = value_decimal * multiplier
+    next_start = matches[idx + 1].start() if idx + 1 < len(matches) else None
     numbers.append({
         'index': idx,
         'raw': raw,
@@ -102,7 +126,7 @@ for idx, match in enumerate(pattern.finditer(text)):
         'scale': scale,
         'unit': unit,
         'base_value': canonical_decimal(base_value_decimal),
-        'source_anchor': 'inline' if anchor_inline else None,
+        'source_anchor': anchor_for_number(match.end(), next_start),
         'start': match.start(),
         'end': match.end(),
     })
