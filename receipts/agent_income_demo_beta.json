@@ -1,0 +1,26 @@
+{
+  "schema": "agent_income_receipt_v1",
+  "receipt_id": "agent_income_demo_beta",
+  "agent_id": "agent_beta",
+  "claim_id": "DEMO_CLAIM_001",
+  "state": "DRIFT",
+  "payment": {
+    "provider": "x402",
+    "paid": true,
+    "cost_usd": "0.005",
+    "unit": "per_verification",
+    "chain": "base",
+    "asset": "USDC",
+    "payment_proof": "demo_payment_proof_beta"
+  },
+  "accuracy": {
+    "score": 0.5,
+    "basis": "state_mapping_v1"
+  },
+  "routing": {
+    "weight": 99.0000000000,
+    "rule": "accuracy_over_cost"
+  },
+  "hash_input": "agent_income_receipt_v1|agent_income_demo_beta|agent_beta|DEMO_CLAIM_001|DRIFT|x402|0.005",
+  "hash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+}
