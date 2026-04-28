@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.github.io/AL/contracts/agent_income_receipt_v1.schema.json",
+  "title": "Agent Income Receipt v1",
+  "type": "object",
+  "required": [
+    "schema",
+    "receipt_id",
+    "agent_id",
+    "claim_id",
+    "state",
+    "payment",
+    "accuracy",
+    "routing",
+    "hash_input",
+    "hash"
+  ],
+  "properties": {
+    "schema": { "const": "agent_income_receipt_v1" },
+    "receipt_id": { "type": "string" },
+    "agent_id": { "type": "string" },
+    "claim_id": { "type": "string" },
+    "state": { "enum": ["RESOLVED", "DRIFT", "FAIL"] },
+    "payment": {
+      "type": "object",
+      "required": ["provider", "paid", "cost_usd", "unit"],
+      "properties": {
+        "provider": { "const": "x402" },
+        "paid": { "type": "boolean" },
+        "cost_usd": { "type": "string", "pattern": "^[0-9]+(\\.[0-9]+)?$" },
+        "unit": { "const": "per_verification" },
+        "chain": { "type": "string" },
+        "asset": { "type": "string" },
+        "tx_hash": { "type": "string" },
+        "payment_proof": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "accuracy": {
+      "type": "object",
+      "required": ["score", "basis"],
+      "properties": {
+        "score": { "type": "number", "minimum": 0, "maximum": 1 },
+        "basis": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "routing": {
+      "type": "object",
+      "required": ["weight", "rule"],
+      "properties": {
+        "weight": { "type": "number", "minimum": 0 },
+        "rule": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "hash_input": { "type": "string" },
+    "hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+  },
+  "additionalProperties": false
+}
