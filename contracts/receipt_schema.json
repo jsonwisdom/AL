@@ -17,46 +17,19 @@
     "replay_cmd"
   ],
   "properties": {
-    "receipt_id": {
-      "type": "string",
-      "pattern": "^ALMS-MS-\\d{3,}$"
-    },
-    "schema_version": {
-      "type": "string",
-      "const": "2.0"
-    },
-    "input_hash": {
-      "type": "string",
-      "pattern": "^sha256:[a-f0-9]{64}$"
-    },
-    "normalized_hash": {
-      "type": "string",
-      "pattern": "^sha256:[a-f0-9]{64}$"
-    },
-    "receipt_hash": {
-      "type": "string",
-      "pattern": "^sha256:[a-f0-9]{64}$"
-    },
-    "transform_version": {
-      "type": "string",
-      "enum": ["normalize_strict_v1"]
-    },
-    "invariant_version": {
-      "type": "string",
-      "enum": ["invariants_v1"]
-    },
-    "original_claim": {
-      "type": "string",
-      "minLength": 1
-    },
-    "normalized_text": {
-      "type": "string",
-      "minLength": 1
-    },
+    "receipt_id": { "type": "string", "pattern": "^ALMS-MS-\\d{3,}$" },
+    "schema_version": { "type": "string", "const": "2.0" },
+    "input_hash": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+    "normalized_hash": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+    "receipt_hash": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+    "transform_version": { "type": "string", "enum": ["normalize_strict_v1"] },
+    "invariant_version": { "type": "string", "enum": ["invariants_v1"] },
+    "original_claim": { "type": "string", "minLength": 1 },
+    "normalized_text": { "type": "string", "minLength": 1 },
     "numeric_extract": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["extractor_version", "numbers_hash", "numbers"],
+      "required": ["extractor_version", "numbers_hash", "numbers", "numbers_fingerprint"],
       "properties": {
         "extractor_version": { "type": "string", "const": "alms_numeric_extractor_v1" },
         "numbers_hash": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
@@ -65,15 +38,30 @@
           "items": {
             "type": "object",
             "additionalProperties": false,
-            "required": ["raw", "number", "scale", "unit", "value", "start", "end"],
+            "required": ["index", "raw", "canonical_number", "scale", "unit", "base_value", "start", "end"],
             "properties": {
+              "index": { "type": "integer", "minimum": 0 },
               "raw": { "type": "string" },
-              "number": { "type": "string" },
+              "canonical_number": { "type": "string" },
               "scale": { "type": "string" },
               "unit": { "type": "string", "enum": ["number", "percent", "usd"] },
-              "value": { "type": "number" },
+              "base_value": { "type": "string" },
               "start": { "type": "integer", "minimum": 0 },
               "end": { "type": "integer", "minimum": 0 }
+            }
+          }
+        },
+        "numbers_fingerprint": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["index", "unit", "base_value", "scale"],
+            "properties": {
+              "index": { "type": "integer", "minimum": 0 },
+              "unit": { "type": "string", "enum": ["number", "percent", "usd"] },
+              "base_value": { "type": "string" },
+              "scale": { "type": "string" }
             }
           }
         }
@@ -81,29 +69,15 @@
     },
     "verdict": {
       "type": "string",
-      "enum": [
-        "VERIFIED",
-        "FALSE",
-        "MISLEADING",
-        "UNVERIFIED",
-        "NEEDS_MORE_EVIDENCE"
-      ]
+      "enum": ["VERIFIED", "FALSE", "MISLEADING", "UNVERIFIED", "NEEDS_MORE_EVIDENCE"]
     },
-    "verdict_reason": {
-      "type": "string"
-    },
+    "verdict_reason": { "type": "string" },
     "failure_states": {
       "type": "array",
       "uniqueItems": true,
       "items": {
         "type": "string",
-        "enum": [
-          "SOURCE_TIMEOUT",
-          "FORMAT_DRIFT",
-          "INVARIANT_CONFLICT",
-          "AMBIGUOUS_ENTITY",
-          "NON_REPRODUCIBLE"
-        ]
+        "enum": ["SOURCE_TIMEOUT", "FORMAT_DRIFT", "INVARIANT_CONFLICT", "AMBIGUOUS_ENTITY", "NON_REPRODUCIBLE"]
       }
     },
     "invariants_results": {
@@ -134,13 +108,8 @@
         }
       }
     },
-    "valid_as_of": {
-      "type": "string",
-      "format": "date-time"
-    },
-    "replay_cmd": {
-      "type": "string"
-    },
+    "valid_as_of": { "type": "string", "format": "date-time" },
+    "replay_cmd": { "type": "string" },
     "environment": {
       "type": "object",
       "additionalProperties": false,
