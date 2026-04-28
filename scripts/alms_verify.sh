@@ -22,20 +22,41 @@ INPUT_HASH=$(echo "$NORMALIZE_OUTPUT" | jq -r '.input_hash')
 NORMALIZED_HASH=$(echo "$NORMALIZE_OUTPUT" | jq -r '.normalized_hash')
 NORMALIZED_TEXT=$(echo "$NORMALIZE_OUTPUT" | jq -r '.normalized_text')
 
-# --- NEW: numeric extraction ---
 NUMERIC_OUTPUT=$(printf '%s' "$NORMALIZED_TEXT" | "$EXTRACTOR")
 NUMBERS_HASH=$(echo "$NUMERIC_OUTPUT" | jq -r '.numbers_hash')
 NUMBERS=$(echo "$NUMERIC_OUTPUT" | jq '.numbers')
 
+# --- numeric drift check ---
 if [ "$MODE" = "replay" ]; then
   REC_HASH=$(jq -r '.numeric_extract.numbers_hash // empty' "$RECEIPT_FILE")
   if [ -n "$REC_HASH" ] && [ "$NUMBERS_HASH" != "$REC_HASH" ]; then
-    echo "ALMS_VERIFY_FAIL numeric_drift_detected expected=$REC_HASH actual=$NUMBERS_HASH" >&2
+    echo "ALMS_VERIFY_FAIL numeric_drift_detected" >&2
     exit 1
   fi
 fi
 
-INVARIANT_RESULTS=$(jq -n --arg nh "$NUMBERS_HASH" '[{"id":"numerical_consistency","passed":true,"details":"numbers_hash stable: "+$nh}]')
+# --- NEW: source anchor invariant ---
+ANCHOR_FAIL=false
+COUNT=$(echo "$NUMBERS" | jq 'length')
+if [ "$COUNT" -gt 0 ]; then
+  MISSING=$(echo "$NUMBERS" | jq '[.[] | select(.source_anchor == null)] | length')
+  if [ "$MISSING" -gt 0 ]; then
+    ANCHOR_FAIL=true
+  fi
+fi
+
+if [ "$ANCHOR_FAIL" = true ]; then
+  echo "ALMS_VERIFY_FAIL numeric_anchor_missing" >&2
+  exit 1
+fi
+
+INVARIANT_RESULTS=$(jq -n \
+  --arg nh "$NUMBERS_HASH" \
+  '[
+    {"id":"numerical_consistency","passed":true,"details":"numbers_hash stable"},
+    {"id":"source_presence","passed":true,"details":"all numbers anchored"}
+  ]'
+)
 
 RECEIPT_ID="ALMS-MS-$(date -u +%Y%m%d%H%M%S)"
 VALID_AS_OF=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
