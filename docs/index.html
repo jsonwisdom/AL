@@ -11,11 +11,13 @@
     .muted { color:#8bb8a0; }
     .card { border:1px solid #1f3b31; border-radius:16px; padding:18px; background:#0d1512; margin:18px 0; }
     .ok { color:#00ff88; font-weight:bold; }
+    .warn { color:#ffd166; }
     code { color:#ffd166; overflow-wrap:anywhere; }
     a { color:#6ecbff; }
     table { width:100%; border-collapse:collapse; margin-top:12px; }
     th,td { border-bottom:1px solid #1f3b31; padding:10px; text-align:left; vertical-align:top; }
     th { color:#8bb8a0; }
+    .small { font-size:.9rem; }
   </style>
 </head>
 <body>
@@ -25,6 +27,7 @@
 
   <section class="card">
     <h2>Verified Minnesota Claims</h2>
+    <p class="muted small" id="manifestStatus">Loading <code>verified-claims.json</code>…</p>
     <table>
       <thead>
         <tr>
@@ -35,7 +38,7 @@
           <th>Proof</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="claimsBody">
         <tr>
           <td>001</td>
           <td><code>Health & Human Services                                  25,808,265</code></td>
@@ -53,12 +56,13 @@
       </tbody>
     </table>
     <p>
+      <a href="verified-claims.json">Verified Claims Manifest</a> ·
       <a href="../_truth/ledger.jsonl">VCLP Ledger</a> ·
       <a href="../sources/mn/mmb-feb-2026-forecast.pdf">Source PDF</a>
     </p>
   </section>
 
-  <section class="card">
+  <section class="card" id="sourceAnchor">
     <h2>Source Anchor</h2>
     <p>Agency: Minnesota Management and Budget</p>
     <p>Document: February 2026 Budget and Economic Forecast</p>
@@ -76,5 +80,52 @@ bash verify.sh</code></pre>
 
   <footer class="muted">⚙️ jaywisdom.base.eth · Verification &gt; Narrative</footer>
 </main>
+
+<script>
+function esc(value) {
+  return String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+async function loadClaims() {
+  const status = document.getElementById('manifestStatus');
+  const body = document.getElementById('claimsBody');
+  const sourceAnchor = document.getElementById('sourceAnchor');
+
+  try {
+    const res = await fetch('verified-claims.json', { cache: 'no-store' });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const manifest = await res.json();
+
+    body.innerHTML = manifest.claims.map(claim => `
+      <tr>
+        <td>${esc(claim.claim_number)}</td>
+        <td><code>${esc(claim.claim_text)}</code><br><span class="muted small">${esc(claim.claim_id)}</span></td>
+        <td>${esc(claim.line_hint)}</td>
+        <td class="ok">${esc(String(claim.status || '').toUpperCase())} + LEDGER_VERIFIED</td>
+        <td>
+          <a href="${esc(claim.canonical_json)}">canonical</a><br>
+          <span class="muted small"><code>${esc(claim.text_hash)}</code></span>
+        </td>
+      </tr>
+    `).join('');
+
+    if (manifest.source) {
+      sourceAnchor.innerHTML = `
+        <h2>Source Anchor</h2>
+        <p>Agency: ${esc(manifest.source.agency)}</p>
+        <p>Document: ${esc(manifest.source.document)}</p>
+        <p>PDF Hash:<br><code>${esc(manifest.source.source_hash)}</code></p>
+        <p>Extract Hash:<br><code>${esc(manifest.source.extract_hash)}</code></p>
+      `;
+    }
+
+    status.innerHTML = `Loaded <code>verified-claims.json</code> · ${manifest.claims.length} claims · version ${esc(manifest.version)}`;
+  } catch (err) {
+    status.innerHTML = `<span class="warn">Manifest load failed; showing embedded fallback claims.</span>`;
+  }
+}
+
+loadClaims();
+</script>
 </body>
 </html>
