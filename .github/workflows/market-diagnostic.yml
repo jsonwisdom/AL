@@ -15,6 +15,10 @@ on:
         description: "Reputation alpha"
         required: false
         default: "0.25"
+      reset_profiles:
+        description: "Reset adaptive profiles before run (1=yes, 0=no)"
+        required: false
+        default: "1"
 
 jobs:
   diagnose:
@@ -27,6 +31,7 @@ jobs:
         env:
           DECAY_LAMBDA: ${{ github.event.inputs.decay_lambda }}
           REPUTATION_ALPHA: ${{ github.event.inputs.reputation_alpha }}
+          RESET_PROFILES: ${{ github.event.inputs.reset_profiles }}
         run: |
           bash scripts/run_market_diagnostic.sh "${{ github.event.inputs.rounds }}"
           cat _truth/routing/diagnostic.json
@@ -38,5 +43,8 @@ jobs:
           path: |
             _truth/routing/diagnostic.json
             _truth/routing/history.jsonl
+            _truth/routing/profile_history.jsonl
             docs/routing-history.json
             _truth/routing/leaderboard.json
+            agents/agent_alpha_profile.json
+            agents/agent_beta_profile.json
