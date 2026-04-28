@@ -36,6 +36,10 @@ jobs:
           bash scripts/run_market_diagnostic.sh "${{ github.event.inputs.rounds }}"
           cat _truth/routing/diagnostic.json
 
+      - name: Assert emergence conditions
+        run: |
+          bash scripts/assert_market_emergence.sh _truth/routing/diagnostic.json
+
       - name: Upload diagnostic artifacts
         uses: actions/upload-artifact@v4
         with:
