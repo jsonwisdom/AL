@@ -26,3 +26,9 @@ Alabama Machine Speed is a state-level truth arbitration system that turns
 policy claims into verifiable, receipt-backed proof artifacts at machine speed.
 
 Read the full State Chess Board explainer: [studio/STATE_CHESS_BOARD.md](studio/STATE_CHESS_BOARD.md)
+
+---
+
+## Operator Guides
+
+- [ALMS Operator Guide](docs/ALMS_OPERATOR_GUIDE.md) — receipts, Merkle roots, preflight audit, and verification flow.
