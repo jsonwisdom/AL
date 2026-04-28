@@ -8,6 +8,7 @@
 #   - canonicalizes decimals such as 3.70 -> 3.7
 #   - normalizes common scale words and abbreviations into base_value
 #   - preserves appearance order for deterministic replay
+#   - emits source_anchor for source-presence invariant checks
 #
 # This is still not external truth verification. It is numeric meaning locking.
 # =============================================================================
@@ -17,7 +18,10 @@ set -euo pipefail
 usage() {
   cat <<'EOF'
 Usage:
-  echo "Minnesota projects a $3.7 billion balance." | scripts/alms_extract_numbers.sh
+  echo "Minnesota projects a $3.7 billion balance. [source:inline]" | scripts/alms_extract_numbers.sh
+
+Anchor marker v1:
+  [source:inline]
 
 Outputs JSON:
   {
@@ -51,39 +55,26 @@ import sys
 getcontext().prec = 50
 text = sys.argv[1]
 
+anchor_inline = bool(re.search(r'\[source:inline\]', text, re.IGNORECASE))
+
 scale_aliases = {
-    'k': 'thousand',
-    'thousand': 'thousand',
-    'm': 'million',
-    'mm': 'million',
-    'mn': 'million',
-    'million': 'million',
-    'b': 'billion',
-    'bn': 'billion',
-    'billion': 'billion',
-    't': 'trillion',
-    'tn': 'trillion',
-    'trillion': 'trillion',
+    'k': 'thousand', 'thousand': 'thousand',
+    'm': 'million', 'mm': 'million', 'mn': 'million', 'million': 'million',
+    'b': 'billion', 'bn': 'billion', 'billion': 'billion',
+    't': 'trillion', 'tn': 'trillion', 'trillion': 'trillion',
     '': '',
 }
-
 scale_multipliers = {
-    '': Decimal('1'),
-    'thousand': Decimal('1000'),
-    'million': Decimal('1000000'),
-    'billion': Decimal('1000000000'),
-    'trillion': Decimal('1000000000000'),
+    '': Decimal('1'), 'thousand': Decimal('1000'), 'million': Decimal('1000000'),
+    'billion': Decimal('1000000000'), 'trillion': Decimal('1000000000000'),
 }
-
 pattern = re.compile(
     r'(?P<prefix>[$])?'
     r'(?<![A-Za-z0-9.])'
     r'(?P<number>\d+(?:,\d{3})*(?:\.\d+)?|\d*\.\d+)'
     r'(?P<percent>%)?'
     r'(?:\s*(?P<scale>thousand|million|billion|trillion|bn|mn|mm|tn|k|m|b|t))?'
-    r'(?![A-Za-z0-9])',
-    re.IGNORECASE,
-)
+    r'(?![A-Za-z0-9])', re.IGNORECASE)
 
 def canonical_decimal(value: Decimal) -> str:
     if value == value.to_integral_value():
@@ -93,48 +84,35 @@ def canonical_decimal(value: Decimal) -> str:
 numbers = []
 for idx, match in enumerate(pattern.finditer(text)):
     raw = match.group(0)
-    number_raw = match.group('number')
-    cleaned = number_raw.replace(',', '')
+    cleaned = match.group('number').replace(',', '')
     percent = bool(match.group('percent'))
     scale_raw = (match.group('scale') or '').lower()
     scale = scale_aliases.get(scale_raw, scale_raw)
-
     try:
         value_decimal = Decimal(cleaned)
     except InvalidOperation:
         continue
-
     unit = 'percent' if percent else ('usd' if match.group('prefix') else 'number')
     multiplier = Decimal('1') if percent else scale_multipliers.get(scale, Decimal('1'))
     base_value_decimal = value_decimal * multiplier
-
-    number_obj = {
+    numbers.append({
         'index': idx,
         'raw': raw,
         'canonical_number': canonical_decimal(value_decimal),
         'scale': scale,
         'unit': unit,
         'base_value': canonical_decimal(base_value_decimal),
+        'source_anchor': 'inline' if anchor_inline else None,
         'start': match.start(),
         'end': match.end(),
-    }
-    numbers.append(number_obj)
+    })
 
-# Hash only canonical semantic numeric tuples, preserving appearance order.
-# Raw/start/end remain in output for audit, but are excluded from numbers_hash
-# so harmless formatting drift does not break numeric equivalence.
 fingerprint = [
-    {
-        'index': n['index'],
-        'unit': n['unit'],
-        'base_value': n['base_value'],
-        'scale': n['scale'],
-    }
+    {'index': n['index'], 'unit': n['unit'], 'base_value': n['base_value'], 'scale': n['scale']}
     for n in numbers
 ]
 canonical = json.dumps(fingerprint, sort_keys=True, separators=(',', ':'))
 digest = hashlib.sha256(canonical.encode('utf-8')).hexdigest()
-
 print(json.dumps({
     'extractor_version': 'alms_numeric_extractor_v1',
     'numbers': numbers,
