@@ -17,7 +17,8 @@ awk '
     label=trim(label)
 
     rest=raw
-    sub(/^[^0-9-]*/, "", rest)
+    sub(label, "", rest)
+    sub(/^[[:space:]]+/, "", rest)
     split(rest, parts, /[[:space:]]+/)
     val=parts[1]
 
