@@ -1,0 +1,26 @@
+{
+  "claim_id": "mn_20260428T021632Z_9f5f1b37",
+  "jurisdiction": "MN",
+  "claim_type": "budget_line_item",
+  "claim_text": "Public Safety & Judiciary                              3,640,627",
+  "source": {
+    "agency": "Minnesota Management and Budget",
+    "document": "February 2026 Budget and Economic Forecast",
+    "source_file": "sources/mn/mmb-feb-2026-forecast.pdf",
+    "source_hash": "sha256:c4ac46e46b80b42a6abc24edbe0480ac4983cb0090a758bd7458b2ea62faca69",
+    "extract_file": "_truth/sources/mmb-feb-2026-forecast.txt",
+    "extract_hash": "sha256:da5ad1bbe192eae56c96cf574025b8f915839d29c78c69e8d6b98a0ad9d7d917",
+    "line_hint": 69,
+    "line_match": "Public Safety & Judiciary                              3,640,627",
+    "source_anchor_status": "anchored"
+  },
+  "artifacts": {
+    "text_hash": "sha256:9f5f1b378114a2797d7d6947c3c10a39601848d42d6ef3717728b20a66c7d95b",
+    "ledger": "_truth/ledger.jsonl"
+  },
+  "verification": {
+    "ledger_status": "verified",
+    "verified_by": "verify.sh"
+  },
+  "status": "source_anchored"
+}

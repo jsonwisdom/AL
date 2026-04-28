@@ -1,0 +1,26 @@
+{
+  "claim_id": "mn_20260428T022923Z_a0e6fd23",
+  "jurisdiction": "MN",
+  "claim_type": "budget_line_item",
+  "claim_text": "Environment and Energy                                 711,149",
+  "source": {
+    "agency": "Minnesota Management and Budget",
+    "document": "February 2026 Budget and Economic Forecast",
+    "source_file": "sources/mn/mmb-feb-2026-forecast.pdf",
+    "source_hash": "sha256:c4ac46e46b80b42a6abc24edbe0480ac4983cb0090a758bd7458b2ea62faca69",
+    "extract_file": "_truth/sources/mmb-feb-2026-forecast.txt",
+    "extract_hash": "sha256:da5ad1bbe192eae56c96cf574025b8f915839d29c78c69e8d6b98a0ad9d7d917",
+    "line_hint": 71,
+    "line_match": "Environment and Energy                                 711,149",
+    "source_anchor_status": "anchored"
+  },
+  "artifacts": {
+    "text_hash": "sha256:a0e6fd23f9ff42e36bb03d7a9c8a2c834647c9d06892f7a733002fb56e46b9b9",
+    "ledger": "_truth/ledger.jsonl"
+  },
+  "verification": {
+    "ledger_status": "verified",
+    "verified_by": "verify.sh"
+  },
+  "status": "source_anchored"
+}
