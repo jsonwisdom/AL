@@ -1,0 +1,11 @@
+{
+  "chain": "base-mainnet",
+  "chain_id": 8453,
+  "eas_contract": "0x4200000000000000000000000000000000000021",
+  "schema_registry": "0x4200000000000000000000000000000000000020",
+  "schema": "string identity,bytes32 root,string cid,string commit,bytes32 archiveSha256",
+  "schema_uid": "UNREGISTERED",
+  "verified": true,
+  "verified_at": "2026-04-28",
+  "source": "cast verification via version() and getSchemaRegistry()"
+}
