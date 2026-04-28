@@ -6,6 +6,7 @@ RECEIPTS_DIR="${RECEIPTS_DIR:-receipts}"
 OUT_DIR="${OUT_DIR:-_truth/routing}"
 LEDGER="$OUT_DIR/leaderboard.json"
 DECAY_LAMBDA="${DECAY_LAMBDA:-0.1}"
+REPUTATION_ALPHA="${REPUTATION_ALPHA:-0.25}"
 NOW_EPOCH="${NOW_EPOCH:-$(date -u +%s)}"
 
 if [ -z "$CLAIM_ID" ]; then
@@ -21,13 +22,15 @@ mkdir -p "$OUT_DIR"
 TMP="$(mktemp)"
 trap 'rm -f "$TMP"' EXIT
 
-# Time-decayed routing.
-# Each receipt keeps its raw routing.weight, but the router uses:
-# decayed_weight = routing.weight * exp(-DECAY_LAMBDA * age_days)
-# Missing timestamps are treated as fresh for backwards-compatible demo receipts.
+# Final routing fitness:
+# final_weight = avg(decayed routing.weight) * reputation_multiplier
+# reputation_multiplier = 1 + (REPUTATION_ALPHA * avg_accuracy * consistency)
+# consistency = 1 - avg(abs(score - avg_accuracy))
+# This rewards steady correctness without letting stale receipts dominate.
 jq -s \
   --argjson now "$NOW_EPOCH" \
   --argjson lambda "$DECAY_LAMBDA" \
+  --argjson repalpha "$REPUTATION_ALPHA" \
   '
   def ts_to_epoch:
     if . == null then $now
@@ -46,17 +49,28 @@ jq -s \
       decayed_routing_weight: (.routing.weight * ((-.age_days * $lambda) | exp))
     })
   | group_by(.agent_id)
-  | map({
-      agent_id: .[0].agent_id,
-      receipts: length,
-      latest_receipt_id: (sort_by(.receipt_id)[-1].receipt_id),
-      avg_accuracy: ((map(.accuracy.score) | add) / length),
-      avg_cost_usd: ((map(.payment.cost_usd | tonumber) | add) / length),
-      raw_routing_weight: ((map(.routing.weight) | add) / length),
-      routing_weight: ((map(.decayed_routing_weight) | add) / length),
-      avg_decay_factor: ((map(.decay_factor) | add) / length),
-      decay_lambda: $lambda
-    })
+  | map(. as $g
+      | (($g | map(.accuracy.score) | add) / length) as $avg_acc
+      | (($g | map((.accuracy.score - $avg_acc) | if . < 0 then -. else . end) | add) / length) as $mad
+      | (1 - $mad) as $consistency
+      | (($g | map(.decayed_routing_weight) | add) / length) as $decayed_weight
+      | (1 + ($repalpha * $avg_acc * $consistency)) as $rep_mult
+      | {
+          agent_id: $g[0].agent_id,
+          receipts: length,
+          latest_receipt_id: ($g | sort_by(.receipt_id)[-1].receipt_id),
+          avg_accuracy: $avg_acc,
+          consistency: $consistency,
+          accuracy_mad: $mad,
+          avg_cost_usd: (($g | map(.payment.cost_usd | tonumber) | add) / length),
+          raw_routing_weight: (($g | map(.routing.weight) | add) / length),
+          decayed_routing_weight: $decayed_weight,
+          reputation_multiplier: $rep_mult,
+          routing_weight: ($decayed_weight * $rep_mult),
+          avg_decay_factor: (($g | map(.decay_factor) | add) / length),
+          decay_lambda: $lambda,
+          reputation_alpha: $repalpha
+        })
   | sort_by(.routing_weight, (0 - .avg_cost_usd), .receipts)
   | reverse
 ' "$RECEIPTS_DIR"/*.json 2>/dev/null > "$TMP" || echo '[]' > "$TMP"
@@ -71,7 +85,7 @@ fi
 
 TS="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 DECISION_ID="route_${CLAIM_ID}_${TS}"
-HASH_INPUT="agent_router_v1|time_decay|lambda=$DECAY_LAMBDA|$CLAIM_ID|$WINNER|$WEIGHT|$TS"
+HASH_INPUT="agent_router_v1|time_decay|lambda=$DECAY_LAMBDA|reputation_alpha=$REPUTATION_ALPHA|$CLAIM_ID|$WINNER|$WEIGHT|$TS"
 HASH="$(printf '%s' "$HASH_INPUT" | sha256sum | awk '{print $1}')"
 
 jq -n \
@@ -82,11 +96,12 @@ jq -n \
   --argjson routing_weight "$WEIGHT" \
   --arg timestamp "$TS" \
   --arg decay_lambda "$DECAY_LAMBDA" \
+  --arg reputation_alpha "$REPUTATION_ALPHA" \
   --arg hash_input "$HASH_INPUT" \
   --arg hash "$HASH" \
   --slurpfile leaderboard "$TMP" \
-  '{schema:$schema, decision_id:$decision_id, claim_id:$claim_id, selected_agent:$selected_agent, routing_weight:$routing_weight, timestamp:$timestamp, decay:{type:"exponential", lambda_per_day:($decay_lambda|tonumber)}, leaderboard:$leaderboard[0], hash_input:$hash_input, hash:$hash}' \
+  '{schema:$schema, decision_id:$decision_id, claim_id:$claim_id, selected_agent:$selected_agent, routing_weight:$routing_weight, timestamp:$timestamp, decay:{type:"exponential", lambda_per_day:($decay_lambda|tonumber)}, reputation:{type:"avg_accuracy_times_consistency", alpha:($reputation_alpha|tonumber)}, leaderboard:$leaderboard[0], hash_input:$hash_input, hash:$hash}' \
   | tee "$OUT_DIR/${DECISION_ID}.json" >/dev/null
 
 cp "$TMP" "$LEDGER"
-echo "ROUTER_OK claim=$CLAIM_ID selected_agent=$WINNER weight=$WEIGHT decay_lambda=$DECAY_LAMBDA hash=$HASH"
+echo "ROUTER_OK claim=$CLAIM_ID selected_agent=$WINNER weight=$WEIGHT decay_lambda=$DECAY_LAMBDA reputation_alpha=$REPUTATION_ALPHA hash=$HASH"
