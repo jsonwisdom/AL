@@ -4,6 +4,9 @@ set -euo pipefail
 CANDIDATES="${CANDIDATES:-_truth/snapshots/mn_budget_claim_candidates.tsv}"
 LIMIT="${LIMIT:-2}"
 DRY_RUN="${DRY_RUN:-1}"
+AUTO_COMMIT="${AUTO_COMMIT:-0}"
+AUTO_PUSH="${AUTO_PUSH:-0}"
+BRANCH="${BRANCH:-master}"
 
 SOURCE_HASH="sha256:c4ac46e46b80b42a6abc24edbe0480ac4983cb0090a758bd7458b2ea62faca69"
 EXTRACT_HASH="sha256:da5ad1bbe192eae56c96cf574025b8f915839d29c78c69e8d6b98a0ad9d7d917"
@@ -13,6 +16,10 @@ command -v jq >/dev/null 2>&1 || { echo "AUTO_APPEND_FAIL reason=missing_jq" >&2
 test -f "$CANDIDATES" || { echo "AUTO_APPEND_FAIL reason=missing_candidates path=$CANDIDATES" >&2; exit 1; }
 
 mkdir -p claims/mn
+
+git_guard() {
+  git rev-parse --is-inside-work-tree >/dev/null 2>&1 || { echo "AUTO_GIT_FAIL reason=not_git_repo" >&2; exit 1; }
+}
 
 slugify() {
   printf '%s' "$1" \
@@ -121,5 +128,25 @@ fi
 
 bash scripts/build_verified_claims_manifest.sh
 bash scripts/check_verified_claims_manifest.sh
+
+if [ "$AUTO_COMMIT" = "1" ]; then
+  git_guard
+  if [ "$added" -eq 0 ]; then
+    echo "AUTO_COMMIT_SKIP reason=no_new_claims"
+  else
+    git add _truth/ledger.jsonl docs/verified-claims.json claims/mn/*.canonical.json
+    if git diff --cached --quiet; then
+      echo "AUTO_COMMIT_SKIP reason=no_staged_changes"
+    else
+      ts=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+      git commit -m "AUTO: ingest ${added} MN budget claims | ${ts}"
+      echo "AUTO_COMMIT_OK added=$added"
+      if [ "$AUTO_PUSH" = "1" ]; then
+        git push origin "$BRANCH"
+        echo "AUTO_PUSH_OK branch=$BRANCH"
+      fi
+    fi
+  fi
+fi
 
 echo "AUTO_APPEND_OK added=$added manifest=docs/verified-claims.json"
