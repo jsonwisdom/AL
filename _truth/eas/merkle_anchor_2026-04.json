@@ -1,1 +1,20 @@
-{"payload_id":"ALMS_EAS_MERKLE_ANCHOR_2026_04","network":"base","root":"jaywisdom.eth","actor":"jaywisdom.base","month":"2026-04","source_merkle_root":"_truth/merkle/root.json","source_ledger":"_truth/ledger/2026-04.jsonl","merkle_root":"9e22fff920f6107f5137d5817b5c52692286c98828b5c6ce6c7d2537db2026a8","ledger_sha256":"d50fd0be6356335fc999efe37cf2456e3097429ed72f7042f5c2230c68416657","leaf_count":5,"algorithm":"sha256_pairwise_sorted_v1","payload_hash":"sha256:fe928cf0daaa7a50c479a7222255e62ed0b9245bec513afd83bd96380f713441","status":"READY_FOR_EAS_UI_SIGNATURE","attestation_uid":"PENDING","tx_hash":"PENDING","attester":"PENDING","built_at_utc":"2026-04-28T20:34:09Z"}
+{
+  "payload_id": "ALMS_EAS_MERKLE_ANCHOR_2026_04",
+  "network": "base",
+  "root": "jaywisdom.eth",
+  "actor": "jaywisdom.base",
+  "month": "2026-04",
+  "source_merkle_root": "_truth/merkle/root.json",
+  "source_ledger": "_truth/ledger/2026-04.jsonl",
+  "merkle_root": "9e22fff920f6107f5137d5817b5c52692286c98828b5c6ce6c7d2537db2026a8",
+  "ledger_sha256": "d50fd0be6356335fc999efe37cf2456e3097429ed72f7042f5c2230c68416657",
+  "leaf_count": 5,
+  "algorithm": "sha256_pairwise_sorted_v1",
+  "payload_hash": "sha256:fe928cf0daaa7a50c479a7222255e62ed0b9245bec513afd83bd96380f713441",
+  "status": "CW_EAS_ATTESTATION_LOCKED",
+  "attestation_uid": "0x67A8C483EFA19950D4D8917CC125D201F41DDDECF76779CB9EDEA7AFFC0B6714",
+  "tx_hash": "0xba8c1226090e77ceb91105cd224d91e9c0706875cbd52dfd31da4461c6048b1e",
+  "attester": "0x992d94aA31dcD8fDb7d8E6885370ef8202AED399",
+  "built_at_utc": "2026-04-28T20:34:09Z",
+  "verdict": "CW_EAS_ATTESTATION_LOCKED"
+}
