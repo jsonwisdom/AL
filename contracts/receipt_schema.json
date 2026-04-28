@@ -53,6 +53,32 @@
       "type": "string",
       "minLength": 1
     },
+    "numeric_extract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["extractor_version", "numbers_hash", "numbers"],
+      "properties": {
+        "extractor_version": { "type": "string", "const": "alms_numeric_extractor_v1" },
+        "numbers_hash": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+        "numbers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["raw", "number", "scale", "unit", "value", "start", "end"],
+            "properties": {
+              "raw": { "type": "string" },
+              "number": { "type": "string" },
+              "scale": { "type": "string" },
+              "unit": { "type": "string", "enum": ["number", "percent", "usd"] },
+              "value": { "type": "number" },
+              "start": { "type": "integer", "minimum": 0 },
+              "end": { "type": "integer", "minimum": 0 }
+            }
+          }
+        }
+      }
+    },
     "verdict": {
       "type": "string",
       "enum": [
