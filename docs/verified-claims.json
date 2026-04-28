@@ -1,0 +1,39 @@
+{
+  "version": "2026.04",
+  "jurisdiction": "MN",
+  "generated_at": "2026-04-28T01:45:00Z",
+  "verifier": "AL VCLP",
+  "ledger": "../_truth/ledger.jsonl",
+  "source": {
+    "agency": "Minnesota Management and Budget",
+    "document": "February 2026 Budget and Economic Forecast",
+    "source_pdf": "../sources/mn/mmb-feb-2026-forecast.pdf",
+    "source_hash": "sha256:c4ac46e46b80b42a6abc24edbe0480ac4983cb0090a758bd7458b2ea62faca69",
+    "extract_file": "../_truth/sources/mmb-feb-2026-forecast.txt",
+    "extract_hash": "sha256:da5ad1bbe192eae56c96cf574025b8f915839d29c78c69e8d6b98a0ad9d7d917"
+  },
+  "claims": [
+    {
+      "claim_number": "001",
+      "claim_id": "mn_20260428T012659Z_9a552847",
+      "claim_text": "Health & Human Services                                  25,808,265",
+      "claim_type": "budget_line_item",
+      "line_hint": 68,
+      "status": "source_anchored",
+      "canonical_json": "../claims/mn/mn_001_hhs.canonical.json",
+      "ledger_entry": "../_truth/ledger.jsonl",
+      "text_hash": "sha256:9a5528472631772e87fb52e392c064d4ece561b6c8439e7eb432643443e54137"
+    },
+    {
+      "claim_number": "002",
+      "claim_id": "mn_20260428T014021Z_2ac5339a",
+      "claim_text": "Public Safety & Judiciary                                  3,640,627",
+      "claim_type": "budget_line_item",
+      "line_hint": 69,
+      "status": "source_anchored",
+      "canonical_json": "../claims/mn/mn_002_public_safety_judiciary.canonical.json",
+      "ledger_entry": "../_truth/ledger.jsonl",
+      "text_hash": "sha256:2ac5339a35913fd27a3ea49424a089dc8c022c5734b5b40502d5a0a2c24a40b5"
+    }
+  ]
+}
