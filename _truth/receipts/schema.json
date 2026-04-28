@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.github.io/AL/receipts/schema.json",
+  "title": "ALMS Receipt Schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "claim_id",
+    "timestamp_utc",
+    "actor",
+    "nonce",
+    "inputs",
+    "outputs",
+    "verdict"
+  ],
+  "properties": {
+    "claim_id": {
+      "type": "string",
+      "pattern": "^CLAIM_[0-9]{8}_[0-9]{6}Z_[a-zA-Z0-9_-]+$"
+    },
+    "timestamp_utc": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+    },
+    "actor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "nonce": {
+      "type": "string",
+      "minLength": 8
+    },
+    "inputs": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "outputs": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "VERIFIED",
+        "FALSE",
+        "MISLEADING",
+        "UNVERIFIED",
+        "NEEDS_MORE_EVIDENCE",
+        "VOID"
+      ]
+    },
+    "voids_claim_id": {
+      "type": "string",
+      "pattern": "^CLAIM_[0-9]{8}_[0-9]{6}Z_[a-zA-Z0-9_-]+$"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "verdict": {
+            "const": "VOID"
+          }
+        }
+      },
+      "then": {
+        "required": ["voids_claim_id"]
+      }
+    }
+  ]
+}
