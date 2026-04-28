@@ -5,15 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AL — Public Verification</title>
   <style>
-    body { margin: 0; background: #070b0a; color: #e8fff3; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
-    main { max-width: 980px; margin: 0 auto; padding: 32px 18px; }
-    .card { border: 1px solid #1f3b31; border-radius: 16px; padding: 18px; background: #0d1512; margin: 18px 0; }
-    h1, h2 { color: #00ff88; }
-    .ok { color: #00ff88; }
-    .muted { color: #8bb8a0; }
-    code { color: #ffd166; overflow-wrap: anywhere; }
-    a { color: #6ecbff; }
-    .grid { display: grid; grid-template-columns: 180px 1fr; gap: 8px 14px; }
+    body { margin:0; background:#070b0a; color:#e8fff3; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+    main { max-width:1100px; margin:0 auto; padding:32px 18px; }
+    h1,h2 { color:#00ff88; }
+    .muted { color:#8bb8a0; }
+    .card { border:1px solid #1f3b31; border-radius:16px; padding:18px; background:#0d1512; margin:18px 0; }
+    .ok { color:#00ff88; font-weight:bold; }
+    code { color:#ffd166; overflow-wrap:anywhere; }
+    a { color:#6ecbff; }
+    table { width:100%; border-collapse:collapse; margin-top:12px; }
+    th,td { border-bottom:1px solid #1f3b31; padding:10px; text-align:left; vertical-align:top; }
+    th { color:#8bb8a0; }
   </style>
 </head>
 <body>
@@ -22,33 +24,57 @@
   <p class="muted">Claim → source bytes → extracted line → hash → ledger → verifier.</p>
 
   <section class="card">
-    <h2>✅ Verified MN Claim #001</h2>
-    <div class="grid">
-      <div>Status</div><div class="ok">source_anchored / ledger_verified</div>
-      <div>Claim ID</div><div><code>mn_20260428T012659Z_9a552847</code></div>
-      <div>Claim Text</div><div><code>Health & Human Services                                  25,808,265</code></div>
-      <div>Agency</div><div>Minnesota Management and Budget</div>
-      <div>Document</div><div>February 2026 Budget and Economic Forecast</div>
-      <div>Line Hint</div><div><code>68</code></div>
-      <div>Source PDF Hash</div><div><code>sha256:c4ac46e46b80b42a6abc24edbe0480ac4983cb0090a758bd7458b2ea62faca69</code></div>
-      <div>Extract Hash</div><div><code>sha256:da5ad1bbe192eae56c96cf574025b8f915839d29c78c69e8d6b98a0ad9d7d917</code></div>
-      <div>Claim Text Hash</div><div><code>sha256:9a5528472631772e87fb52e392c064d4ece561b6c8439e7eb432643443e54137</code></div>
-    </div>
+    <h2>Verified Minnesota Claims</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Claim</th>
+          <th>Line</th>
+          <th>Status</th>
+          <th>Proof</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>001</td>
+          <td><code>Health & Human Services                                  25,808,265</code></td>
+          <td>68</td>
+          <td class="ok">SOURCE_ANCHORED + LEDGER_VERIFIED</td>
+          <td><a href="../claims/mn/mn_001_hhs.canonical.json">canonical</a></td>
+        </tr>
+        <tr>
+          <td>002</td>
+          <td><code>Public Safety & Judiciary                                  3,640,627</code></td>
+          <td>69</td>
+          <td class="ok">SOURCE_ANCHORED + LEDGER_VERIFIED</td>
+          <td><a href="../claims/mn/mn_002_public_safety_judiciary.canonical.json">canonical</a></td>
+        </tr>
+      </tbody>
+    </table>
     <p>
-      <a href="../claims/mn/mn_001_hhs.canonical.json">Canonical JSON</a> ·
       <a href="../_truth/ledger.jsonl">VCLP Ledger</a> ·
       <a href="../sources/mn/mmb-feb-2026-forecast.pdf">Source PDF</a>
     </p>
   </section>
 
   <section class="card">
-    <h2>Local Verification</h2>
-    <p>Clone the repo and run:</p>
-    <pre><code>bash verify.sh</code></pre>
-    <p class="ok">Expected result: ✅ chain valid — all checks passed</p>
+    <h2>Source Anchor</h2>
+    <p>Agency: Minnesota Management and Budget</p>
+    <p>Document: February 2026 Budget and Economic Forecast</p>
+    <p>PDF Hash:<br><code>sha256:c4ac46e46b80b42a6abc24edbe0480ac4983cb0090a758bd7458b2ea62faca69</code></p>
+    <p>Extract Hash:<br><code>sha256:da5ad1bbe192eae56c96cf574025b8f915839d29c78c69e8d6b98a0ad9d7d917</code></p>
   </section>
 
-  <footer class="muted">⚙️ jaywisdom.base.eth · Verification &gt; narrative</footer>
+  <section class="card">
+    <h2>Verify Locally</h2>
+    <pre><code>git clone https://github.com/jsonwisdom/AL.git
+cd AL
+bash verify.sh</code></pre>
+    <p class="ok">Expected: ✅ chain valid — all checks passed</p>
+  </section>
+
+  <footer class="muted">⚙️ jaywisdom.base.eth · Verification &gt; Narrative</footer>
 </main>
 </body>
 </html>
