@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-OUT="site/live.json"
+OUT="studio/live-intel/live.json"
 MERKLE="_truth/merkle/manifest.json"
 ROOT="$(cat _truth/merkle/root.txt 2>/dev/null || echo "NO_ROOT")"
 TS="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
