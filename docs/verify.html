@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AL Public Verifier</title>
+  <style>
+    :root { color-scheme: dark; }
+    body { margin: 0; background: #070b09; color: #e8fff4; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; line-height: 1.55; }
+    main { max-width: 980px; margin: 36px auto; padding: 0 18px; }
+    h1 { color: #00ff9d; border-bottom: 1px solid #1d3a2f; padding-bottom: 12px; }
+    .card { background: #101815; border: 1px solid #1d3a2f; border-radius: 14px; padding: 20px; margin: 18px 0; }
+    .grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 14px; }
+    .muted { color: #91aa9d; }
+    .ok { color: #00ff9d; font-weight: 800; }
+    .fail { color: #ff5c7a; font-weight: 800; }
+    code, pre, textarea, input { background: #19221f; color: #ffd166; border: 1px solid #263b34; border-radius: 8px; }
+    code { padding: 2px 6px; }
+    pre { overflow-x: auto; padding: 14px; }
+    textarea { width: 100%; min-height: 180px; padding: 12px; box-sizing: border-box; font-family: inherit; }
+    input { width: 100%; padding: 10px; box-sizing: border-box; font-family: inherit; }
+    button { background: #00ff9d; color: #03100b; border: 0; border-radius: 10px; padding: 12px 16px; font-weight: 900; cursor: pointer; margin-top: 10px; }
+    button.secondary { background: #263b34; color: #e8fff4; }
+    a { color: #75d7ff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>AL Public Verifier</h1>
+  <p class="muted">Paste a canonical claim JSON or verify the public manifest against Anchor #1.</p>
+
+  <section class="card">
+    <h2>Anchor #1</h2>
+    <div class="grid">
+      <div class="muted">ENS</div><div><code>jaywisdom.eth</code></div>
+      <div class="muted">Key</div><div><code>al.verified_claims</code></div>
+      <div class="muted">Root</div><div><code id="expectedRoot">sha256:2296352053488d28c6517523e0392080d3cef10724db0e2142779572c6179d7a</code></div>
+      <div class="muted">Manifest</div><div><a id="manifestLink" href="verified-claims.json">verified-claims.json</a></div>
+    </div>
+    <button onclick="verifyManifest()">Verify Public Manifest</button>
+    <button class="secondary" onclick="loadManifest()">Load Claims</button>
+    <pre id="manifestResult">Waiting.</pre>
+  </section>
+
+  <section class="card">
+    <h2>Verify A Canonical Claim</h2>
+    <p class="muted">Paste one canonical claim JSON. The verifier checks whether its <code>claim_id</code> and <code>text_hash</code> exist in the public manifest.</p>
+    <textarea id="claimInput" placeholder='{"claim_id":"...","artifacts":{"text_hash":"sha256:..."}}'></textarea>
+    <button onclick="verifyClaim()">Verify Claim</button>
+    <pre id="claimResult">Waiting.</pre>
+  </section>
+
+  <section class="card">
+    <h2>Claims</h2>
+    <div id="claimsList" class="muted">Not loaded yet.</div>
+  </section>
+</main>
+
+<script>
+const EXPECTED_ROOT = 'sha256:2296352053488d28c6517523e0392080d3cef10724db0e2142779572c6179d7a';
+const MANIFEST_URL = 'verified-claims.json';
+
+async function sha256Hex(text) {
+  const bytes = new TextEncoder().encode(text);
+  const hash = await crypto.subtle.digest('SHA-256', bytes);
+  return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+function rootLines(manifest) {
+  return manifest.claims
+    .map(c => [c.claim_id, c.text_hash, c.canonical_json].join('\t'))
+    .sort()
+    .join('\n') + '\n';
+}
+
+async function fetchManifest() {
+  const res = await fetch(MANIFEST_URL, { cache: 'no-store' });
+  if (!res.ok) throw new Error(`manifest fetch failed: ${res.status}`);
+  return await res.json();
+}
+
+async function verifyManifest() {
+  const out = document.getElementById('manifestResult');
+  try {
+    const manifest = await fetchManifest();
+    const computed = 'sha256:' + await sha256Hex(rootLines(manifest));
+    const ok = computed === EXPECTED_ROOT;
+    out.innerHTML = `${ok ? 'PASS' : 'FAIL'}\nexpected: ${EXPECTED_ROOT}\ncomputed: ${computed}\nclaims: ${manifest.claims.length}`;
+    out.className = ok ? 'ok' : 'fail';
+  } catch (e) {
+    out.textContent = `FAIL\n${e.message}`;
+    out.className = 'fail';
+  }
+}
+
+async function loadManifest() {
+  const list = document.getElementById('claimsList');
+  try {
+    const manifest = await fetchManifest();
+    list.innerHTML = manifest.claims.map(c => `
+      <div class="card">
+        <strong>${c.claim_number}. ${c.claim_text}</strong><br>
+        <span class="muted">line ${c.line_hint} · ${c.claim_id}</span><br>
+        <code>${c.text_hash}</code><br>
+        <a href="${c.canonical_json.replace('../','../')}">canonical JSON</a>
+      </div>
+    `).join('');
+  } catch (e) {
+    list.textContent = `Failed to load: ${e.message}`;
+  }
+}
+
+async function verifyClaim() {
+  const out = document.getElementById('claimResult');
+  try {
+    const claim = JSON.parse(document.getElementById('claimInput').value);
+    const manifest = await fetchManifest();
+    const claimId = claim.claim_id;
+    const textHash = claim.artifacts && claim.artifacts.text_hash;
+    const match = manifest.claims.find(c => c.claim_id === claimId && c.text_hash === textHash);
+    if (match) {
+      out.textContent = `PASS\nclaim_id: ${claimId}\ntext_hash: ${textHash}\nmanifest_claim_number: ${match.claim_number}`;
+      out.className = 'ok';
+    } else {
+      out.textContent = `FAIL\nNo manifest entry matched claim_id + text_hash.\nclaim_id: ${claimId}\ntext_hash: ${textHash}`;
+      out.className = 'fail';
+    }
+  } catch (e) {
+    out.textContent = `FAIL\n${e.message}`;
+    out.className = 'fail';
+  }
+}
+
+verifyManifest();
+loadManifest();
+</script>
+</body>
+</html>
