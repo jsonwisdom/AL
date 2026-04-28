@@ -17,7 +17,7 @@ STATUS="$(jq -r '.status // "VERIFIED"' "$IN")"
 TITLE="$(jq -r '.title // .leaf // "'"$LEAF"'"' "$IN")"
 LINE="$(jq -r '.claim // .extracted_line // .line // "verified public record line"' "$IN")"
 
-jq -cS \
+jq -n -cS \
   --arg leaf "$LEAF" \
   --arg title "$TITLE" \
   --arg line "$LINE" \
