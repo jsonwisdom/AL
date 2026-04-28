@@ -1,0 +1,42 @@
+name: Market Diagnostic
+
+on:
+  workflow_dispatch:
+    inputs:
+      rounds:
+        description: "Number of simulation rounds"
+        required: false
+        default: "50"
+      decay_lambda:
+        description: "Decay lambda per day"
+        required: false
+        default: "0.1"
+      reputation_alpha:
+        description: "Reputation alpha"
+        required: false
+        default: "0.25"
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run market diagnostic
+        env:
+          DECAY_LAMBDA: ${{ github.event.inputs.decay_lambda }}
+          REPUTATION_ALPHA: ${{ github.event.inputs.reputation_alpha }}
+        run: |
+          bash scripts/run_market_diagnostic.sh "${{ github.event.inputs.rounds }}"
+          cat _truth/routing/diagnostic.json
+
+      - name: Upload diagnostic artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: market-diagnostic
+          path: |
+            _truth/routing/diagnostic.json
+            _truth/routing/history.jsonl
+            docs/routing-history.json
+            _truth/routing/leaderboard.json
