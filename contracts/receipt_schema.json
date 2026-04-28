@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://alms.jaywisdom.xyz/schema/receipt-v2.json",
+  "title": "ALMS Receipt V2",
+  "description": "Canonical, tamper-evident, replayable receipt for Machine Speed ALMS V2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "receipt_id",
+    "schema_version",
+    "input_hash",
+    "normalized_hash",
+    "transform_version",
+    "invariant_version",
+    "verdict",
+    "valid_as_of",
+    "replay_cmd"
+  ],
+  "properties": {
+    "receipt_id": {
+      "type": "string",
+      "pattern": "^ALMS-MS-\\d{3,}$"
+    },
+    "schema_version": {
+      "type": "string",
+      "const": "2.0"
+    },
+    "input_hash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "normalized_hash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "receipt_hash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "transform_version": {
+      "type": "string",
+      "enum": ["normalize_strict_v1"]
+    },
+    "invariant_version": {
+      "type": "string",
+      "enum": ["invariants_v1"]
+    },
+    "original_claim": {
+      "type": "string",
+      "minLength": 1
+    },
+    "normalized_text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "VERIFIED",
+        "FALSE",
+        "MISLEADING",
+        "UNVERIFIED",
+        "NEEDS_MORE_EVIDENCE"
+      ]
+    },
+    "verdict_reason": {
+      "type": "string"
+    },
+    "failure_states": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "SOURCE_TIMEOUT",
+          "FORMAT_DRIFT",
+          "INVARIANT_CONFLICT",
+          "AMBIGUOUS_ENTITY",
+          "NON_REPRODUCIBLE"
+        ]
+      }
+    },
+    "invariants_results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "passed"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "passed": { "type": "boolean" },
+          "details": { "type": "string" }
+        }
+      }
+    },
+    "proofs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source_url", "fetch_timestamp", "content_hash"],
+        "additionalProperties": false,
+        "properties": {
+          "source_url": { "type": "string", "format": "uri" },
+          "archived_cid": { "type": "string" },
+          "fetch_timestamp": { "type": "string", "format": "date-time" },
+          "content_hash": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+          "status": { "type": "string", "enum": ["LIVE", "ARCHIVED", "TIMEOUT"] }
+        }
+      }
+    },
+    "valid_as_of": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "replay_cmd": {
+      "type": "string"
+    },
+    "environment": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "verifier_version": { "type": "string" },
+        "git_commit": { "type": "string" }
+      }
+    }
+  }
+}
