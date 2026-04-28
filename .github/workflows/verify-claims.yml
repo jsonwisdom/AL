@@ -32,6 +32,9 @@ jobs:
       - name: Run manifest integrity check
         run: bash scripts/check_verified_claims_manifest.sh
 
+      - name: Verify anchored claims root
+        run: bash scripts/verify_verified_claims_root.sh
+
       - name: Validate JSON files
         run: |
           find claims -type f -name "*.json" -print0 | xargs -0 -r -n1 jq empty
@@ -41,3 +44,4 @@ jobs:
         run: |
           test -f docs/index.html
           test -f docs/verified-claims.json
+          test -f docs/ipfs-anchor.txt
