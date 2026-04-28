@@ -36,8 +36,13 @@ jobs:
             find claims -type f -name "*.json" -print0 | xargs -0 -r -n1 jq empty
           fi
 
+      - name: Check verified claims manifest
+        run: |
+          bash scripts/check_verified_claims_manifest.sh
+
       - name: Verify public proof artifacts exist
         run: |
           test -f verify.sh
           test -d docs
           test -d receipts
+          test -f docs/verified-claims.json
