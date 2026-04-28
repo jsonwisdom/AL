@@ -7,15 +7,19 @@ DRY_RUN="${DRY_RUN:-1}"
 AUTO_COMMIT="${AUTO_COMMIT:-0}"
 AUTO_PUSH="${AUTO_PUSH:-0}"
 BRANCH="${BRANCH:-master}"
+HASH_REGISTRY="${HASH_REGISTRY:-data/claim_hashes.txt}"
 
 SOURCE_HASH="sha256:c4ac46e46b80b42a6abc24edbe0480ac4983cb0090a758bd7458b2ea62faca69"
 EXTRACT_HASH="sha256:da5ad1bbe192eae56c96cf574025b8f915839d29c78c69e8d6b98a0ad9d7d917"
 
 command -v jq >/dev/null 2>&1 || { echo "AUTO_APPEND_FAIL reason=missing_jq" >&2; exit 2; }
+command -v sha256sum >/dev/null 2>&1 || { echo "AUTO_APPEND_FAIL reason=missing_sha256sum" >&2; exit 2; }
 
 test -f "$CANDIDATES" || { echo "AUTO_APPEND_FAIL reason=missing_candidates path=$CANDIDATES" >&2; exit 1; }
 
 mkdir -p claims/mn
+mkdir -p "$(dirname "$HASH_REGISTRY")"
+touch "$HASH_REGISTRY"
 
 git_guard() {
   git rev-parse --is-inside-work-tree >/dev/null 2>&1 || { echo "AUTO_GIT_FAIL reason=not_git_repo" >&2; exit 1; }
@@ -53,6 +57,13 @@ added=0
 while IFS=$'\t' read -r line_hint label value claim_text; do
   [ -n "${claim_text:-}" ] || continue
 
+  claim_key_hash="$(printf '%s|%s|%s' "$label" "$value" "$SOURCE_HASH" | sha256sum | awk '{print $1}')"
+
+  if grep -q "^${claim_key_hash}[[:space:]]" "$HASH_REGISTRY"; then
+    echo "AUTO_DEDUPE_SKIP hash=$claim_key_hash line=$line_hint label=$label value=$value"
+    continue
+  fi
+
   if already_manifested "$claim_text"; then
     echo "AUTO_SKIP already_manifested line=$line_hint label=$label"
     continue
@@ -62,7 +73,7 @@ while IFS=$'\t' read -r line_hint label value claim_text; do
   slug=$(slugify "$label")
   canonical="claims/mn/mn_${num}_${slug}.canonical.json"
 
-  echo "AUTO_CANDIDATE num=$num line=$line_hint claim_text=$claim_text"
+  echo "AUTO_CANDIDATE num=$num line=$line_hint hash=$claim_key_hash claim_text=$claim_text"
 
   if [ "$DRY_RUN" = "1" ]; then
     added=$((added + 1))
@@ -115,6 +126,8 @@ while IFS=$'\t' read -r line_hint label value claim_text; do
       status: "source_anchored"
     }' > "$canonical"
 
+  printf '%s\t%s\t%s\t%s\n' "$claim_key_hash" "$label" "$value" "$claim_id" >> "$HASH_REGISTRY"
+
   echo "AUTO_CANONICAL path=$canonical"
   added=$((added + 1))
   [ "$added" -ge "$LIMIT" ] && break
@@ -134,7 +147,7 @@ if [ "$AUTO_COMMIT" = "1" ]; then
   if [ "$added" -eq 0 ]; then
     echo "AUTO_COMMIT_SKIP reason=no_new_claims"
   else
-    git add _truth/ledger.jsonl docs/verified-claims.json claims/mn/*.canonical.json
+    git add _truth/ledger.jsonl docs/verified-claims.json claims/mn/*.canonical.json "$HASH_REGISTRY"
     if git diff --cached --quiet; then
       echo "AUTO_COMMIT_SKIP reason=no_staged_changes"
     else
@@ -149,4 +162,4 @@ if [ "$AUTO_COMMIT" = "1" ]; then
   fi
 fi
 
-echo "AUTO_APPEND_OK added=$added manifest=docs/verified-claims.json"
+echo "AUTO_APPEND_OK added=$added manifest=docs/verified-claims.json hash_registry=$HASH_REGISTRY"
