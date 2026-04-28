@@ -1,5 +1,7 @@
 # Alabama Machine Speed
 
+[![ALMS Daily Audit](https://github.com/jsonwisdom/AL/actions/workflows/alms-daily-json-audit.yml/badge.svg)](https://github.com/jsonwisdom/AL/actions/workflows/alms-daily-json-audit.yml)
+
 ## CORECHAIN
 
 **CORECHAIN = `contracts/` + `docs/` + `studio/`**
