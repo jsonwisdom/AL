@@ -1,0 +1,50 @@
+{
+  "id": "agent_income_matrix_001",
+  "title": "Agent Income Matrix",
+  "status": "DRAFT",
+  "version": "0.1.0",
+  "owner": "jaywisdom.base.eth",
+  "thesis": "Agents do not scale on vibes. They scale on runtime payments and receipt-backed verification.",
+  "payment_rail": {
+    "name": "x402",
+    "mode": "programmatic_runtime_payment",
+    "unit": "per_call",
+    "starting_price_usd": "0.01",
+    "example_capabilities": [
+      "search",
+      "extract",
+      "deep_research"
+    ]
+  },
+  "matrix": {
+    "input": "claim",
+    "call": "search_extract_verify",
+    "pay": "per_verification",
+    "output": "resolved_state",
+    "states": [
+      "RESOLVED",
+      "DRIFT",
+      "FAIL"
+    ]
+  },
+  "economic_loop": [
+    "agent_receives_claim",
+    "agent_pays_for_external_signal",
+    "agent_extracts_evidence",
+    "agent_emits_receipt",
+    "receipt_is_scored",
+    "accurate_agents_earn_future_routing"
+  ],
+  "rules": [
+    "No free assertions.",
+    "No unpaid compute hidden as trust.",
+    "Every paid call must return a receipt or fail closed.",
+    "Receipts decide routing preference.",
+    "Accuracy beats volume."
+  ],
+  "site_copy": {
+    "headline": "Generate Agent Income",
+    "subheadline": "Pay-per-truth turns verification into an agent economy.",
+    "body": "x402-style runtime payments let agents buy data, extract evidence, and emit receipt-backed state transitions. ALMS becomes the matrix where every check has a cost, every result has a proof, and accurate agents earn future routing."
+  }
+}
