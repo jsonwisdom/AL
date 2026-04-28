@@ -1,0 +1,24 @@
+name: ALMS Strict Mode
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  strict-mode:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Run preflight audit
+        run: ./scripts/preflight_repo_audit.sh
+
+      - name: Run strict mode validator
+        run: ./scripts/validate_strict_mode.sh
