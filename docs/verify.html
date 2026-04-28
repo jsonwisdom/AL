@@ -141,5 +141,22 @@ async function verifyClaim() {
 verifyManifest();
 loadManifest();
 </script>
+<script>
+(function(){
+  const cleanUrl = location.href.split("#")[0].split("?")[0];
+  const shareUrl = document.getElementById("shareUrl");
+  const copyBtn = document.getElementById("copyShare");
+  const qr = document.getElementById("shareQr");
+
+  if (shareUrl) shareUrl.value = cleanUrl;
+  if (qr) qr.src = "https://quickchart.io/qr?size=180&text=" + encodeURIComponent(cleanUrl);
+
+  if (copyBtn) copyBtn.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(cleanUrl);
+    copyBtn.textContent = "Copied ✅";
+    setTimeout(() => copyBtn.textContent = "Copy verifier link", 1200);
+  });
+})();
+</script>
 </body>
 </html>
