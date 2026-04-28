@@ -6,6 +6,7 @@ PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 NORMALIZER="$PROJECT_ROOT/scripts/alms_normalize.sh"
 EXTRACTOR="$PROJECT_ROOT/scripts/alms_extract_numbers.sh"
 SOURCE_MATCHER="$PROJECT_ROOT/scripts/alms_source_match.sh"
+FETCHER="$PROJECT_ROOT/scripts/alms_fetch_source.sh"
 
 MODE="raw"
 RECEIPT_FILE=""
@@ -43,21 +44,25 @@ if [ "$MISSING" -gt 0 ]; then
   exit 1
 fi
 
-# --- source match (optional activation) ---
-SOURCE_MATCH_RESULT=null
-if [ -n "${ALMS_SOURCE_FILE:-}" ]; then
-  if [ ! -f "$ALMS_SOURCE_FILE" ]; then
-    echo "ALMS_VERIFY_FAIL source_file_missing path=$ALMS_SOURCE_FILE" >&2
-    exit 1
-  fi
+SOURCE_DOCS="[]"
 
+# --- external grounding ---
+if [ -n "${ALMS_SOURCE_URL:-}" ]; then
+  TMP_DIR=$(mktemp -d)
+  FETCH_OUTPUT=$("$FETCHER" "$ALMS_SOURCE_URL" "$TMP_DIR") || exit 1
+
+  TEXT_PATH=$(echo "$FETCH_OUTPUT" | jq -r '.text_path')
+  RAW_HASH=$(echo "$FETCH_OUTPUT" | jq -r '.raw_hash')
+
+  # integrity check stub: always passes unless fetch failed
+  SOURCE_DOCS=$(echo "$FETCH_OUTPUT" | jq '[.]')
+
+  # run source match on extracted text
   TMP_CLAIM=$(mktemp)
   printf '%s' "$NORMALIZED_TEXT" > "$TMP_CLAIM"
 
-  MATCH_OUTPUT=$("$SOURCE_MATCHER" "$TMP_CLAIM" "$ALMS_SOURCE_FILE")
+  MATCH_OUTPUT=$("$SOURCE_MATCHER" "$TMP_CLAIM" "$TEXT_PATH")
   PASSED=$(echo "$MATCH_OUTPUT" | jq -r '.passed')
-
-  SOURCE_MATCH_RESULT="$MATCH_OUTPUT"
 
   if [ "$PASSED" != "true" ]; then
     FAILED_INDEXES=$(echo "$MATCH_OUTPUT" | jq '[.results[] | select(.matched==false) | .index]')
@@ -74,10 +79,6 @@ INVARIANT_RESULTS=$(jq -n \
   ]'
 )
 
-if [ "$SOURCE_MATCH_RESULT" != "null" ]; then
-  INVARIANT_RESULTS=$(echo "$INVARIANT_RESULTS" | jq '. + [{"id":"source_match","passed":true,"details":"all numbers found in source"}]')
-fi
-
 RECEIPT_ID="ALMS-MS-$(date -u +%Y%m%d%H%M%S)"
 VALID_AS_OF=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 
@@ -88,9 +89,8 @@ BASE=$(jq -n \
   --arg txt "$NORMALIZED_TEXT" \
   --arg numh "$NUMBERS_HASH" \
   --argjson nums "$NUMBERS" \
-  --argjson inv "$INVARIANT_RESULTS" \
-  --argjson sm "$SOURCE_MATCH_RESULT" \
-  '{receipt_id:$id,input_hash:$ih,normalized_hash:$nh,normalized_text:$txt,numeric_extract:{extractor_version:"alms_numeric_extractor_v1",numbers_hash:$numh,numbers:$nums},invariants_results:$inv,source_match:$sm,verdict:"NEEDS_MORE_EVIDENCE",valid_as_of:""}')
+  --argjson src "$SOURCE_DOCS" \
+  '{receipt_id:$id,input_hash:$ih,normalized_hash:$nh,normalized_text:$txt,numeric_extract:{extractor_version:"alms_numeric_extractor_v1",numbers_hash:$numh,numbers:$nums},source_documents:$src,verdict:"NEEDS_MORE_EVIDENCE",valid_as_of:""}')
 
 HASH="sha256:$(echo "$BASE" | jq -cS . | sha256sum | awk '{print $1}')"
 FINAL=$(echo "$BASE" | jq --arg h "$HASH" '. + {receipt_hash:$h}')
