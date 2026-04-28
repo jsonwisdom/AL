@@ -7,41 +7,130 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     :root { --bg:#070b0a; --panel:#0d1512; --line:#1f3b31; --green:#00ff88; --muted:#7fb69c; --yellow:#ffd166; --red:#ff5c7a; --blue:#6ecbff; }
-    body { margin:0; font-family:monospace; background:#070b0a; color:#00ff88; padding:18px; }
-    .panel { border:1px solid #1f3b31; padding:18px; border-radius:12px; margin-bottom:16px; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace; background:radial-gradient(circle at top,#11241d,var(--bg) 45%); color:var(--green); padding:18px; }
+    header,.panel { border:1px solid var(--line); background:rgba(13,21,18,.88); padding:18px; border-radius:18px; margin-bottom:16px; box-shadow:0 0 30px rgba(0,255,136,.08); }
+    h1 { margin:0; font-size:clamp(24px,5vw,44px); letter-spacing:-1px; }
+    h2 { margin:0 0 10px 0; }
+    p { color:var(--muted); line-height:1.5; }
+    .grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin:14px 0; }
+    .card { border:1px solid var(--line); background:rgba(7,16,13,.8); padding:14px; border-radius:14px; min-height:92px; }
+    .label { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.08em; }
+    .value { font-size:22px; margin-top:8px; word-break:break-word; }
+    table { width:100%; border-collapse:collapse; margin-top:12px; }
+    th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; }
+    th { color:var(--muted); }
+    .ok { color:var(--green); } .warn { color:var(--yellow); } .bad { color:var(--red); } .blue { color:var(--blue); }
+    footer { color:var(--muted); margin-top:18px; }
+    a { color:var(--green); }
+    @media (max-width:900px){ .grid{grid-template-columns:repeat(2,minmax(0,1fr));} }
+    @media (max-width:560px){ .grid{grid-template-columns:1fr;} }
   </style>
 </head>
 <body>
-  <div class="panel">
-    <h2>📈 Routing Weight Over Time</h2>
+  <header>
+    <h1>ALMS — Agent Income Matrix</h1>
+    <p>Verification > narrative. Receipts > claims. Runtime payments turn truth into a competitive market.</p>
+  </header>
+
+  <section class="panel">
+    <h2>⚙️ Pay-Per-Truth Loop</h2>
+    <div class="grid">
+      <div class="card"><div class="label">INPUT</div><div class="value">Claim</div></div>
+      <div class="card"><div class="label">CALL</div><div class="value">Extract / Verify</div></div>
+      <div class="card"><div class="label">PAY</div><div class="value">x402 per call</div></div>
+      <div class="card"><div class="label">OUTPUT</div><div class="value">RESOLVED / DRIFT / FAIL</div></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>⚡ Live Truth Market Dashboard</h2>
+    <div class="grid">
+      <div class="card"><div class="label">Top Agent</div><div class="value ok" id="topAgent">loading…</div></div>
+      <div class="card"><div class="label">Routing Weight</div><div class="value blue" id="topWeight">…</div></div>
+      <div class="card"><div class="label">Accuracy</div><div class="value ok" id="topAccuracy">…</div></div>
+      <div class="card"><div class="label">Avg Cost</div><div class="value warn" id="topCost">…</div></div>
+    </div>
+    <table>
+      <thead><tr><th>Agent</th><th>Receipts</th><th>Avg Accuracy</th><th>Consistency</th><th>Avg Cost</th><th>Routing Weight</th></tr></thead>
+      <tbody id="leaderboard"><tr><td colspan="6">loading leaderboard…</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="panel">
+    <h2>📈 Market Heartbeat</h2>
+    <p>Multi-agent routing weight over time. Points are router decisions; tooltip shows the selected round context.</p>
     <canvas id="chart"></canvas>
-  </div>
+  </section>
+
+  <footer>
+    ⚙️ jaywisdom.base.eth · <a href="agent-income.json">agent-income.json</a> · <a href="../_truth/routing/leaderboard.json">leaderboard.json</a> · <a href="routing-history.json">routing-history.json</a>
+  </footer>
 
 <script>
-async function loadChart(){
+let chart;
+async function loadLeaderboard(){
   try {
-    const res = await fetch('routing-history.json');
+    const res = await fetch('../_truth/routing/leaderboard.json', {cache:'no-store'});
     const data = await res.json();
-
-    const labels = data.map(d => d.timestamp);
-    const weights = data.map(d => d.routing_weight);
-
-    new Chart(document.getElementById('chart'), {
-      type: 'line',
-      data: {
-        labels: labels,
-        datasets: [{
-          label: 'Routing Weight',
-          data: weights,
-          borderWidth: 2
-        }]
-      }
-    });
+    if(!Array.isArray(data) || data.length === 0){
+      document.getElementById('topAgent').textContent='fallback';
+      document.getElementById('topWeight').textContent='0';
+      document.getElementById('topAccuracy').textContent='n/a';
+      document.getElementById('topCost').textContent='n/a';
+      document.getElementById('leaderboard').innerHTML='<tr><td colspan="6">No paid scored agents yet. Run scripts/router.sh CLAIM_ID.</td></tr>';
+      return;
+    }
+    const top=data[0];
+    document.getElementById('topAgent').textContent=top.agent_id;
+    document.getElementById('topWeight').textContent=Number(top.routing_weight).toFixed(4);
+    document.getElementById('topAccuracy').textContent=Number(top.avg_accuracy).toFixed(4);
+    document.getElementById('topCost').textContent='$'+Number(top.avg_cost_usd).toFixed(4);
+    document.getElementById('leaderboard').innerHTML=data.map(a=>`<tr><td>${a.agent_id}</td><td>${a.receipts}</td><td>${Number(a.avg_accuracy).toFixed(4)}</td><td>${Number(a.consistency||0).toFixed(4)}</td><td>$${Number(a.avg_cost_usd).toFixed(4)}</td><td>${Number(a.routing_weight).toFixed(4)}</td></tr>`).join('');
   } catch(e){
-    console.log('No history yet');
+    document.getElementById('leaderboard').innerHTML='<tr><td colspan="6">Leaderboard not generated yet.</td></tr>';
   }
 }
-loadChart();
+async function loadChart(){
+  try {
+    const res = await fetch('routing-history.json', {cache:'no-store'});
+    const history = await res.json();
+    const labels = history.map((d,i)=>d.claim_id || `round_${i+1}`);
+    const agents = [...new Set(history.flatMap(d => (d.leaderboard || []).map(a => a.agent_id)))];
+    const datasets = agents.map(agent => ({
+      label: agent,
+      data: history.map(d => {
+        const row = (d.leaderboard || []).find(a => a.agent_id === agent);
+        return row ? Number(row.routing_weight) : null;
+      }),
+      borderWidth: 2,
+      tension: 0.25,
+      pointRadius: history.map(d => d.selected_agent === agent ? 5 : 2)
+    }));
+    const ctx = document.getElementById('chart');
+    if(chart) chart.destroy();
+    chart = new Chart(ctx, {
+      type: 'line',
+      data: { labels, datasets },
+      options: {
+        responsive:true,
+        interaction:{mode:'nearest', intersect:false},
+        plugins:{
+          tooltip:{ callbacks:{ afterBody(items){
+            const idx = items[0].dataIndex;
+            const d = history[idx];
+            const selected = (d.leaderboard || []).find(a => a.agent_id === d.selected_agent) || {};
+            return [`winner: ${d.selected_agent}`, `consistency: ${Number(selected.consistency||0).toFixed(4)}`, `decay: ${Number(selected.avg_decay_factor||0).toFixed(4)}`, `rep: ${Number(selected.reputation_multiplier||0).toFixed(4)}`, `raw: ${Number(selected.raw_routing_weight||0).toFixed(4)}`, `decayed: ${Number(selected.decayed_routing_weight||0).toFixed(4)}`];
+          }}}
+        },
+        scales:{ y:{ beginAtZero:true } }
+      }
+    });
+  } catch(e){ console.log('No routing history yet'); }
+}
+function refresh(){ loadLeaderboard(); loadChart(); }
+refresh();
+setInterval(refresh, 15000);
 </script>
 </body>
 </html>
