@@ -34,3 +34,4 @@ Read the full State Chess Board explainer: [studio/STATE_CHESS_BOARD.md](studio/
 ## Operator Guides
 
 - [ALMS Operator Guide](docs/ALMS_OPERATOR_GUIDE.md) — receipts, Merkle roots, preflight audit, and verification flow.
+- [ALMS Social-Layer Doctrine](docs/ALMS_SOCIAL_LAYER_DOCTRINE.md) — tweets, images, and announcements are proof pointers only; narrative may gesture, only artifacts prove.
