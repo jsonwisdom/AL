@@ -1,16 +1,14 @@
 {
-  "status": "CURRENT",
+  "status": "AUTHORIZED",
   "human_operator": "Jason",
   "assistants": ["ChatGPT"],
   "infrastructure": ["Microsoft", "Google Cloud Shell", "Base"],
   "current_gate": [
-    "SCHEMA_UID_DERIVED",
-    "SCHEMA_UID_NOT_LIVE",
-    "ATTESTATION_BLOCKED",
-    "SIGNER_NOT_AUTHORIZED",
-    "TX_NOT_AUTHORIZED"
+    "JASON_SCHEMA_REGISTRATION_AUTHORIZED",
+    "SIGNER_PENDING",
+    "TX_PENDING"
   ],
   "alms_schema_uid": "0x879d4e37dcd2fe24f977b78f7e8628902af9a54896cb731f5ee7c9e4f5b78c97",
-  "required_next": "JASON_SCHEMA_REGISTRATION_AUTHORIZATION",
-  "live_action_authorized": false
+  "authorization_timestamp": "2026-04-29T19:20:00Z",
+  "live_action_authorized": true
 }
