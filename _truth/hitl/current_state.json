@@ -7,10 +7,9 @@
   ],
   "rule": "Human-in-the-loop required before signer or transaction.",
   "current_gate": [
-    "PREVIEW_SCRIPT_LOCKED",
-    "LIVE_SCRIPT_NOT_CREATED_YET",
-    "SIGNER_NOT_AUTHORIZED",
-    "WAITING_FOR_REAL_ROOT_PREVIEW"
+    "PREVIEW_WITNESS_CREATED",
+    "WAITING_FOR_JASON_AUTHORIZATION"
   ],
+  "latest_preview_witness": "_truth/attest/base_alms_attest_2026_04_v2_preview_20260429T190347Z.txt",
   "live_action_authorized": false
 }
