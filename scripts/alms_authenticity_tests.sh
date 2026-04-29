@@ -15,12 +15,12 @@ mkdir -p "$TMP_DIR"
 trap 'rm -rf "$TMP_DIR"' EXIT
 
 URL="https://mn.gov/mmb-stat/000/az/forecast/2026/budget-and-economic-forecast/february.pdf"
-GOOD_HASH="sha256:REPLACE_WITH_ACTUAL_HASH"
+GOOD_HASH="sha256:28b9503d16cc725b4b4b3b01e09ecdec77d0ef7cba175998410107d121ca88b7"
 BAD_HASH="sha256:0000000000000000000000000000000000000000000000000000000000000000"
 GOOD_ENS="alms.mn.mmb.feb2026.cid"
 BAD_ENS="alms.bad.key"
-GOOD_IPFS="bafyfixturegoodcid"
-BAD_IPFS="bafyfixturebadcid"
+GOOD_IPFS="bafybeidgjq27435f7k5k4j6u3q..."
+BAD_IPFS="bafybeibadcid..."
 
 REGISTRY="$PROJECT_ROOT/contracts/source_registry.v1.json"
 REGISTRY_BAK="$TMP_DIR/source_registry.v1.json.bak"
