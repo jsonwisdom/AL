@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>ALMS Human Receipt Loop</title>
+  <style>
+    body{background:#050505;color:#f5f5f5;font-family:monospace;padding:32px}
+    button{display:block;margin:12px 0;padding:14px 18px;font-size:16px;cursor:pointer}
+    pre{background:#111;border:1px solid #333;padding:16px;white-space:pre-wrap;word-break:break-all}
+    .ok{color:#79ff8f}.warn{color:#ffd166}
+  </style>
+</head>
+<body>
+<h1>ALMS Human Receipt Loop</h1>
+<p class="warn">No private key enters terminal. Wallet signs locally.</p>
+
+<button onclick="connect()">1. Connect Wallet</button>
+<button onclick="switchBase()">2. Switch to Base</button>
+<button onclick="registerSchema()">3. Register ALMS Schema</button>
+<button onclick="exportReceipt()">4. Export Receipt JSON</button>
+
+<pre id="out">READY</pre>
+
+<script>
+const out = document.getElementById("out");
+const BASE_CHAIN_ID = "0x2105";
+const SCHEMA_REGISTRY = "0x4200000000000000000000000000000000000020";
+const ALMS_SCHEMA = "bytes32 merkleRoot,string epoch,string mode,uint8 witnessCount";
+const SCHEMA_RESOLVER = "0x0000000000000000000000000000000000000000";
+const SCHEMA_REVOCABLE = true;
+
+// Injected calldata
+const REGISTER_CALLDATA = "0x60d7a278000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000003e62797465733332206d65726b6c65526f6f742c737472696e672065706f63682c737472696e67206d6f64652c75696e7438207769746e657373436f756e740000";
+
+let account = null;
+let lastTx = null;
+
+function log(x){ out.textContent += "\n" + x; }
+
+async function connect(){
+  if(!window.ethereum){ log("FAIL MetaMask not found"); return; }
+  const a = await ethereum.request({method:"eth_requestAccounts"});
+  account = a[0];
+  log("CONNECTED=" + account);
+}
+
+async function switchBase(){
+  await ethereum.request({
+    method:"wallet_switchEthereumChain",
+    params:[{chainId:BASE_CHAIN_ID}]
+  });
+  log("BASE_CHAIN_ACTIVE");
+}
+
+async function registerSchema(){
+  if(!account) await connect();
+  const chain = await ethereum.request({method:"eth_chainId"});
+  if(chain !== BASE_CHAIN_ID){ log("FAIL wrong_chain=" + chain); return; }
+
+  lastTx = await ethereum.request({
+    method:"eth_sendTransaction",
+    params:[{
+      from: account,
+      to: SCHEMA_REGISTRY,
+      value: "0x0",
+      data: REGISTER_CALLDATA
+    }]
+  });
+
+  log("TX_HASH=" + lastTx);
+}
+
+function exportReceipt(){
+  const receipt = {
+    type: "ALMS_BROWSER_RECEIPT_V1",
+    chain_id: 8453,
+    account,
+    schema_registry: SCHEMA_REGISTRY,
+    schema: ALMS_SCHEMA,
+    resolver: SCHEMA_RESOLVER,
+    revocable: SCHEMA_REVOCABLE,
+    tx_hash: lastTx,
+    ens_target: "jaywisdom.base.eth",
+    next: "verify receipt, then anchor tx/schema UID to ENS text records"
+  };
+  log(JSON.stringify(receipt,null,2));
+}
+</script>
+</body>
+</html>
