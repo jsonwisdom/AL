@@ -20,3 +20,73 @@ fi
 jq . _truth/merkle/manifest.json >/dev/null
 
 echo "PREFLIGHT_OK"
+
+DUPES="$(jq -r 'select(.receipt_hash != null) | .receipt_hash' _truth/receipts/*.json 2>/dev/null | sort | uniq -d)"
+if [ -n "$DUPES" ]; then
+  echo "FATAL: DUPLICATE_RECEIPT_HASHES_DETECTED"
+  echo "$DUPES"
+  exit 1
+fi
+
+if grep -R "verified public record line" _truth/cards site/cards 2>/dev/null; then
+  echo "FATAL: PLACEHOLDER_LINE_DETECTED"
+  exit 1
+fi
+
+if grep -R "UNKNOWN_HASH" _truth 2>/dev/null; then
+  echo "FATAL: UNKNOWN_HASH_DETECTED"
+  exit 1
+fi
+
+echo "PREFLIGHT_HARDENED_VALIDATORS"
+
+if grep -R "UNKNOWN_HASH" _truth 2>/dev/null; then
+  echo "FATAL: UNKNOWN_HASH_DETECTED"
+  exit 1
+fi
+
+if grep -R "verified public record line" _truth/cards site/cards 2>/dev/null; then
+  echo "FATAL: PLACEHOLDER_LINE_DETECTED"
+  exit 1
+fi
+
+MISSING_CARD_FIELD="$(jq -r 'select((has("leaf")|not) or (has("extracted_line")|not) or (has("hash")|not)) | input_filename' _truth/cards/*.card.json 2>/dev/null | head -1 || true)"
+if [ -n "$MISSING_CARD_FIELD" ]; then
+  echo "FATAL: CARD_SCHEMA_REQUIRED_FIELDS $MISSING_CARD_FIELD"
+  exit 1
+fi
+
+DUPES="$(jq -r '.receipt_hash // .hash // empty' _truth/receipts/*.json 2>/dev/null | sort | uniq -d)"
+if [ -n "$DUPES" ]; then
+  echo "FATAL: DUPLICATE_RECEIPT_HASHES_DETECTED"
+  echo "$DUPES"
+  exit 1
+fi
+
+
+if [ -x ./scripts/verify_merkle_root.sh ]; then
+  ./scripts/verify_merkle_root.sh >/dev/null
+else
+  echo "FATAL: MISSING_VERIFY_MERKLE_ROOT"
+  exit 1
+fi
+
+echo "PREFLIGHT_HARDENED_VALIDATORS_OK"
+
+echo "PREFLIGHT_MANIFEST_REFERENCE_CHECK"
+
+MISSING_REFS="$(
+  jq -r '.leaves[]? | .path // .file // .source // empty' _truth/merkle/manifest.json 2>/dev/null \
+  | while read -r p; do
+      [ -z "$p" ] && continue
+      [ -f "$p" ] || echo "$p"
+    done
+)"
+
+if [ -n "$MISSING_REFS" ]; then
+  echo "FATAL: MANIFEST_REFERENCES_MISSING"
+  echo "$MISSING_REFS"
+  exit 1
+fi
+
+echo "PREFLIGHT_MANIFEST_REFERENCE_CHECK_OK"
