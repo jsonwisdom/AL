@@ -90,3 +90,19 @@ if [ -n "$MISSING_REFS" ]; then
 fi
 
 echo "PREFLIGHT_MANIFEST_REFERENCE_CHECK_OK"
+
+echo "PREFLIGHT_SOURCE_REGISTRY_CHECK"
+
+if [ -f contracts/source_registry.v1.json ]; then
+  BAD_SOURCE_HASHES="$(
+    jq -r '.sources[]? | select(.raw_hash? and (.raw_hash | test("^sha256:1{64}$|REPLACE_WITH_ACTUAL_HASH|UNKNOWN_HASH"))) | "\(.id):\(.raw_hash)"' contracts/source_registry.v1.json 2>/dev/null || true
+  )"
+
+  if [ -n "$BAD_SOURCE_HASHES" ]; then
+    echo "FATAL: SOURCE_REGISTRY_PLACEHOLDER_HASH"
+    echo "$BAD_SOURCE_HASHES"
+    exit 1
+  fi
+fi
+
+echo "PREFLIGHT_SOURCE_REGISTRY_CHECK_OK"
