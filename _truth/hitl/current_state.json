@@ -1,0 +1,16 @@
+{
+  "status": "CURRENT",
+  "human_operator": "Jason",
+  "assistants": [
+    "ChatGPT",
+    "Microsoft"
+  ],
+  "rule": "Human-in-the-loop required before signer or transaction.",
+  "current_gate": [
+    "PREVIEW_SCRIPT_LOCKED",
+    "LIVE_SCRIPT_NOT_CREATED_YET",
+    "SIGNER_NOT_AUTHORIZED",
+    "WAITING_FOR_REAL_ROOT_PREVIEW"
+  ],
+  "live_action_authorized": false
+}
