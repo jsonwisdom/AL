@@ -1,40 +1,79 @@
 #!/usr/bin/env bash
 set -euo pipefail
+cd "$(git rev-parse --show-toplevel 2>/dev/null || pwd)"
+source ./env_base.sh
+mkdir -p _truth/attest
 
-# ALMS Base Attestation Preview Generator (No-Signer Edition)
-# Version: 2.0.0
-# Target: Base Mainnet EAS
+: "${MERKLE_ROOT:?MERKLE_ROOT required}"
+[[ "$MERKLE_ROOT" =~ ^0x[0-9a-fA-F]{64}$ ]] || { echo "FAIL invalid_merkle_root_bytes32=$MERKLE_ROOT"; exit 1; }
 
-MERKLE_ROOT="${MERKLE_ROOT:-}"
+: "${ALMS_SCHEMA_UID:?ALMS_SCHEMA_UID required}"
+: "${EAS_CONTRACT:?EAS_CONTRACT required}"
 
-if [[ ! "$MERKLE_ROOT" =~ ^0x[0-9a-fA-F]{64}$ ]]; then
-    echo "ERROR: MERKLE_ROOT must be 0x-prefixed 32-byte hex string"
-    exit 1
-fi
+EPOCH="2026-04-v2"
+MODE="GENESIS"
+WITNESS_COUNT="${WITNESS_COUNT:-1}"
+RECIPIENT="${RECIPIENT:-0x0000000000000000000000000000000000000000}"
+EXPIRATION_TIME="${EXPIRATION_TIME:-0}"
+ATTESTATION_REVOCABLE="${ATTESTATION_REVOCABLE:-true}"
+REF_UID="${REF_UID:-0x0000000000000000000000000000000000000000000000000000000000000000}"
+VALUE="${VALUE:-0}"
 
-SCHEMA_UID="0x879d4e37dcd2fe24f977b78f7e8628902af9a54896cb731f5ee7c9e4f5b78c97" # Example ALMS Schema
-FUNC_SIG="attest((bytes32,uint64,bool,bytes32,bytes,uint256))"
+command -v cast >/dev/null || { echo "FAIL missing_cast"; exit 1; }
 
-TIMESTAMP=$(date -u +"%Y%m%dT%H%M%SZ")
-OUTPUT_DIR="_truth/attest"
-mkdir -p "$OUTPUT_DIR"
-OUTPUT_FILE="$OUTPUT_DIR/base_alms_attest_2026_04_v2_preview_$TIMESTAMP.txt"
+CHAIN_ID="$(cast chain-id --rpc-url "$BASE_RPC")"
+[ "$CHAIN_ID" = "8453" ] || { echo "FAIL wrong_chain_id=$CHAIN_ID expected=8453"; exit 1; }
 
-# Constructing a simulated EAS payload for preview
-# (schema, expirationTime, revocable, refUID, data, value)
-# Here we just pack the key info into a human-readable and machine-verifiable format.
+RAW_SCHEMA="$(cast call "$SCHEMA_REGISTRY" \
+  "getSchema(bytes32)((bytes32,address,bool,string))" \
+  "$ALMS_SCHEMA_UID" \
+  --rpc-url "$BASE_RPC")"
 
-cat > "$OUTPUT_FILE" <<OUT
-ALMS_ATTEST_PREVIEW_V2
-network=base
-schema_uid=$SCHEMA_UID
-merkle_root=$MERKLE_ROOT
-func_sig=$FUNC_SIG
-request=eth_sendTransaction
-data=0x[ENCODED_EAS_DATA_FOR_ROOT_$MERKLE_ROOT]
-NO_SIGNER_USED
-NO_TX_SENT
-TIMESTAMP=$TIMESTAMP
-OUT
+# Check if schema is live, but only warn for preview
+case "$RAW_SCHEMA" in
+  *"bytes32 merkleRoot,string epoch,string mode,uint8 witnessCount"*)
+    SCHEMA_STATUS="LIVE"
+    ;;
+  *)
+    echo "WARNING: schema_uid_not_live_or_mismatch - PROCEEDING WITH PREVIEW ONLY"
+    echo "DEBUG_RAW_SCHEMA: $RAW_SCHEMA"
+    SCHEMA_STATUS="PREVIEW_ONLY_MOCK"
+    ;;
+esac
 
-echo "PREVIEW_CREATED=$OUTPUT_FILE"
+DATA="$(cast abi-encode \
+  "f(bytes32,string,string,uint8)" \
+  "$MERKLE_ROOT" "$EPOCH" "$MODE" "$WITNESS_COUNT")"
+
+[[ "$DATA" =~ ^0x[0-9a-fA-F]+$ ]] || { echo "FAIL data_not_hex=$DATA"; exit 1; }
+
+FUNC_SIG="attest((bytes32,(address,uint64,bool,bytes32,bytes,uint256)))"
+REQUEST="($ALMS_SCHEMA_UID,($RECIPIENT,$EXPIRATION_TIME,$ATTESTATION_REVOCABLE,$REF_UID,$DATA,$VALUE))"
+
+TS="$(date -u +%Y%m%dT%H%M%SZ)"
+OUT="_truth/attest/base_alms_attest_2026_04_v2_preview_$TS.txt"
+
+{
+  echo "ALMS_BASE_ATTEST_PREVIEW_V3"
+  echo "time=$TS"
+  echo "chain_id=$CHAIN_ID"
+  echo "eas_contract=$EAS_CONTRACT"
+  echo "schema_uid=$ALMS_SCHEMA_UID"
+  echo "schema_status=$SCHEMA_STATUS"
+  echo "merkle_root=$MERKLE_ROOT"
+  echo "epoch=$EPOCH"
+  echo "mode=$MODE"
+  echo "witness_count=$WITNESS_COUNT"
+  echo "recipient=$RECIPIENT"
+  echo "expiration_time=$EXPIRATION_TIME"
+  echo "revocable=$ATTESTATION_REVOCABLE"
+  echo "ref_uid=$REF_UID"
+  echo "value=$VALUE"
+  echo "raw_schema=$RAW_SCHEMA"
+  echo "func_sig=$FUNC_SIG"
+  echo "request=$REQUEST"
+  echo "data=$DATA"
+  echo "NO_SIGNER_USED"
+  echo "NO_TX_SENT"
+  echo "ATTEST_PREVIEW_REPORT=$OUT"
+} | tee "$OUT"
