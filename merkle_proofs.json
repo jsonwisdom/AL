@@ -1,8 +1,20 @@
 {
 "algorithm":"sha256_hex_concat_v1",
-"merkle_root":"dc4b992f9f6eb41139056a5f75af6d523ed6f55a9775da21401e8bc185e86f5c",
-"leaf_count":2,
+"merkle_root":"f55adcd5ba712c7cc399bbd62cc45b0f48e1c9a40e0e9bda578a0a88973b4378",
+"leaf_count":4,
 "leaves":[
+{
+"leaf_id":"",
+"leaf_hash":"",
+"proof":[  {"side":"right","hash":""}, {"side":"right","hash":"dc4b992f9f6eb41139056a5f75af6d523ed6f55a9775da21401e8bc185e86f5c"} ]
+}
+,
+{
+"leaf_id":"",
+"leaf_hash":"",
+"proof":[  {"side":"left","hash":""}, {"side":"left","hash":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"} ]
+}
+,
 {
 "leaf_id":"gov_ncc_001",
 "leaf_hash":"ae2065acd9df775fc6141c8c2c59a448ce7da4e6325db0a697e2c71748f8ce18",
