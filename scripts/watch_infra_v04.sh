@@ -45,18 +45,18 @@ for URL in "${URLS[@]}"; do
   HASH="$(sha256sum "$BODY" | cut -d' ' -f1)"
   SIZE="$(wc -c < "$BODY" | tr -d ' ')"
 
-  FETCH_OK=true
-  if [ "$CODE" != "200" ] || [ "$SIZE" -lt 5000 ]; then FETCH_OK=false; fi
-  if grep -qiE 'access denied|captcha|blocked|cloudfront error|request blocked|enable javascript' "$BODY"; then FETCH_OK=false; fi
+  FETCH_OK="true"
+  if [ "$CODE" != "200" ] || [ "$SIZE" -lt 5000 ]; then FETCH_OK="false"; fi
+  if grep -qiE 'access denied|captcha|blocked|cloudfront error|request blocked|enable javascript' "$BODY"; then FETCH_OK="false"; fi
 
   jq -ncS \
     --arg url "$URL" \
     --arg http_code "$CODE" \
     --arg sha256 "$HASH" \
-    --argjson bytes "$SIZE" \
-    --argjson fetch_ok "$FETCH_OK" \
+    --arg bytes "$SIZE" \
+    --arg fetch_ok "$FETCH_OK" \
     --arg fetched_at "$TS" \
-    '{url:$url,http_code:($http_code|tonumber),sha256:$sha256,bytes:$bytes,fetch_ok:$fetch_ok,fetched_at:$fetched_at}' \
+    '{url:$url,http_code:($http_code|tonumber),sha256:$sha256,bytes:($bytes|tonumber),fetch_ok:($fetch_ok=="true"),fetched_at:$fetched_at}' \
     >> "$RAW"
 done
 
@@ -94,8 +94,8 @@ jq -ncS \
   --arg parent_run_hash "$PARENT_HASH" \
   --arg diff_status "$DIFF_STATUS" \
   --arg diff_sha256 "$DIFF_HASH" \
-  --argjson bad_fetches "$BAD_FETCHES" \
-  '{leaf_id:$leaf_id,type:$type,watcher_version:$watcher_version,run_id:$run_id,run_hash:$run_hash,parent_run_hash:$parent_run_hash,diff_status:$diff_status,diff_sha256:$diff_sha256,bad_fetches:$bad_fetches}' \
+  --arg bad_fetches "$BAD_FETCHES" \
+  '{leaf_id:$leaf_id,type:$type,watcher_version:$watcher_version,run_id:$run_id,run_hash:$run_hash,parent_run_hash:$parent_run_hash,diff_status:$diff_status,diff_sha256:$diff_sha256,bad_fetches:($bad_fetches|tonumber)}' \
   > "$RUN/receipt.json"
 
 cp "$RUN/receipt.json" "$BASE/latest.tmp"
