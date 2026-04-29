@@ -12,7 +12,7 @@ if [[ ! "$MERKLE_ROOT" =~ ^0x[0-9a-fA-F]{64}$ ]]; then
     exit 1
 fi
 
-SCHEMA_UID="0x40367a8c4b68ebd564d3e0558d417fb209a82d33622761a3c804a74ce02120d3" # Example ALMS Schema
+SCHEMA_UID="0x879d4e37dcd2fe24f977b78f7e8628902af9a54896cb731f5ee7c9e4f5b78c97" # Example ALMS Schema
 FUNC_SIG="attest((bytes32,uint64,bool,bytes32,bytes,uint256))"
 
 TIMESTAMP=$(date -u +"%Y%m%dT%H%M%SZ")
