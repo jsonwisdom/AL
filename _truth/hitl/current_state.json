@@ -1,17 +1,16 @@
 {
   "status": "CURRENT",
   "human_operator": "Jason",
-  "assistants": [
-    "ChatGPT",
-    "Microsoft"
-  ],
-  "rule": "Human-in-the-loop required before signer or transaction.",
+  "assistants": ["ChatGPT"],
+  "infrastructure": ["Microsoft", "Google Cloud Shell", "Base"],
   "current_gate": [
-    "PREVIEW_WITNESS_CREATED_V3",
-    "WAITING_FOR_JASON_AUTHORIZATION"
+    "SCHEMA_UID_DERIVED",
+    "SCHEMA_UID_NOT_LIVE",
+    "ATTESTATION_BLOCKED",
+    "SIGNER_NOT_AUTHORIZED",
+    "TX_NOT_AUTHORIZED"
   ],
-  "latest_preview_witness": "_truth/attest/base_alms_attest_2026_04_v2_preview_20260429T191530Z.txt",
-  "schema_uid": "0x879d4e37dcd2fe24f977b78f7e8628902af9a54896cb731f5ee7c9e4f5b78c97",
-  "schema_status": "NOT_YET_LIVE",
+  "alms_schema_uid": "0x879d4e37dcd2fe24f977b78f7e8628902af9a54896cb731f5ee7c9e4f5b78c97",
+  "required_next": "JASON_SCHEMA_REGISTRATION_AUTHORIZATION",
   "live_action_authorized": false
 }
