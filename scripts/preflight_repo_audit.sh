@@ -106,3 +106,46 @@ if [ -f contracts/source_registry.v1.json ]; then
 fi
 
 echo "PREFLIGHT_SOURCE_REGISTRY_CHECK_OK"
+
+echo "PREFLIGHT_FULL_CHAIN_CONSISTENCY_CHECK"
+
+REG_HASH="$(jq -r '.sources[]? | select(.id=="mn_mmb_feb2026_forecast") | .raw_hash // empty' contracts/source_registry.v1.json 2>/dev/null)"
+MN1_URI="$(jq -r '.fetch_uri // .golden_uri // empty' _truth/receipts/MN_001.json 2>/dev/null)"
+MN1_CONTENT_HASH="$(jq -r '.content_hash // empty' _truth/receipts/MN_001.json 2>/dev/null)"
+MANIFEST_MN1_HASH="$(jq -r '.leaves[]? | select(.path=="_truth/receipts/MN_001.json") | .hash // empty' _truth/merkle/manifest.json 2>/dev/null)"
+ACTUAL_MN1_FILE_HASH="sha256:$(sha256sum _truth/receipts/MN_001.json | awk '{print $1}')"
+
+if [ -z "$REG_HASH" ]; then
+  echo "FATAL: FULL_CHAIN_MISSING_SOURCE_REGISTRY_HASH"
+  exit 1
+fi
+
+if [ -z "$MN1_URI" ]; then
+  echo "FATAL: FULL_CHAIN_MISSING_RECEIPT_URI"
+  exit 1
+fi
+
+if [ -z "$MN1_CONTENT_HASH" ]; then
+  echo "FATAL: FULL_CHAIN_MISSING_RECEIPT_CONTENT_HASH"
+  exit 1
+fi
+
+if [ -z "$MANIFEST_MN1_HASH" ]; then
+  echo "FATAL: FULL_CHAIN_MISSING_MANIFEST_LEAF"
+  exit 1
+fi
+
+if [ "$MANIFEST_MN1_HASH" != "$ACTUAL_MN1_FILE_HASH" ]; then
+  echo "FATAL: FULL_CHAIN_MANIFEST_RECEIPT_HASH_MISMATCH"
+  echo "manifest=$MANIFEST_MN1_HASH"
+  echo "actual=$ACTUAL_MN1_FILE_HASH"
+  exit 1
+fi
+
+if ! grep -q "$MN1_URI" contracts/source_registry.v1.json; then
+  echo "FATAL: FULL_CHAIN_URI_NOT_IN_SOURCE_REGISTRY"
+  echo "$MN1_URI"
+  exit 1
+fi
+
+echo "PREFLIGHT_FULL_CHAIN_CONSISTENCY_CHECK_OK"
