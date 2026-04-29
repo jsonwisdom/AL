@@ -62,7 +62,7 @@ done
 
 jq -cS . "$RAW" | LC_ALL=C sort > "$CANON"
 RUN_HASH="$(sha256sum "$CANON" | cut -d' ' -f1)"
-BAD_FETCHES="$(jq '[select(.fetch_ok==false)] | length' "$CANON")"
+BAD_FETCHES="$(jq -s '[.[] | select(.fetch_ok==false)] | length' "$CANON")"
 
 DIFF_STATUS="GENESIS"
 DIFF_HASH="NONE"
