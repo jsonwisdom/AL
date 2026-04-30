@@ -1,0 +1,18 @@
+{
+  "segment_id": "ALMS_TEST_SEGMENT_MULTI_EVEN",
+  "state": "SEGMENT_SEALED",
+  "leaf_order": "locked_manifest_order",
+  "global_root": "0x36d3ffa7ee0d1d183f385e3205775f448dcefa1981a18bbc12f9f9930af86ac7",
+  "receipts": [
+    {
+      "leaf_id": "MEDIA_MESH_V1_FINAL_RECEIPT",
+      "receipt_path": "tests/fixtures/alms_receipt.good.json",
+      "receipt_hash": "0x5acb442d42213fa5d79049a91b4e6496999e2090840c0400c6c90f3a66d66e68"
+    },
+    {
+      "leaf_id": "SYNTHETIC_LEAF_2",
+      "receipt_path": "tests/fixtures/segment.multi.even/leaf_2_receipt.json",
+      "receipt_hash": "0x95987d56f2c512503805758c7e201548164ca9c297faf5712edae5500810fd89"
+    }
+  ]
+}

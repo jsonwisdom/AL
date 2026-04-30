@@ -64,7 +64,12 @@ done
 compute_parent() {
   local left="$1"
   local right="$2"
-  printf "%s" "$left$right" | xxd -r -p | sha256sum | awk '{print $1}'
+  python3 - "$left" "$right" <<'PYHASH'
+import sys, hashlib
+left = bytes.fromhex(sys.argv[1])
+right = bytes.fromhex(sys.argv[2])
+print(hashlib.sha256(left + right).hexdigest())
+PYHASH
 }
 
 LEVEL=("${LEAVES[@]}")
