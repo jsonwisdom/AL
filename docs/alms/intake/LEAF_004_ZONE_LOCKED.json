@@ -1,0 +1,19 @@
+{
+  "leaf_id": "004",
+  "target": "GENERAL_FUND_BALANCE_POLICY",
+  "state": "ZONE_LOCKED",
+  "target_page": 9,
+  "anchor_string": "Our Fund Balance Policy requires that the General Fund Balance be within 35%-50% of General",
+  "zone_file": "stcloud_leaf004_zone.txt",
+  "zone_sha256": "a73c8f2f011e02af1c1a35a6a72699177c402b7713377086dc2dd6b933bc4be3",
+  "zone_size_bytes": 3200,
+  "policy_min_percent": 35,
+  "policy_max_percent": 50,
+  "bond_rating_preferred_min_percent": 40,
+  "budget_2026_fund_balance": 28895006,
+  "budget_2026_expenditures": 75784400,
+  "budget_2026_ratio_percent": 38.13,
+  "anchor_allowed": false,
+  "batch_id_allowed": false,
+  "next_gate": "ARTIFACT_BUILD"
+}
