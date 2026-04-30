@@ -32,6 +32,11 @@ jobs:
           chmod +x scripts/test_verify_segment.sh
           ./scripts/test_verify_segment.sh
 
+      - name: Verify public segment manifests
+        run: |
+          ./scripts/verify_segment.sh receipts/segments/segment_001_manifest.json
+          ./scripts/verify_segment.sh receipts/segments/segment_002_manifest.json
+
       - name: Run ALMS rollover verifier tests
         run: |
           chmod +x scripts/verify_rollover.sh
