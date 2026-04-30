@@ -2,7 +2,7 @@
 import sys, json, hashlib, datetime, os
 
 LEAF_PATH = "_truth/edu_civil_rights/mn/MN_EDU_CIVIL_RIGHTS_001.leaf.json"
-DELTA_DIR = "_truth/edu_civil_rights/mn/deltas"
+DELTA_PATH = "_truth/edu_civil_rights/mn/MN_EDU_CIVIL_RIGHTS_001.deltas.jsonl"
 
 VALID_CATEGORIES = set([
     "DISABILITY_SECTION_504",
@@ -61,6 +61,14 @@ def sha256_hex(data: str) -> str:
 def canonical_json(obj) -> str:
     return json.dumps(obj, sort_keys=True, ensure_ascii=False, separators=(",", ":"))
 
+def utc_ts():
+    return datetime.datetime.utcnow().replace(microsecond=0).isoformat() + "Z"
+
+def append_delta(entry):
+    os.makedirs(os.path.dirname(DELTA_PATH), exist_ok=True)
+    with open(DELTA_PATH, "a", encoding="utf-8") as f:
+        f.write(json.dumps(entry, sort_keys=True, separators=(",", ":")) + "\n")
+
 def validate_row(row, idx):
     errors = []
     for key in REQUIRED_ROW_KEYS:
@@ -96,21 +104,21 @@ def main():
             continue
         errors.extend(validate_row(row, idx))
 
+    ts = utc_ts()
+
     if errors:
-        os.makedirs(DELTA_DIR, exist_ok=True)
-        ts = datetime.datetime.utcnow().replace(microsecond=0).isoformat() + "Z"
-        error_delta = {
+        append_delta({
             "timestamp": ts,
             "receipt_id": "MN_EDU_CIVIL_RIGHTS_001",
+            "event": "POPULATION_REJECTED",
             "status": "REJECTED",
+            "hash": leaf.get("hash", {}).get("value"),
+            "numeric_fields_populated": leaf.get("numeric_fields_populated"),
+            "aggregates": leaf.get("data", {}).get("aggregates"),
             "errors": errors,
             "rows_attempted": len(rows)
-        }
-        delta_path = f"{DELTA_DIR}/{ts.replace(':', '')}_rejected_delta.json"
-        with open(delta_path, "w", encoding="utf-8") as f:
-            json.dump(error_delta, f, indent=2, sort_keys=True)
-            f.write("\n")
-        print(f"Rejected ingestion. Delta: {delta_path}")
+        })
+        print(f"Rejected ingestion. Delta ledger: {DELTA_PATH}")
         for e in errors:
             print(e, file=sys.stderr)
         sys.exit(65)
@@ -128,23 +136,20 @@ def main():
         json.dump(leaf, f, indent=2, sort_keys=True)
         f.write("\n")
 
-    os.makedirs(DELTA_DIR, exist_ok=True)
-    ts = datetime.datetime.utcnow().replace(microsecond=0).isoformat() + "Z"
-    delta = {
+    append_delta({
         "timestamp": ts,
         "receipt_id": "MN_EDU_CIVIL_RIGHTS_001",
+        "event": "POPULATION_ACCEPTED",
         "status": "ACCEPTED",
         "hash": leaf_hash,
+        "numeric_fields_populated": leaf["numeric_fields_populated"],
+        "aggregates": leaf["data"].get("aggregates"),
         "errors": [],
         "rows_ingested": len(rows)
-    }
-    delta_path = f"{DELTA_DIR}/{ts.replace(':', '')}_accepted_delta.json"
-    with open(delta_path, "w", encoding="utf-8") as f:
-        json.dump(delta, f, indent=2, sort_keys=True)
-        f.write("\n")
+    })
 
     print(f"Updated leaf. Hash: {leaf_hash}")
-    print(f"Delta: {delta_path}")
+    print(f"Delta ledger: {DELTA_PATH}")
 
 if __name__ == "__main__":
     main()
