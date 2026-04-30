@@ -1,0 +1,15 @@
+{
+  "state": "EXPENDITURE_ZONE_LOCKED",
+  "leaf_id": "003",
+  "asset_id": "ST_CLOUD_CITY_BUDGET_FY2026_REVENUE_GAP_DELTA",
+  "depends_on_leaf": "002",
+  "source_line": 1412,
+  "zone_file": "stcloud_leaf003_zone.txt",
+  "zone_sha256": "2b8e3f9467727c95781a7947190040375a006c6f7881c9675662a5f67b07e77a",
+  "zone_size_bytes": 842,
+  "extracted_field": "total_expenditures_and_other_uses_2026",
+  "extracted_value": 75784400,
+  "anchor_allowed": false,
+  "batch_id_allowed": false,
+  "next_gate": "REVENUE_ANCHOR_CONFIRMATION_AND_GAP_ARTIFACT"
+}
