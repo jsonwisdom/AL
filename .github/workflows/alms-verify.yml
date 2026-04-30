@@ -26,6 +26,11 @@ jobs:
         run: |
           ./scripts/test_verify_receipt.sh
 
+      - name: Verify public receipt artifacts
+        run: |
+          ./scripts/verify_receipt.sh receipts/media_mesh_v1/global_root_receipt.final.json
+          ./scripts/verify_receipt.sh receipts/segment_002/leaf_001_receipt.final.json
+
       - name: Run ALMS segment verifier tests
         run: |
           chmod +x scripts/verify_segment.sh
