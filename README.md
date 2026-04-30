@@ -35,3 +35,12 @@ Read the full State Chess Board explainer: [studio/STATE_CHESS_BOARD.md](studio/
 
 - [ALMS Operator Guide](docs/ALMS_OPERATOR_GUIDE.md) — receipts, Merkle roots, preflight audit, and verification flow.
 - [ALMS Social-Layer Doctrine](docs/ALMS_SOCIAL_LAYER_DOCTRINE.md) — tweets, images, and announcements are proof pointers only; narrative may gesture, only artifacts prove.
+
+## Verifying This Repository
+
+ALMS is designed so reviewers can verify the repository locally without trusting narrative claims.
+
+The verification path is:
+
+```txt
+receipt → segment manifest → rollover link → GitHub CI
