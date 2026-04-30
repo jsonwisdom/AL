@@ -1,0 +1,25 @@
+{
+  "schema": "alms.ws_session_receipt.v0.1",
+  "session_name": "sample_session",
+  "session_id": "d2c7c8d3e9d3c9d0f7f9d0c3c8e7a3a1b9c7f2a1d3e4c5b6a7f8e9d0c1b2a3f",
+  "initial_state_hash": "0x0",
+  "entries": [
+    {
+      "seq": 1,
+      "type": "delta",
+      "payload": "agent_init",
+      "payload_hash": "b3b2d6b3a0c4f9c2d3c1a7e4b2f6c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0",
+      "prev_hash": "0x0",
+      "entry_hash": "e3c1a7b2f6c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0b3b2d6b3a0c4f9c2d3"
+    },
+    {
+      "seq": 2,
+      "type": "delta",
+      "payload": "query_mn_house_deadlock",
+      "payload_hash": "a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0b3b2d6b3a0c4f9c2d3c1a7e4",
+      "prev_hash": "e3c1a7b2f6c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0b3b2d6b3a0c4f9c2d3",
+      "entry_hash": "c9d0e1f2a3b4c5d6e7f8a9b0b3b2d6b3a0c4f9c2d3c1a7e4b2f6c3d4e5f6a7b8"
+    }
+  ],
+  "final_state_hash": "c9d0e1f2a3b4c5d6e7f8a9b0b3b2d6b3a0c4f9c2d3c1a7e4b2f6c3d4e5f6a7b8"
+}
