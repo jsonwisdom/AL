@@ -32,8 +32,10 @@ trap 'rm -f "$TMP"' EXIT
 jq -cS '
   if has("receipt_hash") then
     .receipt_hash = null
+    | del(.receipt_hash_status)
   elif has("output") and (.output | has("receipt_hash")) then
     .output.receipt_hash = null
+    | .output |= del(.receipt_hash_status)
   else
     .
   end
