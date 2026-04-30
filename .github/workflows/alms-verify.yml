@@ -37,3 +37,8 @@ jobs:
           chmod +x scripts/verify_rollover.sh
           chmod +x scripts/test_verify_rollover.sh
           ./scripts/test_verify_rollover.sh
+
+      - name: Verify public rollover artifacts
+        run: |
+          ./scripts/verify_rollover.sh receipts/rollover/segment_001_to_002.json
+          ./scripts/verify_rollover.sh receipts/rollover/segment_002_to_003.json

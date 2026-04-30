@@ -44,3 +44,8 @@ The verification path is:
 
 ```txt
 receipt → segment manifest → rollover link → GitHub CI
+
+### Verify Segment 002 → Segment 003 rollover
+
+```bash
+./scripts/verify_rollover.sh receipts/rollover/segment_002_to_003.json
