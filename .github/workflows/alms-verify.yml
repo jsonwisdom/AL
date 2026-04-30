@@ -31,3 +31,9 @@ jobs:
           chmod +x scripts/verify_segment.sh
           chmod +x scripts/test_verify_segment.sh
           ./scripts/test_verify_segment.sh
+
+      - name: Run ALMS rollover verifier tests
+        run: |
+          chmod +x scripts/verify_rollover.sh
+          chmod +x scripts/test_verify_rollover.sh
+          ./scripts/test_verify_rollover.sh
