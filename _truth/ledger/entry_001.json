@@ -1,0 +1,18 @@
+{
+  "entry": 1,
+  "protocol": "ALMS-WS",
+  "version": "v0.3",
+  "anchor_surface": "GITHUB_COMMIT",
+  "cid": "bafkreickbxqyu5wcrwmcd3ac4vk43kmncuzc7tdd63xzpmeqbdhatgv7oa",
+  "sha256": "4a0de18a76c28d9821ec02e555cada98d15322fcc63f6ef97b09008ce099abf70",
+  "classification": "VALID",
+  "verification": {
+    "local_replay_match": true,
+    "ipfs_fetch_hash_match": true,
+    "deltas_processed": 2
+  },
+  "receipt_path": "_truth/websocket_sessions/anchor_first_receipt.json",
+  "verifier": "scripts/verify_ws_session.sh",
+  "onchain_anchor": "DEFERRED_WALLET_UX_BLOCKED",
+  "status": "PUBLIC_BASELINE_ACTIVE"
+}
