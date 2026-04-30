@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ALMS_CID_BINDING_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "artifact",
+    "sha256",
+    "cid",
+    "binding",
+    "verification"
+  ],
+  "properties": {
+    "artifact": {
+      "type": "string",
+      "description": "Relative path to the canonical artifact being bound."
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$",
+      "description": "Canonical SHA-256 of the artifact bytes."
+    },
+    "cid": {
+      "type": "string",
+      "pattern": "^Qm[1-9A-HJ-NP-Za-km-z]{44}$",
+      "description": "CIDv0 base58btc identifier for the artifact bytes."
+    },
+    "binding": {
+      "type": "string",
+      "enum": ["STRICT"],
+      "description": "Binding mode. STRICT means no fallback and no override."
+    },
+    "verification": {
+      "type": "string",
+      "enum": ["DUAL_MATCH_REQUIRED"],
+      "description": "Both SHA-256 and CID must match the artifact bytes."
+    }
+  }
+}
