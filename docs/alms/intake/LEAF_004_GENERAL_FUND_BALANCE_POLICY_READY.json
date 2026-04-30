@@ -1,0 +1,20 @@
+{
+  "leaf_id": "004",
+  "target": "GENERAL_FUND_BALANCE_POLICY",
+  "state": "INTAKE_READY",
+  "anchor_allowed": false,
+  "batch_id_allowed": false,
+  "mode": "EXTRACTION_ONLY",
+  "activation_phrase": "Start Leaf #004 extraction",
+  "planned_sequence": [
+    "grep_locate_policy_section",
+    "page_window_isolation",
+    "zone_slice_construction",
+    "sha256sum",
+    "wc_c",
+    "raw_bytes_intake",
+    "artifact_build",
+    "precheck"
+  ],
+  "doctrine": "NO_INTERPRETATION_NO_DERIVATION_NO_SHORTCUTS"
+}
