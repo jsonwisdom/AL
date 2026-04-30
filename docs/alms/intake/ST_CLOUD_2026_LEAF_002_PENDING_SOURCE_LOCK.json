@@ -1,0 +1,29 @@
+{
+  "state": "HARD_HALT_CONFIRMED",
+  "leaf_id": "002",
+  "asset_id": "ST_CLOUD_CITY_BUDGET_FY2026_PROPOSED",
+  "asset_class": "CIVIC_FINANCIAL_RECORD",
+  "jurisdiction": "St. Cloud, Minnesota",
+  "source_url": "https://www.ci.stcloud.mn.us/DocumentCenter/View/29485/2026-GOVERNMENTAL-FUNDS-BUDGET-FINAL",
+  "source_title": "2026 Governmental Funds Budget Final",
+  "alms_protocol": "ALMS_V1",
+  "intake_status": "AWAITING_PDF_SHA256_LOCK",
+  "anchor_allowed": false,
+  "batch_id_allowed": false,
+  "required_terminal_outputs": {
+    "pdf_sha256": "sha256sum stcloud_2026_governmental_funds_budget.pdf",
+    "pdf_filesize_bytes": "wc -c stcloud_2026_governmental_funds_budget.pdf",
+    "file_type": "file stcloud_2026_governmental_funds_budget.pdf"
+  },
+  "blocked_until": [
+    "exact_pdf_bytes_locked",
+    "source_pdf_sha256_captured",
+    "pdf_filesize_bytes_captured",
+    "file_type_confirms_pdf",
+    "target_page_identified",
+    "pdftotext_slice_captured"
+  ],
+  "doctrine": "NO_EXTRACTION_WITHOUT_REAL_PDF_BYTES",
+  "mutation_policy": "NO_REPAIR_NO_PLACEHOLDER_NO_MENTAL_EXTRACTION",
+  "next_gate": "PDF_SHA256_LOCK"
+}
