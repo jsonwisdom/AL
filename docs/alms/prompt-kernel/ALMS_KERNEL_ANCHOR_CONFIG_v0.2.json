@@ -1,0 +1,47 @@
+{
+  "id": "ALMS_KERNEL_ANCHOR_CONFIG_v0.2",
+  "target": "alms.kernel.v0_2",
+  "baseline_kernel": "ALMS_PROMPT_KERNEL_v0.2",
+  "lineage_manifest_id": "ALMS_KERNEL_LINEAGE_v0.2",
+  "git": {
+    "repository": "jsonwisdom/AL",
+    "branch": "master",
+    "commit": "52d715ff4cfbbcabb64df6e3d7ad5e16561a7fea",
+    "path": "docs/alms/prompt-kernel/ALMS_KERNEL_LINEAGE_v0.2.json"
+  },
+  "ens": {
+    "name": "alms.kernel.v0_2",
+    "records": {
+      "text.alms:component": "PROMPT_KERNEL",
+      "text.alms:version": "v0.2",
+      "text.alms:status": "STABLE_ANCHORED",
+      "text.alms:git_commit": "52d715ff4cfbbcabb64df6e3d7ad5e16561a7fea",
+      "text.alms:kernel_id": "ALMS_PROMPT_KERNEL_v0.2",
+      "text.alms:kernel_hash": "sha256:018c53422fc3fe7a77533a3eb6a0a729f7d89ef77927a483ae064bed8e75d1d8",
+      "text.alms:content_hash": "ipfs://bafybeiguzlmem6q3oznmswea75ovugs2c3w7t7zejap3rifwuwr5zktn54",
+      "text.alms:governance": "jaywisdom.base.eth",
+      "text.alms:lineage_manifest_id": "ALMS_KERNEL_LINEAGE_v0.2"
+    }
+  },
+  "eas": {
+    "schema": "ALMS_KERNEL_PRIMITIVE_V1",
+    "data": {
+      "kernel_id": "ALMS_PROMPT_KERNEL_v0.2",
+      "component": "PROMPT_KERNEL",
+      "version": "v0.2",
+      "git_commit": "52d715ff4cfbbcabb64df6e3d7ad5e16561a7fea",
+      "kernel_hash": "sha256:018c53422fc3fe7a77533a3eb6a0a729f7d89ef77927a483ae064bed8e75d1d8",
+      "content_hash": "ipfs://bafybeiguzlmem6q3oznmswea75ovugs2c3w7t7zejap3rifwuwr5zktn54",
+      "governance": "jaywisdom.base.eth",
+      "status": "STABLE_BASELINE",
+      "lineage_manifest_id": "ALMS_KERNEL_LINEAGE_v0.2"
+    }
+  },
+  "control_plane": {
+    "action": "ANCHOR_KERNEL",
+    "ens_status": "PENDING_WRITE",
+    "eas_status": "PENDING_ATTESTATION",
+    "fork_rule": "all_experimental_kernels_must_descend_from_git:52d715ff4cfbbcabb64df6e3d7ad5e16561a7fea",
+    "protocol_status": "PRODUCTION_BASELINE_SET"
+  }
+}
