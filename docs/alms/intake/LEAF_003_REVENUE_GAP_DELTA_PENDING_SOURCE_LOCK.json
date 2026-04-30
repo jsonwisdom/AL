@@ -1,0 +1,36 @@
+{
+  "state": "INTAKE_OPEN",
+  "leaf_id": "003",
+  "asset_id": "ST_CLOUD_CITY_BUDGET_FY2026_REVENUE_GAP_DELTA",
+  "asset_class": "CIVIC_FINANCIAL_RECORD",
+  "jurisdiction": "St. Cloud, Minnesota",
+  "depends_on_leaf": "002",
+  "dependency_batch_id": "f574a8741d5ed0cc67310a686ac0ba59f132a98171e723ebf001081ba04c0d21",
+  "known_revenue_anchor": {
+    "field": "total_revenues_and_other_financing_sources_2026",
+    "value": 75784400,
+    "source_leaf": "002"
+  },
+  "target_measure": "expenditure_vs_revenue_gap",
+  "required_next_outputs": {
+    "source_pdf_sha256": "reuse locked PDF only if bytes match Leaf 002 source hash",
+    "target_page": "page number containing General Fund Expenditures and Other Financing Uses Summary",
+    "anchor_string": "exact expenditure table title string",
+    "pdftotext_slice": "raw extraction slice from pdftotext -layout -nopgbrk",
+    "total_expenditures_and_other_financing_uses_2026": "exact table value"
+  },
+  "blocked_until": [
+    "same_source_pdf_hash_confirmed",
+    "target_page_identified",
+    "anchor_string_locked",
+    "pdftotext_slice_captured",
+    "expenditure_value_extracted",
+    "gap_calculation_artifact_constructed",
+    "precheck_passed"
+  ],
+  "doctrine": "DEPENDENT_LEAF_MUST_REFERENCE_LEAF_002_REVENUE_ANCHOR",
+  "mutation_policy": "NO_REPAIR_NO_PLACEHOLDER_NO_MENTAL_EXTRACTION",
+  "anchor_allowed": false,
+  "batch_id_allowed": false,
+  "next_gate": "EXPENDITURE_PAGE_IDENTIFICATION"
+}
