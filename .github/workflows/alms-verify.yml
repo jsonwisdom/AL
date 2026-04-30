@@ -1,0 +1,27 @@
+name: ALMS Receipt Verification
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  verify-receipts:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install jq
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq
+
+      - name: Ensure scripts are executable
+        run: |
+          chmod +x scripts/verify_receipt.sh
+          chmod +x scripts/test_verify_receipt.sh
+
+      - name: Run ALMS receipt verifier tests
+        run: |
+          ./scripts/test_verify_receipt.sh
