@@ -2,12 +2,17 @@
   "segment_id": "ALMS_CHAIN_SEGMENT_003",
   "state": "SEGMENT_SEALED",
   "leaf_order": "locked_manifest_order",
-  "global_root": "0xb23c19348fd2eecb53bb7edc90868574983af94fc1fd40b6d5dc19e217ee4c04",
+  "global_root": "0x265500ec2cf65367783ca7337afc1988d77a3f214ec1e6c05cf5ce1feb9d257f",
   "receipts": [
     {
       "leaf_id": "SEGMENT_003_LEAF_001",
       "receipt_path": "receipts/segment_003/leaf_001_receipt.final.json",
       "receipt_hash": "0xb23c19348fd2eecb53bb7edc90868574983af94fc1fd40b6d5dc19e217ee4c04"
+    },
+    {
+      "leaf_id": "SEGMENT_003_LEAF_002",
+      "receipt_path": "receipts/segment_003/leaf_002_receipt.final.json",
+      "receipt_hash": "0xc2e82c428b6dcfbc2b0319553f34ef23936de205a216e8a01cb30a8a769b46de"
     }
   ]
 }
