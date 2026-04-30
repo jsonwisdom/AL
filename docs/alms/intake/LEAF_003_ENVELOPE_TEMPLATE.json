@@ -1,0 +1,21 @@
+{
+  "artifact_status": "NOT_BUILT",
+  "asset_id": "ST_CLOUD_CITY_BUDGET_FY2026_REVENUE_GAP_DELTA",
+  "depends_on": {
+    "leaf_002_batch_id": "f574a8741d5ed0cc67310a686ac0ba59f132a98171e723ebf001081ba04c0d21",
+    "leaf_002_revenue_value": 75784400
+  },
+  "leaf_003_expenditure_zone": {
+    "zone_sha256": "2b8e3f9467727c95781a7947190040375a006c6f7881c9675662a5f67b07e77a",
+    "zone_size_bytes": 842,
+    "extracted_value": 75784400
+  },
+  "next_required": [
+    "construct_leaf003_artifact_jsonl",
+    "canonicalize_leaf003_artifact_jsonl",
+    "sha256_leaf003_artifact",
+    "construct_leaf003_envelope_with_artifact_sha256"
+  ],
+  "anchor_allowed": false,
+  "batch_id_allowed": false
+}
