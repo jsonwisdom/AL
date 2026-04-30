@@ -25,3 +25,9 @@ jobs:
       - name: Run ALMS receipt verifier tests
         run: |
           ./scripts/test_verify_receipt.sh
+
+      - name: Run ALMS segment verifier tests
+        run: |
+          chmod +x scripts/verify_segment.sh
+          chmod +x scripts/test_verify_segment.sh
+          ./scripts/test_verify_segment.sh
