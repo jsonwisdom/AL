@@ -3,7 +3,7 @@ import json, hashlib, datetime, os
 from statistics import median
 
 LEAF_PATH = "_truth/edu_civil_rights/mn/MN_EDU_CIVIL_RIGHTS_001.leaf.json"
-DELTA_DIR = "_truth/edu_civil_rights/mn/deltas"
+DELTA_PATH = "_truth/edu_civil_rights/mn/MN_EDU_CIVIL_RIGHTS_001.deltas.jsonl"
 
 RESOLUTION_OUTCOMES = set([
     "POSITIVE_RESOLUTION",
@@ -44,6 +44,14 @@ def sha256_hex(data: str) -> str:
 
 def canonical_json(obj) -> str:
     return json.dumps(obj, sort_keys=True, ensure_ascii=False, separators=(",", ":"))
+
+def utc_ts():
+    return datetime.datetime.utcnow().replace(microsecond=0).isoformat() + "Z"
+
+def append_delta(entry):
+    os.makedirs(os.path.dirname(DELTA_PATH), exist_ok=True)
+    with open(DELTA_PATH, "a", encoding="utf-8") as f:
+        f.write(json.dumps(entry, sort_keys=True, separators=(",", ":")) + "\n")
 
 with open(LEAF_PATH, "r", encoding="utf-8") as f:
     leaf = json.load(f)
@@ -103,23 +111,16 @@ with open(LEAF_PATH, "w", encoding="utf-8") as f:
     json.dump(leaf, f, indent=2, sort_keys=True)
     f.write("\n")
 
-os.makedirs(DELTA_DIR, exist_ok=True)
-ts = datetime.datetime.utcnow().replace(microsecond=0).isoformat() + "Z"
-delta_path = f"{DELTA_DIR}/{ts.replace(':', '')}_aggregate_delta.json"
-with open(delta_path, "w", encoding="utf-8") as f:
-    json.dump({
-        "timestamp": ts,
-        "receipt_id": "MN_EDU_CIVIL_RIGHTS_001",
-        "status": "AGGREGATED",
-        "hash": leaf_hash,
-        "aggregates": leaf["data"]["aggregates"],
-        "rules": {
-            "pending_is_not_resolution": True,
-            "aggregation_source": "validated_rows_only",
-            "inference": "disabled"
-        }
-    }, f, indent=2, sort_keys=True)
-    f.write("\n")
+ts = utc_ts()
+append_delta({
+    "timestamp": ts,
+    "receipt_id": "MN_EDU_CIVIL_RIGHTS_001",
+    "event": "AGGREGATED",
+    "status": "AGGREGATED",
+    "hash": leaf_hash,
+    "numeric_fields_populated": leaf["numeric_fields_populated"],
+    "aggregates": leaf["data"]["aggregates"]
+})
 
 print(f"Aggregates computed. Hash: {leaf_hash}")
-print(f"Delta: {delta_path}")
+print(f"Delta ledger: {DELTA_PATH}")
