@@ -1,0 +1,28 @@
+{
+  "schema": "alms.ws_session_receipt.v0.2",
+  "session_name": "canon_test",
+  "session_id": "3c6e0b8a9c15224a8228b9a98ca1531d",
+  "initial_state_hash": "0x0",
+  "canonicalization": "jq -cS .",
+  "entries": [
+    {
+      "seq": 1,
+      "type": "canonical_json_frame",
+      "raw_frame_hash": "placeholder",
+      "canonical_frame": "{\"a\":1,\"b\":2}",
+      "canonical_frame_hash": "9e107d9d372bb6826bd81d3542a419d6",
+      "prev_hash": "0x0",
+      "entry_hash": "c1"
+    },
+    {
+      "seq": 2,
+      "type": "canonical_json_frame",
+      "raw_frame_hash": "placeholder",
+      "canonical_frame": "{\"a\":3,\"b\":4}",
+      "canonical_frame_hash": "e4d909c290d0fb1ca068ffaddf22cbd0",
+      "prev_hash": "c1",
+      "entry_hash": "c2"
+    }
+  ],
+  "final_state_hash": "c2"
+}
