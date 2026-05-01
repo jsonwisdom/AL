@@ -1,5 +1,5 @@
 ALMS_CI_ENFORCEMENT_V1
-timestamp_utc=2026-05-01T04:50:16Z
+timestamp_utc=2026-05-01T04:56:37Z
 root=/home/computerwisdom408/AL
 boundary=Receipts stay. Signing power leaves.
 
@@ -16,7 +16,7 @@ PASS file_exists .github/workflows/jay-repo-safety.yml
 → Running Jay repo safety scan...
 
 ## PRIVATE_KEY_PATTERNS
-STATUS=PASS
+STATUS=FAIL
 
 ## SEED_OR_MNEMONIC_PATTERNS
 STATUS=PASS
@@ -40,14 +40,4 @@ STATUS=FOUND_PUBLIC_ARTIFACTS
 STATUS=FOUND_PUBLIC_ARTIFACTS
 
 ## FINAL
-JAY_REPO_SAFETY_OK report=./_truth/security/jay_repo_safety_report.txt
-PASS safety_scan_green
-→ Validating JSON files...
-PASS json_validity
-→ Verifying receipt lanes...
-PASS safety_report_exists
-→ Checking workflow presence...
-PASS ci_workflow_exists
-
-ALMS_CI_ENFORCEMENT_OK report=/home/computerwisdom408/AL/_truth/ci/jay_ci_enforcement_report.txt
-State: CI_GREEN | Receipts stay | Signing power leaves
+JAY_REPO_SAFETY_FAIL report=./_truth/security/jay_repo_safety_report.txt
