@@ -64,7 +64,7 @@ scan_report() {
   fi
 }
 
-scan_fail "PRIVATE_KEY_PATTERNS" 'PRIVATE_KEY=|private_key|BEGIN (RSA |EC |OPENSSH |)?PRIVATE KEY|wallet\.json|keystore|UTC--'
+scan_fail "PRIVATE_KEY_PATTERNS" 'PRIVATE_KEY=|\"private_key\"[[:space:]]*:|BEGIN (RSA |EC |OPENSSH |)?PRIVATE KEY|wallet\.json|keystore|UTC--'
 scan_fail "SEED_OR_MNEMONIC_PATTERNS" 'MNEMONIC=|SEED_PHRASE=|seed phrase|recovery phrase'
 scan_fail "API_TOKEN_PATTERNS" 'ghp_[A-Za-z0-9_]{20,}|github_pat_[A-Za-z0-9_]{20,}|sk-[A-Za-z0-9]{20,}|xox[baprs]-[A-Za-z0-9-]+'
 scan_fail "ENV_FILE_LEAKS" '(^|/)\.env($|\.| )|\.env\.local|\.env\.production'

@@ -1,12 +1,11 @@
 JAY_REPO_SAFETY_SCAN
-timestamp_utc=2026-05-01T04:45:39Z
+timestamp_utc=2026-05-01T04:46:13Z
 root=.
 
 BOUNDARY: receipts stay; signing power leaves
 
 ## PRIVATE_KEY_PATTERNS
-./_truth/websocket_sessions/anchor_first_receipt_manifest.json:23:    "no_private_keys_in_terminal",
-STATUS=FAIL
+STATUS=PASS
 
 ## SEED_OR_MNEMONIC_PATTERNS
 STATUS=PASS
@@ -101,4 +100,4 @@ STATUS=FOUND_PUBLIC_ARTIFACTS
 STATUS=FOUND_PUBLIC_ARTIFACTS
 
 ## FINAL
-JAY_REPO_SAFETY_FAIL report=./_truth/security/jay_repo_safety_report.txt
+JAY_REPO_SAFETY_OK report=./_truth/security/jay_repo_safety_report.txt
