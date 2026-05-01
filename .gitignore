@@ -1,23 +1,4 @@
-# Runtime observer state
-_truth/base/
-_truth/base_mesh/
-_truth/logs/
-_truth/cron.log
-
-# Exported dashboard runtime feeds
-site/*.json
-site/*.log
-site/feed.log
-
-# Keep source files trackable
-!site/nitro-dashboard.html
-!watchers/
-!watchers/base/
-!watchers/base_mesh/
-!scripts/
-_truth/detect/
-_truth/detect/
-_truth/detect/
-
-# Local verifier backups
-docs/verify.html.bak.*
+node_modules/
+.env
+.env.*
+.DS_Store
