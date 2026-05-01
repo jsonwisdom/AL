@@ -1,0 +1,8 @@
+{
+  "leaf_id": "006",
+  "state": "ENVELOPE_CANONICAL_HASH_CAPTURED",
+  "observed_envelope_sha256": "030f210e78974692730fd1234494bc3a854786dd95fa0b5f3cb5ddd09e106e04",
+  "note": "User provided canonical envelope hash after precheck failure. Precheck PASS still required after promoting canonical bytes before envelope lock.",
+  "anchor_allowed": false,
+  "next_gate": "PROMOTE_CANONICAL_ENVELOPE_BYTES_AND_VERIFY_PRECHECK_PASS"
+}
