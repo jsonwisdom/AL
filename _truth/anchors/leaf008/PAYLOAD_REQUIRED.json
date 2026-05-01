@@ -1,0 +1,14 @@
+{
+  "leaf_id": "008",
+  "state": "PAYLOAD_REQUIRED",
+  "operator_request": "Drop Leaf 008 payload here",
+  "classification": "BLOCKED_ON_BYTES",
+  "required_format": {
+    "payload": "exact Base64 string OR exact raw text bytes",
+    "designation": "LEAF_008_<CLEAR_SHORT_TITLE>",
+    "description": "one clear sentence"
+  },
+  "anchor_allowed": false,
+  "reason": "request received but no actual payload bytes included",
+  "rule": "No bytes, no hash. No hash, no attestation."
+}
