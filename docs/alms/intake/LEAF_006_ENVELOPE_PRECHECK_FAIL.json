@@ -1,0 +1,9 @@
+{
+  "leaf_id": "006",
+  "state": "ENVELOPE_PRECHECK_FAIL",
+  "observed_envelope_sha256": "030f210e78974692730fd1234494bc3a854786dd95fa0b5f3cb5ddd09e106e04",
+  "observed_envelope_size_bytes": 288,
+  "reason": "envelope bytes did not match jq -cS canonical output",
+  "anchor_allowed": false,
+  "next_gate": "PROMOTE_CANONICAL_ENVELOPE_BYTES"
+}
