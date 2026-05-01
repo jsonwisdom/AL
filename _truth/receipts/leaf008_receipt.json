@@ -1,11 +1,11 @@
 {
   "receipt": "LEAF_008_MEME_COURT_RECEIPT",
-  "state": "CID_VERIFIED_ANCHOR_READY",
+  "state": "EAS_ATTESTED_PENDING_FINAL_SEAL",
   "payload_sha256": "d9f8d96b76dc30dabb1405c6b4d5050fbc3e376af50e51ce1d72bc5d9d2cbb07",
   "anchors_sha256": "ea907c7c88901b3467b4872715f709b908346d44837c2b6c9a2aaa2f3f281c4d",
   "anchors_path": "_truth/anchors/leaf008/ANCHORS.json",
   "created_utc": "2026-05-01T05:21:25Z",
-  "next": "ENS_OR_EAS_ANCHOR_READY",
+  "next": "Commit receipt, CI green, then final seal.",
   "ipfs": {
     "cid": "bafkreihauwnirsog7tg2m2yp4nglsnl6a2lc6grz652dlukehxx6e4rvlu",
     "manifest_file_sha256": "672c7ce256c12296f4bf3ba05934761d004374f1850054e5d0fac6ad3c02257b",
@@ -21,5 +21,15 @@
     "fetched_sha256": "077a510d0dc7a28cc4977e278b393988fd1f53ba2991bb43e20da818bb2426df",
     "declared_manifest_file_sha256": "672c7ce256c12296f4bf3ba05934761d004374f1850054e5d0fac6ad3c02257b",
     "state": "JSON_MANIFEST_CONTENT_VERIFIED_WITH_FETCHED_HASH"
+  },
+  "eas": {
+    "state": "EAS_ATTESTED",
+    "network": "Base",
+    "schema": "0x53a4a43dfb91a23d683202e22aa9e59be86ad67fd650aff11be6929b5654bf95",
+    "tx_hash": "0x51c0fcc6659281625d039438046048faefb5afc3e842bf0c2e89196b976c9ac1",
+    "attestation_uid": "0x5849a41321847f3d7ee6eb38eaa05cf73b906e8fa1c003de0a6b9ddaa7f4a5a1",
+    "attester": "0x1dB2C056c7DeCD9f9fC574692b05F62aE34Fb8b5",
+    "recipient": "0x1dB2C056c7DeCD9f9fC574692b05F62aE34Fb8b5",
+    "contentHash": "0x077a510d0dc7a28cc4977e278b393988fd1f53ba2991bb43e20da818bb2426df"
   }
 }

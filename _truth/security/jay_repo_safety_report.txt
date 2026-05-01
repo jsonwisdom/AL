@@ -1,5 +1,5 @@
 JAY_REPO_SAFETY_SCAN
-timestamp_utc=2026-05-01T05:33:48Z
+timestamp_utc=2026-05-01T05:47:17Z
 root=.
 
 BOUNDARY: receipts stay; signing power leaves
@@ -64,6 +64,12 @@ STATUS=PASS
 ./_truth/ledger.jsonl:4:{"claim_id":"al_1777256883_1679","claim_text":"Nitro observer baseline verified: revoker_live=0x0000000000000000000000000000000000000000 revoke_calls=0","source":{"document":"nitro_observer_feed","line_hint":1,"watcher":"claim_emitter.sh"},"artifacts":{"text_hash":"sha256:078d8c3f0eb892d579981210bdd8ef353591ff8e5136283e3d2f5cddd9117d61"},"prev_hash":"sha256:d93a57326e58995b8eab33e603b8846ebe623bbd85cf2be6f0d18aaa9e2ea4b8","status":"verified"}
 ./_truth/base/systemconfig_observer_feed.json:5:  "l1_address_mainnet": "0x73a79Fab69143498Ed3712e519A88a918e1f4072",
 ./_truth/base/systemconfig_observer_feed.json:6:  "l1_address_sepolia": "0xf272670eb55e895584501d564AfEB048bEd26194",
+./_truth/eas/leaf008_eas_attestation.json:6:  "schema": "0x53a4a43dfb91a23d683202e22aa9e59be86ad67fd650aff11be6929b5654bf95",
+./_truth/eas/leaf008_eas_attestation.json:7:  "tx_hash": "0x51c0fcc6659281625d039438046048faefb5afc3e842bf0c2e89196b976c9ac1",
+./_truth/eas/leaf008_eas_attestation.json:8:  "attestation_uid": "0x5849a41321847f3d7ee6eb38eaa05cf73b906e8fa1c003de0a6b9ddaa7f4a5a1",
+./_truth/eas/leaf008_eas_attestation.json:9:  "attester": "0x1dB2C056c7DeCD9f9fC574692b05F62aE34Fb8b5",
+./_truth/eas/leaf008_eas_attestation.json:10:  "recipient": "0x1dB2C056c7DeCD9f9fC574692b05F62aE34Fb8b5",
+./_truth/eas/leaf008_eas_attestation.json:11:  "contentHash": "0x077a510d0dc7a28cc4977e278b393988fd1f53ba2991bb43e20da818bb2426df",
 ./_truth/anchors/leaf007/ANCHORS.json:17:    "schema_uid": "0x53a4a43dfb91a23d683202e22aa9e59be86ad67fd650aff11be6929b5654bf95",
 ./_truth/anchors/leaf007/INTAKE.json:22:    "schema_uid": "0x53a4a43dfb91a23d683202e22aa9e59be86ad67fd650aff11be6929b5654bf95",
 ./_truth/anchors/leaf006/ANCHORS.json:19:    "schema_uid": "0x53a4a43dfb91a23d683202e22aa9e59be86ad67fd650aff11be6929b5654bf95",
@@ -72,6 +78,12 @@ STATUS=PASS
 ./_truth/backfill/eas_backfill_unsigned_tx.json:3:  "to": "0x4200000000000000000000000000000000000021",
 ./_truth/backfill/eas_backfill_unsigned_tx.json:8:  "encoded_data": "0xcad549f24bec742fd1f6bd280e3202921fa2dd6a11f82eb36ff9ecd9903035460000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000300000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000001a6261636b66696c6c5f6d65726b6c655f62617463685f76302e3100000000000000000000000000000000000000000000000000000000000000000000000000355f74727574682f6261636b66696c6c2f6261636b66696c6c5f6d65726b6c655f3230323630343236543233303532385a2e6a736f6e0000000000000000000000",
 ./_truth/command/COMMANDER_STATE_GROK_JAY.json:14:    "eas_uid": "0x88a2850e1e1c8196d89b6e0d93df7ce9f87deaf9fb393ce65b580091a5c66183",
+./_truth/receipts/leaf008_receipt.json:28:    "schema": "0x53a4a43dfb91a23d683202e22aa9e59be86ad67fd650aff11be6929b5654bf95",
+./_truth/receipts/leaf008_receipt.json:29:    "tx_hash": "0x51c0fcc6659281625d039438046048faefb5afc3e842bf0c2e89196b976c9ac1",
+./_truth/receipts/leaf008_receipt.json:30:    "attestation_uid": "0x5849a41321847f3d7ee6eb38eaa05cf73b906e8fa1c003de0a6b9ddaa7f4a5a1",
+./_truth/receipts/leaf008_receipt.json:31:    "attester": "0x1dB2C056c7DeCD9f9fC574692b05F62aE34Fb8b5",
+./_truth/receipts/leaf008_receipt.json:32:    "recipient": "0x1dB2C056c7DeCD9f9fC574692b05F62aE34Fb8b5",
+./_truth/receipts/leaf008_receipt.json:33:    "contentHash": "0x077a510d0dc7a28cc4977e278b393988fd1f53ba2991bb43e20da818bb2426df"
 STATUS=FOUND_PUBLIC_ARTIFACTS
 
 ## PUBLIC_0X_64_HASH_LIKE
@@ -90,6 +102,10 @@ STATUS=FOUND_PUBLIC_ARTIFACTS
 ./scripts/jay_bash_gemini_leaf008.sh:14:SCHEMA_UID="0x53a4a43dfb91a23d683202e22aa9e59be86ad67fd650aff11be6929b5654bf95"
 ./site/eas-backfill-signer.html:18:const ZERO="0x0000000000000000000000000000000000000000000000000000000000000000";
 ./site/eas-backfill-signer.html:20:const merkleRoot="0xcad549f24bec742fd1f6bd280e3202921fa2dd6a11f82eb36ff9ecd990303546";
+./_truth/eas/leaf008_eas_attestation.json:6:  "schema": "0x53a4a43dfb91a23d683202e22aa9e59be86ad67fd650aff11be6929b5654bf95",
+./_truth/eas/leaf008_eas_attestation.json:7:  "tx_hash": "0x51c0fcc6659281625d039438046048faefb5afc3e842bf0c2e89196b976c9ac1",
+./_truth/eas/leaf008_eas_attestation.json:8:  "attestation_uid": "0x5849a41321847f3d7ee6eb38eaa05cf73b906e8fa1c003de0a6b9ddaa7f4a5a1",
+./_truth/eas/leaf008_eas_attestation.json:11:  "contentHash": "0x077a510d0dc7a28cc4977e278b393988fd1f53ba2991bb43e20da818bb2426df",
 ./_truth/anchors/leaf007/ANCHORS.json:17:    "schema_uid": "0x53a4a43dfb91a23d683202e22aa9e59be86ad67fd650aff11be6929b5654bf95",
 ./_truth/anchors/leaf007/INTAKE.json:22:    "schema_uid": "0x53a4a43dfb91a23d683202e22aa9e59be86ad67fd650aff11be6929b5654bf95",
 ./_truth/anchors/leaf006/ANCHORS.json:19:    "schema_uid": "0x53a4a43dfb91a23d683202e22aa9e59be86ad67fd650aff11be6929b5654bf95",
@@ -97,6 +113,10 @@ STATUS=FOUND_PUBLIC_ARTIFACTS
 ./_truth/anchors/leaf006/ANCHORS.json:21:    "content_hash": "0x21829f0be11cd04a64f379ad90003fc39338d91b2242720cd6c0497aed067d8b",
 ./_truth/backfill/eas_backfill_unsigned_tx.json:8:  "encoded_data": "0xcad549f24bec742fd1f6bd280e3202921fa2dd6a11f82eb36ff9ecd9903035460000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000300000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000001a6261636b66696c6c5f6d65726b6c655f62617463685f76302e3100000000000000000000000000000000000000000000000000000000000000000000000000355f74727574682f6261636b66696c6c2f6261636b66696c6c5f6d65726b6c655f3230323630343236543233303532385a2e6a736f6e0000000000000000000000",
 ./_truth/command/COMMANDER_STATE_GROK_JAY.json:14:    "eas_uid": "0x88a2850e1e1c8196d89b6e0d93df7ce9f87deaf9fb393ce65b580091a5c66183",
+./_truth/receipts/leaf008_receipt.json:28:    "schema": "0x53a4a43dfb91a23d683202e22aa9e59be86ad67fd650aff11be6929b5654bf95",
+./_truth/receipts/leaf008_receipt.json:29:    "tx_hash": "0x51c0fcc6659281625d039438046048faefb5afc3e842bf0c2e89196b976c9ac1",
+./_truth/receipts/leaf008_receipt.json:30:    "attestation_uid": "0x5849a41321847f3d7ee6eb38eaa05cf73b906e8fa1c003de0a6b9ddaa7f4a5a1",
+./_truth/receipts/leaf008_receipt.json:33:    "contentHash": "0x077a510d0dc7a28cc4977e278b393988fd1f53ba2991bb43e20da818bb2426df"
 STATUS=FOUND_PUBLIC_ARTIFACTS
 
 ## FINAL
