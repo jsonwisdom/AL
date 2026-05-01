@@ -1,0 +1,27 @@
+{
+  "leaf_id": "008",
+  "designation": "LEAF_008_MEME_COURT_OPENAI_V_MUSK",
+  "description": "Public receipt for tracking Musk v. Altman with satire allowed and fake records forbidden.",
+  "payload_type": "raw_text",
+  "payload_path": "_truth/anchors/leaf008/PAYLOAD.txt",
+  "payload_sha256": "d9f8d96b76dc30dabb1405c6b4d5050fbc3e376af50e51ce1d72bc5d9d2cbb07",
+  "payload_bytes": 693,
+  "baseline_commit": "dcc60d8dbeb98b99b05d2243eef445e2b8820196",
+  "created_utc": "2026-05-01T05:21:25Z",
+  "anchor_identity": "jaywisdom.eth",
+  "court_case": {
+    "name": "Musk v. Altman",
+    "docket": "4:24-cv-04722",
+    "court": "U.S. District Court, Northern District of California",
+    "venue": "Oakland, California",
+    "judge": "Yvonne Gonzalez Rogers"
+  },
+  "rules": [
+    "Satire is allowed.",
+    "Fake records are not.",
+    "Receipts > vibes.",
+    "Verification > narrative."
+  ],
+  "anchor_allowed": false,
+  "status": "LOCAL_VERIFIED_PENDING_CI"
+}
