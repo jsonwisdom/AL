@@ -1,0 +1,19 @@
+{
+  "signal": "artificial goblin intelligence achieved",
+  "classification": "UNVERIFIED_SIGNAL",
+  "mode": "INTAKE_ONLY",
+  "source_required": true,
+  "accepted_source_paths": [
+    "exact_post_text",
+    "post_id_and_timestamp",
+    "screenshot_hash_plus_transcription",
+    "exported_json"
+  ],
+  "anchor_allowed": false,
+  "rule": "No source bytes, no hash. No hash, no receipt.",
+  "next_required": {
+    "payload": "exact source bytes",
+    "designation": "LEAF_008_OR_009_ARTIFICIAL_GOBLIN_INTELLIGENCE_SIGNAL",
+    "description": "Captures the source bytes for the public signal before narrative analysis."
+  }
+}
