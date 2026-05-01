@@ -1,0 +1,9 @@
+{
+  "leaf_id": "006",
+  "state": "DOWNLOAD_TROUBLESHOOT",
+  "expected_local_path": "/home/jaywisdom44/AL/stcloud_leaf006_replay_bundle.tar",
+  "expected_sha256": "21829f0be11cd04a64f379ad90003fc39338d91b2242720cd6c0497aed067d8b",
+  "expected_size_bytes": 10240,
+  "issue": "Cloud Shell download UI reported no such file despite prior sha256 output showing tar existed in repo directory.",
+  "next_gate": "LOCATE_TAR_AND_DOWNLOAD_ABSOLUTE_PATH"
+}
