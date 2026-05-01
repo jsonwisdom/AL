@@ -1,0 +1,26 @@
+{
+  "track": "ZERO_TRUST_GITHUB_DIRECT_REPO_AUDIT",
+  "version": "001_HARDENED",
+  "status": "HARDEN_PHASE_ACTIVE",
+  "gates": {
+    "replay_truth_surface": "BASELINE_ROOT_HARDENED",
+    "consistency_check": "ACTIVE",
+    "ghost_anchor_detector": "HARD_FAIL",
+    "truth_surface_inventory": "CASE_004_AND_CASE_005_INCLUDED"
+  },
+  "baseline": {
+    "merkle_root": "dc4b992f9f6eb41139056a5f75af6d523ed6f55a9775da21401e8bc185e86f5c",
+    "root_sha256": "fc78b6b71e02b7ecf316d37da89032955bae161053b55c241702e35a7557514a",
+    "leaf_count": 2,
+    "runner": "github-actions"
+  },
+  "case_004": {
+    "state": "GITHUB_ANCHORED_EXTERNAL_LAYERS_PENDING",
+    "github_commit": "2d842970b0653944e27974db198ebb78396bd84f"
+  },
+  "case_005": {
+    "state": "PUBLIC_ANCHOR_EMITTED",
+    "fracture_layer": "ZORA_WITHHELD",
+    "full_consensus": false
+  }
+}
