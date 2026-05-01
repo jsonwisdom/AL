@@ -6,7 +6,7 @@ on:
       - main
       - master
     paths:
-      - "truth/**"
+      - "_truth/**"
       - ".github/**"
 
   pull_request:
@@ -14,7 +14,7 @@ on:
       - main
       - master
     paths:
-      - "truth/**"
+      - "_truth/**"
       - ".github/**"
 
 jobs:
@@ -34,8 +34,8 @@ jobs:
 
       - name: Confirm replay script exists
         run: |
-          if [ ! -f truth/audit/replay.py ]; then
-            echo "❌ Missing truth/audit/replay.py"
+          if [ ! -f _truth/audit/replay.py ]; then
+            echo "❌ Missing _truth/audit/replay.py"
             exit 1
           fi
 
@@ -63,7 +63,7 @@ jobs:
       - name: Replay Merkle root from truth surface
         id: replay
         run: |
-          COMPUTED="$(python3 truth/audit/replay.py --commit HEAD --quiet | tail -n 1)"
+          COMPUTED="$(python3 _truth/audit/replay.py --commit HEAD --quiet | tail -n 1)"
 
           if [ -z "$COMPUTED" ]; then
             echo "❌ Replay produced empty root"
