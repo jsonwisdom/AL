@@ -1,0 +1,14 @@
+{
+  "leaf_id": "007",
+  "state": "PAYLOAD_REQUIRED",
+  "operator_signal": "Leaf 007 payload ready",
+  "classification": "BLOCKED_ON_BYTES",
+  "required_next_input": {
+    "payload": "exact raw text OR payload.b64 contents OR repo path to payload.b64",
+    "leaf_designation": "LEAF_007_...",
+    "description": "one_or_two_line_context"
+  },
+  "anchor_allowed": false,
+  "reason": "activation phrase received but no payload bytes were provided",
+  "doctrine": "No bytes, no hash. No hash, no attestation."
+}
