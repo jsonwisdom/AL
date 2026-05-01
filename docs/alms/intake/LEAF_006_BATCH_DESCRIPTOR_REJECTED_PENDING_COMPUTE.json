@@ -1,0 +1,9 @@
+{
+  "leaf_id": "006",
+  "state": "BATCH_DESCRIPTOR_REJECTED",
+  "observed_precheck": "FAIL",
+  "rejection_reason": "descriptor still contained literal PENDING_COMPUTE and raw descriptor did not match canonical bytes",
+  "correct_merkle_root": "030f210e78974692730fd1234494bc3a854786dd95fa0b5f3cb5ddd09e106e04",
+  "anchor_allowed": false,
+  "next_gate": "REBUILD_BATCH_DESCRIPTOR_WITH_LOCKED_ENVELOPE_HASH"
+}
