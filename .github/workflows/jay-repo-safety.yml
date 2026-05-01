@@ -1,0 +1,22 @@
+name: Jay Repo Safety Scan
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  safety:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run Jay repo safety scan
+        run: bash scripts/jay_repo_safety_scan.sh .
+
+      - name: Upload safety report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: jay-repo-safety-report
+          path: _truth/security/jay_repo_safety_report.txt
