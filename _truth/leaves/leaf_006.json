@@ -1,0 +1,28 @@
+{
+  "leaf": "006",
+  "title": "ROUTE_1_2015_HANDOFF_MODEL",
+  "status": "READY_FOR_HASH",
+  "signal_class": "INFRASTRUCTURE_SIGNAL",
+  "subtype": "MN_HUMAN_TRANSIT_MODEL",
+  "location": "St. Cloud / Waite Park, MN",
+  "timepoint": "2026-04-30T20:15:00-0500",
+  "anchorable_claim": "Route 1 has a verified 20:15 Transit Center departure and functions as the clean post-19:30 handoff model for the Walmart / Arby's / terminal transit observation.",
+  "human_observation": [
+    "The Walmart Bus",
+    "back to terminal",
+    "over by Arby's"
+  ],
+  "verified_node": {
+    "route": "Route 1",
+    "departure": "20:15",
+    "origin": "Transit Center",
+    "status": "SUPPORTED"
+  },
+  "excluded_claims": [
+    "Route 10 19:45 Transit Center departure",
+    "20:08 Route 10 return arrival",
+    "guaranteed 7-minute transfer window",
+    "Route 2 20:15 departure"
+  ],
+  "anchor_status": "READY_FOR_HASH_NOT_YET_DEPOSITED"
+}
