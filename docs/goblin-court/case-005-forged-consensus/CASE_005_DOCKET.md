@@ -40,7 +40,7 @@ The trap is visual: most viewers see three green layers and one soft placeholder
 
 ## Court Question
 
-Does three verified layers produce consensus, or does one withheld gate break the whole claim?
+Does three proven layers produce partial consensus, or does one withheld gate block full consensus?
 
 ## Ruling Standard
 
@@ -56,7 +56,7 @@ Does three verified layers produce consensus, or does one withheld gate break th
 3. Runner commit — deliver for verification.
 4. Merge commit — public anchor.
 5. Court ruling — 3/4 consensus boundary test.
-6. Reveal — Zora mint or permanent withhold.
+6. Reveal — ZORA_WITHHELD until court ruling, or permanent withhold.
 
 ## Current Verdict
 

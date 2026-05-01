@@ -10,7 +10,7 @@
     "total_layers": 4,
     "claim_status": "PARTIAL_CONSENSUS_ONLY",
     "full_consensus_allowed": false,
-    "reason": "Zora layer is intentionally withheld and must not be displayed as verified."
+    "reason": "Zora layer is intentionally WITHHELD and must not be displayed as FULL_CONSENSUS."
   },
   "layers": {
     "github": {
@@ -43,7 +43,7 @@
     "A missing human-facing mint must be labeled missing.",
     "Consensus requires scope clarity: consensus over what, across which layers, and with which exceptions."
   ],
-  "failure_condition": "Any UI, dashboard, post, or badge that presents this payload as 4/4 verified is itself the forged consensus artifact.",
+  "failure_condition": "Any UI, dashboard, post, or badge that presents this payload as FULL_CONSENSUS is itself the forged consensus artifact.",
   "language_policy": "NO_GHOST_ANCHORS_NO_CONSENSUS_LAUNDERING",
   "next_gate": "PUBLIC_MERGE_ANCHOR"
 }

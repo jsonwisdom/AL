@@ -31,7 +31,7 @@
 
   <section class="card">
     <h2>1. THE SPINE — GitHub</h2>
-    <p class="ok">✅ GitHub anchored</p>
+    <p class="ok">✅ GitHub receipt present</p>
     <p>Merge commit: <code id="github_commit">2d842970b0653944e27974db198ebb78396bd84f</code></p>
     <p>Merkle root: <code id="merkle_root">dc4b992f9f6eb41139056a5f75af6d523ed6f55a9775da21401e8bc185e86f5c</code></p>
     <p>Root SHA-256: <code id="root_sha256">fc78b6b71e02b7ecf316d37da89032955bae161053b55c241702e35a7557514a</code></p>
@@ -40,8 +40,8 @@
 
   <section class="card">
     <h2>2. EXTERNAL LAYERS</h2>
-    <p class="hold">IPFS/GCS: HOLD — CID required</p>
-    <p class="hold">EAS: HOLD — Base UID required</p>
+    <p class="hold">IPFS/GCS: HOLD — AWAITING_CID</p>
+    <p class="hold">EAS: HOLD — AWAITING_EAS_UID</p>
     <p class="hold">ZORA: HOLD — AWAITING_ZORA_URL required</p>
   </section>
 
@@ -82,7 +82,7 @@ async function loadAudit(){
 }
 function verify(){
   const loaded = auditStatus ? 'LOADED' : 'NOT_LOADED';
-  document.getElementById('result').textContent = `AUDIT_STATUS: ${loaded}\nGITHUB: GREEN\nIPFS/GCS: HOLD — CID required\nEAS: HOLD — UID required\nZORA: HOLD — AWAITING_ZORA_URL required\n\nResult: PARTIAL GREEN. No full four-surface strike until external identifiers are present.`;
+  document.getElementById('result').textContent = `AUDIT_STATUS: ${loaded}\nGITHUB: GREEN\nIPFS/GCS: HOLD — AWAITING_CID\nEAS: HOLD — UID required\nZORA: HOLD — AWAITING_ZORA_URL required\n\nResult: PARTIAL GREEN. No full four-surface strike until external identifiers are present.`;
 }
 loadAudit();
 </script>
