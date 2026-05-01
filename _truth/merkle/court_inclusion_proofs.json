@@ -2,8 +2,8 @@
   "type": "court_merkle_inclusion_proofs",
   "hash_function": "sha256",
   "parent_rule": "sha256(left_bytes + right_bytes)",
-  "leaf_count": 3,
-  "root": "7771fd73c62335f0f361c7dc2ff6307a5d7ed92a14d0b4e15b88db661dbc24a6",
+  "leaf_count": 4,
+  "root": "79e8494155d1e7c8e8f0c7e91c4e7a4e8f721f12a3a9424daade934790086a58",
   "leaves": [
     {
       "path": "_truth/courts/leaf008/verdict_001.canonical.json",
@@ -15,7 +15,7 @@
         },
         {
           "direction": "right",
-          "sibling": "4c7438da90f3d8d35e2c49a9761e34599edcb9929b62ce822ec694f4362b8908"
+          "sibling": "840c0821869c1732676ea4f8c0fb5bcf8fae4772232ab7083a3a96d565a10f92"
         }
       ]
     },
@@ -29,7 +29,7 @@
         },
         {
           "direction": "right",
-          "sibling": "4c7438da90f3d8d35e2c49a9761e34599edcb9929b62ce822ec694f4362b8908"
+          "sibling": "840c0821869c1732676ea4f8c0fb5bcf8fae4772232ab7083a3a96d565a10f92"
         }
       ]
     },
@@ -39,6 +39,20 @@
       "proof": [
         {
           "direction": "right",
+          "sibling": "e798d5875cd72313dd6f2db5f60cbc81adbd0cc9d401f405b6d047eb13fc2e71"
+        },
+        {
+          "direction": "left",
+          "sibling": "346f4c62dea144202fddfeef6bfe758b26d1a7ed36db2c8212aa1a6eb127a379"
+        }
+      ]
+    },
+    {
+      "path": "_truth/courts/leaf011/verdict_001.canonical.json",
+      "leaf_hash": "e798d5875cd72313dd6f2db5f60cbc81adbd0cc9d401f405b6d047eb13fc2e71",
+      "proof": [
+        {
+          "direction": "left",
           "sibling": "6dc9fcb2309de3e0a7e8fdd5e1ad705ebdffa3de33c6e04c12836b353400d2a2"
         },
         {
