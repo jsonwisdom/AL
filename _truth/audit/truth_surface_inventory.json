@@ -1,6 +1,6 @@
 {
+  "policy": "No truth claim without path, state, and boundary.",
   "track": "ZERO_TRUST_GITHUB_DIRECT_REPO_AUDIT",
-  "version": "001_HARDENED",
   "truth_surfaces": [
     {
       "path": "status.json",
@@ -23,32 +23,40 @@
       "role": "watch and alert log"
     },
     {
-      "path": "site/goblin-court/case-004-green/index.html",
       "case": "004",
-      "state": "GITHUB_ANCHORED_EXTERNAL_LAYERS_PENDING",
       "github_commit": "2d842970b0653944e27974db198ebb78396bd84f",
       "merkle_root": "dc4b992f9f6eb41139056a5f75af6d523ed6f55a9775da21401e8bc185e86f5c",
-      "root_sha256": "fc78b6b71e02b7ecf316d37da89032955bae161053b55c241702e35a7557514a"
+      "path": "site/goblin-court/case-004-green/index.html",
+      "root_sha256": "fc78b6b71e02b7ecf316d37da89032955bae161053b55c241702e35a7557514a",
+      "state": "GITHUB_ANCHORED_EXTERNAL_LAYERS_PENDING"
     },
     {
+      "case": "005",
+      "fracture_layer": "ZORA_WITHHELD",
       "path": "docs/goblin-court/case-005-forged-consensus/CASE_005_DOCKET.md",
-      "case": "005",
-      "state": "PARAMETERS_LOCKED",
-      "fracture_layer": "ZORA_WITHHELD"
+      "state": "PARAMETERS_LOCKED"
     },
     {
+      "case": "005",
+      "fracture_layer": "ZORA_WITHHELD",
       "path": "_truth/goblin-court/case-005-forged-consensus/runner_payload.json",
-      "case": "005",
-      "state": "RUNNER_PAYLOAD_EMITTED",
-      "fracture_layer": "ZORA_WITHHELD"
+      "state": "RUNNER_PAYLOAD_EMITTED"
     },
     {
-      "path": "_truth/goblin-court/case-005-forged-consensus/public_anchor.json",
       "case": "005",
-      "state": "PUBLIC_ANCHOR_EMITTED",
+      "consensus_scope": "3_OF_4_PARTIAL_CONSENSUS_ONLY",
       "full_consensus": false,
-      "consensus_scope": "3_OF_4_PARTIAL_CONSENSUS_ONLY"
+      "path": "_truth/goblin-court/case-005-forged-consensus/public_anchor.json",
+      "state": "PUBLIC_ANCHOR_EMITTED"
+    },
+    {
+      "boundary": "File remains under _truth/receipts; promotion is ledger/inventory status, not filesystem move.",
+      "leaf_id": "gov_ncc_001",
+      "path": "_truth/receipts/gov_ncc_001.receipt.json",
+      "role": "promoted receipt",
+      "state": "PROMOTED_FROM_QUARANTINE",
+      "track": "TRACK_006C"
     }
   ],
-  "policy": "No truth claim without path, state, and boundary."
+  "version": "001_HARDENED"
 }
