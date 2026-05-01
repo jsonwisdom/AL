@@ -3174,3 +3174,29 @@
     "status": "TOMBSTONED"
   }
 }
+{
+  "ts": "2026-05-01T10:12:48Z",
+  "type": "ROOT_EVENT",
+  "severity": "INFO",
+  "raw": {
+    "change_type": "NO_CHANGE",
+    "hash_post": "8fc8a0ac1829f95e4affc9baba59c0587e31a1b443ddfc7f255d96f6531c0861",
+    "hash_pre": "8fc8a0ac1829f95e4affc9baba59c0587e31a1b443ddfc7f255d96f6531c0861",
+    "ts": "2026-05-01T10:12:48Z",
+    "type": "ROOT_EVENT"
+  }
+}
+{
+  "ts": "2026-04-27T16:12:09Z",
+  "type": "TOMBSTONE",
+  "severity": "WATCH",
+  "raw": {
+    "ts": "2026-04-27T16:12:09Z",
+    "type": "TOMBSTONE",
+    "file": "test_delete.txt",
+    "reason": "test run",
+    "sha256": "f2ca1bb6c7e907d06dafe4687e579fce76b37e4e93b7605022da52e6ccc26fd2",
+    "git_head": "00667da107a0222a1096b840448f998d3b633773",
+    "status": "TOMBSTONED"
+  }
+}
