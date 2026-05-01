@@ -1,8 +1,244 @@
 {
-  "track": "TRACK_006A_QUARANTINE_LEDGER",
-  "status": "INITIALIZED",
-  "legacy_count": 0,
-  "legacy_paths": [],
-  "policy": "No legacy item may be promoted unless listed here first.",
-  "boundary": "This ledger records only legacy/quarantine items discoverable in the current repository state."
+  "exists_count": 46,
+  "legacy_count": 46,
+  "legacy_count_812": "UNVERIFIED_NOT_USED",
+  "legacy_paths": [
+    {
+      "path": "_truth/receipts/MN_001.json",
+      "sha256": "0311c3a5a2002edf399b7853f581f0f1dd761d8dc7760a2be9174a6680353b3d",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "_truth/receipts/gov_ncc_001.receipt.json",
+      "sha256": "88acf1efe74919118aaba8c341b9af77fed2fb5a6338d455f6ce9357fee6f825",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "_truth/receipts/leaf_002.receipt.json",
+      "sha256": "e72409c75de03474d2cc9e9767152de6c9a01a8b530585abf91ebe07f539069e",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/agent_income_demo_alpha.json",
+      "sha256": "b35db24b4e99364f2235172de74b3d44062a3ee8e7747964a5dd9ad131309b4e",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/agent_income_demo_beta.json",
+      "sha256": "df361430af13e01e9318fc6aae17fd76c29e1f52300866a68417e461ff6ae72c",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0064_receipt.json",
+      "sha256": "d4a075ec245274a5c68914cde37dfeef452f303799718483cc4b339bc22bc6ba",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0065_receipt.json",
+      "sha256": "78124777511a6d51cafb344b62391027a2f02c1d422e684ed855c80093b94cf7",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0066_receipt.json",
+      "sha256": "d8b60855fbf6c6e24c564268ba0fd81cd905028f9221134c64ab7dfedafda44e",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0067_receipt.json",
+      "sha256": "c710bf69b8be0520a2caee024d7b46ed46200bd4f06a4b08a0896b92fc7883a0",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0068_receipt.json",
+      "sha256": "f682b07e5e3627dfa27475d4e6dfc997678f04743d37900cb075b237ddfe592c",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0069_receipt.json",
+      "sha256": "5953e71862811cf82ab9c436a3cf2cbad3ad61cca5cbb3e6d1305326f0fb55bd",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0070_receipt.json",
+      "sha256": "c68f81432123c07d460fa8ed91bff9a006fbcd7eb3961e4ae55cbc1530f9726d",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0071_receipt.json",
+      "sha256": "fcecdcfe430367da8a330e0443ac3bf7ded0f968e49f840a39ab87a59ecf0fd8",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0072_receipt.json",
+      "sha256": "549df9b7583db1816e47b753eb0d78e6349fa0fc023a5645eed00f948e599fcb",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0073_receipt.json",
+      "sha256": "5d84e3ca0eb3a2798162b6cdddd12462510db3e1501f3ba481f9b8714bbfbef5",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0074_receipt.json",
+      "sha256": "e75cad6884e3f88b0772e025e6f5ed6d43998b57cefc5acd861424f426e8a3e3",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0075_receipt.json",
+      "sha256": "30de3c4cb0a901e3e442835076c6c668faa5f0317446acf7ad6c9fb214ebb4a0",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0076_receipt.json",
+      "sha256": "27d136e9b79a519123303d1c285773d5f6309c20caba31d6b71482b92a5cbd65",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0077_receipt.json",
+      "sha256": "2e775674e2a66d70481483e78fea82b0a65be5500da803ecd0ff4284228a2581",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0078_receipt.json",
+      "sha256": "79aafc61cf27a39bd3f7476fc023571cfaf2faf35e7f9e09412904717f4e55f6",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0079_receipt.json",
+      "sha256": "06de912bcdb972e95192c9e3c36463fb7d1c503c47fb1e920fdba3d73c9082b6",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0080_receipt.json",
+      "sha256": "8d5ebfa1f64b95c2f197994dec10954a6e77afb9e37cb293eb00f364c0f9e29d",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0081_receipt.json",
+      "sha256": "4a71c44d087d4d3e502289cbd0e95a637732e996d3141d76c26a7b6edca6fe0d",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0082_receipt.json",
+      "sha256": "c7342460a47b4bd597fb76caad2db4bd64323b49b691c0ea92bf7a138185ffb0",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0083_receipt.json",
+      "sha256": "539a99364ab6d3295df4ee2e594199fbffb59fbc8b6e22b14149f1c9040e1ba4",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0084_receipt.json",
+      "sha256": "7052dfb49ad8ff80cb2019ceb79057a34953e3d93f6d85e8b6bc91038ef9215a",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0085_receipt.json",
+      "sha256": "f411ef81422b61b4b73d37ee7c460728c488c73f829a3d33e4f8883c2405d60c",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0086_receipt.json",
+      "sha256": "d443d98e7cf7e685a1c5aa03a8b5dc6fb8309453b23e8be040730d81d2d1e0d8",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0087_receipt.json",
+      "sha256": "13e302977b82ea085e1976296879e279e88413b7f49450ef917040b2ccd0feab",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0088_receipt.json",
+      "sha256": "ff65b52e0a5f987677d888d0ff31e79d40f38f08b458e4da5f490259615533b1",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0089_receipt.json",
+      "sha256": "8b95d1ac851252ec1f30d405c0a35a76a2c18523cc091be647bafd90b9cf85c7",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0090_receipt.json",
+      "sha256": "9738633e93ad861626457a06f3c43f81d246dc365650c469cc091f778867ca14",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0091_receipt.json",
+      "sha256": "3d03b7217834c0fd2d6a1ce6b2c724253ea333a28afb7d717e94f8e977a89db1",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0092_receipt.json",
+      "sha256": "692d3a6a7e6d3fabb4ae41065615e100dd703f308cec814984d93c3903cdc690",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0093_receipt.json",
+      "sha256": "6072c13c5ff5d20d245591a3f2a6bc9d0cba968fe268f840dd8d10e94635dc11",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0094_receipt.json",
+      "sha256": "d73e4bb009e0a8be249b79690b5fed73f97e2f343b76feac774dd43070347a9c",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0095_receipt.json",
+      "sha256": "773ec3bca4258fe100f04b0f36c20ee8433259a6c7c9d6f47d7a60df689073b6",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0096_receipt.json",
+      "sha256": "b61ac87a39a97aa59ee88832e90cc855aa9bd5d76991d54b84eeef1cea4fa197",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0097_receipt.json",
+      "sha256": "49165c7fcfffca47877f50b81551d53d7b4d8df6d5de671e50b0f2600eafa11b",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0098_receipt.json",
+      "sha256": "8d01176d9e1eaaf1df78dac40ce516774ac90dd94715051d51f24aa7bad6cc41",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0099_receipt.json",
+      "sha256": "ed063cc9bcc90ca12a7191912705569ee222ad222c41b5dad861df3150ad59e3",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0100_receipt.json",
+      "sha256": "d593e4727b9d399233ac986df436b29e17232f0224f2579a53437a8f633b58e2",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0102_receipt.json",
+      "sha256": "d79fafa28ad17410094aa09b69184340e14a6ac2b32917d36224728de84ef57f",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0103_receipt.json",
+      "sha256": "573ad1b8b793c43dd67cd0a22a9e1facb1ddf8c1c7703f5fccabb3b5e0aa5726",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0104_receipt.json",
+      "sha256": "fcbd85acc41f396f0ae4be815bae9e40828b5f9735e2582e9f459c230806c604",
+      "status": "QUARANTINED"
+    },
+    {
+      "path": "receipts/alms_0105_receipt.json",
+      "sha256": "81abd2412865a2a0addc7e07a50110a0783bf78c8047e51c773c2ac036c3c3c2",
+      "status": "QUARANTINED"
+    }
+  ],
+  "missing_count": 0,
+  "promotion_allowed": false,
+  "source_commit": "0a8081df",
+  "source_manifest": "_truth/advisory/alms_advisory_20260428T052518Z/manifest.json",
+  "status": "DISCOVERED_NOT_PROMOTED",
+  "timestamp_utc": "2026-05-01T23:52:45Z",
+  "track": "TRACK_006B_QUARANTINE_DISCOVERY"
 }
