@@ -1,5 +1,5 @@
 JAY_REPO_SAFETY_SCAN
-timestamp_utc=2026-05-01T05:47:17Z
+timestamp_utc=2026-05-01T05:49:32Z
 root=.
 
 BOUNDARY: receipts stay; signing power leaves
@@ -62,6 +62,9 @@ STATUS=PASS
 ./site/eas-backfill-signer.html:20:const merkleRoot="0xcad549f24bec742fd1f6bd280e3202921fa2dd6a11f82eb36ff9ecd990303546";
 ./site/nitro-dashboard.html:40:  const ZERO = "0x0000000000000000000000000000000000000000";
 ./_truth/ledger.jsonl:4:{"claim_id":"al_1777256883_1679","claim_text":"Nitro observer baseline verified: revoker_live=0x0000000000000000000000000000000000000000 revoke_calls=0","source":{"document":"nitro_observer_feed","line_hint":1,"watcher":"claim_emitter.sh"},"artifacts":{"text_hash":"sha256:078d8c3f0eb892d579981210bdd8ef353591ff8e5136283e3d2f5cddd9117d61"},"prev_hash":"sha256:d93a57326e58995b8eab33e603b8846ebe623bbd85cf2be6f0d18aaa9e2ea4b8","status":"verified"}
+./_truth/seals/leaf008_final_seal.json:19:    "schema": "0x53a4a43dfb91a23d683202e22aa9e59be86ad67fd650aff11be6929b5654bf95",
+./_truth/seals/leaf008_final_seal.json:20:    "tx_hash": "0x51c0fcc6659281625d039438046048faefb5afc3e842bf0c2e89196b976c9ac1",
+./_truth/seals/leaf008_final_seal.json:21:    "attestation_uid": "0x5849a41321847f3d7ee6eb38eaa05cf73b906e8fa1c003de0a6b9ddaa7f4a5a1"
 ./_truth/base/systemconfig_observer_feed.json:5:  "l1_address_mainnet": "0x73a79Fab69143498Ed3712e519A88a918e1f4072",
 ./_truth/base/systemconfig_observer_feed.json:6:  "l1_address_sepolia": "0xf272670eb55e895584501d564AfEB048bEd26194",
 ./_truth/eas/leaf008_eas_attestation.json:6:  "schema": "0x53a4a43dfb91a23d683202e22aa9e59be86ad67fd650aff11be6929b5654bf95",
@@ -102,6 +105,9 @@ STATUS=FOUND_PUBLIC_ARTIFACTS
 ./scripts/jay_bash_gemini_leaf008.sh:14:SCHEMA_UID="0x53a4a43dfb91a23d683202e22aa9e59be86ad67fd650aff11be6929b5654bf95"
 ./site/eas-backfill-signer.html:18:const ZERO="0x0000000000000000000000000000000000000000000000000000000000000000";
 ./site/eas-backfill-signer.html:20:const merkleRoot="0xcad549f24bec742fd1f6bd280e3202921fa2dd6a11f82eb36ff9ecd990303546";
+./_truth/seals/leaf008_final_seal.json:19:    "schema": "0x53a4a43dfb91a23d683202e22aa9e59be86ad67fd650aff11be6929b5654bf95",
+./_truth/seals/leaf008_final_seal.json:20:    "tx_hash": "0x51c0fcc6659281625d039438046048faefb5afc3e842bf0c2e89196b976c9ac1",
+./_truth/seals/leaf008_final_seal.json:21:    "attestation_uid": "0x5849a41321847f3d7ee6eb38eaa05cf73b906e8fa1c003de0a6b9ddaa7f4a5a1"
 ./_truth/eas/leaf008_eas_attestation.json:6:  "schema": "0x53a4a43dfb91a23d683202e22aa9e59be86ad67fd650aff11be6929b5654bf95",
 ./_truth/eas/leaf008_eas_attestation.json:7:  "tx_hash": "0x51c0fcc6659281625d039438046048faefb5afc3e842bf0c2e89196b976c9ac1",
 ./_truth/eas/leaf008_eas_attestation.json:8:  "attestation_uid": "0x5849a41321847f3d7ee6eb38eaa05cf73b906e8fa1c003de0a6b9ddaa7f4a5a1",

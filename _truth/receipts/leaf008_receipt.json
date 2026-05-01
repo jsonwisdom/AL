@@ -1,11 +1,11 @@
 {
   "receipt": "LEAF_008_MEME_COURT_RECEIPT",
-  "state": "EAS_ATTESTED_PENDING_FINAL_SEAL",
+  "state": "SEALED",
   "payload_sha256": "d9f8d96b76dc30dabb1405c6b4d5050fbc3e376af50e51ce1d72bc5d9d2cbb07",
   "anchors_sha256": "ea907c7c88901b3467b4872715f709b908346d44837c2b6c9a2aaa2f3f281c4d",
   "anchors_path": "_truth/anchors/leaf008/ANCHORS.json",
   "created_utc": "2026-05-01T05:21:25Z",
-  "next": "Commit receipt, CI green, then final seal.",
+  "next": "Leaf 008 sealed.",
   "ipfs": {
     "cid": "bafkreihauwnirsog7tg2m2yp4nglsnl6a2lc6grz652dlukehxx6e4rvlu",
     "manifest_file_sha256": "672c7ce256c12296f4bf3ba05934761d004374f1850054e5d0fac6ad3c02257b",
@@ -31,5 +31,9 @@
     "attester": "0x1dB2C056c7DeCD9f9fC574692b05F62aE34Fb8b5",
     "recipient": "0x1dB2C056c7DeCD9f9fC574692b05F62aE34Fb8b5",
     "contentHash": "0x077a510d0dc7a28cc4977e278b393988fd1f53ba2991bb43e20da818bb2426df"
+  },
+  "final_seal": {
+    "path": "_truth/seals/leaf008_final_seal.json",
+    "classification": "FINAL_SEALED_RECEIPT"
   }
 }
