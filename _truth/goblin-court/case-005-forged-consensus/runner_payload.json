@@ -15,15 +15,15 @@
   "layers": {
     "github": {
       "status": "REAL",
-      "evidence_requirement": "public commit or runner output"
+      "evidence_requirement": "github.com commit receipt"
     },
     "ipfs": {
       "status": "REAL",
-      "evidence_requirement": "live CID and hash match"
+      "evidence_requirement": "PENDING_LIVE_CID and hash match"
     },
     "eas": {
       "status": "REAL",
-      "evidence_requirement": "Base attestation UID"
+      "evidence_requirement": "PENDING_BASE_UID"
     },
     "zora": {
       "status": "WITHHELD",

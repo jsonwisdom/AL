@@ -15,9 +15,9 @@ The trap is visual: most viewers see three green layers and one soft placeholder
 | Layer | Status | Meaning |
 |---|---:|---|
 | GitHub | REAL | Runner / merge separation path exists |
-| IPFS | REAL | Requires live CID in final payload |
-| EAS | REAL | Requires Base attestation UID in final payload |
-| Zora | WITHHELD | No mint yet; placeholder only |
+| IPFS | REAL | Requires PENDING_LIVE_CID in final payload |
+| EAS | REAL | Requires PENDING_BASE_UID in final payload |
+| Zora | WITHHELD | WITHHELD — MINT_PENDING_COURT_RULING |
 
 ## Hidden Fracture Marker
 

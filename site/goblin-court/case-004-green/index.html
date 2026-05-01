@@ -42,7 +42,7 @@
     <h2>2. EXTERNAL LAYERS</h2>
     <p class="hold">IPFS/GCS: HOLD — CID required</p>
     <p class="hold">EAS: HOLD — Base UID required</p>
-    <p class="hold">ZORA: HOLD — Case 004 URL required</p>
+    <p class="hold">ZORA: HOLD — AWAITING_ZORA_URL required</p>
   </section>
 
   <section class="card">
@@ -82,7 +82,7 @@ async function loadAudit(){
 }
 function verify(){
   const loaded = auditStatus ? 'LOADED' : 'NOT_LOADED';
-  document.getElementById('result').textContent = `AUDIT_STATUS: ${loaded}\nGITHUB: GREEN\nIPFS/GCS: HOLD — CID required\nEAS: HOLD — UID required\nZORA: HOLD — Case 004 URL required\n\nResult: PARTIAL GREEN. No full four-surface strike until external identifiers are present.`;
+  document.getElementById('result').textContent = `AUDIT_STATUS: ${loaded}\nGITHUB: GREEN\nIPFS/GCS: HOLD — CID required\nEAS: HOLD — UID required\nZORA: HOLD — AWAITING_ZORA_URL required\n\nResult: PARTIAL GREEN. No full four-surface strike until external identifiers are present.`;
 }
 loadAudit();
 </script>
