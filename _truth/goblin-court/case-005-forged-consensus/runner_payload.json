@@ -1,0 +1,49 @@
+{
+  "case": "GOBLIN_COURT_CASE_005",
+  "title": "The Forged Consensus",
+  "status": "RUNNER_PAYLOAD_EMITTED",
+  "verdict": "HOLD_FOR_PUBLIC_MERGE_ANCHOR",
+  "court_question": "Is 3/4 enough?",
+  "stress_test": "Provenance systems under asymmetric verification",
+  "consensus_claim": {
+    "claimed_green_layers": 3,
+    "total_layers": 4,
+    "claim_status": "PARTIAL_CONSENSUS_ONLY",
+    "full_consensus_allowed": false,
+    "reason": "Zora layer is intentionally withheld and must not be displayed as verified."
+  },
+  "layers": {
+    "github": {
+      "status": "REAL",
+      "evidence_requirement": "public commit or runner output"
+    },
+    "ipfs": {
+      "status": "REAL",
+      "evidence_requirement": "live CID and hash match"
+    },
+    "eas": {
+      "status": "REAL",
+      "evidence_requirement": "Base attestation UID"
+    },
+    "zora": {
+      "status": "WITHHELD",
+      "withhold_reason": "STRESS_TEST_CONSENSUS_BOUNDARY",
+      "zora_placeholder": "MINT_PENDING_COURT_RULING"
+    }
+  },
+  "hidden_fracture_marker": {
+    "fracture_layer": "ZORA",
+    "fracture_status": "WITHHELD",
+    "fracture_visible_on_deep_inspection": true,
+    "timestamp_withheld": "2026-05-01T23:00:00Z"
+  },
+  "ruling_standard": [
+    "Dashboard green is not proof.",
+    "Majority agreement is not chain-of-custody completion.",
+    "A missing human-facing mint must be labeled missing.",
+    "Consensus requires scope clarity: consensus over what, across which layers, and with which exceptions."
+  ],
+  "failure_condition": "Any UI, dashboard, post, or badge that presents this payload as 4/4 verified is itself the forged consensus artifact.",
+  "language_policy": "NO_GHOST_ANCHORS_NO_CONSENSUS_LAUNDERING",
+  "next_gate": "PUBLIC_MERGE_ANCHOR"
+}
