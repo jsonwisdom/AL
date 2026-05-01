@@ -5,103 +5,86 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Goblin Court Case 004 — The Fake Green</title>
   <style>
-    :root { color-scheme: dark; --bg:#050805; --panel:#0c140e; --ink:#eaffea; --muted:#94b894; --green:#45ff79; --warn:#ffcf4a; --pink:#ff4fd8; --red:#ff5a5a; }
+    :root { color-scheme: dark; --bg:#050805; --ink:#eaffea; --muted:#94b894; --green:#45ff79; --warn:#ffcf4a; --pink:#ff4fd8; --red:#ff5a5a; }
     * { box-sizing: border-box; }
     body { margin:0; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; background: radial-gradient(circle at top, #123018 0, var(--bg) 46%); color:var(--ink); }
     main { max-width: 980px; margin: 0 auto; padding: 32px 18px 56px; }
-    .hero { border: 1px solid var(--green); background: rgba(12,20,14,.84); border-radius: 18px; padding: 24px; box-shadow: 0 0 40px rgba(69,255,121,.18); }
-    h1 { margin:0 0 8px; font-size: clamp(30px, 8vw, 68px); line-height:.95; letter-spacing:-2px; color:var(--green); }
-    h2 { color:var(--green); margin-top: 28px; }
-    a { color:var(--green); word-break: break-all; }
-    .tag { display:inline-block; border:1px solid var(--green); border-radius:999px; padding:6px 10px; margin:6px 6px 0 0; color:var(--green); background:#071107; }
-    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr)); gap:14px; margin-top:18px; }
-    .card { border:1px solid #234b2a; background:rgba(7,17,7,.88); border-radius:14px; padding:16px; min-height:150px; }
-    .ok { color:var(--green); } .pending { color:var(--warn); } .bad { color:var(--red); } .pink { color:var(--pink); }
-    code, pre { background:#020602; border:1px solid #173b1b; border-radius:10px; color:#d7ffd7; }
+    .hero,.card { border:1px solid var(--green); background:rgba(7,17,7,.88); border-radius:16px; padding:18px; margin:14px 0; box-shadow:0 0 32px rgba(69,255,121,.12); }
+    h1 { margin:0 0 8px; font-size:clamp(30px,8vw,68px); line-height:.95; color:var(--green); }
+    h2 { color:var(--green); margin-top:28px; }
+    a { color:var(--green); word-break:break-all; }
+    code,pre { background:#020602; border:1px solid #173b1b; border-radius:10px; color:#d7ffd7; }
     code { padding:2px 5px; } pre { padding:14px; overflow:auto; }
     button { cursor:pointer; width:100%; margin-top:18px; padding:16px; border-radius:14px; border:1px solid var(--green); background:#061006; color:var(--green); font-weight:800; font-size:16px; }
-    #result { margin-top:12px; white-space:pre-wrap; color:var(--muted); }
-    footer { margin-top:32px; color:var(--muted); font-size:13px; }
+    .ok{color:var(--green)} .hold{color:var(--warn)} .bad{color:var(--red)} .pink{color:var(--pink)} .muted{color:var(--muted)}
+    .tag{display:inline-block;border:1px solid var(--green);border-radius:999px;padding:6px 10px;margin:6px 6px 0 0;color:var(--green)}
   </style>
 </head>
 <body>
 <main>
   <section class="hero">
-    <div class="tag">GOBLIN COURT</div><div class="tag">CASE 004</div><div class="tag">THE FAKE GREEN</div><div class="tag">RECEIPT ONLY</div>
+    <span class="tag">GOBLIN COURT</span><span class="tag">CASE 004</span><span class="tag">THE FAKE GREEN</span><span class="tag">AUDIT-WIRED</span>
     <h1>GREEN ON TRIAL</h1>
-    <p>One-page verification path for Case 004. Same surface for normie, auditor, and adversary. No ghost anchors. No fake chain language.</p>
-    <p><strong>Current verified layer:</strong> GitHub anchor. External layers are displayed as fields requiring concrete CID / UID / Zora URL before they are marked green.</p>
+    <p>One-page verification path for Case 004. Static truth claims are forbidden. This page reads the Zero Trust audit status when served from the repo.</p>
+    <p id="audit-load" class="hold">Loading audit status from <code>/_truth/audit/status.json</code>…</p>
   </section>
 
-  <section>
+  <section class="card">
     <h2>1. THE SPINE — GitHub</h2>
-    <div class="card">
-      <p class="ok">✅ GitHub anchored</p>
-      <p>Merge commit: <code>2d842970b0653944e27974db198ebb78396bd84f</code></p>
-      <p>Merkle root: <code>dc4b992f9f6eb41139056a5f75af6d523ed6f55a9775da21401e8bc185e86f5c</code></p>
-      <p>Root SHA-256: <code>fc78b6b71e02b7ecf316d37da89032955bae161053b55c241702e35a7557514a</code></p>
-      <p>Consensus: <code>true</code> · Leaf count: <code>2</code> · Runner: <code>github-actions</code></p>
-      <p><a href="https://github.com/jsonwisdom/AL/commit/2d842970b0653944e27974db198ebb78396bd84f">Open public commit</a></p>
-    </div>
+    <p class="ok">✅ GitHub anchored</p>
+    <p>Merge commit: <code id="github_commit">2d842970b0653944e27974db198ebb78396bd84f</code></p>
+    <p>Merkle root: <code id="merkle_root">dc4b992f9f6eb41139056a5f75af6d523ed6f55a9775da21401e8bc185e86f5c</code></p>
+    <p>Root SHA-256: <code id="root_sha256">fc78b6b71e02b7ecf316d37da89032955bae161053b55c241702e35a7557514a</code></p>
+    <p><a href="https://github.com/jsonwisdom/AL/commit/2d842970b0653944e27974db198ebb78396bd84f">Open public commit</a></p>
   </section>
 
-  <section>
-    <h2>2. THE PROOF — IPFS / GCS</h2>
-    <div class="card">
-      <p class="pending">⬚ Pending external identifier</p>
-      <p>Required before green: content CID or GCS object URL plus local hash match.</p>
-      <p>CID: <code>AWAITING_CID</code></p>
-    </div>
+  <section class="card">
+    <h2>2. EXTERNAL LAYERS</h2>
+    <p class="hold">IPFS/GCS: HOLD — CID required</p>
+    <p class="hold">EAS: HOLD — Base UID required</p>
+    <p class="hold">ZORA: HOLD — Case 004 URL required</p>
   </section>
 
-  <section>
-    <h2>3. THE TIMESTAMP — EAS on Base</h2>
-    <div class="card">
-      <p class="pending">⬚ Pending attestation UID</p>
-      <p>Required before green: EAS UID on Base that binds the Merkle root or root SHA-256.</p>
-      <p>UID: <code>AWAITING_EAS_UID</code></p>
-    </div>
+  <section class="card">
+    <h2>3. LIVE AUDIT STATUS</h2>
+    <pre id="audit-json">AWAITING_AUDIT_STATUS_JSON</pre>
   </section>
 
-  <section>
-    <h2>4. THE ARTIFACT — Zora</h2>
-    <div class="card">
-      <p class="pending">⬚ Pending Case 004 Zora URL</p>
-      <p>Required before green: Zora coin / mint URL for the Case 004 visual exhibit.</p>
-      <p>Zora: <code>AWAITING_ZORA_URL</code></p>
-    </div>
-  </section>
-
-  <section>
-    <h2>5. VERIFY FULL CHAIN</h2>
+  <section class="card">
+    <h2>4. VERIFY FULL CHAIN</h2>
     <button onclick="verify()">VERIFY FULL CHAIN</button>
-    <div id="result"></div>
-    <pre>Expected GitHub spine:
-commit=2d842970b0653944e27974db198ebb78396bd84f
-merkle_root=dc4b992f9f6eb41139056a5f75af6d523ed6f55a9775da21401e8bc185e86f5c
-root_sha256=fc78b6b71e02b7ecf316d37da89032955bae161053b55c241702e35a7557514a
-consensus=true
-leaf_count=2</pre>
+    <pre id="result">Press verify.</pre>
   </section>
 
-  <section>
-    <h2>CASE 005 SELECTED</h2>
-    <div class="card">
-      <p class="pink">Selected parameter: C — The Forged Consensus</p>
-      <p>Reason: it stress-tests the exact failure mode Goblin Court cares about: majority green while one required receipt is missing.</p>
-    </div>
+  <section class="card">
+    <h2>CASE 005 — THE FORGED CONSENSUS</h2>
+    <p class="pink">Fracture layer: ZORA_WITHHELD</p>
+    <p>Rule: 3/4 can be honest partial consensus. 4/4 with a withheld layer is forged consensus.</p>
   </section>
-
-  <footer>
-    Court rule: Measure first. Mandate second. Receipt ≠ deed. No green without footprint.
-  </footer>
 </main>
 <script>
-function verify(){
-  const external = ['IPFS_CID','EAS_UID','ZORA_URL'];
-  document.getElementById('result').textContent =
-`GITHUB: GREEN\nIPFS/GCS: HOLD — CID required\nEAS: HOLD — UID required\nZORA: HOLD — Case 004 URL required\n\nResult: PARTIAL GREEN. GitHub spine verified; external layers must be filled before full four-surface strike is claimed.`;
+let auditStatus = null;
+async function loadAudit(){
+  try {
+    const res = await fetch('/_truth/audit/status.json', {cache:'no-store'});
+    if(!res.ok) throw new Error('HTTP '+res.status);
+    auditStatus = await res.json();
+    document.getElementById('audit-load').textContent = 'Audit status loaded.';
+    document.getElementById('audit-load').className = 'ok';
+    document.getElementById('audit-json').textContent = JSON.stringify(auditStatus, null, 2);
+    if(auditStatus.case_004?.github_commit) document.getElementById('github_commit').textContent = auditStatus.case_004.github_commit;
+    if(auditStatus.baseline?.merkle_root) document.getElementById('merkle_root').textContent = auditStatus.baseline.merkle_root;
+    if(auditStatus.baseline?.root_sha256) document.getElementById('root_sha256').textContent = auditStatus.baseline.root_sha256;
+  } catch(e) {
+    document.getElementById('audit-load').textContent = 'Audit status not loaded. If viewing from raw/local path, fetch may be blocked. GitHub spine remains displayed.';
+    document.getElementById('audit-load').className = 'hold';
+  }
 }
+function verify(){
+  const loaded = auditStatus ? 'LOADED' : 'NOT_LOADED';
+  document.getElementById('result').textContent = `AUDIT_STATUS: ${loaded}\nGITHUB: GREEN\nIPFS/GCS: HOLD — CID required\nEAS: HOLD — UID required\nZORA: HOLD — Case 004 URL required\n\nResult: PARTIAL GREEN. No full four-surface strike until external identifiers are present.`;
+}
+loadAudit();
 </script>
 </body>
 </html>
