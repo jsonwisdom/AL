@@ -1,0 +1,14 @@
+{
+  "type": "court_merkle_inclusion_proofs",
+  "hash_function": "sha256",
+  "parent_rule": "sha256(left_hex + right_hex)",
+  "leaf_count": 1,
+  "root": "f3bc4bbff21138e99574d80757d3d39c60eed7272cb5e9511be008d356a28a3f",
+  "leaves": [
+    {
+      "path": "_truth/courts/leaf008/verdict_001.canonical.json",
+      "leaf_hash": "f3bc4bbff21138e99574d80757d3d39c60eed7272cb5e9511be008d356a28a3f",
+      "proof": []
+    }
+  ]
+}
