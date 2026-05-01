@@ -1,0 +1,14 @@
+{
+  "track": "002_MERKLE_REPLAY",
+  "parent_commit": "0a8081dfd22ac1253a43888d2ae2c5a55a80bfbb",
+  "algorithm": "sha256_hex_concat_v1",
+  "leaf_count": 2,
+  "expected_root": "dc4b992f9f6eb41139056a5f75af6d523ed6f55a9775da21401e8bc185e86f5c",
+  "rebuilt_root": "dc4b992f9f6eb41139056a5f75af6d523ed6f55a9775da21401e8bc185e86f5c",
+  "match": true,
+  "leaves": [
+    {"leaf_id":"gov_ncc_001","canonical_sha256":"ae2065acd9df775fc6141c8c2c59a448ce7da4e6325db0a697e2c71748f8ce18"}
+,
+    {"leaf_id":"test_002","canonical_sha256":"0000000000000000000000000000000000000000000000000000000000000000"}
+  ]
+}
