@@ -5,10 +5,19 @@
   "anchors_sha256": "ea907c7c88901b3467b4872715f709b908346d44837c2b6c9a2aaa2f3f281c4d",
   "anchors_path": "_truth/anchors/leaf008/ANCHORS.json",
   "created_utc": "2026-05-01T05:21:25Z",
-  "next": "Verify CID content hash, then prepare ENS/EAS anchor.",
+  "next": "Upload JSON manifest alone to IPFS, return JSON manifest CID.",
   "ipfs": {
     "cid": "bafkreihauwnirsog7tg2m2yp4nglsnl6a2lc6grz652dlukehxx6e4rvlu",
     "manifest_file_sha256": "672c7ce256c12296f4bf3ba05934761d004374f1850054e5d0fac6ad3c02257b",
     "state": "CID_RETURNED_PENDING_GATEWAY_VERIFICATION"
+  },
+  "ipfs_zip_package": {
+    "cid": "bafkreihauwnirsog7tg2m2yp4nglsnl6a2lc6grz652dlukehxx6e4rvlu",
+    "sha256": "e0a59a88c9c6fccda66b0fe34cb9357e06962f1a39f77435d1443defe272355d",
+    "state": "ZIP_PACKAGE_CID_VERIFIED"
+  },
+  "ipfs_manifest": {
+    "expected_json_manifest_sha256": "672c7ce256c12296f4bf3ba05934761d004374f1850054e5d0fac6ad3c02257b",
+    "state": "JSON_MANIFEST_CID_REQUIRED"
   }
 }
