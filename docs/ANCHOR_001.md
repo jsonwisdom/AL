@@ -1,3 +1,17 @@
+> **STATUS: SUPERSEDED**
+>
+> This document describes a legacy Anchor #1 state from the older AL VCLP flow.
+> It is preserved for historical continuity only.
+>
+> Current canonical Anchor 001 state is recorded in `docs/ANCHOR_001_FINAL_STATE.md`.
+>
+> Current status: `DOUBLE-ANCHORED — VERIFICATION SURFACE COMPLETE`
+> Current GitHub commit: `13004719dd0c34f765ca95dfe8566b6feb2bf6cf`
+> Current EAS UID: `0x18b5b00c62c648df2ccf4a746645493fa2a0b0dcda6697052d8c3a3d1586c142`
+> Current ENS status: `DEFERRED` — Basename text records were not editable for `jaywisdom.base.eth`.
+>
+> Rule: no ghost anchor. ENS is a convenience layer, not the trust layer.
+
 # AL Anchor #1 — Minnesota Budget Core Claims
 
 ## Anchor Identity
