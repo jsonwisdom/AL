@@ -1,0 +1,24 @@
+{
+  "case": "GOBLIN_COURT_CASE_005",
+  "title": "The Forged Consensus",
+  "anchor_type": "PUBLIC_ANCHOR_COMMIT",
+  "runner_commit": "8c5d371d4e9d1f9488f666492de77265c79d2fe1",
+  "docket_commit": "06fe33d8d8d976a4567b9dcbca3734d10b9cff16",
+  "payload": "_truth/goblin-court/case-005-forged-consensus/runner_payload.json",
+  "layers": {
+    "github": "REAL",
+    "ipfs": "REAL_PENDING_LIVE_CID",
+    "eas": "REAL_PENDING_BASE_UID",
+    "zora": "WITHHELD"
+  },
+  "full_consensus": false,
+  "consensus_scope": "3_OF_4_PARTIAL_CONSENSUS_ONLY",
+  "fracture_layer": "ZORA",
+  "fracture_status": "WITHHELD",
+  "withhold_reason": "STRESS_TEST_CONSENSUS_BOUNDARY",
+  "forgery_condition": "Any dashboard, badge, post, or UI claiming 4/4 verified conflicts with the raw runner payload and this public anchor.",
+  "null_judge_question": "Is 3/4 enough?",
+  "provisional_ruling": "Honest 3/4 is admissible as partial consensus; forged 4/4 is rejected.",
+  "status": "PUBLIC_ANCHOR_EMITTED",
+  "next_gate": "NULL_JUDGE_RULING"
+}
