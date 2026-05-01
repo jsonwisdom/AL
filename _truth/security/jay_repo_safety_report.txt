@@ -1,20 +1,15 @@
 JAY_REPO_SAFETY_SCAN
-timestamp_utc=2026-05-01T04:44:38Z
+timestamp_utc=2026-05-01T04:45:39Z
 root=.
 
 BOUNDARY: receipts stay; signing power leaves
 
 ## PRIVATE_KEY_PATTERNS
-./scripts/jay_repo_safety_scan.sh:63:scan_fail "PRIVATE_KEY_PATTERNS" 'PRIVATE_KEY=|private_key|BEGIN (RSA |EC |OPENSSH |)?PRIVATE KEY|wallet\.json|keystore|UTC--'
-./scripts/jay_repo_safety_scan.sh:67:scan_fail "GOOGLE_SERVICE_ACCOUNT_JSON" '"type"[[:space:]]*:[[:space:]]*"service_account"|"private_key_id"|"client_email"'
 ./_truth/websocket_sessions/anchor_first_receipt_manifest.json:23:    "no_private_keys_in_terminal",
 STATUS=FAIL
 
 ## SEED_OR_MNEMONIC_PATTERNS
-./docs/training/JASON_GITHUB_DIRECT_REPO_MANUAL.md:41:3. Do not paste private keys, seed phrases, or wallet files.
-./docs/training/JASON_GITHUB_DIRECT_REPO_MANUAL.md:43:5. Private keys, seed phrases, service accounts, and tokens are critical secrets.
-./scripts/jay_repo_safety_scan.sh:64:scan_fail "SEED_OR_MNEMONIC_PATTERNS" 'MNEMONIC=|SEED_PHRASE=|seed phrase|recovery phrase'
-STATUS=FAIL
+STATUS=PASS
 
 ## API_TOKEN_PATTERNS
 STATUS=PASS
@@ -23,8 +18,7 @@ STATUS=PASS
 STATUS=PASS
 
 ## GOOGLE_SERVICE_ACCOUNT_JSON
-./scripts/jay_repo_safety_scan.sh:67:scan_fail "GOOGLE_SERVICE_ACCOUNT_JSON" '"type"[[:space:]]*:[[:space:]]*"service_account"|"private_key_id"|"client_email"'
-STATUS=FAIL
+STATUS=PASS
 
 ## RPC_URL_WITH_TOKEN
 STATUS=PASS

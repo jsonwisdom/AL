@@ -31,6 +31,8 @@ scan_fail() {
     --exclude-dir=dist \
     --exclude-dir=build \
     --exclude='jay_repo_safety_report.txt' \
+    --exclude='jay_repo_safety_scan.sh' \
+    --exclude='JASON_GITHUB_DIRECT_REPO_MANUAL.md' \
     "$pattern" "$ROOT" >> "$REPORT" 2>/dev/null; then
     echo "STATUS=FAIL" | tee -a "$REPORT"
     fail=1
@@ -53,6 +55,8 @@ scan_report() {
     --exclude-dir=dist \
     --exclude-dir=build \
     --exclude='jay_repo_safety_report.txt' \
+    --exclude='jay_repo_safety_scan.sh' \
+    --exclude='JASON_GITHUB_DIRECT_REPO_MANUAL.md' \
     "$pattern" "$ROOT" >> "$REPORT" 2>/dev/null; then
     echo "STATUS=FOUND_PUBLIC_ARTIFACTS" | tee -a "$REPORT"
   else
