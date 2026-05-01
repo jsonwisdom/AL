@@ -1,15 +1,24 @@
-# ALMS N=4 Adversarial Audit Results
+# ALMS / Goblin Court Adversarial Test Results
 
-## Root Verification
-- Published Root: a5db6a01dba4933addc6c49d9693e97a3cf5baa973e5e42f117d8d04f0e51214
-- Algorithm: sha256_hex_concat_v1 (byte-level)
-- Status: VERIFIED
+## Status
 
-## Proof Verification
-- Leaf 008: VALID
-- Leaf 009: VALID
-- Leaf 010: VALID
-- Leaf 011: VALID
+VERIFIED
 
-## Audit Verdict
-The Goblin Court root is cryptographically consistent and adheres to the "Only Upheld Verdicts" inclusion policy.
+## Canonical Public State
+
+- Merkle Root: `79e8494155d1e7c8e8f0c7e91c4e7a4e8f721f12a3a9424daade934790086a58`
+- Leaf Count: `4`
+- Leaves: `leaf008` through `leaf011`
+- Public Index: `site/merkle/index.json`
+- Browser Verifier: `site/verify/index.html`
+- CLI Verifier: `scripts/verifiers/verify_merkle_proof.py`
+
+## Invariant Under Test
+
+Only canonical UPHELD court verdict files may feed the Merkle tree.
+
+Allowed source:
+
+```text
+_truth/courts/leaf*/verdict_*.canonical.json
+```
