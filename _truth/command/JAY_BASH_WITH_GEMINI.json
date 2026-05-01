@@ -1,0 +1,34 @@
+{
+  "mode": "JAY_BASH_WITH_GEMINI",
+  "state": "OPEN",
+  "operator": "Jay Wisdom",
+  "partner_agent": "Gemini",
+  "repo": "jsonwisdom/AL",
+  "standard": "CANONICAL_HASHING_TRANSPARENT_CODING",
+  "latest_state": {
+    "leaf006": "SEALED_GITHUB_TO_BASE",
+    "leaf007": "SEALED_GITHUB_TO_BASE",
+    "leaf008": "AWAITING_PAYLOAD_BYTES"
+  },
+  "purpose": "Run Gemini through the same repo-native verification gate before accepting any output as system truth.",
+  "rules": [
+    "No Python",
+    "Bash only",
+    "No nano",
+    "No narrative-only output",
+    "Every payload must produce sha256sum and wc -c",
+    "Every attestation requires a real UID before anchor claim"
+  ],
+  "gemini_gate": {
+    "required": [
+      "payload bytes or exact source text",
+      "leaf designation",
+      "one sentence description",
+      "bash verification commands",
+      "terminal output",
+      "commit SHA or EAS UID where applicable"
+    ],
+    "blocked_until": "BYTES_EXIST"
+  },
+  "commander_rule": "Grok, Gemini, ChatGPT, and Jay are all under the same receipt law. No bytes, no green."
+}
