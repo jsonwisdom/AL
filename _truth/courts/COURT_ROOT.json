@@ -1,12 +1,14 @@
 {
   "type": "COURT_BATCH_ROOT",
-  "batch_hash": "f3bc4bbff21138e99574d80757d3d39c60eed7272cb5e9511be008d356a28a3f",
-  "leaves": [
-    "leaf008"
-  ],
-  "verdicts": [
-    "UPHELD"
-  ],
-  "method": "jq_sort_sha256",
-  "batch_type": "linear_hash_batch"
+  "batch_type": "true_merkle_tree",
+  "merkle_root": "f3bc4bbff21138e99574d80757d3d39c60eed7272cb5e9511be008d356a28a3f",
+  "leaves": ["leaf008"],
+  "verdicts": ["UPHELD"],
+  "algorithm": "sha256_hex_concat_v1",
+  "leaf_hashes": {
+    "leaf008": "f3bc4bbff21138e99574d80757d3d39c60eed7272cb5e9511be008d356a28a3f"
+  },
+  "inclusion_paths": {
+    "leaf008": []
+  }
 }
