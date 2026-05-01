@@ -1,0 +1,38 @@
+{
+  "leaf_id": "006",
+  "title": "GitHub Girls Math Doctrine / Sovereign Seal",
+  "canonical_public_receipt": {
+    "surface": "GitHub",
+    "repo": "jsonwisdom/AL",
+    "commit": "ecc0ddd208207",
+    "verifier_script": "scripts/verify_leaf006_payload.sh",
+    "verified_output": "LEAF006_PAYLOAD_VERIFIED sha=21829f0be11cd04a64f379ad90003fc39338d91b2242720cd6c0497aed067d8b bytes=10240"
+  },
+  "payload": {
+    "transport": "GITHUB_BASE64_VERIFIED",
+    "sha256": "21829f0be11cd04a64f379ad90003fc39338d91b2242720cd6c0497aed067d8b",
+    "size_bytes": 10240,
+    "integrity": "BYTE_IDENTICAL"
+  },
+  "base_eas_anchor": {
+    "schema_number": 1464,
+    "schema_uid": "0x53a4a43dfb91a23d683202e22aa9e59be86ad67fd650aff11be6929b5654bf95",
+    "attestation_uid": "0x119d7c4a18bf99824b59c4eccb58153f7803e94db7ca82a96ebee87115dbb340",
+    "content_hash": "0x21829f0be11cd04a64f379ad90003fc39338d91b2242720cd6c0497aed067d8b",
+    "anchor_type": "REPO_NATIVE_CANONICAL_HASH_VERIFIED",
+    "byte_size": 10240,
+    "integrity": "BYTE_IDENTICAL"
+  },
+  "identity": {
+    "universal_root": "jaywisdom.eth",
+    "base_identity_label": "jaywisdom.base.eth",
+    "ens_text_record_policy": "Only write ENS text records on a resolver surface that supports arbitrary text records. Do not claim jaywisdom.base.eth TXT closure unless resolver proof exists."
+  },
+  "smoothest_pattern": "GitHub Base64 payload + Bash verifier + Base EAS attestation",
+  "classification": {
+    "github_to_base": "SEALED",
+    "ens_text_records": "OPTIONAL_IF_RESOLVER_SUPPORTS_TEXT",
+    "triangle": "GITHUB_BASE_COMPLETE__ENS_OPTIONAL_POINTER",
+    "no_ghost_ens": true
+  }
+}
