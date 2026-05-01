@@ -1,0 +1,88 @@
+name: Verify Merkle Note
+
+on:
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - "truth/**"
+      - ".github/**"
+
+  pull_request:
+    branches:
+      - main
+      - master
+    paths:
+      - "truth/**"
+      - ".github/**"
+
+jobs:
+  verify-note:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout full history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+
+      - name: Fetch Git notes
+        run: |
+          git fetch origin refs/notes/commits:refs/notes/commits
+
+      - name: Confirm replay script exists
+        run: |
+          if [ ! -f truth/audit/replay.py ]; then
+            echo "❌ Missing truth/audit/replay.py"
+            exit 1
+          fi
+
+      - name: Extract Merkle root from Git note
+        id: note
+        run: |
+          NOTE="$(git notes --ref=commits show HEAD 2>/dev/null || true)"
+
+          if [ -z "$NOTE" ]; then
+            echo "❌ No Git note found on HEAD"
+            exit 1
+          fi
+
+          ROOT="$(printf '%s\n' "$NOTE" | awk -F= '/^MERKLE_ROOT=/{print $2}' | tail -n 1)"
+
+          if [ -z "$ROOT" ]; then
+            echo "❌ Git note exists, but MERKLE_ROOT= line is missing"
+            echo "$NOTE"
+            exit 1
+          fi
+
+          echo "root=$ROOT" >> "$GITHUB_OUTPUT"
+          echo "NOTE_ROOT=$ROOT"
+
+      - name: Replay Merkle root from truth surface
+        id: replay
+        run: |
+          COMPUTED="$(python3 truth/audit/replay.py --commit HEAD --quiet | tail -n 1)"
+
+          if [ -z "$COMPUTED" ]; then
+            echo "❌ Replay produced empty root"
+            exit 1
+          fi
+
+          echo "computed=$COMPUTED" >> "$GITHUB_OUTPUT"
+          echo "COMPUTED_ROOT=$COMPUTED"
+
+      - name: Compare note root to replay root
+        run: |
+          NOTE_ROOT="${{ steps.note.outputs.root }}"
+          COMPUTED_ROOT="${{ steps.replay.outputs.computed }}"
+
+          if [ "$NOTE_ROOT" != "$COMPUTED_ROOT" ]; then
+            echo "❌ MERKLE ROOT MISMATCH"
+            echo "Note root:   $NOTE_ROOT"
+            echo "Replay root: $COMPUTED_ROOT"
+            exit 1
+          fi
+
+          echo "✅ MERKLE NOTE VERIFIED"
