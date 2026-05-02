@@ -85,3 +85,26 @@ This ledger records observer drift reports as human-readable telemetry with repl
 
 </details>
 
+| 2026-05-01T21:05Z | 20260501_mixed_style_truth | 0.2 | cluster_level_breach | SOVEREIGNTY_ALERT | 9.1 | 0.87 | 0.11 | 6f20a59562114992da200f8c4c099fb8cea0be5672e25098d496b4175d296ea5 |
+
+<details>
+<summary>Receipt: 6f20a595</summary>
+
+**Anchor**
+- **report_id:** `20260501_mixed_style_truth`
+- **report_path:** `reports/20260501_mixed_style_truth.json`
+- **report_sha256:** `6f20a59562114992da200f8c4c099fb8cea0be5672e25098d496b4175d296ea5`
+- **schema_version:** `0.2`
+- **utc_observed:** `2026-05-01T21:05Z`
+
+**Attestation**
+- **scope:** `cluster_level_breach`
+- **not:** `full_model_failure`
+
+**Control Surface Triangle**
+```json
+{"style":{"status":"SOVEREIGNTY_ALERT","metric":{"D":9.1}},"truth":{"status":"TRUTH_ALERT","metric":{"confidence_gap":0.87}},"structure":{"status":"NOMINAL","metric":{"decay_score":0.11}}}
+```
+
+</details>
+
