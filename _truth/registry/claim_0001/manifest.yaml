@@ -1,0 +1,8 @@
+schema: alms.pension_claim.v1.c
+packet_stage: C_EVIDENCE_CLAIM
+numeric_replay_required: true
+replay_allowed: true
+numbers_required: true
+source_hashes_required: true
+result_must_equal_replay_verdict: true
+schema_paths_must_not_drift: true

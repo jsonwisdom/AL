@@ -1,0 +1,27 @@
+{
+  "packet_id": "CLAIM-0001-MMB-FY2026-FUNDED-RATIO",
+  "packet_stage": "C_EVIDENCE_CLAIM",
+  "jurisdiction": "Minnesota",
+  "pension_system": "PERA General Employees Retirement Plan",
+  "official_claim": {
+    "source_title": "MMB February 2026 Budget and Economic Forecast",
+    "source_date": "2026-02",
+    "source_path": "evidence/official_claim.pdf",
+    "source_sha256": "a0b8de56b17cb32978ad63819f9ae1885a2015da8f90e149671581b1897eefe7",
+    "reported_funded_ratio": 90.78
+  },
+  "actuarial_values": {
+    "valuation_date": "2024-01-01",
+    "valuation_path": "evidence/valuation.pdf",
+    "valuation_sha256": "613432a6430957e4a4681c72ecd44f33dd76470f80736f516f63bb55cfbf3dee",
+    "actuarial_assets": 31478997000,
+    "actuarial_liabilities": 34087675000
+  },
+  "anchors": {
+    "evidence_merkle_root": "sha256:93d93e4d7f40e1c3360a88822e99e2e25aab22565db56b6c4cdbd3e11ffa57f8",
+    "replay_script_sha256": null
+  },
+  "tolerance_percentage_points": 0.50,
+  "result": "MISMATCH",
+  "status": "PENDING_REPLAY"
+}
