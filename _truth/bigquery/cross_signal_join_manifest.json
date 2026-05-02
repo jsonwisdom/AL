@@ -1,12 +1,3 @@
-#!/usr/bin/env bash
-set -euo pipefail
-
-echo "🧭 ALMS Receipt #8 - Cross-Signal JOIN Manifest"
-mkdir -p _truth/bigquery
-
-OUT="_truth/bigquery/cross_signal_join_manifest.json"
-
-cat > "$OUT" <<'JSON'
 {
   "artifact": "ALMS_CROSS_SIGNAL_JOIN_MANIFEST",
   "version": "1.0",
@@ -68,23 +59,3 @@ cat > "$OUT" <<'JSON'
     "Do not promote attention or names data as county evidence without a mapping receipt."
   ]
 }
-JSON
-
-HASH="$(sha256sum "$OUT" | awk '{print $1}')"
-TS="$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
-
-cat >> _truth/bigquery/alms_ledger.txt <<LEDGER
-
-=== JOIN_MANIFEST_RECEIPT ===
-TIMESTAMP: $TS
-ARTIFACT: cross_signal_join_manifest
-OUTPUT: $OUT
-HASH: $HASH
-POLICY: LOCAL_ONLY_NO_BIGQUERY_NO_VERTEX_NO_COMPUTE
-STATUS: PARTIAL_JOINABILITY_CONFIRMED
-LEDGER
-
-echo "✅ JOIN_MANIFEST_OK"
-echo "STATUS: PARTIAL_JOINABILITY_CONFIRMED"
-echo "HASH: $HASH"
-echo "OUTPUT: $OUT"
