@@ -1,0 +1,47 @@
+{
+  "batch_hash": "968097f38f0a5c102a08842429a6c2acecf30657c150534e1acd0dbbd9ad0703",
+  "batch_id": "kb_batch_968097f38f0a5c10",
+  "batch_type": "knowledge_broker_batch",
+  "blocked_count": 0,
+  "blocked_items": [],
+  "items": [
+    {
+      "anchor_allowed": "false",
+      "leaf_id": "KB_001",
+      "path": "_truth/leaves/KB_001/receipt.canonical.json",
+      "receipt_hash": "66732552bc6b50db07b8bc7dc91a8194c605344432008c6caa30a954d3149652",
+      "status": "LOCAL_RECEIPT_ONLY"
+    },
+    {
+      "anchor_allowed": "false",
+      "leaf_id": "KB_002",
+      "path": "_truth/leaves/KB_002/receipt.canonical.json",
+      "receipt_hash": "44787152610e439843a22bdef6baa0870c0fddb27ad75b397bd767b25a638ac6",
+      "status": "LOCAL_RECEIPT_ONLY"
+    },
+    {
+      "anchor_allowed": "false",
+      "leaf_id": "KB_003",
+      "path": "_truth/leaves/KB_003/receipt.canonical.json",
+      "receipt_hash": "6f3e2c330787fbaf2d5925f8fa902bc8a4d4d090267bc8e8adca20ed495fffdc",
+      "status": "SOURCE_BACKED"
+    },
+    {
+      "anchor_allowed": "true",
+      "leaf_id": "KB_004",
+      "path": "_truth/leaves/KB_004_something/receipt.canonical.json",
+      "receipt_hash": "caafb1a5e7f16304985862d6fc9dc2c09e183131a357106a1442fc8d47ceb7c5",
+      "status": "verified"
+    },
+    {
+      "anchor_allowed": "false",
+      "leaf_id": "KB_005",
+      "path": "_truth/leaves/KB_005_eas_attestation/receipt.canonical.json",
+      "receipt_hash": "8075fae632359104a3577584fc2893d96eef6d558e47f0cc5e5c7dd5d0ebe690",
+      "status": "SOURCE_BACKED"
+    }
+  ],
+  "merkle_root": "2da343f5bdfc9240993b7b6089ec34ff5ccc535f02db99a16c5d8a5758594655",
+  "policy": "knowledge_broker_policy_v1",
+  "ready_count": 5
+}

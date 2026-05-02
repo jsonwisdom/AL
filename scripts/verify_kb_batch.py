@@ -90,3 +90,32 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+def merkle_root(hashes):
+    import hashlib
+    if not hashes:
+        return hashlib.sha256(b"").hexdigest()
+
+    level = sorted(hashes)
+
+    while len(level) > 1:
+        if len(level) % 2 == 1:
+            level.append(level[-1])
+
+        nxt = []
+        for i in range(0, len(level), 2):
+            a, b = sorted([level[i], level[i + 1]])
+            combined = bytes.fromhex(a) + bytes.fromhex(b)
+            nxt.append(hashlib.sha256(combined).hexdigest())
+
+        level = sorted(nxt)
+
+    return level[0]
+
+
+expected_root = merkle_root([item["receipt_hash"] for item in items])
+
+if manifest.get("merkle_root") != expected_root:
+    import sys
+    print("MERKLE_ROOT_MISMATCH", file=sys.stderr)
+    sys.exit(1)

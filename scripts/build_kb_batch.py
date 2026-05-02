@@ -1,9 +1,16 @@
 #!/usr/bin/env python3
-import json, hashlib
+import json
+import hashlib
+import sys
 from pathlib import Path
+
+BATCH_NUM = sys.argv[1] if len(sys.argv) > 1 else "001"
+
 def sha256_bytes(b): return hashlib.sha256(b).hexdigest()
+
 def canonical(obj):
     return json.dumps(obj, sort_keys=True, separators=(',', ':'), ensure_ascii=False)
+
 def merkle_root(hashes):
     if not hashes:
         return hashlib.sha256(b"").hexdigest()
@@ -17,6 +24,8 @@ def merkle_root(hashes):
             nxt.append(hashlib.sha256(bytes.fromhex(a)+bytes.fromhex(b)).hexdigest())
         level = sorted(nxt)
     return level[0]
+
+# Load all leaves (all KB_* directories)
 leaves = sorted(Path("_truth/leaves").glob("KB_*/receipt.canonical.json"))
 items = []
 for p in leaves:
@@ -46,7 +55,8 @@ manifest = {
     "batch_hash": batch_hash,
     **core
 }
-out = Path("_truth/batches/kb_batch_001.json")
+out = Path(f"_truth/batches/kb_batch_{BATCH_NUM}.json")
 out.write_text(json.dumps(manifest, indent=2, sort_keys=True)+"\n")
-print("MERKLE_ROOT =", root)
-print("READY =", len(items))
+print(f"MERKLE_ROOT = {root}")
+print(f"READY = {len(items)}")
+print(f"OUTPUT = {out}")
