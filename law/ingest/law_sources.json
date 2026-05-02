@@ -2,24 +2,84 @@
   "sources": [
     {
       "id": "doj_press_releases",
-      "type": "public_json_or_html",
       "lane": "doj",
+      "jurisdiction": "US",
       "url": "https://www.justice.gov/news",
-      "status": "seed"
+      "method": "GET",
+      "auth": "none",
+      "cadence": "daily",
+      "pagination": "page",
+      "normalization": {
+        "version": "lg-normalize-v1",
+        "format": "html",
+        "canonicalization": {
+          "spec": "docs/normalize/html_to_text_v1.md",
+          "version": "v1"
+        }
+      },
+      "hash_policy": {
+        "algorithm": "sha256",
+        "scope": "normalized_text"
+      },
+      "receipt_policy": {
+        "emit": true,
+        "path": "law/receipts/doj/"
+      },
+      "status": "active"
     },
     {
       "id": "courtlistener_opinions",
-      "type": "public_api",
       "lane": "cases",
+      "jurisdiction": "US",
       "url": "https://www.courtlistener.com/api/rest/v4/opinions/",
-      "status": "seed"
+      "method": "GET",
+      "auth": "none",
+      "cadence": "daily",
+      "pagination": "page",
+      "normalization": {
+        "version": "lg-normalize-v1",
+        "format": "json",
+        "canonicalization": {
+          "spec": "docs/normalize/json_canonical_jcs.md",
+          "version": "v1"
+        }
+      },
+      "hash_policy": {
+        "algorithm": "sha256",
+        "scope": "normalized_json"
+      },
+      "receipt_policy": {
+        "emit": true,
+        "path": "law/receipts/cases/"
+      },
+      "status": "active"
     },
     {
       "id": "us_code_house",
-      "type": "public_law",
       "lane": "lawbooks",
+      "jurisdiction": "US",
       "url": "https://uscode.house.gov/download/download.shtml",
-      "status": "seed"
+      "method": "GET",
+      "auth": "none",
+      "cadence": "weekly",
+      "pagination": "none",
+      "normalization": {
+        "version": "lg-normalize-v1",
+        "format": "pdf",
+        "canonicalization": {
+          "spec": "docs/normalize/pdf_text_v1.md",
+          "version": "v1"
+        }
+      },
+      "hash_policy": {
+        "algorithm": "sha256",
+        "scope": "normalized_text"
+      },
+      "receipt_policy": {
+        "emit": true,
+        "path": "law/receipts/lawbooks/"
+      },
+      "status": "active"
     }
   ]
 }
