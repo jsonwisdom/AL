@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Law Sources Registry",
+  "type": "object",
+  "properties": {
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id","lane","jurisdiction","url","method","auth","cadence","pagination","normalization","hash_policy","receipt_policy","status"],
+        "properties": {
+          "id": {"type": "string"},
+          "lane": {"type": "string"},
+          "jurisdiction": {"type": "string"},
+          "url": {"type": "string","format": "uri"},
+          "method": {"type": "string","enum": ["GET","POST"]},
+          "auth": {"type": "string","enum": ["none","api_key","token"]},
+          "cadence": {"type": "string","enum": ["manual","daily","weekly"]},
+          "pagination": {"type": "string","enum": ["none","cursor","page"]},
+          "normalization": {
+            "type": "object",
+            "required": ["version","format","canonicalization"],
+            "properties": {
+              "version": {"type": "string"},
+              "format": {"type": "string","enum": ["json","html","pdf","text"]},
+              "canonicalization": {
+                "type": "object",
+                "properties": {
+                  "spec": {"type": "string"},
+                  "version": {"type": "string"}
+                }
+              }
+            }
+          },
+          "hash_policy": {
+            "type": "object",
+            "properties": {
+              "algorithm": {"type": "string","enum": ["sha256"]},
+              "scope": {"type": "string","enum": ["raw_bytes","normalized_json","normalized_text"]}
+            }
+          },
+          "receipt_policy": {
+            "type": "object",
+            "properties": {
+              "emit": {"type": "boolean"},
+              "path": {"type": "string"}
+            }
+          },
+          "status": {"type": "string","enum": ["seed","active","disabled"]}
+        }
+      }
+    }
+  }
+}
