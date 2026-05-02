@@ -56,6 +56,14 @@
       "role": "promoted receipt",
       "state": "PROMOTED_FROM_QUARANTINE",
       "track": "TRACK_006C"
+    },
+    {
+      "boundary": "File remains under _truth; promotion is ledger/inventory status, not filesystem move.",
+      "leaf_id": "MN_001",
+      "path": "_truth/receipts/MN_001.json",
+      "role": "promoted receipt",
+      "state": "PROMOTED_FROM_QUARANTINE",
+      "track": "TRACK_007"
     }
   ],
   "version": "001_HARDENED"
