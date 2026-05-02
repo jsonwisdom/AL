@@ -1,6 +1,6 @@
 {
-  "batch_hash": "4869f53fcaf0e5eb2ca1f34f781883734133574bda1495dfecae18daff514937",
-  "batch_id": "kb_batch_4869f53fcaf0e5eb",
+  "batch_hash": "cce5ed52dc0aaa206d9f5509323efeb34eb762db0d96c2fa9fe89eab4a283040",
+  "batch_id": "kb_batch_cce5ed52dc0aaa20",
   "batch_type": "knowledge_broker_batch",
   "blocked_count": 0,
   "blocked_items": [],
@@ -18,9 +18,16 @@
       "path": "_truth/leaves/KB_002/receipt.canonical.json",
       "receipt_hash": "44787152610e439843a22bdef6baa0870c0fddb27ad75b397bd767b25a638ac6",
       "status": "LOCAL_RECEIPT_ONLY"
+    },
+    {
+      "anchor_allowed": "false",
+      "leaf_id": "KB_003",
+      "path": "_truth/leaves/KB_003/receipt.canonical.json",
+      "receipt_hash": "6f3e2c330787fbaf2d5925f8fa902bc8a4d4d090267bc8e8adca20ed495fffdc",
+      "status": "SOURCE_BACKED"
     }
   ],
   "policy": "knowledge_broker_policy_v1",
   "policy_hash": "f542408662635c6d715d26ae1fb411d1a74181e69acf1d53cc3a3180e3dcb2ea",
-  "ready_count": 2
+  "ready_count": 3
 }
