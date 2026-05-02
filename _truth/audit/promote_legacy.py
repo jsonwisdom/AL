@@ -2,6 +2,16 @@
 import argparse, hashlib, json, subprocess, sys
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import List
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+try:
+    from policy_engine import PolicyEngine
+except Exception as e:
+    PolicyEngine = None
+    POLICY_IMPORT_ERROR = e
+else:
+    POLICY_IMPORT_ERROR = None
 
 LEDGER_PATH = Path("_truth/audit/quarantine_ledger.json")
 INVENTORY_PATH = Path("_truth/audit/truth_surface_inventory.json")
@@ -20,10 +30,23 @@ def sha256_file(p):
     return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 
 def load_json(p):
-    return json.loads(Path(p).read_text())
+    return json.loads(Path(p).read_text(encoding="utf-8"))
 
 def save_json(p, data):
-    Path(p).write_text(json.dumps(data, indent=2, sort_keys=True) + "\n")
+    Path(p).write_text(json.dumps(data, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+def log_policy_exception(file_path: Path, violations: List[str]):
+    exceptions_path = Path("_truth/audit/policy_exceptions.jsonl")
+    exceptions_path.parent.mkdir(parents=True, exist_ok=True)
+    entry = {
+        "timestamp": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "file": str(file_path),
+        "violations": violations,
+        "action": "BLOCKED"
+    }
+    with open(exceptions_path, "a", encoding="utf-8") as f:
+        f.write(json.dumps(entry, sort_keys=True) + "\n")
+    print(f"   📝 Exception logged → {exceptions_path}")
 
 def note_root():
     r = run(["git", "notes", "--ref=commits", "show", "HEAD"], check=False)
@@ -42,6 +65,41 @@ def pick_next(ledger):
         if x.get("status") == "QUARANTINED":
             return x["path"]
     return None
+
+def enforce_policy(p: Path):
+    print("🔍 Running policy compliance validation...")
+    if PolicyEngine is None:
+        msg = f"PolicyEngine import failed: {POLICY_IMPORT_ERROR}"
+        print(f"❌ {msg}")
+        log_policy_exception(p, [msg])
+        sys.exit(1)
+
+    policy_engine = PolicyEngine()
+
+    try:
+        file_data = load_json(p)
+    except Exception as e:
+        msg = f"JSON load failed: {e}"
+        print(f"❌ Failed to load JSON for policy check: {e}")
+        log_policy_exception(p, [msg])
+        sys.exit(1)
+
+    policy_result = policy_engine.validate(file_data)
+    summary = policy_engine.get_summary()
+    print(f"   Policy v{summary.get('policy_version', 'N/A')} | {summary.get('block_rules', 0)} block rules")
+
+    if policy_result.get("blocked", False):
+        print("❌ BLOCKED by policy:")
+        violations = policy_result.get("violations", [])
+        for v in violations:
+            print(f"   • {v}")
+        log_policy_exception(p, violations)
+        sys.exit(1)
+
+    for w in policy_result.get("warnings", []):
+        print(f"   ⚠️  {w}")
+
+    print("   ✅ Policy compliance passed")
 
 def promote(candidate, dry_run):
     p = Path(candidate)
@@ -68,16 +126,18 @@ def promote(candidate, dry_run):
         print("actual=", actual)
         sys.exit(1)
 
+    enforce_policy(p)
+
     old_root = note_root()
     now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
     entry["status"] = "PROMOTED"
-    entry["promoted_track"] = "TRACK_007"
+    entry["promoted_track"] = "TRACK_009"
     entry["promoted_at_utc"] = now
 
     ledger["promoted_count"] = sum(x.get("status") == "PROMOTED" for x in ledger["legacy_paths"])
     ledger["quarantined_count"] = sum(x.get("status") == "QUARANTINED" for x in ledger["legacy_paths"])
-    ledger["status"] = "PROMOTION_AUTOMATED"
+    ledger["status"] = "PROMOTION_AUTOMATED_WITH_SEMANTIC_FIREWALL"
     ledger["promotion_allowed"] = False
     ledger["timestamp_utc"] = now
 
@@ -85,7 +145,7 @@ def promote(candidate, dry_run):
         inventory["truth_surfaces"].append({
             "path": candidate,
             "role": "promoted receipt",
-            "track": "TRACK_007",
+            "track": "TRACK_009",
             "leaf_id": p.stem,
             "state": "PROMOTED_FROM_QUARANTINE",
             "boundary": "File remains under _truth; promotion is ledger/inventory status, not filesystem move."
@@ -95,7 +155,7 @@ def promote(candidate, dry_run):
     save_json(INVENTORY_PATH, inventory)
 
     run(["git", "add", str(LEDGER_PATH), str(INVENTORY_PATH)])
-    run(["git", "commit", "-m", f"Track 007: auto-promote {p.name}"])
+    run(["git", "commit", "-m", f"Track 009: firewall-promote {p.name}"])
 
     new_root = replay_root()
     if old_root and new_root == old_root:

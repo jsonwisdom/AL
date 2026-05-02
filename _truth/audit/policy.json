@@ -1,0 +1,40 @@
+{
+  "policy_version": "1.0",
+  "rules": [
+    {
+      "name": "schema_version_current",
+      "field": "schema_version",
+      "operator": "eq",
+      "value": "2.0",
+      "severity": "block"
+    },
+    {
+      "name": "content_type_allowed",
+      "field": "content_type",
+      "operator": "in",
+      "value": ["receipt", "attestation", "anchor", "ledger_entry", "witness"],
+      "severity": "block"
+    },
+    {
+      "name": "source_approved",
+      "field": "source",
+      "operator": "regex",
+      "value": "^(gov_ncc|leaf_|MN_|agent_income|alms_|base_chain|zero_trust)",
+      "severity": "block"
+    },
+    {
+      "name": "no_deprecated_fields",
+      "field": null,
+      "operator": "absent",
+      "value": ["legacy_version", "old_timestamp", "phantom_id", "vibes_score"],
+      "severity": "block"
+    },
+    {
+      "name": "has_merkle_path",
+      "field": "merkle_path",
+      "operator": "present",
+      "value": null,
+      "severity": "block"
+    }
+  ]
+}
