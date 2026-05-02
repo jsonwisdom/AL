@@ -1,0 +1,105 @@
+name: Anchor Observer Report
+
+on:
+  push:
+    paths:
+      - 'reports/*.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ledger-update
+  cancel-in-progress: false
+
+jobs:
+  anchor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Anchor reports into LEDGER.md
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          touch LEDGER.md
+
+          for REPORT_PATH in reports/*.json; do
+            [[ -f "$REPORT_PATH" ]] || continue
+
+            SCHEMA_VERSION="$(jq -r '.schema_version // empty' "$REPORT_PATH")"
+            if [[ "$SCHEMA_VERSION" != "0.2" ]]; then
+              echo "SCHEMA_GATE_FAILED expected=0.2 actual=$SCHEMA_VERSION file=$REPORT_PATH"
+              exit 1
+            fi
+
+            REPORT_SHA="$(sha256sum "$REPORT_PATH" | awk '{print $1}')"
+
+            if grep -q "$REPORT_SHA" LEDGER.md; then
+              echo "IDEMPOTENCY_CHECK sha=$REPORT_SHA already anchored; skipping"
+              continue
+            fi
+
+            SHORT_SHA="${REPORT_SHA:0:8}"
+            REPORT_FILE="$(basename "$REPORT_PATH")"
+            REPORT_ID="${REPORT_FILE%.json}"
+
+            UTC_OBSERVED="$(jq -r '.metadata.utc_observed // .generated_at // .timestamp // empty' "$REPORT_PATH")"
+            if [[ -z "$UTC_OBSERVED" || "$UTC_OBSERVED" == "null" ]]; then
+              UTC_OBSERVED="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            fi
+
+            STYLE_STATUS="$(jq -r '.control_surface_triangle.style.status // "NOMINAL"' "$REPORT_PATH")"
+            TRUTH_STATUS="$(jq -r '.control_surface_triangle.truth.status // "NOMINAL"' "$REPORT_PATH")"
+            STRUCTURE_STATUS="$(jq -r '.control_surface_triangle.structure.status // "NOMINAL"' "$REPORT_PATH")"
+
+            STATUS="NOMINAL"
+            if [[ "$STRUCTURE_STATUS" == "STRUCTURAL_ALERT" ]]; then STATUS="STRUCTURAL_ALERT"; fi
+            if [[ "$TRUTH_STATUS" == "TRUTH_ALERT" ]]; then STATUS="TRUTH_ALERT"; fi
+            if [[ "$STYLE_STATUS" == "SOVEREIGNTY_ALERT" ]]; then STATUS="SOVEREIGNTY_ALERT"; fi
+
+            STYLE="$(jq -r '.control_surface_triangle.style.metric.D // .control_surface_triangle.style.value // 0' "$REPORT_PATH")"
+            TRUTH="$(jq -r '.control_surface_triangle.truth.metric.confidence_gap // .control_surface_triangle.truth.value // 0' "$REPORT_PATH")"
+            STRUCTURE="$(jq -r '.control_surface_triangle.structure.metric.decay_score // .control_surface_triangle.structure.value // 0' "$REPORT_PATH")"
+            SCOPE="$(jq -r '.scope // "cluster_level_breach"' "$REPORT_PATH")"
+
+            {
+              echo "| $UTC_OBSERVED | $REPORT_ID | $SCHEMA_VERSION | $SCOPE | $STATUS | $STYLE | $TRUTH | $STRUCTURE | $REPORT_SHA | |"
+              echo
+              echo "<details>"
+              echo "<summary>Receipt: $SHORT_SHA</summary>"
+              echo
+              echo "**Anchor**"
+              echo "- **report_id:** \`$REPORT_ID\`"
+              echo "- **report_path:** \`$REPORT_PATH\`"
+              echo "- **report_sha256:** \`$REPORT_SHA\`"
+              echo "- **schema_version:** \`$SCHEMA_VERSION\`"
+              echo "- **utc_observed:** \`$UTC_OBSERVED\`"
+              echo
+              echo "**Attestation**"
+              echo "- **scope:** \`$SCOPE\`"
+              echo "- **not:** \`full_model_failure\`"
+              echo
+              echo "**Control Surface Triangle**"
+              echo '```json'
+              jq -c '.control_surface_triangle' "$REPORT_PATH"
+              echo '```'
+              echo
+              echo "</details>"
+              echo
+            } >> LEDGER.md
+          done
+
+          if git diff --quiet LEDGER.md; then
+            echo "NO_LEDGER_CHANGES"
+            exit 0
+          fi
+
+          git add LEDGER.md
+          git commit -m "ANCHOR: observer reports [ledger-update]"
+          git push
