@@ -27,7 +27,7 @@ jobs:
 
       - name: Verify deterministic replay
         run: |
-          python scripts/verify_kb_batch.py
+          python scripts/verify_kb_batch.py --fail-on-blocked
 
       - name: Show final KB batch manifest
         run: |
