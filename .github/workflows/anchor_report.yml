@@ -69,7 +69,7 @@ jobs:
             SCOPE="$(jq -r '.scope // "cluster_level_breach"' "$REPORT_PATH")"
 
             {
-              echo "| $UTC_OBSERVED | $REPORT_ID | $SCHEMA_VERSION | $SCOPE | $STATUS | $STYLE | $TRUTH | $STRUCTURE | $REPORT_SHA | |"
+              echo "| $UTC_OBSERVED | $REPORT_ID | $SCHEMA_VERSION | $SCOPE | $STATUS | $STYLE | $TRUTH | $STRUCTURE | $REPORT_SHA |"
               echo
               echo "<details>"
               echo "<summary>Receipt: $SHORT_SHA</summary>"
