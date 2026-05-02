@@ -1,0 +1,45 @@
+name: Validate Replay Registry
+
+on:
+  pull_request:
+    paths:
+      - '_truth/replay/registry.json'
+      - '_truth/replay/registry.schema.json'
+      - '.github/workflows/validate-replay-registry.yml'
+  push:
+    branches: [ master ]
+    paths:
+      - '_truth/replay/registry.json'
+      - '_truth/replay/registry.schema.json'
+      - '.github/workflows/validate-replay-registry.yml'
+
+jobs:
+  validate-replay-registry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install validator
+        run: npm install -g ajv-cli ajv-formats
+
+      - name: Validate registry schema
+        run: |
+          test -f _truth/replay/registry.schema.json
+          test -f _truth/replay/registry.json
+          ajv validate \
+            --spec=draft2020 \
+            -c ajv-formats \
+            -s _truth/replay/registry.schema.json \
+            -d _truth/replay/registry.json
+
+      - name: Enforce append-only replay location boundary
+        run: |
+          if git ls-files '_truth/receipts/*REPLAY*' 'receipts/*REPLAY*' | grep -q .; then
+            echo 'Replay artifacts must not live inside Merkle receipt input paths.'
+            git ls-files '_truth/receipts/*REPLAY*' 'receipts/*REPLAY*'
+            exit 1
+          fi
