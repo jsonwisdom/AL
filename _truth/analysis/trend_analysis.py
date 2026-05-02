@@ -29,6 +29,7 @@ def parse_rows():
         row["truth"] = to_float(row["truth"])
         row["structure"] = to_float(row["structure"])
         rows.append(row)
+    rows.sort(key=lambda r: r["utc"])
     return rows
 
 def avg(values):
@@ -39,7 +40,7 @@ def main():
     status_counts = Counter(r["status"] for r in rows)
 
     analysis = {
-        "schema": "trend_analysis_v0.1",
+        "schema": "trend_analysis_v0.1.1",
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "source": "LEDGER.md",
         "mode": "READ_ONLY",
@@ -67,9 +68,10 @@ def main():
     out = OUTPUT_DIR / f"trend_data_{ts}.json"
     out.write_text(json.dumps(analysis, indent=2) + "\n", encoding="utf-8")
 
-    print("📊 Trend Analysis v0.1")
+    print("📊 Trend Analysis v0.1.1")
     print("=" * 50)
     print(f"✅ Found {len(rows)} rows in LEDGER.md")
+    print("✅ Sorted chronologically by UTC")
     print(f"✅ Data saved: {out}")
     print()
     print("📈 Summary:")
