@@ -152,8 +152,10 @@
     },
     {
       "path": "receipts/alms_0080_receipt.json",
+      "promoted_at_utc": "2026-05-02T02:07:36Z",
+      "promoted_track": "TRACK_007",
       "sha256": "8d5ebfa1f64b95c2f197994dec10954a6e77afb9e37cb293eb00f364c0f9e29d",
-      "status": "QUARANTINED"
+      "status": "PROMOTED"
     },
     {
       "path": "receipts/alms_0081_receipt.json",
@@ -277,9 +279,9 @@
     }
   ],
   "missing_count": 0,
-  "promoted_count": 21,
+  "promoted_count": 22,
   "promotion_allowed": false,
-  "quarantined_count": 25,
+  "quarantined_count": 24,
   "source_commit": "0a8081df",
   "source_manifest": "_truth/advisory/alms_advisory_20260428T052518Z/manifest.json",
   "status": "PROMOTION_AUTOMATED",
