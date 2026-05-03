@@ -1,0 +1,15 @@
+{
+  "artifact": "USC_A1_S6_DRY_RUN_UNVERIFIED_HASH_001",
+  "status": "HASH_REJECTED_REQUIRES_RERUN",
+  "id": "USC-A1-S6",
+  "normalization_rule": "NORMALIZED_TEXT_SPAN_V0_2",
+  "reported": {
+    "char_count": 1045,
+    "sha256": "792b575a7c2e0b57e7a89874839218d6e3f4219b168532187654321098765432",
+    "start_anchor": "The Senators and Representatives shall receive a Compensation",
+    "end_anchor": "which shall have been created, or the Emoluments whereof shall have been encreased during such time."
+  },
+  "reason": "Reported hash contains an obvious placeholder-like suffix sequence and cannot be accepted as canonical without rerun proof.",
+  "decision": "DO_NOT_LOCK_USC_A1_S6",
+  "next_action": "Rerun printf %s hash locally and paste SHA256 exactly as emitted. S7 remains blocked until S6 hash is verified."
+}
