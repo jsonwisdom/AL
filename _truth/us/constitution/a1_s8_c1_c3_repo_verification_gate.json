@@ -1,0 +1,26 @@
+{
+  "artifact": "USC_A1_S8_C1_C3_REPO_VERIFICATION_GATE",
+  "status": "HASHES_REJECTED_REPO_TEXT_VERIFIED",
+  "scope": ["USC-A1-S8-C1", "USC-A1-S8-C2", "USC-A1-S8-C3"],
+  "repo_text_verified": {
+    "C1": {
+      "path": "_truth/us/constitution/a1_s8_c1_span.txt",
+      "git_blob_sha": "b80c6975c4d54b3c57ae56e51d0da11c7874a4e1"
+    },
+    "C2": {
+      "path": "_truth/us/constitution/a1_s8_c2_span.txt",
+      "git_blob_sha": "a2714661490cafb01d992f62b3b6f8b3499115e1"
+    },
+    "C3": {
+      "path": "_truth/us/constitution/a1_s8_c3_span.txt",
+      "git_blob_sha": "7830ad2ab18aa093c98aa9a76ebe17858a7b92fe"
+    }
+  },
+  "reported_hashes_rejected": {
+    "C1": "44917631379766948510dfc6e88e36783d47d4e339b674844332997193630f9a",
+    "C2": "0916a04870f4e248b1d927c39050d272998818f278d655f41249b6574f107380",
+    "C3": "374f676f4942f36f6d8920199e4369e85501869e5d956f4d36f6c03998f56157"
+  },
+  "reason": "Reported hashes remain untrusted. Repo text is anchored; C1-C3 SHA256 must be computed by a trusted verifier from fetched repo bytes before Merkle inclusion.",
+  "gate": "DO_NOT_LOCK_C1_C3_HASHES_DO_NOT_PROCEED_TO_C4_C6_UNTIL_TRUSTED_HASHES_EXIST"
+}
