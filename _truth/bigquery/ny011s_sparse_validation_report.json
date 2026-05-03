@@ -1,0 +1,33 @@
+{
+  "receipt": "NY-011S",
+  "artifact": "SPARSE_GSOD_VALIDATION_REPORT",
+  "status": "MEASURED",
+  "scope": "GSOD station counties only",
+  "counties_validated": 4,
+  "county_list": [
+    "Albany",
+    "Erie",
+    "Franklin",
+    "Suffolk"
+  ],
+  "coverage": "4 of 62 counties",
+  "statewide_validation": false,
+  "prism_baseline": "MISSING",
+  "inputs": [
+    "_truth/bigquery/ny007b_gsod_trends.csv",
+    "_truth/bigquery/ny_noaa_income_overlay_62.csv",
+    "_truth/bigquery/ny010_extreme_events_2024.csv"
+  ],
+  "temp_trend_summary": {
+    "mean_f_per_decade": 3.081450291977977,
+    "min_f_per_decade": -0.2490382661732994,
+    "max_f_per_decade": 7.06500785986794
+  },
+  "guardrails": [
+    "Sparse validation only.",
+    "No PRISM or gridded baseline comparison.",
+    "No statewide validation claim.",
+    "No causality, health impact, economic loss, or attribution claim."
+  ],
+  "timestamp_utc": "2026-05-03T01:16:17.958246+00:00"
+}
