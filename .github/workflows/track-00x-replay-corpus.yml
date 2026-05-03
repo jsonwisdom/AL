@@ -1,32 +1,19 @@
-name: TRACK_00X_10 Deterministic Replay Corpus
-
-# Manual trigger marker: 2026-05-03 C0001 replay check
+name: C0001 Isolated Replay Proof
 
 on:
-  push:
-    branches:
-      - master
-      - main
-      - 'release/**'
-    paths:
-      - 'ci/replay_corpus_runner.py'
-      - 'ci/**'
-      - 'corpus/**'
-      - '.github/workflows/track-00x-replay-corpus.yml'
-  pull_request:
-    branches:
-      - master
-      - main
-    paths:
-      - 'ci/replay_corpus_runner.py'
-      - 'ci/**'
-      - 'corpus/**'
-      - '.github/workflows/track-00x-replay-corpus.yml'
   workflow_dispatch:
 
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: c0001-isolated-replay-proof
+  cancel-in-progress: true
+
 jobs:
-  deterministic_replay_corpus:
-    name: TRACK_00X_10 — Deterministic Replay Corpus
+  c0001_isolated_replay:
+    name: C0001 — Isolated Replay Proof
     runs-on: ubuntu-latest
 
     steps:
@@ -45,33 +32,22 @@ jobs:
             pip install -r requirements.txt
           fi
 
-      - name: Run deterministic replay corpus
+      - name: Run C0001 deterministic replay corpus
+        run: python ci/replay_corpus_runner.py
+
+      - name: Show corpus report in log
+        if: always()
         run: |
-          if [ ! -d corpus ]; then
-            mkdir -p ci
-            cat > ci/corpus_report.json <<'JSON'
-          {
-            "total_cases": 0,
-            "pass": 0,
-            "fail": 0,
-            "indeterminate": 1,
-            "failed_cases": [
-              {
-                "case": null,
-                "reason": "missing_corpus_root"
-              }
-            ],
-            "verdict": "INDETERMINATE_BOOTSTRAP"
-          }
-          JSON
-            echo "TRACK_00X_10 bootstrap: corpus/ is not present yet; emitted indeterminate report."
-            exit 0
+          echo '--- ci/corpus_report.json ---'
+          if [ -f ci/corpus_report.json ]; then
+            cat ci/corpus_report.json
+          else
+            echo '{"verdict":"INDETERMINATE","reason":"missing_corpus_report"}'
           fi
-          python ci/replay_corpus_runner.py
 
       - name: Upload corpus report
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: corpus_report
+          name: c0001_corpus_report
           path: ci/corpus_report.json
