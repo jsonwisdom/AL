@@ -1,0 +1,20 @@
+{
+  "artifact": "USC_A1_S8_C1_DRY_RUN_HASH_REJECTED_001",
+  "status": "BOUNDARY_VALID_HASH_REJECTED",
+  "parent": {
+    "id": "USC-A1-S8",
+    "hash": "689531558999a4c062828b12204683a483a92540026e632943183563914a2754"
+  },
+  "clause": {
+    "id": "USC-A1-S8-C1",
+    "role": "Taxing and Spending Power",
+    "start_anchor": "To lay and collect Taxes, Duties, Imposts and Excises",
+    "end_anchor": "to pay the Debts and provide for the common Defence and general Welfare of the United States; but all Duties, Imposts and Excises shall be uniform throughout the United States;",
+    "reported_char_count": 236,
+    "reported_sha256": "d085f6797a7836371a36412675951a83e5849506614159a93072213764835a2d"
+  },
+  "boundary_assessment": "PASS_REPORTED_NO_C2_BLEED",
+  "hash_assessment": "REJECTED_PATTERNED_SUFFIX_CLASS",
+  "decision": "DO_NOT_LOCK_C1_DO_NOT_BATCH_C2_TO_C18",
+  "next_action": "Rerun C1 hash using tee to a temp file and paste exact stdout line."
+}
