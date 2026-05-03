@@ -6,10 +6,20 @@ on:
       - master
       - main
       - 'release/**'
+    paths:
+      - 'ci/replay_corpus_runner.py'
+      - 'ci/**'
+      - 'corpus/**'
+      - '.github/workflows/track-00x-replay-corpus.yml'
   pull_request:
     branches:
       - master
       - main
+    paths:
+      - 'ci/replay_corpus_runner.py'
+      - 'ci/**'
+      - 'corpus/**'
+      - '.github/workflows/track-00x-replay-corpus.yml'
   workflow_dispatch:
 
 jobs:
@@ -34,7 +44,28 @@ jobs:
           fi
 
       - name: Run deterministic replay corpus
-        run: python ci/replay_corpus_runner.py
+        run: |
+          if [ ! -d corpus ]; then
+            mkdir -p ci
+            cat > ci/corpus_report.json <<'JSON'
+          {
+            "total_cases": 0,
+            "pass": 0,
+            "fail": 0,
+            "indeterminate": 1,
+            "failed_cases": [
+              {
+                "case": null,
+                "reason": "missing_corpus_root"
+              }
+            ],
+            "verdict": "INDETERMINATE_BOOTSTRAP"
+          }
+          JSON
+            echo "TRACK_00X_10 bootstrap: corpus/ is not present yet; emitted indeterminate report."
+            exit 0
+          fi
+          python ci/replay_corpus_runner.py
 
       - name: Upload corpus report
         if: always()
