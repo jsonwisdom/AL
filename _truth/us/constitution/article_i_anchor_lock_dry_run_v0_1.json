@@ -1,0 +1,33 @@
+{
+  "artifact": "ARTICLE_I_ANCHOR_LOCK_DRY_RUN_V0_1",
+  "status": "DRY_RUN_PENDING_OPERATOR_SPAN_AND_HASH",
+  "source": "_truth/us/constitution/constitution_gpo.normalized.txt",
+  "normalization_rule": "NORMALIZED_TEXT_SPAN_V0_2",
+  "hash_method": "printf %s \"$SPAN\" | sha256sum",
+  "script": {
+    "name": "anchor_lock.sh",
+    "mode": "single-line normalized source anchor extraction",
+    "warning": "Only valid when start and end anchors are unique in normalized source. If anchors repeat, require occurrence index."
+  },
+  "targets": [
+    {
+      "id": "USC-A1-S3",
+      "start_anchor": "The Senate of the United States",
+      "end_anchor": "of the Party convicted.",
+      "status": "REQUEST_SPAN_PLUS_HASH_FIRST"
+    },
+    {
+      "id": "USC-A1-S4",
+      "start_anchor": "The Times, Places and Manner",
+      "end_anchor": "appoint a different Day.",
+      "status": "PENDING_AFTER_A1_S3"
+    },
+    {
+      "id": "USC-A1-S5",
+      "start_anchor": "Each House shall be the Judge",
+      "end_anchor": "than that in which the two Houses shall be sitting.",
+      "status": "PENDING_AFTER_A1_S3"
+    }
+  ],
+  "gate_logic": "Do not batch-lock A1-S3 through A1-S5 until A1-S3 span boundary, whitespace, and hash are operator-confirmed."
+}
