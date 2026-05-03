@@ -65,8 +65,14 @@ county_agg = df.groupby("county_fips", as_index=False).agg(
 
 # Get all 62 counties.
 spine = pd.read_csv("_truth/bigquery/ny_county_fips_62.csv", dtype=str)
-if "county_fips" not in spine.columns:
+if "county_fips" in spine.columns:
+    spine["county_fips"] = spine["county_fips"].astype(str).str.zfill(5)
+elif "geo_id" in spine.columns:
     spine["county_fips"] = spine["geo_id"].astype(str).str.zfill(5)
+elif "fips" in spine.columns:
+    spine["county_fips"] = spine["fips"].astype(str).str.zfill(5)
+else:
+    raise SystemExit(f"STOP: spine missing FIPS column. Columns: {list(spine.columns)}")
 
 result = spine.merge(county_agg, on="county_fips", how="left")
 

@@ -1,0 +1,41 @@
+{
+  "receipt": "NY-010",
+  "artifact": "NY_EXTREME_EVENTS_2024",
+  "source": "bigquery-public-data.noaa_gsod.gsod2024",
+  "season": "May-September 2024",
+  "stations_used": [
+    "725016",
+    "725180",
+    "725280",
+    "726228"
+  ],
+  "station_county_mapping": [
+    {
+      "usaf": "726228",
+      "county_name": "Franklin"
+    },
+    {
+      "usaf": "725180",
+      "county_name": "Albany"
+    },
+    {
+      "usaf": "725016",
+      "county_name": "Suffolk"
+    },
+    {
+      "usaf": "725280",
+      "county_name": "Erie"
+    }
+  ],
+  "rows": 62,
+  "counties_with_station_data": 4,
+  "hash": "cfa957e5b6d09bdd8e54b63da140a127658191e9b5c7c0df7fc2e4e48dab2540",
+  "output": "_truth/bigquery/ny010_extreme_events_2024.csv",
+  "timestamp_utc": "2026-05-03T00:52:23.015960+00:00",
+  "guardrails": [
+    "Station coverage sparse; only stations proven available in GSOD 2024 are used.",
+    "GSOD mo is STRING with zero-padded month values; filter uses '05' through '09'.",
+    "Zero event counts for counties without stations do not mean no extreme events occurred.",
+    "Do not claim health impact, economic loss, disaster attribution, or climate trend."
+  ]
+}
