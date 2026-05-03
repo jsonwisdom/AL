@@ -1,0 +1,47 @@
+{
+  "artifact": "GITHUB_DIRECT_ANCHOR_STATE",
+  "status": "GITHUB_ANCHORED_ONLY",
+  "onchain_status": "NOT_REGISTERED",
+  "public_label": "GITHUB_ANCHORED_ONLY",
+  "source_output": "alms/national/national_root_ci_latest.json",
+  "national_root": "sha256:272bd90e5b2682c75ab07a49c4491929f39280a2d391ab6742a421e844852105",
+  "national_status": "INDETERMINATE",
+  "states": [
+    {
+      "state": "MN",
+      "status": "PASS",
+      "state_root": "sha256:e399a3b20584b8537a6db68d83720a589032c90468d90a9f906df5b1a3da04a7",
+      "claim_count": 2,
+      "matched_count": 2
+    },
+    {
+      "state": "AL",
+      "status": "INDETERMINATE",
+      "reason": "expected hash missing or mismatch"
+    },
+    {
+      "state": "TX",
+      "status": "INDETERMINATE",
+      "reason": "expected hash missing or mismatch"
+    }
+  ],
+  "repo": "jsonwisdom/AL",
+  "branch": "master",
+  "commit_context": "GitHub Direct receipt created from confirmed CI national root output after MN reached PASS and AL/TX remained INDETERMINATE.",
+  "blocked_claims": [
+    "ANCHORED_ON_BASE",
+    "EAS_ATTESTED",
+    "ENS_COMPLETE",
+    "VERIFIED_NATIONAL_ROOT",
+    "ONCHAIN_CONFIRMED"
+  ],
+  "allowed_claims": [
+    "Machine truth recompute live",
+    "GitHub Direct runtime receipt recorded",
+    "MN snapshot root PASS",
+    "National status honest INDETERMINATE",
+    "No on-chain anchor claimed"
+  ],
+  "boundary": "GitHub Direct anchor receipt only. No wallet signature, no Base/EAS transaction, no ENS update. National PASS requires every state PASS.",
+  "created_utc": "2026-05-03T21:16:00Z"
+}
