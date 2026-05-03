@@ -3,7 +3,7 @@
   "version": "US_SNAPSHOT_2026-05-03",
   "status": "INDETERMINATE",
   "national_root": "sha256:f7b22bfcb64a9cdcfbfa85c4082f94d2c57b6cea2573894b48c0cb24ceac5803",
-  "generated_utc": "2026-05-03T22:00:35Z",
+  "generated_utc": "2026-05-03T22:08:05Z",
   "states": [
     {
       "state": "MN",
@@ -63,7 +63,7 @@
           "id": "TX-BUDGET-2026-01",
           "claim_path": "fixtures/tx/tx_budget_2026_claim.json",
           "source_path": "fixtures/tx/sources/tx_budget_snapshot_2026-05-03.txt",
-          "expected_hash": "UNSET_PENDING_COMMIT",
+          "expected_hash": "sha256:15945890a16a820f1d44e6e1fd7bd76b6983fbbda731a833988035586b27dfcd",
           "computed_hash": "sha256:9fe87f5881bc72f60fbf29dbb508a37573c1a35bbddc3a82aa2765e0176ccfce",
           "hash_match": false
         }
@@ -72,7 +72,7 @@
         {
           "id": "TX-BUDGET-2026-01",
           "reason": "expected hash missing or mismatch",
-          "expected_hash": "UNSET_PENDING_COMMIT",
+          "expected_hash": "sha256:15945890a16a820f1d44e6e1fd7bd76b6983fbbda731a833988035586b27dfcd",
           "computed_hash": "sha256:9fe87f5881bc72f60fbf29dbb508a37573c1a35bbddc3a82aa2765e0176ccfce"
         }
       ]
