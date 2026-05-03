@@ -40,8 +40,8 @@ STATES = {
         {
             "id": "AL-BUDGET-2026-01",
             "claim": "fixtures/al/al_budget_2026_claim.json",
-            "source": "fixtures/al/sources/al_budget_snapshot_2026-05-03.txt",
-            "version": "AL_BOOTSTRAP_2026-05-03",
+            "source": "fixtures/al/sources/al_budget_act_2025_251.pdf",
+            "version": "AL_ACT_2025_251",
         }
     ],
     "TX": [
