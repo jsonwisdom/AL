@@ -1,0 +1,64 @@
+name: ALMS Version Bump
+
+on:
+  workflow_dispatch:
+    inputs:
+      id:
+        description: "ID (e.g., C0001)"
+        required: true
+        type: string
+      version:
+        description: "Version (e.g., 1.0.0)"
+        required: true
+        type: string
+      state:
+        description: "State (e.g., REPLAY_PASSED)"
+        required: true
+        type: string
+      artifact:
+        description: "Artifact path"
+        required: true
+        type: string
+      layer:
+        description: "Layer"
+        required: false
+        default: "corpus_version"
+        type: string
+      notes:
+        description: "Notes"
+        required: false
+        default: ""
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run version bump
+        run: |
+          python scripts/alms_version_bump.py \
+            --id "${{ inputs.id }}" \
+            --version "${{ inputs.version }}" \
+            --state "${{ inputs.state }}" \
+            --artifact "${{ inputs.artifact }}" \
+            --layer "${{ inputs.layer }}" \
+            --notes "${{ inputs.notes }}"
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add alms/version_registry.json alms/version_receipts/
+          git commit -m "ALMS VERSION BUMP ${{ inputs.id }} ${{ inputs.version }}"
+          git push
