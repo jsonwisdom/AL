@@ -3,7 +3,7 @@
   "version": "US_SNAPSHOT_2026-05-03",
   "status": "INDETERMINATE",
   "national_root": "sha256:b6e7e021132f70918d82132e1aa9f76daa0022ea0486d61352204ec909633f26",
-  "generated_utc": "2026-05-03T21:01:58Z",
+  "generated_utc": "2026-05-03T21:04:11Z",
   "states": [
     {
       "state": "MN",
@@ -16,7 +16,7 @@
         {
           "id": "MN-BUDGET-2026-01",
           "hash_match": false,
-          "error": "[Errno 2] No such file or directory: '/home/runner/work/AL/AL/fixtures/mn/mn_budget_2026_claim.json'"
+          "error": "[Errno 2] No such file or directory: '/home/runner/work/AL/AL/fixtures/mn/sources/mmb_budget_snapshot_2026-05-03.txt'"
         },
         {
           "id": "MN-BUDGET-RESERVE-2026-01",
@@ -30,7 +30,7 @@
       "blockers": [
         {
           "id": "MN-BUDGET-2026-01",
-          "reason": "[Errno 2] No such file or directory: '/home/runner/work/AL/AL/fixtures/mn/mn_budget_2026_claim.json'"
+          "reason": "[Errno 2] No such file or directory: '/home/runner/work/AL/AL/fixtures/mn/sources/mmb_budget_snapshot_2026-05-03.txt'"
         }
       ]
     },
