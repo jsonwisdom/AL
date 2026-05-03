@@ -2,8 +2,8 @@
   "artifact": "CI_NATIONAL_ROOT_RECOMPUTE",
   "version": "US_SNAPSHOT_2026-05-03",
   "status": "INDETERMINATE",
-  "national_root": "sha256:0206fac1da58de600e70d5bc142f8d2a57a47d23c4e6a647e5d3167082fc33ce",
-  "generated_utc": "2026-05-03T21:58:31Z",
+  "national_root": "sha256:f7b22bfcb64a9cdcfbfa85c4082f94d2c57b6cea2573894b48c0cb24ceac5803",
+  "generated_utc": "2026-05-03T22:00:35Z",
   "states": [
     {
       "state": "MN",
@@ -35,23 +35,21 @@
     {
       "state": "AL",
       "version": "AL_ACT_2025_251",
-      "status": "INDETERMINATE",
-      "state_root": null,
+      "status": "PASS",
+      "state_root": "sha256:ecf65398c0a34307065aa78d0eafbfbfe4641405cc4a1a14d796058522a78206",
       "claim_count": 1,
-      "matched_count": 0,
+      "matched_count": 1,
       "claims": [
         {
           "id": "AL-BUDGET-2026-01",
-          "hash_match": false,
-          "error": "[Errno 2] No such file or directory: '/home/runner/work/AL/AL/fixtures/al/sources/al_budget_act_2025_251.pdf'"
+          "claim_path": "fixtures/al/al_budget_2026_claim.json",
+          "source_path": "fixtures/al/sources/al_budget_act_2025_251.pdf",
+          "expected_hash": "sha256:ecf65398c0a34307065aa78d0eafbfbfe4641405cc4a1a14d796058522a78206",
+          "computed_hash": "sha256:ecf65398c0a34307065aa78d0eafbfbfe4641405cc4a1a14d796058522a78206",
+          "hash_match": true
         }
       ],
-      "blockers": [
-        {
-          "id": "AL-BUDGET-2026-01",
-          "reason": "[Errno 2] No such file or directory: '/home/runner/work/AL/AL/fixtures/al/sources/al_budget_act_2025_251.pdf'"
-        }
-      ]
+      "blockers": []
     },
     {
       "state": "TX",
@@ -82,7 +80,7 @@
   ],
   "leaf_hashes": [
     "sha256:2d16e1a4cb78c71b6bbaab2aae8f673c1851a2d9afc41b4bb50b66cf503ad998",
-    "sha256:59804063ffd38358e1da5174214a4e9d78c9f94c23050d92e940f56a478b664b",
+    "sha256:711c8674642e6761a99c2eb0ac2151861de4000d61208d129f1b2ae58a0d00ad",
     "sha256:792ba165a7557a923cc072ad98e19ca3d106da76735a4dc10827ae0811772174"
   ],
   "boundary": "GitHub CI recompute only. Not Base/EAS anchored. National PASS requires every state PASS."
