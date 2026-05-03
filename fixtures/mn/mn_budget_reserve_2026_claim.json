@@ -1,0 +1,38 @@
+{
+  "claim_id": "MN-BUDGET-RESERVE-2026-01",
+  "layer": "CLAIM",
+  "state": "MN",
+  "claim_text": "Minnesota maintains a positive general fund budgetary balance / reserve position in the FY2026-2027 biennium, with projections around $3.73 billion after required reserves following enacted budget and forecast updates.",
+  "timestamp": "2026-05-03T20:05:00Z",
+  "source_url": "https://mn.gov/mmb/budget/current-budget/current-enacted-budget/",
+  "source": {
+    "description": "Minnesota Management and Budget official forecasts and enacted budget documents",
+    "source_url": "https://mn.gov/mmb/budget/current-budget/current-enacted-budget/"
+  },
+  "frozen_artifact": {
+    "mode": "repo",
+    "reference": "fixtures/mn/sources/mmb_budget_reserve_snapshot_2026-05-03.txt",
+    "capture_date": "2026-05-03"
+  },
+  "hash": "sha256:3537811e3afd3e1baa5910e530c05c3f82b2d3322e27644d2f6a2847159f1a2c",
+  "receipt": {
+    "receipt_id": "MN-RESERVE-RECEIPT-001",
+    "status": "INDETERMINATE",
+    "notes": "Frozen source snapshot hash bound. Snapshot-level replay may pass, but full source completeness remains unverified.",
+    "replay_passed": false
+  },
+  "replay": {
+    "status": "PENDING"
+  },
+  "state_root": {
+    "status": "PENDING"
+  },
+  "national_root": {
+    "status": "PENDING"
+  },
+  "public_explanation": {
+    "status": "PENDING",
+    "content_summary": "INDETERMINATE - Snapshot-level proof only. Awaiting replay and multi-claim root computation.",
+    "explanation_hash": "UNSET"
+  }
+}
