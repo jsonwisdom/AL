@@ -1,0 +1,91 @@
+name: C0002 Source Hash Discovery
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+      - main
+    paths:
+      - '_truth/bigquery/ny007_era5_schema_probe_manifest.json'
+      - 'corpus/C0002/**'
+      - '.github/workflows/c0002-source-hash.yml'
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  c0002_source_hash:
+    name: Compute and lock C0002 repo-bound source hash
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Compute source hash and update expected_hashes.json
+        shell: python
+        run: |
+          import hashlib
+          import json
+          from pathlib import Path
+
+          source_path = Path('_truth/bigquery/ny007_era5_schema_probe_manifest.json')
+          expected_path = Path('corpus/C0002/replay/expected_hashes.json')
+          out_path = Path('ci/c0002_source_hash.json')
+          out_path.parent.mkdir(parents=True, exist_ok=True)
+
+          if not source_path.exists():
+              report = {
+                  'verdict': 'INDETERMINATE',
+                  'reason': 'missing_source',
+                  'source_path': str(source_path),
+              }
+          else:
+              source_hash = 'sha256:' + hashlib.sha256(source_path.read_bytes()).hexdigest()
+              patch = {
+                  'normalized_artifact_hash': source_hash,
+                  'identity': {
+                      'source_url': 'repo://jsonwisdom/AL/_truth/bigquery/ny007_era5_schema_probe_manifest.json',
+                      'canonical_url': 'repo://jsonwisdom/AL/_truth/bigquery/ny007_era5_schema_probe_manifest.json',
+                      'FETCH_FINGERPRINT': source_hash,
+                  },
+                  'status': 'LOCKED_FROM_CI_SOURCE_HASH_DISCOVERY',
+              }
+              expected_path.parent.mkdir(parents=True, exist_ok=True)
+              expected_path.write_text(json.dumps(patch, indent=2) + '\n')
+              report = {
+                  'verdict': 'SOURCE_HASH_COMPUTED_AND_EXPECTED_HASHES_UPDATED',
+                  'corpus_id': 'C0002',
+                  'source_path': str(source_path),
+                  'source_hash': source_hash,
+                  'expected_hashes_path': str(expected_path),
+                  'expected_hashes_patch': patch,
+                  'note': 'C0002 hashes raw repo JSON bytes. No RFC 8785 transform is applied in this workflow.',
+              }
+
+          out_path.write_text(json.dumps(report, indent=2) + '\n')
+          print(json.dumps(report, indent=2))
+
+      - name: Commit expected hash update
+        shell: bash
+        run: |
+          if git diff --quiet -- corpus/C0002/replay/expected_hashes.json; then
+            echo "No expected hash changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add corpus/C0002/replay/expected_hashes.json ci/c0002_source_hash.json
+          git commit -m "Lock C0002 expected source hash from CI"
+          git push
+
+      - name: Upload C0002 source hash report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: c0002_source_hash
+          path: ci/c0002_source_hash.json
