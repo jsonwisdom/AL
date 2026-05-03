@@ -6,21 +6,27 @@ Running public log of replay attempts, confirmations, breaks, and fixes for Mach
 
 Machine LIVE 2.0 is GitHub Direct replay proof.
 
-It recomputes ALMS state fixtures into a national root while preserving honest `INDETERMINATE` states.
+It recomputes ALMS state fixtures into a national root while preserving honest `INDETERMINATE` states instead of forcing false `PASS` results.
 
 Current verdicts:
 
 ```text
 MN=PASS
 AL=PASS
-TX=INDETERMINATE
-National=INDETERMINATE
+TX=PASS
+National=PASS
+```
+
+Current national root:
+
+```text
+sha256:40cfa9ef33c472792825902467889886d8c6f2cfaaeb771cd0698d017453de70
 ```
 
 Boundary:
 
 ```text
-GitHub CI recompute only. Not Base/EAS anchored. National PASS requires every state PASS.
+GitHub CI recompute only. Not Base/EAS anchored. National PASS means every current state lane passed byte-for-byte replay. It does not claim on-chain anchoring, ENS completion, or broader fiscal judgment.
 ```
 
 ## Receipt Surface
@@ -36,6 +42,7 @@ GitHub CI recompute only. Not Base/EAS anchored. National PASS requires every st
 |---|---|---|---|---|
 | 2026-05-03 | jsonwisdom | `18af5459899b12ed609b9098aed1b6ec43ebfc13` | `BASELINE` | Initial launch receipt. GitHub Direct only. MN `PASS`; AL/TX/National `INDETERMINATE`. No Base/EAS, ENS, on-chain, or national `PASS` claim. |
 | 2026-05-03 | jsonwisdom | `970fa505` | `CONFIRMED` | AL official Act 2025-251 PDF frozen and replayed. MN `PASS`; AL `PASS`; TX `INDETERMINATE`; National `INDETERMINATE`. |
+| 2026-05-03 | jsonwisdom | `27076b601a1c36ae6a23aca46d9ad263bc243c5e` | `CONFIRMED` | TX official GAA 2026-2027 PDF frozen and replayed. MN `PASS`; AL `PASS`; TX `PASS`; National `PASS`. National root `sha256:40cfa9ef33c472792825902467889886d8c6f2cfaaeb771cd0698d017453de70`. GitHub CI recompute only; no Base/EAS, ENS, or on-chain claim. |
 
 ## Entry Standard
 
