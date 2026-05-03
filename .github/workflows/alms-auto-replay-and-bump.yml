@@ -22,7 +22,10 @@ jobs:
           python-version: "3.11"
 
       - name: Install deps
-        run: pip install -r requirements.txt || true
+        run: pip install jsonschema || true
+
+      - name: Validate ALMS version schemas (hard gate)
+        run: python scripts/alms_validate_version_schemas.py
 
       - name: Run replay corpus
         run: python ci/replay_corpus_runner.py || true
@@ -43,9 +46,7 @@ report = json.loads(report_path.read_text())
 
 cases = report.get("cases", []) if "cases" in report else []
 
-# fallback for your simpler format
 if not cases:
-    # assume global PASS means bump both
     if report.get("verdict") == "PASS":
         cases = [
             {"id": "C0001", "verdict": "PASS"},
