@@ -1,0 +1,9 @@
+{
+  "receipt": "NY-007_SCHEMA_PROBE",
+  "artifact": "ERA5_PUBLIC_DATASET_DISCOVERY",
+  "rows": 2,
+  "hash": "317da41c54f232d771bce958e601ea717c6207d1009c64cbfd3634d57534986c",
+  "output": "_truth/bigquery/ny007_era5_schema_probe.csv",
+  "timestamp_utc": "2026-05-03T00:56:58.004120+00:00",
+  "guardrail": "Do not build ERA5 panel until actual table names and schema are confirmed."
+}
