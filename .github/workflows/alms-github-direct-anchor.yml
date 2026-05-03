@@ -1,0 +1,63 @@
+name: ALMS GitHub Direct Anchor
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'fixtures/**'
+      - 'site/reputation-aware-verifier.html'
+      - 'docs/NATIONAL_ROOT_DESIGN.md'
+      - 'scripts/compute_national_root_ci.py'
+      - '.github/workflows/alms-github-direct-anchor.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  github-direct-anchor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Recompute national root (CI)
+        run: |
+          python scripts/compute_national_root_ci.py
+
+      - name: Record GitHub Direct anchor state
+        run: |
+          mkdir -p alms/anchors/runtime
+          cat > alms/anchors/runtime/github_direct_anchor_state.json <<EOF2
+          {
+            "artifact": "GITHUB_DIRECT_ANCHOR_STATE",
+            "status": "GITHUB_ANCHORED_ONLY",
+            "onchain_status": "NOT_REGISTERED",
+            "public_label": "GITHUB_ANCHORED_ONLY",
+            "commit_sha": "${GITHUB_SHA}",
+            "repo": "${GITHUB_REPOSITORY}",
+            "run_id": "${GITHUB_RUN_ID}",
+            "run_attempt": "${GITHUB_RUN_ATTEMPT}",
+            "created_utc": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+            "blocked_claims": [
+              "ANCHORED_ON_BASE",
+              "EAS_ATTESTED",
+              "ENS_COMPLETE",
+              "VERIFIED_NATIONAL_ROOT",
+              "ONCHAIN_CONFIRMED"
+            ],
+            "boundary": "GitHub Direct anchor only. No wallet signature, no Base/EAS transaction, no ENS update."
+          }
+          EOF2
+
+      - name: Commit CI outputs
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "CI: recompute national root + anchor runtime state"
+          file_pattern: |
+            alms/national/national_root_ci_latest.json
+            alms/anchors/runtime/github_direct_anchor_state.json
