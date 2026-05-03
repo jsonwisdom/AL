@@ -1,0 +1,104 @@
+name: AAA C0001 C0002 REPLAY NOW
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - '.github/workflows/AAA-C0001-C0002-REPLAY-NOW.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  replay_now:
+    name: PRINT C0001 C0002 REPLAY REPORT HERE
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compute C0001 and C0002 raw-byte replay report
+        shell: python
+        run: |
+          import hashlib
+          import json
+          from pathlib import Path
+
+          cases = {
+              'C0001': {
+                  'source': Path('_truth/sources/mmb-feb-2026-forecast.txt'),
+                  'expected': Path('corpus/C0001/replay/expected_hashes.json'),
+              },
+              'C0002': {
+                  'source': Path('_truth/bigquery/ny007_era5_schema_probe_manifest.json'),
+                  'expected': Path('corpus/C0002/replay/expected_hashes.json'),
+              },
+          }
+
+          report = {
+              'workflow': 'AAA C0001 C0002 REPLAY NOW',
+              'rule': 'sha256(raw repo file bytes) == expected_hashes.normalized_artifact_hash',
+              'cases': {},
+          }
+
+          pass_count = 0
+          fail_count = 0
+          indeterminate_count = 0
+
+          for case_id, cfg in cases.items():
+              source = cfg['source']
+              expected_file = cfg['expected']
+              entry = {
+                  'source_path': str(source),
+                  'expected_file': str(expected_file),
+              }
+              if not source.exists():
+                  entry.update({'verdict': 'INDETERMINATE', 'reason': 'missing_source'})
+                  indeterminate_count += 1
+              elif not expected_file.exists():
+                  entry.update({'verdict': 'INDETERMINATE', 'reason': 'missing_expected_hashes'})
+                  indeterminate_count += 1
+              else:
+                  expected = json.loads(expected_file.read_text())
+                  actual_hash = 'sha256:' + hashlib.sha256(source.read_bytes()).hexdigest()
+                  expected_hash = expected.get('normalized_artifact_hash')
+                  entry.update({
+                      'actual_hash': actual_hash,
+                      'expected_hash': expected_hash,
+                      'identity': expected.get('identity'),
+                  })
+                  if actual_hash == expected_hash:
+                      entry['verdict'] = 'PASS'
+                      pass_count += 1
+                  else:
+                      entry['verdict'] = 'FAIL'
+                      entry['reason'] = 'hash_mismatch'
+                      fail_count += 1
+              report['cases'][case_id] = entry
+
+          report['summary'] = {
+              'pass': pass_count,
+              'fail': fail_count,
+              'indeterminate': indeterminate_count,
+              'verdict': 'PASS' if fail_count == 0 and indeterminate_count == 0 else 'FAIL',
+          }
+
+          Path('ci').mkdir(exist_ok=True)
+          Path('ci/c0001_c0002_replay_report.json').write_text(json.dumps(report, indent=2) + '\n')
+
+          print('=== COPY THIS JSON: ci/c0001_c0002_replay_report.json ===')
+          print(json.dumps(report, indent=2))
+          print('=== END JSON ===')
+
+          raise SystemExit(0 if report['summary']['verdict'] == 'PASS' else 1)
+
+      - name: Upload easy replay report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: EASY-C0001-C0002-REPLAY-REPORT
+          path: ci/c0001_c0002_replay_report.json
