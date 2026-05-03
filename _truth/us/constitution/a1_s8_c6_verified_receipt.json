@@ -1,0 +1,21 @@
+{
+  "artifact": "USC_A1_S8_C6_VERIFIED_RECEIPT",
+  "status": "VERIFIED_CANONICAL",
+  "id": "USC-A1-S8-C6",
+  "parent": {
+    "id": "USC-A1-S8",
+    "content_hash_sha256": "689531558999a4c062828b12204683a483a92540026e632943183563914a2754"
+  },
+  "role": "Counterfeiting Punishment Power",
+  "normalization_rule": "NORMALIZED_TEXT_SPAN_V0_2",
+  "verification_method": "EXACT_CHARACTER_AUDIT_PLUS_PYTHON_HASHLIB_MATCH",
+  "span": "To provide for the Punishment of counterfeiting the Securities and current Coin of the United States;",
+  "byte_count_utf8": 101,
+  "content_hash_sha256": "bb76ceab94cbd906c03f1d255d1ea30aa0563ff486e0c58c1fd5922f7da8827c",
+  "gate_resolution": "MATCHED_INDEPENDENT_GROUND_TRUTH",
+  "next_gate": {
+    "USC-A1-S8-C7": "REQUIRES_EXACT_BYTE_AUDIT",
+    "WAVE_1": "OPEN_UNTIL_C7_VERIFIED",
+    "WAVE_2": "BLOCKED"
+  }
+}
