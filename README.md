@@ -1,36 +1,48 @@
-# Alabama Machine Speed
+# NY ALMS Climate-Economic Stack
 
-[![ALMS Daily Audit](https://github.com/jsonwisdom/AL/actions/workflows/alms-daily-json-audit.yml/badge.svg)](https://github.com/jsonwisdom/AL/actions/workflows/alms-daily-json-audit.yml)
+**Status:** Verified sparse climate + full income coverage for NY counties
 
-## CORECHAIN
+## What This Is
 
-**CORECHAIN = `contracts/` + `docs/` + `studio/`**
+A deterministic, auditable data pipeline that produces:
+- Median household income for all 62 NY counties (ACS 5-year)
+- Climate observations for 4 counties with GSOD stations (2020-2024)
+- Temperature trends and extreme event metrics for station counties
+- Explicit guardrails preventing overclaim
 
-This repository is organized as a single chain of custody from code to
-culture:
+## Receipt Chain
 
-| Directory | Purpose |
-|-----------|---------|
-| `contracts/` | Protocol code, deployment scripts, legal compact — machine trust and execution |
-| `docs/` | Cross-cutting legal, technical, and operational doctrine |
-| `studio/` | Monetization, learning modules, publishing, visual command — human adoption layer |
+| Receipt | What | Coverage |
+|---------|------|----------|
+| NY-001 | County FIPS | 62/62 |
+| NY-003 | ACS income | 62/62 |
+| NY-004 | GSOD 2024 climate | 6/62 |
+| NY-007B | GSOD trends | 4/62 |
+| NY-010 | Extreme events | 4/62 |
+| NY-011S | Sparse validation | 4/62 |
+| NY-012 | Methodology note | N/A |
 
-**Build the protocol. Define the doctrine. Ship the studio.**
+## What This Does Not Claim
 
-No drift between what the machine does, what the system claims, and what the
-public sees.
+- No statewide climate validation
+- No risk atlas or hazard map
+- No attribution or causality
+- No interpolation to uncovered counties
+
+## Guardrails
+
+- $0 / BigQuery-only
+- Deterministic receipts with hashes
+- No simulated data
+- Honest sparsity documented
+
+## Data Gaps (If Expanding)
+
+- PRISM external download (FTP 404)
+- ERA5 unavailable in public BigQuery
+- Additional station mapping needed
 
 ---
 
-## Overview
-
-Alabama Machine Speed is a state-level truth arbitration system that turns
-policy claims into verifiable, receipt-backed proof artifacts at machine speed.
-
-Read the full State Chess Board explainer: [studio/STATE_CHESS_BOARD.md](studio/STATE_CHESS_BOARD.md)
-
----
-
-## Operator Guides
-
-- [ALMS Operator Guide](docs/ALMS_OPERATOR_GUIDE.md) — receipts, Merkle roots, preflight audit, and verification flow.
+*Receipts verified on GitHub*
+*Last updated: May 2026*
