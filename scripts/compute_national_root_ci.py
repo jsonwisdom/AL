@@ -48,8 +48,8 @@ STATES = {
         {
             "id": "TX-BUDGET-2026-01",
             "claim": "fixtures/tx/tx_budget_2026_claim.json",
-            "source": "fixtures/tx/sources/tx_budget_snapshot_2026-05-03.txt",
-            "version": "TX_BOOTSTRAP_2026-05-03",
+            "source": "fixtures/tx/sources/tx_general_appropriations_act_2026_2027.pdf",
+            "version": "TX_GAA_2026_2027",
         }
     ],
 }
