@@ -5,18 +5,21 @@ GitHub Direct only. No on-chain claims.
 
 Reads known state claim wrappers, verifies frozen source snapshot hashes,
 computes per-state roots where possible, then computes a national Merkle
-commitment over explicit state statuses.
+commitment over explicit state statuses. Also writes the GitHub Direct
+runtime anchor receipt so the CI output loop is complete.
 """
 
 from __future__ import annotations
 
 import hashlib
 import json
+import os
 from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT_DIR = ROOT / "alms" / "national"
+ANCHOR_DIR = ROOT / "alms" / "anchors" / "runtime"
 
 STATES = {
     "MN": [
@@ -50,6 +53,10 @@ STATES = {
         }
     ],
 }
+
+
+def now_utc() -> str:
+    return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
 
 def sha256_bytes(data: bytes) -> str:
@@ -127,6 +134,7 @@ def compute_state(state: str, claims: list[dict]) -> dict:
 
 
 def main() -> int:
+    generated_utc = now_utc()
     state_results = [compute_state(state, claims) for state, claims in STATES.items()]
     national_leaves = []
     for s in state_results:
@@ -134,19 +142,44 @@ def main() -> int:
         national_leaves.append(sha256_text(material))
 
     verdict = "PASS" if all(s["status"] == "PASS" for s in state_results) else "INDETERMINATE"
+    national_root = merkle_root(national_leaves)
     out = {
         "artifact": "CI_NATIONAL_ROOT_RECOMPUTE",
         "version": "US_SNAPSHOT_2026-05-03",
         "status": verdict,
-        "national_root": merkle_root(national_leaves),
-        "generated_utc": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
+        "national_root": national_root,
+        "generated_utc": generated_utc,
         "states": state_results,
         "leaf_hashes": sorted(national_leaves),
         "boundary": "GitHub CI recompute only. Not Base/EAS anchored. National PASS requires every state PASS.",
     }
 
+    runtime_anchor = {
+        "artifact": "GITHUB_DIRECT_ANCHOR_STATE",
+        "status": "GITHUB_ANCHORED_ONLY",
+        "onchain_status": "NOT_REGISTERED",
+        "public_label": "GITHUB_ANCHORED_ONLY",
+        "national_root": national_root,
+        "national_status": verdict,
+        "commit_sha": os.getenv("GITHUB_SHA", "LOCAL_OR_UNKNOWN"),
+        "repo": os.getenv("GITHUB_REPOSITORY", "jsonwisdom/AL"),
+        "run_id": os.getenv("GITHUB_RUN_ID", "LOCAL_OR_UNKNOWN"),
+        "run_attempt": os.getenv("GITHUB_RUN_ATTEMPT", "LOCAL_OR_UNKNOWN"),
+        "created_utc": generated_utc,
+        "blocked_claims": [
+            "ANCHORED_ON_BASE",
+            "EAS_ATTESTED",
+            "ENS_COMPLETE",
+            "VERIFIED_NATIONAL_ROOT",
+            "ONCHAIN_CONFIRMED"
+        ],
+        "boundary": "GitHub Direct anchor only. No wallet signature, no Base/EAS transaction, no ENS update."
+    }
+
     OUT_DIR.mkdir(parents=True, exist_ok=True)
+    ANCHOR_DIR.mkdir(parents=True, exist_ok=True)
     (OUT_DIR / "national_root_ci_latest.json").write_text(json.dumps(out, indent=2) + "\n")
+    (ANCHOR_DIR / "github_direct_anchor_state.json").write_text(json.dumps(runtime_anchor, indent=2) + "\n")
     print(json.dumps(out, indent=2))
     return 0
 
