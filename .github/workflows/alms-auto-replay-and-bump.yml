@@ -30,6 +30,9 @@ jobs:
       - name: Registry diff gate (no illegal transitions)
         run: python scripts/alms_registry_diff_gate.py
 
+      - name: Dependency gate (enforce DAG integrity)
+        run: python scripts/alms_dependency_gate.py
+
       - name: Run replay corpus
         run: python ci/replay_corpus_runner.py || true
 
