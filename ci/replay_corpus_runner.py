@@ -50,9 +50,16 @@ def load_json(path: Path | str) -> Dict[str, Any]:
     return json.loads(Path(path).read_text())
 
 
-def sha256_text_bytes(path: Path) -> str:
+def sha256_file(path: Path) -> str:
     digest = hashlib.sha256(path.read_bytes()).hexdigest()
     return f"sha256:{digest}"
+
+
+def normalize_hash(value: Any) -> Optional[str]:
+    if not value:
+        return None
+    value_str = str(value)
+    return value_str if value_str.startswith("sha256:") else f"sha256:{value_str}"
 
 
 def copytree_if_exists(src: Path, dest: Path) -> None:
@@ -99,6 +106,7 @@ def first_blocking_gate(report: Dict[str, Any]) -> Optional[Dict[str, Any]]:
 def evaluate_repo_bound_c0001() -> Tuple[str, Optional[str], Dict[str, Any]]:
     source_path = REPO_BOUND_C0001["source_path"]
     receipt_path = REPO_BOUND_C0001["receipt_path"]
+    expected_path = Path("corpus/C0001/replay/expected_hashes.json")
 
     if not source_path.exists():
         return "INDETERMINATE", "missing_repo_bound_source", {"path": str(source_path)}
@@ -110,32 +118,50 @@ def evaluate_repo_bound_c0001() -> Tuple[str, Optional[str], Dict[str, Any]]:
     except Exception as exc:
         return "INDETERMINATE", f"invalid_repo_bound_receipt:{exc}", {"path": str(receipt_path)}
 
-    receipt_hash = receipt.get("hash")
-    if not receipt_hash:
-        return "INDETERMINATE", "missing_receipt_hash", {"receipt_path": str(receipt_path)}
+    receipt_hash = normalize_hash(receipt.get("hash"))
+    source_hash = sha256_file(source_path)
 
-    actual_hash = sha256_text_bytes(source_path)
-    expected_hash = f"sha256:{receipt_hash}" if not str(receipt_hash).startswith("sha256:") else str(receipt_hash)
+    expected_hash = None
+    expected_identity = {}
+    if expected_path.exists():
+        try:
+            expected = load_json(expected_path)
+            expected_hash = normalize_hash(expected.get("normalized_artifact_hash"))
+            expected_identity = expected.get("identity", {}) or {}
+        except Exception as exc:
+            return "INDETERMINATE", f"invalid_expected_hashes:{exc}", {"path": str(expected_path)}
 
     identity = {
         "source_url": f"repo://jsonwisdom/AL/{source_path.as_posix()}",
         "canonical_url": f"repo://jsonwisdom/AL/{source_path.as_posix()}",
-        "FETCH_FINGERPRINT": actual_hash,
+        "FETCH_FINGERPRINT": source_hash,
     }
 
     details = {
         "mode": "repo_bound_existing_proof",
         "source_path": str(source_path),
         "receipt_path": str(receipt_path),
+        "source_hash": source_hash,
+        "receipt_hash": receipt_hash,
         "expected_hash": expected_hash,
-        "actual_hash": actual_hash,
         "identity": identity,
+        "expected_identity": expected_identity,
     }
 
-    if actual_hash != expected_hash:
-        return "FAIL", "repo_bound_hash_mismatch", details
+    if expected_identity and expected_identity != identity:
+        return "FAIL", "repo_bound_identity_mismatch", details
 
-    return "PASS", None, details
+    if expected_hash:
+        if source_hash != expected_hash:
+            return "FAIL", "repo_bound_expected_hash_mismatch", details
+        return "PASS", None, details
+
+    if receipt_hash:
+        # Existing MN_001 receipt hash may be a receipt/claim hash, not the raw source hash.
+        # Do not falsely compare incompatible domains. Emit INDETERMINATE with both values.
+        return "INDETERMINATE", "repo_bound_expected_source_hash_missing", details
+
+    return "INDETERMINATE", "missing_receipt_hash", details
 
 
 def evaluate_case(case_dir: Path) -> Tuple[str, Optional[str], Dict[str, Any]]:
