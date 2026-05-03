@@ -1,0 +1,15 @@
+{
+  "artifact": "USC_A1_S3_DRY_RUN_FAILURE_001",
+  "status": "FAILED_BOUNDARY_VALIDATION",
+  "reported_hash": "9a3b8393521d960731f8229b19e95267b2693246369527f338c92b2344738520",
+  "reported_char_count": 2581,
+  "normalization_rule": "NORMALIZED_TEXT_SPAN_V0_2",
+  "failure": {
+    "type": "END_ANCHOR_TERMINUS_DUPLICATION",
+    "observed_end": "Trust, or Profit under the United States: but the Party convicted shall nevertheless be liable and subject to Indictment, Trial, Judgment and Punishment, according to Law. of the Party convicted",
+    "reason": "The reported span ends with duplicated/misplaced terminus text. Article I Section 3 should end at 'according to Law.' The phrase 'of the Party convicted' appears within the impeachment judgment sentence, not as the section terminus."
+  },
+  "decision": "DO_NOT_LOCK_USC_A1_S3",
+  "corrected_end_anchor_recommendation": "according to Law.",
+  "next_action": "Re-run A1-S3 extraction with end anchor 'according to Law.' and paste end snippet plus hash."
+}
