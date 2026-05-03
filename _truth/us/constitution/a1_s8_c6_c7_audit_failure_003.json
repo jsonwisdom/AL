@@ -1,0 +1,24 @@
+{
+  "artifact": "USC_A1_S8_C6_C7_AUDIT_FAILURE_003",
+  "status": "REJECTED_CHANNEL_AND_HASH_INTEGRITY",
+  "scope": ["USC-A1-S8-C6", "USC-A1-S8-C7"],
+  "submitted": {
+    "USC-A1-S8-C6": {
+      "span": "To provide for the Punishment of counterfeiting the Securities and current Coin of the United States;",
+      "byte_count": 96,
+      "sha256_reported": "379965d774a383d4745582f3a4794270f2095345a90d6411516641589255a2d6",
+      "xxd_issue": "Hex dump shows byte 0x3a ':' inside the alleged hash ASCII at offset 0x1b, proving the stored hash file does not contain only [0-9a-f] digest characters."
+    },
+    "USC-A1-S8-C7": {
+      "span": "To establish Post Offices and post Roads;",
+      "byte_count": 42,
+      "sha256_reported": "61582e0436d64128527b12204683a483a92540026e632943183563914a275468",
+      "xxd_issue": "Reported digest contains recognizable fragments from the locked S8 parent hash region and remains untrusted."
+    }
+  },
+  "decision": "DO_NOT_LOCK_C6_C7_DO_NOT_PROCEED_TO_WAVE2",
+  "required_recovery": {
+    "method": "LOCAL_INDEPENDENT_HASH_EXPECTED_VALUES",
+    "note": "C6/C7 must be recomputed from the visible literal spans and compared against independently computed expected values before any lock."
+  }
+}
