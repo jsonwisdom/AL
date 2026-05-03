@@ -10,14 +10,14 @@
     "alms/meme_court/cases/MC-0001.json",
     "alms/meme_court/zora/ZMC-0001.json"
   ],
-  "hash": "UNSET",
-  "state": "DRAFT",
+  "hash": "sha256:9e96b7fdc19927ac98bd445d12ba1d23a9b33ed8ce19f0479941a347b092c029",
+  "state": "REPLAY_REQUIRED",
   "learning_mode": true,
   "artifact_levels": {
     "level_1": "idea named",
     "level_2": "draft written",
     "level_3": "structured JSON added",
-    "level_4": "receipt/hash required",
+    "level_4": "receipt/hash attached",
     "level_5": "replay pending"
   },
   "family_702": {
@@ -37,5 +37,5 @@
     "verified_label_allowed": false
   },
   "caption": "Create the object. Name the proof. Level up the receipt.",
-  "next_action": "compute artifact hash and attach receipt before any VERIFIED or mint-ready claim."
+  "next_action": "replay WFG-0001 and update Meme Court/Zora readiness only after verification."
 }
