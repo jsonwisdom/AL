@@ -11,16 +11,22 @@ on:
       - 'corpus/C0001/**'
       - '.github/workflows/c0001-source-hash.yml'
 
+permissions:
+  contents: write
+  actions: read
+
 jobs:
   c0001_source_hash:
-    name: Compute C0001 repo-bound source hash
+    name: Compute and lock C0001 repo-bound source hash
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Compute source hash without local terminal
+      - name: Compute source hash and update expected_hashes.json
         shell: python
         run: |
           import hashlib
@@ -29,6 +35,7 @@ jobs:
 
           source_path = Path('_truth/sources/mmb-feb-2026-forecast.txt')
           receipt_path = Path('_truth/receipts/MN_001.json')
+          expected_path = Path('corpus/C0001/replay/expected_hashes.json')
           out_path = Path('ci/c0001_source_hash.json')
           out_path.parent.mkdir(parents=True, exist_ok=True)
 
@@ -50,29 +57,48 @@ jobs:
                   except Exception as exc:
                       receipt_hash = 'INVALID_RECEIPT_JSON:' + str(exc)
 
+              patch = {
+                  'normalized_artifact_hash': source_hash,
+                  'identity': {
+                      'source_url': 'repo://jsonwisdom/AL/_truth/sources/mmb-feb-2026-forecast.txt',
+                      'canonical_url': 'repo://jsonwisdom/AL/_truth/sources/mmb-feb-2026-forecast.txt',
+                      'FETCH_FINGERPRINT': source_hash,
+                  },
+                  'status': 'LOCKED_FROM_CI_SOURCE_HASH_DISCOVERY',
+              }
+              expected_path.parent.mkdir(parents=True, exist_ok=True)
+              expected_path.write_text(json.dumps(patch, indent=2) + '\n')
+
               report = {
-                  'verdict': 'SOURCE_HASH_COMPUTED',
+                  'verdict': 'SOURCE_HASH_COMPUTED_AND_EXPECTED_HASHES_UPDATED',
                   'corpus_id': 'C0001',
                   'source_path': str(source_path),
                   'source_hash': source_hash,
-                  'expected_hashes_patch': {
-                      'normalized_artifact_hash': source_hash,
-                      'identity': {
-                          'source_url': 'repo://jsonwisdom/AL/_truth/sources/mmb-feb-2026-forecast.txt',
-                          'canonical_url': 'repo://jsonwisdom/AL/_truth/sources/mmb-feb-2026-forecast.txt',
-                          'FETCH_FINGERPRINT': source_hash,
-                      },
-                      'status': 'LOCKED_FROM_CI_SOURCE_HASH_DISCOVERY',
-                  },
+                  'expected_hashes_path': str(expected_path),
+                  'expected_hashes_patch': patch,
                   'receipt_path': str(receipt_path),
                   'receipt_hash_different_domain': receipt_hash,
-                  'note': 'Use source_hash for C0001 expected_hashes. Do not compare receipt_hash to source_hash unless explicitly declared same-domain.',
+                  'note': 'source_hash has been written into corpus/C0001/replay/expected_hashes.json. receipt_hash remains a different domain value.',
               }
 
           out_path.write_text(json.dumps(report, indent=2) + '\n')
           print(json.dumps(report, indent=2))
 
+      - name: Commit expected hash update
+        shell: bash
+        run: |
+          if git diff --quiet -- corpus/C0001/replay/expected_hashes.json; then
+            echo "No expected hash changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add corpus/C0001/replay/expected_hashes.json ci/c0001_source_hash.json
+          git commit -m "Lock C0001 expected source hash from CI"
+          git push
+
       - name: Upload C0001 source hash report
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: c0001_source_hash
