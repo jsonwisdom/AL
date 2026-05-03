@@ -79,10 +79,13 @@ for c in cases:
     ])
 EOF
 
-      - name: Commit registry updates
+      - name: Merkle root gate (publish global root)
+        run: python scripts/alms_merkle_root_gate.py
+
+      - name: Commit registry updates + root
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add alms/version_registry.json alms/version_receipts/
-          git commit -m "ALMS AUTO REPLAY BUMP" || echo "NO_CHANGES"
+          git add alms/version_registry.json alms/version_receipts/ alms/merkle/
+          git commit -m "ALMS AUTO REPLAY BUMP + ROOT" || echo "NO_CHANGES"
           git push
