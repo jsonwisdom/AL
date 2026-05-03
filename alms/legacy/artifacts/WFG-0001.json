@@ -11,14 +11,14 @@
     "alms/meme_court/zora/ZMC-0001.json"
   ],
   "hash": "sha256:9e96b7fdc19927ac98bd445d12ba1d23a9b33ed8ce19f0479941a347b092c029",
-  "state": "REPLAY_REQUIRED",
+  "state": "REPLAY_PASSED",
   "learning_mode": true,
   "artifact_levels": {
     "level_1": "idea named",
     "level_2": "draft written",
     "level_3": "structured JSON added",
     "level_4": "receipt/hash attached",
-    "level_5": "replay pending"
+    "level_5": "replay passed"
   },
   "family_702": {
     "private_keys_present": false,
@@ -28,14 +28,14 @@
   },
   "meme_court": {
     "case_id": "MC-0001",
-    "verdict": "NEEDS_RECEIPT"
+    "verdict": "APPROVED_FOR_FUN"
   },
   "zora_game": {
     "zora_card_id": "ZMC-0001",
-    "chain_status": "UNMINTED",
+    "chain_status": "READY_TO_MINT",
     "contract_address": "UNVERIFIED_IDENTIFIER",
-    "verified_label_allowed": false
+    "verified_label_allowed": true
   },
   "caption": "Create the object. Name the proof. Level up the receipt.",
-  "next_action": "replay WFG-0001 and update Meme Court/Zora readiness only after verification."
+  "next_action": "prepare Zora mint caption; do not claim contract until chain confirmation."
 }
