@@ -1,0 +1,96 @@
+{
+  "artifact": "CI_NATIONAL_ROOT_RECOMPUTE",
+  "version": "US_SNAPSHOT_2026-05-03",
+  "status": "INDETERMINATE",
+  "national_root": "sha256:b6e7e021132f70918d82132e1aa9f76daa0022ea0486d61352204ec909633f26",
+  "generated_utc": "2026-05-03T21:01:58Z",
+  "states": [
+    {
+      "state": "MN",
+      "version": "MN_SNAPSHOT_2026-05-03",
+      "status": "INDETERMINATE",
+      "state_root": null,
+      "claim_count": 2,
+      "matched_count": 1,
+      "claims": [
+        {
+          "id": "MN-BUDGET-2026-01",
+          "hash_match": false,
+          "error": "[Errno 2] No such file or directory: '/home/runner/work/AL/AL/fixtures/mn/mn_budget_2026_claim.json'"
+        },
+        {
+          "id": "MN-BUDGET-RESERVE-2026-01",
+          "claim_path": "fixtures/mn/mn_budget_reserve_2026_claim.json",
+          "source_path": "fixtures/mn/sources/mmb_budget_reserve_snapshot_2026-05-03.txt",
+          "expected_hash": "sha256:3537811e3afd3e1baa5910e530c05c3f82b2d3322e27644d2f6a2847159f1a2c",
+          "computed_hash": "sha256:3537811e3afd3e1baa5910e530c05c3f82b2d3322e27644d2f6a2847159f1a2c",
+          "hash_match": true
+        }
+      ],
+      "blockers": [
+        {
+          "id": "MN-BUDGET-2026-01",
+          "reason": "[Errno 2] No such file or directory: '/home/runner/work/AL/AL/fixtures/mn/mn_budget_2026_claim.json'"
+        }
+      ]
+    },
+    {
+      "state": "AL",
+      "version": "AL_BOOTSTRAP_2026-05-03",
+      "status": "INDETERMINATE",
+      "state_root": null,
+      "claim_count": 1,
+      "matched_count": 0,
+      "claims": [
+        {
+          "id": "AL-BUDGET-2026-01",
+          "claim_path": "fixtures/al/al_budget_2026_claim.json",
+          "source_path": "fixtures/al/sources/al_budget_snapshot_2026-05-03.txt",
+          "expected_hash": "UNSET_PENDING_COMMIT",
+          "computed_hash": "sha256:b843742f70e9f3bab9e1faf5899d8ee4a185001772f7c461fc015c323ed6c933",
+          "hash_match": false
+        }
+      ],
+      "blockers": [
+        {
+          "id": "AL-BUDGET-2026-01",
+          "reason": "expected hash missing or mismatch",
+          "expected_hash": "UNSET_PENDING_COMMIT",
+          "computed_hash": "sha256:b843742f70e9f3bab9e1faf5899d8ee4a185001772f7c461fc015c323ed6c933"
+        }
+      ]
+    },
+    {
+      "state": "TX",
+      "version": "TX_BOOTSTRAP_2026-05-03",
+      "status": "INDETERMINATE",
+      "state_root": null,
+      "claim_count": 1,
+      "matched_count": 0,
+      "claims": [
+        {
+          "id": "TX-BUDGET-2026-01",
+          "claim_path": "fixtures/tx/tx_budget_2026_claim.json",
+          "source_path": "fixtures/tx/sources/tx_budget_snapshot_2026-05-03.txt",
+          "expected_hash": "UNSET_PENDING_COMMIT",
+          "computed_hash": "sha256:9fe87f5881bc72f60fbf29dbb508a37573c1a35bbddc3a82aa2765e0176ccfce",
+          "hash_match": false
+        }
+      ],
+      "blockers": [
+        {
+          "id": "TX-BUDGET-2026-01",
+          "reason": "expected hash missing or mismatch",
+          "expected_hash": "UNSET_PENDING_COMMIT",
+          "computed_hash": "sha256:9fe87f5881bc72f60fbf29dbb508a37573c1a35bbddc3a82aa2765e0176ccfce"
+        }
+      ]
+    }
+  ],
+  "leaf_hashes": [
+    "sha256:2d16e1a4cb78c71b6bbaab2aae8f673c1851a2d9afc41b4bb50b66cf503ad998",
+    "sha256:f6ab0e7c0361f72726315723d8302c5ed46f1085ea8ae2ef19eb62ca232c6e38",
+    "sha256:f766d567166c854809433f4ae719fb6b7da6d6243980f0d890faf1f60a9ae205"
+  ],
+  "boundary": "GitHub CI recompute only. Not Base/EAS anchored. National PASS requires every state PASS."
+}
