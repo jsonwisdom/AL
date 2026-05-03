@@ -1,0 +1,79 @@
+name: C0001 Source Hash Discovery
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+      - main
+    paths:
+      - '_truth/sources/mmb-feb-2026-forecast.txt'
+      - 'corpus/C0001/**'
+      - '.github/workflows/c0001-source-hash.yml'
+
+jobs:
+  c0001_source_hash:
+    name: Compute C0001 repo-bound source hash
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compute source hash without local terminal
+        shell: python
+        run: |
+          import hashlib
+          import json
+          from pathlib import Path
+
+          source_path = Path('_truth/sources/mmb-feb-2026-forecast.txt')
+          receipt_path = Path('_truth/receipts/MN_001.json')
+          out_path = Path('ci/c0001_source_hash.json')
+          out_path.parent.mkdir(parents=True, exist_ok=True)
+
+          if not source_path.exists():
+              report = {
+                  'verdict': 'INDETERMINATE',
+                  'reason': 'missing_source',
+                  'source_path': str(source_path),
+              }
+          else:
+              source_hash = 'sha256:' + hashlib.sha256(source_path.read_bytes()).hexdigest()
+              receipt_hash = None
+              if receipt_path.exists():
+                  try:
+                      receipt = json.loads(receipt_path.read_text())
+                      raw_hash = receipt.get('hash')
+                      if raw_hash:
+                          receipt_hash = raw_hash if str(raw_hash).startswith('sha256:') else 'sha256:' + str(raw_hash)
+                  except Exception as exc:
+                      receipt_hash = 'INVALID_RECEIPT_JSON:' + str(exc)
+
+              report = {
+                  'verdict': 'SOURCE_HASH_COMPUTED',
+                  'corpus_id': 'C0001',
+                  'source_path': str(source_path),
+                  'source_hash': source_hash,
+                  'expected_hashes_patch': {
+                      'normalized_artifact_hash': source_hash,
+                      'identity': {
+                          'source_url': 'repo://jsonwisdom/AL/_truth/sources/mmb-feb-2026-forecast.txt',
+                          'canonical_url': 'repo://jsonwisdom/AL/_truth/sources/mmb-feb-2026-forecast.txt',
+                          'FETCH_FINGERPRINT': source_hash,
+                      },
+                      'status': 'LOCKED_FROM_CI_SOURCE_HASH_DISCOVERY',
+                  },
+                  'receipt_path': str(receipt_path),
+                  'receipt_hash_different_domain': receipt_hash,
+                  'note': 'Use source_hash for C0001 expected_hashes. Do not compare receipt_hash to source_hash unless explicitly declared same-domain.',
+              }
+
+          out_path.write_text(json.dumps(report, indent=2) + '\n')
+          print(json.dumps(report, indent=2))
+
+      - name: Upload C0001 source hash report
+        uses: actions/upload-artifact@v4
+        with:
+          name: c0001_source_hash
+          path: ci/c0001_source_hash.json
