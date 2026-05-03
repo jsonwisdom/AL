@@ -1,0 +1,16 @@
+{
+  "artifact": "USC_A1_S8_C2_AUDIT_FAILURE_001",
+  "status": "HASH_INVALID_LENGTH",
+  "id": "USC-A1-S8-C2",
+  "role": "Borrowing Power",
+  "span_reported": "To borrow Money on the credit of the United States;",
+  "byte_count_reported": 51,
+  "sha256_reported": "690680674d812304928062085731945720395872105432986710492857106423",
+  "failure_reason": "Reported digest is 63 hex characters, not 64. SHA-256 must be exactly 64 lowercase hex characters when printed by sha256sum.",
+  "boundary_assessment": "SPAN_CONTENT_PLAUSIBLE",
+  "decision": "DO_NOT_LOCK_C2",
+  "required_recovery": {
+    "recommended_command": "printf '%s' 'To borrow Money on the credit of the United States;' > /tmp/c2_raw.txt && wc -c /tmp/c2_raw.txt && sha256sum /tmp/c2_raw.txt",
+    "expected_rule": "accept only exact 64-hex digest plus filename from sha256sum stdout"
+  }
+}
