@@ -1,0 +1,28 @@
+{
+  "artifact": "OBR_SHOCK_FRAGILE_REGIME_STATE",
+  "status": "LOCKED",
+  "lineage": "OBR_MARCH_2024_TO_OBR_MARCH_2026",
+  "method": "HISTORICAL_ADVERSE_SCENARIO_APPLIED_TO_CURRENT_BASELINE",
+  "terminology_correction": {
+    "rejected": "SHOCK_DEPENDENT",
+    "accepted": "SHOCK_FRAGILE",
+    "reason": "The fiscal system does not require the shock to function; it fails when the shock arrives. Fragility is not dependency."
+  },
+  "model_receipts": {
+    "march_2024_hash_commit": "b38bb120e4a3a6bd43c0217a0ef9bc14ad05995a",
+    "march_2024_source_url_commit": "967f1da3765ea25eb8ab1706d7e20ea9cc019540",
+    "march_2024_energy_scenario_extract_commit": "0b528fab0335df90fa621a02ec36fcc2946be81f",
+    "march_2026_hash_commit": "64f042fc291bec36442957b72d9610f92ca5c27e",
+    "surge_delta_model_commit": "9cd0313dd7aeb40d45561d0d2efdfd76e542af67"
+  },
+  "result": {
+    "headroom_pre_shock_gbp_bn": 9.9,
+    "energy_shock_borrowing_gbp_bn": 23.1,
+    "headroom_post_shock_gbp_bn": -13.2,
+    "fiscal_breakpoint": "PROVEN_HEADROOM_BREACH",
+    "transition": "RESILIENT_TO_FRAGILE",
+    "system_state": "SHOCK_FRAGILE"
+  },
+  "live_monitor_rule": "NO_LIVE_INPUT_WITHOUT_SOURCE_RECEIPT",
+  "next_extension": "LIVE_ENERGY_AND_RATES_RECEIPT_OVERLAY"
+}
