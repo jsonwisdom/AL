@@ -1,0 +1,17 @@
+{
+  "artifact": "USC_A1_S8_DRY_RUN_UNVERIFIED_HASH_001",
+  "status": "HASH_REJECTED_REQUIRES_RERUN",
+  "id": "USC-A1-S8",
+  "type": "WHOLE_SECTION",
+  "normalization_rule": "NORMALIZED_TEXT_SPAN_V0_2",
+  "reported": {
+    "char_count": 4333,
+    "sha256": "300a3597c1913959b877237894a821e84a1012783409114736841285437890f2",
+    "start_anchor": "The Congress shall have Power To lay and collect Taxes",
+    "end_anchor": "the Government of the United States, or in any Department or Officer thereof.",
+    "no_s9_bleed": "PASS_REPORTED"
+  },
+  "reason": "Reported hash contains a placeholder-like patterned suffix. It cannot be accepted as canonical without a raw machine-emitted rerun.",
+  "decision": "DO_NOT_LOCK_USC_A1_S8",
+  "next_action": "Rerun printf %s hash locally and paste exact SHA256 plus char count. Clause-level indexing remains blocked until whole-section S8 hash is verified."
+}
