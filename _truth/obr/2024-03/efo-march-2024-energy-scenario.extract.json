@@ -1,0 +1,33 @@
+{
+  "artifact": "OBR_MARCH_2024_EFO_ENERGY_SCENARIO_EXTRACT",
+  "source_path": "_truth/obr/2024-03/efo-march-2024.pdf",
+  "source_url": "https://obr.uk/docs/dlm_uploads/E03057758_OBR_EFO-March-2024_Web-AccessibleFinal.pdf",
+  "source_sha256": "8b29f0416972005085e33d45542b2609712615560193132e01a88c7f21223405",
+  "status": "OPERATOR_EXTRACT_RECORDED_PENDING_LINE_CONTEXT_COMMIT",
+  "energy_price_shock_scenario": {
+    "shock_type": "Temporary energy price shock covering oil, gas, and electricity",
+    "average_annual_borrowing_increase_gbp_bn": 23.1,
+    "debt_peak_increase_pct_gdp": 2.9,
+    "debt_horizon_increase_pct_gdp": 0.8,
+    "welfare_and_pensions_increase_gbp_bn": 21.6,
+    "debt_interest_increase_gbp_bn": 13.3,
+    "tax_receipts_offset_gbp_bn": 31.9,
+    "del_real_terms_protection_extra_borrowing_gbp_bn": 20.4,
+    "del_real_terms_protection_debt_peak_increase_pct_gdp": 4.6,
+    "fiscal_mandate_result": "Still met at horizon under recovery assumption"
+  },
+  "fiscal_sensitivities_zero_headroom_2028_29": {
+    "nominal_gdp_growth_lower_pp": -0.3,
+    "effective_interest_rate_higher_pp": 0.3,
+    "effective_interest_rate_level_pct": 3.4,
+    "rpi_inflation_higher_pp": 1.3
+  },
+  "central_government_debt_interest_net_of_apf_gbp_bn": {
+    "2024_25": 104.7,
+    "2025_26": 89.0,
+    "2026_27": 88.9,
+    "2027_28": 96.2,
+    "2028_29": 103.0
+  },
+  "next_gate": "COMMIT_RAW_CONTEXT_LINES_OR_RUN_DELTA_MODEL"
+}
