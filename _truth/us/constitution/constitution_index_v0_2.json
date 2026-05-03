@@ -1,0 +1,55 @@
+{
+  "registry_version": "0.2",
+  "artifact": "US_CONSTITUTION_INITIAL_INDEX",
+  "source": {
+    "text_reference": "GPO_CONAN_2017",
+    "pdf_path": "_truth/us/constitution/constitution_gpo.pdf",
+    "txt_path": "_truth/us/constitution/constitution_gpo.txt",
+    "normalized_text_path": "_truth/us/constitution/constitution_gpo.normalized.txt",
+    "source_sha256": "89104084666f27b9c9f2b87e2b7e15d862423985a11956104088019e09d6f6e5",
+    "line_count": 6898,
+    "extraction_method": "pdftotext-layout-v1.0"
+  },
+  "normalization_rule": {
+    "id": "NORMALIZED_TEXT_SPAN_V0_2",
+    "status": "LOCKED",
+    "steps": [
+      "Unicode normalize to NFC",
+      "Remove soft line-wrap hyphenation across alphabetic line breaks",
+      "Convert remaining newlines to single spaces",
+      "Collapse repeated whitespace to one ASCII space",
+      "Trim leading and trailing whitespace",
+      "Preserve punctuation and case exactly",
+      "Hash UTF-8 bytes with no trailing newline"
+    ],
+    "hash_method": "printf %s \"$SPAN\" | sha256sum"
+  },
+  "anchors": [
+    {
+      "id": "USC-PREAMBLE",
+      "scope": "Preamble",
+      "type": "FOUNDATIONAL_STATEMENT",
+      "content_hash_sha256": "719273617300f805a519894e662495d468165a2542a2e379201a09d36e2f416c",
+      "status": "VERIFIED_CANONICAL_OPERATOR_REPORTED",
+      "normalization_rule": "NORMALIZED_TEXT_SPAN_V0_2"
+    },
+    {
+      "id": "USC-A1-S1",
+      "scope": "Article I, Section 1",
+      "type": "LEGISLATIVE_POWER",
+      "content_hash_sha256": "f891398939634e5684784411130e691902409747805179976378413158444158",
+      "status": "VERIFIED_CANONICAL_OPERATOR_REPORTED",
+      "normalization_rule": "NORMALIZED_TEXT_SPAN_V0_2"
+    },
+    {
+      "id": "USC-A1-S2",
+      "scope": "Article I, Section 2",
+      "type": "HOUSE_OF_REPRESENTATIVES",
+      "start_anchor": "The House of Representatives shall be composed",
+      "end_anchor": "sole Power of Impeachment.",
+      "content_hash_sha256": "8527aa52aec5a8be4759c7bacaa811e96778491790fe073f3a0683a34c041422",
+      "status": "VERIFIED_CANONICAL",
+      "normalization_rule": "NORMALIZED_TEXT_SPAN_V0_2"
+    }
+  ]
+}
