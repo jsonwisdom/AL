@@ -27,12 +27,7 @@ if [ ! -f "scripts/compute_national_root_ci.py" ]; then
 fi
 
 CURRENT_COMMIT="$(git rev-parse HEAD 2>/dev/null || true)"
-if [ "$CURRENT_COMMIT" != "$EXPECTED_COMMIT" ]; then
-  echo "MACHINE_LIVE_2_REPLAY_WARN"
-  echo "expected_commit=$EXPECTED_COMMIT"
-  echo "current_commit=${CURRENT_COMMIT:-UNKNOWN}"
-  echo "note=For baseline replay, run: git checkout $EXPECTED_COMMIT"
-fi
+[ "$CURRENT_COMMIT" = "$EXPECTED_COMMIT" ] || fail "wrong commit: expected=$EXPECTED_COMMIT actual=${CURRENT_COMMIT:-UNKNOWN}; run: git checkout $EXPECTED_COMMIT"
 
 python3 scripts/compute_national_root_ci.py >/tmp/machine_live_2_replay.json
 
@@ -47,21 +42,34 @@ with open(path, "r", encoding="utf-8") as f:
     data = json.load(f)
 cur = data
 for part in expr.split('.'):
-    if part == "":
+    if not part:
         continue
-    if part.isdigit():
-        cur = cur[int(part)]
-    else:
-        cur = cur[part]
+    cur = cur[int(part)] if part.isdigit() else cur[part]
 print(cur)
+PY
+}
+
+state_status() {
+  python3 - "$1" "$2" <<'PY'
+import json
+import sys
+path, target = sys.argv[1], sys.argv[2]
+with open(path, "r", encoding="utf-8") as f:
+    data = json.load(f)
+for state in data.get("states", []):
+    if state.get("state") == target:
+        print(state.get("status", "MISSING_STATUS"))
+        sys.exit(0)
+print("MISSING_STATE")
+sys.exit(0)
 PY
 }
 
 ROOT="$(read_json "$OUTPUT_PATH" "national_root")"
 NATIONAL="$(read_json "$OUTPUT_PATH" "status")"
-MN="$(read_json "$OUTPUT_PATH" "states.0.status")"
-AL="$(read_json "$OUTPUT_PATH" "states.1.status")"
-TX="$(read_json "$OUTPUT_PATH" "states.2.status")"
+MN="$(state_status "$OUTPUT_PATH" "MN")"
+AL="$(state_status "$OUTPUT_PATH" "AL")"
+TX="$(state_status "$OUTPUT_PATH" "TX")"
 
 [ "$ROOT" = "$EXPECTED_ROOT" ] || fail "root mismatch: expected=$EXPECTED_ROOT actual=$ROOT"
 [ "$NATIONAL" = "$EXPECTED_NATIONAL" ] || fail "national verdict mismatch: expected=$EXPECTED_NATIONAL actual=$NATIONAL"
