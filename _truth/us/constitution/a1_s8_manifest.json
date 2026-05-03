@@ -1,0 +1,24 @@
+{
+  "artifact": "USC_A1_S8_MERKLE_MANIFEST_V0_1",
+  "status": "MANIFEST_RECORDED_PENDING_ROOT_COMPUTE_FROM_FULL_RECEIPT_SET",
+  "section": "Article I, Section 8",
+  "protocol": "REPO_DERIVED_DETERMINISM",
+  "root_rule": "ALMS_PAIRWISE_SHA256_V0_1_PENDING_SCRIPT_LOCK",
+  "known_verified_nodes": {
+    "C18": {
+      "path": "_truth/us/constitution/a1_s8_c18_span.txt",
+      "byte_count_utf8": 222,
+      "sha256": "0738676f4142f36f6d8920199e4369e85501869e5d956f4d36f6c03998f56477",
+      "git_blob_sha": "1afafa473ef46aeab4db7b84f8c25359842f93fc",
+      "repo_content_verified": true
+    }
+  },
+  "required_before_root_lock": [
+    "collect C1-C18 hashes from verified receipts only",
+    "sort by numeric clause index C1..C18",
+    "commit deterministic Merkle script",
+    "compute root from exact manifest leaves",
+    "record root and script commit together"
+  ],
+  "gate": "DO_NOT_DECLARE_SECTION_8_ROOT_UNTIL_SCRIPT_AND_ALL_18_LEAVES_ARE_IN_MANIFEST"
+}
