@@ -3,7 +3,7 @@
   "version": "US_SNAPSHOT_2026-05-03",
   "status": "INDETERMINATE",
   "national_root": "sha256:272bd90e5b2682c75ab07a49c4491929f39280a2d391ab6742a421e844852105",
-  "generated_utc": "2026-05-03T21:15:36Z",
+  "generated_utc": "2026-05-03T21:55:18Z",
   "states": [
     {
       "state": "MN",
@@ -44,7 +44,7 @@
           "id": "AL-BUDGET-2026-01",
           "claim_path": "fixtures/al/al_budget_2026_claim.json",
           "source_path": "fixtures/al/sources/al_budget_snapshot_2026-05-03.txt",
-          "expected_hash": "UNSET_PENDING_COMMIT",
+          "expected_hash": "sha256:ecf65398c0a34307065aa78d0eafbfbfe4641405cc4a1a14d796058522a78206",
           "computed_hash": "sha256:b843742f70e9f3bab9e1faf5899d8ee4a185001772f7c461fc015c323ed6c933",
           "hash_match": false
         }
@@ -53,7 +53,7 @@
         {
           "id": "AL-BUDGET-2026-01",
           "reason": "expected hash missing or mismatch",
-          "expected_hash": "UNSET_PENDING_COMMIT",
+          "expected_hash": "sha256:ecf65398c0a34307065aa78d0eafbfbfe4641405cc4a1a14d796058522a78206",
           "computed_hash": "sha256:b843742f70e9f3bab9e1faf5899d8ee4a185001772f7c461fc015c323ed6c933"
         }
       ]
