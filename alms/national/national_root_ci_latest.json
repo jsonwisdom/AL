@@ -2,8 +2,8 @@
   "artifact": "CI_NATIONAL_ROOT_RECOMPUTE",
   "version": "US_SNAPSHOT_2026-05-03",
   "status": "INDETERMINATE",
-  "national_root": "sha256:f7b22bfcb64a9cdcfbfa85c4082f94d2c57b6cea2573894b48c0cb24ceac5803",
-  "generated_utc": "2026-05-03T22:08:05Z",
+  "national_root": "sha256:2c8bb5b8841615f5b2f9c06b299d9bf7661a597d8a7367cf4522228fe2c6dd76",
+  "generated_utc": "2026-05-03T22:08:35Z",
   "states": [
     {
       "state": "MN",
@@ -53,7 +53,7 @@
     },
     {
       "state": "TX",
-      "version": "TX_BOOTSTRAP_2026-05-03",
+      "version": "TX_GAA_2026_2027",
       "status": "INDETERMINATE",
       "state_root": null,
       "claim_count": 1,
@@ -61,27 +61,22 @@
       "claims": [
         {
           "id": "TX-BUDGET-2026-01",
-          "claim_path": "fixtures/tx/tx_budget_2026_claim.json",
-          "source_path": "fixtures/tx/sources/tx_budget_snapshot_2026-05-03.txt",
-          "expected_hash": "sha256:15945890a16a820f1d44e6e1fd7bd76b6983fbbda731a833988035586b27dfcd",
-          "computed_hash": "sha256:9fe87f5881bc72f60fbf29dbb508a37573c1a35bbddc3a82aa2765e0176ccfce",
-          "hash_match": false
+          "hash_match": false,
+          "error": "[Errno 2] No such file or directory: '/home/runner/work/AL/AL/fixtures/tx/sources/tx_general_appropriations_act_2026_2027.pdf'"
         }
       ],
       "blockers": [
         {
           "id": "TX-BUDGET-2026-01",
-          "reason": "expected hash missing or mismatch",
-          "expected_hash": "sha256:15945890a16a820f1d44e6e1fd7bd76b6983fbbda731a833988035586b27dfcd",
-          "computed_hash": "sha256:9fe87f5881bc72f60fbf29dbb508a37573c1a35bbddc3a82aa2765e0176ccfce"
+          "reason": "[Errno 2] No such file or directory: '/home/runner/work/AL/AL/fixtures/tx/sources/tx_general_appropriations_act_2026_2027.pdf'"
         }
       ]
     }
   ],
   "leaf_hashes": [
-    "sha256:2d16e1a4cb78c71b6bbaab2aae8f673c1851a2d9afc41b4bb50b66cf503ad998",
     "sha256:711c8674642e6761a99c2eb0ac2151861de4000d61208d129f1b2ae58a0d00ad",
-    "sha256:792ba165a7557a923cc072ad98e19ca3d106da76735a4dc10827ae0811772174"
+    "sha256:792ba165a7557a923cc072ad98e19ca3d106da76735a4dc10827ae0811772174",
+    "sha256:84c92026ebdbb82cd8f8bb2b6b6bdddcfa06cdd24273d2525c602505501fe86b"
   ],
   "boundary": "GitHub CI recompute only. Not Base/EAS anchored. National PASS requires every state PASS."
 }
