@@ -1,0 +1,21 @@
+{
+  "artifact": "USC_A1_S8_C11_VERIFIED_RECEIPT",
+  "status": "VERIFIED_CANONICAL",
+  "id": "USC-A1-S8-C11",
+  "parent": {
+    "id": "USC-A1-S8",
+    "content_hash_sha256": "689531558999a4c062828b12204683a483a92540026e632943183563914a2754"
+  },
+  "role": "War, Letters of Marque and Reprisal, and Captures Power",
+  "normalization_rule": "NORMALIZED_TEXT_SPAN_V0_2",
+  "verification_method": "EXACT_CHARACTER_AUDIT_PLUS_INDEPENDENT_MATCH",
+  "span": "To declare War, grant Letters of Marque and Reprisal, and make Rules concerning Captures on Land and Water;",
+  "byte_count_utf8": 107,
+  "content_hash_sha256": "94060984d57bf80dbe28e62e359fd5fcc2f43fecab5baef3f9f8f6f1b660c1a9",
+  "gate_resolution": "MATCHED_INDEPENDENT_GROUND_TRUTH",
+  "next_gate": {
+    "USC-A1-S8-C12": "REQUIRES_EXACT_BYTE_AUDIT",
+    "USC-A1-S8-C13": "BLOCKED_UNTIL_C12_VERIFIED",
+    "MILITARY_CLUSTER_C14_C16": "BLOCKED"
+  }
+}
