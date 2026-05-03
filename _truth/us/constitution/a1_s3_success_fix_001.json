@@ -1,0 +1,21 @@
+{
+  "artifact": "USC_A1_S3_SUCCESS_FIX_001",
+  "status": "VERIFIED_CANONICAL_OPERATOR_REPORTED",
+  "id": "USC-A1-S3",
+  "normalization_rule": "NORMALIZED_TEXT_SPAN_V0_2",
+  "corrected_boundary": {
+    "start_anchor": "The Senate of the United States shall be composed",
+    "end_anchor": "according to Law.",
+    "previous_failed_end_anchor": "of the Party convicted.",
+    "fix": "SUCCESS_FIX_001",
+    "reported_char_delta_vs_failed_span": -20
+  },
+  "content_hash_sha256": "09426f0f5b118b846e99b03683072216e2577c385b03517178044733479f6497",
+  "char_count": 2561,
+  "gate_result": "S3_PASS",
+  "automation_unlock": {
+    "USC-A1-S4": "UNLOCKED_FOR_EXTRACTION_NOT_LOCKED",
+    "USC-A1-S5": "UNLOCKED_FOR_EXTRACTION_NOT_LOCKED"
+  },
+  "rule": "Do not lock S4 or S5 until their exact spans, boundary snippets, char counts, and hashes are recorded."
+}
