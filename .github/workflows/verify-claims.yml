@@ -3,8 +3,28 @@ name: Verify Claims
 on:
   push:
     branches: [master]
+    paths:
+      - 'claims/**'
+      - 'docs/verified-claims.json'
+      - 'docs/ipfs-anchor.txt'
+      - 'docs/index.html'
+      - 'verify.sh'
+      - 'scripts/build_verified_claims_manifest.sh'
+      - 'scripts/check_verified_claims_manifest.sh'
+      - 'scripts/verify_verified_claims_root.sh'
+      - '.github/workflows/verify-claims.yml'
   pull_request:
     branches: [master]
+    paths:
+      - 'claims/**'
+      - 'docs/verified-claims.json'
+      - 'docs/ipfs-anchor.txt'
+      - 'docs/index.html'
+      - 'verify.sh'
+      - 'scripts/build_verified_claims_manifest.sh'
+      - 'scripts/check_verified_claims_manifest.sh'
+      - 'scripts/verify_verified_claims_root.sh'
+      - '.github/workflows/verify-claims.yml'
   workflow_dispatch:
 
 jobs:
