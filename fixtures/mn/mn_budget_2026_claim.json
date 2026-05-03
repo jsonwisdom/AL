@@ -1,0 +1,39 @@
+{
+  "claim_id": "MN-BUDGET-2026-01",
+  "layer": "CLAIM",
+  "state": "MN",
+  "claim_text": "The State of Minnesota enacted a FY2026-2027 biennial budget with a projected general fund budgetary balance of approximately $3.73 billion (after reserves) following the June 2025 legislative session. General Fund spending is in the $65-70 billion range for the biennium.",
+  "timestamp": "2026-05-03T19:45:00Z",
+  "source_url": "https://mn.gov/mmb/budget/current-budget/current-enacted-budget/",
+  "source": {
+    "description": "Official Minnesota Management and Budget (MMB) Current Enacted Budget documentation",
+    "source_url": "https://mn.gov/mmb/budget/current-budget/current-enacted-budget/"
+  },
+  "frozen_artifact": {
+    "mode": "repo",
+    "reference": "fixtures/mn/sources/mmb_budget_snapshot_2026-05-03.txt",
+    "capture_date": "2026-05-03"
+  },
+  "hash": "sha256:e4d56ee0d5136c8bd45f9b93ba1cb16098a6626710889a45a744b184d9040b0f",
+  "receipt": {
+    "receipt_id": "MN-BUDGET-RECEIPT-001",
+    "status": "INDETERMINATE",
+    "notes": "Frozen source snapshot bytes committed and hashed. Snapshot-level replay may pass, but full source completeness remains unverified.",
+    "replay_passed": false
+  },
+  "replay": {
+    "status": "PENDING",
+    "notes": "Ready for replay execution against frozen source snapshot"
+  },
+  "state_root": {
+    "status": "PENDING"
+  },
+  "national_root": {
+    "status": "PENDING"
+  },
+  "public_explanation": {
+    "status": "PENDING",
+    "content_summary": "Artifact frozen and hashed. Full verification pending successful replay and root computation. Current status: INDETERMINATE.",
+    "explanation_hash": "UNSET"
+  }
+}
