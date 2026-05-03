@@ -1,11 +1,6 @@
-name: AAA C0001 C0002 REPLAY NOW
+name: MANUAL ONLY C0001 C0002 REPLAY REPORT
 
 on:
-  push:
-    branches:
-      - master
-    paths:
-      - '.github/workflows/AAA-C0001-C0002-REPLAY-NOW.yml'
   workflow_dispatch:
 
 permissions:
@@ -14,7 +9,7 @@ permissions:
 
 jobs:
   replay_now:
-    name: PRINT C0001 C0002 REPLAY REPORT HERE
+    name: COPY JSON FROM THIS JOB ONLY
     runs-on: ubuntu-latest
 
     steps:
@@ -40,7 +35,7 @@ jobs:
           }
 
           report = {
-              'workflow': 'AAA C0001 C0002 REPLAY NOW',
+              'workflow': 'MANUAL ONLY C0001 C0002 REPLAY REPORT',
               'rule': 'sha256(raw repo file bytes) == expected_hashes.normalized_artifact_hash',
               'cases': {},
           }
