@@ -1,0 +1,19 @@
+{
+  "verdict": "SOURCE_HASH_COMPUTED_AND_EXPECTED_HASHES_UPDATED",
+  "corpus_id": "C0001",
+  "source_path": "_truth/sources/mmb-feb-2026-forecast.txt",
+  "source_hash": "sha256:da5ad1bbe192eae56c96cf574025b8f915839d29c78c69e8d6b98a0ad9d7d917",
+  "expected_hashes_path": "corpus/C0001/replay/expected_hashes.json",
+  "expected_hashes_patch": {
+    "normalized_artifact_hash": "sha256:da5ad1bbe192eae56c96cf574025b8f915839d29c78c69e8d6b98a0ad9d7d917",
+    "identity": {
+      "source_url": "repo://jsonwisdom/AL/_truth/sources/mmb-feb-2026-forecast.txt",
+      "canonical_url": "repo://jsonwisdom/AL/_truth/sources/mmb-feb-2026-forecast.txt",
+      "FETCH_FINGERPRINT": "sha256:da5ad1bbe192eae56c96cf574025b8f915839d29c78c69e8d6b98a0ad9d7d917"
+    },
+    "status": "LOCKED_FROM_CI_SOURCE_HASH_DISCOVERY"
+  },
+  "receipt_path": "_truth/receipts/MN_001.json",
+  "receipt_hash_different_domain": "sha256:04368980dc3d501a4131202cc38ce56cfd38054eaf140f56e65f8280e6d5e51c",
+  "note": "source_hash has been written into corpus/C0001/replay/expected_hashes.json. receipt_hash remains a different domain value."
+}
