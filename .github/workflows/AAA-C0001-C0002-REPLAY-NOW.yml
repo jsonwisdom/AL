@@ -1,6 +1,11 @@
 name: MANUAL ONLY C0001 C0002 REPLAY REPORT
 
 on:
+  push:
+    branches:
+      - master
+    paths:
+      - '.github/workflows/AAA-C0001-C0002-REPLAY-NOW.yml'
   workflow_dispatch:
 
 permissions:
