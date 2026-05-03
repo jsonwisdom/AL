@@ -1,0 +1,28 @@
+{
+  "model": "OBR_ENERGY_SURGE_DELTA_V1",
+  "status": "COMPUTED",
+  "lineage": {
+    "march_2024_energy_scenario_extract_commit": "0b528fab0335df90fa621a02ec36fcc2946be81f",
+    "march_2024_source_url_commit": "967f1da3765ea25eb8ab1706d7e20ea9cc019540",
+    "march_2024_hash_commit": "b38bb120e4a3a6bd43c0217a0ef9bc14ad05995a",
+    "march_2026_hash_commit": "64f042fc291bec36442957b72d9610f92ca5c27e"
+  },
+  "assumption": "OBR March 2024 temporary energy price shock scenario applied against the weaker OBR March 2026 baseline headroom posture.",
+  "inputs": {
+    "baseline_headroom_gbp_bn": 9.9,
+    "energy_shock_average_annual_borrowing_increase_gbp_bn": 23.1,
+    "energy_shock_debt_interest_increase_gbp_bn": 13.3,
+    "energy_shock_welfare_and_pensions_increase_gbp_bn": 21.6,
+    "energy_shock_debt_peak_increase_pct_gdp": 2.9,
+    "energy_shock_debt_horizon_increase_pct_gdp": 0.8
+  },
+  "computed": {
+    "headroom_after_shock_gbp_bn": -13.2,
+    "headroom_breach": true,
+    "fiscal_mandate_result_under_shock": "FAIL",
+    "fiscal_regime": "DEFICIT_EXPANSION",
+    "transition": "SHOCK_ABSORBENT_TO_SHOCK_DEPENDENT"
+  },
+  "interpretation": "The same OBR-style energy shock that was absorbable in the 2024 scenario becomes a headroom-breaching shock when applied to the March 2026 baseline.",
+  "caution": "This is a deterministic delta model using recorded OBR scenario values and March 2026 headroom. Live oil-market overlays require separate source receipts."
+}
