@@ -1,0 +1,22 @@
+{
+  "artifact": "USC_A1_S8_C5_VERIFIED_RECEIPT",
+  "status": "VERIFIED_CANONICAL",
+  "id": "USC-A1-S8-C5",
+  "parent": {
+    "id": "USC-A1-S8",
+    "content_hash_sha256": "689531558999a4c062828b12204683a483a92540026e632943183563914a2754"
+  },
+  "role": "Coinage, Foreign Coin Value, Weights and Measures",
+  "normalization_rule": "NORMALIZED_TEXT_SPAN_V0_2",
+  "verification_method": "VISIBLE_SPAN_MATCH_PLUS_SHA256_PLUS_XXD_CHANNEL_AUDIT",
+  "span": "To coin Money, regulate the Value thereof, and of foreign Coin, and fix the Standard of Weights and Measures;",
+  "byte_count": 109,
+  "content_hash_sha256": "725bb46d811d0bbca651bcb597d58274783b92265715d7fd9fd2f014b5b40be9",
+  "xxd_ascii_confirmed": true,
+  "gate_resolution": "DISPLAYED_SPAN_AND_HASHED_SPAN_MATCH",
+  "next_gate": {
+    "USC-A1-S8-C6": "REQUIRES_100_PERCENT_AUDIT_BLOCK",
+    "USC-A1-S8-C7": "REQUIRES_100_PERCENT_AUDIT_BLOCK",
+    "wave_2": "BLOCKED_UNTIL_C6_C7_VERIFIED"
+  }
+}
