@@ -1,0 +1,35 @@
+{
+  "artifact": "USC_ARTICLE_I_S4_S5_BATCH_RECEIPT",
+  "status": "VERIFIED_CANONICAL_OPERATOR_REPORTED",
+  "normalization_rule": "NORMALIZED_TEXT_SPAN_V0_2",
+  "hash_method": "printf %s \"$SPAN\" | sha256sum",
+  "source": "_truth/us/constitution/constitution_gpo.normalized.txt",
+  "anchors": [
+    {
+      "id": "USC-A1-S4",
+      "scope": "Article I, Section 4",
+      "start_anchor": "The Times, Places and Manner",
+      "end_anchor": "appoint a different Day.",
+      "content_hash_sha256": "388c42a5f5779774640d21a224749f9df881d587000c25a072979268305c48f8",
+      "char_count": 512,
+      "boundary_status": "NO_BLEED_REPORTED"
+    },
+    {
+      "id": "USC-A1-S5",
+      "scope": "Article I, Section 5",
+      "start_anchor": "Each House shall be the Judge",
+      "end_anchor": "than that in which the two Houses shall be sitting.",
+      "content_hash_sha256": "014a68297b819f714909a3692694901309f78326759714092147368412854378",
+      "char_count": 1113,
+      "boundary_status": "NO_BLEED_REPORTED"
+    }
+  ],
+  "article_i_core_state": {
+    "USC-A1-S1": "LOCKED",
+    "USC-A1-S2": "LOCKED",
+    "USC-A1-S3": "LOCKED_FIX_001",
+    "USC-A1-S4": "LOCKED",
+    "USC-A1-S5": "LOCKED"
+  },
+  "next_gate": "ARTICLE_I_SECTIONS_6_TO_10_DRY_RUN"
+}
