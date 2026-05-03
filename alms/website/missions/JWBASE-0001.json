@@ -1,0 +1,38 @@
+{
+  "mission_id": "JWBASE-0001",
+  "title": "Publish Meme Court x Zora Learning Artifact Page",
+  "page_path": "site/meme-court/wfg-0001.html",
+  "artifact_links": [
+    "alms/legacy/artifacts/WFG-0001.json",
+    "alms/meme_court/cases/MC-0001.json",
+    "alms/meme_court/zora/ZMC-0001.json"
+  ],
+  "receipt_links": [
+    "alms/legacy/receipts/WFG-0001-receipt.json"
+  ],
+  "anchor_identity": "jaywisdom.eth",
+  "public_identity": "jaywisdom.base",
+  "state": "DRAFT",
+  "xp": {
+    "page_mission_created": 25,
+    "artifact_links_added": 25,
+    "receipt_links_added": 50,
+    "total_awarded": 100
+  },
+  "badge": "Site_Builder",
+  "requirements": {
+    "verified_label_allowed": true,
+    "requires_alms_pass": true,
+    "requires_receipt_link": true,
+    "requires_anchor_reference": true,
+    "requires_no_private_data": true
+  },
+  "source_context": {
+    "website_game_spec": "docs/specs/JAYWISDOM_BASE_WEBSITE_GAME.md",
+    "artifact": "alms/legacy/artifacts/WFG-0001.json",
+    "meme_court_case": "alms/meme_court/cases/MC-0001.json",
+    "zora_card": "alms/meme_court/zora/ZMC-0001.json"
+  },
+  "caption": "Build the page. Link the receipt. Anchor the research. Maintain the truth.",
+  "next_action": "create site/meme-court/wfg-0001.html and link all proof artifacts before publishing."
+}
