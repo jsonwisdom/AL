@@ -20,8 +20,9 @@ FILES = [
     "_truth/bigquery/ny_noaa_income_overlay_62.csv",
     "_truth/bigquery/ny004_noaa_manifest.json",
     "_truth/bigquery/ny005_prism_county_normals.csv",
-    "_truth/bigquery/ny007_era5_panel_1980_2024.csv",
-    "_truth/bigquery/ny007_era5_trends_1980_2024.csv",
+    "_truth/bigquery/ny007b_gsod_panel.csv",
+    "_truth/bigquery/ny007b_gsod_trends.csv",
+    "_truth/bigquery/ny007b_gsod_manifest.json",
 ]
 
 OUT = Path("_truth/bigquery/ny011_dependency_audit.json")
@@ -61,7 +62,7 @@ def main() -> None:
         "missing": missing,
         "guardrails": [
             "Do not run NY-011 validation unless status is GO.",
-            "Do not synthesize PRISM or ERA5 files from narrative claims.",
+            "Do not synthesize PRISM or NY-007B files from narrative claims.",
             "If dependencies are missing, open a dependency reconstruction receipt first."
         ]
     }

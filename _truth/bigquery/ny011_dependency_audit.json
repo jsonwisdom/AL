@@ -1,0 +1,71 @@
+{
+  "receipt": "NY-011_DEPENDENCY_AUDIT",
+  "status": "BLOCKED_MISSING_DEPENDENCIES",
+  "timestamp_utc": "2026-05-03T01:13:14Z",
+  "files": [
+    {
+      "path": "_truth/bigquery/ny010_extreme_events_2024.csv",
+      "exists": true,
+      "bytes": 3136,
+      "lines": 63,
+      "sha256": "cfa957e5b6d09bdd8e54b63da140a127658191e9b5c7c0df7fc2e4e48dab2540"
+    },
+    {
+      "path": "_truth/bigquery/ny010_extreme_events_manifest.json",
+      "exists": true,
+      "bytes": 1162,
+      "lines": 41,
+      "sha256": "7f40902f9f1a0215521496bbd1f712b2d31dd95e768b0f90d254d09d8cf1466f"
+    },
+    {
+      "path": "_truth/bigquery/ny_noaa_income_overlay_62.csv",
+      "exists": true,
+      "bytes": 2359,
+      "lines": 63,
+      "sha256": "13b5fde21ad4081fe1c982a6ce5c4413bf561dcde6de877cc69c2e77f5551b51"
+    },
+    {
+      "path": "_truth/bigquery/ny004_noaa_manifest.json",
+      "exists": true,
+      "bytes": 644,
+      "lines": 17,
+      "sha256": "e635f19508ee15ab1c39a79be6efd4f9db592b2748ca440b1cf185dc57f9f71b"
+    },
+    {
+      "path": "_truth/bigquery/ny005_prism_county_normals.csv",
+      "exists": false,
+      "bytes": 0,
+      "lines": null,
+      "sha256": null
+    },
+    {
+      "path": "_truth/bigquery/ny007b_gsod_panel.csv",
+      "exists": true,
+      "bytes": 924,
+      "lines": 21,
+      "sha256": "394aca325afd179d4b39e62fce45d8fa2112713b0d80a38d4058d6dfe50087d7"
+    },
+    {
+      "path": "_truth/bigquery/ny007b_gsod_trends.csv",
+      "exists": true,
+      "bytes": 458,
+      "lines": 5,
+      "sha256": "c5fb2028504125adf3ab1c18459ea3c698f92c51ed5f217b399e1e421c32772e"
+    },
+    {
+      "path": "_truth/bigquery/ny007b_gsod_manifest.json",
+      "exists": true,
+      "bytes": 0,
+      "lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "missing": [
+    "_truth/bigquery/ny005_prism_county_normals.csv"
+  ],
+  "guardrails": [
+    "Do not run NY-011 validation unless status is GO.",
+    "Do not synthesize PRISM or NY-007B files from narrative claims.",
+    "If dependencies are missing, open a dependency reconstruction receipt first."
+  ]
+}
