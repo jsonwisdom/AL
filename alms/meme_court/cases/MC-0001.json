@@ -8,9 +8,9 @@
   "risk_level": "LOW",
   "receipt_required": true,
   "two_review_required": false,
-  "alms_status": "UNSET",
-  "family_702_label": "NEEDS_RECEIPT",
-  "meme_court_verdict": "NEEDS_RECEIPT",
+  "alms_status": "PASS",
+  "family_702_label": "APPROVED",
+  "meme_court_verdict": "APPROVED_FOR_FUN",
   "humor_rating": 7,
   "privacy_screen": {
     "private_keys_present": false,
@@ -20,16 +20,17 @@
   },
   "receipt_screen": {
     "source_artifact": "docs/learning/WISDOM_FAMILY_GAMING_ARTIFACTS.md",
-    "receipt_path": "UNSET",
-    "hash": "UNSET",
-    "status": "NEEDS_RECEIPT"
+    "receipt_path": "alms/legacy/receipts/WFG-0001-receipt.json",
+    "hash": "sha256:9e96b7fdc19927ac98bd445d12ba1d23a9b33ed8ce19f0479941a347b092c029",
+    "status": "RECEIPT_ATTACHED"
   },
   "badges_available": [
     "Court_Clerk",
     "Goblin_Detector",
-    "Caption_Counsel"
+    "Caption_Counsel",
+    "Replay_Ranger"
   ],
   "caption": "Meme Court reviews WFG-0001. Funny is allowed. Fake verified is not.",
-  "next_action": "create WFG-0001 artifact card JSON and compute receipt hash",
-  "state": "DRAFT"
+  "next_action": "update ZMC-0001 to READY_FOR_ZORA",
+  "state": "APPROVED"
 }
