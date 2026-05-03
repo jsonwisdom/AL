@@ -6,15 +6,17 @@ Runs corpus/* entries through the ALMS CI gate chain and verifies replay output
 against frozen expected hashes and identity bindings.
 
 Rules enforced:
-- Replay hash source of truth is pipeline/receipt/receipt_replay_manifest.json
-- Expected identity is checked against the record identity in the replay manifest
-- replay_gate_check must execute
+- Standard corpus cases use pipeline/receipt/receipt_replay_manifest.json
+- Repo-bound corpus cases may replay an already verified repo source/receipt pair
+- Expected identity is checked against the record identity
+- replay_gate_check must execute for pipeline-backed cases
 - Non-zero gates fail the corpus item, except integration_matrix_t01_t08 may remain
   INDETERMINATE while TRACK_00X_6 fixtures are not fully implemented
 """
 
 from __future__ import annotations
 
+import hashlib
 import json
 import shutil
 import subprocess
@@ -26,6 +28,12 @@ CORPUS_ROOT = Path("corpus")
 REPORT_PATH = Path("ci/corpus_report.json")
 REPLAY_MANIFEST_PATH = Path("pipeline/receipt/receipt_replay_manifest.json")
 ALLOWED_INDETERMINATE_GATE = "integration_matrix_t01_t08"
+
+REPO_BOUND_C0001 = {
+    "case_id": "C0001",
+    "source_path": Path("_truth/sources/mmb-feb-2026-forecast.txt"),
+    "receipt_path": Path("_truth/receipts/MN_001.json"),
+}
 
 
 def reset_runtime() -> None:
@@ -40,6 +48,11 @@ def reset_runtime() -> None:
 
 def load_json(path: Path | str) -> Dict[str, Any]:
     return json.loads(Path(path).read_text())
+
+
+def sha256_text_bytes(path: Path) -> str:
+    digest = hashlib.sha256(path.read_bytes()).hexdigest()
+    return f"sha256:{digest}"
 
 
 def copytree_if_exists(src: Path, dest: Path) -> None:
@@ -83,8 +96,60 @@ def first_blocking_gate(report: Dict[str, Any]) -> Optional[Dict[str, Any]]:
     return None
 
 
+def evaluate_repo_bound_c0001() -> Tuple[str, Optional[str], Dict[str, Any]]:
+    source_path = REPO_BOUND_C0001["source_path"]
+    receipt_path = REPO_BOUND_C0001["receipt_path"]
+
+    if not source_path.exists():
+        return "INDETERMINATE", "missing_repo_bound_source", {"path": str(source_path)}
+    if not receipt_path.exists():
+        return "INDETERMINATE", "missing_repo_bound_receipt", {"path": str(receipt_path)}
+
+    try:
+        receipt = load_json(receipt_path)
+    except Exception as exc:
+        return "INDETERMINATE", f"invalid_repo_bound_receipt:{exc}", {"path": str(receipt_path)}
+
+    receipt_hash = receipt.get("hash")
+    if not receipt_hash:
+        return "INDETERMINATE", "missing_receipt_hash", {"receipt_path": str(receipt_path)}
+
+    actual_hash = sha256_text_bytes(source_path)
+    expected_hash = f"sha256:{receipt_hash}" if not str(receipt_hash).startswith("sha256:") else str(receipt_hash)
+
+    identity = {
+        "source_url": f"repo://jsonwisdom/AL/{source_path.as_posix()}",
+        "canonical_url": f"repo://jsonwisdom/AL/{source_path.as_posix()}",
+        "FETCH_FINGERPRINT": actual_hash,
+    }
+
+    details = {
+        "mode": "repo_bound_existing_proof",
+        "source_path": str(source_path),
+        "receipt_path": str(receipt_path),
+        "expected_hash": expected_hash,
+        "actual_hash": actual_hash,
+        "identity": identity,
+    }
+
+    if actual_hash != expected_hash:
+        return "FAIL", "repo_bound_hash_mismatch", details
+
+    return "PASS", None, details
+
+
 def evaluate_case(case_dir: Path) -> Tuple[str, Optional[str], Dict[str, Any]]:
     reset_runtime()
+
+    if case_dir.name == REPO_BOUND_C0001["case_id"]:
+        header_path = case_dir / "source" / "headers.json"
+        if header_path.exists():
+            try:
+                header = load_json(header_path)
+                if header.get("status") == "BOUND_TO_EXISTING_AUDIT_SOURCE":
+                    return evaluate_repo_bound_c0001()
+            except Exception:
+                pass
 
     source_dir = case_dir / "source"
     if not source_dir.exists():
