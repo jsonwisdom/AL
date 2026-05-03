@@ -1,0 +1,31 @@
+{
+  "claim_id": "AL-BUDGET-2026-01",
+  "layer": "CLAIM",
+  "state": "AL",
+  "claim_text": "Alabama budget snapshot bootstrap claim for ALMS multi-state testing. No verified financial assertion is made at this stage.",
+  "timestamp": "2026-05-03T21:10:00Z",
+  "source": {
+    "description": "Placeholder until official Alabama budget source is frozen",
+    "source_url": "UNSET"
+  },
+  "frozen_artifact": {
+    "mode": "repo",
+    "reference": "fixtures/al/sources/al_budget_snapshot_2026-05-03.txt",
+    "capture_date": "2026-05-03"
+  },
+  "hash": "UNSET_PENDING_COMMIT",
+  "receipt": {
+    "receipt_id": "AL-BUDGET-RECEIPT-001",
+    "status": "INDETERMINATE",
+    "notes": "Bootstrap claim only. Awaiting real source capture, hash, and replay.",
+    "replay_passed": false
+  },
+  "replay": { "status": "PENDING" },
+  "state_root": { "status": "PENDING" },
+  "national_root": { "status": "PENDING" },
+  "public_explanation": {
+    "status": "PENDING",
+    "content_summary": "Bootstrap AL lane. No verified claim yet.",
+    "explanation_hash": "UNSET"
+  }
+}
