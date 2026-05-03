@@ -2,22 +2,22 @@
   "claim_id": "TX-BUDGET-2026-01",
   "layer": "CLAIM",
   "state": "TX",
-  "claim_text": "Texas budget snapshot bootstrap claim for ALMS multi-state expansion. No verified financial assertion is made at this stage.",
+  "claim_text": "Texas FY2026-2027 General Appropriations Act is represented by the Legislative Budget Board PDF, used as the canonical ALMS source artifact.",
   "timestamp": "2026-05-03T21:30:00Z",
   "source": {
-    "description": "Placeholder until official Texas budget source is frozen",
-    "source_url": "UNSET"
+    "description": "General Appropriations Act for the 2026-2027 biennium",
+    "source_url": "https://www.lbb.texas.gov/Documents/GAA/General_Appropriations_Act_2026_2027.pdf"
   },
   "frozen_artifact": {
     "mode": "repo",
-    "reference": "fixtures/tx/sources/tx_budget_snapshot_2026-05-03.txt",
+    "reference": "fixtures/tx/sources/tx_general_appropriations_act_2026_2027.pdf",
     "capture_date": "2026-05-03"
   },
-  "hash": "UNSET_PENDING_COMMIT",
+  "hash": "sha256:15945890a16a820f1d44e6e1fd7bd76b6983fbbda731a833988035586b27dfcd",
   "receipt": {
     "receipt_id": "TX-BUDGET-RECEIPT-001",
     "status": "INDETERMINATE",
-    "notes": "Bootstrap claim only. Awaiting real source capture, hash, and replay.",
+    "notes": "Official source candidate selected. Awaiting frozen PDF commit, hash, and replay confirmation.",
     "replay_passed": false
   },
   "replay": { "status": "PENDING" },
@@ -25,7 +25,7 @@
   "national_root": { "status": "PENDING" },
   "public_explanation": {
     "status": "PENDING",
-    "content_summary": "Bootstrap TX lane. No verified claim yet.",
+    "content_summary": "TX lane pending replay against GAA 2026-2027 source artifact.",
     "explanation_hash": "UNSET"
   }
 }
