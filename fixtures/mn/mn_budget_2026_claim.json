@@ -14,11 +14,11 @@
     "reference": "fixtures/mn/sources/mmb_budget_snapshot_2026-05-03.txt",
     "capture_date": "2026-05-03"
   },
-  "hash": "sha256:e4d56ee0d5136c8bd45f9b93ba1cb16098a6626710889a45a744b184d9040b0f",
+  "hash": "sha256:01dddb1843f4b3ae0b22e8d661f54525d463457401aec042073249a65d7f5f3d",
   "receipt": {
     "receipt_id": "MN-BUDGET-RECEIPT-001",
     "status": "INDETERMINATE",
-    "notes": "Frozen source snapshot bytes committed and hashed. Snapshot-level replay may pass, but full source completeness remains unverified.",
+    "notes": "Hash bound to actual frozen source snapshot bytes in AL repo. Snapshot-level replay may pass, but full source completeness remains unverified.",
     "replay_passed": false
   },
   "replay": {
@@ -33,7 +33,7 @@
   },
   "public_explanation": {
     "status": "PENDING",
-    "content_summary": "Artifact frozen and hashed. Full verification pending successful replay and root computation. Current status: INDETERMINATE.",
+    "content_summary": "Artifact frozen and hashed at snapshot level. Full official source completeness remains unverified. Current status: INDETERMINATE.",
     "explanation_hash": "UNSET"
   }
 }
