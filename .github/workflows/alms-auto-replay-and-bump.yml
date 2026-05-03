@@ -27,6 +27,9 @@ jobs:
       - name: Validate ALMS version schemas (hard gate)
         run: python scripts/alms_validate_version_schemas.py
 
+      - name: Registry diff gate (no illegal transitions)
+        run: python scripts/alms_registry_diff_gate.py
+
       - name: Run replay corpus
         run: python ci/replay_corpus_runner.py || true
 
