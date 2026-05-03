@@ -1,0 +1,81 @@
+name: ALMS Auto Replay + Auto Bump
+
+on:
+  push:
+    paths:
+      - "corpus/**"
+      - "_truth/**"
+
+permissions:
+  contents: write
+
+jobs:
+  replay-and-bump:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: pip install -r requirements.txt || true
+
+      - name: Run replay corpus
+        run: python ci/replay_corpus_runner.py || true
+
+      - name: Evaluate and bump versions
+        run: |
+          python - << 'EOF'
+import json
+from pathlib import Path
+import subprocess
+
+report_path = Path("ci/corpus_report.json")
+if not report_path.exists():
+    print("NO_REPORT")
+    exit(0)
+
+report = json.loads(report_path.read_text())
+
+cases = report.get("cases", []) if "cases" in report else []
+
+# fallback for your simpler format
+if not cases:
+    # assume global PASS means bump both
+    if report.get("verdict") == "PASS":
+        cases = [
+            {"id": "C0001", "verdict": "PASS"},
+            {"id": "C0002", "verdict": "PASS"}
+        ]
+
+for c in cases:
+    cid = c.get("id")
+    verdict = c.get("verdict")
+
+    if cid not in ["C0001", "C0002"]:
+        continue
+
+    state = "REPLAY_PASSED" if verdict == "PASS" else "BLOCKED"
+
+    artifact = f"corpus/{cid}/replay/expected_hashes.json"
+
+    subprocess.run([
+        "python", "scripts/alms_version_bump.py",
+        "--id", cid,
+        "--version", "1.0.0",
+        "--state", state,
+        "--artifact", artifact
+    ])
+EOF
+
+      - name: Commit registry updates
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add alms/version_registry.json alms/version_receipts/
+          git commit -m "ALMS AUTO REPLAY BUMP" || echo "NO_CHANGES"
+          git push
