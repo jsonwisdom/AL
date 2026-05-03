@@ -1,9 +1,10 @@
 {
   "corpus_id": "C0001",
-  "artifact_class": "minnesota_budget_pdf",
-  "source_url": "TBD_MINNESOTA_BUDGET_PDF_URL",
-  "canonical_url": "TBD_MINNESOTA_BUDGET_PDF_URL",
-  "fetched_at": null,
-  "status": "INDETERMINATE_SOURCE_NOT_FROZEN",
-  "notes": "C0001 scaffold only. Real HTTP headers must be captured when raw.bin is frozen. Do not treat this as evidence."
+  "artifact_class": "minnesota_mmb_feb_2026_forecast_extracted_text",
+  "source_url": "repo://jsonwisdom/AL/_truth/sources/mmb-feb-2026-forecast.txt",
+  "canonical_url": "repo://jsonwisdom/AL/_truth/sources/mmb-feb-2026-forecast.txt",
+  "source_receipt": "_truth/receipts/MN_001.json",
+  "receipt_hash": "sha256:04368980dc3d501a4131202cc38ce56cfd38054eaf140f56e65f8280e6d5e51c",
+  "status": "BOUND_TO_EXISTING_AUDIT_SOURCE",
+  "notes": "C0001 uses the existing audit repo deterministic extracted source, not a newly fetched PDF. Raw PDF bytes remain out of scope until supplied separately."
 }
