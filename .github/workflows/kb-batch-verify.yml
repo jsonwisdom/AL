@@ -3,8 +3,19 @@ name: KB Batch - Build & Verify
 on:
   push:
     branches: [ master ]
+    paths:
+      - '_truth/batches/**'
+      - 'scripts/build_kb_batch.py'
+      - 'scripts/verify_kb_batch.py'
+      - '.github/workflows/kb-batch-verify.yml'
   pull_request:
     branches: [ master ]
+    paths:
+      - '_truth/batches/**'
+      - 'scripts/build_kb_batch.py'
+      - 'scripts/verify_kb_batch.py'
+      - '.github/workflows/kb-batch-verify.yml'
+  workflow_dispatch:
 
 jobs:
   verify-batch:
@@ -30,5 +41,6 @@ jobs:
           python scripts/verify_kb_batch.py --fail-on-blocked
 
       - name: Show final KB batch manifest
+        if: always()
         run: |
           cat _truth/batches/kb_batch_001.json | python -m json.tool
