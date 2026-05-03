@@ -1,0 +1,78 @@
+name: WFG-0001 Hash Discovery
+
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - 'alms/legacy/artifacts/WFG-0001.json'
+      - '.github/workflows/wfg-0001-hash.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  hash-wfg-0001:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compute WFG-0001 hash and receipt
+        shell: python
+        run: |
+          import hashlib
+          import json
+          from pathlib import Path
+          from datetime import datetime, timezone
+
+          artifact_path = Path('alms/legacy/artifacts/WFG-0001.json')
+          receipt_path = Path('alms/legacy/receipts/WFG-0001-receipt.json')
+          report_path = Path('ci/wfg_0001_hash_report.json')
+          receipt_path.parent.mkdir(parents=True, exist_ok=True)
+          report_path.parent.mkdir(parents=True, exist_ok=True)
+
+          raw = artifact_path.read_bytes()
+          artifact_hash = 'sha256:' + hashlib.sha256(raw).hexdigest()
+          data = json.loads(raw.decode('utf-8'))
+          data['hash'] = artifact_hash
+          data['state'] = 'REPLAY_REQUIRED'
+          data['artifact_levels']['level_4'] = 'receipt/hash attached'
+          data['next_action'] = 'replay WFG-0001 and update Meme Court/Zora readiness only after verification.'
+          artifact_path.write_text(json.dumps(data, indent=2) + '\n')
+
+          receipt = {
+            'event_type': 'wisdom_family_artifact_hash',
+            'artifact_id': 'WFG-0001',
+            'artifact_path': str(artifact_path),
+            'artifact_hash': artifact_hash,
+            'state': 'REPLAY_REQUIRED',
+            'timestamp_utc': datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace('+00:00', 'Z'),
+            'rule': 'sha256(raw repo file bytes before self-hash field update)'
+          }
+          receipt_path.write_text(json.dumps(receipt, indent=2) + '\n')
+
+          report = {
+            'verdict': 'HASH_COMPUTED',
+            'artifact_id': 'WFG-0001',
+            'artifact_hash': artifact_hash,
+            'artifact_path': str(artifact_path),
+            'receipt_path': str(receipt_path)
+          }
+          report_path.write_text(json.dumps(report, indent=2) + '\n')
+          print(json.dumps(report, indent=2))
+
+      - name: Commit WFG-0001 hash and receipt
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add alms/legacy/artifacts/WFG-0001.json alms/legacy/receipts/WFG-0001-receipt.json ci/wfg_0001_hash_report.json
+          git commit -m "Attach WFG-0001 hash receipt" || echo "NO_CHANGES"
+          git push
+
+      - name: Upload WFG-0001 hash report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: WFG-0001-HASH-REPORT
+          path: ci/wfg_0001_hash_report.json
