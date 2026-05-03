@@ -3,7 +3,7 @@
   "version": "US_SNAPSHOT_2026-05-03",
   "status": "INDETERMINATE",
   "national_root": "sha256:b6e7e021132f70918d82132e1aa9f76daa0022ea0486d61352204ec909633f26",
-  "generated_utc": "2026-05-03T21:06:27Z",
+  "generated_utc": "2026-05-03T21:13:05Z",
   "states": [
     {
       "state": "MN",
@@ -15,8 +15,11 @@
       "claims": [
         {
           "id": "MN-BUDGET-2026-01",
-          "hash_match": false,
-          "error": "[Errno 2] No such file or directory: '/home/runner/work/AL/AL/fixtures/mn/sources/mmb_budget_snapshot_2026-05-03.txt'"
+          "claim_path": "fixtures/mn/mn_budget_2026_claim.json",
+          "source_path": "fixtures/mn/sources/mmb_budget_snapshot_2026-05-03.txt",
+          "expected_hash": "sha256:e4d56ee0d5136c8bd45f9b93ba1cb16098a6626710889a45a744b184d9040b0f",
+          "computed_hash": "sha256:01dddb1843f4b3ae0b22e8d661f54525d463457401aec042073249a65d7f5f3d",
+          "hash_match": false
         },
         {
           "id": "MN-BUDGET-RESERVE-2026-01",
@@ -30,7 +33,9 @@
       "blockers": [
         {
           "id": "MN-BUDGET-2026-01",
-          "reason": "[Errno 2] No such file or directory: '/home/runner/work/AL/AL/fixtures/mn/sources/mmb_budget_snapshot_2026-05-03.txt'"
+          "reason": "expected hash missing or mismatch",
+          "expected_hash": "sha256:e4d56ee0d5136c8bd45f9b93ba1cb16098a6626710889a45a744b184d9040b0f",
+          "computed_hash": "sha256:01dddb1843f4b3ae0b22e8d661f54525d463457401aec042073249a65d7f5f3d"
         }
       ]
     },
