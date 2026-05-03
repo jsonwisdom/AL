@@ -1,0 +1,26 @@
+{
+  "artifact": "USC_A1_S8_VERIFIED_WHOLE_SECTION_RECEIPT",
+  "status": "VERIFIED_CANONICAL",
+  "id": "USC-A1-S8",
+  "type": "WHOLE_SECTION",
+  "normalization_rule": "NORMALIZED_TEXT_SPAN_V0_2",
+  "hash_method": "printf %s \"$SPAN\" | sha256sum",
+  "source": "_truth/us/constitution/constitution_gpo.normalized.txt",
+  "boundary": {
+    "start_anchor": "The Congress shall have Power To lay and collect Taxes",
+    "end_anchor": "the Government of the United States, or in any Department or Officer thereof."
+  },
+  "content_hash_sha256": "689531558999a4c062828b12204683a483a92540026e632943183563914a2754",
+  "char_count": 4333,
+  "gate_resolution": "RE_HASH_SUCCESS_STRICT_STDOUT",
+  "checks": {
+    "entropy": "PASS_REPORTED",
+    "normalization": "PASS_REPORTED",
+    "s9_bleed": "PASS_REPORTED",
+    "boundary": "PASS_REPORTED"
+  },
+  "next_gate": {
+    "clause_indexing": "INITIALIZING",
+    "rule": "Clause-level anchors must reference this parent section hash and preserve S8 whole-section context."
+  }
+}
