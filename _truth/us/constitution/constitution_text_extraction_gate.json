@@ -1,0 +1,27 @@
+{
+  "artifact": "US_CONSTITUTION_TEXT_EXTRACTION_GATE",
+  "status": "TEXT_LAYER_BLOCKED",
+  "binary_receipt": {
+    "source": "Senate Publication 103-21",
+    "sha256": "3f880c568420c97fc41d9a20bbc0b475febff477d1a24d387216fa2a440cc9d8",
+    "size_note": "2.2MB fetched from senate.gov",
+    "binary_pinned": true
+  },
+  "extraction_result": {
+    "tool": "pdftotext -layout -nopgbrk",
+    "line_count": 0,
+    "failure_mode": "IMAGE_SCANNED_PDF_NO_EMBEDDED_TEXT_LAYER"
+  },
+  "canonical_status": "BINARY_ONLY_TEXT_NOT_EXTRACTABLE",
+  "allowed_recovery_paths": [
+    {
+      "path": "OCR_CURRENT_BINARY",
+      "description": "Preserves Senate 103-21 binary provenance but creates a derived OCR text layer that must be labeled DERIVED_OCR_TEXT, not original text."
+    },
+    {
+      "path": "GPO_MACHINE_READABLE_SWITCH",
+      "description": "Use official GPO CONAN PDF as a separate machine-readable constitutional reference with its own binary hash and source lineage."
+    }
+  ],
+  "rule": "Do not mark text canonical until source URL, binary hash, extraction policy, and line-count proof are recorded."
+}
