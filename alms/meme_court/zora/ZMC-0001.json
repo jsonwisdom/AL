@@ -5,27 +5,31 @@
   "title": "Meme Court: How to Create Artifacts",
   "creator": "Jay Wisdom / Wisdom Family",
   "identity": "jaywisdom.base",
-  "court_verdict": "NEEDS_RECEIPT",
-  "alms_status": "UNSET",
-  "receipt_path": "UNSET",
+  "court_verdict": "READY_FOR_ZORA",
+  "alms_status": "PASS",
+  "receipt_path": "alms/legacy/receipts/WFG-0001-receipt.json",
   "merkle_root": "UNSET",
-  "chain_status": "UNMINTED",
+  "chain_status": "READY_TO_MINT",
   "contract_address": "UNVERIFIED_IDENTIFIER",
-  "caption": "Meme Court x Zora. Funny is allowed. Fake verified is not. Bring receipts or meet the goblin. 🧌⚖️🧾",
+  "caption": "Meme Court x Zora. Funny is allowed. Verified because receipts passed. 🧌⚖️🧾",
   "xp": {
     "case_created": 10,
     "privacy_screen_passed": 10,
     "missing_receipt_caught": 25,
-    "total_awarded": 45
+    "receipt_attached": 50,
+    "replay_passed": 50,
+    "total_awarded": 145
   },
   "badges_unlocked": [
     "Zora_Court_Clerk",
-    "Goblin_Gatekeeper"
+    "Goblin_Gatekeeper",
+    "Replay_Ranger",
+    "Mint_Ready_Judge"
   ],
   "mint_rules": {
-    "verified_label_allowed": false,
-    "reason": "ALMS status is UNSET and receipt_path is UNSET",
-    "zora_distribution_allowed": "RESEARCH_OR_NEEDS_RECEIPT_ONLY",
+    "verified_label_allowed": true,
+    "reason": "ALMS status PASS",
+    "zora_distribution_allowed": "READY_FOR_ZORA",
     "contract_claim_allowed": false
   },
   "links": {
@@ -33,6 +37,6 @@
     "spec_file": "docs/specs/MEME_COURT_ZORA_GAME.md",
     "artifact_source": "docs/learning/WISDOM_FAMILY_GAMING_ARTIFACTS.md"
   },
-  "next_action": "create WFG-0001 artifact card JSON and attach receipt before any VERIFIED mint claim",
-  "state": "DRAFT"
+  "next_action": "mint on Zora; wait for contract confirmation before updating contract_address",
+  "state": "READY"
 }
