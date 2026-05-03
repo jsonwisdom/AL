@@ -2,24 +2,24 @@
   "artifact": "CI_NATIONAL_ROOT_RECOMPUTE",
   "version": "US_SNAPSHOT_2026-05-03",
   "status": "INDETERMINATE",
-  "national_root": "sha256:b6e7e021132f70918d82132e1aa9f76daa0022ea0486d61352204ec909633f26",
-  "generated_utc": "2026-05-03T21:13:05Z",
+  "national_root": "sha256:272bd90e5b2682c75ab07a49c4491929f39280a2d391ab6742a421e844852105",
+  "generated_utc": "2026-05-03T21:15:36Z",
   "states": [
     {
       "state": "MN",
       "version": "MN_SNAPSHOT_2026-05-03",
-      "status": "INDETERMINATE",
-      "state_root": null,
+      "status": "PASS",
+      "state_root": "sha256:e399a3b20584b8537a6db68d83720a589032c90468d90a9f906df5b1a3da04a7",
       "claim_count": 2,
-      "matched_count": 1,
+      "matched_count": 2,
       "claims": [
         {
           "id": "MN-BUDGET-2026-01",
           "claim_path": "fixtures/mn/mn_budget_2026_claim.json",
           "source_path": "fixtures/mn/sources/mmb_budget_snapshot_2026-05-03.txt",
-          "expected_hash": "sha256:e4d56ee0d5136c8bd45f9b93ba1cb16098a6626710889a45a744b184d9040b0f",
+          "expected_hash": "sha256:01dddb1843f4b3ae0b22e8d661f54525d463457401aec042073249a65d7f5f3d",
           "computed_hash": "sha256:01dddb1843f4b3ae0b22e8d661f54525d463457401aec042073249a65d7f5f3d",
-          "hash_match": false
+          "hash_match": true
         },
         {
           "id": "MN-BUDGET-RESERVE-2026-01",
@@ -30,14 +30,7 @@
           "hash_match": true
         }
       ],
-      "blockers": [
-        {
-          "id": "MN-BUDGET-2026-01",
-          "reason": "expected hash missing or mismatch",
-          "expected_hash": "sha256:e4d56ee0d5136c8bd45f9b93ba1cb16098a6626710889a45a744b184d9040b0f",
-          "computed_hash": "sha256:01dddb1843f4b3ae0b22e8d661f54525d463457401aec042073249a65d7f5f3d"
-        }
-      ]
+      "blockers": []
     },
     {
       "state": "AL",
@@ -94,7 +87,7 @@
   ],
   "leaf_hashes": [
     "sha256:2d16e1a4cb78c71b6bbaab2aae8f673c1851a2d9afc41b4bb50b66cf503ad998",
-    "sha256:f6ab0e7c0361f72726315723d8302c5ed46f1085ea8ae2ef19eb62ca232c6e38",
+    "sha256:792ba165a7557a923cc072ad98e19ca3d106da76735a4dc10827ae0811772174",
     "sha256:f766d567166c854809433f4ae719fb6b7da6d6243980f0d890faf1f60a9ae205"
   ],
   "boundary": "GitHub CI recompute only. Not Base/EAS anchored. National PASS requires every state PASS."
