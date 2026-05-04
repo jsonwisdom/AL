@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ALMS Article I Verifier</title>
+  <style>
+    :root { color-scheme: dark; }
+    body { margin: 0; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background: #050505; color: #e8ffe8; }
+    main { max-width: 980px; margin: 0 auto; padding: 40px 20px; }
+    h1 { color: #8cff8c; }
+    .card { border: 1px solid #235a23; border-radius: 12px; padding: 20px; background: #0b120b; margin: 16px 0; }
+    .status { font-size: 1.8rem; font-weight: 700; padding: 18px; border-radius: 10px; border: 1px solid #666; display: inline-block; }
+    .verified { color: #72ff72; border-color: #72ff72; }
+    .mismatch, .error { color: #ff7070; border-color: #ff7070; }
+    code, pre { word-break: break-all; white-space: pre-wrap; }
+    .muted { color: #b8cbb8; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>ALMS Article I Verifier</h1>
+  <p class="muted">Client-side verification of the Article I Global Root under ALMS_GLOBAL_MERKLE_RULE_V1.</p>
+  <div class="card"><div id="status" class="status">ANALYZING...</div></div>
+  <div class="card">
+    <h2>Expected Root</h2>
+    <code id="expected"></code>
+  </div>
+  <div class="card">
+    <h2>Computed Root</h2>
+    <code id="computed">pending</code>
+  </div>
+  <div class="card">
+    <h2>Section Roots</h2>
+    <pre id="sections">pending</pre>
+  </div>
+</main>
+<script>
+const EXPECTED = "09873d69046c82736187786483562306208a0d01f974673323065a0438627341";
+const BASE = "https://raw.githubusercontent.com/jsonwisdom/AL/master/_truth/us/constitution/";
+const SECTION_MANIFESTS = [
+  ["USC-A1-S8", "a1_s8_merkle_manifest.json"],
+  ["USC-A1-S9", "a1_s9_merkle_manifest.json"],
+  ["USC-A1-S10", "a1_s10_merkle_manifest.json"]
+];
+
+function bytesToHex(bytes) {
+  return Array.from(bytes).map(b => b.toString(16).padStart(2, "0")).join("");
+}
+
+function hexToBytes(hex) {
+  if (!/^[0-9a-f]{64}$/i.test(hex)) throw new Error("bad 32-byte hex: " + hex);
+  const out = new Uint8Array(hex.length / 2);
+  for (let i = 0; i < out.length; i++) out[i] = parseInt(hex.slice(i * 2, i * 2 + 2), 16);
+  return out;
+}
+
+async function sha256Bytes(data) {
+  return new Uint8Array(await crypto.subtle.digest("SHA-256", data));
+}
+
+async function leafHash(id, rootHex) {
+  const material = new TextEncoder().encode(`${id}:${rootHex}`);
+  return sha256Bytes(material);
+}
+
+async function parentHash(leftBytes, rightBytes) {
+  const combined = new Uint8Array(leftBytes.length + rightBytes.length);
+  combined.set(leftBytes, 0);
+  combined.set(rightBytes, leftBytes.length);
+  return sha256Bytes(combined);
+}
+
+async function fetchManifest(file) {
+  const res = await fetch(BASE + file, { cache: "no-store" });
+  if (!res.ok) throw new Error(`${file} fetch failed: ${res.status}`);
+  return res.json();
+}
+
+async function run() {
+  document.getElementById("expected").textContent = EXPECTED;
+  const roots = [];
+  const report = [];
+
+  for (const [id, file] of SECTION_MANIFESTS) {
+    const manifest = await fetchManifest(file);
+    if (manifest.rule_id !== "ALMS_GLOBAL_MERKLE_RULE_V1") throw new Error(`${file} rule mismatch`);
+    if (!manifest.root_sha256) throw new Error(`${file} missing root_sha256`);
+    roots.push(await leafHash(id, manifest.root_sha256));
+    report.push({ id, file, root_sha256: manifest.root_sha256 });
+  }
+
+  const h89 = await parentHash(roots[0], roots[1]);
+  const articleRoot = bytesToHex(await parentHash(h89, roots[2]));
+
+  document.getElementById("sections").textContent = JSON.stringify(report, null, 2);
+  document.getElementById("computed").textContent = articleRoot;
+
+  const status = document.getElementById("status");
+  if (articleRoot === EXPECTED) {
+    status.textContent = "VERIFIED";
+    status.className = "status verified";
+  } else {
+    status.textContent = "MISMATCH";
+    status.className = "status mismatch";
+  }
+}
+
+run().catch(err => {
+  document.getElementById("status").textContent = "ERROR: " + err.message;
+  document.getElementById("status").className = "status error";
+});
+</script>
+</body>
+</html>
