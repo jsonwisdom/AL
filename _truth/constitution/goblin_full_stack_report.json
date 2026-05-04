@@ -1,0 +1,58 @@
+{
+  "tool": "ALMS_GOBLIN_VERIFIER_V1",
+  "base": "good Behaviour",
+  "text_hash": "076b7c55bc9f1cd86e86e02797720e91b4fea467512be219628bd3ecb3c7c4f5",
+  "container_hash": null,
+  "layers": {
+    "L1_spelling": [
+      {
+        "id": "spelling-behavior",
+        "note": "Behaviour -> Behavior",
+        "text": "good Behavior",
+        "hash": "fdeebfe556c5415fce79404287419d6e2e7b56d21e177ea25b8913194f27241a",
+        "fractured": true,
+        "codepoints": [
+          {"char": "g", "codepoint": "U+0067", "utf8_hex": "67"},
+          {"char": "o", "codepoint": "U+006F", "utf8_hex": "6f"},
+          {"char": "o", "codepoint": "U+006F", "utf8_hex": "6f"},
+          {"char": "d", "codepoint": "U+0064", "utf8_hex": "64"},
+          {"char": " ", "codepoint": "U+0020", "utf8_hex": "20"},
+          {"char": "B", "codepoint": "U+0042", "utf8_hex": "42"},
+          {"char": "e", "codepoint": "U+0065", "utf8_hex": "65"},
+          {"char": "h", "codepoint": "U+0068", "utf8_hex": "68"},
+          {"char": "a", "codepoint": "U+0061", "utf8_hex": "61"},
+          {"char": "v", "codepoint": "U+0076", "utf8_hex": "76"},
+          {"char": "i", "codepoint": "U+0069", "utf8_hex": "69"},
+          {"char": "o", "codepoint": "U+006F", "utf8_hex": "6f"},
+          {"char": "r", "codepoint": "U+0072", "utf8_hex": "72"}
+        ]
+      }
+    ],
+    "L2_byte_identity": [
+      {"id": "trailing-space", "note": "Trailing space", "text": "good Behaviour ", "hash": "ebe5ab5babdf9fda7f28d01ca047c324836de669e79ae516fe741eb9264f447b", "fractured": true},
+      {"id": "nbsp", "note": "Non-breaking space", "text": "good Behaviour ", "hash": "4d3e3b8c6137c5011316a4f7d9876b025f085d8b408b8ac3452b93ea723840b4", "fractured": true},
+      {"id": "smart-quotes", "note": "Smart quotes", "text": "“good Behaviour”", "hash": "f07f8435b9a7575936a4f9dbe9df742a32d71558a342f287f01377f5a794f9a5", "fractured": true},
+      {"id": "straight-quotes", "note": "Straight quotes", "text": "\"good Behaviour\"", "hash": "f9a89aca57d4ca8bf9a6e76486726ff2650ad24e13b04519e4dc2ce484728b34", "fractured": true},
+      {"id": "period", "note": "Added period", "text": "good Behaviour.", "hash": "d27dbfc3950d1dbaee73b33e058c1e6221be23d856115529e543ca477a9410f7", "fractured": true},
+      {"id": "lf", "note": "LF line ending", "text": "good Behaviour\n", "hash": "d8dc58d914a17e779f7f491cf213d5e72982446e81a213f2e22b2a0647d6671c", "fractured": true},
+      {"id": "crlf", "note": "CRLF line ending", "text": "good Behaviour\r\n", "hash": "47daf9f304b5ad7b3e70ed52832ebd57538f2a84df087bf3d0849ff487177f19", "fractured": true}
+    ],
+    "L3_normalization": [
+      {"id": "nfc", "note": "NFC normalization", "text": "good Behaviour", "hash": "076b7c55bc9f1cd86e86e02797720e91b4fea467512be219628bd3ecb3c7c4f5", "fractured": false},
+      {"id": "nfkc", "note": "NFKC normalization", "text": "good Behaviour", "hash": "076b7c55bc9f1cd86e86e02797720e91b4fea467512be219628bd3ecb3c7c4f5", "fractured": false},
+      {"id": "casefold", "note": "Case folding", "text": "good behaviour", "hash": "f41c3fe0dcb2fb509e4d1f28f19910a4b0d0a0c1e80ac7acb69272f85c095168", "fractured": true},
+      {"id": "collapse-whitespace", "note": "Whitespace collapse", "text": "good Behaviour", "hash": "076b7c55bc9f1cd86e86e02797720e91b4fea467512be219628bd3ecb3c7c4f5", "fractured": false},
+      {"id": "trim", "note": "Trim surrounding whitespace", "text": "good Behaviour", "hash": "076b7c55bc9f1cd86e86e02797720e91b4fea467512be219628bd3ecb3c7c4f5", "fractured": false}
+    ],
+    "L4_render_font": [
+      {"id": "ligature-fi", "note": "ﬁ single glyph U+FB01", "text": "good Behaﬁour", "hash": "6cba26c7aecc12ece1dff755d4d42b011bdc24cd04861ec677af7a8b2a0daf57", "fractured": true},
+      {"id": "greek-omicron", "note": "Greek omicron U+03BF vs Latin o", "text": "gοοd Behaviour", "hash": "e4cf597e35d9e46168860f82b74f5d82206ad0afb959c3e2d18a46b730420d9d", "fractured": true},
+      {"id": "dotless-i", "note": "Dotless i U+0131 vs Latin i", "text": "good Behavıour", "hash": "e477fe412f1e95df9176e5c3f94c5e71f4411debd4ac65e183c574ca66a72685", "fractured": true},
+      {"id": "kerning-space", "note": "Inserted visual gap", "text": "good Beha viour", "hash": "f3dd9a310c07c8765199af5eb9cc5467d80b821f3114d6a47b0040d7610c5c5e", "fractured": true},
+      {"id": "soft-hyphen", "note": "Soft hyphen U+00AD", "text": "good Beha­viour", "hash": "3279f8cba59eb908ff28b3bcb6ac37563412a2d066e9f68a79747920f4ce6cdb", "fractured": true}
+    ],
+    "L5_container": []
+  },
+  "verdict": "FRACTURED",
+  "doctrine": "No byte match -> no truth"
+}
