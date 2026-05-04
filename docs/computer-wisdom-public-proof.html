@@ -31,15 +31,14 @@
 
   <div class="card">
     <h2>Live Commit</h2>
-    <p>Auto-verify shipped at:</p>
-    <pre>8aaa91bafd14eec2d10c5c29f0d24f141a821dce</pre>
-    <p><a href="https://github.com/jsonwisdom/AL/commit/8aaa91bafd14eec2d10c5c29f0d24f141a821dce">Open commit on GitHub</a></p>
+    <p id="liveCommitText">Loading latest commit…</p>
+    <p><a id="liveCommitLink" href="#">Open commit on GitHub</a></p>
   </div>
 
   <div class="card">
-    <h2>Verify</h2>
-    <p>The verifier accepts a commit SHA and root hash, pulls the repo bytes, recomputes locally in your browser, and returns <strong>VERIFIED</strong> or <strong>MISMATCH</strong>.</p>
-    <a class="button" href="../_truth/meta/public_exports/verify.html">Open Browser Verifier</a>
+    <h2>Verify Latest</h2>
+    <p>Auto-loads the latest commit + root and verifies in your browser.</p>
+    <a class="button" id="verifyLatestBtn" href="../_truth/meta/public_exports/verify.html">Open Browser Verifier</a>
   </div>
 
   <div class="grid">
@@ -95,5 +94,33 @@ Proof &gt; platform.</pre>
   "status": "PORTABLE_TRUTH_LIVE"
 }</pre>
   </div>
+
+<script>
+(async function(){
+  try {
+    const url = "https://api.github.com/repos/jsonwisdom/AL/contents/_truth/meta/public_exports/latest.json?ref=main";
+    const res = await fetch(url, { headers: { "Accept": "application/vnd.github+json" }});
+    if (!res.ok) throw new Error("Failed to load latest.json");
+    const meta = await res.json();
+    const raw = await fetch(meta.download_url).then(r => r.text());
+    const latest = JSON.parse(raw);
+
+    const commit = latest.auto_verify_commit || "";
+    const root = latest.root || "";
+
+    if (commit) {
+      document.getElementById("liveCommitText").textContent = commit;
+      document.getElementById("liveCommitLink").href = `https://github.com/jsonwisdom/AL/commit/${commit}`;
+    }
+
+    if (commit && root && root !== "PENDING_TASK_ROOT") {
+      const link = `../_truth/meta/public_exports/verify.html?commit=${encodeURIComponent(commit)}&root=${encodeURIComponent(root)}`;
+      document.getElementById("verifyLatestBtn").href = link;
+    }
+  } catch (e) {
+    document.getElementById("liveCommitText").textContent = "Could not load latest pointer";
+  }
+})();
+</script>
 </body>
 </html>
