@@ -1,0 +1,39 @@
+name: ALMS Run 001 PDF Receipt
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/verify/alms_receipt_gen_hardened.py
+      - .github/workflows/alms-run001-pdf.yml
+
+jobs:
+  build-run001-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip reportlab
+
+      - name: Generate hardened Run 001 PDF receipt
+        env:
+          ALMS_GENERATED_AT_UTC: '2026-05-05T04:55:00Z'
+        run: |
+          python3 scripts/verify/alms_receipt_gen_hardened.py
+          cat _truth/receipts/ALMS_RUN_001.pdf.sha256
+
+      - name: Upload PDF receipt artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ALMS_RUN_001_PDF_RECEIPT
+          path: |
+            _truth/receipts/ALMS_RUN_001.pdf
+            _truth/receipts/ALMS_RUN_001.pdf.sha256
+          if-no-files-found: error
