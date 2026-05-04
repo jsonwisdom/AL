@@ -6,9 +6,10 @@
 </head>
 <body style="font-family:monospace;background:#050505;color:#9cff9c;padding:24px">
 <h2>ALMS Fast Anchor Signer — Base</h2>
-<p>This signer uses prefilled, repo-verified values. Operator action: connect wallet, sign attestation.</p>
+<p>This signer computes the SHA-256 hash of the manual bytes before attestation. Operator action: connect wallet, compute, sign.</p>
 <button id="connect">1. Connect Wallet</button>
-<button id="attest">2. Attest Prefilled Anchor</button>
+<button id="compute">2. Compute Hash</button>
+<button id="attest">3. Attest Verified Anchor</button>
 <pre id="out"></pre>
 
 <script type="module">
@@ -19,18 +20,44 @@ const out = (x) => document.getElementById("out").textContent += x + "\n";
 const EAS = "0x4200000000000000000000000000000000000021";
 const SCHEMA_UID = "0xfa94377476d86a25585e7da7889adf60f5a34fe09e1744f98626ad66bb686baa";
 const ZERO = "0x0000000000000000000000000000000000000000000000000000000000000000";
+const RAW_URL = "https://raw.githubusercontent.com/jsonwisdom/AL/alms-contract-deployer-samgov/docs/manuals/ALMS_EAS_FAST_ANCHOR_MANUAL.md";
 
 // Existing schema:
 // string identity,bytes32 root,string cid,string commit,bytes32 archiveSha256
 const ANCHOR = {
   identity: "jaywisdom.eth|jaywisdom.base|alms:eas-fast-anchor-manual",
-  root: "0x0000000000000000000000000000000000000000000000000000000000000000",
+  root: null,
   cid: "github:jsonwisdom/AL:docs/manuals/ALMS_EAS_FAST_ANCHOR_MANUAL.md",
   commit: "a249929bfcada07b86b57709a6758b27ea157cf6",
-  archiveSha256: "0x0000000000000000000000000000000000000000000000000000000000000000"
+  archiveSha256: null,
+  byteSize: null
 };
 
 let provider, signer, address;
+
+function hex(bytes){
+  return "0x" + [...new Uint8Array(bytes)].map(b => b.toString(16).padStart(2,"0")).join("");
+}
+
+async function sha256Bytes(buf){
+  return hex(await crypto.subtle.digest("SHA-256", buf));
+}
+
+async function computeAnchor(){
+  out("fetching: " + RAW_URL);
+  const res = await fetch(RAW_URL, { cache: "no-store" });
+  if(!res.ok) throw new Error("fetch_failed_" + res.status);
+  const buf = await res.arrayBuffer();
+  const h = await sha256Bytes(buf);
+  ANCHOR.root = h;
+  ANCHOR.archiveSha256 = h;
+  ANCHOR.byteSize = buf.byteLength;
+  out("content_hash: " + h);
+  out("archiveSha256: " + h);
+  out("byte_size: " + ANCHOR.byteSize);
+  out("commit: " + ANCHOR.commit);
+  return h;
+}
 
 async function setup(){
   provider = new ethers.BrowserProvider(window.ethereum);
@@ -39,13 +66,14 @@ async function setup(){
   address = await signer.getAddress();
   out("wallet: " + address);
   out("schema_uid: " + SCHEMA_UID);
-  out("commit: " + ANCHOR.commit);
 }
 
 document.getElementById("connect").onclick = setup;
+document.getElementById("compute").onclick = computeAnchor;
 
 document.getElementById("attest").onclick = async()=>{
   if(!signer) await setup();
+  if(!ANCHOR.root || !ANCHOR.archiveSha256) await computeAnchor();
 
   const coder = ethers.AbiCoder.defaultAbiCoder();
   const data = coder.encode(
@@ -89,6 +117,9 @@ document.getElementById("attest").onclick = async()=>{
     tx_hash: tx.hash,
     signer: address,
     commit: ANCHOR.commit,
+    content_hash: ANCHOR.root,
+    archiveSha256: ANCHOR.archiveSha256,
+    byte_size: ANCHOR.byteSize,
     status: uid ? "ATTESTED" : "TX_CONFIRMED_UID_NOT_PARSED"
   }, null, 2));
 };
