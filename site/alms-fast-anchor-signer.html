@@ -6,13 +6,13 @@
 </head>
 <body style="font-family:monospace;background:#050505;color:#9cff9c;padding:24px">
 <h2>ALMS Fast Anchor Signer — Base</h2>
-<p>This signer computes SHA-256, validates all receipt fields, and outputs copy-safe JSON only.</p>
+<p>This signer computes SHA-256, waits for confirmed Base receipt, parses UID only from confirmed EAS logs, and outputs copy-safe JSON only.</p>
 <button id="connect">1. Connect Wallet</button>
 <button id="compute">2. Compute Hash</button>
 <button id="attest">3. Attest Verified Anchor</button>
-<button id="copy" disabled>4. Copy Validated JSON</button>
+<button id="copy" disabled>4. Copy Confirmed JSON</button>
 <pre id="status"></pre>
-<h3>Validated Receipt JSON</h3>
+<h3>Confirmed Receipt JSON</h3>
 <pre id="out">{}</pre>
 
 <script type="module">
@@ -47,9 +47,7 @@ const ANCHOR = {
 let provider, signer, address, lastReceipt = null;
 
 function requireMatch(name, value, regex){
-  if(!regex.test(value || "")){
-    throw new Error(`INVALID_${name}: ${value}`);
-  }
+  if(!regex.test(value || "")) throw new Error(`INVALID_${name}: ${value}`);
 }
 
 function validatePreAttest(){
@@ -57,9 +55,7 @@ function validatePreAttest(){
   requireMatch("COMMIT", ANCHOR.commit, RX.commit);
   requireMatch("ROOT", ANCHOR.root, RX.hex32);
   requireMatch("ARCHIVE_SHA256", ANCHOR.archiveSha256, RX.hex32);
-  if(!Number.isInteger(ANCHOR.byteSize) || ANCHOR.byteSize <= 0){
-    throw new Error("INVALID_BYTE_SIZE: " + ANCHOR.byteSize);
-  }
+  if(!Number.isInteger(ANCHOR.byteSize) || ANCHOR.byteSize <= 0) throw new Error("INVALID_BYTE_SIZE: " + ANCHOR.byteSize);
   if(address) requireMatch("SIGNER", address, RX.address);
 }
 
@@ -71,12 +67,10 @@ function validateReceipt(receipt){
   requireMatch("COMMIT", receipt.commit, RX.commit);
   requireMatch("CONTENT_HASH", receipt.content_hash, RX.hex32);
   requireMatch("ARCHIVE_SHA256", receipt.archiveSha256, RX.hex32);
-  if(!Number.isInteger(receipt.byte_size) || receipt.byte_size <= 0){
-    throw new Error("INVALID_BYTE_SIZE: " + receipt.byte_size);
-  }
-  if(receipt.status !== "ATTESTED"){
-    throw new Error("INVALID_STATUS: " + receipt.status);
-  }
+  if(!Number.isInteger(receipt.byte_size) || receipt.byte_size <= 0) throw new Error("INVALID_BYTE_SIZE: " + receipt.byte_size);
+  if(receipt.status !== "ATTESTED_CONFIRMED") throw new Error("INVALID_STATUS: " + receipt.status);
+  if(receipt.tx_receipt_status !== 1) throw new Error("INVALID_TX_RECEIPT_STATUS: " + receipt.tx_receipt_status);
+  if(receipt.eas_explorer !== `https://base.easscan.org/attestation/view/${receipt.attestation_uid}`) throw new Error("INVALID_EAS_EXPLORER_LINK");
 }
 
 function hex(bytes){
@@ -119,18 +113,13 @@ async function setup(){
   status("wallet_connected");
 }
 
-document.getElementById("connect").onclick = async()=>{
-  try { await setup(); }
-  catch(e){ status("ERROR: " + e.message); }
-};
-
-document.getElementById("compute").onclick = async()=>{
-  try { await computeAnchor(); }
-  catch(e){ status("ERROR: " + e.message); }
-};
+document.getElementById("connect").onclick = async()=>{ try { await setup(); } catch(e){ status("ERROR: " + e.message); } };
+document.getElementById("compute").onclick = async()=>{ try { await computeAnchor(); } catch(e){ status("ERROR: " + e.message); } };
 
 document.getElementById("attest").onclick = async()=>{
   try{
+    document.getElementById("copy").disabled = true;
+    lastReceipt = null;
     if(!signer) await setup();
     if(!ANCHOR.root || !ANCHOR.archiveSha256) await computeAnchor();
     validatePreAttest();
@@ -148,55 +137,64 @@ document.getElementById("attest").onclick = async()=>{
     const c = new ethers.Contract(EAS, abi, signer);
     const tx = await c.attest({
       schema: SCHEMA_UID,
-      data: {
-        recipient: address,
-        expirationTime: 0,
-        revocable: true,
-        refUID: ZERO,
-        data,
-        value: 0
-      }
+      data: { recipient: address, expirationTime: 0, revocable: true, refUID: ZERO, data, value: 0 }
     });
-    status("tx_submitted");
-    const r = await tx.wait();
+    requireMatch("TX_HASH_SUBMITTED", tx.hash, RX.hex32);
+    status("tx_submitted: " + tx.hash);
+    status("waiting_for_base_confirmation");
+
+    const r = await tx.wait(1);
+    if(!r) throw new Error("NO_TX_RECEIPT_RETURNED");
+    if(r.status !== 1) throw new Error("TX_FAILED_NOT_CONFIRMED_STATUS_" + r.status);
+    if((r.hash || r.transactionHash) !== tx.hash) throw new Error("TX_HASH_MISMATCH_AFTER_CONFIRMATION");
+    status("tx_confirmed_status_1");
 
     let uid = null;
     const iface = new ethers.Interface(abi);
     for(const log of r.logs){
+      if((log.address || "").toLowerCase() !== EAS.toLowerCase()) continue;
       try{
         const p = iface.parseLog(log);
-        if(p.name === "Attested") uid = p.args.uid;
+        if(p && p.name === "Attested" && p.args.schema.toLowerCase() === SCHEMA_UID.toLowerCase()){
+          uid = p.args.uid;
+        }
       }catch(e){}
     }
+    requireMatch("ATTESTATION_UID_FROM_CONFIRMED_LOG", uid, RX.hex32);
+    status("attested_event_found_in_confirmed_receipt");
 
     const receipt = {
       schema_uid: SCHEMA_UID,
       attestation_uid: uid,
       tx_hash: tx.hash,
+      tx_receipt_status: r.status,
       signer: address,
       commit: ANCHOR.commit,
       content_hash: ANCHOR.root,
       archiveSha256: ANCHOR.archiveSha256,
       byte_size: ANCHOR.byteSize,
-      status: "ATTESTED"
+      basescan_tx: `https://basescan.org/tx/${tx.hash}`,
+      eas_explorer: `https://base.easscan.org/attestation/view/${uid}`,
+      status: "ATTESTED_CONFIRMED"
     };
     validateReceipt(receipt);
     lastReceipt = receipt;
     setReceipt(receipt);
     document.getElementById("copy").disabled = false;
-    status("VALIDATED_RECEIPT_READY_TO_COPY");
+    status("CONFIRMED_VALIDATED_RECEIPT_READY_TO_COPY");
   }catch(e){
     status("ERROR: " + e.message);
     document.getElementById("copy").disabled = true;
+    lastReceipt = null;
   }
 };
 
 document.getElementById("copy").onclick = async()=>{
   try{
-    if(!lastReceipt) throw new Error("NO_VALID_RECEIPT");
+    if(!lastReceipt) throw new Error("NO_VALID_CONFIRMED_RECEIPT");
     validateReceipt(lastReceipt);
     await navigator.clipboard.writeText(JSON.stringify(lastReceipt, null, 2));
-    status("VALIDATED_JSON_COPIED");
+    status("CONFIRMED_JSON_COPIED");
   }catch(e){ status("ERROR: " + e.message); }
 };
 </script>
