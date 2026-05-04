@@ -47,6 +47,7 @@
 const OWNER = "jsonwisdom";
 const REPO = "AL";
 const TASK_DIR = "_truth/tasks/queue";
+const LATEST_PATH = "_truth/meta/public_exports/latest.json";
 
 function stableStringify(value) {
   if (value === null || typeof value !== "object") return JSON.stringify(value);
@@ -66,15 +67,43 @@ async function githubJson(url) {
   return await r.json();
 }
 
+function fillInputs({ commit, root, eas }) {
+  if (commit) document.getElementById("commit").value = commit;
+  if (root) document.getElementById("expected").value = String(root).replace(/^sha256:/, "");
+  if (eas) document.getElementById("eas").value = eas;
+}
+
 function loadParams() {
   const p = new URLSearchParams(window.location.search);
   const commit = p.get("commit") || "";
   const root = p.get("root") || p.get("expected") || "";
   const eas = p.get("eas") || "";
-  if (commit) document.getElementById("commit").value = commit;
-  if (root) document.getElementById("expected").value = root;
-  if (eas) document.getElementById("eas").value = eas;
+  fillInputs({ commit, root, eas });
   return Boolean(commit && root);
+}
+
+async function loadLatestIfNeeded() {
+  const result = document.getElementById("result");
+  result.className = "muted";
+  result.textContent = "Loading latest proof pointer...";
+  const url = `https://api.github.com/repos/${OWNER}/${REPO}/contents/${LATEST_PATH}?ref=main`;
+  const meta = await githubJson(url);
+  const raw = await fetch(meta.download_url).then(r => {
+    if (!r.ok) throw new Error("Could not fetch latest.json");
+    return r.text();
+  });
+  const latest = JSON.parse(raw);
+  const commit = latest.auto_verify_commit || latest.commit || "";
+  const root = latest.root || latest.merkle_root || "";
+  const eas = latest.eas_uid || latest.eas || "";
+  fillInputs({ commit, root, eas });
+  if (!commit || !root || root === "PENDING_TASK_ROOT") {
+    result.className = "muted";
+    result.textContent = "Latest pointer loaded, but root is pending. Paste a root or update latest.json.";
+    document.getElementById("audit").textContent = JSON.stringify(latest, null, 2);
+    return false;
+  }
+  return true;
 }
 
 async function verify() {
@@ -131,8 +160,18 @@ async function verify() {
   }
 }
 
-window.addEventListener("DOMContentLoaded", () => {
-  if (loadParams()) verify();
+window.addEventListener("DOMContentLoaded", async () => {
+  try {
+    if (loadParams()) {
+      verify();
+      return;
+    }
+    if (await loadLatestIfNeeded()) verify();
+  } catch (err) {
+    document.getElementById("result").className = "bad";
+    document.getElementById("result").textContent = "ERROR";
+    document.getElementById("audit").textContent = String(err && err.message ? err.message : err);
+  }
 });
 </script>
 </body>
