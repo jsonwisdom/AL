@@ -66,6 +66,17 @@ async function githubJson(url) {
   return await r.json();
 }
 
+function loadParams() {
+  const p = new URLSearchParams(window.location.search);
+  const commit = p.get("commit") || "";
+  const root = p.get("root") || p.get("expected") || "";
+  const eas = p.get("eas") || "";
+  if (commit) document.getElementById("commit").value = commit;
+  if (root) document.getElementById("expected").value = root;
+  if (eas) document.getElementById("eas").value = eas;
+  return Boolean(commit && root);
+}
+
 async function verify() {
   const commit = document.getElementById("commit").value.trim();
   const expected = document.getElementById("expected").value.trim().replace(/^sha256:/, "");
@@ -119,6 +130,10 @@ async function verify() {
     audit.textContent = String(err && err.message ? err.message : err);
   }
 }
+
+window.addEventListener("DOMContentLoaded", () => {
+  if (loadParams()) verify();
+});
 </script>
 </body>
 </html>
