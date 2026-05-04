@@ -3,6 +3,8 @@
   "status": "ROOT_RECORDED_FROM_VERIFIED_REMOTE_SPANS",
   "rule_id": "ALMS_GLOBAL_MERKLE_RULE_V1",
   "leaf_count": 3,
+  "root_status": "VERIFIED_FROM_REPO_BYTES",
+  "root_sha256": "f9a4666f443b7117079d85449911e3b5e0c528627b0c79774640498a442e973e",
   "leaves": [
     {
       "id": "USC-A1-S10-C1",
@@ -17,6 +19,5 @@
       "path": "_truth/us/constitution/a1_s10_c3_span.txt"
     }
   ],
-  "root_status": "PENDING_TRUSTED_RECOMPUTE",
-  "gate_note": "Manifest is remote-visible. Final root must be computed under ALMS_GLOBAL_MERKLE_RULE_V1 from fetched repo bytes and recorded in an updated manifest before Article I aggregate root."
+  "gate_note": "Section 10 root recorded after C1-C3 were verified by remote fetch. Article I aggregate may proceed only by reading section manifests from GitHub."
 }
