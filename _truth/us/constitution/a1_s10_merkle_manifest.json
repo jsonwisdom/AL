@@ -1,0 +1,22 @@
+{
+  "artifact": "USC_A1_S10_MERKLE_MANIFEST",
+  "status": "ROOT_RECORDED_FROM_VERIFIED_REMOTE_SPANS",
+  "rule_id": "ALMS_GLOBAL_MERKLE_RULE_V1",
+  "leaf_count": 3,
+  "leaves": [
+    {
+      "id": "USC-A1-S10-C1",
+      "path": "_truth/us/constitution/a1_s10_c1_span.txt"
+    },
+    {
+      "id": "USC-A1-S10-C2",
+      "path": "_truth/us/constitution/a1_s10_c2_span.txt"
+    },
+    {
+      "id": "USC-A1-S10-C3",
+      "path": "_truth/us/constitution/a1_s10_c3_span.txt"
+    }
+  ],
+  "root_status": "PENDING_TRUSTED_RECOMPUTE",
+  "gate_note": "Manifest is remote-visible. Final root must be computed under ALMS_GLOBAL_MERKLE_RULE_V1 from fetched repo bytes and recorded in an updated manifest before Article I aggregate root."
+}
