@@ -18,5 +18,6 @@ jobs:
 
       - name: Replay Article I Merkle root
         run: |
+          set -e
           python3 _truth/us/constitution/replay_article_i_root.py
-          echo "ARTICLE_I_INTEGRITY: PASS"
+          echo "ALMS_GATE: PASS"
