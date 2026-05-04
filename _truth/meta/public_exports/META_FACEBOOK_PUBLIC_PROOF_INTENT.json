@@ -1,0 +1,42 @@
+{
+  "artifact": "META_FACEBOOK_PUBLIC_PROOF_INTENT",
+  "version": "cw.meta.public_export.v1",
+  "system": "Computer Wisdom Meta",
+  "operator": "jaywisdom.eth",
+  "alias": "jaywisdom.base",
+  "purpose": "Ensure Computer Wisdom public proof exists outside Meta/Facebook control.",
+  "canonical_rule": "GitHub builds the bytes. ALMS proves the bytes. Public chain witnesses the proof. Meta/Facebook distributes only.",
+  "source_of_truth": [
+    "GitHub commit",
+    "ALMS receipt hash",
+    "Team Kernel Merkle root",
+    "jaywisdom.eth",
+    "jaywisdom.base"
+  ],
+  "public_chain_targets": [
+    "Base",
+    "ENS",
+    "EAS"
+  ],
+  "facebook_meta_boundary": {
+    "role": "distribution_only",
+    "trust_level": "not_authoritative",
+    "ai_meta_blocking_power": "none",
+    "platform_deletion_does_not_delete_proof": true,
+    "platform_suppression_does_not_invalidate_receipt": true
+  },
+  "public_proof_requirement": {
+    "must_be_verifiable_without_facebook_login": true,
+    "must_reference_github_commit_or_receipt": true,
+    "must_reference_public_chain_pointer_when_available": true,
+    "must_not_depend_on_platform_moderation": true
+  },
+  "current_state": {
+    "github_direct": "REQUIRED",
+    "alms_receipt": "REQUIRED",
+    "public_chain_export": "PREPARED_BY_INTENT",
+    "on_chain_pointer": "PENDING_OPERATOR_EXPORT",
+    "autonomous_signing": "FORBIDDEN"
+  },
+  "status": "INTENT_DEFINED"
+}
