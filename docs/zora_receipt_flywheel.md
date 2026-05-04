@@ -55,7 +55,7 @@ Machine Speed means the system moves at the speed of verified state transitions,
 The goal is fast public output without skipping proof gates.
 
 ```text
-Capture → Canonicalize → Hash → Commit → Fetch → Replay → Publish → Share
+CAPTURE → HASH → COMMIT → FETCH → REPLAY → PUBLISH → CHAIN_CONFIRM
 ```
 
 Speed rules:
@@ -68,6 +68,25 @@ Speed rules:
 - A Zora post is not proof unless it points back to receipts.
 
 Machine Speed is achieved by reducing friction, not by weakening verification.
+
+### Monotonic Stage Rule
+
+A stage can only be marked complete if every prior stage is complete.
+
+```json
+{
+  "stage_order": [
+    "CAPTURE",
+    "HASH",
+    "COMMIT",
+    "FETCH",
+    "REPLAY",
+    "PUBLISH",
+    "CHAIN_CONFIRM"
+  ],
+  "rule": "cannot skip forward; cannot regress without a new receipt"
+}
+```
 
 ## Core Loop
 
@@ -103,6 +122,29 @@ ALMS Receipt → GitHub Manifest → Image Card → Zora Post → Base Tx / Atte
 | Zora | Media and collector surface | Distribution layer |
 | Browser verifier | Client-side replay | Public proof interface |
 | Meme Court / Quest | Game layer | Education + engagement |
+
+## Meme Court Runtime Integration
+
+Zora posts should be able to route into Meme Court case logic.
+
+Current runtime module:
+
+```text
+docs/meme-court.js
+```
+
+Supported charges:
+
+- GHOST_PROMOTION
+- NORMALIZATION_TREASON
+- IDENTITY_DRIFT
+- FAKE_CHAIN_CONFIRM
+- HASH_THEATER
+- SKIPPED_REPLAY
+
+Zora should display these as case outcomes, not as proof outputs.
+
+Meme Court teaches the failure mode. ALMS receipts decide the truth.
 
 ## Base Receipt Fields
 
@@ -164,6 +206,8 @@ ALMS Receipt → GitHub Manifest → Image Card → Zora Post → Base Tx / Atte
   "source_root_sha256": "<64_hex>",
   "repo_commit_sha": "<git_commit>",
   "machine_speed_stage": "REPLAY_VERIFIED",
+  "meme_court_case_id": "MC-<id-or-null>",
+  "meme_court_charge": "<charge-or-CLEAN_PASS>",
   "zora_url": null,
   "zora_contract_address": "UNVERIFIED_IDENTIFIER",
   "zora_tx_hash": null,
@@ -182,6 +226,7 @@ Each receipt image should show:
 - operator: Jay Wisdom
 - identity: `jaywisdom.base → jaywisdom.eth`
 - machine speed stage: CAPTURE / HASH / COMMIT / FETCH / REPLAY / PUBLISH
+- Meme Court charge or CLEAN PASS
 - short root hash
 - status badge
 - QR/verifier pointer
@@ -192,7 +237,7 @@ Each receipt image should show:
 ## Flywheel
 
 ```text
-Jay Wisdom Signal → ALMS Receipt → GitHub Manifest → Image → Zora → Base Receipt → Share → Verify → Quest → New Receipt → New Image
+Jay Wisdom Signal → ALMS Receipt → Meme Court Check → GitHub Manifest → Image → Zora → Base Receipt → Share → Verify → Quest → New Receipt → New Image
 ```
 
 ## First Campaign
@@ -218,6 +263,7 @@ The verifier caught the drift.
 Operator: Jay Wisdom
 Identity: jaywisdom.base → jaywisdom.eth
 Stage: <machine_speed_stage>
+Charge: <meme_court_charge_or_CLEAN_PASS>
 Root: <short_root>
 Receipt: <receipt_path>
 Base: <base_tx_or_uid_or_PENDING>
@@ -225,6 +271,25 @@ Verify: <url>
 
 No Receipt. No Mercy. 🧌⚖️🧾
 ```
+
+## Zora Caption Auto-Generator Contract
+
+Any generated caption must include:
+
+```json
+{
+  "operator": "Jay Wisdom",
+  "identity": "jaywisdom.base -> jaywisdom.eth",
+  "stage": "<machine_speed_stage>",
+  "charge": "<meme_court_charge_or_CLEAN_PASS>",
+  "root": "<short_root>",
+  "receipt": "<receipt_path>",
+  "base": "<base_tx_or_uid_or_PENDING>",
+  "verify": "<url>"
+}
+```
+
+If any field is missing, the caption status is `DRAFT_INCOMPLETE`.
 
 ## Jay Wisdom Public Voice
 
@@ -252,5 +317,7 @@ Base is approved as a settlement / attestation layer, not the canonical truth bo
 `jaywisdom.base` is the Base-facing anchor and resolves to the canonical ENS identity `jaywisdom.eth` for receipt identity purposes.
 
 ALMS Machine Speed is approved as the throughput model: move fast, but only promote verified state.
+
+Meme Court charge detection is approved as an enforcement and education layer.
 
 Proof > narrative.
