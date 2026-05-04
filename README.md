@@ -1,5 +1,9 @@
 # NY ALMS Climate-Economic Stack
 
+![PORTABLE_TRUTH_LIVE](https://img.shields.io/badge/PORTABLE_TRUTH-LIVE-black?style=for-the-badge)
+
+**Public Proof:** https://jsonwisdom.github.io/AL/computer-wisdom-public-proof.html
+
 **Status:** Verified sparse climate + full income coverage for NY counties
 
 ## What This Is
