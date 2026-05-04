@@ -1,80 +1,69 @@
-# Computer Wisdom Public Proof — Verification Guide
+# Computer Wisdom Public Proof — Verify It Yourself
 
-## What this is
+## The idea (plain English)
 
-This folder defines how Computer Wisdom proof works **outside of any platform (Meta/Facebook, X, etc.)**.
+You don’t have to trust a post, a person, or a platform.
 
-Platforms can distribute content. They do not control truth.
+You can check the proof yourself.
 
-## Core Rule
+- GitHub holds the exact files (the bytes)
+- A hash (Merkle root) summarizes those files
+- This page recomputes the hash in your browser and compares it to what was posted
 
-```
-GitHub = source of truth (bytes)
-ALMS = proof (hashes)
-Public chain = witness (optional pointer)
-Platforms = distribution only
-```
+If they match → it’s real
+If they don’t → it’s not
 
-## How to Verify a Post
+## Quick verify (30 seconds)
 
-When you see a Computer Wisdom post, it should include:
+1. Open the verifier page in this folder: `verify.html`
+2. Paste the **GitHub commit SHA** from the post
+3. Paste the **Merkle root / SHA-256** from the post
+4. Click **Verify**
 
-- GitHub commit link
-- Merkle root or receipt hash
-- Optional on-chain pointer
+You’ll see:
 
-### Step 1 — Open GitHub
+- **VERIFIED** (green) if the bytes match
+- **MISMATCH** (red) if they don’t
 
-Follow the commit link and view the files in the repo.
+No login. No wallet. No platform permission.
 
-### Step 2 — Check the bytes
+## Why this works
 
-Look at:
+Platforms (Meta/Facebook, X, etc.) can:
 
-- `_truth/tasks/queue/`
-- `_truth/tasks/merkle/root.txt`
-- `_truth/meta/policies/`
+- throttle reach
+- remove posts
+- change feeds
 
-These are the canonical artifacts.
+They **cannot** change the bytes in GitHub or the hash you recompute locally.
 
-### Step 3 — Recompute the root (advanced)
+That’s why proof is portable.
 
-Run:
+## What you’re checking
 
-```bash
-jq -cS '.' _truth/tasks/queue/*.json | sha256sum
-```
-
-Compare with:
+The verifier pulls JSON files from:
 
 ```
-_truth/tasks/merkle/root.txt
+_truth/tasks/queue/
 ```
 
-If they match, the task set is valid.
+at the exact commit you provide, converts them to a canonical format (sorted keys), and computes a SHA-256 hash.
 
-### Step 4 — Optional: Check on-chain pointer
+It compares that to the hash in the post.
 
-If provided, open the Base/EAS link.
+## Optional: on-chain witness
 
-Confirm the Merkle root or hash matches the repo.
+Sometimes a post will also include an on-chain link (Base / EAS).
 
-## Why this matters
+That’s a **witness** — a timestamped pointer to the same hash.
 
-- If a platform deletes the post → proof still exists
-- If a platform suppresses reach → proof is still verifiable
-- If a platform lies → the bytes win
+It’s helpful, but not required to verify the bytes.
 
-## Key Guarantee
+## Bottom line
 
-Computer Wisdom proof **does not depend on platform permission**.
+- GitHub = source of truth (bytes)
+- This page = verification tool (recompute hash)
+- Chain = optional witness (public timestamp)
+- Platforms = distribution only
 
-Anyone can verify independently using GitHub and (optionally) the public chain.
-
-## Status
-
-```
-INTENT_DEFINED — public proof path established
-```
-
-On-chain export will be added only when the operator explicitly chooses to publish a pointer.
+**If the hash matches, the proof is real.**
