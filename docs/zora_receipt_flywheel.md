@@ -146,6 +146,60 @@ Zora should display these as case outcomes, not as proof outputs.
 
 Meme Court teaches the failure mode. ALMS receipts decide the truth.
 
+## Pre-Post Validation Gate
+
+Before any Zora caption is treated as publish-ready, it must pass the pre-post validation gate.
+
+Required fields:
+
+```json
+[
+  "operator",
+  "identity",
+  "stage",
+  "charge",
+  "root",
+  "receipt",
+  "base",
+  "verify"
+]
+```
+
+Validation rules:
+
+- `operator` must be `Jay Wisdom`.
+- `identity` must include `jaywisdom.base -> jaywisdom.eth` or `jaywisdom.base → jaywisdom.eth`.
+- `stage` must be one of the ALMS Machine Speed stages.
+- `charge` must be `CLEAN_PASS` or a known Meme Court charge.
+- `root` must be a short or full root derived from repo-visible receipts.
+- `receipt` must point to GitHub or a repo-visible receipt path.
+- `base` may be `PENDING`, a Base tx hash, or a Base attestation UID, but must not be called verified before fetch.
+- `verify` must point to the public verifier or repo verifier path.
+
+If validation fails, status is:
+
+```text
+DRAFT_INCOMPLETE
+```
+
+If validation passes but chain evidence is missing, status is:
+
+```text
+READY_TO_PUBLISH_PENDING_CHAIN_CONFIRMATION
+```
+
+If validation passes and Base evidence is fetched, status is:
+
+```text
+CHAIN_CONFIRMED_PENDING_REPLAY
+```
+
+If validation passes and replay confirms the root, status is:
+
+```text
+REPLAY_VERIFIED
+```
+
 ## Base Receipt Fields
 
 ```json
@@ -319,5 +373,7 @@ Base is approved as a settlement / attestation layer, not the canonical truth bo
 ALMS Machine Speed is approved as the throughput model: move fast, but only promote verified state.
 
 Meme Court charge detection is approved as an enforcement and education layer.
+
+The pre-post validation gate is approved as the blocker for incomplete Zora payloads.
 
 Proof > narrative.
