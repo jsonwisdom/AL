@@ -1,0 +1,23 @@
+{
+  "schema": "fixture.state.v1",
+  "fixture_id": "MN-0001",
+  "jurisdiction": "US-MN",
+  "state": "MN",
+  "source": {
+    "name": "Minnesota Management and Budget",
+    "uri": "sources/mn/mmb-feb-2026-forecast.pdf",
+    "retrieved_at": "inherited_from_verified_claim_mn_001",
+    "source_hash": "sha256:c4ac46e46b80b42a6abc24edbe0480ac4983cb0090a758bd7458b2ea62faca69",
+    "extract_hash": "sha256:da5ad1bbe192eae56c96cf574025b8f915839d29c78c69e8d6b98a0ad9d7d917"
+  },
+  "artifact": {
+    "type": "pdf",
+    "path": "sources/mn/mmb-feb-2026-forecast.pdf",
+    "description": "February 2026 Budget and Economic Forecast"
+  },
+  "hashes": {
+    "sha256": "c4ac46e46b80b42a6abc24edbe0480ac4983cb0090a758bd7458b2ea62faca69",
+    "content_hash": "da5ad1bbe192eae56c96cf574025b8f915839d29c78c69e8d6b98a0ad9d7d917"
+  },
+  "status": "VERIFIED"
+}
