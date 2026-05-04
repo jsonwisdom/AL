@@ -1,0 +1,17 @@
+{
+  "artifact": "ALMS_CONSTITUTION_MIRROR_RECEIPT",
+  "status": "DESIGN_STAGED_NO_CID_VERIFIED",
+  "source_root_sha256": "09873d69046c82736187786483562306208a0d01f974673323065a0438627341",
+  "source_commit_sha": "4a533c3f19c3052bcb14a78b46cadc4edd45bdd6",
+  "mirror_type": "ipfs",
+  "mirror_identifier": null,
+  "reported_identifier_rejected": "QmY69zQkSjH5A7yGZ6p8pTqWv9N2M1K4L7J5I3H2G1F0E9",
+  "verification_status": "PENDING",
+  "admissibility_rule": "No CID is accepted until produced by an actual ipfs add run and independently replayed from fetched IPFS bytes.",
+  "next_required_evidence": [
+    "raw ipfs add -r _truth/us/constitution output",
+    "root CID copied from actual IPFS output",
+    "fresh environment fetch via CID",
+    "replay_article_i_root.py PASS against fetched bytes"
+  ]
+}
