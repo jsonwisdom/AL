@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Computer Wisdom Public Proof Verifier</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, sans-serif; max-width: 920px; margin: 40px auto; padding: 0 18px; line-height: 1.5; }
+    code, pre, input, button { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    input { width: 100%; padding: 10px; margin: 6px 0 14px; box-sizing: border-box; }
+    button { padding: 10px 14px; cursor: pointer; }
+    .card { border: 1px solid #ddd; border-radius: 10px; padding: 16px; margin: 16px 0; }
+    .ok { color: #0a7a2f; font-weight: 700; }
+    .bad { color: #b00020; font-weight: 700; }
+    .muted { color: #666; }
+    pre { white-space: pre-wrap; background: #f6f6f6; padding: 12px; border-radius: 8px; overflow-wrap: anywhere; }
+  </style>
+</head>
+<body>
+  <h1>Computer Wisdom Public Proof Verifier</h1>
+  <p><strong>Purpose:</strong> verify a Computer Wisdom post without trusting Meta, Facebook, or any feed ranking system.</p>
+
+  <div class="card">
+    <label>GitHub commit SHA</label>
+    <input id="commit" placeholder="paste commit SHA" />
+
+    <label>Expected Merkle root / SHA-256</label>
+    <input id="expected" placeholder="paste expected root hash" />
+
+    <label>Optional EAS attestation UID</label>
+    <input id="eas" placeholder="optional 0x..." />
+
+    <button onclick="verify()">Verify</button>
+  </div>
+
+  <div class="card">
+    <h2>Result</h2>
+    <div id="result" class="muted">Waiting for input.</div>
+    <pre id="audit"></pre>
+  </div>
+
+  <h2>How this works</h2>
+  <p>This page pulls task files from <code>jsonwisdom/AL</code> at the commit you provide, canonicalizes the JSON with sorted keys, hashes the canonical lines, and compares that value to the expected root.</p>
+  <p>Chain is a witness. GitHub is the byte source. Meta/Facebook are distribution only.</p>
+
+<script>
+const OWNER = "jsonwisdom";
+const REPO = "AL";
+const TASK_DIR = "_truth/tasks/queue";
+
+function stableStringify(value) {
+  if (value === null || typeof value !== "object") return JSON.stringify(value);
+  if (Array.isArray(value)) return "[" + value.map(stableStringify).join(",") + "]";
+  return "{" + Object.keys(value).sort().map(k => JSON.stringify(k) + ":" + stableStringify(value[k])).join(",") + "}";
+}
+
+async function sha256Hex(text) {
+  const bytes = new TextEncoder().encode(text);
+  const digest = await crypto.subtle.digest("SHA-256", bytes);
+  return Array.from(new Uint8Array(digest)).map(b => b.toString(16).padStart(2, "0")).join("");
+}
+
+async function githubJson(url) {
+  const r = await fetch(url, { headers: { "Accept": "application/vnd.github+json" }});
+  if (!r.ok) throw new Error(`GitHub fetch failed ${r.status}: ${url}`);
+  return await r.json();
+}
+
+async function verify() {
+  const commit = document.getElementById("commit").value.trim();
+  const expected = document.getElementById("expected").value.trim().replace(/^sha256:/, "");
+  const eas = document.getElementById("eas").value.trim();
+  const result = document.getElementById("result");
+  const audit = document.getElementById("audit");
+  result.className = "muted";
+  result.textContent = "Verifying...";
+  audit.textContent = "";
+
+  try {
+    if (!commit || !expected) throw new Error("Commit SHA and expected root are required.");
+    const dirUrl = `https://api.github.com/repos/${OWNER}/${REPO}/contents/${TASK_DIR}?ref=${encodeURIComponent(commit)}`;
+    const files = await githubJson(dirUrl);
+    const jsonFiles = files.filter(f => f.type === "file" && f.name.endsWith(".json")).sort((a,b) => a.path.localeCompare(b.path));
+    if (!jsonFiles.length) throw new Error("No task JSON files found in _truth/tasks/queue at that commit.");
+
+    const canonicalLines = [];
+    const trail = [];
+    for (const file of jsonFiles) {
+      const raw = await fetch(file.download_url).then(r => {
+        if (!r.ok) throw new Error(`Raw fetch failed for ${file.path}`);
+        return r.text();
+      });
+      const obj = JSON.parse(raw);
+      const canonical = stableStringify(obj);
+      canonicalLines.push(canonical);
+      trail.push({ path: file.path, sha: file.sha, canonical_length: canonical.length });
+    }
+
+    const joined = canonicalLines.join("\n") + "\n";
+    const computed = await sha256Hex(joined);
+    const ok = computed.toLowerCase() === expected.toLowerCase();
+
+    result.className = ok ? "ok" : "bad";
+    result.textContent = ok ? "VERIFIED — root matches repo bytes" : "MISMATCH — root does not match repo bytes";
+    audit.textContent = JSON.stringify({
+      owner: OWNER,
+      repo: REPO,
+      commit,
+      task_dir: TASK_DIR,
+      file_count: jsonFiles.length,
+      computed_sha256: computed,
+      expected_sha256: expected,
+      eas_attestation_uid: eas || null,
+      files: trail
+    }, null, 2);
+  } catch (err) {
+    result.className = "bad";
+    result.textContent = "ERROR";
+    audit.textContent = String(err && err.message ? err.message : err);
+  }
+}
+</script>
+</body>
+</html>
