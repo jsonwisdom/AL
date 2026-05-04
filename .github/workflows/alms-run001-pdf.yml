@@ -4,8 +4,11 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
-  actions: read
+  contents: read
+
+defaults:
+  run:
+    shell: bash
 
 jobs:
   build-run001-pdf:
@@ -37,11 +40,3 @@ jobs:
             _truth/receipts/ALMS_RUN_001.pdf
             _truth/receipts/ALMS_RUN_001.pdf.sha256
           if-no-files-found: error
-
-      - name: Commit PDF receipt back to repo
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add _truth/receipts/ALMS_RUN_001.pdf _truth/receipts/ALMS_RUN_001.pdf.sha256
-          git commit -m "ALMS: add generated Run 001 PDF receipt" || echo "No changes to commit"
-          git push
