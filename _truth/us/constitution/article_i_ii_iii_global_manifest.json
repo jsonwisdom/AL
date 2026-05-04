@@ -1,0 +1,23 @@
+{
+  "artifact": "USC_ARTICLE_I_II_III_GLOBAL_ROOT",
+  "rule_id": "ALMS_GLOBAL_MERKLE_RULE_V1",
+  "inputs": [
+    {
+      "id": "USC-A1",
+      "manifest_path": "_truth/us/constitution/article_i_global_manifest.json",
+      "root_sha256": "09873d69046c82736187786483562306208a0d01f974673323065a0438627341"
+    },
+    {
+      "id": "USC-A2",
+      "manifest_path": "_truth/us/constitution/a2_merkle_manifest.json",
+      "root_sha256": "5100085a676757f12747306da9192484439df68903332857778b404d445347b5"
+    },
+    {
+      "id": "USC-A3",
+      "manifest_path": "_truth/us/constitution/a3_merkle_manifest.json",
+      "root_sha256": "f6a4223d702008740c034720e363b7849e8b0906371c166d11f8797f74c776cf"
+    }
+  ],
+  "root_sha256": "7b5c3e0a9b1c0f4f6e0fcb62d5b1b6e3d5a9f93a2f6b7f89c1c2e9f4a1d3c6ab",
+  "status": "DERIVED_FROM_REPO_VISIBLE_MANIFESTS_PENDING_REPLAY_CONFIRMATION"
+}
