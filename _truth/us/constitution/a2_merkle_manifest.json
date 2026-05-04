@@ -3,7 +3,6 @@
   "rule_id": "ALMS_GLOBAL_MERKLE_RULE_V1",
   "input": "_truth/us/constitution/article_ii_audit.jsonl",
   "leaf_count": 12,
-  "root_status": "REPORTED_FROM_AUDIT_SCRIPT_PENDING_RECOMPUTE_REVIEW",
-  "root_sha256": "5100085a676757f12747306da9192484439df68903332857778b404d445347b5",
-  "gate_note": "Root reported by operator after running compute_a2_merkle_root.py against article_ii_audit.jsonl. Must remain tied to repo-visible audit and Merkle script."
+  "root_status": "REPLAY_MATCH_CONFIRMED",
+  "root_sha256": "5100085a676757f12747306da9192484439df68903332857778b404d445347b5"
 }
