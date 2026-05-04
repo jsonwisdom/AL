@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ALMS Fast Anchor Signer — Base</title>
+</head>
+<body style="font-family:monospace;background:#050505;color:#9cff9c;padding:24px">
+<h2>ALMS Fast Anchor Signer — Base</h2>
+<p>This signer uses prefilled, repo-verified values. Operator action: connect wallet, sign attestation.</p>
+<button id="connect">1. Connect Wallet</button>
+<button id="attest">2. Attest Prefilled Anchor</button>
+<pre id="out"></pre>
+
+<script type="module">
+import { ethers } from "https://cdn.jsdelivr.net/npm/ethers@6.13.4/+esm";
+
+const out = (x) => document.getElementById("out").textContent += x + "\n";
+
+const EAS = "0x4200000000000000000000000000000000000021";
+const SCHEMA_UID = "0xfa94377476d86a25585e7da7889adf60f5a34fe09e1744f98626ad66bb686baa";
+const ZERO = "0x0000000000000000000000000000000000000000000000000000000000000000";
+
+// Existing schema:
+// string identity,bytes32 root,string cid,string commit,bytes32 archiveSha256
+const ANCHOR = {
+  identity: "jaywisdom.eth|jaywisdom.base|alms:eas-fast-anchor-manual",
+  root: "0x0000000000000000000000000000000000000000000000000000000000000000",
+  cid: "github:jsonwisdom/AL:docs/manuals/ALMS_EAS_FAST_ANCHOR_MANUAL.md",
+  commit: "a249929bfcada07b86b57709a6758b27ea157cf6",
+  archiveSha256: "0x0000000000000000000000000000000000000000000000000000000000000000"
+};
+
+let provider, signer, address;
+
+async function setup(){
+  provider = new ethers.BrowserProvider(window.ethereum);
+  await provider.send("wallet_switchEthereumChain", [{ chainId: "0x2105" }]);
+  signer = await provider.getSigner();
+  address = await signer.getAddress();
+  out("wallet: " + address);
+  out("schema_uid: " + SCHEMA_UID);
+  out("commit: " + ANCHOR.commit);
+}
+
+document.getElementById("connect").onclick = setup;
+
+document.getElementById("attest").onclick = async()=>{
+  if(!signer) await setup();
+
+  const coder = ethers.AbiCoder.defaultAbiCoder();
+  const data = coder.encode(
+    ["string","bytes32","string","string","bytes32"],
+    [ANCHOR.identity, ANCHOR.root, ANCHOR.cid, ANCHOR.commit, ANCHOR.archiveSha256]
+  );
+
+  const abi = [
+    "function attest((bytes32 schema,(address recipient,uint64 expirationTime,bool revocable,bytes32 refUID,bytes data,uint256 value) data)) payable returns (bytes32)",
+    "event Attested(address indexed recipient,address indexed attester,bytes32 uid,bytes32 indexed schema)"
+  ];
+  const c = new ethers.Contract(EAS, abi, signer);
+  const tx = await c.attest({
+    schema: SCHEMA_UID,
+    data: {
+      recipient: address,
+      expirationTime: 0,
+      revocable: true,
+      refUID: ZERO,
+      data,
+      value: 0
+    }
+  });
+  out("tx_hash: " + tx.hash);
+  const r = await tx.wait();
+
+  let uid = null;
+  const iface = new ethers.Interface(abi);
+  for(const log of r.logs){
+    try{
+      const p = iface.parseLog(log);
+      if(p.name === "Attested") uid = p.args.uid;
+    }catch(e){}
+  }
+
+  out("attestation_uid: " + (uid || "NOT_PARSED_CHECK_EASSCAN"));
+  out("receipt_json:");
+  out(JSON.stringify({
+    schema_uid: SCHEMA_UID,
+    attestation_uid: uid,
+    tx_hash: tx.hash,
+    signer: address,
+    commit: ANCHOR.commit,
+    status: uid ? "ATTESTED" : "TX_CONFIRMED_UID_NOT_PARSED"
+  }, null, 2));
+};
+</script>
+</body>
+</html>
