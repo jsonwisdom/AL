@@ -1,0 +1,22 @@
+name: ALMS Global Integrity Audit
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  verify_article_i:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Replay Article I Merkle root
+        run: |
+          python3 _truth/us/constitution/replay_article_i_root.py
+          echo "ARTICLE_I_INTEGRITY: PASS"
