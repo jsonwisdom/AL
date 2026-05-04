@@ -8,6 +8,30 @@ Use Zora as the public creative surface for verified ALMS receipts without confu
 
 The receipt remains the source of truth. The image is the invitation.
 
+## Jay Wisdom Operator Layer
+
+Jay Wisdom is the human operator and philosophy layer of this system.
+
+Core identity:
+
+```text
+Jay Wisdom / JSONWisdom / Zero Cool
+jaywisdom.base → resolves to jaywisdom.eth
+```
+
+Guiding doctrine:
+
+```text
+Proof > narrative
+Verify > announce
+Receipts over vibes
+If it does not verify, it does not exist
+```
+
+Jay Wisdom is represented in the public surface as the operator of the verification machine, not as a substitute for verification.
+
+The machine proves. Jay routes attention to the proof.
+
 ## Identity Anchor
 
 Primary operator identity:
@@ -24,12 +48,33 @@ Rules:
 - Verification receipts should bind back to `jaywisdom.eth` when recording canonical identity.
 - Do not claim ENS text-record anchoring unless a visible ENS/Basename record or transaction receipt exists.
 
+## ALMS Machine Speed
+
+Machine Speed means the system moves at the speed of verified state transitions, not the speed of announcements.
+
+The goal is fast public output without skipping proof gates.
+
+```text
+Capture → Canonicalize → Hash → Commit → Fetch → Replay → Publish → Share
+```
+
+Speed rules:
+
+- Fast capture is allowed.
+- Fast publishing is allowed.
+- Fast status upgrades are not allowed.
+- A root is not real until it is repo-visible and replay-confirmed.
+- A Base transaction is not real until chain evidence is fetched.
+- A Zora post is not proof unless it points back to receipts.
+
+Machine Speed is achieved by reducing friction, not by weakening verification.
+
 ## Core Loop
 
 1. Verify a receipt in ALMS.
 2. Render a visual proof card.
 3. Publish the image/artifact to Zora.
-4. Include receipt hash, manifest path, repo commit, and verification URL in the post metadata or caption.
+4. Include receipt hash, manifest path, repo commit, Base status, identity binding, and verification URL in the post metadata or caption.
 5. Route collectors back to the verifier.
 6. New users replay the proof and enter Constitution Quest / Meme Court.
 
@@ -51,6 +96,7 @@ ALMS Receipt → GitHub Manifest → Image Card → Zora Post → Base Tx / Atte
 
 | Layer | Role | Trust Boundary |
 |---|---|---|
+| Jay Wisdom | Human operator / narrative router | Not a proof boundary |
 | GitHub | Source bytes, manifests, replay scripts | Primary proof surface |
 | ALMS | Canonicalization, hashing, Merkle rules | Verification logic |
 | Base | Public settlement / attestation record | Publication timestamp + chain receipt |
@@ -65,9 +111,11 @@ ALMS Receipt → GitHub Manifest → Image Card → Zora Post → Base Tx / Atte
   "artifact": "ALMS_BASE_PUBLICATION_RECEIPT",
   "network": "base",
   "chain_id": 8453,
+  "operator": "Jay Wisdom",
   "operator_base_name": "jaywisdom.base",
   "canonical_ens_root": "jaywisdom.eth",
   "identity_resolution": "jaywisdom.base -> jaywisdom.eth",
+  "machine_speed_stage": "CAPTURE|HASH|COMMIT|FETCH|REPLAY|PUBLISH|CHAIN_CONFIRM",
   "source_root_sha256": "<64_hex>",
   "source_manifest_path": "_truth/us/constitution/<manifest>.json",
   "repo_commit_sha": "<git_commit>",
@@ -93,6 +141,7 @@ ALMS Receipt → GitHub Manifest → Image Card → Zora Post → Base Tx / Atte
 
 ## Non-Negotiable Rules
 
+- Jay Wisdom narrative != proof.
 - Image != proof.
 - Zora post != deed.
 - Transaction hash != contract address.
@@ -107,12 +156,14 @@ ALMS Receipt → GitHub Manifest → Image Card → Zora Post → Base Tx / Atte
 {
   "artifact": "ALMS_ZORA_RECEIPT_CARD",
   "title": "<human title>",
+  "operator": "Jay Wisdom",
   "operator_base_name": "jaywisdom.base",
   "canonical_ens_root": "jaywisdom.eth",
   "visual_asset_path": "docs/assets/<image>.png",
   "source_manifest_path": "_truth/us/constitution/<manifest>.json",
   "source_root_sha256": "<64_hex>",
   "repo_commit_sha": "<git_commit>",
+  "machine_speed_stage": "REPLAY_VERIFIED",
   "zora_url": null,
   "zora_contract_address": "UNVERIFIED_IDENTIFIER",
   "zora_tx_hash": null,
@@ -128,7 +179,9 @@ Each receipt image should show:
 
 - title
 - artifact id
+- operator: Jay Wisdom
 - identity: `jaywisdom.base → jaywisdom.eth`
+- machine speed stage: CAPTURE / HASH / COMMIT / FETCH / REPLAY / PUBLISH
 - short root hash
 - status badge
 - QR/verifier pointer
@@ -139,7 +192,7 @@ Each receipt image should show:
 ## Flywheel
 
 ```text
-Receipt → GitHub Manifest → Image → Zora → Base Receipt → Share → Verify → Quest → New Receipt → New Image
+Jay Wisdom Signal → ALMS Receipt → GitHub Manifest → Image → Zora → Base Receipt → Share → Verify → Quest → New Receipt → New Image
 ```
 
 ## First Campaign
@@ -162,7 +215,9 @@ Meme Court Receipt: <TITLE>
 The goblin tried to mutate the record.
 The verifier caught the drift.
 
+Operator: Jay Wisdom
 Identity: jaywisdom.base → jaywisdom.eth
+Stage: <machine_speed_stage>
 Root: <short_root>
 Receipt: <receipt_path>
 Base: <base_tx_or_uid_or_PENDING>
@@ -171,6 +226,23 @@ Verify: <url>
 No Receipt. No Mercy. 🧌⚖️🧾
 ```
 
+## Jay Wisdom Public Voice
+
+Use direct proof language:
+
+```text
+Bring receipts.
+Verify the root.
+Keep the chain clean.
+No vibes. Just rights.
+```
+
+Avoid claiming finality before replay.
+
+Avoid turning the Constitution into partisan scoring.
+
+The game is precision. The win condition is proof.
+
 ## Status
 
 Zora flywheel is approved as a public engagement layer, not a trust boundary.
@@ -178,5 +250,7 @@ Zora flywheel is approved as a public engagement layer, not a trust boundary.
 Base is approved as a settlement / attestation layer, not the canonical truth boundary.
 
 `jaywisdom.base` is the Base-facing anchor and resolves to the canonical ENS identity `jaywisdom.eth` for receipt identity purposes.
+
+ALMS Machine Speed is approved as the throughput model: move fast, but only promote verified state.
 
 Proof > narrative.
