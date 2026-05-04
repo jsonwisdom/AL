@@ -1,0 +1,9 @@
+{
+  "artifact": "USC_A1_S9_MERKLE_MANIFEST",
+  "status": "ROOT_RECORDED_FROM_VERIFIED_REMOTE_SPANS",
+  "rule_id": "ALMS_GLOBAL_MERKLE_RULE_V1",
+  "leaf_count": 8,
+  "root_sha256": "c60e318f68450113c1bc9d2138407a60313ec9e25b02976967842f27fa741f03",
+  "rejected_reported_root": "f6a84d94324f60e9803b9b9a67451421f64929497746274e502c3a502695668e",
+  "gate_note": "The previously reported Section 9 root used a different rule. This manifest records the ALMS_GLOBAL_MERKLE_RULE_V1 root: leaf=SHA256(id + ':' + span_sha256), parent=SHA256(left_raw || right_raw)."
+}
