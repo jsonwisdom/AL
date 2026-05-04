@@ -1,0 +1,25 @@
+{
+  "artifact": "USC_ARTICLE_I_GLOBAL_ROOT",
+  "rule_id": "ALMS_GLOBAL_MERKLE_RULE_V1",
+  "status": "ROOT_RECORDED_FROM_REMOTE_SECTION_MANIFESTS",
+  "sections": [
+    {
+      "id": "USC-A1-S8",
+      "manifest_path": "_truth/us/constitution/a1_s8_merkle_manifest.json",
+      "root_sha256": "717015523e1074e26719114f479d20c3a8d11e15546876c026e6329431835639"
+    },
+    {
+      "id": "USC-A1-S9",
+      "manifest_path": "_truth/us/constitution/a1_s9_merkle_manifest.json",
+      "root_sha256": "c60e318f68450113c1bc9d2138407a60313ec9e25b02976967842f27fa741f03"
+    },
+    {
+      "id": "USC-A1-S10",
+      "manifest_path": "_truth/us/constitution/a1_s10_merkle_manifest.json",
+      "root_sha256": "f9a4666f443b7117079d85449911e3b5e0c528627b0c79774640498a442e973e"
+    }
+  ],
+  "article_i_root_rule": "leaf = SHA256(section_id + ':' + section_root_sha256); parent = SHA256(left_raw || right_raw); odd leaf promoted unchanged",
+  "article_i_root_sha256": "09873d69046c82736187786483562306208a0d01f974673323065a0438627341",
+  "gate_note": "Article I root recorded only after Section 8, 9, and 10 manifests were fetched from GitHub."
+}
