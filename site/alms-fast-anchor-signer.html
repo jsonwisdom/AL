@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ALMS Fast Anchor Signer — Base</title>
+</head>
+<body style="font-family:monospace;background:#050505;color:#9cff9c;padding:24px">
+<h2>ALMS Fast Anchor Signer — Base</h2>
+<p>This signer computes SHA-256, waits for confirmed Base receipt, parses UID only from confirmed EAS logs, and outputs copy-safe JSON only.</p>
+<button id="connect">1. Connect Wallet</button>
+<button id="compute">2. Compute Hash</button>
+<button id="attest">3. Attest Verified Anchor</button>
+<button id="copy" disabled>4. Copy Confirmed JSON</button>
+<pre id="status"></pre>
+<h3>Confirmed Receipt JSON</h3>
+<pre id="out">{}</pre>
+
+<script type="module">
+import { ethers } from "https://cdn.jsdelivr.net/npm/ethers@6.13.4/+esm";
+
+const status = (x) => document.getElementById("status").textContent += x + "\n";
+const setReceipt = (obj) => {
+  document.getElementById("out").textContent = JSON.stringify(obj, null, 2);
+};
+
+const EAS = "0x4200000000000000000000000000000000000021";
+const SCHEMA_UID = "0xfa94377476d86a25585e7da7889adf60f5a34fe09e1744f98626ad66bb686baa";
+const ZERO = "0x0000000000000000000000000000000000000000000000000000000000000000";
+const RAW_URL = "https://raw.githubusercontent.com/jsonwisdom/AL/alms-contract-deployer-samgov/docs/manuals/ALMS_EAS_FAST_ANCHOR_MANUAL.md";
+const COMMIT = "a249929bfcada07b86b57709a6758b27ea157cf6";
+
+const RX = {
+  hex32: /^0x[0-9a-fA-F]{64}$/,
+  address: /^0x[0-9a-fA-F]{40}$/,
+  commit: /^[0-9a-fA-F]{40}$/
+};
+
+const ANCHOR = {
+  identity: "jaywisdom.eth|jaywisdom.base|alms:eas-fast-anchor-manual",
+  root: null,
+  cid: "github:jsonwisdom/AL:docs/manuals/ALMS_EAS_FAST_ANCHOR_MANUAL.md",
+  commit: COMMIT,
+  archiveSha256: null,
+  byteSize: null
+};
+
+let provider, signer, address, lastReceipt = null;
+
+function requireMatch(name, value, regex){
+  if(!regex.test(value || "")) throw new Error(`INVALID_${name}: ${value}`);
+}
+
+function validatePreAttest(){
+  requireMatch("SCHEMA_UID", SCHEMA_UID, RX.hex32);
+  requireMatch("COMMIT", ANCHOR.commit, RX.commit);
+  requireMatch("ROOT", ANCHOR.root, RX.hex32);
+  requireMatch("ARCHIVE_SHA256", ANCHOR.archiveSha256, RX.hex32);
+  if(!Number.isInteger(ANCHOR.byteSize) || ANCHOR.byteSize <= 0) throw new Error("INVALID_BYTE_SIZE: " + ANCHOR.byteSize);
+  if(address) requireMatch("SIGNER", address, RX.address);
+}
+
+function validateReceipt(receipt){
+  requireMatch("SCHEMA_UID", receipt.schema_uid, RX.hex32);
+  requireMatch("ATTESTATION_UID", receipt.attestation_uid, RX.hex32);
+  requireMatch("TX_HASH", receipt.tx_hash, RX.hex32);
+  requireMatch("SIGNER", receipt.signer, RX.address);
+  requireMatch("COMMIT", receipt.commit, RX.commit);
+  requireMatch("CONTENT_HASH", receipt.content_hash, RX.hex32);
+  requireMatch("ARCHIVE_SHA256", receipt.archiveSha256, RX.hex32);
+  if(!Number.isInteger(receipt.byte_size) || receipt.byte_size <= 0) throw new Error("INVALID_BYTE_SIZE: " + receipt.byte_size);
+  if(receipt.status !== "ATTESTED_CONFIRMED") throw new Error("INVALID_STATUS: " + receipt.status);
+  if(receipt.tx_receipt_status !== 1) throw new Error("INVALID_TX_RECEIPT_STATUS: " + receipt.tx_receipt_status);
+  if(receipt.eas_explorer !== `https://base.easscan.org/attestation/view/${receipt.attestation_uid}`) throw new Error("INVALID_EAS_EXPLORER_LINK");
+}
+
+function hex(bytes){
+  return "0x" + [...new Uint8Array(bytes)].map(b => b.toString(16).padStart(2,"0")).join("");
+}
+
+async function sha256Bytes(buf){
+  return hex(await crypto.subtle.digest("SHA-256", buf));
+}
+
+async function computeAnchor(){
+  status("fetching manual bytes");
+  const res = await fetch(RAW_URL, { cache: "no-store" });
+  if(!res.ok) throw new Error("FETCH_FAILED_" + res.status);
+  const buf = await res.arrayBuffer();
+  const h = await sha256Bytes(buf);
+  ANCHOR.root = h;
+  ANCHOR.archiveSha256 = h;
+  ANCHOR.byteSize = buf.byteLength;
+  validatePreAttest();
+  setReceipt({
+    status: "HASH_COMPUTED_READY_TO_ATTEST",
+    schema_uid: SCHEMA_UID,
+    commit: ANCHOR.commit,
+    content_hash: ANCHOR.root,
+    archiveSha256: ANCHOR.archiveSha256,
+    byte_size: ANCHOR.byteSize
+  });
+  status("hash_validated");
+  return h;
+}
+
+async function setup(){
+  if(!window.ethereum) throw new Error("NO_WALLET_PROVIDER");
+  provider = new ethers.BrowserProvider(window.ethereum);
+  await provider.send("wallet_switchEthereumChain", [{ chainId: "0x2105" }]);
+  signer = await provider.getSigner();
+  address = await signer.getAddress();
+  requireMatch("SIGNER", address, RX.address);
+  status("wallet_connected");
+}
+
+document.getElementById("connect").onclick = async()=>{ try { await setup(); } catch(e){ status("ERROR: " + e.message); } };
+document.getElementById("compute").onclick = async()=>{ try { await computeAnchor(); } catch(e){ status("ERROR: " + e.message); } };
+
+document.getElementById("attest").onclick = async()=>{
+  try{
+    document.getElementById("copy").disabled = true;
+    lastReceipt = null;
+    if(!signer) await setup();
+    if(!ANCHOR.root || !ANCHOR.archiveSha256) await computeAnchor();
+    validatePreAttest();
+
+    const coder = ethers.AbiCoder.defaultAbiCoder();
+    const data = coder.encode(
+      ["string","bytes32","string","string","bytes32"],
+      [ANCHOR.identity, ANCHOR.root, ANCHOR.cid, ANCHOR.commit, ANCHOR.archiveSha256]
+    );
+
+    const abi = [
+      "function attest((bytes32 schema,(address recipient,uint64 expirationTime,bool revocable,bytes32 refUID,bytes data,uint256 value) data)) payable returns (bytes32)",
+      "event Attested(address indexed recipient,address indexed attester,bytes32 uid,bytes32 indexed schema)"
+    ];
+    const c = new ethers.Contract(EAS, abi, signer);
+    const tx = await c.attest({
+      schema: SCHEMA_UID,
+      data: { recipient: address, expirationTime: 0, revocable: true, refUID: ZERO, data, value: 0 }
+    });
+    requireMatch("TX_HASH_SUBMITTED", tx.hash, RX.hex32);
+    status("tx_submitted: " + tx.hash);
+    status("waiting_for_base_confirmation");
+
+    const r = await tx.wait(1);
+    if(!r) throw new Error("NO_TX_RECEIPT_RETURNED");
+    if(r.status !== 1) throw new Error("TX_FAILED_NOT_CONFIRMED_STATUS_" + r.status);
+    if((r.hash || r.transactionHash) !== tx.hash) throw new Error("TX_HASH_MISMATCH_AFTER_CONFIRMATION");
+    status("tx_confirmed_status_1");
+
+    let uid = null;
+    const iface = new ethers.Interface(abi);
+    for(const log of r.logs){
+      if((log.address || "").toLowerCase() !== EAS.toLowerCase()) continue;
+      try{
+        const p = iface.parseLog(log);
+        if(p && p.name === "Attested" && p.args.schema.toLowerCase() === SCHEMA_UID.toLowerCase()){
+          uid = p.args.uid;
+        }
+      }catch(e){}
+    }
+    requireMatch("ATTESTATION_UID_FROM_CONFIRMED_LOG", uid, RX.hex32);
+    status("attested_event_found_in_confirmed_receipt");
+
+    const receipt = {
+      schema_uid: SCHEMA_UID,
+      attestation_uid: uid,
+      tx_hash: tx.hash,
+      tx_receipt_status: r.status,
+      signer: address,
+      commit: ANCHOR.commit,
+      content_hash: ANCHOR.root,
+      archiveSha256: ANCHOR.archiveSha256,
+      byte_size: ANCHOR.byteSize,
+      basescan_tx: `https://basescan.org/tx/${tx.hash}`,
+      eas_explorer: `https://base.easscan.org/attestation/view/${uid}`,
+      status: "ATTESTED_CONFIRMED"
+    };
+    validateReceipt(receipt);
+    lastReceipt = receipt;
+    setReceipt(receipt);
+    document.getElementById("copy").disabled = false;
+    status("CONFIRMED_VALIDATED_RECEIPT_READY_TO_COPY");
+  }catch(e){
+    status("ERROR: " + e.message);
+    document.getElementById("copy").disabled = true;
+    lastReceipt = null;
+  }
+};
+
+document.getElementById("copy").onclick = async()=>{
+  try{
+    if(!lastReceipt) throw new Error("NO_VALID_CONFIRMED_RECEIPT");
+    validateReceipt(lastReceipt);
+    await navigator.clipboard.writeText(JSON.stringify(lastReceipt, null, 2));
+    status("CONFIRMED_JSON_COPIED");
+  }catch(e){ status("ERROR: " + e.message); }
+};
+</script>
+</body>
+</html>
