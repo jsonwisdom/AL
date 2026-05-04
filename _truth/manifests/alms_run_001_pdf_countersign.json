@@ -1,0 +1,19 @@
+{
+  "artifact": "ALMS_RUN_001.pdf",
+  "status": "CLOSED",
+  "sha256": "f0cb2568f494bacfe9538d905295a3217955533fd3a792617b223ccfdaf3f6615",
+  "workflow": "ALMS Run 001 PDF Receipt",
+  "workflow_run": "#4",
+  "mode": "manual_artifact_only",
+  "side_effects": "none",
+  "recursion": false,
+  "verified_by": "user_log_output",
+  "claim_boundary": "PDF receipt hash proves the generated PDF artifact only. Source artifacts remain pending for full closed-loop replay.",
+  "countersignature": "jsonwisdom/observer_mode",
+  "doctrine": "Proof > vibes. Run the receipt.",
+  "remaining_gap": [
+    "_truth/receipts/fisa702.pdf",
+    "_truth/receipts/fisa702_extracted.txt",
+    "_truth/receipts/fisa702_diff.txt"
+  ]
+}
