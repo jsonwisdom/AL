@@ -2,10 +2,11 @@ name: ALMS Run 001 PDF Receipt
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - scripts/verify/alms_receipt_gen_hardened.py
-      - .github/workflows/alms-run001-pdf.yml
+
+permissions:
+  contents: write
+
+actions: read
 
 jobs:
   build-run001-pdf:
@@ -22,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: python -m pip install --upgrade pip reportlab
 
-      - name: Generate hardened Run 001 PDF receipt
+      - name: Generate PDF receipt
         env:
           ALMS_GENERATED_AT_UTC: '2026-05-05T04:55:00Z'
         run: |
@@ -37,3 +38,11 @@ jobs:
             _truth/receipts/ALMS_RUN_001.pdf
             _truth/receipts/ALMS_RUN_001.pdf.sha256
           if-no-files-found: error
+
+      - name: Commit PDF receipt back to repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _truth/receipts/ALMS_RUN_001.pdf _truth/receipts/ALMS_RUN_001.pdf.sha256
+          git commit -m "ALMS: add generated Run 001 PDF receipt" || echo "No changes to commit"
+          git push
