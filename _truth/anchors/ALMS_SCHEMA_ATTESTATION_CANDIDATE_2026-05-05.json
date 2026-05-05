@@ -6,7 +6,7 @@
   "branch": "master",
   "commit": "80a12cf6dd40477637d2589387a8b05e09968a2f",
   "subject_artifact": "_truth/status/QUIESCENT_HOLD_2026-05-05.json",
-  "subject_sha256": "PENDING_STATUS_SHA256_VERIFICATION",
+  "subject_sha256": "9ec754e486bd8dd6c073528c33275d6dd55810080b85303255b8fe881e0827df",
   "claims_ledger_path": "_truth/anchors/ALMS_ATTESTATION_CLAIMS_LEDGER_2026-05-05.json",
   "claims_ledger_sha256": "2f0c6d13ccb9ddbc37a5c07d855dfccffb65afd9f78584af2d5d9fe5b3720bb0",
   "claim": "Snapshot proven. Change detectable. Monitoring pending.",
@@ -18,5 +18,5 @@
   "eas_uid": null,
   "tx_hash": null,
   "candidate_manifest_sha256": null,
-  "custody_note": "Candidate only. Bound to claims ledger hash. Subject SHA256 still requires operator/repo-side verification before EAS payload. Not EAS-attested until real Base/EAS UID or tx hash is recorded."
+  "custody_note": "Candidate only. Bound to claims ledger hash and quiescent hold subject hash. Not EAS-attested until real Base/EAS UID or tx hash is recorded."
 }
