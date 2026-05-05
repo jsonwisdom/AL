@@ -1,0 +1,20 @@
+{
+  "artifact": "RENDERED_STABILITY_OBSERVATION",
+  "observation_id": "justice_epstein_RENDERED_STABLE_001",
+  "source_id": "justice_epstein",
+  "source_url": "https://www.justice.gov/epstein",
+  "fetch_method": "PLAYWRIGHT_RENDERED",
+  "content_status": "CAPTURED_AND_STABLE",
+  "barrier_status": "BYPASSED",
+  "snapshots": 2,
+  "first_rendered_sha256": "8601485862b2e914eeb2b5ae5fe7f33a3df292946c8f5ccbecbc91dbb207ca89",
+  "latest_rendered_sha256": "8601485862b2e914eeb2b5ae5fe7f33a3df292946c8f5ccbecbc91dbb207ca89",
+  "comparison_result": "RENDERED_STABLE",
+  "html_size_bytes": 76669,
+  "text_size_bytes": 28897,
+  "promotion_status": "NOT_PROMOTED",
+  "write_run_0002": "UNCHANGED",
+  "gate_status": "CLOSED",
+  "required_next_action": "BUILD_RENDERED_ONLY_HASH_INDEX",
+  "custody_note": "Rendered-only lineage. Challenge-page captures are excluded from content truth. No promotion and no WRITE_RUN_0002_packet.json."
+}
