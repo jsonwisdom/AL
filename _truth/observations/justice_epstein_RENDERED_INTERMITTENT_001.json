@@ -1,0 +1,20 @@
+{
+  "artifact": "RENDERED_ACCESS_OBSERVATION",
+  "observation_id": "justice_epstein_RENDERED_INTERMITTENT_001",
+  "source_id": "justice_epstein",
+  "source_url": "https://www.justice.gov/epstein",
+  "fetch_method": "PLAYWRIGHT_RENDERED",
+  "prior_stable_rendered_sha256": "8601485862b2e914eeb2b5ae5fe7f33a3df292946c8f5ccbecbc91dbb207ca89",
+  "latest_rendered_sha256": "81b16c09f8b88043031b88d337620a4b72e030972753e6ca9f701fdc8e98fec3",
+  "comparison_result": "RENDERED_CHANGED_WITH_BARRIER_LIKELY_TRUE",
+  "content_status": "INTERMITTENT_ACCESS",
+  "stable_snapshots": 2,
+  "blocked_snapshots": 1,
+  "barrier_status": "INTERMITTENT_AKAMAI_BOT_PROTECTION",
+  "promotion_status": "BLOCKED",
+  "promotion_block_reason": "RENDERED_ACCESS_NOT_STABLE",
+  "write_run_0002": "UNCHANGED",
+  "gate_status": "CLOSED",
+  "recommended_next_action": "OBSERVE_ONLY_OR_USE_ALTERNATIVE_STABLE_OFFICIAL_ENDPOINT",
+  "custody_note": "Rendered capture succeeded twice, then returned likely barrier content. Do not promote rendered content until access stability is proven over time or a stable official endpoint is used."
+}
