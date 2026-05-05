@@ -1,0 +1,24 @@
+{
+  "artifact": "DOJ_RELEASE",
+  "release_id": "justice_epstein_REL_0001_CANDIDATE",
+  "source_id": "justice_epstein",
+  "source_url": "https://www.justice.gov/epstein",
+  "status": "CANDIDATE_CONSTRUCTION_ONLY",
+  "promotion_decision_ref": "_truth/promotions/justice_epstein_APPROVE_DECISION_001.json",
+  "opens_custody_gate": false,
+  "creates_hash_index": false,
+  "write_run_0002": "UNCHANGED",
+  "gate_status": "CLOSED",
+  "files": [
+    {
+      "file_id": "justice_epstein_html_001",
+      "path": "_truth/ingest/justice_epstein/2026-05-05T10-15-35Z.html",
+      "size_bytes": 2578,
+      "sha256": "f8597472a5b9dd6c350189862c02f10673f5efa5c452b32d095915d84507226d",
+      "mime_type": "text/html",
+      "custody_stage": "INGEST_ONLY_QUARANTINED"
+    }
+  ],
+  "release_manifest_sha256": null,
+  "custody_note": "Candidate construction only. Does not create HASH_INDEX.json or WRITE_RUN_0002_packet.json. Final hash must be computed with release_manifest_sha256 set to null."
+}
