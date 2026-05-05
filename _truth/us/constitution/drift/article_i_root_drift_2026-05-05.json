@@ -1,0 +1,9 @@
+{
+  "artifact": "USC_ARTICLE_I_ROOT_DRIFT_RECEIPT",
+  "status": "DRIFT_DETECTED_NOT_PROMOTED",
+  "rule_id": "ALMS_GLOBAL_MERKLE_RULE_V1",
+  "expected_article_i_root_sha256": "09873d69046c82736187786483562306208a0d01f974673323065a0438627341",
+  "computed_article_i_root_sha256": "2c595278a5a1ecbafd00544bdcd81a5473b4a13775950d5300e2b44c1bbcd518",
+  "finding": "Current section manifests replay deterministically but do not match stored Article I global manifest root.",
+  "next_required": "Audit section manifest provenance before promoting computed root."
+}
