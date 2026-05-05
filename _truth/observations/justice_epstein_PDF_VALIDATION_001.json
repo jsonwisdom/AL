@@ -1,0 +1,23 @@
+{
+  "artifact": "PDF_VALIDATION_OBSERVATION",
+  "observation_id": "justice_epstein_PDF_VALIDATION_001",
+  "source_id": "justice_epstein_pdf",
+  "source_url": "https://www.justice.gov/epstein/files/DataSet%209/EFTA00818213.pdf",
+  "mode": "OBSERVATION",
+  "lineage": "PDF_ONLY",
+  "file_path": "_truth/ingest/justice_epstein_pdf/2026-05-05T11-04-05Z.pdf",
+  "file_type": "PDF document, version 1.3, 1 page(s)",
+  "pdf_sha256": "b5ead1dcf7c710d8246b84ff59cfe39d6a609aaaf234cb29359c65d2f6a5d56e",
+  "pdf_size_bytes": 76296,
+  "hash_index_ref": "HASH_INDEX_003",
+  "integrity": "VERIFIED",
+  "content_truth": "PROVEN_FOR_CAPTURED_PDF_SNAPSHOT",
+  "access_truth": "AGE_GATE_CLICK_SUCCESS",
+  "claim_scope": "SNAPSHOT_ONLY",
+  "time_bound": true,
+  "promotion_status": "NOT_PROMOTED",
+  "write_run_0002": "UNCHANGED",
+  "gate_status": "CLOSED",
+  "recommended_next_action": "STAY_IN_OBSERVATION_OR_CAPTURE_SECOND_PDF_FOR_STABILITY",
+  "custody_note": "PDF structure and SHA256 verified locally by operator. pdftotext was unavailable; content preview not required for byte integrity. No promotion and no WRITE_RUN_0002_packet.json."
+}
