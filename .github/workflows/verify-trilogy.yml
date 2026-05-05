@@ -1,0 +1,23 @@
+name: Verify Trilogy
+
+on:
+  push:
+    paths:
+      - 'alms_trilogy/**'
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install deps
+        run: sudo apt-get update && sudo apt-get install -y jq
+      - name: Make script executable
+        run: chmod +x verify_trilogy.sh
+      - name: Run verifier
+        run: ./verify_trilogy.sh
+      - name: Upload receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: trilogy-verify
+          path: .trilogy_verify
