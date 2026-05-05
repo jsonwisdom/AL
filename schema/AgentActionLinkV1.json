@@ -1,0 +1,16 @@
+{
+  "name": "AgentActionLinkV1",
+  "relations": ["spawned", "verified", "delegated", "superseded"],
+  "fields": [
+    { "name": "parentUID", "type": "bytes32" },
+    { "name": "childUID", "type": "bytes32" },
+    { "name": "parentActionHash", "type": "bytes32" },
+    { "name": "childActionHash", "type": "bytes32" },
+    { "name": "parentSigner", "type": "address" },
+    { "name": "childSigner", "type": "address" },
+    { "name": "relation", "type": "string" },
+    { "name": "timestamp", "type": "uint64" },
+    { "name": "payloadRef", "type": "string" }
+  ],
+  "schema": "bytes32 parentUID,bytes32 childUID,bytes32 parentActionHash,bytes32 childActionHash,address parentSigner,address childSigner,string relation,uint64 timestamp,string payloadRef"
+}
