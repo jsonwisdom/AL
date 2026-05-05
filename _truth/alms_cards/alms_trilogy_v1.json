@@ -1,0 +1,36 @@
+{
+  "collection": "Verified Before Viral — The ALMS Sequence",
+  "sequence_id": "ALMS_TRILOGY_V1",
+  "status": "SOURCE_LAYER_CREATED_GITHUB_ONLY",
+  "not_anchor_status": "NOT_EAS_ANCHORED_UNTIL_UID_EXISTS",
+  "cards": [
+    {
+      "card_id": "CARD_001_ANDY",
+      "name": "ALGO-ADDICTED ANDY",
+      "phase": "HOOK",
+      "claim": "Engagement systems can optimize addiction over safety.",
+      "caption": "WE BUILT THE HOOK… THE COURT BUILT THE BRAKE.",
+      "sticker": "RECEIPTS > ENGAGEMENT"
+    },
+    {
+      "card_id": "CARD_002_GARY",
+      "name": "GAVEL-GAGGED GARY",
+      "phase": "HAMMER",
+      "claim": "Courts enforce safety after harm is proven.",
+      "caption": "YOU MADE THE MESS… NOW THE COURT MADE YOU CLEAN IT.",
+      "sticker": "PHASED & CONFUSED"
+    },
+    {
+      "card_id": "CARD_003_ALLISON",
+      "name": "AUDIT ALLISON",
+      "phase": "PREVENTION",
+      "claim": "Systems can verify safety before deployment.",
+      "caption": "NO HARM. NO COURT. NO PROBLEM.",
+      "sticker": "VERIFY > REPAIR"
+    }
+  ],
+  "eas_schema": {
+    "name": "ALMS_Sequence_v1",
+    "schema": "string sequenceId,string cardId,string phase,bytes32 trilogyHash,bytes32 imageHash,string title,string claim,string sourceUrl,string parentUid"
+  }
+}
