@@ -1,10 +1,12 @@
 name: Verify Trilogy
-
 on:
+  workflow_dispatch:
   push:
+    branches: [master]
     paths:
       - 'alms_trilogy/**'
-
+      - 'verify_trilogy.sh'
+      - '.github/workflows/verify-trilogy.yml'
 jobs:
   verify:
     runs-on: ubuntu-latest
