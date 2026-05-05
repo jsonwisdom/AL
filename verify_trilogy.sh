@@ -1,32 +1,36 @@
 #!/usr/bin/env bash
 set -euo pipefail
-
 TARGET="alms_trilogy/hashes.json"
+WORK=".trilogy_work"
 RECEIPT=".trilogy_verify"
 
-jq -r '.trilogy_hash' "$TARGET" > /dev/null
+fail(){ echo "FAIL: $1"; exit 1; }
+strip0x(){ echo "$1" | sed 's/^0x//'; }
 
-fail() { echo "FAIL: $1"; exit 1; }
+rm -rf "$WORK"
+mkdir -p "$WORK"
 
-strip0x() { echo "$1" | sed 's/^0x//' ; }
+CID="$(jq -r '.bundle.cid' "$TARGET")"
+EXPECTED_BUNDLE="$(strip0x "$(jq -r '.bundle.sha256' "$TARGET")")"
 
-check_hash() {
-  local file=$1
-  local expected=$(strip0x "$2")
-  local actual=$(sha256sum "$file" | awk '{print $1}')
-  if [[ "$actual" != "$expected" ]]; then
-    fail "$file mismatch"
-  fi
-}
+echo "Downloading bundle: $CID"
+curl -fL --retry 3 --connect-timeout 20 \
+  "https://ipfs.io/ipfs/${CID}" \
+  -o "$WORK/bundle.zip"
 
-# Images
+ACTUAL_BUNDLE="$(sha256sum "$WORK/bundle.zip" | awk '{print $1}')"
+[[ "$ACTUAL_BUNDLE" == "$EXPECTED_BUNDLE" ]] || fail "bundle.zip mismatch"
+
+unzip -q "$WORK/bundle.zip" -d "$WORK/unpacked"
+
 for f in $(jq -r '.images | keys[]' "$TARGET"); do
-  check_hash "alms_trilogy/$f" $(jq -r ".images[\"$f\"]" "$TARGET")
+  expected="$(strip0x "$(jq -r ".images[\"$f\"]" "$TARGET")")"
+  actual="$(sha256sum "$WORK/unpacked/$f" | awk '{print $1}')"
+  [[ "$actual" == "$expected" ]] || fail "$f mismatch"
 done
 
-# Bundle (optional local file check skipped if not present)
-
-# Write receipt
-echo "{\"status\":\"PASS\",\"ts\":\"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"}" > "$RECEIPT"
+cat > "$RECEIPT" <<JSON
+{"status":"PASS","artifact":"ALMS_TRILOGY_V1_CI_REPLAY","bundle_cid":"$CID","ts":"$(date -u +%Y-%m-%dT%H:%M:%SZ)"}
+JSON
 
 echo "PASS: Trilogy verified"
