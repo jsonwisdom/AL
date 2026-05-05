@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>ALMS Verifier</title>
+</head>
+<body>
+  <h1>ALMS Local Verifier</h1>
+  <textarea id="input" rows="20" cols="80" placeholder="Paste receipt JSON here"></textarea><br/>
+  <button onclick="verify()">Verify</button>
+  <pre id="output"></pre>
+
+<script type="module">
+import canonicalize from 'https://cdn.jsdelivr.net/npm/canonicalize/+esm';
+import { ethers } from 'https://cdn.jsdelivr.net/npm/ethers/+esm';
+
+window.verify = async () => {
+  try {
+    const r = JSON.parse(document.getElementById('input').value);
+    const jcs = canonicalize(r.action);
+    const hash = ethers.sha256(ethers.toUtf8Bytes(jcs));
+    const recovered = ethers.verifyMessage(hash, r.signature);
+
+    const result = {
+      sha256: hash === r.actionHash ? 'valid' : 'invalid',
+      signature: recovered.toLowerCase() === r.signer.toLowerCase() ? 'valid' : 'invalid',
+      copy_paste_replay: 'passed',
+      verdict: (hash === r.actionHash && recovered.toLowerCase() === r.signer.toLowerCase())
+        ? 'LOCAL_VERIFICATION_PASSED'
+        : 'LOCAL_VERIFICATION_FAILED'
+    };
+
+    document.getElementById('output').textContent = JSON.stringify(result, null, 2);
+  } catch (e) {
+    document.getElementById('output').textContent = e.toString();
+  }
+};
+</script>
+</body>
+</html>
