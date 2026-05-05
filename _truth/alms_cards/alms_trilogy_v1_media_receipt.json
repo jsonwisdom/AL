@@ -1,0 +1,24 @@
+{
+  "artifact": "ALMS_TRILOGY_V1_MEDIA_RECEIPT",
+  "status": "IPFS_CIDS_RECORDED_IMAGE_SHA256_PENDING",
+  "trilogy_hash": "0xbff64af27865e7967a9992c4ac8089bc8ca6a637e58194236d1b3abd25e1ac57",
+  "source_commit": "f6e0aa526f5f4ada107d809e290026cad1470a99",
+  "media": {
+    "andy": {
+      "cid": "bafybeieyx5thqorpsnjgamdukpdkwzpuor7fqgkdusmigda2fnwkd2ixdi",
+      "uri": "ipfs://bafybeieyx5thqorpsnjgamdukpdkwzpuor7fqgkdusmigda2fnwkd2ixdi",
+      "sha256": "PENDING"
+    },
+    "gary": {
+      "cid": "bafybeihvkyhmudnaejxylmtr43vp2ungmt7aalr6jggmjb2ww6fxkhob6a",
+      "uri": "ipfs://bafybeihvkyhmudnaejxylmtr43vp2ungmt7aalr6jggmjb2ww6fxkhob6a",
+      "sha256": "PENDING"
+    },
+    "allison": {
+      "cid": "bafybeicf7xi4pzna63roxyhtpu5d4c2frhdbfp2wrnlio47zbhxvfv63ra",
+      "uri": "ipfs://bafybeicf7xi4pzna63roxyhtpu5d4c2frhdbfp2wrnlio47zbhxvfv63ra",
+      "sha256": "PENDING"
+    }
+  },
+  "rule": "CID records storage identity. SHA256 still required for exact byte receipt. EAS not anchored until UID exists."
+}
