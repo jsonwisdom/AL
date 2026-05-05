@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ALMS Trilogy V1 Browser Verifier</title>
+  <style>
+    :root{--bg:#070b0a;--panel:#0d1512;--line:#1f3b31;--green:#00ff88;--muted:#7fb69c;--yellow:#ffd166;--red:#ff5c7a;--blue:#6ecbff;}
+    *{box-sizing:border-box} body{margin:0;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;background:radial-gradient(circle at top,#11241d,var(--bg) 45%);color:var(--green);padding:18px;line-height:1.5}
+    main{max-width:980px;margin:0 auto} header,.card{border:1px solid var(--line);background:rgba(13,21,18,.9);border-radius:16px;padding:18px;margin-bottom:14px;box-shadow:0 0 30px rgba(0,255,136,.08)}
+    h1{margin:0;font-size:clamp(24px,5vw,42px)} .muted{color:var(--muted)} .ok{color:var(--green)} .warn{color:var(--yellow)} .bad{color:var(--red)} .hash{overflow-wrap:anywhere;color:#d7ffe9}
+    button{background:#07100d;border:1px solid var(--line);color:var(--green);padding:12px 14px;border-radius:12px;font:inherit;cursor:pointer} button:hover{border-color:var(--green)}
+    table{width:100%;border-collapse:collapse;margin-top:10px} th,td{border-bottom:1px solid var(--line);padding:10px;text-align:left;vertical-align:top} th{color:var(--muted)}
+    .pill{display:inline-block;border:1px solid currentColor;border-radius:999px;padding:3px 8px;font-size:12px}.big{font-size:22px;font-weight:700}
+    a{color:var(--green)} code,pre{background:#07100d;border:1px solid var(--line);border-radius:8px;padding:10px;display:block;overflow:auto;color:#d7ffe9}
+  </style>
+</head>
+<body>
+<main>
+<header>
+  <h1>ALMS Trilogy V1 Browser Verifier</h1>
+  <p class="muted">One-click byte verification using Web Crypto. No install. No wallet. No EAS claim until real UIDs exist.</p>
+</header>
+
+<section class="card">
+  <div class="muted">Pinned verifier commit</div>
+  <div class="hash">62bf6450357f8edb2d4494140ca294cf073b0708</div>
+  <br>
+  <div class="muted">IPFS directory CID</div>
+  <div class="hash" id="cid"></div>
+  <br>
+  <button id="run">Run Browser Verification</button>
+</section>
+
+<section class="card">
+  <div class="muted">Overall Status</div>
+  <div id="overall" class="big warn">NOT RUN</div>
+  <table>
+    <thead><tr><th>File</th><th>Status</th><th>Computed SHA256</th><th>Expected SHA256</th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+</section>
+
+<section class="card">
+  <div class="muted">Integrity chain</div>
+  <pre>Git commit → browser verifier → IPFS directory CID → file bytes → SHA256 → PASS/FAIL → EAS pending</pre>
+  <p><a href="./">Back to Trilogy Audit</a> · <a href="../">Back to ALMS Explorer</a></p>
+</section>
+</main>
+
+<script>
+const STATE = {
+  commit: "62bf6450357f8edb2d4494140ca294cf073b0708",
+  cid: "bafybeibcc32x2jq3ktmk4epvugprux2ehrsx2ukzqbn5gxffvudztc6ile",
+  gateway: "https://ipfs.io/ipfs/",
+  easStatus: "PENDING_UIDS",
+  files: {
+    "andy.jpg": "fb4521ae28e166ee9442c20e68ea38e2f9dc51d40a68fbfcdf2c0d8e773ea821",
+    "gary.jpg": "603a559a8da229d90c731a8be517f408471e1f72b095fa4361a93ddeba56060c",
+    "allison.jpg": "e7eb95287af70d21676a43c395881e6477968fccfd35fd46b0774c5c0281f4de"
+  }
+};
+
+document.getElementById('cid').textContent = STATE.cid;
+const rows = document.getElementById('rows');
+const overall = document.getElementById('overall');
+
+function hex(buffer){return [...new Uint8Array(buffer)].map(b=>b.toString(16).padStart(2,'0')).join('')}
+function row(name,status,actual,expected){
+  const cls = status === 'PASS' ? 'ok' : status === 'RUNNING' ? 'warn' : 'bad';
+  return `<tr><td>${name}</td><td><span class="pill ${cls}">${status}</span></td><td class="hash">${actual||''}</td><td class="hash">${expected}</td></tr>`;
+}
+function renderPending(){rows.innerHTML = Object.entries(STATE.files).map(([f,h])=>row(f,'PENDING','',h)).join('')}
+renderPending();
+
+async function verifyFile(name, expected){
+  const url = `${STATE.gateway}${STATE.cid}/${name}`;
+  const res = await fetch(url, {cache:'no-store'});
+  if(!res.ok) throw new Error(`${name} fetch failed: ${res.status}`);
+  const buf = await res.arrayBuffer();
+  const digest = hex(await crypto.subtle.digest('SHA-256', buf));
+  return {name, expected, digest, ok: digest === expected};
+}
+
+async function run(){
+  overall.className = 'big warn'; overall.textContent = 'RUNNING';
+  rows.innerHTML = Object.entries(STATE.files).map(([f,h])=>row(f,'RUNNING','',h)).join('');
+  const results = [];
+  for(const [name, expected] of Object.entries(STATE.files)){
+    try{ results.push(await verifyFile(name, expected)); }
+    catch(e){ results.push({name, expected, digest:String(e), ok:false}); }
+    rows.innerHTML = results.map(r=>row(r.name, r.ok?'PASS':'FAIL', r.digest, r.expected)).join('') +
+      Object.entries(STATE.files).slice(results.length).map(([f,h])=>row(f,'PENDING','',h)).join('');
+  }
+  const pass = results.every(r=>r.ok);
+  overall.className = pass ? 'big ok' : 'big bad';
+  overall.textContent = pass ? 'PASS: Trilogy verified' : 'FAIL: byte mismatch or fetch error';
+}
+
+document.getElementById('run').addEventListener('click', run);
+</script>
+</body>
+</html>
