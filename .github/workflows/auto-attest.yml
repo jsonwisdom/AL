@@ -3,12 +3,19 @@ name: Auto Attest Receipts
 on:
   push:
     branches: [ main ]
+    paths:
+      - '_truth/receipts/**/*.json'
+
+permissions:
+  contents: write
 
 jobs:
   attest:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -18,17 +25,41 @@ jobs:
       - name: Install deps
         run: npm install
 
-      - name: Find receipts
-        run: |
-          ls _truth/receipts || true
-
-      - name: Attest receipts
+      - name: Attest changed receipts exactly once
         env:
           BASE_SEPOLIA_RPC: ${{ secrets.BASE_SEPOLIA_RPC }}
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
           EAS_SCHEMA_UID: ${{ secrets.EAS_SCHEMA_UID }}
         run: |
-          for f in _truth/receipts/*.json; do
+          set -euo pipefail
+          files=$(git diff --name-only HEAD^ HEAD | grep '^_truth/receipts/.*\.json$' || true)
+          if [ -z "$files" ]; then
+            echo "No changed receipt JSON files."
+            exit 0
+          fi
+          for f in $files; do
+            if jq -e '.attestationUID? // empty' "$f" >/dev/null; then
+              echo "Skipping already anchored receipt: $f"
+              continue
+            fi
             echo "Attesting $f"
-            npx ts-node scripts/attest-receipt.ts $f || true
+            out=$(npx ts-node scripts/attest-receipt.ts "$f")
+            echo "$out"
+            uid=$(echo "$out" | jq -r '.attestationUID')
+            tx=$(echo "$out" | jq -r '.txHash')
+            jq --arg uid "$uid" --arg tx "$tx" '. + {attestationUID: $uid, attestationTxHash: $tx}' "$f" > "$f.tmp"
+            mv "$f.tmp" "$f"
           done
+
+      - name: Commit attestation UIDs
+        run: |
+          set -euo pipefail
+          if git diff --quiet; then
+            echo "No attestation updates to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _truth/receipts/*.json
+          git commit -m "AUTO_ATTEST: append receipt attestation UIDs"
+          git push
