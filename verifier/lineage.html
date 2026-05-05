@@ -12,7 +12,7 @@
 </head>
 <body>
   <h1>ALMS Lineage Verifier</h1>
-  <p>Input a child link UID. The verifier reads the link attestation from Base Sepolia EAS and renders the parent → child edge.</p>
+  <p>Input a child link attestation UID. The verifier reads the link attestation from Base Sepolia EAS and renders the parent → child edge.</p>
 
   <label>Link attestation UID</label>
   <input id="uid" placeholder="0x..." />
@@ -26,7 +26,7 @@ import { ethers } from 'https://cdn.jsdelivr.net/npm/ethers/+esm';
 
 const EAS = '0x4200000000000000000000000000000000000021';
 const RPC = 'https://sepolia.base.org';
-const LINK_SCHEMA = 'bytes32 parentUID,bytes32 childUID,bytes32 parentActionHash,bytes32 childActionHash,address parentSigner,address childSigner,string relation,uint64 timestamp,string payloadRef';
+const LINK_SCHEMA_UID = '0x0000000000000000000000000000000000000000000000000000000000000000';
 
 const uidEl = document.getElementById('uid');
 const out = document.getElementById('out');
@@ -41,6 +41,9 @@ async function verifyLineage(uid) {
   );
   const att = await eas.getAttestation(uid);
   if (!att.uid || att.uid === ethers.ZeroHash) return { verdict: 'CHAIN_LINEAGE_BROKEN', reason: 'link_attestation_not_found' };
+  if (LINK_SCHEMA_UID !== ethers.ZeroHash && att.schema.toLowerCase() !== LINK_SCHEMA_UID.toLowerCase()) {
+    return { verdict: 'CHAIN_LINEAGE_BROKEN', reason: 'wrong_schema', expected: LINK_SCHEMA_UID, actual: att.schema };
+  }
 
   const decoded = ethers.AbiCoder.defaultAbiCoder().decode(
     ['bytes32','bytes32','bytes32','bytes32','address','address','string','uint64','string'],
@@ -61,9 +64,11 @@ async function verifyLineage(uid) {
 
   const allowed = ['spawned', 'verified', 'delegated', 'superseded'];
   const relationValid = allowed.includes(edge.relation);
+  if (!relationValid) return { verdict: 'CHAIN_LINEAGE_BROKEN', reason: 'invalid_relation', edge };
+  if (edge.childUID.toLowerCase() !== uid.toLowerCase()) return { verdict: 'CHAIN_LINEAGE_BROKEN', reason: 'uid_mismatch', expected: uid, actual: edge.childUID, edge };
 
   return {
-    verdict: relationValid ? 'CHAIN_LINEAGE_VALID' : 'CHAIN_LINEAGE_BROKEN',
+    verdict: 'CHAIN_LINEAGE_VALID',
     uid,
     schemaUID: att.schema,
     attester: att.attester,
