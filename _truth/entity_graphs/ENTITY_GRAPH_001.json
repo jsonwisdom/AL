@@ -1,0 +1,57 @@
+{
+  "entity_graph_id": "ENTITY_GRAPH_001",
+  "source": "justice_epstein",
+  "delta_set_ref": "DELTA_SET_001",
+  "release_manifest_sha256": "44a74a00019faed75ae5166f4787fa7b7c0c4a7a10084387670c67614946a41c",
+  "nodes": [
+    {
+      "node_id": "justice_domain",
+      "node_type": "SOURCE_DOMAIN",
+      "properties": {
+        "url": "https://www.justice.gov",
+        "source": "doj_official"
+      }
+    },
+    {
+      "node_id": "epstein_page",
+      "node_type": "DOCUMENT",
+      "properties": {
+        "file_path": "_truth/ingest/justice_epstein/2026-05-05T10-15-35Z.html",
+        "sha256": "f8597472a5b9dd6c350189862c02f10673f5efa5c452b32d095915d84507226d",
+        "size_bytes": 2578,
+        "fetch_timestamp": "2026-05-05T10-15-35Z"
+      }
+    },
+    {
+      "node_id": "ingest_run",
+      "node_type": "PROCESS",
+      "properties": {
+        "script": "scripts/fetch_justice_epstein.sh",
+        "timestamp": "2026-05-05T10-15-35Z"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "edge_001",
+      "from_node": "justice_domain",
+      "to_node": "epstein_page",
+      "relationship": "HOSTS"
+    },
+    {
+      "edge_id": "edge_002",
+      "from_node": "ingest_run",
+      "to_node": "epstein_page",
+      "relationship": "CREATED"
+    }
+  ],
+  "node_count": 3,
+  "edge_count": 2,
+  "status": "CANDIDATE",
+  "promoted": false,
+  "opens_custody_gate": false,
+  "WRITE_RUN_0002": "UNCHANGED",
+  "gate_status": "CLOSED",
+  "entity_graph_manifest_sha256": null,
+  "custody_note": "Candidate entity graph only. Provenance graph over source, ingest process, and document artifact. No semantic entity extraction, no claim ledger, no view layer, and no WRITE_RUN_0002_packet.json."
+}
