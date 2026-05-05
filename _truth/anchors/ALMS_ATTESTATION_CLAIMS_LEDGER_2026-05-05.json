@@ -1,0 +1,59 @@
+{
+  "artifact": "ALMS_ATTESTATION_CLAIMS_LEDGER",
+  "ledger_id": "ALMS_ATTESTATION_CLAIMS_LEDGER_2026-05-05",
+  "created_at_utc": "2026-05-05T00:00:00Z",
+  "repo": "jsonwisdom/AL",
+  "claim_scope": "OBSERVATION_STACK_ONLY",
+  "promotion": false,
+  "gate_status": "CLOSED",
+  "onchain_status": "NOT_ATTESTED",
+  "claims": [
+    {
+      "claim_id": "ALMS_CLAIM_001",
+      "statement": "The DOJ observation stack reached QUIESCENT HOLD on 2026-05-05.",
+      "status": "VERIFIED_BY_REPO_ARTIFACT",
+      "evidence_path": "_truth/status/QUIESCENT_HOLD_2026-05-05.json",
+      "allowed_public_claim": "Snapshot proven. Change detectable. Monitoring pending."
+    },
+    {
+      "claim_id": "ALMS_CLAIM_002",
+      "statement": "The DOJ web UI source was observed as structurally blocked under current conditions.",
+      "status": "VERIFIED_BY_REPO_ARTIFACT",
+      "evidence_path": "_truth/observations/justice_epstein_ACCESS_FINAL_001.json",
+      "allowed_public_claim": "Web UI access was not reliably monitorable under current conditions."
+    },
+    {
+      "claim_id": "ALMS_CLAIM_003",
+      "statement": "A DOJ PDF artifact was captured and SHA256-verified as a snapshot-only observation.",
+      "status": "VERIFIED_BY_REPO_ARTIFACT",
+      "evidence_path": "_truth/observations/justice_epstein_PDF_VALIDATION_001.json",
+      "allowed_public_claim": "A specific DOJ PDF snapshot was captured and byte-verified."
+    },
+    {
+      "claim_id": "ALMS_CLAIM_004",
+      "statement": "The PDF-only hash index was recorded for the captured DOJ PDF artifact.",
+      "status": "VERIFIED_BY_REPO_ARTIFACT",
+      "evidence_path": "_truth/hash_index/HASH_INDEX_003.json",
+      "allowed_public_claim": "The captured PDF has a recorded hash index entry."
+    },
+    {
+      "claim_id": "ALMS_CLAIM_005",
+      "statement": "The manifest-pair diff engine passed the defined adversarial test matrix.",
+      "status": "VERIFIED_BY_REPO_ARTIFACT",
+      "evidence_path": "_truth/diff_engine/WRITE_RUN_0004_1_TEST_RESULT.json",
+      "allowed_public_claim": "The diff engine passed defined adversarial cases only."
+    },
+    {
+      "claim_id": "ALMS_CLAIM_006",
+      "statement": "Continuous monitoring, dataset completeness, semantic truth, and promotion authority remain unproven.",
+      "status": "BOUNDARY_CLAIM",
+      "evidence_path": "_truth/status/QUIESCENT_HOLD_2026-05-05.json",
+      "allowed_public_claim": "Monitoring, completeness, and semantic truth were not claimed."
+    }
+  ],
+  "claim_count": 6,
+  "verified_claims": 5,
+  "boundary_claims": 1,
+  "ledger_manifest_sha256": null,
+  "custody_note": "Claims ledger for future schema/EAS attestation. Not onchain. Do not mark ATTESTED until real UID or transaction hash is recorded."
+}
