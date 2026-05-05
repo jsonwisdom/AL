@@ -1,0 +1,35 @@
+name: Validate Claim Ledgers
+
+on:
+  pull_request:
+    paths:
+      - "ledgers/claims/**.json"
+      - "scripts/validate_claim_bounding.py"
+      - "scripts/validate_claim_ledger.py"
+      - "schemas/CLAIM_BOUNDING_TEST_LEDGER.schema.json"
+
+jobs:
+  validate-claims:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validate claim ledgers
+        run: |
+          set -e
+          files=$(ls ledgers/claims/*.json 2>/dev/null || true)
+          if [ -z "$files" ]; then
+            echo "No claim ledgers found."
+            exit 0
+          fi
+          for f in $files; do
+            echo "Validating $f"
+            python scripts/validate_claim_ledger.py "$f"
+          done
