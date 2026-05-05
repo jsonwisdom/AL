@@ -1,0 +1,30 @@
+{
+  "action": {
+    "agent": "agent1.jaywisdom.base.eth",
+    "input": {
+      "bytes": 123456,
+      "sha256": "0x1111111111111111111111111111111111111111111111111111111111111111",
+      "uri": "file://samples/mn-gov-fixture.pdf"
+    },
+    "output": {
+      "bytes": 4096,
+      "metadata": {
+        "preview": "deterministic-local-gate-fixture",
+        "transform": "pdf-preview-hash-v1"
+      },
+      "sha256": "0x2222222222222222222222222222222222222222222222222222222222222222"
+    },
+    "policy": {
+      "allowNetwork": false,
+      "maxBytes": 10000000
+    },
+    "taskId": "sample_agent1_pdf_ingest",
+    "taskType": "task-ingest-pdf",
+    "timestamp": "2026-05-05T00:00:00.000Z",
+    "version": "1.0.0"
+  },
+  "jcs": "{\"agent\":\"agent1.jaywisdom.base.eth\",\"input\":{\"bytes\":123456,\"sha256\":\"0x1111111111111111111111111111111111111111111111111111111111111111\",\"uri\":\"file://samples/mn-gov-fixture.pdf\"},\"output\":{\"bytes\":4096,\"metadata\":{\"preview\":\"deterministic-local-gate-fixture\",\"transform\":\"pdf-preview-hash-v1\"},\"sha256\":\"0x2222222222222222222222222222222222222222222222222222222222222222\"},\"policy\":{\"allowNetwork\":false,\"maxBytes\":10000000},\"taskId\":\"sample_agent1_pdf_ingest\",\"taskType\":\"task-ingest-pdf\",\"timestamp\":\"2026-05-05T00:00:00.000Z\",\"version\":\"1.0.0\"}",
+  "actionHash": "0x4990cc83c098b3a85b655afe5e56fe433e61dc1c951b91bfb65a6799dbb1fd65",
+  "signature": "0x",
+  "signer": "0x"
+}
