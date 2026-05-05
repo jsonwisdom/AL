@@ -1,40 +1,108 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>ALMS Verifier</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ALMS Public Verifier</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 960px; margin: 2rem auto; padding: 0 1rem; }
+    textarea, input { width: 100%; box-sizing: border-box; margin: .5rem 0 1rem; }
+    textarea { min-height: 260px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    pre { background: #111; color: #eee; padding: 1rem; overflow: auto; }
+    .ok { color: #087f23; font-weight: 700; }
+    .bad { color: #b00020; font-weight: 700; }
+  </style>
 </head>
 <body>
-  <h1>ALMS Local Verifier</h1>
-  <textarea id="input" rows="20" cols="80" placeholder="Paste receipt JSON here"></textarea><br/>
-  <button onclick="verify()">Verify</button>
-  <pre id="output"></pre>
+  <h1>ALMS Public Verifier</h1>
+  <p>Paste a signed receipt. Local verification checks JCS → SHA256 → EIP-191 signature. Optional chain check reads Base Sepolia EAS.</p>
+
+  <label>Receipt JSON</label>
+  <textarea id="receipt" placeholder="Paste receipt JSON"></textarea>
+
+  <label>Optional Base Sepolia Attestation UID</label>
+  <input id="uid" placeholder="0x..." />
+
+  <button id="verify">Verify</button>
+  <button id="share">Build Share Link</button>
+
+  <h2>Result</h2>
+  <pre id="out">Waiting.</pre>
+  <h2>QR</h2>
+  <img id="qr" alt="QR code appears after share link" />
 
 <script type="module">
 import canonicalize from 'https://cdn.jsdelivr.net/npm/canonicalize/+esm';
 import { ethers } from 'https://cdn.jsdelivr.net/npm/ethers/+esm';
 
-window.verify = async () => {
+const EAS = '0x4200000000000000000000000000000000000021';
+const BASESCAN = 'https://sepolia.basescan.org/tx/';
+const RPC = 'https://sepolia.base.org';
+
+const out = document.getElementById('out');
+const receiptEl = document.getElementById('receipt');
+const uidEl = document.getElementById('uid');
+const qrEl = document.getElementById('qr');
+
+function print(x) { out.textContent = JSON.stringify(x, null, 2); }
+
+async function verifyLocal(receipt) {
+  const jcs = canonicalize(receipt.action);
+  const actionHash = ethers.sha256(ethers.toUtf8Bytes(jcs));
+  const recovered = ethers.verifyMessage(actionHash, receipt.signature);
+  const signatureValid = recovered.toLowerCase() === receipt.signer.toLowerCase();
+  const hashValid = actionHash === receipt.actionHash;
+  return {
+    sha256: hashValid ? 'valid' : 'invalid',
+    signature: signatureValid ? 'valid' : 'invalid',
+    recovered,
+    actionHash,
+    verdict: hashValid && signatureValid ? 'LOCAL_VERIFICATION_PASSED' : 'LOCAL_VERIFICATION_FAILED'
+  };
+}
+
+async function verifyChain(uid, receipt) {
+  if (!uid) return { status: 'not_checked' };
+  const provider = new ethers.JsonRpcProvider(RPC);
+  const eas = new ethers.Contract(
+    EAS,
+    ['function getAttestation(bytes32 uid) view returns (tuple(bytes32 uid,bytes32 schema,uint64 time,uint64 expirationTime,uint64 revocationTime,bytes32 refUID,address recipient,address attester,bool revocable,bytes data))'],
+    provider
+  );
+  const att = await eas.getAttestation(uid);
+  const exists = att.uid && att.uid !== ethers.ZeroHash;
+  return {
+    status: exists ? 'valid' : 'invalid',
+    uid,
+    schema: exists ? att.schema : null,
+    recipient: exists ? att.recipient : null,
+    attester: exists ? att.attester : null,
+    time: exists ? Number(att.time) : null,
+    recipient_matches_signer: exists && receipt?.signer ? att.recipient.toLowerCase() === receipt.signer.toLowerCase() : null
+  };
+}
+
+document.getElementById('verify').onclick = async () => {
   try {
-    const r = JSON.parse(document.getElementById('input').value);
-    const jcs = canonicalize(r.action);
-    const hash = ethers.sha256(ethers.toUtf8Bytes(jcs));
-    const recovered = ethers.verifyMessage(hash, r.signature);
-
-    const result = {
-      sha256: hash === r.actionHash ? 'valid' : 'invalid',
-      signature: recovered.toLowerCase() === r.signer.toLowerCase() ? 'valid' : 'invalid',
-      copy_paste_replay: 'passed',
-      verdict: (hash === r.actionHash && recovered.toLowerCase() === r.signer.toLowerCase())
-        ? 'LOCAL_VERIFICATION_PASSED'
-        : 'LOCAL_VERIFICATION_FAILED'
-    };
-
-    document.getElementById('output').textContent = JSON.stringify(result, null, 2);
+    const receipt = JSON.parse(receiptEl.value);
+    const local = await verifyLocal(receipt);
+    const chain = await verifyChain(uidEl.value.trim(), receipt);
+    print({ LOCAL: local, CHAIN: chain });
   } catch (e) {
-    document.getElementById('output').textContent = e.toString();
+    print({ error: e instanceof Error ? e.message : String(e) });
   }
 };
+
+document.getElementById('share').onclick = () => {
+  const url = new URL(location.href);
+  if (uidEl.value.trim()) url.searchParams.set('uid', uidEl.value.trim());
+  const link = url.toString();
+  qrEl.src = 'https://quickchart.io/qr?text=' + encodeURIComponent(link);
+  print({ shareLink: link });
+};
+
+const params = new URLSearchParams(location.search);
+if (params.get('uid')) uidEl.value = params.get('uid');
 </script>
 </body>
 </html>
