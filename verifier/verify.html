@@ -9,8 +9,6 @@
     textarea, input { width: 100%; box-sizing: border-box; margin: .5rem 0 1rem; }
     textarea { min-height: 260px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
     pre { background: #111; color: #eee; padding: 1rem; overflow: auto; }
-    .ok { color: #087f23; font-weight: 700; }
-    .bad { color: #b00020; font-weight: 700; }
   </style>
 </head>
 <body>
@@ -36,7 +34,6 @@ import canonicalize from 'https://cdn.jsdelivr.net/npm/canonicalize/+esm';
 import { ethers } from 'https://cdn.jsdelivr.net/npm/ethers/+esm';
 
 const EAS = '0x4200000000000000000000000000000000000021';
-const BASESCAN = 'https://sepolia.basescan.org/tx/';
 const RPC = 'https://sepolia.base.org';
 
 const out = document.getElementById('out');
@@ -82,16 +79,18 @@ async function verifyChain(uid, receipt) {
   };
 }
 
-document.getElementById('verify').onclick = async () => {
+async function runVerify() {
   try {
-    const receipt = JSON.parse(receiptEl.value);
-    const local = await verifyLocal(receipt);
+    const receipt = receiptEl.value.trim() ? JSON.parse(receiptEl.value) : null;
+    const local = receipt ? await verifyLocal(receipt) : { status: 'receipt_not_provided' };
     const chain = await verifyChain(uidEl.value.trim(), receipt);
     print({ LOCAL: local, CHAIN: chain });
   } catch (e) {
     print({ error: e instanceof Error ? e.message : String(e) });
   }
-};
+}
+
+document.getElementById('verify').onclick = runVerify;
 
 document.getElementById('share').onclick = () => {
   const url = new URL(location.href);
@@ -102,7 +101,10 @@ document.getElementById('share').onclick = () => {
 };
 
 const params = new URLSearchParams(location.search);
-if (params.get('uid')) uidEl.value = params.get('uid');
+if (params.get('uid')) {
+  uidEl.value = params.get('uid');
+  runVerify();
+}
 </script>
 </body>
 </html>
