@@ -1,7 +1,7 @@
 {
   "artifact": "USC_ARTICLE_I_GLOBAL_ROOT",
   "rule_id": "ALMS_GLOBAL_MERKLE_RULE_V1",
-  "status": "ROOT_RECORDED_FROM_REMOTE_SECTION_MANIFESTS",
+  "status": "ROOT_V2_PROMOTED_FROM_REPLAY_AFTER_DRIFT_RECEIPT",
   "sections": [
     {
       "id": "USC-A1-S8",
@@ -20,6 +20,8 @@
     }
   ],
   "article_i_root_rule": "leaf = SHA256(section_id + ':' + section_root_sha256); parent = SHA256(left_raw || right_raw); odd leaf promoted unchanged",
-  "article_i_root_sha256": "09873d69046c82736187786483562306208a0d01f974673323065a0438627341",
-  "gate_note": "Article I root recorded only after Section 8, 9, and 10 manifests were fetched from GitHub."
+  "article_i_root_sha256": "2c595278a5a1ecbafd00544bdcd81a5473b4a13775950d5300e2b44c1bbcd518",
+  "gate_note": "Article I root recorded only after Section 8, 9, and 10 manifests were fetched from GitHub.",
+  "previous_article_i_root_sha256": "09873d69046c82736187786483562306208a0d01f974673323065a0438627341",
+  "promotion_receipt": "_truth/us/constitution/promotion/article_i_root_v2_promotion_2026-05-05.json"
 }
