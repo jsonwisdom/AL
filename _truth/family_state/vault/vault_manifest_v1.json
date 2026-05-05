@@ -1,8 +1,11 @@
 {
   "artifact": "FAMILY_STATE_VAULT_V1",
-  "status": "SEALED_ONCHAIN",
-  "canonical_source": "IPFS",
+  "status": "GLOBALLY_MERKLE_ROOTED",
+  "canonical_source": "IPFS + GitHub",
   "bundleCID": "bafybeichf2q4fvxknpaq3v5g5gl5m76eiwzmadz6pgkamemhupvcfoolbm",
+  "merkle_root": "0xdb2a48d967c0354eab34137754ce3a32098eddd5bdc1fbe9c0a2e6296992b15a",
+  "merkle_root_uid": "0x0f2d29611c21dd989fd2036867232e9ee50d655f75ca58af29cf073aef04a628",
+  "merkle_root_url": "https://raw.githubusercontent.com/jsonwisdom/AL/1cb0519595cf1abfef6c811220cfb4eb912e01ed/_truth/family_state/vault/merkle_root_v1.txt",
   "entries": [
     {
       "entryId": "vault_core_values_v1",
