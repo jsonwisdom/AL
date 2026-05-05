@@ -1,0 +1,51 @@
+{
+  "schema": "string sequenceId,string cardId,string phase,bytes32 trilogyHash,bytes32 imageHash,string title,string claim,string sourceUrl,string parentUid",
+  "network": "base",
+  "status": "PAYLOADS_READY_SCHEMA_UID_PENDING",
+  "parent": {
+    "sequenceId": "ALMS_TRILOGY_V1",
+    "cardId": "PARENT",
+    "phase": "SEQUENCE",
+    "trilogyHash": "0xbff64af27865e7967a9992c4ac8089bc8ca6a637e58194236d1b3abd25e1ac57",
+    "imageHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "title": "Verified Before Viral — The ALMS Sequence",
+    "claim": "GitHub source, IPFS bundle, and SHA256 media hashes locked before EAS anchoring.",
+    "sourceUrl": "ipfs://bafybeibcc32x2jq3ktmk4epvugprux2ehrsx2ukzqbn5gxffvudztc6ile",
+    "parentUid": ""
+  },
+  "children": [
+    {
+      "sequenceId": "ALMS_TRILOGY_V1",
+      "cardId": "CARD_001_ANDY",
+      "phase": "HOOK",
+      "trilogyHash": "0xbff64af27865e7967a9992c4ac8089bc8ca6a637e58194236d1b3abd25e1ac57",
+      "imageHash": "0xfb4521ae28e166ee9442c20e68ea38e2f9dc51d40a68fbfcdf2c0d8e773ea821",
+      "title": "ALGO-ADDICTED ANDY",
+      "claim": "Engagement systems can optimize addiction over safety.",
+      "sourceUrl": "ipfs://bafybeibcc32x2jq3ktmk4epvugprux2ehrsx2ukzqbn5gxffvudztc6ile/andy.jpg",
+      "parentUid": "PARENT_UID_PENDING"
+    },
+    {
+      "sequenceId": "ALMS_TRILOGY_V1",
+      "cardId": "CARD_002_GARY",
+      "phase": "HAMMER",
+      "trilogyHash": "0xbff64af27865e7967a9992c4ac8089bc8ca6a637e58194236d1b3abd25e1ac57",
+      "imageHash": "0x603a559a8da229d90c731a8be517f408471e1f72b095fa4361a93ddeba56060c",
+      "title": "GAVEL-GAGGED GARY",
+      "claim": "Courts enforce safety after harm is proven.",
+      "sourceUrl": "ipfs://bafybeibcc32x2jq3ktmk4epvugprux2ehrsx2ukzqbn5gxffvudztc6ile/gary.jpg",
+      "parentUid": "PARENT_UID_PENDING"
+    },
+    {
+      "sequenceId": "ALMS_TRILOGY_V1",
+      "cardId": "CARD_003_ALLISON",
+      "phase": "PREVENTION",
+      "trilogyHash": "0xbff64af27865e7967a9992c4ac8089bc8ca6a637e58194236d1b3abd25e1ac57",
+      "imageHash": "0xe7eb95287af70d21676a43c395881e6477968fccfd35fd46b0774c5c0281f4de",
+      "title": "AUDIT ALLISON",
+      "claim": "Systems can verify safety before deployment.",
+      "sourceUrl": "ipfs://bafybeibcc32x2jq3ktmk4epvugprux2ehrsx2ukzqbn5gxffvudztc6ile/allison.jpg",
+      "parentUid": "PARENT_UID_PENDING"
+    }
+  ]
+}
