@@ -1,0 +1,39 @@
+name: Validate Attestation Candidates
+
+on:
+  pull_request:
+    paths:
+      - "_truth/anchors/**.json"
+      - "schemas/ATTESTATION_CANDIDATE.v1.schema.json"
+      - "scripts/verify_attestation_graph.py"
+      - "scripts/validate_attestation_candidate.py"
+
+jobs:
+  validate-candidates:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: |
+          pip install jsonschema
+
+      - name: Validate candidates
+        run: |
+          set -e
+          files=$(ls _truth/anchors/*.json 2>/dev/null || true)
+          if [ -z "$files" ]; then
+            echo "No attestation candidates found."
+            exit 0
+          fi
+          for f in $files; do
+            echo "Validating $f"
+            python scripts/validate_attestation_candidate.py "$f"
+          done
