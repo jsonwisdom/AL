@@ -1,34 +1,43 @@
 {
   "artifact": "FAMILY_STATE_VAULT_V1",
-  "status": "HASHED_IPFS_COMPLETE_EAS_PENDING",
+  "status": "SEALED_ONCHAIN",
   "canonical_source": "IPFS",
   "bundleCID": "bafybeichf2q4fvxknpaq3v5g5gl5m76eiwzmadz6pgkamemhupvcfoolbm",
   "entries": [
     {
       "entryId": "vault_core_values_v1",
       "type": "VALUES",
+      "cardId": "VAULT_VALUES",
       "contentCID": "ipfs://bafybeichf2q4fvxknpaq3v5g5gl5m76eiwzmadz6pgkamemhupvcfoolbm/vault_core_values_v1.md",
       "contentHash": "0x5e4adc4bba7ed4d520ade207b2b8316e282c54337fd63acf96e3fb26454b5851",
+      "eas_uid": "0xb77990d104e6e37748feb1ecc615f26ed0c3753898ccef9ca4fff3105d51f611",
+      "eas_url": "https://base.easscan.org/attestation/0xb77990d104e6e37748feb1ecc615f26ed0c3753898ccef9ca4fff3105d51f611",
       "steward": "ALLISON_WRITES_JAY_VERIFIES",
       "phase": "VAULT_ENTRY_V1"
     },
     {
       "entryId": "vault_emergency_protocol_v1",
       "type": "RUNBOOK",
+      "cardId": "VAULT_RUNBOOK",
       "contentCID": "ipfs://bafybeichf2q4fvxknpaq3v5g5gl5m76eiwzmadz6pgkamemhupvcfoolbm/vault_emergency_protocol_v1.md",
       "contentHash": "0x4e6d3f4f5e087cb94c4548dc8ba3d2063b1650e876b64ce3f0362614e96ce4a2",
+      "eas_uid": "0x596ebae3bb0ebbe8ef4da29ca8eb9965fe4c28f8cdc840a88efb2b49a1702f68",
+      "eas_url": "https://base.easscan.org/attestation/0x596ebae3bb0ebbe8ef4da29ca8eb9965fe4c28f8cdc840a88efb2b49a1702f68",
       "steward": "ANDY_BUILDS_GARY_GUARDS_JAY_VERIFIES",
       "phase": "VAULT_ENTRY_V1"
     },
     {
       "entryId": "vault_origin_story_v1",
       "type": "STORY",
+      "cardId": "VAULT_STORY",
       "contentCID": "ipfs://bafybeichf2q4fvxknpaq3v5g5gl5m76eiwzmadz6pgkamemhupvcfoolbm/vault_origin_story_v1.md",
       "contentHash": "0x3a5d5e87e94c1631227fbd2309e89b8d52b11bef956fbf0766f5d60dd0c3b0ea",
+      "eas_uid": "0x267b71eed5267ab35ccba482bd98b456af336302046705ef6d0859c051e08a96",
+      "eas_url": "https://base.easscan.org/attestation/0x267b71eed5267ab35ccba482bd98b456af336302046705ef6d0859c051e08a96",
       "steward": "JAY_DRAFTS_ALLISON_TRANSMITS",
       "phase": "VAULT_ENTRY_V1"
     }
   ],
   "eas_schema": "0x6736223de66e49f0f8a89ff4ef26e1ef6ce41da73536447d434aefc1f4b6e53b",
-  "eas_status": "PENDING_UIDS"
+  "eas_status": "COMPLETE"
 }
