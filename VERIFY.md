@@ -8,6 +8,13 @@ Anyone can verify the ALMS Trilogy integrity using standard tools such as `curl`
 git clone https://github.com/jsonwisdom/AL.git
 cd AL
 git checkout 62bf6450357f8edb2d4494140ca294cf073b0708
+git rev-parse HEAD
+```
+
+Expected commit:
+
+```text
+62bf6450357f8edb2d4494140ca294cf073b0708
 ```
 
 ## Step 2: Run the verifier
@@ -56,7 +63,7 @@ allison.jpg 0xe7eb95287af70d21676a43c395881e6477968fccfd35fd46b0774c5c0281f4de
 ## Integrity chain
 
 ```text
-Git commit 62bf6450 → CI log → IPFS directory CID → per-file SHA256s → EAS pending
+Git commit 62bf6450357f8edb2d4494140ca294cf073b0708 → verifier script → IPFS directory CID → per-file SHA256s → EAS pending
 ```
 
 No ghost anchors. No "trust me" steps.
