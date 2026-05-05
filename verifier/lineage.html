@@ -12,7 +12,7 @@
 </head>
 <body>
   <h1>ALMS Lineage Verifier</h1>
-  <p>Input a child link attestation UID. The verifier reads the link attestation from Base Sepolia EAS and renders the parent → child edge.</p>
+  <p>Input a child link attestation UID. The verifier reads the link attestation from Base and renders the parent → child edge.</p>
 
   <label>Link attestation UID</label>
   <input id="uid" placeholder="0x..." />
@@ -25,8 +25,8 @@
 import { ethers } from 'https://cdn.jsdelivr.net/npm/ethers/+esm';
 
 const EAS = '0x4200000000000000000000000000000000000021';
-const RPC = 'https://sepolia.base.org';
-const LINK_SCHEMA_UID = '0x0000000000000000000000000000000000000000000000000000000000000000';
+const RPC = 'https://mainnet.base.org';
+const LINK_SCHEMA_UID = '0x93c5ccbb6334ce3f9b56e77580c45cbeb616ad27a9f1955a65ab51b8f7e2d35e';
 
 const uidEl = document.getElementById('uid');
 const out = document.getElementById('out');
@@ -41,7 +41,7 @@ async function verifyLineage(uid) {
   );
   const att = await eas.getAttestation(uid);
   if (!att.uid || att.uid === ethers.ZeroHash) return { verdict: 'CHAIN_LINEAGE_BROKEN', reason: 'link_attestation_not_found' };
-  if (LINK_SCHEMA_UID !== ethers.ZeroHash && att.schema.toLowerCase() !== LINK_SCHEMA_UID.toLowerCase()) {
+  if (att.schema.toLowerCase() !== LINK_SCHEMA_UID.toLowerCase()) {
     return { verdict: 'CHAIN_LINEAGE_BROKEN', reason: 'wrong_schema', expected: LINK_SCHEMA_UID, actual: att.schema };
   }
 
