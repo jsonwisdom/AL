@@ -1,0 +1,37 @@
+{
+  "artifact": "DIFF_ENGINE_TEST_RESULT",
+  "run_id": "WRITE_RUN_0004_1",
+  "engine": "DIFF_ENGINE_V1",
+  "status": "VALIDATED",
+  "result": "ALL_TESTS_PASSED",
+  "promotion": false,
+  "write_run_0002": "UNCHANGED",
+  "write_run_0004": "UNCHANGED",
+  "gate_status": "CLOSED",
+  "test_results": [
+    {
+      "case_id": "DIFF_001_SAME_MANIFEST",
+      "result": "PASS",
+      "meaning": "same manifest produced empty diff"
+    },
+    {
+      "case_id": "DIFF_002_HETEROGENEOUS_NO_FALSE_CHANGED",
+      "result": "PASS",
+      "meaning": "different manifests did not produce false changed entries"
+    },
+    {
+      "case_id": "DIFF_003_CORRUPT_JSON_FAIL_FAST",
+      "result": "PASS",
+      "meaning": "corrupt JSON failed fast with nonzero exit"
+    },
+    {
+      "case_id": "DIFF_004_TRUNCATED_SHA_NO_FALSE_CHANGED",
+      "result": "PASS",
+      "meaning": "truncated SHA test did not hallucinate changed overlap in heterogeneous case"
+    }
+  ],
+  "claim_scope": "SNAPSHOT_DIFF_ONLY",
+  "validated_claim": "DIFF_ENGINE_V1 passed defined adversarial cases only; this does not prove monitoring, completeness, or semantic correctness.",
+  "recommended_next_action": "HOLD_UNTIL_REAL_T_TPLUSDELTA_MANIFEST_PAIR",
+  "custody_note": "Test result recorded from operator-provided terminal output. No content fetch, no promotion, no gate movement."
+}
