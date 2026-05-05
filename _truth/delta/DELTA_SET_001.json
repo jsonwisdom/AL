@@ -1,0 +1,34 @@
+{
+  "artifact": "DELTA_SET",
+  "delta_set_id": "DELTA_SET_001",
+  "hash_index_ref": "HASH_INDEX_001",
+  "release_id": "justice_epstein_REL_0001_CANDIDATE",
+  "release_manifest_sha256": "44a74a00019faed75ae5166f4787fa7b7c0c4a7a10084387670c67614946a41c",
+  "source_id": "justice_epstein",
+  "source_url": "https://www.justice.gov/epstein",
+  "delta_type": "INITIAL",
+  "change_count": 1,
+  "total_delta_bytes": 2578,
+  "status": "CANDIDATE",
+  "promoted": false,
+  "opens_custody_gate": false,
+  "creates_entity_graph": false,
+  "write_run_0002": "UNCHANGED",
+  "gate_status": "CLOSED",
+  "changes": [
+    {
+      "change_id": "justice_epstein_initial_html_001",
+      "change_type": "INITIAL_ARTIFACT",
+      "file_id": "justice_epstein_html_001",
+      "path": "_truth/ingest/justice_epstein/2026-05-05T10-15-35Z.html",
+      "size_bytes": 2578,
+      "sha256": "f8597472a5b9dd6c350189862c02f10673f5efa5c452b32d095915d84507226d",
+      "provenance": {
+        "hash_index_ref": "HASH_INDEX_001",
+        "release_manifest_sha256": "44a74a00019faed75ae5166f4787fa7b7c0c4a7a10084387670c67614946a41c"
+      }
+    }
+  ],
+  "delta_manifest_sha256": null,
+  "custody_note": "Initial Delta Set candidate only. No semantic claims, no entity graph, no claim ledger, no view layer, and no WRITE_RUN_0002_packet.json."
+}
