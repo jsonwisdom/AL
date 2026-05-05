@@ -1,0 +1,22 @@
+{
+  "artifact": "ALMS_SCHEMA_ATTESTATION_CANDIDATE",
+  "candidate_id": "ALMS_SCHEMA_ATTESTATION_CANDIDATE_2026-05-05",
+  "created_at_utc": "2026-05-05T00:00:00Z",
+  "repo": "jsonwisdom/AL",
+  "branch": "master",
+  "commit": "80a12cf6dd40477637d2589387a8b05e09968a2f",
+  "subject_artifact": "_truth/status/QUIESCENT_HOLD_2026-05-05.json",
+  "subject_sha256": "PENDING_STATUS_SHA256_VERIFICATION",
+  "claims_ledger_path": "_truth/anchors/ALMS_ATTESTATION_CLAIMS_LEDGER_2026-05-05.json",
+  "claims_ledger_sha256": "2f0c6d13ccb9ddbc37a5c07d855dfccffb65afd9f78584af2d5d9fe5b3720bb0",
+  "claim": "Snapshot proven. Change detectable. Monitoring pending.",
+  "stack_state": "QUIESCENT",
+  "promotion": false,
+  "gate_status": "CLOSED",
+  "write_run_0002": "UNCHANGED",
+  "onchain_status": "NOT_ATTESTED",
+  "eas_uid": null,
+  "tx_hash": null,
+  "candidate_manifest_sha256": null,
+  "custody_note": "Candidate only. Bound to claims ledger hash. Subject SHA256 still requires operator/repo-side verification before EAS payload. Not EAS-attested until real Base/EAS UID or tx hash is recorded."
+}
