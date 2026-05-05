@@ -1,0 +1,32 @@
+{
+  "artifact": "ACCESS_FINAL_OBSERVATION",
+  "observation_id": "justice_epstein_ACCESS_FINAL_001",
+  "source_id": "justice_epstein",
+  "source_url": "https://www.justice.gov/epstein",
+  "mode": "OBSERVATION",
+  "fetch_method": "PLAYWRIGHT_RENDERED",
+  "content_truth": "PROVEN_FOR_CAPTURED_RENDERED_SNAPSHOT",
+  "access_truth": "STRUCTURALLY_BLOCKED_UNDER_CURRENT_CONDITIONS",
+  "capture_attempts": 5,
+  "successful_captures": 2,
+  "blocked_captures": 3,
+  "success_rate": "40%",
+  "post_initial_success_rate": "0%",
+  "successful_content_sha256": "8601485862b2e914eeb2b5ae5fe7f33a3df292946c8f5ccbecbc91dbb207ca89",
+  "latest_blocked_sha256": "6e6b6894bcbc47306590822b0cb88d56456cfab47ca018c7a0b5b7d6b87d8afa",
+  "barrier_likely": true,
+  "barrier_types_observed": [
+    "full_html_wrapper",
+    "minimal_text_wrapper"
+  ],
+  "promotion_status": "BLOCKED",
+  "promotion_block_reason": "ACCESS_NOT_RELIABLY_MONITORABLE_UNDER_CURRENT_IP_SESSION_FINGERPRINT",
+  "write_run_0002": "UNCHANGED",
+  "gate_status": "CLOSED",
+  "recommended_next_actions": [
+    "stay_in_observation_mode",
+    "seek_alternative_stable_official_endpoint",
+    "retry_after_hours_or_days_without_fingerprint_evasion"
+  ],
+  "custody_note": "Content capture is valid for the captured snapshot. Ongoing monitoring is not proven. Do not promote this source under current access conditions."
+}
