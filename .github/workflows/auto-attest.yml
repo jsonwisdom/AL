@@ -1,0 +1,34 @@
+name: Auto Attest Receipts
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  attest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install deps
+        run: npm install
+
+      - name: Find receipts
+        run: |
+          ls _truth/receipts || true
+
+      - name: Attest receipts
+        env:
+          BASE_SEPOLIA_RPC: ${{ secrets.BASE_SEPOLIA_RPC }}
+          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+          EAS_SCHEMA_UID: ${{ secrets.EAS_SCHEMA_UID }}
+        run: |
+          for f in _truth/receipts/*.json; do
+            echo "Attesting $f"
+            npx ts-node scripts/attest-receipt.ts $f || true
+          done
