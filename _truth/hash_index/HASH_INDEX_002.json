@@ -1,0 +1,33 @@
+{
+  "artifact": "HASH_INDEX",
+  "hash_index_id": "HASH_INDEX_002",
+  "lineage": "RENDERED_ONLY",
+  "source_id": "justice_epstein",
+  "source_url": "https://www.justice.gov/epstein",
+  "entries": [
+    {
+      "file_id": "justice_epstein_rendered_html_001",
+      "path": "_truth/ingest/justice_epstein_rendered/PENDING_OPERATOR_TIMESTAMP.rendered.html",
+      "sha256": "8601485862b2e914eeb2b5ae5fe7f33a3df292946c8f5ccbecbc91dbb207ca89",
+      "size_bytes": 76669,
+      "content_type": "text/html",
+      "origin": "PLAYWRIGHT_RENDERED"
+    },
+    {
+      "file_id": "justice_epstein_rendered_text_001",
+      "path": "_truth/ingest/justice_epstein_rendered/PENDING_OPERATOR_TIMESTAMP.rendered.txt",
+      "sha256": "PENDING_OPERATOR_TEXT_SHA256",
+      "size_bytes": 28897,
+      "content_type": "text/plain",
+      "origin": "PLAYWRIGHT_RENDERED"
+    }
+  ],
+  "entry_count": 2,
+  "status": "CANDIDATE_PENDING_OPERATOR_PATHS",
+  "promoted": false,
+  "opens_custody_gate": false,
+  "write_run_0002": "UNCHANGED",
+  "gate_status": "CLOSED",
+  "hash_index_manifest_sha256": null,
+  "custody_note": "Rendered-only hash index candidate. Requires operator timestamp and text_sha256 patch before manifest lock. Excludes Akamai challenge captures."
+}
