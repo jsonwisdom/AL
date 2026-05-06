@@ -142,13 +142,97 @@ Source:
 https://www.sos.state.mn.us/
 ```
 
+Current officeholder:
+
+```text
+Steve Simon, Minnesota Secretary of State
+```
+
 Useful for:
 
-- elections,
-- voter information,
+- elections and voting,
+- voter registration,
+- absentee voting information,
+- election results,
+- county election office lookup,
 - business filings,
-- civic participation resources,
-- official state records.
+- liens,
+- Safe at Home address confidentiality,
+- notary public services,
+- official documents,
+- open appointments to state boards, councils, and commissions.
+
+### Elections and Voting
+
+Source:
+
+```text
+https://www.sos.state.mn.us/elections-voting/
+```
+
+Citizen uses:
+
+- register to vote,
+- check registration,
+- find polling place,
+- learn about absentee voting,
+- review election results,
+- understand how elections work.
+
+County election office finder:
+
+```text
+https://www.sos.state.mn.us/elections-voting/find-county-election-office/
+```
+
+### Business and Liens
+
+Source:
+
+```text
+https://www.sos.state.mn.us/business-liens/
+```
+
+Citizen and business uses:
+
+- business search,
+- business registration,
+- renewals,
+- filings,
+- liens.
+
+Contact:
+
+```text
+651-296-2803
+877-551-6767
+```
+
+### Safe at Home
+
+Source:
+
+```text
+https://www.sos.state.mn.us/safe-at-home/
+```
+
+Public summary:
+
+```text
+Address confidentiality program for eligible participants, including people affected by domestic violence, stalking, sexual assault, or related safety concerns.
+```
+
+### Other Services
+
+The Secretary of State also supports:
+
+- notary public applications and lookup,
+- official documents,
+- Great Seal-related functions,
+- certification of legislative acts, executive orders, and governor proclamations,
+- open appointments for state boards, commissions, and councils.
+
+These notes are navigation aids. The authoritative source is the Secretary of State website.
 
 ---
 
