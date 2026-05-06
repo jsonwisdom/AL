@@ -130,7 +130,107 @@ Useful for:
 - court rules,
 - forms,
 - case access links,
-- judicial branch public information.
+- judicial branch public information,
+- self-help resources,
+- Guide & File,
+- court forms,
+- remote hearing information,
+- electronic filing information.
+
+### Self-Help Centers
+
+Source:
+
+```text
+https://mncourts.gov/help-topics/self-help-centers
+```
+
+Public summary:
+
+```text
+Self-help resources for unrepresented / pro se individuals. Staff provide legal information only, not legal advice.
+```
+
+Availability notes:
+
+- statewide phone and email support,
+- Monday through Friday, 8:30 a.m. to 4:00 p.m.,
+- in-person services in Hennepin, Ramsey, and 10th Judicial District counties.
+
+### Help Topics
+
+Source:
+
+```text
+https://mncourts.gov/help-topic-sections
+```
+
+Useful for common legal topics such as:
+
+- conciliation / small claims court,
+- divorce,
+- expungement,
+- restraining orders,
+- child support,
+- custody,
+- name changes,
+- landlord / tenant issues.
+
+### Guide & File
+
+Source:
+
+```text
+https://mncourts.gov/help-topics/guide-and-file
+```
+
+Public summary:
+
+```text
+Free online interview tool that helps create and electronically file court forms.
+```
+
+### Court Forms
+
+Source:
+
+```text
+https://mncourts.gov/getforms
+```
+
+Useful for:
+
+- official court forms,
+- fillable forms,
+- Smart Forms where available.
+
+### Minnesota State Law Library
+
+Source:
+
+```text
+https://mn.gov/law-library/
+```
+
+Useful for:
+
+- legal research guides,
+- legal topic pages,
+- county-by-county referrals,
+- appellate opinions archive,
+- public legal information.
+
+### Court Structure
+
+Navigation summary:
+
+```text
+Minnesota Supreme Court -> Minnesota Court of Appeals -> District Courts
+```
+
+Minnesota District Courts are organized into ten judicial districts.
+
+These notes are navigation aids. The authoritative source is the Minnesota Judicial Branch and Minnesota State Law Library.
 
 ---
 
