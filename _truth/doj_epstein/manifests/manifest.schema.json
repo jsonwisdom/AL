@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DOJ Epstein Public Records Manifest",
+  "type": "object",
+  "required": [
+    "manifest_id",
+    "state",
+    "generated_at_utc",
+    "receipts"
+  ],
+  "properties": {
+    "manifest_id": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string",
+      "enum": [
+        "SOURCE_PENDING",
+        "INDETERMINATE",
+        "REPLAY_READY"
+      ]
+    },
+    "generated_at_utc": {
+      "type": "string"
+    },
+    "receipts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "receipt_id",
+          "path"
+        ],
+        "properties": {
+          "receipt_id": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}
