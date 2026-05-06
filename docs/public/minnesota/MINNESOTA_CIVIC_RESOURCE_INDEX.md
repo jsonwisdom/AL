@@ -29,7 +29,7 @@ Official sources = primary references.
 Citizen summaries = navigation aids only.
 ```
 
-Readers should verify legal, constitutional, court, election, health, housing, and agency information against official Minnesota sources.
+Readers should verify legal, constitutional, court, election, health, housing, legal-aid, and agency information against official or authoritative sources.
 
 ---
 
@@ -577,6 +577,97 @@ Minnesota Housing provides financing, program, and referral resources.
 This index is not legal advice, financial advice, or housing eligibility determination.
 
 Readers should confirm program eligibility and deadlines with Minnesota Housing or the relevant administering organization.
+
+---
+
+## LawHelpMN.org
+
+Source:
+
+```text
+https://www.lawhelpmn.org/
+```
+
+Public summary:
+
+```text
+Free legal information and referral resources for Minnesotans with civil legal issues.
+```
+
+Operated by:
+
+```text
+Legal Services State Support / Minnesota Legal Services Coalition
+```
+
+Useful for:
+
+- finding legal aid resources,
+- civil legal information,
+- county-based referrals,
+- legal topic navigation,
+- immigration legal resource referrals,
+- provider lookup through legal-aid networks,
+- multilingual legal information.
+
+### Legal Help Guide
+
+Public summary:
+
+```text
+Guided triage tool that asks questions and points users toward legal aid or referral options based on location and situation.
+```
+
+### Topic Coverage
+
+LawHelpMN covers civil legal topics such as:
+
+- housing,
+- family law,
+- debt,
+- immigration,
+- disability,
+- healthcare,
+- employment,
+- benefits,
+- consumer issues.
+
+### Immigration Resources
+
+Source:
+
+```text
+https://www.lawhelpmn.org/immigration
+```
+
+Useful for:
+
+- verified immigration legal resources,
+- referrals,
+- public information intended to reduce misinformation.
+
+### Related Resources
+
+```text
+https://www.mnlegaladvice.org/
+https://www.projusticemn.org/
+https://www.vlnmn.org/
+https://www.211unitedway.org/
+```
+
+Minnesota Volunteer Lawyers Network phone:
+
+```text
+612-752-6699
+```
+
+### Legal Information Boundary
+
+LawHelpMN provides legal information and referrals.
+
+This index is not legal advice and does not create an attorney-client relationship.
+
+Readers should confirm eligibility, availability, and referral details through LawHelpMN or the relevant legal-service provider.
 
 ---
 
