@@ -42,6 +42,7 @@ V2_TRANSFORM_VARIANT = "V2_TRANSFORM_VARIANT"
 V3_PROVENANCE_VARIANT = "V3_PROVENANCE_VARIANT"
 V4_IDENTITY_VARIANT = "V4_IDENTITY_VARIANT"
 V5_SEMANTIC_VARIANT = "V5_SEMANTIC_VARIANT"
+TRACE_CLOSED = "TRACE_CLOSED"
 
 EXIT_CODES = {
     PASS: 0,
@@ -63,6 +64,9 @@ class TraceStep:
     input_ref: Optional[str] = None
     output_ref: Optional[str] = None
     message: Optional[str] = None
+    verdict: Optional[str] = None
+    trace_hash: Optional[str] = None
+    closed_at: Optional[str] = None
 
 
 @dataclass
@@ -80,8 +84,11 @@ class VerificationState:
     artifact_id: Optional[str] = None
     source_uri: Optional[str] = None
     source_type: Optional[str] = None
+    trace_closed: bool = False
 
     def add_trace(self, name: str, status: str, message: Optional[str] = None) -> None:
+        if self.trace_closed:
+            raise RuntimeError("trace is sealed; no further events may be appended")
         self.trace.append(
             TraceStep(
                 step=len(self.trace) + 1,
@@ -100,6 +107,11 @@ def canonical_json_bytes(obj: Any) -> bytes:
 
 def sha256_hex(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
+
+
+def trace_hash(trace: List[TraceStep]) -> str:
+    trace_body = [step.__dict__ for step in trace]
+    return "sha256:" + sha256_hex(canonical_json_bytes(trace_body))
 
 
 def load_packet(path: Path) -> Dict[str, Any]:
@@ -138,8 +150,6 @@ def validate_provenance(state: VerificationState) -> None:
         return
 
     if str(state.source_uri).startswith(("http://", "https://", "ipfs://")):
-        # Constitutional rule: no network calls during replay.
-        # Remote URIs may identify source, but this skeleton will not fetch them.
         state.add_trace("provenance_validation", "PASS", "remote source declared but not fetched during replay")
         return
 
@@ -187,8 +197,6 @@ def recompute_digest_placeholder(state: VerificationState) -> None:
         return
 
     state.expected_digest = digest
-
-    # Skeleton behavior: for now, only verifies self-contained canonical.inline_json.
     inline_json = canonical.get("inline_json")
     if inline_json is None:
         state.verdict = INDETERMINATE
@@ -220,21 +228,49 @@ def verify_receipt_placeholder(state: VerificationState) -> None:
 
 
 def finalize_verdict(state: VerificationState) -> None:
-    if state.errors:
-        if state.verdict == INDETERMINATE:
-            state.add_trace("verdict", "INDETERMINATE", "failed closed without observable contradiction")
-        elif state.verdict == FAIL:
-            state.add_trace("verdict", "FAIL", "observable contradiction detected")
-        elif state.verdict == TAINTED:
-            state.add_trace("verdict", "TAINTED", "policy divergence detected")
+    if state.trace_closed:
         return
 
-    state.verdict = PASS
-    state.cvd_class = NONE
-    state.add_trace("verdict", "PASS", "declared evidence recomputed under skeleton constraints")
+    if state.errors:
+        if state.verdict == FAIL:
+            status = FAIL
+            message = "observable contradiction detected"
+        elif state.verdict == TAINTED:
+            status = TAINTED
+            message = "policy divergence detected"
+        else:
+            state.verdict = INDETERMINATE
+            status = INDETERMINATE
+            message = "failed closed without observable contradiction"
+    else:
+        state.verdict = PASS
+        state.cvd_class = NONE
+        status = PASS
+        message = "declared evidence recomputed under skeleton constraints"
+
+    closure = TraceStep(
+        step=len(state.trace) + 1,
+        name=TRACE_CLOSED,
+        status=status,
+        input_ref=str(state.input_path),
+        output_ref=None,
+        message=message,
+        verdict=state.verdict,
+        trace_hash=None,
+        closed_at=datetime.now(timezone.utc).isoformat(),
+    )
+    state.trace.append(closure)
+    closure.trace_hash = trace_hash(state.trace)
+    state.trace_closed = True
+
+
+def assert_trace_closed(state: VerificationState) -> None:
+    if not state.trace or state.trace[-1].name != TRACE_CLOSED or not state.trace_closed:
+        raise RuntimeError("verdict void: TRACE_CLOSED terminal event missing")
 
 
 def emit_cvd_report(state: VerificationState) -> Dict[str, Any]:
+    assert_trace_closed(state)
     now = datetime.now(timezone.utc).isoformat()
     report = {
         "schema": "CVD_OUTPUT_SCHEMA_V1",
@@ -302,27 +338,19 @@ def run_verifier(path: Path) -> VerificationState:
     packet = load_packet(path)
     state = VerificationState(input_path=path, packet=packet)
 
-    validate_schema(state)
-    if state.errors:
-        return state
+    try:
+        validate_schema(state)
+        if not state.errors:
+            validate_provenance(state)
+        if not state.errors:
+            validate_transform_policy(state)
+        if not state.errors:
+            recompute_digest_placeholder(state)
+        if not state.errors:
+            verify_receipt_placeholder(state)
+    finally:
+        finalize_verdict(state)
 
-    validate_provenance(state)
-    if state.errors:
-        return state
-
-    validate_transform_policy(state)
-    if state.errors:
-        return state
-
-    recompute_digest_placeholder(state)
-    if state.errors:
-        return state
-
-    verify_receipt_placeholder(state)
-    if state.errors:
-        return state
-
-    finalize_verdict(state)
     return state
 
 
@@ -344,7 +372,7 @@ def main() -> int:
     except ValueError as exc:
         print(json.dumps({"error": str(exc), "verdict": "INVALID_INPUT"}, sort_keys=True), file=sys.stderr)
         return EXIT_CODES["INVALID_INPUT"]
-    except Exception as exc:  # fail closed
+    except Exception as exc:
         print(json.dumps({"error": str(exc), "verdict": "INTERNAL_ERROR"}, sort_keys=True), file=sys.stderr)
         return EXIT_CODES["INTERNAL_ERROR"]
 
