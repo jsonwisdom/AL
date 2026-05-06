@@ -29,7 +29,7 @@ Official sources = primary references.
 Citizen summaries = navigation aids only.
 ```
 
-Readers should verify legal, constitutional, court, election, health, and agency information against official Minnesota sources.
+Readers should verify legal, constitutional, court, election, health, housing, and agency information against official Minnesota sources.
 
 ---
 
@@ -476,6 +476,107 @@ Grant programs overview:
 ```text
 https://www.dli.mn.gov/grants
 ```
+
+---
+
+## Minnesota Housing Finance Agency
+
+Source:
+
+```text
+https://www.mnhousing.gov/
+```
+
+Public mission summary:
+
+```text
+All Minnesotans live and thrive in a stable, safe, and accessible home they can afford.
+```
+
+Office address:
+
+```text
+400 Wabasha Street North, Suite 400
+St. Paul, MN 55102
+```
+
+Useful for:
+
+- homebuyer assistance,
+- refinance information,
+- home improvement loans,
+- foreclosure prevention resources,
+- renter assistance,
+- housing stability programs,
+- homelessness prevention resources,
+- supportive housing resources.
+
+### Homeownership Resources
+
+Buy or refinance a home:
+
+```text
+https://www.mnhousing.gov/homeownership/buy-or-refinance-a-home.html
+```
+
+Citizen uses:
+
+- Start Up loans for eligible first-time homebuyers,
+- Step Up loans for repeat homebuyers or refinancing,
+- Fix Up home improvement loans,
+- Rehabilitation Loan Program information,
+- foreclosure prevention and payment-difficulty resources.
+
+Housing help:
+
+```text
+https://www.mnhousing.gov/home/housing-help
+```
+
+### Renter Resources
+
+Help for renters:
+
+```text
+https://www.mnhousing.gov/rental-housing/help-for-renters.html
+```
+
+Find housing assistance:
+
+```text
+https://www.mnhousing.gov/home/housing-stability/find-housing-assistance.html
+```
+
+Useful for:
+
+- rental assistance information,
+- housing assistance referrals,
+- Family Homeless Prevention and Assistance Program references,
+- Housing Trust Fund Rental Assistance references,
+- Bridges Program references.
+
+HousingLink rental property finder:
+
+```text
+https://housinglink.org/
+```
+
+### Housing Stability
+
+Minnesota Housing resources may point to:
+
+- Coordinated Entry System information,
+- supportive housing resources,
+- homelessness prevention programs,
+- Minnesota Interagency Council on Homelessness resources.
+
+### Housing Information Boundary
+
+Minnesota Housing provides financing, program, and referral resources.
+
+This index is not legal advice, financial advice, or housing eligibility determination.
+
+Readers should confirm program eligibility and deadlines with Minnesota Housing or the relevant administering organization.
 
 ---
 
