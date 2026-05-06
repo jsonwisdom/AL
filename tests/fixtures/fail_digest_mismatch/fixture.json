@@ -1,0 +1,45 @@
+{
+  "fixture_spec": "FIXTURE_SPEC_V1",
+  "fixture_id": "fixture:mn:test:fail-digest-mismatch:001:sha256:d286238325148188949569a586de904f4957435b9fa597f38c32d986c63d115f",
+  "jurisdiction": "mn",
+  "domain": "test",
+  "source": {
+    "title": "ALMS FAIL Vector 001",
+    "uri": "local:test/fail_digest_mismatch/source.json",
+    "publisher": "jsonwisdom/AL",
+    "retrieved_at": "2026-05-06T00:00:00Z",
+    "retrieval_method": "local",
+    "source_type": "json"
+  },
+  "transform": {
+    "policy_id": "ALMS_JSON_INLINE_CANONICAL_V1",
+    "policy_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+    "canonicalization_method": "json.dumps sort_keys compact utf-8",
+    "toolchain": ["python-json"],
+    "notes": "Minimal FAIL vector for replay engine skeleton."
+  },
+  "canonical": {
+    "digest_method": "sha256",
+    "digest": "sha256:d286238325148188949569a586de904f4957435b9fa597f38c32d986c63d115f",
+    "byte_length": 49,
+    "uri": null,
+    "inline_json": {
+      "record": "mn-pass-001",
+      "status": "tampered"
+    }
+  },
+  "receipt": {
+    "receipt_spec": "ALMS_RECEIPT_V1",
+    "uri": null,
+    "digest": "sha256:d286238325148188949569a586de904f4957435b9fa597f38c32d986c63d115f"
+  },
+  "replay": {
+    "replay_spec": "REPLAY_SPEC_V1",
+    "required_inputs": ["source", "transform_policy", "canonical_digest", "receipt"],
+    "expected_verdict": "FAIL"
+  },
+  "witness": {
+    "required_for_verification": false,
+    "items": []
+  }
+}
