@@ -29,7 +29,7 @@ Official sources = primary references.
 Citizen summaries = navigation aids only.
 ```
 
-Readers should verify legal, constitutional, court, election, and agency information against official Minnesota sources.
+Readers should verify legal, constitutional, court, election, health, and agency information against official Minnesota sources.
 
 ---
 
@@ -333,6 +333,125 @@ The Secretary of State also supports:
 - open appointments for state boards, commissions, and councils.
 
 These notes are navigation aids. The authoritative source is the Secretary of State website.
+
+---
+
+## Minnesota Department of Health
+
+Source:
+
+```text
+https://www.health.state.mn.us/
+```
+
+Public mission summary:
+
+```text
+Protects, maintains, and improves the health of all Minnesotans.
+```
+
+Useful for:
+
+- vital records,
+- immunization records,
+- WIC nutrition resources,
+- 988 mental health crisis information,
+- cancer screening resources,
+- health care facility and provider lookup,
+- disease and condition information,
+- public health data and statistics,
+- emergency preparedness.
+
+### Vital Records and Individual Health
+
+Vital records:
+
+```text
+https://www.health.state.mn.us/people/vitalrecords/index.html
+```
+
+Immunization records:
+
+```text
+https://www.health.state.mn.us/people/immunize/miic/records.html
+```
+
+WIC nutrition program:
+
+```text
+https://www.health.state.mn.us/people/wic/index.html
+```
+
+988 Lifeline information:
+
+```text
+https://www.health.state.mn.us/communities/suicide/988/questions.html
+```
+
+Sage cancer screening program:
+
+```text
+https://www.health.state.mn.us/diseases/cancer/sage/index.html
+```
+
+### Facilities and Providers
+
+Find a facility or provider:
+
+```text
+https://www.health.state.mn.us/facilities/regulation/findaprovider.html
+```
+
+Nurse aide registry:
+
+```text
+https://www.health.state.mn.us/facilities/providers/nursingassistant/index.html
+```
+
+### Diseases and Conditions
+
+A-Z disease listing:
+
+```text
+https://www.health.state.mn.us/diseases/index.html
+```
+
+Travel health guidance:
+
+```text
+https://www.health.state.mn.us/diseases/travel/travelers.html
+```
+
+### Data and Statistics
+
+Source:
+
+```text
+https://www.health.state.mn.us/data/index.html
+```
+
+Useful for:
+
+- community health data,
+- disease statistics,
+- environmental health data,
+- health behavior data.
+
+### Emergency Preparedness
+
+Source:
+
+```text
+https://www.health.state.mn.us/communities/ep/index.html
+```
+
+### Health Information Boundary
+
+MDH provides public health information and resources.
+
+This index is not medical advice.
+
+Readers should confirm health information with MDH, licensed professionals, or emergency services when appropriate.
 
 ---
 
