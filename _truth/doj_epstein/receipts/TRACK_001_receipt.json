@@ -1,0 +1,33 @@
+{
+  "receipt_id": "TRACK_001",
+  "status": "INGESTED_PENDING_REPLAY",
+  "source": {
+    "type": "official_DOJ_page_or_release",
+    "url": "https://www.justice.gov/opa/media/1434856/dl?inline",
+    "docket_reference": "",
+    "retrieved_at_utc": "'$TS'"
+  },
+  "artifact": {
+    "path": "_truth/doj_epstein/sources/dl.pdf",
+    "media_type": "application/pdf",
+    "sha256": "'$HASH'",
+    "byte_length": '$BYTES'
+  },
+  "description": {
+    "neutral_summary": "DOJ Office of the Deputy Attorney General Section 3 report to Congress concerning the Epstein Files Transparency Act.",
+    "page_or_section": "6-page PDF",
+    "notes": "Inclusion of a name means only appearance in released materials; no wrongdoing asserted."
+  },
+  "provenance": {
+    "operator": "jaywisdom.base",
+    "capture_method": "operator_local_download_and_hash",
+    "archive_url": ""
+  },
+  "verification": {
+    "verification_status": "REPO_BYTES_HASHED",
+    "computed_from": "_truth/doj_epstein/sources/dl.pdf",
+    "verdict": "INDETERMINATE",
+    "reason": "INGESTED_PENDING_REPLAY",
+    "match_confirmed": null
+  }
+}
