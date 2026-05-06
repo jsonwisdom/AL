@@ -34,17 +34,62 @@ Primary Minnesota civic resource index:
 ./MINNESOTA_CIVIC_RESOURCE_INDEX.md
 ```
 
-Chapter 216B public utilities index:
+---
+
+## Live Statute Navigation Indices
+
+### Public Trust and Transparency
+
+Chapter 13 — Government Data Practices Act:
+
+```text
+./MN_STATUTES_13_GOVERNMENT_DATA_PRACTICES_INDEX.md
+```
+
+Chapter 13D — Open Meeting Law:
+
+```text
+./MN_STATUTES_13D_OPEN_MEETING_LAW_INDEX.md
+```
+
+Public trust navigation rule:
+
+```text
+Chapter 13  = access to government data
+Chapter 13D = access to public meetings
+```
+
+### Energy Infrastructure and Governance
+
+Chapter 216B — Public Utilities:
 
 ```text
 ./MN_STATUTES_216B_PUBLIC_UTILITIES_INDEX.md
 ```
 
+Chapter 216C — Energy Planning and Conservation:
+
+```text
+./MN_STATUTES_216C_ENERGY_PLANNING_CONSERVATION_INDEX.md
+```
+
+Chapter 216E — Power Plant and Transmission Siting:
+
+```text
+./MN_STATUTES_216E_POWER_PLANT_TRANSMISSION_SITING_INDEX.md
+```
+
+Energy navigation rule:
+
+```text
+216B = regulate utilities
+216C = plan energy policy
+216E = site physical infrastructure
+```
+
 ---
 
-## Citizen Navigation
-
-### Core Minnesota Government Sources
+## Agency and Civic Resource Navigation
 
 Use the civic resource index to find official public sources for:
 
@@ -65,29 +110,24 @@ File:
 ./MINNESOTA_CIVIC_RESOURCE_INDEX.md
 ```
 
-### Statutory Navigation
-
-Chapter 216B Public Utilities index:
-
-```text
-./MN_STATUTES_216B_PUBLIC_UTILITIES_INDEX.md
-```
-
-Official Revisor source:
-
-```text
-https://www.revisor.mn.gov/statutes/cite/216B
-```
-
 ---
 
-## Agency Grouping
+## Sovereignty Bundles
 
-### Elections and Civic Records
+### Public Trust and Transparency
 
-- Minnesota Secretary of State
+- Minnesota Statutes Chapter 13
+- Minnesota Statutes Chapter 13D
 - Minnesota Legislature
 - Office of the Revisor of Statutes
+
+### Energy Infrastructure and Governance
+
+- Minnesota Statutes Chapter 216B
+- Minnesota Statutes Chapter 216C
+- Minnesota Statutes Chapter 216E
+- Minnesota Department of Commerce references where linked from official sources
+- Minnesota Public Utilities Commission references where linked from official sources
 
 ### Courts and Legal Help
 
@@ -96,29 +136,27 @@ https://www.revisor.mn.gov/statutes/cite/216B
 - LawHelpMN
 - Minnesota Attorney General
 
+### Elections and Civic Records
+
+- Minnesota Secretary of State
+- Minnesota Legislature
+- Office of the Revisor of Statutes
+
 ### Health, Housing, Labor, and Public Services
 
 - Minnesota Department of Health
 - Minnesota Housing Finance Agency
 - Minnesota Department of Labor and Industry
 
-### Utilities, Energy, and Infrastructure
-
-- Minnesota Statutes Chapter 216B
-- Minnesota Public Utilities Commission references where linked from official sources
-- Minnesota Department of Commerce references where linked from official sources
-
 ---
 
-## Statute Queue
+## Future Statute Candidates
 
-Future statute navigation candidates:
+Future statute navigation candidates may include:
 
 ```text
-Chapter 13  = Minnesota Government Data Practices Act
-Chapter 13D = Open Meeting Law
-Chapter 216C = Energy conservation and state energy policy
-Chapter 216E = Power plant and transmission siting
+Chapter 216F = Wind energy conversion systems
+Chapter 216G = Pipeline routing
 ```
 
 These are candidates only.
@@ -133,7 +171,7 @@ Official source links should be treated as primary references.
 
 Repo summaries are navigation aids.
 
-Always confirm legal, health, housing, election, court, agency, or public-program details directly with the official source.
+Always confirm legal, health, housing, election, court, agency, utility, energy, infrastructure, or public-program details directly with the official source.
 
 ---
 
