@@ -128,3 +128,9 @@ Use the Revisor for the statute.
 Use this index to find the statute.
 
 Verify > narrative.
+
+---
+
+## Navigation
+
+[Back to Minnesota Civic Hub](./README.md)
