@@ -268,12 +268,74 @@ Source:
 https://www.ag.state.mn.us/
 ```
 
+Current officeholder:
+
+```text
+Keith Ellison, Minnesota Attorney General
+```
+
+Office address:
+
+```text
+445 Minnesota Street, Suite 600
+St. Paul, MN 55101
+```
+
+Phone:
+
+```text
+651-296-3353
+800-657-3787
+800-627-3529 (Minnesota Relay)
+```
+
 Useful for:
 
 - consumer protection,
+- consumer complaint filing,
 - public legal resources,
 - official attorney general publications,
-- opinions and guidance where published.
+- antitrust reporting,
+- charities and nonprofit oversight resources,
+- Medicaid Fraud Control Unit information,
+- senior citizen, veteran, student, housing, healthcare, utility, and scam-related resources.
+
+### Consumer Complaints
+
+Source:
+
+```text
+https://www.ag.state.mn.us/office/complaint.asp
+```
+
+Citizen uses:
+
+- file consumer complaints,
+- report false advertising or deceptive practices,
+- seek complaint mediation resources,
+- find guidance for consumer disputes.
+
+### Consumer Information Topics
+
+The Attorney General publishes public resources on topics such as:
+
+- scams,
+- identity theft,
+- housing,
+- healthcare,
+- utilities,
+- senior citizens,
+- veterans,
+- students,
+- courts and dispute resolution.
+
+### Legal Representation Boundary
+
+The Attorney General represents the State of Minnesota, state agencies, boards, and commissions.
+
+The office generally cannot provide individual legal advice or represent private individuals.
+
+These notes are navigation aids. The authoritative source is the Attorney General website.
 
 ---
 
