@@ -29,7 +29,7 @@ Official sources = primary references.
 Citizen summaries = navigation aids only.
 ```
 
-Readers should verify legal, constitutional, court, election, health, housing, legal-aid, and agency information against official or authoritative sources.
+Readers should verify legal, constitutional, court, election, health, housing, legal-aid, legislative, and agency information against official or authoritative sources.
 
 ---
 
@@ -95,6 +95,106 @@ Useful for:
 - bill tracking,
 - legislative history,
 - committee information.
+
+### Bill Tracking
+
+Current Legislature:
+
+```text
+94th Legislature, 2025-2026
+```
+
+House bill status search:
+
+```text
+https://www.revisor.mn.gov/bills/status_search.php?body=House
+```
+
+Senate bill status search:
+
+```text
+https://www.revisor.mn.gov/bills/status_search.php?body=Senate
+```
+
+Combined legislative search:
+
+```text
+https://www.leg.mn.gov/leg/legis.aspx
+```
+
+Search options may include:
+
+- bill number,
+- keyword,
+- topic,
+- author,
+- committee,
+- statute citation,
+- legislative action.
+
+Common topics include:
+
+- elections,
+- housing,
+- health,
+- education,
+- environment,
+- labor,
+- courts,
+- transportation,
+- taxes.
+
+### Bill Alerts
+
+MyBills signup:
+
+```text
+https://www.house.leg.state.mn.us/leg/billsublogin.asp
+```
+
+Useful for:
+
+- tracking specific bills,
+- email alerts,
+- RSS alerts where available.
+
+### Session Laws and New Laws
+
+Current session laws:
+
+```text
+https://www.revisor.mn.gov/laws/current/
+```
+
+New Laws summary:
+
+```text
+https://www.house.leg.state.mn.us/newlaws/
+```
+
+### Find Your Legislator
+
+Source:
+
+```text
+https://www.gis.leg.mn/iMaps/districts/
+```
+
+### Committee Schedules and Live Video
+
+House live video:
+
+```text
+https://www.house.leg.state.mn.us/live/1
+```
+
+Senate media:
+
+```text
+https://www.youtube.com/MnSenateMedia
+```
+
+These notes are navigation aids. The authoritative sources are the Minnesota Legislature and Office of the Revisor of Statutes.
 
 ---
 
