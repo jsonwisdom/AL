@@ -1,0 +1,55 @@
+{
+  "registry_id": "CORE_003_REGISTRY_V1",
+  "registry_version": "1.0.0",
+  "layer": "CORE-003",
+  "status": "ACTIVE",
+  "activation_conditions_met": true,
+  "integrity": {
+    "canonical_bytes_frozen": true,
+    "hash_algorithm": "SHA-256",
+    "recomputation_match": true
+  },
+  "fail_closed": {
+    "hash_mismatch": "no_stabilizer",
+    "parse_failure": "no_stabilizer",
+    "topology_mismatch": "no_stabilizer"
+  },
+  "modules": [
+    {
+      "module_id": "CIS_NOTICE_EVICTION_V1",
+      "version": "1.0.0",
+      "domain": "HOUSING_GOVERNANCE",
+      "path": "core/cis/modules/CIS_NOTICE_EVICTION_V1.json",
+      "sha256": "7dc78a9f29f0c7cac113218209fd130e7056ed847a89a89d5f66b611eda714b7",
+      "status": "ACTIVE",
+      "topology_dependencies": [
+        "COURT_ORDER_REQUIRED_FOR_EVICTION"
+      ],
+      "last_verified": "2026-05-06"
+    },
+    {
+      "module_id": "CIS_OVERPAYMENT_V1",
+      "version": "1.0.0",
+      "domain": "BENEFITS_GOVERNANCE",
+      "path": "core/cis/modules/CIS_OVERPAYMENT_V1.json",
+      "sha256": "e7826e32da573acb07b3b48f239a35452b237b35f7ab60989fa91984cdccecfd",
+      "status": "ACTIVE",
+      "topology_dependencies": [
+        "ADMINISTRATIVE_REVIEW_EXISTS"
+      ],
+      "last_verified": "2026-05-06"
+    },
+    {
+      "module_id": "CIS_IPIB_ENFORCEMENT_V1",
+      "version": "1.0.0",
+      "domain": "IOWA_OPEN_GOVERNMENT",
+      "path": "core/cis/modules/CIS_IPIB_ENFORCEMENT_V1.json",
+      "sha256": "58b4919f8f82174d154c4a3c5c75a6528a640814d2bd2cdf470a8843501de9fd",
+      "status": "ACTIVE",
+      "topology_dependencies": [
+        "HYBRID_BOARD_MEDIATION_ENFORCEMENT"
+      ],
+      "last_verified": "2026-05-06"
+    }
+  ]
+}
