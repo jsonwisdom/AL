@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jsonwisdom/AL/docs/attestations/TRACK_001_CEREMONY_TRANSCRIPT_SCHEMA.json",
+  "title": "TRACK_001 Ceremony Transcript Schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "artifact",
+    "track_id",
+    "environment",
+    "network",
+    "operator",
+    "ceremony",
+    "evidence",
+    "ens",
+    "verifier",
+    "verdict"
+  ],
+  "properties": {
+    "artifact": { "const": "TRACK_001_CEREMONY_TRANSCRIPT" },
+    "track_id": { "const": "TRACK_001_DOJ_EPSTEIN" },
+    "environment": { "enum": ["testnet", "mainnet"] },
+    "network": { "enum": ["base-sepolia", "base-mainnet"] },
+    "operator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primary_identity", "primary_identity_base", "operator_wallet"],
+      "properties": {
+        "primary_identity": { "const": "jaywisdom.eth" },
+        "primary_identity_base": { "const": "jaywisdom.base.eth" },
+        "operator_wallet": { "const": "0x992d94aA31dcD8fDb7d8E6885370ef8202AED399" }
+      }
+    },
+    "ceremony": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["run_label", "run_type", "nonce", "issued_at_unix"],
+      "properties": {
+        "run_label": { "type": "string" },
+        "run_type": { "enum": ["TESTNET", "PRODUCTION"] },
+        "nonce": { "type": "string", "pattern": "^0x[a-fA-F0-9]{32,64}$" },
+        "issued_at_unix": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["preflight_hash", "payload_hash", "schema_uid", "attestation_uid", "receipt_sha256", "receipt_commit"],
+      "properties": {
+        "preflight_hash": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
+        "payload_hash": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
+        "schema_uid": { "type": "string", "pattern": "^0x[a-fA-F0-9]{64}$" },
+        "attestation_uid": { "type": "string", "pattern": "^0x[a-fA-F0-9]{64}$" },
+        "receipt_sha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
+        "receipt_commit": { "type": "string", "pattern": "^[a-fA-F0-9]{40}$" }
+      }
+    },
+    "ens": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "schema_uid_key", "attestation_uid_key", "receipt_commit_key", "payload_sha256_key", "receipt_sha256_key", "status_key"],
+      "properties": {
+        "name": { "const": "jaywisdom.base.eth" },
+        "schema_uid_key": { "const": "track001:schema_uid" },
+        "attestation_uid_key": { "const": "track001:attestation_uid" },
+        "receipt_commit_key": { "const": "track001:receipt_commit" },
+        "payload_sha256_key": { "const": "track001:payload_sha256" },
+        "receipt_sha256_key": { "const": "track001:receipt_sha256" },
+        "status_key": { "const": "track001:status" }
+      }
+    },
+    "verifier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["script", "exit_code", "exit_meaning"],
+      "properties": {
+        "script": { "const": "track001_verify.js" },
+        "exit_code": { "type": "integer", "minimum": 0 },
+        "exit_meaning": { "type": "string" }
+      }
+    },
+    "verdict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["governance", "public", "admissible"],
+      "properties": {
+        "governance": { "type": "string" },
+        "public": { "type": "string" },
+        "admissible": { "type": "boolean" }
+      }
+    }
+  }
+}
