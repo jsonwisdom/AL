@@ -1,0 +1,91 @@
+{
+  "state": "Iowa",
+  "artifact": "ia-authorities-seed",
+  "kernel_phase": "STATE_ONBOARDING_V1_STEP_1",
+  "runtime_state": "AUTHORITY_SURFACE_SEED",
+  "last_verified": "2026-05-06",
+  "verifier": "jsonwisdom",
+  "doctrine": {
+    "authority_surface_first": true,
+    "facts_only": true,
+    "guidance_included": false,
+    "workflows_inferred": false
+  },
+  "authorities": [
+    {
+      "name": "Iowa Utilities Commission",
+      "jurisdiction_type": "state_agency",
+      "source_url": "https://iuc.iowa.gov",
+      "core_responsibility": [
+        "utility regulation",
+        "utility consumer information"
+      ],
+      "workflow_inferred": false,
+      "last_verified": "2026-05-06",
+      "verifier": "jsonwisdom"
+    },
+    {
+      "name": "Iowa Department of Health and Human Services",
+      "jurisdiction_type": "state_agency",
+      "source_url": "https://hhs.iowa.gov",
+      "core_responsibility": [
+        "health coverage",
+        "human services",
+        "public assistance"
+      ],
+      "workflow_inferred": false,
+      "last_verified": "2026-05-06",
+      "verifier": "jsonwisdom"
+    },
+    {
+      "name": "Iowa Workforce Development",
+      "jurisdiction_type": "state_agency",
+      "source_url": "https://workforce.iowa.gov",
+      "core_responsibility": [
+        "unemployment insurance",
+        "reemployment services"
+      ],
+      "workflow_inferred": false,
+      "last_verified": "2026-05-06",
+      "verifier": "jsonwisdom"
+    },
+    {
+      "name": "Iowa Secretary of State",
+      "jurisdiction_type": "state_agency",
+      "source_url": "https://sos.iowa.gov",
+      "core_responsibility": [
+        "business services",
+        "elections"
+      ],
+      "workflow_inferred": false,
+      "last_verified": "2026-05-06",
+      "verifier": "jsonwisdom"
+    },
+    {
+      "name": "Iowa Judicial Branch",
+      "jurisdiction_type": "judicial_branch",
+      "source_url": "https://www.iowacourts.gov",
+      "core_responsibility": [
+        "case process information",
+        "court forms",
+        "courts"
+      ],
+      "workflow_inferred": false,
+      "last_verified": "2026-05-06",
+      "verifier": "jsonwisdom"
+    },
+    {
+      "name": "Iowa Public Information Board",
+      "jurisdiction_type": "state_board",
+      "source_url": "https://ipib.iowa.gov",
+      "core_responsibility": [
+        "open meetings guidance",
+        "open records guidance",
+        "public information complaints"
+      ],
+      "workflow_inferred": false,
+      "last_verified": "2026-05-06",
+      "verifier": "jsonwisdom"
+    }
+  ]
+}
