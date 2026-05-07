@@ -1,0 +1,47 @@
+{
+  "version": "PARAMETER_CHANGE_CONSTITUTION_V1",
+  "purpose": "Define replay-safe parameter changes without allowing economics to become governance truth.",
+  "last_verified": "2026-05-06",
+  "verifier": "jsonwisdom",
+  "genesis_parameter_policy": {
+    "genesis_parameters_ratified_before_activation": true,
+    "genesis_grace_period_epochs": 1440,
+    "genesis_parameters_mutable_until": "first_effective_epoch + genesis_grace_period_epochs",
+    "genesis_bundle_required": true,
+    "post_activation_changes_require_future_effective_epoch": true
+  },
+  "change_record_shape": {
+    "change_id": "deterministic_parameter_change_identifier",
+    "parameter_set_id": "target_parameter_set",
+    "old_parameter_snapshot_hash": "sha256_or_cid_of_old_parameter_snapshot",
+    "new_parameter_snapshot_hash": "sha256_or_cid_of_new_parameter_snapshot",
+    "effective_epoch": "future_epoch_or_genesis_bundle_epoch",
+    "rationale_hash": "hash_of_rationale_artifact",
+    "simulation_artifact_hash": "hash_of_simulation_artifact",
+    "approval_attestation": "optional_attestation_or_signature_bundle",
+    "fork_policy": "explicit_fork_required_for_retroactive_disagreement"
+  },
+  "rules": {
+    "no_retroactive_application": true,
+    "no_prior_ledger_rewrite": true,
+    "no_anchor_truth_change": true,
+    "no_implicit_latest_parameters": true,
+    "parameter_epoch_required": true,
+    "rejected_parameter_paths_remain_replay_visible": true
+  },
+  "failure_modes": [
+    "PARAMETER_EPOCH_MISSING",
+    "RETROACTIVE_PARAMETER_CHANGE_ATTEMPT",
+    "PRIOR_LEDGER_REWRITE_ATTEMPT",
+    "ANCHOR_TRUTH_CHANGE_ATTEMPT",
+    "IMPLICIT_LATEST_PARAMETER_ATTEMPT",
+    "GENESIS_GRACE_PERIOD_EXPIRED"
+  ],
+  "invariants": [
+    "Parameter changes tune economics, not truth.",
+    "No parameter change may rewrite prior incentive ledgers.",
+    "No parameter change may alter epoch anchors or manifest identity.",
+    "Genesis parameters may be corrected before activation only inside the explicit grace period.",
+    "After activation, all parameter changes apply only at explicit future epochs."
+  ]
+}
