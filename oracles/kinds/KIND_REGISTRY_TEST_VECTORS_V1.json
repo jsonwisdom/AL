@@ -1,0 +1,125 @@
+{
+  "spec_version": "v1",
+  "artifact": "KIND_REGISTRY_TEST_VECTORS_V1",
+  "purpose": "Pin validator behavior for schema-kind resolution so interpreter convergence is testable across implementations.",
+  "last_verified": "2026-05-06",
+  "verifier": "jsonwisdom",
+  "binds_to": {
+    "registry_anchor_artifact": "oracles/kinds/KIND_REGISTRY_ANCHOR_V1.json",
+    "registry_anchor_commit_sha": "fc548d5811e32e19c9a29f195f1694b5abf6d859",
+    "kind_spec_artifact": "oracles/kinds/SUBSTRATE_REACTION_KIND_V1.json"
+  },
+  "verdict_function": "verdict = F(artifact_bytes, registry_epoch, test_vector_epoch)",
+  "required_properties": [
+    "Substrate records validate only when registry resolves schema_id to KIND_1_SUBSTRATE.",
+    "Reaction fields inside substrate records reject before business logic.",
+    "Registry epoch is an explicit input, not ambient configuration.",
+    "Reaction derivation_type must match registry-bound reaction schema.",
+    "Two validators receiving the same artifact, registry epoch, and test vector epoch must emit the same boolean and reason code."
+  ],
+  "test_vectors": [
+    {
+      "test_vector_id": "TV_KIND_001_SUBSTRATE_BOUNDARY_VALID",
+      "description": "A minimal zk_sensor_observation_v1 substrate validates only as KIND_1_SUBSTRATE under the pinned registry epoch.",
+      "schema_id": "zk_sensor_observation_v1",
+      "artifact": {
+        "sensor_id": "sensor_alpha",
+        "measurement_type": "temperature",
+        "value": 21.5,
+        "units": "celsius",
+        "attestation_hash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "timestamp_unix_ms": 1778112000000
+      },
+      "expected": {
+        "valid": true,
+        "kind": "KIND_1_SUBSTRATE",
+        "reason_code": "VALID_KIND_1_SUBSTRATE"
+      }
+    },
+    {
+      "test_vector_id": "TV_KIND_002_REACTION_SMUGGLED_AS_SUBSTRATE",
+      "description": "A substrate-shaped price observation carrying liquidity_state must fail as reaction smuggling.",
+      "schema_id": "price_observation_v1",
+      "artifact": {
+        "market_id": "ETH_USD",
+        "price": 3000.0,
+        "timestamp_unix_ms": 1778112000000,
+        "liquidity_state": "panic"
+      },
+      "expected": {
+        "valid": false,
+        "reason_code": "REACTION_SMUGGLED_AS_SUBSTRATE",
+        "violated_invariant": "KIND-1"
+      }
+    },
+    {
+      "test_vector_id": "TV_KIND_003_REGISTRY_EPOCH_MISMATCH",
+      "description": "Same artifact bytes under an unpinned or mismatched registry epoch must fail registry validation.",
+      "schema_id": "zk_sensor_observation_v1",
+      "registry_epoch_id": "MISMATCHED_REGISTRY_EPOCH",
+      "artifact": {
+        "sensor_id": "sensor_alpha",
+        "measurement_type": "temperature",
+        "value": 21.5,
+        "units": "celsius",
+        "attestation_hash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "timestamp_unix_ms": 1778112000000
+      },
+      "expected": {
+        "valid": false,
+        "reason_code": "REGISTRY_EPOCH_MISSING"
+      }
+    },
+    {
+      "test_vector_id": "TV_KIND_004_DERIVATION_TYPE_INTEGRITY",
+      "description": "A reaction record with a forged derivation_type must fail schema-bound reaction validation.",
+      "schema_id": "divergence_observation_v1",
+      "artifact": {
+        "source_ids": [
+          "price_obs_001",
+          "price_obs_002"
+        ],
+        "derivation_type": "debt_curve",
+        "computed_fields": {
+          "divergence_score": 0.42
+        }
+      },
+      "expected": {
+        "valid": false,
+        "reason_code": "DERIVATION_TYPE_MISMATCH",
+        "violated_invariant": "KIND-2"
+      }
+    },
+    {
+      "test_vector_id": "TV_KIND_005_TWO_VALIDATOR_CONVERGENCE",
+      "description": "Any two validators given the same artifact, registry epoch, and test vector epoch must emit identical validity and reason code.",
+      "schema_id": "jurisdiction_event_v1",
+      "artifact": {
+        "sovereign_id": "IL",
+        "event_type": "publication",
+        "legal_basis_hash": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "effective_ns": 1778112000000000000
+      },
+      "expected": {
+        "valid": true,
+        "kind": "KIND_1_SUBSTRATE",
+        "reason_code": "VALID_KIND_1_SUBSTRATE",
+        "convergence_required": true
+      }
+    }
+  ],
+  "failure_modes": [
+    "REGISTRY_EPOCH_MISSING",
+    "REGISTRY_ROOT_MISMATCH",
+    "SCHEMA_HASH_MISMATCH",
+    "REACTION_SMUGGLED_AS_SUBSTRATE",
+    "DERIVATION_TYPE_MISMATCH",
+    "VALIDATOR_DIVERGENCE"
+  ],
+  "invariants": [
+    "Interpreter behavior is content-addressed through test vector epochs.",
+    "Validator convergence is measured, not assumed.",
+    "A registry epoch without test vectors is not sufficient for constitutional replay.",
+    "Any two validators diverging on the same triple are outside constitutional consensus."
+  ]
+}
