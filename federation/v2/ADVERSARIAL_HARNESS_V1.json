@@ -1,0 +1,47 @@
+{
+  "artifact": "ADVERSARIAL_HARNESS_V1",
+  "layer": "FEDERATION_V2",
+  "purpose": "Define adversarial pressure tests for V2 federation invariants: temporal privilege, semantic privilege, social privilege, and proof inflation.",
+  "last_verified": "2026-05-06",
+  "verifier": "jsonwisdom",
+  "attacks": [
+    {
+      "attack_id": "TEMPORAL_PRIVILEGE_LATEST_QUERY",
+      "description": "Attempt to query federation state using latest/current semantics instead of an explicit graph root.",
+      "target_schema": "CROSS_EPOCH_QUERY_CLOSURE_V1",
+      "expected_failure": "QUERY_USES_LATEST"
+    },
+    {
+      "attack_id": "SEMANTIC_PRIVILEGE_OBLIGATION_MET_WRITE",
+      "description": "Attempt to make federation write obligation_met or substantive compliance instead of attestation_present.",
+      "target_schema": "PROOF_CARRYING_OBLIGATIONS_V1",
+      "expected_failure": "FEDERATION_ENFORCEMENT_ATTEMPT"
+    },
+    {
+      "attack_id": "SOCIAL_PRIVILEGE_AUTHORITATIVE_SNAPSHOT",
+      "description": "Attempt to treat a federation epoch node as authoritative current world state.",
+      "target_schema": "FED_EPOCH_GRAPH_V1",
+      "expected_failure": "QUERY_USES_LIVE_VIEW"
+    },
+    {
+      "attack_id": "PROOF_INFLATION_VAGUE_OVERSIZED_PROOF",
+      "description": "Attempt to attach oversized or vague proof material to a predicate to create compliance fog and replay-cost inflation.",
+      "target_schema": "PROOF_CARRYING_OBLIGATIONS_V1",
+      "expected_failure": "PROOF_BOUNDS_EXCEEDED"
+    }
+  ],
+  "proof_inflation_bounds": {
+    "predicate_expression_max_chars": 512,
+    "attestation_claim_max_chars": 512,
+    "required_attestations_max": 16,
+    "required_epoch_roots_max": 16,
+    "signature_bundle_hash_required": true,
+    "raw_unbounded_evidence_forbidden": true
+  },
+  "invariants": [
+    "Adversarial tests must fail closed with explicit reason codes.",
+    "No attack may be represented as a valid governance action.",
+    "Proof size and predicate specificity must be bounded to prevent semantic laundering.",
+    "The harness tests grammar, write authority, social status, and replay cost."
+  ]
+}
