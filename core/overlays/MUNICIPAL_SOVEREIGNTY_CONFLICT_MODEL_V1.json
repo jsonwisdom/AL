@@ -1,0 +1,84 @@
+{
+  "model": "MUNICIPAL_SOVEREIGNTY_CONFLICT_MODEL_V1",
+  "layer": "CORE-OVERLAY",
+  "purpose": "Define deterministic arbitration rules between validated Cook and Chicago overlays without accessing or mutating the Illinois baseline directly.",
+  "last_verified": "2026-05-06",
+  "verifier": "jsonwisdom",
+  "scope": {
+    "baseline_access": "forbidden",
+    "operates_over": [
+      "VALID_COOK_DELTA_A",
+      "VALID_CHICAGO_DELTA_B"
+    ],
+    "jurisdiction": "chicago",
+    "assumptions": [
+      "DOWNSTATE_LINEAR_TOPOLOGY_CONTAMINATED(B,E_C) == false",
+      "DOWNSTATE_LINEAR_TOPOLOGY_CONTAMINATED(B,E_H) == false"
+    ]
+  },
+  "precedence": {
+    "levels": {
+      "baseline": 0,
+      "cook": 1,
+      "chicago": 2
+    },
+    "absolute": {
+      "baseline": true,
+      "cook": true,
+      "chicago": false
+    },
+    "interpretation": "Chicago precedence is local and defeasible; Cook wins unless a municipal override window is explicit."
+  },
+  "conflict_types": [
+    "VALUE",
+    "STRUCTURAL",
+    "PERMISSION"
+  ],
+  "conflict_instance_shape": {
+    "node_id": "municipal_node_id",
+    "key_path": "json_pointer_or_equivalent_path",
+    "cook_value": "value_from_valid_cook_effective_view",
+    "chicago_value": "value_from_valid_chicago_effective_view",
+    "conflict_type": "VALUE_OR_STRUCTURAL_OR_PERMISSION"
+  },
+  "resolution_rules": {
+    "rule_1_baseline_firewall": {
+      "condition": "conflict_implies_baseline_mutation_or_contradicts_baseline_absolute_constraint",
+      "result": "reject_stack",
+      "ledger_code": "SOVEREIGNTY_CONFLICT_VIOLATES_BASELINE"
+    },
+    "rule_2_cook_non_overridable": {
+      "condition": "cook_override_policy == cook_absolute",
+      "result": "cook_wins",
+      "ledger_code": "RESOLVED_IN_FAVOR_OF_COOK_NON_OVERRIDABLE"
+    },
+    "rule_3_chicago_local_override": {
+      "condition": "cook_override_policy == municipal_may_override AND node_is_within_chicago_jurisdiction",
+      "result": "chicago_wins",
+      "ledger_code": "RESOLVED_IN_FAVOR_OF_CHICAGO_LOCAL_OVERRIDE"
+    },
+    "rule_4_joint_prohibition": {
+      "condition": "cook_forbids_action AND chicago_forbids_action",
+      "result": "effective_forbid_with_union_reasons",
+      "ledger_code": "RESOLVED_AS_JOINT_PROHIBITION"
+    },
+    "rule_5_cook_default": {
+      "condition": "cook_and_chicago_conflict AND cook_override_policy_missing",
+      "result": "cook_wins",
+      "ledger_code": "RESOLVED_IN_FAVOR_OF_COOK_DEFAULT"
+    }
+  },
+  "failure_modes": [
+    "SOVEREIGNTY_CONFLICT_MODEL_UNDECIDABLE",
+    "SOVEREIGNTY_CONFLICT_VIOLATES_BASELINE",
+    "UNVALIDATED_CHICAGO_OVERLAY",
+    "UNVALIDATED_COOK_OVERLAY"
+  ],
+  "invariants": [
+    "Sovereignty arbitration may run only after Cook and Chicago validators pass.",
+    "Baseline is not a party to arbitration.",
+    "Baseline may not be read for mutation or conflict patching.",
+    "Chicago may win only inside an explicit municipal override window.",
+    "Unspecified override policy defaults to Cook in V1."
+  ]
+}
