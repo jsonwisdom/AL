@@ -1,0 +1,92 @@
+{
+  "spec_version": "v1",
+  "artifact": "PRICE_DIVERGENCE_MARKET_V1",
+  "inherits": "oracles/DIVERGENCE_MARKET_META_V1.json",
+  "claim_type": "PRICE_OBSERVATION",
+  "last_verified": "2026-05-06",
+  "verifier": "jsonwisdom",
+  "oracle_definition": {
+    "type": "financial price oracle stream",
+    "bond": "B_o",
+    "risk_surface": "capital_concentration_and_infrastructure_collocation",
+    "liveness_requirement": "one price claim per epoch T_epoch"
+  },
+  "states": [
+    "INITIAL",
+    "ACTIVE",
+    "CHALLENGED",
+    "RESOLVING_REFERENCE_SET",
+    "CAPITAL_DIVERSITY_FALLBACK",
+    "RESOLVED_SLASHED",
+    "RESOLVED_UPHELD",
+    "APPEAL"
+  ],
+  "reference_set": {
+    "selection_rule": "any k active price oracles in the same asset market selected after challenge freeze",
+    "size_k": 7,
+    "lookback_delta": 100,
+    "entropy_filter": "drop claims where local_price_variance > sigma_max",
+    "diversity_requirement": {
+      "staking_pool_diversity_min": 3,
+      "collocation_zone_diversity_min": 3,
+      "enforcement": "if not met -> transition CAPITAL_DIVERSITY_FALLBACK"
+    }
+  },
+  "capital_diversity_fallback": {
+    "trigger": "staking_pool_diversity < min OR collocation_zone_diversity < min",
+    "state": "CAPITAL_DIVERSITY_FALLBACK",
+    "reference_set": "time_shifted_historical_median_of_same_oracle",
+    "reference_semantics": "self_consistency_only_no_market_truth_claim",
+    "threshold_epsilon_multiplier": 2,
+    "challenger_bond_multiplier": 2,
+    "meaning": "Refusal to judge by capital or infrastructure monoculture; judge only by bounded self-history with wider epsilon."
+  },
+  "challenge_mechanics": {
+    "freeze_on_challenge": true,
+    "challenger_selects_reference_after_freeze": true,
+    "challenger_bond_B_c": "k * delta * verification_cost + grief_margin_g",
+    "reference_unpredictability_invariant": "No price oracle can predict the reference set before challenge freeze.",
+    "fixed_parameters_per_epoch": [
+      "staking_pool_diversity_min",
+      "collocation_zone_diversity_min",
+      "sigma_max",
+      "lookback_delta",
+      "size_k"
+    ]
+  },
+  "slash_condition": {
+    "metric": "abs(price_claim - reference_median)",
+    "threshold_epsilon": "per_asset_market_parameter",
+    "deviation_score": "abs(claim - reference) / epsilon",
+    "slash_amount": "min(B_o, alpha * deviation_score * B_o)",
+    "alpha": 0.8
+  },
+  "economic_consequence": {
+    "primary": "bond_slashing",
+    "secondary": "liquidity_discount",
+    "challenger_reward_beta": 0.5,
+    "protocol_burn_gamma": 0.3,
+    "remaining": "treasury_or_return",
+    "constraint": "beta + gamma <= 1"
+  },
+  "appeal_path": {
+    "exists": true,
+    "to": "higher_asset_market_compact",
+    "bond_multiplier": 1.5
+  },
+  "failure_modes": [
+    "LOW_ACTIVITY_PRICE_ORACLE_SET",
+    "STAKING_POOL_MONOCULTURE",
+    "COLLOCATION_ZONE_MONOCULTURE",
+    "CAPITAL_CONCENTRATION_REFERENCE_CAPTURE",
+    "ENTROPY_FILTER_FALSE_POSITIVE",
+    "GRIEFING_EXPENSIVE_REFERENCE_SET"
+  ],
+  "invariants": [
+    "No price oracle may choose the authority that judges its own divergence.",
+    "Capital diversity failure is refusal to judge by concentrated market peers.",
+    "Fallback narrows to self-consistency and never claims market truth.",
+    "Reference-set unpredictability is the core anti-capture property.",
+    "Fallbacks may narrow truth claims but may never expand authority claims."
+  ]
+}
