@@ -1,0 +1,72 @@
+{
+  "version": "WITNESS_INCENTIVE_MODEL_V1_GENESIS",
+  "parent_model": "economics/WITNESS_INCENTIVE_MODEL_V1.json",
+  "parent_blob_sha": "b5b32556781f32945cdd904cd166f6b79e5aa02f",
+  "parent_sha256_reported_by_operator": "b5b32556781f32945cdd904cd166f6b79e5aa02f",
+  "status": "GENESIS_CORRECTION_WITHIN_GRACE_PERIOD",
+  "effective_epoch": 185440,
+  "parameter_epoch": 184000,
+  "genesis_grace_period_epochs": 1440,
+  "correction_notes": [
+    "chronic_faulty_threshold_epochs corrected from 2 to 7",
+    "chronic_multiplier corrected from 2.0 to 1.5",
+    "base_reward and base_penalty made explicit for simulation replay",
+    "penalty_decay_rate added to allow recovery modeling"
+  ],
+  "parameters": {
+    "base_reward": 100.0,
+    "base_penalty": 5.0,
+    "state_coefficients": {
+      "HEALTHY": {
+        "reward_rate_per_epoch": 1.0,
+        "penalty_rate_per_epoch": 0.0
+      },
+      "MISSING": {
+        "reward_rate_per_epoch": 0.0,
+        "penalty_rate_per_epoch": 0.25
+      },
+      "FAULTY_WITNESS": {
+        "reward_rate_per_epoch": 0.0,
+        "penalty_rate_per_epoch": 1.0
+      },
+      "REPAIRING": {
+        "reward_rate_per_epoch": 0.25,
+        "penalty_rate_per_epoch": 0.05
+      },
+      "UNAVAILABLE_BUT_ANCHORED": {
+        "reward_rate_per_epoch": 0.0,
+        "penalty_rate_per_epoch": 0.0
+      }
+    },
+    "time_in_state_pricing": {
+      "enabled": true,
+      "penalty_formula": "penalty = base_penalty * state_penalty_rate * log2(1 + epochs_in_state)",
+      "reward_formula": "reward = base_reward * state_reward_rate * coverage_multiplier",
+      "chronic_missing_threshold_epochs": 7,
+      "chronic_faulty_threshold_epochs": 7,
+      "chronic_multiplier": 1.5,
+      "penalty_decay_rate": 0.15,
+      "recovery_requires": "consecutive_healthy_epochs >= chronic_faulty_threshold_epochs"
+    },
+    "coverage_rewards": {
+      "coverage_metric": "healthy_witness_count_per_epoch_object",
+      "target_healthy_witnesses": 3,
+      "coverage_multiplier_formula": "min(1.0, healthy_witness_count / target_healthy_witnesses)",
+      "minimum_reward_condition": "witness_state == HEALTHY AND bytes_match_anchor_defined_hashes"
+    },
+    "stake": {
+      "initial_stake": 10000.0,
+      "minimum_stake": 1000.0,
+      "slashing_floor": 0.10,
+      "penalty_draws_from_stake_when_revenue_exhausted": true,
+      "stake_depletion_handling": "DEACTIVATED_WITNESS"
+    }
+  },
+  "operator_reported_sha256": "6033596f7f8397124d2ab3cc13a88941405079154428a4cfe414e8108207098c",
+  "invariants": [
+    "Genesis correction applies before activation only.",
+    "No prior ledger is rewritten.",
+    "Defective V1 remains replay-visible as parent history.",
+    "Economics tune availability, not truth."
+  ]
+}
