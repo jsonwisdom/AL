@@ -6,7 +6,8 @@
   "topology_model": "DOWNSTATE_LINEAR_TOPOLOGY",
   "canonicalization_order": [
     "state",
-    "county"
+    "county",
+    "municipal_non_sovereign"
   ],
   "last_verified": "2026-05-06",
   "verifier": "jsonwisdom",
@@ -18,6 +19,11 @@
     "guidance_included": false,
     "municipal_shadowing_prohibited": true,
     "workflows_inferred": false
+  },
+  "node_tags": {
+    "STATE_LAYER": "statewide authority or state agency node",
+    "COUNTY_LAYER": "county authority node inside downstate linear topology",
+    "MUNICIPAL_NON_SOVEREIGN": "municipal implementation surface with no baseline override authority"
   },
   "inheritance_rules": {
     "baseline_path": "state_to_county",
@@ -48,6 +54,36 @@
       "workflow_inferred": false
     }
   },
+  "sample_instantiation": {
+    "county": "Sangamon County",
+    "status": "SAMPLE_DOWNSTATE_COUNTY",
+    "nodes": [
+      {
+        "node_id": "SANGAMON_SHERIFF",
+        "node_tag": "COUNTY_LAYER",
+        "role": "county_sheriff_local_enforcement",
+        "sovereign_layer": "county"
+      },
+      {
+        "node_id": "SANGAMON_CIRCUIT_CLERK",
+        "node_tag": "COUNTY_LAYER",
+        "role": "judicial_records_and_circuit_court_interface",
+        "sovereign_layer": "county"
+      },
+      {
+        "node_id": "SANGAMON_STATES_ATTORNEY",
+        "node_tag": "COUNTY_LAYER",
+        "role": "prosecution_civil_counsel_and_sheriff_coordination",
+        "sovereign_layer": "county"
+      },
+      {
+        "node_id": "SPRINGFIELD_POLICE_DEPARTMENT",
+        "node_tag": "MUNICIPAL_NON_SOVEREIGN",
+        "role": "municipal_police_implementation_surface",
+        "sovereign_layer": "municipal_non_sovereign"
+      }
+    ]
+  },
   "known_delta_hooks": {
     "COOK_DELTA_A": {
       "status": "EXPLICIT_DELTA_REQUIRED",
@@ -58,16 +94,25 @@
       "reason": "Chicago nested municipal complexity must be modeled as separate overlay"
     }
   },
+  "validation_requirements": [
+    "canonicalization_order_must_match_state_county_municipal_non_sovereign",
+    "municipal_override_allowed_must_be_false",
+    "shadowing_allowed_must_be_false",
+    "sample_instantiation_must_include_required_county_nodes",
+    "municipal_nodes_must_use_MUNICIPAL_NON_SOVEREIGN_tag"
+  ],
   "verification_notes": [
     "Illinois downstate baseline intentionally models state-to-county linear topology only",
+    "Sangamon County is sample instantiation, not statewide proof",
+    "Springfield municipal surface is explicitly non-sovereign in baseline",
     "Cook and Chicago are excluded from baseline and must be layered as explicit deltas",
     "No guidance or workflow is inferred from this seed"
   ],
   "next_allowed_actions": [
-    "Instantiate sample downstate county against baseline",
+    "Run validation script against downstate baseline",
     "Draft Cook Delta A only as explicit overlay",
     "Draft Chicago Delta B only as explicit nested overlay",
-    "Add validation script for topology constraints"
+    "Freeze v1 only after validator passes"
   ],
   "blocked_actions": [
     "Do not infer Cook County behavior into downstate baseline",
