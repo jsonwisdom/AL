@@ -1,0 +1,24 @@
+{
+  "anchor_id": "epoch_anchor_bootstrap_2026-05-06",
+  "epoch_id": "EPOCH_ANCHOR_V1_BOOTSTRAP",
+  "canonical_manifest_cid": "bafkreichwss5dosbtrhy3eh7dg47nnz67rge6ndyxydd6vekv7yfedvxji",
+  "source_artifact_path": "attestation/EPOCH_ANCHOR_V1.json",
+  "source_artifact_github_blob_sha": "9daa0ab97209c6f0d9785d7e3595d0eff7b6b3f5",
+  "source_artifact_raw_url": "https://raw.githubusercontent.com/jsonwisdom/AL/master/attestation/EPOCH_ANCHOR_V1.json",
+  "anchor_context": {
+    "storage_target": "ipfs_or_content_addressed_storage",
+    "cid_supplied_by": "operator",
+    "operator": "Jay Wisdom",
+    "repo": "jsonwisdom/AL",
+    "branch": "master"
+  },
+  "timestamp_unix_ms": 1778112000000,
+  "prev_epoch_anchor": null,
+  "status": "CID_RETURNED_OPERATOR_BOUND",
+  "validation_rule": "Replay node resolves epoch_id to canonical_manifest_cid, fetches bytes, and checks against GitHub source artifact hash or stronger future sha256 field.",
+  "invariants": [
+    "CID proves object authenticity.",
+    "Epoch anchor proves epoch authority.",
+    "Silent epoch rebind attempts are rejected unless explicit fork epoch is declared."
+  ]
+}
