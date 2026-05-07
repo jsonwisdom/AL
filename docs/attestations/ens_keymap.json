@@ -1,0 +1,52 @@
+{
+  "artifact": "TRACK_001_ENS_KEYMAP",
+  "track_id": "TRACK_001_DOJ_EPSTEIN",
+  "ens_name": "jaywisdom.base.eth",
+  "resolves_to": "jaywisdom.eth",
+  "environment": "base-mainnet",
+  "keys": {
+    "schema_uid": {
+      "ens_text_key": "track001:schema_uid",
+      "value_format": "0x-prefixed 32-byte EAS schema UID",
+      "required": true
+    },
+    "attestation_uid": {
+      "ens_text_key": "track001:attestation_uid",
+      "value_format": "0x-prefixed 32-byte EAS attestation UID",
+      "required": true
+    },
+    "receipt_commit": {
+      "ens_text_key": "track001:receipt_commit",
+      "value_format": "40-character git commit SHA",
+      "required": true
+    },
+    "payload_sha256": {
+      "ens_text_key": "track001:payload_sha256",
+      "value_format": "64-character lowercase SHA-256 hex",
+      "required": true
+    },
+    "receipt_sha256": {
+      "ens_text_key": "track001:receipt_sha256",
+      "value_format": "64-character lowercase SHA-256 hex",
+      "required": true
+    },
+    "status": {
+      "ens_text_key": "track001:status",
+      "value_format": "MAINNET_REGISTERED_NOT_ACTIVATED or MAINNET_ACTIVE",
+      "required": true
+    },
+    "verdict": {
+      "ens_text_key": "track001:verdict",
+      "value_format": "TRACK_001_MAINNET_VERDICT string",
+      "required": false
+    }
+  },
+  "invariants": [
+    "ENS is routing, not trust",
+    "Git commits are immutable byte history",
+    "EAS attestations are immutable witnesses",
+    "mainnet references testnet but never inherits testnet",
+    "verify exit code 0 is the only admissible mainnet-real state"
+  ],
+  "status": "ENS_KEYMAP_FROZEN_PENDING_MAINNET_VALUES"
+}
