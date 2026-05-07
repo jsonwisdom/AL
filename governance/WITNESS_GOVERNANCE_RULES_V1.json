@@ -1,0 +1,34 @@
+{
+  "version": "WITNESS_GOVERNANCE_RULES_V1",
+  "governs": "WITNESS_INCENTIVE_MODEL_V1_GENESIS",
+  "rules": {
+    "parameter_changes": {
+      "proposal": "MUST publish proposed JSON and its canonical SHA-256 before activation.",
+      "visibility": "MUST expose diff against prior version.",
+      "effective_epoch": "MUST be declared before activation and replay-verifiable."
+    },
+    "genesis_corrections": {
+      "allowed": "ONLY within defined grace period.",
+      "replay": "MUST preserve defective parent visibility and computed hash."
+    },
+    "activation": {
+      "requirement": "MUST provide commit-pinned raw URL and SHA-256 verification.",
+      "validation": "MUST pass curl|sha256sum gate."
+    },
+    "deprecation": {
+      "rule": "MUST mark prior model as deprecated but replay-visible.",
+      "immutability": "MUST NOT delete or rewrite prior JSON."
+    },
+    "rejection": {
+      "rule": "MUST emit computed hash and mismatch reason.",
+      "visibility": "MUST be replay-auditable."
+    }
+  },
+  "invariants": [
+    "No prior ledger is rewritten.",
+    "Governance rules bind all future parameter objects.",
+    "Bytes decide validity.",
+    "Narrative does not override replay.",
+    "All changes must be replay-verifiable from public surfaces."
+  ]
+}
