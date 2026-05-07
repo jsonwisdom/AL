@@ -1,0 +1,39 @@
+{
+  "version": "WITNESS_PARAMETER_UPDATE_0001_ACTIVATION",
+  "activation_id": 1,
+  "activation_type": "PARAMETER_UPDATE_ACTIVATION",
+  "status": "ACTIVATED",
+  "proposal": {
+    "name": "WITNESS_PARAMETER_UPDATE_0001_PROPOSAL",
+    "commit_sha": "347fc10e2506e0820a44be82fdf79ae37796afbd",
+    "url": "https://raw.githubusercontent.com/jsonwisdom/AL/347fc10e2506e0820a44be82fdf79ae37796afbd/governance/WITNESS_PARAMETER_UPDATE_0001_PROPOSAL.json",
+    "sha256": "ae85f64df2c18ab0e9c6d2bde4e3dd9ca1e1e7b93ea5a1e9c3b3ffff78d4216e",
+    "status": "VERIFIED"
+  },
+  "parent_epoch": {
+    "name": "WITNESS_GOVERNANCE_EPOCH_0001_MANIFEST",
+    "epoch": 1,
+    "commit_sha": "e83b7c5ee5002fac020636cdb78bd9719e4d7fcb",
+    "sha256": "7bc1fe6cf6683c3144c2d79313e78cfb8c4015c681c5cb28c4c695950ed7805f"
+  },
+  "governed_by": {
+    "name": "WITNESS_GOVERNANCE_RULES_V1",
+    "commit_sha": "264b2759b997770dc86015e27df2b179054b1760",
+    "sha256": "e7b99e3eeacb0b49df9c9e81e5cae94b1be5206c62f0e5ccbef4e73bdf4685cd"
+  },
+  "activation_epoch": 2,
+  "activation_timestamp": "2026-05-06T23:00:00Z",
+  "proposal_timestamp": "2026-05-06T22:51:00Z",
+  "activated_change": {
+    "field": "parameters.time_in_state_pricing.chronic_multiplier",
+    "old_value": 1.5,
+    "new_value": 1.25
+  },
+  "invariants": [
+    "Activation references verified proposal SHA-256.",
+    "Activation references sealed Epoch 0001 as parent.",
+    "Activation is governed by WITNESS_GOVERNANCE_RULES_V1.",
+    "Activation timestamp is later than proposal timestamp.",
+    "GENESIS remains replay-visible and is not rewritten."
+  ]
+}
