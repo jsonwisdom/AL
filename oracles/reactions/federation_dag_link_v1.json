@@ -1,0 +1,12 @@
+{
+  "schema": "federation_dag_link_v1",
+  "kind": "KIND_2_REACTION",
+  "derivation_type": "federation_dag_link",
+  "required_fields": {
+    "source_ids": "array",
+    "computed_fields": {
+      "dependency_edges": "array",
+      "graph_transition": "string"
+    }
+  }
+}
