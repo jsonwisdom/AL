@@ -1,0 +1,62 @@
+{
+  "artifact": "CROSS_EPOCH_QUERY_CLOSURE_V1",
+  "layer": "FEDERATION_V2",
+  "purpose": "Define deterministic query closure rules over FED_EPOCH_GRAPH_V1 without introducing a live view or privileged reader.",
+  "last_verified": "2026-05-06",
+  "verifier": "jsonwisdom",
+  "query_rule": {
+    "queries_are_pure_traversals": true,
+    "query_input_must_be_root_bound": true,
+    "latest_keyword_forbidden": true,
+    "live_view_forbidden": true,
+    "privileged_reader_forbidden": true
+  },
+  "closure_requirements": {
+    "start_root_required": true,
+    "dependency_closure_explicit": true,
+    "visited_nodes_recorded": true,
+    "traversal_order_deterministic": true,
+    "result_bound_to_root": true
+  },
+  "allowed_query_inputs": [
+    "graph_root_sha256",
+    "node_id",
+    "edge_type",
+    "epoch_id",
+    "compact_id",
+    "state"
+  ],
+  "forbidden_query_inputs": [
+    "mutable_current_state",
+    "latest",
+    "live_agency_status",
+    "unverified_external_narrative"
+  ],
+  "output_shape": {
+    "query_id": "deterministic_query_identifier",
+    "bound_root_sha256": "graph_root_used_for_query",
+    "dependency_closure": [
+      "node_ids_visited_in_deterministic_order"
+    ],
+    "result": "query_result_bound_to_root",
+    "proof": {
+      "traversal_algorithm": "v1",
+      "closure_hash_sha256": "sha256_of_dependency_closure",
+      "result_hash_sha256": "sha256_of_canonical_result"
+    }
+  },
+  "failure_modes": [
+    "QUERY_ROOT_MISSING",
+    "QUERY_USES_LIVE_VIEW",
+    "QUERY_USES_LATEST",
+    "QUERY_CLOSURE_INCOMPLETE",
+    "QUERY_TRAVERSAL_NONDETERMINISTIC"
+  ],
+  "invariants": [
+    "Queries do not create authority.",
+    "Queries do not mutate graph state.",
+    "Queries are valid only against an explicit graph root.",
+    "The dependency closure is part of the query proof.",
+    "Time is queried as recorded topology, not obeyed as live authority."
+  ]
+}
