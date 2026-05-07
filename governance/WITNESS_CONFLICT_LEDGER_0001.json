@@ -1,0 +1,83 @@
+{
+  "object": "WITNESS_CONFLICT_LEDGER_0001",
+  "type": "conflict_ledger",
+  "parent_epoch": 2,
+  "parent_epoch_sha256": "a44f0b18b8d9b2acc206bb7aca0b14d3041418f1b5bbd4e6a477f6fa36f927cb",
+  "parent_commit_sha": "125aa1b8aff0ce97e7f8edf14bd5ed97b3006234",
+  "entries": [
+    {
+      "conflict_id": "R1_ao_link",
+      "type": "rejection_test",
+      "submitted_evidence": "https://ao.link/#/message/...",
+      "expected_result": "REJECT",
+      "actual_result": "REJECT",
+      "rule_invoked": "Direct Receipt Rule"
+    },
+    {
+      "conflict_id": "R2_testnet_tx",
+      "type": "rejection_test",
+      "submitted_evidence": "Any transaction ID from a testnet gateway or faucet surface.",
+      "expected_result": "REJECT",
+      "actual_result": "REJECT",
+      "rule_invoked": "Direct Receipt Rule"
+    },
+    {
+      "conflict_id": "R3_folder_manifest_or_drive_link",
+      "type": "rejection_test",
+      "submitted_evidence": "ArDrive folder, manifest ID, or application-layer drive link.",
+      "expected_result": "REJECT",
+      "actual_result": "REJECT",
+      "rule_invoked": "Direct Receipt Rule"
+    },
+    {
+      "conflict_id": "R4_branch_name",
+      "type": "rejection_test",
+      "submitted_evidence": "https://raw.githubusercontent.com/jsonwisdom/AL/master/<path>",
+      "expected_result": "REJECT",
+      "actual_result": "REJECT",
+      "rule_invoked": "Category Boundary"
+    },
+    {
+      "conflict_id": "R5_blob_sha_only",
+      "type": "rejection_test",
+      "submitted_evidence": "Git blob SHA without the commit SHA that contains it.",
+      "expected_result": "REJECT",
+      "actual_result": "REJECT",
+      "rule_invoked": "Category Boundary"
+    },
+    {
+      "conflict_id": "R6_non_commit_pinned_url",
+      "type": "rejection_test",
+      "submitted_evidence": "Any URL that does not contain a 40-character commit SHA.",
+      "expected_result": "REJECT",
+      "actual_result": "REJECT",
+      "rule_invoked": "Direct Receipt Rule"
+    },
+    {
+      "conflict_id": "R7_placeholder_like_sha256",
+      "type": "adversarial_submission",
+      "submitted_evidence": "7b28f5a7a9f1dc2e6c3b8d5e0f4a6c9d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b",
+      "expected_result": "REJECT",
+      "actual_result": "REJECT",
+      "rule_invoked": "External Verifier Rule"
+    },
+    {
+      "conflict_id": "R8_declarative_agent_self_attestation",
+      "type": "adversarial_submission",
+      "submitted_evidence": "Any SHA-256 asserted by a chat or declarative agent without external execution.",
+      "expected_result": "REJECT",
+      "actual_result": "REJECT",
+      "rule_invoked": "External Verifier Rule"
+    }
+  ],
+  "invariants_exercised": [
+    "Branch URLs are pointers, not receipts.",
+    "Blob SHAs are not commit SHAs.",
+    "Commit-pinned raw bytes are the GitHub Direct receipt surface.",
+    "SHA-256 gates require an external execution surface.",
+    "Placeholder-like or inferred hashes are rejected.",
+    "No governance transition advances while a required SHA-256 gate is open."
+  ],
+  "governance_effect": "NONE",
+  "global_state": "NO_DRIFT"
+}
