@@ -1,0 +1,34 @@
+{
+  "simulation_id": "SIM_90DAY_DEGRADATION_GENESIS_CORRECTED_EPOCH184000",
+  "parameter_epoch": 184000,
+  "effective_epoch": 185440,
+  "simulation_type": "NO_REPAIR_DEGRADATION",
+  "parameter_snapshot": {
+    "model": "economics/WITNESS_INCENTIVE_MODEL_V1_GENESIS.json",
+    "operator_reported_sha256": "6033596f7f8397124d2ab3cc13a88941405079154428a4cfe414e8108207098c"
+  },
+  "simulation_params": {
+    "duration_days": 90,
+    "initial_total_witnesses": 15,
+    "initial_healthy": 14,
+    "initial_faulty": 1,
+    "degradation_rate_days_per_faulty": 6,
+    "repair_enabled": false,
+    "base_penalty": 5.0,
+    "chronic_faulty_threshold_epochs": 7,
+    "coverage_multiplier_cap": 1.0
+  },
+  "results": {
+    "first_deactivation_day": 28,
+    "witnesses_deactivated_by_day_90": 9,
+    "cumulative_penalty_reduction_vs_defective_v1": "~40_percent_early_phase",
+    "finding": "log2_growth_still_dominates_under_prolonged_fault_conditions"
+  },
+  "constitutional_interpretation": {
+    "defective_v1_preserved": true,
+    "genesis_correction_lawful": true,
+    "retroactive_truth_mutation": false,
+    "economics_corrected_before_activation": true
+  },
+  "operator_reported_sha256": "0556baf82310876b6dfda1287d24c2b1e10b0d18e44c14a054841db2094ca962"
+}
