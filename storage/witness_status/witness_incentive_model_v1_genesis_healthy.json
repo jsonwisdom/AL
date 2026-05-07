@@ -1,0 +1,31 @@
+{
+  "status_record_id": "witness_incentive_model_v1_genesis_healthy",
+  "object_id": "WITNESS_INCENTIVE_MODEL_V1_GENESIS",
+  "object_path": "economics/WITNESS_INCENTIVE_MODEL_V1_GENESIS.json",
+  "witness_binding_path": "storage/witness_bindings/witness_incentive_model_v1_genesis_cid.json",
+  "cid": "bafkreia3lgzbtcrzxy4eouy7g56krzft5a6kg3tb3o2xm6uj5jmp4c5uyi",
+  "canonical_github_blob_sha": "72b13b71342376a5be6e3ea89891c6699422e624",
+  "expected_sha256": "6033596f7f8397124d2ab3cc13a88941405079154428a4cfe414e8108207098c",
+  "observed_sha256": "6033596f7f8397124d2ab3cc13a88941405079154428a4cfe414e8108207098c",
+  "verification_report": {
+    "timestamp_utc": "2026-05-06T10:23:17Z",
+    "repo": "jsonwisdom/AL",
+    "branch": "master",
+    "github_blob_status": "PASS",
+    "github_sha256_status": "PASS",
+    "cid_gateway_used": "https://ipfs.io/ipfs/bafkreia3lgzbtcrzxy4eouy7g56krzft5a6kg3tb3o2xm6uj5jmp4c5uyi",
+    "cid_fetch_status": "PASS",
+    "cid_sha256_status": "PASS",
+    "byte_compare_status": "PASS"
+  },
+  "previous_state": "CID_RETURNED_OPERATOR_BOUND",
+  "new_state": "HEALTHY_WITNESS",
+  "transition": "CID_BOUND_TO_HEALTHY_WITNESS",
+  "authority_rule": "CID witness is healthy for availability only; GitHub lineage remains canonical authority.",
+  "invariants": [
+    "CID bytes matched canonical GitHub source bytes.",
+    "Witness is healthy because bytes match anchor-defined hashes.",
+    "Healthy witness status does not create authority.",
+    "Replica health cannot redefine epoch truth."
+  ]
+}
