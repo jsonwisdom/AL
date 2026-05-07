@@ -1,0 +1,60 @@
+{
+  "artifact": "seeds/illinois/chicago-delta-b-v0.1.json",
+  "extends": "seeds/illinois/cook-delta-a-v0.1.json",
+  "overlay_type": "MUNICIPAL_DELTA",
+  "baseline_integrity": {
+    "baseline_hash": "PENDING_BASELINE_SHA256",
+    "baseline_hash_status": "PENDING_CANONICAL_BASELINE_HASH",
+    "baseline_is_immutable": true,
+    "modifies_baseline": false,
+    "baseline_precedence": "absolute"
+  },
+  "delta_scope": {
+    "jurisdiction": "chicago",
+    "parent_jurisdiction": "cook",
+    "allowed_operations": [
+      "add",
+      "shadow"
+    ],
+    "forbidden_operations": [
+      "delete",
+      "rebase",
+      "rewrite"
+    ]
+  },
+  "shadowing_rules": {
+    "shadowing_allowed": "delta_scoped_only",
+    "cross_jurisdiction_shadowing": "forbidden",
+    "upward_shadowing_into_baseline": "forbidden",
+    "upward_shadowing_into_cook": "forbidden"
+  },
+  "conflict_resolution": {
+    "scope": "delta_only",
+    "baseline_precedence": "absolute",
+    "cook_precedence": "absolute_within_cook_scope",
+    "chicago_precedence": "local_only",
+    "sovereignty_conflict_model": "PENDING_V1"
+  },
+  "blocked_actions": [
+    "baseline_mutation",
+    "baseline_topology_rewrite",
+    "cook_topology_rewrite",
+    "cross_jurisdiction_shadowing",
+    "overlay_delete_baseline_nodes",
+    "overlay_rebase",
+    "upward_shadowing_into_baseline",
+    "upward_shadowing_into_cook"
+  ],
+  "fail_closed": {
+    "baseline_hash_missing": "reject",
+    "baseline_mutation_detected": "reject",
+    "cook_topology_rewrite_detected": "reject",
+    "cross_jurisdiction_shadowing_detected": "reject",
+    "missing_extends_field": "reject",
+    "overlay_type_missing": "reject",
+    "upward_shadowing_detected": "reject"
+  },
+  "runtime_state": "MUNICIPAL_OVERLAY_DEFINED_PENDING_BASELINE_HASH",
+  "last_verified": "2026-05-06",
+  "verifier": "jsonwisdom"
+}
