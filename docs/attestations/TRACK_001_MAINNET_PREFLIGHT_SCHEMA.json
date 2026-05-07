@@ -1,0 +1,37 @@
+{
+  "track_id": "TRACK_001_DOJ_EPSTEIN",
+  "environment": "mainnet",
+  "network": "base-mainnet",
+  "schema_version": "1.0.0",
+  "operator": {
+    "primary_identity": "jaywisdom.eth",
+    "primary_identity_base": "jaywisdom.base.eth",
+    "operator_wallet": "0x992d94aA31dcD8fDb7d8E6885370ef8202AED399"
+  },
+  "attestation_required_fields": [
+    "artifact",
+    "repo",
+    "branch",
+    "payload_commit",
+    "payload_path",
+    "payload_url",
+    "payload_sha256",
+    "git_blob_sha",
+    "merged_intake_commit",
+    "scope",
+    "non_claims",
+    "status"
+  ],
+  "testnet_reference": {
+    "base_sepolia_schema_uid": "0x0de9dd56c4a71de33f3b5b2eefbdf35c21c9b1f836a92d161ed86c6b10d2a57d",
+    "base_sepolia_attestation_uid": "0xabfcfbe62114e5962d8916ca152748de1eb48dd3373e8a4c85733426a6cfdd96",
+    "testnet_receipt_commit": "26e91c4206b1c7cc17ca403bc610dee15b65f3b0",
+    "testnet_receipt_sha256": "db785f570ceab73ca1575da140bbb28c73f80d01e71a570eb01fcacae7c1fd1a"
+  },
+  "mainnet_status": "PREFLIGHT_ONLY_NOT_REGISTERED",
+  "separation_guarantees": [
+    "testnet and mainnet artifacts are separated",
+    "no testnet UID is reused as a mainnet UID",
+    "mainnet ceremony must produce fresh schema and attestation receipts"
+  ]
+}
