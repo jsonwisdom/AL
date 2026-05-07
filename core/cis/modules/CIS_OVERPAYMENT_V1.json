@@ -1,0 +1,61 @@
+{
+  "module_id": "CIS_OVERPAYMENT_V1",
+  "version": "1.0.0",
+  "domain": "BENEFITS_GOVERNANCE",
+  "trigger_signals": [
+    "benefit_adjustment_notice",
+    "collection_letter",
+    "overpayment_notice",
+    "repayment_demand"
+  ],
+  "panic_failure_modes": [
+    "appeal_rights_forfeiture",
+    "catastrophization",
+    "panic_payment",
+    "self_incrimination_assumption"
+  ],
+  "stabilizer": {
+    "statement": "An overpayment notice is an accounting claim, not a fraud finding.",
+    "semantic_class": "status_clarification",
+    "interrupt_type": "catastrophization_interrupt"
+  },
+  "preserved_properties": {
+    "cognitive": [
+      "appeal_awareness",
+      "evidence_retention",
+      "procedural_orientation"
+    ],
+    "procedural": [
+      "deadline_visibility",
+      "documentation_preservation",
+      "hearing_awareness"
+    ]
+  },
+  "required_operator_actions": [
+    "preserve_notice",
+    "read_appeal_rights",
+    "save_payment_records",
+    "verify_deadlines"
+  ],
+  "topology_dependencies": [
+    "ADMINISTRATIVE_REVIEW_EXISTS"
+  ],
+  "runtime_destabilizers": [
+    "automated_collection_language",
+    "missing_deadline_visibility",
+    "portal_authentication_failure",
+    "unclear_repayment_language"
+  ],
+  "non_claims": [
+    "does_not_cancel_repayment",
+    "does_not_determine_eligibility",
+    "does_not_predict_hearing_outcome",
+    "does_not_replace_legal_advice"
+  ],
+  "source_requirements": [
+    "official_agency_notice",
+    "official_appeal_process_source",
+    "state_benefits_authority_source"
+  ],
+  "last_verified": "2026-05-06"
+}
