@@ -1,0 +1,78 @@
+{
+  "state": "Illinois",
+  "artifact": "downstate-baseline-v0.1",
+  "kernel_phase": "STATE_ONBOARDING_V1_STEP_1",
+  "runtime_state": "AUTHORITY_SURFACE_SEED",
+  "topology_model": "DOWNSTATE_LINEAR_TOPOLOGY",
+  "canonicalization_order": [
+    "state",
+    "county"
+  ],
+  "last_verified": "2026-05-06",
+  "verifier": "jsonwisdom",
+  "doctrine": {
+    "authority_surface_first": true,
+    "baseline_excludes_municipal_overrides": true,
+    "cook_chicago_as_explicit_deltas": true,
+    "facts_only": true,
+    "guidance_included": false,
+    "municipal_shadowing_prohibited": true,
+    "workflows_inferred": false
+  },
+  "inheritance_rules": {
+    "baseline_path": "state_to_county",
+    "municipal_override_allowed": false,
+    "quasi_entity_exceptions_allowed": false,
+    "shadowing_allowed": false
+  },
+  "authority_surfaces": {
+    "FOIA_ROUTING": {
+      "primary": "state_officer_or_state_agency",
+      "secondary": "county_clerk_or_county_office",
+      "statute_ref": "5 ILCS 140",
+      "workflow_inferred": false
+    },
+    "ENFORCEMENT": {
+      "primary": "state_agencies",
+      "secondary": "county_sheriff_local_enforcement",
+      "workflow_inferred": false
+    },
+    "ADJUDICATION": {
+      "primary": "county_circuit_court",
+      "venue_model": "county_based",
+      "workflow_inferred": false
+    },
+    "PORTALS": {
+      "rule": "one_portal_per_state_function_in_baseline",
+      "shadowing_prohibited": true,
+      "workflow_inferred": false
+    }
+  },
+  "known_delta_hooks": {
+    "COOK_DELTA_A": {
+      "status": "EXPLICIT_DELTA_REQUIRED",
+      "reason": "Cook County may behave as quasi-state topology and must not pollute downstate baseline"
+    },
+    "CHICAGO_DELTA_B": {
+      "status": "EXPLICIT_DELTA_REQUIRED",
+      "reason": "Chicago nested municipal complexity must be modeled as separate overlay"
+    }
+  },
+  "verification_notes": [
+    "Illinois downstate baseline intentionally models state-to-county linear topology only",
+    "Cook and Chicago are excluded from baseline and must be layered as explicit deltas",
+    "No guidance or workflow is inferred from this seed"
+  ],
+  "next_allowed_actions": [
+    "Instantiate sample downstate county against baseline",
+    "Draft Cook Delta A only as explicit overlay",
+    "Draft Chicago Delta B only as explicit nested overlay",
+    "Add validation script for topology constraints"
+  ],
+  "blocked_actions": [
+    "Do not infer Cook County behavior into downstate baseline",
+    "Do not infer Chicago municipal routing into state-to-county model",
+    "Do not add guidance before authority constraints are verified",
+    "Do not treat municipal overrides as baseline behavior"
+  ]
+}
