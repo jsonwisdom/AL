@@ -1,0 +1,28 @@
+{
+  "compact_id": "BAD_COMPACT_V1",
+  "participants": [
+    {
+      "state": "IL",
+      "epoch_id": "IL_EPOCH_17",
+      "epoch_root_sha256": "PENDING_TEST_ROOT_IL"
+    },
+    {
+      "state": "IA",
+      "epoch_id": "IA_EPOCH_09",
+      "epoch_root_sha256": "PENDING_TEST_ROOT_IA"
+    }
+  ],
+  "subject_matter": "water_flow",
+  "constraints": {
+    "baseline_mutation": "forbidden",
+    "state_sovereignty": "preserved",
+    "federal_preemption": "explicitly_scoped"
+  },
+  "obligations": {
+    "IL": {
+      "on_attested_predicate": "FLOW_BELOW_THRESHOLD_V1",
+      "action": "MAY_TRIGGER_LOCAL_DROUGHT_PROCEDURE",
+      "obligation_met": true
+    }
+  }
+}
