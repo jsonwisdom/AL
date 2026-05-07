@@ -19,7 +19,12 @@
   ],
   "properties": {
     "event_type": {
-      "const": "ASSET_BINDING"
+      "type": "string",
+      "enum": [
+        "ASSET_BINDING",
+        "ASSET_REBINDING",
+        "ASSET_REVOCATION"
+      ]
     },
     "event_index": {
       "type": "integer",
@@ -35,6 +40,10 @@
       "maxLength": 512
     },
     "asset_hash": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "prior_hash": {
       "type": "string",
       "pattern": "^sha256:[0-9a-f]{64}$"
     },
