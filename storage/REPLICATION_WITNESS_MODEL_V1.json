@@ -1,0 +1,163 @@
+{
+  "version": "REPLICATION_WITNESS_MODEL_V1",
+  "purpose": "Define federation-safe replication where storage substrates are witnesses for availability, never authorities over epoch truth.",
+  "last_verified": "2026-05-06",
+  "verifier": "jsonwisdom",
+  "authority_boundary": {
+    "authority": [
+      "EPOCH_ANCHOR_V1",
+      "canonical_manifest_cid",
+      "constitutional_commit_lineage"
+    ],
+    "witnesses": [
+      "github",
+      "ipfs",
+      "arweave",
+      "base_eas",
+      "ots",
+      "local_cold_archive",
+      "pinning_services"
+    ],
+    "rule": "If a replica disagrees with the anchor, the replica is wrong by definition."
+  },
+  "invariants": {
+    "replicas_are_witnesses_not_authorities": true,
+    "no_implicit_latest": true,
+    "anchor_is_single_source_of_truth": true,
+    "no_replica_majority_rule": true,
+    "reads_are_suspect_until_verified": true
+  },
+  "objects": {
+    "epoch_anchor": {
+      "id": "EPOCH_ANCHOR_V1_BOOTSTRAP",
+      "path": "attestation/epoch_anchor_bootstrap_2026-05-06.json",
+      "git_commit": "adcc16d7032a3120facec15e39e34ce7d8565c76"
+    },
+    "epoch_manifest": {
+      "canonical_manifest_cid": "bafkreichwss5dosbtrhy3eh7dg47nnz67rge6ndyxydd6vekv7yfedvxji",
+      "manifest_sha256": "PENDING_MANIFEST_SHA256"
+    }
+  },
+  "witness_health_states": [
+    "HEALTHY",
+    "FAULTY_WITNESS",
+    "MISSING",
+    "REPAIRING",
+    "UNAVAILABLE_BUT_ANCHORED"
+  ],
+  "witnesses": [
+    {
+      "id": "github_primary",
+      "type": "git",
+      "role": "lineage_and_blob",
+      "authority": false,
+      "locators": {
+        "repo_url": "https://github.com/jsonwisdom/AL",
+        "anchor_path": "attestation/epoch_anchor_bootstrap_2026-05-06.json"
+      }
+    },
+    {
+      "id": "ipfs_primary",
+      "type": "ipfs",
+      "role": "cid_distribution",
+      "authority": false,
+      "locators": {
+        "manifest_cid": "bafkreichwss5dosbtrhy3eh7dg47nnz67rge6ndyxydd6vekv7yfedvxji"
+      }
+    },
+    {
+      "id": "arweave_primary",
+      "type": "arweave",
+      "role": "long_term_persistence",
+      "authority": false,
+      "locators": {
+        "anchor_tx_id": "PENDING_ARWEAVE_ANCHOR_TX",
+        "manifest_tx_id": "PENDING_ARWEAVE_MANIFEST_TX"
+      }
+    },
+    {
+      "id": "base_eas_attestation",
+      "type": "eas",
+      "role": "existence_and_ordering_attestation",
+      "authority": false,
+      "locators": {
+        "schema_uid": "PENDING_EAS_SCHEMA_UID",
+        "attestation_uid": "PENDING_EAS_ATTESTATION_UID"
+      }
+    },
+    {
+      "id": "ots_bitcoin",
+      "type": "ots",
+      "role": "timestamp_attestation",
+      "authority": false,
+      "locators": {
+        "ots_proof_file": "timestamps/epoch_manifest.ots"
+      }
+    },
+    {
+      "id": "local_cold_archive",
+      "type": "offline",
+      "role": "catastrophic_recovery",
+      "authority": false,
+      "locators": {
+        "path": "cold_storage/epoch_2026-05-06/"
+      }
+    }
+  ],
+  "read_validation": [
+    "Fetch only by explicit coordinate: commit hash, CID, SHA256, or declared locator.",
+    "CID-addressed bytes must match the CID.",
+    "Manifest bytes must match manifest_sha256 when manifest_sha256 is finalized.",
+    "Anchor bytes must match committed lineage or stronger future SHA256 field.",
+    "Failed checks mark the source as FAULTY_WITNESS for that object."
+  ],
+  "health_policy": {
+    "check_interval_seconds": 86400,
+    "min_healthy_witnesses_per_object": 1,
+    "witness_check_order": [
+      "ipfs_primary",
+      "arweave_primary",
+      "github_primary",
+      "local_cold_archive"
+    ],
+    "available_if_any_healthy": true,
+    "none_healthy_state": "UNAVAILABLE_BUT_ANCHORED"
+  },
+  "repair_policy": {
+    "enabled": true,
+    "source_selection_rule": "Choose any HEALTHY witness whose bytes match anchor-defined hashes.",
+    "allowed_repairs": [
+      "ipfs_primary",
+      "arweave_primary",
+      "github_primary",
+      "local_cold_archive"
+    ],
+    "reverify_after_repair": true,
+    "log_repairs_to": "logs/replication_repairs.jsonl",
+    "repair_log_fields": [
+      "epoch_id",
+      "object_type",
+      "from_witness",
+      "to_witness",
+      "old_status",
+      "new_status",
+      "timestamp_unix_ms",
+      "hashes"
+    ]
+  },
+  "failure_modes": [
+    "FAULTY_WITNESS",
+    "MISSING_WITNESS",
+    "UNAVAILABLE_BUT_ANCHORED",
+    "ANCHOR_CONFLICT_DETECTED",
+    "IMPLICIT_LATEST_ATTEMPT",
+    "REPLICA_AUTHORITY_ATTEMPT"
+  ],
+  "invariants_text": [
+    "Replicas preserve availability; they do not create authority.",
+    "No majority of replicas can overrule the epoch anchor.",
+    "Repair source is chosen because bytes match anchor-defined hashes, not because the witness is trusted.",
+    "If all witnesses disappear, truth is unavailable but not ambiguous.",
+    "Who helps remember may never decide what is true."
+  ]
+}
