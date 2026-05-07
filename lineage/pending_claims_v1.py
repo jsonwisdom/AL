@@ -10,6 +10,7 @@ Constitutional boundary:
   - This module NEVER resolves competing hashes
   - This module aggregates evidence only
   - This module NEVER trusts caller-provided trace status
+  - This module REQUIRES Namespace Guard pass before state change
   - This module REQUIRES VerifierReceiptV1 before state change
 """
 
@@ -19,6 +20,8 @@ import json
 from pathlib import Path
 from typing import Any
 
+from namespace.namespace_guard_v1 import PASS, evaluate_claim, load_policy
+
 PENDING_LOG_PATH = Path("lineage/pending_asset_claims.jsonl")
 
 NEW_CLAIM = "NEW_CLAIM"
@@ -26,12 +29,14 @@ COALESCED = "COALESCED"
 DUPLICATE_CLAIM = "DUPLICATE_CLAIM"
 REJECTED = "REJECTED"
 REJECTED_TRACE = "REJECTED_TRACE"
+NAMESPACE_REJECTED = "NAMESPACE_REJECTED"
 SOVEREIGN_REVIEW_REQUIRED = "SOVEREIGN_REVIEW_REQUIRED"
 
 RECEIPT_TYPE = "VERIFIER_RECEIPT_V1"
 VERIFIER_VERSION = "CBREv1.2+"
 OPCODE_TABLE_ID = "0x0001"
 VERIFIED_TRACE = "VERIFIED_TRACE"
+LOCAL_BRANCH_ID = "LOCAL_BRANCH"
 
 REQUIRED_CLAIM_FIELDS = {
     "asset_id",
@@ -84,6 +89,28 @@ def validate_claim(claim: dict[str, Any]) -> tuple[bool, str | None]:
 
 
 
+def validate_namespace(
+    claim: dict[str, Any],
+    local_branch_id: str = LOCAL_BRANCH_ID,
+    policy: dict[str, Any] | None = None,
+) -> tuple[str | None, dict[str, Any] | None]:
+    if policy is None:
+        policy = load_policy()
+
+    status, detail = evaluate_claim(
+        claim["asset_id"],
+        claim["origin"],
+        local_branch_id,
+        policy,
+    )
+
+    if status != PASS:
+        return NAMESPACE_REJECTED, {"namespace_status": status, "detail": detail}
+
+    return None, detail
+
+
+
 def validate_receipt(
     claim: dict[str, Any],
     verifier_receipt: dict[str, Any] | None,
@@ -117,10 +144,20 @@ def process_claim(
     claim: dict[str, Any],
     verifier_receipt: dict[str, Any] | None,
     pending_claims: list[dict[str, Any]],
+    local_branch_id: str = LOCAL_BRANCH_ID,
+    namespace_policy: dict[str, Any] | None = None,
 ) -> tuple[str, list[dict[str, Any]]]:
     valid, reason = validate_claim(claim)
     if not valid:
         raise ValueError(f"REJECTED: {reason}")
+
+    namespace_status, namespace_detail = validate_namespace(
+        claim,
+        local_branch_id=local_branch_id,
+        policy=namespace_policy,
+    )
+    if namespace_status is not None:
+        raise ValueError(f"{namespace_status}: {json.dumps(namespace_detail, sort_keys=True)}")
 
     receipt_status, receipt_reason = validate_receipt(claim, verifier_receipt)
     if receipt_status is not None:
