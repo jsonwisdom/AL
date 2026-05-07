@@ -1,0 +1,58 @@
+{
+  "spec_version": "v1",
+  "artifact": "VALIDATOR_CAPABILITY_V1",
+  "purpose": "Define validator self-test capability signatures so peers can detect interpreter divergence before accepting records or sharing consensus views.",
+  "last_verified": "2026-05-06",
+  "verifier": "jsonwisdom",
+  "capability_shape": {
+    "validator_id": "stable_validator_identity_or_pubkey",
+    "software_build_hash": "sha256_or_git_commit_of_validator_build",
+    "registry_epoch_id": "pinned_registry_epoch_identifier",
+    "registry_anchor_commit_sha": "commit_sha_for_kind_registry_anchor",
+    "test_vector_epoch_id": "pinned_test_vector_epoch_identifier",
+    "test_vector_commit_sha": "commit_sha_for_kind_registry_test_vectors",
+    "verdict_hash_sha256": "sha256_of_canonical_test_vector_results",
+    "supported_kind_spec": "SUBSTRATE_REACTION_KIND_V1",
+    "signature": "validator_signature_over_capability_fields"
+  },
+  "canonical_verdict_hash_input": {
+    "ordered_by": "test_vector_id_ascending",
+    "fields": [
+      "test_vector_id",
+      "valid",
+      "kind",
+      "reason_code",
+      "violated_invariant"
+    ],
+    "serialization": "canonical_json_utf8_sorted_keys_no_whitespace"
+  },
+  "peer_handshake_rules": {
+    "capability_signature_required": true,
+    "registry_epoch_match_required": true,
+    "test_vector_epoch_match_required": true,
+    "verdict_hash_match_required": true,
+    "software_build_hash_match_optional": true,
+    "incompatible_peers_do_not_sync": true
+  },
+  "failure_modes": [
+    "VALIDATOR_CAPABILITY_MISSING",
+    "VALIDATOR_CAPABILITY_SIGNATURE_INVALID",
+    "REGISTRY_EPOCH_INCOMPATIBLE",
+    "TEST_VECTOR_EPOCH_INCOMPATIBLE",
+    "VERDICT_HASH_MISMATCH",
+    "VALIDATOR_DIVERGENCE"
+  ],
+  "network_behavior": {
+    "on_match": "PEER_COMPATIBLE",
+    "on_mismatch": "PEER_REJECTED_VALIDATOR_DIVERGENCE",
+    "slashing_eligible": "policy_local_or_network_specific",
+    "consensus_view_shared": false
+  },
+  "invariants": [
+    "Validators advertise interpreter compatibility before accepting records.",
+    "Validator convergence is proven by test vector verdict hash, not assumed from software identity.",
+    "Different software builds may peer if their registry epoch, test vector epoch, and verdict hash match.",
+    "Same software builds may not peer if their verdict hash diverges.",
+    "Interpreter divergence is detected before economic or governance action."
+  ]
+}
