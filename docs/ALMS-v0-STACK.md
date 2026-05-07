@@ -31,7 +31,11 @@ Answers: what is inherited.
 
 Spec anchor: `docs/ALMS-v0-PROVENANCE.md`
 
-Constitutional hash: `PROVENANCE_SHA256_PLACEHOLDER`
+Commit SHA: `78f81c3aa963791ec2ee47dc3bf6a34f4e6817f0`
+
+Git blob SHA: `0813c46b2e1917a78de8c301b7a957a7007b563a`
+
+SHA-256: `pending_external_attestation`
 
 ### 2.2 REGISTRY — Jurisdiction and Revocation
 
@@ -47,7 +51,11 @@ Answers: who has jurisdiction.
 
 Spec anchor: `docs/ALMS-v0-REGISTRY.md`
 
-Constitutional hash: `REGISTRY_SHA256_PLACEHOLDER`
+Commit SHA: `3ba1b30b38d256151cb174b958814aa61bb3e702`
+
+Git blob SHA: `c97b3ad545c9ab1ff3259d4bf57ddc2b441f63ee`
+
+SHA-256: `pending_external_attestation`
 
 ### 2.3 EXECUTION — Deterministic Replay Law
 
@@ -63,7 +71,11 @@ Answers: what replay means.
 
 Spec anchor: `docs/ALMS-v0-EXECUTION.md`
 
-Constitutional hash: `EXECUTION_SHA256_PLACEHOLDER`
+Commit SHA: `25666e966741954ca0d16829ba8a93bc2f284823`
+
+Git blob SHA: `634b55178f7aafaf662586ace54f75ee55f9dfcb`
+
+SHA-256: `pending_external_attestation`
 
 ### 2.4 COURTROOM — Adjudication and Legitimacy
 
@@ -79,7 +91,11 @@ Answers: what may be spoken.
 
 Spec anchor: `docs/ALMS-v0-COURTROOM.md`
 
-Constitutional hash: `COURTROOM_SHA256_PLACEHOLDER`
+Commit SHA: `28b72ffb526a6b2becae674c8d00d6a2e2cb964a`
+
+Git blob SHA: `b508358dee86cad68bab2c8501044d6b6cf2126f`
+
+SHA-256: `pending_external_attestation`
 
 ## 3. Binding Relationships
 
@@ -113,36 +129,58 @@ These guarantees are not advisory. They are binding conditions for ALMS-v0 confo
 
 ## 5. v0 Closure
 
-ALMS-v0 is closed and anchored by the following constitutional artifacts:
+ALMS-v0 is closed and anchored by Git repository coordinates and Git file-object identities.
+
+This closure intentionally distinguishes:
 
 ```json
 {
-  "ALMS_v0_closure": {
-    "provenance_spec": {
-      "path": "docs/ALMS-v0-PROVENANCE.md",
-      "sha256": "PROVENANCE_SHA256_PLACEHOLDER"
-    },
-    "registry_spec": {
-      "path": "docs/ALMS-v0-REGISTRY.md",
-      "sha256": "REGISTRY_SHA256_PLACEHOLDER"
-    },
-    "execution_spec": {
-      "path": "docs/ALMS-v0-EXECUTION.md",
-      "sha256": "EXECUTION_SHA256_PLACEHOLDER"
-    },
-    "courtroom_spec": {
-      "path": "docs/ALMS-v0-COURTROOM.md",
-      "sha256": "COURTROOM_SHA256_PLACEHOLDER"
-    },
-    "conformance_suite": {
-      "path": "alms-v0-conformance/",
-      "description": "Canonical test vectors and CLI contracts for ALMS-v0 admissibility and replay."
-    }
-  }
+  "commit_sha": "repo-state coordinate",
+  "git_blob_sha": "Git object identity for file content",
+  "sha256": "external raw-byte digest, pending trusted shell attestation"
 }
 ```
 
-Once the placeholders are replaced with actual SHA-256 digests of the referenced files, any modification to those files constitutes a constitutional change and must be treated as a versioned amendment, v1 or later, not an in-place edit.
+```yaml
+v0_closure:
+  provenance:
+    path: docs/ALMS-v0-PROVENANCE.md
+    commit_sha: 78f81c3aa963791ec2ee47dc3bf6a34f4e6817f0
+    git_blob_sha: 0813c46b2e1917a78de8c301b7a957a7007b563a
+    sha256: pending_external_attestation
+
+  registry:
+    path: docs/ALMS-v0-REGISTRY.md
+    commit_sha: 3ba1b30b38d256151cb174b958814aa61bb3e702
+    git_blob_sha: c97b3ad545c9ab1ff3259d4bf57ddc2b441f63ee
+    sha256: pending_external_attestation
+
+  execution:
+    path: docs/ALMS-v0-EXECUTION.md
+    commit_sha: 25666e966741954ca0d16829ba8a93bc2f284823
+    git_blob_sha: 634b55178f7aafaf662586ace54f75ee55f9dfcb
+    sha256: pending_external_attestation
+
+  courtroom:
+    path: docs/ALMS-v0-COURTROOM.md
+    commit_sha: 28b72ffb526a6b2becae674c8d00d6a2e2cb964a
+    git_blob_sha: b508358dee86cad68bab2c8501044d6b6cf2126f
+    sha256: pending_external_attestation
+
+  stack:
+    path: docs/ALMS-v0-STACK.md
+    commit_sha: 90a1972149ac40ccba8607af1a8321f141599e1d
+    git_blob_sha: 1c16a77dde5d9beb0262d23d929f89a4be0397c9
+    sha256: pending_external_attestation
+
+  conformance_suite:
+    path: alms-v0-conformance/
+    description: Canonical test vectors and CLI contracts for ALMS-v0 admissibility and replay.
+```
+
+External SHA-256 attestations MAY be added later by trusted shell execution over commit-pinned raw URLs. They must not be inferred from connector content or substituted for Git blob identities.
+
+Any modification to these files after closure constitutes a constitutional change and must be treated as a versioned amendment, v1 or later, not an in-place edit.
 
 ## 6. v1 Boundary
 
