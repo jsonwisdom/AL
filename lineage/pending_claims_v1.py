@@ -9,6 +9,8 @@ Constitutional boundary:
   - This module NEVER performs adoption
   - This module NEVER resolves competing hashes
   - This module aggregates evidence only
+  - This module NEVER trusts caller-provided trace status
+  - This module REQUIRES VerifierReceiptV1 before state change
 """
 
 from __future__ import annotations
@@ -23,7 +25,13 @@ NEW_CLAIM = "NEW_CLAIM"
 COALESCED = "COALESCED"
 DUPLICATE_CLAIM = "DUPLICATE_CLAIM"
 REJECTED = "REJECTED"
+REJECTED_TRACE = "REJECTED_TRACE"
 SOVEREIGN_REVIEW_REQUIRED = "SOVEREIGN_REVIEW_REQUIRED"
+
+RECEIPT_TYPE = "VERIFIER_RECEIPT_V1"
+VERIFIER_VERSION = "CBREv1.2+"
+OPCODE_TABLE_ID = "0x0001"
+VERIFIED_TRACE = "VERIFIED_TRACE"
 
 REQUIRED_CLAIM_FIELDS = {
     "asset_id",
@@ -76,13 +84,47 @@ def validate_claim(claim: dict[str, Any]) -> tuple[bool, str | None]:
 
 
 
+def validate_receipt(
+    claim: dict[str, Any],
+    verifier_receipt: dict[str, Any] | None,
+) -> tuple[str | None, str | None]:
+    if verifier_receipt is None:
+        return REJECTED_TRACE, "NO_VERIFIER_RECEIPT"
+
+    if verifier_receipt.get("receipt_type") != RECEIPT_TYPE:
+        return REJECTED_TRACE, "BAD_RECEIPT_TYPE"
+
+    if verifier_receipt.get("verifier_version") != VERIFIER_VERSION:
+        return REJECTED_TRACE, "BAD_VERIFIER_VERSION"
+
+    if verifier_receipt.get("opcode_table_id") != OPCODE_TABLE_ID:
+        return REJECTED_TRACE, "BAD_OPCODE_TABLE"
+
+    if verifier_receipt.get("trace_status") != VERIFIED_TRACE:
+        return REJECTED_TRACE, "TRACE_STATUS_NOT_VERIFIED"
+
+    if verifier_receipt.get("trace_hash") != claim.get("trace_hash"):
+        return REJECTED_TRACE, "TRACE_HASH_MISMATCH"
+
+    if verifier_receipt.get("output_commitment") != claim.get("output_commitment"):
+        return REJECTED_TRACE, "OUTPUT_COMMITMENT_MISMATCH"
+
+    return None, None
+
+
+
 def process_claim(
     claim: dict[str, Any],
+    verifier_receipt: dict[str, Any] | None,
     pending_claims: list[dict[str, Any]],
 ) -> tuple[str, list[dict[str, Any]]]:
     valid, reason = validate_claim(claim)
     if not valid:
         raise ValueError(f"REJECTED: {reason}")
+
+    receipt_status, receipt_reason = validate_receipt(claim, verifier_receipt)
+    if receipt_status is not None:
+        raise ValueError(f"{receipt_status}: {receipt_reason}")
 
     asset_hash = claim["asset_hash"]
     origin = claim["origin"]
@@ -117,8 +159,8 @@ def process_claim(
             "asset_hash": claim["asset_hash"],
             "trace_hash": claim["trace_hash"],
             "output_commitment": claim["output_commitment"],
-            "trace_status": "VERIFIED_TRACE",
-            "trace_verified_at": claim["timestamp_utc"],
+            "trace_status": VERIFIED_TRACE,
+            "trace_verified_at": verifier_receipt["verified_at_utc"],
             "latest_attestation_utc": claim["timestamp_utc"],
             "attestors": [
                 {
