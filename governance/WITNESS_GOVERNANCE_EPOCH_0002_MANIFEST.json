@@ -1,0 +1,25 @@
+{
+  "version": "WITNESS_GOVERNANCE_EPOCH_0002_MANIFEST",
+  "epoch": 2,
+  "status": "SEALED",
+  "parent_epoch": {
+    "name": "WITNESS_GOVERNANCE_EPOCH_0001_MANIFEST",
+    "commit_sha": "e83b7c5ee5002fac020636cdb78bd9719e4d7fcb",
+    "sha256": "7bc1fe6cf6683c3144c2d79313e78cfb8c4015c681c5cb28c4c695950ed7805f"
+  },
+  "activated_update": {
+    "name": "WITNESS_PARAMETER_UPDATE_0001_ACTIVATION",
+    "commit_sha": "696bf794ff5cb9658209d6ca72c5a7a119744dae",
+    "sha256": "c20045613d33283993858eb37411eafd7e502e9734cf8044ed83c3a640af56aa"
+  },
+  "current_parameter_state": {
+    "parameters.time_in_state_pricing.chronic_multiplier": 1.25
+  },
+  "invariants": [
+    "Epoch 0002 descends from sealed Epoch 0001.",
+    "Epoch 0002 includes verified Activation 0001.",
+    "GENESIS remains replay-visible and is not rewritten.",
+    "Future updates MUST reference Epoch 0002 as parent.",
+    "Validity is determined solely by commit-pinned raw bytes and SHA-256."
+  ]
+}
