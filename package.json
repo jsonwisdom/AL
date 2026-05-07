@@ -1,0 +1,19 @@
+{
+  "name": "alms-track001-governance",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20 <23"
+  },
+  "scripts": {
+    "track001:preflight": "node scripts/track001_preflight.js",
+    "track001:finalize": "node scripts/track001_finalize.js",
+    "track001:verify": "node scripts/track001_verify.js"
+  },
+  "dependencies": {
+    "@ethereum-attestation-service/eas-sdk": "^2.7.0",
+    "ajv": "^8.17.1",
+    "ethers": "^6.13.5"
+  }
+}
