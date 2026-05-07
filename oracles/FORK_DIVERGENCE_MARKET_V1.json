@@ -1,0 +1,85 @@
+{
+  "spec_version": "v1",
+  "artifact": "FORK_DIVERGENCE_MARKET_V1",
+  "claim_type": "SOVEREIGN_HISTORY_DIVERGENCE",
+  "last_verified": "2026-05-06",
+  "verifier": "jsonwisdom",
+  "oracle_definition": {
+    "type": "sovereign history stream",
+    "bond_equivalent": "liquidity_at_risk",
+    "liveness_requirement": "one finalized history root per epoch T_epoch"
+  },
+  "states": [
+    "INITIAL",
+    "ACTIVE",
+    "CHALLENGED",
+    "RESOLVING_REFERENCE_SET",
+    "JURISDICTION_DIVERSITY_FALLBACK",
+    "RESOLVED_DIVERGENT",
+    "RESOLVED_UPHELD",
+    "APPEAL"
+  ],
+  "reference_set": {
+    "selection_rule": "peer sovereign history streams active in the federation log",
+    "size_k": 5,
+    "lookback_delta": 100,
+    "entropy_filter": "drop histories where regulatory_variance > sigma_max",
+    "diversity_requirement": {
+      "jurisdiction_diversity_min": 3,
+      "enforcement": "if not met -> transition JURISDICTION_DIVERSITY_FALLBACK"
+    }
+  },
+  "jurisdiction_diversity_fallback": {
+    "trigger": "jurisdiction_diversity < jurisdiction_diversity_min",
+    "state": "JURISDICTION_DIVERSITY_FALLBACK",
+    "reference_set": "canonical Federation history fallback",
+    "reference_semantics": "ordering_and_publication_proof_only_no_legal_meaning",
+    "divergence_condition": "history_ordering_or_publication_proof_conflict over sliding window",
+    "challenge_cost_multiplier": 2,
+    "meaning": "Refusal to judge by jurisdictional monoculture; judge only against neutral publication history."
+  },
+  "challenge_mechanics": {
+    "freeze_on_challenge": true,
+    "challenger_selects_reference_after_freeze": true,
+    "reference_unpredictability_invariant": "No fork can predict the reference set before challenge freeze.",
+    "fixed_parameters_per_fork_epoch": [
+      "jurisdiction_diversity_min",
+      "sigma_max",
+      "lookback_delta",
+      "size_k"
+    ]
+  },
+  "divergence_condition": {
+    "metric": "distance(fork_history_claim, reference_history_median)",
+    "threshold_epsilon": "per_claim_type_parameter",
+    "deviation_score": "distance(claim, reference) / epsilon",
+    "resolved_divergent_if": "deviation_score > 1"
+  },
+  "economic_consequence": {
+    "slashing_analog": "liquidity_abandonment",
+    "mechanism": "capital exits or discounts fork whose history stream repeatedly resolves divergent or fallback-dependent",
+    "direct_protocol_slash": false,
+    "market_pricing_signal": true
+  },
+  "appeal_path": {
+    "exists": true,
+    "to": "higher_federated_history_compact",
+    "cost_multiplier": 1.5
+  },
+  "failure_modes": [
+    "LOW_ACTIVITY_FORK_SET",
+    "JURISDICTION_MONOCULTURE",
+    "REGULATORY_CAPTURE_REFERENCE_SET",
+    "COMPLIANT_MAJORITY_JUDGES_DISSENTER",
+    "HISTORY_FALLBACK_OVERUSE",
+    "LIQUIDITY_EXIT_CASCADE"
+  ],
+  "invariants": [
+    "No fork may choose the authority that judges its own divergence.",
+    "Jurisdiction diversity failure is refusal to judge by captured legal monoculture.",
+    "Canonical Federation history fallback provides ordering and publication proof only, never semantic legal truth.",
+    "Reference-set unpredictability is the core anti-capture property.",
+    "Liquidity abandonment is an economic signal, not a federation verdict.",
+    "The federation never decides which fork is lawful; it records replayable divergence mechanics."
+  ]
+}
