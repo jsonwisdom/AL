@@ -1,11 +1,15 @@
 import json
+import sys
 from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
+ROOT = Path(__file__).resolve().parents[2]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
 from agents.four04_crawler.runtime_surface import RUNTIME_ALLOWED_404
 
-ROOT = Path(__file__).resolve().parents[2]
 RECEIPTS_DIR = ROOT / 'receipts'
 OUTPUT_DIR = Path(__file__).resolve().parent / 'public'
 
