@@ -25,10 +25,13 @@ jobs:
       - name: Run membrane compliance tests
         run: pytest tests/test_404_runtime_surface.py -v
 
-      - name: Commit receipts
+      - name: Build dashboard
+        run: python dashboards/404_overview/build.py
+
+      - name: Commit receipts and dashboard artifacts
         run: |
           git config user.name "404-bot"
           git config user.email "404-bot@jsonwisdom.org"
-          git add receipts/
-          git diff --staged --quiet || git commit -m "chore: update 404 receipts [skip ci]"
+          git add receipts/ dashboards/404_overview/public/
+          git diff --staged --quiet || git commit -m "chore: update 404 receipts and dashboard [skip ci]"
           git push
