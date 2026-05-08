@@ -1,13 +1,26 @@
 #!/usr/bin/env bash
 set -euo pipefail
-cd "$(dirname "$0")/alms-core"
+
+# ALMS Core v0.1.1 fork-resolution reproducer.
+# May be run from repo root (AL/) or from AL/alms-core/.
+
+SCRIPT_DIR="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
+cd "$SCRIPT_DIR"
+
 export PYTHONDONTWRITEBYTECODE=1
 export PYTHONHASHSEED=0
 export TZ=UTC
 export LC_ALL=C.UTF-8
 export LANG=C.UTF-8
-python -m pytest -q -W error
-python - <<'PY'
+export PYTHONUTF8=1
+
+python3 --version
+python3 -m pip install --require-hashes -r requirements.txt
+python3 -m pytest -q -W error
+
+sha256sum examples/claim.pass.json examples/bundle.pass.json examples/runtime.pass.json
+
+python3 - <<'PY'
 import json, pathlib, sys
 sys.path.insert(0, str(pathlib.Path('.').resolve()))
 from src.hash import hash_object_null_field
@@ -19,6 +32,6 @@ expected = {
 for p,(field,want) in expected.items():
     obj=json.loads(pathlib.Path(p).read_text())
     got=hash_object_null_field(obj, field)
-    print(f'{p} {got}')
+    print(f'{p} {field} {got}')
     assert got == want, (p, got, want)
 PY
