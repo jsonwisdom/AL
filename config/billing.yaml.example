@@ -1,0 +1,68 @@
+version: "1.0"
+status: "EXAMPLE_ONLY"
+
+# Constitutional invariant:
+# Revenue may buy operations only.
+# Revenue may not buy verdicts, interpretation,
+# target manipulation, unlock authority, or semantic power.
+
+tiers:
+  - name: public
+    feature_flags:
+      - feature_kind: crawl_frequency_minutes
+        value: 1440
+      - feature_kind: api_rate_limit_per_minute
+        value: 60
+      - feature_kind: retention_days
+        value: 30
+      - feature_kind: export_enabled
+        value: false
+
+  - name: professional
+    feature_flags:
+      - feature_kind: crawl_frequency_minutes
+        value: 60
+      - feature_kind: api_rate_limit_per_minute
+        value: 600
+      - feature_kind: retention_days
+        value: 365
+      - feature_kind: export_enabled
+        value: true
+      - feature_kind: webhook_concurrency
+        value: 5
+      - feature_kind: sla_percent
+        value: 99.5
+
+  - name: enterprise
+    feature_flags:
+      - feature_kind: crawl_frequency_minutes
+        value: 5
+      - feature_kind: api_rate_limit_per_minute
+        value: 5000
+      - feature_kind: retention_days
+        value: 3650
+      - feature_kind: export_enabled
+        value: true
+      - feature_kind: webhook_concurrency
+        value: 50
+      - feature_kind: sla_percent
+        value: 99.9
+      - feature_kind: signed_feed_delivery
+        value: true
+      - feature_kind: on_prem_runner
+        value: true
+      - feature_kind: white_label_rendering
+        value: true
+
+forbidden_feature_kinds:
+  - premium_verdict
+  - risk_scoring
+  - trust_scoring
+  - sentiment_analysis
+  - priority_verdict
+  - customer_override
+  - paid_unlock
+  - private_interpretation
+  - target_priority
+  - receipt_suppression
+  - custom_allowed_surface
