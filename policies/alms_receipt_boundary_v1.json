@@ -6,7 +6,12 @@
   "receipt_boundary": {
     "inside_scope": "explicitly transformed and replayable material",
     "outside_scope": "material for which no correspondence claim is made",
-    "latent": "compatible-but-unconverted phenomena remaining ambient during this intake cycle"
+    "latent": "compatible-but-unconverted phenomena remaining ambient during this intake cycle",
+    "latent_constraints": [
+      "latent status applies only at cycle completion",
+      "do not infer latent status retroactively from missing receipts",
+      "absence of receipts is not evidence of irrelevance or nonexistence"
+    ]
   },
   "required_fields": [
     "scope",
