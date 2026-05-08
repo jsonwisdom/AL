@@ -1,0 +1,30 @@
+{
+  "manifest_version": "1.0.0",
+  "artifact": "membrane_surface_manifest_v1.json",
+  "surface_count": 5,
+  "surfaces": [
+    {
+      "name": "allowed_surface",
+      "status": "ENUM_LOCKED"
+    },
+    {
+      "name": "state_jurisdiction",
+      "status": "ENUM_LOCKED"
+    },
+    {
+      "name": "five_tier_audit",
+      "status": "CHECKLIST_LOCKED"
+    },
+    {
+      "name": "state_intake",
+      "status": "SCHEMA_LOCKED"
+    },
+    {
+      "name": "restoration_lifecycle",
+      "status": "PRECEDENT_LOCKED"
+    }
+  ],
+  "constitutional_invariant": "NO AMBIGUOUS STATE MAY CROSS THE MEMBRANE",
+  "generated_by": "ALMS_CONSTITUTIONAL_MEMBRANE",
+  "status": "LOCKED"
+}
