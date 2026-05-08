@@ -1,0 +1,27 @@
+{
+  "manifest_version": "1.0.0",
+  "artifact": "mn_county_fips_87.csv",
+  "artifact_hash": "sha256:c421106ef0ee69d7814bf8691ba1eda942378af0c9c1831442a6229a16a7350d",
+  "receipt_id": "MN-001",
+  "circuit_id": "alms_mn_v1",
+  "state": "Minnesota",
+  "state_fips": "27",
+  "county_count": 87,
+  "source": "U.S. Census Bureau 2020 FIPS codes",
+  "source_url": "https://www.census.gov/programs-surveys/geography/technical-documentation/county-changes.html",
+  "constitutional_basis": "docs/state_workflows/STATE_INTAKE_AUDIT_CHECKLIST_V1.md",
+  "policy": "LOCAL_ONLY_NO_DYNAMIC_FETCH_NO_GHOST_PROMOTION",
+  "canonicalization_rule": "JCS_RFC8785",
+  "generated_at": "2026-05-08T00:00:00Z",
+  "operator": "ALMS_MN_PIPELINE",
+  "status": "SCAFFOLD_ONLY",
+  "blocked_claims": [
+    "statewide climate coverage",
+    "statewide economic coverage",
+    "multi-signal overlays",
+    "interstate comparison",
+    "policy recommendation"
+  ],
+  "next_required": "MN-002 source probe",
+  "jurisdiction": "SCAFFOLD_ONLY_NOT_OPERATIONAL"
+}
