@@ -1,7 +1,7 @@
 [
   {
     "circuit_id": "404_v1",
-    "crawl_timestamp": "2026-05-08T02:07:40.093316+00:00",
+    "crawl_timestamp": "2026-05-08T06:31:51.823387+00:00",
     "expected_hash": null,
     "http_status": 200,
     "observed_hash": "sha256:aa3ddc6268e610f9051c55051868d452f86b25ec78f5182270954788b184667b",
@@ -12,10 +12,10 @@
   },
   {
     "circuit_id": "404_v1",
-    "crawl_timestamp": "2026-05-08T02:07:40.093316+00:00",
+    "crawl_timestamp": "2026-05-08T06:31:51.823387+00:00",
     "expected_hash": null,
     "http_status": 404,
-    "observed_hash": "sha256:cfb6f364aeed9698f3835e59961cde4262d8a899e08a24357f3cffa061d38650",
+    "observed_hash": "sha256:b084aa4613c70e80be6fa7f07d7a5b18cd080702a894845f31dfb7477bb78ba7",
     "receipt_id": "404_NOT_FOUND_38747bb7e167",
     "target_url": "https://www.mncourts.gov/mncourtsgov/media/supreme-court/opinions/OPA220001-0523.pdf",
     "url_hash": "sha256:aa284af20c4b93e0aa6b78e4bc4df438f7ef4807c6f605bc408438747bb7e167",
@@ -23,10 +23,10 @@
   },
   {
     "circuit_id": "404_v1",
-    "crawl_timestamp": "2026-05-08T02:07:40.093316+00:00",
+    "crawl_timestamp": "2026-05-08T06:31:51.823387+00:00",
     "expected_hash": null,
     "http_status": 403,
-    "observed_hash": "sha256:57173c4685f6fd43938e60716f1b57c7e8df9538d487466883dd2747b3b11a0e",
+    "observed_hash": "sha256:570fce210eebfbb24ec634d51437cd49c809a5417a3923e336611638e30ae3d6",
     "receipt_id": "404_CRAWLER_BLOCKED_9d0faa4e50f7",
     "target_url": "https://www.gao.gov/assets/gao-24-106789.pdf",
     "url_hash": "sha256:88253507969e03f5df1cdb3293c61c7a716c77cfd3cd7ab3c0459d0faa4e50f7",
@@ -34,7 +34,7 @@
   },
   {
     "circuit_id": "404_v1",
-    "crawl_timestamp": "2026-05-08T02:07:40.093316+00:00",
+    "crawl_timestamp": "2026-05-08T06:31:51.823387+00:00",
     "expected_hash": null,
     "http_status": 404,
     "observed_hash": "sha256:a2cf9388a44eaf7b4c8c32fde90da1b4df3152a5c9495c86a247f811941128db",
@@ -45,7 +45,18 @@
   },
   {
     "circuit_id": "404_v1",
-    "crawl_timestamp": "2026-05-08T02:07:40.093316+00:00",
+    "crawl_timestamp": "2026-05-08T06:31:51.823387+00:00",
+    "expected_hash": null,
+    "http_status": 404,
+    "observed_hash": "sha256:199b876d0191032a3361571d3ee1dcf9ff966d7e67f0d3dee13de3bc01fd6e75",
+    "receipt_id": "404_NOT_FOUND_896030567b5c",
+    "target_url": "https://www.epa.gov/climate/endangerment-finding-2009",
+    "url_hash": "sha256:9b97907a5c65485d1dbbb173c209fd6c641adb9b009670bc55cd896030567b5c",
+    "verdict": "NOT_FOUND"
+  },
+  {
+    "circuit_id": "404_v1",
+    "crawl_timestamp": "2026-05-08T06:31:51.823387+00:00",
     "expected_hash": null,
     "http_status": 404,
     "observed_hash": "sha256:dc1d54dab6ec8c00f70137927504e4f222c8395f10760b6beecfcfa94e08249f",
@@ -56,10 +67,21 @@
   },
   {
     "circuit_id": "404_v1",
-    "crawl_timestamp": "2026-05-08T02:07:40.093316+00:00",
+    "crawl_timestamp": "2026-05-08T06:31:51.823387+00:00",
+    "expected_hash": null,
+    "http_status": 404,
+    "observed_hash": "sha256:6ad2c0d94b03089487a2893f153c5ea35770bddf7d88fb288954075a917f4b54",
+    "receipt_id": "404_NOT_FOUND_85a6427b5ca7",
+    "target_url": "https://www.doi.gov/foia/offshore-drilling-permits-2024",
+    "url_hash": "sha256:ac54be2e96704ac52b96593ba4d64d4dfb37f08dcbb2a15af07c85a6427b5ca7",
+    "verdict": "NOT_FOUND"
+  },
+  {
+    "circuit_id": "404_v1",
+    "crawl_timestamp": "2026-05-08T06:31:51.823387+00:00",
     "expected_hash": null,
     "http_status": 200,
-    "observed_hash": "sha256:c6637bb57b817f2ce5b66b53107a84ffdd81cfabce5e67e41e6a7e8a73b74a42",
+    "observed_hash": "sha256:dd153bcac2cf5f631ca5d6c799bc1d10c395c3c489cd32b3c78a58fe41b883e1",
     "receipt_id": "404_FOUND_50a12d9dbad7",
     "target_url": "https://www.courts.oregon.gov/opinions/Documents/S070001.pdf",
     "url_hash": "sha256:7357db2480b8dba4be90ec9ce0d747496d1fe86be1cb08c845c550a12d9dbad7",
@@ -67,7 +89,7 @@
   },
   {
     "circuit_id": "404_v1",
-    "crawl_timestamp": "2026-05-08T02:07:40.093316+00:00",
+    "crawl_timestamp": "2026-05-08T06:31:51.823387+00:00",
     "expected_hash": null,
     "http_status": 200,
     "observed_hash": "sha256:aa3ddc6268e610f9051c55051868d452f86b25ec78f5182270954788b184667b",
@@ -78,10 +100,10 @@
   },
   {
     "circuit_id": "404_v1",
-    "crawl_timestamp": "2026-05-08T02:07:40.093316+00:00",
+    "crawl_timestamp": "2026-05-08T06:31:51.823387+00:00",
     "expected_hash": null,
     "http_status": 403,
-    "observed_hash": "sha256:e4b218a83964adb880487b484f12faaca66732add1486d3190dc860cbe7bb217",
+    "observed_hash": "sha256:1c7d3987897de70c6e3252e00fb88da98967e60e54edc4767f694b78bb046ae5",
     "receipt_id": "404_CRAWLER_BLOCKED_bb77800d06d8",
     "target_url": "https://www.cbo.gov/system/files/2024-01/58888-Outlook.pdf",
     "url_hash": "sha256:a948a6f34ec0e973d6921c272fd9f1a6617fde92d2adcc15d8e0bb77800d06d8",
@@ -89,7 +111,7 @@
   },
   {
     "circuit_id": "404_v1",
-    "crawl_timestamp": "2026-05-08T02:07:40.093316+00:00",
+    "crawl_timestamp": "2026-05-08T06:31:51.823387+00:00",
     "expected_hash": null,
     "http_status": 404,
     "observed_hash": "sha256:dc1d54dab6ec8c00f70137927504e4f222c8395f10760b6beecfcfa94e08249f",
@@ -100,7 +122,7 @@
   },
   {
     "circuit_id": "404_v1",
-    "crawl_timestamp": "2026-05-08T02:07:40.093316+00:00",
+    "crawl_timestamp": "2026-05-08T06:31:51.823387+00:00",
     "expected_hash": null,
     "http_status": 404,
     "observed_hash": "sha256:dc1d54dab6ec8c00f70137927504e4f222c8395f10760b6beecfcfa94e08249f",
