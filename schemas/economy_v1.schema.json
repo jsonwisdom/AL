@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.github.io/AL/schemas/economy_v1.schema.json",
+  "title": "Economic Membrane v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "status", "tiers", "forbidden_feature_kinds"],
+  "properties": {
+    "version": { "const": "1.0" },
+    "status": { "enum": ["EXAMPLE_ONLY", "ACTIVE_FOR_REVIEW", "ACTIVE"] },
+    "tiers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "feature_flags"],
+        "properties": {
+          "name": { "type": "string" },
+          "feature_flags": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["feature_kind", "value"],
+              "properties": {
+                "feature_kind": {
+                  "enum": [
+                    "crawl_frequency_minutes",
+                    "api_rate_limit_per_minute",
+                    "webhook_concurrency",
+                    "retention_days",
+                    "export_enabled",
+                    "sla_percent",
+                    "support_tier",
+                    "signed_feed_delivery",
+                    "on_prem_runner",
+                    "white_label_rendering"
+                  ]
+                },
+                "value": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "forbidden_feature_kinds": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "premium_verdict",
+          "risk_scoring",
+          "trust_scoring",
+          "sentiment_analysis",
+          "priority_verdict",
+          "customer_override",
+          "paid_unlock",
+          "private_interpretation",
+          "target_priority",
+          "receipt_suppression",
+          "custom_allowed_surface"
+        ]
+      }
+    }
+  }
+}
