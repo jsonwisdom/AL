@@ -63,3 +63,15 @@ targets:
     rationale: "CBO budget outlook public record endpoint for procedural replay observation."
     added_by_pr: "#1"
     operational_state: "ACTIVE"
+
+  - url: "https://www.epa.gov/climate/endangerment-finding-2009"
+    tags: ["agency_publication"]
+    rationale: "EPA agency publication endpoint for procedural replay observation."
+    added_by_pr: "#PENDING"
+    operational_state: "ACTIVE"
+
+  - url: "https://www.doi.gov/foia/offshore-drilling-permits-2024"
+    tags: ["foia_page"]
+    rationale: "DOI FOIA page endpoint for procedural replay observation."
+    added_by_pr: "#PENDING"
+    operational_state: "ACTIVE"
