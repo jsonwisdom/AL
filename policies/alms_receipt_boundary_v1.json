@@ -1,0 +1,27 @@
+{
+  "policy": "ALMS_RECEIPT_BOUNDARY_V1",
+  "status": "CANONICAL_DRAFT",
+  "constitutional_rule": "Correctly scoped. Remainder guaranteed.",
+  "ledger_rule": "The ledger records the transformation, not the world.",
+  "receipt_boundary": {
+    "inside_scope": "explicitly transformed and replayable material",
+    "outside_scope": "material for which no correspondence claim is made",
+    "latent": "compatible-but-unconverted phenomena remaining ambient during this intake cycle"
+  },
+  "required_fields": [
+    "scope",
+    "transformed",
+    "tolerance",
+    "threshold",
+    "latent",
+    "remainder",
+    "correspondence_outside_scope"
+  ],
+  "forbidden_implications": [
+    "receipt captures whole event",
+    "unreceipted phenomena are irrelevant",
+    "receipt exhausts correspondence",
+    "ledger equals world state"
+  ],
+  "preferred_statement": "This receipt records a scoped transformation. The threshold existed. Some phenomena did not cross it. Their status remains ambient. Correspondence outside scope is not claimed."
+}
