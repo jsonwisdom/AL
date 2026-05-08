@@ -73,19 +73,19 @@ No correspondence claim is made.
 
 ### 3.3 Latent / Unconverted
 
-Phenomena materially or operationally compatible with possible receipt conversion, but not converted during this intake cycle.
+Definition: Compatible with capture, present near the system, not yet transformed, not irrelevant, not claimed.
 
-Latent material is neither failure nor irrelevance.
+Purpose: Preserve the boundary between what the system has processed and what exists outside processing. This category carries no payload, only position.
 
-It is compatible-but-unconverted remainder.
+Failure mode prevented: Calibration drift under internal coherence. Without this state, a ledger of accurate receipts will over time be read as a complete account of the world. Silence accumulates as implicit confirmation.
+
+Invariant: Completeness of records is not completeness of world. Absence of a receipt is not evidence of irrelevance or nonexistence.
+
+Temporality: Latent status applies only at cycle completion. Do not set retroactively from later absence. Status reflects what the system knew at the intake boundary, not what can be inferred afterward.
+
+Usage: Set when a phenomenon is detected as proximate and compatible but not converted to a receipt in this cycle. Do not use for errors, rejections, out-of-scope data, or any state inferred after cycle completion.
 
 The receipt must not silently collapse latent material into either captured truth or irrelevant noise.
-
-Latent status applies only at cycle completion.
-
-Do not set latent status retroactively from later absence of receipts.
-
-Absence of a receipt is not evidence that a phenomenon was latent, irrelevant, false, or nonexistent.
 
 ---
 
