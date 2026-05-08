@@ -1,0 +1,160 @@
+{
+  "artifact": "TRACK_020_REPLAY_VERIFIER_DECISION_TABLE_V1",
+  "version": "1.0",
+  "track": "TRACK_020",
+  "purpose": "Mechanically distinguish Git candidates from registered schemas and submitted attestations without narrative interpretation.",
+  "classification_stage": {
+    "rules": [
+      {
+        "if": "schema_uid_absent AND attestation_uid_absent",
+        "kind": "CANDIDATE"
+      },
+      {
+        "if": "schema_uid_present AND attestation_uid_absent",
+        "kind": "REGISTERED_SCHEMA"
+      },
+      {
+        "if": "attestation_uid_present",
+        "kind": "ATTESTATION"
+      }
+    ]
+  },
+  "decision_rows": [
+    {
+      "kind": "CANDIDATE",
+      "verdict": "CANDIDATE_ONLY",
+      "required_inputs": [
+        "git_ref",
+        "artifact_path",
+        "artifact_sha256"
+      ],
+      "required_state": {
+        "registration_state": "CANDIDATE_NOT_REGISTERED",
+        "onchain_state": "NOT_SUBMITTED",
+        "no_ghost_anchor": true
+      },
+      "allowed_actions": [
+        "validate_schema_shape",
+        "validate_candidate_hash",
+        "prepare_operator_review"
+      ],
+      "blocked_actions": [
+        "claim_registered",
+        "claim_attested",
+        "claim_mainnet_active"
+      ]
+    },
+    {
+      "kind": "REGISTERED_SCHEMA",
+      "verdict": "REGISTERED_SCHEMA_ONLY",
+      "required_inputs": [
+        "chain_profile",
+        "schema_uid",
+        "schema_registry_address",
+        "registration_tx_hash",
+        "operator_signature"
+      ],
+      "required_state": {
+        "registration_state": "REGISTERED"
+      },
+      "allowed_actions": [
+        "verify_schema_uid",
+        "verify_registration_tx",
+        "compare_schema_bytes_to_candidate"
+      ],
+      "blocked_actions": [
+        "claim_attestation_submitted_without_attestation_uid",
+        "claim_federation_ready_without_attestation"
+      ]
+    },
+    {
+      "kind": "ATTESTATION",
+      "verdict": "ATTESTATION_VERIFIABLE",
+      "required_inputs": [
+        "chain_profile",
+        "eas_address",
+        "schema_uid",
+        "attestation_uid",
+        "attestation_tx_hash",
+        "operator_signature",
+        "TRACK_019_TESTNET_PROOF"
+      ],
+      "required_state": {
+        "onchain_state": "CONFIRMED"
+      },
+      "allowed_actions": [
+        "verify_attestation_uid",
+        "verify_attester",
+        "verify_payload",
+        "verify_track019_dependency"
+      ],
+      "blocked_actions": [
+        "bypass_track019_runtime_proof",
+        "claim_federation_ready_without_payload_match"
+      ]
+    }
+  ],
+  "outcome_stage": {
+    "rules": [
+      {
+        "if": "kind == 'CANDIDATE'",
+        "verdict_code": "CANDIDATE_ONLY"
+      },
+      {
+        "if": "kind == 'REGISTERED_SCHEMA' AND operator_signature_missing",
+        "verdict_code": "FAIL_OPERATOR_SIGNATURE_REQUIRED"
+      },
+      {
+        "if": "kind == 'REGISTERED_SCHEMA' AND registration_payload_matches_candidate",
+        "verdict_code": "REGISTERED_SCHEMA_ONLY"
+      },
+      {
+        "if": "kind == 'REGISTERED_SCHEMA' AND registration_payload_mismatch",
+        "verdict_code": "FAIL_SCHEMA_PAYLOAD_DRIFT"
+      },
+      {
+        "if": "kind == 'ATTESTATION' AND TRACK_019_TESTNET_PROOF_missing",
+        "verdict_code": "MAINNET_ACTIVATION_BLOCKED"
+      },
+      {
+        "if": "kind == 'ATTESTATION' AND operator_signature_missing",
+        "verdict_code": "FAIL_OPERATOR_SIGNATURE_REQUIRED"
+      },
+      {
+        "if": "kind == 'ATTESTATION' AND attestation_payload_mismatch",
+        "verdict_code": "FAIL_PAYLOAD_DRIFT"
+      },
+      {
+        "if": "kind == 'ATTESTATION' AND TRACK_019_TESTNET_PROOF_verified AND operator_signature_present AND attestation_payload_matches_candidate",
+        "verdict_code": "ATTESTATION_VERIFIED"
+      }
+    ]
+  },
+  "monotonicity_rules": [
+    "if attestation_uid is present, classification != CANDIDATE",
+    "if schema_uid is present, classification != CANDIDATE",
+    "if attestation_uid is present, classification != REGISTERED_SCHEMA"
+  ],
+  "transition_rules": [
+    {
+      "transition": "TRACK_020_MAINNET_ENABLE",
+      "preconditions": [
+        "kind == 'ATTESTATION'",
+        "verdict_code == 'ATTESTATION_VERIFIED'",
+        "TRACK_020.status == 'BLOCKED_PENDING_TRACK_019_RUNTIME_PROOF'"
+      ],
+      "postconditions": [
+        "TRACK_020.status == 'MAINNET_ENABLED'"
+      ]
+    }
+  ],
+  "blocked_without_exception": [
+    "candidate_claimed_as_registered",
+    "registered_schema_claimed_as_attestation",
+    "attestation_downcast_to_candidate",
+    "mainnet_enabled_without_TRACK_019_TESTNET_PROOF",
+    "payload_drift_accepted",
+    "operator_signature_missing_accepted"
+  ],
+  "verdict": "DECISION_TABLE_RECORDED"
+}
