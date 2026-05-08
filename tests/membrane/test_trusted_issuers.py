@@ -3,6 +3,7 @@
 Membrane tests for config/trusted_issuers.yaml.
 
 Governance surfaces must themselves be governed.
+The policy is allowed to name forbidden terms; issuer entries are not.
 """
 
 from pathlib import Path
@@ -23,7 +24,7 @@ FORBIDDEN_TERMS = {
     "prosecution",
     "intelligence",
     "surveillance",
-    "Threat Assessment Bureau",
+    "threat assessment bureau",
 }
 
 
@@ -32,10 +33,38 @@ def load_config():
         return yaml.safe_load(f)
 
 
+def issuer_text(issuer):
+    fields = [
+        issuer.get("issuer_id", ""),
+        issuer.get("name", ""),
+        issuer.get("category", ""),
+        issuer.get("issuer_url", ""),
+        issuer.get("did_or_jwks_ref", ""),
+        issuer.get("revocation_endpoint", ""),
+        issuer.get("added_by_pr", ""),
+        issuer.get("rationale", ""),
+        issuer.get("operational_state", ""),
+        " ".join(issuer.get("credential_scope", [])),
+    ]
+    return "\n".join(str(x).lower() for x in fields)
+
+
 def test_required_top_level_fields_exist():
     data = load_config()
     assert "trusted_issuers" in data
     assert "policy" in data
+
+
+def test_policy_declares_membrane_controls():
+    data = load_config()
+    policy = data["policy"]
+    assert policy.get("operator_signature_required") is True
+    assert policy.get("no_ghost_anchor") is True
+    assert policy.get("config_changes_require_pr") is True
+    assert policy.get("revocation_endpoint_required") is True
+    assert policy.get("added_by_pr_required") is True
+    assert policy.get("rationale_required") is True
+    assert "forbidden_semantics" in policy
 
 
 def test_all_issuers_have_required_fields():
@@ -58,12 +87,15 @@ def test_all_issuers_have_required_fields():
         assert not missing, f"Issuer missing required fields: {missing}"
 
 
-def test_no_forbidden_semantics_present():
-    raw = CONFIG_PATH.read_text(encoding="utf-8")
-    lowered = raw.lower()
+def test_no_forbidden_semantics_in_issuer_entries():
+    data = load_config()
 
-    for term in FORBIDDEN_TERMS:
-        assert term.lower() not in lowered, f"Forbidden governance term present: {term}"
+    for issuer in data["trusted_issuers"]:
+        text = issuer_text(issuer)
+        for term in FORBIDDEN_TERMS:
+            assert term not in text, (
+                f"Forbidden governance term present in issuer {issuer.get('issuer_id')}: {term}"
+            )
 
 
 def test_all_issuers_have_revocation_endpoint():
@@ -98,8 +130,9 @@ def test_no_law_enforcement_jurisdiction_creep():
 
 if __name__ == "__main__":
     test_required_top_level_fields_exist()
+    test_policy_declares_membrane_controls()
     test_all_issuers_have_required_fields()
-    test_no_forbidden_semantics_present()
+    test_no_forbidden_semantics_in_issuer_entries()
     test_all_issuers_have_revocation_endpoint()
     test_all_issuers_have_pr_traceability()
     test_no_law_enforcement_jurisdiction_creep()
