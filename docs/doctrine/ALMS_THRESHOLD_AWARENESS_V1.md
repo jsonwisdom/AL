@@ -81,6 +81,12 @@ It is compatible-but-unconverted remainder.
 
 The receipt must not silently collapse latent material into either captured truth or irrelevant noise.
 
+Latent status applies only at cycle completion.
+
+Do not set latent status retroactively from later absence of receipts.
+
+Absence of a receipt is not evidence that a phenomenon was latent, irrelevant, false, or nonexistent.
+
 ---
 
 ## 4. Threshold Awareness
