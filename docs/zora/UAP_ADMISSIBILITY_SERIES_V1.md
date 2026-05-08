@@ -1,12 +1,13 @@
 # UAP_ADMISSIBILITY_SERIES_V1
 
-Status: `MINT_PREP`
+Status: `MINT_HELD_FOR_LIVE_FIRE_STRESS_TEST`
 Creator: `jaywisdom.base.eth`
 Classification: `Constitutional Media Artifact`
 Epistemic posture: `Admissibility-First`
 Doctrine: `Replay over narrative`
 Observer posture: `Non-theological`
 Date scope: `2026-05-08`
+Pre-test receipt: `aaece0790368ff6cda28b946e23ca152e644a5a3`
 
 ## Purpose
 
@@ -21,6 +22,50 @@ Core line:
 Anchor phrase:
 
 > REPLAY IS AUTHORITY.
+
+## Live Fire Stress Test Gate
+
+Mint is intentionally held while the May 8, 2026 UAP release cycle is reviewed.
+
+This gate exists to prove that the series is not a static disclosure poster. It is an evidence-handling protocol that can ingest new information without collapsing into belief, ridicule, or spectacle.
+
+### Gate State
+
+```text
+LIVE_FIRE_STRESS_TEST = ACTIVE
+MINT_STATUS = HELD
+PRE_TEST_RECEIPT = aaece0790368ff6cda28b946e23ca152e644a5a3
+TAG_STATUS = BLOCKED_UNTIL_REVIEW
+```
+
+### Material Change Criteria
+
+A docket update is required if credible source material introduces any of the following:
+
+- New official Department of Defense / AARO case materials.
+- New resolved cases affecting the SIGNAL / NOISE split.
+- New unresolved sensor data acknowledged by an official source.
+- New procedural details about interagency review or release process.
+- New source timestamps that alter the May 8, 2026 admissibility posture.
+
+### No Material Change Rule
+
+If no material change is found after review, add the following docket amendment before tagging:
+
+```text
+Reviewed against May 8, 2026 release cycle; no material alteration to admissibility posture.
+```
+
+### Tag Rule
+
+Do not tag `v1.0` until one of the following is true:
+
+1. Material changes are ingested, docket/index/metadata are updated, and final SHA-256 manifest is regenerated.
+2. No material change is found, the no-material-change amendment is added, and final SHA-256 manifest is regenerated.
+
+### Mint Rule
+
+Do not mint until `v1.0` exists and final asset bytes are locked.
 
 ## Zora Description Blurb
 
