@@ -1,15 +1,19 @@
 import hashlib
 import json
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
 import requests
 import yaml
 
+ROOT = Path(__file__).resolve().parents[2]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
 from agents.four04_crawler.proof_blob_surface import AllowedSurface
 from agents.four04_crawler.runtime_surface import RUNTIME_ALLOWED_404
 
-ROOT = Path(__file__).resolve().parents[2]
 TARGETS = ROOT / "agents" / "four04_crawler" / "targets.yaml"
 RECEIPTS = ROOT / "receipts"
 
