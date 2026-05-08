@@ -1,0 +1,14 @@
+{
+  "fixture_spec": "FIXTURE_SPEC_V1",
+  "fixture_id": "fixture:receipt-boundary:fail-partial-laundered:001",
+  "upstream_status": "PARTIAL",
+  "receipt": {
+    "receipt_spec": "ALMS_RECEIPT_V1",
+    "status": "COMPLETE",
+    "digest": "sha256:failfixture"
+  },
+  "replay": {
+    "replay_spec": "REPLAY_SPEC_V1",
+    "expected_verdict": "FAIL"
+  }
+}
