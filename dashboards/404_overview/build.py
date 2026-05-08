@@ -11,6 +11,17 @@ OUTPUT_DIR = Path(__file__).resolve().parent / 'public'
 
 ALLOWED = {v.value for v in RUNTIME_ALLOWED_404}
 
+FORBIDDEN_FIELDS = {
+    'RISK_SCORE',
+    'TRUST_SCORE',
+    'CORRUPTION_SCORE',
+    'SEVERITY',
+    'SUSPICIOUS',
+    'BLAME',
+    'MOTIVE',
+    'INTENT'
+}
+
 
 def load_receipts():
     receipts = []
@@ -30,6 +41,14 @@ def load_receipts():
         if verdict not in ALLOWED:
             raise RuntimeError(
                 f'Dashboard attempted to render forbidden verdict: {verdict}'
+            )
+
+        forbidden_present = FORBIDDEN_FIELDS.intersection(set(data.keys()))
+
+        if forbidden_present:
+            raise RuntimeError(
+                'Dashboard attempted to render forbidden receipt field(s): '
+                + ', '.join(sorted(forbidden_present))
             )
 
         receipts.append(data)
