@@ -124,13 +124,38 @@ ARE SATISFIED WITH COMMITTED, HASH-VERIFIABLE ARTIFACTS.
 A state that passes CLAIM, REFERENCE, and SHAPE but fails EVIDENCE
 is PARTIALLY VERIFIED with SUSPENDED JURISDICTION.
 
-A state that passes all five tiers is OPERATIONAL.
+A state that passes all five tiers is OPERATIONAL only for the specific tier earned.
 
 ## Current State Map (Auto-Generated from Committed Artifacts)
 
 | State | Claim | Reference | Shape | Evidence | Jurisdiction |
 |-------|-------|-----------|-------|----------|--------------|
 | NY | PRESENT | PRESENT | ACCEPTED | INCOMPLETE | SUSPENDED |
+| MN | PRESENT | PRESENT | ACCEPTED | COMPLETE | ACTIVE (SCAFFOLD ONLY) |
 
 No other states have committed artifacts.
 This table grows only when new state artifacts are committed.
+
+## Active State Boundaries
+
+### NY
+
+NY has a referenced and ledger-recorded NY-004 sparse NOAA claim, but the direct artifact enumeration remains missing. Jurisdiction is suspended at the evidence tier.
+
+### MN
+
+MN has an active scaffold-only jurisdiction based on:
+
+- `_truth/bigquery/mn_county_fips_87.csv`
+- `_truth/bigquery/mn_county_fips_87_manifest.json`
+- `sha256:c421106ef0ee69d7814bf8691ba1eda942378af0c9c1831442a6229a16a7350d`
+
+MN scaffold jurisdiction proves only the 87-county FIPS scaffold.
+
+MN scaffold jurisdiction does not prove:
+
+- economic coverage
+- climate coverage
+- multi-signal coverage
+- interstate comparison
+- policy recommendation
