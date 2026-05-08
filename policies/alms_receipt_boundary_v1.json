@@ -6,12 +6,14 @@
   "receipt_boundary": {
     "inside_scope": "explicitly transformed and replayable material",
     "outside_scope": "material for which no correspondence claim is made",
-    "latent": "compatible-but-unconverted phenomena remaining ambient during this intake cycle",
-    "latent_constraints": [
-      "latent status applies only at cycle completion",
-      "do not infer latent status retroactively from missing receipts",
-      "absence of receipts is not evidence of irrelevance or nonexistence"
-    ]
+    "latent": {
+      "definition": "Compatible with capture, present near the system, not yet transformed, not irrelevant, not claimed.",
+      "purpose": "Preserve the boundary between what the system has processed and what exists outside processing. This category carries no payload, only position.",
+      "failure_mode_prevented": "Calibration drift under internal coherence. Without this state, a ledger of accurate receipts will over time be read as a complete account of the world. Silence accumulates as implicit confirmation.",
+      "invariant": "Completeness of records is not completeness of world. Absence of a receipt is not evidence of irrelevance or nonexistence.",
+      "temporality": "Latent status applies only at cycle completion. Do not set retroactively from later absence. Status reflects what the system knew at the intake boundary, not what can be inferred afterward.",
+      "usage": "Set when a phenomenon is detected as proximate and compatible but not converted to a receipt in this cycle. Do not use for errors, rejections, out-of-scope data, or any state inferred after cycle completion."
+    }
   },
   "required_fields": [
     "scope",
