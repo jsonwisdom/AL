@@ -16,7 +16,8 @@
     "forbidden_fields",
     "runtime_limits",
     "output",
-    "operational_state"
+    "operational_state",
+    "lifecycle"
   ],
   "properties": {
     "agent_id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
@@ -98,6 +99,9 @@
     },
     "operational_state": {
       "enum": ["ACTIVE_FOR_REVIEW", "ACTIVE", "DISABLED", "DEPRECATED"]
+    },
+    "lifecycle": {
+      "enum": ["proposed", "active_for_review", "active", "deprecated", "retired"]
     }
   },
   "not": {
