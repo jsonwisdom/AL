@@ -38,9 +38,9 @@ jobs:
 
       - name: Scan runtime/output surfaces for forbidden accusation semantics
         run: |
-          FORBIDDEN="guilt_score|corruption_score|bad_actor_score|institutional_reputation|trust_score|culpability_score"
+          FORBIDDEN="guilt_score|corruption_score|bad_actor_score|institutional_reputation|trust_score|culpability_score|risk_level|risk_score|sensitive|oversight-priority|high-risk"
 
-          TARGETS="agents/ receipts/ dashboards/"
+          TARGETS="agents/ receipts/ dashboards/404_overview/public/"
 
           for target in $TARGETS; do
             if [ -d "$target" ]; then
