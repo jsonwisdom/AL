@@ -63,3 +63,17 @@ targets:
     rationale: "CBO budget outlook public record endpoint for procedural replay observation."
     added_by_pr: "#1"
     operational_state: "ACTIVE"
+
+  - url: "https://www.epa.gov/climate/endangerment-finding-2009"
+    tags: ["oversight-priority"]
+    rationale: "High-risk oversight target flagged by watchdog organizations as sensitive."
+    added_by_pr: "#PENDING"
+    operational_state: "ACTIVE"
+    priority: "high"
+
+  - url: "https://www.doi.gov/foia/offshore-drilling-permits-2024"
+    tags: ["oversight-priority"]
+    rationale: "Priority oversight target due to sensitivity of the content."
+    added_by_pr: "#PENDING"
+    operational_state: "ACTIVE"
+    risk_level: "elevated"
