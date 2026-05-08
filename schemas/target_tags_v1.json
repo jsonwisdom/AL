@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.github.io/AL/schemas/target_tags_v1.json",
+  "title": "Target Tags v1",
+  "description": "Closed vocabulary for constitutional target governance. Tags are procedural, not editorial.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "court_opinion",
+          "court_docket",
+          "agency_publication",
+          "foia_page",
+          "state_ag_record",
+          "legislative_report",
+          "budget_report",
+          "public_manifest",
+          "public_index"
+        ]
+      }
+    }
+  }
+}
