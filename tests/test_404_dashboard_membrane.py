@@ -1,9 +1,15 @@
+import importlib.util
 import json
 from pathlib import Path
 
 import pytest
 
-from dashboards.four04_overview import build as dashboard_build
+ROOT = Path(__file__).resolve().parents[1]
+BUILD_PATH = ROOT / "dashboards" / "404_overview" / "build.py"
+
+spec = importlib.util.spec_from_file_location("dashboard_404_build", BUILD_PATH)
+dashboard_build = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(dashboard_build)
 
 
 def test_dashboard_rejects_forbidden_verdict(tmp_path, monkeypatch):
