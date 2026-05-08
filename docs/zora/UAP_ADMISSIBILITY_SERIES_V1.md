@@ -22,6 +22,23 @@ Anchor phrase:
 
 > REPLAY IS AUTHORITY.
 
+## Zora Description Blurb
+
+This is not a UFO drop. It is an epistemic protocol for anomalous evidence.
+
+In May 2026, the U.S. government began opening files. The internet did what it always does: belief, ridicule, noise. This series rejects that collapse. It is a constitutional media artifact: a system for presenting contested data without losing the signal to the circus.
+
+SIGNAL: what meets the bar of admissible evidence.
+NOISE: the memetic distortion that buries it.
+FLYWHEEL: the amplification loop that turns both into spectacle.
+REPLAY: the memory artifact. Restraint as authority. No lore, only the record.
+
+Built as an evidence docket, not a conspiracy archive. Formal naming uses Department of Defense / DoD alignment. Machine-readable metadata. SHA-256 provenance. A taxonomy that ports to intelligence, governance, and media studies without revision.
+
+The anchor is REPLAY: black and gold, sparse typography, "Replay is authority" as constitutional seal. When the cycle moves on, this remains a tool for handling anomalous evidence without collapsing into belief or ridicule.
+
+Admissibility-first. Replay over narrative.
+
 ## Bundle Layout
 
 ```text
