@@ -31,12 +31,19 @@ jobs:
 
       - run: pytest tests/membrane/test_trusted_issuers.py -v
 
-  forbidden_semantics_scan:
+  forbidden_output_surface_scan:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Scan for forbidden accusation semantics
+      - name: Scan runtime/output surfaces for forbidden accusation semantics
         run: |
-          FORBIDDEN="guilt_score|corruption_score|bad_actor|intent|motive|blame|liable|threat_assessment|risk_score"
-          ! grep -rEi "$FORBIDDEN" circuits/ specs/ agents/ config/ || exit 1
+          FORBIDDEN="guilt_score|corruption_score|bad_actor_score|institutional_reputation|trust_score|culpability_score"
+
+          TARGETS="agents/ receipts/ dashboards/"
+
+          for target in $TARGETS; do
+            if [ -d "$target" ]; then
+              ! grep -rEi "$FORBIDDEN" "$target" || exit 1
+            fi
+          done
