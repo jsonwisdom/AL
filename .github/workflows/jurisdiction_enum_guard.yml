@@ -1,0 +1,161 @@
+name: jurisdiction enum guard
+
+on:
+  push:
+    paths:
+      - 'schemas/state_jurisdiction_enum_v1.schema.json'
+      - 'schemas/state_jurisdiction_enum_v1.ts'
+      - 'schemas/membrane_surface_manifest_v1.json'
+      - 'docs/state_workflows/STATE_JURISDICTION_ENUM_V1.md'
+      - '_truth/receipts/STATE_JURISDICTION_ENUM_TRIPLE_RECEIPT_V1.md'
+      - '_truth/bigquery/*_manifest.json'
+  pull_request:
+    paths:
+      - 'schemas/state_jurisdiction_enum_v1.schema.json'
+      - 'schemas/state_jurisdiction_enum_v1.ts'
+      - 'schemas/membrane_surface_manifest_v1.json'
+      - 'docs/state_workflows/STATE_JURISDICTION_ENUM_V1.md'
+      - '_truth/receipts/STATE_JURISDICTION_ENUM_TRIPLE_RECEIPT_V1.md'
+      - '_truth/bigquery/*_manifest.json'
+
+jobs:
+  jurisdiction-enum-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify jurisdiction enum triple integrity
+        run: |
+          set -euo pipefail
+
+          TRIPLE_RECEIPT="_truth/receipts/STATE_JURISDICTION_ENUM_TRIPLE_RECEIPT_V1.md"
+          DOCTRINE="docs/state_workflows/STATE_JURISDICTION_ENUM_V1.md"
+          SCHEMA="schemas/state_jurisdiction_enum_v1.schema.json"
+          TYPESCRIPT="schemas/state_jurisdiction_enum_v1.ts"
+          MANIFEST="schemas/membrane_surface_manifest_v1.json"
+
+          for required in "$TRIPLE_RECEIPT" "$DOCTRINE" "$SCHEMA" "$TYPESCRIPT" "$MANIFEST"; do
+            if [ ! -f "$required" ]; then
+              echo "CONSTITUTIONAL BREACH: Required jurisdiction enum surface missing: $required"
+              exit 1
+            fi
+            echo "OK: required surface present: $required"
+          done
+
+      - name: Scan manifests for forbidden jurisdiction values
+        run: |
+          set -euo pipefail
+
+          # Values that are constitutionally unrepresentable in artifact jurisdiction fields.
+          # Doctrine and schema docs may mention these terms as forbidden; manifests may not use them.
+          FORBIDDEN_VALUES=(
+            "ACTIVE_SPARSE_CLIMATE_ONLY"
+            "ACTIVE_FULL_COVERAGE"
+            "HALTED"
+            "OUTSIDE_JURISDICTION"
+            "DEPRECATED"
+            "ACTIVE"
+            "OPERATIONAL"
+            "VERIFIED"
+            "COMPLETE"
+            "FULLY_VERIFIED"
+            "READY"
+            "GREEN"
+          )
+
+          VIOLATIONS_FOUND=false
+
+          shopt -s nullglob
+          TARGETS=( _truth/bigquery/*_manifest.json )
+
+          if [ ${#TARGETS[@]} -eq 0 ]; then
+            echo "No state manifests found for forbidden-value scan."
+            exit 0
+          fi
+
+          for value in "${FORBIDDEN_VALUES[@]}"; do
+            HITS=$(grep -r '"jurisdiction"[[:space:]]*:[[:space:]]*"'"$value"'"' "${TARGETS[@]}" 2>/dev/null || true)
+
+            if [ -n "$HITS" ]; then
+              echo "CONSTITUTIONAL BREACH: Forbidden jurisdiction value '$value' found:"
+              echo "$HITS"
+              echo "---"
+              VIOLATIONS_FOUND=true
+            fi
+          done
+
+          if [ "$VIOLATIONS_FOUND" = true ]; then
+            echo ""
+            echo "These values are constitutionally unrepresentable per:"
+            echo "  - docs/state_workflows/STATE_JURISDICTION_ENUM_V1.md"
+            echo "  - schemas/state_jurisdiction_enum_v1.schema.json"
+            echo "  - _truth/receipts/STATE_JURISDICTION_ENUM_TRIPLE_RECEIPT_V1.md"
+            echo ""
+            echo "Valid enum values:"
+            echo "  NOT_ESTABLISHED, SUSPENDED, ACTIVE_SCAFFOLD_ONLY, ACTIVE_ECONOMIC_ONLY,"
+            echo "  ACTIVE_SPARSE_OVERLAY_ONLY, ACTIVE_FULL_STATE_WORKFLOW"
+            echo ""
+            echo "Forbidden ambiguity terms: ACTIVE, OPERATIONAL, VERIFIED, COMPLETE,"
+            echo "  FULLY_VERIFIED, READY, GREEN"
+            echo ""
+            echo "Proposed-but-uncommitted values refused by sealed triple:"
+            echo "  ACTIVE_SPARSE_CLIMATE_ONLY, ACTIVE_FULL_COVERAGE, HALTED,"
+            echo "  OUTSIDE_JURISDICTION, DEPRECATED"
+            exit 1
+          fi
+
+          echo "No forbidden jurisdiction values detected in manifests."
+
+      - name: Validate manifest jurisdiction fields against enum
+        run: |
+          set -euo pipefail
+
+          python3 - <<'PY'
+          import glob
+          import json
+          import sys
+
+          valid_values = {
+              "NOT_ESTABLISHED",
+              "SUSPENDED",
+              "ACTIVE_SCAFFOLD_ONLY",
+              "ACTIVE_ECONOMIC_ONLY",
+              "ACTIVE_SPARSE_OVERLAY_ONLY",
+              "ACTIVE_FULL_STATE_WORKFLOW",
+          }
+
+          manifests = sorted(glob.glob("_truth/bigquery/*_manifest.json"))
+          if not manifests:
+              print("No state manifests found for enum validation.")
+              sys.exit(0)
+
+          failed = False
+
+          for manifest in manifests:
+              try:
+                  with open(manifest, "r", encoding="utf-8") as f:
+                      data = json.load(f)
+              except Exception as exc:
+                  print(f"CONSTITUTIONAL BREACH: {manifest}")
+                  print(f"  manifest JSON parse failed: {exc}")
+                  failed = True
+                  continue
+
+              jurisdiction = data.get("jurisdiction")
+              if jurisdiction is None:
+                  continue
+
+              if jurisdiction not in valid_values:
+                  print(f"CONSTITUTIONAL BREACH: {manifest}")
+                  print(f"  jurisdiction field: {jurisdiction!r}")
+                  print(f"  not in valid enum: {sorted(valid_values)}")
+                  print("  see: docs/state_workflows/STATE_JURISDICTION_ENUM_V1.md")
+                  failed = True
+              else:
+                  print(f"OK: {manifest} -> jurisdiction: {jurisdiction}")
+
+          if failed:
+              sys.exit(1)
+
+          print("All manifest jurisdiction fields validate against enum.")
+          PY
