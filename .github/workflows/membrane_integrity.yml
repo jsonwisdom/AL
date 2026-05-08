@@ -1,0 +1,42 @@
+name: membrane integrity
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  proof_blob_surface:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - run: pip install pytest pyyaml
+
+      - run: pytest tests/spec_compliance/test_proof_blob_membrane.py -v
+
+  trusted_issuer_membrane:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - run: pip install pytest pyyaml
+
+      - run: pytest tests/membrane/test_trusted_issuers.py -v
+
+  forbidden_semantics_scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Scan for forbidden accusation semantics
+        run: |
+          FORBIDDEN="guilt_score|corruption_score|bad_actor|intent|motive|blame|liable|threat_assessment|risk_score"
+          ! grep -rEi "$FORBIDDEN" circuits/ specs/ agents/ config/ || exit 1
