@@ -11,6 +11,20 @@ Contributors may propose changes.
 The membrane decides whether the change is representable.
 ```
 
+## Contributor Mental Model
+
+The constitution is not only a document.
+
+It runs in:
+
+- schemas
+- tests
+- CI
+- runtime guards
+- the local Agent SDK harness
+
+Unknown powers are not ignored. They are unconstitutional.
+
 ## Contribution Types
 
 ### Target Changes
@@ -66,6 +80,12 @@ Why existing agents cannot do this:
 Runtime limits:
 Targets file:
 Constitutional basis:
+```
+
+Before opening a PR, run:
+
+```bash
+python agent-sdk/harness.py agents/<agent_id>/manifest.yaml
 ```
 
 Forbidden agent kinds include:
@@ -137,6 +157,24 @@ CI rejects:
 - invalid trusted issuer governance
 - target and agent scope violations as tests are hardened
 
+## Local Checks
+
+Run:
+
+```bash
+pytest tests/membrane -v
+pytest tests/spec_compliance -v
+pytest tests/test_404_runtime_surface.py -v
+pytest tests/test_404_dashboard_membrane.py -v
+python agent-sdk/harness.py agents/<agent_id>/manifest.yaml
+```
+
+The SDK harness lets contributors test boundedness before CI.
+
+It does not prove the agent is correct.
+
+It proves the declared constitutional boundary is representable.
+
 ## Commercial Boundary
 
 Customers may buy operational service.
@@ -152,17 +190,6 @@ Customers may not buy:
 - lifecycle power
 
 See `specs/constitutional_replay_economy_v0.1.md`.
-
-## Local Checks
-
-Run:
-
-```bash
-pytest tests/membrane -v
-pytest tests/spec_compliance -v
-pytest tests/test_404_runtime_surface.py -v
-pytest tests/test_404_dashboard_membrane.py -v
-```
 
 ## One-Sentence Contract
 
