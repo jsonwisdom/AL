@@ -5,103 +5,133 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jay’s Wisdom War Board</title>
   <style>
-    body {
-      background: #050505;
-      color: #d7ffd7;
-      font-family: monospace;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      padding: 24px;
-      border-bottom: 1px solid #1f5f1f;
-    }
-    h1 {
-      margin: 0;
-      color: #7dff7d;
-    }
-    .tagline {
-      color: #9ac89a;
-      margin-top: 8px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 16px;
-      padding: 24px;
-    }
-    .card {
-      border: 1px solid #1f5f1f;
-      padding: 16px;
-      background: #0d0d0d;
-    }
-    .badge {
-      display: inline-block;
-      padding: 4px 8px;
-      border: 1px solid #3aff3a;
-      margin-top: 8px;
-      color: #3aff3a;
-    }
-    a {
-      color: #7dcfff;
-    }
-    pre {
-      white-space: pre-wrap;
-      word-break: break-word;
-      background: #111;
-      padding: 12px;
-      overflow-x: auto;
-    }
+    :root { --bg:#050505; --panel:#0d0d0d; --ink:#d7ffd7; --muted:#9ac89a; --green:#22c55e; --gray:#666; --red:#ef4444; --blue:#7dcfff; --amber:#f59e0b; }
+    body { background:var(--bg); color:var(--ink); font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; margin:0; }
+    header { padding:28px; border-bottom:1px solid #1f5f1f; background:linear-gradient(180deg,#071007,#050505); }
+    h1 { margin:0; color:#7dff7d; font-size:clamp(28px,5vw,56px); }
+    h2 { margin-top:0; color:#baffba; }
+    h3 { color:#dfffdc; }
+    .tagline,.muted { color:var(--muted); margin-top:8px; }
+    .notice { margin:18px 28px 0; border:1px solid var(--amber); color:#ffe3a3; padding:14px; background:#171106; }
+    .breach { margin:18px 28px 0; border:2px solid var(--red); color:#ffd3d3; padding:16px; background:#240808; display:none; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px; padding:24px; }
+    .card { border:1px solid #1f5f1f; padding:18px; background:var(--panel); min-height:120px; }
+    .wide { grid-column:1/-1; }
+    .badge { display:inline-block; padding:5px 9px; border:1px solid var(--gray); color:#ccc; margin:4px 4px 4px 0; }
+    .badge.green { border-color:var(--green); color:var(--green); }
+    .badge.gray { border-color:var(--gray); color:#ccc; }
+    .badge.amber { border-color:var(--amber); color:#ffd27a; }
+    .badge.red { border-color:var(--red); color:#ffb3b3; }
+    a { color:var(--blue); }
+    pre { white-space:pre-wrap; word-break:break-word; background:#111; padding:12px; overflow-x:auto; }
+    .tree { display:flex; gap:14px; align-items:center; flex-wrap:wrap; margin-top:12px; }
+    .node { border:1px solid var(--gray); padding:12px; background:#080808; min-width:210px; }
+    .node .label { font-weight:bold; color:#fff; }
+    .edge { color:#aaa; border-top:2px dashed var(--gray); width:54px; opacity:.7; }
+    .children { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:10px; margin-top:14px; }
+    .child { border:1px dashed var(--gray); padding:10px; background:#090909; }
+    footer { border-top:1px solid #1f5f1f; padding:18px 28px; color:var(--muted); }
+    button,input { background:#101010; color:var(--ink); border:1px solid #315f31; padding:8px; font-family:inherit; }
   </style>
 </head>
 <body>
   <header>
     <h1>Jay’s Wisdom War Board</h1>
-    <div class="tagline">The joke can fly. The receipt must land.</div>
-    <div class="tagline">Identity: jaywisdom.base.eth</div>
+    <div class="tagline">Civic public dashboard for Meme MetaVerse provenance.</div>
+    <div class="tagline">Identity: <strong>jaywisdom.base.eth</strong></div>
+    <div class="tagline">Doctrine: The joke can fly. The receipt must land.</div>
   </header>
 
-  <div class="grid">
-    <div class="card">
-      <h2>Status Dashboard</h2>
-      <div id="status">Loading truth boundary...</div>
-    </div>
+  <div class="notice">Truthful posture: this page is public repo canon and parent-referenced. Dedicated War Board onchain certification remains pending until truth.json says otherwise.</div>
+  <div id="breach" class="breach"></div>
 
-    <div class="card">
-      <h2>War Board Doctrine</h2>
-      <p><a href="../specs/JAYS_WISDOM_WAR_BOARD_V0_2.md">Open Spec</a></p>
-      <div class="badge">JOINT_ORIGIN ENABLED</div>
-    </div>
+  <main class="grid" id="app">
+    <section class="card">
+      <h2>Civic Status</h2>
+      <div id="badges">Loading truth boundary...</div>
+    </section>
 
-    <div class="card">
-      <h2>EAS Schema Reference</h2>
-      <p><a href="../specs/JAYS_WISDOM_WAR_BOARD_EAS_SCHEMA_V0_2.md">Open Schema Spec</a></p>
-      <div class="badge">SCHEMA REGISTRATION PENDING</div>
-    </div>
+    <section class="card">
+      <h2>Public Links</h2>
+      <p><a href="../specs/JAYS_WISDOM_WAR_BOARD_V0_2.md">War Board Spec</a></p>
+      <p><a href="../specs/FAMILY_NODE_ATTESTATION_TREE_V1.md">Family Node Spec</a></p>
+      <p><a href="../specs/INHERITANCE_MODEL_V1.md">Inheritance Model</a></p>
+      <p><a href="../specs/RENDERER_SPEC_V1.md">Renderer Spec</a></p>
+    </section>
 
-    <div class="card">
+    <section class="card">
+      <h2>Parent Attestation</h2>
+      <div id="parent">Loading parent reference...</div>
+    </section>
+
+    <section class="card">
       <h2>Collision Checker</h2>
-      <p>Status: Awaiting schema registration + Observer A receipt.</p>
-      <pre>JOINT_ORIGIN requires:
-- temporal_window_check = PASS
-- independence_proof = PASS
-- local_context_preservation = PASS</pre>
-    </div>
-  </div>
+      <p>Status: SPEC_ONLY — JOINT_ORIGIN protocol not yet deployed.</p>
+      <input placeholder="Meme ID / county pair" /> <button onclick="alert('SPEC_ONLY — no backend deployed. Receipts required.')">Check</button>
+    </section>
+
+    <section class="card wide">
+      <h2>Auditable Family Node Tree</h2>
+      <div id="tree">Loading lineage tree...</div>
+    </section>
+
+    <section class="card wide">
+      <h2>Truth Boundary</h2>
+      <pre id="truth">Loading truth.json...</pre>
+    </section>
+  </main>
+
+  <footer id="audit-footer">truth.json hash=pending loaded_at=pending breach_count=pending</footer>
 
   <script>
-    fetch('./truth.json')
-      .then(r => r.json())
-      .then(data => {
-        document.getElementById('status').innerHTML = `
-          <pre>${JSON.stringify(data.truth_boundary, null, 2)}</pre>
-          <p>Schema UID: ${data.schema_uid}</p>
-          <p>Observer A: ${data.observer_a_status}</p>
-        `;
+    async function sha256(text){ const b=new TextEncoder().encode(text); const h=await crypto.subtle.digest('SHA-256',b); return [...new Uint8Array(h)].map(x=>x.toString(16).padStart(2,'0')).join(''); }
+    function badge(label, cls){ return `<span class="badge ${cls}">${label}</span>`; }
+    function failClosed(msg, breaches=[]){
+      document.getElementById('breach').style.display='block';
+      document.getElementById('breach').innerHTML=`<strong>RENDER HALTED</strong><br>${msg}<pre>${breaches.join('\n')}</pre>`;
+      document.getElementById('app').style.display='none';
+      console.error('RENDERER_SPEC_V1_FAIL_CLOSED', {msg, breaches});
+    }
+    function validate(data){
+      const breaches=[];
+      if(!data.truth_boundary) breaches.push('BREACH: missing truth_boundary');
+      if(!data.lineage_tree) breaches.push('BREACH: missing lineage_tree');
+      const tb=data.truth_boundary||{};
+      if(tb.dedicated_war_board_schema_registered===true && !data.schema_uid) breaches.push('BREACH: Ghost Claim — dedicated schema true without schema_uid');
+      if(tb.dedicated_war_board_schema_verified===true && !data.schema_uid) breaches.push('BREACH: Edge Integrity — verified schema true without schema_uid');
+      return breaches;
+    }
+    function renderTree(t){
+      const parent=t.parent, family=t.family_node, children=t.children||[];
+      const childHtml=children.map(c=>`<div class="child" data-edge-type="INHERITS" data-trust-level="Inherited (Soft)"><div class="label">${c.label}</div>${badge('INHERITS','gray')}<div class="muted">${c.status}</div><div><a href="../${c.path}">${c.path}</a></div></div>`).join('');
+      return `<div class="tree">
+        <div class="node" data-node-id="PARENT_ANCHOR" data-edge-type="INHERITS"><div class="label">${parent.label}</div>${badge('INHERITS','gray')}<p><a href="${parent.url}">Parent EAS Reference</a></p></div>
+        <div class="edge"></div>
+        <div class="node" data-node-id="FAMILY_NODE" data-edge-type="INHERITS"><div class="label">${family.label}</div>${badge('INHERITS','gray')}<p>${family.status}</p><p><a href="../${family.path}">${family.path}</a></p></div>
+      </div><h3>Children</h3><div class="children">${childHtml}</div>`;
+    }
+    fetch('./truth.json', {cache:'no-store'})
+      .then(async r=>{ if(!r.ok) throw new Error('truth.json unreadable'); const text=await r.text(); return {text,data:JSON.parse(text),hash:await sha256(text)}; })
+      .then(({text,data,hash})=>{
+        const breaches=validate(data);
+        const loadedAt=new Date().toISOString();
+        console.log('RENDERER_SPEC_V1_VALIDATION', {breach_count:breaches.length, node_count:(data.lineage_tree?.children||[]).length+2, hash, loadedAt});
+        if(breaches.length) return failClosed('Boundary violation detected before render.', breaches);
+        const tb=data.truth_boundary;
+        document.getElementById('badges').innerHTML = [
+          badge('PUBLIC_FACING', tb.public_facing?'green':'red'),
+          badge('REPO_CANONICAL', tb.repo_canonical?'green':'red'),
+          badge('UPPER_LEVEL_REFERENCED', tb.upper_level_parent_reference?'amber':'gray'),
+          badge('PARENT_EAS_LINKED', tb.parent_eas_attestation_linked?'amber':'gray'),
+          badge('DEDICATED_ONCHAIN_CERTIFIED', tb.dedicated_war_board_schema_verified?'green':'gray'),
+          badge('META_CERTIFIED', tb.meta_certified?'green':'gray')
+        ].join('');
+        document.getElementById('parent').innerHTML = `<p>UID: <a href="${data.parent_eas_attestation_url}">${data.parent_eas_attestation_uid}</a></p><p>TX: <a href="${data.parent_eas_tx_url}">${data.parent_eas_tx_hash}</a></p>`;
+        document.getElementById('tree').innerHTML = renderTree(data.lineage_tree);
+        document.getElementById('truth').textContent = JSON.stringify(data, null, 2);
+        document.getElementById('audit-footer').textContent = `truth.json hash=${hash} loaded_at=${loadedAt} breach_count=0`;
       })
-      .catch(err => {
-        document.getElementById('status').innerText = 'Failed to load truth boundary.';
-      });
+      .catch(e=>failClosed('truth.json unreadable', [e.message]));
   </script>
 </body>
 </html>
