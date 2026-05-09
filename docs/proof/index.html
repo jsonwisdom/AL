@@ -7,88 +7,33 @@
     <title>AL Receipt Viewer — Attestation Ledger</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace;
-            background: #0a0e12;
-            color: #e4e4e7;
-            padding: 2rem;
-            line-height: 1.5;
-        }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace; background: #0a0e12; color: #e4e4e7; padding: 2rem; line-height: 1.5; }
         .container { max-width: 1400px; margin: 0 auto; }
         h1 { font-size: 2rem; font-weight: 600; margin-bottom: 0.5rem; }
         .subhead { color: #71717a; margin-bottom: 2rem; border-left: 3px solid #3b82f6; padding-left: 1rem; }
-        .status {
-            background: #18181b;
-            border-radius: 0.5rem;
-            padding: 1rem;
-            margin-bottom: 2rem;
-            font-size: 0.875rem;
-            font-family: monospace;
-            border: 1px solid #27272a;
-        }
+        .status { background: #18181b; border-radius: 0.5rem; padding: 1rem; margin-bottom: 2rem; font-size: 0.875rem; font-family: monospace; border: 1px solid #27272a; }
+        .status.ok { border-color: #22c55e; }
+        .status.warn { border-color: #f59e0b; }
+        .status.fail { border-color: #ef4444; }
         .receipt-grid { display: flex; flex-direction: column; gap: 1rem; }
-        .receipt-card {
-            background: #121317;
-            border: 1px solid #27272a;
-            border-radius: 0.75rem;
-            padding: 1.25rem;
-            transition: all 0.2s;
-        }
+        .receipt-card { background: #121317; border: 1px solid #27272a; border-radius: 0.75rem; padding: 1.25rem; transition: all 0.2s; }
         .receipt-card:hover { border-color: #3b82f6; background: #18181b; }
-        .receipt-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-        .claim {
-            font-family: monospace;
-            font-weight: 600;
-            color: #3b82f6;
-            word-break: break-all;
-        }
+        .receipt-card.warn { border-color: #f59e0b; }
+        .receipt-card.fail { border-color: #ef4444; }
+        .receipt-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem; }
+        .claim { font-family: monospace; font-weight: 600; color: #3b82f6; word-break: break-all; }
         .timestamp { color: #71717a; font-size: 0.75rem; font-family: monospace; }
-        .details {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 0.75rem;
-            margin-top: 0.75rem;
-            font-size: 0.8125rem;
-        }
-        .detail-item {
-            background: #0a0e12;
-            padding: 0.5rem 0.75rem;
-            border-radius: 0.375rem;
-            border-left: 2px solid #3b82f6;
-        }
-        .detail-label {
-            color: #71717a;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 0.25rem;
-        }
+        .details { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.75rem; margin-top: 0.75rem; font-size: 0.8125rem; }
+        .detail-item { background: #0a0e12; padding: 0.5rem 0.75rem; border-radius: 0.375rem; border-left: 2px solid #3b82f6; }
+        .detail-label { color: #71717a; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.25rem; }
         .detail-value { font-family: monospace; word-break: break-all; font-size: 0.75rem; }
-        .algorithm-badge {
-            background: #1e293b;
-            color: #94a3b8;
-            padding: 0.2rem 0.5rem;
-            border-radius: 0.25rem;
-            font-size: 0.7rem;
-            font-family: monospace;
-        }
-        .error { background: #7f1a1a; border: 1px solid #ef4444; padding: 1rem; border-radius: 0.5rem; color: #fecaca; }
+        .algorithm-badge { background: #1e293b; color: #94a3b8; padding: 0.2rem 0.5rem; border-radius: 0.25rem; font-size: 0.7rem; font-family: monospace; }
+        .code { font-weight: 700; letter-spacing: 0.02em; }
+        .ok-text { color: #22c55e; }
+        .warn-text { color: #f59e0b; }
+        .fail-text { color: #ef4444; }
         .loading { text-align: center; padding: 3rem; color: #71717a; }
-        footer {
-            margin-top: 3rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #27272a;
-            text-align: center;
-            font-size: 0.75rem;
-            color: #52525b;
-        }
+        footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #27272a; text-align: center; font-size: 0.75rem; color: #52525b; }
         a { color: #60a5fa; text-decoration: none; }
         a:hover { text-decoration: underline; }
         @media (max-width: 768px) { body { padding: 1rem; } .details { grid-template-columns: 1fr; } }
@@ -97,172 +42,165 @@
 <body>
 <div class="container">
     <h1>📋 AL Receipt Viewer</h1>
-    <div class="subhead">Attestation Ledger — verifiable claims from <code>_truth/receipts/index.json</code></div>
-
-    <div id="app">
-        <div class="loading">Loading receipts from <code>_truth/receipts/index.json</code>...</div>
-    </div>
-    <footer>
-        <span>🔗 Receipts indexed from <code>_truth/receipts/</code> • A claim is public only when receipt is present, indexed, and replay-linkable</span>
-    </footer>
+    <div class="subhead">Attestation Ledger — witness layer for <code>_truth/receipts/index.json</code></div>
+    <div id="app"><div class="loading">Loading proof viewer contract...</div></div>
+    <footer><span>🔗 CI = law • Viewer = witness • Index = derived truth • Receipts = authority bytes</span></footer>
 </div>
 
 <script>
-    const app = document.getElementById('app');
-    const RAW_BASE = 'https://raw.githubusercontent.com/jsonwisdom/AL/master';
+const app = document.getElementById('app');
+const RAW_BASE = 'https://raw.githubusercontent.com/jsonwisdom/AL/master';
+const INDEX_PATH = '_truth/receipts/index.json';
 
-    async function loadReceipts() {
+function renderFatal(code, msg) {
+    app.innerHTML = `<div class="status fail"><span class="code fail-text">❌ ${escapeHtml(code)}</span>: ${escapeHtml(msg)}</div>`;
+}
+
+async function sha256Hex(arrayBuffer) {
+    const digest = await crypto.subtle.digest('SHA-256', arrayBuffer);
+    return [...new Uint8Array(digest)].map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+async function fetchText(url) {
+    const resp = await fetch(url, { cache: 'no-store' });
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    return await resp.text();
+}
+
+async function loadReceipts() {
+    let indexText;
+    let indexData;
+
+    try {
+        indexText = await fetchText(`${RAW_BASE}/${INDEX_PATH}`);
+    } catch (err) {
+        renderFatal('INDEX_MISSING', `No index found at ${INDEX_PATH}: ${err.message}`);
+        return;
+    }
+
+    try {
+        indexData = JSON.parse(indexText);
+    } catch (err) {
+        renderFatal('INDEX_PARSE_ERROR', `Invalid JSON in ${INDEX_PATH}: ${err.message}`);
+        return;
+    }
+
+    const receiptEntries = indexData.index?.receipts;
+    if (!Array.isArray(receiptEntries)) {
+        renderFatal('INVALID_INDEX_SCHEMA', 'Missing index.receipts[] array');
+        return;
+    }
+
+    const results = [];
+    let loaded = 0;
+
+    for (let i = 0; i < receiptEntries.length; i++) {
+        const entry = receiptEntries[i];
+        const receiptPath = entry.path;
+
+        if (!receiptPath) {
+            results.push({ state: 'RECEIPT_PATH_MISSING', severity: 'fail', index: i, message: 'Index entry missing path', entry });
+            continue;
+        }
+
+        let receiptText;
         try {
-            const indexResponse = await fetch(`${RAW_BASE}/_truth/receipts/index.json`);
-            if (!indexResponse.ok) throw new Error(`HTTP ${indexResponse.status}`);
-            const indexData = await indexResponse.json();
-
-            const receiptEntries = indexData.index?.receipts || [];
-
-            if (receiptEntries.length === 0) {
-                app.innerHTML = '<div class="status">⚠️ No receipts found in index</div>';
-                return;
-            }
-
-            const receipts = [];
-            for (const entry of receiptEntries) {
-                try {
-                    const receiptPath = entry.path;
-                    if (!receiptPath) continue;
-
-                    const receiptResp = await fetch(`${RAW_BASE}/${receiptPath}`);
-                    if (!receiptResp.ok) throw new Error(`HTTP ${receiptResp.status}`);
-                    const receiptData = await receiptResp.json();
-
-                    receipts.push({
-                        ...receiptData,
-                        _meta: {
-                            path: receiptPath,
-                            index_hash: entry.hash || 'unverified',
-                            index_timestamp: entry.timestamp,
-                            claims_indexed: entry.claims || [],
-                            size_bytes: entry.size_bytes
-                        }
-                    });
-                } catch (err) {
-                    console.warn(`Could not load receipt ${entry.path}:`, err);
-                    receipts.push({
-                        error: true,
-                        _meta: { path: entry.path, error: err.message }
-                    });
-                }
-            }
-
-            renderReceipts(receipts, indexData);
+            receiptText = await fetchText(`${RAW_BASE}/${receiptPath}`);
         } catch (err) {
-            console.error(err);
-            app.innerHTML = `<div class="error">❌ Failed to load receipt index: ${err.message}<br><br>Make sure <code>_truth/receipts/index.json</code> exists on <code>master</code> and is accessible through raw.githubusercontent.com.</div>`;
+            results.push({ state: 'RECEIPT_MISSING', severity: 'warn', index: i, message: `${receiptPath}: ${err.message}`, entry });
+            continue;
         }
+
+        const actualHash = 'sha256:' + await sha256Hex(new TextEncoder().encode(receiptText));
+        const expectedHash = entry.hash || '';
+        if (expectedHash && actualHash !== expectedHash) {
+            results.push({ state: 'HASH_MISMATCH', severity: 'fail', index: i, message: `${receiptPath} expected=${expectedHash} actual=${actualHash}`, entry, actualHash });
+            continue;
+        }
+
+        let receipt;
+        try {
+            receipt = JSON.parse(receiptText);
+        } catch (err) {
+            results.push({ state: 'RECEIPT_PARSE_ERROR', severity: 'warn', index: i, message: `${receiptPath}: ${err.message}`, entry, actualHash });
+            continue;
+        }
+
+        const required = ['claim', 'algorithm', 'timestamp', 'signature'];
+        const missing = required.filter(k => !receipt[k]);
+        if (missing.length) {
+            results.push({ state: 'RECEIPT_SCHEMA_INVALID', severity: 'warn', index: i, message: `${receiptPath} missing=${missing.join(',')}`, entry, receipt, actualHash });
+            continue;
+        }
+
+        loaded++;
+        results.push({ state: 'FULL_RECEIPT_OK', severity: 'ok', index: i, message: receiptPath, entry, receipt, actualHash });
     }
 
-    function renderReceipts(receipts, indexData) {
-        if (!receipts.length) {
-            app.innerHTML = '<div class="status">No receipts loaded</div>';
-            return;
-        }
+    renderResults(results, indexData, loaded, receiptEntries.length);
+}
 
-        const totalReceipts = indexData.index?.total_receipts || receipts.length;
-        const loadedCount = receipts.filter(r => !r.error).length;
+function renderResults(results, indexData, loaded, total) {
+    const errors = results.filter(r => r.severity !== 'ok');
+    const finalState = errors.length === 0 ? 'FULL_LOAD_OK' : (loaded > 0 ? 'PARTIAL_LOAD' : 'RECEIPT_LOAD_FAILED');
+    const cls = finalState === 'FULL_LOAD_OK' ? 'ok' : (finalState === 'PARTIAL_LOAD' ? 'warn' : 'fail');
+    const icon = finalState === 'FULL_LOAD_OK' ? '✅' : (finalState === 'PARTIAL_LOAD' ? '⚠️' : '❌');
 
-        const html = `
-            <div class="status">
-                📍 Loaded ${loadedCount} of ${totalReceipts} receipts • 
-                Schema: ${indexData.schema_version || 'unknown'} • 
-                Last updated: ${indexData.last_updated || 'unknown'}
-            </div>
-            <div class="receipt-grid">
-                ${receipts.map(receipt => renderReceiptCard(receipt)).join('')}
-            </div>
-        `;
-        app.innerHTML = html;
-    }
+    app.innerHTML = `
+        <div class="status ${cls}">
+            <span class="code ${cls === 'ok' ? 'ok-text' : cls === 'warn' ? 'warn-text' : 'fail-text'}">${icon} ${finalState}</span>: loaded=${loaded} total=${total} errors=${errors.length}<br>
+            Schema: ${escapeHtml(indexData.schema_version || 'unknown')} • Last updated: ${escapeHtml(indexData.last_updated || 'unknown')}
+        </div>
+        <div class="receipt-grid">${results.map(renderResultCard).join('')}</div>
+    `;
+}
 
-    function renderReceiptCard(receipt) {
-        if (receipt.error) {
-            return `
-                <div class="receipt-card" style="border-color:#7f1a1a">
-                    <div class="receipt-header">
-                        <span class="claim" style="color:#ef4444">⚠️ Failed to load</span>
-                    </div>
-                    <div class="detail-item">
-                        <div class="detail-label">Path</div>
-                        <div class="detail-value">${escapeHtml(receipt._meta?.path || 'unknown')}</div>
-                    </div>
-                    <div class="detail-item">
-                        <div class="detail-label">Error</div>
-                        <div class="detail-value">${escapeHtml(receipt._meta?.error || 'Unknown error')}</div>
-                    </div>
-                </div>
-            `;
-        }
-
-        const claim = receipt.claim || (receipt._meta?.claims_indexed?.length ? receipt._meta.claims_indexed.join(', ') : 'No claim field');
-        const algorithm = receipt.algorithm || 'unknown';
-        const timestamp = receipt.timestamp || receipt._meta?.index_timestamp || 'unknown';
-        const commitment = receipt.commitment || 'none';
-        const signature = receipt.signature ? truncateHash(receipt.signature) : 'missing';
-        const version = receipt.version || '1.0';
-
-        const hasRequiredFields = receipt.claim && receipt.timestamp && receipt.signature;
-        const verificationStatus = hasRequiredFields ? '✅ Verified structure' : '⚠️ Incomplete receipt';
-
+function renderResultCard(result) {
+    if (result.severity !== 'ok') {
         return `
-            <div class="receipt-card">
-                <div class="receipt-header">
-                    <span class="claim">📜 ${escapeHtml(typeof claim === 'string' ? claim : JSON.stringify(claim))}</span>
-                    <span class="algorithm-badge">${escapeHtml(algorithm)}</span>
-                </div>
-                <div class="timestamp">🕐 ${escapeHtml(timestamp)} • ${verificationStatus}</div>
-                
+            <div class="receipt-card ${result.severity}">
+                <div class="receipt-header"><span class="claim ${result.severity === 'fail' ? 'fail-text' : 'warn-text'}">${escapeHtml(result.state)}</span></div>
                 <div class="details">
-                    <div class="detail-item">
-                        <div class="detail-label">Commitment</div>
-                        <div class="detail-value">${escapeHtml(typeof commitment === 'string' ? truncateHash(commitment, 40) : JSON.stringify(commitment))}</div>
-                    </div>
-                    <div class="detail-item">
-                        <div class="detail-label">Signature (truncated)</div>
-                        <div class="detail-value">${escapeHtml(signature)}</div>
-                    </div>
-                    <div class="detail-item">
-                        <div class="detail-label">Version / Proof</div>
-                        <div class="detail-value">v${escapeHtml(version)} • ${receipt.proof ? 'proof present' : 'no proof field'}</div>
-                    </div>
-                    <div class="detail-item">
-                        <div class="detail-label">Index Claims</div>
-                        <div class="detail-value">${receipt._meta?.claims_indexed?.map(c => escapeHtml(c)).join(', ') || 'none'}</div>
-                    </div>
-                    <div class="detail-item">
-                        <div class="detail-label">Indexed Hash</div>
-                        <div class="detail-value"><code>${escapeHtml(receipt._meta?.index_hash || 'unverified')}</code></div>
-                    </div>
-                    <div class="detail-item">
-                        <div class="detail-label">Source Path</div>
-                        <div class="detail-value"><code>${escapeHtml(receipt._meta?.path || 'unknown')}</code></div>
-                    </div>
+                    <div class="detail-item"><div class="detail-label">Index</div><div class="detail-value">receipt[${result.index}]</div></div>
+                    <div class="detail-item"><div class="detail-label">Message</div><div class="detail-value">${escapeHtml(result.message)}</div></div>
+                    <div class="detail-item"><div class="detail-label">Indexed Hash</div><div class="detail-value">${escapeHtml(result.entry?.hash || 'none')}</div></div>
+                    <div class="detail-item"><div class="detail-label">Actual Hash</div><div class="detail-value">${escapeHtml(result.actualHash || 'not computed')}</div></div>
                 </div>
+            </div>`;
+    }
+
+    const receipt = result.receipt;
+    return `
+        <div class="receipt-card">
+            <div class="receipt-header">
+                <span class="claim">📜 ${escapeHtml(receipt.claim)}</span>
+                <span class="algorithm-badge">${escapeHtml(receipt.algorithm)}</span>
             </div>
-        `;
-    }
+            <div class="timestamp">🕐 ${escapeHtml(receipt.timestamp)} • ✅ FULL_RECEIPT_OK</div>
+            <div class="details">
+                <div class="detail-item"><div class="detail-label">Commitment</div><div class="detail-value">${escapeHtml(typeof receipt.commitment === 'string' ? truncateHash(receipt.commitment, 64) : JSON.stringify(receipt.commitment || 'none'))}</div></div>
+                <div class="detail-item"><div class="detail-label">Signature</div><div class="detail-value">${escapeHtml(truncateHash(receipt.signature, 32))}</div></div>
+                <div class="detail-item"><div class="detail-label">Indexed Hash</div><div class="detail-value">${escapeHtml(result.entry.hash || 'none')}</div></div>
+                <div class="detail-item"><div class="detail-label">Computed Hash</div><div class="detail-value">${escapeHtml(result.actualHash)}</div></div>
+                <div class="detail-item"><div class="detail-label">Source Path</div><div class="detail-value">${escapeHtml(result.entry.path)}</div></div>
+                <div class="detail-item"><div class="detail-label">Index Claims</div><div class="detail-value">${(result.entry.claims || []).map(escapeHtml).join(', ') || 'none'}</div></div>
+            </div>
+        </div>`;
+}
 
-    function truncateHash(str, len = 24) {
-        if (!str || typeof str !== 'string') return str || '—';
-        if (str.length <= len) return str;
-        return str.slice(0, len) + '…';
-    }
+function truncateHash(str, len = 24) {
+    if (!str || typeof str !== 'string') return str || '—';
+    return str.length <= len ? str : str.slice(0, len) + '…';
+}
 
-    function escapeHtml(str) {
-        if (!str) return '';
-        const div = document.createElement('div');
-        div.textContent = typeof str === 'string' ? str : JSON.stringify(str);
-        return div.innerHTML;
-    }
+function escapeHtml(str) {
+    if (str === null || str === undefined) return '';
+    const div = document.createElement('div');
+    div.textContent = typeof str === 'string' ? str : JSON.stringify(str);
+    return div.innerHTML;
+}
 
-    loadReceipts();
+loadReceipts();
 </script>
 </body>
 </html>
