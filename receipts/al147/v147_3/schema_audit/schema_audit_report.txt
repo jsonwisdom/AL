@@ -1,0 +1,450 @@
+AL147_SCHEMA_AUDIT
+2026-05-09T14:59:34Z
+
+SCHEMA FILES
+./agents/track020/schemas/track020_mainnet_attestation_candidate_v1.schema.json
+./agents/track020/schemas/track020_mainnet_schema_candidate_v1.schema.json
+./contracts/agent_income_receipt_v1.schema.json
+./contracts/alms_adversarial_report_v1.schema.json
+./contracts/alms_cid_binding_v1.schema.json
+./contracts/alms_ledger_v1.schema.json
+./contracts/alms_merkle_root_v1.schema.json
+./contracts/gov_ncc_event_v1.schema.json
+./docs/ALMS-v1-PROVENANCE-SCHEMAS.md
+./docs/attestations/TRACK_001_BASE_EAS_PAYLOAD_GITHUB_DIRECT.json
+./docs/attestations/TRACK_001_CEREMONY_TRANSCRIPT_SCHEMA.json
+./docs/attestations/TRACK_001_MAINNET_PREFLIGHT_SCHEMA.json
+./docs/attestations/TRACK_001_MAINNET_RECEIPT_SCHEMA.json
+./docs/epoch_02/EPOCH_02_ATTESTATION_FINALITY_RULES_V1.md
+./docs/epoch_02/EPOCH_02_ATTESTATION_PAYLOAD_SCHEMA_V1.md
+./docs/epoch_02/EPOCH_02_ATTESTATION_SIGNING_RULES_V1.md
+./docs/JAYS_ROOT_TIERED_LAYERING_SCHEMA.md
+./docs/live/live_alms_002_open_weights_release_monitor.md
+./docs/schemas.html
+./docs/SoulboundReceiptMetadataSchema.md
+./docs/specs/CVD_OUTPUT_SCHEMA_V1.md
+./docs/training/SCHEMAS_FIXTURES_MERKLE_ROOTS_STARTER.md
+./examples/ATTESTATION_CANDIDATE.v1.example.json
+./federation/COMPACT_SCHEMA_V1.json
+./federation/v2/REJECTION_REASON_VOCABULARY_V1.json
+./.github/workflows/attestation-candidate-validate.yml
+./governance/MEME_COURT_ATTESTATION_STATION_V1.json
+./law/ingest/law_sources.schema.json
+./lineage/asset_lineage_schema_v1.json
+./manifest/asset_manifest_schema_v1.json
+./observers/openclaw/release-v2026.4.24.json
+./receipts/al147/v147_3/schema_audit/schema_audit_report.txt
+./schemas/agent_manifest_v0.1.schema.json
+./schemas/alms_version_receipt.schema.json
+./schemas/alms_version_registry.schema.json
+./schemas/ATTESTATION_CANDIDATE.v1.schema.json
+./schemas/cipher_court/telemetry_v1.schema.json
+./schemas/CLAIM_BOUNDING_TEST_LEDGER.schema.json
+./schemas/economy_v1.schema.json
+./schemas/fixture.county.v1.schema.json
+./schemas/fixture.federal.v1.schema.json
+./schemas/fixture.state.v1.schema.json
+./schemas/root.state.v1.schema.json
+./schemas/state_jurisdiction_enum_v1.schema.json
+./schemas/targets_v1.schema.json
+./schemas/WRITE_RUN_0002_packet.schema.json
+./scripts/alms_gsod_schema_probe.py
+./scripts/alms_validate_version_schemas.py
+./scripts/deploy-eas-schema.ts
+./scripts/deploy-link-schema.ts
+./scripts/generate_attestation_candidate.py
+./scripts/validate_attestation_candidate.py
+./scripts/verify_attestation_graph.py
+./scripts/verify_eas_anchor.sh
+./site/eas-backfill-signer.html
+./_truth/anchors/ALMS_ATTESTATION_CLAIMS_LEDGER_2026-05-05.json
+./_truth/anchors/ALMS_SCHEMA_ATTESTATION_CANDIDATE_2026-05-05.json
+./_truth/backfill/eas_backfill_unsigned_tx.json
+./_truth/bigquery/bls_laus_schema_probe.csv
+./_truth/bigquery/bls_schema_probe.csv
+./_truth/bigquery/gsod2024_schema_probe.csv
+./_truth/bigquery/gsod2024_schema_probe_manifest.json
+./_truth/bigquery/irs_schema_probe.csv
+./_truth/bigquery/ny007_era5_schema_probe.csv
+./_truth/bigquery/ny007_era5_schema_probe_manifest.json
+./_truth/doj_epstein/manifests/manifest.schema.json
+./_truth/eas/leaf008_eas_attestation.json
+./_truth/receipts/schema.json
+./_truth/releases/justice_epstein/DOJ_RELEASE_CANDIDATE_001.json
+./_truth/replay/registry.schema.json
+
+SCHEMA UID REFERENCES
+./index.html:44:<section class="card" style="margin-bottom:14px;"><div class="label">ALMS Trilogy V1 Audit <a href="https://github.com/jsonwisdom/AL/actions/workflows/verify-trilogy.yml" target="_blank" rel="noopener noreferrer"><img class="badge" alt="Verify Trilogy workflow status" src="https://github.com/jsonwisdom/AL/actions/workflows/verify-trilogy.yml/badge.svg"></a></div><div class="small">Offchain verified media sequence — GitHub + IPFS + SHA256 locked. EAS onchain status remains pending until real UIDs exist.</div><br><b>Status:</b> <span class="warn">EAS_PENDING / OFFCHAIN_VERIFIED</span><br><b>CI Replay:</b> <a href="https://github.com/jsonwisdom/AL/actions/workflows/verify-trilogy.yml" target="_blank" rel="noopener noreferrer">Verify Trilogy workflow</a><br><br><b>Trilogy Hash:</b><br><span class="hash">0xbff64af27865e7967a9992c4ac8089bc8ca6a637e58194236d1b3abd25e1ac57</span><br><br><b>Bundle CID:</b><br><span class="hash">bafybeibcc32x2jq3ktmk4epvugprux2ehrsx2ukzqbn5gxffvudztc6ile</span><br><br><a href="alms_trilogy/">Open Trilogy Audit</a> · <a href="https://gateway.pinata.cloud/ipfs/bafybeibcc32x2jq3ktmk4epvugprux2ehrsx2ukzqbn5gxffvudztc6ile" target="_blank" rel="noopener noreferrer">Open IPFS Bundle</a></section>
+./alms_trilogy/index.html:17:<p class="hold">EAS status: pending until schema UID + attestation UIDs exist.</p>
+./alms_trilogy/index.html:44:<tr><td>EAS schema / attestations</td><td>Pending</td></tr>
+./alms_trilogy/index.html:48:<p>No claim of EAS anchoring is valid until schema UID and attestation UIDs are published here.</p>
+./alms_trilogy/hashes.json:3:  "status": "OFFCHAIN_VERIFIED_EAS_PENDING",
+./alms_trilogy/verify.html:22:  <p class="muted">One-click byte verification using Web Crypto. No install. No wallet. No EAS claim until real UIDs exist.</p>
+./alms_trilogy/verify.html:46:  <pre>Git commit → browser verifier → IPFS directory CID → file bytes → SHA256 → PASS/FAIL → EAS pending</pre>
+./watchers/base/build_l1standardbridge_feed.sh:43:  REASON="bridge event flow confirmed from observed topics"
+./watchers/base/build_l1standardbridge_feed.sh:46:  REASON="bridge code confirmed but no observed event flow in sampled window"
+./watchers/base/build_l1standardbridge_feed.sh:56:  --arg reason "$REASON" \
+./watchers/base/alert_optimismportal_changes.sh:17:CURRENT_REASON="$(jq -r '.status.reason // "no reason"' "$FEED")"
+./watchers/base/alert_optimismportal_changes.sh:46:  --arg reason "$CURRENT_REASON" \
+./watchers/media/anchor_verifier_v1_net.sh:5:# PURPOSE: Network harness that resolves ENS/EAS into anchored_batch.json, then calls offline verifier
+./watchers/media/anchor_verifier_v1_net.sh:9:  echo "usage: $0 <merged_receipts_jsonl> <ens_name> <ens_text_key> <eas_schema_uid>" >&2
+./watchers/media/anchor_verifier_v1_net.sh:16:EAS_SCHEMA_UID="$4"
+./watchers/media/anchor_verifier_v1_net.sh:38:[ -n "$EAS_SCHEMA_UID" ] || hard_fail "EAS_SCHEMA_UID_EMPTY"
+./watchers/media/anchor_verifier_v1_net.sh:42:#   MEDIA_MESH_RESOLVE_ENS_CMD: prints EAS attestation UID from ENS name + text key
+./watchers/media/anchor_verifier_v1_net.sh:43:#   MEDIA_MESH_FETCH_EAS_CMD: prints EAS attestation JSON from attestation UID
+./watchers/media/anchor_verifier_v1_net.sh:47:#   $MEDIA_MESH_FETCH_EAS_CMD "$ATTESTATION_UID"
+./watchers/media/anchor_verifier_v1_net.sh:50:[ -n "${MEDIA_MESH_FETCH_EAS_CMD:-}" ] || hard_fail "EAS_FETCH_COMMAND_NOT_CONFIGURED"
+./watchers/media/anchor_verifier_v1_net.sh:60:EAS_JSON="$($MEDIA_MESH_FETCH_EAS_CMD "$ATTESTATION_UID")"
+./watchers/media/anchor_verifier_v1_net.sh:61:[ -n "$EAS_JSON" ] || hard_fail "EAS_FETCH_EMPTY"
+./watchers/media/anchor_verifier_v1_net.sh:62:printf '%s' "$EAS_JSON" | jq -e . >/dev/null 2>&1 || hard_fail "EAS_JSON_MALFORMED"
+./watchers/media/anchor_verifier_v1_net.sh:64:ATTESTED_SCHEMA_UID="$(printf '%s' "$EAS_JSON" | jq -r '.schema_uid // .schemaUid // .schema // ""')"
+./watchers/media/anchor_verifier_v1_net.sh:65:[ "$ATTESTED_SCHEMA_UID" = "$EAS_SCHEMA_UID" ] || hard_fail "EAS_SCHEMA_UID_MISMATCH"
+./watchers/media/anchor_verifier_v1_net.sh:67:REVOKED="$(printf '%s' "$EAS_JSON" | jq -r '.revoked // false')"
+./watchers/media/anchor_verifier_v1_net.sh:68:[ "$REVOKED" = "false" ] || hard_fail "EAS_ATTESTATION_REVOKED"
+./watchers/media/anchor_verifier_v1_net.sh:70:BATCH_ID="$(printf '%s' "$EAS_JSON" | jq -r '.batch_id // .batchId // .data.batch_id // .data.batchId // ""')"
+./watchers/media/anchor_verifier_v1_net.sh:71:MERKLE_ROOT="$(printf '%s' "$EAS_JSON" | jq -r '.merkle_root // .merkleRoot // .data.merkle_root // .data.merkleRoot // ""')"
+./watchers/media/anchor_verifier_v1_net.sh:72:LEAF_COUNT="$(printf '%s' "$EAS_JSON" | jq -r '.leaf_count // .leafCount // .data.leaf_count // .data.leafCount // ""')"
+./watchers/media/anchor_verifier_v1_net.sh:73:BATCH_TIMESTAMP_UTC="$(printf '%s' "$EAS_JSON" | jq -r '.timestamp_utc // .timestampUtc // .data.timestamp_utc // .data.timestampUtc // ""')"
+./watchers/media/anchor_verifier_v1_net.sh:75:[ -n "$BATCH_ID" ] || hard_fail "EAS_BATCH_ID_MISSING"
+./watchers/media/anchor_verifier_v1_net.sh:76:[ -n "$MERKLE_ROOT" ] || hard_fail "EAS_MERKLE_ROOT_MISSING"
+./watchers/media/anchor_verifier_v1_net.sh:77:[ -n "$LEAF_COUNT" ] || hard_fail "EAS_LEAF_COUNT_MISSING"
+./watchers/media/anchor_verifier_v1_net.sh:78:[ -n "$BATCH_TIMESTAMP_UTC" ] || hard_fail "EAS_TIMESTAMP_MISSING"
+./watchers/media/anchor_verifier_v1_net.sh:91:  --arg attestation_uid "$ATTESTATION_UID" \
+./watchers/media/anchor_verifier_v1_net.sh:92:  --arg eas_schema_uid "$EAS_SCHEMA_UID" \
+./watchers/media/anchor_verifier_v1_net.sh:97:  '{attestation_uid:$attestation_uid,eas_schema_uid:$eas_schema_uid,ens_name:$ens_name,ens_text_key:$ens_text_key,offline_result:$offline_result,timestamp_utc:$timestamp_utc,verify_status:$offline_result.verify_status}'
+./watchers/media/anchor_publisher_v1.sh:5:# PURPOSE: Validate canonical batch summary and emit wallet-safe EAS anchor payload
+./watchers/media/anchor_publisher_v1.sh:54:EAS_PAYLOAD="$(jq -n -cS \
+./watchers/media/anchor_publisher_v1.sh:62:# Browser/wallet publisher consumes eas_payload and returns eas_attestation_uid.
+./watchers/media/anchor_publisher_v1.sh:63:EAS_ATTESTATION_UID="PENDING_WALLET_SIGNATURE"
+./watchers/media/anchor_publisher_v1.sh:68:  --arg eas_attestation_uid "$EAS_ATTESTATION_UID" \
+./watchers/media/anchor_publisher_v1.sh:69:  --arg eas_payload "$EAS_PAYLOAD" \
+./watchers/media/anchor_publisher_v1.sh:74:  '{batch_hash:$batch_hash,batch_id:$batch_id,eas_attestation_uid:$eas_attestation_uid,eas_payload:($eas_payload|fromjson),ens_update:$ens_update,leaf_count:$leaf_count,merkle_root:$merkle_root,timestamp_utc:$timestamp_utc}'
+./tools/decode_run_log.sh:31:    REASON="$(printf '%s' "$line" | jq -r '.reason // "unknown"')"
+./tools/decode_run_log.sh:32:    printf "  REASON: %s\n" "$REASON"
+./law/adapters/build_doj_news_feed.sh:29:  EVENT="EMPTY"; VISIBILITY="YELLOW"; REASON="sitemap fetched but no DOJ release URLs matched"
+./law/adapters/build_doj_news_feed.sh:31:  EVENT="QUIET"; VISIBILITY="GREEN"; REASON="no_new_doj_release_urls_detected"
+./law/adapters/build_doj_news_feed.sh:33:  EVENT="ALERT"; VISIBILITY="GREEN"; REASON="doj_release_url_set_changed"
+./law/adapters/build_doj_news_feed.sh:38:  --arg event "$EVENT" --arg visibility "$VISIBILITY" --arg reason "$REASON" \
+./alms/anchors/runtime/github_direct_anchor_state.json:33:    "EAS_ATTESTED",
+./alms/anchors/runtime/github_direct_anchor_state.json:45:  "boundary": "GitHub Direct anchor receipt only. No wallet signature, no Base/EAS transaction, no ENS update. National PASS requires every state PASS.",
+./alms/anchors/trigger/ci_trigger_2026-05-03T2108Z.json:10:  "boundary": "GitHub Direct trigger only. No Base/EAS/ENS claim."
+./alms/national/national_root_ci_latest.json:81:  "boundary": "GitHub CI recompute only. Not Base/EAS anchored. National PASS requires every state PASS."
+./specs/rlup_v0.1.md:93:  "DENIED_WITH_REASON",
+./storage/REPLICATION_WITNESS_MODEL_V1.json:84:        "schema_uid": "PENDING_EAS_SCHEMA_UID",
+./storage/REPLICATION_WITNESS_MODEL_V1.json:85:        "attestation_uid": "PENDING_EAS_ATTESTATION_UID"
+./contracts/eas/base.config.json:4:  "eas_contract": "0x4200000000000000000000000000000000000021",
+./contracts/eas/base.config.json:7:  "schema_uid": "0xfa94377476d86a25585e7da7889adf60f5a34fe09e1744f98626ad66bb686baa",
+./docs/index.html:6:Meta/Facebook only distribute.</div></section><section class="grid"><div class="card"><h3>Public Proof</h3><p>Portable truth page and model.</p><a class="button" href="computer-wisdom-public-proof.html">Open</a></div><div class="card"><h3>Verifier</h3><p>Browser recomputes proof from GitHub bytes.</p><a class="button" href="verify/">Open</a></div><div class="card"><h3>ALMS Attest <span class="badge">OPERATOR</span></h3><p>Wallet-side Base/EAS witness tool. Not the public verifier.</p><a class="button" href="attest/">Open</a></div><div class="card"><h3>Schemas</h3><p>Root, federal, state, and county fixture schemas.</p><a class="button" href="schemas/">Open</a></div><div class="card"><h3>Fixtures</h3><p>Federal/state/county evidence pipeline.</p><a class="button" href="fixtures/">Open</a></div><div class="card"><h3>State</h3><p>Machine-readable latest state and root layer.</p><a class="button" href="state/">Open</a></div></section><section class="card"><h2>Latest</h2><pre id="latest" class="rule">Loading latest.json…</pre></section><script>(async()=>{try{const r=await fetch('https://api.github.com/repos/jsonwisdom/AL/contents/_truth/meta/public_exports/latest.json?ref=main',{headers:{Accept:'application/vnd.github+json'}});const m=await r.json();const raw=await fetch(m.download_url).then(x=>x.text());document.getElementById('latest').textContent=raw}catch(e){document.getElementById('latest').textContent='Could not load latest.json'}})()</script></body></html>
+./docs/alms_trilogy/index.html:17:<p class="hold">EAS status: pending until schema UID + attestation UIDs exist.</p>
+./docs/alms_trilogy/index.html:44:<tr><td>EAS schema / attestations</td><td>Pending</td></tr>
+./docs/alms_trilogy/index.html:48:<p>No claim of EAS anchoring is valid until schema UID and attestation UIDs are published here.</p>
+./docs/games/CIPHER_COURT_TELEMETRY_V1.md:34:MEASURE_BEHAVIOR_NOT_IDENTITY
+./docs/JAY_WISDOM_PROTOCOL_V1.md:29:| EAS | Public attestation layer |
+./docs/JAY_WISDOM_PROTOCOL_V1.md:66:- EAS UIDs
+./docs/JAYS_ROOT_TIERED_LAYERING_SCHEMA.md:119:  "tools": ["EAS", "ENS", "transaction pointer"],
+./docs/JAYS_ROOT_TIERED_LAYERING_SCHEMA.md:137:EAS attestation UID
+./docs/JAYS_ROOT_TIERED_LAYERING_SCHEMA.md:169:3. Witness: optional Base/EAS/ENS pointer
+./docs/meme-court.js:60:      charge: "NORMALIZATION_TREASON",
+./docs/media-mesh-anchor-spec-v1.md:31:## EAS Schema
+./docs/media-mesh-anchor-spec-v1.md:66:EAS attestation UID for the latest anchored media batch
+./docs/media-mesh-anchor-spec-v1.md:69:ENS gives the current head. EAS gives the historical trail.
+./docs/media-mesh-anchor-spec-v1.md:76:4. Submit EAS attestation using `MEDIA_MESH_BATCH_V1`.
+./docs/media-mesh-anchor-spec-v1.md:81:Given an ENS name, EAS schema UID, and local `merged.jsonl`:
+./docs/media-mesh-anchor-spec-v1.md:83:1. Resolve ENS text record to latest EAS attestation UID.
+./docs/media-mesh-anchor-spec-v1.md:84:2. Fetch EAS attestation.
+./docs/specs/MR_MRS_WISDOM_FAMILY_ENVIRONMENT_702.md:89:    "Base/ENS/EAS anchor",
+./docs/specs/BASED_AMERICA_3_0.md:68:4. No Base / ENS anchor claim without wallet receipt, tx hash, EAS UID, or signed proof.
+./docs/specs/WISDOM_FAMILY_LEGACY_5_0.md:171:  "was_it anchored": "Base / ENS / EAS receipt if available",
+./docs/specs/WISDOM_FAMILY_LEGACY_5_0.md:184:5. No anchor claim without wallet receipt, EAS UID, tx hash, or signed proof.
+./docs/specs/ALMS_5_0.md:51:  "L8_anchor": "Base / ENS / EAS external proof",
+./docs/specs/ALMS_5_0.md:116:3. No anchor claim without wallet receipt, EAS UID, tx hash, or signed proof.
+./docs/specs/AMERICA_COMPUTER_WISDOM_4_0.md:197:6. No Base / ENS anchor may be claimed without wallet receipt, tx hash, EAS UID, or signed proof.
+./docs/specs/VERIFIER_SPEC_V1.md:151:- EAS UID
+./docs/specs/REPLAY_SPEC_V1.md:112:    "type": "none | EAS | ENS | BaseTx | IPFS | other",
+./docs/specs/REPLAY_SPEC_V1.md:189:ENS, Base, EAS, GitHub profiles, platform accounts, and public websites MAY route users to proof objects.
+./docs/specs/GAMIFIED_COMPUTER_WISDOM_APPLE_INTELLIGENCE.md:87:  "level_7": "Base/ENS/EAS anchor prepared or signed",
+./docs/specs/GAMIFIED_COMPUTER_WISDOM_APPLE_INTELLIGENCE.md:146:    "Anchor_Pilot": "prepared first Base/ENS/EAS anchor packet",
+./docs/goblin-court/case-005-forged-consensus/CASE_005_DOCKET.md:19:| EAS | REAL | Requires PENDING_BASE_UID in final payload |
+./docs/BASE_BUILDING_INSTRUCTIONS.md:44:- EAS (attestations) runs here
+./docs/research/CIPHER_COURT_AGGREGATION_AND_PRIVACY_V1.md:14:MEASURE_BEHAVIOR
+./docs/alms-attest.html:1:<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ALMS Attest — Operator</title><style>body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;max-width:980px;margin:42px auto;padding:0 20px;line-height:1.55}.badge{display:inline-block;border:1px solid #111;border-radius:999px;padding:6px 10px;font-family:monospace;font-weight:700}.warn{border-color:#b00020;color:#b00020}.card{border:1px solid #ddd;border-radius:14px;padding:18px;margin:14px 0}.nav a{margin-right:10px;color:#111;font-weight:700}code,pre{font-family:monospace}pre{background:#f6f6f6;padding:14px;border-radius:10px;white-space:pre-wrap;overflow-wrap:anywhere}</style></head><body><p class="nav"><a href="./">Home</a><a href="computer-wisdom-public-proof.html">Proof</a><a href="../_truth/meta/public_exports/verify.html">Verify</a></p><h1>ALMS Attest</h1><p><span class="badge warn">OPERATOR</span> <span class="badge">BASE/EAS WITNESS</span></p><section class="card"><h2>Warning</h2><p>This is the operator-side witness layer. It may require a wallet. Public visitors should use the browser verifier instead.</p></section><section class="card"><h2>Existing Attest UI</h2><p><a href="../site/eas-backfill-signer.html">Open EAS Backfill Signer</a></p><pre>Schema:
+./docs/contracts/VERIFIER_SERVICE_CONTRACT_V1.md:29:- ENS / Git / EAS pointer review;
+./docs/contracts/VERIFIER_SERVICE_CONTRACT_V1.md:42:- payment does not override schema, Git, EAS, ENS, or hash evidence.
+./docs/contracts/VERIFIER_SERVICE_CONTRACT_V1.md:66:- EAS UID / transaction reference;
+./docs/contracts/VERIFIER_SERVICE_CONTRACT_V1.md:79:- external network failures, RPC downtime, GitHub downtime, EAS downtime, ENS resolver downtime, and wallet failures are outside operator control.
+./docs/whitepaper/DETERMINISTIC_CIVIC_MEMORY_MINIMAL_RECORDS_CVD_V1.md:21:ENS, Base, and EAS function as optional discovery and witness layers.
+./docs/whitepaper/DETERMINISTIC_CIVIC_MEMORY_MINIMAL_RECORDS_CVD_V1.md:33:-> optional Base/EAS/ENS witness
+./docs/attestations/TRACK_001_MAINNET_RECEIPT_SCHEMA.json:36:      "required": ["schema_uid", "attestation_uid", "receipt_commit", "receipt_sha256"],
+./docs/attestations/TRACK_001_MAINNET_RECEIPT_SCHEMA.json:38:        "schema_uid": { "const": "0x0de9dd56c4a71de33f3b5b2eefbdf35c21c9b1f836a92d161ed86c6b10d2a57d" },
+./docs/attestations/TRACK_001_MAINNET_RECEIPT_SCHEMA.json:39:        "attestation_uid": { "const": "0xabfcfbe62114e5962d8916ca152748de1eb48dd3373e8a4c85733426a6cfdd96" },
+./docs/attestations/TRACK_001_MAINNET_RECEIPT_SCHEMA.json:47:      "required": ["schema_uid", "schema_tx_hash", "attestation_uid", "attestation_tx_hash"],
+./docs/attestations/TRACK_001_MAINNET_RECEIPT_SCHEMA.json:49:        "schema_uid": { "type": "string", "pattern": "^0x[a-fA-F0-9]{64}$" },
+./docs/attestations/TRACK_001_MAINNET_RECEIPT_SCHEMA.json:51:        "attestation_uid": { "type": "string", "pattern": "^0x[a-fA-F0-9]{64}$" },
+./docs/attestations/TRACK_001_BASE_EAS_PAYLOAD_GITHUB_DIRECT.json:6:  "payload_path": "docs/attestations/TRACK_001_BASE_EAS_PAYLOAD.json",
+./docs/attestations/TRACK_001_BASE_EAS_PAYLOAD_GITHUB_DIRECT.json:20:  "status": "PUBLIC_BLOB_VERIFIED_READY_FOR_BASE_EAS"
+./docs/attestations/JAY_REPUTATION_INFRASTRUCTURE_MEMO.md:10:- EAS records the cryptographic witness.
+./docs/attestations/JAY_REPUTATION_INFRASTRUCTURE_MEMO.md:54:- EAS witness state.
+./docs/attestations/TRACK_001_MAINNET_PREFLIGHT_SCHEMA.json:26:    "base_sepolia_schema_uid": "0x0de9dd56c4a71de33f3b5b2eefbdf35c21c9b1f836a92d161ed86c6b10d2a57d",
+./docs/attestations/TRACK_001_MAINNET_PREFLIGHT_SCHEMA.json:27:    "base_sepolia_attestation_uid": "0xabfcfbe62114e5962d8916ca152748de1eb48dd3373e8a4c85733426a6cfdd96",
+./docs/attestations/ens_keymap.json:8:    "schema_uid": {
+./docs/attestations/ens_keymap.json:9:      "ens_text_key": "track001:schema_uid",
+./docs/attestations/ens_keymap.json:10:      "value_format": "0x-prefixed 32-byte EAS schema UID",
+./docs/attestations/ens_keymap.json:13:    "attestation_uid": {
+./docs/attestations/ens_keymap.json:14:      "ens_text_key": "track001:attestation_uid",
+./docs/attestations/ens_keymap.json:15:      "value_format": "0x-prefixed 32-byte EAS attestation UID",
+./docs/attestations/ens_keymap.json:47:    "EAS attestations are immutable witnesses",
+./docs/attestations/TRACK_001_CEREMONY_TRANSCRIPT_SCHEMA.json:48:      "required": ["preflight_hash", "payload_hash", "schema_uid", "attestation_uid", "receipt_sha256", "receipt_commit"],
+./docs/attestations/TRACK_001_CEREMONY_TRANSCRIPT_SCHEMA.json:52:        "schema_uid": { "type": "string", "pattern": "^0x[a-fA-F0-9]{64}$" },
+./docs/attestations/TRACK_001_CEREMONY_TRANSCRIPT_SCHEMA.json:53:        "attestation_uid": { "type": "string", "pattern": "^0x[a-fA-F0-9]{64}$" },
+./docs/attestations/TRACK_001_CEREMONY_TRANSCRIPT_SCHEMA.json:61:      "required": ["name", "schema_uid_key", "attestation_uid_key", "receipt_commit_key", "payload_sha256_key", "receipt_sha256_key", "status_key"],
+./docs/attestations/TRACK_001_CEREMONY_TRANSCRIPT_SCHEMA.json:64:        "schema_uid_key": { "const": "track001:schema_uid" },
+./docs/attestations/TRACK_001_CEREMONY_TRANSCRIPT_SCHEMA.json:65:        "attestation_uid_key": { "const": "track001:attestation_uid" },
+./docs/guides/OPERATOR_IMPLEMENTATION_GUIDE_V1.md:104:- optional EAS attestation
+./docs/training/JASON_GITHUB_DIRECT_REPO_MANUAL.md:21:| ENS / Base / EAS | Anchor surfaces after verification |
+./docs/zora_receipt_flywheel.md:139:- NORMALIZATION_TREASON
+./docs/zora_receipt_flywheel.md:220:  "base_attestation_uid": "UNVERIFIED_IDENTIFIER",
+./docs/verify.html:200:  assert(candidate.eas_uid === null, '[FAIL] Candidate contains EAS UID; use post-attestation verifier');
+./docs/verify/index.html:4:<body><p><a href="../">Home</a></p><h1>Computer Wisdom Verifier</h1><p><strong>Purpose:</strong> verify a Computer Wisdom proof without trusting Meta, Facebook, or a feed ranking system.</p><div class="card"><label>GitHub commit SHA</label><input id="commit" placeholder="paste commit SHA"><label>Expected Merkle root / SHA-256</label><input id="expected" placeholder="paste expected root hash"><label>Optional EAS attestation UID</label><input id="eas" placeholder="optional 0x..."><button onclick="verify()">Verify</button></div><div class="card"><h2>Result</h2><div id="result" class="muted">Waiting for input.</div><pre id="audit"></pre></div><h2>How this works</h2><p>This page pulls task files from <code>jsonwisdom/AL</code> at the commit you provide, canonicalizes JSON with sorted keys, hashes the canonical lines, and compares that value to the expected root.</p><p>GitHub is the byte source. The browser is the verifier. Chain is an optional witness.</p><script>
+./docs/verify/index.html:12:async function verify(){const commit=document.getElementById("commit").value.trim();const expected=document.getElementById("expected").value.trim().replace(/^sha256:/,"");const eas=document.getElementById("eas").value.trim();const result=document.getElementById("result"),audit=document.getElementById("audit");result.className="muted";result.textContent="Verifying...";audit.textContent="";try{if(!commit||!expected)throw new Error("Commit SHA and expected root are required.");const files=await githubJson(`https://api.github.com/repos/${OWNER}/${REPO}/contents/${TASK_DIR}?ref=${encodeURIComponent(commit)}`);const jsonFiles=files.filter(f=>f.type==="file"&&f.name.endsWith(".json")).sort((a,b)=>a.path.localeCompare(b.path));if(!jsonFiles.length)throw new Error("No task JSON files found in _truth/tasks/queue at that commit.");const canonicalLines=[],trail=[];for(const file of jsonFiles){const raw=await fetch(file.download_url).then(r=>{if(!r.ok)throw new Error(`Raw fetch failed for ${file.path}`);return r.text()});const obj=JSON.parse(raw);const canonical=stableStringify(obj);canonicalLines.push(canonical);trail.push({path:file.path,sha:file.sha,canonical_length:canonical.length})}const computed=await sha256Hex(canonicalLines.join("\n")+"\n");const ok=computed.toLowerCase()===expected.toLowerCase();result.className=ok?"ok":"bad";result.textContent=ok?"VERIFIED — root matches repo bytes":"MISMATCH — root does not match repo bytes";audit.textContent=JSON.stringify({owner:OWNER,repo:REPO,commit,task_dir:TASK_DIR,file_count:jsonFiles.length,computed_sha256:computed,expected_sha256:expected,eas_attestation_uid:eas||null,files:trail},null,2)}catch(err){result.className="bad";result.textContent="ERROR";audit.textContent=String(err&&err.message?err.message:err)}}
+./docs/ANCHOR_001.md:10:> Current EAS UID: `0x18b5b00c62c648df2ccf4a746645493fa2a0b0dcda6697052d8c3a3d1586c142`
+./docs/epoch_02/VERIFIER_SEALING_STATUTE_V1.md:11:VERIFIER_MEASUREMENT
+./docs/epoch_02/VERIFIER_SEALING_STATUTE_V1.md:25:THE SEAL IS IN THE MEASUREMENT
+./docs/epoch_02/VERIFIER_SEALING_STATUTE_V1.md:80:  "verifier_role": "EXTERNAL_MEASUREMENT",
+./docs/epoch_02/VERIFIER_SEALING_STATUTE_V1.md:161:MEASUREMENT_BEFORE_SEAL
+./docs/meme_court_charge_system.md:66:### NORMALIZATION_TREASON
+./docs/meme_court_charge_system.md:152:  "charge": "NORMALIZATION_TREASON",
+./docs/attest/index.html:1:<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ALMS Attest — Operator</title><style>body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;max-width:980px;margin:42px auto;padding:0 20px;line-height:1.55}.badge{display:inline-block;border:1px solid #111;border-radius:999px;padding:6px 10px;font-family:monospace;font-weight:700}.warn{border-color:#b00020;color:#b00020}.card{border:1px solid #ddd;border-radius:14px;padding:18px;margin:14px 0}.nav a{margin-right:10px;color:#111;font-weight:700}code,pre{font-family:monospace}pre{background:#f6f6f6;padding:14px;border-radius:10px;white-space:pre-wrap;overflow-wrap:anywhere}</style></head><body><p class="nav"><a href="../">Home</a><a href="../computer-wisdom-public-proof.html">Proof</a><a href="../../_truth/meta/public_exports/verify.html">Verify</a><a href="../schemas/">Schemas</a><a href="../fixtures/">Fixtures</a><a href="../state/">State</a></p><h1>ALMS Attest</h1><p><span class="badge warn">OPERATOR</span> <span class="badge">BASE/EAS WITNESS</span></p><section class="card"><h2>Warning</h2><p>This is the operator-side witness layer. It may require a wallet. Public visitors should use the browser verifier instead.</p></section><section class="card"><h2>Existing Attest UI</h2><p><a href="../../site/eas-backfill-signer.html">Open EAS Backfill Signer</a></p><pre>Schema:
+./docs/media-mesh-v1-public-verification-guide.md:171:## Verify an Anchor Through ENS/EAS
+./docs/media-mesh-v1-public-verification-guide.md:179:export MEDIA_MESH_FETCH_EAS_CMD="your_eas_fetcher"
+./docs/media-mesh-v1-public-verification-guide.md:185:  <EAS_SCHEMA_UID>
+./docs/media-mesh-v1-public-verification-guide.md:190:1. resolves ENS to an EAS attestation UID,
+./docs/media-mesh-v1-public-verification-guide.md:191:2. fetches EAS attestation data,
+./docs/audit/MACHINE_LIVE_2_AUDIT_LOG.md:29:GitHub CI recompute only. Not Base/EAS anchored. National PASS means every current state lane passed byte-for-byte replay. It does not claim on-chain anchoring, ENS completion, or broader fiscal judgment.
+./docs/audit/MACHINE_LIVE_2_AUDIT_LOG.md:43:| 2026-05-03 | jsonwisdom | `18af5459899b12ed609b9098aed1b6ec43ebfc13` | `BASELINE` | Initial launch receipt. GitHub Direct only. MN `PASS`; AL/TX/National `INDETERMINATE`. No Base/EAS, ENS, on-chain, or national `PASS` claim. |
+./docs/audit/MACHINE_LIVE_2_AUDIT_LOG.md:45:| 2026-05-03 | jsonwisdom | `27076b601a1c36ae6a23aca46d9ad263bc243c5e` | `CONFIRMED` | TX official GAA 2026-2027 PDF frozen and replayed. MN `PASS`; AL `PASS`; TX `PASS`; National `PASS`. National root `sha256:40cfa9ef33c472792825902467889886d8c6f2cfaaeb771cd0698d017453de70`. GitHub CI recompute only; no Base/EAS, ENS, or on-chain claim. |
+./docs/audit/ENS_ALIGNMENT_AUDIT_LEAF006.md:23:  "eas_schema_uid": "0x53a4a43dfb91a23d683202e22aa9e59be86ad67fd650aff11be6929b5654bf95",
+./docs/audit/ENS_ALIGNMENT_AUDIT_LEAF006.md:24:  "eas_attestation_uid": "0x119d7c4a18bf99824b59c4eccb58153f7803e94db7ca82a96ebee87115dbb340",
+./docs/audit/ENS_ALIGNMENT_AUDIT_LEAF006.md:51:2. Base EAS stores the attestation UID.
+./docs/audit/ENS_ALIGNMENT_AUDIT_LEAF006.md:53:4. Anyone can replay from the repo and compare against the EAS + ENS records.
+./docs/audit/MACHINE_LIVE_2_ADVERSARIAL_REPLAY.md:47:3. No on-chain, Base/EAS, or ENS claim is introduced.
+./docs/audit/MACHINE_LIVE_2_ADVERSARIAL_REPLAY.md:57:5. The receipt overclaims Base/EAS, ENS, or on-chain status.
+./docs/audit/MACHINE_LIVE_2_ADVERSARIAL_REPLAY.md:67:- Expecting Base/EAS, ENS, or wallet anchoring from this receipt.
+./docs/audit/MACHINE_LIVE_2_ADVERSARIAL_REPLAY.md:73:No Base/EAS claim.  
+./docs/audit/TX_SOURCE_CANDIDATE_GAA_2026_2027.md:63:Do not claim Base/EAS, ENS, or on-chain anchoring from this step.
+./docs/computer-wisdom-public-proof.html:68:      <p>Base/EAS can witness later; it is not required for verification.</p>
+./docs/live/live_alms_002_open_weights_release_monitor.md:112:  "status": "WAITING_FOR_FIRST_RELEASE_SIGNAL"
+./docs/constitution_multi_source_consensus.md:32:4. EAS/Base attestation
+./docs/ANCHOR_001_FINAL_STATE.md:5:Anchor 001 is complete at the verification-surface layer using GitHub plus EAS on Base.
+./docs/ANCHOR_001_FINAL_STATE.md:18:| EAS Schema UID | `0x3bab210b4da3faff084e146075caf9168efb5c9c87f18509bca2c07d7f2e49c` |
+./docs/ANCHOR_001_FINAL_STATE.md:19:| EAS Attestation UID | `0x18b5b00c62c648df2ccf4a746645493fa2a0b0dcda6697052d8c3a3d1586c142` |
+./docs/ANCHOR_001_FINAL_STATE.md:31:6. Verify the EAS attestation UID `0x18b5b00c62c648df2ccf4a746645493fa2a0b0dcda6697052d8c3a3d1586c142` on Base.
+./docs/ANCHOR_001_FINAL_STATE.md:50:GitHub commit → JCS canonical bytes → SHA-256 → Keccak-256 → EAS attestation on Base
+./docs/ALMS_GITHUB_ACTIONS_LOCATION.md:42:- Does not claim Base/EAS/ENS anchoring.
+./docs/ALMS_GITHUB_ACTIONS_LOCATION.md:54:EAS_ATTESTED
+./agents/track020/fixtures/mainnet_blocked_missing_track019.json:4:  "schema_uid": "0x1111111111111111111111111111111111111111111111111111111111111111",
+./agents/track020/fixtures/mainnet_blocked_missing_track019.json:5:  "attestation_uid": "0x2222222222222222222222222222222222222222222222222222222222222222",
+./agents/track020/verifier/track020_replay_verifier_decision_table_v1.json:9:        "if": "schema_uid_absent AND attestation_uid_absent",
+./agents/track020/verifier/track020_replay_verifier_decision_table_v1.json:13:        "if": "schema_uid_present AND attestation_uid_absent",
+./agents/track020/verifier/track020_replay_verifier_decision_table_v1.json:17:        "if": "attestation_uid_present",
+./agents/track020/verifier/track020_replay_verifier_decision_table_v1.json:52:        "schema_uid",
+./agents/track020/verifier/track020_replay_verifier_decision_table_v1.json:61:        "verify_schema_uid",
+./agents/track020/verifier/track020_replay_verifier_decision_table_v1.json:66:        "claim_attestation_submitted_without_attestation_uid",
+./agents/track020/verifier/track020_replay_verifier_decision_table_v1.json:76:        "schema_uid",
+./agents/track020/verifier/track020_replay_verifier_decision_table_v1.json:77:        "attestation_uid",
+./agents/track020/verifier/track020_replay_verifier_decision_table_v1.json:86:        "verify_attestation_uid",
+./agents/track020/verifier/track020_replay_verifier_decision_table_v1.json:134:    "if attestation_uid is present, classification != CANDIDATE",
+./agents/track020/verifier/track020_replay_verifier_decision_table_v1.json:135:    "if schema_uid is present, classification != CANDIDATE",
+./agents/track020/verifier/track020_replay_verifier_decision_table_v1.json:136:    "if attestation_uid is present, classification != REGISTERED_SCHEMA"
+./agents/track020/verifier/verify_track020_replay_state.py:45:    schema_uid = inp.get("schema_uid")
+./agents/track020/verifier/verify_track020_replay_state.py:46:    attestation_uid = inp.get("attestation_uid")
+./agents/track020/verifier/verify_track020_replay_state.py:48:    if attestation_uid:
+./agents/track020/verifier/verify_track020_replay_state.py:50:    if schema_uid:
+./scripts/alms_noaa_receipt.sh:41:STATUS: MEASURED
+./scripts/attest-receipt.ts:1:import { EAS, SchemaEncoder } from '@ethereum-attestation-service/eas-sdk';
+./scripts/attest-receipt.ts:5:const EAS_ADDR = '0x4200000000000000000000000000000000000021';
+./scripts/attest-receipt.ts:14:  const eas = new EAS(EAS_ADDR);
+./scripts/attest-receipt.ts:27:    schema: process.env.EAS_SCHEMA_UID!,
+./scripts/alms_ny011s_sparse_validation.py:39:    "status": "MEASURED",
+./scripts/alms_ny011s_sparse_validation.py:78:        f"STATUS: MEASURED\n"
+./scripts/alms_wikipedia_receipt.sh:39:STATUS: MEASURED
+./scripts/alms_fdic_receipt.sh:42:STATUS: MEASURED
+./scripts/alms_wikipedia_fixed_receipt.sh:41:STATUS: MEASURED
+./scripts/verify_eas_anchor.sh:4:EAS_UID="${1:-0x321ae52ab6900744baebd637b87a4cbb307ffc7891810aa456638970111abf48}"
+./scripts/verify_eas_anchor.sh:5:EAS_SCAN_URL="https://base.easscan.org/graphql"
+./scripts/verify_eas_anchor.sh:7:echo "🔍 Verifying EAS Anchor: $EAS_UID"
+./scripts/verify_eas_anchor.sh:11:ATTESTATION=$(curl -s -X POST "$EAS_SCAN_URL" \
+./scripts/verify_eas_anchor.sh:14:    \"query\": \"{ attestations(where: { id: { equals: \\\"$EAS_UID\\\" } }) { id decodedDataJson } }\"
+./scripts/verify_eas_anchor.sh:20:  echo "   Try: https://base.easscan.org/attestation/view/$EAS_UID"
+./scripts/verify_eas_anchor.sh:62:  echo "   EAS: $CONTENT_HASH"
+./scripts/verify_eas_anchor.sh:76:  echo "   EAS: $BYTE_SIZE"
+./scripts/verify_eas_anchor.sh:83:  echo "   EAS: $INTEGRITY"
+./scripts/verify_eas_anchor.sh:93:echo "✅ EAS_VERIFY_OK uid=$EAS_UID root=$BATCH_ROOT commit=$COMMIT_REF size=$BYTE_SIZE"
+./scripts/alms_acs_receipt.sh:36:STATUS: MEASURED
+./scripts/alms_ny004_noaa_overlay.py:126:            "STATUS: MEASURED\n"
+./scripts/link-receipts.ts:1:import { EAS, SchemaEncoder } from '@ethereum-attestation-service/eas-sdk';
+./scripts/link-receipts.ts:5:const EAS_ADDR = '0x4200000000000000000000000000000000000021';
+./scripts/link-receipts.ts:18:  const eas = new EAS(EAS_ADDR);
+./scripts/tombstone_file.sh:5:REASON="${2:-unspecified}"
+./scripts/tombstone_file.sh:28:  --arg reason "$REASON" \
+./scripts/jay_bash_gemini_leaf008.sh:42:    "schema_uid": "$SCHEMA_UID",
+./scripts/jay_bash_gemini_leaf008.sh:43:    "attestation_uid": "PENDING",
+./scripts/jay_bash_gemini_leaf008.sh:59:printf 'EAS_CONTENT_HASH=0x%s\n' "$SHA"
+./scripts/jay_bash_gemini_leaf008.sh:60:printf 'EAS_LEAF_DESIGNATION=%s\n' "$DESIGNATION"
+./scripts/jay_bash_gemini_leaf008.sh:61:printf 'EAS_ANCHOR_TYPE=GEMINI_BASH_CANONICAL_HASH_VERIFIED\n'
+./scripts/jay_bash_gemini_leaf008.sh:62:printf 'EAS_BYTE_SIZE=%s\n' "$BYTES"
+./scripts/jay_bash_gemini_leaf008.sh:63:printf 'EAS_INTEGRITY=BYTE_IDENTICAL\n'
+./scripts/alms_receipt_pipeline.sh:28:  - No EAS/ENS dependency.
+./scripts/build_public_verify_link.py:28:    parser.add_argument("--eas", default="", help="Optional EAS attestation UID")
+./scripts/compute_national_root_ci.py:154:        "boundary": "GitHub CI recompute only. Not Base/EAS anchored. National PASS requires every state PASS.",
+./scripts/compute_national_root_ci.py:171:            "EAS_ATTESTED",
+./scripts/compute_national_root_ci.py:176:        "boundary": "GitHub Direct anchor only. No wallet signature, no Base/EAS transaction, no ENS update."
+./scripts/verify-anchor001-current.sh:7:EAS_SCHEMA_UID="0x3bab210b4da3faff084e146075caf9168efb5c9c87f18509bca2c07d7f2e49c"
+./scripts/verify-anchor001-current.sh:8:EAS_UID="0x18b5b00c62c648df2ccf4a746645493fa2a0b0dcda6697052d8c3a3d1586c142"
+./scripts/verify-anchor001-current.sh:19:eas_schema_uid=$EAS_SCHEMA_UID
+./scripts/verify-anchor001-current.sh:20:eas_attestation_uid=$EAS_UID
+./scripts/verify-anchor001-current.sh:31:6. Verify EAS UID on Base: $EAS_UID
+./scripts/alms_bls_fixed_receipt.sh:38:STATUS: MEASURED
+./scripts/alms_acs_noaa_fips_join.py:48:    "status": "MEASURED" if len(joined) > 0 else "NO_MATCH",
+./scripts/verify_attestation_graph.py:153:        print("[FAIL] Candidate contains EAS UID or tx hash; use post-attestation verifier")
+./scripts/deploy-eas-schema.ts:1:import { EAS, SchemaRegistry } from '@ethereum-attestation-service/eas-sdk';
+./scripts/deploy-eas-schema.ts:14:  const schemaUID = await tx.wait();
+./scripts/deploy-eas-schema.ts:16:  console.log(JSON.stringify({ schemaUID }, null, 2));
+./scripts/replay_machine_live_2.sh:87:echo "boundary=GitHub Direct replay proof only; no Base/EAS, ENS, or on-chain claim"
+./scripts/alms_bls_receipt.sh:36:STATUS: MEASURED
+./scripts/fetch_justice_epstein_rendered.sh:7:# This script does not promote, does not write DOJ_RELEASE/HASH_INDEX,
+./scripts/audit/ghost_anchor_detector.sh:16:patterns='IPFS|CID|EAS|UID|Zora|contract|verified|anchored|schema_uid'
+./scripts/audit/ghost_anchor_detector.sh:17:receipts='Qm[1-9A-HJ-NP-Za-km-z]{44}|bafy[0-9a-z]{50,}|0x[a-fA-F0-9]{40}|0x[a-fA-F0-9]{64}|zora\.co|easscan\.org|basescan\.org|github\.com|AWAITING_CID|AWAITING_EAS_UID|AWAITING_ZORA_URL|PENDING_LIVE_CID|PENDING_BASE_UID|WITHHELD|MINT_PENDING_COURT_RULING|EXPLICITLY_PENDING|NOT_APPLICABLE'
+./scripts/alms_ny_fips_loader.py:122:        "status": "MEASURED",
+./scripts/alms_ny_fips_loader.py:141:            f"STATUS: MEASURED\n"
+./scripts/generate_attestation_candidate.py:7:- Output remains NOT_ATTESTED until a real EAS UID / tx hash exists.
+./verifier/lineage.html:27:const EAS = '0x4200000000000000000000000000000000000021';
+./verifier/lineage.html:38:    EAS,
+./verifier/lineage.html:73:    schemaUID: att.schema,
+./VERIFY.md:66:Git commit 62bf6450357f8edb2d4494140ca294cf073b0708 → verifier script → IPFS directory CID → per-file SHA256s → EAS pending
+./federation/v2/REJECTION_REASON_VOCABULARY_V1.json:2:  "artifact": "REJECTION_REASON_VOCABULARY_V1",
+./.github/workflows/AAA-C0001-C0002-REPLAY-NOW.yml:103:          name: EASY-C0001-C0002-REPLAY-REPORT
+./.github/workflows/alms-github-direct-anchor.yml:48:              "EAS_ATTESTED",
+./.github/workflows/alms-github-direct-anchor.yml:53:            "boundary": "GitHub Direct anchor only. No wallet signature, no Base/EAS transaction, no ENS update."
+./LEDGER.md:12:- External anchors such as IPFS, EAS, Base, or ENS are not claimed unless a visible receipt exists.
+./site/eas-backfill-signer.html:3:<head><meta charset="utf-8"><title>EAS Backfill Signer</title></head>
+./site/eas-backfill-signer.html:5:<h2>EAS Backfill Signer — Base</h2>
+./site/eas-backfill-signer.html:16:const EAS="0x4200000000000000000000000000000000000021";
+./site/eas-backfill-signer.html:25:let provider, signer, address, schemaUID;
+./site/eas-backfill-signer.html:56:        schemaUID=p.args.uid;
+./site/eas-backfill-signer.html:57:        out("SCHEMA_UID: "+schemaUID);
+./site/eas-backfill-signer.html:65:  if(!schemaUID){
+./site/eas-backfill-signer.html:66:    schemaUID=prompt("Paste schema UID:");
+./site/eas-backfill-signer.html:78:  const c=new ethers.Contract(EAS,abi,signer);
+./site/eas-backfill-signer.html:80:    schema:schemaUID,
+./site/goblin-court/case-004-green/index.html:44:    <p class="hold">EAS: HOLD — AWAITING_EAS_UID</p>
+./site/goblin-court/case-004-green/index.html:85:  document.getElementById('result').textContent = `AUDIT_STATUS: ${loaded}\nGITHUB: GREEN\nIPFS/GCS: HOLD — AWAITING_CID\nEAS: HOLD — UID required\nZORA: HOLD — AWAITING_ZORA_URL required\n\nResult: PARTIAL GREEN. No full four-surface strike until external identifiers are present.`;
+./site/meme-court/wfg-0001.html:95:        <li>Do not claim Base/ENS anchoring until a wallet receipt, EAS UID, or tx hash exists.</li>
+./.env.example:13:# Base Mainnet EAS contract addresses
+./.env.example:14:MAINNET_EAS_ADDRESS=0x4200000000000000000000000000000000000021
+./_truth/alms_cards/alms_trilogy_v1_media_classification.json:4:  "note": "Operator reported uploaded media may be mixed JPG/PNG text cards rather than the intended three character portrait PNGs. Do not bind EAS child attestations until final canonical media roles are explicitly confirmed and exact SHA256 hashes are produced from real bytes.",
+./_truth/alms_cards/alms_trilogy_v1_media_classification.json:15:    "Only then encode EAS parent and child attestations"
+./_truth/alms_cards/alms_trilogy_v1_hashes.json:11:  "rule": "Do not claim EAS anchored until schema UID and attestation UID exist.",
+./_truth/alms_cards/eas/alms_sequence_v1_payloads.json:12:    "claim": "GitHub source, IPFS bundle, and SHA256 media hashes locked before EAS anchoring.",
+./_truth/alms_cards/alms_trilogy_v1_media_receipt.json:3:  "status": "BUNDLE_CID_AND_IMAGE_SHA256_LOCKED_EAS_PENDING",
+./_truth/alms_cards/alms_trilogy_v1_media_receipt.json:26:  "rule": "GitHub source and IPFS bundle are locked. Do not claim EAS anchored until schema UID and attestation UID exist."
+./_truth/alms_cards/alms_trilogy_v1.json:5:  "not_anchor_status": "NOT_EAS_ANCHORED_UNTIL_UID_EXISTS",
+./_truth/alms_cards/audit/alms_trilogy_v1_audit_receipt.json:3:  "status": "GITHUB_PAGES_AUDIT_READY_EAS_PENDING",
+./_truth/alms_cards/audit/alms_trilogy_v1_audit_receipt.json:9:  "rule": "Do not claim onchain anchoring until EAS schema UID and attestation UIDs are present."
+./_truth/write_runs/fixtures/WRITE_RUN_0002_packet.FIXTURE.json:16:        "DOJ_RELEASE.json",
+./_truth/seals/leaf008_final_seal.json:21:    "attestation_uid": "0x5849a41321847f3d7ee6eb38eaa05cf73b906e8fa1c003de0a6b9ddaa7f4a5a1"
+./_truth/family_state/vault/vault_v1_verification.html:30:    <p><strong>EAS Attestation:</strong><br><a href="https://base.easscan.org/attestation/0xb77990d104e6e37748feb1ecc615f26ed0c3753898ccef9ca4fff3105d51f611" target="_blank" rel="noopener noreferrer">0xb77990...51f611</a></p>
+./_truth/family_state/vault/vault_v1_verification.html:37:    <p><strong>EAS Attestation:</strong><br><a href="https://base.easscan.org/attestation/0x596ebae3bb0ebbe8ef4da29ca8eb9965fe4c28f8cdc840a88efb2b49a1702f68" target="_blank" rel="noopener noreferrer">0x596eba...02f68</a></p>
+./_truth/family_state/vault/vault_v1_verification.html:44:    <p><strong>EAS Attestation:</strong><br><a href="https://base.easscan.org/attestation/0x267b71eed5267ab35ccba482bd98b456af336302046705ef6d0859c051e08a96" target="_blank" rel="noopener noreferrer">0x267b71...e08a96</a></p>
+./_truth/family_state/vault/vault_v1_verification.html:54:    <li>✅ IPFS bytes verified locally + onchain via EAS</li>
+./_truth/family_state/vault/HASH_MISMATCH_BLOCKED.md:15:No manifest promotion, EAS payload generation, or onchain sealing occurs until:
+./_truth/eas/leaf008_eas_attestation.json:2:  "receipt": "LEAF_008_EAS_ATTESTATION_RECEIPT",
+./_truth/eas/leaf008_eas_attestation.json:3:  "state": "EAS_ATTESTED",
+./_truth/eas/leaf008_eas_attestation.json:8:  "attestation_uid": "0x5849a41321847f3d7ee6eb38eaa05cf73b906e8fa1c003de0a6b9ddaa7f4a5a1",
+./_truth/meta/public_exports/verify.html:30:    <label>Optional EAS attestation UID</label>
+./_truth/meta/public_exports/verify.html:153:      eas_attestation_uid: eas || null,
+./_truth/meta/public_exports/META_FACEBOOK_PUBLIC_PROOF_INTENT.json:19:    "EAS"
+./_truth/meta/public_exports/README.md:56:Sometimes a post will also include an on-chain link (Base / EAS).
+./_truth/anchors/ALMS_ATTESTATION_CLAIMS_LEDGER_2026-05-05.json:58:  "custody_note": "Claims ledger for future schema/EAS attestation. Not onchain. Do not mark ATTESTED until real UID or transaction hash is recorded."
+./_truth/anchors/leaf007/ANCHORS.json:17:    "schema_uid": "0x53a4a43dfb91a23d683202e22aa9e59be86ad67fd650aff11be6929b5654bf95",
+./_truth/anchors/leaf007/ANCHORS.json:18:    "attestation_uid": "PENDING"
+./_truth/anchors/leaf007/INTAKE.json:18:    "EAS_attestation_using_schema_1464"
+./_truth/anchors/leaf007/INTAKE.json:22:    "schema_uid": "0x53a4a43dfb91a23d683202e22aa9e59be86ad67fd650aff11be6929b5654bf95",
+./_truth/anchors/leaf006/ANCHORS.json:19:    "schema_uid": "0x53a4a43dfb91a23d683202e22aa9e59be86ad67fd650aff11be6929b5654bf95",
+./_truth/anchors/leaf006/ANCHORS.json:20:    "attestation_uid": "0x119d7c4a18bf99824b59c4eccb58153f7803e94db7ca82a96ebee87115dbb340",
+./_truth/anchors/leaf006/ANCHORS.json:31:  "smoothest_pattern": "GitHub Base64 payload + Bash verifier + Base EAS attestation",
+./_truth/anchors/leaf008/source.txt:11:Attested through EAS
+./_truth/anchors/leaf008/ENS_GITHUB_DIRECT_ANCHOR.json:10:  "identity_policy": "ENS names identify the operator/root; GitHub stores the public receipt; EAS stores the onchain proof.",
+./_truth/anchors/leaf008/ENS_GITHUB_DIRECT_ANCHOR.json:12:  "schema_uid": "0x53a4a43df91a23d683202e22aa9e59be86ad67fd650aff11be6929b5654bf95",
+./_truth/anchors/leaf008/ENS_GITHUB_DIRECT_ANCHOR.json:13:  "attestation_uid": "0x14ee2701791ccdb6f98167b143619ddbf4c1a6ccce4fb9166ea364335d6a5059",
+./_truth/anchors/leaf008/ENS_GITHUB_DIRECT_ANCHOR.canonical.json:1:{"anchor_statement":"jaywisdom.eth and jaywisdom.base.eth are the public identity roots for this receipt. No ENS mutation was performed.","attestation_uid":"0x14ee2701791ccdb6f98167b143619ddbf4c1a6ccce4fb9166ea364335d6a5059","byte_size":693,"content_hash":"0xd9f8d96b76dc30dabb1405c6b4d5050fbc3e376af50e51ce1d72bc5d9d2cbb07","cost":"0","eas_url":"https://base.easscan.org/attestation/view/0x14ee2701791ccdb6f98167b143619ddbf4c1a6ccce4fb9166ea364335d6a5059","ens_roots":["jaywisdom.eth","jaywisdom.base.eth"],"ens_write":false,"github_repo":"https://github.com/jsonwisdom/AL","identity_policy":"ENS names identify the operator/root; GitHub stores the public receipt; EAS stores the onchain proof.","leaf":"leaf008","schema_number":1464,"schema_uid":"0x53a4a43df91a23d683202e22aa9e59be86ad67fd650aff11be6929b5654bf95","source_commit":"2cb8fb722b93b259b035a0fc956c9900492bc796","status":"ANCHORED_BY_REFERENCE"}
+./_truth/anchors/ALMS_SCHEMA_ATTESTATION_CANDIDATE_2026-05-05.json:21:  "custody_note": "Candidate only. Bound to claims ledger hash and quiescent hold subject hash. Not EAS-attested until real Base/EAS UID or tx hash is recorded."
+./_truth/backfill/eas_backfill_unsigned_tx.json:3:  "to": "0x4200000000000000000000000000000000000021",
+./_truth/backfill/eas_backfill_unsigned_tx.json:4:  "schema_uid": "PASTE_SCHEMA_UID_HERE",
+./_truth/security/jay_repo_safety_report.txt:44:./contracts/eas/base.config.json:4:  "eas_contract": "0x4200000000000000000000000000000000000021",
+./_truth/security/jay_repo_safety_report.txt:46:./contracts/eas/base.config.json:7:  "schema_uid": "0xfa94377476d86a25585e7da7889adf60f5a34fe09e1744f98626ad66bb686baa",
+./_truth/security/jay_repo_safety_report.txt:51:./docs/audit/ENS_ALIGNMENT_AUDIT_LEAF006.md:23:  "eas_schema_uid": "0x53a4a43dfb91a23d683202e22aa9e59be86ad67fd650aff11be6929b5654bf95",
+./_truth/security/jay_repo_safety_report.txt:52:./docs/audit/ENS_ALIGNMENT_AUDIT_LEAF006.md:24:  "eas_attestation_uid": "0x119d7c4a18bf99824b59c4eccb58153f7803e94db7ca82a96ebee87115dbb340",
+./_truth/security/jay_repo_safety_report.txt:59:./site/eas-backfill-signer.html:16:const EAS="0x4200000000000000000000000000000000000021";
+./_truth/security/jay_repo_safety_report.txt:67:./_truth/seals/leaf008_final_seal.json:21:    "attestation_uid": "0x5849a41321847f3d7ee6eb38eaa05cf73b906e8fa1c003de0a6b9ddaa7f4a5a1"
+./_truth/security/jay_repo_safety_report.txt:72:./_truth/eas/leaf008_eas_attestation.json:8:  "attestation_uid": "0x5849a41321847f3d7ee6eb38eaa05cf73b906e8fa1c003de0a6b9ddaa7f4a5a1",
+./_truth/security/jay_repo_safety_report.txt:76:./_truth/anchors/leaf007/ANCHORS.json:17:    "schema_uid": "0x53a4a43dfb91a23d683202e22aa9e59be86ad67fd650aff11be6929b5654bf95",
+./_truth/security/jay_repo_safety_report.txt:77:./_truth/anchors/leaf007/INTAKE.json:22:    "schema_uid": "0x53a4a43dfb91a23d683202e22aa9e59be86ad67fd650aff11be6929b5654bf95",
+./_truth/security/jay_repo_safety_report.txt:78:./_truth/anchors/leaf006/ANCHORS.json:19:    "schema_uid": "0x53a4a43dfb91a23d683202e22aa9e59be86ad67fd650aff11be6929b5654bf95",
+./_truth/security/jay_repo_safety_report.txt:79:./_truth/anchors/leaf006/ANCHORS.json:20:    "attestation_uid": "0x119d7c4a18bf99824b59c4eccb58153f7803e94db7ca82a96ebee87115dbb340",
+./_truth/security/jay_repo_safety_report.txt:81:./_truth/backfill/eas_backfill_unsigned_tx.json:3:  "to": "0x4200000000000000000000000000000000000021",
+./_truth/security/jay_repo_safety_report.txt:86:./_truth/receipts/leaf008_receipt.json:30:    "attestation_uid": "0x5849a41321847f3d7ee6eb38eaa05cf73b906e8fa1c003de0a6b9ddaa7f4a5a1",
+./_truth/security/jay_repo_safety_report.txt:100:./contracts/eas/base.config.json:7:  "schema_uid": "0xfa94377476d86a25585e7da7889adf60f5a34fe09e1744f98626ad66bb686baa",
+./_truth/security/jay_repo_safety_report.txt:101:./docs/audit/ENS_ALIGNMENT_AUDIT_LEAF006.md:23:  "eas_schema_uid": "0x53a4a43dfb91a23d683202e22aa9e59be86ad67fd650aff11be6929b5654bf95",
+./_truth/security/jay_repo_safety_report.txt:102:./docs/audit/ENS_ALIGNMENT_AUDIT_LEAF006.md:24:  "eas_attestation_uid": "0x119d7c4a18bf99824b59c4eccb58153f7803e94db7ca82a96ebee87115dbb340",
+./_truth/security/jay_repo_safety_report.txt:110:./_truth/seals/leaf008_final_seal.json:21:    "attestation_uid": "0x5849a41321847f3d7ee6eb38eaa05cf73b906e8fa1c003de0a6b9ddaa7f4a5a1"
+./_truth/security/jay_repo_safety_report.txt:113:./_truth/eas/leaf008_eas_attestation.json:8:  "attestation_uid": "0x5849a41321847f3d7ee6eb38eaa05cf73b906e8fa1c003de0a6b9ddaa7f4a5a1",
+./_truth/security/jay_repo_safety_report.txt:115:./_truth/anchors/leaf007/ANCHORS.json:17:    "schema_uid": "0x53a4a43dfb91a23d683202e22aa9e59be86ad67fd650aff11be6929b5654bf95",
+./_truth/security/jay_repo_safety_report.txt:116:./_truth/anchors/leaf007/INTAKE.json:22:    "schema_uid": "0x53a4a43dfb91a23d683202e22aa9e59be86ad67fd650aff11be6929b5654bf95",
+./_truth/security/jay_repo_safety_report.txt:117:./_truth/anchors/leaf006/ANCHORS.json:19:    "schema_uid": "0x53a4a43dfb91a23d683202e22aa9e59be86ad67fd650aff11be6929b5654bf95",
+./_truth/security/jay_repo_safety_report.txt:118:./_truth/anchors/leaf006/ANCHORS.json:20:    "attestation_uid": "0x119d7c4a18bf99824b59c4eccb58153f7803e94db7ca82a96ebee87115dbb340",
+./_truth/security/jay_repo_safety_report.txt:124:./_truth/receipts/leaf008_receipt.json:30:    "attestation_uid": "0x5849a41321847f3d7ee6eb38eaa05cf73b906e8fa1c003de0a6b9ddaa7f4a5a1",
+./_truth/command/JAY_BASH_WITH_GEMINI.json:29:      "commit SHA or EAS UID where applicable"
+./_truth/bigquery/acs_noaa_fips_join_manifest.json:3:  "status": "MEASURED",
+./_truth/bigquery/ny011s_sparse_validation_report.json:4:  "status": "MEASURED",
+./_truth/bigquery/alms_ledger.txt:14:STATUS: MEASURED
+./_truth/bigquery/alms_ledger.txt:22:STATUS: MEASURED
+./_truth/bigquery/alms_ledger.txt:30:STATUS: MEASURED
+./_truth/bigquery/alms_ledger.txt:39:STATUS: MEASURED
+./_truth/bigquery/alms_ledger.txt:57:STATUS: MEASURED
+./_truth/bigquery/alms_ledger.txt:75:STATUS: MEASURED
+./_truth/bigquery/alms_ledger.txt:134:STATUS: MEASURED
+./_truth/bigquery/alms_ledger.txt:178:STATUS: MEASURED
+./_truth/hash_index/HASH_INDEX_001.json:21:  "promotion_status": "APPROVED_FOR_RELEASE_CONSTRUCTION",
+./_truth/observations/justice_epstein_ACCESS_PROFILE_001.json:49:  "promotion_block_reason": "ACCESS_NOT_STABLE_ENOUGH_FOR_RELEASE_PROMOTION",
+./_truth/doj_epstein/notes/first_ingestion_checklist.md:68:- Base/EAS attestation exists
+./_truth/promotions/justice_epstein_APPROVE_DECISION_001.json:8:  "reason_code": "VALIDATED_AND_STABLE_ENOUGH_FOR_RELEASE_CONSTRUCTION",
+./_truth/promotions/justice_epstein_APPROVE_DECISION_001.json:11:  "promotion_status": "APPROVED_FOR_RELEASE_CONSTRUCTION",
+./_truth/promotions/justice_epstein_APPROVE_DECISION_001.json:16:  "next_required_action": "CONSTRUCT_DOJ_RELEASE_JSON",
+./_truth/promotions/justice_epstein_APPROVE_DECISION_001.json:17:  "custody_note": "APPROVE is a meta-decision only. It authorizes construction of DOJ_RELEASE.json but does not create DOJ_RELEASE.json, HASH_INDEX.json, DELTA_SET.json, ENTITY_GRAPH.json, CLAIM_LEDGER.json, VIEW_LAYER.json, or WRITE_RUN_0002_packet.json."
+./_truth/promotions/justice_epstein_PROMOTE_PROPOSAL_001.json:7:  "action": "CANDIDATE_FOR_RELEASE",
+./_truth/promotions/justice_epstein_PROMOTE_PROPOSAL_001.json:20:  "custody_note": "Proposal only. Does not create DOJ_RELEASE.json, HASH_INDEX.json, DELTA_SET.json, ENTITY_GRAPH.json, CLAIM_LEDGER.json, VIEW_LAYER.json, or WRITE_RUN_0002_packet.json."
+./_truth/audit/ipfs_daily/2026-05-08/inventory.jsonl:178:{"path":"_truth/releases/justice_epstein/DOJ_RELEASE_CANDIDATE_001.json","sha256":"0b69f73337ef4486d359a13e6ba334b720c2ff454a9df90424095e9f21e65fbc","bytes":1038}
+./_truth/audit/ipfs_daily/2026-05-08/inventory.jsonl:311:{"path":"docs/attestations/TRACK_001_BASE_EAS_PAYLOAD_GITHUB_DIRECT.json","sha256":"fb5a9ae706dc64ddce74e2c3ecb09302a78cfcf9cf68b37e00e576fbb57056f2","bytes":861}
+./_truth/audit/ipfs_daily/2026-05-06/inventory.jsonl:177:{"path":"_truth/releases/justice_epstein/DOJ_RELEASE_CANDIDATE_001.json","sha256":"0b69f73337ef4486d359a13e6ba334b720c2ff454a9df90424095e9f21e65fbc","bytes":1038}
+./_truth/audit/ipfs_daily/2026-05-07/inventory.jsonl:177:{"path":"_truth/releases/justice_epstein/DOJ_RELEASE_CANDIDATE_001.json","sha256":"0b69f73337ef4486d359a13e6ba334b720c2ff454a9df90424095e9f21e65fbc","bytes":1038}
+./_truth/batches/aggregate_batch_001_003.canonical.json:1:{"aggregation_type":"MERKLE_BATCH_ROOT","anchor_status":"PENDING_EAS","anchor_type":"EAS_BASE","global_merkle_root":"0x40eed5be3f11c6dd940ef0bc8276ddeec8e5e4fa01895c1029fb1d8301d05cce","leaf_count":3,"leaf_roots":["0x9446eb001f4ef217111f7a4a933e35fa113fc698617467d9f5ebade92622ff3a","0x3234460e4d9ddeafa0c54d505fd156fc835b154b7c61b0bddb8420b67914978c","0x2da343f5bdfc9240993b7b6089ec34ff5ccc535f02db99a16c5d8a5758594655"],"source_batches":["kb_batch_001","kb_batch_002","kb_batch_003"],"track":"020"}
+./_truth/batches/kb_batch_001_anchor_payload.canonical.json:1:{"anchor_status":"PENDING_EAS","anchor_type":"EAS_BASE","batch_file":"_truth/batches/kb_batch_001.json","batch_hash":"5e99598a82a222350865ff95c044960b25110d826404e3af39dae5960258c3cb","batch_id":"kb_batch_5e99598a82a22235","blocked_count":0,"commit":"ad972c3bd1ba444465d82d61325fb97f9f70f395","merkle_root":"9446eb001f4ef217111f7a4a933e35fa113fc698617467d9f5ebade92622ff3a","ready_count":3,"repo":"jsonwisdom/AL","track":"019"}
+./_truth/batches/aggregate_batch_001_003.json:3:  "anchor_type": "EAS_BASE",
+./_truth/batches/aggregate_batch_001_003.json:17:  "anchor_status": "PENDING_EAS"
+./_truth/batches/kb_batch_002_anchor_payload.canonical.json:1:{"anchor_status":"PENDING_EAS","anchor_type":"EAS_BASE","batch_file":"_truth/batches/kb_batch_002.json","batch_hash":"f608b0827402716000c92672cadb17fb0d5a45d7c9893c0f8131359c335bb029","batch_id":"kb_batch_f608b08274027160","blocked_count":0,"commit":"0bdb4958aeba299f6151141a508d7df9031019a2","merkle_root":"3234460e4d9ddeafa0c54d505fd156fc835b154b7c61b0bddb8420b67914978c","ready_count":4,"repo":"jsonwisdom/AL","track":"020"}
+./_truth/batches/kb_batch_002_anchor_payload.json:3:  "anchor_type": "EAS_BASE",
+./_truth/batches/kb_batch_002_anchor_payload.json:12:  "anchor_status": "PENDING_EAS"
+./_truth/batches/kb_batch_001_anchor_payload.json:3:  "anchor_type": "EAS_BASE",
+./_truth/batches/kb_batch_001_anchor_payload.json:12:  "anchor_status": "PENDING_EAS"
+./_truth/launch/al_verification_protocol_launch.json:15:  "next": "QR/share layer, then IPFS/EAS"
+./_truth/releases/justice_epstein/DOJ_RELEASE_CANDIDATE_001.json:2:  "artifact": "DOJ_RELEASE",
+./_truth/ingest/justice_epstein/DOJ_INGEST_RECEIPT_001.json:14:  "custody_note": "This receipt records a quarantined ingest fingerprint only. It does not create DOJ_RELEASE.json, HASH_INDEX.json, or WRITE_RUN_0002_packet.json."
+./_truth/ipfs/leaf008_json_manifest_fetched.json:1:{"branch":"master","case_receipt":{"case":"Musk v. Altman","court":"United States District Court, Northern District of California","docket":"4:24-cv-04722","judge":"Yvonne Gonzalez Rogers","venue":"Oakland, California"},"commit":"8ebdb76","created_utc":"2026-05-01T05:23:37Z","identity":{"ens_root":"jaywisdom.eth","rule":"Receipts stay. Signing power leaves."},"leaf":{"anchors_path":"_truth/anchors/leaf008/ANCHORS.json","anchors_sha256":"ea907c7c88901b3467b4872715f709b908346d44837c2b6c9a2aaa2f3f281c4d","description":"Public receipt for tracking Musk v. Altman with satire allowed and fake records forbidden.","designation":"LEAF_008_MEME_COURT_OPENAI_V_MUSK","id":"008","payload_bytes":693,"payload_path":"_truth/anchors/leaf008/PAYLOAD.txt","payload_sha256":"d9f8d96b76dc30dabb1405c6b4d5050fbc3e376af50e51ce1d72bc5d9d2cbb07","receipt_path":"_truth/receipts/leaf008_receipt.json"},"manifest":"LEAF_008_IPFS_MANIFEST","manifest_file_sha256":"672c7ce256c12296f4bf3ba05934761d004374f1850054e5d0fac6ad3c02257b","manifest_sha256":"9a4883853a3b3dc92b221dc00d63e468de3782c4c01162beecec258d5d809fb3","public_rules":["Satire is allowed.","Fake records are not.","Docket claims require public docket or public reporting support.","Quotes require source support.","Legal conclusions must be labeled as commentary unless directly supported by court record.","Receipts > vibes.","Verification > narrative.","No bytes, no hash.","No hash, no attestation."],"repo":"jsonwisdom/AL","state":"IPFS_READY_PENDING_CID","verification":{"anchor_allowed":false,"ci_enforcement":"green","github_actions":"green","next":"Upload this manifest package to IPFS. Return the CID. Then update manifest/receipt with CID before ENS/EAS anchoring.","safety_scan":"green"}}
+./_truth/ipfs/leaf008_cid.json:10:  "rule": "CID is not ENS/EAS anchor. CID must be verified before public anchor claim."
+./_truth/ipfs/leaf008_json_manifest_cid_verified.json:12:  "next": "ENS_OR_EAS_ANCHOR_READY"
+./_truth/receipts/leaf008_receipt.json:26:    "state": "EAS_ATTESTED",
+./_truth/receipts/leaf008_receipt.json:30:    "attestation_uid": "0x5849a41321847f3d7ee6eb38eaa05cf73b906e8fa1c003de0a6b9ddaa7f4a5a1",
+./_truth/receipts/README.md:24:receipt -> raw-byte sha256 -> daily inventory -> chained audit manifest -> IPFS witness -> EAS anchor
+./_truth/receipts/NY_ALMS_HALT_001.md:25:REASON: UNVERIFIED_INPUT
+./_truth/receipts/NY_004_CONSTITUTIONAL_TIMELINE_V1.md:53:REASON: UNVERIFIED_INPUT
+./schemas/WRITE_RUN_0002_packet.schema.json:63:                  "DOJ_RELEASE.json",
