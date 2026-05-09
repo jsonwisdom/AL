@@ -1,0 +1,19 @@
+name: Proof Viewer Contract
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  proof-viewer-contract:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run proof viewer contract
+        run: python3 scripts/test_proof_viewer_contract.py
