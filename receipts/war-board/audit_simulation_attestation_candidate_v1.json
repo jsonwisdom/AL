@@ -1,0 +1,63 @@
+{
+  "protocol": "PUBLIC_RECORD_OF_TRUTH_BY_JAY",
+  "candidate_id": "WAR_BOARD_AUDIT_SIMULATION_ATTESTATION_CANDIDATE_V1",
+  "identity": "jaywisdom.base.eth",
+  "project": "MEME_METAVERSE_WAR_BOARD",
+  "attestation_target": "WAR_BOARD_RENDERER_AUDIT_SIMULATION_V1",
+  "mode": "BROWSER_WALLET_ONLY_EAS_ATTESTATION_CANDIDATE",
+  "network": {
+    "chain": "base-mainnet",
+    "chain_id": 8453
+  },
+  "parent_ref_uid": "0x3ed74bd760457f0d8b8c5462924719fa77f134e9f927577d0745459c024fb0dd",
+  "parent_ref_status": "UPPER_LEVEL_PARENT_REFERENCE_REVOCABLE_PENDING_RECHECK",
+  "repo": "https://github.com/jsonwisdom/AL",
+  "audit_simulation_path": "docs/war-board/audit-simulation/README.md",
+  "audit_simulation_commit": "2360678c5501b851c532d546cae57756202ef6cd",
+  "fixtures": [
+    {
+      "name": "valid_inherits",
+      "path": "docs/war-board/audit-simulation/truth.valid-inherits.json",
+      "expected_result": "GRAY_ONLY_INHERITS"
+    },
+    {
+      "name": "ghost_claim",
+      "path": "docs/war-board/audit-simulation/truth.ghost-claim.json",
+      "expected_result": "FAIL_CLOSED_GHOST_CLAIM"
+    },
+    {
+      "name": "corrupt_truth",
+      "path": "docs/war-board/audit-simulation/truth.corrupt.json",
+      "expected_result": "RENDER_HALTED_UNREADABLE_SOURCE"
+    }
+  ],
+  "recommended_schema": "string projectId,string targetId,string repoUrl,string commitHash,string targetPath,string parentRefUID,string statusJson",
+  "browser_payload": {
+    "projectId": "MEME_METAVERSE_WAR_BOARD",
+    "targetId": "WAR_BOARD_RENDERER_AUDIT_SIMULATION_V1",
+    "repoUrl": "https://github.com/jsonwisdom/AL",
+    "commitHash": "2360678c5501b851c532d546cae57756202ef6cd",
+    "targetPath": "docs/war-board/audit-simulation/README.md",
+    "parentRefUID": "0x3ed74bd760457f0d8b8c5462924719fa77f134e9f927577d0745459c024fb0dd",
+    "statusJson": "{\"valid_inherits\":\"GRAY_ONLY_INHERITS\",\"ghost_claim\":\"FAIL_CLOSED_GHOST_CLAIM\",\"corrupt_truth\":\"RENDER_HALTED_UNREADABLE_SOURCE\",\"dedicated_war_board_certification\":false}"
+  },
+  "truth_boundary": {
+    "browser_wallet_only": true,
+    "terminal_private_keys": false,
+    "dedicated_audit_simulation_attestation": false,
+    "ready_for_browser_attestation": true
+  },
+  "post_attestation_required_fields": [
+    "schema_uid",
+    "attestation_uid",
+    "tx_hash",
+    "block_number",
+    "recipient"
+  ],
+  "non_claims": [
+    "This candidate does not claim the Audit Simulation has already been attested.",
+    "This candidate does not claim dedicated War Board certification.",
+    "This candidate does not claim Meta certification.",
+    "Finality begins only after Observer A verifies the resulting UID on Base mainnet."
+  ]
+}
