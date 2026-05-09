@@ -12,16 +12,16 @@ It turns claims, datasets, documents, and public proof pages into replayable art
 
 - NY median household income coverage: 62/62 counties
 - NY climate observation coverage: sparse station counties only
-- Public proof surface: https://jsonwisdom.github.io/AL/computer-wisdom-public-proof.html
+- Public proof surface: https://jsonwisdom.github.io/AL/proof/computer-wisdom-public-proof.html
 
 ## How To Verify
 
     git clone https://github.com/jsonwisdom/AL.git
     cd AL
-    find receipts -type f | sort
+    find _truth/receipts -type f | sort
     find docs -type f | sort
 
-Pick a receipt (e.g., `receipts/NY-003.json`), run the SQL or script referenced inside, hash the output, compare to `output_hash`. Match = verified.
+Pick a receipt from `_truth/receipts/index.json`, open the referenced JSON, inspect `claim`, `algorithm`, `commitment`, `timestamp`, and `signature`. A claim is public only when the receipt is present, indexed, and replay-linked.
 
 ## Claim Boundaries
 
