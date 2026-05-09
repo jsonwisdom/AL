@@ -1,0 +1,19 @@
+name: VCLP Ledger Verify
+
+on:
+  pull_request:
+    branches: [ master ]
+  push:
+    branches: [ master ]
+
+jobs:
+  verify-vclp:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check VCLP verifier syntax
+        run: bash -n docs/protocols/vclp/verify.sh
+
+      - name: Run VCLP ledger verification
+        run: ./docs/protocols/vclp/verify.sh _truth/ledger.jsonl _truth/patterns.json
