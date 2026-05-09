@@ -3,9 +3,14 @@
   "identity": "jaywisdom.base.eth",
   "war_board_id": "JAYS_WISDOM_WAR_BOARD_V0_2",
   "schema_spec_id": "JAYS_WISDOM_WAR_BOARD_EAS_SCHEMA_V0_2",
+  "family_node_id": "FAMILY_NODE_ATTESTATION_TREE_V1",
   "repo": "https://github.com/jsonwisdom/AL",
   "spec_path": "docs/specs/JAYS_WISDOM_WAR_BOARD_V0_2.md",
   "schema_spec_path": "docs/specs/JAYS_WISDOM_WAR_BOARD_EAS_SCHEMA_V0_2.md",
+  "family_node_path": "docs/specs/FAMILY_NODE_ATTESTATION_TREE_V1.md",
+  "family_node_commit": "40baaf4cf7016596a5e2d82e0046e9fee62aa4ef",
+  "child_index_path": "receipts/war-board/war_board_child_attestation_index.json",
+  "child_index_commit": "27df7641c93db1c5e44e33e360b23a2cac4dd1a2",
   "parent_receipt_path": "receipts/war-board/war_board_upper_level_parent_receipt.json",
   "parent_receipt_commit": "88a26dc2828d2ccdf5bbf6b0cc6efbf378b11e9d",
   "parent_eas_attestation_uid": "0x3ed74bd760457f0d8b8c5462924719fa77f134e9f927577d0745459c024fb0dd",
@@ -19,12 +24,48 @@
   "schema_registration_status": "PENDING_DEDICATED_WAR_BOARD_SCHEMA",
   "schema_uid": null,
   "observer_a_status": "PENDING_FOR_DEDICATED_WAR_BOARD_SCHEMA",
-  "dashboard_status": "PUBLIC_STATIC_SCAFFOLD",
+  "dashboard_status": "PUBLIC_STATIC_SCAFFOLD_WITH_FAMILY_NODE_NAVIGATION",
+  "lineage_tree": {
+    "parent": {
+      "label": "Upper-Level Parent EAS Reference",
+      "status": "PARENT_EAS_LINKED_REVOCABLE",
+      "url": "https://base.easscan.org/attestation/view/0x3ed74bd760457f0d8b8c5462924719fa77f134e9f927577d0745459c024fb0dd"
+    },
+    "family_node": {
+      "label": "Family Node Attestation Tree v1",
+      "status": "PUBLIC_REPO_CANON_GITHUB_DIRECT",
+      "path": "docs/specs/FAMILY_NODE_ATTESTATION_TREE_V1.md",
+      "commit": "40baaf4cf7016596a5e2d82e0046e9fee62aa4ef"
+    },
+    "children": [
+      {
+        "label": "War Board Spec",
+        "status": "PUBLIC_REPO_CANON_PARENT_REFERENCED",
+        "path": "docs/specs/JAYS_WISDOM_WAR_BOARD_V0_2.md"
+      },
+      {
+        "label": "War Board EAS Schema Spec",
+        "status": "REGISTRATION_CANDIDATE_NOT_ONCHAIN_REGISTERED",
+        "path": "docs/specs/JAYS_WISDOM_WAR_BOARD_EAS_SCHEMA_V0_2.md"
+      },
+      {
+        "label": "Truth Config",
+        "status": "PUBLIC_TRUTH_BOUNDARY_JSON",
+        "path": "docs/war-board/truth.json"
+      },
+      {
+        "label": "Dashboard Scaffold",
+        "status": "PUBLIC_STATIC_SCAFFOLD",
+        "path": "docs/war-board/index.html"
+      }
+    ]
+  },
   "truth_boundary": {
     "public_facing": true,
     "repo_canonical": true,
     "upper_level_parent_reference": true,
     "parent_eas_attestation_linked": true,
+    "family_node_navigation_enabled": true,
     "dedicated_war_board_schema_registered": false,
     "dedicated_war_board_schema_verified": false,
     "meta_certified": false,
