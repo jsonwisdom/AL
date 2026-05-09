@@ -1,44 +1,57 @@
-# AL — Audit Ledger / ALMS Verification Machine
+# AL — Attestation Ledger
 
-AL is a zero-trust civic verification repository.
+Public verifiable claims with cryptographic receipts.
 
-It turns claims, datasets, documents, and public proof pages into replayable artifacts that can be checked by humans, courts, agents, and machines.
+## Authority
 
-> Verify > Narrative.
-> Receipts > claims.
-> Replay > authority.
+All authority resolves to:
 
-## What You Can Verify Today
+- **Receipt index:** `_truth/receipts/index.json`
+- **Public proof surface:** https://jsonwisdom.github.io/AL/proof/
+- **Receipt viewer:** https://jsonwisdom.github.io/AL/proof/index.html
 
-- NY median household income coverage: 62/62 counties
-- NY climate observation coverage: sparse station counties only
-- Public proof surface: https://jsonwisdom.github.io/AL/proof/computer-wisdom-public-proof.html
-
-## How To Verify
-
-    git clone https://github.com/jsonwisdom/AL.git
-    cd AL
-    find _truth/receipts -type f | sort
-    find docs -type f | sort
+## Verification
 
 Pick a receipt from `_truth/receipts/index.json`, open the referenced JSON, inspect `claim`, `algorithm`, `commitment`, `timestamp`, and `signature`. A claim is public only when the receipt is present, indexed, and replay-linked.
 
-## Claim Boundaries
+```bash
+# Browse the index
+cat _truth/receipts/index.json | jq '.index.receipts[] | {path, claims}'
 
-* No statewide climate validation
-* No risk atlas or hazard map
-* No attribution or causality
-* No interpolation to uncovered counties
-* No simulated data
+# Verify a specific receipt
+cat receipts/2025-04-10T08-30-00Z-attestation.json | jq '{claim, algorithm, timestamp, signature}'
+```
 
-## System Layers
+## Structure
 
-1. Civic Proof
-2. Constitutional Machine
-3. Agent Infrastructure
+```txt
+AL/
+├── README.md              # This file
+├── docs/
+│   ├── proof/             # Public proof surfaces (GitHub Pages)
+│   │   ├── computer-wisdom-public-proof.html
+│   │   └── index.html     # Receipt viewer
+│   ├── ARCHITECTURE.md    # System design
+│   ├── DOCTRINE.md        # Constitutional rules
+│   └── REPO_MAP.md        # File inventory
+├── _truth/
+│   └── receipts/
+│       └── index.json     # Canonical receipt index
+├── receipts/              # Individual attestation receipts, where present
+└── data/                  # Legacy/public module outputs
+    └── ny/                # NY climate-economic proof surface, where present
+```
 
-See:
+## Legacy/public module
 
-* docs/ARCHITECTURE.md
-* docs/DOCTRINE.md
-* docs/REPO_MAP.md
+NY climate-economic proof surface:
+
+- Coverage: 62/62 counties (median household income)
+- Climate observation: sparse station counties only
+- Proofs archived under `data/ny/`, where present
+
+All NY claims are attested via receipts in `_truth/receipts/index.json`.
+
+## License
+
+See repository metadata.
