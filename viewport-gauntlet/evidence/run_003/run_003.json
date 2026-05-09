@@ -10,16 +10,17 @@
   ],
   "tasks_completed": [
     "create_viewport_smoke_doc",
-    "verify_metrics_replay"
+    "verify_metrics_replay",
+    "open_evidence_pr"
   ],
   "tasks_failed": [],
   "constraints_active": [
     "mobile_safari_390px",
     "intermittent_network"
   ],
-  "overall_status": "pending",
+  "overall_status": "completed",
   "metrics": {
-    "completion_rate": 0.6666666666666666,
+    "completion_rate": 1.0,
     "intervention_count": 0,
     "recovery_count": 2,
     "unintended_edits": 0,
@@ -29,9 +30,9 @@
     "token_refreshes": 0
   },
   "verification": {
-    "tests_passed": false,
-    "commit_hash": "",
-    "pr_url": "",
+    "tests_passed": true,
+    "commit_hash": "269522cdd7dff77feb21ac2cdc34ca0019b95b3c",
+    "pr_url": "https://github.com/jsonwisdom/AL/pull/146",
     "logs_attached": true
   },
   "logs_location": "viewport-gauntlet/logs/",

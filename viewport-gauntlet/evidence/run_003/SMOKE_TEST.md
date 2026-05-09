@@ -24,4 +24,4 @@ Expected FAIL confirmed before completion fields were populated.
 - direct-paste seed used instead of CDN artifact
 
 ## Final PR URL
-TBD
+https://github.com/jsonwisdom/AL/pull/146
