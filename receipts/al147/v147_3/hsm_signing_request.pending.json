@@ -1,0 +1,12 @@
+{
+  "protocol": "AL_147",
+  "version": "v147.3",
+  "request_type": "SETTLEMENT_ANCHOR_SIGNATURE",
+  "source_branch": "evidence/run-003-real",
+  "source_commit": "482b05af2d5fa4b6a18ab7f2475913bb75dd8791",
+  "payload_sha256": "faf15c75ab293df25dd5fb72f2fe4c4301b986bfabeb752525144c05fd7df552",
+  "payload_path": "receipts/al147/v147_3/test_settlement.bin",
+  "signing_gate": "G7_SETTLEMENT_INVALIDATION",
+  "status": "AWAITING_OPERATOR_HANDOFF",
+  "operator_instructions": "Verify test_settlement.bin matches payload_sha256 on public branch evidence/run-003-real commit 482b05af before signing."
+}
