@@ -7,7 +7,7 @@ on:
 
 concurrency:
   group: alms-auto-root
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   run:
@@ -17,8 +17,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup jq
-        run: sudo apt-get update && sudo apt-get install -y jq
+      - name: Verify jq
+        run: jq --version
 
       - name: Run ALMS cycle
         run: |
