@@ -1,0 +1,64 @@
+{
+  "protocol": "PUBLIC_RECORD_OF_TRUTH_BY_JAY",
+  "index_id": "WAR_BOARD_CHILD_ATTESTATION_INDEX_V0_2",
+  "identity": "jaywisdom.base.eth",
+  "project": "MEME_METAVERSE_WAR_BOARD",
+  "created_at": "2026-05-09T00:00:00Z",
+  "purpose": "Neat parent-child map for War Board public attestations and repo surfaces.",
+  "parent": {
+    "receipt_path": "receipts/war-board/war_board_upper_level_parent_receipt.json",
+    "receipt_commit": "88a26dc2828d2ccdf5bbf6b0cc6efbf378b11e9d",
+    "eas_uid": "0x3ed74bd760457f0d8b8c5462924719fa77f134e9f927577d0745459c024fb0dd",
+    "eas_url": "https://base.easscan.org/attestation/view/0x3ed74bd760457f0d8b8c5462924719fa77f134e9f927577d0745459c024fb0dd",
+    "status": "UPPER_LEVEL_REFERENCED_PENDING_OBSERVER_A_RECHECK"
+  },
+  "children": [
+    {
+      "child_id": "WAR_BOARD_SPEC_V0_2",
+      "type": "REPO_SPEC",
+      "path": "docs/specs/JAYS_WISDOM_WAR_BOARD_V0_2.md",
+      "status": "PUBLIC_REPO_CANON",
+      "dedicated_eas_uid": null
+    },
+    {
+      "child_id": "WAR_BOARD_EAS_SCHEMA_SPEC_V0_2",
+      "type": "REPO_SCHEMA_SPEC",
+      "path": "docs/specs/JAYS_WISDOM_WAR_BOARD_EAS_SCHEMA_V0_2.md",
+      "status": "REGISTRATION_CANDIDATE_NOT_ONCHAIN_REGISTERED",
+      "dedicated_schema_uid": null
+    },
+    {
+      "child_id": "WAR_BOARD_TRUTH_CONFIG",
+      "type": "PUBLIC_TRUTH_BOUNDARY_JSON",
+      "path": "docs/war-board/truth.json",
+      "status": "PUBLIC_REPO_CANON",
+      "dedicated_eas_uid": null
+    },
+    {
+      "child_id": "WAR_BOARD_DASHBOARD_SCAFFOLD",
+      "type": "GITHUB_PAGES_STATIC_SURFACE",
+      "path": "docs/war-board/index.html",
+      "status": "PUBLIC_STATIC_SCAFFOLD",
+      "dedicated_eas_uid": null
+    },
+    {
+      "child_id": "DAILY_DOCKER_DOCKETS",
+      "type": "DOCTRINE_AND_WORKFLOW",
+      "path": "docs/MEME_METAVERSE_DAILY_DOCKER_DOCKETS.md",
+      "status": "PUBLIC_REPO_CANON",
+      "dedicated_eas_uid": null
+    }
+  ],
+  "rules": {
+    "child_claim_finality": "A child is not dedicated-onchain unless it has its own verified EAS UID or schema UID.",
+    "parent_reference": "Parent EAS reference makes the child legible, not independently certified.",
+    "no_ghost_anchor": true,
+    "revocation_truth_required": true
+  },
+  "current_classification": "PARENT_REFERENCED_CHILDREN_INDEXED_GITHUB_DIRECT",
+  "non_claims": [
+    "Children listed here are not automatically dedicated EAS attestations.",
+    "This index is a GitHub-direct public receipt, not an onchain registry.",
+    "Dedicated child attestation UIDs must be filled only after Observer A verification."
+  ]
+}
