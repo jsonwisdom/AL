@@ -1,0 +1,13 @@
+{
+  "version": "alms.attestation.v1",
+  "timestamp": "2026-05-09T00:00:00Z",
+  "claim": "attestation-index-is-root-authority",
+  "algorithm": "sha256",
+  "commitment": "README -> _truth/receipts/index.json -> indexed receipt path -> signature",
+  "signature": "UNSIGNED_GENESIS_RECEIPT",
+  "proof": {
+    "repo": "jsonwisdom/AL",
+    "branch": "master",
+    "viewer": "docs/proof/index.html"
+  }
+}
