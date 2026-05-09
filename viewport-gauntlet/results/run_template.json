@@ -1,0 +1,29 @@
+{
+  "run_id": "run_NNN_operator_hybrid",
+  "timestamp": "2026-05-09T00:00:00Z",
+  "operator": "human_coordinator",
+  "infrastructure": "model_based",
+  "tasks_assigned": [
+    "fix_markdown_bug",
+    "rename_variable",
+    "update_yaml_config"
+  ],
+  "tasks_completed": [],
+  "tasks_failed": [],
+  "constraints_active": [
+    "mobile_safari_390px"
+  ],
+  "overall_status": "pending",
+  "metrics": {
+    "completion_rate": 0.0,
+    "intervention_count": 0,
+    "recovery_count": 0,
+    "unintended_edits": 0,
+    "state_loss_incidents": 0,
+    "elapsed_time_seconds": 0,
+    "token_refreshes": 0
+  },
+  "logs_location": "logs/",
+  "diff_location": "results/run_NNN.diff",
+  "notes": "Template for new benchmark runs. Copy to run_NNN_operator_hybrid.json and populate during execution."
+}
