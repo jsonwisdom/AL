@@ -20,8 +20,15 @@
     "recovery_count": 0,
     "unintended_edits": 0,
     "state_loss_incidents": 0,
+    "hallucinated_commands_executed": 0,
     "elapsed_time_seconds": 0,
     "token_refreshes": 0
+  },
+  "verification": {
+    "tests_passed": false,
+    "commit_hash": "",
+    "pr_url": "",
+    "logs_attached": false
   },
   "logs_location": "logs/",
   "diff_location": "results/run_NNN.diff",
