@@ -1,0 +1,57 @@
+name: Resolver Witness Convergence
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "docs/specs/RESOLVER_WITNESS_SPEC_V1.md"
+      - "docs/specs/RESOLVER_WITNESS_IMPLEMENTATION_GUIDE_V1.md"
+      - "scripts/resolver_witness/**"
+      - "tests/resolver_witness/**"
+      - ".github/workflows/resolver-witness-convergence.yml"
+  push:
+    branches: [ main ]
+    paths:
+      - "docs/specs/RESOLVER_WITNESS_SPEC_V1.md"
+      - "docs/specs/RESOLVER_WITNESS_IMPLEMENTATION_GUIDE_V1.md"
+      - "scripts/resolver_witness/**"
+      - "tests/resolver_witness/**"
+      - ".github/workflows/resolver-witness-convergence.yml"
+
+jobs:
+  convergence:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Python observer
+        run: python3 scripts/resolver_witness/compute_expected_hashes.py > /tmp/python_hashes.json
+
+      - name: TypeScript observer
+        run: node scripts/resolver_witness/compute_expected_hashes.ts > /tmp/typescript_hashes.json
+
+      - name: Compare observers to registry
+        run: |
+          python3 - <<'PY'
+          import json, pathlib, sys
+
+          registry = json.loads(pathlib.Path("tests/resolver_witness/hash_registry.json").read_text())
+          py = json.loads(pathlib.Path("/tmp/python_hashes.json").read_text())
+          ts = json.loads(pathlib.Path("/tmp/typescript_hashes.json").read_text())
+
+          if py != ts:
+              print("FAIL: Python and TypeScript observer outputs differ")
+              print("PY:", json.dumps(py, indent=2, sort_keys=True))
+              print("TS:", json.dumps(ts, indent=2, sort_keys=True))
+              sys.exit(1)
+
+          if py != registry:
+              print("FAIL: Observer output differs from committed registry")
+              print("OBS:", json.dumps(py, indent=2, sort_keys=True))
+              print("REG:", json.dumps(registry, indent=2, sort_keys=True))
+              sys.exit(1)
+
+          print("CONSENSUS_PASSED")
+          print(json.dumps(py, indent=2, sort_keys=True))
+          PY
