@@ -10,6 +10,29 @@ All authority resolves to:
 - **Public proof surface:** https://jsonwisdom.github.io/AL/proof/
 - **Receipt viewer:** https://jsonwisdom.github.io/AL/proof/index.html
 
+## Meme MetaVerse / War Board
+
+New public workflow surfaces:
+
+- `docs/MEME_METAVERSE_DAILY_DOCKER_DOCKETS.md`
+- `docs/specs/JAYS_MEME_RUBRIC_V1.md`
+- `docs/specs/JAYS_WISDOM_WAR_BOARD_V0_2.md`
+
+Core doctrine:
+
+```text
+The joke can fly. The receipt must land.
+```
+
+The War Board introduces provenance-aware meme governance:
+
+- county-resolution vernacular records
+- attestation-aware docketing
+- collision-window inspection
+- `JOINT_ORIGIN` status for synchronous independent emergence
+- visible corrections and revocations
+- anti-ghost-anchor enforcement
+
 ## Verification
 
 Pick a receipt from `_truth/receipts/index.json`, open the referenced JSON, inspect `claim`, `algorithm`, `commitment`, `timestamp`, and `signature`. A claim is public only when the receipt is present, indexed, and replay-linked.
@@ -26,31 +49,21 @@ cat receipts/2025-04-10T08-30-00Z-attestation.json | jq '{claim, algorithm, time
 
 ```txt
 AL/
-├── README.md              # This file
+├── README.md
 ├── docs/
-│   ├── proof/             # Public proof surfaces (GitHub Pages)
-│   │   ├── computer-wisdom-public-proof.html
-│   │   └── index.html     # Receipt viewer
-│   ├── ARCHITECTURE.md    # System design
-│   ├── DOCTRINE.md        # Constitutional rules
-│   └── REPO_MAP.md        # File inventory
+│   ├── proof/
+│   ├── specs/
+│   │   ├── JAYS_MEME_RUBRIC_V1.md
+│   │   └── JAYS_WISDOM_WAR_BOARD_V0_2.md
+│   ├── MEME_METAVERSE_DAILY_DOCKER_DOCKETS.md
+│   ├── ARCHITECTURE.md
+│   ├── DOCTRINE.md
+│   └── REPO_MAP.md
 ├── _truth/
 │   └── receipts/
-│       └── index.json     # Canonical receipt index
-├── receipts/              # Individual attestation receipts, where present
-└── data/                  # Legacy/public module outputs
-    └── ny/                # NY climate-economic proof surface, where present
+├── receipts/
+└── data/
 ```
-
-## Legacy/public module
-
-NY climate-economic proof surface:
-
-- Coverage: 62/62 counties (median household income)
-- Climate observation: sparse station counties only
-- Proofs archived under `data/ny/`, where present
-
-All NY claims are attested via receipts in `_truth/receipts/index.json`.
 
 ## License
 
