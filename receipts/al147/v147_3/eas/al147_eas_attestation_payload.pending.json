@@ -1,0 +1,20 @@
+{
+  "protocol": "AL_147",
+  "version": "v147.3",
+  "chain": "base-mainnet",
+  "chain_id": 8453,
+  "eas_contract": "0x4200000000000000000000000000000000000021",
+  "schema_registry": "0x4200000000000000000000000000000000000020",
+  "schema_uid": "0xfa94377476d86a25585e7da7889adf60f5a34fe09e1744f98626ad66bb686baa",
+  "schema": "string identity,bytes32 root,string cid,string commit,bytes32 archiveSha256",
+  "identity": "jaywisdom.base.eth",
+  "root": "0xfaf15c75ab293df25dd5fb72f2fe4c4301b986bfabeb752525144c05fd7df552",
+  "cid": "bafybeigtmg55n4bhfigetbghuacgbjrmjbhmenqfvpt5jdpugmzjnf4duu",
+  "commit": "c6c4d818f935778c804cc2334696a902368f3119",
+  "archiveSha256": "0xfaf15c75ab293df25dd5fb72f2fe4c4301b986bfabeb752525144c05fd7df552",
+  "artifact_path": "receipts/al147/v147_3/test_settlement.bin",
+  "archive_semantics": "archiveSha256 equals root because attested artifact is test_settlement.bin; ZIP artifact absent locally",
+  "status": "READY_FOR_BASE_EAS_ATTESTATION",
+  "base_tx_hash": null,
+  "eas_attestation_uid": null
+}
