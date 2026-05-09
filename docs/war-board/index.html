@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jay’s Wisdom War Board</title>
+  <style>
+    body {
+      background: #050505;
+      color: #d7ffd7;
+      font-family: monospace;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      padding: 24px;
+      border-bottom: 1px solid #1f5f1f;
+    }
+    h1 {
+      margin: 0;
+      color: #7dff7d;
+    }
+    .tagline {
+      color: #9ac89a;
+      margin-top: 8px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 16px;
+      padding: 24px;
+    }
+    .card {
+      border: 1px solid #1f5f1f;
+      padding: 16px;
+      background: #0d0d0d;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border: 1px solid #3aff3a;
+      margin-top: 8px;
+      color: #3aff3a;
+    }
+    a {
+      color: #7dcfff;
+    }
+    pre {
+      white-space: pre-wrap;
+      word-break: break-word;
+      background: #111;
+      padding: 12px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Jay’s Wisdom War Board</h1>
+    <div class="tagline">The joke can fly. The receipt must land.</div>
+    <div class="tagline">Identity: jaywisdom.base.eth</div>
+  </header>
+
+  <div class="grid">
+    <div class="card">
+      <h2>Status Dashboard</h2>
+      <div id="status">Loading truth boundary...</div>
+    </div>
+
+    <div class="card">
+      <h2>War Board Doctrine</h2>
+      <p><a href="../specs/JAYS_WISDOM_WAR_BOARD_V0_2.md">Open Spec</a></p>
+      <div class="badge">JOINT_ORIGIN ENABLED</div>
+    </div>
+
+    <div class="card">
+      <h2>EAS Schema Reference</h2>
+      <p><a href="../specs/JAYS_WISDOM_WAR_BOARD_EAS_SCHEMA_V0_2.md">Open Schema Spec</a></p>
+      <div class="badge">SCHEMA REGISTRATION PENDING</div>
+    </div>
+
+    <div class="card">
+      <h2>Collision Checker</h2>
+      <p>Status: Awaiting schema registration + Observer A receipt.</p>
+      <pre>JOINT_ORIGIN requires:
+- temporal_window_check = PASS
+- independence_proof = PASS
+- local_context_preservation = PASS</pre>
+    </div>
+  </div>
+
+  <script>
+    fetch('./truth.json')
+      .then(r => r.json())
+      .then(data => {
+        document.getElementById('status').innerHTML = `
+          <pre>${JSON.stringify(data.truth_boundary, null, 2)}</pre>
+          <p>Schema UID: ${data.schema_uid}</p>
+          <p>Observer A: ${data.observer_a_status}</p>
+        `;
+      })
+      .catch(err => {
+        document.getElementById('status').innerText = 'Failed to load truth boundary.';
+      });
+  </script>
+</body>
+</html>
