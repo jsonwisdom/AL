@@ -109,10 +109,11 @@
 
 <script>
     const app = document.getElementById('app');
+    const RAW_BASE = 'https://raw.githubusercontent.com/jsonwisdom/AL/master';
 
     async function loadReceipts() {
         try {
-            const indexResponse = await fetch('/AL/_truth/receipts/index.json');
+            const indexResponse = await fetch(`${RAW_BASE}/_truth/receipts/index.json`);
             if (!indexResponse.ok) throw new Error(`HTTP ${indexResponse.status}`);
             const indexData = await indexResponse.json();
 
@@ -129,7 +130,7 @@
                     const receiptPath = entry.path;
                     if (!receiptPath) continue;
 
-                    const receiptResp = await fetch(`/AL/${receiptPath}`);
+                    const receiptResp = await fetch(`${RAW_BASE}/${receiptPath}`);
                     if (!receiptResp.ok) throw new Error(`HTTP ${receiptResp.status}`);
                     const receiptData = await receiptResp.json();
 
@@ -155,7 +156,7 @@
             renderReceipts(receipts, indexData);
         } catch (err) {
             console.error(err);
-            app.innerHTML = `<div class="error">❌ Failed to load receipt index: ${err.message}<br><br>Make sure <code>/AL/_truth/receipts/index.json</code> exists and is accessible.</div>`;
+            app.innerHTML = `<div class="error">❌ Failed to load receipt index: ${err.message}<br><br>Make sure <code>_truth/receipts/index.json</code> exists on <code>master</code> and is accessible through raw.githubusercontent.com.</div>`;
         }
     }
 
