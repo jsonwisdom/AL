@@ -79,16 +79,25 @@ jobs:
             -V fontsize=12pt
           cp dist/pdf/litigation-package.pdf "dist/pdf/litigation-package-${{ steps.stamp.outputs.date }}-${{ steps.stamp.outputs.short_sha }}.pdf"
 
-      - name: Commit generated PDFs
+      - name: Mirror dist into docs for GitHub Pages
         run: |
-          if [[ -n "$(git status --porcelain dist/pdf)" ]]; then
+          mkdir -p docs/assets docs/pdf docs/.well-known
+          cp dist/index.html docs/index.html
+          cp dist/print.css docs/print.css
+          cp -R dist/assets/. docs/assets/
+          cp -R dist/pdf/. docs/pdf/
+          cp -R dist/.well-known/. docs/.well-known/
+
+      - name: Commit generated distribution artifacts
+        run: |
+          if [[ -n "$(git status --porcelain dist/pdf docs/index.html docs/print.css docs/assets docs/pdf docs/.well-known)" ]]; then
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add dist/pdf
-            git commit -m "dist: rebuild citable pdf artifacts ${{ steps.stamp.outputs.date }} ${{ steps.stamp.outputs.short_sha }}"
+            git add dist/pdf docs/index.html docs/print.css docs/assets docs/pdf docs/.well-known
+            git commit -m "dist: rebuild and mirror citable artifacts ${{ steps.stamp.outputs.date }} ${{ steps.stamp.outputs.short_sha }}"
             git push
           else
-            echo "No PDF changes to commit."
+            echo "No distribution changes to commit."
           fi
 
       - name: Upload generated PDFs
