@@ -1,0 +1,117 @@
+name: Constitutional Gate (Migration Guard)
+
+on:
+  push:
+    branches:
+      - root-law-machine-audit-v1
+      - 'audit/**'
+      - '*audit*'
+  pull_request:
+    branches:
+      - master
+      - root-law-machine-audit-v1
+
+jobs:
+  constitutional-check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Foundry
+        uses: foundry-rs/foundry-toolchain@v1
+        with:
+          version: stable
+
+      - name: Show Foundry version
+        run: forge --version
+
+      - name: MigrationGuard tests (9 required)
+        run: |
+          set -euo pipefail
+          output="$(forge test --match-contract MigrationGuardTest -vv 2>&1)"
+          echo "$output"
+          if ! grep -Eq '9 passed|test result: ok\. 9 passed' <<< "$output"; then
+            echo "ERROR: expected exactly 9 passing MigrationGuard tests"
+            exit 1
+          fi
+
+      - name: Forbid ERC20 / NFT code in constitutional lane
+        run: |
+          set -euo pipefail
+          if grep -RInE 'IERC20|ERC20|IERC721|IERC1155|\bNFT\b|\bERC-20\b|\bERC-721\b|\bERC-1155\b' contracts src test 2>/dev/null; then
+            echo "ERROR: forbidden token/NFT interface detected in constitutional lane"
+            exit 1
+          fi
+          echo "No token/NFT interfaces found"
+
+      - name: Verify receipt integrity formula is present
+        run: |
+          set -euo pipefail
+          if ! grep -RIn 'function computeReceiptIntegrity' contracts/MigrationGuard.sol; then
+            echo "ERROR: computeReceiptIntegrity function not found"
+            exit 1
+          fi
+          if ! grep -RIn 'keccak256(abi.encodePacked' contracts/MigrationGuard.sol; then
+            echo "ERROR: receipt integrity keccak formula not found"
+            exit 1
+          fi
+          if ! grep -RIn 'sourceWitnessHash' contracts/MigrationGuard.sol; then
+            echo "ERROR: sourceWitnessHash missing from guard"
+            exit 1
+          fi
+          if ! grep -RIn 'degradationLogHash' contracts/MigrationGuard.sol; then
+            echo "ERROR: degradationLogHash missing from guard"
+            exit 1
+          fi
+          if ! grep -RIn 'restraintFlags' contracts/MigrationGuard.sol; then
+            echo "ERROR: restraintFlags missing from guard"
+            exit 1
+          fi
+          echo "Receipt integrity surface confirmed"
+
+      - name: Assert fail-closed behavior exists
+        run: |
+          set -euo pipefail
+          grep -RIn 'REJECT_TARGET_CONFIDENCE_PROMOTION' contracts/MigrationGuard.sol
+          grep -RIn 'REJECT_RECEIPT_INTEGRITY_MISMATCH' contracts/MigrationGuard.sol
+          grep -RIn 'REJECT_MISSING_DEGRADATION_LOG' contracts/MigrationGuard.sol
+          grep -RIn 'REJECT_SEMANTICALLY_UNMAPPED_EXECUTION_BLOCKED' contracts/MigrationGuard.sol
+          grep -RIn 'failureLog' contracts/MigrationGuard.sol
+          grep -RIn 'ingestFailClosed' contracts/MigrationGuard.sol
+          echo "Fail-closed surface confirmed"
+
+      - name: Block bytes32-padded EAS address drift
+        run: |
+          set -euo pipefail
+          if grep -RIn '0x42000000000000000000000000000000000000000000000000000000000000000' .; then
+            echo "ERROR: bytes32-padded EAS/Schema address detected"
+            exit 1
+          fi
+          grep -RIn '0x4200000000000000000000000000000000000021' docs .env.base-sepolia.example 2>/dev/null || true
+          grep -RIn '0x4200000000000000000000000000000000000020' docs .env.base-sepolia.example 2>/dev/null || true
+          echo "Address drift gate confirmed"
+
+      - name: Block committed secrets and local env files
+        run: |
+          set -euo pipefail
+          if find . -name '.env' -o -name '*.pem' -o -name '*.key' | grep -v '^./.git/'; then
+            echo "ERROR: local secret/env file committed"
+            exit 1
+          fi
+          if grep -RInE 'PRIVATE_KEY=0x[0-9a-fA-F]{64}|BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY' . --exclude-dir=.git; then
+            echo "ERROR: private key material detected"
+            exit 1
+          fi
+          echo "No committed private key material found"
+
+      - name: Block silent authority bypass markers
+        run: |
+          set -euo pipefail
+          if grep -RInE '//[[:space:]]*skip|\.only\(|silentAuth|payToRestoreRole' contracts src test docs 2>/dev/null; then
+            echo "ERROR: suspicious bypass marker found"
+            exit 1
+          fi
+          echo "No silent authority bypass markers detected"
