@@ -1,5 +1,5 @@
-import { keccak_256 } from '@noble/hashes/sha3';
-import { utf8ToBytes, bytesToHex } from '@noble/hashes/utils';
+import { keccak_256 } from '../node_modules/@noble/hashes/esm/sha3.js';
+import { utf8ToBytes, bytesToHex } from '../node_modules/@noble/hashes/esm/utils.js';
 
 export const ZERO_HASH_FOR_EMPTY_DEGRADATION_LOG =
   '0xc218684497e411f185d34f0d618d35706509ec25c78a0871309f3e098867a78e';
