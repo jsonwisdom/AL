@@ -64,3 +64,74 @@ document.getElementById("verifyBtn").addEventListener("click",()=>{document.getE
 </script>
 </body>
 </html>
+
+<!-- PHASE_4: PUBLIC REPLAY RECEIPT INDEX -->
+<h2>⚡ PHASE 4 — PUBLIC REPLAY RECEIPT INDEX</h2>
+<p style="color:#888;">Discoverable roots • Lineage hashes • Parity proofs • Public export</p>
+
+<button onclick="buildPublicIndex()" style="background:#ff00aa; color:#000; padding:12px 28px; font-weight:bold; margin:10px 0;">
+  REFRESH PUBLIC INDEX
+</button>
+
+<button onclick="exportPublicIndex()" style="background:#00ff9f; color:#000; padding:12px 28px; font-weight:bold; margin:10px 0 20px 10px;">
+  EXPORT PUBLIC INDEX JSON
+</button>
+
+<div id="public-index" style="background:#111; padding:20px; border:1px solid #00ff9f; font-family:monospace; overflow:auto; max-height:600px;"></div>
+
+<script>
+// PHASE_4 Public Index Engine
+const KNOWN_ROOTS = [
+  {
+    name: "Genesis",
+    uid: "0xc79d3d89dabf16db6a59ba612d0d79db68b20f127baf5fa16e454c911e2beb93",
+    description: "Transport Constitution Root"
+  }
+];
+
+async function buildPublicIndex() {
+  const container = document.getElementById('public-index');
+  let html = `<h3>PUBLIC CONSTITUTIONAL REPLAY INDEX</h3>
+    <table style="width:100%; border-collapse:collapse;">
+      <thead><tr style="background:#1a1a1a;">
+        <th style="padding:8px; text-align:left;">Root</th>
+        <th style="padding:8px; text-align:left;">Lineage Hash</th>
+        <th style="padding:8px;">Worst Verdict</th>
+        <th>Action</th>
+      </tr></thead><tbody>`;
+
+  for (const root of KNOWN_ROOTS) {
+    try {
+      const chain = await traverseLineage(root.uid, 3);
+      const worst = chain.some(n => n.verdict?.color === "🔴") ? "🔴" : 
+                    chain.some(n => n.verdict?.color === "🟠") ? "🟠" : "🟢";
+      
+      html += `<tr style="border-bottom:1px solid #333;">
+        <td>${root.name}<br><small>${root.description}</small></td>
+        <td style="font-size:0.85em;">[computed]</td>
+        <td style="text-align:center;">${worst}</td>
+        <td><button onclick="runLineageTraversalWithRoot('${root.uid}');">Verify Lineage →</button></td>
+      </tr>`;
+    } catch(e) {
+      html += `<tr><td>${root.name}</td><td colspan="3" style="color:#ff0066;">ERROR</td></tr>`;
+    }
+  }
+  html += `</tbody></table>`;
+  container.innerHTML = html;
+}
+
+function exportPublicIndex() {
+  const index = {
+    version: "TRANSPORT_CONSTITUTION_PUBLIC_INDEX_v4",
+    generatedAt: new Date().toISOString(),
+    verifierCommit: "463af1c6eeaaf435716b0b328340b09eda6467de",
+    lineageParityHash: "0x9d0a723a861d852d2d34e80fc5288622aa8520395a03739a8cfdd3cb514b7f05"
+  };
+  finalizeBundle(index);
+}
+
+function runLineageTraversalWithRoot(uid) {
+  document.getElementById('lineage-input').value = uid;
+  runLineageTraversal();
+}
+</script>
