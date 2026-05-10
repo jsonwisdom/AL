@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TransportConstitution — IndexedDB Smoke Test Harness</title>
+  <script type="module">
+    import {
+      writeReceipt,
+      getReceipt,
+      getReceiptStats,
+      ZERO_HASH_FOR_EMPTY_DEGRADATION_LOG
+    } from './indexeddb-transaction-wrapper.js';
+
+    window.__modules = {
+      writeReceipt,
+      getReceipt,
+      getReceiptStats,
+      ZERO_HASH_FOR_EMPTY_DEGRADATION_LOG
+    };
+
+    console.log('[Test Harness] TransportConstitution modules loaded');
+  </script>
+</head>
+<body>
+  <h1>TransportConstitution — Test Harness</h1>
+  <p>No UI. No claims. Just the gate.</p>
+  <pre id="status">Waiting for Playwright...</pre>
+</body>
+</html>

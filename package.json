@@ -1,19 +1,16 @@
 {
-  "name": "alms-track001-governance",
-  "version": "1.0.0",
-  "private": true,
+  "name": "transport-constitution",
+  "version": "0.2.0",
+  "description": "Bounded truth survives translation pressure.",
   "type": "module",
-  "engines": {
-    "node": ">=20 <23"
-  },
   "scripts": {
-    "track001:preflight": "node scripts/track001_preflight.js",
-    "track001:finalize": "node scripts/track001_finalize.js",
-    "track001:verify": "node scripts/track001_verify.js"
+    "test:constitutional": "npx playwright test transport-constitution/indexeddb-smoke.test.spec.js --project=chromium"
   },
   "dependencies": {
-    "@ethereum-attestation-service/eas-sdk": "^2.7.0",
-    "ajv": "^8.17.1",
-    "ethers": "^6.13.5"
+    "@noble/hashes": "^1.3.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "serve": "^14.2.0"
   }
 }
