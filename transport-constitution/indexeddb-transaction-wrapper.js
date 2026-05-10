@@ -124,7 +124,7 @@ async function commitReceipt(prepared, rawReceipt) {
       targetContext: rawReceipt.targetContext,
       sourceConfidenceLevel: rawReceipt.sourceConfidenceLevel,
       targetConfidenceLevel: rawReceipt.targetConfidenceLevel,
-      isValid: true,
+      isValid: 1,
       canonicalized: true,
       version: '0.2.0',
       lossCount: rawReceipt.translation_loss.length,
@@ -158,7 +158,7 @@ async function storeRejectedReceipt(prepared, rawReceipt, validation) {
       attester: rawReceipt.attester || '0x0',
       sourceContext: rawReceipt.sourceContext,
       targetContext: rawReceipt.targetContext,
-      isValid: false,
+      isValid: 0,
       canonicalized: true,
       rejectionCode: validation.rejectionCode,
       rejectionReason: validation.reason,
@@ -193,8 +193,8 @@ export async function getReceiptStats() {
     const validIndex = store.index('isValid');
 
     const totalReq = store.count();
-    const validReq = validIndex.count(IDBKeyRange.only(true));
-    const rejectedReq = validIndex.count(IDBKeyRange.only(false));
+    const validReq = validIndex.count(IDBKeyRange.only(1));
+    const rejectedReq = validIndex.count(IDBKeyRange.only(0));
 
     tx.oncomplete = () => {
       db.close();
@@ -211,7 +211,7 @@ export async function listValidReceipts(limit = 50) {
     const tx = db.transaction(DB_CONFIG.storeName, 'readonly');
     const index = tx.objectStore(DB_CONFIG.storeName).index('isValid');
     const results = [];
-    const request = index.openCursor(IDBKeyRange.only(true));
+    const request = index.openCursor(IDBKeyRange.only(1));
 
     request.onsuccess = (event) => {
       const cursor = event.target.result;

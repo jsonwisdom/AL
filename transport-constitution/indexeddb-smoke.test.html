@@ -4,22 +4,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TransportConstitution — IndexedDB Smoke Test Harness</title>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "@noble/hashes/sha3": "/node_modules/@noble/hashes/esm/sha3.js",
+        "@noble/hashes/utils": "/node_modules/@noble/hashes/esm/utils.js",
+        "@noble/hashes/crypto": "/node_modules/@noble/hashes/esm/crypto.js",
+        "@noble/hashes/_assert": "/node_modules/@noble/hashes/esm/_assert.js"
+      }
+    }
+  </script>
+
   <script type="module">
+    import {
+      prepareReceiptForStorage,
+      verifyDegradationLogHash
+    } from './canonicalizeReceipt.js';
+
     import {
       writeReceipt,
       getReceipt,
+      listValidReceipts,
       getReceiptStats,
-      ZERO_HASH_FOR_EMPTY_DEGRADATION_LOG
+      constitutionalValidate,
+      ZERO_HASH_FOR_EMPTY_DEGRADATION_LOG,
+      ConfidenceLevel,
+      RejectionCode
     } from './indexeddb-transaction-wrapper.js';
 
     window.__modules = {
       writeReceipt,
       getReceipt,
+      listValidReceipts,
       getReceiptStats,
-      ZERO_HASH_FOR_EMPTY_DEGRADATION_LOG
+      constitutionalValidate,
+      prepareReceiptForStorage,
+      verifyDegradationLogHash,
+      ZERO_HASH_FOR_EMPTY_DEGRADATION_LOG,
+      ConfidenceLevel,
+      RejectionCode
     };
 
-    console.log('[Test Harness] TransportConstitution modules loaded');
+    window.__modulesReady = true;
+    console.log('[Test Harness] TransportConstitution v0.2 modules loaded');
   </script>
 </head>
 <body>

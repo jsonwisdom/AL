@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-const HARNESS = 'file://' + process.cwd() + '/transport-constitution/indexeddb-smoke.test.html';
+const HARNESS = 'http://127.0.0.1:3000/transport-constitution/indexeddb-smoke.test.html';
 
 function baseReceipt() {
   return {
@@ -27,10 +27,12 @@ function baseReceipt() {
 
 test.beforeEach(async ({ page }) => {
   await page.goto(HARNESS);
+  await page.waitForFunction(() => window.__modulesReady === true);
   await page.evaluate(async () => {
     await indexedDB.deleteDatabase('TransportConstitution');
   });
   await page.reload();
+  await page.waitForFunction(() => window.__modulesReady === true);
 });
 
 test('valid receipt writes', async ({ page }) => {
@@ -76,8 +78,7 @@ test('empty translation_loss requires zero sentinel', async ({ page }) => {
 
 test('non-empty translation_loss cannot use zero sentinel', async ({ page }) => {
   const outcome = await page.evaluate(async (receipt) => {
-    const { prepareReceiptForStorage, ZERO_HASH_FOR_EMPTY_DEGRADATION_LOG } = await import('./canonicalizeReceipt.js');
-    const { constitutionalValidate } = await import('./indexeddb-transaction-wrapper.js');
+    const { prepareReceiptForStorage, ZERO_HASH_FOR_EMPTY_DEGRADATION_LOG, constitutionalValidate } = window.__modules;
     const prepared = await prepareReceiptForStorage(receipt);
     prepared.degradationLogHash = ZERO_HASH_FOR_EMPTY_DEGRADATION_LOG;
     return constitutionalValidate(prepared, receipt);
