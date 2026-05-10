@@ -35,6 +35,54 @@ def execute_primitive(primitive: str, context: Dict[str, Any]) -> Dict[str, Any]
     }
 
 
+def _rollback_if_active(conn) -> None:
+    try:
+        conn.execute("ROLLBACK")
+    except sqlite3.OperationalError:
+        pass
+
+
+def reserve_nullifier(registry_conn, promotion_id: str, nullifier: str):
+    """Atomic nullifier reservation with BEGIN IMMEDIATE.
+
+    Returns (reserved_nullifier, reason_code, reason_text).
+    Exactly one caller may reserve a nullifier before proof verification.
+    """
+    registry_conn.execute("BEGIN IMMEDIATE")
+
+    try:
+        existing = registry_conn.execute(
+            "SELECT consumed, attempt_status FROM consumption_registry WHERE nullifier_hash = ?",
+            (nullifier,),
+        ).fetchone()
+
+        if existing:
+            registry_conn.execute("ROLLBACK")
+            if existing[0]:
+                return None, "E001", "ALREADY_CONSUMED"
+            return None, "E010", "ALREADY_RESERVED"
+
+        registry_conn.execute(
+            """
+            INSERT INTO consumption_registry
+            (promotion_id, consumed, nullifier_hash,
+             consumption_type, last_attempt_at_unix_ms, attempt_status)
+            VALUES (?, FALSE, ?, 'zk_pending', ?, 'reserved')
+            """,
+            (
+                promotion_id,
+                nullifier,
+                now_ms(),
+            ),
+        )
+        registry_conn.commit()
+        return nullifier, None, None
+
+    except Exception:
+        _rollback_if_active(registry_conn)
+        raise
+
+
 def _update_attempt_status(
     conn,
     nullifier: str,
@@ -97,6 +145,37 @@ def log_zk_attempt(
     return attempt_id
 
 
+def log_nullifier_lifecycle(
+    nullifier: str,
+    event_type: str,
+    conn,
+    metadata: Optional[Dict[str, Any]] = None,
+):
+    """Best-effort append-only lifecycle audit log.
+
+    If the host schema does not include nullifier_lifecycle_log yet, skip without
+    affecting verifier semantics.
+    """
+    try:
+        conn.execute(
+            """
+            INSERT INTO nullifier_lifecycle_log
+            (event_id, nullifier_hash, event_type, timestamp_unix_ms, metadata_json)
+            VALUES (?, ?, ?, ?, ?)
+            """,
+            (
+                sha256(f"{nullifier}:{event_type}:{now_ms()}"),
+                nullifier,
+                event_type,
+                now_ms(),
+                json.dumps(metadata or {}),
+            ),
+        )
+        conn.commit()
+    except sqlite3.OperationalError:
+        pass
+
+
 class ZKVerificationError(Exception):
     pass
 
@@ -122,35 +201,12 @@ def present_zk_visa(
     nullifier = public_inputs["nullifier_hash"]
 
     try:
-        registry_conn.execute(
-            """
-            INSERT INTO consumption_registry
-            (promotion_id, consumed, nullifier_hash,
-             consumption_type, last_attempt_at_unix_ms, attempt_status)
-            VALUES (?, FALSE, ?, 'zk_pending', ?, 'reserved')
-            """,
-            (
-                public_inputs["promotion_id"],
-                nullifier,
-                now_ms(),
-            ),
+        _, err_code, err_text = reserve_nullifier(
+            registry_conn,
+            public_inputs["promotion_id"],
+            nullifier,
         )
-        registry_conn.commit()
-
     except sqlite3.IntegrityError:
-        status = registry_conn.execute(
-            "SELECT consumed, attempt_status FROM consumption_registry WHERE nullifier_hash = ?",
-            (nullifier,),
-        ).fetchone()
-
-        if status and status[0]:
-            log_zk_attempt(nullifier, "REJECTED", "E001", registry_conn)
-            return {
-                "result": "REJECTED",
-                "reason_code": "E001",
-                "reason_text": "ALREADY_CONSUMED",
-            }
-
         log_zk_attempt(nullifier, "REJECTED", "E010", registry_conn)
         return {
             "result": "REJECTED",
@@ -158,6 +214,15 @@ def present_zk_visa(
             "reason_text": "ALREADY_RESERVED",
         }
 
+    if err_code:
+        log_zk_attempt(nullifier, "REJECTED", err_code, registry_conn)
+        return {
+            "result": "REJECTED",
+            "reason_code": err_code,
+            "reason_text": err_text,
+        }
+
+    log_nullifier_lifecycle(nullifier, "RESERVED", registry_conn)
     log_zk_attempt(nullifier, "ATTEMPT_STARTED", None, registry_conn)
 
     try:
@@ -168,6 +233,7 @@ def present_zk_visa(
                 "REJECTED",
                 "E002_BAD_SIGNATURE",
             )
+            log_nullifier_lifecycle(nullifier, "REJECTED", registry_conn, {"reason_code": "E002_BAD_SIGNATURE"})
             return {
                 "result": "REJECTED",
                 "reason_code": "E002_BAD_SIGNATURE",
@@ -181,6 +247,7 @@ def present_zk_visa(
                 "REJECTED",
                 "E007",
             )
+            log_nullifier_lifecycle(nullifier, "REJECTED", registry_conn, {"reason_code": "E007"})
             return {
                 "result": "REJECTED",
                 "reason_code": "E007",
@@ -199,6 +266,7 @@ def present_zk_visa(
                 "REJECTED",
                 "E002_BAD_PROOF",
             )
+            log_nullifier_lifecycle(nullifier, "REJECTED", registry_conn, {"reason_code": "E002_BAD_PROOF"})
             return {
                 "result": "REJECTED",
                 "reason_code": "E002_BAD_PROOF",
@@ -212,6 +280,7 @@ def present_zk_visa(
                 "REJECTED",
                 "E006",
             )
+            log_nullifier_lifecycle(nullifier, "REJECTED", registry_conn, {"reason_code": "E006"})
             return {
                 "result": "REJECTED",
                 "reason_code": "E006",
@@ -227,6 +296,7 @@ def present_zk_visa(
                 "REJECTED",
                 "E005",
             )
+            log_nullifier_lifecycle(nullifier, "REJECTED", registry_conn, {"reason_code": "E005"})
             return {
                 "result": "REJECTED",
                 "reason_code": "E005",
@@ -240,6 +310,7 @@ def present_zk_visa(
                 "REJECTED",
                 "E005",
             )
+            log_nullifier_lifecycle(nullifier, "REJECTED", registry_conn, {"reason_code": "E005"})
             return {
                 "result": "REJECTED",
                 "reason_code": "E005",
@@ -257,6 +328,7 @@ def present_zk_visa(
             "SUCCESS",
             None,
         )
+        log_nullifier_lifecycle(nullifier, "SUCCESS", registry_conn)
 
         return {
             "result": execution_result,
@@ -273,6 +345,7 @@ def present_zk_visa(
             "E099",
             {"error": str(exc)},
         )
+        log_nullifier_lifecycle(nullifier, "REJECTED", registry_conn, {"reason_code": "E099", "error": str(exc)})
 
         return {
             "result": "REJECTED",
