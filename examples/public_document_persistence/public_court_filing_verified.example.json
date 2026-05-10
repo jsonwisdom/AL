@@ -1,0 +1,37 @@
+{
+  "type": "PUBLIC_DOCUMENT_PERSISTENCE_RECEIPT",
+  "subject": "public_court_filing_verified_example",
+  "claim_mode": "existence_and_custody_only",
+  "allegation_mode": "blocked",
+  "existence": {
+    "status": "verified",
+    "source_uri": "REPLACE_WITH_PUBLIC_COURT_FILING_URI",
+    "document_hash": "REPLACE_WITH_SHA256_DOCUMENT_HASH"
+  },
+  "custody": [
+    {
+      "holder": "public_court_records_system",
+      "from": null,
+      "to": null,
+      "authority": "public_docket_or_court_record"
+    }
+  ],
+  "mutation_history": [],
+  "redaction_state": "unknown",
+  "release_timeline": [
+    {
+      "event": "public_access_observed",
+      "timestamp": "REPLACE_WITH_OBSERVATION_TIMESTAMP",
+      "source_uri": "REPLACE_WITH_PUBLIC_COURT_FILING_URI"
+    }
+  ],
+  "verification_path": "download_public_filing -> compute_sha256 -> compare_document_hash -> classify_existence_verified",
+  "destruction_authorization": {
+    "status": "not_destroyed",
+    "authorized_by": null,
+    "authority": null,
+    "date": null
+  },
+  "verification_status": "verified",
+  "claim_status": "verified"
+}
