@@ -1,38 +1,30 @@
 {
-  "title": "Due Process at Machine Speed",
-  "subtitle": "The Constitutional Requirement for Replayable Administrative Records",
-  "version": "1.0.0",
+  "@context": "https://www.w3.org/ns/activitystreams",
+  "type": "Service",
+  "name": "Due Process at Machine Speed",
+  "version": "v0.1.0",
   "last_updated": "2026-05-10",
-  "repository": "https://github.com/jsonwisdom/AL",
-  "landing_page": "/dist/index.html",
-  "description": "A constitutional framework for machine-speed government decisions grounded in procedural due process, administrative record doctrine, and meaningful review.",
-  "doctrine": [
-    "NO MANIFEST, NO AUTHORITY",
-    "NO REPLAY, NO AUTOMATED POWER",
-    "NO PLAIN-LANGUAGE EXPLANATION, NO AUTOMATED AUTHORITY",
-    "A DELAY THAT FUNCTIONS AS A DENIAL IS A DECISION"
-  ],
+  "canonical_url": "https://jsonwisdom.github.io/AL/",
+  "landing_html": "https://jsonwisdom.github.io/AL/index.html",
+  "description": "A constitutional framework for machine-speed government decisions. Not AI ethics; procedural due process applied to automated public power.",
   "artifacts": {
-    "law_review_article": {
-      "title": "Due Process at Machine Speed",
-      "pdf": "/dist/pdf/due-process-at-machine-speed.pdf",
-      "source": "/docs/legal/DUE_PROCESS_AT_MACHINE_SPEED.md"
-    },
-    "model_judicial_opinion": {
-      "title": "Model Judicial Opinion",
-      "pdf": "/dist/pdf/model-judicial-opinion.pdf",
-      "source": "/docs/legal/MODEL_JUDICIAL_OPINION.md"
-    },
-    "public_explainer": {
-      "title": "The Computer Said No",
-      "pdf": "/dist/pdf/the-computer-said-no.pdf",
-      "source": "/docs/public/THE_COMPUTER_SAID_NO.md"
-    },
-    "litigation_package": {
-      "title": "Litigation Package",
-      "pdf": "/dist/pdf/litigation-package.pdf"
-    }
+    "framework_pdf": "/dist/pdf/due-process-at-machine-speed.pdf",
+    "model_opinion_pdf": "/dist/pdf/model-judicial-opinion.pdf",
+    "citizen_explainer_pdf": "/dist/pdf/the-computer-said-no.pdf",
+    "litigation_package_pdf": "/dist/pdf/litigation-package.pdf"
   },
+  "source_artifacts": {
+    "law_review_article": "/docs/legal/DUE_PROCESS_AT_MACHINE_SPEED.md",
+    "model_judicial_opinion": "/docs/legal/MODEL_JUDICIAL_OPINION.md",
+    "public_explainer": "/docs/public/THE_COMPUTER_SAID_NO.md",
+    "constitutional_operating_doctrine": "/docs/policy/CONSTITUTIONAL_OPERATING_DOCTRINE.md"
+  },
+  "doctrine_block": "NO MANIFEST, NO AUTHORITY. NO REPLAY, NO AUTOMATED POWER. NO PLAIN-LANGUAGE EXPLANATION, NO AUTOMATED AUTHORITY. A DELAY THAT FUNCTIONS AS A DENIAL IS A DECISION.",
+  "plain_language_doctrine": "When an automated system significantly affects liberty, property, benefits, eligibility, or substantial rights, due process requires meaningful notice, plain-language explanation, timely human review, preserved appeal rights, and a reviewable record of the machine-mediated decision.",
+  "source_repo": "https://github.com/jsonwisdom/AL/tree/master/docs",
+  "distribution_repo": "https://github.com/jsonwisdom/AL/tree/master/dist",
+  "repository": "https://github.com/jsonwisdom/AL",
+  "cite_as": "Due Process at Machine Speed Framework v0.1.0 (2026), https://jsonwisdom.github.io/AL/dist/pdf/due-process-at-machine-speed.pdf",
   "authors": [
     "Jay Wisdom"
   ],
