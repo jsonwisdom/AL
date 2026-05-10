@@ -52,7 +52,7 @@ def main():
     receipt_parts = {
         "circuit_hash": circuit_hash,
         "noir_version": noir_version,
-        "timestamp": datetime.utcnow().isoformat()
+        "timestamp": datetime.now(timezone.utc).isoformat()
     }
     build_receipt_hash = sha256_json(receipt_parts)
     result["build_receipt_hash"] = build_receipt_hash
