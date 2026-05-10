@@ -1,4 +1,4 @@
-name: Build Distribution Layer
+name: Build Citable Distribution Layer
 
 on:
   workflow_dispatch:
@@ -10,6 +10,9 @@ on:
       - 'dist/**'
       - '.github/workflows/build-dist.yml'
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,14 +20,22 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Install Pandoc
+      - name: Install Pandoc and TeX
         run: |
           sudo apt-get update
-          sudo apt-get install -y pandoc texlive-latex-base texlive-latex-recommended texlive-fonts-recommended
+          sudo apt-get install -y pandoc texlive-xetex texlive-latex-base texlive-latex-recommended texlive-fonts-recommended
 
       - name: Prepare PDF output directory
         run: mkdir -p dist/pdf
+
+      - name: Set version stamp
+        id: stamp
+        run: |
+          echo "date=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
+          echo "short_sha=$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
 
       - name: Render law review article
         run: |
@@ -32,7 +43,9 @@ jobs:
             -o dist/pdf/due-process-at-machine-speed.pdf \
             --pdf-engine=xelatex \
             -V geometry:margin=1in \
-            -V fontsize=12pt
+            -V fontsize=12pt \
+            -V linestretch=2
+          cp dist/pdf/due-process-at-machine-speed.pdf "dist/pdf/due-process-at-machine-speed-${{ steps.stamp.outputs.date }}-${{ steps.stamp.outputs.short_sha }}.pdf"
 
       - name: Render judicial opinion
         run: |
@@ -41,14 +54,16 @@ jobs:
             --pdf-engine=xelatex \
             -V geometry:margin=1in \
             -V fontsize=12pt
+          cp dist/pdf/model-judicial-opinion.pdf "dist/pdf/model-judicial-opinion-${{ steps.stamp.outputs.date }}-${{ steps.stamp.outputs.short_sha }}.pdf"
 
       - name: Render public explainer
         run: |
           pandoc docs/public/THE_COMPUTER_SAID_NO.md \
             -o dist/pdf/the-computer-said-no.pdf \
             --pdf-engine=xelatex \
-            -V geometry:margin=1in \
+            -V geometry:margin=0.75in \
             -V fontsize=12pt
+          cp dist/pdf/the-computer-said-no.pdf "dist/pdf/the-computer-said-no-${{ steps.stamp.outputs.date }}-${{ steps.stamp.outputs.short_sha }}.pdf"
 
       - name: Build litigation package
         run: |
@@ -62,6 +77,19 @@ jobs:
             --pdf-engine=xelatex \
             -V geometry:margin=1in \
             -V fontsize=12pt
+          cp dist/pdf/litigation-package.pdf "dist/pdf/litigation-package-${{ steps.stamp.outputs.date }}-${{ steps.stamp.outputs.short_sha }}.pdf"
+
+      - name: Commit generated PDFs
+        run: |
+          if [[ -n "$(git status --porcelain dist/pdf)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add dist/pdf
+            git commit -m "dist: rebuild citable pdf artifacts ${{ steps.stamp.outputs.date }} ${{ steps.stamp.outputs.short_sha }}"
+            git push
+          else
+            echo "No PDF changes to commit."
+          fi
 
       - name: Upload generated PDFs
         uses: actions/upload-artifact@v4
