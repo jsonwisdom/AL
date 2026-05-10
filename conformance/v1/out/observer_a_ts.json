@@ -1,0 +1,25 @@
+[
+  {
+    "vector_id": "001_positive_parity_genesis",
+    "runtime": "deno",
+    "implementation": "minimal-verifiable-kernel-ts-v1",
+    "verdict": "PASS",
+    "mismatches": [],
+    "computed": {
+      "final_root": "0x46e5cfce35b038d1387a002c2443856aef8501a9771f0250e2dc26259e23b7b5",
+      "event_count": 1,
+      "degraded": false,
+      "degradation_notes": []
+    }
+  },
+  {
+    "vector_id": "002_structural_rejection_float",
+    "runtime": "deno",
+    "implementation": "minimal-verifiable-kernel-ts-v1",
+    "verdict": "PASS",
+    "mismatches": [],
+    "computed": {
+      "rejection": "Error: Number forbidden by manifest: 3.1415926535"
+    }
+  }
+]

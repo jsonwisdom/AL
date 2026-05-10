@@ -1,0 +1,49 @@
+{
+  "inputs": {
+    "observer_a_output": "/home/computerwisdom408/AL/conformance/v1/out/observer_a_ts.json",
+    "observer_b_output": "/home/computerwisdom408/AL/conformance/v1/out/observer_b_python.json"
+  },
+  "mismatches": [
+    {
+      "mismatch": [
+        {
+          "field": "final_root",
+          "observer_a": "0x46e5cfce35b038d1387a002c2443856aef8501a9771f0250e2dc26259e23b7b5",
+          "observer_b": "0x5f007aa20f3f62fa2d2ef6c69273b7829ca8ea9c3e2562311ab9046c2f70295c"
+        }
+      ],
+      "observer_a_verdict": "PASS",
+      "observer_b_verdict": "PASS",
+      "status": "DIVERGED",
+      "vector_id": "001_positive_parity_genesis"
+    }
+  ],
+  "observers": {
+    "observer_a": "minimal-verifiable-kernel-ts-v1",
+    "observer_b": "observer-b-python-v1"
+  },
+  "receipt_type": "FIRST_CROSS_OBSERVER_CONVERGENCE_RECEIPT",
+  "status": "NOT_CONVERGED",
+  "vectors": [
+    {
+      "mismatch": [
+        {
+          "field": "final_root",
+          "observer_a": "0x46e5cfce35b038d1387a002c2443856aef8501a9771f0250e2dc26259e23b7b5",
+          "observer_b": "0x5f007aa20f3f62fa2d2ef6c69273b7829ca8ea9c3e2562311ab9046c2f70295c"
+        }
+      ],
+      "observer_a_verdict": "PASS",
+      "observer_b_verdict": "PASS",
+      "status": "DIVERGED",
+      "vector_id": "001_positive_parity_genesis"
+    },
+    {
+      "mismatch": [],
+      "observer_a_verdict": "PASS",
+      "observer_b_verdict": "PASS",
+      "status": "CONVERGED",
+      "vector_id": "002_structural_rejection_float"
+    }
+  ]
+}

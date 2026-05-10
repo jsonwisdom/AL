@@ -1,0 +1,35 @@
+[
+  {
+    "computed": {
+      "checkpoint_roots": [
+        {
+          "index": 0,
+          "root": "0x5f007aa20f3f62fa2d2ef6c69273b7829ca8ea9c3e2562311ab9046c2f70295c"
+        }
+      ],
+      "degradation_notes": [],
+      "degraded": false,
+      "event_count": 1,
+      "event_ids": [
+        "0x6737e1fcc7206aba0d8fd3b834cd31c69fe30c1d463fcb0a41f1847271353c8c"
+      ],
+      "final_root": "0x5f007aa20f3f62fa2d2ef6c69273b7829ca8ea9c3e2562311ab9046c2f70295c"
+    },
+    "implementation": "observer-b-python-v1",
+    "mismatches": [],
+    "runtime": "python-stdlib",
+    "vector_id": "001_positive_parity_genesis",
+    "verdict": "PASS"
+  },
+  {
+    "computed": {
+      "expected_failure": "FAIL_NUMBER_FORBIDDEN",
+      "rejection": "Manifest hash mismatch: 0x0000000000000000000000000000000000000000000000000000000000000000 != 0xea7997eec5fe26430ab161ab83606bc43d5c2a07eb049c7ad01b766e109dc37f"
+    },
+    "implementation": "observer-b-python-v1",
+    "mismatches": [],
+    "runtime": "python-stdlib",
+    "vector_id": "002_structural_rejection_float",
+    "verdict": "PASS"
+  }
+]
