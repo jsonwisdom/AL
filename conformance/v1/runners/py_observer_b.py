@@ -1,29 +1,18 @@
 #!/usr/bin/env python3
-"""
-Observer B — Python conformance runner for MinimalVerifiableKernel v1.
-
-Purpose:
-- provide an independent implementation path from the TypeScript kernel
-- use only Python stdlib primitives
-- emit machine-readable verdicts
-
-Important:
-- expected roots remain null until generated and independently reproduced
-- this runner must not import TS code or share kernel logic
-"""
+"""Observer B — Python stdlib conformance runner."""
 
 from __future__ import annotations
 
 import hashlib
 import json
 import pathlib
-import sys
 import unicodedata
-from typing import Any, Dict, List, Tuple
+from typing import Any, Dict, List
 
 ZERO_HASH = "0x" + "00" * 32
 ROOT = pathlib.Path(__file__).resolve().parents[3]
 VECTOR_DIR = ROOT / "conformance" / "v1" / "vectors"
+REJECTION_CLASSES = ["FAIL_NUMBER_FORBIDDEN", "FAIL_MANIFEST_HASH_MISMATCH", "FAIL_INDEX_GAP", "FAIL_UNKNOWN"]
 
 
 def sha256_hex(data: bytes) -> str:
@@ -31,7 +20,6 @@ def sha256_hex(data: bytes) -> str:
 
 
 def stable_json_string(value: Any) -> str:
-    """Small deterministic JSON serializer aligned to the current TS kernel surface."""
     if value is None:
         return "null"
     if value is True:
@@ -40,19 +28,12 @@ def stable_json_string(value: Any) -> str:
         return "false"
     if isinstance(value, str):
         return json.dumps(value, ensure_ascii=False, separators=(",", ":"))
-    if isinstance(value, int):
-        raise ValueError(f"Number forbidden by manifest: {value}")
-    if isinstance(value, float):
+    if isinstance(value, (int, float)):
         raise ValueError(f"Number forbidden by manifest: {value}")
     if isinstance(value, list):
         return "[" + ",".join(stable_json_string(v) for v in value) + "]"
     if isinstance(value, dict):
-        parts = []
-        for key in sorted(value.keys()):
-            if not isinstance(key, str):
-                raise ValueError(f"Object key must be string: {key!r}")
-            parts.append(stable_json_string(key) + ":" + stable_json_string(value[key]))
-        return "{" + ",".join(parts) + "}"
+        return "{" + ",".join(stable_json_string(k) + ":" + stable_json_string(value[k]) for k in sorted(value.keys())) + "}"
     raise ValueError(f"Unsupported JSON value type: {type(value).__name__}")
 
 
@@ -77,9 +58,7 @@ def enforce_lf(value: Any) -> Any:
 
 
 def canonical_bytes(payload: Any) -> bytes:
-    working = normalize_nfc(payload)
-    working = enforce_lf(working)
-    text = stable_json_string(working)
+    text = stable_json_string(enforce_lf(normalize_nfc(payload)))
     if "\n" in text:
         raise ValueError("Canonical JSON must be single-line")
     return text.encode("utf-8")
@@ -91,18 +70,26 @@ def hash_manifest(manifest: Dict[str, Any]) -> str:
     return sha256_hex(stable_json_string(copy).encode("utf-8"))
 
 
-def merkle_root(state: Dict[str, str]) -> str:
-    lines = []
-    for key in sorted(state.keys()):
-        lines.append(f"{key}:{state[key]}")
-    return sha256_hex("\n".join(lines).encode("utf-8"))
+def state_root(state: Dict[str, str]) -> str:
+    serialized = "\n".join(f"{key}:{state[key]}" for key in sorted(state.keys()))
+    return sha256_hex(serialized.encode("utf-8"))
+
+
+def rejection_class(exc: Exception) -> str:
+    msg = str(exc)
+    if "Number forbidden" in msg or "Float" in msg:
+        return "FAIL_NUMBER_FORBIDDEN"
+    if "Manifest hash mismatch" in msg:
+        return "FAIL_MANIFEST_HASH_MISMATCH"
+    if "Index must be gap-free" in msg:
+        return "FAIL_INDEX_GAP"
+    return "FAIL_UNKNOWN"
 
 
 class ObserverBKernel:
     def __init__(self, manifest: Dict[str, Any]) -> None:
-        self.manifest = dict(manifest)
-        claimed = self.manifest.get("hash")
-        if claimed in (None, "SELF"):
+        self.manifest = json.loads(json.dumps(manifest, separators=(",", ":")))
+        if self.manifest.get("hash") in (None, "SELF"):
             self.manifest["hash"] = hash_manifest(self.manifest)
         computed = hash_manifest(self.manifest)
         if self.manifest["hash"] != computed:
@@ -114,16 +101,9 @@ class ObserverBKernel:
         if raw.get("index") != expected_index:
             raise ValueError(f"Index must be gap-free: expected {expected_index}, got {raw.get('index')}")
         payload = json.loads(json.dumps(raw["payload"], separators=(",", ":")))
-        if payload.get("manifest_hash") == "SELF":
-            payload["manifest_hash"] = self.manifest["hash"]
         event_id = sha256_hex(canonical_bytes(payload))
         parent_hash = self.events[-1]["id"] if self.events else ZERO_HASH
-        self.events.append({
-            "id": event_id,
-            "index": raw["index"],
-            "manifestUsed": self.manifest["hash"],
-            "parentHash": parent_hash,
-        })
+        self.events.append({"id": event_id, "index": raw["index"], "manifestUsed": self.manifest["hash"], "parentHash": parent_hash})
         return event_id
 
     def replay(self) -> Dict[str, Any]:
@@ -134,16 +114,8 @@ class ObserverBKernel:
             state[f"event:{idx}:id"] = event["id"]
             state[f"event:{idx}:manifest"] = event["manifestUsed"]
             state[f"event:{idx}:parent"] = event["parentHash"]
-            if idx % 1000 == 0:
-                checkpoints.append({"index": idx, "root": merkle_root(state)})
-        return {
-            "root": merkle_root(state),
-            "eventCount": len(self.events),
-            "checkpoints": checkpoints,
-            "manifestUsed": self.manifest["hash"],
-            "degraded": False,
-            "degradationNotes": [],
-        }
+            checkpoints.append({"index": idx, "root": state_root(state)})
+        return {"root": state_root(state), "eventCount": len(self.events), "checkpoints": checkpoints, "manifestUsed": self.manifest["hash"], "degraded": False, "degradationNotes": []}
 
 
 def load_vector(name: str) -> Dict[str, Any]:
@@ -153,55 +125,19 @@ def load_vector(name: str) -> Dict[str, Any]:
 
 def run_vector(vector: Dict[str, Any]) -> Dict[str, Any]:
     try:
-        manifest = vector.get("manifest") or {
-            "version": "1.0.0",
-            "hash": ZERO_HASH,
-            "rules": {
-                "json": "RFC8785",
-                "text_encoding": "UTF-8",
-                "text_normalization": "NFC",
-                "line_endings": "LF",
-                "float_policy": "forbidden",
-                "timestamp_format": "TAI64",
-                "ordering": "index-ascending",
-            },
-            "pin": {"hashFunction": "SHA-256", "hashFunctionSpec": "FIPS 180-4"},
-        }
+        manifest = vector.get("manifest") or load_vector("001_positive_parity_genesis.json")["manifest"]
         kernel = ObserverBKernel(manifest)
         event_ids = [kernel.append_event(event) for event in vector["events"]]
         replay = kernel.replay()
-        return {
-            "vector_id": vector["vector_id"],
-            "runtime": "python-stdlib",
-            "implementation": "observer-b-python-v1",
-            "verdict": "PASS",
-            "mismatches": [],
-            "computed": {
-                "event_ids": event_ids,
-                "checkpoint_roots": replay["checkpoints"],
-                "final_root": replay["root"],
-                "event_count": replay["eventCount"],
-                "degraded": replay["degraded"],
-                "degradation_notes": replay["degradationNotes"],
-            },
-        }
+        return {"vector_id": vector["vector_id"], "runtime": "python-stdlib", "implementation": "observer-b-python-v1", "verdict": "PASS", "mismatches": [], "computed": {"event_ids": event_ids, "checkpoint_roots": replay["checkpoints"], "final_root": replay["root"], "event_count": replay["eventCount"], "degraded": replay["degraded"], "degradation_notes": replay["degradationNotes"], "manifest_used": replay["manifestUsed"], "rejection_class": None, "rejection_message": None}}
     except Exception as exc:
         expected_failure = vector.get("acceptance_criteria", {}).get("failure_class")
-        return {
-            "vector_id": vector.get("vector_id", "UNKNOWN"),
-            "runtime": "python-stdlib",
-            "implementation": "observer-b-python-v1",
-            "verdict": "PASS" if expected_failure else "FAIL",
-            "mismatches": [] if expected_failure else [str(exc)],
-            "computed": {"rejection": str(exc), "expected_failure": expected_failure},
-        }
+        cls = rejection_class(exc)
+        return {"vector_id": vector.get("vector_id", "UNKNOWN"), "runtime": "python-stdlib", "implementation": "observer-b-python-v1", "verdict": "PASS" if expected_failure else "FAIL", "mismatches": [] if expected_failure else [str(exc)], "computed": {"rejection_class": cls, "rejection_message": str(exc), "expected_failure": expected_failure}}
 
 
 def main() -> int:
-    vectors = [
-        load_vector("001_positive_parity_genesis.json"),
-        load_vector("002_structural_rejection_float.json"),
-    ]
+    vectors = [load_vector(p.name) for p in sorted(VECTOR_DIR.glob("*.json"))]
     verdicts = [run_vector(v) for v in vectors]
     print(json.dumps(verdicts, indent=2, sort_keys=True))
     return 0 if all(v["verdict"] == "PASS" for v in verdicts) else 1
