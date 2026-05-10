@@ -204,4 +204,21 @@ contract MigrationGuardTest is Test {
         assertTrue(guard.passiveWitnessRecords(r.sourceWitnessHash));
         assertFalse(guard.failureLog(r.sourceWitnessHash));
     }
+
+    function test_HigherConfidencePreservedWithoutPromotion() public {
+        MigrationGuard.MigrationReceipt memory r = _buildReceipt(
+            keccak256("higher-preserved"),
+            4,
+            4,
+            guard.ZERO_HASH_FOR_EMPTY_DEGRADATION_LOG(),
+            "",
+            0x05,
+            false
+        );
+
+        guard.submitMigration(r);
+
+        assertTrue(guard.passiveWitnessRecords(r.sourceWitnessHash));
+        assertFalse(guard.failureLog(r.sourceWitnessHash));
+    }
 }
