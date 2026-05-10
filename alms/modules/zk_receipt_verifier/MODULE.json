@@ -1,0 +1,21 @@
+{
+  "module_id": "alms.zk_receipt_verifier.v1",
+  "status": "REPO_TEST_GREEN",
+  "source_path": "runtime_lattice",
+  "test_command": "python3 -m pytest runtime_lattice/tests/test_zk_adversarial.py -v --tb=short",
+  "test_result": "5 passed, 0 failed",
+  "verified_commit": "80fe507c880519868535d35afc3fae0b080b6e10",
+  "verified_at": "2025-05-10T22:18:00Z",
+  "invariants": [
+    "nullifier reserve before proof verification",
+    "bad proof consumes nullifier",
+    "revoked key consumes nullifier",
+    "missing public input does not reserve nullifier",
+    "no packaging before repo-green"
+  ],
+  "dependencies": [],
+  "entry_points": {
+    "zk_verifier": "present_zk_visa",
+    "validator": "enforce_runtime_legality"
+  }
+}
