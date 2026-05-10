@@ -1,0 +1,70 @@
+name: Build Distribution Layer
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+    paths:
+      - 'docs/**'
+      - 'dist/**'
+      - '.github/workflows/build-dist.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Pandoc
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-latex-base texlive-latex-recommended texlive-fonts-recommended
+
+      - name: Prepare PDF output directory
+        run: mkdir -p dist/pdf
+
+      - name: Render law review article
+        run: |
+          pandoc docs/legal/DUE_PROCESS_AT_MACHINE_SPEED.md \
+            -o dist/pdf/due-process-at-machine-speed.pdf \
+            --pdf-engine=xelatex \
+            -V geometry:margin=1in \
+            -V fontsize=12pt
+
+      - name: Render judicial opinion
+        run: |
+          pandoc docs/legal/MODEL_JUDICIAL_OPINION.md \
+            -o dist/pdf/model-judicial-opinion.pdf \
+            --pdf-engine=xelatex \
+            -V geometry:margin=1in \
+            -V fontsize=12pt
+
+      - name: Render public explainer
+        run: |
+          pandoc docs/public/THE_COMPUTER_SAID_NO.md \
+            -o dist/pdf/the-computer-said-no.pdf \
+            --pdf-engine=xelatex \
+            -V geometry:margin=1in \
+            -V fontsize=12pt
+
+      - name: Build litigation package
+        run: |
+          cat \
+            docs/policy/CONSTITUTIONAL_OPERATING_DOCTRINE.md \
+            docs/legal/AGENCY_OPPOSITION_BRIEF.md \
+            docs/legal/REPLY_BRIEF.md > /tmp/litigation-package.md
+
+          pandoc /tmp/litigation-package.md \
+            -o dist/pdf/litigation-package.pdf \
+            --pdf-engine=xelatex \
+            -V geometry:margin=1in \
+            -V fontsize=12pt
+
+      - name: Upload generated PDFs
+        uses: actions/upload-artifact@v4
+        with:
+          name: machine-speed-due-process-pdfs
+          path: dist/pdf/*.pdf
