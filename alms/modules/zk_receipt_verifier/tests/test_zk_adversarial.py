@@ -1,4 +1,5 @@
 import sqlite3
+import threading
 from datetime import datetime, timedelta
 
 import pytest
@@ -64,6 +65,18 @@ def registry():
             result TEXT,
             reason_code TEXT,
             verifier_identity_hash TEXT,
+            metadata_json TEXT
+        )
+        """
+    )
+
+    conn.execute(
+        """
+        CREATE TABLE nullifier_lifecycle_log (
+            event_id TEXT,
+            nullifier_hash TEXT,
+            event_type TEXT,
+            timestamp_unix_ms INTEGER,
             metadata_json TEXT
         )
         """
@@ -173,3 +186,104 @@ def test_revoked_key_metadata_fail(registry):
     )
 
     assert result["reason_code"] == "E007"
+
+
+
+def test_concurrent_double_submit_with_begin_immediate(tmp_path):
+    """File-backed concurrency test for BEGIN IMMEDIATE reservation semantics."""
+    db_path = tmp_path / "zk_registry.sqlite"
+
+    bootstrap = sqlite3.connect(str(db_path), isolation_level=None)
+
+    bootstrap.execute(
+        """
+        CREATE TABLE consumption_registry (
+            promotion_id TEXT PRIMARY KEY,
+            consumed BOOLEAN DEFAULT FALSE,
+            nullifier_hash TEXT UNIQUE,
+            consumption_type TEXT,
+            attempt_status TEXT,
+            reason_code TEXT,
+            metadata TEXT,
+            last_attempt_at_unix_ms INTEGER
+        )
+        """
+    )
+
+    bootstrap.execute(
+        """
+        CREATE TABLE attempt_log (
+            attempt_id TEXT,
+            promotion_id TEXT,
+            timestamp_unix_ms INTEGER,
+            result TEXT,
+            reason_code TEXT,
+            verifier_identity_hash TEXT,
+            metadata_json TEXT
+        )
+        """
+    )
+
+    bootstrap.execute(
+        """
+        CREATE TABLE nullifier_lifecycle_log (
+            event_id TEXT,
+            nullifier_hash TEXT,
+            event_type TEXT,
+            timestamp_unix_ms INTEGER,
+            metadata_json TEXT
+        )
+        """
+    )
+    bootstrap.close()
+
+    nullifier = "0xrace_test"
+    results = []
+    errors = []
+    lock = threading.Lock()
+
+    def worker(worker_id):
+        try:
+            conn = sqlite3.connect(
+                str(db_path),
+                timeout=5.0,
+                isolation_level=None,
+            )
+
+            result = present_zk_visa(
+                zk_proof=MockProof(),
+                public_inputs={
+                    "nullifier_hash": nullifier,
+                    "promotion_id": f"promo_{worker_id}",
+                    "authorized_primitive": "TRANSFER",
+                },
+                requested_primitive="TRANSFER",
+                registry_conn=conn,
+                noir_verifier=MockVerifier(valid=True),
+            )
+
+            with lock:
+                results.append(result)
+
+            conn.close()
+
+        except Exception as exc:
+            with lock:
+                errors.append(str(exc))
+
+    threads = [threading.Thread(target=worker, args=(i,)) for i in range(10)]
+
+    for thread in threads:
+        thread.start()
+
+    for thread in threads:
+        thread.join()
+
+    successes = [r for r in results if r.get("result") != "REJECTED"]
+    rejections = [r for r in results if r.get("result") == "REJECTED"]
+
+    assert len(successes) == 1
+    assert len(errors) == 0
+
+    for rejected in rejections:
+        assert rejected["reason_code"] in ("E001", "E010")
