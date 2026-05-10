@@ -1,0 +1,20 @@
+{
+  "type": "PUBLIC_DOCUMENT_HASH_DRIFT_RECEIPT",
+  "subject": "public_court_filing_hash_drift_example",
+  "source_uri": "REPLACE_WITH_PUBLIC_DOCUMENT_URI",
+  "previous_document_hash": "sha256:REPLACE_WITH_PREVIOUS_HASH",
+  "observed_document_hash": "sha256:REPLACE_WITH_OBSERVED_HASH",
+  "hash_algorithm": "sha256",
+  "observed_at": "REPLACE_WITH_OBSERVATION_TIMESTAMP",
+  "drift_status": "hash_mismatch",
+  "previous_verification_status": "verified",
+  "recommended_verification_status": "hash_mismatch",
+  "recommended_claim_status": "indeterminate",
+  "allegation_mode": "blocked",
+  "review_required": true,
+  "notes": [
+    "Observed content hash differs from previously recorded document hash.",
+    "Hash drift is an event, not automatically deception.",
+    "Manual review required before issuing any replacement verified receipt."
+  ]
+}
