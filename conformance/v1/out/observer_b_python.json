@@ -4,16 +4,19 @@
       "checkpoint_roots": [
         {
           "index": 0,
-          "root": "0x5f007aa20f3f62fa2d2ef6c69273b7829ca8ea9c3e2562311ab9046c2f70295c"
+          "root": "0x46e5cfce35b038d1387a002c2443856aef8501a9771f0250e2dc26259e23b7b5"
         }
       ],
       "degradation_notes": [],
       "degraded": false,
       "event_count": 1,
       "event_ids": [
-        "0x6737e1fcc7206aba0d8fd3b834cd31c69fe30c1d463fcb0a41f1847271353c8c"
+        "0x3db64342a870437653dbacf43cd8db0b2664e17f057519d2eb21342328e50b07"
       ],
-      "final_root": "0x5f007aa20f3f62fa2d2ef6c69273b7829ca8ea9c3e2562311ab9046c2f70295c"
+      "final_root": "0x46e5cfce35b038d1387a002c2443856aef8501a9771f0250e2dc26259e23b7b5",
+      "manifest_used": "0xea7997eec5fe26430ab161ab83606bc43d5c2a07eb049c7ad01b766e109dc37f",
+      "rejection_class": null,
+      "rejection_message": null
     },
     "implementation": "observer-b-python-v1",
     "mismatches": [],
@@ -24,12 +27,48 @@
   {
     "computed": {
       "expected_failure": "FAIL_NUMBER_FORBIDDEN",
-      "rejection": "Manifest hash mismatch: 0x0000000000000000000000000000000000000000000000000000000000000000 != 0xea7997eec5fe26430ab161ab83606bc43d5c2a07eb049c7ad01b766e109dc37f"
+      "rejection_class": "FAIL_NUMBER_FORBIDDEN",
+      "rejection_message": "Number forbidden by manifest: 3.1415926535"
     },
     "implementation": "observer-b-python-v1",
     "mismatches": [],
     "runtime": "python-stdlib",
     "vector_id": "002_structural_rejection_float",
+    "verdict": "PASS"
+  },
+  {
+    "computed": {
+      "checkpoint_roots": [
+        {
+          "index": 0,
+          "root": "0x23f3bddd052689bb3eb0e453bab1ff6bc9a70605222d16063bcbd520df5d66b5"
+        },
+        {
+          "index": 1,
+          "root": "0xb392de5798f1c4ca3de5ed617579f644811eb01b6f7e9d9937b50616071c100e"
+        },
+        {
+          "index": 2,
+          "root": "0xd2e4fccd4a2787462abe74be98fab468de4c885178586a88daed28f10b956901"
+        }
+      ],
+      "degradation_notes": [],
+      "degraded": false,
+      "event_count": 3,
+      "event_ids": [
+        "0x9e12ad8df09c0c5fce24b1ea8db19d2f88b52c196c96bbbaf351506f8b051251",
+        "0x4a29ab81b2c6af473db9429aabf8b7dc64fee752ee0c26226cdc5b18917dead6",
+        "0xed248250d03a70564635fadf00b0edb9bf7df9f680086c92a1535c4bc4f5bdbf"
+      ],
+      "final_root": "0xd2e4fccd4a2787462abe74be98fab468de4c885178586a88daed28f10b956901",
+      "manifest_used": "0xea7997eec5fe26430ab161ab83606bc43d5c2a07eb049c7ad01b766e109dc37f",
+      "rejection_class": null,
+      "rejection_message": null
+    },
+    "implementation": "observer-b-python-v1",
+    "mismatches": [],
+    "runtime": "python-stdlib",
+    "vector_id": "003_multi_event_checkpoint_alignment",
     "verdict": "PASS"
   }
 ]

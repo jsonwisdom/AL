@@ -6,10 +6,25 @@
     "verdict": "PASS",
     "mismatches": [],
     "computed": {
+      "event_ids": [
+        "0x3db64342a870437653dbacf43cd8db0b2664e17f057519d2eb21342328e50b07"
+      ],
+      "canonical_payload_sha256": [
+        "0x3db64342a870437653dbacf43cd8db0b2664e17f057519d2eb21342328e50b07"
+      ],
+      "checkpoint_roots": [
+        {
+          "index": 0,
+          "root": "0x46e5cfce35b038d1387a002c2443856aef8501a9771f0250e2dc26259e23b7b5"
+        }
+      ],
       "final_root": "0x46e5cfce35b038d1387a002c2443856aef8501a9771f0250e2dc26259e23b7b5",
       "event_count": 1,
       "degraded": false,
-      "degradation_notes": []
+      "degradation_notes": [],
+      "manifest_used": "0xea7997eec5fe26430ab161ab83606bc43d5c2a07eb049c7ad01b766e109dc37f",
+      "rejection_class": null,
+      "rejection_message": null
     }
   },
   {
@@ -19,7 +34,48 @@
     "verdict": "PASS",
     "mismatches": [],
     "computed": {
-      "rejection": "Error: Number forbidden by manifest: 3.1415926535"
+      "rejection_class": "FAIL_NUMBER_FORBIDDEN",
+      "rejection_message": "Number forbidden by manifest: 3.1415926535"
+    }
+  },
+  {
+    "vector_id": "003_multi_event_checkpoint_alignment",
+    "runtime": "deno",
+    "implementation": "minimal-verifiable-kernel-ts-v1",
+    "verdict": "PASS",
+    "mismatches": [],
+    "computed": {
+      "event_ids": [
+        "0x9e12ad8df09c0c5fce24b1ea8db19d2f88b52c196c96bbbaf351506f8b051251",
+        "0x4a29ab81b2c6af473db9429aabf8b7dc64fee752ee0c26226cdc5b18917dead6",
+        "0xed248250d03a70564635fadf00b0edb9bf7df9f680086c92a1535c4bc4f5bdbf"
+      ],
+      "canonical_payload_sha256": [
+        "0x9e12ad8df09c0c5fce24b1ea8db19d2f88b52c196c96bbbaf351506f8b051251",
+        "0x4a29ab81b2c6af473db9429aabf8b7dc64fee752ee0c26226cdc5b18917dead6",
+        "0xed248250d03a70564635fadf00b0edb9bf7df9f680086c92a1535c4bc4f5bdbf"
+      ],
+      "checkpoint_roots": [
+        {
+          "index": 0,
+          "root": "0x23f3bddd052689bb3eb0e453bab1ff6bc9a70605222d16063bcbd520df5d66b5"
+        },
+        {
+          "index": 1,
+          "root": "0xb392de5798f1c4ca3de5ed617579f644811eb01b6f7e9d9937b50616071c100e"
+        },
+        {
+          "index": 2,
+          "root": "0xd2e4fccd4a2787462abe74be98fab468de4c885178586a88daed28f10b956901"
+        }
+      ],
+      "final_root": "0xd2e4fccd4a2787462abe74be98fab468de4c885178586a88daed28f10b956901",
+      "event_count": 3,
+      "degraded": false,
+      "degradation_notes": [],
+      "manifest_used": "0xea7997eec5fe26430ab161ab83606bc43d5c2a07eb049c7ad01b766e109dc37f",
+      "rejection_class": null,
+      "rejection_message": null
     }
   }
 ]
