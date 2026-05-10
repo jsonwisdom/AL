@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.github.io/AL/schemas/public_document_persistence_receipt.schema.json",
+  "title": "Public Document Persistence Receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "type",
+    "subject",
+    "claim_mode",
+    "allegation_mode",
+    "existence",
+    "custody",
+    "mutation_history",
+    "redaction_state",
+    "release_timeline",
+    "verification_path",
+    "destruction_authorization",
+    "verification_status",
+    "claim_status"
+  ],
+  "properties": {
+    "type": { "const": "PUBLIC_DOCUMENT_PERSISTENCE_RECEIPT" },
+    "subject": { "type": "string", "minLength": 1 },
+    "claim_mode": { "enum": ["existence_and_custody_only"] },
+    "allegation_mode": { "const": "blocked" },
+    "existence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "source_uri", "document_hash"],
+      "properties": {
+        "status": { "enum": ["unknown", "claimed", "verified"] },
+        "source_uri": { "type": ["string", "null"] },
+        "document_hash": { "type": ["string", "null"] }
+      }
+    },
+    "custody": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["holder", "from", "to", "authority"],
+        "properties": {
+          "holder": { "type": "string" },
+          "from": { "type": ["string", "null"] },
+          "to": { "type": ["string", "null"] },
+          "authority": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "mutation_history": { "type": "array", "items": { "type": "object" } },
+    "redaction_state": { "enum": ["unknown", "none", "partial", "full", "sealed"] },
+    "release_timeline": { "type": "array", "items": { "type": "object" } },
+    "verification_path": { "type": ["string", "null"] },
+    "destruction_authorization": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["status", "authorized_by", "authority", "date"],
+      "properties": {
+        "status": { "enum": ["not_destroyed", "unknown", "destroyed_with_receipt", "destroyed_without_receipt"] },
+        "authorized_by": { "type": ["string", "null"] },
+        "authority": { "type": ["string", "null"] },
+        "date": { "type": ["string", "null"] }
+      }
+    },
+    "verification_status": {
+      "enum": [
+        "unknown",
+        "unverified",
+        "unavailable",
+        "sealed",
+        "pending_public_evidence",
+        "destroyed_with_receipt",
+        "destroyed_without_receipt",
+        "verified"
+      ]
+    },
+    "claim_status": { "enum": ["indeterminate", "verified", "blocked"] }
+  }
+}
