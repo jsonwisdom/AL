@@ -1,0 +1,39 @@
+{
+  "@context": "https://www.w3.org/ns/activitystreams",
+  "type": "Service",
+  "name": "Due Process at Machine Speed",
+  "version": "v0.1.0",
+  "last_updated": "2026-05-10",
+  "canonical_url": "https://jsonwisdom.github.io/AL/",
+  "landing_html": "https://jsonwisdom.github.io/AL/index.html",
+  "description": "A constitutional framework for machine-speed government decisions. Not AI ethics; procedural due process applied to automated public power.",
+  "artifacts": {
+    "framework_pdf": "/dist/pdf/due-process-at-machine-speed.pdf",
+    "model_opinion_pdf": "/dist/pdf/model-judicial-opinion.pdf",
+    "citizen_explainer_pdf": "/dist/pdf/the-computer-said-no.pdf",
+    "litigation_package_pdf": "/dist/pdf/litigation-package.pdf"
+  },
+  "versions": [
+    {
+      "date": "2026-05-10",
+      "commit": "c23ea7c",
+      "snapshot_base": "/dist/pdf/due-process-at-machine-speed-2026-05-10-c23ea7c.pdf"
+    }
+  ],
+  "source_artifacts": {
+    "law_review_article": "/docs/legal/DUE_PROCESS_AT_MACHINE_SPEED.md",
+    "model_judicial_opinion": "/docs/legal/MODEL_JUDICIAL_OPINION.md",
+    "public_explainer": "/docs/public/THE_COMPUTER_SAID_NO.md",
+    "constitutional_operating_doctrine": "/docs/policy/CONSTITUTIONAL_OPERATING_DOCTRINE.md"
+  },
+  "doctrine_block": "When an algorithmic system significantly affects an individual's liberty, property, or substantial rights, due process requires: (1) meaningful notice that a machine made or materially influenced the decision; (2) a timely, human-in-the-loop hearing before an impartial adjudicator; (3) the right to explanation in plain language; and (4) preserved human appellate review.",
+  "plain_language_doctrine": "When an automated system significantly affects liberty, property, benefits, eligibility, or substantial rights, due process requires meaningful notice, plain-language explanation, timely human review, preserved appeal rights, and a reviewable record of the machine-mediated decision.",
+  "source_repo": "https://github.com/jsonwisdom/AL/tree/master/docs",
+  "distribution_repo": "https://github.com/jsonwisdom/AL/tree/master/dist",
+  "repository": "https://github.com/jsonwisdom/AL",
+  "cite_as": "Due Process at Machine Speed Framework v0.1.0 (2026). Stable canonical version at https://jsonwisdom.github.io/AL/dist/pdf/due-process-at-machine-speed.pdf. Archive snapshots at /dist/pdf/ with ISO date and commit hash.",
+  "authors": [
+    "Jay Wisdom"
+  ],
+  "license": "Public constitutional and educational reference material"
+}
