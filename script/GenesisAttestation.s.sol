@@ -2,7 +2,7 @@
 pragma solidity ^0.8.20;
 
 import "forge-std/Script.sol";
-import { IEAS, AttestationRequest, AttestationRequestData } from "@ethereum-attestation-service/eas-contracts/contracts/IEAS.sol";
+import { IEAS, AttestationRequest, AttestationRequestData } from "eas-contracts/IEAS.sol";
 
 /// @title GenesisAttestation
 /// @notice Anchors the Constitutional Root to Base Sepolia
