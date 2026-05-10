@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.github.io/AL/schemas/public_document_hash_drift_receipt.schema.json",
+  "title": "Public Document Hash Drift Receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "type",
+    "subject",
+    "source_uri",
+    "previous_document_hash",
+    "observed_document_hash",
+    "hash_algorithm",
+    "observed_at",
+    "drift_status",
+    "previous_verification_status",
+    "recommended_verification_status",
+    "recommended_claim_status",
+    "allegation_mode",
+    "review_required",
+    "notes"
+  ],
+  "properties": {
+    "type": { "const": "PUBLIC_DOCUMENT_HASH_DRIFT_RECEIPT" },
+    "subject": { "type": "string", "minLength": 1 },
+    "source_uri": { "type": "string", "minLength": 1 },
+    "previous_document_hash": { "type": "string", "minLength": 1 },
+    "observed_document_hash": { "type": "string", "minLength": 1 },
+    "hash_algorithm": { "enum": ["sha256"] },
+    "observed_at": { "type": "string", "minLength": 1 },
+    "drift_status": {
+      "enum": [
+        "hash_match",
+        "hash_mismatch",
+        "source_unavailable",
+        "fetch_error"
+      ]
+    },
+    "previous_verification_status": {
+      "enum": [
+        "unknown",
+        "unverified",
+        "unavailable",
+        "sealed",
+        "pending_public_evidence",
+        "destroyed_with_receipt",
+        "destroyed_without_receipt",
+        "verified",
+        "stale",
+        "hash_mismatch"
+      ]
+    },
+    "recommended_verification_status": {
+      "enum": [
+        "verified",
+        "stale",
+        "hash_mismatch",
+        "pending_public_evidence",
+        "unavailable"
+      ]
+    },
+    "recommended_claim_status": { "enum": ["verified", "indeterminate", "blocked"] },
+    "allegation_mode": { "const": "blocked" },
+    "review_required": { "type": "boolean" },
+    "notes": { "type": "array", "items": { "type": "string" } }
+  }
+}
