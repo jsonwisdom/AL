@@ -2,7 +2,7 @@ import {
   GENESIS_MANIFEST,
   MinimalVerifiableKernel,
   type RawEvent
-} from "../../../src/kernel";
+} from "../../../src/kernel.ts";
 
 import vector001 from "../vectors/001_positive_parity_genesis.json" assert { type: "json" };
 import vector002 from "../vectors/002_structural_rejection_float.json" assert { type: "json" };
