@@ -1,6 +1,82 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Computer Wisdom</title><style>body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;max-width:1080px;margin:42px auto;padding:0 20px;line-height:1.55;color:#111}h1{font-size:2.7rem}.badge{display:inline-block;border:1px solid #111;border-radius:999px;padding:7px 11px;font-family:monospace;font-weight:700;margin:3px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}.card{border:1px solid #ddd;border-radius:14px;padding:18px;margin:14px 0}.nav{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}.nav a,.button{border:1px solid #111;border-radius:999px;padding:8px 12px;text-decoration:none;color:#111;font-weight:700}.rule{background:#f6f6f6;border-radius:10px;padding:14px;font-family:monospace;white-space:pre-wrap;overflow-wrap:anywhere}.muted{color:#555}</style></head><body><h1>Computer Wisdom</h1><p class="muted">Public interface to a verification protocol.</p><p><span class="badge">PORTABLE_TRUTH_LIVE</span><span class="badge">GITHUB_FIRST</span><span class="badge">META_DISTRIBUTION_ONLY</span></p><nav class="nav"><a href="proof/computer-wisdom-public-proof.html">Public Proof</a><a href="proof/">Receipt Viewer</a><a href="verify/">Verify</a><a href="attest/">ALMS Attest</a><a href="schemas/">Schemas</a><a href="fixtures/">Fixtures</a><a href="state/">State</a></nav><section class="card"><h2>Operating Rule</h2><div class="rule">GitHub hosts the bytes.
-ALMS generates the hash.
-The browser recomputes the proof.
-Public chain may witness later.
-Meta/Facebook only distribute.</div></section><section class="grid"><div class="card"><h3>Public Proof</h3><p>Portable truth page and model.</p><a class="button" href="proof/computer-wisdom-public-proof.html">Open</a></div><div class="card"><h3>Receipt Viewer</h3><p>Reads _truth/receipts/index.json and follows indexed receipt paths.</p><a class="button" href="proof/">Open</a></div><div class="card"><h3>Verifier</h3><p>Browser recomputes proof from GitHub bytes.</p><a class="button" href="verify/">Open</a></div><div class="card"><h3>ALMS Attest <span class="badge">OPERATOR</span></h3><p>Wallet-side Base/EAS witness tool. Not the public verifier.</p><a class="button" href="attest/">Open</a></div><div class="card"><h3>Schemas</h3><p>Root, federal, state, and county fixture schemas.</p><a class="button" href="schemas/">Open</a></div><div class="card"><h3>Fixtures</h3><p>Federal/state/county evidence pipeline.</p><a class="button" href="fixtures/">Open</a></div><div class="card"><h3>State</h3><p>Machine-readable latest state and root layer.</p><a class="button" href="state/">Open</a></div></section><section class="card"><h2>Latest</h2><pre id="latest" class="rule">Loading latest.json…</pre></section><script>(async()=>{try{const r=await fetch('https://api.github.com/repos/jsonwisdom/AL/contents/_truth/meta/public_exports/latest.json?ref=master',{headers:{Accept:'application/vnd.github+json'}});const m=await r.json();const raw=await fetch(m.download_url).then(x=>x.text());document.getElementById('latest').textContent=raw}catch(e){document.getElementById('latest').textContent='Could not load latest.json'}})()</script></body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Computer Wisdom — Jay's Wisdom</title>
+<style>
+:root{color-scheme:dark;--bg:#07090d;--panel:#111722;--line:#273244;--text:#eef2ff;--muted:#9aa7bd;--gold:#f8d56b;--blue:#7dd3fc;--green:#86efac;--red:#fca5a5}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#172033 0,var(--bg) 42rem);color:var(--text);font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;line-height:1.55}
+main{max-width:1120px;margin:0 auto;padding:28px 18px 72px}.hero,.card{border:1px solid var(--line);background:rgba(17,23,34,.82);border-radius:22px}.hero{padding:34px;box-shadow:0 24px 80px rgba(0,0,0,.42)}.kicker{color:var(--gold);text-transform:uppercase;letter-spacing:.12em;font-size:.78rem}h1{font-size:clamp(2.2rem,7vw,5rem);line-height:.96;margin:12px 0}h2{color:var(--blue)}p{color:var(--muted);max-width:76ch}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}.card{padding:18px}.actions,.nav{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}a.button,.nav a{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:12px 15px;text-decoration:none;color:var(--text);font-weight:700;background:#151e2d}.primary{background:linear-gradient(135deg,#2563eb,#0891b2);border-color:#38bdf8}.rule{background:#0b111b;border-radius:14px;padding:16px;color:var(--green);white-space:pre-wrap}.badge{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:.75rem;margin:4px}.warning{color:var(--red)}footer{margin-top:30px;color:#6b7280;font-size:.84rem}
+</style>
+</head>
+<body>
+<main>
+<div class="hero">
+<div class="kicker">Family Approved • Receipt Governed • Replay Before Authority</div>
+<h1>Computer Wisdom Proof First.</h1>
+<p>That is how the game starts. Before rewards, reputation, or economy, the visitor meets the receipts machine. Authentic Self Discovery Learning begins after proof.</p>
+<div>
+<span class="badge">VERIFY &gt; NARRATIVE</span>
+<span class="badge">RECEIPTS &gt; CLAIMS</span>
+<span class="badge">REPLAY &gt; AUTHORITY</span>
+</div>
+<div class="actions">
+<a class="button primary" href="proof/">Start Receipt Viewer</a>
+<a class="button" href="../_truth/receipts/index.json">Receipt Index</a>
+<a class="button" href="https://github.com/jsonwisdom/AL">GitHub Repo</a>
+</div>
+</div>
+
+<section class="card" style="margin-top:22px">
+<h2>Root Order</h2>
+<div class="rule">Family → School → Receipts → Roles → Reputation → Rewards → Economy</div>
+<p>Family is the first commons. School comes before market. Repair comes before punishment. Replay comes before authority.</p>
+</section>
+
+<section class="grid" style="margin-top:22px">
+<div class="card">
+<h2>1. Computer Wisdom Proof</h2>
+<p>Open the existing proof and receipt viewer first. The machine must show receipts before it asks for trust.</p>
+<a class="button" href="proof/">Open Viewer</a>
+</div>
+<div class="card">
+<h2>2. Authentic Self Discovery</h2>
+<p>You are not a persona here. You are a participant with agency.</p>
+</div>
+<div class="card">
+<h2>3. Learning Lab</h2>
+<p>Learn proof, replay, correction, and verification before economy surfaces.</p>
+</div>
+<div class="card">
+<h2>4. Repair Workshop</h2>
+<p>Correction begins neutral. Verified repair becomes positive. Concealment becomes negative.</p>
+</div>
+</section>
+
+<section class="card" style="margin-top:22px">
+<h2>Existing Machine Surfaces</h2>
+<nav class="nav">
+<a href="proof/">Receipt Viewer</a>
+<a href="verify/">Verify</a>
+<a href="attest/">ALMS Attest</a>
+<a href="schemas/">Schemas</a>
+<a href="fixtures/">Fixtures</a>
+<a href="state/">State</a>
+</nav>
+<p>The reboot wraps the existing machine. It does not replace it.</p>
+</section>
+
+<section class="card" style="margin-top:22px">
+<h2>Boundary</h2>
+<p>Money may support repair. Money may not purchase trust.</p>
+<p>No hidden scoring. No ghost anchors. No machine-owned sovereignty.</p>
+<p class="warning">If a page cannot point to receipts, it must say so.</p>
+</section>
+
+<footer>
+jaywisdom.base • AL Attestation Ledger • constitutional front door for the existing receipts machine
+</footer>
+</main>
+</body>
+</html>
