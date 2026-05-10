@@ -135,3 +135,90 @@ function runLineageTraversalWithRoot(uid) {
   runLineageTraversal();
 }
 </script>
+
+<!-- ====================== PHASE_4: PUBLIC REPLAY RECEIPT INDEX ====================== -->
+<h2 id="phase4" style="color:#00ff9f; border-top:2px solid #ff00aa; padding-top:30px; margin-top:40px;">
+  ⚡ PHASE 4 — PUBLIC REPLAY RECEIPT INDEX
+</h2>
+<p style="color:#888; font-style:italic;">Discoverable roots • Lineage hashes • Parity proofs • Deterministic public export</p>
+
+<button onclick="buildPublicIndex()" style="background:#ff00aa; color:#000; padding:12px 28px; font-weight:bold; margin:10px 0; border:none; cursor:pointer;">
+  REFRESH PUBLIC INDEX
+</button>
+
+<button onclick="exportPublicIndex()" style="background:#00ff9f; color:#000; padding:12px 28px; font-weight:bold; margin:10px 0 20px 10px; border:none; cursor:pointer;">
+  EXPORT PUBLIC INDEX JSON
+</button>
+
+<div id="public-index" style="background:#111; padding:20px; border:1px solid #00ff9f; font-family:monospace; overflow:auto; max-height:600px; line-height:1.5;"></div>
+
+<script>
+// PHASE_4 Public Index Engine
+const KNOWN_ROOTS = [
+  {
+    name: "Genesis",
+    uid: "0xc79d3d89dabf16db6a59ba612d0d79db68b20f127baf5fa16e454c911e2beb93",
+    description: "Transport Constitution Root",
+    parityHash: "0x9d0a723a861d852d2d34e80fc5288622aa8520395a03739a8cfdd3cb514b7f05",
+    timestamp: "2025-05-01T00:00:00Z",
+    previous: null
+  }
+];
+
+async function buildPublicIndex() {
+  const container = document.getElementById('public-index');
+  container.innerHTML = `<p style="color:#00ff9f;">🔄 Building public replay index...</p>`;
+
+  let html = `<h3 style="margin-top:0;color:#ff00aa;">PUBLIC CONSTITUTIONAL REPLAY INDEX</h3>
+    <table style="width:100%; border-collapse:collapse; font-size:0.95em;">
+      <thead><tr style="background:#1a1a1a;">
+        <th style="padding:10px; text-align:left;">Root</th>
+        <th style="padding:10px; text-align:left;">UID</th>
+        <th style="padding:10px; text-align:left;">Parity Hash</th>
+        <th style="padding:10px; text-align:left;">Lineage</th>
+      </tr></thead><tbody>`;
+
+  KNOWN_ROOTS.forEach(root => {
+    html += `
+      <tr style="border-bottom:1px solid #222;">
+        <td style="padding:10px; color:#ff00aa;">${root.name}</td>
+        <td style="padding:10px; font-family:monospace; word-break:break-all; color:#00ff9f;">${root.uid}</td>
+        <td style="padding:10px; font-family:monospace; font-size:0.9em; color:#aaa;">${root.parityHash}</td>
+        <td style="padding:10px;">${root.previous ? '← ' + root.previous.substring(0,12)+'...' : '<strong>Genesis</strong>'}</td>
+      </tr>`;
+  });
+
+  html += `</tbody></table>`;
+  container.innerHTML = html;
+}
+
+function exportPublicIndex() {
+  const data = {
+    phase: "4",
+    title: "Transport Constitution — Public Replay Receipt Index",
+    generated: new Date().toISOString(),
+    roots: KNOWN_ROOTS,
+    format: "deterministic"
+  };
+  
+  const blob = new Blob([JSON.stringify(data, null, 2)], {type: 'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `transport-constitution-phase4-index-${Date.now()}.json`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+
+  alert("✅ Phase 4 Public Index exported successfully");
+}
+
+// Auto-build
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => setTimeout(buildPublicIndex, 400));
+} else {
+  setTimeout(buildPublicIndex, 400);
+}
+</script>
+<!-- ====================== END PHASE 4 ====================== -->
