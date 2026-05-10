@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The AI Clarity Act | Byte by Byte Executive Proposal</title>
+  <style>
+    :root {
+      --navy: #07162d;
+      --blue: #123c69;
+      --gold: #d8b15f;
+      --cream: #f6f0df;
+      --ink: #101820;
+      --red: #9b1c1c;
+      --green: #1d6b3a;
+      --gray: #6b7280;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Georgia, 'Times New Roman', serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.55;
+    }
+    header {
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      color: white;
+      padding: 56px 24px 48px;
+      border-bottom: 8px solid var(--gold);
+    }
+    .wrap { max-width: 1120px; margin: 0 auto; }
+    .seal {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 8px 14px;
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 999px;
+      font-family: system-ui, sans-serif;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: 12px;
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-size: clamp(42px, 7vw, 82px);
+      line-height: .92;
+      margin: 0 0 18px;
+      letter-spacing: -0.04em;
+    }
+    .subtitle {
+      max-width: 820px;
+      font-size: clamp(19px, 2.4vw, 28px);
+      color: #efe3bd;
+      margin: 0 0 28px;
+    }
+    .doctrine {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 34px;
+    }
+    .doctrine div, .card, .quote, .band, .timeline li {
+      border: 1px solid rgba(7,22,45,.18);
+      background: rgba(255,255,255,.76);
+      border-radius: 16px;
+      padding: 18px;
+    }
+    .doctrine div {
+      background: rgba(255,255,255,.08);
+      border-color: rgba(255,255,255,.2);
+      color: white;
+      font-family: system-ui, sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: .06em;
+    }
+    main { padding: 48px 24px 72px; }
+    section { margin: 0 auto 42px; max-width: 1120px; }
+    h2 {
+      font-size: clamp(28px, 4vw, 48px);
+      margin: 0 0 14px;
+      letter-spacing: -0.03em;
+      color: var(--navy);
+    }
+    h3 { color: var(--blue); margin: 0 0 8px; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .card strong { color: var(--red); }
+    .quote {
+      background: white;
+      border-left: 8px solid var(--gold);
+      font-size: 24px;
+      color: var(--navy);
+    }
+    .rules { counter-reset: rule; }
+    .rules .card::before {
+      counter-increment: rule;
+      content: counter(rule);
+      display: inline-grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: white;
+      font-family: system-ui, sans-serif;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .bands { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .band { font-family: system-ui, sans-serif; }
+    .band b { display: block; font-size: 18px; margin-bottom: 4px; }
+    .green { border-top: 8px solid var(--green); }
+    .yellow { border-top: 8px solid var(--gold); }
+    .red { border-top: 8px solid var(--red); }
+    .gray { border-top: 8px solid var(--gray); }
+    code, pre {
+      background: #07162d;
+      color: #f6f0df;
+      border-radius: 14px;
+      padding: 16px;
+      display: block;
+      overflow-x: auto;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 14px;
+    }
+    .timeline { list-style: none; padding: 0; display: grid; gap: 12px; }
+    .footer {
+      background: var(--navy);
+      color: white;
+      padding: 28px 24px;
+      font-family: system-ui, sans-serif;
+    }
+    .buttonrow { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+    .btn {
+      display: inline-block;
+      padding: 12px 16px;
+      border-radius: 10px;
+      text-decoration: none;
+      background: var(--gold);
+      color: var(--navy);
+      font-family: system-ui, sans-serif;
+      font-weight: 800;
+    }
+    .btn.secondary { background: transparent; color: white; border: 1px solid rgba(255,255,255,.35); }
+    @media (max-width: 860px) {
+      .grid, .two, .doctrine, .bands { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="seal">⚖️ Executive Proposal · AI Clarity · Byte by Byte</div>
+      <h1>The AI Clarity Act</h1>
+      <p class="subtitle">A presidential-style proposal for replayability, provenance, and audit standards in public-facing AI systems.</p>
+      <div class="buttonrow">
+        <a class="btn" href="#order">Read the Order</a>
+        <a class="btn secondary" href="#byte">Byte by Byte</a>
+        <a class="btn secondary" href="#score">Audit Bands</a>
+      </div>
+      <div class="doctrine">
+        <div>Trust requires replay</div>
+        <div>Memory must be public</div>
+        <div>Drift must be disclosed</div>
+        <div>Automation must remain auditable</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="order">
+      <h2>Executive Order on Replayability, Provenance, and Audit Standards</h2>
+      <div class="quote">Liberty and property interests protected by the Constitution cannot be delegated to uninspectable processes.</div>
+      <p>Automated systems that determine or materially influence public outcomes shall not operate beyond meaningful review. When an AI system affects benefits, housing, credit, employment, legal recommendations, public eligibility, or access to essential services, its output must carry a replayable record.</p>
+    </section>
+
+    <section>
+      <h2>Constitutional Rules</h2>
+      <div class="grid rules">
+        <div class="card"><h3>Replay Requirement</h3><p>Material AI outputs must preserve model ID, policy hash, timestamp, input provenance, transformation chain, and output receipt hash.</p></div>
+        <div class="card"><h3>Drift Disclosure</h3><p>Material model changes must be logged. Prior outputs remain historically preserved. Silent model replacement is prohibited.</p></div>
+        <div class="card"><h3>Public Audit Memory</h3><p>Covered systems must maintain append-only logs for policy changes, upgrades, overrides, replay failures, and drift events.</p></div>
+        <div class="card"><h3>Human Review</h3><p><strong>A score is not a verdict.</strong> AI confidence cannot become final authority over protected interests.</p></div>
+        <div class="card"><h3>Multi-Observer Verification</h3><p><strong>Consensus ≠ convergence.</strong> Agreement without reproducible replay is insufficient.</p></div>
+        <div class="card"><h3>Allegation Boundary</h3><p>Systems may classify evidence states. They may not infer criminality, motive, or intent without human adjudication.</p></div>
+      </div>
+    </section>
+
+    <section id="byte">
+      <h2>Byte by Byte: Architectural Due Process</h2>
+      <div class="two">
+        <div class="card">
+          <h3>The Ceiling</h3>
+          <p>The AI Clarity Act limits what the state may delegate to uninspectable automation. It is the negative constitutional constraint: no black-box governance over protected interests.</p>
+        </div>
+        <div class="card">
+          <h3>The Floor</h3>
+          <p>Byte by Byte requires verification to be built into the substrate at the same resolution the system operates. Not after-the-fact summaries. Replayable records.</p>
+        </div>
+      </div>
+      <pre>ARCHITECTURAL_DUE_PROCESS:
+  no executive action implemented through automated systems is sufficient
+  unless the underlying computation is verifiable byte by byte
+  by independent observers without proprietary permission.</pre>
+    </section>
+
+    <section>
+      <h2>Auto-Pen Replay Manifest</h2>
+      <p>Every executive action touching automated systems should attach a replay manifest. The signature is not just political. It is technical custody.</p>
+      <pre>{
+  "type": "EXECUTIVE_AUTOMATION_REPLAY_MANIFEST",
+  "order_id": "AI_CLARITY_ACT_DRAFT",
+  "model_scope": "covered_public_facing_ai_systems",
+  "policy_hash": "sha256:REPLACE_WITH_POLICY_HASH",
+  "replay_required": true,
+  "append_only_audit": true,
+  "human_review_required": true,
+  "score_is_verdict": false,
+  "allegation_mode": "blocked"
+}</pre>
+    </section>
+
+    <section id="score">
+      <h2>Enforcement Categories</h2>
+      <div class="bands">
+        <div class="band green"><b>GREEN</b>Replay currently succeeds with sufficient independent convergence.</div>
+        <div class="band yellow"><b>YELLOW</b>Replay exists but has weakness, age, limited observers, or review flags.</div>
+        <div class="band red"><b>RED</b>Replay broken, divergent, unavailable, or hash-mismatched.</div>
+        <div class="band gray"><b>GRAY</b>Sealed, unknown, or insufficient public evidence.</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Structural Guarantees</h2>
+      <ul class="timeline">
+        <li><strong>Verifiable computation:</strong> Outputs carry replay receipts, not decorative metadata.</li>
+        <li><strong>Temporal fidelity:</strong> Review must be provable at machine resolution when systems operate at machine speed.</li>
+        <li><strong>Observer independence:</strong> Verification cannot require permission from the system operator.</li>
+        <li><strong>Distributed inspection:</strong> Centralized logging alone does not satisfy the Act.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <strong>Closing Doctrine:</strong> TRUST REQUIRES REPLAY. MEMORY MUST BE PUBLIC. DRIFT MUST BE DISCLOSED. AUTOMATION MUST REMAIN AUDITABLE.
+    </div>
+  </footer>
+</body>
+</html>
