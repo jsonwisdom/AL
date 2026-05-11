@@ -1,7 +1,7 @@
 {
   "capsule_type": "FAF_EPOCH_03_REPLAY_CAPSULE",
   "version": "1.0.0",
-  "status": "INITIALIZED_RUNTIME_IDENTITY_PENDING_DIGEST",
+  "status": "INITIALIZED_RUNTIME_AND_FIXTURES_PENDING_HASHES",
   "operator": "jaywisdom.base.eth",
   "project": "Parody Paradox Jay FAF",
   "doctrine": {
@@ -17,6 +17,22 @@
     "code_version_requirement": "tag must resolve to immutable Git object before replay",
     "entrypoint": "npm run replay",
     "entrypoint_rule": "Replay using any other entrypoint MUST be refused"
+  },
+  "fixtures": {
+    "faf_epoch_03_inputs": {
+      "path": "fixtures/faf/epoch_03",
+      "type": "directory",
+      "hash_algo": "sha256-tree",
+      "hash": null,
+      "hash_requirement": "computed from sorted file list: find path -type f -print0 | sort -z | xargs -0 sha256sum | sha256sum"
+    },
+    "prior_epoch_evidence": {
+      "path": "receipts/faf/epoch_02",
+      "type": "directory",
+      "hash_algo": "sha256-tree",
+      "hash": null,
+      "hash_requirement": "computed from sorted file list: find path -type f -print0 | sort -z | xargs -0 sha256sum | sha256sum"
+    }
   },
   "source_visual_artifact": {
     "title": "Parody Paradox Jay FAF",
@@ -51,6 +67,8 @@
     "runtime_identity_declared": true,
     "container_digest_locked": false,
     "code_version_tag_verified": false,
+    "fixture_paths_declared": true,
+    "fixture_hashes_locked": false,
     "local_replay_completed": false,
     "ci_witness_completed": false,
     "human_reproduction_completed": false,
@@ -68,7 +86,9 @@
     "self_reference_rule": "receipt_hash MUST be null before hashing",
     "runtime_role": "reproduce_only_never_reinterpret",
     "ci_role": "witness_not_oracle",
-    "runtime_identity_rule": "container_digest, code_version, and entrypoint must match capsule before replay authority is granted"
+    "runtime_identity_rule": "container_digest, code_version, and entrypoint must match capsule before replay authority is granted",
+    "fixture_identity_rule": "pinned fixture paths must exist and hashes must match capsule before replay authority is granted",
+    "network_rule": "replay must not require network reads to complete"
   },
   "receipt_hash": null
 }
