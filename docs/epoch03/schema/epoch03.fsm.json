@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "id": "epoch03-fsm",
+    "version": "0.1.0",
+    "doctrine_hash": "TODO",
+    "description": "Canonical finite-state machine for AL epoch03 adjudication lifecycle."
+  },
+  "states": [
+    {
+      "id": "S0",
+      "name": "Unattested",
+      "role": "entry",
+      "terminal": false
+    },
+    {
+      "id": "S1",
+      "name": "AttestationCandidate",
+      "role": "intermediate",
+      "terminal": false
+    },
+    {
+      "id": "S2",
+      "name": "UnderAdjudication",
+      "role": "intermediate",
+      "terminal": false
+    },
+    {
+      "id": "S3",
+      "name": "Equilibrium",
+      "role": "terminal",
+      "terminal": true
+    },
+    {
+      "id": "S4",
+      "name": "Rejected",
+      "role": "terminal",
+      "terminal": true
+    }
+  ],
+  "transitions": [
+    {
+      "id": "T0",
+      "from": "S0",
+      "to": "S1",
+      "trigger": "submit_candidate",
+      "guard": "D-0",
+      "description": "Claim enters as an attestation candidate under doctrine D-0."
+    },
+    {
+      "id": "T1",
+      "from": "S1",
+      "to": "S2",
+      "trigger": "open_adjudication",
+      "guard": "D-1",
+      "description": "Candidate is accepted into adjudication under doctrine D-1."
+    },
+    {
+      "id": "T2",
+      "from": "S2",
+      "to": "S3",
+      "trigger": "reach_equilibrium",
+      "guard": "D-5",
+      "description": "Adjudication reaches equilibrium under doctrine D-5."
+    },
+    {
+      "id": "T3",
+      "from": "S2",
+      "to": "S4",
+      "trigger": "reject_claim",
+      "guard": "D-2",
+      "description": "Claim is rejected under doctrine D-2."
+    }
+  ]
+}
