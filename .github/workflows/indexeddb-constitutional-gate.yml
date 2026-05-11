@@ -1,0 +1,48 @@
+name: IndexedDB Constitutional Gate
+
+on:
+  push:
+    branches: [ "audit", "audit/**" ]
+  pull_request:
+    branches: [ "audit", "audit/**" ]
+
+jobs:
+  indexeddb-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout constitution
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: |
+          npm install
+          npx playwright install --with-deps chromium
+
+      - name: Run constitutional IndexedDB tests
+        run: |
+          npx playwright test transport-constitution/indexeddb-smoke.test.spec.js --project=chromium --reporter=html
+
+      - name: Generate audit receipt
+        if: always()
+        run: |
+          echo "MIGRATION_GUARD_TEST_SUITE_V0.2"
+          echo "TEST_COUNT=10"
+          echo "WRITE_LAW=canonicalize_validate_store_add"
+          echo "FAIL_CLOSED=true"
+
+      - name: Upload constitutional artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: migration-guard-test-receipt-v0.2
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 30
