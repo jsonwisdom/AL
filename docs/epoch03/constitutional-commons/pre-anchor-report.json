@@ -33,5 +33,21 @@
     "no_ui_or_asset_hashes_in_payload": "UNRUN",
     "local_replay_required_before_trust": "PASS"
   },
+  "failures": [],
+  "failure_entry_schema": {
+    "id": "F-001",
+    "class": "validator_drift | harness_drift | canonicalization_drift | lineage_drift | intentional_doctrine_evolution | unintended_semantic_mutation",
+    "surface": "golden_transcript | adversarial_harness | lineage_harness | roots | receipt_chain",
+    "engine_pair": "js_vs_wasm | js_vs_cli | wasm_vs_cli | n/a",
+    "description": "Short human-readable summary of what diverged.",
+    "evidence": {
+      "diff_file": "path/to/diff.txt",
+      "left_verdict": "path/to/left.json",
+      "right_verdict": "path/to/right.json"
+    },
+    "status": "open | resolved",
+    "notes": "Optional extra context or links to PRs/issues."
+  },
+  "failure_rule": "Any FAIL in parity or checklist MUST have at least one corresponding failures[] entry. Resolved failures remain in history with status=resolved.",
   "timestamp": 0
 }
