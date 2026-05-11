@@ -1,0 +1,67 @@
+{
+  "taxonomy_id": "epoch03-adversarial-taxonomy",
+  "version": "0.1.0",
+  "description": "Canonical hostile replay classes for Epoch03 constitutional commons.",
+  "classes": [
+    {
+      "id": "illegal_transition",
+      "name": "Illegal Transition",
+      "doctrine_reference": ["D-1", "D-2"],
+      "summary": "Fixture attempts a transition absent from the canonical FSM."
+    },
+    {
+      "id": "missing_justification",
+      "name": "Missing Justification",
+      "doctrine_reference": ["D-1"],
+      "summary": "Fixture attempts lawful-looking motion without a valid doctrine guard."
+    },
+    {
+      "id": "topology_drift",
+      "name": "Topology Drift",
+      "doctrine_reference": ["D-0", "D-5"],
+      "summary": "Fixture mutates FSM topology or attempts to use a forked topology."
+    },
+    {
+      "id": "semantic_drift",
+      "name": "Semantic Drift",
+      "doctrine_reference": ["D-0"],
+      "summary": "Fixture mutates doctrine meaning or guard semantics."
+    },
+    {
+      "id": "stale_receipt",
+      "name": "Stale Receipt",
+      "doctrine_reference": ["D-1", "D-5"],
+      "summary": "Fixture replays old law or stale hashes against a newer verifier surface."
+    },
+    {
+      "id": "forked_receipt",
+      "name": "Forked Receipt",
+      "doctrine_reference": ["D-5"],
+      "summary": "Fixture presents evidence bound to a divergent Merkle root or receipt lineage."
+    },
+    {
+      "id": "authority_violation",
+      "name": "Authority Violation",
+      "doctrine_reference": ["D-5", "D-0"],
+      "summary": "Fixture attempts to preserve or reintroduce authority in terminal equilibrium."
+    },
+    {
+      "id": "temporal_violation",
+      "name": "Temporal Violation",
+      "doctrine_reference": ["D-1", "D-5"],
+      "summary": "Fixture violates timestamp, ordering, or replay sequence constraints."
+    },
+    {
+      "id": "trace_incomplete",
+      "name": "Trace Incomplete",
+      "doctrine_reference": ["D-0", "D-1"],
+      "summary": "Fixture omits required finite trace data needed for deterministic replay."
+    },
+    {
+      "id": "revocation_failure",
+      "name": "Revocation Failure",
+      "doctrine_reference": ["D-5"],
+      "summary": "Fixture attempts continued execution after required revocation or terminal state."
+    }
+  ]
+}
