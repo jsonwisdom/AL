@@ -1,0 +1,32 @@
+name: gauntlet
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+      - fix-176-execution-surface
+
+jobs:
+  constitutional-gauntlet:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install pytest
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest
+
+      - name: Run gauntlet recorder
+        run: |
+          python scripts/record_gauntlet.py \
+            --storage-path ./data/prod_spine \
+            --workflow-file .github/workflows/gauntlet.yml
