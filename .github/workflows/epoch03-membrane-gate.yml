@@ -1,0 +1,40 @@
+name: Epoch03 Membrane Gate
+
+on:
+  pull_request:
+    paths:
+      - 'docs/specs/EPOCH03_CANONICAL_MEMBRANE_CONTRACT_V1_0_1.schema.json'
+      - 'fixtures/epoch03/membrane/**'
+      - 'scripts/epoch03_membrane_schema_gate.py'
+      - '.github/workflows/epoch03-membrane-gate.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/specs/EPOCH03_CANONICAL_MEMBRANE_CONTRACT_V1_0_1.schema.json'
+      - 'fixtures/epoch03/membrane/**'
+      - 'scripts/epoch03_membrane_schema_gate.py'
+      - '.github/workflows/epoch03-membrane-gate.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  membrane-gate:
+    name: Validate Epoch03 membrane schema and replay fixtures
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install validator dependency
+        run: python -m pip install --upgrade jsonschema
+
+      - name: Run Epoch03 membrane schema gate
+        run: python scripts/epoch03_membrane_schema_gate.py
