@@ -1,0 +1,42 @@
+{
+  "doctrine_id": "epoch03-doctrine",
+  "version": "0.1.0",
+  "clauses": [
+    {
+      "code": "D-0",
+      "name": "Well-formed Claim",
+      "severity": "guard",
+      "summary": "Claim must be syntactically and structurally well-formed.",
+      "description": "The system SHALL reject any claim that does not satisfy the canonical schema and basic structural invariants.",
+      "applies_to_states": ["S0", "S1"],
+      "error_message": "Claim is not well-formed under D-0."
+    },
+    {
+      "code": "D-1",
+      "name": "Adjudicable Claim",
+      "severity": "guard",
+      "summary": "Claim must be admissible for adjudication.",
+      "description": "The system SHALL only admit claims that satisfy admissibility constraints into adjudication.",
+      "applies_to_states": ["S1"],
+      "error_message": "Claim is not admissible for adjudication under D-1."
+    },
+    {
+      "code": "D-2",
+      "name": "Rejection Grounds",
+      "severity": "terminal",
+      "summary": "Claim fails one or more non-negotiable constraints.",
+      "description": "The system SHALL reject claims that violate non-negotiable constraints.",
+      "applies_to_states": ["S2"],
+      "error_message": "Claim rejected under D-2."
+    },
+    {
+      "code": "D-5",
+      "name": "Equilibrium Reached",
+      "severity": "terminal",
+      "summary": "Adjudication has reached a stable, replay-safe equilibrium.",
+      "description": "The system SHALL mark claims as equilibrium when all required constraints are satisfied and no further lawful transitions exist.",
+      "applies_to_states": ["S2", "S3"],
+      "error_message": "Equilibrium not satisfied under D-5."
+    }
+  ]
+}

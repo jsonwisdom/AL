@@ -1,0 +1,9 @@
+{
+  "meta": {"id": "adversarial-02-missing-doctrine", "epoch": "epoch03", "doctrine_id": "epoch03-doctrine", "doctrine_version": "0.1.0", "fsm_id": "epoch03-fsm", "fsm_version": "0.1.0", "expected": "REJECT"},
+  "initial_state": "S0",
+  "steps": [
+    {"seq": 0, "from": "S0", "to": "S1", "trigger": "submit_candidate", "guard": "D-0", "result": "ACCEPT", "timestamp": "2026-05-10T21:00:00Z", "context": {"claim_id": "ADV-02", "validator_version": "0.1.0"}},
+    {"seq": 1, "from": "S1", "to": "S2", "trigger": "open_adjudication", "guard": "D-MISSING", "result": "ACCEPT", "timestamp": "2026-05-10T21:00:01Z", "context": {"claim_id": "ADV-02", "validator_version": "0.1.0"}}
+  ],
+  "final_state": "S2"
+}

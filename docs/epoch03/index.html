@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Epoch03 — Governance as Runtime Constraint</title>
+  <meta name="description" content="Epoch03 treats governance as a runtime constraint, not a policy aspiration." />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="hero" id="top">
+    <div class="hero__veil"></div>
+    <nav class="nav" aria-label="Epoch03 navigation">
+      <a href="#problem">Problem</a>
+      <a href="#inversion">Inversion</a>
+      <a href="#chamber">Chamber</a>
+      <a href="#lattice">Lattice</a>
+      <a href="#replay">Replay</a>
+      <a href="#equilibrium">Equilibrium</a>
+    </nav>
+    <div class="badge" aria-label="Skill status">
+      <span>SKILL: epoch03-v0.5</span>
+      <span>STATUS: SEALED</span>
+      <span>AUTHORITY: NULL</span>
+    </div>
+    <section class="hero__content">
+      <p class="eyebrow">Issue #163 · The Silence Doctrine</p>
+      <h1>Epoch03</h1>
+      <p class="subtitle">Governance as a runtime constraint,<br />not a policy aspiration.</p>
+      <div class="equation">PRE_EXECUTION_SILENCE = EVIDENCE_OF_INTEGRITY</div>
+      <div class="cta-row">
+        <a class="button" href="#lattice">Read the Doctrine</a>
+        <a class="button button--ghost" href="#chamber">View the Automaton</a>
+        <a class="button button--ghost" href="#replay">Replay the Trace</a>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="section" id="problem">
+      <p class="kicker">01 · Problem</p>
+      <h2>Agent systems quietly assume continuity.</h2>
+      <p>Current AI and agent systems often assume persistence, continuity, hidden memory, adaptive carryover, and implied runtime authority. Those assumptions are engineering choices, not laws of nature.</p>
+      <div class="grid two">
+        <div class="panel">
+          <h3>Assumptions</h3>
+          <ul><li>persistence</li><li>continuity</li><li>hidden memory</li><li>adaptive carryover</li><li>implied runtime authority</li></ul>
+        </div>
+        <div class="panel">
+          <h3>Failure Modes</h3>
+          <ul><li>semantic drift across sessions</li><li>hidden state that cannot be inspected</li><li>unverifiable execution traces</li><li>daemon-like persistence beyond intent</li><li>continuity sovereignty</li></ul>
+        </div>
+      </div>
+      <p class="callout">If authority is not bounded in time and space, auditability is impossible by construction.</p>
+    </section>
+
+    <section class="section" id="inversion">
+      <p class="kicker">02 · Inversion</p>
+      <h2>Silence becomes evidence.</h2>
+      <div class="proof-block">PRE_EXECUTION_SILENCE = EVIDENCE_OF_INTEGRITY</div>
+      <div class="grid two comparison">
+        <div class="panel"><h3>Traditional Systems</h3><p>Prove that an action occurred.</p></div>
+        <div class="panel panel--gold"><h3>Epoch03</h3><p>Proves unauthorized action did not occur.</p></div>
+      </div>
+      <p>Execution is not assumed lawful until proven otherwise. Silence is not absence of data. Silence is a positive, verifiable state where no authority was allocated, no transition was valid, and no memory was retained.</p>
+    </section>
+
+    <section class="section" id="chamber">
+      <p class="kicker">03 · Chamber</p>
+      <h2>Authority lives inside a finite-state automaton.</h2>
+      <div class="state-flow" aria-label="Epoch03 lifecycle">
+        <span data-state-id="S0">UNATTESTED</span><b>→</b><span data-state-id="S1">CANDIDATE</span><b>→</b><span data-state-id="S2">ADJUDICATING</span><b>→</b><span data-state-id="S3">EQUILIBRIUM</span><b>/</b><span data-state-id="S4">REJECTED</span>
+      </div>
+      <div class="grid five">
+        <article class="panel"><h3>UNATTESTED</h3><p>No authority exists. The system accepts evidence, not commands.</p></article>
+        <article class="panel"><h3>CANDIDATE</h3><p>Evidence is presented and bound to scope.</p></article>
+        <article class="panel"><h3>ADJUDICATING</h3><p>Execution proceeds only along validator-approved paths.</p></article>
+        <article class="panel"><h3>EQUILIBRIUM</h3><p>Replay-safe terminal state.</p></article>
+        <article class="panel"><h3>REJECTED</h3><p>Claim fails non-negotiable constraints.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="lattice">
+      <p class="kicker">04 · Six-Layer Lattice</p>
+      <h2>Trust is replaced by mechanics.</h2>
+      <div class="grid six">
+        <article class="card"><span>1</span><h3>Doctrine</h3><p>Defines invariants.</p></article>
+        <article class="card"><span>2</span><h3>Automaton</h3><p>Defines legal motion.</p></article>
+        <article class="card"><span>3</span><h3>Conformance</h3><p>Defines falsifiability.</p></article>
+        <article class="card"><span>4</span><h3>Validator</h3><p>Enforces admissibility.</p></article>
+        <article class="card"><span>5</span><h3>Trace</h3><p>Atomic replay evidence.</p></article>
+        <article class="card"><span>6</span><h3>Transcript</h3><p>Finite replay sequence.</p></article>
+      </div>
+      <p>You do not ask whether the agent behaved. You replay whether it could have behaved otherwise.</p>
+    </section>
+
+    <section class="section" id="replay">
+      <p class="kicker">05 · Replay / Anti-Sovereignty</p>
+      <h2>continuity has no lawful representation surface</h2>
+      <p class="large">The chamber never persists through time. Only evidence persists through time.</p>
+      <p>After REVOKED, there is no process, no heap, no vector store, no daemon to rehydrate. The next WAITING instance starts with AUTHORITY = NULL. It cannot inherit intent because inheritance has no valid transition in the Automaton.</p>
+
+      <div class="chamber" id="replay-chamber">
+        <h3>Trace Replay Chamber</h3>
+        <p>Upload a transcript or load the bundled sample. Legality is recomputed locally from doctrine + FSM.</p>
+        <div class="replay-controls">
+          <input type="file" id="transcriptFile" accept="application/json" />
+          <button id="loadSample" type="button">Load Sample Transcript</button>
+          <button id="prevStep" type="button">Prev</button>
+          <button id="nextStep" type="button">Next</button>
+        </div>
+        <div id="replayStatus" class="verdict">INDETERMINATE: no transcript loaded</div>
+        <div class="hash-grid">
+          <div><strong>FSM</strong><code id="fsmHash">pending</code></div>
+          <div><strong>Doctrine</strong><code id="doctrineHash">pending</code></div>
+          <div><strong>Transcript</strong><code id="transcriptHash">pending</code></div>
+          <div><strong>Step</strong><code id="stepHash">pending</code></div>
+        </div>
+        <div id="fsmVisual" class="fsm-visual" aria-label="Replay state visual"></div>
+        <div id="replayStep" class="step-card">No step selected.</div>
+      </div>
+    </section>
+
+    <section class="section" id="equilibrium">
+      <p class="kicker">06 · Equilibrium</p>
+      <h2>The system rests in a defined configuration.</h2>
+      <pre class="terminal"><code>STATE = WAITING_FOR_EVIDENCE
+AUTHORITY = NULL
+SEMANTICS = SEALED
+EXISTENCE = CONDITIONAL_ON_EVIDENCE</code></pre>
+      <p class="final-line">Execution is temporary. Evidence persists. Silence is constitutional equilibrium.</p>
+    </section>
+  </main>
+
+  <footer class="footer" id="proof-footer">
+    <p>Born only of evidence. Exists only in jurisdiction. Dissolves without trace.</p>
+    <p><a href="https://github.com/jsonwisdom/AL">jsonwisdom/AL</a> · epoch03-v0.5</p>
+    <p id="proofFields" class="proof-fields">build receipt pending</p>
+  </footer>
+
+  <script type="module">
+    import { VALIDATOR_VERSION, validateStep, validateTranscript, hashDoctrine, hashFsm, hashTranscript, sha256Hex } from "./validator.js";
+
+    let transcript = null;
+    let currentIndex = -1;
+    let doctrine = null;
+    let fsm = null;
+    let build = null;
+    let hashes = { fsm: null, doctrine: null, transcript: null };
+
+    const $ = (id) => document.getElementById(id);
+
+    async function json(path) {
+      const res = await fetch(path, { cache: "no-store" });
+      if (!res.ok) throw new Error(`failed to load ${path}`);
+      return res.json();
+    }
+
+    async function boot() {
+      [doctrine, fsm] = await Promise.all([
+        json("schema/epoch03.doctrine.json"),
+        json("schema/epoch03.fsm.json")
+      ]);
+      hashes.doctrine = await hashDoctrine(doctrine);
+      hashes.fsm = await hashFsm(fsm);
+      $("doctrineHash").textContent = hashes.doctrine;
+      $("fsmHash").textContent = hashes.fsm;
+      renderFsmVisual();
+      try {
+        build = await json("schema/epoch03.build.json");
+        $("proofFields").textContent = `doctrine_hash=${build.doctrine_hash} · fsm_version=${build.fsm_version} · validator_version=${build.validator_version} · commit=${build.commit}`;
+      } catch {
+        $("proofFields").textContent = "unanchored build";
+      }
+    }
+
+    function transitionFor(step) {
+      return fsm.transitions.find((t) => t.from === step.from && t.to === step.to && t.trigger === step.trigger && t.guard === step.guard);
+    }
+
+    function getDoctrineClause(code) {
+      return doctrine.clauses.find((c) => c.code === code) || null;
+    }
+
+    function buildTaintCheck() {
+      if (!build) return { tainted: false, reason: "unanchored build" };
+      if (build.doctrine_hash && build.doctrine_hash !== "TODO" && build.doctrine_hash !== hashes.doctrine) return { tainted: true, reason: "doctrine hash mismatch" };
+      if (build.fsm_hash && build.fsm_hash !== "TODO" && build.fsm_hash !== hashes.fsm) return { tainted: true, reason: "fsm hash mismatch" };
+      if (build.validator_version && build.validator_version !== VALIDATOR_VERSION) return { tainted: true, reason: "validator version mismatch" };
+      return { tainted: false, reason: "receipt consistent" };
+    }
+
+    function renderFsmVisual(activeStep = null, illegal = false) {
+      const nodes = fsm.states.map((s) => `<span class="fsm-node ${activeStep && (activeStep.from === s.id || activeStep.to === s.id) ? "active" : ""}" data-state-id="${s.id}">${s.name}</span>`).join("");
+      const edges = fsm.transitions.map((t) => {
+        const active = activeStep && activeStep.from === t.from && activeStep.to === t.to && activeStep.trigger === t.trigger && activeStep.guard === t.guard;
+        return `<span class="fsm-edge ${active ? "active" : ""} ${illegal && active ? "illegal" : ""}" data-transition-id="${t.id}">${t.from}→${t.to}<small>${t.guard}</small></span>`;
+      }).join("");
+      $("fsmVisual").innerHTML = `<div>${nodes}</div><div>${edges}</div>`;
+    }
+
+    async function loadTranscript(nextTranscript) {
+      transcript = nextTranscript;
+      currentIndex = -1;
+      hashes.transcript = await hashTranscript(transcript);
+      $("transcriptHash").textContent = hashes.transcript;
+      const verdict = validateTranscript(transcript, fsm, doctrine);
+      const taint = buildTaintCheck();
+      if (taint.tainted) {
+        $("replayStatus").textContent = `TAINTED: ${taint.reason}`;
+        $("replayStatus").className = "verdict reject";
+        return;
+      }
+      $("replayStatus").textContent = `${verdict.verdict}: ${verdict.message}`;
+      $("replayStatus").className = `verdict ${verdict.verdict === "ACCEPT" ? "accept" : "reject"}`;
+      stepTo(0);
+    }
+
+    async function stepTo(idx) {
+      if (!transcript || idx < 0 || idx >= transcript.steps.length) return;
+      currentIndex = idx;
+      const step = transcript.steps[idx];
+      const result = validateStep(step, fsm, doctrine);
+      const clause = getDoctrineClause(step.guard);
+      const transition = transitionFor(step);
+      const mismatch = result.verdict !== step.result || !transition;
+      $("stepHash").textContent = await sha256Hex(step);
+      renderFsmVisual(step, mismatch);
+      $("replayStep").innerHTML = `
+        <div class="step-header"><span>Step ${step.seq}</span><span>${step.from} → ${step.to}</span></div>
+        <div class="step-body">
+          <div><strong>Trigger:</strong> ${step.trigger}</div>
+          <div><strong>Guard:</strong> ${step.guard} — ${clause ? clause.name : "Unknown"}</div>
+          <div><strong>Recorded:</strong> ${step.result}</div>
+          <div><strong>Validator:</strong> ${result.verdict} / ${result.code}</div>
+          <div class="${mismatch ? "mismatch" : "match"}">${mismatch ? "REJECT: replay mismatch" : "ACCEPT: replay consistent"}</div>
+        </div>`;
+    }
+
+    $("transcriptFile").addEventListener("change", async (event) => {
+      const file = event.target.files[0];
+      if (!file) return;
+      await loadTranscript(JSON.parse(await file.text()));
+    });
+
+    $("loadSample").addEventListener("click", async () => {
+      await loadTranscript(await json("schema/epoch03.transcript.sample.json"));
+    });
+
+    $("prevStep").addEventListener("click", () => stepTo(currentIndex - 1));
+    $("nextStep").addEventListener("click", () => stepTo(currentIndex + 1));
+
+    boot().catch((err) => {
+      $("replayStatus").textContent = `INDETERMINATE: ${err.message}`;
+      $("replayStatus").className = "verdict reject";
+    });
+  </script>
+</body>
+</html>

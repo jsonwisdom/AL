@@ -1,0 +1,53 @@
+{
+  "project": "jsonwisdom/AL",
+  "epoch": "epoch03",
+  "status": "UNRUN",
+  "attestation_status": "NOT_MINTED",
+  "commit": "GIT_COMMIT_SHA",
+  "harness_hash": "sha256:HARNESS_HASH_HEX",
+  "doctrine_root": "sha256:DOCTRINE_ROOT_HEX",
+  "fsm_root": "sha256:FSM_ROOT_HEX",
+  "receipt_root": "sha256:RECEIPT_ROOT_HEX",
+  "lineage_root": "sha256:LINEAGE_ROOT_HEX",
+  "parity": {
+    "golden_transcript": {
+      "js_vs_wasm": "UNRUN",
+      "js_vs_cli": "UNRUN",
+      "wasm_vs_cli": "UNRUN"
+    },
+    "adversarial_harness": {
+      "js_vs_wasm": "UNRUN",
+      "js_vs_cli": "UNRUN",
+      "wasm_vs_cli": "UNRUN"
+    },
+    "lineage_harness": {
+      "js_vs_wasm": "UNRUN",
+      "js_vs_cli": "UNRUN",
+      "wasm_vs_cli": "UNRUN"
+    }
+  },
+  "checklist": {
+    "canonical_concat_applied": "UNRUN",
+    "verdict_jsons_bit_identical": "UNRUN",
+    "roots_recomputed_from_frozen_code": "UNRUN",
+    "no_ui_or_asset_hashes_in_payload": "UNRUN",
+    "local_replay_required_before_trust": "PASS"
+  },
+  "failures": [],
+  "failure_entry_schema": {
+    "id": "F-001",
+    "class": "validator_drift | harness_drift | canonicalization_drift | lineage_drift | intentional_doctrine_evolution | unintended_semantic_mutation",
+    "surface": "golden_transcript | adversarial_harness | lineage_harness | roots | receipt_chain",
+    "engine_pair": "js_vs_wasm | js_vs_cli | wasm_vs_cli | n/a",
+    "description": "Short human-readable summary of what diverged.",
+    "evidence": {
+      "diff_file": "path/to/diff.txt",
+      "left_verdict": "path/to/left.json",
+      "right_verdict": "path/to/right.json"
+    },
+    "status": "open | resolved",
+    "notes": "Optional extra context or links to PRs/issues."
+  },
+  "failure_rule": "Any FAIL in parity or checklist MUST have at least one corresponding failures[] entry. Resolved failures remain in history with status=resolved.",
+  "timestamp": 0
+}
