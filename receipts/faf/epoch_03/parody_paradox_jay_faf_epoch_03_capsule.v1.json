@@ -1,7 +1,7 @@
 {
   "capsule_type": "FAF_EPOCH_03_REPLAY_CAPSULE",
   "version": "1.0.0",
-  "status": "INITIALIZED",
+  "status": "INITIALIZED_RUNTIME_IDENTITY_PENDING_DIGEST",
   "operator": "jaywisdom.base.eth",
   "project": "Parody Paradox Jay FAF",
   "doctrine": {
@@ -10,6 +10,14 @@
     "governance_layer": "ALMS",
     "meaning_boundary": "bounded_versioned_attested_replay_surface"
   },
+  "runtime": {
+    "container_digest": null,
+    "container_digest_requirement": "sha256:<IMAGE_DIGEST>; full image digest required before ALPHA_VERIFIED",
+    "code_version": "git:refs/tags/faf-epoch-03-runtime-v1",
+    "code_version_requirement": "tag must resolve to immutable Git object before replay",
+    "entrypoint": "npm run replay",
+    "entrypoint_rule": "Replay using any other entrypoint MUST be refused"
+  },
   "source_visual_artifact": {
     "title": "Parody Paradox Jay FAF",
     "artifact_status": "FAF_CONSTITUTIONAL_ARTIFACT_CANDIDATE",
@@ -17,65 +25,18 @@
     "interpretation_rule": "visual_artifact_may_define_doctrine_surface_but_runtime_claims_require_replay_receipts"
   },
   "frozen_inputs": {
-    "fixtures": [
-      "alpha",
-      "beta",
-      "gamma",
-      "delta",
-      "epsilon",
-      "zeta"
-    ],
-    "commands": [
-      "npm run doctrine:lint",
-      "npm run test:constitutional",
-      "npm run replay"
-    ],
+    "fixtures": ["alpha", "beta", "gamma", "delta", "epsilon", "zeta"],
+    "commands": ["npm run doctrine:lint", "npm run test:constitutional", "npm run replay"],
     "invariants": [
-      {
-        "id": 1,
-        "name": "Bounded Meaning",
-        "enforcement_target": "Prevents semantic drift"
-      },
-      {
-        "id": 2,
-        "name": "Canonical Fixtures",
-        "enforcement_target": "Locks reference inputs"
-      },
-      {
-        "id": 3,
-        "name": "Deterministic Replay",
-        "enforcement_target": "Guarantees reproducibility"
-      },
-      {
-        "id": 4,
-        "name": "Veto Propagation",
-        "enforcement_target": "Ensures human oversight"
-      },
-      {
-        "id": 5,
-        "name": "Cognition Limits",
-        "enforcement_target": "Prevents AI overreach"
-      },
-      {
-        "id": 6,
-        "name": "Runtime Subordination",
-        "enforcement_target": "Runtime may reproduce, never reinterpret"
-      },
-      {
-        "id": 7,
-        "name": "Visible Mutation",
-        "enforcement_target": "All changes logged"
-      },
-      {
-        "id": 8,
-        "name": "Human Reproduction",
-        "enforcement_target": "Two receipts required"
-      },
-      {
-        "id": 9,
-        "name": "Infrastructure Neutral",
-        "enforcement_target": "CI witnesses, not oracles"
-      }
+      {"id": 1, "name": "Bounded Meaning", "enforcement_target": "Prevents semantic drift"},
+      {"id": 2, "name": "Canonical Fixtures", "enforcement_target": "Locks reference inputs"},
+      {"id": 3, "name": "Deterministic Replay", "enforcement_target": "Guarantees reproducibility"},
+      {"id": 4, "name": "Veto Propagation", "enforcement_target": "Ensures human oversight"},
+      {"id": 5, "name": "Cognition Limits", "enforcement_target": "Prevents AI overreach"},
+      {"id": 6, "name": "Runtime Subordination", "enforcement_target": "Runtime may reproduce, never reinterpret"},
+      {"id": 7, "name": "Visible Mutation", "enforcement_target": "All changes logged"},
+      {"id": 8, "name": "Human Reproduction", "enforcement_target": "Two receipts required"},
+      {"id": 9, "name": "Infrastructure Neutral", "enforcement_target": "CI witnesses, not oracles"}
     ]
   },
   "expected_outputs": {
@@ -87,6 +48,9 @@
   },
   "gates": {
     "epoch_03_capsule_initialized": true,
+    "runtime_identity_declared": true,
+    "container_digest_locked": false,
+    "code_version_tag_verified": false,
     "local_replay_completed": false,
     "ci_witness_completed": false,
     "human_reproduction_completed": false,
@@ -103,7 +67,8 @@
     "hashing": "sha256",
     "self_reference_rule": "receipt_hash MUST be null before hashing",
     "runtime_role": "reproduce_only_never_reinterpret",
-    "ci_role": "witness_not_oracle"
+    "ci_role": "witness_not_oracle",
+    "runtime_identity_rule": "container_digest, code_version, and entrypoint must match capsule before replay authority is granted"
   },
   "receipt_hash": null
 }
