@@ -1,0 +1,56 @@
+{
+  "contract_id": "EPOCH03_CANONICAL_MEMBRANE_CONTRACT_V1",
+  "version": "1.0.1",
+  "status": "SPEC_DRAFT_READY_FOR_OPERATOR_REVIEW",
+  "invariant": "LEFT_MUTABLE_RIGHT_IMMUTABLE_MEMBRANE_ENFORCED",
+  "state_split": {
+    "operational_state": { "symbol": "L", "mutable": true, "ai_assisted": true, "authoritative": false },
+    "canonical_state": { "symbol": "R", "mutable": false, "log_type": "hash_linked_ratified_blocks", "authoritative": true }
+  },
+  "canonical_block": {
+    "payload": {},
+    "prev_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "receipt": {},
+    "timestamp": "2026-05-10T23:59:59Z",
+    "hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+  },
+  "invariants": [
+    { "id": "I1", "text": "Canon chain is a single hash-linked list from trusted seed to current head." },
+    { "id": "I2", "text": "Every canonical mutation has a receipt bound to its hash." },
+    { "id": "I3", "text": "No block is canonical without explicit operator confirmation." },
+    { "id": "I4", "text": "AI-origin content may appear in payloads, but never in authority fields." }
+  ],
+  "promotion_checks": [
+    { "id": "M1", "name": "Hash Continuity", "required": true, "failure_action": "BLOCK_PROMOTION" },
+    { "id": "M2", "name": "Receipt Presence", "required": true, "failure_action": "BLOCK_PROMOTION" },
+    { "id": "M3", "name": "Receipt Provenance", "required": true, "failure_action": "BLOCK_PROMOTION" },
+    { "id": "M4", "name": "Explicit Confirmation", "required": true, "failure_action": "BLOCK_PROMOTION" },
+    { "id": "M5", "name": "No Hidden Channels", "required": true, "failure_action": "BLOCK_PROMOTION" },
+    { "id": "M6", "name": "Deterministic Replay", "required": true, "failure_action": "BLOCK_PROMOTION" }
+  ],
+  "failure_modes": [
+    { "id": "F1", "name": "Hash Mismatch", "tamper_banner": true },
+    { "id": "F2", "name": "Missing Receipt", "tamper_banner": true },
+    { "id": "F3", "name": "AI-Origin Promotion Attempt", "tamper_banner": true },
+    { "id": "F4", "name": "Canon Chain Corruption", "tamper_banner": true }
+  ],
+  "recovery": {
+    "command": "reseedCanon",
+    "requires_operator_confirmation": true,
+    "log": "cw_recovery_log",
+    "receipt_required_fields": ["previous_chain_hash", "recovery_timestamp_utc", "recovery_reason"],
+    "clears_tamper_banner": true,
+    "preserves_recovery_event": true
+  },
+  "membrane_rules": [
+    { "rule": 1, "title": "Hash Decides", "text": "Story may explain. Hash decides." },
+    { "rule": 2, "title": "No Receipt, No Reality", "text": "If there is no receipt, it never became real." },
+    { "rule": 3, "title": "Operator or Nothing", "text": "Only a human hand can seal. Silence beats an untrusted signature." },
+    { "rule": 4, "title": "Exorcism by Receipt", "text": "The cursed vault remembers every secret it swallowed. A receipt is the exorcism." },
+    { "rule": 5, "title": "Scratch Is Not Scripture", "text": "Left side may dream. Right side only replays what was sealed." },
+    { "rule": 6, "title": "Goblins Do Not Hold Seals", "text": "Goblins may whisper warnings, but they never hold the seal." },
+    { "rule": 7, "title": "Every Block Must Be Replayable", "text": "If you cannot replay it, you cannot trust it. If you cannot trust it, you cannot keep it." },
+    { "rule": 8, "title": "No Secret Paths", "text": "Any traveler with the map can find the vault again. No secret paths." }
+  ],
+  "final_contract_line": "All authority flows through the membrane. Every canonical fact is hash-bound, receipted, replayable, and recoverable through cw_recovery_log and reseedCanon()."
+}
