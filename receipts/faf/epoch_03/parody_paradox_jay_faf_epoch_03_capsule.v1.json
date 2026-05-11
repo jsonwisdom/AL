@@ -1,0 +1,109 @@
+{
+  "capsule_type": "FAF_EPOCH_03_REPLAY_CAPSULE",
+  "version": "1.0.0",
+  "status": "INITIALIZED",
+  "operator": "jaywisdom.base.eth",
+  "project": "Parody Paradox Jay FAF",
+  "doctrine": {
+    "name": "Replay Over Agreement",
+    "runtime": "FAF Constitutional Runtime",
+    "governance_layer": "ALMS",
+    "meaning_boundary": "bounded_versioned_attested_replay_surface"
+  },
+  "source_visual_artifact": {
+    "title": "Parody Paradox Jay FAF",
+    "artifact_status": "FAF_CONSTITUTIONAL_ARTIFACT_CANDIDATE",
+    "receipt_id_visible": "a9f3c7b8e2d14f9aa7c0e8d4f1b2c6d7",
+    "interpretation_rule": "visual_artifact_may_define_doctrine_surface_but_runtime_claims_require_replay_receipts"
+  },
+  "frozen_inputs": {
+    "fixtures": [
+      "alpha",
+      "beta",
+      "gamma",
+      "delta",
+      "epsilon",
+      "zeta"
+    ],
+    "commands": [
+      "npm run doctrine:lint",
+      "npm run test:constitutional",
+      "npm run replay"
+    ],
+    "invariants": [
+      {
+        "id": 1,
+        "name": "Bounded Meaning",
+        "enforcement_target": "Prevents semantic drift"
+      },
+      {
+        "id": 2,
+        "name": "Canonical Fixtures",
+        "enforcement_target": "Locks reference inputs"
+      },
+      {
+        "id": 3,
+        "name": "Deterministic Replay",
+        "enforcement_target": "Guarantees reproducibility"
+      },
+      {
+        "id": 4,
+        "name": "Veto Propagation",
+        "enforcement_target": "Ensures human oversight"
+      },
+      {
+        "id": 5,
+        "name": "Cognition Limits",
+        "enforcement_target": "Prevents AI overreach"
+      },
+      {
+        "id": 6,
+        "name": "Runtime Subordination",
+        "enforcement_target": "Runtime may reproduce, never reinterpret"
+      },
+      {
+        "id": 7,
+        "name": "Visible Mutation",
+        "enforcement_target": "All changes logged"
+      },
+      {
+        "id": 8,
+        "name": "Human Reproduction",
+        "enforcement_target": "Two receipts required"
+      },
+      {
+        "id": 9,
+        "name": "Infrastructure Neutral",
+        "enforcement_target": "CI witnesses, not oracles"
+      }
+    ]
+  },
+  "expected_outputs": {
+    "doctrine_lint": "PASS_REQUIRED",
+    "constitutional_tests": "PASS_REQUIRED",
+    "replay_matrix": "alpha_through_zeta_PASS_REQUIRED",
+    "human_reproduction_receipts": 2,
+    "merkle_root": null
+  },
+  "gates": {
+    "epoch_03_capsule_initialized": true,
+    "local_replay_completed": false,
+    "ci_witness_completed": false,
+    "human_reproduction_completed": false,
+    "onchain_anchor_permitted": false
+  },
+  "anchor_policy": {
+    "github_commit_receipt_required": true,
+    "eas_base_anchor_optional_after_replay": true,
+    "ens_text_record_optional_after_anchor": true,
+    "no_anchor_without_replay": true
+  },
+  "verification_policy": {
+    "canonicalization": "jq -cS",
+    "hashing": "sha256",
+    "self_reference_rule": "receipt_hash MUST be null before hashing",
+    "runtime_role": "reproduce_only_never_reinterpret",
+    "ci_role": "witness_not_oracle"
+  },
+  "receipt_hash": null
+}
