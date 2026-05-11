@@ -1,0 +1,164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.github.io/AL/specs/EPOCH03_CANONICAL_MEMBRANE_CONTRACT_V1_0_1.schema.json",
+  "title": "Epoch03 Canonical Membrane Contract v1.0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_id",
+    "version",
+    "status",
+    "invariant",
+    "state_split",
+    "canonical_block",
+    "invariants",
+    "promotion_checks",
+    "failure_modes",
+    "recovery",
+    "membrane_rules",
+    "final_contract_line"
+  ],
+  "properties": {
+    "contract_id": { "const": "EPOCH03_CANONICAL_MEMBRANE_CONTRACT_V1" },
+    "version": { "const": "1.0.1" },
+    "status": { "enum": ["SPEC_DRAFT_READY_FOR_OPERATOR_REVIEW", "RATIFIED", "DEPRECATED"] },
+    "invariant": { "const": "LEFT_MUTABLE_RIGHT_IMMUTABLE_MEMBRANE_ENFORCED" },
+    "state_split": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["operational_state", "canonical_state"],
+      "properties": {
+        "operational_state": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["symbol", "mutable", "ai_assisted", "authoritative"],
+          "properties": {
+            "symbol": { "const": "L" },
+            "mutable": { "const": true },
+            "ai_assisted": { "const": true },
+            "authoritative": { "const": false }
+          }
+        },
+        "canonical_state": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["symbol", "mutable", "log_type", "authoritative"],
+          "properties": {
+            "symbol": { "const": "R" },
+            "mutable": { "const": false },
+            "log_type": { "const": "hash_linked_ratified_blocks" },
+            "authoritative": { "const": true }
+          }
+        }
+      }
+    },
+    "canonical_block": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["payload", "prev_hash", "receipt", "timestamp", "hash"],
+      "properties": {
+        "payload": { "type": "object" },
+        "prev_hash": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+        "receipt": { "type": "object" },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "hash": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" }
+      }
+    },
+    "invariants": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "text"],
+        "properties": {
+          "id": { "enum": ["I1", "I2", "I3", "I4"] },
+          "text": { "type": "string" }
+        }
+      }
+    },
+    "promotion_checks": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "required", "failure_action"],
+        "properties": {
+          "id": { "enum": ["M1", "M2", "M3", "M4", "M5", "M6"] },
+          "name": { "type": "string" },
+          "required": { "const": true },
+          "failure_action": { "const": "BLOCK_PROMOTION" }
+        }
+      }
+    },
+    "failure_modes": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "tamper_banner"],
+        "properties": {
+          "id": { "enum": ["F1", "F2", "F3", "F4"] },
+          "name": { "type": "string" },
+          "tamper_banner": { "const": true }
+        }
+      }
+    },
+    "recovery": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["command", "requires_operator_confirmation", "log", "receipt_required_fields", "clears_tamper_banner", "preserves_recovery_event"],
+      "properties": {
+        "command": { "const": "reseedCanon" },
+        "requires_operator_confirmation": { "const": true },
+        "log": { "const": "cw_recovery_log" },
+        "receipt_required_fields": {
+          "type": "array",
+          "description": "All fields that must appear in every constitutional recovery receipt.",
+          "items": {
+            "type": "string",
+            "enum": [
+              "previous_chain_hash",
+              "recovery_timestamp_utc",
+              "recovery_reason",
+              "operator_identity"
+            ]
+          },
+          "uniqueItems": true,
+          "minItems": 4,
+          "allOf": [
+            { "contains": { "const": "previous_chain_hash" } },
+            { "contains": { "const": "recovery_timestamp_utc" } },
+            { "contains": { "const": "recovery_reason" } },
+            { "contains": { "const": "operator_identity" } }
+          ]
+        },
+        "clears_tamper_banner": { "const": true },
+        "preserves_recovery_event": { "const": true }
+      }
+    },
+    "membrane_rules": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["rule", "title", "text"],
+        "properties": {
+          "rule": { "minimum": 1, "maximum": 8, "type": "integer" },
+          "title": { "type": "string" },
+          "text": { "type": "string" }
+        }
+      }
+    },
+    "final_contract_line": {
+      "const": "All authority flows through the membrane. Every canonical fact is hash-bound, receipted, replayable, and recoverable through cw_recovery_log and reseedCanon()."
+    }
+  }
+}
