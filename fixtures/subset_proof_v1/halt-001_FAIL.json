@@ -1,0 +1,18 @@
+{
+  "metadata": {
+    "constraint_id": "HALT-001",
+    "expect": "FAIL"
+  },
+  "proof": {
+    "proof_type": "HALT",
+    "pre_capabilities": [
+      "treasury.execute"
+    ],
+    "post_capabilities": [
+      "emergency.admin"
+    ],
+    "added_capabilities": [
+      "emergency.admin"
+    ]
+  }
+}
