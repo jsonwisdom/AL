@@ -1,0 +1,94 @@
+{
+  "requirements_type": "FAF_EPOCH_03_HUMAN_REPLAY_PROOF_BUNDLE_REQUIREMENTS",
+  "version": "1.0.0",
+  "status": "DECLARED",
+  "epoch": "Epoch_03",
+  "operator": "jaywisdom.base.eth",
+  "doctrine": "Replay Over Agreement",
+  "alpha_verification_ref": "receipts/faf/epoch_03/alpha_state_verification.pending.json",
+  "capsule_ref": "receipts/faf/epoch_03/parody_paradox_jay_faf_epoch_03_capsule.v1.json",
+  "merkle_layout_ref": "receipts/faf/epoch_03/parody_paradox_jay_faf_epoch_03_merkle_layout.v1.json",
+  "entrypoint_required": "npm run replay",
+  "bundle_principle": "A human witness must prove the replay process, not merely assert the Merkle root.",
+  "required_artifacts": [
+    {
+      "name": "alpha_state_verification_receipt",
+      "required": true,
+      "hash_required": true,
+      "purpose": "binds replay to verified capsule, runtime, and fixtures"
+    },
+    {
+      "name": "command_manifest",
+      "required": true,
+      "hash_required": true,
+      "required_command": "npm run replay",
+      "purpose": "proves lawful entrypoint was used"
+    },
+    {
+      "name": "stdout_log",
+      "required": true,
+      "hash_required": true,
+      "hash_field": "stdout_hash",
+      "purpose": "captures observable replay output without relying on narrative"
+    },
+    {
+      "name": "stderr_log",
+      "required": true,
+      "hash_required": true,
+      "hash_field": "stderr_hash",
+      "purpose": "captures warnings or refusal traces"
+    },
+    {
+      "name": "leaf_manifest",
+      "required": true,
+      "hash_required": true,
+      "purpose": "lists leaves, ordering, and leaf hashes used in Merkle construction"
+    },
+    {
+      "name": "tree_layout_manifest",
+      "required": true,
+      "hash_required": true,
+      "hash_field": "tree_layout_hash",
+      "purpose": "proves replay geometry matches the declared layout"
+    },
+    {
+      "name": "merkle_root_receipt",
+      "required": true,
+      "hash_required": true,
+      "purpose": "records root candidate and assembly policy"
+    },
+    {
+      "name": "refusal_receipt",
+      "required": false,
+      "hash_required": true,
+      "purpose": "required only when replay halts; excluded from Merkle tree"
+    }
+  ],
+  "required_hashes": {
+    "alpha_verification_hash": null,
+    "proof_bundle_hash": null,
+    "stdout_hash": null,
+    "stderr_hash": null,
+    "leaf_manifest_hash": null,
+    "tree_layout_hash": null,
+    "merkle_root": null
+  },
+  "acceptance_rules": {
+    "entrypoint_must_match": true,
+    "alpha_verification_verdict_must_equal": "ALPHA_VERIFIED",
+    "proof_bundle_hash_required": true,
+    "stdout_hash_required": true,
+    "tree_layout_hash_required": true,
+    "merkle_root_required": true,
+    "refusal_receipt_means_no_root": true,
+    "network_reads_allowed": false
+  },
+  "dual_receipt_gate": {
+    "minimum_human_receipts": 2,
+    "all_merkle_roots_identical": true,
+    "all_tree_layout_hashes_identical": true,
+    "all_alpha_verification_refs_identical": true,
+    "parity_required": true
+  },
+  "receipt_hash": null
+}
