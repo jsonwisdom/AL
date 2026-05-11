@@ -5,11 +5,15 @@
   "title": "Hermes Keeps Agents Alive. ALMS Keeps Agents Legitimate.",
   "status": "CANON_VISUAL_LOCKED",
   "decision": "KEEP_SINGLE_CANON_VISUAL",
-  "placeholder_receipt": "canon-510ce7cd5a33",
-  "placeholder_warning": "Placeholder is not a Git commit SHA. Final anchor requires actual_git_commit_sha_from_master.",
-  "variant_policy": "NO_VARIANTS_UNTIL_MASTER_RECEIPT_EXISTS",
+  "branch_evidence_sha": "123e4024ba90752ec6b44488b2b78fcd10e1e8fc",
+  "actual_git_commit_sha_from_master": "fab141f29de7ff1eafef9e509683a9ecfca1c242",
+  "master_anchor_finalized": true,
+  "placeholder_replaced": true,
+  "origin_pr": "jsonwisdom/AL#167",
+  "canonical_reference": "BRANCH_EVIDENCE_VS_MASTER_ANCHOR_V1",
+  "variant_policy_at_merge": "NO_VARIANTS_UNTIL_MASTER_RECEIPT_EXISTS",
   "exports": ["html", "svg", "png"],
   "claim": "Hermes provides uptime primitives for autonomous agents; ALMS provides legitimacy primitives for replay-safe governance.",
   "canon_line": "Uptime gets you through the night. Legitimacy gets you through the audit.",
-  "tree_state": "pending_commit"
+  "tree_state": "committed_to_master"
 }
