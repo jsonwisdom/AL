@@ -1,0 +1,37 @@
+{
+  "project": "jsonwisdom/AL",
+  "epoch": "epoch03",
+  "status": "UNRUN",
+  "attestation_status": "NOT_MINTED",
+  "commit": "GIT_COMMIT_SHA",
+  "harness_hash": "sha256:HARNESS_HASH_HEX",
+  "doctrine_root": "sha256:DOCTRINE_ROOT_HEX",
+  "fsm_root": "sha256:FSM_ROOT_HEX",
+  "receipt_root": "sha256:RECEIPT_ROOT_HEX",
+  "lineage_root": "sha256:LINEAGE_ROOT_HEX",
+  "parity": {
+    "golden_transcript": {
+      "js_vs_wasm": "UNRUN",
+      "js_vs_cli": "UNRUN",
+      "wasm_vs_cli": "UNRUN"
+    },
+    "adversarial_harness": {
+      "js_vs_wasm": "UNRUN",
+      "js_vs_cli": "UNRUN",
+      "wasm_vs_cli": "UNRUN"
+    },
+    "lineage_harness": {
+      "js_vs_wasm": "UNRUN",
+      "js_vs_cli": "UNRUN",
+      "wasm_vs_cli": "UNRUN"
+    }
+  },
+  "checklist": {
+    "canonical_concat_applied": "UNRUN",
+    "verdict_jsons_bit_identical": "UNRUN",
+    "roots_recomputed_from_frozen_code": "UNRUN",
+    "no_ui_or_asset_hashes_in_payload": "UNRUN",
+    "local_replay_required_before_trust": "PASS"
+  },
+  "timestamp": 0
+}
