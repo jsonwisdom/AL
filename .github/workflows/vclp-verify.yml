@@ -27,15 +27,17 @@ jobs:
 
           def eval_halt_001(doc):
               proof = doc.get("proof", {})
+              if doc.get("metadata", {}).get("constraint_id") != "HALT-001":
+                  return True
               if proof.get("proof_type") != "HALT":
                   return False
               return len(proof.get("added_capabilities", [])) == 0
 
           failed = False
-          paths = sorted(glob.glob("fixtures/subset_proof_v1/*.json"))
+          paths = sorted(glob.glob("fixtures/subset_proof_v1/halt-001_*.json"))
 
           if not paths:
-              print("NO_FIXTURES_FOUND")
+              print("NO_HALT_001_FIXTURES_FOUND")
               sys.exit(1)
 
           for path in paths:
@@ -46,17 +48,189 @@ jobs:
               cid = md.get("constraint_id")
               expect = md.get("expect")
 
-              if not cid or expect not in ("PASS", "FAIL"):
+              if cid != "HALT-001" or expect not in ("PASS", "FAIL"):
                   print(f"METADATA_INVALID: {path}")
                   failed = True
                   continue
 
-              if cid != "HALT-001":
-                  print(f"UNSUPPORTED_CONSTRAINT_FOR_THIS_STUB: {path} {cid}")
+              actual = eval_halt_001(doc)
+              expected = expect == "PASS"
+
+              if actual != expected:
+                  print(f"EXPECTATION_MISMATCH: {path} actual={actual} expected={expected}")
+                  failed = True
+              else:
+                  print(f"OK: {path}")
+
+          sys.exit(1 if failed else 0)
+          PY
+
+      - name: Verify subset_proof_v1 HALT-002 fixtures
+        run: |
+          python - <<'PY'
+          import glob
+          import json
+          import sys
+
+          def eval_halt_002(doc):
+              proof = doc.get("proof", {})
+              pre = set(proof.get("pre_capabilities", []))
+              post = set(proof.get("post_capabilities", []))
+              return post.issubset(pre)
+
+          failed = False
+          paths = sorted(glob.glob("fixtures/subset_proof_v1/halt-002_*.json"))
+
+          if not paths:
+              print("NO_HALT_002_FIXTURES_FOUND")
+              sys.exit(1)
+
+          for path in paths:
+              with open(path) as f:
+                  doc = json.load(f)
+
+              md = doc.get("metadata", {})
+              cid = md.get("constraint_id")
+              expect = md.get("expect")
+
+              if cid != "HALT-002" or expect not in ("PASS", "FAIL"):
+                  print(f"METADATA_INVALID: {path}")
                   failed = True
                   continue
 
-              actual = eval_halt_001(doc)
+              actual = eval_halt_002(doc)
+              expected = expect == "PASS"
+
+              if actual != expected:
+                  print(f"EXPECTATION_MISMATCH: {path} actual={actual} expected={expected}")
+                  failed = True
+              else:
+                  print(f"OK: {path}")
+
+          sys.exit(1 if failed else 0)
+          PY
+
+      - name: Verify subset_proof_v1 HALT-003 fixtures
+        run: |
+          python - <<'PY'
+          import glob
+          import json
+          import sys
+
+          def eval_halt_003(doc):
+              proof = doc.get("proof", {})
+              return proof.get("strict_paths_expressible") is False
+
+          failed = False
+          paths = sorted(glob.glob("fixtures/subset_proof_v1/halt-003_*.json"))
+
+          if not paths:
+              print("NO_HALT_003_FIXTURES_FOUND")
+              sys.exit(1)
+
+          for path in paths:
+              with open(path) as f:
+                  doc = json.load(f)
+
+              md = doc.get("metadata", {})
+              cid = md.get("constraint_id")
+              expect = md.get("expect")
+
+              if cid != "HALT-003" or expect not in ("PASS", "FAIL"):
+                  print(f"METADATA_INVALID: {path}")
+                  failed = True
+                  continue
+
+              actual = eval_halt_003(doc)
+              expected = expect == "PASS"
+
+              if actual != expected:
+                  print(f"EXPECTATION_MISMATCH: {path} actual={actual} expected={expected}")
+                  failed = True
+              else:
+                  print(f"OK: {path}")
+
+          sys.exit(1 if failed else 0)
+          PY
+
+      - name: Verify subset_proof_v1 HALT-004 fixtures
+        run: |
+          python - <<'PY'
+          import glob
+          import json
+          import sys
+
+          def eval_halt_004(doc):
+              proof = doc.get("proof", {})
+              halt_scope = proof.get("halt_scope")
+              receipt_hash = proof.get("domain_split_receipt_hash")
+              return halt_scope == "STRICT_ZONE_ALL" or bool(receipt_hash)
+
+          failed = False
+          paths = sorted(glob.glob("fixtures/subset_proof_v1/halt-004_*.json"))
+
+          if not paths:
+              print("NO_HALT_004_FIXTURES_FOUND")
+              sys.exit(1)
+
+          for path in paths:
+              with open(path) as f:
+                  doc = json.load(f)
+
+              md = doc.get("metadata", {})
+              cid = md.get("constraint_id")
+              expect = md.get("expect")
+
+              if cid != "HALT-004" or expect not in ("PASS", "FAIL"):
+                  print(f"METADATA_INVALID: {path}")
+                  failed = True
+                  continue
+
+              actual = eval_halt_004(doc)
+              expected = expect == "PASS"
+
+              if actual != expected:
+                  print(f"EXPECTATION_MISMATCH: {path} actual={actual} expected={expected}")
+                  failed = True
+              else:
+                  print(f"OK: {path}")
+
+          sys.exit(1 if failed else 0)
+          PY
+
+      - name: Verify subset_proof_v1 HALT-005 fixtures
+        run: |
+          python - <<'PY'
+          import glob
+          import json
+          import sys
+
+          def eval_halt_005(doc):
+              proof = doc.get("proof", {})
+              receipt_hash = proof.get("active_classifier_receipt_hash")
+              return bool(receipt_hash)
+
+          failed = False
+          paths = sorted(glob.glob("fixtures/subset_proof_v1/halt-005_*.json"))
+
+          if not paths:
+              print("NO_HALT_005_FIXTURES_FOUND")
+              sys.exit(1)
+
+          for path in paths:
+              with open(path) as f:
+                  doc = json.load(f)
+
+              md = doc.get("metadata", {})
+              cid = md.get("constraint_id")
+              expect = md.get("expect")
+
+              if cid != "HALT-005" or expect not in ("PASS", "FAIL"):
+                  print(f"METADATA_INVALID: {path}")
+                  failed = True
+                  continue
+
+              actual = eval_halt_005(doc)
               expected = expect == "PASS"
 
               if actual != expected:
