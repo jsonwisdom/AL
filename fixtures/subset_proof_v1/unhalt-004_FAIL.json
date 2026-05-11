@@ -1,0 +1,11 @@
+{
+  "metadata": {
+    "constraint_id": "UNHALT-004",
+    "expect": "FAIL"
+  },
+  "proof": {
+    "halted_capabilities": ["read"],
+    "post_capabilities": ["read", "write", "execute", "admin"],
+    "pre_halt_capabilities": ["read", "write", "execute"]
+  }
+}
