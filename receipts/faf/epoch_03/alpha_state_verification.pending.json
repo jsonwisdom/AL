@@ -1,0 +1,50 @@
+{
+  "type": "alpha_state_verification",
+  "epoch": "Epoch_03",
+  "status": "PENDING_DIGESTS_AND_LOCAL_OBSERVATION",
+  "capsule_path": "receipts/faf/epoch_03/parody_paradox_jay_faf_epoch_03_capsule.v1.json",
+  "commit": {
+    "declared_commit_sha": "27075eabe678dcd433ef4e5758099b95e41f94f6",
+    "observed_commit_sha": null,
+    "tree_consistency": "UNOBSERVED"
+  },
+  "runtime": {
+    "container_digest": null,
+    "code_version": "git:refs/tags/faf-epoch-03-runtime-v1",
+    "entrypoint": "npm run replay"
+  },
+  "fixtures": [
+    {
+      "name": "faf_epoch_03_inputs",
+      "path": "fixtures/faf/epoch_03",
+      "hash_algo": "sha256-tree",
+      "declared_hash": null,
+      "observed_hash": null,
+      "verdict": "UNOBSERVED"
+    },
+    {
+      "name": "prior_epoch_evidence",
+      "path": "receipts/faf/epoch_02",
+      "hash_algo": "sha256-tree",
+      "declared_hash": null,
+      "observed_hash": null,
+      "verdict": "UNOBSERVED"
+    }
+  ],
+  "capsule": {
+    "canonical_hash_algo": "sha256",
+    "canonical_hash": null,
+    "canonicalization_command": "jq -cS '.receipt_hash=null' receipts/faf/epoch_03/parody_paradox_jay_faf_epoch_03_capsule.v1.json | sha256sum"
+  },
+  "alpha_rules": {
+    "verified_only_if_tree_consistency": ["MATCH", "FAST_FORWARD"],
+    "verified_only_if_all_fixture_verdicts": "MATCH",
+    "verified_only_if_runtime_digest_present": true,
+    "verified_only_if_entrypoint_matches_capsule": true,
+    "failure_verdict": "DRIFT_DETECTED",
+    "failure_refusal_code": "ALMS-03 STATE_DRIFT"
+  },
+  "verdict": "PENDING",
+  "refusal_code": null,
+  "receipt_hash": null
+}
