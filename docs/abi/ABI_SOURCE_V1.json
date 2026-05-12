@@ -16,14 +16,196 @@
       "constitutional_effect": "REJECT_BEFORE_CANONICALIZATION"
     },
     {
+      "code": "F-002",
+      "name": "CANONICALIZATION_MISMATCH",
+      "layer": "T37_CANONICALIZATION",
+      "reason": "Input cannot be normalized to the Safe JSON Subset under Unicode, key order, and numeric policy.",
+      "constitutional_effect": "REJECT_BEFORE_HASH"
+    },
+    {
       "code": "F-003",
       "name": "HASH_REPLAY_FAILURE",
       "layer": "T36_REPLAY",
       "reason": "SHA256(T37(input)) does not equal claimed digest.",
       "constitutional_effect": "REJECT_BEFORE_ATTESTATION"
+    },
+    {
+      "code": "F-004",
+      "name": "PROHIBITED_SURFACE_INVOKED",
+      "layer": "SURFACE_POLICY",
+      "reason": "Operation attempted to invoke a surface outside the declared allowed_surfaces domain.",
+      "constitutional_effect": "REJECT_BEFORE_STATE"
+    },
+    {
+      "code": "F-005",
+      "name": "UNAUTHORIZED_OPERATOR",
+      "layer": "AUTHORITY",
+      "reason": "Caller identity does not match a permitted operator for this ABI surface.",
+      "constitutional_effect": "REJECT_BEFORE_EXECUTION"
     }
   ],
-  "allowed_surfaces": [],
-  "required_receipts": [],
-  "operators": []
+  "allowed_surfaces": [
+    {
+      "surface_id": "SURFACE_T32_ADMIT_SOURCE_V1",
+      "surface_type": "READ_ONLY_VERIFY",
+      "description": "Evaluate whether ABI_SOURCE_V1 satisfies T32 shape requirements before canonicalization.",
+      "state_mutation": false,
+      "requires_receipts": [],
+      "may_trigger_failures": ["F-001"],
+      "operator_required": false,
+      "attestation_authority": false
+    },
+    {
+      "surface_id": "SURFACE_T37_CANONICALIZE_SOURCE_V1",
+      "surface_type": "CANONICALIZE_ONLY",
+      "description": "Convert T32-admitted ABI_SOURCE_V1 into canonical UTF-8 bytes under T37 Triple Crown policy.",
+      "state_mutation": false,
+      "requires_receipts": ["T32_ADMISSION_RECEIPT_V1"],
+      "may_trigger_failures": ["F-002"],
+      "operator_required": false,
+      "attestation_authority": false
+    },
+    {
+      "surface_id": "SURFACE_T36_REPLAY_DIGEST_V1",
+      "surface_type": "REPLAY_ONLY",
+      "description": "Replay T37 canonicalization and verify SHA-256 digest reproduction.",
+      "state_mutation": false,
+      "requires_receipts": ["T32_ADMISSION_RECEIPT_V1", "T37_CANONICALIZATION_RECEIPT_V1"],
+      "may_trigger_failures": ["F-003"],
+      "operator_required": false,
+      "attestation_authority": false
+    },
+    {
+      "surface_id": "SURFACE_EMIT_NON_ATTESTING_RECEIPT_V1",
+      "surface_type": "EMIT_RECEIPT",
+      "description": "Emit non-sovereign evidence receipts for admission, canonicalization, and replay events.",
+      "state_mutation": true,
+      "requires_receipts": [],
+      "may_trigger_failures": ["F-004"],
+      "operator_required": false,
+      "attestation_authority": false
+    },
+    {
+      "surface_id": "SURFACE_REFUSE_FAILURE_V1",
+      "surface_type": "REFUSE",
+      "description": "Emit refusal outcome when failure geometry fires.",
+      "state_mutation": true,
+      "requires_receipts": [],
+      "may_trigger_failures": [],
+      "operator_required": false,
+      "attestation_authority": false
+    }
+  ],
+  "required_receipts": [
+    {
+      "receipt_id": "T32_ADMISSION_RECEIPT_V1",
+      "receipt_type": "ADMISSION",
+      "surface_id": "SURFACE_T32_ADMIT_SOURCE_V1",
+      "proves": ["source_shape_admitted_without_repair"],
+      "failure_codes_avoided": ["F-001"],
+      "failure_codes_triggered": [],
+      "state_mutation": false,
+      "attestation_authority": false,
+      "finality_authority": false
+    },
+    {
+      "receipt_id": "T37_CANONICALIZATION_RECEIPT_V1",
+      "receipt_type": "CANONICALIZATION",
+      "surface_id": "SURFACE_T37_CANONICALIZE_SOURCE_V1",
+      "proves": ["canonical_bytes_computed_under_T37_policy"],
+      "failure_codes_avoided": ["F-002"],
+      "failure_codes_triggered": [],
+      "state_mutation": false,
+      "attestation_authority": false,
+      "finality_authority": false
+    },
+    {
+      "receipt_id": "T36_REPLAY_RECEIPT_V1",
+      "receipt_type": "REPLAY",
+      "surface_id": "SURFACE_T36_REPLAY_DIGEST_V1",
+      "proves": ["claimed_digest_reproduced_from_canonical_bytes"],
+      "failure_codes_avoided": ["F-003"],
+      "failure_codes_triggered": [],
+      "state_mutation": false,
+      "attestation_authority": false,
+      "finality_authority": false
+    }
+  ],
+  "operators": [
+    {
+      "operator_id": "OPERATOR_JAYWISDOM_ROOT_V1",
+      "identity": "jaywisdom.eth",
+      "operator_alias": "jaywisdom.base.eth",
+      "identity_type": "ENS_ROOT_WITH_BASE_ALIAS",
+      "wallet_binding": "0xA380552a27b0a5a2874Ea7AA52CAC09f542002E8",
+      "permitted_surfaces": [
+        "SURFACE_T32_ADMIT_SOURCE_V1",
+        "SURFACE_T37_CANONICALIZE_SOURCE_V1",
+        "SURFACE_T36_REPLAY_DIGEST_V1",
+        "SURFACE_EMIT_NON_ATTESTING_RECEIPT_V1",
+        "SURFACE_REFUSE_FAILURE_V1"
+      ],
+      "prohibited_surfaces": ["BIND_AUTHORITY", "ATTEST", "ENS_ABI_WRITE", "EAS_WRITE", "A00001_ISSUANCE"],
+      "requires_receipts": ["T32_ADMISSION_RECEIPT_V1", "T37_CANONICALIZATION_RECEIPT_V1", "T36_REPLAY_RECEIPT_V1"],
+      "can_bind_authority": false,
+      "can_attest": false,
+      "can_mutate_ens": false,
+      "can_write_eas": false,
+      "finality_required": true
+    }
+  ],
+  "finality_conditions": [
+    "FINALITY_SOURCE_COMPLETE_V1",
+    "FINALITY_T32_ADMISSIBLE_V1",
+    "FINALITY_T37_CANONICAL_BYTES_V1",
+    "FINALITY_T36_REPLAY_SUCCESS_V1",
+    "FINALITY_OPERATOR_BOUND_V1",
+    "FINALITY_NO_PROHIBITED_SURFACE_V1",
+    "FINALITY_EXPLICIT_REVIEW_V1"
+  ],
+  "attestation_surface": {
+    "surface_id": "SURFACE_A00001_ATTEST_ABI_GENESIS_V1",
+    "surface_type": "ATTEST",
+    "locked": true,
+    "can_issue_a00001": false,
+    "can_mutate_ens": false,
+    "can_write_eas": false
+  },
+  "sovereign_unlock_conditions": {
+    "surface_id": "SURFACE_UNLOCK_A00001_MINT_V1",
+    "can_issue_a00001": false,
+    "unlock_receipt_required": "SOVEREIGN_UNLOCK_RECEIPT_V1"
+  },
+  "sovereign_issuance_conditions": {
+    "surface_id": "SURFACE_ISSUE_A00001_ABI_GENESIS_V1",
+    "requires_explicit_issuance_command": true,
+    "single_use": true,
+    "can_issue_a00001": true,
+    "can_mutate_ens": false,
+    "can_write_eas": false
+  },
+  "a00001_review_protocol": {
+    "review_protocol": "A00001_REVIEW_PROTOCOL_V1",
+    "allowed_review_outputs": ["ELIGIBLE_FOR_EXPLICIT_ISSUANCE", "REJECTED_BY_REVIEW"]
+  },
+  "a00001_issuance_command_semantics": {
+    "command_id": "A00001_ISSUANCE_COMMAND_V1",
+    "command_type": "EXPLICIT_SINGLE_USE_ISSUANCE_COMMAND",
+    "single_use": true,
+    "can_authorize_future_issuance": false
+  },
+  "a00001_issuance_transcript_model": {
+    "transcript_id": "A00001_ISSUANCE_TRANSCRIPT_V1",
+    "transcript_type": "SOVEREIGN_ISSUANCE_TRANSCRIPT",
+    "issuance_result": "NOT_ISSUED"
+  },
+  "a00001_issuance_envelope": {
+    "envelope_id": "A00001_ISSUANCE_ENVELOPE_V1",
+    "envelope_type": "SOVEREIGN_ISSUANCE_ENVELOPE",
+    "issuance_result": "NOT_ISSUED"
+  },
+  "a00001_sovereign_execution_ritual": {
+    "ritual_id": "A00001_SOVEREIGN_EXECUTION_RITUAL_V1",
+    "terminal_outputs": ["A00001_ISSUANCE_ELIGIBLE_PENDING_EXPLICIT_COMMAND", "A00001_REFUSED_BY_RITUAL"]
+  }
 }
