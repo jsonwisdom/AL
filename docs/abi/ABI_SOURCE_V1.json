@@ -1,0 +1,29 @@
+{
+  "schema_id": "ABI_SOURCE_V1",
+  "schema_version": "1.0.0",
+  "domain": "DIGITAL_ABI_DOMAIN",
+  "authority_root": "jaywisdom.eth",
+  "operator_alias": "jaywisdom.base.eth",
+  "wallet_binding": "0xA380552a27b0a5a2874Ea7AA52CAC09f542002E8",
+  "canonicalization_policy": "T37.0001_TRIPLE_CROWN",
+  "replay_policy": "T36.0001_REPLAY_OBLIGATION",
+  "failure_codes": [
+    {
+      "code": "F-001",
+      "name": "UNREPRESENTABLE_SHAPE",
+      "layer": "T32_TYPE",
+      "reason": "Input cannot be expressed in the ABI schema (missing/extra fields, wrong types).",
+      "constitutional_effect": "REJECT_BEFORE_CANONICALIZATION"
+    },
+    {
+      "code": "F-003",
+      "name": "HASH_REPLAY_FAILURE",
+      "layer": "T36_REPLAY",
+      "reason": "SHA256(T37(input)) does not equal claimed digest.",
+      "constitutional_effect": "REJECT_BEFORE_ATTESTATION"
+    }
+  ],
+  "allowed_surfaces": [],
+  "required_receipts": [],
+  "operators": []
+}
