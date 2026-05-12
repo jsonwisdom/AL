@@ -1,0 +1,25 @@
+{
+  "version": "1",
+  "publisher": ["jaywisdom.base.eth", "jaywisdom.eth"],
+  "network": "base",
+  "canonicalization": "RFC8785-JCS",
+  "hash_algorithm": "SHA-256",
+  "documents": [
+    {
+      "name": "leavebehind.pdf",
+      "type": "application/pdf",
+      "sha256": "bdce62f834dabf975df86f86f2210502584798aa00709dec64af4ed5990c074a"
+    },
+    {
+      "name": "visual_summary_letter.pdf",
+      "type": "application/pdf",
+      "sha256": "e72b0ff4c18bd49bb52138f427d6a7fb8d765f7f1c82365c2b6e7f7c279394d6"
+    },
+    {
+      "name": "visual_summary_a4.pdf",
+      "type": "application/pdf",
+      "sha256": "9a0c17f7af8c6dae2aa06e0068b1457e3512cdbefa5345fea6b80853e7cc1dca"
+    }
+  ],
+  "disclaimer": "No SEC endorsement, no regulatory affiliation. This record attests only to document integrity at the time of anchoring."
+}

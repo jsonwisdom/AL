@@ -1,0 +1,10 @@
+Canonicalization: RFC8785-JCS
+Hash algorithm: SHA-256
+Encoding: UTF-8
+Line endings: LF (\n)
+Timestamp format: RFC3339 UTC
+
+This specification defines the normalization and interpretation rules for
+payload_hardened.json and payload_hardened_canonical.json. Future verifiers
+must apply these rules before recomputing digests or comparing against the
+on-chain integrity record.
