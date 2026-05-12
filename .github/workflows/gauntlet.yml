@@ -27,6 +27,6 @@ jobs:
 
       - name: Run gauntlet recorder
         run: |
-          python scripts/record_gauntlet.py \
+          PYTHONPATH="$PWD" python scripts/record_gauntlet.py \
             --storage-path ./data/prod_spine \
             --workflow-file .github/workflows/gauntlet.yml
