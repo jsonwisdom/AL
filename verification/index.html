@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Verification Anchor V1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 920px; margin: 40px auto; padding: 0 20px; line-height: 1.5; color: #111; }
+    code, pre { background: #f4f4f4; padding: 2px 4px; }
+    pre { padding: 12px; overflow-x: auto; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; vertical-align: top; }
+    th { background: #eee; }
+    .note { border: 1px solid #ccc; padding: 12px; background: #fafafa; }
+  </style>
+</head>
+<body>
+<h1>Verification Anchor V1</h1>
+
+<section>
+<h2>What this page is</h2>
+<p>
+This page is an integrity witness for specific documents. It is not legal advice,
+not SEC communication, not a solicitation, and not evidence of regulatory endorsement
+or affiliation.
+</p>
+</section>
+
+<section>
+<h2>Documents and hashes</h2>
+<table>
+<tr><th>Document</th><th>Format / usage</th><th>SHA-256</th></tr>
+<tr><td>leavebehind.pdf</td><td>Leave-behind packet</td><td><code>bdce62f834dabf975df86f86f2210502584798aa00709dec64af4ed5990c074a</code></td></tr>
+<tr><td>visual_summary_letter.pdf</td><td>US Letter handout</td><td><code>e72b0ff4c18bd49bb52138f427d6a7fb8d765f7f1c82365c2b6e7f7c279394d6</code></td></tr>
+<tr><td>visual_summary_a4.pdf</td><td>A4 handout</td><td><code>9a0c17f7af8c6dae2aa06e0068b1457e3512cdbefa5345fea6b80853e7cc1dca</code></td></tr>
+<tr><td>payload_hardened_canonical.json</td><td>Canonical anchor payload</td><td><code>8fd7f7448375ba2c3cdf6424e2c5d979f8208ded861b8e9ef7a86b00f5345350</code></td></tr>
+</table>
+</section>
+
+<section>
+<h2>How to verify</h2>
+<p>Unix-like systems:</p>
+<pre>sha256sum leavebehind.pdf
+sha256sum visual_summary_letter.pdf
+sha256sum visual_summary_a4.pdf
+sha256sum payload_hardened_canonical.json</pre>
+
+<p>Windows:</p>
+<pre>CertUtil -hashfile leavebehind.pdf SHA256
+CertUtil -hashfile visual_summary_letter.pdf SHA256
+CertUtil -hashfile visual_summary_a4.pdf SHA256
+CertUtil -hashfile payload_hardened_canonical.json SHA256</pre>
+
+<p>Match the output exactly to the hashes listed above.</p>
+</section>
+
+<section id="base-anchor">
+<h2>Base anchor details</h2>
+<p>
+Network: <code>Base</code><br>
+Transaction hash: <code>0xc1a6da6ab1727f3dc8d5cc93c3af546b4636ec8cf6e4f9b614c900471670056d</code><br>
+Block number: <code>45893063</code><br>
+Block timestamp UTC: <code>2026-05-12T08:44:33Z</code><br>
+Unix timestamp: <code>1778575473</code><br>
+Attester: <code>0x1dB2C056c7DeCD9f9fC574692b05F62aE34Fb8b5</code><br>
+EAS contract: <code>0x4200000000000000000000000000000000000021</code><br>
+Schema UID: <code>0xACB404A756DE1F3E4C698624D3F1D72B37ED42C986FD078AFD185356B80B91C4</code><br>
+Attestation UID: <code>0x4D5A281F608E180E02AFD678C8E6F2260F220289A8C68047D1739F8EC753DB4F</code><br>
+Explorer URL:
+<a href="https://basescan.org/tx/0xc1a6da6ab1727f3dc8d5cc93c3af546b4636ec8cf6e4f9b614c900471670056d">https://basescan.org/tx/0xc1a6da6ab1727f3dc8d5cc93c3af546b4636ec8cf6e4f9b614c900471670056d</a>
+</p>
+
+<p>
+The blockchain transaction serves solely as a public timestamped integrity record.
+It does not confer any regulatory status, endorsement, or approval.
+</p>
+
+<p>
+This anchor does not attest to truth, completeness, or regulatory acceptance.
+It attests only to document integrity at the time of anchoring.
+</p>
+</section>
+
+<section>
+<h2>Publisher and scope</h2>
+<p>
+Publisher identifiers: <code>jaywisdom.base.eth</code>, <code>jaywisdom.eth</code>.
+</p>
+<p>
+This page attests only to the existence of specific documents at or before the anchor time
+and the integrity of those documents via SHA-256.
+</p>
+</section>
+
+<section>
+<h2>Disclaimer and reproducibility</h2>
+<div class="note">
+No SEC endorsement. No regulatory affiliation. Not investment advice. Not a solicitation.
+Anyone may independently recompute hashes and compare them to the on-chain payload.
+</div>
+<p>
+Verification requires independent recomputation of hashes from locally obtained files.
+No representation is made regarding external mirrors or third-party hosting integrity.
+</p>
+</section>
+
+</body>
+</html>
