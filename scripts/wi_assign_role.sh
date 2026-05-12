@@ -16,6 +16,13 @@ esac
 
 test -f "$MANIFEST" || { echo "MISSING_MANIFEST"; exit 1; }
 
+MATCH_COUNT="$(jq -r --arg file "$FILE" 'select(.artifact_file == $file) | .artifact_file' "$MANIFEST" | wc -l | tr -d ' ')"
+if [ "$MATCH_COUNT" = "0" ]; then
+  rm -f "$TMP"
+  echo "ARTIFACT_NOT_FOUND: $FILE"
+  exit 1
+fi
+
 jq -c --arg file "$FILE" --arg role "$ROLE" --arg ts "$TS" '
   if .artifact_file == $file then
     .artifact_role = $role
