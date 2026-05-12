@@ -68,9 +68,9 @@ jobs:
           cmp witness2.sha256 witness3.sha256
           cmp witness1.uid witness2.uid
           cmp witness2.uid witness3.uid
-          grep -q '^VALID uid:' verify1.log
-          grep -q '^VALID uid:' verify2.log
-          grep -q '^VALID uid:' verify3.log
+          grep -q '^REPLAY_OK uid:' verify1.log
+          grep -q '^REPLAY_OK uid:' verify2.log
+          grep -q '^REPLAY_OK uid:' verify3.log
           echo "3_CLEAN_REPLAYS=PROVEN"
 
       - name: Upload replay artifacts
