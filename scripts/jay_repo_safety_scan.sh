@@ -17,6 +17,21 @@ mkdir -p "$REPORT_DIR"
 
 fail=0
 
+COMMON_EXCLUDES=(
+  --exclude-dir=.git
+  --exclude-dir=node_modules
+  --exclude-dir=.next
+  --exclude-dir=dist
+  --exclude-dir=build
+  --exclude='jay_repo_safety_report.txt'
+  --exclude='jay_repo_safety_scan.sh'
+  --exclude='JASON_GITHUB_DIRECT_REPO_MANUAL.md'
+  --exclude='JAY_WISDOM_PROTOCOL_V1.md'
+  --exclude='runtime_green_receipt.json'
+  --exclude='runtime_green_receipt.sha256'
+  --exclude='verify_runtime_green_receipt.py'
+)
+
 scan_fail() {
   local name="$1"
   local pattern="$2"
@@ -24,17 +39,7 @@ scan_fail() {
   echo "" | tee -a "$REPORT"
   echo "## $name" | tee -a "$REPORT"
 
-  if grep -RInE \
-    --exclude-dir=.git \
-    --exclude-dir=node_modules \
-    --exclude-dir=.next \
-    --exclude-dir=dist \
-    --exclude-dir=build \
-    --exclude='jay_repo_safety_report.txt' \
-    --exclude='jay_repo_safety_scan.sh' \
-    --exclude='JASON_GITHUB_DIRECT_REPO_MANUAL.md' \
-    --exclude='JAY_WISDOM_PROTOCOL_V1.md' \
-    "$pattern" "$ROOT" >> "$REPORT" 2>/dev/null; then
+  if grep -RInE "${COMMON_EXCLUDES[@]}" "$pattern" "$ROOT" >> "$REPORT" 2>/dev/null; then
     echo "STATUS=FAIL" | tee -a "$REPORT"
     fail=1
   else
@@ -49,17 +54,7 @@ scan_report() {
   echo "" | tee -a "$REPORT"
   echo "## $name" | tee -a "$REPORT"
 
-  if grep -RInE \
-    --exclude-dir=.git \
-    --exclude-dir=node_modules \
-    --exclude-dir=.next \
-    --exclude-dir=dist \
-    --exclude-dir=build \
-    --exclude='jay_repo_safety_report.txt' \
-    --exclude='jay_repo_safety_scan.sh' \
-    --exclude='JASON_GITHUB_DIRECT_REPO_MANUAL.md' \
-    --exclude='JAY_WISDOM_PROTOCOL_V1.md' \
-    "$pattern" "$ROOT" >> "$REPORT" 2>/dev/null; then
+  if grep -RInE "${COMMON_EXCLUDES[@]}" "$pattern" "$ROOT" >> "$REPORT" 2>/dev/null; then
     echo "STATUS=FOUND_PUBLIC_ARTIFACTS" | tee -a "$REPORT"
   else
     echo "STATUS=NONE_FOUND" | tee -a "$REPORT"
