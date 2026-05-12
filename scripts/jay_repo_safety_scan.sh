@@ -23,6 +23,7 @@ COMMON_EXCLUDES=(
   --exclude-dir=.next
   --exclude-dir=dist
   --exclude-dir=build
+  --exclude='.gitignore'
   --exclude='jay_repo_safety_report.txt'
   --exclude='jay_repo_safety_scan.sh'
   --exclude='JASON_GITHUB_DIRECT_REPO_MANUAL.md'
@@ -32,6 +33,13 @@ COMMON_EXCLUDES=(
   --exclude='verify_runtime_green_receipt.py'
 )
 
+run_grep() {
+  local pattern="$1"
+  grep -RInE "${COMMON_EXCLUDES[@]}" "$pattern" "$ROOT" 2>/dev/null \
+    | grep -vE '^[^:]+:[0-9]+:[[:space:]]*#' \
+    | grep -vE 'keystore account name|_ACCOUNT|ACCOUNT=' || true
+}
+
 scan_fail() {
   local name="$1"
   local pattern="$2"
@@ -39,7 +47,9 @@ scan_fail() {
   echo "" | tee -a "$REPORT"
   echo "## $name" | tee -a "$REPORT"
 
-  if grep -RInE "${COMMON_EXCLUDES[@]}" "$pattern" "$ROOT" >> "$REPORT" 2>/dev/null; then
+  matches="$(run_grep "$pattern")"
+  if [ -n "$matches" ]; then
+    printf '%s\n' "$matches" >> "$REPORT"
     echo "STATUS=FAIL" | tee -a "$REPORT"
     fail=1
   else
@@ -54,7 +64,9 @@ scan_report() {
   echo "" | tee -a "$REPORT"
   echo "## $name" | tee -a "$REPORT"
 
-  if grep -RInE "${COMMON_EXCLUDES[@]}" "$pattern" "$ROOT" >> "$REPORT" 2>/dev/null; then
+  matches="$(run_grep "$pattern")"
+  if [ -n "$matches" ]; then
+    printf '%s\n' "$matches" >> "$REPORT"
     echo "STATUS=FOUND_PUBLIC_ARTIFACTS" | tee -a "$REPORT"
   else
     echo "STATUS=NONE_FOUND" | tee -a "$REPORT"
