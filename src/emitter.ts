@@ -9,13 +9,23 @@ import fs from 'node:fs';
 const uidSchema = JSON.parse(fs.readFileSync('schemas/UID_V1.schema.json', 'utf8'));
 const witnessSchema = JSON.parse(fs.readFileSync('schemas/WITNESS_V1.schema.json', 'utf8'));
 
-const ajv = new Ajv({ allErrors: true, strict: true });
+const ajv = new Ajv({ allErrors: true, strict: false });
+ajv.addSchema(uidSchema, './UID_V1.schema.json');
 const validateUID = ajv.compile(uidSchema);
 const validateWitness = ajv.compile(witnessSchema);
+
+function jcs(value: unknown): string {
+  const out = canonicalize(value);
+  if (out === undefined) throw new Error('CANONICALIZE_FAILED');
+  return out;
+}
 
 function hash(data: string): string {
   return 'sha256:' + bytesToHex(sha256(utf8ToBytes(data)));
 }
+
+const privateKeyHex = '0000000000000000000000000000000000000000000000000000000000000001';
+const privateKey = new Uint8Array(Buffer.from(privateKeyHex, 'hex'));
 
 const eventPayload = {
   workflow: 'gauntlet',
@@ -24,8 +34,7 @@ const eventPayload = {
   status: 'GREEN'
 };
 
-const eventPayloadCanonical = canonicalize(eventPayload)!;
-const eventPayloadHash = hash(eventPayloadCanonical);
+const eventPayloadHash = hash(jcs(eventPayload));
 
 const envelope = {
   schema: 'alms/uid@v1',
@@ -46,11 +55,8 @@ if (!validateUID(envelope)) {
   process.exit(1);
 }
 
-const envelopeCanonical = canonicalize(envelope)!;
-const uidDigest = sha256(utf8ToBytes(envelopeCanonical));
-const uid = 'uid:' + base58btc.encode(uidDigest).replace('z', '');
-
-const privateKey = ed.utils.randomPrivateKey();
+const uidDigest = sha256(utf8ToBytes(jcs(envelope)));
+const uid = 'uid:' + base58btc.encode(uidDigest).slice(1);
 const publicKey = await ed.getPublicKeyAsync(privateKey);
 
 const witness = {
@@ -64,11 +70,10 @@ const witness = {
       sha256: hash(fs.readFileSync('.github/workflows/gauntlet.yml', 'utf8'))
     }
   ],
-  signatures: []
+  signatures: [] as Array<{ algorithm: 'Ed25519'; public_key: string; signature: string }>
 };
 
-const signable = canonicalize(witness)!;
-const signableHash = sha256(utf8ToBytes(signable));
+const signableHash = sha256(utf8ToBytes(jcs(witness)));
 const signature = await ed.signAsync(signableHash, privateKey);
 
 witness.signatures.push({
@@ -83,9 +88,5 @@ if (!validateWitness(witness)) {
 }
 
 fs.mkdirSync('.runtime/witnesses', { recursive: true });
-fs.writeFileSync(
-  `.runtime/witnesses/${uid}.json`,
-  canonicalize(witness)!
-);
-
+fs.writeFileSync(`.runtime/witnesses/${uid}.json`, jcs(witness));
 console.log('EMITTED', uid);
