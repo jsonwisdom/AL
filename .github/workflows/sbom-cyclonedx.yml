@@ -7,13 +7,14 @@ on:
       - 'package-lock.json'
       - 'yarn.lock'
       - 'pnpm-lock.yaml'
+      - 'package.json'
+      - '.github/workflows/sbom-cyclonedx.yml'
   schedule:
     - cron: '30 4 * * 1'
   workflow_dispatch:
 
 permissions:
   contents: write
-  security-events: write
 
 jobs:
   generate-sbom:
@@ -30,19 +31,35 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install CycloneDX CLI
-        run: npm install -g @cyclonedx/cyclonedx-npm
+      - name: Install SBOM tools
+        run: |
+          npm install -g @cyclonedx/cyclonedx-npm @cyclonedx/cyclonedx-cli
 
       - name: Generate SBOM (CycloneDX JSON)
         run: |
           mkdir -p _truth/security
-          cyclonedx-npm --output-format json --output-file _truth/security/sbom.cdx.json
+          if [ -f package.json ]; then
+            cyclonedx-npm --output-format json --output-file _truth/security/sbom.cdx.json --ignore-npm-errors
+          else
+            cat > _truth/security/sbom.cdx.json <<'JSON'
+          {
+            "bomFormat": "CycloneDX",
+            "specVersion": "1.5",
+            "version": 1,
+            "metadata": {
+              "component": {
+                "type": "application",
+                "name": "jsonwisdom/AL"
+              }
+            },
+            "components": []
+          }
+          JSON
+          fi
 
       - name: Generate SPDX companion format
-        uses: spdx/cyclonedx-to-spdx@v1
-        with:
-          input: _truth/security/sbom.cdx.json
-          output: _truth/security/sbom.spdx.json
+        run: |
+          cyclonedx convert --input-file _truth/security/sbom.cdx.json --output-format spdxjson --output-file _truth/security/sbom.spdx.json
 
       - name: Generate SHA256 anchors
         run: |
