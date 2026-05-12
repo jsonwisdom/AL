@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.github.io/AL/schemas/WITNESS_V1.schema.json",
+  "title": "WITNESS_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "uid",
+    "envelope",
+    "event_payload",
+    "artifacts",
+    "signatures"
+  ],
+  "properties": {
+    "schema": {
+      "const": "alms/witness@v1"
+    },
+    "uid": {
+      "type": "string",
+      "pattern": "^uid:[1-9A-HJ-NP-Za-km-z]+$"
+    },
+    "envelope": {
+      "$ref": "./UID_V1.schema.json"
+    },
+    "event_payload": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "workflow",
+        "run_id",
+        "commit",
+        "status"
+      ],
+      "properties": {
+        "workflow": { "type": "string" },
+        "run_id": { "type": "integer" },
+        "commit": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{7,40}$"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["GREEN", "RED"]
+        }
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "sha256"],
+        "properties": {
+          "path": { "type": "string" },
+          "sha256": {
+            "type": "string",
+            "pattern": "^sha256:[a-f0-9]{64}$"
+          }
+        }
+      }
+    },
+    "signatures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["algorithm", "public_key", "signature"],
+        "properties": {
+          "algorithm": {
+            "const": "Ed25519"
+          },
+          "public_key": {
+            "type": "string"
+          },
+          "signature": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
