@@ -50,12 +50,16 @@ def sha256_prefixed(data: bytes) -> str:
     return "sha256:" + sha256_hex(data)
 
 
-def sha256_to_bytes32(hash_value: Optional[str]) -> Optional[str]:
-    if hash_value is None:
-        return None
-    if not isinstance(hash_value, str) or not hash_value.startswith("sha256:") or len(hash_value) != 71:
-        die(f"invalid sha256 hash for bytes32 conversion: {hash_value}")
-    return "0x" + hash_value.removeprefix("sha256:")
+def sha256_bytes32(data: bytes) -> str:
+    return "0x" + sha256_hex(data)
+
+
+def valid_sha256_prefixed(value: Optional[str]) -> bool:
+    return isinstance(value, str) and value.startswith("sha256:") and len(value) == 71
+
+
+def valid_bytes32(value: Optional[str]) -> bool:
+    return isinstance(value, str) and value.startswith("0x") and len(value) == 66
 
 
 def read_json(path: Path) -> Any:
@@ -77,7 +81,7 @@ def batch_hash_preimage(manifest: Dict[str, Any]) -> Dict[str, Any]:
 
 
 def compute_batch_hash(manifest: Dict[str, Any]) -> str:
-    return sha256_prefixed(canonical_bytes(batch_hash_preimage(manifest)))
+    return sha256_bytes32(canonical_bytes(batch_hash_preimage(manifest)))
 
 
 def strict_witness_entry(path: Path, repo_root: Path) -> Dict[str, Any]:
@@ -89,7 +93,7 @@ def strict_witness_entry(path: Path, repo_root: Path) -> Dict[str, Any]:
     event_payload_hash = envelope.get("event_payload_hash")
     if not isinstance(uid, str) or not uid.startswith("uid:"):
         die(f"missing/invalid witness uid: {path}")
-    if not isinstance(event_payload_hash, str) or not event_payload_hash.startswith("sha256:"):
+    if not valid_sha256_prefixed(event_payload_hash):
         die(f"missing/invalid event_payload_hash: {path}")
 
     raw = path.read_bytes()
@@ -164,15 +168,13 @@ def verify_manifest(args: argparse.Namespace) -> None:
 
     recorded_batch_hash = manifest.get("batch_hash")
     computed_batch_hash = compute_batch_hash(manifest)
-    batch_hash_ok = recorded_batch_hash == computed_batch_hash
+    batch_hash_match = recorded_batch_hash == computed_batch_hash and valid_bytes32(recorded_batch_hash)
 
     witnesses = manifest.get("witnesses", [])
     sort_order_ok = witnesses == sorted(witnesses, key=lambda item: item.get("witness_id", ""))
     witness_count_ok = manifest.get("witness_count") == len(witnesses)
     prev_batch_hash = manifest.get("prev_batch_hash")
-    prev_batch_hash_ok = prev_batch_hash is None or (
-        isinstance(prev_batch_hash, str) and prev_batch_hash.startswith("sha256:") and len(prev_batch_hash) == 71
-    )
+    prev_batch_hash_ok = prev_batch_hash is None or valid_bytes32(prev_batch_hash)
 
     witness_reports: List[Dict[str, Any]] = []
     for entry in witnesses:
@@ -186,6 +188,7 @@ def verify_manifest(args: argparse.Namespace) -> None:
         node_output = "not run"
         if exists:
             node_ok, node_output = run_node_verifier(repo_root, witness_path)
+        item_pass = bool(exists and witness_hash_ok and node_ok)
         witness_reports.append(
             {
                 "witness_id": witness_id,
@@ -193,12 +196,13 @@ def verify_manifest(args: argparse.Namespace) -> None:
                 "exists": exists,
                 "witness_hash_ok": bool(witness_hash_ok),
                 "node_replay_ok": bool(node_ok),
+                "pass": item_pass,
                 "node_output": node_output,
             }
         )
 
-    all_witnesses_ok = all(item["exists"] and item["witness_hash_ok"] and item["node_replay_ok"] for item in witness_reports)
-    overall_green = bool(batch_hash_ok and sort_order_ok and witness_count_ok and prev_batch_hash_ok and all_witnesses_ok)
+    all_witnesses_ok = all(item["pass"] for item in witness_reports)
+    overall_green = bool(batch_hash_match and sort_order_ok and witness_count_ok and prev_batch_hash_ok and all_witnesses_ok)
 
     report = {
         "schema": REPORT_SCHEMA,
@@ -206,7 +210,7 @@ def verify_manifest(args: argparse.Namespace) -> None:
         "manifest_path": manifest_path.relative_to(repo_root).as_posix() if manifest_path.is_relative_to(repo_root) else manifest_path.as_posix(),
         "batch_hash_recorded": recorded_batch_hash,
         "batch_hash_computed": computed_batch_hash,
-        "batch_hash_ok": batch_hash_ok,
+        "batch_hash_match": batch_hash_match,
         "sort_order_ok": sort_order_ok,
         "witness_count_ok": witness_count_ok,
         "prev_batch_hash_ok": prev_batch_hash_ok,
@@ -226,16 +230,19 @@ def build_eas_payload(args: argparse.Namespace) -> None:
     out = (repo_root / args.out).resolve()
     manifest = read_json(manifest_path)
     batch_hash = manifest.get("batch_hash")
-    if compute_batch_hash(manifest) != batch_hash:
+    if compute_batch_hash(manifest) != batch_hash or not valid_bytes32(batch_hash):
         die("manifest batch_hash does not verify; refusing EAS payload")
+    prev_batch_hash = manifest.get("prev_batch_hash")
+    if prev_batch_hash is not None and not valid_bytes32(prev_batch_hash):
+        die("manifest prev_batch_hash is invalid; refusing EAS payload")
     payload = {
         "schema": EAS_PAYLOAD_SCHEMA,
         "version": 1,
         "anchor_purpose": "integrity_witness_only",
-        "batchHash": sha256_to_bytes32(batch_hash),
+        "batchHash": batch_hash,
         "witnessReplayTag": manifest.get("witness_replay_tag"),
         "witnessCount": manifest.get("witness_count"),
-        "prevBatchHash": sha256_to_bytes32(manifest.get("prev_batch_hash")),
+        "prevBatchHash": prev_batch_hash,
         "manifestURI": args.manifest_uri,
         "broadcast_enabled": False,
     }
