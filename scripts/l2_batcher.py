@@ -173,6 +173,7 @@ def verify_manifest(args: argparse.Namespace) -> None:
     witnesses = manifest.get("witnesses", [])
     sort_order_ok = witnesses == sorted(witnesses, key=lambda item: item.get("witness_id", ""))
     witness_count_ok = manifest.get("witness_count") == len(witnesses)
+    uid_match = bool(sort_order_ok and witness_count_ok)
     prev_batch_hash = manifest.get("prev_batch_hash")
     prev_batch_hash_ok = prev_batch_hash is None or valid_bytes32(prev_batch_hash)
 
@@ -201,8 +202,9 @@ def verify_manifest(args: argparse.Namespace) -> None:
             }
         )
 
+    sha256_match = all(item["exists"] and item["witness_hash_ok"] for item in witness_reports)
     all_witnesses_ok = all(item["pass"] for item in witness_reports)
-    overall_green = bool(batch_hash_match and sort_order_ok and witness_count_ok and prev_batch_hash_ok and all_witnesses_ok)
+    overall_green = bool(batch_hash_match and uid_match and sha256_match and prev_batch_hash_ok and all_witnesses_ok)
 
     report = {
         "schema": REPORT_SCHEMA,
@@ -211,6 +213,8 @@ def verify_manifest(args: argparse.Namespace) -> None:
         "batch_hash_recorded": recorded_batch_hash,
         "batch_hash_computed": computed_batch_hash,
         "batch_hash_match": batch_hash_match,
+        "uid_match": uid_match,
+        "sha256_match": sha256_match,
         "sort_order_ok": sort_order_ok,
         "witness_count_ok": witness_count_ok,
         "prev_batch_hash_ok": prev_batch_hash_ok,
