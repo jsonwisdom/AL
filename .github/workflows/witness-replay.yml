@@ -12,6 +12,7 @@ on:
       - 'src/verifier.ts'
       - 'schemas/UID_V1.schema.json'
       - 'schemas/WITNESS_V1.schema.json'
+      - 'scripts/l2_batcher.py'
       - '.github/workflows/witness-replay.yml'
 
 permissions:
@@ -75,6 +76,7 @@ jobs:
           cat witness3.sha256 || true
 
       - name: Compare replay outputs
+        id: compare
         run: |
           awk '{print $1}' witness1.sha256 | tr -d '\n\r ' > witness1.hash
           awk '{print $1}' witness2.sha256 | tr -d '\n\r ' > witness2.hash
@@ -91,6 +93,24 @@ jobs:
           grep -q '^REPLAY_OK uid:' verify3.log
           echo "3_CLEAN_REPLAYS=PROVEN"
 
+      - name: L2 Batch Creation
+        if: ${{ steps.compare.outcome == 'success' }}
+        run: |
+          python3 scripts/l2_batcher.py create
+          python3 scripts/l2_batcher.py verify
+          python3 scripts/l2_batcher.py eas
+          echo "L2_BATCH_REPLAY=PROVEN"
+
+      - name: Print L2 batch evidence
+        if: always()
+        run: |
+          echo "=== L2 batch manifest ==="
+          cat _truth/batches/batch_manifest.json || true
+          echo "=== L2 replay report ==="
+          cat _truth/batches/replay_report.json || true
+          echo "=== L2 EAS payload draft ==="
+          cat _truth/batches/eas_payload.draft.json || true
+
       - name: Upload replay artifacts
         if: always()
         uses: actions/upload-artifact@v4
@@ -101,3 +121,14 @@ jobs:
             verify*.log
             witness*.sha256
             witness*.uid
+            .runtime/witnesses/*.json
+
+      - name: Upload L2 batch artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: l2-batch-artifacts
+          path: |
+            _truth/batches/batch_manifest.json
+            _truth/batches/replay_report.json
+            _truth/batches/eas_payload.draft.json
