@@ -76,13 +76,16 @@ jobs:
 
       - name: Compare replay outputs
         run: |
-          awk '{print $1}' witness1.sha256 > witness1.hash
-          awk '{print $1}' witness2.sha256 > witness2.hash
-          awk '{print $1}' witness3.sha256 > witness3.hash
+          awk '{print $1}' witness1.sha256 | tr -d '\n\r ' > witness1.hash
+          awk '{print $1}' witness2.sha256 | tr -d '\n\r ' > witness2.hash
+          awk '{print $1}' witness3.sha256 | tr -d '\n\r ' > witness3.hash
+          tr -d '\n\r ' < witness1.uid > witness1.uid.norm
+          tr -d '\n\r ' < witness2.uid > witness2.uid.norm
+          tr -d '\n\r ' < witness3.uid > witness3.uid.norm
           cmp witness1.hash witness2.hash
           cmp witness2.hash witness3.hash
-          cmp witness1.uid witness2.uid
-          cmp witness2.uid witness3.uid
+          cmp witness1.uid.norm witness2.uid.norm
+          cmp witness2.uid.norm witness3.uid.norm
           grep -q '^REPLAY_OK uid:' verify1.log
           grep -q '^REPLAY_OK uid:' verify2.log
           grep -q '^REPLAY_OK uid:' verify3.log
