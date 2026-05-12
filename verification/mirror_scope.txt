@@ -1,0 +1,7 @@
+This mirror reproduces the verification materials associated with the Base transaction referenced in index.html.
+
+Integrity verification is performed by:
+- recomputing local SHA-256 hashes of the included documents, and
+- comparing them against the hashes recorded in the on-chain payload for that transaction.
+
+This mirror does not modify, extend, or interpret the on-chain record. It exists solely as a replayable copy of the verification interface and related artifacts.
