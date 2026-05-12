@@ -9,8 +9,11 @@ import fs from 'node:fs';
 const canonicalize = canonicalizeModule as unknown as (value: unknown) => string | undefined;
 const Ajv2020 = Ajv2020Module as unknown as new (opts?: Record<string, unknown>) => any;
 
+const uidSchema = JSON.parse(fs.readFileSync('schemas/UID_V1.schema.json', 'utf8'));
 const witnessSchema = JSON.parse(fs.readFileSync('schemas/WITNESS_V1.schema.json', 'utf8'));
 const ajv = new Ajv2020({ allErrors: true, strict: false });
+ajv.addSchema(uidSchema, 'https://jsonwisdom.github.io/AL/schemas/UID_V1.schema.json');
+ajv.addSchema(uidSchema, './UID_V1.schema.json');
 const validateWitness = ajv.compile(witnessSchema);
 
 function jcs(value: unknown): string {
