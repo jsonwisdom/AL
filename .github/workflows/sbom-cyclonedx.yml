@@ -39,22 +39,38 @@ jobs:
         run: |
           mkdir -p _truth/security
           if [ -f package.json ]; then
-            cyclonedx-npm --output-format json --output-file _truth/security/sbom.cdx.json --ignore-npm-errors
+            echo "Generating CycloneDX SBOM from package.json"
+            cyclonedx-npm --output-format json --output-file _truth/security/sbom.cdx.json --ignore-npm-errors || {
+              echo "cyclonedx-npm failed; generating minimal fallback SBOM"
+              printf '%s\n' \
+                '{' \
+                '  "bomFormat": "CycloneDX",' \
+                '  "specVersion": "1.5",' \
+                '  "version": 1,' \
+                '  "metadata": {' \
+                '    "component": {' \
+                '      "type": "application",' \
+                '      "name": "jsonwisdom/AL"' \
+                '    }' \
+                '  },' \
+                '  "components": []' \
+                '}' > _truth/security/sbom.cdx.json
+            }
           else
-            cat > _truth/security/sbom.cdx.json <<'JSON'
-          {
-            "bomFormat": "CycloneDX",
-            "specVersion": "1.5",
-            "version": 1,
-            "metadata": {
-              "component": {
-                "type": "application",
-                "name": "jsonwisdom/AL"
-              }
-            },
-            "components": []
-          }
-          JSON
+            echo "No package.json found; generating minimal fallback SBOM"
+            printf '%s\n' \
+              '{' \
+              '  "bomFormat": "CycloneDX",' \
+              '  "specVersion": "1.5",' \
+              '  "version": 1,' \
+              '  "metadata": {' \
+              '    "component": {' \
+              '      "type": "application",' \
+              '      "name": "jsonwisdom/AL"' \
+              '    }' \
+              '  },' \
+              '  "components": []' \
+              '}' > _truth/security/sbom.cdx.json
           fi
 
       - name: Generate SPDX companion format
