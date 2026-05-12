@@ -62,6 +62,18 @@ jobs:
           sha256sum "$WITNESS_FILE" | tee witness3.sha256
           basename "$WITNESS_FILE" .json | tee witness3.uid
 
+      - name: Print replay evidence
+        if: always()
+        run: |
+          echo "=== witness UIDs ==="
+          cat witness1.uid || true
+          cat witness2.uid || true
+          cat witness3.uid || true
+          echo "=== witness SHA256 ==="
+          cat witness1.sha256 || true
+          cat witness2.sha256 || true
+          cat witness3.sha256 || true
+
       - name: Compare replay outputs
         run: |
           cmp witness1.sha256 witness2.sha256
