@@ -7,8 +7,14 @@ import Ajv from 'ajv';
 import fs from 'node:fs';
 
 const witnessSchema = JSON.parse(fs.readFileSync('schemas/WITNESS_V1.schema.json', 'utf8'));
-const ajv = new Ajv({ allErrors: true, strict: true });
+const ajv = new Ajv({ allErrors: true, strict: false });
 const validateWitness = ajv.compile(witnessSchema);
+
+function jcs(value: unknown): string {
+  const out = canonicalize(value);
+  if (out === undefined) throw new Error('CANONICALIZE_FAILED');
+  return out;
+}
 
 function hash(data: string): string {
   return 'sha256:' + bytesToHex(sha256(utf8ToBytes(data)));
@@ -27,17 +33,14 @@ if (!validateWitness(witness)) {
   process.exit(1);
 }
 
-const eventPayloadCanonical = canonicalize(witness.event_payload)!;
-const recomputedPayloadHash = hash(eventPayloadCanonical);
-
+const recomputedPayloadHash = hash(jcs(witness.event_payload));
 if (recomputedPayloadHash !== witness.envelope.event_payload_hash) {
   console.error('NONCONFORMANT_EVENT_PAYLOAD_HASH');
   process.exit(1);
 }
 
-const envelopeCanonical = canonicalize(witness.envelope)!;
-const uidDigest = sha256(utf8ToBytes(envelopeCanonical));
-const recomputedUID = 'uid:' + base58btc.encode(uidDigest).replace('z', '');
+const uidDigest = sha256(utf8ToBytes(jcs(witness.envelope)));
+const recomputedUID = 'uid:' + base58btc.encode(uidDigest).slice(1);
 
 if (recomputedUID !== witness.uid) {
   console.error('NONCONFORMANT_UID');
@@ -45,8 +48,12 @@ if (recomputedUID !== witness.uid) {
 }
 
 const sig = witness.signatures[0];
-const signable = canonicalize({ ...witness, signatures: [] })!;
-const signableHash = sha256(utf8ToBytes(signable));
+const signable = {
+  ...witness,
+  signatures: []
+};
+
+const signableHash = sha256(utf8ToBytes(jcs(signable)));
 
 const verified = await ed.verifyAsync(
   sig.signature,
@@ -59,4 +66,4 @@ if (!verified) {
   process.exit(1);
 }
 
-console.log('VALID', witness.uid);
+console.log('REPLAY_OK', witness.uid);
