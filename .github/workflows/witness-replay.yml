@@ -1,0 +1,84 @@
+name: Witness Replay
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "master" ]
+    paths:
+      - 'package.json'
+      - 'package-lock.json'
+      - 'tsconfig.json'
+      - 'src/emitter.ts'
+      - 'src/verifier.ts'
+      - 'schemas/UID_V1.schema.json'
+      - 'schemas/WITNESS_V1.schema.json'
+      - '.github/workflows/witness-replay.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  witness-replay:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build TypeScript
+        run: npm run witness:build
+
+      - name: Replay run 1
+        run: |
+          rm -rf .runtime
+          npm run witness:emit:gauntlet | tee emit1.log
+          WITNESS_FILE=$(find .runtime/witnesses -name 'uid:*.json' | sort | head -n 1)
+          npm run witness:verify -- "$WITNESS_FILE" | tee verify1.log
+          sha256sum "$WITNESS_FILE" | tee witness1.sha256
+          basename "$WITNESS_FILE" .json | tee witness1.uid
+
+      - name: Replay run 2
+        run: |
+          rm -rf .runtime
+          npm run witness:emit:gauntlet | tee emit2.log
+          WITNESS_FILE=$(find .runtime/witnesses -name 'uid:*.json' | sort | head -n 1)
+          npm run witness:verify -- "$WITNESS_FILE" | tee verify2.log
+          sha256sum "$WITNESS_FILE" | tee witness2.sha256
+          basename "$WITNESS_FILE" .json | tee witness2.uid
+
+      - name: Replay run 3
+        run: |
+          rm -rf .runtime
+          npm run witness:emit:gauntlet | tee emit3.log
+          WITNESS_FILE=$(find .runtime/witnesses -name 'uid:*.json' | sort | head -n 1)
+          npm run witness:verify -- "$WITNESS_FILE" | tee verify3.log
+          sha256sum "$WITNESS_FILE" | tee witness3.sha256
+          basename "$WITNESS_FILE" .json | tee witness3.uid
+
+      - name: Compare replay outputs
+        run: |
+          cmp witness1.sha256 witness2.sha256
+          cmp witness2.sha256 witness3.sha256
+          cmp witness1.uid witness2.uid
+          cmp witness2.uid witness3.uid
+          grep -q '^VALID uid:' verify1.log
+          grep -q '^VALID uid:' verify2.log
+          grep -q '^VALID uid:' verify3.log
+          echo "3_CLEAN_REPLAYS=PROVEN"
+
+      - name: Upload replay artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: witness-replay-artifacts
+          path: |
+            emit*.log
+            verify*.log
+            witness*.sha256
+            witness*.uid
