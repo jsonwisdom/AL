@@ -31,9 +31,9 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install SBOM tools
+      - name: Install CycloneDX npm generator
         run: |
-          npm install -g @cyclonedx/cyclonedx-npm @cyclonedx/cyclonedx-cli
+          npm install -g @cyclonedx/cyclonedx-npm
 
       - name: Generate SBOM (CycloneDX JSON)
         run: |
@@ -75,7 +75,48 @@ jobs:
 
       - name: Generate SPDX companion format
         run: |
-          cyclonedx convert --input-file _truth/security/sbom.cdx.json --output-format spdxjson --output-file _truth/security/sbom.spdx.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          cdx_path = Path('_truth/security/sbom.cdx.json')
+          spdx_path = Path('_truth/security/sbom.spdx.json')
+          cdx = json.loads(cdx_path.read_text())
+          component = cdx.get('metadata', {}).get('component', {})
+          name = component.get('name', 'jsonwisdom/AL')
+          spdx = {
+              'spdxVersion': 'SPDX-2.3',
+              'dataLicense': 'CC0-1.0',
+              'SPDXID': 'SPDXRef-DOCUMENT',
+              'name': f'{name} SBOM',
+              'documentNamespace': 'https://github.com/jsonwisdom/AL/sbom/spdx',
+              'creationInfo': {
+                  'created': '2026-05-12T00:00:00Z',
+                  'creators': ['Tool: AL-SBOM-Workflow']
+              },
+              'packages': []
+          }
+          for i, comp in enumerate(cdx.get('components', []), start=1):
+              pkg_name = comp.get('name', f'component-{i}')
+              pkg_version = comp.get('version', 'NOASSERTION')
+              license_declared = 'NOASSERTION'
+              licenses = comp.get('licenses') or []
+              if licenses:
+                  first = licenses[0]
+                  if isinstance(first, dict):
+                      lic = first.get('license') or {}
+                      license_declared = lic.get('id') or lic.get('name') or 'NOASSERTION'
+              spdx['packages'].append({
+                  'name': pkg_name,
+                  'SPDXID': f'SPDXRef-Package-{i}',
+                  'downloadLocation': 'NOASSERTION',
+                  'filesAnalyzed': False,
+                  'versionInfo': pkg_version,
+                  'licenseConcluded': 'NOASSERTION',
+                  'licenseDeclared': license_declared,
+                  'copyrightText': 'NOASSERTION'
+              })
+          spdx_path.write_text(json.dumps(spdx, indent=2, sort_keys=True) + '\n')
+          PY
 
       - name: Generate SHA256 anchors
         run: |
