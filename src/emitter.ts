@@ -1,10 +1,13 @@
-import canonicalize from 'canonicalize';
+import canonicalizeModule from 'canonicalize';
+import AjvModule from 'ajv';
 import { sha256 } from '@noble/hashes/sha256';
 import { utf8ToBytes, bytesToHex } from '@noble/hashes/utils';
 import { base58btc } from 'multiformats/bases/base58';
 import * as ed from '@noble/ed25519';
-import Ajv from 'ajv';
 import fs from 'node:fs';
+
+const canonicalize = canonicalizeModule as unknown as (value: unknown) => string | undefined;
+const Ajv = AjvModule as unknown as new (opts?: Record<string, unknown>) => any;
 
 const uidSchema = JSON.parse(fs.readFileSync('schemas/UID_V1.schema.json', 'utf8'));
 const witnessSchema = JSON.parse(fs.readFileSync('schemas/WITNESS_V1.schema.json', 'utf8'));
