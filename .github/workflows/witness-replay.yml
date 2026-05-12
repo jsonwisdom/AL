@@ -76,9 +76,9 @@ jobs:
 
       - name: Compare replay outputs
         run: |
-          cut -d ' ' -f1 witness1.sha256 > witness1.hash
-          cut -d ' ' -f1 witness2.sha256 > witness2.hash
-          cut -d ' ' -f1 witness3.sha256 > witness3.hash
+          awk '{print $1}' witness1.sha256 > witness1.hash
+          awk '{print $1}' witness2.sha256 > witness2.hash
+          awk '{print $1}' witness3.sha256 > witness3.hash
           cmp witness1.hash witness2.hash
           cmp witness2.hash witness3.hash
           cmp witness1.uid witness2.uid
