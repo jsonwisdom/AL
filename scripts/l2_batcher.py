@@ -25,12 +25,12 @@ import json
 import subprocess
 import sys
 from pathlib import Path
-from typing import Any, Dict, List, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 
-ZERO_PREV_BATCH_HASH = "sha256:" + ("0" * 64)
 MANIFEST_SCHEMA = "alms/l2_batch_manifest@v1"
 REPORT_SCHEMA = "alms/l2_batch_replay_report@v1"
 EAS_PAYLOAD_SCHEMA = "alms/eas_integrity_witness_payload@v1"
+DEFAULT_WITNESS_REPLAY_TAG = "WITNESS_REPLAY_GREEN_V1"
 
 
 def die(message: str, code: int = 1) -> None:
@@ -48,6 +48,14 @@ def sha256_hex(data: bytes) -> str:
 
 def sha256_prefixed(data: bytes) -> str:
     return "sha256:" + sha256_hex(data)
+
+
+def sha256_to_bytes32(hash_value: Optional[str]) -> Optional[str]:
+    if hash_value is None:
+        return None
+    if not isinstance(hash_value, str) or not hash_value.startswith("sha256:") or len(hash_value) != 71:
+        die(f"invalid sha256 hash for bytes32 conversion: {hash_value}")
+    return "0x" + hash_value.removeprefix("sha256:")
 
 
 def read_json(path: Path) -> Any:
@@ -162,7 +170,9 @@ def verify_manifest(args: argparse.Namespace) -> None:
     sort_order_ok = witnesses == sorted(witnesses, key=lambda item: item.get("witness_id", ""))
     witness_count_ok = manifest.get("witness_count") == len(witnesses)
     prev_batch_hash = manifest.get("prev_batch_hash")
-    prev_batch_hash_ok = isinstance(prev_batch_hash, str) and prev_batch_hash.startswith("sha256:") and len(prev_batch_hash) == 71
+    prev_batch_hash_ok = prev_batch_hash is None or (
+        isinstance(prev_batch_hash, str) and prev_batch_hash.startswith("sha256:") and len(prev_batch_hash) == 71
+    )
 
     witness_reports: List[Dict[str, Any]] = []
     for entry in witnesses:
@@ -188,7 +198,7 @@ def verify_manifest(args: argparse.Namespace) -> None:
         )
 
     all_witnesses_ok = all(item["exists"] and item["witness_hash_ok"] and item["node_replay_ok"] for item in witness_reports)
-    overall_pass = bool(batch_hash_ok and sort_order_ok and witness_count_ok and prev_batch_hash_ok and all_witnesses_ok)
+    overall_green = bool(batch_hash_ok and sort_order_ok and witness_count_ok and prev_batch_hash_ok and all_witnesses_ok)
 
     report = {
         "schema": REPORT_SCHEMA,
@@ -201,13 +211,13 @@ def verify_manifest(args: argparse.Namespace) -> None:
         "witness_count_ok": witness_count_ok,
         "prev_batch_hash_ok": prev_batch_hash_ok,
         "all_witnesses_ok": all_witnesses_ok,
-        "overall_pass": overall_pass,
+        "overall_status": "GREEN" if overall_green else "RED",
         "witnesses": witness_reports,
     }
     write_canonical_json(report_path, report)
     print(f"REPLAY_REPORT_WRITTEN {report_path}")
-    print("BATCH_REPLAY_PASS" if overall_pass else "BATCH_REPLAY_FAIL")
-    raise SystemExit(0 if overall_pass else 1)
+    print("BATCH_REPLAY_GREEN" if overall_green else "BATCH_REPLAY_RED")
+    raise SystemExit(0 if overall_green else 1)
 
 
 def build_eas_payload(args: argparse.Namespace) -> None:
@@ -222,12 +232,12 @@ def build_eas_payload(args: argparse.Namespace) -> None:
         "schema": EAS_PAYLOAD_SCHEMA,
         "version": 1,
         "anchor_purpose": "integrity_witness_only",
-        "batchHash": batch_hash,
+        "batchHash": sha256_to_bytes32(batch_hash),
         "witnessReplayTag": manifest.get("witness_replay_tag"),
         "witnessCount": manifest.get("witness_count"),
-        "prevBatchHash": manifest.get("prev_batch_hash"),
+        "prevBatchHash": sha256_to_bytes32(manifest.get("prev_batch_hash")),
         "manifestURI": args.manifest_uri,
-        "broadcast": False,
+        "broadcast_enabled": False,
     }
     write_canonical_json(out, payload)
     print(f"EAS_PAYLOAD_DRAFT_WRITTEN {out}")
@@ -242,8 +252,8 @@ def main() -> None:
     create = sub.add_parser("create")
     create.add_argument("--witness-dir", default=".runtime/witnesses")
     create.add_argument("--out", default="_truth/batches/batch_manifest.json")
-    create.add_argument("--witness-replay-tag", default="witness-replay-green-v1")
-    create.add_argument("--prev-batch-hash", default=ZERO_PREV_BATCH_HASH)
+    create.add_argument("--witness-replay-tag", default=DEFAULT_WITNESS_REPLAY_TAG)
+    create.add_argument("--prev-batch-hash", default=None)
     create.set_defaults(func=create_manifest)
 
     verify = sub.add_parser("verify")
