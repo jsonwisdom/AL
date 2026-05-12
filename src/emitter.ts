@@ -1,5 +1,5 @@
 import canonicalizeModule from 'canonicalize';
-import AjvModule from 'ajv';
+import Ajv2020Module from 'ajv/dist/2020.js';
 import { sha256 } from '@noble/hashes/sha256';
 import { utf8ToBytes, bytesToHex } from '@noble/hashes/utils';
 import { base58btc } from 'multiformats/bases/base58';
@@ -7,12 +7,12 @@ import * as ed from '@noble/ed25519';
 import fs from 'node:fs';
 
 const canonicalize = canonicalizeModule as unknown as (value: unknown) => string | undefined;
-const Ajv = AjvModule as unknown as new (opts?: Record<string, unknown>) => any;
+const Ajv2020 = Ajv2020Module as unknown as new (opts?: Record<string, unknown>) => any;
 
 const uidSchema = JSON.parse(fs.readFileSync('schemas/UID_V1.schema.json', 'utf8'));
 const witnessSchema = JSON.parse(fs.readFileSync('schemas/WITNESS_V1.schema.json', 'utf8'));
 
-const ajv = new Ajv({ allErrors: true, strict: false });
+const ajv = new Ajv2020({ allErrors: true, strict: false });
 ajv.addSchema(uidSchema, './UID_V1.schema.json');
 const validateUID = ajv.compile(uidSchema);
 const validateWitness = ajv.compile(witnessSchema);
