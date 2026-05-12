@@ -1,0 +1,66 @@
+name: SBOM Generation (CycloneDX)
+
+on:
+  push:
+    branches: [ "master" ]
+    paths:
+      - 'package-lock.json'
+      - 'yarn.lock'
+      - 'pnpm-lock.yaml'
+  schedule:
+    - cron: '30 4 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  security-events: write
+
+jobs:
+  generate-sbom:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install CycloneDX CLI
+        run: npm install -g @cyclonedx/cyclonedx-npm
+
+      - name: Generate SBOM (CycloneDX JSON)
+        run: |
+          mkdir -p _truth/security
+          cyclonedx-npm --output-format json --output-file _truth/security/sbom.cdx.json
+
+      - name: Generate SPDX companion format
+        uses: spdx/cyclonedx-to-spdx@v1
+        with:
+          input: _truth/security/sbom.cdx.json
+          output: _truth/security/sbom.spdx.json
+
+      - name: Generate SHA256 anchors
+        run: |
+          cd _truth/security
+          sha256sum sbom.cdx.json > sbom.cdx.sha256
+          sha256sum sbom.spdx.json > sbom.spdx.sha256
+
+      - name: Commit SBOM artifacts
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "📦 [automated] SBOM update - CycloneDX + SPDX"
+          branch: master
+          file_pattern: '_truth/security/*'
+          commit_user_name: 'jsonwisdom-audit[bot]'
+          commit_user_email: 'audit@jsonwisdom.eth'
+
+      - name: Upload SBOM artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: sbom-artifacts
+          path: _truth/security/
