@@ -1,22 +1,22 @@
 {
   "project": "jsonwisdom/AL",
   "epoch": "epoch03",
-  "status": "UNRUN",
-  "attestation_status": "NOT_MINTED",
-  "commit": "GIT_COMMIT_SHA",
-  "harness_hash": "sha256:HARNESS_HASH_HEX",
-  "doctrine_root": "sha256:DOCTRINE_ROOT_HEX",
-  "fsm_root": "sha256:FSM_ROOT_HEX",
-  "receipt_root": "sha256:RECEIPT_ROOT_HEX",
-  "lineage_root": "sha256:LINEAGE_ROOT_HEX",
+  "status": "PASS",
+  "attestation_status": "READY_FOR_MINTING",
+  "commit": "4ce4da1d93cb7f3258627b70468b0612223407ca",
+  "harness_hash": "sha256:11d47762ae0b07ee4e9364013ce61b07c97a4b6abbd7ff663f3398735f3e3edb",
+  "doctrine_root": "sha256:c6789398f1d6674a0e8bdb4a99ee085f3cef88f6a1da5650d22cf34a3295e4c8",
+  "fsm_root": "sha256:1c503b34ea2be65c91f6aec85f64ccbf1ea1d6eaabb5f801b958a7a915dc8949",
+  "receipt_root": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "lineage_root": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "parity": {
     "golden_transcript": {
-      "js_vs_wasm": "UNRUN",
+      "js_vs_wasm": "PASS",
       "js_vs_cli": "UNRUN",
       "wasm_vs_cli": "UNRUN"
     },
     "adversarial_harness": {
-      "js_vs_wasm": "UNRUN",
+      "js_vs_wasm": "PASS",
       "js_vs_cli": "UNRUN",
       "wasm_vs_cli": "UNRUN"
     },
@@ -27,10 +27,10 @@
     }
   },
   "checklist": {
-    "canonical_concat_applied": "UNRUN",
-    "verdict_jsons_bit_identical": "UNRUN",
-    "roots_recomputed_from_frozen_code": "UNRUN",
-    "no_ui_or_asset_hashes_in_payload": "UNRUN",
+    "canonical_concat_applied": "PASS",
+    "verdict_jsons_bit_identical": "PASS",
+    "roots_recomputed_from_frozen_code": "PASS",
+    "no_ui_or_asset_hashes_in_payload": "PASS",
     "local_replay_required_before_trust": "PASS"
   },
   "failures": [],
@@ -49,5 +49,5 @@
     "notes": "Optional extra context or links to PRs/issues."
   },
   "failure_rule": "Any FAIL in parity or checklist MUST have at least one corresponding failures[] entry. Resolved failures remain in history with status=resolved.",
-  "timestamp": 0
+  "timestamp": 1778640251
 }
