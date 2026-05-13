@@ -3,15 +3,15 @@
   "version": "1.0.0",
   "epoch": "03",
   "envelope_id": "A00001",
-  "envelope_state": "PREPARED_UNPOPULATED",
+  "envelope_state": "POPULATED_NON_ISSUING",
   "constitutional_authority": "NONE",
   "activation_effect": "NONE",
   "issuance_effect": "NONE",
   "issuance_status": "UNPERFORMED",
-  "operator_identity": "REQUIRED",
-  "transcript_reference": "REQUIRED",
-  "command_reference": "REQUIRED",
-  "canonical_digest": "REQUIRED",
+  "operator_identity": "OPERATOR_JAYWISDOM_ROOT_V1",
+  "transcript_reference": "A00001_ISSUANCE_TRANSCRIPT_V1",
+  "command_reference": "A00001_ISSUANCE_COMMAND_V1",
+  "canonical_digest": "sha256:658c71e4fa2eb804cff90e2a724a255391e0b723da07e43c79385713eac1ec84",
   "required_receipts": {
     "continuity_receipt": "REQUIRED",
     "finalization_receipt": "REQUIRED",
@@ -44,6 +44,12 @@
     "authority_asserted": false,
     "crown_unsealed": false
   },
-  "next_lawful_surface": "POPULATE_A00001_ISSUANCE_ENVELOPE",
-  "notes": "This envelope is prepared only. It is not populated, issued, activated, authoritative, ENS-mutating, EAS-writing, or crown-unsealing."
+  "next_lawful_surface": "EVALUATE_POPULATED_A00001_ISSUANCE_ENVELOPE",
+  "notes": "This envelope is populated only. It is not issued, activated, authoritative, ENS-mutating, EAS-writing, or crown-unsealing.",
+  "operator_alias": "jaywisdom.base.eth",
+  "authority_root": "jaywisdom.eth",
+  "wallet_binding": "0xA380552a27b0a5a2874Ea7AA52CAC09f542002E8",
+  "canonical_substrate": "docs/abi/ABI_SOURCE_V1.json",
+  "target_attestation": "A00001",
+  "target_asset": "ABI_SOURCE_V1"
 }
