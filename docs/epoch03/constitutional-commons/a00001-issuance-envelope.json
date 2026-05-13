@@ -1,0 +1,49 @@
+{
+  "artifact": "a00001-issuance-envelope.json",
+  "version": "1.0.0",
+  "epoch": "03",
+  "envelope_id": "A00001",
+  "envelope_state": "PREPARED_UNPOPULATED",
+  "constitutional_authority": "NONE",
+  "activation_effect": "NONE",
+  "issuance_effect": "NONE",
+  "issuance_status": "UNPERFORMED",
+  "operator_identity": "REQUIRED",
+  "transcript_reference": "REQUIRED",
+  "command_reference": "REQUIRED",
+  "canonical_digest": "REQUIRED",
+  "required_receipts": {
+    "continuity_receipt": "REQUIRED",
+    "finalization_receipt": "REQUIRED",
+    "replay_receipt": "REQUIRED",
+    "aggregation_receipt": "REQUIRED",
+    "issuance_eligibility_receipt": "REQUIRED",
+    "explicit_issuance_requirements_receipt": "REQUIRED"
+  },
+  "revocation_surface": "SUPPORTED",
+  "single_use_semantics": "ENFORCED",
+  "forbidden_bindings": {
+    "activation_binding": true,
+    "authority_binding": true,
+    "implicit_mint_rights": true,
+    "ens_mutation": true,
+    "eas_write": true,
+    "future_mint_authority": true
+  },
+  "population_requirements": {
+    "operator_identity_must_be_bound": true,
+    "transcript_reference_must_be_bound": true,
+    "command_reference_must_be_bound": true,
+    "canonical_digest_must_be_bound": true,
+    "required_receipts_must_be_attached": true,
+    "explicit_operator_command_required_before_issuance": true
+  },
+  "claim_boundaries": {
+    "issuance_performed": false,
+    "activation_asserted": false,
+    "authority_asserted": false,
+    "crown_unsealed": false
+  },
+  "next_lawful_surface": "POPULATE_A00001_ISSUANCE_ENVELOPE",
+  "notes": "This envelope is prepared only. It is not populated, issued, activated, authoritative, ENS-mutating, EAS-writing, or crown-unsealing."
+}
