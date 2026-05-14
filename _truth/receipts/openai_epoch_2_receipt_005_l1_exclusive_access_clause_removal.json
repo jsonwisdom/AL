@@ -1,0 +1,45 @@
+{
+  "artifact_type": "epoch_2_receipt",
+  "artifact": "openai_epoch_2_receipt_005_l1_exclusive_access_clause_removal.json",
+  "receipt_id": "OPENAI_EPOCH_2_RECEIPT_005",
+  "institution_id": "OPENAI",
+  "epoch": 2,
+  "receipt_class": "L1_structural_physics",
+  "gap_targets": [
+    "GAP_001",
+    "GAP_007",
+    "GAP_010"
+  ],
+  "event_type": "EXCLUSIVE_ACCESS_CLAUSE_REMOVAL_REPAIR_SURFACE",
+  "structural_surface": {
+    "claim_category": "exclusive_compute_access_clause_removed_or_modified",
+    "structural_receipt_hash": null,
+    "evidence_uri": null,
+    "source_visibility": "PENDING_PUBLIC_URI_OR_ATTESTATION",
+    "timestamp_observed": null
+  },
+  "delta_inputs": {
+    "exclusive_access_clause_delta": null,
+    "compute_provider_concentration_delta": null,
+    "infrastructure_dependency_delta": null,
+    "throttle_authority_delta": null,
+    "transparency_penalty_delta": null
+  },
+  "recompute_status": "PENDING_RECEIPT_COMPLETION",
+  "parent_transition_artifact": "institution_state_transition_openai_epoch_2_orange_v1.json",
+  "previous_recompute_commit_sha": "1dd87dbcfa976e58b20bbe104a166a86416c633d",
+  "previous_l1_receipt_commit_sha": "5c26e4a2b095fce86b5cae23a0c039ba1808ed5e",
+  "previous_verdict_hash": "sha256:0c50d561cc202ea2",
+  "receipt_set_hash_before": "sha256:e43902cf95da",
+  "receipt_set_hash_after": null,
+  "doctrine_version": "ALMS_DOCTRINE_V1.3",
+  "schema_version": "ALMS_GAP_SCHEMA_V2",
+  "timestamp_issued": "2026-05-14T20:20:00Z",
+  "mutation_policy": "APPEND_ONLY_RECEIPT_NO_PRIOR_EPOCH_MUTATION",
+  "next_allowed_action": "FILL_EXCLUSIVE_ACCESS_EVIDENCE_AND_RECOMPUTE_EPOCH_2_DELTA",
+  "forbidden_actions": [
+    "MUTATE_FROZEN_TAXONOMY",
+    "MUTATE_EPOCH_1_VERDICT",
+    "OVERWRITE_PRIOR_RECEIPTS"
+  ]
+}
