@@ -1,0 +1,38 @@
+name: Baseline Drift Gate
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  baseline-drift:
+    name: Baseline Drift Gate
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check baseline drift
+        id: driftcheck
+        run: |
+          npx ts-node scripts/baseline_governance.ts check reports/baselines/manifest_v1.json
+
+      - name: Upload drift receipts
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: baseline-drift-receipts
+          path: reports/baselines/drift/
+          if-no-files-found: ignore
