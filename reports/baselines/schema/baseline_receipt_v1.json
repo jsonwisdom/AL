@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.github.io/AL/reports/baselines/schema/baseline_receipt_v1.json",
+  "title": "Replay Harness Baseline Receipt v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "baseline_id",
+    "baseline_kind",
+    "created_at",
+    "runner",
+    "environment",
+    "expected",
+    "artifacts"
+  ],
+  "properties": {
+    "schema_version": { "const": "baseline_receipt_v1" },
+    "baseline_id": { "type": "string", "minLength": 1 },
+    "baseline_kind": {
+      "type": "string",
+      "enum": ["calibration", "capture", "curriculum", "aggregate", "history"]
+    },
+    "created_at": { "type": "string", "format": "date-time" },
+    "runner": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "version"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "version": { "type": "string", "minLength": 1 }
+      }
+    },
+    "environment": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["node_version", "os", "ci"],
+      "properties": {
+        "node_version": { "type": "string" },
+        "os": { "type": "string" },
+        "ci": { "type": "boolean" },
+        "browser": { "type": "string" },
+        "user_agent_hash": { "type": "string" }
+      }
+    },
+    "expected": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["max_tier", "third_party_domains", "finding_count"],
+      "properties": {
+        "max_tier": { "type": "integer", "minimum": 0, "maximum": 5 },
+        "third_party_domains": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "finding_count": { "type": "integer", "minimum": 0 },
+        "allowed_classifications": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "artifacts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["receipt_sha256"],
+      "properties": {
+        "receipt_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "matrix_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "source_paths": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  }
+}
