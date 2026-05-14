@@ -1,0 +1,37 @@
+# EAS Schema: Lapis Replay Court v1
+
+Status: Draft Only
+Network Target: Base
+Root Identity: jaywisdom.eth
+Source Verdict: Lapis Replay Court #14 / commit e3015c4a48840201b465dda63c56640da46f433e
+
+## Schema String
+
+string audit_id,bytes32 actual_content_sha256,bytes32 chronology_commit,string schema_version,bool schema_valid,bool texture_present,bool chronology_present,bool witness_present,bool replay_path_present,bool silent_overwrite_detected,string root_identity,string witness_identity,string verdict,string replay_summary_artifact_url,bytes32 replay_summary_artifact_zip_sha256,uint64 timestamp_utc
+
+## Field Notes
+
+- audit_id: replay-lapis-genesis-commit-edcec6f
+- actual_content_sha256: e03f9a8c9c623cb12850b56c7c8a2ebb74a32f557a8e51a6e2a2aa7fc51f0c01
+- chronology_commit: edcec6f55adbd65913f3e6b28c79c81d73ef84b6
+- schema_version: lapis.replayable_audit_demo.v0.1
+- schema_valid: true
+- texture_present: true
+- chronology_present: true
+- witness_present: true
+- replay_path_present: true
+- silent_overwrite_detected: false
+- root_identity: jaywisdom.eth
+- witness_identity: jaywisdom.eth
+- verdict: PASS
+- replay_summary_artifact_url: https://github.com/jsonwisdom/AL/actions/runs/25853072036/artifacts/6991507959
+- replay_summary_artifact_zip_sha256: 970975688f1a9321f961fb67d49c59bddf75a52aad3b28ecec9c60b7844211dd
+- timestamp_utc: 1778751581
+
+## Submission Rule
+
+This file is a schema draft and must not be treated as an on-chain attestation.
+
+Base/EAS submission requires an explicit external wallet action and visible UID receipt.
+
+No EAS claim is complete until the attestation UID, transaction hash, network, schema UID, and attester address are recorded back into the repo.
