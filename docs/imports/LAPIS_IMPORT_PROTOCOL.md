@@ -37,7 +37,29 @@ A source may exist in storage while remaining non-canonical. A source becomes ev
 
 ---
 
-## 3. Classification Rule
+## 3. Evidence Court Doctrine
+
+Every imported claim enters the archive as submitted evidence, not as fact.
+
+The court does not ask whether a claim sounds plausible. It asks whether the claim can be read, hashed, replayed, attributed, and witnessed.
+
+The gavel is the hash.
+
+The witness is the verifier.
+
+The verdict is `REPLAY_SUMMARY.json`.
+
+The Triad determines admissibility:
+
+1. **Chronology** — when the claim or repair entered the record.
+2. **Texture** — what bytes, context, smudges, and limitations were preserved.
+3. **Meaning** — who witnessed the import and why it matters.
+
+Administrative fog is dismissed by default. Inaccessible links, volatile URLs, unhashable claims, and non-replayable assertions do not reach settlement.
+
+---
+
+## 4. Classification Rule
 
 ChatGPT share links and similar conversation links are classified as:
 
@@ -55,7 +77,7 @@ They may be used as human navigation aids, but they must not be treated as root 
 
 ---
 
-## 4. Admissibility Standard
+## 5. Admissibility Standard
 
 A source becomes admissible only when it has:
 
@@ -76,7 +98,7 @@ A source becomes admissible only when it has:
 
 ---
 
-## 5. Recommended Import Path
+## 6. Recommended Import Path
 
 Use the following pattern for imported conversation material:
 
@@ -95,7 +117,7 @@ Every imported artifact should include:
 
 ---
 
-## 6. Lapis Pipeline
+## 7. Lapis Pipeline
 
 The import pipeline is:
 
@@ -111,7 +133,7 @@ No inaccessible link may bypass this pipeline.
 
 ---
 
-## 7. Sovereignty Boundary
+## 8. Sovereignty Boundary
 
 The Lapis pipeline controls the burden of proof.
 
@@ -130,7 +152,7 @@ Anyone who wants GCS or Base finality must satisfy this definition of evidence.
 
 ---
 
-## 8. Final Rule
+## 9. Final Rule
 
 If the Auditor cannot read the bytes, the Auditor cannot witness the truth.
 
