@@ -1,0 +1,271 @@
+schema_version: CONSTITUTIONAL_THERMODYNAMIC_STACK_V1
+status: canonical_draft
+class: replay_native_constitutional_lifecycle
+canonical_sentence: Legitimacy was learned, not declared.
+core_invariant: Truth outranks survival.
+
+failure_topology:
+  F-001:
+    name: ROLLBACK_LEAK_ACROSS_ANCHOR
+    class: Boundedness Violation
+    severity: Constitutional
+    lesson: A recovery that cannot be replayed is not a recovery; it is a mutation of history.
+  F-002:
+    name: VERIFIER_DIVERGENCE_CASCADE
+    class: Semantic Fork
+    severity: Constitutional
+    lesson: Byte-identical history can still fracture if verifiers cannot converge on meaning.
+  F-003:
+    name: ATTRIBUTION_EROSION
+    class: Causal Context Loss
+    severity: Foundational
+    lesson: Accountability degrades before correctness does.
+  F-004:
+    name: REPLAY_FIDELITY_DECAY
+    class: Reproducibility Degradation
+    severity: Constitutional if persistent
+    lesson: Replay that slowly stops converging is mythology with logs.
+  F-005:
+    name: TAINT_PROPAGATION_BEYOND_SCOPE
+    class: Scope Contamination
+    severity: Constitutional
+    lesson: Taint is semantic divergence carried across unauthorized topology edges.
+
+pressure_fields:
+  P24:
+    from: F-002
+    to: F-004
+    coupling: 0.91
+    formula: "0.91 * (S^1.4 * R^1.1 * V^1.6 * A^1.8)"
+    variables:
+      S: semantic_drift_velocity
+      R: replay_distance_since_fork
+      V: verifier_topology_fragmentation
+      A: attribution_debt
+    collapse_modifier:
+      condition: "A > 0.70 && V > 0.45"
+      threshold_multiplier: 0.72
+  P45:
+    from: F-004
+    to: F-005
+    formula: "C45 * (D * E * U * A)"
+    variables:
+      D: decay_intensity
+      E: edge_permeability
+      U: unauthorized_topology_exposure
+      A: attribution_debt
+
+entropy_basin:
+  boundary_conditions:
+    A: "> 0.65"
+    V: "> 0.40"
+    D: "> 0.15"
+    P_combined: "> 0.73"
+  effect: failures_self_reinforce_rather_than_self_correct
+  exit_rule: external_reanchoring_required
+
+constitutional_emergency_modules:
+  CE-02:
+    name: BASIN_ENTRY_DETECTOR
+    purpose: Detect synchronized epistemic fragmentation before mythic recovery.
+    trigger_conditions:
+      liveness: true
+      replay_runnable: true
+      convergent_replay: false
+      attribution_debt: ">= 0.70"
+      metric_rule: any_3_of_4_metrics_above_threshold_for_N_windows
+    effect:
+      - internal_replay_no_longer_authoritative
+      - mutation_and_rollback_frozen_for_contested_span
+      - CE01_required
+  CE-01:
+    name: EXTERNAL_REANCHORING_PROTOCOL
+    purpose: Import external authority only as bounded, replayable intervention.
+    hard_rule: External re-anchoring may restore forward legitimacy but may not retroactively clean contested history.
+    required_artifact: REANCHOR_BUNDLE_V1
+  CE-03:
+    name: EXTERNAL_QUORUM_CONSTRAINT
+    purpose: Prevent external re-anchoring from becoming mythic authority.
+    invariants:
+      - id: CE03-I01
+        name: NO_SEMANTIC_INHERITANCE_FROM_BASIN
+      - id: CE03-I02
+        name: DISSENT_PRESERVATION_REQUIRED
+      - id: CE03-I03
+        name: QUORUM_ROTATION_BOUND
+      - id: CE03-I04
+        name: PUBLIC_REPLAYABILITY_REQUIRED
+      - id: CE03-I05
+        name: NO_RETROACTIVE_CLEANING
+
+reanchor_bundle_v1:
+  purpose: Make emergency authority import auditable and replayable.
+  required_sections:
+    - bundle_id
+    - pre_basin_state
+    - basin_evidence
+    - quorum_manifest
+    - deliberation_record
+    - reanchor_state
+    - continuity_mapping
+    - signatures
+    - canonical_encoded_lesson
+  validation_hard_gates:
+    - structural_canonicality
+    - CE02_trigger_legitimacy
+    - contested_region_correctness
+    - CE03_external_quorum_constraints
+    - deliberation_integrity
+    - new_replay_horizon_invariants
+    - signature_completeness
+  soft_gates:
+    - constitutional_memory_present
+  encoded_lesson: We did not fix history. We marked where it broke, showed how authority entered, preserved disagreement, and anchored what comes next.
+
+lifecycle_state_machine:
+  states:
+    S0_NORMAL_OPERATION:
+      conditions:
+        liveness: true
+        replay_runnable: true
+        convergent_replay: true
+        A: "< 0.40"
+        P24: "< 0.25"
+      next: S1_PRESSURE_ACCUMULATION
+    S1_PRESSURE_ACCUMULATION:
+      conditions:
+        P24: "[0.25, 0.78)"
+        metrics: rising
+      next: S2_CE02_BASIN_ENTRY_CONFIRMED
+    S2_CE02_BASIN_ENTRY_CONFIRMED:
+      effects:
+        - internal_replay_no_longer_authoritative
+        - contested_span_frozen
+      next: S3_CE01_REANCHOR_REQUIRED
+    S3_CE01_REANCHOR_REQUIRED:
+      required_actions:
+        - assemble_external_quorum_under_CE03
+        - generate_REANCHOR_BUNDLE_V1
+      next: S4_REANCHOR_BUNDLE_GENERATED
+    S4_REANCHOR_BUNDLE_GENERATED:
+      action: validate_bundle(bundle, context)
+      branches:
+        valid: S5_VALIDATOR_ACCEPTED
+        invalid: S6_VALIDATOR_REJECTED
+    S5_VALIDATOR_ACCEPTED:
+      effects:
+        - new_anchor_becomes_replay_root
+        - basin_history_preserved_as_contested_evidence
+      next: S7_NEW_REPLAY_HORIZON_ESTABLISHED
+    S7_NEW_REPLAY_HORIZON_ESTABLISHED:
+      effects:
+        - CE02_resets_to_INACTIVE
+        - CE01_returns_to_NOT_REQUIRED
+        - external_quorum_dissolved
+      next: S0_NORMAL_OPERATION
+    S6_VALIDATOR_REJECTED:
+      terminal: true
+      effects:
+        - no_new_anchor_legitimate
+        - continuation_as_repaired_is_mythic
+        - system_constitutionally_dead
+      permitted_actions:
+        - archival
+        - forensic_replay
+        - external_replacement_without_continuity_claim
+      forbidden_actions:
+        - claiming_continuity_of_constitutional_legitimacy
+      lesson: A system that cannot be constitutionally repaired must be allowed to die visibly.
+
+archival_protocols:
+  AP-01:
+    name: CONSTITUTIONAL_ARCHIVAL_PROTOCOL
+    activation: S6_VALIDATOR_REJECTED
+    purpose: Preserve truthful constitutional death without permitting resurrection.
+    archive_bundle: ARCHIVE_BUNDLE_V1
+    core_invariant: The dead cannot sign the living.
+    required_fields:
+      - archive_id
+      - last_valid_anchor
+      - validator_rejection_record
+      - failed_reanchor_bundles
+      - entropy_telemetry_series
+      - contested_history_span
+      - dissent_artifacts
+      - seal
+      - canonical_encoded_lesson
+    non_resurrection_invariants:
+      INV-AP01-1: archive.last_valid_anchor must equal final convergent anchor in replay log
+      INV-AP01-2: no bundle may claim continuity from parent anchor after last_valid_anchor
+      INV-AP01-3: signatures using dead lineage authority keys on new state are invalid
+      INV-AP01-4: archive seal hash must remain immutable
+      INV-AP01-5: archive replay allowed only in audit_only mode; continuation attempts must return CONSTITUTIONAL_DEATH_ENFORCED
+  AP-02:
+    name: MULTILINEAGE_SUCCESSION_PROTOCOL
+    purpose: Permit learning after death without false continuity.
+    core_invariant: Successors inherit lessons, not legitimacy.
+    lineage_model: directed_acyclic_graph
+    allowed_link_types:
+      - inspired_by
+      - derived_from
+      - rejected_from
+      - forked_after_failure
+    forbidden_link_types:
+      - continuity_asserted
+    hard_invariants:
+      INV-AP02-1:
+        name: NO_CONTINUITY_ASSERTION
+        rule: successor.continuity == false && successor.parent_anchor == null
+      INV-AP02-2:
+        name: FRESH_KEY_MATERIAL
+        rule: successor.key.created_at > predecessor.termination_timestamp && successor.key != predecessor.key
+      INV-AP02-3:
+        name: EXPLICIT_CONSTITUTIONAL_MUTATIONS
+        rule: successor.constitutional_mutations.length >= 1
+      INV-AP02-4:
+        name: PREDECESSOR_ARCHIVE_REFERENCED
+        rule: successor.predecessor_archive_id == archive.archive_id
+      INV-AP02-5:
+        name: ACYCLIC_LINEAGE_GRAPH
+        rule: graph_must_be_acyclic
+
+public_validator_interface:
+  validate_bundle:
+    input:
+      - bundle
+      - context
+    output:
+      valid: boolean
+      errors: list
+      warnings: list
+      new_anchor: nullable_hash
+  compute_entropy_metrics:
+    input:
+      - entropy_metrics_block
+      - topology_constants
+    output:
+      - S
+      - R
+      - V
+      - A
+      - P24
+      - P45
+      - basin_conditions_met
+  verify_signatures:
+    input:
+      - bundle_id
+      - quorum_members
+    output:
+      all_signatures_valid: boolean
+      invalid_members: list
+
+next_layer:
+  AP-03:
+    name: SUCCESSOR_INTEROPERABILITY_PROTOCOL
+    question: How can divergent lineages coordinate without merging legitimacy or creating a meta-lineage?
+    open_requirements:
+      - share_telemetry_without_authority_merger
+      - verify_archives_without_inheriting_claims
+      - coordinate_without_meta_lineage
+
+final_encoded_lesson: Birth without inevitability. Operation without absolutism. Emergency without dictatorship. Death without erasure. Succession without resurrection.
