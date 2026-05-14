@@ -1,0 +1,10 @@
+{
+  "release": "constitutional-agent-v0.1.0-doctrine",
+  "artifact_class": "constitutional_replay_cell",
+  "doctrine": "boring_infrastructure_that_replays",
+  "core_path": "manifest -> execution -> receipt -> anchor -> validation -> pricing",
+  "protected_ratio": "12 invariants / ~100 validator lines / 3 demo cases / 1 mental model",
+  "merge_rule": "If you cannot replay the change, you cannot merge it.",
+  "settlement_rule": "No anchor = no coverage.",
+  "expected_result": "CONSTITUTIONAL EXECUTION CELL: PASS"
+}
