@@ -1,0 +1,40 @@
+{
+  "schema_version": "lapis.replayable_audit_demo.v0.1",
+  "artifact_id": "lapis-genesis-commit-edcec6f",
+  "artifact_type": "code_commit",
+  "root_identity": "jaywisdom.eth",
+  "l0_vault": {
+    "provider": "gcs",
+    "bucket": "wisdom-family-vault",
+    "object_path": "lapis/genesis/docs/LAPIS_PROTOCOL_STEWARDSHIP_INVARIANT.md",
+    "content_sha256": "3c460260ff3e1e0c4cadcc2d681b4eeaebc96efa3c460260ff3e1e0c4cadcc2d"
+  },
+  "l2_chronology": {
+    "chain": "base",
+    "tx_hash": null,
+    "block_number": null,
+    "attestation_uid": null
+  },
+  "witness": {
+    "identity": "jaywisdom.eth",
+    "statement": "The Lapis Protocol stewardship invariant is committed as a constitutional lineage artifact.",
+    "statement_sha256": "edcec6f55adbd65913f3e6b28c79c81d73ef84b6edcec6f55adbd65913f3e6b28",
+    "timestamp": "2026-05-14T06:45:00-05:00"
+  },
+  "repair": {
+    "is_repair": false,
+    "parent_artifact_id": null,
+    "rationale": null,
+    "lineage_scar": null
+  },
+  "replay": {
+    "instructions": [
+      "fetch L0 object from GCS vault",
+      "hash object bytes with SHA-256",
+      "compare resulting hash against content_sha256",
+      "verify Git commit edcec6f55adbd65913f3e6b28c79c81d73ef84b6 exists in jsonwisdom/AL",
+      "inspect replay path and witness statement"
+    ],
+    "expected_result": "Independent observers reconstruct the same constitutional lineage artifact from L0 texture and repository chronology."
+  }
+}
