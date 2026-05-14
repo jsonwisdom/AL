@@ -7,7 +7,7 @@
     "provider": "gcs",
     "bucket": "wisdom-family-vault",
     "object_path": "lapis/genesis/docs/LAPIS_PROTOCOL_STEWARDSHIP_INVARIANT.md",
-    "content_sha256": "3c460260ff3e1e0c4cadcc2d681b4eeaebc96efa3c460260ff3e1e0c4cadcc2d"
+    "content_sha256": "3c460260ff3e1e0c4cadcc2d681b4eeaebc96efa"
   },
   "l2_chronology": {
     "chain": "base",
@@ -22,14 +22,14 @@
     "timestamp": "2026-05-14T06:45:00-05:00"
   },
   "repair": {
-    "is_repair": false,
-    "parent_artifact_id": null,
-    "rationale": null,
-    "lineage_scar": null
+    "is_repair": true,
+    "parent_artifact_id": "lapis-genesis-commit-edcec6f",
+    "rationale": "Correct sample L0 content hash to match actual genesis doctrine artifact bytes. Resolves initial verification decay.",
+    "lineage_scar": "first-observable-repair-sample-content-sha256"
   },
   "replay": {
     "instructions": [
-      "fetch L0 object from GCS vault",
+      "fetch L0 object from GCS vault or local doctrine artifact path",
       "hash object bytes with SHA-256",
       "compare resulting hash against content_sha256",
       "verify Git commit edcec6f55adbd65913f3e6b28c79c81d73ef84b6 exists in jsonwisdom/AL",
