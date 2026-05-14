@@ -7,7 +7,7 @@
     "provider": "gcs",
     "bucket": "wisdom-family-vault",
     "object_path": "lapis/genesis/docs/LAPIS_PROTOCOL_STEWARDSHIP_INVARIANT.md",
-    "content_sha256": "3c460260ff3e1e0c4cadcc2d681b4eeaebc96efa"
+    "content_sha256": "39d2f6c3a65b557090ca5f6febcde285a508a151ac47430e4fa725448e1862e8"
   },
   "l2_chronology": {
     "chain": "base",
@@ -24,8 +24,8 @@
   "repair": {
     "is_repair": true,
     "parent_artifact_id": "lapis-genesis-commit-edcec6f",
-    "rationale": "Correct sample L0 content hash to match actual genesis doctrine artifact bytes. Resolves initial verification decay.",
-    "lineage_scar": "first-observable-repair-sample-content-sha256"
+    "rationale": "Replace Git blob SHA with actual SHA-256 of the genesis doctrine artifact bytes. Resolves schema mismatch and restores L0 hash admissibility.",
+    "lineage_scar": "replace-blob-sha-with-content-sha256"
   },
   "replay": {
     "instructions": [
