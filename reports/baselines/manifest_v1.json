@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "baseline_manifest_v1",
+  "entries": [
+    {
+      "runner": "calibration",
+      "baselinePath": "reports/baselines/calibration/baseline.json",
+      "candidatePath": "reports/calibration/latest.json",
+      "required": true
+    },
+    {
+      "runner": "capture",
+      "baselinePath": "reports/baselines/capture/baseline.json",
+      "candidatePath": "reports/capture/latest.json",
+      "required": true
+    },
+    {
+      "runner": "curriculum",
+      "baselinePath": "reports/baselines/curriculum/baseline.json",
+      "candidatePath": "reports/curriculum/latest.json",
+      "required": true
+    }
+  ]
+}
