@@ -1,0 +1,26 @@
+{
+  "artifact_type": "constitutional_verdict",
+  "artifact": "constitutional_verdict_openai_2026_v1.json",
+  "status": "EPOCH_1_VERDICT_BOUND",
+  "institution_id": "OPENAI",
+  "epoch": 1,
+  "input_artifact_hash": "sha256:e43902cf95da",
+  "doctrine_version": "ALMS_DOCTRINE_V1.3",
+  "schema_version": "ALMS_GAP_SCHEMA_V2",
+  "constitutional_state": "RED_STATE",
+  "final_divergence": 0.925,
+  "previous_verdict_hash": null,
+  "machine_actions": [
+    "FREEZE_INDEPENDENCE_CLAIMS",
+    "REQUIRE_EXTERNAL_REVIEW",
+    "EMIT_PUBLIC_RECEIPT",
+    "EMIT_SOVEREIGNTY_RECEIPT"
+  ],
+  "mutation_policy": "FROZEN_NO_DIRECT_MUTATION",
+  "next_allowed_artifact": "institution_state_transition_openai_epoch_2_v1.json",
+  "forbidden_actions": [
+    "MUTATE_FROZEN_TAXONOMY",
+    "MUTATE_EPOCH_1_VERDICT",
+    "OVERWRITE_PRIOR_RECEIPTS"
+  ]
+}
