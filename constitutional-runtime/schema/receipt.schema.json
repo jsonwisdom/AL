@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Receipt",
+  "type": "object",
+  "properties": {
+    "event_id": { "type": ["string", "null"], "pattern": "^[0-9a-f]{64}$" },
+    "replay_path": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+    },
+    "state_snapshot": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "constitution_hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "evidence_root": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "policy_hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "verdict": {
+      "enum": ["MATCH", "DIVERGENCE", "INVALID", "INSUFFICIENT_EVIDENCE", "CONSTITUTIONAL_UNKNOWN"]
+    },
+    "signatures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "observer_id": { "type": "string" },
+          "signature": { "type": "string" }
+        },
+        "required": ["observer_id", "signature"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["event_id", "replay_path", "state_snapshot", "constitution_hash", "evidence_root", "policy_hash", "signatures"],
+  "additionalProperties": false
+}
