@@ -49,12 +49,24 @@ def sha256_file(path: Path) -> str:
 
 def git_commit_exists(commit_sha: str) -> bool:
     result = subprocess.run(
-        ["git", "cat-file", "-e", f"{commit_sha}^{{commit}}"],
+        ["git", "cat-file", "-e", f"{commit_sha}^{commit}"],
         stdout=subprocess.DEVNULL,
         stderr=subprocess.DEVNULL,
         check=False,
     )
     return result.returncode == 0
+
+
+def current_git_commit() -> str | None:
+    result = subprocess.run(
+        ["git", "rev-parse", "HEAD"],
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    if result.returncode != 0:
+        return None
+    return result.stdout.strip()
 
 
 def validate_schema(sample: dict[str, Any], schema: dict[str, Any]) -> tuple[bool, str | None]:
@@ -85,6 +97,17 @@ def infer_local_artifact_path(sample: dict[str, Any]) -> Path:
     )
 
 
+def infer_chronology_commit(sample: dict[str, Any]) -> str | None:
+    explicit_commit = sample.get("repository_chronology", {}).get("commit_sha")
+    if explicit_commit:
+        return explicit_commit
+
+    if sample.get("artifact_id") == "lapis-genesis-commit-edcec6f":
+        return GENESIS_COMMIT
+
+    return current_git_commit()
+
+
 def run_audit(sample_path: Path, schema_path: Path, output_path: Path) -> dict[str, Any]:
     sample = load_json(sample_path)
     schema = load_json(schema_path)
@@ -107,7 +130,7 @@ def run_audit(sample_path: Path, schema_path: Path, output_path: Path) -> dict[s
     else:
         artifact_path_error = None
 
-    chronology_commit = GENESIS_COMMIT if sample.get("artifact_id") == "lapis-genesis-commit-edcec6f" else None
+    chronology_commit = infer_chronology_commit(sample)
     chronology_pass = git_commit_exists(chronology_commit) if chronology_commit else False
 
     witness_present = bool(sample.get("witness", {}).get("identity"))
