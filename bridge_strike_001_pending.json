@@ -1,6 +1,6 @@
 {
   "mock_strike": "001",
-  "status": "PRODUCTION_PRIMED_SCHEMA_REGISTERED",
+  "status": "PRODUCTION_PRIMED_SCHEMA_REGISTERED_TX_UNDECODED",
   "chain": {
     "id": 8453,
     "name": "Base Mainnet"
@@ -17,14 +17,16 @@
     "schema_uid": "0x13f0d9c2a8e45f2afc9ce01a98eb85e87774f66f21096a89b10bef31eac22889",
     "schema_registration_tx": "0x88b476b5b37bc4368ef6137af0de3525fc14e167c96e63c93d59cebd326874c6",
     "schema_resolver": "0x0000000000000000000000000000000000000000",
-    "attestation_tx": "PENDING_ATTESTATION_TX_HASH"
+    "candidate_attestation_tx": "0x60cd5ceab31a637cfe9f7d5b4767d2a6462f062ab06cc727587a29d110a5e676",
+    "candidate_attestation_status": "UNDECODED_NO_UID_CONFIRMED",
+    "attestation_uid": "PENDING_EVENT_DECODED_UID"
   },
   "commit_requirements": [
     "VERIFYING_CONTRACT_DECISION",
     "PRODUCTION_WITNESS_PAYLOAD",
     "EIP712_FULL_HASH",
     "FINAL_COMMIT_SHA",
-    "ATTESTATION_TX_HASH"
+    "DECODED_ATTESTATION_UID"
   ],
-  "prohibition": "DO_NOT_STRIKE_MAINNET_WITHOUT_FINAL_WITNESS_AND_ATTESTATION_TX"
+  "prohibition": "DO_NOT_MARK_STRIKE_CONFIRMED_WITHOUT_DECODED_UID"
 }
