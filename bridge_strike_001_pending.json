@@ -1,6 +1,6 @@
 {
   "mock_strike": "001",
-  "status": "PRODUCTION_PRIMED_SCHEMA_REGISTERED_TX_UNDECODED",
+  "status": "STAGING_ATTESTATION_CONFIRMED_PENDING_FINAL_WITNESS",
   "chain": {
     "id": 8453,
     "name": "Base Mainnet"
@@ -17,16 +17,18 @@
     "schema_uid": "0x13f0d9c2a8e45f2afc9ce01a98eb85e87774f66f21096a89b10bef31eac22889",
     "schema_registration_tx": "0x88b476b5b37bc4368ef6137af0de3525fc14e167c96e63c93d59cebd326874c6",
     "schema_resolver": "0x0000000000000000000000000000000000000000",
-    "candidate_attestation_tx": "0x60cd5ceab31a637cfe9f7d5b4767d2a6462f062ab06cc727587a29d110a5e676",
-    "candidate_attestation_status": "UNDECODED_NO_UID_CONFIRMED",
-    "attestation_uid": "PENDING_EVENT_DECODED_UID"
+    "staging_attestation_uid": "0x5c1f5cf84831406f929da249f057063a1ac2260d1c0930ab784d4a3eb3043ccf",
+    "staging_attestation_tx": "0xc6c20dd25651bcf17c9397773d41edcca7b9ab390eeaf552411aaf2308e8bb6c",
+    "staging_attestation_result": "PENDING_REAL_CONSTANTS",
+    "staging_attestation_to": "0xA380552a27b0a5a2874Ea7AA52CAC09f542002E8",
+    "production_attestation_uid": "PENDING_FINAL_WITNESS_UID"
   },
   "commit_requirements": [
     "VERIFYING_CONTRACT_DECISION",
     "PRODUCTION_WITNESS_PAYLOAD",
     "EIP712_FULL_HASH",
     "FINAL_COMMIT_SHA",
-    "DECODED_ATTESTATION_UID"
+    "PRODUCTION_ATTESTATION_UID"
   ],
-  "prohibition": "DO_NOT_MARK_STRIKE_CONFIRMED_WITHOUT_DECODED_UID"
+  "prohibition": "DO_NOT_MARK_FINAL_STRIKE_CONFIRMED_WITHOUT_PRODUCTION_WITNESS_HASH_AND_EIP712_DIGEST"
 }
