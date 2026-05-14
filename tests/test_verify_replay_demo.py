@@ -34,16 +34,20 @@ def minimal_schema() -> dict:
     }
 
 
-def schema_compliant_sample(content_hash: str) -> dict:
+def schema_compliant_sample(content_hash: str, commit_sha: str) -> dict:
     return {
         "schema_version": "lapis.replayable_audit_demo.v0.1",
-        "artifact_id": "lapis-genesis-commit-edcec6f",
+        "artifact_id": "lapis-portable-test-artifact",
         "artifact_type": "code_commit",
         "root_identity": "jaywisdom.eth",
+        "repository_chronology": {
+            "commit_sha": commit_sha,
+            "branch": "master",
+        },
         "l0_vault": {
             "provider": "gcs",
             "bucket": "wisdom-family-vault",
-            "object_path": "lapis/genesis/docs/LAPIS_PROTOCOL_STEWARDSHIP_INVARIANT.md",
+            "object_path": "docs/LAPIS_PROTOCOL_STEWARDSHIP_INVARIANT.md",
             "content_sha256": content_hash,
         },
         "l2_chronology": {
@@ -68,15 +72,15 @@ def schema_compliant_sample(content_hash: str) -> dict:
             "instructions": [
                 "hash artifact bytes",
                 "compare resulting hash against content_sha256",
-                "verify genesis commit exists",
+                "verify declared commit exists",
             ],
             "expected_result": "Replay verifier produces deterministic pass or fail.",
         },
     }
 
 
-def init_git_repo(path: Path) -> None:
-    subprocess.run(["git", "init"], cwd=path, check=True, stdout=subprocess.DEVNULL)
+def init_git_repo(path: Path) -> str:
+    subprocess.run(["git", "init", "-b", "master"], cwd=path, check=True, stdout=subprocess.DEVNULL)
     subprocess.run(["git", "config", "user.email", "test@example.com"], cwd=path, check=True)
     subprocess.run(["git", "config", "user.name", "Lapis Test"], cwd=path, check=True)
 
@@ -89,10 +93,12 @@ def init_git_repo(path: Path) -> None:
 
     subprocess.run(["git", "add", "."], cwd=path, check=True)
     subprocess.run(["git", "commit", "-m", "test genesis"], cwd=path, check=True, stdout=subprocess.DEVNULL)
+    result = subprocess.run(["git", "rev-parse", "HEAD"], cwd=path, check=True, capture_output=True, text=True)
+    return result.stdout.strip()
 
 
 def test_audit_pass_when_schema_texture_chronology_witness_and_replay_align(tmp_path, monkeypatch):
-    init_git_repo(tmp_path)
+    commit_sha = init_git_repo(tmp_path)
     monkeypatch.chdir(tmp_path)
 
     artifact = tmp_path / "docs" / "LAPIS_PROTOCOL_STEWARDSHIP_INVARIANT.md"
@@ -103,7 +109,7 @@ def test_audit_pass_when_schema_texture_chronology_witness_and_replay_align(tmp_
     output_path = tmp_path / "REPLAY_SUMMARY.json"
 
     write_json(schema_path, minimal_schema())
-    write_json(sample_path, schema_compliant_sample(content_hash))
+    write_json(sample_path, schema_compliant_sample(content_hash, commit_sha))
 
     summary = run_audit(sample_path=sample_path, schema_path=schema_path, output_path=output_path)
 
@@ -116,7 +122,7 @@ def test_audit_pass_when_schema_texture_chronology_witness_and_replay_align(tmp_
 
 
 def test_audit_fails_on_byte_mutation(tmp_path, monkeypatch):
-    init_git_repo(tmp_path)
+    commit_sha = init_git_repo(tmp_path)
     monkeypatch.chdir(tmp_path)
 
     artifact = tmp_path / "docs" / "LAPIS_PROTOCOL_STEWARDSHIP_INVARIANT.md"
@@ -128,7 +134,7 @@ def test_audit_fails_on_byte_mutation(tmp_path, monkeypatch):
     output_path = tmp_path / "REPLAY_SUMMARY.json"
 
     write_json(schema_path, minimal_schema())
-    write_json(sample_path, schema_compliant_sample(original_hash))
+    write_json(sample_path, schema_compliant_sample(original_hash, commit_sha))
 
     summary = run_audit(sample_path=sample_path, schema_path=schema_path, output_path=output_path)
 
@@ -138,7 +144,7 @@ def test_audit_fails_on_byte_mutation(tmp_path, monkeypatch):
 
 
 def test_audit_fails_when_schema_is_invalid(tmp_path, monkeypatch):
-    init_git_repo(tmp_path)
+    commit_sha = init_git_repo(tmp_path)
     monkeypatch.chdir(tmp_path)
 
     artifact = tmp_path / "docs" / "LAPIS_PROTOCOL_STEWARDSHIP_INVARIANT.md"
@@ -149,7 +155,7 @@ def test_audit_fails_when_schema_is_invalid(tmp_path, monkeypatch):
     output_path = tmp_path / "REPLAY_SUMMARY.json"
 
     write_json(schema_path, minimal_schema())
-    sample = schema_compliant_sample(content_hash)
+    sample = schema_compliant_sample(content_hash, commit_sha)
     del sample["witness"]
     write_json(sample_path, sample)
 
