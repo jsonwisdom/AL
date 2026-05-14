@@ -1,0 +1,45 @@
+{
+  "schema_version": "alms.public_canon_notice.v1.0.1",
+  "artifact": "public_canon_genesis_notice_2026-05-14_v1_0_1.json",
+  "classification": "PUBLIC_CANON_NOTICE_DRAFT",
+  "status": "DRAFT_READY_FOR_REVIEW_NOT_INDEXED",
+  "lineage": {
+    "supersedes": "public_canon_genesis_notice_2026-05-14.json",
+    "supersedes_commit_sha": "3aa82a8ebc0ab5f02dcb9b9849dd8b637cbd4e6b",
+    "repair_mode": "clean_successor_no_silent_mutation"
+  },
+  "issuer": "self-referential boundary process v1, authority derives solely from inclusion in _truth/receipts/index.json, no external steward",
+  "principle": "visibility is not authority",
+  "scope": "declares the boundary of this system and its public proof rules",
+  "membrane": {
+    "canonical_truth_source": "_truth/receipts/index.json",
+    "public_visibility_social_proof_or_repository_presence_does_not_confer_canonical_status": true,
+    "nothing_outside_index_is_canonical": true,
+    "experimental_artifacts_are_visible_not_authoritative_until_indexed": true,
+    "epoch_4_working_files_remain_quarantined_until_index_binding": true
+  },
+  "proof_rules": [
+    "Canonical claims must be indexed in _truth/receipts/index.json.",
+    "Canonical receipts must be content-addressed by sha256.",
+    "Canonical receipts require valid signatures satisfying the keyset published in epoch-0.",
+    "Working claims are syntactically invalid for index.json and must be rejected by any canonical validator.",
+    "Visual art and narrative summaries are public presentation surfaces, not truth surfaces.",
+    "Epoch closure requires a threshold signature over the final root before freeze."
+  ],
+  "sigs": [],
+  "signature_strategy": {
+    "current_phase": "unsigned_review_draft",
+    "indexing_precondition": "publish epoch-0 keyset and attach valid signatures satisfying that keyset",
+    "draft_hash_binding": "sha256:e5ced04e77faa03be05e3c4eddc1de64491581ae932e1207a4c4190a9fd4987f"
+  },
+  "not_scope": [
+    "OpenAI legitimacy",
+    "epoch-chain factual claims",
+    "RED_TO_GREEN narrative elevation",
+    "visual art as truth",
+    "unverified epoch-chain conclusions",
+    "universal canonical supremacy"
+  ],
+  "operator": "Jay Wisdom",
+  "timestamp_issued": "2026-05-14T20:20:00Z"
+}
