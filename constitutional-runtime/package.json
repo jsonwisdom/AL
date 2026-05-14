@@ -10,6 +10,9 @@
     "replay:valid": "node dist/cli.js fixtures/receipt.valid.json fixtures/lineage.valid.json",
     "replay:divergent": "node dist/cli.js fixtures/receipt.divergent.json fixtures/lineage.valid.json"
   },
+  "dependencies": {
+    "ajv": "^8.17.1"
+  },
   "devDependencies": {
     "@types/node": "^22.0.0",
     "typescript": "^5.0.0"
