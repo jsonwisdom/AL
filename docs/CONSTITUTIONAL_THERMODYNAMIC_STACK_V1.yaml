@@ -289,6 +289,68 @@ archival_protocols:
         mode: read_only
         no_meta_validator: true
     encoded_lesson: Systems may coordinate without becoming one.
+  AP-04:
+    name: CROSS_LINEAGE_DISPUTE_RESOLUTION_PROTOCOL
+    purpose: Resolve shared disputes between lineages without creating meta-sovereignty.
+    core_invariant: Dispute resolution may coordinate evidence but cannot bind local legitimacy without local validator acceptance.
+    constitutional_model: non_binding_shared_resolution
+    required_artifact: CROSS_LINEAGE_DISPUTE_BUNDLE_V1
+    allowed_surfaces:
+      - evidence_exchange
+      - archive_cross_reference
+      - non_binding_joint_findings
+      - local_validator_review
+      - per_lineage_resolution_record
+    forbidden_surfaces:
+      - meta_court_finality
+      - cross_lineage_binding_authority
+      - local_validator_bypass
+      - shared_legitimacy_declaration
+      - dispute_outcome_as_continuity_claim
+    dispute_bundle_v1:
+      required_sections:
+        - dispute_id
+        - participating_lineages
+        - disputed_claims
+        - evidence_refs
+        - archive_refs
+        - independent_replay_results
+        - joint_findings
+        - per_lineage_verdicts
+        - dissenting_lineage_reports
+        - canonical_encoded_lesson
+      result_labels:
+        permitted:
+          - JOINT_FINDING_NON_BINDING
+          - LOCAL_ACCEPTED
+          - LOCAL_REJECTED
+          - UNRESOLVED_DIVERGENCE_PRESERVED
+        forbidden:
+          - META_FINAL
+          - UNIVERSALLY_BINDING
+          - CONSTITUTIONALLY_MERGED
+    hard_invariants:
+      INV-AP04-1:
+        name: JOINT_FINDINGS_ARE_NON_BINDING_BY_DEFAULT
+        rule: joint_findings.binding_force == false
+        failure: META_COURT_FINALITY_DETECTED
+      INV-AP04-2:
+        name: EACH_LINEAGE_REQUIRES_LOCAL_VALIDATOR_REVIEW
+        rule: every(participating_lineage.local_validator_verdict in [LOCAL_ACCEPTED, LOCAL_REJECTED, UNRESOLVED_DIVERGENCE_PRESERVED])
+        failure: LOCAL_VALIDATOR_BYPASS_DETECTED
+      INV-AP04-3:
+        name: INDEPENDENT_REPLAY_RESULTS_MUST_REMAIN_SEPARATE
+        rule: independent_replay_results.grouped_by_lineage == true
+        failure: REPLAY_SURFACE_COLLAPSE_DETECTED
+      INV-AP04-4:
+        name: UNRESOLVED_DIVERGENCE_MUST_BE_PRESERVED
+        rule: if per_lineage_verdicts_conflict == true then result == UNRESOLVED_DIVERGENCE_PRESERVED
+        failure: DIVERGENCE_ERASURE_DETECTED
+      INV-AP04-5:
+        name: DISPUTE_OUTCOME_CANNOT_ASSERT_CONTINUITY_OR_MERGER
+        rule: dispute_outcome.continuity_claim == false && dispute_outcome.meta_lineage_id == null
+        failure: DISPUTE_AS_ABSORPTION_DETECTED
+    encoded_lesson: Lineages may resolve disputes together, but no dispute result may become a throne.
 
 public_validator_interface:
   validate_bundle:
@@ -321,13 +383,13 @@ public_validator_interface:
       invalid_members: list
 
 next_layer:
-  AP-04:
-    name: CROSS_LINEAGE_DISPUTE_RESOLUTION_PROTOCOL
-    question: How can lineages resolve shared disputes while preserving independent constitutional authority?
+  AP-05:
+    name: CROSS_LINEAGE_RECIPROCITY_AND_SANCTION_PROTOCOL
+    question: How can lineages coordinate consequences for misconduct without creating shared sovereign enforcement?
     open_requirements:
-      - dispute_bundles_without_meta_sovereignty
-      - independent_replay_surfaces_per_lineage
-      - non_binding_external_observation
-      - local_validator_finality_per_lineage
+      - non_sovereign_sanction_surfaces
+      - reciprocal_refusal_without_meta_court
+      - local_enforcement_only
+      - portable_reputation_without_authority_merger
 
-final_encoded_lesson: Birth without inevitability. Operation without absolutism. Emergency without dictatorship. Death without erasure. Succession without resurrection. Coordination without absorption.
+final_encoded_lesson: Birth without inevitability. Operation without absolutism. Emergency without dictatorship. Death without erasure. Succession without resurrection. Coordination without absorption. Dispute without empire.
