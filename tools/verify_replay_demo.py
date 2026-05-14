@@ -49,7 +49,7 @@ def sha256_file(path: Path) -> str:
 
 def git_commit_exists(commit_sha: str) -> bool:
     result = subprocess.run(
-        ["git", "cat-file", "-e", f"{commit_sha}^{commit}"],
+        ["git", "cat-file", "-e", f"{commit_sha}^{{commit}}"],
         stdout=subprocess.DEVNULL,
         stderr=subprocess.DEVNULL,
         check=False,
