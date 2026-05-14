@@ -2,15 +2,13 @@
   "schema_version": "alms.receipt_index.v1",
   "last_updated": "2026-05-14T20:20:00Z",
   "index": {
-    "total_receipts": 2,
+    "total_receipts": 5,
     "receipts": [
       {
         "path": "_truth/receipts/2026-05-09T00-00-00Z-attestation-ledger-root.json",
         "hash": "sha256:857c1d9f25192499cf4438569c0b4be7af88a334aef2a7bb39ae4cd530714b8b",
         "timestamp": "2026-05-09T00:00:00Z",
-        "claims": [
-          "attestation-index-is-root-authority"
-        ],
+        "claims": ["attestation-index-is-root-authority"],
         "size_bytes": 481
       },
       {
@@ -23,6 +21,39 @@
           "openai-epoch-artifacts-remain-experimental-until-indexed-and-replay-linked"
         ],
         "size_bytes": 1435
+      },
+      {
+        "path": "_truth/receipts/readme_proof_surface_clarification_2026-05-14.json",
+        "hash": "sha256:8fc1b7010f88706686e8a4f0971a1d56efd51954",
+        "timestamp": "2026-05-14T20:20:00Z",
+        "claims": [
+          "readme-proof-surface-clarified",
+          "canonical-truth-source-is-receipt-index",
+          "public-files-are-non-canonical-without-index-binding"
+        ],
+        "size_bytes": 1011
+      },
+      {
+        "path": "_truth/receipts/repo_structure_attestation_2026-05-14.json",
+        "hash": "sha256:503c1977117e524354a1ebfd386b5a7926e4eaab",
+        "timestamp": "2026-05-14T20:20:00Z",
+        "claims": [
+          "repo-structure-boundary-attested",
+          "truth-receipts-directory-is-canonical-receipt-directory",
+          "docs-receipts-data-are-public-working-surfaces-until-indexed"
+        ],
+        "size_bytes": 1277
+      },
+      {
+        "path": "_truth/receipts/experimental_artifact_disclaimer_2026-05-14.json",
+        "hash": "sha256:9356257d94b7e75dc0b2979dbec8704982c57d31",
+        "timestamp": "2026-05-14T20:20:00Z",
+        "claims": [
+          "experimental-artifacts-disclaimed",
+          "epoch-chain-artifacts-do-not-assert-public-legitimacy-claims",
+          "index-binding-required-for-public-canon"
+        ],
+        "size_bytes": 1150
       }
     ]
   }
