@@ -1,0 +1,42 @@
+{
+  "artifact_type": "institution_state_transition_update",
+  "artifact": "institution_state_transition_openai_epoch_2_updated.json",
+  "status": "EPOCH_2_RECOMPUTED_FROM_APPEND_ONLY_RECEIPT",
+  "institution_id": "OPENAI",
+  "from_epoch": 1,
+  "to_epoch": 2,
+  "previous_verdict_hash": "sha256:0c50d561cc202ea2",
+  "new_receipts": [
+    {
+      "receipt_id": "OPENAI_EPOCH_2_RECEIPT_001",
+      "path": "_truth/receipts/openai_epoch_2_receipt_001_l3_epistemic_coherence.json",
+      "commit_sha": "fc284ef4260a270d6cc1e5d8703a30a5f235b009",
+      "receipt_class": "L3_epistemic_coherence",
+      "action": "APPEND_ONLY",
+      "mutates_prior": false
+    }
+  ],
+  "delta_layer_scores": {
+    "L1_structural_physics": 0,
+    "L2_governance_integrity": 0,
+    "L3_epistemic_coherence": -0.02
+  },
+  "delta_transparency_penalty": -0.005,
+  "new_weighted_divergence": 0.856,
+  "new_constitutional_state": "RED_STATE",
+  "uncertainty_band": "VERIFIED_DIVERGENCE_WITH_PRIVATE_ATTESTATIONS",
+  "receipt_set_hash": "sha256:e43902cf95da",
+  "doctrine_version": "ALMS_DOCTRINE_V1.3",
+  "schema_version": "ALMS_GAP_SCHEMA_V2",
+  "timestamp_issued": "2026-05-14T20:20:00Z",
+  "mutation_policy": "APPEND_ONLY_NO_MUTATION_OF_FROZEN_EPOCHS",
+  "next_lawful_actions": [
+    "APPEND_ADDITIONAL_EPOCH_2_RECEIPTS",
+    "FREEZE_EPOCH_2_AND_EMIT_EPOCH_3_SKELETON"
+  ],
+  "forbidden_actions": [
+    "MUTATE_FROZEN_TAXONOMY",
+    "MUTATE_EPOCH_1_VERDICT",
+    "OVERWRITE_PRIOR_RECEIPTS"
+  ]
+}
