@@ -1,0 +1,44 @@
+{
+  "artifact_type": "institution_state_transition_update",
+  "artifact": "institution_state_transition_openai_epoch_2_l1_decentralization_v1.json",
+  "status": "REPLAY_ACCEPTED",
+  "institution_id": "OPENAI",
+  "epoch": 2,
+  "receipts_ingested": [
+    "openai_epoch_2_receipt_001_l3_epistemic_coherence.json",
+    "openai_epoch_2_receipt_002_l2_governance_integrity.json",
+    "openai_epoch_2_receipt_003_l1_structural_physics.json",
+    "openai_epoch_2_receipt_004_l1_provider_diversification.json",
+    "openai_epoch_2_receipt_005_l1_exclusive_access_clause_removal.json",
+    "openai_epoch_2_receipt_006_l1_provider_agnostic_orchestration.json",
+    "openai_epoch_2_receipt_007_l1_inference_routing_decentralization.json"
+  ],
+  "cumulative_delta_layer_scores": {
+    "L1_structural_physics": -0.90,
+    "L2_governance_integrity": -0.03,
+    "L3_epistemic_coherence": -0.02
+  },
+  "delta_transparency_penalty": -0.035,
+  "new_weighted_divergence": 0.406,
+  "final_divergence_with_penalty": 0.431,
+  "constitutional_state": "YELLOW_STATE",
+  "uncertainty_band": "VERIFIED_DIVERGENCE_WITH_PRIVATE_ATTESTATIONS",
+  "replay_continuity": "PRESERVED",
+  "doctrine_version": "ALMS_DOCTRINE_V1.3",
+  "schema_version": "ALMS_GAP_SCHEMA_V2",
+  "previous_state_transition_commit_sha": "94b79f9995add61707cb498f83ed22d3ae3f2fa8",
+  "latest_receipt_commit_sha": "afd39818728d34b384358b459d1ff6430c59f475",
+  "previous_verdict_hash": "sha256:0c50d561cc202ea2",
+  "receipt_set_hash_before": "sha256:e43902cf95da",
+  "mutation_policy": "APPEND_ONLY_NO_MUTATION_OF_FROZEN_EPOCHS",
+  "next_lawful_actions": [
+    "APPEND_L2_GOVERNANCE_RECEIPT",
+    "APPEND_L3_TRANSPARENCY_RECEIPT",
+    "FREEZE_EPOCH_2"
+  ],
+  "forbidden_actions": [
+    "MUTATE_FROZEN_TAXONOMY",
+    "MUTATE_EPOCH_1_VERDICT",
+    "OVERWRITE_PRIOR_RECEIPTS"
+  ]
+}
