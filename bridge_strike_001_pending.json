@@ -1,0 +1,27 @@
+{
+  "mock_strike": "001",
+  "status": "PENDING_REAL_CONSTANTS",
+  "chain": {
+    "id": 8453,
+    "name": "Base Mainnet"
+  },
+  "eip712_payload": {
+    "domain": {
+      "name": "Lapis Replay Court",
+      "chainId": 8453,
+      "verifyingContract": "PENDING_REAL_CONTRACT_ADDRESS"
+    },
+    "typed_data_hash": "PENDING_EIP712_FULL_HASH"
+  },
+  "eas_attestation": {
+    "schema_uid": "PENDING_REAL_EAS_SCHEMA_UID_FROM_REGISTRATION",
+    "attestation_tx": "PENDING_TX_HASH"
+  },
+  "commit_requirements": [
+    "EAS_SCHEMA_UID",
+    "VERIFYING_CONTRACT_ADDRESS",
+    "REGISTRATION_TX_HASH",
+    "FINAL_COMMIT_SHA"
+  ],
+  "prohibition": "DO_NOT_STRIKE_MAINNET_WITHOUT_REAL_CONSTANTS"
+}
