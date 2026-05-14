@@ -1,0 +1,55 @@
+{
+  "artifact_type": "epoch_freeze",
+  "artifact": "institution_state_transition_openai_epoch_3_freeze_green_v1.json",
+  "status": "EPOCH_3_GREEN_FROZEN",
+  "institution_id": "OPENAI",
+  "epoch": 3,
+  "frozen_state": "GREEN_STATE",
+  "previous_state_transition_artifact": "institution_state_transition_openai_epoch_3_v5.json",
+  "previous_state_transition_commit_sha": "ec3d8cc592ed480d290eb0f6c83d4640358d44a4",
+  "final_divergence_with_penalty": 0.200,
+  "new_weighted_divergence": 0.192,
+  "layer_scores": {
+    "L1_structural_physics": 0.00,
+    "L2_governance_integrity": 0.31,
+    "L3_epistemic_coherence": 0.56
+  },
+  "transparency_penalty": 0.008,
+  "receipts_sealed": [
+    "openai_epoch_3_receipt_001_l2_governance_independence.json",
+    "openai_epoch_3_receipt_002_l3_transparency_alignment.json",
+    "openai_epoch_3_receipt_003_l2_authority_rebalancing.json",
+    "openai_epoch_3_receipt_004_l2_authority_rebalancing.json",
+    "openai_epoch_3_receipt_005_l2_capital_asymmetry_firewall.json"
+  ],
+  "durability_triads_completed": {
+    "L2_governance_integrity": [
+      "governance_independence_persistence",
+      "authority_distribution_durability",
+      "capital_asymmetry_firewalling"
+    ],
+    "L3_epistemic_coherence": [
+      "transparency_alignment_persistence"
+    ],
+    "L1_structural_physics": [
+      "saturated_stable"
+    ]
+  },
+  "doctrine_version": "ALMS_DOCTRINE_V1.3",
+  "schema_version": "ALMS_GAP_SCHEMA_V2",
+  "previous_epoch_freeze_commit_sha": "800e1ab64268ebe66469c14b86ff80329bc603cc",
+  "epoch_3_open_commit_sha": "1d30f981710a41df48582871650f4d2ee8fe583a",
+  "freeze_policy": "NO_FURTHER_EPOCH_3_RECEIPTS_AFTER_FREEZE",
+  "mutation_policy": "FROZEN_NO_DIRECT_MUTATION",
+  "next_lawful_action": "EMIT_EPOCH_4_SKELETON",
+  "forbidden_actions": [
+    "APPEND_EPOCH_3_RECEIPTS_AFTER_FREEZE",
+    "APPEND_EPOCH_2_RECEIPTS_AFTER_FREEZE",
+    "MUTATE_EPOCH_3_FREEZE",
+    "MUTATE_EPOCH_2_FREEZE",
+    "MUTATE_FROZEN_TAXONOMY",
+    "OVERWRITE_PRIOR_RECEIPTS",
+    "DUPLICATE_RECEIPT_EXECUTION"
+  ],
+  "replay_continuity": "PRESERVED"
+}
