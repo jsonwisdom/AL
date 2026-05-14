@@ -1,0 +1,33 @@
+{
+  "schema_version": "alms.repo_hygiene_receipt.v1",
+  "artifact": "repo_structure_attestation_2026-05-14.json",
+  "classification": "REPO_HYGIENE_RECEIPT",
+  "status": "SAFE_TO_ATTEST",
+  "scope": "AL repository structure and canonical boundary clarification",
+  "statements": {
+    "canonical_receipt_index": "_truth/receipts/index.json",
+    "canonical_receipt_directory": "_truth/receipts/",
+    "public_working_surfaces": [
+      "docs/",
+      "receipts/",
+      "data/"
+    ],
+    "public_working_surfaces_are_not_canonical_without_index_binding": true,
+    "experimental_artifacts_are_non_canonical_until_indexed_and_replay_linked": true,
+    "no_legitimacy_claims": true
+  },
+  "not_scope": [
+    "OpenAI legitimacy",
+    "epoch-chain factual claims",
+    "RED_TO_GREEN narrative elevation",
+    "mutation of README",
+    "mutation of frozen epochs"
+  ],
+  "recommended_posture": {
+    "epoch_4": "HOLD_OPEN_REPLAY",
+    "canon_expansion": "DEFERRED_UNTIL_REPO_HYGIENE_COMPLETE",
+    "freeze_policy": "NO_FREEZE_UNTIL_READY_FOR_PUBLIC_CANON"
+  },
+  "operator": "Jay Wisdom",
+  "timestamp_issued": "2026-05-14T20:20:00Z"
+}
