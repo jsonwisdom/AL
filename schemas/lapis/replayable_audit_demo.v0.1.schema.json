@@ -1,0 +1,205 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.dev/schemas/lapis/replayable_audit_demo.v0.1.schema.json",
+  "title": "Lapis Replayable Audit Demo Schema",
+  "description": "Binds L0 texture to L2 chronology with an explicit witness and replay path under the Lapis Protocol Stewardship Invariant.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "artifact_id",
+    "artifact_type",
+    "root_identity",
+    "l0_vault",
+    "l2_chronology",
+    "witness",
+    "repair",
+    "replay"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "lapis.replayable_audit_demo.v0.1"
+    },
+    "artifact_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Stable identifier for the audited artifact or repair event."
+    },
+    "artifact_type": {
+      "type": "string",
+      "enum": [
+        "wisdom_family_record",
+        "code_commit",
+        "legal_record",
+        "media_asset",
+        "repair_event"
+      ]
+    },
+    "root_identity": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Primary stewardship identity responsible for the artifact lineage."
+    },
+    "l0_vault": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "provider",
+        "bucket",
+        "object_path",
+        "content_sha256"
+      ],
+      "properties": {
+        "provider": {
+          "type": "string",
+          "const": "gcs"
+        },
+        "bucket": {
+          "type": "string",
+          "minLength": 1
+        },
+        "object_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "content_sha256": {
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{64}$"
+        }
+      }
+    },
+    "l2_chronology": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "chain",
+        "tx_hash",
+        "block_number",
+        "attestation_uid"
+      ],
+      "properties": {
+        "chain": {
+          "type": "string",
+          "enum": ["base", "base-sepolia"]
+        },
+        "tx_hash": {
+          "anyOf": [
+            { "type": "null" },
+            { "type": "string", "pattern": "^0x[a-fA-F0-9]{64}$" }
+          ]
+        },
+        "block_number": {
+          "anyOf": [
+            { "type": "null" },
+            { "type": "integer", "minimum": 0 }
+          ]
+        },
+        "attestation_uid": {
+          "anyOf": [
+            { "type": "null" },
+            { "type": "string", "pattern": "^0x[a-fA-F0-9]{64}$" }
+          ]
+        }
+      }
+    },
+    "witness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "identity",
+        "statement",
+        "statement_sha256",
+        "timestamp"
+      ],
+      "properties": {
+        "identity": {
+          "type": "string",
+          "minLength": 1
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "statement_sha256": {
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{64}$"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "repair": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "is_repair",
+        "parent_artifact_id",
+        "rationale",
+        "lineage_scar"
+      ],
+      "properties": {
+        "is_repair": {
+          "type": "boolean"
+        },
+        "parent_artifact_id": {
+          "anyOf": [
+            { "type": "null" },
+            { "type": "string", "minLength": 1 }
+          ]
+        },
+        "rationale": {
+          "anyOf": [
+            { "type": "null" },
+            { "type": "string", "minLength": 1 }
+          ]
+        },
+        "lineage_scar": {
+          "anyOf": [
+            { "type": "null" },
+            { "type": "string", "minLength": 1 }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "is_repair": { "const": true } },
+            "required": ["is_repair"]
+          },
+          "then": {
+            "properties": {
+              "parent_artifact_id": { "type": "string", "minLength": 1 },
+              "rationale": { "type": "string", "minLength": 1 },
+              "lineage_scar": { "type": "string", "minLength": 1 }
+            }
+          }
+        }
+      ]
+    },
+    "replay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "instructions",
+        "expected_result"
+      ],
+      "properties": {
+        "instructions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "expected_result": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}
