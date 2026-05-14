@@ -1,0 +1,43 @@
+{
+  "artifact_type": "epoch_freeze",
+  "artifact": "institution_state_transition_openai_epoch_2_freeze_green_v1.json",
+  "status": "EPOCH_2_GREEN_FROZEN",
+  "institution_id": "OPENAI",
+  "epoch": 2,
+  "frozen_state": "GREEN_STATE",
+  "previous_state_transition_artifact": "institution_state_transition_openai_epoch_2_green_v1.json",
+  "previous_state_transition_commit_sha": "3ec9c55ed5f9087c92f2fcd6f08857aa99d86dc4",
+  "final_divergence_with_penalty": 0.291,
+  "new_weighted_divergence": 0.276,
+  "cumulative_delta_layer_scores": {
+    "L1_structural_physics": -0.90,
+    "L2_governance_integrity": -0.38,
+    "L3_epistemic_coherence": -0.07
+  },
+  "delta_transparency_penalty": -0.045,
+  "receipts_sealed": [
+    "openai_epoch_2_receipt_001_l3_epistemic_coherence.json",
+    "openai_epoch_2_receipt_002_l2_governance_integrity.json",
+    "openai_epoch_2_receipt_003_l1_structural_physics.json",
+    "openai_epoch_2_receipt_004_l1_provider_diversification.json",
+    "openai_epoch_2_receipt_005_l1_exclusive_access_clause_removal.json",
+    "openai_epoch_2_receipt_006_l1_provider_agnostic_orchestration.json",
+    "openai_epoch_2_receipt_007_l1_inference_routing_decentralization.json",
+    "openai_epoch_2_receipt_008_l2_board_independence_restoration.json",
+    "openai_epoch_2_receipt_009_l3_transparency_disclosure.json"
+  ],
+  "doctrine_version": "ALMS_DOCTRINE_V1.3",
+  "schema_version": "ALMS_GAP_SCHEMA_V2",
+  "previous_verdict_hash": "sha256:0c50d561cc202ea2",
+  "receipt_set_hash_before": "sha256:e43902cf95da",
+  "freeze_policy": "NO_FURTHER_EPOCH_2_RECEIPTS_AFTER_FREEZE",
+  "mutation_policy": "FROZEN_NO_DIRECT_MUTATION",
+  "next_lawful_action": "EMIT_EPOCH_3_SKELETON",
+  "forbidden_actions": [
+    "APPEND_EPOCH_2_RECEIPTS_AFTER_FREEZE",
+    "MUTATE_FROZEN_TAXONOMY",
+    "MUTATE_EPOCH_1_VERDICT",
+    "OVERWRITE_PRIOR_RECEIPTS"
+  ],
+  "replay_continuity": "PRESERVED"
+}
