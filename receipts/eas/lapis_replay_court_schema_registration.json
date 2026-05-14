@@ -1,0 +1,13 @@
+{
+  "status": "schema_registered_attestation_pending",
+  "network": "base",
+  "schema_uid": "0x1e1a391bd33dcf44367bbbeead5917c99867477340087b3e9d146b0991ba79e3",
+  "schema_registration_tx_hash": "0x547a46d4f93c00137ccd329201867062638d9ca74ccef396d204f06d59832e9e",
+  "schema_string": "string audit_id,bytes32 actual_content_sha256,string chronology_commit,string schema_version,bool schema_valid,bool texture_present,bool chronology_present,bool witness_present,bool replay_path_present,bool silent_overwrite_detected,string root_identity,string witness_identity,string verdict,string replay_summary_artifact_url,bytes32 replay_summary_artifact_zip_sha256,uint64 timestamp_utc",
+  "source_commit": "e3015c4a48840201b465dda63c56640da46f433e",
+  "schema_commit": "25d405f6e1c9cf6dbc2a011f67ec0332d4ff19db",
+  "root_identity": "jaywisdom.eth",
+  "attestation_uid": null,
+  "attestation_tx_hash": null,
+  "required_next_step": "Create attestation using the registered schema UID, then record attestation UID and transaction hash."
+}
