@@ -1,0 +1,29 @@
+{
+  "schema_version": "alms.repo_hygiene_receipt.v1",
+  "artifact": "experimental_artifact_disclaimer_2026-05-14.json",
+  "classification": "REPO_HYGIENE_RECEIPT",
+  "status": "SAFE_TO_ATTEST",
+  "scope": "Experimental artifact disclaimer for public repository surfaces",
+  "statements": {
+    "canonical_truth_source": "_truth/receipts/index.json",
+    "experimental_artifacts_are_public_working_files": true,
+    "experimental_artifacts_are_not_canonical_without_index_binding": true,
+    "epoch_chain_artifacts_do_not_assert_public_legitimacy_claims": true,
+    "index_binding_required_for_public_canon": true,
+    "no_legitimacy_claims": true
+  },
+  "not_scope": [
+    "OpenAI legitimacy",
+    "epoch-chain factual claims",
+    "RED_TO_GREEN narrative elevation",
+    "mutation of frozen epochs",
+    "canonization of experimental artifacts"
+  ],
+  "recommended_posture": {
+    "epoch_4": "HOLD_OPEN_REPLAY",
+    "canon_expansion": "DEFERRED_UNTIL_REPO_HYGIENE_COMPLETE",
+    "freeze_policy": "NO_FREEZE_UNTIL_READY_FOR_PUBLIC_CANON"
+  },
+  "operator": "Jay Wisdom",
+  "timestamp_issued": "2026-05-14T20:20:00Z"
+}
