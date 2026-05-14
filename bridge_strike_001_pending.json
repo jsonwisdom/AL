@@ -1,6 +1,6 @@
 {
   "mock_strike": "001",
-  "status": "PENDING_REAL_CONSTANTS",
+  "status": "PRODUCTION_PRIMED_SCHEMA_REGISTERED",
   "chain": {
     "id": 8453,
     "name": "Base Mainnet"
@@ -9,19 +9,22 @@
     "domain": {
       "name": "Lapis Replay Court",
       "chainId": 8453,
-      "verifyingContract": "PENDING_REAL_CONTRACT_ADDRESS"
+      "verifyingContract": "PENDING_VERIFYING_CONTRACT_DECISION"
     },
     "typed_data_hash": "PENDING_EIP712_FULL_HASH"
   },
   "eas_attestation": {
-    "schema_uid": "PENDING_REAL_EAS_SCHEMA_UID_FROM_REGISTRATION",
-    "attestation_tx": "PENDING_TX_HASH"
+    "schema_uid": "0x13f0d9c2a8e45f2afc9ce01a98eb85e87774f66f21096a89b10bef31eac22889",
+    "schema_registration_tx": "0x88b476b5b37bc4368ef6137af0de3525fc14e167c96e63c93d59cebd326874c6",
+    "schema_resolver": "0x0000000000000000000000000000000000000000",
+    "attestation_tx": "PENDING_ATTESTATION_TX_HASH"
   },
   "commit_requirements": [
-    "EAS_SCHEMA_UID",
-    "VERIFYING_CONTRACT_ADDRESS",
-    "REGISTRATION_TX_HASH",
-    "FINAL_COMMIT_SHA"
+    "VERIFYING_CONTRACT_DECISION",
+    "PRODUCTION_WITNESS_PAYLOAD",
+    "EIP712_FULL_HASH",
+    "FINAL_COMMIT_SHA",
+    "ATTESTATION_TX_HASH"
   ],
-  "prohibition": "DO_NOT_STRIKE_MAINNET_WITHOUT_REAL_CONSTANTS"
+  "prohibition": "DO_NOT_STRIKE_MAINNET_WITHOUT_FINAL_WITNESS_AND_ATTESTATION_TX"
 }
