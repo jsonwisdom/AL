@@ -7,6 +7,11 @@ import { join } from "node:path";
 import { verifySignature } from "./signature.js";
 import { canonicalizeForSignature } from "./canonical.js";
 import { evaluateObserverThreshold } from "./threshold.js";
+import {
+  ContradictionReceipt,
+  detectContradiction,
+  isValidContradictionReceipt
+} from "./contradiction.js";
 
 const SCHEMA_DIR = join(process.cwd(), "schema");
 
@@ -43,22 +48,49 @@ export function validateReceiptSchema(data: unknown): { valid: boolean; errors?:
 }
 
 export function validateReceipt(
-  receipt: Receipt,
+  receipt: Receipt | ContradictionReceipt,
   lineage: Lineage
 ): {
   verdict: Verdict;
   computed_root?: string;
   divergence?: string;
   mutation_surface?: "Mutable" | "Frozen";
+  details?: {
+    uniqueObservers: number;
+    conflictingRoots: string[];
+  };
 } {
-  if (!pathExists(receipt, lineage)) {
+  if ("reports" in receipt && isValidContradictionReceipt(receipt)) {
+    const result = detectContradiction(receipt.reports);
+
+    if (result.isContradiction) {
+      return {
+        verdict: "CONSTITUTIONAL_CONTRADICTION",
+        divergence: "D3",
+        mutation_surface: "Frozen",
+        details: {
+          uniqueObservers: result.uniqueObserverCount,
+          conflictingRoots: result.conflictingRoots
+        }
+      };
+    }
+
     return {
       verdict: "INSUFFICIENT_EVIDENCE",
       mutation_surface: "Frozen"
     };
   }
 
-  for (const eventId of receipt.replay_path) {
+  const replayReceiptInput = receipt as Receipt;
+
+  if (!pathExists(replayReceiptInput, lineage)) {
+    return {
+      verdict: "INSUFFICIENT_EVIDENCE",
+      mutation_surface: "Frozen"
+    };
+  }
+
+  for (const eventId of replayReceiptInput.replay_path) {
     const event = lineage.events[eventId];
 
     if (event.signatures.length === 0) {
@@ -89,8 +121,8 @@ export function validateReceipt(
     }
   }
 
-  const computed = replayReceipt(receipt, lineage);
-  const d = divergenceClass(computed, receipt.state_snapshot);
+  const computed = replayReceipt(replayReceiptInput, lineage);
+  const d = divergenceClass(computed, replayReceiptInput.state_snapshot);
   const surface = mutationSurface(d);
 
   if (d === "D0") {
