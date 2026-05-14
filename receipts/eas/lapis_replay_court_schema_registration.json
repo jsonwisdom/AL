@@ -1,13 +1,16 @@
 {
-  "status": "schema_registered_attestation_pending",
+  "status": "confirmed",
   "network": "base",
   "schema_uid": "0x1e1a391bd33dcf44367bbbeead5917c99867477340087b3e9d146b0991ba79e3",
   "schema_registration_tx_hash": "0x547a46d4f93c00137ccd329201867062638d9ca74ccef396d204f06d59832e9e",
   "schema_string": "string audit_id,bytes32 actual_content_sha256,string chronology_commit,string schema_version,bool schema_valid,bool texture_present,bool chronology_present,bool witness_present,bool replay_path_present,bool silent_overwrite_detected,string root_identity,string witness_identity,string verdict,string replay_summary_artifact_url,bytes32 replay_summary_artifact_zip_sha256,uint64 timestamp_utc",
   "source_commit": "e3015c4a48840201b465dda63c56640da46f433e",
   "schema_commit": "25d405f6e1c9cf6dbc2a011f67ec0332d4ff19db",
+  "schema_receipt_commit": "e07bc9fe2fc037dc308ad8642d7bd042c0c24de3",
   "root_identity": "jaywisdom.eth",
-  "attestation_uid": null,
-  "attestation_tx_hash": null,
-  "required_next_step": "Create attestation using the registered schema UID, then record attestation UID and transaction hash."
+  "attestation_uid": "0x530b0edfcc62b3f7e36c163b3d5785c7248d13fd42aebbc4220086453be9da64",
+  "attestation_tx_hash": "0x60cd5ceab31a637cfe9f7d5b4767d2a6462f062ab06cc727587a29d110a5e676",
+  "attester": "0x1dB2C056c7DeCD9f9fC574692b05F62aE34Fb8b5",
+  "attestation_status": "confirmed",
+  "constitutional_green": true
 }
