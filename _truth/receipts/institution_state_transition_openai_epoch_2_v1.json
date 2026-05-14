@@ -1,0 +1,30 @@
+{
+  "artifact_type": "institution_state_transition",
+  "artifact": "institution_state_transition_openai_epoch_2_v1.json",
+  "status": "EPOCH_2_SKELETON_READY",
+  "institution_id": "OPENAI",
+  "from_epoch": 1,
+  "to_epoch": 2,
+  "previous_verdict_hash": "sha256:0c50d561cc202ea2",
+  "new_receipts": [],
+  "delta_layer_scores": {
+    "L1_structural_physics": null,
+    "L2_governance_integrity": null,
+    "L3_epistemic_coherence": null
+  },
+  "delta_transparency_penalty": null,
+  "new_weighted_divergence": null,
+  "new_constitutional_state": null,
+  "uncertainty_band": null,
+  "receipt_set_hash": "sha256:e43902cf95da",
+  "doctrine_version": "ALMS_DOCTRINE_V1.3",
+  "schema_version": "ALMS_GAP_SCHEMA_V2",
+  "timestamp_issued": "2026-05-14T20:20:00Z",
+  "mutation_policy": "APPEND_ONLY_NO_MUTATION_OF_EPOCH_1",
+  "next_allowed_action": "APPEND_RECEIPT_TO_NEW_RECEIPTS_AND_RECOMPUTE_DELTA",
+  "forbidden_actions": [
+    "MUTATE_FROZEN_TAXONOMY",
+    "MUTATE_EPOCH_1_VERDICT",
+    "OVERWRITE_PRIOR_RECEIPTS"
+  ]
+}
