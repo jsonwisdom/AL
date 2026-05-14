@@ -1,0 +1,73 @@
+{
+  "schema_version": "alms.keyset_publication.v1.1",
+  "artifact": "epoch_0_keyset_publication_v1_1.json",
+  "classification": "KEYSET_PUBLICATION_DRAFT",
+  "status": "APPENDED_NOT_INDEXED_ZERO_AUTHORITY",
+  "lineage": {
+    "supersedes": "epoch_0_keyset_publication_v1.json",
+    "repair_mode": "clean_successor_no_silent_mutation"
+  },
+  "issuer": "self-referential boundary process v1, authority derives solely from inclusion in _truth/receipts/index.json, no external steward",
+  "binding_rule": "This keyset gains authority only upon inclusion in _truth/receipts/index.json. Until indexed, it has zero canonical effect.",
+  "signature_scheme": "ed25519",
+  "hash_algorithm": "sha256",
+  "keys": [
+    {
+      "key_id": "epoch0-bootstrap-1",
+      "public_key": "PLACEHOLDER_REPLACE_BEFORE_INDEXING",
+      "status": "PENDING_REAL_PUBLIC_KEY"
+    }
+  ],
+  "thresholds": {
+    "promotion": {
+      "rule": "1_of_1_bootstrap",
+      "note": "bootstrap 1 of 1, constrained to allowed_scope only, upgrade to m of n required before any experimental promotion"
+    },
+    "rotation": "1_of_1_bootstrap",
+    "revocation": "1_of_1_bootstrap"
+  },
+  "bootstrap_constraint": {
+    "promotion_threshold": "1_of_1_bootstrap",
+    "allowed_scope": [
+      "boundary_receipts",
+      "keyset_publication",
+      "validator_policy_receipts",
+      "repo_hygiene_receipts"
+    ],
+    "forbidden_scope": [
+      "Epoch 4 experimental claim promotion",
+      "OpenAI legitimacy claims",
+      "RED_TO_GREEN narrative elevation",
+      "visual art as truth",
+      "universal canonical supremacy"
+    ],
+    "upgrade_required_before_experimental_promotion": true,
+    "required_upgrade": "threshold_keyset_rotation_to_m_of_n"
+  },
+  "rotation_procedure": [
+    "New keyset must be signed by the current active threshold.",
+    "New keyset receipt must include the full replacement keyset object and its sha256 hash.",
+    "New keyset gains authority only after index inclusion.",
+    "Old keys remain valid only for receipts issued before rotation effective timestamp."
+  ],
+  "revocation_procedure": [
+    "Revocation receipt must be signed by the active threshold.",
+    "Revocation gains authority only after index inclusion.",
+    "Validators reject post-revocation signatures from revoked keys."
+  ],
+  "promotion_requirements": [
+    "Receipt signatures must satisfy the active threshold at issued_at.",
+    "Receipt scope must be permitted by the active keyset.",
+    "Bootstrap keyset cannot promote Epoch 4 experimental claims.",
+    "Experimental promotion requires indexed rotation to an m-of-n threshold keyset."
+  ],
+  "not_scope": [
+    "content truth validation",
+    "OpenAI legitimacy",
+    "epoch-chain factual claims",
+    "universal canonical supremacy",
+    "promotion of experimental claims"
+  ],
+  "operator": "Jay Wisdom",
+  "timestamp_issued": "2026-05-14T20:20:00Z"
+}
