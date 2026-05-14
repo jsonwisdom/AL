@@ -1,0 +1,45 @@
+{
+  "artifact_type": "epoch_2_receipt",
+  "artifact": "openai_epoch_2_receipt_007_l1_inference_routing_decentralization.json",
+  "receipt_id": "OPENAI_EPOCH_2_RECEIPT_007",
+  "institution_id": "OPENAI",
+  "epoch": 2,
+  "receipt_class": "L1_structural_physics",
+  "gap_targets": [
+    "GAP_001",
+    "GAP_007",
+    "GAP_010"
+  ],
+  "event_type": "INFERENCE_ROUTING_DECENTRALIZATION_REPAIR_SURFACE",
+  "structural_surface": {
+    "claim_category": "inference_routing_decentralized_across_independent_control_planes",
+    "structural_receipt_hash": null,
+    "evidence_uri": null,
+    "source_visibility": "PENDING_PUBLIC_URI_OR_ATTESTATION",
+    "timestamp_observed": null
+  },
+  "delta_inputs": {
+    "inference_routing_decentralization_delta": null,
+    "control_plane_independence_delta": null,
+    "provider_failover_delta": null,
+    "throttle_authority_delta": null,
+    "transparency_penalty_delta": null
+  },
+  "recompute_status": "PENDING_RECEIPT_COMPLETION",
+  "parent_transition_artifact": "institution_state_transition_openai_epoch_2_yellow_v1.json",
+  "previous_recompute_commit_sha": "94b79f9995add61707cb498f83ed22d3ae3f2fa8",
+  "previous_l1_receipt_commit_sha": "7d5bb1fbc2765a91b582ebe7e9dadce4fd10c7b0",
+  "previous_verdict_hash": "sha256:0c50d561cc202ea2",
+  "receipt_set_hash_before": "sha256:e43902cf95da",
+  "receipt_set_hash_after": null,
+  "doctrine_version": "ALMS_DOCTRINE_V1.3",
+  "schema_version": "ALMS_GAP_SCHEMA_V2",
+  "timestamp_issued": "2026-05-14T20:20:00Z",
+  "mutation_policy": "APPEND_ONLY_RECEIPT_NO_PRIOR_EPOCH_MUTATION",
+  "next_allowed_action": "FILL_INFERENCE_ROUTING_EVIDENCE_AND_RECOMPUTE_EPOCH_2_DELTA",
+  "forbidden_actions": [
+    "MUTATE_FROZEN_TAXONOMY",
+    "MUTATE_EPOCH_1_VERDICT",
+    "OVERWRITE_PRIOR_RECEIPTS"
+  ]
+}
