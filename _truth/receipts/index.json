@@ -1,8 +1,8 @@
 {
   "schema_version": "alms.receipt_index.v1",
-  "last_updated": "2026-05-12T10:36:00Z",
+  "last_updated": "2026-05-14T20:20:00Z",
   "index": {
-    "total_receipts": 1,
+    "total_receipts": 2,
     "receipts": [
       {
         "path": "_truth/receipts/2026-05-09T00-00-00Z-attestation-ledger-root.json",
@@ -12,6 +12,17 @@
           "attestation-index-is-root-authority"
         ],
         "size_bytes": 481
+      },
+      {
+        "path": "_truth/receipts/root_authority_gap_audit_2026-05-14.json",
+        "hash": "sha256:ce4fcaa115389b1d58047023547fe9542a4a499f",
+        "timestamp": "2026-05-14T20:20:00Z",
+        "claims": [
+          "al-root-authority-boundary-audited",
+          "github-public-files-are-not-canonical-without-index-binding",
+          "openai-epoch-artifacts-remain-experimental-until-indexed-and-replay-linked"
+        ],
+        "size_bytes": 1435
       }
     ]
   }
