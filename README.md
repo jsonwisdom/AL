@@ -10,6 +10,16 @@ All authority resolves to:
 - **Public proof surface:** https://jsonwisdom.github.io/AL/proof/
 - **Receipt viewer:** https://jsonwisdom.github.io/AL/proof/index.html
 
+## Canonical Boundary
+
+The canonical truth source for this repository is `_truth/receipts/index.json`.
+
+Only receipts present in that index are authoritative AL claims. Public files in this repository are visible working surfaces, but visibility alone does not make a file canonical.
+
+Experimental artifacts, draft receipts, epoch-chain files, and working documents are **not canon** unless they are explicitly indexed and replay-linked through `_truth/receipts/index.json`.
+
+Epoch-chain artifacts do not assert public legitimacy claims unless the canonical index binds them as such.
+
 ## Meme MetaVerse / War Board
 
 New public workflow surfaces:
