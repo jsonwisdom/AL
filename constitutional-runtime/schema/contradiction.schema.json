@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ContradictionReceipt",
+  "description": "Multi-observer contradiction as first-class constitutional artifact",
+  "type": "object",
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "reports": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "$ref": "observer-report.schema.json"
+      }
+    },
+    "verdict": {
+      "const": "CONSTITUTIONAL_CONTRADICTION"
+    },
+    "divergence": {
+      "const": "D3"
+    },
+    "mutation_surface": {
+      "const": "Frozen"
+    }
+  },
+  "required": [
+    "event_id",
+    "reports",
+    "verdict",
+    "divergence",
+    "mutation_surface"
+  ],
+  "additionalProperties": false
+}
