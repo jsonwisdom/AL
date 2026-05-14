@@ -39,4 +39,5 @@ console.log(JSON.stringify(result, null, 2));
 
 if (result.verdict === "MATCH") process.exit(0);
 if (result.verdict === "DIVERGENCE") process.exit(2);
+if (result.verdict === "CONSTITUTIONAL_CONTRADICTION") process.exit(2);
 process.exit(4);
