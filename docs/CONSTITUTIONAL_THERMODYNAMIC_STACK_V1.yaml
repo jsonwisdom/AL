@@ -228,6 +228,67 @@ archival_protocols:
       INV-AP02-5:
         name: ACYCLIC_LINEAGE_GRAPH
         rule: graph_must_be_acyclic
+  AP-03:
+    name: SUCCESSOR_INTEROPERABILITY_PROTOCOL
+    purpose: Enable coordination between distinct constitutional lineages without legitimacy merger.
+    core_invariant: Coordination must not become absorption.
+    constitutional_model: ecology_not_empire
+    diagnostic_boundary: ARCHIVE_VALID != CONSTITUTIONALLY_ALIGNED
+    allowed_surfaces:
+      - telemetry_exchange
+      - archive_verification
+      - bounded_coordination
+      - dispute_interoperability
+      - shared_observation
+    forbidden_surfaces:
+      - authority_inheritance
+      - merged_sovereignty
+      - continuity_laundering
+      - meta_lineage_creation
+      - cross_lineage_validator_override
+    hard_invariants:
+      INV-AP03-1:
+        name: TELEMETRY_EXCHANGE_DOES_NOT_IMPLY_LEGITIMACY_INHERITANCE
+        rule: shared_telemetry.claimed_legitimacy_inheritance == false
+        failure: LEGITIMACY_LAUNDERING_DETECTED
+      INV-AP03-2:
+        name: ARCHIVE_VERIFICATION_DOES_NOT_IMPLY_CONSTITUTIONAL_CONVERGENCE
+        rule: archive_verification.result in [ARCHIVE_VALID, ARCHIVE_INVALID] && archive_verification.result != CONSTITUTIONALLY_ALIGNED
+        failure: CONSTITUTIONAL_CONVERGENCE_LAUNDERING_DETECTED
+      INV-AP03-3:
+        name: CROSS_LINEAGE_QUORUM_CANNOT_OVERRIDE_LOCAL_VALIDATOR_SUPREMACY
+        rule: cross_lineage_quorum_signature.valid_for_local_state_mutation == false
+        failure: LOCAL_VALIDATOR_SUPREMACY_BREACH
+      INV-AP03-4:
+        name: DISPUTE_COORDINATION_PRESERVES_INDEPENDENT_REPLAY_SURFACES
+        rule: dispute_bundle.requires_independent_replay_surface_per_lineage == true
+        failure: REPLAY_SURFACE_COLLAPSE_DETECTED
+      INV-AP03-5:
+        name: FEDERATED_OBSERVATION_MUST_NOT_CREATE_META_SOVEREIGNTY
+        rule: meta_lineage_id == null && meta_validator_override == false
+        failure: META_SOVEREIGNTY_ATTEMPT
+    coordination_primitives:
+      telemetry_exchange:
+        mode: read_only
+        legitimacy_effect: none
+      archive_verification:
+        mode: audit_only
+        permitted_result_labels:
+          - ARCHIVE_VALID
+          - ARCHIVE_INVALID
+        forbidden_result_labels:
+          - CONSTITUTIONALLY_ALIGNED
+          - LEGITIMACY_INHERITED
+      bounded_coordination:
+        requires_local_validator_acceptance_per_lineage: true
+        shared_action_must_not_mutate_local_state_without_local_validation: true
+      dispute_interoperability:
+        requires_dispute_bundle: true
+        requires_independent_replay_surface_per_lineage: true
+      shared_observation:
+        mode: read_only
+        no_meta_validator: true
+    encoded_lesson: Systems may coordinate without becoming one.
 
 public_validator_interface:
   validate_bundle:
@@ -260,12 +321,13 @@ public_validator_interface:
       invalid_members: list
 
 next_layer:
-  AP-03:
-    name: SUCCESSOR_INTEROPERABILITY_PROTOCOL
-    question: How can divergent lineages coordinate without merging legitimacy or creating a meta-lineage?
+  AP-04:
+    name: CROSS_LINEAGE_DISPUTE_RESOLUTION_PROTOCOL
+    question: How can lineages resolve shared disputes while preserving independent constitutional authority?
     open_requirements:
-      - share_telemetry_without_authority_merger
-      - verify_archives_without_inheriting_claims
-      - coordinate_without_meta_lineage
+      - dispute_bundles_without_meta_sovereignty
+      - independent_replay_surfaces_per_lineage
+      - non_binding_external_observation
+      - local_validator_finality_per_lineage
 
-final_encoded_lesson: Birth without inevitability. Operation without absolutism. Emergency without dictatorship. Death without erasure. Succession without resurrection.
+final_encoded_lesson: Birth without inevitability. Operation without absolutism. Emergency without dictatorship. Death without erasure. Succession without resurrection. Coordination without absorption.
