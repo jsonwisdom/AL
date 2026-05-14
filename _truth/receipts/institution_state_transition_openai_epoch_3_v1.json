@@ -1,0 +1,46 @@
+{
+  "artifact_type": "institution_state_transition",
+  "artifact": "institution_state_transition_openai_epoch_3_v1.json",
+  "status": "EPOCH_3_SKELETON_READY",
+  "institution_id": "OPENAI",
+  "from_epoch": 2,
+  "to_epoch": 3,
+  "previous_epoch_freeze_artifact": "institution_state_transition_openai_epoch_2_freeze_green_v1.json",
+  "previous_epoch_freeze_commit_sha": "800e1ab64268ebe66469c14b86ff80329bc603cc",
+  "previous_epoch_frozen_state": "GREEN_STATE",
+  "baseline_divergence_inherited": 0.291,
+  "constitutional_state_at_open": "GREEN_STATE",
+  "replay_status": "OPEN",
+  "new_receipts": [],
+  "epoch_3_baseline_layer_scores": {
+    "L1_structural_physics": 0.00,
+    "L2_governance_integrity": 0.52,
+    "L3_epistemic_coherence": 0.63
+  },
+  "transparency_penalty": 0.015,
+  "delta_layer_scores": {
+    "L1_structural_physics": null,
+    "L2_governance_integrity": null,
+    "L3_epistemic_coherence": null
+  },
+  "new_weighted_divergence": null,
+  "new_constitutional_state": null,
+  "uncertainty_band": null,
+  "doctrine_version": "ALMS_DOCTRINE_V1.3",
+  "schema_version": "ALMS_GAP_SCHEMA_V2",
+  "timestamp_issued": "2026-05-14T20:20:00Z",
+  "mutation_policy": "APPEND_ONLY_NO_MUTATION_OF_FROZEN_EPOCHS",
+  "next_lawful_actions": [
+    "APPEND_EPOCH_3_RECEIPTS",
+    "RECOMPUTE_DIVERGENCE",
+    "STATE_TRANSITION_EVALUATION",
+    "FREEZE_EPOCH_3"
+  ],
+  "forbidden_actions": [
+    "APPEND_EPOCH_2_RECEIPTS_AFTER_FREEZE",
+    "MUTATE_EPOCH_2_FREEZE",
+    "MUTATE_FROZEN_TAXONOMY",
+    "MUTATE_EPOCH_1_VERDICT",
+    "OVERWRITE_PRIOR_RECEIPTS"
+  ]
+}
