@@ -21,7 +21,23 @@ Only replayable, hashable, inspectable bytes may enter the archive as evidence.
 
 ---
 
-## 2. Classification Rule
+## 2. Evidence Is a Pipeline Status
+
+Evidence is not a file type.
+
+Evidence is a status granted by the Lapis pipeline after a claim satisfies admissibility, hashing, replay, attribution, and witness requirements.
+
+Storage is custodial: it keeps a record.
+
+Admissibility is jurisdictional: it decides what the record is allowed to say.
+
+The archive is therefore not merely a warehouse. It is a verification court for imported claims.
+
+A source may exist in storage while remaining non-canonical. A source becomes evidence only after it passes the pipeline.
+
+---
+
+## 3. Classification Rule
 
 ChatGPT share links and similar conversation links are classified as:
 
@@ -39,7 +55,7 @@ They may be used as human navigation aids, but they must not be treated as root 
 
 ---
 
-## 3. Admissibility Standard
+## 4. Admissibility Standard
 
 A source becomes admissible only when it has:
 
@@ -60,7 +76,7 @@ A source becomes admissible only when it has:
 
 ---
 
-## 4. Recommended Import Path
+## 5. Recommended Import Path
 
 Use the following pattern for imported conversation material:
 
@@ -79,7 +95,7 @@ Every imported artifact should include:
 
 ---
 
-## 5. Lapis Pipeline
+## 6. Lapis Pipeline
 
 The import pipeline is:
 
@@ -95,7 +111,26 @@ No inaccessible link may bypass this pipeline.
 
 ---
 
-## 6. Final Rule
+## 7. Sovereignty Boundary
+
+The Lapis pipeline controls the burden of proof.
+
+Evidence is not “I saw it.” Evidence is:
+
+- here are the bytes,
+- here is the hash,
+- here is the replay path,
+- here is the verifier output,
+- here is the witness,
+- and here is the lineage.
+
+Ephemeral conversation artifacts may remain as pointers, but only durable, machine-checkable artifacts may cross into settlement.
+
+Anyone who wants GCS or Base finality must satisfy this definition of evidence.
+
+---
+
+## 8. Final Rule
 
 If the Auditor cannot read the bytes, the Auditor cannot witness the truth.
 
