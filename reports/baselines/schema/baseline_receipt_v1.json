@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://epoch03/baseline_receipt_v1.json",
+  "title": "Baseline Receipt v1",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "receiptType",
+    "harnessVersion",
+    "commit",
+    "generatedAt",
+    "networkEvents",
+    "metrics",
+    "receiptHash"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "baseline_receipt_v1"
+    },
+    "receiptType": {
+      "type": "string",
+      "enum": ["calibration", "capture", "curriculum"]
+    },
+    "harnessVersion": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{7,40}$"
+    },
+    "commit": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{7,40}$"
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "networkEvents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "timestamp",
+          "method",
+          "resourceType",
+          "url",
+          "tier"
+        ],
+        "properties": {
+          "timestamp": { "type": "number" },
+          "method": { "type": "string" },
+          "resourceType": { "type": "string" },
+          "url": { "type": "string" },
+          "tier": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 5
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "required": [
+        "tier3PlusCount",
+        "eventCount"
+      ],
+      "properties": {
+        "tier3PlusCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "eventCount": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "receiptHash": {
+      "type": "string",
+      "description": "SHA-256 of the canonicalized receipt body",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  },
+  "additionalProperties": false
+}
