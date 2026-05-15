@@ -1,4 +1,8 @@
 import { Hash } from "./types.js";
+import {
+  applyObserverTransition,
+  ObserverTransition
+} from "./observer-transition.js";
 
 export interface Observer {
   observer_id: Hash;
@@ -46,4 +50,59 @@ export function deduplicateObservers(observers: Observer[]): Observer[] {
     }
   }
   return Array.from(byObserverId.values());
+}
+
+export function resolveObserverAtLineage(
+  observerId: Hash,
+  publicKey: Hash,
+  lineageTip: Hash,
+  knownTransitions: ObserverTransition[] = []
+): Observer | null {
+  const initialObserver: Observer = {
+    observer_id: observerId,
+    public_key: publicKey,
+    status: "ACTIVE",
+    lineage_tip: lineageTip
+  };
+
+  if (!isValidObserver(initialObserver)) return null;
+
+  const matchingTransitions = knownTransitions.filter(
+    (transition) =>
+      transition.observer_id === observerId && transition.lineage_tip === lineageTip
+  );
+
+  let resolved = initialObserver;
+  for (const transition of matchingTransitions) {
+    resolved = applyObserverTransition(resolved, transition);
+  }
+
+  return resolved;
+}
+
+export function resolveObserversAtLineage(
+  observerIds: Hash[],
+  publicKeysByObserverId: Map<Hash, Hash>,
+  lineageTip: Hash,
+  knownTransitions: ObserverTransition[] = []
+): Map<Hash, Observer> {
+  const resolved = new Map<Hash, Observer>();
+
+  for (const observerId of observerIds) {
+    const publicKey = publicKeysByObserverId.get(observerId);
+    if (!publicKey) continue;
+
+    const observer = resolveObserverAtLineage(
+      observerId,
+      publicKey,
+      lineageTip,
+      knownTransitions
+    );
+
+    if (observer) {
+      resolved.set(observerId, observer);
+    }
+  }
+
+  return resolved;
 }
