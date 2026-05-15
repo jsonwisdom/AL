@@ -8,17 +8,21 @@ Minimal deterministic replay + divergence engine for constitutional membrane ver
 - **Negative control** — `fixtures/receipt.divergent.json` (D3 divergence, deterministic mismatch)
 - **Contradiction control** — `fixtures/contradiction.valid.json` (multi-observer CONSTITUTIONAL_CONTRADICTION)
 - **Revoked observer control** — `fixtures/contradiction.revoked-observer.json` (claim rejected after observer activity filtering)
+- **Observer transition controls** — `fixtures/observer.active.json`, `fixtures/observer.revoked.json`, `fixtures/observer-transition.invalid-state.json`
 - **Lineage control** — `fixtures/lineage.valid.json`
 - **Schema surface** — `schema/*.schema.json` (strict, no additionalProperties)
 
 ## Verified Constitutional Controls
 
-| Control | Fixture | Claimed Verdict | Evaluated Verdict | Active Observers | Divergence | Mutation Surface | Exit Code |
-|---------|---------|-----------------|-------------------|------------------|------------|------------------|-----------|
-| Genesis Positive | `receipt.valid.json` | `MATCH` | `MATCH` | — | `D0` | Mutable/Frozen | 0 |
-| Replay Divergence | `receipt.divergent.json` | `DIVERGENCE` | `DIVERGENCE` | — | `D3` | Frozen | 2 |
-| Observer Contradiction | `contradiction.valid.json` | `CONSTITUTIONAL_CONTRADICTION` | `CONSTITUTIONAL_CONTRADICTION` | >=2 | `D3` | Frozen | 2 |
-| Revoked Observer Negative | `contradiction.revoked-observer.json` | `CONSTITUTIONAL_CONTRADICTION` | `INSUFFICIENT_EVIDENCE` | 1 | `D0` | Frozen | 4 |
+| Control Type | Fixture | Claimed Verdict | Evaluated Outcome | Key Property | Exit Code |
+|--------------|---------|-----------------|-------------------|--------------|-----------|
+| Genesis Positive | `receipt.valid.json` | `MATCH` | `MATCH` | Empty replay path | 0 |
+| Replay Divergence | `receipt.divergent.json` | `DIVERGENCE` | `DIVERGENCE` | Root mismatch | 2 |
+| Observer Contradiction | `contradiction.valid.json` | `CONSTITUTIONAL_CONTRADICTION` | `CONSTITUTIONAL_CONTRADICTION` | >=2 ACTIVE observers | 2 |
+| Revoked Observer Negative | `contradiction.revoked-observer.json` | `CONSTITUTIONAL_CONTRADICTION` | `INSUFFICIENT_EVIDENCE` | Only 1 ACTIVE after filtering | 4 |
+| Observer Transition Active | `observer.active.json` | `OBSERVER_TRANSITION` | Accepted by transition tests | ACTIVE -> ACTIVE baseline | — |
+| Observer Transition Revoke | `observer.revoked.json` | `OBSERVER_TRANSITION` | Accepted by transition tests | ACTIVE -> REVOKED explicit transition | — |
+| Observer Transition Invalid | `observer-transition.invalid-state.json` | `OBSERVER_TRANSITION` | Meaningless / no-op | ACTIVE -> ACTIVE self-transition | — |
 
 ## CLI Contract
 
@@ -44,6 +48,7 @@ This script:
 - Builds from source
 - Validates positive control (exit 0)
 - Validates divergent control (exit 2)
+- Runs observer transition evaluator tests
 - Validates contradiction control with lineage binding (exit 2)
 - Validates revoked-observer negative control (exit 4)
 - Fails hard on any drift
@@ -68,6 +73,16 @@ Observer activity is enforced at evaluation time:
 - Receipts describe claims; the validator determines legitimacy
 
 Negative control: `contradiction.revoked-observer.json` claims `CONSTITUTIONAL_CONTRADICTION`, but contains only 1 active observer after filtering. The validator returns `INSUFFICIENT_EVIDENCE` with exit code 4.
+
+## Observer Transition Rules
+
+Observer status changes are modeled as explicit `ObserverTransition` receipts:
+
+- `ACTIVE -> REVOKED` is a meaningful revocation event
+- Self-transitions such as `ACTIVE -> ACTIVE` are schema-valid but semantically no-op
+- `applyObserverTransition()` only applies when the observer identity and prior status match the transition
+- Future reports from REVOKED observers are filtered by observer activity checks
+- Receipts claim; the runtime validates
 
 This layer is intentionally narrow:
 
