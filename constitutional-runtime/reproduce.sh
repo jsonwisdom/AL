@@ -20,6 +20,20 @@ echo "→ Running observer transition evaluator tests"
 node dist/observer-transition.test.js
 echo "✅ ObserverTransition pure evaluator tests passed"
 
+# === OBSERVER TRANSITION LINEAGE CONSISTENCY OBSERVABILITY ===
+echo "→ Testing observer transition lineage consistency observability"
+transition_result=$(node dist/cli.js fixtures/observer.revoked.json fixtures/lineage.valid.json)
+transition_reason=$(echo "$transition_result" | grep -o '"reason": "observer_context_not_available"' | cut -d'"' -f4 || true)
+transition_consistency=$(echo "$transition_result" | grep -o '"isConsistent": null' | cut -d':' -f2 | tr -d ' ' || true)
+
+if [ "$transition_reason" = "observer_context_not_available" ] && [ "$transition_consistency" = "null" ]; then
+  echo "✅ Lineage consistency uncertainty explicitly surfaced (isConsistent=null)"
+else
+  echo "❌ Lineage consistency observability failed"
+  echo "$transition_result"
+  exit 1
+fi
+
 # === CONTRADICTION CONTROL WITH LINEAGE BINDING ===
 echo "→ Testing contradiction receipt with lineage binding (expect CONSTITUTIONAL_CONTRADICTION / exit 2)"
 set +e
