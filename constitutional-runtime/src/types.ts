@@ -7,7 +7,8 @@ export type Verdict =
   | "DIVERGENCE"
   | "INVALID"
   | "INSUFFICIENT_EVIDENCE"
-  | "CONSTITUTIONAL_UNKNOWN";
+  | "CONSTITUTIONAL_UNKNOWN"
+  | "CONSTITUTIONAL_CONTRADICTION";
 
 export interface Signature {
   observer_id: string;
