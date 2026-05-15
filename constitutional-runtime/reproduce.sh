@@ -25,9 +25,12 @@ echo "→ Testing observer transition lineage consistency observability"
 transition_result=$(node dist/cli.js fixtures/observer.revoked.json fixtures/lineage.valid.json)
 transition_reason=$(echo "$transition_result" | grep -o '"reason": "observer_context_not_available"' | cut -d'"' -f4 || true)
 transition_consistency=$(echo "$transition_result" | grep -o '"isConsistent": null' | cut -d':' -f2 | tr -d ' ' || true)
+transition_valid_binding=$(echo "$transition_result" | grep -o '"hasValidLineageBinding": true' | cut -d':' -f2 | tr -d ' ' || true)
 
-if [ "$transition_reason" = "observer_context_not_available" ] && [ "$transition_consistency" = "null" ]; then
-  echo "✅ Lineage consistency uncertainty explicitly surfaced (isConsistent=null)"
+if [ "$transition_reason" = "observer_context_not_available" ] && [ "$transition_consistency" = "null" ] && [ "$transition_valid_binding" = "true" ]; then
+  echo "✅ Lineage binding + explicit uncertainty verified"
+  echo "   hasValidLineageBinding=true (structural binding enforced)"
+  echo "   isConsistent=null (observer context unavailable; unknown ≠ true)"
 else
   echo "❌ Lineage consistency observability failed"
   echo "$transition_result"
