@@ -1,7 +1,7 @@
 import { Lineage, Receipt, Verdict } from "./types.js";
 import { replayReceipt, pathExists } from "./replay.js";
 import { divergenceClass, mutationSurface } from "./divergence.js";
-import AjvModule from "ajv";
+import Ajv from "ajv/dist/ajv.js";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { verifySignature } from "./signature.js";
@@ -13,7 +13,6 @@ import {
   isValidContradictionReceipt
 } from "./contradiction.js";
 
-const Ajv = (AjvModule as unknown as { default?: typeof AjvModule }).default ?? AjvModule;
 const SCHEMA_DIR = join(process.cwd(), "schema");
 
 let lineageValidator: any = null;
