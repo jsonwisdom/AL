@@ -90,9 +90,11 @@ export function validateReceipt(
     conflictingRoots?: string[];
     lineage_tip?: string;
     observer_id?: string;
+    from_status?: "ACTIVE" | "REVOKED";
+    to_status?: "ACTIVE" | "REVOKED";
     isMeaningful?: boolean;
     isRevocation?: boolean;
-    reason?: string;
+    reason?: string | null;
   };
 } {
   if ("verdict" in receipt && receipt.verdict === "OBSERVER_TRANSITION") {
@@ -100,7 +102,10 @@ export function validateReceipt(
     if (!schemaResult.valid || !isValidObserverTransition(receipt)) {
       return {
         verdict: "INSUFFICIENT_EVIDENCE",
-        mutation_surface: "Frozen"
+        mutation_surface: "Frozen",
+        details: {
+          reason: "schema_or_structural_validation_failed"
+        }
       };
     }
 
@@ -109,9 +114,12 @@ export function validateReceipt(
       mutation_surface: "Frozen",
       details: {
         observer_id: receipt.observer_id,
+        from_status: receipt.from_status,
+        to_status: receipt.to_status,
         lineage_tip: receipt.lineage_tip,
         isMeaningful: isMeaningfulObserverTransition(receipt),
-        isRevocation: isObserverRevocation(receipt)
+        isRevocation: isObserverRevocation(receipt),
+        reason: receipt.reason ?? null
       }
     };
   }
