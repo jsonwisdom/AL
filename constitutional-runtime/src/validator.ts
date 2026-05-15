@@ -7,6 +7,7 @@ import { join } from "node:path";
 import { verifySignature } from "./signature.js";
 import { canonicalizeForSignature } from "./canonical.js";
 import { evaluateObserverThreshold } from "./threshold.js";
+import { resolveObserverAtLineage } from "./observer.js";
 import {
   ContradictionReceipt,
   detectContradiction,
@@ -20,6 +21,7 @@ import {
 } from "./observer-transition.js";
 
 const SCHEMA_DIR = join(process.cwd(), "schema");
+const PLACEHOLDER_PUBLIC_KEY = "0000000000000000000000000000000000000000000000000000000000000000";
 
 let lineageValidator: any = null;
 let receiptValidator: any = null;
@@ -95,11 +97,18 @@ export function validateReceipt(
     replay_path?: string[];
     replayPathLength?: number;
     hasValidLineageBinding?: boolean;
+    resolvedObserver?: {
+      observer_id: string;
+      status: "ACTIVE" | "REVOKED";
+      lineage_tip: string;
+      public_key_source: "placeholder";
+    } | null;
     context?: {
       replayPath: string[];
       replayPathLength: number;
       lineageTip: string;
       hasValidLineageBinding: boolean;
+      resolvedObserverAvailable: boolean;
       lineageConsistency: {
         observerLineageTip: string | null;
         transitionLineageTip: string;
@@ -132,11 +141,25 @@ export function validateReceipt(
 
     const replayPath = receipt.replay_path ?? [];
     const hasValidLineageBinding = typeof receipt.lineage_tip === "string" && receipt.lineage_tip.length === 64;
+    const resolvedObserver = resolveObserverAtLineage(
+      receipt.observer_id,
+      PLACEHOLDER_PUBLIC_KEY,
+      receipt.lineage_tip,
+      []
+    );
+    const resolvedObserverDetails = resolvedObserver
+      ? {
+          observer_id: resolvedObserver.observer_id,
+          status: resolvedObserver.status,
+          lineage_tip: resolvedObserver.lineage_tip,
+          public_key_source: "placeholder" as const
+        }
+      : null;
     const lineageConsistency = {
-      observerLineageTip: null,
+      observerLineageTip: resolvedObserver?.lineage_tip ?? null,
       transitionLineageTip: receipt.lineage_tip,
-      isConsistent: null,
-      reason: "observer_context_not_available"
+      isConsistent: resolvedObserver ? resolvedObserver.lineage_tip === receipt.lineage_tip : null,
+      reason: resolvedObserver ? "observer_resolved_with_placeholder_key" : "observer_context_not_available"
     };
 
     return {
@@ -149,12 +172,14 @@ export function validateReceipt(
         replay_path: replayPath,
         replayPathLength: replayPath.length,
         hasValidLineageBinding,
+        resolvedObserver: resolvedObserverDetails,
         lineage_tip: receipt.lineage_tip,
         context: {
           replayPath,
           replayPathLength: replayPath.length,
           lineageTip: receipt.lineage_tip,
           hasValidLineageBinding,
+          resolvedObserverAvailable: Boolean(resolvedObserver),
           lineageConsistency
         },
         isMeaningful: isMeaningfulObserverTransition(receipt),
