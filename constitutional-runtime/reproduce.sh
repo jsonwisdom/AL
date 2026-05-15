@@ -25,6 +25,26 @@ echo "→ Running observer registry evaluator tests"
 node dist/observer-registry.test.js
 echo "✅ ObserverRegistry pure evaluator tests passed"
 
+# === OBSERVER REGISTRY OBSERVABILITY ===
+echo "→ Testing observer-registry observability in validator"
+registry_result=$(node dist/cli.js fixtures/observer-registry.valid.json fixtures/lineage.valid.json)
+registry_total_active=$(echo "$registry_result" | grep -o '"totalActive": [0-9]*' | head -n 1 | cut -d':' -f2 | tr -d ' ' || true)
+registry_total_revoked=$(echo "$registry_result" | grep -o '"totalRevoked": [0-9]*' | head -n 1 | cut -d':' -f2 | tr -d ' ' || true)
+registry_observer_count=$(echo "$registry_result" | grep -o '"observerCount": [0-9]*' | head -n 1 | cut -d':' -f2 | tr -d ' ' || true)
+registry_replay_len=$(echo "$registry_result" | grep -o '"replayPathLength": [0-9]*' | head -n 1 | cut -d':' -f2 | tr -d ' ' || true)
+registry_consistent_totals=$(echo "$registry_result" | grep -o '"hasConsistentTotals": true' | cut -d':' -f2 | tr -d ' ' || true)
+
+if [ "$registry_total_active" = "2" ] && [ "$registry_total_revoked" = "1" ] && [ "$registry_observer_count" = "3" ] && [ "$registry_replay_len" = "3" ] && [ "$registry_consistent_totals" = "true" ]; then
+  echo "✅ Observer registry observability verified"
+  echo "   totalActive=${registry_total_active}, totalRevoked=${registry_total_revoked}, observerCount=${registry_observer_count}"
+  echo "   replayPathLength=${registry_replay_len}, hasConsistentTotals=true"
+  echo "   visible context ≠ authoritative settlement"
+else
+  echo "❌ Registry observability assertion failed"
+  echo "$registry_result"
+  exit 1
+fi
+
 # === OBSERVER TRANSITION LINEAGE CONSISTENCY OBSERVABILITY ===
 echo "→ Testing observer transition lineage consistency observability"
 transition_result=$(node dist/cli.js fixtures/observer.revoked.json fixtures/lineage.valid.json)
