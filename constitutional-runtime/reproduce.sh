@@ -15,6 +15,11 @@ if [ "$code" -ne 2 ]; then
   exit 1
 fi
 
+# === OBSERVER TRANSITION TESTS ===
+echo "→ Running observer transition evaluator tests"
+node dist/observer-transition.test.js
+echo "✅ ObserverTransition pure evaluator tests passed"
+
 # === CONTRADICTION CONTROL WITH LINEAGE BINDING ===
 echo "→ Testing contradiction receipt with lineage binding (expect CONSTITUTIONAL_CONTRADICTION / exit 2)"
 set +e
@@ -52,5 +57,5 @@ fi
 active_count=$(echo "$revoked_result" | grep -o '"activeObserverCount": [0-9]*' | cut -d':' -f2 | tr -d ' ' || echo "0")
 echo "✅ INSUFFICIENT_EVIDENCE verified (exit 4, activeObserverCount=${active_count})"
 
-echo "🎉 All controls verified (MATCH / DIVERGENCE / CONSTITUTIONAL_CONTRADICTION + REVOKED observer negative control)"
+echo "🎉 All controls and transition tests verified (MATCH / DIVERGENCE / CONSTITUTIONAL_CONTRADICTION + observer transitions)"
 echo "REPRODUCE_OK"
