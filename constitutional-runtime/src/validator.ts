@@ -94,6 +94,12 @@ export function validateReceipt(
     to_status?: "ACTIVE" | "REVOKED";
     isMeaningful?: boolean;
     isRevocation?: boolean;
+    lineageConsistency?: {
+      observerLineageTip: string | null;
+      transitionLineageTip: string;
+      isConsistent: boolean | null;
+      reason: string;
+    };
     reason?: string | null;
   };
 } {
@@ -119,6 +125,12 @@ export function validateReceipt(
         lineage_tip: receipt.lineage_tip,
         isMeaningful: isMeaningfulObserverTransition(receipt),
         isRevocation: isObserverRevocation(receipt),
+        lineageConsistency: {
+          observerLineageTip: null,
+          transitionLineageTip: receipt.lineage_tip,
+          isConsistent: null,
+          reason: "observer_context_not_available"
+        },
         reason: receipt.reason ?? null
       }
     };
