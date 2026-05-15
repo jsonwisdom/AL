@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DegradedObserverMode",
+  "description": "Explicit degraded observer surface signal that does not grant expanded authority",
+  "type": "object",
+  "properties": {
+    "verdict": {
+      "const": "DEGRADED_OBSERVER_MODE"
+    },
+    "lineage_tip": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "replay_path": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      }
+    },
+    "expectedObserverCount": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "activeObserverCount": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "missingObserverCount": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "activeRatio": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "confidenceLevel": {
+      "enum": ["HEALTHY", "DEGRADED", "INSUFFICIENT"]
+    },
+    "mutation_surface": {
+      "const": "Frozen"
+    }
+  },
+  "required": [
+    "verdict",
+    "lineage_tip",
+    "expectedObserverCount",
+    "activeObserverCount",
+    "missingObserverCount",
+    "activeRatio",
+    "confidenceLevel",
+    "mutation_surface"
+  ],
+  "additionalProperties": false
+}
