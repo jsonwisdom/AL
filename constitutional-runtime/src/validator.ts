@@ -92,6 +92,19 @@ export function validateReceipt(
     observer_id?: string;
     from_status?: "ACTIVE" | "REVOKED";
     to_status?: "ACTIVE" | "REVOKED";
+    replay_path?: string[];
+    replayPathLength?: number;
+    context?: {
+      replayPath: string[];
+      replayPathLength: number;
+      lineageTip: string;
+      lineageConsistency: {
+        observerLineageTip: string | null;
+        transitionLineageTip: string;
+        isConsistent: boolean | null;
+        reason: string;
+      };
+    };
     isMeaningful?: boolean;
     isRevocation?: boolean;
     lineageConsistency?: {
@@ -115,6 +128,14 @@ export function validateReceipt(
       };
     }
 
+    const replayPath = receipt.replay_path ?? [];
+    const lineageConsistency = {
+      observerLineageTip: null,
+      transitionLineageTip: receipt.lineage_tip,
+      isConsistent: null,
+      reason: "observer_context_not_available"
+    };
+
     return {
       verdict: "OBSERVER_TRANSITION",
       mutation_surface: "Frozen",
@@ -122,15 +143,18 @@ export function validateReceipt(
         observer_id: receipt.observer_id,
         from_status: receipt.from_status,
         to_status: receipt.to_status,
+        replay_path: replayPath,
+        replayPathLength: replayPath.length,
         lineage_tip: receipt.lineage_tip,
+        context: {
+          replayPath,
+          replayPathLength: replayPath.length,
+          lineageTip: receipt.lineage_tip,
+          lineageConsistency
+        },
         isMeaningful: isMeaningfulObserverTransition(receipt),
         isRevocation: isObserverRevocation(receipt),
-        lineageConsistency: {
-          observerLineageTip: null,
-          transitionLineageTip: receipt.lineage_tip,
-          isConsistent: null,
-          reason: "observer_context_not_available"
-        },
+        lineageConsistency,
         reason: receipt.reason ?? null
       }
     };
