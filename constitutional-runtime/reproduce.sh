@@ -23,16 +23,32 @@ echo "✅ ObserverTransition pure evaluator tests passed"
 # === OBSERVER TRANSITION LINEAGE CONSISTENCY OBSERVABILITY ===
 echo "→ Testing observer transition lineage consistency observability"
 transition_result=$(node dist/cli.js fixtures/observer.revoked.json fixtures/lineage.valid.json)
-transition_reason=$(echo "$transition_result" | grep -o '"reason": "observer_context_not_available"' | cut -d'"' -f4 || true)
-transition_consistency=$(echo "$transition_result" | grep -o '"isConsistent": null' | cut -d':' -f2 | tr -d ' ' || true)
+transition_reason=$(echo "$transition_result" | grep -o '"reason": "observer_resolved_with_placeholder_key"' | cut -d'"' -f4 || true)
+transition_consistency=$(echo "$transition_result" | grep -o '"isConsistent": true' | cut -d':' -f2 | tr -d ' ' || true)
 transition_valid_binding=$(echo "$transition_result" | grep -o '"hasValidLineageBinding": true' | cut -d':' -f2 | tr -d ' ' || true)
 
-if [ "$transition_reason" = "observer_context_not_available" ] && [ "$transition_consistency" = "null" ] && [ "$transition_valid_binding" = "true" ]; then
-  echo "✅ Lineage binding + explicit uncertainty verified"
+if [ "$transition_reason" = "observer_resolved_with_placeholder_key" ] && [ "$transition_consistency" = "true" ] && [ "$transition_valid_binding" = "true" ]; then
+  echo "✅ Lineage binding + placeholder observer resolution verified"
   echo "   hasValidLineageBinding=true (structural binding enforced)"
-  echo "   isConsistent=null (observer context unavailable; unknown ≠ true)"
+  echo "   isConsistent=true (synthetic placeholder observer; not authoritative registry state)"
 else
   echo "❌ Lineage consistency observability failed"
+  echo "$transition_result"
+  exit 1
+fi
+
+# === RESOLVED OBSERVER OBSERVABILITY ===
+echo "→ Testing resolvedObserver visibility in validator"
+resolved_observer_available=$(echo "$transition_result" | grep -o '"resolvedObserverAvailable": true' | cut -d':' -f2 | tr -d ' ' || true)
+placeholder_source=$(echo "$transition_result" | grep -o '"public_key_source": "placeholder"' | cut -d'"' -f4 || true)
+
+if [ "$resolved_observer_available" = "true" ] && [ "$placeholder_source" = "placeholder" ]; then
+  echo "✅ resolvedObserver visibility confirmed"
+  echo "   resolvedObserverAvailable=true"
+  echo "   public_key_source=placeholder (synthetic)"
+  echo "   Context is visible (no registry authority yet)"
+else
+  echo "❌ resolvedObserver visibility assertion failed"
   echo "$transition_result"
   exit 1
 fi
