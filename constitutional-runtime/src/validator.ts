@@ -122,6 +122,9 @@ export function validateReceipt(
       status: "ACTIVE" | "REVOKED";
       lineage_tip: string;
       public_key_source: "placeholder";
+      resolvedObserverSource: "placeholder";
+      appliedTransitionCount: number;
+      registryLineageTip: string | null;
     } | null;
     context?: {
       replayPath: string[];
@@ -129,6 +132,9 @@ export function validateReceipt(
       lineageTip: string;
       hasValidLineageBinding?: boolean;
       resolvedObserverAvailable?: boolean;
+      resolvedObserverSource?: "placeholder";
+      appliedTransitionCount?: number;
+      registryLineageTip?: string | null;
       observerCount?: number;
       totalActive?: number;
       totalRevoked?: number;
@@ -213,7 +219,10 @@ export function validateReceipt(
           observer_id: resolvedObserver.observer_id,
           status: resolvedObserver.status,
           lineage_tip: resolvedObserver.lineage_tip,
-          public_key_source: "placeholder" as const
+          public_key_source: "placeholder" as const,
+          resolvedObserverSource: "placeholder" as const,
+          appliedTransitionCount: 0,
+          registryLineageTip: null
         }
       : null;
     const lineageConsistency = {
@@ -241,6 +250,9 @@ export function validateReceipt(
           lineageTip: receipt.lineage_tip,
           hasValidLineageBinding,
           resolvedObserverAvailable: Boolean(resolvedObserver),
+          resolvedObserverSource: "placeholder",
+          appliedTransitionCount: 0,
+          registryLineageTip: null,
           lineageConsistency
         },
         isMeaningful: isMeaningfulObserverTransition(receipt),
