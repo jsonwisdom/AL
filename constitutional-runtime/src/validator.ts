@@ -68,7 +68,9 @@ export function validateReceipt(
   divergence?: string;
   mutation_surface?: "Mutable" | "Frozen";
   details?: {
-    uniqueObservers?: number;
+    uniqueActiveObservers?: number;
+    activeObserverCount?: number;
+    totalReportsSubmitted?: number;
     conflictingRoots?: string[];
     lineage_tip?: string;
     reason?: string;
@@ -101,7 +103,9 @@ export function validateReceipt(
         divergence: "D3",
         mutation_surface: "Frozen",
         details: {
-          uniqueObservers: result.uniqueObserverCount,
+          uniqueActiveObservers: result.uniqueActiveObservers,
+          activeObserverCount: result.activeObserverCount,
+          totalReportsSubmitted: receipt.reports.length,
           conflictingRoots: result.conflictingRoots,
           lineage_tip: receipt.lineage_tip
         }
@@ -110,7 +114,12 @@ export function validateReceipt(
 
     return {
       verdict: "INSUFFICIENT_EVIDENCE",
-      mutation_surface: "Frozen"
+      mutation_surface: "Frozen",
+      details: {
+        activeObserverCount: result.activeObserverCount,
+        totalReportsSubmitted: receipt.reports.length,
+        reason: "insufficient_active_observers"
+      }
     };
   }
 
