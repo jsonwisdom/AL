@@ -34,6 +34,19 @@ else
   exit 1
 fi
 
+# === OBSERVER TRANSITION REPLAY-PATH VISIBILITY ===
+echo "→ Testing replay-path visibility in observer transition"
+transition_replay_path_length=$(echo "$transition_result" | grep -o '"replayPathLength": [0-9]*' | head -n 1 | cut -d':' -f2 | tr -d ' ' || true)
+
+if [ -n "$transition_replay_path_length" ]; then
+  echo "✅ Replay-path visibility confirmed (replayPathLength=${transition_replay_path_length})"
+  echo "   Context is visible, not enforced"
+else
+  echo "❌ Replay-path visibility failed"
+  echo "$transition_result"
+  exit 1
+fi
+
 # === CONTRADICTION CONTROL WITH LINEAGE BINDING ===
 echo "→ Testing contradiction receipt with lineage binding (expect CONSTITUTIONAL_CONTRADICTION / exit 2)"
 set +e
