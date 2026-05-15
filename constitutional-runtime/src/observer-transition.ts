@@ -1,5 +1,5 @@
 import { Hash } from "./types.js";
-import { Observer } from "./observer.js";
+import { Observer, isValidObserver } from "./observer.js";
 
 export interface ObserverTransition {
   observer_id: Hash;
@@ -32,13 +32,33 @@ export function isMeaningfulObserverTransition(
   return transition.from_status !== transition.to_status;
 }
 
+export function hasConsistentObserverTransitionLineage(
+  observer: Observer,
+  transition: ObserverTransition
+): boolean {
+  return (
+    isValidObserver(observer) &&
+    isValidObserverTransition(transition) &&
+    observer.observer_id === transition.observer_id &&
+    observer.lineage_tip === transition.lineage_tip
+  );
+}
+
+export function isValidObserverTransitionForObserver(
+  observer: Observer,
+  transition: ObserverTransition
+): boolean {
+  return (
+    hasConsistentObserverTransitionLineage(observer, transition) &&
+    observer.status === transition.from_status
+  );
+}
+
 export function applyObserverTransition(
   observer: Observer,
   transition: ObserverTransition
 ): Observer {
-  if (!isValidObserverTransition(transition)) return observer;
-  if (observer.observer_id !== transition.observer_id) return observer;
-  if (observer.status !== transition.from_status) return observer;
+  if (!isValidObserverTransitionForObserver(observer, transition)) return observer;
 
   return {
     ...observer,
