@@ -28,5 +28,29 @@ if [ "$contradiction_code" -ne 2 ]; then
 fi
 
 echo "✅ CONSTITUTIONAL_CONTRADICTION with lineage_tip verified (exit 2)"
-echo "🎉 All three constitutional controls verified (MATCH / DIVERGENCE / CONSTITUTIONAL_CONTRADICTION with lineage binding)"
+
+# === REVOKED OBSERVER NEGATIVE CONTROL ===
+echo "→ Testing contradiction with REVOKED observer (expect INSUFFICIENT_EVIDENCE / exit 4)"
+set +e
+revoked_result=$(node dist/cli.js fixtures/contradiction.revoked-observer.json fixtures/lineage.valid.json)
+revoked_code=$?
+set -e
+
+if [ "$revoked_code" -ne 4 ]; then
+  echo "Wrong exit code for revoked-observer case: $revoked_code (expected 4)"
+  echo "$revoked_result"
+  exit 1
+fi
+
+revoked_verdict=$(echo "$revoked_result" | grep -o '"verdict": "[^"]*"' | cut -d'"' -f4)
+if [ "$revoked_verdict" != "INSUFFICIENT_EVIDENCE" ]; then
+  echo "Wrong verdict: $revoked_verdict (expected INSUFFICIENT_EVIDENCE)"
+  echo "$revoked_result"
+  exit 1
+fi
+
+active_count=$(echo "$revoked_result" | grep -o '"activeObserverCount": [0-9]*' | cut -d':' -f2 | tr -d ' ' || echo "0")
+echo "✅ INSUFFICIENT_EVIDENCE verified (exit 4, activeObserverCount=${active_count})"
+
+echo "🎉 All controls verified (MATCH / DIVERGENCE / CONSTITUTIONAL_CONTRADICTION + REVOKED observer negative control)"
 echo "REPRODUCE_OK"
