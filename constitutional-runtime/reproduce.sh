@@ -20,6 +20,11 @@ echo "→ Running observer transition evaluator tests"
 node dist/observer-transition.test.js
 echo "✅ ObserverTransition pure evaluator tests passed"
 
+# === OBSERVER REGISTRY TESTS ===
+echo "→ Running observer registry evaluator tests"
+node dist/observer-registry.test.js
+echo "✅ ObserverRegistry pure evaluator tests passed"
+
 # === OBSERVER TRANSITION LINEAGE CONSISTENCY OBSERVABILITY ===
 echo "→ Testing observer transition lineage consistency observability"
 transition_result=$(node dist/cli.js fixtures/observer.revoked.json fixtures/lineage.valid.json)
@@ -103,5 +108,5 @@ fi
 active_count=$(echo "$revoked_result" | grep -o '"activeObserverCount": [0-9]*' | cut -d':' -f2 | tr -d ' ' || echo "0")
 echo "✅ INSUFFICIENT_EVIDENCE verified (exit 4, activeObserverCount=${active_count})"
 
-echo "🎉 All controls and transition tests verified (MATCH / DIVERGENCE / CONSTITUTIONAL_CONTRADICTION + observer transitions)"
+echo "🎉 All controls and evaluator tests verified (MATCH / DIVERGENCE / CONSTITUTIONAL_CONTRADICTION + observer transitions + observer registry)"
 echo "REPRODUCE_OK"
