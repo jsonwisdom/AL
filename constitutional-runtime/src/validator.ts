@@ -68,8 +68,10 @@ export function validateReceipt(
   divergence?: string;
   mutation_surface?: "Mutable" | "Frozen";
   details?: {
-    uniqueObservers: number;
-    conflictingRoots: string[];
+    uniqueObservers?: number;
+    conflictingRoots?: string[];
+    lineage_tip?: string;
+    reason?: string;
   };
 } {
   if ("reports" in receipt) {
@@ -81,7 +83,17 @@ export function validateReceipt(
       };
     }
 
-    const result = detectContradiction(receipt.reports);
+    const result = detectContradiction(receipt);
+
+    if (!result.isLineageBound) {
+      return {
+        verdict: "INSUFFICIENT_EVIDENCE",
+        mutation_surface: "Frozen",
+        details: {
+          reason: "missing_lineage_binding"
+        }
+      };
+    }
 
     if (result.isContradiction) {
       return {
@@ -90,7 +102,8 @@ export function validateReceipt(
         mutation_surface: "Frozen",
         details: {
           uniqueObservers: result.uniqueObserverCount,
-          conflictingRoots: result.conflictingRoots
+          conflictingRoots: result.conflictingRoots,
+          lineage_tip: receipt.lineage_tip
         }
       };
     }
