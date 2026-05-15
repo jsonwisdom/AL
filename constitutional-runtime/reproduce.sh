@@ -25,6 +25,11 @@ echo "→ Running observer registry evaluator tests"
 node dist/observer-registry.test.js
 echo "✅ ObserverRegistry pure evaluator tests passed"
 
+# === OBSERVER REGISTRY RESOLUTION TESTS ===
+echo "→ Running observer registry resolution evaluator tests"
+node dist/observer-registry-resolution.test.js
+echo "✅ ObserverRegistry resolution tests passed"
+
 # === OBSERVER REGISTRY OBSERVABILITY ===
 echo "→ Testing observer-registry observability in validator"
 registry_result=$(node dist/cli.js fixtures/observer-registry.valid.json fixtures/lineage.valid.json)
