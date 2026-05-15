@@ -30,6 +30,11 @@ echo "→ Running observer registry resolution evaluator tests"
 node dist/observer-registry-resolution.test.js
 echo "✅ ObserverRegistry resolution tests passed"
 
+# === DEGRADED OBSERVER MODE TESTS ===
+echo "→ Running degraded observer mode evaluator tests"
+node dist/degraded-mode.test.js
+echo "✅ DegradedMode pure evaluator tests passed"
+
 # === OBSERVER REGISTRY OBSERVABILITY ===
 echo "→ Testing observer-registry observability in validator"
 registry_result=$(node dist/cli.js fixtures/observer-registry.valid.json fixtures/lineage.valid.json)
@@ -133,5 +138,5 @@ fi
 active_count=$(echo "$revoked_result" | grep -o '"activeObserverCount": [0-9]*' | cut -d':' -f2 | tr -d ' ' || echo "0")
 echo "✅ INSUFFICIENT_EVIDENCE verified (exit 4, activeObserverCount=${active_count})"
 
-echo "🎉 All controls and evaluator tests verified (MATCH / DIVERGENCE / CONSTITUTIONAL_CONTRADICTION + observer transitions + observer registry)"
+echo "🎉 All controls and evaluator tests verified (MATCH / DIVERGENCE / CONSTITUTIONAL_CONTRADICTION + observer transitions + observer registry + degraded observer mode)"
 echo "REPRODUCE_OK"
