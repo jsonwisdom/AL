@@ -17,6 +17,7 @@ const SCHEMA_DIR = join(process.cwd(), "schema");
 
 let lineageValidator: any = null;
 let receiptValidator: any = null;
+let contradictionValidator: any = null;
 
 function initValidators() {
   if (lineageValidator) return;
@@ -26,13 +27,18 @@ function initValidators() {
   const eventSchema = JSON.parse(readFileSync(join(SCHEMA_DIR, "event.schema.json"), "utf8"));
   const lineageSchema = JSON.parse(readFileSync(join(SCHEMA_DIR, "lineage.schema.json"), "utf8"));
   const receiptSchema = JSON.parse(readFileSync(join(SCHEMA_DIR, "receipt.schema.json"), "utf8"));
+  const observerReportSchema = JSON.parse(readFileSync(join(SCHEMA_DIR, "observer-report.schema.json"), "utf8"));
+  const contradictionSchema = JSON.parse(readFileSync(join(SCHEMA_DIR, "contradiction.schema.json"), "utf8"));
 
   ajv.addSchema(eventSchema, "event.schema.json");
   ajv.addSchema(lineageSchema, "lineage.schema.json");
   ajv.addSchema(receiptSchema, "receipt.schema.json");
+  ajv.addSchema(observerReportSchema, "observer-report.schema.json");
+  ajv.addSchema(contradictionSchema, "contradiction.schema.json");
 
   lineageValidator = ajv.compile(lineageSchema);
   receiptValidator = ajv.compile(receiptSchema);
+  contradictionValidator = ajv.compile(contradictionSchema);
 }
 
 export function validateLineageSchema(data: unknown): { valid: boolean; errors?: any[] } {
@@ -45,6 +51,12 @@ export function validateReceiptSchema(data: unknown): { valid: boolean; errors?:
   initValidators();
   const valid = receiptValidator(data);
   return { valid, errors: valid ? undefined : receiptValidator.errors };
+}
+
+export function validateContradictionSchema(data: unknown): { valid: boolean; errors?: any[] } {
+  initValidators();
+  const valid = contradictionValidator(data);
+  return { valid, errors: valid ? undefined : contradictionValidator.errors };
 }
 
 export function validateReceipt(
@@ -60,7 +72,15 @@ export function validateReceipt(
     conflictingRoots: string[];
   };
 } {
-  if ("reports" in receipt && isValidContradictionReceipt(receipt)) {
+  if ("reports" in receipt) {
+    const schemaResult = validateContradictionSchema(receipt);
+    if (!schemaResult.valid || !isValidContradictionReceipt(receipt)) {
+      return {
+        verdict: "INSUFFICIENT_EVIDENCE",
+        mutation_surface: "Frozen"
+      };
+    }
+
     const result = detectContradiction(receipt.reports);
 
     if (result.isContradiction) {
