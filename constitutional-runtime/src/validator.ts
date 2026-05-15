@@ -9,6 +9,11 @@ import { canonicalizeForSignature } from "./canonical.js";
 import { evaluateObserverThreshold } from "./threshold.js";
 import { resolveObserverAtLineage } from "./observer.js";
 import {
+  isValidObserverRegistry,
+  hasConsistentObserverTotals,
+  ObserverRegistry
+} from "./observer-registry.js";
+import {
   ContradictionReceipt,
   detectContradiction,
   isValidContradictionReceipt
@@ -27,6 +32,7 @@ let lineageValidator: any = null;
 let receiptValidator: any = null;
 let contradictionValidator: any = null;
 let observerTransitionValidator: any = null;
+let observerRegistryValidator: any = null;
 
 function initValidators() {
   if (lineageValidator) return;
@@ -39,6 +45,7 @@ function initValidators() {
   const observerReportSchema = JSON.parse(readFileSync(join(SCHEMA_DIR, "observer-report.schema.json"), "utf8"));
   const contradictionSchema = JSON.parse(readFileSync(join(SCHEMA_DIR, "contradiction.schema.json"), "utf8"));
   const observerTransitionSchema = JSON.parse(readFileSync(join(SCHEMA_DIR, "observer-transition.schema.json"), "utf8"));
+  const observerRegistrySchema = JSON.parse(readFileSync(join(SCHEMA_DIR, "observer-registry.schema.json"), "utf8"));
 
   ajv.addSchema(eventSchema, "event.schema.json");
   ajv.addSchema(lineageSchema, "lineage.schema.json");
@@ -46,11 +53,13 @@ function initValidators() {
   ajv.addSchema(observerReportSchema, "observer-report.schema.json");
   ajv.addSchema(contradictionSchema, "contradiction.schema.json");
   ajv.addSchema(observerTransitionSchema, "observer-transition.schema.json");
+  ajv.addSchema(observerRegistrySchema, "observer-registry.schema.json");
 
   lineageValidator = ajv.compile(lineageSchema);
   receiptValidator = ajv.compile(receiptSchema);
   contradictionValidator = ajv.compile(contradictionSchema);
   observerTransitionValidator = ajv.compile(observerTransitionSchema);
+  observerRegistryValidator = ajv.compile(observerRegistrySchema);
 }
 
 export function validateLineageSchema(data: unknown): { valid: boolean; errors?: any[] } {
@@ -77,11 +86,17 @@ export function validateObserverTransitionSchema(data: unknown): { valid: boolea
   return { valid, errors: valid ? undefined : observerTransitionValidator.errors };
 }
 
+export function validateObserverRegistrySchema(data: unknown): { valid: boolean; errors?: any[] } {
+  initValidators();
+  const valid = observerRegistryValidator(data);
+  return { valid, errors: valid ? undefined : observerRegistryValidator.errors };
+}
+
 export function validateReceipt(
-  receipt: Receipt | ContradictionReceipt | ObserverTransition,
+  receipt: Receipt | ContradictionReceipt | ObserverTransition | ObserverRegistry,
   lineage: Lineage
 ): {
-  verdict: Verdict | "OBSERVER_TRANSITION";
+  verdict: Verdict | "OBSERVER_TRANSITION" | "OBSERVER_REGISTRY";
   computed_root?: string;
   divergence?: string;
   mutation_surface?: "Mutable" | "Frozen";
@@ -97,6 +112,11 @@ export function validateReceipt(
     replay_path?: string[];
     replayPathLength?: number;
     hasValidLineageBinding?: boolean;
+    totalActive?: number;
+    totalRevoked?: number;
+    observerCount?: number;
+    hasConsistentTotals?: boolean;
+    note?: string;
     resolvedObserver?: {
       observer_id: string;
       status: "ACTIVE" | "REVOKED";
@@ -107,9 +127,13 @@ export function validateReceipt(
       replayPath: string[];
       replayPathLength: number;
       lineageTip: string;
-      hasValidLineageBinding: boolean;
-      resolvedObserverAvailable: boolean;
-      lineageConsistency: {
+      hasValidLineageBinding?: boolean;
+      resolvedObserverAvailable?: boolean;
+      observerCount?: number;
+      totalActive?: number;
+      totalRevoked?: number;
+      hasConsistentTotals?: boolean;
+      lineageConsistency?: {
         observerLineageTip: string | null;
         transitionLineageTip: string;
         isConsistent: boolean | null;
@@ -127,6 +151,43 @@ export function validateReceipt(
     reason?: string | null;
   };
 } {
+  if ("verdict" in receipt && receipt.verdict === "OBSERVER_REGISTRY") {
+    const schemaResult = validateObserverRegistrySchema(receipt);
+    if (!schemaResult.valid || !isValidObserverRegistry(receipt)) {
+      return {
+        verdict: "INSUFFICIENT_EVIDENCE",
+        mutation_surface: "Frozen",
+        details: {
+          reason: "schema_or_structural_validation_failed"
+        }
+      };
+    }
+
+    return {
+      verdict: "OBSERVER_REGISTRY",
+      mutation_surface: "Frozen",
+      details: {
+        totalActive: receipt.totalActive,
+        totalRevoked: receipt.totalRevoked,
+        observerCount: receipt.observers.length,
+        replay_path: receipt.replay_path,
+        replayPathLength: receipt.replay_path.length,
+        lineage_tip: receipt.lineage_tip,
+        hasConsistentTotals: hasConsistentObserverTotals(receipt),
+        context: {
+          replayPath: receipt.replay_path,
+          replayPathLength: receipt.replay_path.length,
+          lineageTip: receipt.lineage_tip,
+          observerCount: receipt.observers.length,
+          totalActive: receipt.totalActive,
+          totalRevoked: receipt.totalRevoked,
+          hasConsistentTotals: hasConsistentObserverTotals(receipt)
+        },
+        note: "visible context is not authoritative settlement"
+      }
+    };
+  }
+
   if ("verdict" in receipt && receipt.verdict === "OBSERVER_TRANSITION") {
     const schemaResult = validateObserverTransitionSchema(receipt);
     if (!schemaResult.valid || !isValidObserverTransition(receipt)) {
