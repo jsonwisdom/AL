@@ -15,6 +15,11 @@ import {
 } from "./observer-registry.js";
 import { resolveObserverWithRegistry } from "./observer-registry-resolution.js";
 import {
+  DegradedObserverMode,
+  isFakeEscalationSignal,
+  isValidDegradedObserverMode
+} from "./degraded-mode.js";
+import {
   ContradictionReceipt,
   detectContradiction,
   isValidContradictionReceipt
@@ -34,6 +39,7 @@ let receiptValidator: any = null;
 let contradictionValidator: any = null;
 let observerTransitionValidator: any = null;
 let observerRegistryValidator: any = null;
+let degradedObserverModeValidator: any = null;
 
 function initValidators() {
   if (lineageValidator) return;
@@ -47,6 +53,7 @@ function initValidators() {
   const contradictionSchema = JSON.parse(readFileSync(join(SCHEMA_DIR, "contradiction.schema.json"), "utf8"));
   const observerTransitionSchema = JSON.parse(readFileSync(join(SCHEMA_DIR, "observer-transition.schema.json"), "utf8"));
   const observerRegistrySchema = JSON.parse(readFileSync(join(SCHEMA_DIR, "observer-registry.schema.json"), "utf8"));
+  const degradedObserverModeSchema = JSON.parse(readFileSync(join(SCHEMA_DIR, "degraded-observer-mode.schema.json"), "utf8"));
 
   ajv.addSchema(eventSchema, "event.schema.json");
   ajv.addSchema(lineageSchema, "lineage.schema.json");
@@ -55,12 +62,14 @@ function initValidators() {
   ajv.addSchema(contradictionSchema, "contradiction.schema.json");
   ajv.addSchema(observerTransitionSchema, "observer-transition.schema.json");
   ajv.addSchema(observerRegistrySchema, "observer-registry.schema.json");
+  ajv.addSchema(degradedObserverModeSchema, "degraded-observer-mode.schema.json");
 
   lineageValidator = ajv.compile(lineageSchema);
   receiptValidator = ajv.compile(receiptSchema);
   contradictionValidator = ajv.compile(contradictionSchema);
   observerTransitionValidator = ajv.compile(observerTransitionSchema);
   observerRegistryValidator = ajv.compile(observerRegistrySchema);
+  degradedObserverModeValidator = ajv.compile(degradedObserverModeSchema);
 }
 
 export function validateLineageSchema(data: unknown): { valid: boolean; errors?: any[] } {
@@ -93,12 +102,18 @@ export function validateObserverRegistrySchema(data: unknown): { valid: boolean;
   return { valid, errors: valid ? undefined : observerRegistryValidator.errors };
 }
 
+export function validateDegradedObserverModeSchema(data: unknown): { valid: boolean; errors?: any[] } {
+  initValidators();
+  const valid = degradedObserverModeValidator(data);
+  return { valid, errors: valid ? undefined : degradedObserverModeValidator.errors };
+}
+
 export function validateReceipt(
-  receipt: Receipt | ContradictionReceipt | ObserverTransition | ObserverRegistry,
+  receipt: Receipt | ContradictionReceipt | ObserverTransition | ObserverRegistry | DegradedObserverMode,
   lineage: Lineage,
   registryContext?: ObserverRegistry
 ): {
-  verdict: Verdict | "OBSERVER_TRANSITION" | "OBSERVER_REGISTRY";
+  verdict: Verdict | "OBSERVER_TRANSITION" | "OBSERVER_REGISTRY" | "DEGRADED_OBSERVER_MODE";
   computed_root?: string;
   divergence?: string;
   mutation_surface?: "Mutable" | "Frozen";
@@ -118,6 +133,12 @@ export function validateReceipt(
     totalRevoked?: number;
     observerCount?: number;
     hasConsistentTotals?: boolean;
+    expectedObserverCount?: number;
+    missingObserverCount?: number;
+    activeRatio?: number;
+    confidenceLevel?: "HEALTHY" | "DEGRADED" | "INSUFFICIENT";
+    isValid?: boolean;
+    isFakeEscalation?: boolean;
     note?: string;
     resolvedObserver?: {
       observer_id: string;
@@ -140,6 +161,12 @@ export function validateReceipt(
       observerCount?: number;
       totalActive?: number;
       totalRevoked?: number;
+      expectedObserverCount?: number;
+      activeObserverCount?: number;
+      missingObserverCount?: number;
+      activeRatio?: number;
+      confidenceLevel?: "HEALTHY" | "DEGRADED" | "INSUFFICIENT";
+      isFakeEscalation?: boolean;
       hasConsistentTotals?: boolean;
       lineageConsistency?: {
         observerLineageTip: string | null;
@@ -192,6 +219,51 @@ export function validateReceipt(
           hasConsistentTotals: hasConsistentObserverTotals(receipt)
         },
         note: "visible context is not authoritative settlement"
+      }
+    };
+  }
+
+  if ("verdict" in receipt && receipt.verdict === "DEGRADED_OBSERVER_MODE") {
+    const schemaResult = validateDegradedObserverModeSchema(receipt);
+    if (!schemaResult.valid || !isValidDegradedObserverMode(receipt)) {
+      return {
+        verdict: "INSUFFICIENT_EVIDENCE",
+        mutation_surface: "Frozen",
+        details: {
+          reason: "schema_or_structural_validation_failed"
+        }
+      };
+    }
+
+    const isFakeEscalation = isFakeEscalationSignal(receipt);
+    const replayPath = receipt.replay_path ?? [];
+
+    return {
+      verdict: "DEGRADED_OBSERVER_MODE",
+      mutation_surface: "Frozen",
+      details: {
+        isValid: true,
+        isFakeEscalation,
+        expectedObserverCount: receipt.expectedObserverCount,
+        activeObserverCount: receipt.activeObserverCount,
+        missingObserverCount: receipt.missingObserverCount,
+        activeRatio: receipt.activeRatio,
+        confidenceLevel: receipt.confidenceLevel,
+        replay_path: replayPath,
+        replayPathLength: replayPath.length,
+        lineage_tip: receipt.lineage_tip,
+        context: {
+          replayPath,
+          replayPathLength: replayPath.length,
+          lineageTip: receipt.lineage_tip,
+          expectedObserverCount: receipt.expectedObserverCount,
+          activeObserverCount: receipt.activeObserverCount,
+          missingObserverCount: receipt.missingObserverCount,
+          activeRatio: receipt.activeRatio,
+          confidenceLevel: receipt.confidenceLevel,
+          isFakeEscalation
+        },
+        note: "degraded signal increases observability only and never grants authority"
       }
     };
   }
