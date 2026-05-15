@@ -1,7 +1,8 @@
 import { DivergenceClass, Hash } from "./types.js";
+import { Observer, isActiveObserver } from "./observer.js";
 
 export interface ObserverReport {
-  observer_id: Hash;
+  observer: Observer;
   event_id: Hash;
   observed_state_root: Hash;
   signature: string;
@@ -22,9 +23,10 @@ export function detectContradiction(
 ): {
   isContradiction: boolean;
   divergence: DivergenceClass;
-  uniqueObserverCount: number;
+  uniqueActiveObservers: number;
   conflictingRoots: Hash[];
   isLineageBound: boolean;
+  activeObserverCount: number;
 } {
   const isLineageBound = typeof receipt.lineage_tip === "string" && receipt.lineage_tip.length === 64;
 
@@ -32,37 +34,45 @@ export function detectContradiction(
     return {
       isContradiction: false,
       divergence: "D0",
-      uniqueObserverCount: 0,
+      uniqueActiveObservers: 0,
       conflictingRoots: [],
-      isLineageBound: false
+      isLineageBound: false,
+      activeObserverCount: 0
     };
   }
 
-  if (receipt.reports.length < 2) {
+  const activeReports = receipt.reports.filter((report) =>
+    isActiveObserver(report.observer, receipt.lineage_tip)
+  );
+  const activeObserverCount = activeReports.length;
+
+  if (activeObserverCount < 2) {
     return {
       isContradiction: false,
       divergence: "D0",
-      uniqueObserverCount: 0,
+      uniqueActiveObservers: 0,
       conflictingRoots: [],
-      isLineageBound: true
+      isLineageBound: true,
+      activeObserverCount
     };
   }
 
   const byObserver = new Map<Hash, ObserverReport>();
-  for (const report of receipt.reports) {
-    byObserver.set(report.observer_id, report);
+  for (const report of activeReports) {
+    byObserver.set(report.observer.observer_id, report);
   }
 
   const uniqueReports = Array.from(byObserver.values());
-  const uniqueObserverCount = uniqueReports.length;
+  const uniqueActiveObservers = uniqueReports.length;
 
-  if (uniqueObserverCount < 2) {
+  if (uniqueActiveObservers < 2) {
     return {
       isContradiction: false,
       divergence: "D0",
-      uniqueObserverCount,
+      uniqueActiveObservers,
       conflictingRoots: [],
-      isLineageBound: true
+      isLineageBound: true,
+      activeObserverCount
     };
   }
 
@@ -76,9 +86,10 @@ export function detectContradiction(
   return {
     isContradiction: hasConflict,
     divergence: hasConflict ? "D3" : "D0",
-    uniqueObserverCount,
+    uniqueActiveObservers,
     conflictingRoots: hasConflict ? Array.from(rootSet) : [],
-    isLineageBound: true
+    isLineageBound: true,
+    activeObserverCount
   };
 }
 

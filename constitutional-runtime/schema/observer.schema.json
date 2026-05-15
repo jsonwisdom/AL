@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Observer",
+  "type": "object",
+  "properties": {
+    "observer_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "public_key": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "status": {
+      "enum": ["ACTIVE", "REVOKED"]
+    },
+    "lineage_tip": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  },
+  "required": ["observer_id", "public_key", "status", "lineage_tip"],
+  "additionalProperties": false
+}

@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ObserverTransition",
+  "description": "Explicit observer status transition bound to replay context",
+  "type": "object",
+  "properties": {
+    "observer_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "from_status": {
+      "enum": ["ACTIVE", "REVOKED"]
+    },
+    "to_status": {
+      "enum": ["ACTIVE", "REVOKED"]
+    },
+    "replay_path": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      }
+    },
+    "lineage_tip": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "reason": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "verdict": {
+      "const": "OBSERVER_TRANSITION"
+    },
+    "mutation_surface": {
+      "const": "Frozen"
+    }
+  },
+  "required": [
+    "observer_id",
+    "from_status",
+    "to_status",
+    "lineage_tip",
+    "verdict",
+    "mutation_surface"
+  ],
+  "additionalProperties": false
+}
