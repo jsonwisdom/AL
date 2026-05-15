@@ -1,7 +1,7 @@
 import { Lineage, Receipt, Verdict } from "./types.js";
 import { replayReceipt, pathExists } from "./replay.js";
 import { divergenceClass, mutationSurface } from "./divergence.js";
-import Ajv from "ajv";
+import AjvModule from "ajv";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { verifySignature } from "./signature.js";
@@ -13,6 +13,7 @@ import {
   isValidContradictionReceipt
 } from "./contradiction.js";
 
+const Ajv = AjvModule;
 const SCHEMA_DIR = join(process.cwd(), "schema");
 
 let lineageValidator: any = null;
@@ -133,7 +134,7 @@ export function validateReceipt(
       };
     }
 
-    const canonicalStr = canonicalizeForSignature(event);
+    const canonicalStr = canonicalizeForSignature(event as Record<string, unknown>);
     const canonicalBytes = new TextEncoder().encode(canonicalStr);
 
     for (const sig of event.signatures) {
