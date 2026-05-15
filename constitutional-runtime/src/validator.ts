@@ -13,7 +13,7 @@ import {
   isValidContradictionReceipt
 } from "./contradiction.js";
 
-const Ajv = AjvModule;
+const Ajv = (AjvModule as unknown as { default?: typeof AjvModule }).default ?? AjvModule;
 const SCHEMA_DIR = join(process.cwd(), "schema");
 
 let lineageValidator: any = null;
@@ -134,7 +134,7 @@ export function validateReceipt(
       };
     }
 
-    const canonicalStr = canonicalizeForSignature(event as Record<string, unknown>);
+    const canonicalStr = canonicalizeForSignature(event as unknown as Record<string, unknown>);
     const canonicalBytes = new TextEncoder().encode(canonicalStr);
 
     for (const sig of event.signatures) {
