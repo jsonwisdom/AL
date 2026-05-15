@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ObserverRegistry",
+  "description": "Resolved observer registry snapshot bound to replay context",
+  "type": "object",
+  "properties": {
+    "verdict": {
+      "const": "OBSERVER_REGISTRY"
+    },
+    "lineage_tip": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "replay_path": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      }
+    },
+    "observers": {
+      "type": "array",
+      "items": {
+        "$ref": "observer.schema.json"
+      }
+    },
+    "totalActive": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "totalRevoked": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "mutation_surface": {
+      "const": "Frozen"
+    }
+  },
+  "required": [
+    "verdict",
+    "lineage_tip",
+    "replay_path",
+    "observers",
+    "totalActive",
+    "totalRevoked",
+    "mutation_surface"
+  ],
+  "additionalProperties": false
+}
