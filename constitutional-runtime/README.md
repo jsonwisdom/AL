@@ -10,6 +10,14 @@ Minimal deterministic replay + divergence engine for constitutional membrane ver
 - **Lineage control** — `fixtures/lineage.valid.json`
 - **Schema surface** — `schema/*.schema.json` (strict, no additionalProperties)
 
+## Verified Constitutional Controls
+
+| Control | Fixture | Verdict | Divergence | Mutation Surface | Binding | Exit Code |
+|---------|---------|---------|------------|------------------|------------------|-----------|
+| Genesis Positive | `receipt.valid.json` | `MATCH` | `D0` | Mutable/Frozen | — | 0 |
+| Replay Divergence | `receipt.divergent.json` | `DIVERGENCE` | `D3` | Frozen | — | 2 |
+| Observer Contradiction | `contradiction.valid.json` | `CONSTITUTIONAL_CONTRADICTION` | `D3` | Frozen | `lineage_tip` | 2 |
+
 ## CLI Contract
 
 ```bash
@@ -34,12 +42,16 @@ This script:
 - Builds from source
 - Validates positive control (exit 0)
 - Validates divergent control (exit 2)
-- Validates contradiction control (exit 2)
+- Validates contradiction control with lineage binding (exit 2)
 - Fails hard on any drift
 
-## Contradiction Receipts
+## Contradiction Control (with lineage binding)
 
-Observer disagreement is constitutional state, not hidden operator context.
+Observer disagreement is now bound to specific replay context:
+
+- `lineage_tip` (required) — anchors contradiction to a concrete tip/root
+- `replay_path` (optional) — preserves genesis/empty-path compatibility
+- Enforced structurally: **No contradiction without lineage context**
 
 A contradiction receipt records multiple observer reports for the same event where observers report conflicting state roots. In v0.1, any exact root conflict is treated as D3 and freezes the mutation surface.
 
@@ -61,6 +73,6 @@ This layer is intentionally narrow:
 
 ## Status
 
-Branch: `constitutional-runtime-observer-reports`
+Branch: `constitutional-runtime-contradiction-lineage-binding`
 
 Membrane: structurally self-describing + externally reproducible
