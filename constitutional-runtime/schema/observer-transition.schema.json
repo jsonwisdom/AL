@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "ObserverTransition",
-  "description": "Explicit status transition receipt for observer attestation lineage",
+  "description": "Explicit observer status transition bound to replay context",
   "type": "object",
   "properties": {
     "observer_id": {
@@ -13,6 +13,13 @@
     },
     "to_status": {
       "enum": ["ACTIVE", "REVOKED"]
+    },
+    "replay_path": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      }
     },
     "lineage_tip": {
       "type": "string",
