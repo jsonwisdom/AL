@@ -2,7 +2,7 @@ import * as ed from "@noble/ed25519";
 import { sha512 } from "@noble/hashes/sha2.js";
 import { hexToBytes } from "@noble/hashes/utils";
 
-ed.hashes.sha512 = sha512;
+ed.hashes.sha512 = sha512 as unknown as typeof ed.hashes.sha512;
 
 export function verifySignature(
   canonicalEventBytes: Uint8Array,
