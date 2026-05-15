@@ -12,12 +12,19 @@ import {
   detectContradiction,
   isValidContradictionReceipt
 } from "./contradiction.js";
+import {
+  isMeaningfulObserverTransition,
+  isObserverRevocation,
+  isValidObserverTransition,
+  ObserverTransition
+} from "./observer-transition.js";
 
 const SCHEMA_DIR = join(process.cwd(), "schema");
 
 let lineageValidator: any = null;
 let receiptValidator: any = null;
 let contradictionValidator: any = null;
+let observerTransitionValidator: any = null;
 
 function initValidators() {
   if (lineageValidator) return;
@@ -29,16 +36,19 @@ function initValidators() {
   const receiptSchema = JSON.parse(readFileSync(join(SCHEMA_DIR, "receipt.schema.json"), "utf8"));
   const observerReportSchema = JSON.parse(readFileSync(join(SCHEMA_DIR, "observer-report.schema.json"), "utf8"));
   const contradictionSchema = JSON.parse(readFileSync(join(SCHEMA_DIR, "contradiction.schema.json"), "utf8"));
+  const observerTransitionSchema = JSON.parse(readFileSync(join(SCHEMA_DIR, "observer-transition.schema.json"), "utf8"));
 
   ajv.addSchema(eventSchema, "event.schema.json");
   ajv.addSchema(lineageSchema, "lineage.schema.json");
   ajv.addSchema(receiptSchema, "receipt.schema.json");
   ajv.addSchema(observerReportSchema, "observer-report.schema.json");
   ajv.addSchema(contradictionSchema, "contradiction.schema.json");
+  ajv.addSchema(observerTransitionSchema, "observer-transition.schema.json");
 
   lineageValidator = ajv.compile(lineageSchema);
   receiptValidator = ajv.compile(receiptSchema);
   contradictionValidator = ajv.compile(contradictionSchema);
+  observerTransitionValidator = ajv.compile(observerTransitionSchema);
 }
 
 export function validateLineageSchema(data: unknown): { valid: boolean; errors?: any[] } {
@@ -59,11 +69,17 @@ export function validateContradictionSchema(data: unknown): { valid: boolean; er
   return { valid, errors: valid ? undefined : contradictionValidator.errors };
 }
 
+export function validateObserverTransitionSchema(data: unknown): { valid: boolean; errors?: any[] } {
+  initValidators();
+  const valid = observerTransitionValidator(data);
+  return { valid, errors: valid ? undefined : observerTransitionValidator.errors };
+}
+
 export function validateReceipt(
-  receipt: Receipt | ContradictionReceipt,
+  receipt: Receipt | ContradictionReceipt | ObserverTransition,
   lineage: Lineage
 ): {
-  verdict: Verdict;
+  verdict: Verdict | "OBSERVER_TRANSITION";
   computed_root?: string;
   divergence?: string;
   mutation_surface?: "Mutable" | "Frozen";
@@ -73,9 +89,33 @@ export function validateReceipt(
     totalReportsSubmitted?: number;
     conflictingRoots?: string[];
     lineage_tip?: string;
+    observer_id?: string;
+    isMeaningful?: boolean;
+    isRevocation?: boolean;
     reason?: string;
   };
 } {
+  if ("verdict" in receipt && receipt.verdict === "OBSERVER_TRANSITION") {
+    const schemaResult = validateObserverTransitionSchema(receipt);
+    if (!schemaResult.valid || !isValidObserverTransition(receipt)) {
+      return {
+        verdict: "INSUFFICIENT_EVIDENCE",
+        mutation_surface: "Frozen"
+      };
+    }
+
+    return {
+      verdict: "OBSERVER_TRANSITION",
+      mutation_surface: "Frozen",
+      details: {
+        observer_id: receipt.observer_id,
+        lineage_tip: receipt.lineage_tip,
+        isMeaningful: isMeaningfulObserverTransition(receipt),
+        isRevocation: isObserverRevocation(receipt)
+      }
+    };
+  }
+
   if ("reports" in receipt) {
     const schemaResult = validateContradictionSchema(receipt);
     if (!schemaResult.valid || !isValidContradictionReceipt(receipt)) {
