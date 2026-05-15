@@ -13,6 +13,7 @@ import {
   hasConsistentObserverTotals,
   ObserverRegistry
 } from "./observer-registry.js";
+import { resolveObserverWithRegistry } from "./observer-registry-resolution.js";
 import {
   ContradictionReceipt,
   detectContradiction,
@@ -94,7 +95,8 @@ export function validateObserverRegistrySchema(data: unknown): { valid: boolean;
 
 export function validateReceipt(
   receipt: Receipt | ContradictionReceipt | ObserverTransition | ObserverRegistry,
-  lineage: Lineage
+  lineage: Lineage,
+  registryContext?: ObserverRegistry
 ): {
   verdict: Verdict | "OBSERVER_TRANSITION" | "OBSERVER_REGISTRY";
   computed_root?: string;
@@ -121,8 +123,8 @@ export function validateReceipt(
       observer_id: string;
       status: "ACTIVE" | "REVOKED";
       lineage_tip: string;
-      public_key_source: "placeholder";
-      resolvedObserverSource: "placeholder";
+      public_key_source: "placeholder" | "registry";
+      resolvedObserverSource: "placeholder" | "registry" | "none";
       appliedTransitionCount: number;
       registryLineageTip: string | null;
     } | null;
@@ -132,7 +134,7 @@ export function validateReceipt(
       lineageTip: string;
       hasValidLineageBinding?: boolean;
       resolvedObserverAvailable?: boolean;
-      resolvedObserverSource?: "placeholder";
+      resolvedObserverSource?: "placeholder" | "registry" | "none";
       appliedTransitionCount?: number;
       registryLineageTip?: string | null;
       observerCount?: number;
@@ -208,28 +210,41 @@ export function validateReceipt(
 
     const replayPath = receipt.replay_path ?? [];
     const hasValidLineageBinding = typeof receipt.lineage_tip === "string" && receipt.lineage_tip.length === 64;
-    const resolvedObserver = resolveObserverAtLineage(
-      receipt.observer_id,
-      PLACEHOLDER_PUBLIC_KEY,
-      receipt.lineage_tip,
-      []
-    );
+    const registryResolution = registryContext
+      ? resolveObserverWithRegistry(registryContext, receipt.observer_id, [])
+      : null;
+    const placeholderObserver = registryResolution?.observer
+      ? null
+      : resolveObserverAtLineage(
+          receipt.observer_id,
+          PLACEHOLDER_PUBLIC_KEY,
+          receipt.lineage_tip,
+          []
+        );
+    const resolvedObserver = registryResolution?.observer ?? placeholderObserver;
+    const resolvedObserverSource = registryResolution?.observer ? "registry" : placeholderObserver ? "placeholder" : "none";
+    const appliedTransitionCount = registryResolution?.appliedTransitionCount ?? 0;
+    const registryLineageTip = registryResolution?.observer ? registryResolution.registryLineageTip : null;
     const resolvedObserverDetails = resolvedObserver
       ? {
           observer_id: resolvedObserver.observer_id,
           status: resolvedObserver.status,
           lineage_tip: resolvedObserver.lineage_tip,
-          public_key_source: "placeholder" as const,
-          resolvedObserverSource: "placeholder" as const,
-          appliedTransitionCount: 0,
-          registryLineageTip: null
+          public_key_source: resolvedObserverSource === "registry" ? "registry" as const : "placeholder" as const,
+          resolvedObserverSource,
+          appliedTransitionCount,
+          registryLineageTip
         }
       : null;
     const lineageConsistency = {
       observerLineageTip: resolvedObserver?.lineage_tip ?? null,
       transitionLineageTip: receipt.lineage_tip,
       isConsistent: resolvedObserver ? resolvedObserver.lineage_tip === receipt.lineage_tip : null,
-      reason: resolvedObserver ? "observer_resolved_with_placeholder_key" : "observer_context_not_available"
+      reason: resolvedObserverSource === "registry"
+        ? "observer_resolved_from_registry"
+        : resolvedObserverSource === "placeholder"
+          ? "observer_resolved_with_placeholder_key"
+          : "observer_context_not_available"
     };
 
     return {
@@ -250,9 +265,9 @@ export function validateReceipt(
           lineageTip: receipt.lineage_tip,
           hasValidLineageBinding,
           resolvedObserverAvailable: Boolean(resolvedObserver),
-          resolvedObserverSource: "placeholder",
-          appliedTransitionCount: 0,
-          registryLineageTip: null,
+          resolvedObserverSource,
+          appliedTransitionCount,
+          registryLineageTip,
           lineageConsistency
         },
         isMeaningful: isMeaningfulObserverTransition(receipt),
