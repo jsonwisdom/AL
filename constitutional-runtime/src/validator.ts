@@ -94,10 +94,12 @@ export function validateReceipt(
     to_status?: "ACTIVE" | "REVOKED";
     replay_path?: string[];
     replayPathLength?: number;
+    hasValidLineageBinding?: boolean;
     context?: {
       replayPath: string[];
       replayPathLength: number;
       lineageTip: string;
+      hasValidLineageBinding: boolean;
       lineageConsistency: {
         observerLineageTip: string | null;
         transitionLineageTip: string;
@@ -129,6 +131,7 @@ export function validateReceipt(
     }
 
     const replayPath = receipt.replay_path ?? [];
+    const hasValidLineageBinding = typeof receipt.lineage_tip === "string" && receipt.lineage_tip.length === 64;
     const lineageConsistency = {
       observerLineageTip: null,
       transitionLineageTip: receipt.lineage_tip,
@@ -137,7 +140,7 @@ export function validateReceipt(
     };
 
     return {
-      verdict: "OBSERVER_TRANSITION",
+      verdict: hasValidLineageBinding ? "OBSERVER_TRANSITION" : "INSUFFICIENT_EVIDENCE",
       mutation_surface: "Frozen",
       details: {
         observer_id: receipt.observer_id,
@@ -145,11 +148,13 @@ export function validateReceipt(
         to_status: receipt.to_status,
         replay_path: replayPath,
         replayPathLength: replayPath.length,
+        hasValidLineageBinding,
         lineage_tip: receipt.lineage_tip,
         context: {
           replayPath,
           replayPathLength: replayPath.length,
           lineageTip: receipt.lineage_tip,
+          hasValidLineageBinding,
           lineageConsistency
         },
         isMeaningful: isMeaningfulObserverTransition(receipt),
