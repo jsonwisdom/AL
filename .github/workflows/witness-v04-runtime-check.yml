@@ -1,0 +1,86 @@
+name: Witness v0.4 Runtime Check
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+    paths:
+      - 'witness_court_pilot_v4.py'
+      - 'requirements.txt'
+      - '.github/workflows/witness-v04-runtime-check.yml'
+
+jobs:
+  runtime-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Compile app
+        run: python -m py_compile witness_court_pilot_v4.py
+
+      - name: Start Witness server
+        run: |
+          mkdir -p data
+          DATA_DIR="$PWD/data" python -m uvicorn witness_court_pilot_v4:app --host 127.0.0.1 --port 8000 > witness.log 2>&1 &
+          echo $! > witness.pid
+          sleep 5
+
+      - name: Capture endpoints
+        run: |
+          curl -sS http://127.0.0.1:8000/summarize | tee summarize.json
+          echo
+          curl -sS http://127.0.0.1:8000/replay | tee replay.json
+          echo
+          curl -sS http://127.0.0.1:8000/convergence-receipt | tee convergence-receipt.json
+          echo
+
+      - name: Independent Merkle recompute
+        run: |
+          python - <<'PY'
+          import json, hashlib
+          replay = json.load(open('replay.json'))
+          summary = json.load(open('summarize.json'))
+          leaves = [bytes.fromhex(e['hash']) for e in replay]
+          if not leaves:
+              raise SystemExit('no leaves')
+          level = leaves[:]
+          while len(level) > 1:
+              nxt = []
+              for i in range(0, len(level), 2):
+                  left = level[i]
+                  right = level[i+1] if i + 1 < len(level) else left
+                  nxt.append(hashlib.sha256(left + right).digest())
+              level = nxt
+          root = level[0].hex()
+          assert root == summary['merkle_root'], f"root mismatch {root} != {summary['merkle_root']}"
+          receipt = {
+              'receipt_type': 'GITHUB_ACTIONS_RUNTIME_CHECK',
+              'mode': 'EPHEMERAL_CI_RUNTIME',
+              'event_count': len(replay),
+              'merkle_root': root,
+              'status': 'CONVERGED'
+          }
+          open('runtime-check-receipt.json', 'w').write(json.dumps(receipt, indent=2, sort_keys=True))
+          print(json.dumps(receipt, indent=2, sort_keys=True))
+          PY
+
+      - name: Upload runtime receipts
+        uses: actions/upload-artifact@v4
+        with:
+          name: witness-v04-runtime-check
+          path: |
+            summarize.json
+            replay.json
+            convergence-receipt.json
+            runtime-check-receipt.json
+            witness.log
