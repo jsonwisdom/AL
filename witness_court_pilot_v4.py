@@ -9,7 +9,7 @@ import uvicorn
 from cryptography.hazmat.primitives.asymmetric import ed25519
 from cryptography.hazmat.primitives import serialization
 
-DATA_DIR = "/data"
+DATA_DIR = os.getenv("DATA_DIR", "/tmp/witness-data")
 KEY_PATH = f"{DATA_DIR}/witness_key.pem"
 DB_PATH = f"{DATA_DIR}/court_witness.db"
 
