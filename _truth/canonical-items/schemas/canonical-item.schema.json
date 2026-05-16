@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jsonwisdom/AL/_truth/canonical-items/schemas/canonical-item.schema.json",
+  "title": "JSONWISDOM Canonical Item",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "repo",
+    "path",
+    "branch_or_ref",
+    "item_type",
+    "status",
+    "authority_surface",
+    "delete_policy"
+  ],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "repo": { "type": "string", "pattern": "^[^/]+/[^/]+$" },
+    "path": { "type": "string", "minLength": 1 },
+    "branch_or_ref": { "type": "string", "minLength": 1 },
+    "item_type": {
+      "type": "string",
+      "enum": ["README", "RECEIPT", "WORKFLOW", "RUNTIME_CONFIG", "DOCTRINE", "INDEX", "ANCHOR", "EXPERIMENT", "ISSUE", "BRANCH"]
+    },
+    "status": {
+      "type": "string",
+      "enum": ["CANONICAL", "CANDIDATE", "EXPERIMENTAL", "ARCHIVED", "DEPRECATED"]
+    },
+    "authority_surface": { "type": ["string", "null"] },
+    "receipt_ref": { "type": ["string", "null"] },
+    "last_audit": { "type": ["string", "null"] },
+    "delete_policy": {
+      "type": "string",
+      "const": "NO_DELETE_UNLESS_3_CONSECUTIVE_AUDITS_PASS"
+    },
+    "notes": { "type": ["string", "null"] }
+  }
+}
