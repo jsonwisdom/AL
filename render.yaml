@@ -5,7 +5,7 @@ services:
     plan: free
     branch: witness-v0.4-runtime
     buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn witness_court_pilot_v4:app --host 0.0.0.0 --port $PORT
+    startCommand: mkdir -p /tmp/witness-data && uvicorn witness_court_pilot_v4:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: DATA_DIR
         value: /tmp/witness-data
