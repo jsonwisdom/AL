@@ -1,7 +1,7 @@
 {
   "registry_version": "jsonwisdom_canonical_items_v0.1",
   "created_at": "2026-05-16T03:10:00Z",
-  "updated_at": "2026-05-16T12:30:00Z",
+  "updated_at": "2026-05-16T00:46:12Z",
   "doctrine": {
     "visible_in_git_is_not_canonical": true,
     "canonical_item_definition": "explicitly declared + indexed + receipt-linked or audit-bound",
@@ -35,6 +35,25 @@
       "verification_surface": "independent_replay",
       "status": "constitutional_anchor_confirmed",
       "anchored_at": "2026-05-16T12:17:24Z"
+    }
+  ],
+  "identity_graphs": [
+    {
+      "graph_id": "EPOCH03_IDENTITY_GRAPH_WITNESS_PRIMITIVE_001",
+      "state": "GRAPH_ATTESTED_ONCHAIN",
+      "root_identity": "jaywisdom.base.eth",
+      "portable_sha256": "0xbd14d54188da6f98a18ef2e5dd0dee8edd08a89b9e5a890104ac07d176c2d139",
+      "schema_uid": "0x352a0b17577d6b18ef1efb3ab3988e638736c3a187ca0fe70e8f15dba88b7cc0",
+      "attestation_uid": "0x20b7496a0c708cde32eaaccbe8b6df03e641b6187db39d95c43866ff20922b3c",
+      "tx_hash": "0x9bcc44135761869e19920fc785b5def2c80402599d1001a8ed043a49e0f93aa2",
+      "block_number": "TO_BE_ADDED",
+      "network": "base-sepolia",
+      "timestamp_iso8601": "2026-05-16T00:46:12Z",
+      "graph_commit": "66267edb11cab0db48512411734e7d171ae8f4bd",
+      "receipt_commit": "6e8b3f8fd33642f26a90b30a8f8a2c5cdb963aab",
+      "diagram_commit": "51a5b7dcd80eae6e436cd04d70a695a0feb1715d",
+      "verification_surface": "receipt_bound_identity_graph",
+      "status": "constitutional_graph_anchor_confirmed"
     }
   ],
   "next_steps": [
