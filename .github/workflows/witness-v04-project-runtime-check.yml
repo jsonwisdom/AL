@@ -1,0 +1,51 @@
+name: Witness v0.4 Project Runtime Check
+
+on:
+  push:
+    branches:
+      - project/witness-v0.4-runtime
+    paths:
+      - 'projects/witness-v0.4-runtime/**'
+      - '.github/workflows/witness-v04-project-runtime-check.yml'
+  pull_request:
+    branches:
+      - project/witness-v0.4-runtime
+    paths:
+      - 'projects/witness-v0.4-runtime/**'
+      - '.github/workflows/witness-v04-project-runtime-check.yml'
+  workflow_dispatch:
+
+jobs:
+  verify-runtime:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: projects/witness-v0.4-runtime
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Syntax check
+        run: python -m py_compile witness_court_pilot_v4.py
+
+      - name: Start service
+        run: |
+          mkdir -p /tmp/witness-data
+          DATA_DIR=/tmp/witness-data python -m uvicorn witness_court_pilot_v4:app --host 127.0.0.1 --port 8000 > witness.log 2>&1 &
+          sleep 5
+
+      - name: Health check
+        run: curl -f http://127.0.0.1:8000/health || exit 1
+
+      - name: Summarize check
+        run: curl -f http://127.0.0.1:8000/summarize | grep -q '"merkle_root"' || exit 1
+
+      - name: Convergence receipt check
+        run: curl -f http://127.0.0.1:8000/convergence-receipt || exit 1
