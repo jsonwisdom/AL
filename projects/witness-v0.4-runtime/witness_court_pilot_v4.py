@@ -8,6 +8,7 @@ from fastapi import FastAPI, HTTPException
 import uvicorn
 from cryptography.hazmat.primitives.asymmetric import ed25519
 from cryptography.hazmat.primitives import serialization
+from witness.receipts.dependencies import get_runtime_evidence_state
 
 DATA_DIR = os.getenv("DATA_DIR", "/tmp/witness-data")
 KEY_PATH = f"{DATA_DIR}/witness_key.pem"
@@ -175,6 +176,10 @@ if len(court.log) <= 1:
 @app.get("/health")
 async def health():
     return {"status": "ok", "name": court.name, "events": len(court.log)}
+
+@app.get("/legitimacy", tags=["witness", "observability"])
+async def get_legitimacy():
+    return get_runtime_evidence_state()
 
 @app.get("/summarize")
 async def summarize():
