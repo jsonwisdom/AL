@@ -1,0 +1,26 @@
+{
+  "receipt_id": "EPOCH03_IDENTITY_GRAPH_WITNESS_PRIMITIVE_001_RECEIPT",
+  "graph_id": "EPOCH03_IDENTITY_GRAPH_WITNESS_PRIMITIVE_001",
+  "status": "GRAPH_RECEIPT_BOUND",
+  "source_path": "_truth/identity-graphs/epoch03/witness-primitive-001.json",
+  "source_commit": "66267edb11cab0db48512411734e7d171ae8f4bd",
+  "git_blob_sha": "69bb763088edab2cf57e81e116a3ed8127e7549c",
+  "portable_sha256": "bd14d54188da6f98a18ef2e5dd0dee8edd08a89b9e5a890104ac07d176c2d139",
+  "root": "jaywisdom.base.eth",
+  "doctrine": [
+    "no ghost anchors",
+    "replay first",
+    "scale later"
+  ],
+  "header": "Identity discovers. Receipts prove. Hashes anchor. Attestations challenge. Runtimes execute and disappear.",
+  "canonical_rule": "The graph object is the source. Diagrams and UI views are interpretations derived from the graph object.",
+  "boundary_invariants": [
+    "runtime != identity",
+    "runtime != anchor",
+    "runtime != truth",
+    "identity discovers",
+    "receipts prove",
+    "hashes anchor",
+    "attestations challenge"
+  ]
+}
