@@ -49,3 +49,42 @@ jobs:
 
       - name: Convergence receipt check
         run: curl -f http://127.0.0.1:8000/convergence-receipt || exit 1
+
+      - name: Generate CI Runtime Receipt
+        run: |
+          cat > ci-runtime-receipt.json << EOF
+          {
+            "receipt_version": "witness_ci_runtime_receipt_v0.1",
+            "receipt_type": "EPHEMERAL_CI_RUNTIME_RECEIPT",
+            "status": "CONVERGED_BY_CI",
+            "render_status": "OPTIONAL_HOSTING_LAYER",
+            "timestamp": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")",
+            "repo": "${{ github.repository }}",
+            "branch": "${{ github.ref_name }}",
+            "commit_sha": "${{ github.sha }}",
+            "workflow_name": "Witness v0.4 Project Runtime Check",
+            "workflow_run": "${{ github.run_id }}",
+            "workflow_attempt": "${{ github.run_attempt }}",
+            "runtime": "uvicorn",
+            "runtime_mode": "EPHEMERAL_CI_RUNTIME",
+            "project_root": "projects/witness-v0.4-runtime",
+            "checks": [
+              "pip_install",
+              "py_compile",
+              "uvicorn_boot",
+              "health_endpoint",
+              "summarize_endpoint",
+              "convergence_receipt_endpoint"
+            ],
+            "claim_boundary": "proves ephemeral CI runtime convergence only; does not prove persistent continuity or live hosted availability"
+          }
+          EOF
+          cat ci-runtime-receipt.json
+
+      - name: Upload CI Runtime Receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: ci-runtime-receipt
+          path: projects/witness-v0.4-runtime/ci-runtime-receipt.json
+          retention-days: 90
+          if-no-files-found: error
