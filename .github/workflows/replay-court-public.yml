@@ -10,7 +10,7 @@ on:
       - '.github/workflows/replay-court-public.yml'
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   replay-court:
@@ -50,6 +50,22 @@ jobs:
           echo "$OATH" | tee oath-path.txt
           cat "$OATH" | python3 -m json.tool | tee oath.json
 
+      - name: Publish public mirrors
+        run: |
+          mkdir -p artifacts/public/latest
+          cp level1-output.txt artifacts/public/latest/level1-output.txt
+          cp latest-receipt-path.txt artifacts/public/latest/latest-receipt-path.txt
+          cp verifier-current-tip.txt artifacts/public/latest/verifier-current-tip.txt
+          cp level3-generator-output.txt artifacts/public/latest/level3-generator-output.txt
+          cp oath-path.txt artifacts/public/latest/oath-path.txt
+          cp oath.json artifacts/public/latest/oath.json
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add artifacts/public/latest
+          git diff --cached --quiet || git commit -m "ci: publish latest replay court artifacts"
+          git push || true
+
       - name: Upload replay court artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -62,6 +78,5 @@ jobs:
             oath-path.txt
             oath.json
             receipts/oaths/*.json
+            artifacts/public/latest/*
           if-no-files-found: error
-
-# Touch: force GitHub Actions workflow indexing.
