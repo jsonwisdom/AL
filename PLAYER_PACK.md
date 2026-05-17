@@ -146,6 +146,32 @@ RECEIPT_CONFIRMED
 RECEIPT_REJECTED
 ```
 
+## Level 3 — Replay Oath
+
+### Status
+
+Schema live, generator pending.
+
+Manual oath JSON creation is possible by following `docs/schemas/replay-oath-v0.1.json`.
+No automated oath generator is shipped yet.
+
+### Goal
+
+Create a witness statement about receipt replay.
+
+### Win Condition
+
+- oath identifies receipt
+- oath identifies witness
+- oath records verification mode
+- oath records receipt/output hashes
+
+### Failure Condition
+
+- oath claims more than the verifier observed
+- oath lacks receipt reference
+- docs imply an automated oath generator exists before one is shipped
+
 ## If You Cannot Execute
 
 If the environment cannot clone, fetch raw files, or execute shell commands, report that as access drift.
