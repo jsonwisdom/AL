@@ -2,6 +2,8 @@
 
 A deterministic replay transcript for heterogeneous interpreter verification.
 
+<!-- replay-matrix trigger: 2026-05-17T01:24:00Z -->
+
 ## 1. Execution Context
 
 - Workflow: `replay-matrix.yaml`
