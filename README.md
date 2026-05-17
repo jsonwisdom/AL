@@ -10,6 +10,15 @@ All authority resolves to:
 - **Public proof surface:** https://jsonwisdom.github.io/AL/proof/
 - **Receipt viewer:** https://jsonwisdom.github.io/AL/proof/index.html
 
+## Public Proof Surface
+
+Canonical URL: https://jsonwisdom.github.io/AL/proof/
+
+All proof pages live under this path. The named proof page is:
+https://jsonwisdom.github.io/AL/proof/computer-wisdom-public-proof.html
+
+No other URLs are authoritative. If a doc points elsewhere, that reference is stale.
+
 ## Canonical Boundary
 
 The canonical truth source for this repository is `_truth/receipts/index.json`.
