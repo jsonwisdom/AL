@@ -26,10 +26,18 @@ Determine whether a replay artifact is ready for external anchoring.
 - CI_UNOBSERVED
 - ANCHOR_BLOCKED
 
-## Verification Command
+## Verification Commands
 ```bash
 ./verify.sh
+./scripts/root_continuity_checkpoint.sh
+python3 scripts/verify_root_continuity_receipt.py <receipt.json>
+python3 scripts/verify_root_continuity_receipt.py --historical <receipt.json>
 ```
+
+## Readiness Definition
+`READY_FOR_ANCHOR` means replay evidence is sufficient for anchoring review. It does not mean the artifact is already anchored.
+
+CI/log witness status must be inspected when anchoring claims depend on CI.
 
 ## Receipt Path
 - `docs/forensic/`
