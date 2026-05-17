@@ -124,10 +124,10 @@ Use repo-local skills without granting imaginary authority.
 
 ### Artifacts
 
-- `.agents/skills/witness-replay/SKILL.md`
-- `.agents/skills/receipt-audit/SKILL.md`
-- `.agents/skills/canonicalization-check/SKILL.md`
-- `.agents/skills/anchor-readiness/SKILL.md`
+- [`witness-replay`](https://github.com/jsonwisdom/AL/blob/master/.agents/skills/witness-replay/SKILL.md)
+- [`receipt-audit`](https://github.com/jsonwisdom/AL/blob/master/.agents/skills/receipt-audit/SKILL.md)
+- [`canonicalization-check`](https://github.com/jsonwisdom/AL/blob/master/.agents/skills/canonicalization-check/SKILL.md)
+- [`anchor-readiness`](https://github.com/jsonwisdom/AL/blob/master/.agents/skills/anchor-readiness/SKILL.md)
 
 ### Win Condition
 
