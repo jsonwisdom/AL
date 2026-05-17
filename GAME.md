@@ -45,8 +45,10 @@ Verify a generated receipt.
 ### Command
 
 ```bash
-python3 scripts/verify_root_continuity_receipt.py <receipt.json>
-python3 scripts/verify_root_continuity_receipt.py --historical <receipt.json>
+LATEST=$(ls -t receipts/root-continuity/*.json | head -1)
+echo "$LATEST"
+python3 scripts/verify_root_continuity_receipt.py "$LATEST"
+python3 scripts/verify_root_continuity_receipt.py --historical "$LATEST"
 ```
 
 ### Win Condition
