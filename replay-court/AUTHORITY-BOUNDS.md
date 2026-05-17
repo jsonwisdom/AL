@@ -4,6 +4,8 @@ Authority in Replay Court is bounded by replayable evidence, preserved contradic
 
 No actor may quietly weaken the rules that constrain their own authority.
 
+Authority derives from checkability, not from role.
+
 ## Purpose
 
 ```text
@@ -70,7 +72,7 @@ Examples:
 Requirements:
 
 ```text
-review: two independent approvals
+review: two independent approvals, neither being the proposer
 contradiction_ref: required
 time_lock: 48 hours
 self_audit_required: yes
@@ -96,7 +98,7 @@ Examples:
 Requirements:
 
 ```text
-review: three-person unanimous supermajority
+review: three-person unanimous supermajority, none being the proposer
 contradiction_ref: required
 time_lock: 7 days
 self_audit_required: yes
@@ -118,6 +120,7 @@ Operational and Structural amendments must cite a preserved contradiction:
 
 ```text
 Contradiction: <contradiction_hash or contradiction_id>
+Contradiction: <hash> - <one-line summary>
 ```
 
 No contradiction reference, no merge.
@@ -148,6 +151,10 @@ The time-lock begins only after:
 - impact note or analysis is included
 - required reviewers are requested
 ```
+
+Time-lock starts at proposal publication, not at first review.
+
+Time-lock cannot be bypassed by force-push, rebase, or new PR.
 
 Emergency bypass is not allowed in v0.
 
@@ -187,6 +194,8 @@ Validator must check:
 5. self_audit_triggered_when_required
 6. proposer_authority_not_self-weakened_without_structural_review
 ```
+
+If any authority-bounds check fails, result is FAIL, not UNOBSERVED. UNOBSERVED is not acceptable for authority changes.
 
 Failure classes:
 
