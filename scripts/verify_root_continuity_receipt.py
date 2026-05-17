@@ -88,7 +88,8 @@ def main() -> int:
     print(f"recorded_head: {recorded_head}")
     if current_head:
         print(f"current_head: {current_head}")
-    print(f"status: {outcome.get('status')}")
+    print(f"verifier_verdict: confirmed")
+    print(f"recorded_outcome_status: {outcome.get('status')}")
     return 0
 
 
