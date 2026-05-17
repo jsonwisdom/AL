@@ -1,4 +1,4 @@
-# AL: THE REPLAY COURT — Game Mechanics v0.2
+# AL: THE REPLAY COURT — Game Mechanics v0.3
 
 This file defines the quantitative game layer for agents.
 
@@ -42,6 +42,60 @@ PROBABLY_PASS
 ```
 
 Inventing a status is `DRIFT_FOUND: status_schema_drift`.
+
+## Level-Specific Status Rules
+
+Levels 1-3 are execution/artifact levels. They may only use:
+
+```text
+PASS
+FAIL
+UNOBSERVED
+```
+
+`PASS DOCS-ONLY` is forbidden for Levels 1-3.
+
+If an agent emits `PASS DOCS-ONLY` for Level 1, 2, or 3, it must report:
+
+```text
+DRIFT_FOUND: level_status_drift
+```
+
+Levels 4-5 may use `PASS DOCS-ONLY`, but only as telemetry when prior executable levels are incomplete.
+
+## Point Rules
+
+Only these point values are valid:
+
+```text
+PASS: 20
+FAIL: 0
+UNOBSERVED: 0
+PASS DOCS-ONLY: 5
+```
+
+`PASS DOCS-ONLY: 10` is invalid.
+
+Any nonstandard point value must report:
+
+```text
+DRIFT_FOUND: scoring_drift
+```
+
+## Next Action Rules
+
+Every level must include a concrete `NEXT ACTION`.
+
+Forbidden next actions:
+
+```text
+None
+N/A
+No action
+Not applicable
+```
+
+A blocked level must say exactly what artifact, command, or witness should be inspected next.
 
 ## Routes
 
