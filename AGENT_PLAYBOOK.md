@@ -27,6 +27,53 @@ skill != judge
 payment != legitimacy
 ```
 
+## Execution Routes
+
+Agents must choose the strongest available route. No shell access is not enough to stop if public artifacts are available.
+
+```text
+Route A — Local shell execution
+  run commands directly and report stdout/stderr
+
+Route B — Public runner artifact inspection
+  inspect GitHub Actions artifacts from AL Replay Court Public Run
+
+Route C — Docs-only review
+  quote live repo docs and classify boundaries only
+```
+
+Level 1 can pass by either:
+
+```text
+Route A: observed ./scripts/root_continuity_checkpoint.sh output
+Route B: observed public artifact level1-output.txt
+```
+
+Level 2 can pass by either:
+
+```text
+Route A: observed verify_root_continuity_receipt.py output
+Route B: observed public artifact verifier-current-tip.txt
+```
+
+Level 3 can pass by either:
+
+```text
+Route A: observed generated oath JSON
+Route B: observed public artifact oath.json
+```
+
+If Route A is unavailable, try Route B.
+If Route B artifacts are unavailable, report:
+
+```text
+PUBLIC RUNNER ARTIFACTS: UNOBSERVED
+```
+
+Only then fall back to Route C.
+
+Route C never counts as executable replay.
+
 ## Sequential Progression Rule
 
 Game progression is sequential.
@@ -56,13 +103,19 @@ PATCH SUGGESTIONS ALLOWED: no
 
 Goal: run the continuity drill and produce a root continuity receipt.
 
-Pass requires observed command output from:
+Pass requires observed command output or public runner artifact from:
 
 ```bash
 ./scripts/root_continuity_checkpoint.sh
 ```
 
-If no shell is available, report:
+or:
+
+```text
+level1-output.txt
+```
+
+If no shell and no public artifact are available, report:
 
 ```text
 LEVEL 1: UNOBSERVED
@@ -72,10 +125,16 @@ LEVEL 1: UNOBSERVED
 
 Goal: verify the generated receipt.
 
-Pass requires observed verifier output from:
+Pass requires observed verifier output or public runner artifact from:
 
 ```bash
 python3 scripts/verify_root_continuity_receipt.py <receipt.json>
+```
+
+or:
+
+```text
+verifier-current-tip.txt
 ```
 
 Browser inspection does not count as full replay.
@@ -84,7 +143,13 @@ Browser inspection does not count as full replay.
 
 Goal: generate or inspect a replay oath from real receipt and verifier output.
 
-Pass requires observed oath JSON with:
+Pass requires observed oath JSON from local generation or public runner artifact:
+
+```text
+oath.json
+```
+
+The oath must contain:
 
 ```text
 schema_version: 0.1.0
@@ -180,7 +245,7 @@ PATCH SUGGESTIONS ALLOWED: no
 Stop immediately when:
 
 ```text
-execution unavailable
+execution unavailable and public artifacts unavailable
 required file unobserved
 artifact missing
 hash mismatch
@@ -198,16 +263,22 @@ Do not continue into architecture design after a stop condition.
 EXECUTION AVAILABLE:
 yes / no
 
+PUBLIC RUNNER ARTIFACTS:
+OBSERVED / UNOBSERVED
+
+ROUTE USED:
+A_LOCAL_EXECUTION / B_PUBLIC_ARTIFACTS / C_DOCS_ONLY
+
 LEVEL 1:
-PASS / FAIL / UNOBSERVED
+PASS / FAIL / UNOBSERVED / PASS DOCS-ONLY
 Evidence:
 
 LEVEL 2:
-PASS / FAIL / UNOBSERVED
+PASS / FAIL / UNOBSERVED / PASS DOCS-ONLY
 Evidence:
 
 LEVEL 3:
-PASS / FAIL / UNOBSERVED
+PASS / FAIL / UNOBSERVED / PASS DOCS-ONLY
 Evidence:
 
 LEVEL 4:
