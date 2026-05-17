@@ -27,6 +27,29 @@ skill != judge
 payment != legitimacy
 ```
 
+## Sequential Progression Rule
+
+Game progression is sequential.
+
+A player may inspect later-level docs out of order, but may not claim a higher level reached unless all prior levels are `PASS`.
+
+Docs-only review of Level 4 or Level 5 earns scoped reviewer status only:
+
+```text
+Level 4 docs-reviewer
+Level 5 docs-reviewer
+```
+
+It does not count as reaching Level 4 or Level 5.
+
+If Levels 1-3 are `UNOBSERVED`, then:
+
+```text
+HIGHEST LEVEL REACHED: none
+ROLE EARNED: docs-reviewer
+PATCH SUGGESTIONS ALLOWED: no
+```
+
 ## Game Levels
 
 ### Level 1 — Continuity Drill
@@ -116,7 +139,7 @@ observer-only
   default role when execution or witness files are unavailable
 
 docs-reviewer
-  can quote live docs and classify docs drift
+  can quote live docs and classify docs drift, but has not reached game levels unless prior levels pass
 
 oath-reviewer
   can inspect an observed oath artifact
@@ -128,7 +151,7 @@ requirements reviewer
   can check whether implementation requirements remain bounded
 
 contributor-eligible
-  requires Level 1-5 pass or exact live drift with bounded patch evidence
+  requires sequential Level 1-5 pass or exact live drift with bounded patch evidence
 
 settlement-reviewer
   requires validated oath chain and Level 5 readiness evidence
@@ -141,7 +164,7 @@ No role is permanent. Each claim must be backed by current witness evidence.
 Patch suggestions are forbidden unless one of these is true:
 
 ```text
-1. The agent has passed Levels 1-5 with observed evidence.
+1. The agent has passed Levels 1-5 sequentially with observed evidence.
 2. The agent quotes exact live file text proving bounded docs drift.
 3. The agent quotes exact command output proving executable drift.
 ```
@@ -188,11 +211,11 @@ PASS / FAIL / UNOBSERVED
 Evidence:
 
 LEVEL 4:
-PASS / FAIL / UNOBSERVED
+PASS / FAIL / UNOBSERVED / PASS DOCS-ONLY
 Evidence:
 
 LEVEL 5:
-PASS / FAIL / UNOBSERVED
+PASS / FAIL / UNOBSERVED / PASS DOCS-ONLY
 Evidence:
 
 HIGHEST LEVEL REACHED:
