@@ -26,9 +26,12 @@ Run the public replay oath and report only observed witness evidence.
 - REGISTRY_MISMATCH
 - DRIFT_REQUIRES_FORENSIC_ENTRY
 
-## Verification Command
+## Verification Commands
 ```bash
 ./verify.sh
+./scripts/root_continuity_checkpoint.sh
+python3 scripts/verify_root_continuity_receipt.py <receipt.json>
+python3 scripts/verify_root_continuity_receipt.py --historical <receipt.json>
 ```
 
 ## Receipt Path
