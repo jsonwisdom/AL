@@ -143,6 +143,9 @@ Use repo-local skills without granting imaginary authority.
 
 ## Level 5 — Settlement Readiness
 
+### Status
+Design-ready, not active. No x402 payment flow is currently active.
+
 ### Goal
 Decide whether an operation is ready for optional x402 settlement.
 
@@ -170,7 +173,7 @@ Level 1: implemented
 Level 2: implemented
 Level 3: schema implemented, generator pending
 Level 4: skills implemented
-Level 5: design-ready, not active
+Level 5: design-ready, not active; no x402 payment flow is currently active
 ```
 
 ## Player Objective
