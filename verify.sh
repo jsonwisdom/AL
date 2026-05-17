@@ -1,15 +1,23 @@
-#!/usr/bin/env bash
+#!/bin/bash
 set -euo pipefail
 
-VCLP_VERIFY="docs/protocols/vclp/verify.sh"
-LEDGER="_truth/ledger.jsonl"
-PATTERNS="_truth/patterns.json"
+echo "🧾 Sovereign Replay Court — Public Oath"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
-echo "=== AL Verification via VCLP ==="
-
-if [[ ! -x "$VCLP_VERIFY" ]]; then
-  echo "✗ VCLP verifier missing or not executable: $VCLP_VERIFY"
-  exit 1
+if ! command -v python3 &> /dev/null; then
+    echo "❌ REPLAY_REJECTED: python3 not found"
+    exit 1
 fi
 
-"$VCLP_VERIFY" "$LEDGER" "$PATTERNS"
+python3 src/matrix_runner.py
+exit_code=$?
+
+if [ $exit_code -eq 0 ]; then
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    echo "🧾 REPLAY_CONFIRMED | No drift detected"
+else
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    echo "⚠️ REPLAY_REJECTED | Drift detected"
+fi
+
+exit $exit_code
