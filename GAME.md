@@ -21,6 +21,7 @@ Generate a root continuity receipt and update the receipt index.
 ### Command
 
 ```bash
+chmod +x scripts/root_continuity_checkpoint.sh
 ./scripts/root_continuity_checkpoint.sh
 ```
 
