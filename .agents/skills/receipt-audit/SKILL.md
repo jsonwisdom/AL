@@ -26,9 +26,12 @@ Validate that receipts, roots, and forensic entries align with executable reposi
 - NARRATIVE_STATE_GAP
 - FORENSIC_ESCALATION_REQUIRED
 
-## Verification Command
+## Verification Commands
 ```bash
 git log --oneline -- docs/forensic/
+cat receipts/index.json | python3 -m json.tool
+python3 scripts/verify_root_continuity_receipt.py <receipt.json>
+python3 scripts/verify_root_continuity_receipt.py --historical <receipt.json>
 ```
 
 ## Receipt Path
