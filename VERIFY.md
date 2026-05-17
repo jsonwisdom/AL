@@ -1,69 +1,72 @@
-# ALMS Trilogy V1 — Public Verification
+# Sovereign Replay Court — Public Law
 
-Anyone can verify the ALMS Trilogy integrity using standard tools such as `curl`, `sha256sum`, and `jq`.
+## Constitutional Invariant
 
-## Step 1: Clone the repository
+```text
+Host_Witness == Chamber_Witness == Registry
+```
+
+Execution ≡ Registry.
+
+No witness may bless a root independently.
+Consensus exists only when all replay surfaces converge.
+
+## Public Stranger Test
+
+### Host Witness
 
 ```bash
 git clone https://github.com/jsonwisdom/AL.git
 cd AL
-git checkout 62bf6450357f8edb2d4494140ca294cf073b0708
-git rev-parse HEAD
+chmod +x verify.sh
+./verify.sh
 ```
 
-Expected commit:
-
-```text
-62bf6450357f8edb2d4494140ca294cf073b0708
-```
-
-## Step 2: Run the verifier
+### Chamber Witness
 
 ```bash
-./verify_trilogy.sh
+docker build -t al-court -f Dockerfile.replay .
+docker run --rm al-court
 ```
 
-Expected output:
+## Expected Verdict
 
 ```text
-Downloading directory from IPFS: bafybeibcc32x2jq3ktmk4epvugprux2ehrsx2ukzqbn5gxffvudztc6ile
-Downloading: allison.jpg
-✓ allison.jpg matches
-Downloading: andy.jpg
-✓ andy.jpg matches
-Downloading: gary.jpg
-✓ gary.jpg matches
-PASS: Trilogy verified
+REPLAY_CONFIRMED
+MATRIX: GREEN
+Execution ≡ Registry holds.
 ```
 
-## Step 3: Manual verification
+## Witness Roles
 
-List the IPFS directory:
+### Host Clerk
 
-```bash
-ipfs ls bafybeibcc32x2jq3ktmk4epvugprux2ehrsx2ukzqbn5gxffvudztc6ile
-```
+The host witness executes against the ambient machine environment.
+It introduces real-world entropy and validates environmental reproducibility.
 
-Download and hash each file:
+### Chamber Judge
 
-```bash
-for f in andy.jpg gary.jpg allison.jpg; do
-  curl -sL "https://ipfs.io/ipfs/bafybeibcc32x2jq3ktmk4epvugprux2ehrsx2ukzqbn5gxffvudztc6ile/$f" | sha256sum
-done
-```
+The chamber witness executes inside the replay container.
+It validates hermetic replay under pinned execution conditions.
 
-Compare with `alms_trilogy/hashes.json`:
+## Registry Roots
+
+### AFP_MINIMAL_001
 
 ```text
-andy.jpg    0xfb4521ae28e166ee9442c20e68ea38e2f9dc51d40a68fbfcdf2c0d8e773ea821
-gary.jpg    0x603a559a8da229d90c731a8be517f408471e1f72b095fa4361a93ddeba56060c
-allison.jpg 0xe7eb95287af70d21676a43c395881e6477968fccfd35fd46b0774c5c0281f4de
+27e37c8d23fb3e1f841de98731d54241da2825f6bfdc78bc3f7c9b8100eeb812
 ```
 
-## Integrity chain
+### AFP_NESTED_002
 
 ```text
-Git commit 62bf6450357f8edb2d4494140ca294cf073b0708 → verifier script → IPFS directory CID → per-file SHA256s → EAS pending
+75fe512e17fd630336da1554228b68c1f821066b9b5d0d7b3c078101dabc0c3a
 ```
 
-No ghost anchors. No "trust me" steps.
+## Constitutional Rule
+
+No phantom scripts.
+No assumed infrastructure.
+No ceremonial green.
+
+Only executable artifacts present on `master` may participate in the public oath.
