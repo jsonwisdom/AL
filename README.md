@@ -1,4 +1,6 @@
 # AL — Attestation Ledger
+![Replay Status](https://github.com/jsonwisdom/AL/actions/workflows/replay.yml/badge.svg)
+
 
 Public verifiable claims with cryptographic receipts.
 
