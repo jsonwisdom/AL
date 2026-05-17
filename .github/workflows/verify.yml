@@ -1,10 +1,33 @@
-name: verify
-on: [push, pull_request]
+name: Sovereign Replay Court — Membrane Guard
+
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+
 jobs:
-  check:
+  stranger-court:
+    name: "Stranger Test — Execution ≡ Registry"
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - run: sudo apt-get update && sudo apt-get install -y jq
-      - run: chmod +x verify.sh docs/protocols/vclp/verify.sh studio/watchers/claim_emitter.sh
-      - run: ./verify.sh
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Prepare Environment
+        run: |
+          chmod +x verify.sh
+
+      - name: Execute Public Oath (Clerk)
+        run: ./verify.sh
+
+      - name: Court Verdict
+        if: success()
+        run: echo "🟢 MEMBRANE_HOLDING: Execution ≡ Registry verified by stranger runner"
