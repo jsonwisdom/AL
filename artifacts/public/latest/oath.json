@@ -1,0 +1,27 @@
+{
+    "schema_version": "0.1.0",
+    "oath_type": "replay_oath",
+    "timestamp": "2026-05-17T12:00:54.019818Z",
+    "witness": {
+        "identity": "github-actions-public-witness",
+        "mode": "observer"
+    },
+    "source": {
+        "receipt_path": "receipts/root-continuity/cr_20260517T120053Z_root_continuity.json",
+        "receipt_hash": "sha256:37f0376ac36d31f194f1365afbd49317bd571229647a2472f513cb8a0ec9f38c",
+        "verifier_output_hash": "sha256:d68e731e831f68b634d61147a6cbc507764427923e2f52222eb12aa658b4239d"
+    },
+    "observation": {
+        "verifier_mode": "current-tip",
+        "replay_status": "confirmed",
+        "observed_tokens": [
+            "RECEIPT_CONFIRMED"
+        ]
+    },
+    "limits": {
+        "creates_truth": false,
+        "authorizes_payment": false,
+        "links_settlement": false,
+        "signature_present": false
+    }
+}
