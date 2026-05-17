@@ -39,6 +39,12 @@ def main() -> int:
         "operation": receipt.get("operation", {}).get("type"),
         "status": receipt.get("outcome", {}).get("status"),
         "head_commit": receipt.get("outcome", {}).get("result", {}).get("head_commit"),
+        "verification": {
+            "tip": "unobserved",
+            "historical": "unobserved",
+            "last_verified_at": null,
+            "verification_count": 0
+        }
     }
 
     entries = index.setdefault("entries", [])
