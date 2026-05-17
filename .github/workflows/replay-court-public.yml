@@ -1,0 +1,65 @@
+name: AL Replay Court Public Run
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/root_continuity_checkpoint.sh'
+      - 'scripts/verify_root_continuity_receipt.py'
+      - 'scripts/generate_replay_oath.py'
+      - '.github/workflows/replay-court-public.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  replay-court:
+    name: Run Levels 1-3 and upload oath artifact
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Show Python version
+        run: python3 --version
+
+      - name: Level 1 - continuity drill
+        run: |
+          chmod +x scripts/root_continuity_checkpoint.sh
+          ./scripts/root_continuity_checkpoint.sh | tee level1-output.txt
+
+      - name: Locate latest receipt
+        run: |
+          LATEST=$(ls -t receipts/root-continuity/*.json | head -1)
+          echo "$LATEST" | tee latest-receipt-path.txt
+          echo "LATEST=$LATEST" >> "$GITHUB_ENV"
+
+      - name: Level 2 - verify receipt
+        run: |
+          python3 scripts/verify_root_continuity_receipt.py "$LATEST" | tee verifier-current-tip.txt
+
+      - name: Level 3 - generate replay oath
+        run: |
+          python3 scripts/generate_replay_oath.py \
+            "$LATEST" \
+            verifier-current-tip.txt \
+            "github-actions-public-witness" | tee level3-generator-output.txt
+          OATH=$(ls -t receipts/oaths/*.json | head -1)
+          echo "$OATH" | tee oath-path.txt
+          cat "$OATH" | python3 -m json.tool | tee oath.json
+
+      - name: Upload replay court artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: replay-court-public-run
+          path: |
+            level1-output.txt
+            latest-receipt-path.txt
+            verifier-current-tip.txt
+            level3-generator-output.txt
+            oath-path.txt
+            oath.json
+            receipts/oaths/*.json
+          if-no-files-found: error
