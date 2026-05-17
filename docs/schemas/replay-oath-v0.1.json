@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jsonwisdom/AL/docs/schemas/replay-oath-v0.1.json",
+  "title": "Replay Oath Schema",
+  "version": "0.1",
+  "type": "object",
+  "required": [
+    "oath_id",
+    "version",
+    "timestamp",
+    "receipt_id",
+    "receipt_ref",
+    "verdict",
+    "witness",
+    "observed",
+    "registry_match",
+    "signature",
+    "metadata"
+  ],
+  "properties": {
+    "oath_id": { "type": "string" },
+    "version": { "const": "0.1" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "receipt_id": { "type": "string" },
+    "receipt_ref": { "type": "string" },
+    "verdict": {
+      "enum": [
+        "REPLAY_CONFIRMED",
+        "REPLAY_REJECTED",
+        "WITNESS_UNOBSERVED"
+      ]
+    },
+    "witness": {
+      "type": "object",
+      "required": ["id", "type", "environment"],
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "enum": ["host", "container", "external", "ci"] },
+        "environment": { "type": "string" },
+        "environment_hash": { "type": "string", "pattern": "^sha256:" }
+      },
+      "additionalProperties": false
+    },
+    "observed": {
+      "type": "object",
+      "required": [
+        "receipt_hash",
+        "recorded_head",
+        "verification_mode",
+        "verification_output_hash"
+      ],
+      "properties": {
+        "receipt_hash": { "type": "string", "pattern": "^sha256:" },
+        "recorded_head": { "type": "string" },
+        "current_head": { "type": "string" },
+        "verification_mode": { "enum": ["current-tip", "historical"] },
+        "verification_output_hash": { "type": "string", "pattern": "^sha256:" },
+        "delta_ref": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "registry_match": { "type": "boolean" },
+    "signature": {
+      "type": "object",
+      "required": ["algorithm", "value", "signed_fields"],
+      "properties": {
+        "algorithm": { "enum": ["none", "ed25519"] },
+        "value": { "type": ["string", "null"] },
+        "signed_fields": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "notes": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
