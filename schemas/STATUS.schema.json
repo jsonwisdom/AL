@@ -1,0 +1,1 @@
+{"type":"object","required":["schema_version","status","replay_policy"],"properties":{"schema_version":{"const":"alms.status.v1"},"status":{"enum":["REPLAY_READY","REPLAY_CONFIRMED","REPLAY_DIVERGED"]},"replay_policy":{"const":"STRICT_BYTE_EQUALITY"}}}

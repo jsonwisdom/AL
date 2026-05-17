@@ -33,54 +33,56 @@
     "receipts": [
       {
         "path": "_truth/receipts/2026-05-09T00-00-00Z-attestation-ledger-root.json",
-        "hash": "sha256:88705a04c20e36f4d31781ddd15a5c67a1067903d1299b6d7ce0a6aa775f7bf1",
+        "hash": "sha256:fe8897c2fb0686d99679364e70aaa936b884e18aef371c0bbd8fbf37c1d19a26",
         "timestamp": "2026-05-09T00:00:00Z",
-        "claims": ["attestation-index-is-root-authority"],
+        "claims": [
+          "attestation-index-is-root-authority"
+        ],
         "size_bytes": 491
       },
       {
         "path": "_truth/receipts/root_authority_gap_audit_2026-05-14.json",
-        "hash": "sha256:7387cbc87784d49f0f0105c87c7a8470e885d60621c795d9375afc7755ffc0e6",
+        "hash": "sha256:a805bbbba83cca8b433eb9a52f79b237ec03706b08ae71928c6c66876b852c79",
         "timestamp": "2026-05-14T20:20:00Z",
         "claims": [
           "al-root-authority-boundary-audited",
           "github-public-files-are-not-canonical-without-index-binding",
           "openai-epoch-artifacts-remain-experimental-until-indexed-and-replay-linked"
         ],
-        "size_bytes": 1591
+        "size_bytes": 1498
       },
       {
         "path": "_truth/receipts/readme_proof_surface_clarification_2026-05-14.json",
-        "hash": "sha256:98c36b070b31c47db1cf98ad71e93ffbf5ee435c85638d987a2d7e189bbce4fb",
+        "hash": "sha256:e1c2ca6dbd09947cecbee1f6b08da96c85fd7d1b6bcbae36c4919e7f96c922a4",
         "timestamp": "2026-05-14T20:20:00Z",
         "claims": [
           "readme-proof-surface-clarified",
           "canonical-truth-source-is-receipt-index",
           "public-files-are-non-canonical-without-index-binding"
         ],
-        "size_bytes": 966
+        "size_bytes": 873
       },
       {
         "path": "_truth/receipts/repo_structure_attestation_2026-05-14.json",
-        "hash": "sha256:92fa4a3eae0847eadeb2433a3ececfebc3caf555d68efa6cfaa9a9df6f7a55a8",
+        "hash": "sha256:180e0987b66e7f4809d5e4878b4050be3df6eace0fa699b65ac429672e4c76fe",
         "timestamp": "2026-05-14T20:20:00Z",
         "claims": [
           "repo-structure-boundary-attested",
           "truth-receipts-directory-is-canonical-receipt-directory",
           "docs-receipts-data-are-public-working-surfaces-until-indexed"
         ],
-        "size_bytes": 1225
+        "size_bytes": 1132
       },
       {
         "path": "_truth/receipts/experimental_artifact_disclaimer_2026-05-14.json",
-        "hash": "sha256:1733ab9d19429fab6cf336029ea7f5800c6fa70ed125068c8d342d7c0ae4232b",
+        "hash": "sha256:9be1f96280a75e5da29d7cde1a1e7c411780f6a9329b5a138425f6c1c957267c",
         "timestamp": "2026-05-14T20:20:00Z",
         "claims": [
           "experimental-artifacts-disclaimed",
           "epoch-chain-artifacts-do-not-assert-public-legitimacy-claims",
           "index-binding-required-for-public-canon"
         ],
-        "size_bytes": 1211
+        "size_bytes": 1118
       }
     ]
   }
