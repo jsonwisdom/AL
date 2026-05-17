@@ -1,4 +1,4 @@
-# AL: THE REPLAY COURT — Game Mechanics v0.1
+# AL: THE REPLAY COURT — Game Mechanics v0.2
 
 This file defines the quantitative game layer for agents.
 
@@ -19,6 +19,30 @@ No level may be skipped.
 No blocked level may end without a next action.
 No docs-only pass counts as game progression.
 
+## Allowed Status Values
+
+Agents may only emit these level statuses:
+
+```text
+PASS
+FAIL
+UNOBSERVED
+PASS DOCS-ONLY
+```
+
+Forbidden invented statuses include but are not limited to:
+
+```text
+LOCKED
+SUSPENDED
+PENDING
+PARTIAL
+ASSUMED
+PROBABLY_PASS
+```
+
+Inventing a status is `DRIFT_FOUND: status_schema_drift`.
+
 ## Routes
 
 ```text
@@ -26,7 +50,7 @@ Route A — Local Execution
   Agent runs commands directly.
 
 Route B — Public Artifact Inspection
-  Agent inspects GitHub Actions artifacts.
+  Agent inspects public replay artifacts.
 
 Route C — Docs-Only Review
   Agent quotes live repo docs only.
@@ -42,6 +66,28 @@ else C
 
 No shell access is not a stop condition by itself.
 It only moves the agent from Route A to Route B.
+
+## Public Artifact Surfaces
+
+GitHub Actions artifact ZIPs may require authentication. If artifact ZIP contents cannot be read, agents must try public committed mirrors before falling back to Route C.
+
+Public committed mirrors, when present:
+
+```text
+artifacts/public/latest/level1-output.txt
+artifacts/public/latest/latest-receipt-path.txt
+artifacts/public/latest/verifier-current-tip.txt
+artifacts/public/latest/level3-generator-output.txt
+artifacts/public/latest/oath-path.txt
+artifacts/public/latest/oath.json
+```
+
+If neither artifact ZIP contents nor public committed mirrors can be read, report:
+
+```text
+PUBLIC RUNNER ARTIFACTS: UNOBSERVED
+ROUTE USED: C_DOCS_ONLY
+```
 
 ## Level Score Table
 
@@ -65,6 +111,7 @@ Award 20 points if one of these is observed:
 ```text
 Route A: stdout/stderr from ./scripts/root_continuity_checkpoint.sh
 Route B: public artifact level1-output.txt
+Route B mirror: artifacts/public/latest/level1-output.txt
 ```
 
 ### FAIL Conditions
@@ -85,12 +132,13 @@ Award 0 points and require NEXT ACTION if:
 ```text
 no shell access
 and no level1-output.txt artifact inspected
+and no artifacts/public/latest/level1-output.txt mirror inspected
 ```
 
 ### Required Next Action
 
 ```text
-Inspect public runner artifact level1-output.txt or trigger AL Replay Court Public Run.
+Inspect public runner artifact level1-output.txt, inspect artifacts/public/latest/level1-output.txt, or trigger AL Replay Court Public Run.
 ```
 
 ## Level 2 — Receipt Replay
@@ -102,6 +150,7 @@ Award 20 points if one of these is observed:
 ```text
 Route A: verifier stdout from python3 scripts/verify_root_continuity_receipt.py <receipt.json>
 Route B: public artifact verifier-current-tip.txt
+Route B mirror: artifacts/public/latest/verifier-current-tip.txt
 ```
 
 Required token:
@@ -127,12 +176,13 @@ Award 0 points and require NEXT ACTION if:
 ```text
 no verifier output
 and no verifier-current-tip.txt artifact inspected
+and no artifacts/public/latest/verifier-current-tip.txt mirror inspected
 ```
 
 ### Required Next Action
 
 ```text
-Inspect public runner artifact verifier-current-tip.txt.
+Inspect public runner artifact verifier-current-tip.txt or artifacts/public/latest/verifier-current-tip.txt.
 ```
 
 ## Level 3 — Replay Oath
@@ -144,6 +194,7 @@ Award 20 points if one of these is observed:
 ```text
 Route A: generated replay oath JSON
 Route B: public artifact oath.json
+Route B mirror: artifacts/public/latest/oath.json
 ```
 
 Required oath fields:
@@ -178,12 +229,13 @@ Award 0 points and require NEXT ACTION if:
 ```text
 no oath JSON observed
 and no oath.json artifact inspected
+and no artifacts/public/latest/oath.json mirror inspected
 ```
 
 ### Required Next Action
 
 ```text
-Inspect public runner artifact oath.json.
+Inspect public runner artifact oath.json or artifacts/public/latest/oath.json.
 ```
 
 ## Level 4 — Skill Boundary
@@ -316,6 +368,9 @@ contributor-eligible
 ```text
 ROUTE USED:
 A_LOCAL_EXECUTION / B_PUBLIC_ARTIFACTS / C_DOCS_ONLY
+
+PUBLIC RUNNER ARTIFACTS:
+OBSERVED / UNOBSERVED
 
 LEVEL 1:
 STATUS:
