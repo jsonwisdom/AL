@@ -31,3 +31,21 @@ jobs:
       - name: Court Verdict
         if: success()
         run: echo "🟢 MEMBRANE_HOLDING: Execution ≡ Registry verified by stranger runner"
+
+  docker-replay:
+    name: "Docker Chamber — Portable Replay Witness"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Build Replay Chamber
+        run: docker build -t al-court -f Dockerfile.replay .
+
+      - name: Execute Replay Chamber
+        run: docker run --rm al-court
+
+      - name: Chamber Verdict
+        if: success()
+        run: echo "🟢 CHAMBER_HOLDING: Docker replay confirmed public oath"
