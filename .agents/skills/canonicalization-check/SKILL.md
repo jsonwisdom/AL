@@ -30,6 +30,10 @@ Verify deterministic normalization and hashing behavior across replay environmen
 python3 src/matrix_runner.py
 ```
 
+## Inspection-Only Surface
+- `verify_browser.html` may inspect historical receipt hashes.
+- Browser inspection must not be treated as replay settlement.
+
 ## Receipt Path
 - `docs/forensic/`
 
