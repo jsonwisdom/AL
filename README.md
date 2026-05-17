@@ -85,6 +85,13 @@ docs/forensic/                         forensic memory
 Dockerfile.replay                      replay chamber
 ```
 
+## Level 4 Skill Witnesses
+
+- [`witness-replay`](./.agents/skills/witness-replay/SKILL.md)
+- [`receipt-audit`](./.agents/skills/receipt-audit/SKILL.md)
+- [`canonicalization-check`](./.agents/skills/canonicalization-check/SKILL.md)
+- [`anchor-readiness`](./.agents/skills/anchor-readiness/SKILL.md)
+
 ## Core Loop
 
 ```text
