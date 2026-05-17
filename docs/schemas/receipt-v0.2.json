@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jsonwisdom/AL/docs/schemas/receipt-v0.2.json",
+  "title": "Constitutional Receipt Schema",
+  "version": "0.2",
+  "type": "object",
+  "required": [
+    "receipt_id",
+    "version",
+    "timestamp",
+    "schema_hash",
+    "canonicalization",
+    "operation",
+    "authority",
+    "state",
+    "outcome",
+    "replay",
+    "signature",
+    "metadata"
+  ],
+  "properties": {
+    "receipt_id": { "type": "string" },
+    "version": { "const": "0.2" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "context_id": { "type": "string" },
+    "session_id": { "type": "string" },
+    "schema_hash": { "type": "string", "pattern": "^sha256:" },
+    "canonicalization": {
+      "type": "object",
+      "required": ["method", "unicode", "encoding", "line_endings"],
+      "properties": {
+        "method": { "const": "JCS" },
+        "unicode": { "const": "NFC" },
+        "encoding": { "const": "UTF-8" },
+        "line_endings": { "const": "LF" }
+      },
+      "additionalProperties": false
+    },
+    "operation": { "type": "object" },
+    "authority": { "type": "object" },
+    "state": { "type": "object" },
+    "checks": { "type": "object" },
+    "outcome": { "type": "object" },
+    "replay": { "type": "object" },
+    "signature": { "type": "object" },
+    "metadata": { "type": "object" }
+  },
+  "additionalProperties": false
+}
