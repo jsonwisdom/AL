@@ -91,6 +91,12 @@ RECEIPT_REJECTED
 
 ## Level 3 — Replay Oath
 
+### Status
+Schema live, generator pending.
+
+Manual oath JSON creation is possible by following `docs/schemas/replay-oath-v0.1.json`.
+No automated oath generator is shipped yet.
+
 ### Goal
 Create a witness statement about receipt replay.
 
@@ -109,6 +115,7 @@ Create a witness statement about receipt replay.
 
 - oath claims more than the verifier observed
 - oath lacks receipt reference
+- docs imply an automated oath generator exists before one is shipped
 
 ## Level 4 — Skill Boundary
 
@@ -161,7 +168,7 @@ Receipts do not depend on settlement.
 ```text
 Level 1: implemented
 Level 2: implemented
-Level 3: schema implemented
+Level 3: schema implemented, generator pending
 Level 4: skills implemented
 Level 5: design-ready, not active
 ```
