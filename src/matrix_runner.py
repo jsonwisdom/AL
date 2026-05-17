@@ -15,6 +15,10 @@ FIXTURES = {
     "AFP_NESTED_002": {
         "canonical": '{"children":[{"key":"a","value":1},{"key":"b","value":"string"},{"key":"nested","value":{"x":100,"y":200,"z":{"deep":true,"id":12345678901234567890}}}],"depth":4,"metadata":{"hash_algorithm":"blake2b","version":"AFP_NESTED_002"},"type":"nested_scope"}',
         "expected_sha256": "75fe512e17fd630336da1554228b68c1f821066b9b5d0d7b3c078101dabc0c3a"
+    },
+    "UNICODE_EDGE_002": {
+        "canonical": '{"case":"unicode_normalization","expected_form":"NFC","fixture":"UNICODE_EDGE_002","pairs":[{"decomposed":"e\\u0301","label":"latin_e_acute","normalized":"\\u00e9"},{"decomposed":"A\\u030a","label":"latin_a_ring","normalized":"\\u00c5"},{"decomposed":"\\u212b","label":"angstrom_sign","normalized":"\\u00c5"}],"version":"1.0"}',
+        "expected_sha256": "52336cd649d551e306837e6698557cc6fd53b5461c28a7b738a3e2868acbad25"
     }
 }
 
