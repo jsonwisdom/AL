@@ -65,4 +65,4 @@ flowchart TD
 - NY Climate-Economic Stack preserved as first civic proof
 - Receipts: NY-001 through NY-012
 - Guardrails: $0 BigQuery-only, no interpolation, honest sparsity
-- Public proof: https://jsonwisdom.github.io/AL/computer-wisdom-public-proof.html
+- Public proof: https://jsonwisdom.github.io/AL/proof/computer-wisdom-public-proof.html
