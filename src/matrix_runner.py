@@ -3,7 +3,9 @@
 Deterministic, interpreter-agnostic verification matrix."""
 
 import hashlib
+import platform
 import sys
+from pathlib import Path
 
 FIXTURES = {
     "AFP_MINIMAL_001": {
@@ -17,12 +19,22 @@ FIXTURES = {
 }
 
 
+def witness_identity():
+    if Path("/.dockerenv").exists():
+        return "CHAMBER_JUDGE"
+    return "HOST_CLERK"
+
+
 def verify_fixture(fixture_id, canonical_str, expected_root):
     actual = hashlib.sha256(canonical_str.encode("utf-8")).hexdigest()
     return actual == expected_root, actual
 
 
 def main():
+    witness = witness_identity()
+    print(f"WITNESS: {witness}")
+    print(f"PYTHON: {platform.python_version()}")
+
     failures = []
     for fixture_id, data in FIXTURES.items():
         passed, actual = verify_fixture(
@@ -30,6 +42,8 @@ def main():
             data["canonical"],
             data["expected_sha256"],
         )
+        status = "PASS" if passed else "FAIL"
+        print(f"{status}: {fixture_id}: {actual}")
         if not passed:
             failures.append(
                 f"{fixture_id}: expected {data['expected_sha256']}, got {actual}"
