@@ -1,91 +1,133 @@
-# AL — Attestation Ledger
-![Replay Status](https://github.com/jsonwisdom/AL/actions/workflows/replay.yml/badge.svg)
+# AL — Public Lab for Replayable AI Infrastructure
 
+**AL is not a framework. It is a public lab.**
 
-Public verifiable claims with cryptographic receipts.
+A living collection of primitives that make AI systems auditable, replayable, and settlement-ready once they touch reality.
 
-## Authority
-
-All authority resolves to:
-
-- **Receipt index:** `_truth/receipts/index.json`
-- **Public proof surface:** https://jsonwisdom.github.io/AL/proof/
-- **Receipt viewer:** https://jsonwisdom.github.io/AL/proof/index.html
-
-## Public Proof Surface
-
-Canonical URL: https://jsonwisdom.github.io/AL/proof/
-
-All proof pages live under this path. The named proof page is:
-https://jsonwisdom.github.io/AL/proof/computer-wisdom-public-proof.html
-
-No other URLs are authoritative. If a doc points elsewhere, that reference is stale.
-
-## Canonical Boundary
-
-The canonical truth source for this repository is `_truth/receipts/index.json`.
-
-Only receipts present in that index are authoritative AL claims. Public files in this repository are visible working surfaces, but visibility alone does not make a file canonical.
-
-Experimental artifacts, draft receipts, epoch-chain files, and working documents are **not canon** unless they are explicitly indexed and replay-linked through `_truth/receipts/index.json`.
-
-Epoch-chain artifacts do not assert public legitimacy claims unless the canonical index binds them as such.
-
-## Meme MetaVerse / War Board
-
-New public workflow surfaces:
-
-- `docs/MEME_METAVERSE_DAILY_DOCKER_DOCKETS.md`
-- `docs/specs/JAYS_MEME_RUBRIC_V1.md`
-- `docs/specs/JAYS_WISDOM_WAR_BOARD_V0_2.md`
-
-Core doctrine:
+This repo is structured as a game:
 
 ```text
-The joke can fly. The receipt must land.
+clone it
+play it
+break it
+extend it
 ```
 
-The War Board introduces provenance-aware meme governance:
+## Start Here
 
-- county-resolution vernacular records
-- attestation-aware docketing
-- collision-window inspection
-- `JOINT_ORIGIN` status for synchronous independent emergence
-- visible corrections and revocations
-- anti-ghost-anchor enforcement
+👉 [`GAME.md`](./GAME.md) — machine-readable game loop and current levels.
 
-## Verification
+## Current Level Status
 
-Pick a receipt from `_truth/receipts/index.json`, open the referenced JSON, inspect `claim`, `algorithm`, `commitment`, `timestamp`, and `signature`. A claim is public only when the receipt is present, indexed, and replay-linked.
+```text
+Level 1 — Continuity Drill      stable
+Level 2 — Receipt Replay        stable
+Level 3 — Replay Oath           schema live
+Level 4 — Skill Boundary        implemented
+Level 5 — x402 Settlement       design-ready, not active
+```
+
+## Quickstart
 
 ```bash
-# Browse the index
-cat _truth/receipts/index.json | jq '.index.receipts[] | {path, claims}'
-
-# Verify a specific receipt
-cat receipts/2025-04-10T08-30-00Z-attestation.json | jq '{claim, algorithm, timestamp, signature}'
+git clone https://github.com/jsonwisdom/AL.git
+cd AL
+chmod +x scripts/root_continuity_checkpoint.sh
+./scripts/root_continuity_checkpoint.sh
 ```
 
-## Structure
+Then verify the receipt:
 
-```txt
-AL/
-├── README.md
-├── docs/
-│   ├── proof/
-│   ├── specs/
-│   │   ├── JAYS_MEME_RUBRIC_V1.md
-│   │   └── JAYS_WISDOM_WAR_BOARD_V0_2.md
-│   ├── MEME_METAVERSE_DAILY_DOCKER_DOCKETS.md
-│   ├── ARCHITECTURE.md
-│   ├── DOCTRINE.md
-│   └── REPO_MAP.md
-├── _truth/
-│   └── receipts/
-├── receipts/
-└── data/
+```bash
+LATEST=$(ls -t receipts/root-continuity/*.json | head -1)
+python3 scripts/verify_root_continuity_receipt.py "$LATEST"
+python3 scripts/verify_root_continuity_receipt.py --historical "$LATEST"
+cat receipts/index.json | python3 -m json.tool
 ```
 
-## License
+## What You Should See
 
-See repository metadata.
+The drill should:
+
+- check the repo continuity state
+- emit a receipt JSON
+- validate the receipt JSON
+- update `receipts/index.json`
+
+The verifier should emit either:
+
+```text
+RECEIPT_CONFIRMED
+```
+
+or:
+
+```text
+RECEIPT_REJECTED: <reason>
+```
+
+Honest failure is useful. Drift is a finding.
+
+## What You Will Find Inside
+
+```text
+GAME.md                                game loop / levels
+VERIFY.md                              public replay law
+scripts/root_continuity_checkpoint.sh  Level 1 drill
+scripts/verify_root_continuity_receipt.py Level 2 verifier
+scripts/update_receipt_index.py        receipt registry updater
+receipts/index.json                    lightweight receipt registry
+docs/schemas/receipt-v0.2.json         receipt schema
+docs/schemas/replay-oath-v0.1.json     replay oath schema
+docs/constitutional/service-primitives.md plain-language primitives
+.agents/skills/                        bounded repo-local agent skills
+docs/forensic/                         forensic memory
+Dockerfile.replay                      replay chamber
+```
+
+## Core Loop
+
+```text
+operation
+→ receipt
+→ index
+→ replay verification
+→ oath
+→ optional settlement
+```
+
+## Current Doctrine
+
+```text
+No witness, no claim.
+No receipt, no ratification.
+No replay, no settlement.
+```
+
+Settlement is downstream from receipts.
+Payment does not create legitimacy.
+
+## How to Play
+
+1. Run Level 1.
+2. Verify the receipt with Level 2.
+3. Report the first honest failure or success.
+4. Extend a skill, receipt type, or verifier.
+5. Keep claims bounded by what replay proves.
+
+## What This Is Not
+
+This is not a token launch.
+This is not a finished protocol.
+This is not a claim of universal truth.
+
+It is an operational lab for making AI-adjacent systems more replayable, auditable, and honest about their own state.
+
+## Operating Principle
+
+```text
+No irreversible gods.
+Only recoverable continuity.
+```
+
+Clone → run → verify → extend.
