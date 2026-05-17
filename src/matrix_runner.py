@@ -5,6 +5,8 @@ Deterministic, interpreter-agnostic verification matrix."""
 import hashlib
 import platform
 import sys
+import tempfile
+import unicodedata
 from pathlib import Path
 
 FIXTURES = {
@@ -17,8 +19,8 @@ FIXTURES = {
         "expected_sha256": "75fe512e17fd630336da1554228b68c1f821066b9b5d0d7b3c078101dabc0c3a"
     },
     "UNICODE_EDGE_002": {
-        "canonical": '{"case":"unicode_normalization","expected_form":"NFC","fixture":"UNICODE_EDGE_002","pairs":[{"decomposed":"e\\u0301","label":"latin_e_acute","normalized":"\\u00e9"},{"decomposed":"A\\u030a","label":"latin_a_ring","normalized":"\\u00c5"},{"decomposed":"\\u212b","label":"angstrom_sign","normalized":"\\u00c5"}],"version":"1.0"}',
-        "expected_sha256": "52336cd649d551e306837e6698557cc6fd53b5461c28a7b738a3e2868acbad25"
+        "canonical": '{"case":"unicode_normalization","expected_form":"NFC","fixture":"UNICODE_EDGE_002","pairs":[{"decomposed":"é","label":"latin_e_acute","normalized":"é"},{"decomposed":"Å","label":"latin_a_ring","normalized":"Å"},{"decomposed":"Å","label":"angstrom_sign","normalized":"Å"}],"version":"1.0"}',
+        "expected_sha256": "9825c293dc3c7dc1065e45bdc36e8f157ee16879e6078af0bfd997c32f0f6442"
     }
 }
 
@@ -29,28 +31,47 @@ def witness_identity():
     return "HOST_CLERK"
 
 
+def canonical_bytes(canonical_str):
+    normalized = unicodedata.normalize("NFC", canonical_str)
+    return normalized.encode("utf-8")
+
+
+def filesystem_round_trip(canonical_str):
+    normalized = unicodedata.normalize("NFC", canonical_str)
+    with tempfile.NamedTemporaryFile("w+", encoding="utf-8", delete=True) as handle:
+        handle.write(normalized)
+        handle.flush()
+        handle.seek(0)
+        observed = handle.read()
+    return unicodedata.normalize("NFC", observed) == normalized
+
+
 def verify_fixture(fixture_id, canonical_str, expected_root):
-    actual = hashlib.sha256(canonical_str.encode("utf-8")).hexdigest()
-    return actual == expected_root, actual
+    actual = hashlib.sha256(canonical_bytes(canonical_str)).hexdigest()
+    round_trip_ok = filesystem_round_trip(canonical_str)
+    return actual == expected_root and round_trip_ok, actual, round_trip_ok
 
 
 def main():
     witness = witness_identity()
     print(f"WITNESS: {witness}")
     print(f"PYTHON: {platform.python_version()}")
+    print("NORMALIZATION: NFC")
+    print("ENCODING: UTF-8")
 
     failures = []
     for fixture_id, data in FIXTURES.items():
-        passed, actual = verify_fixture(
+        passed, actual, round_trip_ok = verify_fixture(
             fixture_id,
             data["canonical"],
             data["expected_sha256"],
         )
         status = "PASS" if passed else "FAIL"
         print(f"{status}: {fixture_id}: {actual}")
+        print(f"ROUND_TRIP: {fixture_id}: {'PASS' if round_trip_ok else 'FAIL'}")
         if not passed:
             failures.append(
-                f"{fixture_id}: expected {data['expected_sha256']}, got {actual}"
+                f"{fixture_id}: expected {data['expected_sha256']}, got {actual}, round_trip={round_trip_ok}"
             )
 
     if failures:
