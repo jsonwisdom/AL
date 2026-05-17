@@ -51,14 +51,43 @@ python3 scripts/verify_root_continuity_receipt.py "$LATEST"
 python3 scripts/verify_root_continuity_receipt.py --historical "$LATEST"
 ```
 
+### Output Contract
+
+Full verifier may print:
+
+```text
+RECEIPT_CONFIRMED
+RECEIPT_REJECTED
+mode: current-tip
+mode: historical
+```
+
+Browser verifier may print:
+
+```text
+HISTORICAL_HASH_MATCH
+HISTORICAL_HASH_MISMATCH
+FULL_REPLAY_STATUS: UNOBSERVED
+VERIFIER_MODE: BROWSER_STATIC_ONLY
+```
+
+Browser verifier must not print:
+
+```text
+RECEIPT_CONFIRMED
+RECEIPT_REJECTED
+```
+
 ### Win Condition
 
-- verifier emits `RECEIPT_CONFIRMED`
+- full verifier emits `RECEIPT_CONFIRMED`
+- browser verifier preserves `FULL_REPLAY_STATUS: UNOBSERVED`
 
 ### Failure Condition
 
-- verifier emits `RECEIPT_REJECTED`
+- full verifier emits `RECEIPT_REJECTED`
 - current-tip and historical mode are confused
+- browser verifier claims full replay
 
 ## Level 3 — Replay Oath
 
