@@ -8,29 +8,34 @@ on:
 
 jobs:
   stranger-court:
-    name: "Stranger Test — Execution ≡ Registry"
+    name: "Host Clerk — Python ${{ matrix.python-version }}"
     runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [ '3.8', '3.9', '3.10', '3.11', '3.12', '3.13' ]
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup Python
+      - name: Setup Python ${{ matrix.python-version }}
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
-          cache: 'pip'
+          python-version: ${{ matrix.python-version }}
 
       - name: Prepare Environment
         run: |
           chmod +x verify.sh
+          python --version
 
-      - name: Execute Public Oath (Clerk)
+      - name: Execute Public Oath (Host Clerk)
         run: ./verify.sh
 
       - name: Court Verdict
         if: success()
-        run: echo "🟢 MEMBRANE_HOLDING: Execution ≡ Registry verified by stranger runner"
+        run: echo "🟢 HOST_CLERK_HOLDING: Python ${{ matrix.python-version }} verified Execution ≡ Registry"
 
   docker-replay:
     name: "Docker Chamber — Portable Replay Witness"
