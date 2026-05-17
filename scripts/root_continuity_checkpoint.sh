@@ -14,6 +14,7 @@ OUT_FILE="$OUT_DIR/cr_${TIMESTAMP}_root_continuity.json"
 REPO_NAME="$(basename "$REPO_ROOT")"
 LOCAL_BARE_PATH="../constitutional-root/${REPO_NAME}.git"
 RESTORE_DOC="docs/restore.md"
+INDEX_SCRIPT="scripts/update_receipt_index.py"
 
 mkdir -p "$OUT_DIR"
 
@@ -39,6 +40,7 @@ if git ls-remote origin HEAD > /tmp/root_continuity_github_head.txt; then
   GITHUB_OK=true
 else
   GITHUB_OK=false
+  : > /tmp/root_continuity_github_head.txt
 fi
 
 echo "[5] checking mirror remote: codeberg"
@@ -95,6 +97,13 @@ EOF
 
 echo "[7] validating receipt JSON"
 python3 -m json.tool "$OUT_FILE" >/dev/null
+
+echo "[8] updating receipt index"
+if test -f "$INDEX_SCRIPT"; then
+  python3 "$INDEX_SCRIPT" "$OUT_FILE"
+else
+  echo "[WARN] receipt index updater missing: $INDEX_SCRIPT"
+fi
 
 cat "$OUT_FILE"
 
