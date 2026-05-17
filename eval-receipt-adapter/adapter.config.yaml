@@ -1,0 +1,18 @@
+system:
+  operator: "jaywisdom.base.eth"
+  environment: "production-eval"
+  version: "147.3"
+
+pipeline_targets:
+  dataset_source: "./test-fixtures/eval_dataset.json"
+  prompt_template: "./prompts/eval_v1_template.txt"
+  model_output: "./outputs/model_run_latest.json"
+
+storage:
+  l0_local_vault: "./receipts"
+  l0_gcs_bucket: "computer-wisdom-vault"
+  auto_upload_gcs: false
+
+attestation:
+  eas_schema_uid: "PENDING_SCHEMA_UID"
+  auto_attest_base: false
