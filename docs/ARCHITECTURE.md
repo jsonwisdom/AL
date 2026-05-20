@@ -1,68 +1,43 @@
-# ARCHITECTURE
+# jaywisdom.base.eth Receipt Machine Architecture
 
-AL is built as a verification machine, not a database.
+## Purpose
 
-## Three Layers
+jaywisdom.base.eth is the public identity root for Jay Wisdom's onchain store, receipt catalog, and verification system.
 
-**1. Civic Proof** — public datasets + verification
-- What the public sees and can check
-- NY income/climate receipts, proof pages, methodology notes
-- No hidden steps
+This repository is the constitutional staging layer. It prepares claims locally before any public witness is created.
 
-**2. Constitutional Machine** — replay / receipts / doctrine
-- Deterministic transforms
-- Every claim produces a receipt with source, query, parameters, output_hash
-- Replay is the only authority
+## Verification Order
 
-**3. Agent Infrastructure** — observers / validators / automation
-- Watchdogs that continuously re-run receipts
-- Validators check hashes and anchors
-- Automation prevents drift
+1. Git commit
+2. SHA256 manifest
+3. IPFS CID
+4. EAS attestation on Base
+5. Final receipt update
 
-## Verification Flow
+No artifact is ANCHORED until all required witness fields are real and recorded.
 
-~~~mermaid
-flowchart TD
-    A[Raw Source Material] --> B[Intake]
-    B --> C[Normalize]
-    C --> D[Canonical Output]
-    D --> E[Receipt]
-    E --> F
-    F --> G[Public Proof Surface]
-    F --> H[Anchor / Attestation]
-    E --> I[Replay]
-    I --> J[Observer Verification]
-    J --> K[Verdict]
-    subgraph Civic Proof
-      G
-      K
-    end
-    subgraph Constitutional Machine
-      C
-      D
-      E
-      F
-      I
-    end
-    subgraph Agent Infrastructure
-      J
-    end
-~~~
+## Core Directories
 
-## Data Path
+| Directory | Purpose |
+|---|---|
+| receipts/ | Root receipts and forensic proof objects |
+| schemas/ | EAS and verification schemas |
+| attestations/ | Draft and finalized witness payloads |
+| docs/ | Human-readable architecture and replay guide |
+| ledger/ | Public operational accounting, when added |
+| hooks/ | Zora/Base economic logic, when added |
+| store/ | Public sellable artifacts, when added |
 
-1. Intake: pull from authoritative source (ACS, GSOD, etc.)
-2. Normalize: deterministic SQL, no manual edits
-3. Canonical Output: CSV/JSON with stable ordering
-4. Receipt: JSON with query, params, hashes, timestamp
-5. Hash: sha256 of output
-6. Public Proof: rendered HTML table linking receipts
-7. Anchor: optional on-chain attestation via ENS
-8. Replay: anyone reruns step 2-4 and compares hash
+## Current Root Receipt
 
-## Current Implementation
+Receipt: IDENTITY_ROOT_RECEIPT_001
 
-- NY Climate-Economic Stack preserved as first civic proof
-- Receipts: NY-001 through NY-012
-- Guardrails: $0 BigQuery-only, no interpolation, honest sparsity
-- Public proof: https://jsonwisdom.github.io/AL/proof/computer-wisdom-public-proof.html
+Claim: jaywisdom.base.eth is the public identity root for Jay Wisdom's onchain store and verification catalog.
+
+Current status: LOCAL_CANON_PENDING_ANCHOR
+
+## Canon
+
+Receipt first.  
+Anchor second.  
+Profit third.
