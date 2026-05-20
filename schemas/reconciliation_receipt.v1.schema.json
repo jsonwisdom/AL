@@ -1,0 +1,66 @@
+{
+  "$schema": "https://schema.epoch03/reconciliation_receipt.v1.schema.json",
+  "title": "reconciliation_receipt.v1",
+  "type": "object",
+  "required": ["schema_version","receipt_id","payment_evidence_ref","validation","transition","created_at","operator","invariants"],
+  "properties": {
+    "schema_version": { "type": "string", "const": "reconciliation_receipt.v1" },
+    "receipt_id": { "type": "string" },
+    "payment_evidence_ref": {
+      "type": "object",
+      "required": ["evidence_id","tx_ref_primary","artifact_id","receivable_id"],
+      "properties": {
+        "evidence_id": { "type": "string" },
+        "tx_ref_primary": { "type": "string" },
+        "artifact_id": { "type": "string" },
+        "receivable_id": { "type": "string" }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "required": ["evidence_exists","witness_verified","currency_match","amount_sufficient","tx_ref_unique","artifact_binding_valid","hash_valid"],
+      "properties": {
+        "evidence_exists": { "type": "boolean" },
+        "witness_verified": { "type": "boolean" },
+        "currency_match": { "type": "boolean" },
+        "amount_sufficient": { "type": "boolean" },
+        "tx_ref_unique": { "type": "boolean" },
+        "artifact_binding_valid": { "type": "boolean" },
+        "hash_valid": { "type": "boolean" },
+        "notes": { "type": "string" }
+      }
+    },
+    "transition": {
+      "type": "object",
+      "required": ["from_state","to_state","authorized"],
+      "properties": {
+        "from_state": { "type": "string", "enum": ["ARTIFACT_ANCHORED_PENDING_PAYMENT","PAYMENT_RECEIVED_PENDING_RECONCILIATION"] },
+        "to_state": { "type": "string", "enum": ["PAYMENT_RECEIVED_PENDING_RECONCILIATION","RECOGNIZED_REVENUE_SETTLED","NO_TRANSITION"] },
+        "authorized": { "type": "boolean" }
+      }
+    },
+    "created_at": { "type": "string", "format": "date-time" },
+    "operator": {
+      "type": "object",
+      "required": ["system_id"],
+      "properties": {
+        "system_id": { "type": "string" },
+        "actor_id": { "type": "string" }
+      }
+    },
+    "invariants": {
+      "type": "object",
+      "required": ["no_transition_without_valid_evidence","no_duplicate_tx_ref","no_currency_mismatch","no_negative_amounts","no_missing_witnesses","no_artifact_mismatch"],
+      "properties": {
+        "no_transition_without_valid_evidence": { "type": "boolean", "const": true },
+        "no_duplicate_tx_ref": { "type": "boolean", "const": true },
+        "no_currency_mismatch": { "type": "boolean", "const": true },
+        "no_negative_amounts": { "type": "boolean", "const": true },
+        "no_missing_witnesses": { "type": "boolean", "const": true },
+        "no_artifact_mismatch": { "type": "boolean", "const": true }
+      }
+    },
+    "meta": { "type": "object", "additionalProperties": true }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": "reconciliation_receipt.v1",
+  "receipt_id": "PENDING",
+  "payment_evidence_ref": {
+    "evidence_id": "",
+    "tx_ref_primary": "",
+    "artifact_id": "ARTIFACT_ALMS_001",
+    "receivable_id": "REVENUE_ARTIFACT_002"
+  },
+  "validation": {
+    "evidence_exists": false,
+    "witness_verified": false,
+    "currency_match": false,
+    "amount_sufficient": false,
+    "tx_ref_unique": false,
+    "artifact_binding_valid": false,
+    "hash_valid": false,
+    "notes": "TEMPLATE_ONLY_NO_VALIDATION"
+  },
+  "transition": {
+    "from_state": "ARTIFACT_ANCHORED_PENDING_PAYMENT",
+    "to_state": "NO_TRANSITION",
+    "authorized": false
+  },
+  "created_at": "",
+  "operator": {
+    "system_id": "",
+    "actor_id": ""
+  },
+  "invariants": {
+    "no_transition_without_valid_evidence": true,
+    "no_duplicate_tx_ref": true,
+    "no_currency_mismatch": true,
+    "no_negative_amounts": true,
+    "no_missing_witnesses": true,
+    "no_artifact_mismatch": true
+  },
+  "meta": {}
+}
