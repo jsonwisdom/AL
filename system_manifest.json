@@ -1,8 +1,9 @@
 {
   "schema_id": "JSONWISDOM_SYSTEM_MANIFEST_V1",
-  "version": "1.0.0",
-  "status": "PUBLIC_PRE_ANCHOR",
+  "version": "1.0.1",
+  "status": "GITHUB_ANCHORED",
   "created_at_utc": "2026-05-20T18:00:00Z",
+  "updated_at_utc": "2026-05-20T18:05:00Z",
   "operator": {
     "name": "Jason Wisdom",
     "handle": "jsonwisdom",
@@ -62,7 +63,8 @@
     "github": {
       "repo": "jsonwisdom/AL",
       "issue": 241,
-      "manifest_commit": null,
+      "manifest_commit": "b5990ead8ec7fcc8324b9cbc205f0bdc6b4e7adc",
+      "manifest_update_commit": null,
       "audit_pack_commit": null
     },
     "ens": {
@@ -96,7 +98,7 @@
   },
   "next_steps": [
     "Commit audit_v01 artifacts to jsonwisdom/AL.",
-    "Update witness_state.github.manifest_commit with this file commit SHA.",
+    "Set ENS text record constitution.v0 to the final GitHub commit SHA selected as the constitutional anchor.",
     "Recompute content_sha256 from committed audit artifacts.",
     "Optionally create Base tx or EAS attestation containing manifest commit and content hash.",
     "Only promote state after verifier replay succeeds."
