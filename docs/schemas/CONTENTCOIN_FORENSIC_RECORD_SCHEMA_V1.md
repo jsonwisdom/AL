@@ -50,6 +50,28 @@ This is not a fallback state.
 
 This is the default constitutional state when evidence is incomplete.
 
+### UNSUPPORTED_ATTRIBUTION_PROHIBITION_V1
+
+The field `unsupported_claims_promoted_into_attribution` MUST always be `NO` for a schema-valid record.
+
+```json
+{
+  "unsupported_claims_promoted_into_attribution": "NO"
+}
+```
+
+If unsupported claims are promoted into attribution, the record is schema-invalid and must be rewritten or reverted to:
+
+```json
+{
+  "classification": "INSUFFICIENT_EVIDENCE",
+  "forensic_status": "INSUFFICIENT_EVIDENCE",
+  "attribution_promotion": "REFUSED"
+}
+```
+
+This invariant prevents low-context objects, CMD-low surfaces, absence of evidence, reused referrers, sparse metadata, or incomplete claim splits from being inflated into attribution.
+
 ### INSUFFICIENT_EVIDENCE_REFUSAL_FLOW_V1
 
 The forensic engine MUST execute the following refusal flow before any attribution is promoted:
@@ -70,6 +92,7 @@ supported_claims is complete
 AND unsupported_claims is complete
 AND every promoted attribution maps to at least one supported claim
 AND no promoted attribution depends on an unsupported claim
+AND unsupported_claims_promoted_into_attribution == NO
 ```
 
 If this condition fails, the engine MUST set:
@@ -131,6 +154,7 @@ If the evidence type does not match the claim type, the attribution is schema-in
     "supported_claims": [],
     "unsupported_claims": [],
     "claim_boundary_check": "PASSED | FAILED",
+    "unsupported_claims_promoted_into_attribution": "NO",
     "attribution_promotion": "ALLOWED | REFUSED",
     "required_next_checks": [],
     "forensic_status": "string",
@@ -160,10 +184,11 @@ Every record must include:
 5. Unsupported Claims.
 6. Cognitive Metadata Deficiency analysis.
 7. Claim Boundary Check.
-8. Attribution Promotion Decision.
-9. Replay-Legitimate Next Checks.
-10. Boundary Rule.
-11. Deep Rule.
+8. Unsupported Attribution Prohibition.
+9. Attribution Promotion Decision.
+10. Replay-Legitimate Next Checks.
+11. Boundary Rule.
+12. Deep Rule.
 
 ---
 
@@ -243,10 +268,12 @@ AND classification declared
 AND supported_claims declared
 AND unsupported_claims declared
 AND claim_boundary_check declared
+AND unsupported_claims_promoted_into_attribution == NO
 AND attribution_promotion declared
 AND forensic_status declared
 AND uncertainty boundary declared
 AND CLAIM_BOUNDARY_ENFORCEMENT_V1 satisfied
+AND UNSUPPORTED_ATTRIBUTION_PROHIBITION_V1 satisfied
 AND INSUFFICIENT_EVIDENCE_REFUSAL_FLOW_V1 satisfied
 ```
 
