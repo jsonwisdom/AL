@@ -1,0 +1,104 @@
+{
+  "schema_id": "JSONWISDOM_SYSTEM_MANIFEST_V1",
+  "version": "1.0.0",
+  "status": "PUBLIC_PRE_ANCHOR",
+  "created_at_utc": "2026-05-20T18:00:00Z",
+  "operator": {
+    "name": "Jason Wisdom",
+    "handle": "jsonwisdom",
+    "basename": "jaywisdom.base.eth"
+  },
+  "purpose": "Record the honest current state of the JSONWisdom membrane, ALMS participation, and Replayable Resilience Audit v0.1 before any onchain promotion.",
+  "core_boundary": {
+    "rule": "Cognition may change internal state. Only receipts may promote truth state.",
+    "cognition_inside_membrane": true,
+    "receipts_cross_membrane": true,
+    "self_certification_allowed": false
+  },
+  "components": {
+    "membrane": {
+      "status": "ACTIVE",
+      "file": "membrane.json",
+      "commit_sha": "d1a13a3b87fe38a92d709b6c800962262bf37931",
+      "role": "Prevent cognition from self-promoting into public authority."
+    },
+    "cognitive_skills": {
+      "status": "ACTIVE",
+      "allowed_actions": [
+        "explore",
+        "classify",
+        "detect_drift",
+        "prepare_verifier_paths"
+      ],
+      "authority": "provisional_internal_state_only"
+    },
+    "alms": {
+      "status": "CAN_JUMP_IN",
+      "role": "receipt_engine_and_reconciliation_layer",
+      "authority": "schema_gated_reconciliation_only",
+      "rule": "ALMS does not make claims true. ALMS records whether replayable receipts exist and whether replay succeeds."
+    },
+    "replayable_resilience_audit_v01": {
+      "status": "GENERATED_NOT_PUBLISHED",
+      "target_path": "audit_v01/",
+      "required_files": [
+        "audit_v01/assumption_map.md",
+        "audit_v01/failure_mode_graph.json",
+        "audit_v01/kill_order_report.md",
+        "audit_v01/audit_receipt.json"
+      ],
+      "zip_artifact": "Replayable_Resilience_Audit_v01.zip",
+      "content_sha256": "9f3c...",
+      "content_sha256_status": "TRUNCATED_UNVERIFIED",
+      "note": "The audit artifact was referenced externally in conversation, but the full committed repo artifact is not yet present in this repository."
+    }
+  },
+  "claimed_merkle_root": {
+    "value": "835ef176896f17e1a0e5c6a689ae2b47dc48bd84371ca5607394be8f058c31b2",
+    "status": "UNVERIFIED_IDENTIFIER",
+    "reason": "Root was claimed but no leaf list, canonicalization rule, ENS record, Base tx, or EAS UID has been independently verified."
+  },
+  "witness_state": {
+    "github": {
+      "repo": "jsonwisdom/AL",
+      "issue": 241,
+      "manifest_commit": null,
+      "audit_pack_commit": null
+    },
+    "ens": {
+      "name": "jaywisdom.base.eth",
+      "text_record": null
+    },
+    "base": {
+      "tx": null
+    },
+    "eas": {
+      "uid": null
+    }
+  },
+  "self_correction_event": {
+    "event_id": "NARRATIVE_TO_INFRASTRUCTURE_DOWNGRADE_001",
+    "description": "A prior claim that a Merkle root and offer page were anchored was downgraded to NEEDS_RECEIPTS because no public receipts were present.",
+    "result": "Claim promotion blocked. Product narrowed to Replayable Resilience Audit v0.1 pilot.",
+    "truth_state_after_event": "NEEDS_RECEIPTS"
+  },
+  "promotion_rules": {
+    "minimum_sellable_state": "GITHUB_ANCHORED",
+    "minimum_defensible_state": "PUBLIC_WITNESSED",
+    "minimum_verified_state": "VERIFIED",
+    "forbidden_claims": [
+      "anchored_without_tx_or_uid",
+      "verified_without_recompute",
+      "ens_complete_without_visible_text_record",
+      "client_ready_without_verifier_path",
+      "system_will_not_collapse"
+    ]
+  },
+  "next_steps": [
+    "Commit audit_v01 artifacts to jsonwisdom/AL.",
+    "Update witness_state.github.manifest_commit with this file commit SHA.",
+    "Recompute content_sha256 from committed audit artifacts.",
+    "Optionally create Base tx or EAS attestation containing manifest commit and content hash.",
+    "Only promote state after verifier replay succeeds."
+  ]
+}
