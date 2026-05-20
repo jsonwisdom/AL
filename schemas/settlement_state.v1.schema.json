@@ -1,0 +1,39 @@
+{
+  "schema": "settlement_state.v1",
+  "meta": {
+    "description": "Canonical settlement state object for ALMS-001 lineage",
+    "version": "1.0.0",
+    "status": "IMPERATIVE_AWAITING_EVIDENCE"
+  },
+  "fields": {
+    "artifact_ref": {
+      "type": "string",
+      "format": "SHA256",
+      "required": true,
+      "description": "Hash binding to the original REVENUE_ARTIFACT_002"
+    },
+    "settlement_status": {
+      "enum": ["PENDING", "VERIFIED", "DISPUTED", "REVERSED"],
+      "default": "PENDING"
+    },
+    "payment_proof": {
+      "type": "object",
+      "nullable": true,
+      "properties": {
+        "tx_hash": "string",
+        "timestamp": "iso8601",
+        "provider": "string",
+        "amount": "decimal",
+        "currency": "string"
+      }
+    },
+    "invariants_checked": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "constraints": {
+    "no_mutation": "locked until payment_evidence.v1 ingestion",
+    "no_revenue_recognition": "strictly prohibited until settlement_status == VERIFIED"
+  }
+}
