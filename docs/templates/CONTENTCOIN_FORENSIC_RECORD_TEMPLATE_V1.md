@@ -16,6 +16,33 @@ Use this template when evaluating Zora/Base ContentCoins, low-context onchain me
 
 ---
 
+## Constitutional Refusal Flow
+
+Every analysis must execute the following flow before attribution is allowed:
+
+```text
+OBSERVABLE_SURFACE
+→ CLAIM_EXTRACTION
+→ SUPPORTED_CLAIMS_LIST
+→ UNSUPPORTED_CLAIMS_LIST
+→ CLAIM_BOUNDARY_CHECK
+→ ATTRIBUTION_GATE
+```
+
+If the supported/unsupported split cannot be completed:
+
+```json
+{
+  "classification": "INSUFFICIENT_EVIDENCE",
+  "forensic_status": "INSUFFICIENT_EVIDENCE",
+  "attribution_promotion": "REFUSED"
+}
+```
+
+This is a lawful terminal state until additional evidence appears.
+
+---
+
 ## Record Header
 
 ```text
@@ -55,6 +82,8 @@ Factory-like deployment does not prove deception without supporting checks.
   "metadata_density": "EMPTY | SPARSE | PARTIAL | RICH",
   "lineage_confidence": "UNKNOWN | UNCONFIRMED_FACTORY_PATTERN | BYTECODE_MATCH_CONFIRMED | DEPLOYER_CLUSTER_CONFIRMED",
   "risk_flags": [],
+  "claim_boundary_check": "PASSED | FAILED",
+  "attribution_promotion": "ALLOWED | REFUSED",
   "forensic_status": "INSUFFICIENT_EVIDENCE_FOR_FARM_ATTRIBUTION"
 }
 ```
@@ -100,7 +129,27 @@ List claims that are tempting but not yet lawful.
 
 ---
 
-## 6. Cognitive Metadata Deficiency
+## 6. Claim Boundary Check
+
+```text
+supported_claims complete: YES | NO
+unsupported_claims complete: YES | NO
+all promoted attributions map to supported claims: YES | NO
+unsupported claims promoted into attribution: YES | NO
+```
+
+Rule:
+
+```text
+If any condition fails:
+→ claim_boundary_check = FAILED
+→ attribution_promotion = REFUSED
+→ classification = INSUFFICIENT_EVIDENCE
+```
+
+---
+
+## 7. Cognitive Metadata Deficiency
 
 Assess whether the object has enough semantic surface area for lawful interpretation.
 
@@ -110,7 +159,7 @@ The primary deficiency is <metadata/identity/narrative/lineage/attestation> insu
 
 ---
 
-## 7. Cognitive Metadata Density Inputs
+## 8. Cognitive Metadata Density Inputs
 
 ```json
 {
@@ -129,7 +178,7 @@ The primary deficiency is <metadata/identity/narrative/lineage/attestation> insu
 
 ---
 
-## 8. Replay-Legitimate Next Checks
+## 9. Replay-Legitimate Next Checks
 
 Select only the checks needed for the next classification transition.
 
@@ -145,7 +194,7 @@ Select only the checks needed for the next classification transition.
 
 ---
 
-## 9. Boundary Rule
+## 10. Boundary Rule
 
 ```text
 Low-attestation does not equal malicious origin.
@@ -155,7 +204,7 @@ A forensic system must classify what the evidence supports, not what the pattern
 
 ---
 
-## 10. Deep Rule
+## 11. Deep Rule
 
 ```text
 The future information war is not only truth versus lies.
@@ -174,6 +223,8 @@ Low-context objects produce attribution inflation unless cognitive metadata boun
 [ ] classification declared
 [ ] supported claims declared
 [ ] unsupported claims declared
+[ ] claim boundary check completed
+[ ] attribution promotion declared
 [ ] uncertainty boundary declared
 [ ] next checks declared
 [ ] cognitive metadata deficiency declared
