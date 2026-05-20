@@ -19,6 +19,39 @@ Every attribution must be bounded by receipts, observable surfaces, and explicit
 
 ---
 
+## Schema Invariant Block
+
+### CLAIM_BOUNDARY_ENFORCEMENT_V1
+
+If the analyst cannot complete the supported/unsupported claim split, the record MUST remain `INSUFFICIENT_EVIDENCE`.
+
+No inference may be promoted into attribution.
+
+No classification may exceed its evidentiary surface.
+
+A forensic record may not:
+
+- assert identity without identity evidence.
+- assert coordination without cluster evidence.
+- assert intent without behavioral evidence.
+- assert farm attribution without multi-signal confirmation.
+- assert narrative origin without narrative binding.
+- assert lineage without traceable funding, deployer, or receipt continuity.
+
+If any required support is absent, the record must preserve:
+
+```json
+{
+  "forensic_status": "INSUFFICIENT_EVIDENCE"
+}
+```
+
+This is not a fallback state.
+
+This is the default constitutional state when evidence is incomplete.
+
+---
+
 ## Canonical Record Object
 
 ```json
@@ -94,7 +127,7 @@ Use when creator identity, media, narrative, and provenance surfaces are suffici
 
 ### INSUFFICIENT_EVIDENCE
 
-Use when observable data is too sparse even for low-context classification.
+Use when observable data is too sparse even for low-context classification, or when the supported/unsupported claim split cannot be completed.
 
 ---
 
@@ -151,9 +184,12 @@ AND supported_claims declared
 AND unsupported_claims declared
 AND forensic_status declared
 AND uncertainty boundary declared
+AND CLAIM_BOUNDARY_ENFORCEMENT_V1 satisfied
 ```
 
 If any field is missing, the record is not schema-valid.
+
+If the supported/unsupported claim split is incomplete, the record must remain `INSUFFICIENT_EVIDENCE`.
 
 ---
 
