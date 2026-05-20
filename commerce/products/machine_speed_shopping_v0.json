@@ -1,0 +1,35 @@
+{
+  "schema_id": "JSONWISDOM_COMMERCE_PRODUCT_V1",
+  "product_id": "machine_speed_shopping_v0",
+  "title": "Machine Speed Shopping — Receipts Over Narrative Shirt",
+  "category": "tier_1_merch",
+  "price_usd": 25,
+  "constitution_v0": "e3a1fbffab785dd6ffa69cbcc17a19fec68130b9",
+  "commerce_thesis": "Machine-speed commerce requires machine-speed receipts. Shopping becomes replayable verification instead of persuasion-only marketing.",
+  "shirt_text": "RECEIPTS OVER NARRATIVE",
+  "buyer_gets": [
+    "shirt fulfillment",
+    "digital commerce receipt",
+    "constitutional metadata reference"
+  ],
+  "promotion_event_type": "COMMERCE_WITNESS_EVENT",
+  "alms_requirements": {
+    "must_emit_receipt": true,
+    "must_include_constitution_v0": true,
+    "must_record_order_id": true,
+    "must_record_fulfillment_state": true
+  },
+  "commerce_runtime": {
+    "cognition": "generates product and positioning",
+    "jsonl": "records orders and fulfillment",
+    "alms": "reconciles payment and shipment state",
+    "witness": "externalizes receipt references",
+    "verifier": "replays commerce events"
+  },
+  "forbidden_claims": [
+    "verified_sale_without_payment",
+    "fulfilled_without_tracking_or_delivery_state",
+    "constitutional_anchor_without_replay"
+  ],
+  "status": "PRODUCT_DEFINITION_DRAFT"
+}
