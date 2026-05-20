@@ -1,0 +1,66 @@
+{
+  "schema_id": "JSONWISDOM_FAILURE_MODE_GRAPH_V1",
+  "audit_id": "replayable_resilience_audit_v01",
+  "target_claim": "A Merkle root and offer page were anchored to jaywisdom.base.eth and ready for commercial use.",
+  "verdict": "NEEDS_RECEIPTS",
+  "nodes": [
+    {
+      "id": "F1",
+      "name": "narrative_inflation",
+      "class": "promotion_failure",
+      "description": "A coherent sales narrative was promoted as if public infrastructure already existed.",
+      "severity": "HIGH",
+      "detected_by": "membrane_rule",
+      "blocked_by": ["receipt_required", "forbidden_claims"]
+    },
+    {
+      "id": "F2",
+      "name": "missing_anchor_receipt",
+      "class": "evidence_gap",
+      "description": "No GitHub commit, ENS text record, Base transaction, or EAS UID was available to support the anchor claim.",
+      "severity": "HIGH",
+      "detected_by": "proof_presence_check",
+      "blocked_by": ["proofs_present_null", "NEEDS_RECEIPTS"]
+    },
+    {
+      "id": "F3",
+      "name": "root_without_leaf_replay",
+      "class": "replay_gap",
+      "description": "A root value without canonical leaf list and hashing rule cannot be independently recomputed.",
+      "severity": "HIGH",
+      "detected_by": "recompute_impossibility",
+      "blocked_by": ["leaf_list_required", "canonicalization_required"]
+    },
+    {
+      "id": "F4",
+      "name": "scope_creep_to_revenue_cathedral",
+      "class": "commercial_overreach",
+      "description": "Multiple high-ticket products were described before the first receipt-backed product existed.",
+      "severity": "MEDIUM",
+      "detected_by": "scope_boundary_check",
+      "blocked_by": ["single_product_pilot", "minimum_sellable_state"]
+    },
+    {
+      "id": "F5",
+      "name": "ens_authority_confusion",
+      "class": "witness_layer_confusion",
+      "description": "ENS/Basename routing could be mistaken for sufficient authority instead of a human-readable pointer.",
+      "severity": "MEDIUM",
+      "detected_by": "layer_separation_rule",
+      "blocked_by": ["ens_not_sufficient", "base_or_eas_optional_witness"]
+    }
+  ],
+  "edges": [
+    {"from": "F1", "to": "F2", "relationship": "depends_on_missing_receipt"},
+    {"from": "F2", "to": "F3", "relationship": "prevents_replay"},
+    {"from": "F1", "to": "F4", "relationship": "enables_commercial_overreach"},
+    {"from": "F5", "to": "F1", "relationship": "can_mask_promotion_failure"}
+  ],
+  "mitigations": [
+    "Downgrade claim to NEEDS_RECEIPTS.",
+    "Commit audit artifacts before ENS/Base promotion.",
+    "Require recomputation before VERIFIED.",
+    "Separate GitHub artifact state, ENS routing, Base witness, and EAS structured attestation.",
+    "Sell only the receipt-backed pilot, not unverifiable certainty."
+  ]
+}
