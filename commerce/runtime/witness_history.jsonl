@@ -1,0 +1,4 @@
+{"type":"COMMERCE_RUNTIME_INIT","version":"1.0.0","status":"ACTIVE","constitution_v0":"e3a1fbffab785dd6ffa69cbcc17a19fec68130b9","rule":"Frozen JSON defines products. Append-only JSONL records commerce witness events."}
+{"type":"PRODUCT_DEFINITION_WITNESSED","product_id":"girl_math_artifact_v0","path":"commerce/products/girl_math_artifact_v0.json","commit_sha":"b7aa9f6c6763f43dc046c0f3f0953a2a4716e23c","price_usd":5,"status":"DRAFT_READY_FOR_STORE"}
+{"type":"PRODUCT_DEFINITION_WITNESSED","product_id":"machine_speed_shopping_v0","path":"commerce/products/machine_speed_shopping_v0.json","commit_sha":"bde10be5aaa93ae3bf2d6323043fb992e7d78aa8","price_usd":25,"status":"DRAFT_READY_FOR_STORE"}
+{"type":"COMMERCE_GOAL","goal_id":"first_50_usd","target_usd":50,"accepted_events":["PAYMENT_RECEIVED","FULFILLMENT_CONFIRMED","RECEIPT_EMITTED"],"status":"PENDING_SALES"}
