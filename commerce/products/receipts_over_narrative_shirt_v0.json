@@ -1,0 +1,38 @@
+{
+  "schema_id": "JSONWISDOM_COMMERCE_PRODUCT_V1",
+  "product_id": "receipts_over_narrative_shirt_v0",
+  "title": "Receipts Over Narrative Shirt",
+  "category": "tier_1_merch",
+  "price_usd": 25,
+  "gateway": "Fourthwall",
+  "gateway_listing_url": null,
+  "constitution_v0": "e3a1fbffab785dd6ffa69cbcc17a19fec68130b9",
+  "commerce_thesis": "A wearable entry point into replayable verification: identity first, doctrine underneath, receipt required at the sale boundary.",
+  "shirt_text": "RECEIPTS OVER NARRATIVE",
+  "buyer_gets": [
+    "shirt fulfillment through gateway",
+    "digital commerce receipt when payment is confirmed",
+    "constitutional metadata reference"
+  ],
+  "promotion_event_type": "COMMERCE_WITNESS_EVENT",
+  "alms_requirements": {
+    "must_emit_receipt": true,
+    "must_include_constitution_v0": true,
+    "must_record_order_id": true,
+    "must_record_payment_status": true,
+    "must_record_fulfillment_state": true,
+    "must_record_gateway_reference": true
+  },
+  "ready_for_sale_requirements": [
+    "gateway_listing_url_present",
+    "price_matches_gateway",
+    "product_definition_commit_captured"
+  ],
+  "forbidden_claims": [
+    "ready_for_sale_without_gateway_url",
+    "verified_sale_without_payment",
+    "fulfilled_without_tracking_or_delivery_state",
+    "constitutional_anchor_without_replay"
+  ],
+  "status": "PRODUCT_DEFINITION_ANCHORED_GATEWAY_PENDING"
+}
