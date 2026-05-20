@@ -1,0 +1,20 @@
+{
+  "receipt_id": "SETTLEMENT_TRANSITION_RULES_001",
+  "lineage": "ALMS-001",
+  "schema": "settlement_transition_rules.v1",
+  "prior_public_canon_commit": "035d2321567459d8de95d8728aa1ed8c5f7ce611",
+  "binds_to": {
+    "settlement_state_schema_sha256": "121b740b54e1da025cb2eb7be010ef58cf594bc98682999784f147246927d67a",
+    "payment_evidence_schema_sha256": "2fbf0a22a8f04d697e6a791833f8127d2c10c9d64a83353b0529aa6bb51871e4"
+  },
+  "transition_rules_sha256": "1c845d6821ca6792519bfa46a60cb2d9fe3465ddc633412e61c47824594b921f",
+  "current_state": "PAYMENT_EVIDENCE_REQUIRED",
+  "allowed_next_state": "PAYMENT_RECEIVED_PENDING_RECONCILIATION",
+  "forbidden_direct_states": [
+    "SETTLEMENT_VERIFIED",
+    "REVENUE_RECOGNIZED"
+  ],
+  "revenue_recognition": "PROHIBITED_UNTIL_SETTLEMENT_VERIFIED_AND_SEPARATE_RECEIPT_EXISTS",
+  "status": "TRANSITION_RULES_DEFINED_PENDING_COMMIT",
+  "git_commit": "PENDING"
+}
