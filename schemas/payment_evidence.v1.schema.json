@@ -1,0 +1,94 @@
+{
+  "$schema": "https://schema.epoch03/payment_evidence.v1.schema.json",
+  "title": "payment_evidence.v1",
+  "type": "object",
+  "required": ["schema_version","evidence_id","artifact_ref","economic_ref","settlement","amount","counterparties","evidence_proof","created_at","invariants"],
+  "properties": {
+    "schema_version": { "type": "string", "const": "payment_evidence.v1" },
+    "evidence_id": { "type": "string" },
+    "artifact_ref": {
+      "type": "object",
+      "required": ["artifact_id", "git_commit", "eas_uid"],
+      "properties": {
+        "artifact_id": { "type": "string" },
+        "git_commit": { "type": "string" },
+        "eas_uid": { "type": "string" }
+      }
+    },
+    "economic_ref": {
+      "type": "object",
+      "required": ["receivable_id", "expected_amount", "currency"],
+      "properties": {
+        "receivable_id": { "type": "string" },
+        "expected_amount": { "type": "string", "pattern": "^[0-9]+(\\.[0-9]{1,8})?$" },
+        "currency": { "type": "string" }
+      }
+    },
+    "settlement": {
+      "type": "object",
+      "required": ["network", "mechanism", "tx_ref", "settled_at"],
+      "properties": {
+        "network": { "type": "string" },
+        "mechanism": { "type": "string", "enum": ["ONCHAIN_TRANSFER","BANK_WIRE","ACH","SEPA","CARD_PROCESSOR","OTHER_FIAT_RAIL"] },
+        "tx_ref": {
+          "type": "object",
+          "required": ["primary"],
+          "properties": {
+            "primary": { "type": "string" },
+            "secondary": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "settled_at": { "type": "string", "format": "date-time" }
+      }
+    },
+    "amount": {
+      "type": "object",
+      "required": ["currency", "paid_amount"],
+      "properties": {
+        "currency": { "type": "string" },
+        "paid_amount": { "type": "string", "pattern": "^[0-9]+(\\.[0-9]{1,8})?$" },
+        "fees": { "type": "string", "pattern": "^[0-9]+(\\.[0-9]{1,8})?$" },
+        "net_amount": { "type": "string", "pattern": "^[0-9]+(\\.[0-9]{1,8})?$" }
+      }
+    },
+    "counterparties": {
+      "type": "object",
+      "required": ["payer", "payee"],
+      "properties": {
+        "payer": { "type": "object", "required": ["legal_name"], "properties": { "legal_name": { "type": "string" }, "account_ref": { "type": "string" }, "identifier": { "type": "string" } } },
+        "payee": { "type": "object", "required": ["legal_name"], "properties": { "legal_name": { "type": "string" }, "account_ref": { "type": "string" }, "identifier": { "type": "string" } } }
+      }
+    },
+    "evidence_proof": {
+      "type": "object",
+      "required": ["payload_hash", "payload_locator", "hash_algorithm", "witnesses"],
+      "properties": {
+        "payload_hash": { "type": "string" },
+        "hash_algorithm": { "type": "string", "enum": ["sha256", "keccak256"] },
+        "payload_locator": {
+          "type": "array",
+          "items": { "type": "object", "required": ["type", "value"], "properties": { "type": { "type": "string", "enum": ["IPFS_CID","HTTPS_URL","BANK_STATEMENT_REF","PROCESSOR_PORTAL_REF","INTERNAL_DOC_ID"] }, "value": { "type": "string" } } }
+        },
+        "witnesses": {
+          "type": "array",
+          "items": { "type": "object", "required": ["type", "value"], "properties": { "type": { "type": "string", "enum": ["EAS_ATTESTATION","ONCHAIN_CONTRACT_EVENT","BANK_SIGNATURE","PROCESSOR_SIGNATURE","INTERNAL_SYSTEM_SIGNATURE"] }, "value": { "type": "string" } } }
+        }
+      }
+    },
+    "created_at": { "type": "string", "format": "date-time" },
+    "operator": { "type": "object", "required": ["system_id"], "properties": { "system_id": { "type": "string" }, "actor_id": { "type": "string" } } },
+    "invariants": {
+      "type": "object",
+      "required": ["no_revenue_without_payment_proof","currency_match_required","amount_non_negative","artifact_binding_required","payment_ref_uniqueness_required"],
+      "properties": {
+        "no_revenue_without_payment_proof": { "type": "boolean", "const": true },
+        "currency_match_required": { "type": "boolean", "const": true },
+        "amount_non_negative": { "type": "boolean", "const": true },
+        "artifact_binding_required": { "type": "boolean", "const": true },
+        "payment_ref_uniqueness_required": { "type": "boolean", "const": true, "description": "A settlement tx_ref.primary may not be reused across revenue entries." }
+      }
+    },
+    "meta": { "type": "object", "additionalProperties": true }
+  },
+  "additionalProperties": false
+}
