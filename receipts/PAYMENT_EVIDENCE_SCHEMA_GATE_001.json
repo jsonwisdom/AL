@@ -1,0 +1,13 @@
+{
+  "receipt_id": "PAYMENT_EVIDENCE_SCHEMA_GATE_001",
+  "lineage": "ALMS-001",
+  "schema": "payment_evidence.v1",
+  "prior_public_canon_commit": "e0e865c29a285a37d26a344c1c832df7b3a565d4",
+  "current_state": "PAYMENT_EVIDENCE_REQUIRED",
+  "gate": "CLOSED_UNTIL_VALID_PAYMENT_EVIDENCE",
+  "on_valid_evidence": "PAYMENT_RECEIVED_PENDING_RECONCILIATION",
+  "schema_sha256": "2fbf0a22a8f04d697e6a791833f8127d2c10c9d64a83353b0529aa6bb51871e4",
+  "git_commit": "PENDING",
+  "revenue_recognition": "PROHIBITED",
+  "status": "PAYMENT_EVIDENCE_SCHEMA_DEFINED_HASH_BOUND"
+}
