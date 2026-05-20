@@ -35,7 +35,8 @@ If the supported/unsupported split cannot be completed:
 {
   "classification": "INSUFFICIENT_EVIDENCE",
   "forensic_status": "INSUFFICIENT_EVIDENCE",
-  "attribution_promotion": "REFUSED"
+  "attribution_promotion": "REFUSED",
+  "unsupported_claims_promoted_into_attribution": "NO"
 }
 ```
 
@@ -83,6 +84,7 @@ Factory-like deployment does not prove deception without supporting checks.
   "lineage_confidence": "UNKNOWN | UNCONFIRMED_FACTORY_PATTERN | BYTECODE_MATCH_CONFIRMED | DEPLOYER_CLUSTER_CONFIRMED",
   "risk_flags": [],
   "claim_boundary_check": "PASSED | FAILED",
+  "unsupported_claims_promoted_into_attribution": "NO",
   "attribution_promotion": "ALLOWED | REFUSED",
   "forensic_status": "INSUFFICIENT_EVIDENCE_FOR_FARM_ATTRIBUTION"
 }
@@ -135,7 +137,7 @@ List claims that are tempting but not yet lawful.
 supported_claims complete: YES | NO
 unsupported_claims complete: YES | NO
 all promoted attributions map to supported claims: YES | NO
-unsupported claims promoted into attribution: YES | NO
+unsupported_claims_promoted_into_attribution: NO
 ```
 
 Rule:
@@ -149,7 +151,25 @@ If any condition fails:
 
 ---
 
-## 7. Cognitive Metadata Deficiency
+## 7. Unsupported Attribution Prohibition
+
+```text
+LOW_CONTEXT objects do not authorize attribution.
+CMD-low surfaces cannot be inflated into narrative.
+Absence of evidence cannot be treated as evidence of coordination.
+Incomplete claim splits must terminate in INSUFFICIENT_EVIDENCE.
+Attribution requires multi-signal, replay-verifiable support.
+```
+
+Constitutional invariant:
+
+```text
+unsupported_claims_promoted_into_attribution = NO
+```
+
+---
+
+## 8. Cognitive Metadata Deficiency
 
 Assess whether the object has enough semantic surface area for lawful interpretation.
 
@@ -159,7 +179,7 @@ The primary deficiency is <metadata/identity/narrative/lineage/attestation> insu
 
 ---
 
-## 8. Cognitive Metadata Density Inputs
+## 9. Cognitive Metadata Density Inputs
 
 ```json
 {
@@ -178,7 +198,7 @@ The primary deficiency is <metadata/identity/narrative/lineage/attestation> insu
 
 ---
 
-## 9. Replay-Legitimate Next Checks
+## 10. Replay-Legitimate Next Checks
 
 Select only the checks needed for the next classification transition.
 
@@ -194,7 +214,7 @@ Select only the checks needed for the next classification transition.
 
 ---
 
-## 10. Boundary Rule
+## 11. Boundary Rule
 
 ```text
 Low-attestation does not equal malicious origin.
@@ -204,7 +224,7 @@ A forensic system must classify what the evidence supports, not what the pattern
 
 ---
 
-## 11. Deep Rule
+## 12. Deep Rule
 
 ```text
 The future information war is not only truth versus lies.
@@ -224,6 +244,7 @@ Low-context objects produce attribution inflation unless cognitive metadata boun
 [ ] supported claims declared
 [ ] unsupported claims declared
 [ ] claim boundary check completed
+[ ] unsupported_claims_promoted_into_attribution = NO
 [ ] attribution promotion declared
 [ ] uncertainty boundary declared
 [ ] next checks declared
