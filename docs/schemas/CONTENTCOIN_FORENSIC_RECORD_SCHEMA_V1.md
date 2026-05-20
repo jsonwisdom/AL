@@ -50,6 +50,62 @@ This is not a fallback state.
 
 This is the default constitutional state when evidence is incomplete.
 
+### INSUFFICIENT_EVIDENCE_REFUSAL_FLOW_V1
+
+The forensic engine MUST execute the following refusal flow before any attribution is promoted:
+
+```text
+OBSERVABLE_SURFACE
+→ CLAIM_EXTRACTION
+→ SUPPORTED_CLAIMS_LIST
+→ UNSUPPORTED_CLAIMS_LIST
+→ CLAIM_BOUNDARY_CHECK
+→ ATTRIBUTION_GATE
+```
+
+The attribution gate is lawful only if:
+
+```text
+supported_claims is complete
+AND unsupported_claims is complete
+AND every promoted attribution maps to at least one supported claim
+AND no promoted attribution depends on an unsupported claim
+```
+
+If this condition fails, the engine MUST set:
+
+```json
+{
+  "classification": "INSUFFICIENT_EVIDENCE",
+  "forensic_status": "INSUFFICIENT_EVIDENCE",
+  "attribution_promotion": "REFUSED"
+}
+```
+
+This flow prevents:
+
+- narrative inflation.
+- epistemic drift.
+- adversarial overreach.
+- false certainty.
+- farm-attribution hallucination.
+- identity misbinding.
+
+### ATTRIBUTION_PROMOTION_RULE_V1
+
+A record may promote attribution only when the evidence type matches the claim type.
+
+```text
+identity claim → identity evidence required
+coordination claim → cluster evidence required
+intent claim → behavior evidence required
+farm claim → multi-signal confirmation required
+narrative-origin claim → narrative binding required
+lineage claim → deployer, funding, or receipt continuity required
+```
+
+If the evidence type does not match the claim type, the attribution is schema-invalid.
+
 ---
 
 ## Canonical Record Object
@@ -74,6 +130,8 @@ This is the default constitutional state when evidence is incomplete.
     "risk_flags": [],
     "supported_claims": [],
     "unsupported_claims": [],
+    "claim_boundary_check": "PASSED | FAILED",
+    "attribution_promotion": "ALLOWED | REFUSED",
     "required_next_checks": [],
     "forensic_status": "string",
     "cognitive_metadata_density": {
@@ -101,9 +159,11 @@ Every record must include:
 4. Supported Claims.
 5. Unsupported Claims.
 6. Cognitive Metadata Deficiency analysis.
-7. Replay-Legitimate Next Checks.
-8. Boundary Rule.
-9. Deep Rule.
+7. Claim Boundary Check.
+8. Attribution Promotion Decision.
+9. Replay-Legitimate Next Checks.
+10. Boundary Rule.
+11. Deep Rule.
 
 ---
 
@@ -182,14 +242,19 @@ AND contract_address exists
 AND classification declared
 AND supported_claims declared
 AND unsupported_claims declared
+AND claim_boundary_check declared
+AND attribution_promotion declared
 AND forensic_status declared
 AND uncertainty boundary declared
 AND CLAIM_BOUNDARY_ENFORCEMENT_V1 satisfied
+AND INSUFFICIENT_EVIDENCE_REFUSAL_FLOW_V1 satisfied
 ```
 
 If any field is missing, the record is not schema-valid.
 
 If the supported/unsupported claim split is incomplete, the record must remain `INSUFFICIENT_EVIDENCE`.
+
+If attribution promotion is refused, the classification must not exceed `INSUFFICIENT_EVIDENCE` unless new evidence is added and the record is updated.
 
 ---
 
