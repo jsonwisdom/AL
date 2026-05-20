@@ -1,0 +1,20 @@
+{
+  "release": "ALMS_REPEATABILITY_FRAMEWORK_V0_7",
+  "tagline": "Proof over narrative",
+  "status": "RELEASE_CANDIDATE",
+  "chain": [
+    "kernel_observation",
+    "canonical_frame",
+    "parent_linkage",
+    "merkle_inclusion",
+    "external_anchoring",
+    "cross_org_challenge",
+    "challenge_market",
+    "slashing",
+    "institutional_receipt",
+    "policy_gate",
+    "block_deploy"
+  ],
+  "root_rule": "A claim is legitimate only when its execution history can be reconstructed, challenged, and converged upon by independent observers.",
+  "final_lock_phrase": "v0.7 is not complete because it describes replay. v0.7 is complete because it fails unreplayable claims."
+}
