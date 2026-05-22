@@ -17,7 +17,8 @@
     },
     "hash_algorithm_specification": {
       "required": true,
-      "status": "MISSING",
+      "status": "PRESENT",
+      "source_path": "specs/guardrails/hash-algorithm.v1.json",
       "description": "Explicit digest algorithm and encoding rules used for content identity."
     },
     "replay_input_specification": {
