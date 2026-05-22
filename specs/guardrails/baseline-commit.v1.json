@@ -1,0 +1,12 @@
+{
+  "schema_id": "AL_BASELINE_COMMIT_ANCHOR_V1",
+  "status": "PRESENT",
+  "purpose": "Anchor the baseline git commit hash for replay comparison.",
+  "baseline_commit": "476eadad36ff2a977e9099b800d7019ff0b0905a",
+  "anchored_at_timestamp": "2026-05-22T03:32:27Z",
+  "lineage_rules": {
+    "ancestry_check": "Replay run target commits must have this baseline_commit as a direct historical ancestor.",
+    "divergence_limit": "Zero unauthorized file mutations between baseline and run target inside guardrail-managed paths."
+  },
+  "promotion_effect": "Satisfies baseline_commit_anchor only."
+}
