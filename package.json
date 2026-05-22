@@ -12,7 +12,9 @@
     "track001:verify": "node scripts/track001_verify.js",
     "witness:build": "tsc",
     "witness:emit:gauntlet": "tsx src/emitter.ts",
-    "witness:verify": "tsx src/verifier.ts"
+    "witness:verify": "tsx src/verifier.ts",
+    "guardrails:verify": "node scripts/verify-receipt.js",
+    "guardrails:replay": "node scripts/replay-verification.js"
   },
   "dependencies": {
     "@ethereum-attestation-service/eas-sdk": "^2.7.0",
