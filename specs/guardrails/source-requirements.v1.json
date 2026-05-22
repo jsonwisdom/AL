@@ -30,7 +30,8 @@
     },
     "deterministic_execution_contract": {
       "required": true,
-      "status": "MISSING",
+      "status": "PRESENT",
+      "source_path": "specs/guardrails/deterministic-execution.v1.json",
       "description": "Rules that define deterministic execution, failure behavior, and environment assumptions."
     },
     "baseline_commit_anchor": {
