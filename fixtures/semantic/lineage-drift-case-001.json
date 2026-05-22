@@ -1,0 +1,75 @@
+{
+  "case_id": "lineage-drift-case-001",
+  "target_evaluator_id": "evaluator_structural_strict",
+  "fixture_class": "LINEAGE_DRIFT_COMPARATIVE_FIXTURE",
+  "evidentiary_status": "NON_EVIDENTIARY_REFERENCE_PAYLOAD",
+  "substrate_anchor": {
+    "checkpoint": "a1b2c3d4e5f67890a1b2c3d4e5f67890a1b2c3d4e5f67890a1b2c3d4e5f67890",
+    "claim": "MMB February 2026 Budget Forecast: Biennium projection structural surplus is stable."
+  },
+  "comparative_timeline": [
+    {
+      "sequence": 1,
+      "state_label": "ANCHOR_INTEGRITY",
+      "timestamp": "2026-05-21T23:21:12Z",
+      "receipt_snapshot": {
+        "receipt_id": "27551e57480763e44e15f91e261b05ea1f8a32c2d35a5393afcf3afb584f0a48",
+        "version": "1.0",
+        "methodology_ref": {
+          "method_id": "algebraic-balance-audit",
+          "method_hash": "8c7b6a5f4e3d2c1b0a9f8e7d6c5b4a3f2e1d0c9b8a7f6e5d4c3b2a1f0e9d8c7b",
+          "parameters": {
+            "tolerance": "0.00"
+          }
+        },
+        "semantic_verdict": "APPROVED",
+        "replay_status": "UNTESTED",
+        "receipt_hash": {
+          "algorithm": "SHA-256",
+          "encoding": "lowercase_hex",
+          "input_rule": "canonical receipt JSON with receipt_hash omitted",
+          "value": "faa0159463e18434dd7d104df3f7e6160244aa75ad7eb96e398325de484feb86"
+        }
+      },
+      "telemetry_verdict": {
+        "identity_check": "HASH_MATCH",
+        "lineage_status": "COHERENT"
+      }
+    },
+    {
+      "sequence": 2,
+      "state_label": "DRIFT_DETECTED",
+      "timestamp": "2026-05-21T23:45:00Z",
+      "receipt_snapshot": {
+        "receipt_id": "27551e57480763e44e15f91e261b05ea1f8a32c2d35a5393afcf3afb584f0a48",
+        "version": "1.0",
+        "methodology_ref": {
+          "method_id": "algebraic-balance-audit",
+          "method_hash": "8c7b6a5f4e3d2c1b0a9f8e7d6c5b4a3f2e1d0c9b8a7f6e5d4c3b2a1f0e9d8c7b",
+          "parameters": {
+            "tolerance": "0.05"
+          }
+        },
+        "semantic_verdict": "APPROVED",
+        "replay_status": "UNTESTED",
+        "receipt_hash": {
+          "algorithm": "SHA-256",
+          "encoding": "lowercase_hex",
+          "input_rule": "canonical receipt JSON with receipt_hash omitted",
+          "value": "faa0159463e18434dd7d104df3f7e6160244aa75ad7eb96e398325de484feb86"
+        }
+      },
+      "telemetry_verdict": {
+        "identity_check": "MISMATCH",
+        "lineage_status": "CORRUPTED",
+        "analysis": {
+          "cause": "Parameter adjustment from 0.00 to 0.05 inside methodology_ref while preserving the prior declared receipt_hash value.",
+          "mechanical_result": "The identity checker rejects the block. Lineage continuity breaks at this sequence boundary."
+        }
+      }
+    }
+  ],
+  "semantic_judgment": null,
+  "promotion_status": "STUB_LOCKED",
+  "ghost_anchor_risk": false
+}
