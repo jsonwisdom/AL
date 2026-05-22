@@ -1,6 +1,6 @@
 {
   "schema_version": "alms.receipt_index.v1",
-  "last_updated": "2026-05-16T07:00:00Z",
+  "last_updated": "2026-05-22T01:40:00Z",
   "canonical_boundary": {
     "authoritative_index": "_truth/receipts/index.json",
     "binding_rule": "Only indexed and replay-linked receipts are canonical AL claims.",
@@ -16,7 +16,8 @@
       "_truth/receipts/root_authority_gap_audit_2026-05-14.json",
       "_truth/receipts/readme_proof_surface_clarification_2026-05-14.json",
       "_truth/receipts/repo_structure_attestation_2026-05-14.json",
-      "_truth/receipts/experimental_artifact_disclaimer_2026-05-14.json"
+      "_truth/receipts/experimental_artifact_disclaimer_2026-05-14.json",
+      "_truth/receipts/ens_website_target_leaf001_2026-05-22.json"
     ],
     "PENDING_REPLAY_BINDING": [
       "NY-001 through NY-012 referenced in historical documentation but not yet fully replay-bound in the canonical index"
@@ -29,7 +30,7 @@
     "NON_CANONICAL": []
   },
   "index": {
-    "total_receipts": 5,
+    "total_receipts": 6,
     "receipts": [
       {
         "path": "_truth/receipts/2026-05-09T00-00-00Z-attestation-ledger-root.json",
@@ -83,6 +84,19 @@
           "index-binding-required-for-public-canon"
         ],
         "size_bytes": 1118
+      },
+      {
+        "path": "_truth/receipts/ens_website_target_leaf001_2026-05-22.json",
+        "hash": "sha256:f136e1471f1422de481d125bfe1f62c5fea61718a1c70d9d3ec82af85707265c",
+        "timestamp": "2026-05-22T01:40:00Z",
+        "claims": [
+          "jaywisdom.base.eth-website-target-live-verified",
+          "al-dashboard-target-is-jsonwisdom-github-io-al-site",
+          "placeholder-repos-excluded-from-active-ens-target",
+          "github-issue-242-records-website-target-readiness",
+          "ens-website-target-leaf001-is-append-only"
+        ],
+        "size_bytes": 1383
       }
     ]
   }
