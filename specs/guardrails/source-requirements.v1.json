@@ -6,7 +6,8 @@
   "required_sources": {
     "canonicalization_algorithm_spec": {
       "required": true,
-      "status": "MISSING",
+      "status": "PRESENT",
+      "source_path": "specs/guardrails/canonicalization-algorithm.v1.json",
       "description": "Deterministic byte-level canonicalization rules for receipt artifacts."
     },
     "receipt_schema_target": {
