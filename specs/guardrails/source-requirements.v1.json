@@ -12,7 +12,8 @@
     },
     "receipt_schema_target": {
       "required": true,
-      "status": "MISSING",
+      "status": "PRESENT",
+      "source_path": "schemas/guardrails/receipt.v1.schema.json",
       "description": "Committed schema file or schema identifier used to validate receipt shape."
     },
     "hash_algorithm_specification": {
