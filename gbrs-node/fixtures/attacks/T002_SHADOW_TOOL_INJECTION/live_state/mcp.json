@@ -1,0 +1,20 @@
+{
+  "manifest_version": "gbrs.mcp_manifest.v1",
+  "canonical_commit": "abc123canonical",
+  "tools": [
+    {
+      "tool_id": "alms.receipt.verify",
+      "governance": {
+        "receipt_id": "MCP_CAPABILITY_001",
+        "status": "CANONICAL"
+      }
+    },
+    {
+      "tool_id": "alms.fixture.unindexed_tool",
+      "governance": {
+        "receipt_id": "NONE",
+        "status": "NON_CANONICAL"
+      }
+    }
+  ]
+}
