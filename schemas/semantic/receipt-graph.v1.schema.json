@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/jsonwisdom/AL/master/schemas/semantic/receipt-graph.v1.schema.json",
+  "title": "ReceiptGraphTopology",
+  "description": "Defines pure structural relationships, lineage paths, and checkpoint intersections of the observation layer. Epistemology, semantic weight, and truth arbitration are excluded.",
+  "type": "object",
+  "required": [
+    "version",
+    "nodes",
+    "edges",
+    "constraints"
+  ],
+  "properties": {
+    "version": {
+      "type": "string",
+      "enum": [
+        "1.0.0"
+      ]
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "type",
+          "properties"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique cryptographic or system identifier."
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "RECEIPT",
+              "EVALUATOR",
+              "SUBSTRATE_CHECKPOINT"
+            ]
+          },
+          "properties": {
+            "type": "object",
+            "properties": {
+              "timestamp": {
+                "type": "integer"
+              },
+              "block_height": {
+                "type": "integer"
+              },
+              "software_version": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "source",
+          "target",
+          "type"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "target": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "EVALUATED_AT",
+              "DERIVED_FROM",
+              "SHARES_SUBSTRATE",
+              "LINEAGE_BREAK"
+            ]
+          },
+          "properties": {
+            "type": "object",
+            "properties": {
+              "drifted_fields": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Only populated on LINEAGE_BREAK edges to list paths that diverged."
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "required": [
+        "semantic_weighting",
+        "authority_scoring",
+        "truth_ranking"
+      ],
+      "properties": {
+        "semantic_weighting": {
+          "type": "boolean",
+          "const": false,
+          "description": "Edges cannot carry subjective weight values."
+        },
+        "authority_scoring": {
+          "type": "boolean",
+          "const": false,
+          "description": "Nodes cannot maintain consensus centrality weights or legitimacy scores."
+        },
+        "truth_ranking": {
+          "type": "boolean",
+          "const": false,
+          "description": "Paths cannot be ranked based on truth correctness assumptions."
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
