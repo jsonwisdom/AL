@@ -36,7 +36,8 @@
     },
     "baseline_commit_anchor": {
       "required": true,
-      "status": "MISSING",
+      "status": "PRESENT",
+      "source_path": "specs/guardrails/baseline-commit.v1.json",
       "description": "Git commit hash used as the baseline for replay comparison."
     }
   },
