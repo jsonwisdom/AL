@@ -1,5 +1,5 @@
 # File: core/immune/cross_biome_hook.py
-# Version: v0.2.0-REFINED
+# Version: v0.2.1-FLAT-CONTRACT-ALIGNED
 # Status: INERT / DRY-CHECK ONLY
 # Dependency Hash: 045ff8a6246f428070a772346d33a76bf0c55795
 
@@ -18,7 +18,7 @@ class CrossBiomeDryCheckHook:
                               brp_manifest_path: str,
                               target_trace_path: str) -> Tuple[str, Dict[str, Any]]:
         """
-        Parses three static inputs, computes deterministic metrics from
+        Parses three static flat-contract inputs, computes deterministic metrics from
         declared fields, and returns a simulated status verdict. Zero state leakage.
         """
         try:
@@ -51,8 +51,18 @@ class CrossBiomeDryCheckHook:
                 "coercion_vector_blocked": str(rules.get(offending_vector))
             }
 
-        # 2. Simulated Collusion Assessment via Signature Entropy.
+        # 2. Validator Uniqueness Guard before Signature Entropy.
         validators = manifest.get("cross_biome_verification", {}).get("required_independent_validators", [])
+        if len(set(validators)) != len(validators):
+            return "COLLUSION_REJECTED", {
+                "reason": "Synthetic validator plurality detected",
+                "forensic_schema_version": "v0.2.1",
+                "total_pool_size": len(validators),
+                "unique_pool_size": len(set(validators)),
+                "intercept_stage": "VALIDATOR_UNIQUENESS_GUARD"
+            }
+
+        # 3. Simulated Collusion Assessment via Signature Entropy.
         seed = manifest.get("cross_biome_verification", {}).get("anti_collusion_entropy_seed", "")
 
         hasher = hashlib.sha256()
@@ -68,7 +78,7 @@ class CrossBiomeDryCheckHook:
                 "exposure": manifest["cryptographic_escrow"]["challenge_stake_amount"]
             }
 
-        # 3. Deterministic Shadow Compression Calculation.
+        # 4. Deterministic Shadow Compression Calculation.
         signals = trace.get("internal_friction", {}).get("hidden_compression_signals", {})
         observed_entropy_drop = signals.get("entropy_drop", 0.0)
         estimated_unexplored = signals.get("replay_cost_surface", {}).get("estimated_unexplored_branches", 0)
