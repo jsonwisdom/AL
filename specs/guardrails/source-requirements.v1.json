@@ -24,7 +24,8 @@
     },
     "replay_input_specification": {
       "required": true,
-      "status": "MISSING",
+      "status": "PRESENT",
+      "source_path": "specs/guardrails/replay-inputs.v1.json",
       "description": "Declared input files and parameters required to reproduce replay checks."
     },
     "deterministic_execution_contract": {
