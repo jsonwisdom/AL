@@ -1,0 +1,38 @@
+{
+  "receipt_id": "27551e57480763e44e15f91e261b05ea1f8a32c2d35a5393afcf3afb584f0a48",
+  "version": "1.0",
+  "evaluator_id": "EVAL_LEGAL_001",
+  "substrate_checkpoint": "a1b2c3d4e5f67890123456789abcdef0123456789abcdef0123456789abcdef0",
+  "input_hash_matrix": {
+    "root": "f47d8e3c9b2a1f0e5d6c7b8a9f0e1d2c3b4a5f6e7d8c9b0a1f2e3d4c5b6a7f",
+    "paths": [
+      "observations/events/2026-05-21/incident-8472/raw",
+      "observations/events/2026-05-21/incident-8472/media_hash",
+      "observations/context/governance/2026-05"
+    ],
+    "omitted_paths_hash": "9f8e7d6c5b4a392817160514131211100f0e0d0c0b0a09080706050403020100"
+  },
+  "methodology_ref": {
+    "method_id": "LEGAL_PRECEDENT_2026_v2",
+    "method_hash": "3a4b5c6d7e8f901223456789abcdef0123456789abcdef0123456789abcdef01",
+    "parameters": {
+      "jurisdiction": "US_Federal",
+      "precedent_weight": "strict",
+      "statutes_included": [
+        "18 USC 1001",
+        "Constitution_1st_Amendment"
+      ]
+    }
+  },
+  "claim": "The observed event sequence constitutes a clear violation of 18 USC 1001 with no applicable First Amendment defense under current precedent.",
+  "semantic_verdict": "APPROVED",
+  "replay_status": "UNTESTED",
+  "output_hash": "e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6",
+  "timestamp": "2026-05-22T04:10:00Z",
+  "receipt_hash": {
+    "algorithm": "SHA-256",
+    "input_rule": "canonical receipt JSON with receipt_hash omitted",
+    "encoding": "lowercase_hex",
+    "value": "27551e57480763e44e15f91e261b05ea1f8a32c2d35a5393afcf3afb584f0a48"
+  }
+}
