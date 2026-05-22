@@ -1,0 +1,16 @@
+{
+  "schema_id": "AL_HASH_ALGORITHM_SPEC_V1",
+  "status": "PRESENT",
+  "algorithm": "SHA-256",
+  "input_boundary": "UTF-8 bytes emitted by AL_CANONICALIZATION_ALGORITHM_SPEC_V1",
+  "output_encoding": "lowercase_hex",
+  "digest_length_bytes": 32,
+  "digest_length_hex_chars": 64,
+  "forbidden_inputs": [
+    "raw_precanonical_json",
+    "pretty_printed_json",
+    "platform_native_object_serialization",
+    "stringified_debug_output"
+  ],
+  "promotion_effect": "Satisfies hash_algorithm_specification only."
+}
