@@ -1,5 +1,5 @@
 # File: core/immune/cross_biome_hook.py
-# Version: v0.1.1-REFERENCE
+# Version: v0.2.0-REFINED
 # Status: INERT / DRY-CHECK ONLY
 # Dependency Hash: 045ff8a6246f428070a772346d33a76bf0c55795
 
@@ -31,16 +31,27 @@ class CrossBiomeDryCheckHook:
         except FileNotFoundError as e:
             return "FIXTURE_MISSING_ERROR", {"error": str(e)}
 
-        # 1. Structural Spine Verification
+        # 1. Structural Spine Verification with v0.2 forensic failure payloads.
         invariants = compliance.get("constitutional_invariants", {})
         if invariants.get("compatibility_rule") != "ALL_REQUIRED":
-            return "STRUCTURAL_NON_COMPLIANCE", {"reason": "Compatibility rule mismatch"}
+            return "STRUCTURAL_NON_COMPLIANCE", {
+                "reason": "Compatibility rule mismatch",
+                "forensic_schema_version": "v0.2.0",
+                "intercept_stage": "SPINE_VERIFICATION",
+                "coercion_vector_blocked": str(invariants.get("compatibility_rule"))
+            }
 
         rules = invariants.get("rules", {})
         if rules.get("semantic_authority") is not False or rules.get("global_finality") is not False:
-            return "STRUCTURAL_NON_COMPLIANCE", {"reason": "Sovereignty protection failure"}
+            offending_vector = "semantic_authority" if rules.get("semantic_authority") is not False else "global_finality"
+            return "STRUCTURAL_NON_COMPLIANCE", {
+                "reason": "Sovereignty protection failure",
+                "forensic_schema_version": "v0.2.0",
+                "intercept_stage": "SPINE_VERIFICATION",
+                "coercion_vector_blocked": str(rules.get(offending_vector))
+            }
 
-        # 2. Simulated Collusion Assessment via Signature Entropy
+        # 2. Simulated Collusion Assessment via Signature Entropy.
         validators = manifest.get("cross_biome_verification", {}).get("required_independent_validators", [])
         seed = manifest.get("cross_biome_verification", {}).get("anti_collusion_entropy_seed", "")
 
@@ -57,7 +68,7 @@ class CrossBiomeDryCheckHook:
                 "exposure": manifest["cryptographic_escrow"]["challenge_stake_amount"]
             }
 
-        # 3. Deterministic Shadow Compression Calculation
+        # 3. Deterministic Shadow Compression Calculation.
         signals = trace.get("internal_friction", {}).get("hidden_compression_signals", {})
         observed_entropy_drop = signals.get("entropy_drop", 0.0)
         estimated_unexplored = signals.get("replay_cost_surface", {}).get("estimated_unexplored_branches", 0)
@@ -72,6 +83,7 @@ class CrossBiomeDryCheckHook:
                 "expected_floor": expected_floor
             }
 
+        # Success-path output remains v0.1-compatible.
         return "FORK_ENFORCED", {
             "simulated_action": "RELEASE_AND_REWARD",
             "calculated_sigma_h": calculated_sigma_h,
