@@ -1,0 +1,55 @@
+{
+  "schema_id": "AL_GUARDRAIL_HASH_OBSERVATION_V1",
+  "status": "STRUCTURAL_HASH_OBSERVATION_ONLY",
+  "verdict": "SUPPORTED",
+  "evaluation": null,
+  "promotion_status": "STUB_LOCKED",
+  "remote_commit": "9950ddba4b940d1525a1532371768104d24befba",
+  "remote_url": "https://github.com/jsonwisdom/AL/commit/9950ddba4b940d1525a1532371768104d24befba",
+  "files": [
+    {
+      "path": "specs/guardrails/source-requirements.v1.json",
+      "exists": true,
+      "parse_ok": true,
+      "sha256": "90361c6f2c462daa14d3fb7c8df5eed3a98a08c926d6b6e4484bec90995b97b6"
+    },
+    {
+      "path": "specs/guardrails/canonicalization-algorithm.v1.json",
+      "exists": true,
+      "parse_ok": true,
+      "sha256": "d2e70fc7b85544c98e697a3a336478b4f9ff76a9db72b3d04e3b6f4371f81457"
+    },
+    {
+      "path": "schemas/guardrails/receipt.v1.schema.json",
+      "exists": true,
+      "parse_ok": true,
+      "sha256": "1b3743effb626c5e6807f872650683d1139d5e7fe8fb78de177cf96e974d16d3"
+    },
+    {
+      "path": "specs/guardrails/hash-algorithm.v1.json",
+      "exists": true,
+      "parse_ok": true,
+      "sha256": "457cca24f5dcbcc749e121440887095612ba05d85c63c4eaeaef3890149579ed"
+    },
+    {
+      "path": "specs/guardrails/replay-inputs.v1.json",
+      "exists": true,
+      "parse_ok": true,
+      "sha256": "3d2bacec0b7bb1e935a6ef3408b6589526a0fd76768d7cd150430bd419989af7"
+    },
+    {
+      "path": "specs/guardrails/deterministic-execution.v1.json",
+      "exists": true,
+      "parse_ok": true,
+      "sha256": "25a066f611b921be139e2fbc9b7fbf24d3efb01cf11d38c94d40c708f53bcc75"
+    },
+    {
+      "path": "specs/guardrails/baseline-commit.v1.json",
+      "exists": true,
+      "parse_ok": true,
+      "sha256": "4e12e25b6de6b81bf10ad6afef1bd1651421e264032ff17d23be8ddaf51fda66"
+    }
+  ],
+  "validation_errors": [],
+  "ghost_anchor_risk": false
+}
