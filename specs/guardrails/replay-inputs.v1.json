@@ -1,0 +1,20 @@
+{
+  "schema_id": "AL_REPLAY_INPUT_SPECIFICATION_V1",
+  "status": "PRESENT",
+  "purpose": "Declare the committed input surfaces allowed during guardrail replay checks.",
+  "allowed_inputs": [
+    "specs/guardrails/source-requirements.v1.json",
+    "specs/guardrails/canonicalization-algorithm.v1.json",
+    "specs/guardrails/hash-algorithm.v1.json",
+    "schemas/guardrails/receipt.v1.schema.json"
+  ],
+  "forbidden_inputs": [
+    "uncommitted_local_files",
+    "environment_variables",
+    "network_responses",
+    "wallet_state",
+    "external_attestations",
+    "generated_runtime_cache"
+  ],
+  "promotion_effect": "Satisfies replay_input_specification only."
+}
