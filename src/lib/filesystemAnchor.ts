@@ -66,3 +66,52 @@ export async function readReceiptBundle(
     return null;
   }
 }
+
+export async function writeRaidChallenge(raid: { raidId: string; [key: string]: unknown }): Promise<AnchorWriteResult> {
+  const path = paths.raid(raid.raidId);
+  try {
+    await ensureParent(path);
+    await writeFile(path, JSON.stringify(raid, null, 2), { flag: "wx" });
+    return { ok: true, path, status: "WRITTEN" };
+  } catch (err: any) {
+    if (err?.code === "EEXIST") return { ok: false, path, status: "ALREADY_EXISTS", error: err.message };
+    return { ok: false, path, status: "WRITE_FAILED", error: err?.message ?? String(err) };
+  }
+}
+
+export async function readRaidChallenge(raidId: string): Promise<Record<string, unknown> | null> {
+  try {
+    return JSON.parse(await readFile(paths.raid(raidId), "utf8")) as Record<string, unknown>;
+  } catch {
+    return null;
+  }
+}
+
+export async function appendRaidResolution(
+  raidId: string,
+  resolution: { raidId: string; [key: string]: unknown }
+): Promise<AnchorWriteResult> {
+  const path = join("runtime-data", "raid-resolutions", `${raidId}.ndjson`);
+  try {
+    if (resolution.raidId !== raidId) {
+      return { ok: false, path, status: "WRITE_FAILED", error: "resolution raidId does not match target raidId" };
+    }
+    await ensureParent(path);
+    await appendFile(path, `${JSON.stringify(resolution)}\n`, { flag: "a" });
+    return { ok: true, path, status: "APPENDED" };
+  } catch (err: any) {
+    return { ok: false, path, status: "WRITE_FAILED", error: err?.message ?? String(err) };
+  }
+}
+
+export async function readRaidResolutionStream(raidId: string): Promise<unknown[]> {
+  const path = join("runtime-data", "raid-resolutions", `${raidId}.ndjson`);
+  try {
+    const raw = await readFile(path, "utf8");
+    return raw.split("\n").filter((line) => line.trim()).map((line) => JSON.parse(line));
+  } catch (err: any) {
+    if (err?.code === "ENOENT") return [];
+    throw err;
+  }
+}
+
