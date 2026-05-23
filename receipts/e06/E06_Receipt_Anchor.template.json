@@ -1,0 +1,36 @@
+{
+  "epoch": "E06",
+  "status": "PRE_ANCHOR",
+  "timestamp": "TO_BE_SET_AT_ANCHOR_TIME",
+  "actor": "Zero Cool",
+  "artifacts": {
+    "primary": {
+      "name": "TO_BE_SET",
+      "path": "TO_BE_SET",
+      "sha256": "TO_BE_SET"
+    }
+  },
+  "chain_of_custody": {
+    "ens_pointer": "E06|PENDING|cid=TO_BE_SET|commit=TO_BE_SET|root=TO_BE_SET",
+    "github_commit": "TO_BE_SET",
+    "root_hash": "TO_BE_SET",
+    "ens_pointer_commit": "TO_BE_SET"
+  },
+  "verification_protocol": "REPLAY_BEFORE_AUTHORITY",
+  "certificate_layout": {
+    "header": "E06 FINALIZED: VERIFICATION CERTIFICATE",
+    "footer": "Digital ABI Domain | PROTECT OUR ASSETS | AUTH: ZERO COOL",
+    "verification_instructions": [
+      "Resolve jaywisdom.eth or jaywisdom.base.eth TXT record for E06 pointer.",
+      "Clone jsonwisdom/AL at the anchored commit.",
+      "Compute SHA-256 of the primary artifact.",
+      "Compare artifact hash and discovery bundle root against this certificate."
+    ]
+  },
+  "constitutional_boundary": {
+    "identity": "DISCOVERY_ONLY",
+    "authority": "COMMIT_PLUS_BYTES_PLUS_HASH_PLUS_REPLAY_ONLY",
+    "placeholder_promotion": "FORBIDDEN"
+  },
+  "seal": "E06_CERTIFICATE_WAITING_FOR_REAL_BYTES"
+}
