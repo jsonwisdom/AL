@@ -1,0 +1,84 @@
+{
+  "artifact": "MULTI_OBSERVER_REPLAY_CLASS_001",
+  "purpose": "Define the observer authority geometry for constitutional replay before any external witness integration.",
+  "evidence_context": {
+    "continuity_receipt_ref": "CI_VERIFIED_PASS_RECEIPT_001",
+    "interpreter_lineage_ref": "FREEZE_INTERPRETER_HASH_LINEAGE_001",
+    "evidence_class": "INDEPENDENT_REPRODUCTION_OBSERVATION"
+  },
+  "observers": [
+    {
+      "observer_id": "OBSERVER_1",
+      "observer": "LOCAL_REPLAY",
+      "authority_class": "SEMANTIC_AUTHORITY",
+      "role": "Source of truth and final semantic arbiter.",
+      "constraints": [
+        "May determine replay meaning from local receipts, policy, and interpreter lineage.",
+        "Must remain replayable from committed artifacts.",
+        "Must not depend on CI or Base for semantic meaning."
+      ]
+    },
+    {
+      "observer_id": "OBSERVER_2",
+      "observer": "CI",
+      "authority_class": "REPRODUCTION_WITNESS",
+      "role": "Independent reproduction witness for build, vectors, negative tests, and emitter execution.",
+      "constraints": [
+        "May confirm reproducibility of committed local replay artifacts.",
+        "Must not redefine semantic meaning.",
+        "Must not promote itself to validation authority."
+      ]
+    },
+    {
+      "observer_id": "OBSERVER_3",
+      "observer": "BASE",
+      "authority_class": "OPTIONAL_EXISTENCE_WITNESS",
+      "role": "Optional external existence and timestamp witness for already-frozen repo artifacts.",
+      "constraints": [
+        "May attest artifact existence or timestamp only.",
+        "Must not validate replay semantics.",
+        "Must not override LOCAL_REPLAY.",
+        "Must not repair missing receipts.",
+        "Must not claim production readiness."
+      ]
+    }
+  ],
+  "constitutional_constraints": {
+    "semantic_non_mutation": "Only LOCAL_REPLAY holds semantic authority.",
+    "witness_non_inflation": "No witness may bootstrap itself into authority through first observation or external anchoring.",
+    "existence_vs_authority": "External witnesses may prove existence at time T, not correctness or meaning.",
+    "base_non_authority": "Base witness status is optional and non-semantic.",
+    "ci_non_authority": "CI reproduction is witness evidence, not semantic truth."
+  },
+  "frozen_anchors": {
+    "interpreter_hash": "sha256:b699acaf26a9ba0996228d8a4fd4411516c267fdf847df3ccdb265b0b6750e68",
+    "merkle_root": "sha256:9de1c6069dc84a3730f478ba1301c86536f7702203f314e271199ac5fbe42ae5"
+  },
+  "forbidden_promotions": [
+    "CI_TO_SEMANTIC_AUTHORITY",
+    "BASE_TO_SEMANTIC_AUTHORITY",
+    "BASE_TO_VALIDATION_WITNESS",
+    "WORKFLOW_SUCCESS_TO_PRODUCTION_READY",
+    "EXISTENCE_WITNESS_TO_MEANING_PROOF"
+  ],
+  "valid_future_sequence": [
+    "LOCAL_REPLAY_CONFIRMED",
+    "CI_REPRODUCTION_OBSERVED",
+    "REPO_CONTINUITY_RECEIPT_COMMITTED",
+    "INTERPRETER_HASH_LINEAGE_FROZEN",
+    "MULTI_OBSERVER_REPLAY_CLASS_DEFINED",
+    "OPTIONAL_EXTERNAL_EXISTENCE_WITNESS"
+  ],
+  "boundary_status": {
+    "local_replay_role": "SEMANTIC_AUTHORITY",
+    "ci_role": "REPRODUCTION_WITNESS_ONLY",
+    "base_witness_status": "NOT_CHECKED",
+    "production_readiness": "NOT_CLAIMED",
+    "authority_inflation_prevention": "ACTIVE"
+  },
+  "metadata": {
+    "timestamp": "2026-05-24T02:15:00Z",
+    "generated_by": "constitutional-replay-v1",
+    "artifact_id": "MULTI_OBSERVER_REPLAY_CLASS_001"
+  }
+}
