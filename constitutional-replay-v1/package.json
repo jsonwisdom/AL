@@ -1,0 +1,30 @@
+{
+  "name": "constitutional-replay-v1",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local-first constitutional replay kernel for AL receipts.",
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "test:vectors": "node --test dist/tests/*.test.js",
+    "emit:demo": "node dist/examples/treasury-agent/emit-demo.js",
+    "batch": "node dist/examples/treasury-agent/build-batch.js",
+    "replay": "node dist/cli/replay.js",
+    "demo": "./demo.sh",
+    "dashboard": "node dist/cli/dashboard-static.js"
+  },
+  "keywords": [
+    "ALMS",
+    "replay",
+    "receipts",
+    "constitutional-replay",
+    "local-first",
+    "base-witness-only"
+  ],
+  "author": "JayWisdom.eth",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.0.0"
+  }
+}
