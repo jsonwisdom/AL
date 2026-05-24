@@ -1,0 +1,41 @@
+{
+  "schema_id": "BADGE_INPUT_DERIVATION_SPEC_001",
+  "version": "1.0.0",
+  "purpose": "Derive BadgeInput exclusively from receipt lineage without UI inference or network authority.",
+  "source_of_truth": [
+    "receipts/continuity/BATCH_002_HASH_RECEIPT.json",
+    "MULTI_OBSERVER_REPLAY_CLASS_001"
+  ],
+  "mapping_logic": {
+    "evidence_class": "LINEAGE.evidence_class",
+    "witness_scope": "LINEAGE.witness_scope",
+    "authority_level": "LINEAGE.semantic_authority",
+    "replay_status": "CI_VERIFIED_PASS_RECEIPT_001.status"
+  },
+  "validation_rule": "IF_FIELD_MISSING_THEN_UNVERIFIED",
+  "edge_cases": {
+    "REPLAY_TIMEOUT": {
+      "render_as": "UNVERIFIED",
+      "reason": "A timeout is not a failed truth claim and not a success claim. It is absence of replay completion."
+    },
+    "REPLAY_ERROR": {
+      "render_as": "UNVERIFIED",
+      "reason": "Runtime error cannot promote authority."
+    },
+    "PARTIAL_RECEIPT": {
+      "render_as": "UNVERIFIED",
+      "reason": "Incomplete lineage cannot generate authority markers."
+    },
+    "UNKNOWN_OBSERVER": {
+      "render_as": "UNVERIFIED",
+      "reason": "Unregistered observer has no UI authority."
+    }
+  },
+  "constraints": {
+    "network_reads_for_badge_input": "FORBIDDEN",
+    "user_toggle_authority": "FORBIDDEN",
+    "witness_to_authority_promotion": "FORBIDDEN",
+    "fail_closed_default": "UNVERIFIED"
+  },
+  "doctrine": "Proof may travel. Meaning stays replayable."
+}
