@@ -1,0 +1,13 @@
+{
+  "receipt_id": "HEARTBEAT_STABLE_TO_READY",
+  "track": "TRACK_001",
+  "transition": "HEARTBEAT_STABLE → READY_FOR_CEREMONY",
+  "trigger": "observed_consecutive_green_commits >= 3",
+  "timestamp_utc": "2026-05-24T11:27:46Z",
+  "state_machine_position": {
+    "previous": "HEARTBEAT_STABLE",
+    "current": "READY_FOR_CEREMONY",
+    "next": "CEREMONY_IN_PROGRESS"
+  },
+  "verifier": "verifier/src/ceremony/receipt.rs"
+}
