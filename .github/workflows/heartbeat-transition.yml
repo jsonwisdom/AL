@@ -1,4 +1,5 @@
-name: Heartbeat State Transition
+name: Heartbeat Transition Court
+run-name: "Heartbeat Transition Court — receipt issuance for ${{ github.event.workflow_run.head_sha }}"
 
 on:
   workflow_run:
@@ -8,6 +9,7 @@ on:
 
 jobs:
   advance_state:
+    name: "Issue machine heartbeat receipt"
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
 
@@ -15,38 +17,42 @@ jobs:
       contents: write
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout constitutional repository
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Count consecutive green receipts
+      - name: Count constitutional GREEN receipts
         id: count
         run: |
           chmod +x scripts/count_consecutive_greens.sh
           CONSECUTIVE=$(bash scripts/count_consecutive_greens.sh)
+          NEXT=$((CONSECUTIVE + 1))
           echo "count=$CONSECUTIVE" >> $GITHUB_OUTPUT
+          echo "next=$NEXT" >> $GITHUB_OUTPUT
+          echo "Current constitutional GREEN count: $CONSECUTIVE"
+          echo "Next receipt number: $NEXT"
 
-      - name: Generate GREEN receipt
+      - name: Generate next GREEN heartbeat receipt
         env:
           GITHUB_EVENT_WORKFLOW_CONCLUSION: ${{ github.event.workflow_run.conclusion }}
         run: |
           chmod +x scripts/generate_green_receipt.sh
-          NEXT=$(( ${{ steps.count.outputs.count }} + 1 ))
-          bash scripts/generate_green_receipt.sh --number "$NEXT"
+          bash scripts/generate_green_receipt.sh --number "${{ steps.count.outputs.next }}"
 
-      - name: Generate transition receipt
-        if: ${{ steps.count.outputs.count + 1 >= 3 }}
+      - name: Generate HEARTBEAT_STABLE to READY_FOR_CEREMONY receipt
+        if: ${{ fromJSON(steps.count.outputs.next) >= 3 }}
         run: |
           chmod +x scripts/generate_transition_receipt.sh
           bash scripts/generate_transition_receipt.sh \
             --from HEARTBEAT_STABLE \
             --to READY_FOR_CEREMONY
 
-      - name: Commit and push machine-issued receipts
+      - name: Commit machine-issued constitutional receipts
         run: |
           git config user.name "AL Verifier Bot"
           git config user.email "verifier@al.truth"
           git add _truth/governance/*.json
-          git diff --cached --quiet || git commit -m "constitutional: machine-issued heartbeat receipts"
+          git diff --cached --quiet || git commit -m "constitutional: machine-issued heartbeat receipts [skip heartbeat-transition]"
           git push
