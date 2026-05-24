@@ -4,6 +4,7 @@ use serde::{Deserialize, Serialize};
 pub struct ReceiptV1 {
     pub receipt_version: String,
     pub receipt_id: String,
+    pub content_hash: String,
     pub created_at: String,
     pub intent: IntentBlock,
     pub execution: ExecutionBlock,
