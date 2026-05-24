@@ -5,8 +5,10 @@
   "description": "Local-first constitutional replay kernel for AL receipts.",
   "type": "module",
   "scripts": {
-    "build": "tsc --noEmit",
-    "emit:demo": "node examples/treasury-agent/emit-demo.js",
+    "typecheck": "tsc --noEmit",
+    "build:emit": "tsc",
+    "build": "npm run typecheck && npm run build:emit",
+    "emit:demo": "node dist/examples/treasury-agent/emit-demo.js",
     "demo": "./demo.sh",
     "dashboard": "echo 'dashboard-lite not implemented yet' && exit 2",
     "verify:base": "echo 'BASE_WITNESS_NOT_IMPLEMENTED_v0.1' && exit 2"
