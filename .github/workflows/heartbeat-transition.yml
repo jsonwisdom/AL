@@ -1,0 +1,52 @@
+name: Heartbeat State Transition
+
+on:
+  workflow_run:
+    workflows: ["Verifier Heartbeat"]
+    types: [completed]
+    branches: [master]
+
+jobs:
+  advance_state:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Count consecutive green receipts
+        id: count
+        run: |
+          chmod +x scripts/count_consecutive_greens.sh
+          CONSECUTIVE=$(bash scripts/count_consecutive_greens.sh)
+          echo "count=$CONSECUTIVE" >> $GITHUB_OUTPUT
+
+      - name: Generate GREEN receipt
+        env:
+          GITHUB_EVENT_WORKFLOW_CONCLUSION: ${{ github.event.workflow_run.conclusion }}
+        run: |
+          chmod +x scripts/generate_green_receipt.sh
+          NEXT=$(( ${{ steps.count.outputs.count }} + 1 ))
+          bash scripts/generate_green_receipt.sh --number "$NEXT"
+
+      - name: Generate transition receipt
+        if: ${{ steps.count.outputs.count + 1 >= 3 }}
+        run: |
+          chmod +x scripts/generate_transition_receipt.sh
+          bash scripts/generate_transition_receipt.sh \
+            --from HEARTBEAT_STABLE \
+            --to READY_FOR_CEREMONY
+
+      - name: Commit and push machine-issued receipts
+        run: |
+          git config user.name "AL Verifier Bot"
+          git config user.email "verifier@al.truth"
+          git add _truth/governance/*.json
+          git diff --cached --quiet || git commit -m "constitutional: machine-issued heartbeat receipts"
+          git push
