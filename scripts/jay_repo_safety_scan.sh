@@ -57,6 +57,31 @@ scan_fail() {
   fi
 }
 
+scan_env_file_leaks() {
+  echo "" | tee -a "$REPORT"
+  echo "## ENV_FILE_LEAKS" | tee -a "$REPORT"
+
+  matches="$(find "$ROOT" -type f \
+    -not -path '*/.git/*' \
+    -not -path '*/node_modules/*' \
+    -not -path '*/.next/*' \
+    -not -path '*/dist/*' \
+    -not -path '*/build/*' \
+    \( -name '.env' -o -name '.env.*' \) \
+    ! -name '.env.example' \
+    ! -name '.env.sample' \
+    ! -name '.env.template' \
+    -print 2>/dev/null || true)"
+
+  if [ -n "$matches" ]; then
+    printf '%s\n' "$matches" >> "$REPORT"
+    echo "STATUS=FAIL" | tee -a "$REPORT"
+    fail=1
+  else
+    echo "STATUS=PASS" | tee -a "$REPORT"
+  fi
+}
+
 scan_report() {
   local name="$1"
   local pattern="$2"
@@ -76,7 +101,7 @@ scan_report() {
 scan_fail "PRIVATE_KEY_PATTERNS" 'PRIVATE_KEY=|\"private_key\"[[:space:]]*:|BEGIN (RSA |EC |OPENSSH |)?PRIVATE KEY|wallet\.json|keystore|UTC--'
 scan_fail "SEED_OR_MNEMONIC_PATTERNS" 'MNEMONIC=|SEED_PHRASE=|seed phrase|recovery phrase'
 scan_fail "API_TOKEN_PATTERNS" 'ghp_[A-Za-z0-9_]{20,}|github_pat_[A-Za-z0-9_]{20,}|sk-[A-Za-z0-9]{20,}|xox[baprs]-[A-Za-z0-9-]+'
-scan_fail "ENV_FILE_LEAKS" '(^|/)\.env($|\.| )|\.env\.local|\.env\.production'
+scan_env_file_leaks
 scan_fail "GOOGLE_SERVICE_ACCOUNT_JSON" '"type"[[:space:]]*:[[:space:]]*"service_account"|"private_key_id"|"client_email"'
 scan_fail "RPC_URL_WITH_TOKEN" 'https://[^ ]*(alchemy|infura|quicknode|ankr|getblock)[^ ]*(key|token|secret|api)'
 
