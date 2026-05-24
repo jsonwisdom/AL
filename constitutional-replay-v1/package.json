@@ -6,12 +6,10 @@
   "type": "module",
   "scripts": {
     "build": "tsc --noEmit",
-    "test:vectors": "node --test dist/tests/*.test.js",
-    "emit:demo": "node dist/examples/treasury-agent/emit-demo.js",
-    "batch": "node dist/examples/treasury-agent/build-batch.js",
-    "replay": "node dist/cli/replay.js",
+    "emit:demo": "node examples/treasury-agent/emit-demo.js",
     "demo": "./demo.sh",
-    "dashboard": "node dist/cli/dashboard-static.js"
+    "dashboard": "echo 'dashboard-lite not implemented yet' && exit 2",
+    "verify:base": "echo 'BASE_WITNESS_NOT_IMPLEMENTED_v0.1' && exit 2"
   },
   "keywords": [
     "ALMS",
