@@ -62,6 +62,11 @@ export function merkleRoot(leaves: string[]): string {
 
     for (let index = 0; index < level.length; index += 2) {
       const left = level[index];
+
+      if (left === undefined) {
+        throw new BatchError("RECEIPT_HASH_MISSING", `index=${index}`);
+      }
+
       const right = level[index + 1] ?? left;
       next.push(hashPair(left, right));
     }
@@ -69,7 +74,13 @@ export function merkleRoot(leaves: string[]): string {
     level = next;
   }
 
-  return level[0];
+  const root = level[0];
+
+  if (root === undefined) {
+    throw new BatchError("EMPTY_BATCH");
+  }
+
+  return root;
 }
 
 export function summarizeReceipt(receipt: ReceiptV1, batch_id: string): ReceiptSummaryV1 {
