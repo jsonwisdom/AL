@@ -71,6 +71,31 @@ export function receiptHash(receipt: ReceiptV1): string {
   return canonicalHash(receipt);
 }
 
+function assertNonEmptyStringField(
+  r: Record<string, unknown>,
+  field: string
+): string {
+  const value = r[field];
+
+  if (typeof value !== "string" || value.length === 0) {
+    throw new ReceiptError("INVALID_RECEIPT_SCHEMA", field);
+  }
+
+  return value;
+}
+
+function assertRefusalCodeValue(value: unknown): RefusalCode | null {
+  if (value === null) {
+    return null;
+  }
+
+  if (typeof value !== "string" || value.length === 0) {
+    throw new ReceiptError("VERDICT_BINDING_MISMATCH", "invalid refusal_code");
+  }
+
+  return value as RefusalCode;
+}
+
 export function validateReceiptEnvelope(receipt: unknown): ReceiptV1 {
   if (typeof receipt !== "object" || receipt === null || Array.isArray(receipt)) {
     throw new ReceiptError("INVALID_RECEIPT_SCHEMA", "receipt must be an object");
@@ -113,40 +138,33 @@ export function validateReceiptEnvelope(receipt: unknown): ReceiptV1 {
     throw new ReceiptError("INVALID_RECEIPT_SCHEMA", "invalid result");
   }
 
-  if (r.result === "SUCCESS" && r.refusal_code !== null) {
+  const result = r.result;
+  const refusal_code = assertRefusalCodeValue(r.refusal_code);
+
+  if (result === "SUCCESS" && refusal_code !== null) {
     throw new ReceiptError("VERDICT_BINDING_MISMATCH", "success receipt cannot carry refusal_code");
   }
 
-  if (r.result === "REFUSAL" && typeof r.refusal_code !== "string") {
+  if (result === "REFUSAL" && refusal_code === null) {
     throw new ReceiptError("VERDICT_BINDING_MISMATCH", "refusal receipt requires refusal_code");
   }
 
-  const stringFields = [
-    "policy_hash",
-    "interpreter_hash",
-    "input_hash",
-    "context_hash",
-    "action"
-  ] as const;
-
-  for (const field of stringFields) {
-    const value = r[field];
-
-    if (typeof value !== "string" || value.length === 0) {
-      throw new ReceiptError("INVALID_RECEIPT_SCHEMA", field);
-    }
-  }
+  const policy_hash = assertNonEmptyStringField(r, "policy_hash");
+  const interpreter_hash = assertNonEmptyStringField(r, "interpreter_hash");
+  const input_hash = assertNonEmptyStringField(r, "input_hash");
+  const context_hash = assertNonEmptyStringField(r, "context_hash");
+  const action = assertNonEmptyStringField(r, "action");
 
   return {
-    receipt_version: r.receipt_version,
-    policy_hash: r.policy_hash as string,
-    policy_version: r.policy_version,
-    interpreter_hash: r.interpreter_hash as string,
-    replay_engine_version: r.replay_engine_version,
-    action: r.action as string,
-    input_hash: r.input_hash as string,
-    context_hash: r.context_hash as string,
-    result: r.result,
-    refusal_code: r.refusal_code as RefusalCode | null
-  } satisfies ReceiptV1;
+    receipt_version: RECEIPT_VERSION,
+    policy_hash,
+    policy_version: "policy.v1",
+    interpreter_hash,
+    replay_engine_version: REPLAY_ENGINE_VERSION,
+    action,
+    input_hash,
+    context_hash,
+    result,
+    refusal_code
+  };
 }
