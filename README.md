@@ -31,6 +31,54 @@ It is a **protocol for contestability** — the minimum viable constitution for 
 
 ---
 
+## Verifier (Executable Courthouse)
+
+The verifier is the replay supremacy engine.
+
+Current status:
+- Constitutional schemas frozen under `GOVERNANCE_V1`
+- Rust verifier crate active under `/verifier`
+- Golden heartbeat test committed
+- Current replay engine posture: `VERIFIER_ERROR` no-op court
+
+### Clean Operator Bring-Up
+
+Use a clean shallow clone of `master`:
+
+```bash
+rm -rf AL
+
+git clone --depth 1 --branch master https://github.com/jsonwisdom/AL.git AL
+
+cd AL/verifier
+cargo test
+```
+
+### Expected Current Heartbeat
+
+The current verifier intentionally emits:
+
+```json
+{
+  "status": "VERIFIER_ERROR"
+}
+```
+
+This is constitutional and expected until deterministic replay execution is implemented.
+
+### Golden Fixtures
+
+Fixtures live at:
+
+```text
+/tests/fixtures/receipt_valid_v1.json
+/tests/fixtures/verdict_verifier_error_v1.json
+```
+
+The golden test performs exact JSON equality against the committed verdict fixture.
+
+---
+
 ## Repo Rules
 
 1. **Canonical Immutability:** Schemas are never altered — only versioned with full audit trails.
