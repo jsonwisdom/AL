@@ -1,0 +1,61 @@
+{
+  "receipt": "BASE_BATCH_ARENA_RULES_001",
+  "purpose": "Define Base Batch Arena as a non-authoritative witness game mode.",
+  "player": "jaywisdom.base.eth",
+  "arena_mode": "BATCH_WITNESSING_ONLY",
+  "witness_scope": "EXISTENCE_ONLY",
+  "semantic_authority": "LOCAL_REPLAY",
+  "ci_role": "REPRODUCTION_WITNESS",
+  "base_role": "OPTIONAL_EXISTENCE_WITNESS",
+  "forbidden_promotions": {
+    "CI_TO_SEMANTIC_AUTHORITY": "FORBIDDEN",
+    "BASE_TO_SEMANTIC_AUTHORITY": "FORBIDDEN",
+    "EXISTENCE_WITNESS_TO_MEANING_PROOF": "FORBIDDEN",
+    "TRANSACTION_TO_TRUTH": "FORBIDDEN",
+    "TIMESTAMP_TO_CORRECTNESS": "FORBIDDEN",
+    "WORKFLOW_SUCCESS_TO_PRODUCTION_READY": "FORBIDDEN"
+  },
+  "levels": {
+    "level_1_repo_batch": {
+      "batch_id": "BATCH_001_REPO_CONTINUITY",
+      "includes": [
+        "CI_VERIFIED_PASS_RECEIPT_001",
+        "FREEZE_INTERPRETER_HASH_LINEAGE_001",
+        "MULTI_OBSERVER_REPLAY_CLASS_001"
+      ],
+      "victory_condition": "REPO_BATCH_CREATED_NO_BASE_CALL_NO_AUTHORITY_DRIFT"
+    },
+    "level_2_hash_batch": {
+      "batch_id": "BATCH_002_HASH",
+      "required_fields": [
+        "artifact_ids",
+        "commit_hashes",
+        "artifact_sha256_values",
+        "merkle_root",
+        "interpreter_hash",
+        "witness_scope=EXISTENCE_ONLY"
+      ],
+      "victory_condition": "BASE_PAYLOAD_READY_BASE_NOT_INVOKED"
+    },
+    "level_3_base_witness_payload": {
+      "payload_template": {
+        "player": "jaywisdom.base.eth",
+        "witness_scope": "EXISTENCE_ONLY",
+        "semantic_authority": "LOCAL_REPLAY",
+        "base_authority": "NONE",
+        "production_readiness": "NOT_CLAIMED"
+      },
+      "victory_condition": "BASE_SEES_ARTIFACT_BASE_DOES_NOT_JUDGE_ARTIFACT"
+    }
+  },
+  "boss_fight": {
+    "name": "AUTHORITY_INFLATION",
+    "rule": "BASE_MAY_WITNESS_BUT_NOT_INTERPRET",
+    "description": "Base may observe batch existence but may not derive, infer, or assert semantic meaning."
+  },
+  "metadata": {
+    "generated_by": "constitutional-replay-v1",
+    "timestamp": "2026-05-24T02:15:00Z",
+    "commit_intent": "Define Base as a gamified witness arena without semantic authority."
+  }
+}
