@@ -6,6 +6,7 @@ COUNT=0
 
 # Count frozen GREEN heartbeat receipts at or after the constitutional epoch boundary.
 # Pre-fab0e393 construction history is not constitutional history.
+# Receipt shapes may store GREEN either at top-level .status or nested heartbeat_court.status.
 while IFS= read -r receipt; do
   [ -n "$receipt" ] || continue
 
@@ -15,7 +16,7 @@ while IFS= read -r receipt; do
     continue
   fi
 
-  if git show "$commit:$receipt" 2>/dev/null | grep -q '"status"[[:space:]]*:[[:space:]]*"GREEN"'; then
+  if git show "$commit:$receipt" 2>/dev/null | grep -q '"GREEN"'; then
     COUNT=$((COUNT + 1))
   fi
 done < <(git ls-tree --name-only -r HEAD _truth/governance/ | grep 'HEARTBEAT_COURT_GREEN_RECEIPT_.*\.json$' | sort)
