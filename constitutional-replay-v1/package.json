@@ -10,6 +10,7 @@
     "build": "npm run typecheck && npm run build:emit",
     "emit:demo": "node dist/examples/treasury-agent/emit-demo.js",
     "test:vectors": "npm run build && node tests/policy-v1-vectors.test.js",
+    "test:negative": "npm run build && node tests/replay-divergence-negative.test.js",
     "demo": "./demo.sh",
     "dashboard": "echo 'dashboard-lite not implemented yet' && exit 2",
     "verify:base": "echo 'BASE_WITNESS_NOT_IMPLEMENTED_v0.1' && exit 2"
