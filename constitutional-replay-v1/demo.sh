@@ -50,14 +50,22 @@ echo ""
 echo "No Base witness claim emitted."
 echo "No production readiness claim emitted."
 echo ""
-echo "Executing sovereign local replay loop..."
+echo "Executing strict build/runtime alignment gates..."
 echo ""
 
+echo "[1/3] Typecheck"
+npm run typecheck
+
+echo "[2/3] Emit build artifacts"
+npm run build:emit
+
+echo "[3/3] Execute emitted replay demo"
 npm run emit:demo
 
 echo ""
-echo "✅ Constitutional loop complete."
-echo "Receipts are sovereign and replayable."
+echo "SUCCESS_CONFIRMED and REFUSAL_CONFIRMED paths executed."
+echo "WITNESS_STATUS=NOT_CHECKED"
 echo ""
+echo "Constitutional loop complete."
 echo "Replay remains semantic authority."
 echo "Base remains witness-only."
