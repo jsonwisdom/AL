@@ -1,4 +1,4 @@
-name: BATCH_002_HASH_LOCAL_REPLAY
+name: 🧌 BATCH_002_HASH_ARENA
 
 on:
   workflow_dispatch:
@@ -6,22 +6,32 @@ on:
     paths:
       - 'receipts/continuity/BASE_BATCH_ARENA_RULES_001.json'
       - 'receipts/continuity/HASH_CANONICALIZATION_RULES_001.json'
-      - 'scripts/canonical-sha256.js'
-      - 'scripts/merkle-pair-root.js'
+      - 'scripts/*.cjs'
       - '.github/workflows/batch-002-hash.yml'
 
 jobs:
   compute:
+    name: ⚔️ LEVEL_2_HASH_BATCH
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
+      - name: 🗺️ Enter Arena
         uses: actions/checkout@v4
 
-      - name: Compute BATCH_002 hashes
+      - name: 🌳 Compute Witness Leaves
         run: |
-          BASE_SHA=$(node scripts/canonical-sha256.js receipts/continuity/BASE_BATCH_ARENA_RULES_001.json)
-          HASH_RULES_SHA=$(node scripts/canonical-sha256.js receipts/continuity/HASH_CANONICALIZATION_RULES_001.json)
-          MERKLE_ROOT=$(node scripts/merkle-pair-root.js "$BASE_SHA" "$HASH_RULES_SHA")
+          echo "🧌 Entering Merkle Arena..."
+
+          BASE_SHA=$(node scripts/canonical-sha256.cjs receipts/continuity/BASE_BATCH_ARENA_RULES_001.json)
+          HASH_RULES_SHA=$(node scripts/canonical-sha256.cjs receipts/continuity/HASH_CANONICALIZATION_RULES_001.json)
+
+          echo "✅ Artifact leaf #1 forged"
+          echo "✅ Artifact leaf #2 forged"
+
+          MERKLE_ROOT=$(node scripts/merkle-pair-root.cjs "$BASE_SHA" "$HASH_RULES_SHA")
+
+          echo "🏆 AUTHORITY_INFLATION defeated"
+          echo "🌳 Deterministic Merkle root sealed"
 
           {
             echo "BASE_SHA=$BASE_SHA"
@@ -29,9 +39,10 @@ jobs:
             echo "MERKLE_ROOT=$MERKLE_ROOT"
             echo "BASE_STATUS=NOT_INVOKED"
             echo "SEMANTIC_AUTHORITY=LOCAL_REPLAY"
+            echo "ARENA_STATUS=LEVEL_2_COMPLETE"
           } | tee batch-002-hash-output.txt
 
-      - name: Upload BATCH_002 hash output
+      - name: 📦 Upload Witness Artifact
         uses: actions/upload-artifact@v4
         with:
           name: batch-002-hash-output
