@@ -1,0 +1,40 @@
+{
+  "receipt": "BATCH_002_HASH_RECEIPT",
+  "batch_id": "BATCH_002_HASH",
+  "arena": "BATCH_002_HASH_ARENA",
+  "level": "LEVEL_2_HASH_BATCH",
+  "boss": "AUTHORITY_INFLATION",
+  "status": "LOCAL_REPLAY_COMPUTED_BASE_NOT_INVOKED",
+  "base_status": "NOT_INVOKED",
+  "semantic_authority": "LOCAL_REPLAY",
+  "ci_role": "REPRODUCTION_WITNESS",
+  "arena_status": "LEVEL_2_COMPLETE",
+  "workflow_artifact": "batch-002-hash-output.txt",
+  "artifact_hashes": [
+    {
+      "artifact_id": "BASE_BATCH_ARENA_RULES_001",
+      "sha256": "670f56228147d3465d3f1d01d159b4a2e9ef906267085d375c347511abf4c8c8"
+    },
+    {
+      "artifact_id": "HASH_CANONICALIZATION_RULES_001",
+      "sha256": "1167d096f1b2261f82f65e93907eb7b1da91cdbbbe4a6ca1933019a53efee700"
+    }
+  ],
+  "merkle_construction": {
+    "algorithm": "SHA256",
+    "pair_rule": "SHA256(canonicalize([left_leaf, right_leaf]))",
+    "merkle_root": "1f739b1bd6144d031d213bccdebfc615af642077a383aae579d2394489b19343"
+  },
+  "forbidden_promotions_preserved": [
+    "BASE_TO_SEMANTIC_AUTHORITY",
+    "EXISTENCE_WITNESS_TO_MEANING_PROOF",
+    "TRANSACTION_TO_TRUTH",
+    "TIMESTAMP_TO_CORRECTNESS"
+  ],
+  "goblin_status": {
+    "banana_peel": "DEFEATED",
+    "boots": ".cjs",
+    "boss_bar": "CLEARED",
+    "loot_chest": "OPENED"
+  }
+}
