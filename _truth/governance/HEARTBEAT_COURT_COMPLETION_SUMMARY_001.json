@@ -1,0 +1,41 @@
+{
+  "summary_id": "HEARTBEAT_COURT_COMPLETION_001",
+  "court": "Heartbeat Court",
+  "track": "TRACK_001",
+  "final_state": "READY_FOR_CEREMONY",
+  "manual_override": false,
+  "machine_authority": true,
+  "green_receipts": [
+    {
+      "file": "HEARTBEAT_COURT_GREEN_RECEIPT_001.json",
+      "commit": "fab0e39388aa37c971ab4d172f189173e19b1d9b",
+      "timestamp": "2026-05-24T00:00:00Z"
+    },
+    {
+      "file": "HEARTBEAT_COURT_GREEN_RECEIPT_002.json",
+      "commit": "2e0c4fbc87a7a3edaf8ca85f8efd83fdd81d8ccf",
+      "timestamp": "2026-05-24T11:23:57Z"
+    },
+    {
+      "file": "HEARTBEAT_COURT_GREEN_RECEIPT_003.json",
+      "commit": "05a7f2f",
+      "timestamp": "2026-05-24T11:27:46Z"
+    }
+  ],
+  "transition_receipt": {
+    "file": "HEARTBEAT_STABLE_TO_READY_RECEIPT.json",
+    "from_state": "HEARTBEAT_STABLE",
+    "to_state": "READY_FOR_CEREMONY",
+    "trigger": "observed_consecutive_green_commits >= 3",
+    "timestamp": "2026-05-24T11:27:46Z"
+  },
+  "constitutional_laws": [
+    "No commit may enter history unless Heartbeat returns GREEN",
+    "No operator may override Heartbeat verdicts",
+    "Heartbeat receipts are constitutional evidence",
+    "A commit without a receipt is not part of history"
+  ],
+  "sealed_at_utc": "2026-05-24T11:30:00Z",
+  "next_chamber": "Ceremony Court",
+  "next_required_transition": "READY_FOR_CEREMONY → CEREMONY_IN_PROGRESS"
+}
