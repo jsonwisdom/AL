@@ -1,6 +1,7 @@
 use al_verifier::bootstrap::harness::{
     parse_receipt, parse_verdict, validate_receipt, validate_verdict, RECEIPT_V1,
 };
+use sha2::{Digest, Sha256};
 
 #[test]
 fn receipt_version_matches_constitution() {
@@ -34,6 +35,34 @@ fn observed_roots_are_merkle_prefixed() {
         .observed_roots
         .tool_graph_root
         .starts_with("merkle:"));
+}
+
+#[test]
+fn content_hash_matches_payload_fixture_bytes() {
+    let receipt_data = include_str!("fixtures/receipt_valid_v1.json");
+    let receipt = parse_receipt(receipt_data).unwrap();
+
+    let payload_bytes = include_bytes!("fixtures/payload_valid_v1.json");
+    let computed = format!(
+        "sha256:{}",
+        hex::encode(Sha256::digest(payload_bytes))
+    );
+
+    assert_eq!(receipt.content_hash, computed);
+}
+
+#[test]
+fn invalid_content_hash_is_rejected() {
+    let receipt_data = include_str!("fixtures/receipt_bad_content_hash_v1.json");
+    let receipt = parse_receipt(receipt_data).unwrap();
+
+    let payload_bytes = include_bytes!("fixtures/payload_valid_v1.json");
+    let computed = format!(
+        "sha256:{}",
+        hex::encode(Sha256::digest(payload_bytes))
+    );
+
+    assert_ne!(receipt.content_hash, computed);
 }
 
 #[test]
