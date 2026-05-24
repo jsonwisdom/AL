@@ -12,6 +12,7 @@ jobs:
     name: "Issue machine heartbeat receipt"
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
+    environment: three-green-seal
 
     permissions:
       contents: write
