@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jsonwisdom/AL/schemas/RECEIPT_V1.schema.json",
+  "title": "RECEIPT_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "receipt_version",
+    "receipt_id",
+    "created_at",
+    "intent",
+    "execution",
+    "observed_roots",
+    "replay"
+  ],
+  "properties": {
+    "receipt_version": { "const": "RECEIPT_V1" },
+    "receipt_id": { "type": "string", "minLength": 1 },
+    "created_at": { "type": "string", "format": "date-time" },
+    "intent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["request_hash", "actor_hash", "constraints_hash"],
+      "properties": {
+        "request_hash": { "$ref": "#/$defs/sha256_uri" },
+        "actor_hash": { "$ref": "#/$defs/sha256_uri" },
+        "constraints_hash": { "$ref": "#/$defs/sha256_uri" }
+      }
+    },
+    "execution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "verifier_env_hash",
+        "fixture_hash",
+        "replay_contract_hash",
+        "execution_block_hash"
+      ],
+      "properties": {
+        "verifier_env_hash": { "$ref": "#/$defs/sha256_uri" },
+        "fixture_hash": { "$ref": "#/$defs/sha256_uri" },
+        "replay_contract_hash": { "$ref": "#/$defs/sha256_uri" },
+        "execution_block_hash": { "$ref": "#/$defs/sha256_uri" },
+        "tool_calls": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/tool_call" },
+          "default": []
+        },
+        "state_transitions": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/state_transition" },
+          "default": []
+        }
+      }
+    },
+    "observed_roots": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state_transitions_root", "tool_graph_root"],
+      "properties": {
+        "state_transitions_root": { "$ref": "#/$defs/sha256_uri" },
+        "tool_graph_root": { "$ref": "#/$defs/sha256_uri" }
+      }
+    },
+    "replay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["canonicalization", "requested_action"],
+      "properties": {
+        "canonicalization": { "const": "JCS_SHA256" },
+        "requested_action": {
+          "type": "string",
+          "enum": ["REPLAY", "INVALIDATE", "CORRECT", "ESCALATE"]
+        }
+      }
+    }
+  },
+  "$defs": {
+    "sha256_uri": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "tool_call": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["tool_call_hash"],
+      "properties": {
+        "tool_call_hash": { "$ref": "#/$defs/sha256_uri" }
+      }
+    },
+    "state_transition": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["transition_hash"],
+      "properties": {
+        "transition_hash": { "$ref": "#/$defs/sha256_uri" }
+      }
+    }
+  }
+}
