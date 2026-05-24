@@ -18,6 +18,12 @@ fn verifier_error_matches_fixture_shape() {
     let receipt_bytes = std::fs::read("../tests/fixtures/receipt_valid_v1.json")
         .expect("receipt fixture");
 
+    let expected_bytes = std::fs::read("../tests/fixtures/verdict_verifier_error_v1.json")
+        .expect("verdict fixture");
+
+    let expected: Value = serde_json::from_slice(&expected_bytes)
+        .expect("expected verdict json");
+
     let mut output = Vec::new();
 
     run_verifier(
@@ -27,10 +33,8 @@ fn verifier_error_matches_fixture_shape() {
     )
     .expect("verifier execution");
 
-    let parsed: Value = serde_json::from_slice(&output)
+    let actual: Value = serde_json::from_slice(&output)
         .expect("valid VERDICT_V1 json");
 
-    assert_eq!(parsed["verdict_version"], "VERDICT_V1");
-    assert_eq!(parsed["status"], "VERIFIER_ERROR");
-    assert_eq!(parsed["governance_anchor"]["tag"], "GOVERNANCE_V1");
+    assert_eq!(actual, expected);
 }
