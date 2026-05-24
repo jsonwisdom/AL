@@ -1,0 +1,43 @@
+{
+  "criteria_id": "CEREMONY_COMPLETION_CRITERIA_V1",
+  "court": "Ceremony Court",
+  "active_state": "CEREMONY_IN_PROGRESS",
+  "target_state": "CONSTITUTION_FROZEN",
+  "created_at_utc": "2026-05-24T11:40:00Z",
+  "required_artifacts": [
+    {
+      "artifact": "HEARTBEAT_COURT_COMPLETION_SUMMARY_001.json",
+      "expected_commit": "666d5b0b597d5c5df24ac950be91fb16b48a2442",
+      "required": true
+    },
+    {
+      "artifact": "CEREMONY_COURT_RULES_V1.json",
+      "expected_commit": "bf427c8ded33e3457883217df4edb1735f015c6a",
+      "required": true
+    },
+    {
+      "artifact": "CEREMONY_OPENING_RECEIPT_001.json",
+      "expected_commit": "8c7fe1ba9ed4899c49730e27eb1cb3323828ad83",
+      "required": true
+    },
+    {
+      "artifact": "STATE_CHANGE_CERTIFICATE.json",
+      "expected_commit": "62691e2fd3e6a1efa8d8d3bef6e0654952d33ccb",
+      "required": true
+    }
+  ],
+  "required_conditions": [
+    "manual_override == false",
+    "Verifier Heartbeat GREEN after Ceremony Court opening",
+    "no_divergence_detected == true",
+    "all_artifacts_hash_match == true"
+  ],
+  "halt_conditions": [
+    "missing_artifact",
+    "hash_mismatch",
+    "manual_override_true",
+    "heartbeat_failed",
+    "divergence_detected"
+  ],
+  "machine_authority": true
+}
