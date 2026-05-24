@@ -1,0 +1,33 @@
+{
+  "receipt": "BASE_WITNESS_PAYLOAD_001",
+  "level": "LEVEL_3_BASE_WITNESS_PAYLOAD",
+  "player": "jaywisdom.base.eth",
+  "witness_scope": "EXISTENCE_ONLY",
+  "semantic_authority": "LOCAL_REPLAY",
+  "base_authority": "NONE",
+  "production_readiness": "NOT_CLAIMED",
+  "batch_id": "BATCH_002_HASH",
+  "merkle_root": "1f739b1bd6144d031d213bccdebfc615af642077a383aae579d2394489b19343",
+  "base_sha": "670f56228147d3465d3f1d01d159b4a2e9ef906267085d375c347511abf4c8c8",
+  "hash_rules_sha": "1167d096f1b2261f82f65e93907eb7b1da91cdbbbe4a6ca1933019a53efee700",
+  "status": "BASE_SEES_EXISTENCE_NOT_MEANING",
+  "constitutional_compliance": {
+    "semantic_integrity": "SECURE",
+    "authority_inflation": "PREVENTED",
+    "witness_mode": "PASSIVE_EXISTENCE_ONLY"
+  },
+  "forbidden_interpretations": [
+    "BASE_PROVES_TRUTH",
+    "BASE_PROVES_CORRECTNESS",
+    "BASE_PROVES_PRODUCTION_READINESS",
+    "TRANSACTION_PROVES_MEANING",
+    "TIMESTAMP_PROVES_VALIDITY"
+  ],
+  "goblin_spec": {
+    "dungeon": "BASE_BATCH_ARENA",
+    "boss": "AUTHORITY_INFLATION",
+    "boss_status": "DEFEATED_AT_LEVEL_2",
+    "level_3_rule": "BASE_MAY_WITNESS_BUT_NOT_INTERPRET",
+    "cage_status": "LOCKED"
+  }
+}
