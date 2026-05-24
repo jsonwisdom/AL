@@ -10,10 +10,15 @@ on:
 jobs:
   constitutional-gauntlet:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -30,3 +35,32 @@ jobs:
           PYTHONPATH="$PWD" python scripts/record_gauntlet.py \
             --storage-path ./data/prod_spine \
             --workflow-file .github/workflows/gauntlet.yml
+
+      - name: Run Ceremony Court completion audit
+        run: |
+          chmod +x scripts/audit_ceremony_completion.sh
+          bash scripts/audit_ceremony_completion.sh
+
+      - name: Issue Ceremony Court audit receipt on PASS
+        run: |
+          TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          cat > _truth/governance/CEREMONY_AUDIT_RECEIPT_001.json <<EOF
+          {
+            "receipt_id": "CEREMONY_AUDIT_001",
+            "court": "Ceremony Court",
+            "audit_status": "PASS",
+            "eligible_for_completion_receipt": true,
+            "timestamp_utc": "${TIMESTAMP}",
+            "audited_by": "scripts/audit_ceremony_completion.sh",
+            "workflow": "gauntlet",
+            "workflow_run": "${{ github.run_id }}"
+          }
+EOF
+
+      - name: Commit Ceremony Court audit receipt
+        run: |
+          git config user.name "AL Verifier Bot"
+          git config user.email "verifier@al.truth"
+          git add _truth/governance/CEREMONY_AUDIT_RECEIPT_001.json
+          git diff --cached --quiet || git commit -m "constitutional: ceremony audit receipt PASS [skip ci]"
+          git push
