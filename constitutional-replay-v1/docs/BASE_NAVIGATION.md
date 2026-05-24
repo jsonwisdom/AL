@@ -8,6 +8,20 @@ No receipt, no ratification.
 No replay, no settlement.
 ```
 
+## Required Governance Gate
+
+Before any Base witness integration, local replay must pass the protocol in:
+
+```text
+constitutional-replay-v1/docs/LOCAL_REPLAY_PROTOCOL.md
+```
+
+Kernel rule:
+
+```text
+If it cannot replay locally, it does not count.
+```
+
 ## Layer Separation
 
 AL doctrine preserved:
@@ -190,4 +204,4 @@ Never let Base become replay authority.
 
 This document is the canonical navigation receipt for Base integration in `constitutional-replay-v1`.
 
-All future Base-related changes must reference it.
+All future Base-related changes must reference it and must preserve `LOCAL_REPLAY_PROTOCOL.md`.
