@@ -9,6 +9,14 @@
       "ESCALATION_LOGIC_V1": "gitblob:d741fd618f444089d2276e4efda642d6bf233d95",
       "SETTLEMENT_RECEIPT_V1": "gitblob:5f2b52a76897171c6673968604b7cf897f08d1bc"
     },
+    "tooling": {
+      "VERIFIER_V1": {
+        "kind": "tooling_schema",
+        "anchor": "gitblob:b7e3d06b3cc93a98bbfc5bd450d435801fd2fe65",
+        "governance_tag": "GOVERNANCE_V1",
+        "description": "Replay verifier interface, behavior, and VERDICT_V1 emission contract."
+      }
+    },
     "registry": {
       "discovery_uri": "git+https://github.com/jsonwisdom/AL",
       "anchoring_policy": "TAGGED_IMMUTABLE_RELEASES_ONLY",
