@@ -1,4 +1,5 @@
-name: gauntlet
+name: Ceremony Audit Gate
+run-name: "Ceremony Audit Gate — audit receipt issuance for ${{ github.sha }}"
 
 on:
   workflow_dispatch:
@@ -8,29 +9,30 @@ on:
       - fix-176-execution-surface
 
 jobs:
-  constitutional-gauntlet:
+  ceremony-audit-gate:
+    name: Ceremony Audit Gate — run audit and issue receipt
     runs-on: ubuntu-latest
     permissions:
       contents: write
 
     steps:
-      - name: Checkout
+      - name: Checkout repository with full history
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Setup Python
+      - name: Setup Python for legacy gauntlet recorder
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Install pytest
+      - name: Install pytest for legacy gauntlet recorder
         run: |
           python -m pip install --upgrade pip
           pip install pytest
 
-      - name: Run gauntlet recorder
+      - name: Run legacy gauntlet recorder
         run: |
           PYTHONPATH="$PWD" python scripts/record_gauntlet.py \
             --storage-path ./data/prod_spine \
@@ -52,7 +54,7 @@ jobs:
             "eligible_for_completion_receipt": true,
             "timestamp_utc": "${TIMESTAMP}",
             "audited_by": "scripts/audit_ceremony_completion.sh",
-            "workflow": "gauntlet",
+            "workflow": "Ceremony Audit Gate",
             "workflow_run": "${{ github.run_id }}"
           }
 EOF
