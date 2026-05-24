@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jsonwisdom/AL/schemas/VERIFIER_V1.schema.json",
+  "title": "VERIFIER_V1",
+  "description": "Reference schema for the replay supremacy engine that validates RECEIPT_V1 objects against the GOVERNANCE_V1 constitutional baseline.",
+  "type": "object",
+  "required": [
+    "verifier_version",
+    "governance_anchor",
+    "input",
+    "output",
+    "replay_requirements",
+    "forbidden_actions"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "verifier_version": { "const": "VERIFIER_V1" },
+    "governance_anchor": {
+      "type": "object",
+      "required": ["tag", "manifest_commit"],
+      "additionalProperties": false,
+      "properties": {
+        "tag": { "const": "GOVERNANCE_V1" },
+        "manifest_commit": { "const": "0ef5076170008ff428a0c9163c7c4822c42ebfdd" }
+      }
+    },
+    "input": {
+      "type": "object",
+      "required": ["schema", "object_type"],
+      "additionalProperties": false,
+      "properties": {
+        "schema": { "const": "RECEIPT_V1" },
+        "object_type": { "const": "RECEIPT_OBJECT" }
+      }
+    },
+    "output": {
+      "type": "object",
+      "required": ["schema", "allowed_statuses", "required_roots", "diff_required_on_divergence"],
+      "additionalProperties": false,
+      "properties": {
+        "schema": { "const": "VERDICT_V1" },
+        "allowed_statuses": {
+          "type": "array",
+          "prefixItems": [
+            { "const": "VERIFIED" },
+            { "const": "DIVERGENT" },
+            { "const": "VERIFIER_ERROR" }
+          ],
+          "items": false,
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "required_roots": {
+          "type": "array",
+          "prefixItems": [
+            { "const": "state_transitions_root" },
+            { "const": "tool_graph_root" }
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "diff_required_on_divergence": { "type": "boolean", "const": true }
+      }
+    },
+    "replay_requirements": {
+      "type": "object",
+      "required": [
+        "content_addressed_environment",
+        "content_addressed_fixture",
+        "content_addressed_replay_contract",
+        "deterministic_execution",
+        "root_comparison"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "content_addressed_environment": { "type": "boolean", "const": true },
+        "content_addressed_fixture": { "type": "boolean", "const": true },
+        "content_addressed_replay_contract": { "type": "boolean", "const": true },
+        "deterministic_execution": { "type": "boolean", "const": true },
+        "root_comparison": { "type": "boolean", "const": true }
+      }
+    },
+    "forbidden_actions": {
+      "type": "array",
+      "prefixItems": [
+        { "const": "MUTATE_RECEIPT" },
+        { "const": "IGNORE_GOVERNANCE_ANCHOR" },
+        { "const": "ACCEPT_PLACEHOLDER_HASH" },
+        { "const": "RETURN_VERIFIED_WITHOUT_ROOT_MATCH" },
+        { "const": "SUPPRESS_DIVERGENCE_DIFF" }
+      ],
+      "items": false,
+      "minItems": 5,
+      "maxItems": 5
+    }
+  }
+}
