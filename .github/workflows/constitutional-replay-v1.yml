@@ -40,13 +40,13 @@ jobs:
       - name: Run negative replay-divergence tests
         run: npm run test:negative
 
-      - name: Run unified local constitutional loop
+      - name: Constitutional replay npm loop
         run: npm run test:all
 
       - name: Report bounded status
         run: |
-          echo "CI_REPRODUCTION_OBSERVED"
-          echo "Evidence Class: INDEPENDENT_REPRODUCTION"
+          echo "CI_NPM_LOOP_OBSERVED"
+          echo "Evidence Class: INDEPENDENT_REPRODUCTION_OBSERVATION"
           echo "Semantic Authority: LOCAL_REPLAY"
           echo "WITNESS_STATUS=NOT_CHECKED"
           echo "No Base witness claim emitted."
