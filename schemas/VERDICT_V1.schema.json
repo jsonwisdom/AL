@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jsonwisdom/AL/schemas/VERDICT_V1.schema.json",
+  "title": "VERDICT_V1",
+  "description": "Terminal output contract for VERIFIER_V1. Formalizes verified, divergent, and verifier-error findings as root-bound, settlement-ready evidence.",
+  "type": "object",
+  "required": [
+    "verdict_version",
+    "verdict_id",
+    "created_at",
+    "governance_anchor",
+    "receipt_id",
+    "status",
+    "expected_roots",
+    "observed_roots",
+    "diff",
+    "verifier",
+    "settlement_readiness"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "verdict_version": { "const": "VERDICT_V1" },
+    "verdict_id": { "type": "string", "minLength": 1 },
+    "created_at": { "type": "string", "format": "date-time" },
+    "governance_anchor": {
+      "type": "object",
+      "required": ["tag", "manifest_commit", "verifier_schema_ref"],
+      "additionalProperties": false,
+      "properties": {
+        "tag": { "const": "GOVERNANCE_V1" },
+        "manifest_commit": { "const": "0ef5076170008ff428a0c9163c7c4822c42ebfdd" },
+        "verifier_schema_ref": { "const": "VERIFIER_V1" }
+      }
+    },
+    "receipt_id": { "type": "string", "minLength": 1 },
+    "status": {
+      "type": "string",
+      "enum": ["VERIFIED", "DIVERGENT", "VERIFIER_ERROR"]
+    },
+    "expected_roots": { "$ref": "#/$defs/root_set" },
+    "observed_roots": { "$ref": "#/$defs/root_set" },
+    "diff": {
+      "type": "object",
+      "required": ["diff_required", "divergent_invocations", "divergent_transitions", "diff_root"],
+      "additionalProperties": false,
+      "properties": {
+        "diff_required": { "type": "boolean" },
+        "divergent_invocations": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "divergent_transitions": {
+          "type": "array",
+          "items": { "type": "integer", "minimum": 0 }
+        },
+        "diff_root": { "$ref": "#/$defs/sha256_uri" }
+      }
+    },
+    "verifier": {
+      "type": "object",
+      "required": ["verifier_id", "verifier_env_hash", "verifier_spec_ref"],
+      "additionalProperties": false,
+      "properties": {
+        "verifier_id": { "type": "string", "minLength": 1 },
+        "verifier_env_hash": { "$ref": "#/$defs/sha256_uri" },
+        "verifier_spec_ref": { "const": "VERIFIER_V1" },
+        "verifier_signature": {
+          "type": "string",
+          "pattern": "^ed25519:[A-Za-z0-9+/=_-]+$"
+        }
+      }
+    },
+    "settlement_readiness": {
+      "type": "object",
+      "required": ["eligible_for_challenge", "eligible_for_settlement", "recommended_action"],
+      "additionalProperties": false,
+      "properties": {
+        "eligible_for_challenge": { "type": "boolean", "const": true },
+        "eligible_for_settlement": { "type": "boolean" },
+        "recommended_action": {
+          "type": "string",
+          "enum": ["NONE", "CHALLENGE", "SETTLEMENT", "ESCALATE"]
+        }
+      }
+    }
+  },
+  "$defs": {
+    "sha256_uri": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "root_set": {
+      "type": "object",
+      "required": ["state_transitions_root", "tool_graph_root"],
+      "additionalProperties": false,
+      "properties": {
+        "state_transitions_root": { "$ref": "#/$defs/sha256_uri" },
+        "tool_graph_root": { "$ref": "#/$defs/sha256_uri" }
+      }
+    }
+  }
+}
