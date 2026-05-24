@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jsonwisdom/AL/schemas/CHALLENGE_V1.schema.json",
+  "title": "CHALLENGE_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "challenge_version",
+    "challenge_id",
+    "created_at",
+    "receipt_id",
+    "jurisdiction_id",
+    "requested_action",
+    "evidence",
+    "verdict_model",
+    "forbidden_actions"
+  ],
+  "properties": {
+    "challenge_version": { "const": "CHALLENGE_V1" },
+    "challenge_id": { "type": "string", "minLength": 1 },
+    "created_at": { "type": "string", "format": "date-time" },
+    "receipt_id": { "type": "string", "minLength": 1 },
+    "jurisdiction_id": { "type": "string", "minLength": 1 },
+    "requested_action": {
+      "type": "string",
+      "enum": ["REPLAY", "INVALIDATE", "CORRECT", "ESCALATE"]
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "expected_root",
+        "observed_root",
+        "diff_root",
+        "evidence_hash"
+      ],
+      "properties": {
+        "expected_root": { "$ref": "#/$defs/sha256_uri" },
+        "observed_root": { "$ref": "#/$defs/sha256_uri" },
+        "diff_root": { "$ref": "#/$defs/sha256_uri" },
+        "evidence_hash": { "$ref": "#/$defs/sha256_uri" },
+        "notes_hash": { "$ref": "#/$defs/sha256_uri" }
+      }
+    },
+    "verdict_model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "method",
+        "allowed_verdicts",
+        "allowed_remedy_orders",
+        "execution_boundary"
+      ],
+      "properties": {
+        "method": { "const": "ROOT_COMPARISON" },
+        "allowed_verdicts": {
+          "type": "array",
+          "prefixItems": [
+            { "const": "CONVERGENT" },
+            { "const": "DIVERGENT" },
+            { "const": "NEEDS_ESCALATION" }
+          ],
+          "items": false,
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "allowed_remedy_orders": {
+          "type": "array",
+          "prefixItems": [
+            { "const": "NONE" },
+            { "const": "INVALIDATE" },
+            { "const": "CORRECT" },
+            { "const": "ESCALATE" }
+          ],
+          "items": false,
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "execution_boundary": {
+          "const": "CHALLENGE_LAYER_AUTHORIZES_REMEDY_BUT_DOES_NOT_EXECUTE"
+        }
+      }
+    },
+    "remedy_order": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["order_type", "target_receipt_id", "order_hash"],
+      "properties": {
+        "order_type": {
+          "type": "string",
+          "enum": ["NONE", "INVALIDATE", "CORRECT", "ESCALATE"]
+        },
+        "target_receipt_id": { "type": "string", "minLength": 1 },
+        "successor_receipt_required": { "type": "boolean" },
+        "order_hash": { "$ref": "#/$defs/sha256_uri" }
+      }
+    },
+    "forbidden_actions": {
+      "type": "array",
+      "prefixItems": [
+        { "const": "DIRECT_EXECUTION" },
+        { "const": "STATE_MUTATION" },
+        { "const": "DELETE_PRIOR_RECEIPT" },
+        { "const": "SILENT_REWRITE" },
+        { "const": "UNRECEIPTED_REMEDY" }
+      ],
+      "items": false,
+      "minItems": 5,
+      "maxItems": 5
+    }
+  },
+  "$defs": {
+    "sha256_uri": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}
