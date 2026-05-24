@@ -24,7 +24,7 @@ impl InternalError {
     ) -> VerdictV1 {
         VerdictV1 {
             verdict_version: "VERDICT_V1".into(),
-            verdict_id: "verifier-error-auto".into(),
+            verdict_id: "verdict-verifier-error-fixture-001".into(),
             created_at: "2026-05-24T08:41:00Z".into(),
             governance_anchor: GovernanceAnchor {
                 tag: "GOVERNANCE_V1".into(),
