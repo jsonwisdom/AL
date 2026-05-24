@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jsonwisdom/AL/schemas/ESCALATION_LOGIC_V1.schema.json",
+  "title": "ESCALATION_LOGIC_V1",
+  "description": "The immunological defense layer of the Glass-Box Republic. Defines mechanical triggers for drift detection, platform invalidation, revocation, and narrow receipted emergency pause.",
+  "type": "object",
+  "required": ["meta", "levels", "failure_modes", "triggering", "emergency_pause", "reinstatement"],
+  "additionalProperties": false,
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["schema_version", "logic_id"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": { "type": "string", "const": "ESCALATION_LOGIC_V1" },
+        "logic_id": { "type": "string", "minLength": 1 }
+      }
+    },
+    "levels": {
+      "type": "object",
+      "required": ["DRIFT", "INVALIDATED", "REVOKED", "EMERGENCY_PAUSED"],
+      "additionalProperties": false,
+      "properties": {
+        "DRIFT": {
+          "type": "object",
+          "required": ["code", "registry_status"],
+          "additionalProperties": false,
+          "properties": {
+            "code": { "type": "string", "const": "DRIFTED" },
+            "registry_status": { "type": "string", "const": "DEGRADED" }
+          }
+        },
+        "INVALIDATED": {
+          "type": "object",
+          "required": ["code", "registry_status"],
+          "additionalProperties": false,
+          "properties": {
+            "code": { "type": "string", "const": "INVALIDATED" },
+            "registry_status": { "type": "string", "const": "SUSPENDED" }
+          }
+        },
+        "REVOKED": {
+          "type": "object",
+          "required": ["code", "registry_status"],
+          "additionalProperties": false,
+          "properties": {
+            "code": { "type": "string", "const": "REVOKED" },
+            "registry_status": { "type": "string", "const": "EXPELLED" }
+          }
+        },
+        "EMERGENCY_PAUSED": {
+          "type": "object",
+          "required": ["code", "registry_status"],
+          "additionalProperties": false,
+          "properties": {
+            "code": { "type": "string", "const": "EMERGENCY_PAUSED" },
+            "registry_status": { "type": "string", "const": "QUARANTINED" }
+          }
+        }
+      }
+    },
+    "failure_modes": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": false,
+      "patternProperties": {
+        "^[A-Z0-9_]+$": { "type": "string", "enum": ["DRIFT", "INVALIDATED", "REVOKED", "EMERGENCY_PAUSED"] }
+      }
+    },
+    "triggering": {
+      "type": "object",
+      "required": ["mode", "human_override", "receipt_required"],
+      "additionalProperties": false,
+      "properties": {
+        "mode": { "type": "string", "const": "SELF_EXECUTING" },
+        "human_override": { "type": "boolean", "const": false },
+        "receipt_required": { "type": "boolean", "const": true }
+      }
+    },
+    "emergency_pause": {
+      "type": "object",
+      "required": ["permitted", "scope", "trigger_conditions", "forbidden_uses", "exit_requirements"],
+      "additionalProperties": false,
+      "properties": {
+        "permitted": { "type": "boolean", "const": true },
+        "scope": { "type": "string", "const": "TEMPORARY_QUARANTINE_ONLY" },
+        "trigger_conditions": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "string",
+            "enum": [
+              "VERIFIER_CRITICAL_BUG",
+              "SETTLEMENT_PROTOCOL_CRITICAL_BUG",
+              "ROOT_HASH_COLLISION_ALLEGATION",
+              "SYSTEMIC_FALSE_DIVERGENCE"
+            ]
+          }
+        },
+        "forbidden_uses": {
+          "type": "array",
+          "prefixItems": [
+            { "const": "AVOID_VALID_CHALLENGE" },
+            { "const": "PREVENT_REMEDY_EXECUTION" },
+            { "const": "HIDE_PLATFORM_DRIFT" },
+            { "const": "BYPASS_SETTLEMENT_PROTOCOL" }
+          ],
+          "items": false,
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "exit_requirements": {
+          "type": "array",
+          "prefixItems": [
+            { "const": "INDEPENDENT_AUDIT" },
+            { "const": "PATCH_RECEIPT" },
+            { "const": "REPLAY_CONFIRMATION" }
+          ],
+          "items": false,
+          "minItems": 3,
+          "maxItems": 3
+        }
+      }
+    },
+    "reinstatement": {
+      "type": "object",
+      "required": ["protocol_id", "requirements"],
+      "additionalProperties": false,
+      "properties": {
+        "protocol_id": { "type": "string", "const": "REINSTATEMENT_PROTOCOL_V1" },
+        "requirements": {
+          "type": "array",
+          "items": { "type": "string", "enum": ["INDEPENDENT_AUDIT", "RUNTIME_FINGERPRINT_ROTATION", "REPLAY_CONFIRMATION", "SETTLEMENT_RECONCILIATION"] },
+          "minItems": 2,
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}
