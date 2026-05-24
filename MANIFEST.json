@@ -1,0 +1,19 @@
+{
+  "ACTIVATION_V1": {
+    "protocol_signature": "GLASS_BOX_REPUBLIC_GENESIS",
+    "governance_version": "V1",
+    "schemas": {
+      "RECEIPT_V1": "sha256:4d616e69666573745f52454345495054",
+      "CHALLENGE_V1": "sha256:4348414c4c454e47455f45564944454e",
+      "SETTLEMENT_PROTOCOL_V1": "sha256:534554544c454d454e545f50524f544f",
+      "ESCALATION_LOGIC_V1": "sha256:455343414c4154494f4e5f4c4f474943",
+      "SETTLEMENT_RECEIPT_V1": "sha256:534554544c454d454e545f5245434549"
+    },
+    "registry": {
+      "discovery_uri": "git+https://github.com/jsonwisdom/AL",
+      "anchoring_policy": "TAGGED_IMMUTABLE_RELEASES_ONLY",
+      "audit_frequency": "REPLAY_ON_COMMIT"
+    },
+    "enforcement_state": "ACTIVE"
+  }
+}
