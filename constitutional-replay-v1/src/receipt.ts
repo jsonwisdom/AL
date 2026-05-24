@@ -121,11 +121,32 @@ export function validateReceiptEnvelope(receipt: unknown): ReceiptV1 {
     throw new ReceiptError("VERDICT_BINDING_MISMATCH", "refusal receipt requires refusal_code");
   }
 
-  for (const field of ["policy_hash", "interpreter_hash", "input_hash", "context_hash", "action"]) {
-    if (typeof r[field] !== "string" || (r[field] as string).length === 0) {
+  const stringFields = [
+    "policy_hash",
+    "interpreter_hash",
+    "input_hash",
+    "context_hash",
+    "action"
+  ] as const;
+
+  for (const field of stringFields) {
+    const value = r[field];
+
+    if (typeof value !== "string" || value.length === 0) {
       throw new ReceiptError("INVALID_RECEIPT_SCHEMA", field);
     }
   }
 
-  return r as ReceiptV1;
+  return {
+    receipt_version: r.receipt_version,
+    policy_hash: r.policy_hash as string,
+    policy_version: r.policy_version,
+    interpreter_hash: r.interpreter_hash as string,
+    replay_engine_version: r.replay_engine_version,
+    action: r.action as string,
+    input_hash: r.input_hash as string,
+    context_hash: r.context_hash as string,
+    result: r.result,
+    refusal_code: r.refusal_code as RefusalCode | null
+  } satisfies ReceiptV1;
 }
