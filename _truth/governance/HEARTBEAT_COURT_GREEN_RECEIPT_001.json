@@ -1,0 +1,37 @@
+{
+  "receipt_id": "HEARTBEAT_COURT_GREEN_001",
+  "track": "TRACK_001",
+  "purpose": "Constitutional milestone freeze — first green heartbeat",
+  "commit": "0204e396e608b0049b93bb870a8bf4a54ef960fb",
+  "workflow": "Verifier Heartbeat #21",
+  "timestamp_utc": "2026-05-24T00:00:00Z",
+  "heartbeat_court": {
+    "status": "GREEN",
+    "scope": [
+      "schema parse",
+      "semantic prefixes (sha256:, merkle:)",
+      "version contracts",
+      "payload integrity (content_hash verification)"
+    ],
+    "runtime_seconds": 19,
+    "budget_seconds": 30
+  },
+  "ceremony_state": {
+    "state_machine": "TRACK_001_STATE_MACHINE_V1",
+    "verifier": "verifier/src/ceremony/receipt.rs",
+    "status": "COMMITTED"
+  },
+  "transition_threshold": {
+    "from": "HEARTBEAT_STABLE",
+    "to": "READY_FOR_CEREMONY",
+    "required_consecutive_green_commits": 3,
+    "current_count": 1
+  },
+  "law": [
+    "No commit may enter history unless Heartbeat returns GREEN",
+    "No operator may override Heartbeat verdicts",
+    "Heartbeat receipts are constitutional evidence",
+    "A commit without a receipt is not part of history"
+  ],
+  "next_required": "TRACK_001 ceremony activation after 3 consecutive GREEN commits"
+}
