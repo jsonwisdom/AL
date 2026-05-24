@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "policy.v1.schema.json",
+  "title": "constitutional-replay-v1 policy.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "policy_id",
+    "required_inputs",
+    "allowed_actions",
+    "blocked_actions",
+    "limits",
+    "refusal_codes"
+  ],
+  "properties": {
+    "version": {
+      "const": "policy.v1"
+    },
+    "policy_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "required_inputs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "allowed_actions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "blocked_actions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "limits": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "transfer_usdc_day": {
+          "type": "string",
+          "pattern": "^[0-9]+$"
+        }
+      },
+      "required": ["transfer_usdc_day"]
+    },
+    "refusal_codes": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "SPEND_LIMIT_EXCEEDED",
+          "ACTION_NOT_ALLOWED",
+          "CONTRACT_NOT_ALLOWED",
+          "DELEGATION_EXPIRED",
+          "RATE_LIMIT_EXCEEDED",
+          "SIGNATURE_INVALID",
+          "POLICY_UNAVAILABLE",
+          "ESCALATION_REQUIRED",
+          "UNKNOWN_REFUSAL"
+        ]
+      },
+      "minItems": 9,
+      "maxItems": 9,
+      "uniqueItems": true
+    }
+  }
+}
