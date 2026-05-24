@@ -1,0 +1,52 @@
+{
+  "receipt": "CI_VERIFIED_PASS_RECEIPT_001",
+  "evidence_class": "INDEPENDENT_REPRODUCTION_OBSERVATION",
+  "state": {
+    "ci_state": "CI_NPM_LOOP_OBSERVED",
+    "constitutional_state": "CONSTITUTIONAL_REPLAY_V1_CI_REPRODUCED"
+  },
+  "ci_reproduction": {
+    "npm_install": "PASS",
+    "npm_build": "PASS",
+    "test_vectors": {
+      "total": 8,
+      "pass": 8,
+      "fail": 0
+    },
+    "test_negative": {
+      "total": 5,
+      "pass": 5,
+      "fail": 0
+    },
+    "test_all": "PASS",
+    "emit_demo": "PASS"
+  },
+  "replay_markers": {
+    "success_confirmed": true,
+    "refusal_confirmed": true,
+    "witness_status": "NOT_CHECKED",
+    "semantic_authority": "LOCAL_REPLAY",
+    "replay_divergence": false
+  },
+  "anchors": {
+    "merkle_root": "sha256:9de1c6069dc84a3730f478ba1301c86536f7702203f314e271199ac5fbe42ae5",
+    "interpreter_hash": "sha256:b699acaf26a9ba0996228d8a4fd4411516c267fdf847df3ccdb265b0b6750e68"
+  },
+  "boundary": {
+    "ci_role": "REPRODUCTION_WITNESS_ONLY",
+    "local_replay_role": "SEMANTIC_AUTHORITY",
+    "base_witness_status": "NOT_CHECKED",
+    "production_readiness": "NOT_CLAIMED"
+  },
+  "continuity": {
+    "replay_divergence": false,
+    "authority_inflation": false,
+    "semantic_drift": false
+  },
+  "metadata": {
+    "generated_by": "constitutional-replay-v1",
+    "timestamp": "2026-05-24T01:55:00Z",
+    "ci_run_id": "CI_CONSTITUTIONAL_REPLAY_V1_2026_05_24_001",
+    "artifact_id": "CI_VERIFIED_PASS_RECEIPT_001"
+  }
+}
