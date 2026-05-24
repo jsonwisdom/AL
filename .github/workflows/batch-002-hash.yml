@@ -1,0 +1,38 @@
+name: BATCH_002_HASH_LOCAL_REPLAY
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'receipts/continuity/BASE_BATCH_ARENA_RULES_001.json'
+      - 'receipts/continuity/HASH_CANONICALIZATION_RULES_001.json'
+      - 'scripts/canonical-sha256.js'
+      - 'scripts/merkle-pair-root.js'
+      - '.github/workflows/batch-002-hash.yml'
+
+jobs:
+  compute:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compute BATCH_002 hashes
+        run: |
+          BASE_SHA=$(node scripts/canonical-sha256.js receipts/continuity/BASE_BATCH_ARENA_RULES_001.json)
+          HASH_RULES_SHA=$(node scripts/canonical-sha256.js receipts/continuity/HASH_CANONICALIZATION_RULES_001.json)
+          MERKLE_ROOT=$(node scripts/merkle-pair-root.js "$BASE_SHA" "$HASH_RULES_SHA")
+
+          {
+            echo "BASE_SHA=$BASE_SHA"
+            echo "HASH_RULES_SHA=$HASH_RULES_SHA"
+            echo "MERKLE_ROOT=$MERKLE_ROOT"
+            echo "BASE_STATUS=NOT_INVOKED"
+            echo "SEMANTIC_AUTHORITY=LOCAL_REPLAY"
+          } | tee batch-002-hash-output.txt
+
+      - name: Upload BATCH_002 hash output
+        uses: actions/upload-artifact@v4
+        with:
+          name: batch-002-hash-output
+          path: batch-002-hash-output.txt
