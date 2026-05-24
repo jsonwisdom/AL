@@ -11,6 +11,7 @@
     "emit:demo": "node dist/examples/treasury-agent/emit-demo.js",
     "test:vectors": "npm run build && node tests/policy-v1-vectors.test.js",
     "test:negative": "npm run build && node tests/replay-divergence-negative.test.js",
+    "test:all": "npm run build && npm run test:vectors && npm run test:negative && npm run emit:demo",
     "demo": "./demo.sh",
     "dashboard": "echo 'dashboard-lite not implemented yet' && exit 2",
     "verify:base": "echo 'BASE_WITNESS_NOT_IMPLEMENTED_v0.1' && exit 2"
