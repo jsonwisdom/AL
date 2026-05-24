@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jsonwisdom/AL/schemas/SETTLEMENT_RECEIPT_V1.schema.json",
+  "title": "SETTLEMENT_RECEIPT_V1",
+  "description": "Tamper-evident proof of enforcement state transition and settlement finality.",
+  "type": "object",
+  "required": ["receipt_version", "receipt_id", "created_at", "linked_artifacts", "settlement_state", "proof"],
+  "additionalProperties": false,
+  "properties": {
+    "receipt_version": { "const": "SETTLEMENT_RECEIPT_V1" },
+    "receipt_id": { "type": "string", "minLength": 1 },
+    "created_at": { "type": "string", "format": "date-time" },
+    "linked_artifacts": {
+      "type": "object",
+      "required": ["challenge_receipt_hash", "remedy_order_hash", "settlement_protocol_hash"],
+      "additionalProperties": false,
+      "properties": {
+        "challenge_receipt_hash": { "$ref": "#/$defs/sha256_uri" },
+        "remedy_order_hash": { "$ref": "#/$defs/sha256_uri" },
+        "settlement_protocol_hash": { "$ref": "#/$defs/sha256_uri" }
+      }
+    },
+    "settlement_state": {
+      "type": "object",
+      "required": ["state", "enforcement_action", "execution_status"],
+      "additionalProperties": false,
+      "properties": {
+        "state": {
+          "type": "string",
+          "enum": ["PENDING", "SETTLED", "BREACHED", "ESCALATED"]
+        },
+        "enforcement_action": {
+          "type": "string",
+          "enum": ["ESCROW_HOLD", "SLASH", "BREACH_FLAG", "FINALITY_MARK", "REMEDY_REFUSAL_LOG"]
+        },
+        "execution_status": {
+          "type": "string",
+          "enum": ["NOT_REQUIRED", "AWAITING_EXECUTION", "EXECUTED", "REFUSED"]
+        }
+      }
+    },
+    "proof": {
+      "type": "object",
+      "required": ["settlement_root", "receipt_hash"],
+      "additionalProperties": false,
+      "properties": {
+        "settlement_root": { "$ref": "#/$defs/sha256_uri" },
+        "receipt_hash": { "$ref": "#/$defs/sha256_uri" }
+      }
+    }
+  },
+  "$defs": {
+    "sha256_uri": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}
