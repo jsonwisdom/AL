@@ -1,4 +1,5 @@
 pub mod bootstrap;
+pub mod ceremony;
 pub mod hash;
 pub mod model;
 
