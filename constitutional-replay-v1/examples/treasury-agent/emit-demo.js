@@ -2,12 +2,12 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { loadPolicy } from "../../dist/policy.js";
-import { interpretPolicy } from "../../dist/interpreter.js";
-import { emitReceipt } from "../../dist/receipt.js";
-import { replayReceipt } from "../../dist/replay.js";
-import { emitBatch, summarizeReceipt } from "../../dist/batch.js";
-import { canonicalHash } from "../../dist/hash.js";
+import { loadPolicy } from "../../dist/src/policy.js";
+import { interpretPolicy } from "../../dist/src/interpreter.js";
+import { emitReceipt } from "../../dist/src/receipt.js";
+import { replayReceipt } from "../../dist/src/replay.js";
+import { emitBatch, summarizeReceipt } from "../../dist/src/batch.js";
+import { canonicalHash } from "../../dist/src/hash.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -104,6 +104,10 @@ if (replayResult.replay_status !== "REFUSAL_CONFIRMED") {
   process.exit(1);
 }
 
-console.log("✅ Constitutional loop complete.");
-console.log("Receipts are sovereign and replayable.");
-console.log("Run: npm run replay examples/treasury-agent/receipts/refusal-001.json");
+console.log("SUCCESS_CONFIRMED receipt=examples/treasury-agent/receipts/success-001.json");
+console.log("REFUSAL_CONFIRMED receipt=examples/treasury-agent/receipts/refusal-001.json");
+console.log("REPLAY_RESULT=examples/treasury-agent/replay/refusal-001.replay.json");
+console.log("BATCH=examples/treasury-agent/batches/batch-001.json");
+console.log(`MERKLE_ROOT=${batch.merkle_root}`);
+console.log(`INTERPRETER_HASH=${interpreter_hash}`);
+console.log("WITNESS_STATUS=NOT_CHECKED");
