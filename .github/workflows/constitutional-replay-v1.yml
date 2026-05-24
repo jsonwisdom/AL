@@ -1,0 +1,53 @@
+name: constitutional-replay-v1
+
+on:
+  push:
+    paths:
+      - "constitutional-replay-v1/**"
+      - ".github/workflows/constitutional-replay-v1.yml"
+  pull_request:
+    paths:
+      - "constitutional-replay-v1/**"
+      - ".github/workflows/constitutional-replay-v1.yml"
+
+jobs:
+  local-replay-loop:
+    name: Local replay loop
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: constitutional-replay-v1
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Typecheck and emit build
+        run: npm run build
+
+      - name: Run positive vector tests
+        run: npm run test:vectors
+
+      - name: Run negative replay-divergence tests
+        run: npm run test:negative
+
+      - name: Run unified local constitutional loop
+        run: npm run test:all
+
+      - name: Report bounded status
+        run: |
+          echo "CI_REPRODUCTION_OBSERVED"
+          echo "Evidence Class: INDEPENDENT_REPRODUCTION"
+          echo "Semantic Authority: LOCAL_REPLAY"
+          echo "WITNESS_STATUS=NOT_CHECKED"
+          echo "No Base witness claim emitted."
+          echo "No production readiness claim emitted."
