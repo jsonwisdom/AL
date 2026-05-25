@@ -1,0 +1,36 @@
+BATCH_003 ITEM_016
+status: USER_OP_002_SUBSCRIBED_DECODED
+network: base
+explorer: base.blockscout.com
+parent_tx: 0x0d96232a39eb4842ec7cbe72f78350769b630016b9692f6340e98e0085b673dc
+block: 46454006
+user_op_hash: 0x810cabd8b5de0c30b1698138943b17c4111f0871c76d4c7cbf27099e2b623dd1
+sender: 0xE7e84D3DC169617e05A0669e74fE7E22968c00CA
+target: 0x8a8c43Ef2a4Ee143b02Cc4D7F840dF05fa75B455
+status: Success
+method_or_event: Subscribed(address indexed user)
+method_id: a88fac53
+subscribed_user: 0xE7e84D3DC169617e05A0669e74fE7E22968c00CA
+raw_call_selector: b61d27f6
+call_target_from_raw: 0x8a8c43ef2a4ee143b02cc4d7f840df05fa75b455
+inner_call_selector_visible: b0509641
+prior_user_op_002_details_commit: 005df7a4884c15df025070ea86499f787cf6a28e
+
+proof_007_classification:
+- not_jaywisdom_contract_touch
+- not_creation_tx
+- not_first_mint_or_buy_evidence_for_jaywisdom
+- usable_as_subscription_event_evidence_only
+
+claim_allowed:
+- User operation 002 decoded as a Subscribed event on target 0x8a8c43Ef2a4Ee143b02Cc4D7F840dF05fa75B455.
+- User operation 002 does not provide JAYWISDOM deployer/minter evidence from visible logs.
+
+claim_not_allowed:
+- JAYWISDOM contract touched by user op 002
+- creation transaction identified
+- first minter or buyer identified
+- deployer versus first minter comparison completed
+- Proof-007 passed
+
+boundary: decoded subscription evidence only; not JAYWISDOM contract evidence; no Proof-007 result claimed
