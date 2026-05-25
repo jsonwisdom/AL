@@ -1,0 +1,35 @@
+REPLAY EAS BATCH_002 ATTESTATION V1
+
+status: EAS_ATTESTATION_RECORDED
+network: BASE
+surface: EAS
+schema_name: REPLAY_SEQUENCE_VALIDATION_V1
+schema_uid: 0xa56eee7fe536dace0f317337c4524182181c94241bca2cc6f3ecd279734b37ac
+attestation_uid: 0xed2eed117f8b888d597910ed88cda166217babfcdcfc54e4c70b02a49ee2dc25
+attestation_tx_hash: 0x8a3ccc41ab7611a940f21fee77d58fbd3fde647d197e2315e4e07824351e712c
+created: 2026-05-25T02:58:15
+revocable: true
+revoked: false
+expiration: never
+attester: 0x1dB2C056c7DeCD9f9fC574692b05F62aE34Fb8b5
+recipient: 0xA380552a27b0a5a2874Ea7AA52CAC09f542002E8
+recipient_identity: jaywisdom.base.eth
+subject_identity: jaywisdom.eth / jaywisdom.base.eth
+subject_address: 0xA380552a27b0a5a2874Ea7AA52CAC09f542002E8
+attester_role: delegated_recorder
+
+repo: jsonwisdom/AL
+file_path: receipts/replay/BATCH_002_VALIDATION_DRY_RUN_002.txt
+schema_commit: 3826d9df225f616ac5d70e6a9b3cc176e18b542b
+schema_blob_sha: e45551ae32f950c834ed259ea76230be0e4ebf43
+validator_commit: df31151206675c0d8799087bf498f82b23acd3a1
+canonical_record_commit: 8ba06c09d2b085cf9fc4abe71f4ee747da01233a
+validation_receipt_commit: cb61172691763afff2105fd19ce954ad8b2edbf5
+authority_model: EVIDENCE_ONLY
+replayability: FOREVER
+state_assertion: VALIDATOR_PASS_ONLY
+chain: BASE
+
+boundary: This attestation records validator pass status only. It does not claim jaywisdom.base.eth signed the schema freeze, and it does not independently verify external Base transaction execution.
+claim_allowed: BATCH_002 validator pass attested on EAS/Base by delegated recorder.
+claim_not_allowed: jaywisdom.base.eth signed schema freeze; external Base tx independently verified; schema owner-signed finality
