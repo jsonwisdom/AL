@@ -1,0 +1,36 @@
+BATCH_003 ITEM_014
+status: NEXT_INSPECTION_ORDER
+network: base
+proof_target: PROOF_007
+contract: 0x694ce46c64d9d1a5e9376a9febcf85ec05d72e9f
+parent_tx: 0x0d96232a39eb4842ec7cbe72f78350769b630016b9692f6340e98e0085b673dc
+prior_transfer_decode_commit: 51d1b1a0230925a9cba0476f09e75f8aa47bed53
+
+command:
+1. Inspect user operation 002: 0x810cabd8b5...3dd1
+2. Copy details, logs, and raw data
+3. Classify as creation, mint, buy, transfer, or other
+4. If user op 002 does not resolve Proof-007, inspect user operation 003: 0x4cb58353c5...0fe4
+5. If neither resolves Proof-007, search the contract creation transaction for 0x694ce46c64d9d1a5e9376a9febcf85ec05d72e9f
+
+required_fields:
+- full user op hash
+- sender
+- status
+- target or contract touched
+- method selector
+- decoded call or event names
+- from/to addresses if transfer-like
+- classification
+
+claim_allowed:
+- Proof-007 branch ordered for next inspection.
+- User Op 001 is transfer evidence only.
+
+claim_not_allowed:
+- Proof-007 passed
+- creator/deployer identified
+- first minter/buyer identified
+- deployer != first_minter established
+
+boundary: inspection order only; no new decode result; no proof result claimed
