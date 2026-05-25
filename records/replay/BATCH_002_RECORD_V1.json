@@ -1,0 +1,59 @@
+{
+  "schema": "REPLAY_SEQUENCE_SCHEMA_V1",
+  "version": "1.0.0",
+  "organism": "REPLAY",
+  "network": "BASE",
+  "surface": "ZORA_BASE",
+  "ticker": "REPLAY",
+  "authority_model": "EVIDENCE_ONLY",
+  "replayability": "FOREVER",
+  "batches": [
+    {
+      "batch": "BATCH_001",
+      "sequence": 1,
+      "title": "REPLAY_DEPLOYMENT_RECEIPT",
+      "status": "SEALED",
+      "timestamp": "github_commit:3826d9df225f616ac5d70e6a9b3cc176e18b542b",
+      "items": [],
+      "next_phase": "BATCH_002"
+    },
+    {
+      "batch": "BATCH_002",
+      "sequence": 2,
+      "title": "BUILDER_PROOF",
+      "status": "OPEN",
+      "timestamp": "github_commit:1a07bdab6babbdb616c9ad9b9661c42a39f9179d",
+      "items": [
+        {
+          "action": "JAYWISDOM_BASE_MOVEMENT",
+          "surface": "BASE",
+          "receipt": "0xbeb2fdc8d757cf0bf284e0efacd776ab0df081550dbccf9d993aff5882d1fa5e",
+          "timestamp": "github_commit:1a07bdab6babbdb616c9ad9b9661c42a39f9179d",
+          "neutral_summary": "JayWisdom Base movement receipt candidate recorded from provided Base transaction hash."
+        },
+        {
+          "action": "CLEANING_RECORD_001",
+          "surface": "GITHUB_DIRECT",
+          "receipt": "github:jsonwisdom/AL@1acc191de4b67ca115207b0b0b9662d13b6b2f7b:receipts/replay/BATCH_002_ITEM_002_CLEANING_001.txt",
+          "timestamp": "github_commit:1acc191de4b67ca115207b0b0b9662d13b6b2f7b",
+          "neutral_summary": "Cleaning record 001 added as GitHub direct metadata."
+        },
+        {
+          "action": "CLEANING_RECORD_002",
+          "surface": "GITHUB_DIRECT",
+          "receipt": "github:jsonwisdom/AL@7db96e3b8f029b9a0ae125a80dcd041ad0d10261:receipts/replay/BATCH_002_ITEM_003_CLEANING_002.txt",
+          "timestamp": "github_commit:7db96e3b8f029b9a0ae125a80dcd041ad0d10261",
+          "neutral_summary": "Cleaning record 002 added as GitHub direct metadata."
+        },
+        {
+          "action": "CLEANING_RECORD_003",
+          "surface": "GITHUB_DIRECT",
+          "receipt": "github:jsonwisdom/AL@b50d5a65593b870671d1517515becba6fbacf545:receipts/replay/BATCH_002_ITEM_004_CLEANING_003.txt",
+          "timestamp": "github_commit:b50d5a65593b870671d1517515becba6fbacf545",
+          "neutral_summary": "Cleaning record 003 added as GitHub direct metadata."
+        }
+      ],
+      "next_phase": null
+    }
+  ]
+}
