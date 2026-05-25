@@ -1,0 +1,55 @@
+REPLAY PATH C SCHEMA FREEZE AND EAS ATTESTATION V2
+
+status: PREPARED_NOT_EXECUTED
+repository: jsonwisdom/AL
+network: BASE
+surface: ZORA_BASE
+attestation_surface: EAS
+identity_primary: jaywisdom.eth
+identity_base: jaywisdom.base.eth
+identity_anchor: 0xa380552a27b0a5a2874ea7aa52cac09f542002e8
+previous_path_c_prep_commit: 0829ed2fcbbe543c156dc5701a262960d3e53074
+
+schema_commit: 3826d9df225f616ac5d70e6a9b3cc176e18b542b
+schema_blob_sha: e45551ae32f950c834ed259ea76230be0e4ebf43
+validator_patch_commit: df31151206675c0d8799087bf498f82b23acd3a1
+canonical_record_commit: 8ba06c09d2b085cf9fc4abe71f4ee747da01233a
+validation_pass_receipt_commit: cb61172691763afff2105fd19ce954ad8b2edbf5
+path_c_v1_commit: 0829ed2fcbbe543c156dc5701a262960d3e53074
+
+path_c_order:
+1. wallet_sign_schema_freeze
+2. record_signature_receipt
+3. eas_attest_batch_002_validation_pass
+4. append_eas_uid_and_tx_hash
+
+wallet_sign_message:
+I, jaywisdom.eth / jaywisdom.base.eth, freeze REPLAY_SEQUENCE_SCHEMA_V1 for REPLAY Base/Zora receipt sequencing.
+
+Schema commit: 3826d9df225f616ac5d70e6a9b3cc176e18b542b
+Schema blob SHA: e45551ae32f950c834ed259ea76230be0e4ebf43
+Validator patch commit: df31151206675c0d8799087bf498f82b23acd3a1
+Canonical BATCH_002 record commit: 8ba06c09d2b085cf9fc4abe71f4ee747da01233a
+Validation pass receipt commit: cb61172691763afff2105fd19ce954ad8b2edbf5
+Path C prep chain: 0829ed2fcbbe543c156dc5701a262960d3e53074
+Authority model: EVIDENCE_ONLY
+Replayability: FOREVER
+Boundary: This signature freezes the GitHub schema and validation path only. It does not claim external Base transaction verification or EAS attestation.
+
+prepared_eas_statement:
+REPLAY has a GitHub-committed schema, patched validator, canonical BATCH_002 record, validation pass receipt, and Path C preparation chain for Base/Zora receipt sequencing. This attestation records validator pass status only and does not independently verify external Base transaction execution unless separate transaction evidence is attached.
+
+required_return_fields_after_signature:
+- signer_address
+- signature
+- signed_message
+- signed_timestamp_utc
+
+required_return_fields_after_eas:
+- eas_uid
+- eas_tx_hash
+- eas_schema_or_schema_uid_if_used
+- attester_address
+- attested_timestamp_or_block
+
+boundary: prepared only; no wallet signature claimed; no EAS UID claimed; no onchain finality claimed in this file
