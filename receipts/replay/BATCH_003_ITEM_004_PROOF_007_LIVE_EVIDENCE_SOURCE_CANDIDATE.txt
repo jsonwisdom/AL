@@ -1,0 +1,42 @@
+BATCH_003_ITEM_004_PROOF_007_LIVE_EVIDENCE_SOURCE_CANDIDATE
+
+status: LIVE_EVIDENCE_SOURCE_CANDIDATE_COMMITTED
+batch: BATCH_003
+item: ITEM_004
+mode: BUILD_AND_PLAY
+surface: GITHUB_DIRECT
+repository: jsonwisdom/AL
+identity: jaywisdom.eth
+identity_address: 0xa380552a27b0a5a2874ea7aa52cac09f542002e8
+
+source_candidate:
+https://base.app/profile/0x829AdfEdBe565F9885a7eA6Bc78912acAef055E2
+
+scanner_file:
+tools/replay/proof_007_zora_creator_coin_scanner.py
+scanner_blob_sha: 7e7b553adaf312ca6159740e6ddc774c24b9f2b9
+
+purpose:
+Use the Base App profile as a live surface to locate Zora/Base creator coin evidence for Proof-007.
+
+required_next_evidence:
+- specific coin or contract address
+- creation transaction hash or creation event reference
+- creator or deployer address
+- first mint or buy transaction hash or event reference
+- first minter or buyer address
+
+current_evidence_status: SOURCE_LINK_ONLY
+claim_allowed:
+- Proof-007 live evidence source candidate committed to BATCH_003.
+- Base App profile URL queued for inspection.
+- Scanner scaffold exists in GitHub.
+
+claim_not_allowed:
+- Base App profile data was parsed.
+- contract address identified.
+- deployer/minter comparison completed.
+- Proof-007 passed.
+- mismatch found.
+
+boundary: source URL recorded only; no live data parsed; no transaction evidence verified; no EAS attestation; no wallet signature.
