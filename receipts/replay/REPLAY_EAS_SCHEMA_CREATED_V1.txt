@@ -1,0 +1,19 @@
+REPLAY EAS SCHEMA CREATED V1
+
+status: EAS_SCHEMA_CREATED_RECORDED
+network: BASE
+surface: EAS
+schema_name: REPLAY_SEQUENCE_VALIDATION_V1
+schema_uid: 0xa56eee7fe536dace0f317337c4524182181c94241bca2cc6f3ecd279734b37ac
+schema_tx_hash: 0xb17c66f7fbe246be22a0783f813157eac8ac271a1a83558e96c2f16265af8b71
+repository: jsonwisdom/AL
+schema_commit: 3826d9df225f616ac5d70e6a9b3cc176e18b542b
+schema_blob_sha: e45551ae32f950c834ed259ea76230be0e4ebf43
+validator_patch_commit: df31151206675c0d8799087bf498f82b23acd3a1
+canonical_record_commit: 8ba06c09d2b085cf9fc4abe71f4ee747da01233a
+validation_pass_receipt_commit: cb61172691763afff2105fd19ce954ad8b2edbf5
+subject_identity: jaywisdom.eth / jaywisdom.base.eth
+subject_address: 0xa380552a27b0a5a2874ea7aa52cac09f542002e8
+claim_allowed: REPLAY_SEQUENCE_VALIDATION_V1 schema created on EAS/Base.
+claim_not_allowed: BATCH_002 attested; jaywisdom.base.eth signed; external Base tx verified
+boundary: records EAS schema creation only; no BATCH_002 attestation UID claimed; no wallet signature claimed; no external transaction verification claimed
