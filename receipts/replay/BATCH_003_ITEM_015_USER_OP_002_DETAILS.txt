@@ -1,0 +1,38 @@
+BATCH_003 ITEM_015
+status: USER_OP_002_DETAILS_RECORDED
+network: base
+explorer: base.blockscout.com
+parent_tx: 0x0d96232a39eb4842ec7cbe72f78350769b630016b9692f6340e98e0085b673dc
+block: 46454006
+user_op_hash: 0x810cabd8b5de0c30b1698138943b17c4111f0871c76d4c7cbf27099e2b623dd1
+sender: 0xE7e84D3DC169617e05A0669e74fE7E22968c00CA
+target: 0x8a8c43Ef2a4Ee143b02Cc4D7F840dF05fa75B455
+status: Success
+timestamp_visible: May 25 2026 03:22:39 (-05:00 UTC)
+fee_eth: 0.000002647358
+gas_limit: 947058
+gas_used: 378194
+gas_used_percent: 39.93
+entry_point: EntryPoint
+prior_inspection_order: 84065dad7006084dfdbecbe9d764f54d2ba30027
+
+remaining_evidence_needed:
+- Logs tab data
+- Raw tab data
+- method selector
+- decoded call or event names
+- whether target or logs touch 0x694ce46c64d9d1a5e9376a9febcf85ec05d72e9f
+- classification as creation, mint, buy, transfer, or other
+
+claim_allowed:
+- User operation 002 full hash, sender, target, and visible execution details recorded.
+- User operation 002 succeeded inside parent handleOps transaction.
+
+claim_not_allowed:
+- User operation 002 classified
+- JAYWISDOM contract touched
+- creator/deployer verified
+- first minter/buyer verified
+- Proof-007 passed
+
+boundary: visible user operation details only; no logs/raw decode; no proof result claimed
