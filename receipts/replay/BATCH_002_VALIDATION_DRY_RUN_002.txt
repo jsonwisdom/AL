@@ -1,0 +1,18 @@
+BATCH_002 VALIDATION DRY RUN 002
+
+record_commit: 8ba06c09d2b085cf9fc4abe71f4ee747da01233a
+schema_commit: 3826d9df225f616ac5d70e6a9b3cc176e18b542b
+validator_patch_commit: df31151206675c0d8799087bf498f82b23acd3a1
+previous_failed_dry_run: d9d77ef7671f22b0215a372bc6af1f8d0d5e1b31
+batch: BATCH_002
+status: VALIDATOR_PASS
+
+basis:
+- BATCH_001 sealed timestamp patched to RFC3339 UTC: 2026-05-25T07:11:13Z
+- BATCH_002 remains OPEN and may use github_commit timestamp under patched validator policy
+- ITEM_001 through ITEM_004 use permitted timestamp forms
+- neutral summaries remain non-promotional
+- sequence order is BATCH_001 then BATCH_002
+- next_phase continuity is valid
+
+boundary: validator pass only; no external Base transaction verification claimed; no EAS attestation claimed; no wallet signature claimed
