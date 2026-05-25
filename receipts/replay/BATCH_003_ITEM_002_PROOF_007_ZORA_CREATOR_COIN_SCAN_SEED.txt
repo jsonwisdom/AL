@@ -1,0 +1,40 @@
+BATCH_003_ITEM_002_PROOF_007_ZORA_CREATOR_COIN_SCAN_SEED
+
+status: IDEA_RECEIPT_COMMITTED
+batch: BATCH_003
+item: ITEM_002
+mode: BUILD_AND_PLAY
+surface: GITHUB_DIRECT
+repository: jsonwisdom/AL
+identity: jaywisdom.eth
+identity_address: 0xa380552a27b0a5a2874ea7aa52cac09f542002e8
+
+idea:
+Pull a real Zora Creator Coin case where deployer != first minter and run Proof-007.
+
+small_executable_step:
+Write a Base/Zora scanner that fetches recent CreatorCoinCreated-style events or equivalent Zora coin creation records, then compares deployer/creator address against first mint or first buyer/minter address.
+
+proof_007_goal:
+Determine whether a Zora Creator Coin has a public evidence case where creator/deployer and first minter are distinct addresses.
+
+required_evidence_before_proof:
+- contract address or coin address
+- creation transaction hash
+- deployer or creator address
+- first mint/buy transaction hash
+- first minter or buyer address
+- source surface used for extraction
+
+current_evidence_status: NO_LIVE_TX_DATA_YET
+claim_allowed:
+- Proof-007 scan seed committed to BATCH_003.
+- The Idea Factory has queued a Zora Creator Coin deployer-versus-first-minter evidence test.
+
+claim_not_allowed:
+- Proof-007 passed.
+- A real deployer/minter mismatch has been found.
+- Zora data has been independently verified.
+- Any Creator Coin case is proven.
+
+boundary: GitHub direct idea receipt only; no live chain data claimed; no EAS attestation; no wallet signature; no final proof.
