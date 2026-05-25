@@ -1,0 +1,33 @@
+REPLAY FLYWHEEL V1
+
+status: ACTIVE
+repository: jsonwisdom/AL
+network: BASE
+surface: ZORA_BASE
+identity: jaywisdom.base.eth
+identity_alt: jaywisdom.eth
+anchor: 0xa380552a27b0a5a2874ea7aa52cac09f542002e8
+
+flywheel_order:
+1. schema_committed
+2. validator_committed
+3. receipt_candidates_appended
+4. record_validated
+5. attestation_allowed_only_after_validation
+
+current_schema_commit: 3826d9df225f616ac5d70e6a9b3cc176e18b542b
+current_validator_commit: 2dab03c953a3ac2d36a645d0d23e90352d39c9ac
+current_receipt_chain_head: b50d5a65593b870671d1517515becba6fbacf545
+
+current_batch: BATCH_002
+current_batch_status: OPEN_WITH_RECEIPT_CANDIDATES
+
+rules:
+- schema before attestation
+- validator before claims
+- receipts before narrative
+- github commits are valid receipt sources
+- onchain claims require onchain proof
+- wallet signature claims require wallet signature proof
+
+boundary: flywheel active as GitHub direct control record; no onchain attestation claimed; no wallet signature claimed; no final validation claimed in this file
