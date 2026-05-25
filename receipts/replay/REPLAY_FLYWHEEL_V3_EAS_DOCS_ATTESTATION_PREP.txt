@@ -1,0 +1,58 @@
+REPLAY FLYWHEEL V3 WITH EAS DOCS AND ATTESTATION PREP
+
+status: ATTESTATION_PREP_ACTIVE
+repository: jsonwisdom/AL
+network: BASE
+surface: ZORA_BASE
+attestation_surface: EAS
+identity: jaywisdom.base.eth
+identity_alt: jaywisdom.eth
+anchor: 0xa380552a27b0a5a2874ea7aa52cac09f542002e8
+
+reference_docs:
+- eas_docs: https://docs.attest.org/docs/welcome
+- base_docs: https://docs.base.org/get-started/base
+- base_docs_index: https://docs.base.org/llms.txt
+- zora_docs: https://docs.zora.co/
+- zora_skill: https://docs.zora.co/skill.md
+- zora_coins_sdk: https://docs.zora.co/coins/sdk
+- zora_coins_protocol: https://docs.zora.co/coins/protocol
+
+flywheel_order:
+1. schema_committed
+2. validator_committed
+3. receipt_candidates_appended
+4. reference_docs_recorded
+5. eas_docs_recorded
+6. record_validated
+7. eas_attestation_allowed_only_after_validation
+
+current_schema_commit: 3826d9df225f616ac5d70e6a9b3cc176e18b542b
+current_validator_commit: 2dab03c953a3ac2d36a645d0d23e90352d39c9ac
+current_receipt_chain_head: b50d5a65593b870671d1517515becba6fbacf545
+previous_flywheel_commit: 093d24a6907b503fee2e963c98261adecf47330e
+
+current_batch: BATCH_002
+current_batch_status: OPEN_WITH_RECEIPT_CANDIDATES
+
+attestation_payload_draft:
+subject: REPLAY
+schema: REPLAY_SEQUENCE_SCHEMA_V1
+schema_commit: 3826d9df225f616ac5d70e6a9b3cc176e18b542b
+validator_commit: 2dab03c953a3ac2d36a645d0d23e90352d39c9ac
+batch: BATCH_002
+batch_status: OPEN_WITH_RECEIPT_CANDIDATES
+authority_model: EVIDENCE_ONLY
+replayability: FOREVER
+statement: REPLAY has a GitHub-committed schema and validator path for Base/Zora receipt sequencing. Attestation is permitted only after validation passes.
+
+rules:
+- schema before attestation
+- validator before claims
+- receipts before narrative
+- docs are reference surfaces, not proof of user action
+- github commits are valid receipt sources
+- eas claims require eas UID or transaction proof
+- wallet signature claims require wallet signature proof
+
+boundary: EAS docs included as reference surface and attestation payload prepared; no EAS UID claimed; no onchain attestation claimed; no wallet signature claimed; no final validation claimed in this file
