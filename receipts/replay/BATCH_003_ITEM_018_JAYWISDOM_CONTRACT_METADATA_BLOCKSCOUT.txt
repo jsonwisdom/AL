@@ -1,0 +1,43 @@
+BATCH_003 ITEM_018
+status: CONTRACT_METADATA_BLOCKSCOUT_RECORDED
+network: base
+explorer: base.blockscout.com
+contract: 0x694cE46C64D9D1a5e9376A9feBcF85Ec05D72e9F
+contract_type: Proxy Token
+proxy_detection: EIP-1167 Minimal Proxy
+source_code_label: jaywisdom
+token_name: jaywisdom
+token_symbol: jaywisdom
+implementation_label: CreatorCoin
+eth_balance: 0 ETH
+transactions_visible: 204
+transfers_visible: 80
+internal_txns_visible: 0
+gas_used_visible: 9035890
+last_balance_update: 46453920
+prior_user_op_001_transfer_decode: 51d1b1a0230925a9cba0476f09e75f8aa47bed53
+prior_user_op_002_subscription_decode: b02130ca791812c2a291f1b8d0532b7afa4f5b30
+prior_user_op_003_morpho_decode: 78340f697352703b7b651d6ad15b5e8050308644
+
+proof_007_relevance:
+- confirms contract page and token metadata surface
+- confirms implementation label CreatorCoin
+- does not yet identify creator/deployer address
+- does not yet identify creation transaction
+- does not yet identify first mint or buy
+
+required_next_click:
+Open Transactions tab or Token transfers tab and sort/find earliest record. Look for contract creation, first transfer from zero address, CoinCreated, Mint, Buy, or Purchase.
+
+claim_allowed:
+- JAYWISDOM contract metadata recorded from Blockscout visible contract page.
+- JAYWISDOM contract is displayed as Proxy Token with CreatorCoin implementation label.
+
+claim_not_allowed:
+- creator/deployer identified
+- creation tx identified
+- first minter/buyer identified
+- deployer versus first minter comparison completed
+- Proof-007 passed
+
+boundary: visible contract metadata only; no origin or first mint proof claimed
