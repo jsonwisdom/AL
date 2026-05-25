@@ -1,0 +1,35 @@
+BATCH_003_GENESIS_KEY_V1
+
+status: BATCH_003_PREPARED_NOT_OPEN
+key_type: PUBLIC_GENESIS_IDENTIFIER
+authority_model: EVIDENCE_ONLY
+owner_identity: jaywisdom.eth
+owner_address: 0xa380552a27b0a5a2874ea7aa52cac09f542002e8
+
+prior_state: BATCH_002 validator pass attested on EAS/Base by delegated recorder
+prior_eas_uid: 0xed2eed117f8b888d597910ed88cda166217babfcdcfc54e4c70b02a49ee2dc25
+prior_eas_tx_hash: 0x8a3ccc41ab7611a940f21fee77d58fbd3fde647d197e2315e4e07824351e712c
+prior_github_state_commit: 10594c70e8c58c58d3e3699a50248d5b782d2c9d
+
+canonical_string:
+BATCH_003::jaywisdom.eth::0xa380552a27b0a5a2874ea7aa52cac09f542002e8::AFTER_EAS_ATTESTED_VALIDATOR_PASS
+
+hashable_message:
+I, jaywisdom.eth, initialize BATCH_003 as a new REPLAY receipt sequence.
+Identity: jaywisdom.eth / 0xa380552a27b0a5a2874ea7aa52cac09f542002e8
+Prior state: BATCH_002 validator pass attested on EAS/Base by delegated recorder.
+Prior EAS UID: 0xed2eed117f8b888d597910ed88cda166217babfcdcfc54e4c70b02a49ee2dc25
+Boundary: This Genesis Key is a public batch-root identifier. It is not a private key, not a wallet signature, and not a claim of owner-signed finality.
+Next state: BATCH_003_PREPARED
+
+claim_allowed:
+- BATCH_003 public genesis identifier prepared in GitHub.
+- BATCH_003 references prior BATCH_002 EAS validator-pass attestation.
+
+claim_not_allowed:
+- BATCH_003 opened.
+- jaywisdom.eth wallet signed this genesis key.
+- owner-signed finality.
+- new receipts appended to BATCH_003.
+
+boundary: public root marker only; no private key; no access token; no wallet signature; no EAS attestation for BATCH_003; no batch opening claimed.
