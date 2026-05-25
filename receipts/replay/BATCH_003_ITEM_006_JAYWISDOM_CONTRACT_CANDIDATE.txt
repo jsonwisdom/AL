@@ -1,0 +1,40 @@
+BATCH_003_ITEM_006_JAYWISDOM_CONTRACT_CANDIDATE
+
+status: CONTRACT_CANDIDATE_COMMITTED
+batch: BATCH_003
+item: ITEM_006
+mode: BUILD_AND_PLAY
+surface: GITHUB_DIRECT
+repository: jsonwisdom/AL
+identity: jaywisdom.eth
+identity_address: 0xa380552a27b0a5a2874ea7aa52cac09f542002e8
+
+contract_label: JAYWISDOM
+contract_address: 0x694ce46c64d9d1a5e9376a9febcf85ec05d72e9f
+network: base
+proof_target: PROOF_007_ZORA_CREATOR_COIN_DEPLOYER_VS_FIRST_MINTER
+
+linked_target_wallet: 0x829AdfEdBe565F9885a7eA6Bc78912acAef055E2
+linked_factory: 0x777777751622c0d3258f214F9DF38E35BF45baF3
+scanner_patch_commit: b6e2a7018a03d861b4210a5bdd0acd032c8be541
+previous_factory_target_commit: 8ab7ab9f60cdf99cd4b26e46296a3468cd953dde
+
+required_next_evidence:
+- creation transaction hash or event reference for contract_address
+- creator or deployer address from creation evidence
+- first mint or buy transaction hash or event reference
+- first minter or buyer address from transaction evidence
+
+claim_allowed:
+- JAYWISDOM contract candidate committed to BATCH_003 for Proof-007 inspection.
+- Contract address is queued as the next Proof-007 evidence target.
+
+claim_not_allowed:
+- contract decoded
+- creator/deployer verified
+- first minter/buyer verified
+- deployer/minter comparison completed
+- Proof-007 passed
+- Zora Factory data independently verified
+
+boundary: contract address candidate only; no live chain decoding claimed; no proof result; no EAS attestation; no wallet signature.
