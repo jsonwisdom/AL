@@ -1,0 +1,11 @@
+{
+  "type": "module",
+  "scripts": {
+    "audit:node": "tsx src/audit.ts",
+    "audit:bun": "bun src/audit.ts",
+    "audit:deno": "deno run src/audit.ts"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.0"
+  }
+}
