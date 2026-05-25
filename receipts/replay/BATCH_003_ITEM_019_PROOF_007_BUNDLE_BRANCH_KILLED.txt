@@ -1,0 +1,39 @@
+BATCH_003 ITEM_019
+status: PROOF_007_BUNDLE_BRANCH_KILLED
+network: base
+contract_under_test: 0x694ce46c64d9d1a5e9376a9febcf85ec05d72e9f
+parent_tx: 0x0d96232a39eb4842ec7cbe72f78350769b630016b9692f6340e98e0085b673dc
+block: 46454006
+
+branch_kill_reason:
+The bundled handleOps transaction was inspected across all three visible user operations. It contains JAYWISDOM transfer activity, a subscription event, and a Morpho USDC to gtUSDCp swap/deposit path. It does not contain contract creation evidence or first mint/buy evidence sufficient to resolve Proof-007.
+
+classified_user_ops:
+- user_op_001: JAYWISDOM ERC20 transfer evidence only
+- user_op_002: non-JAYWISDOM subscription event
+- user_op_003: non-JAYWISDOM Morpho swap/deposit path
+
+supporting_commits:
+- user_op_001_transfer_decode: 51d1b1a0230925a9cba0476f09e75f8aa47bed53
+- user_op_002_subscription_decode: b02130ca791812c2a291f1b8d0532b7afa4f5b30
+- user_op_003_morpho_decode: 78340f697352703b7b651d6ad15b5e8050308644
+- prior_branch_close: 2fcf0f6f963d6ba38dda1edf756af59eda8627a6
+
+proof_007_result_for_this_bundle:
+INSUFFICIENT_ORIGIN_EVIDENCE
+
+next_branch:
+Find the contract creation transaction for 0x694ce46c64d9d1a5e9376a9febcf85ec05d72e9f and earliest mint/buy or zero-address transfer event.
+
+claim_allowed:
+- The bundled transaction branch is closed for Proof-007 origin purposes.
+- The bundle proves post-deployment activity only.
+- Proof-007 must pivot to contract creation and earliest mint/buy evidence.
+
+claim_not_allowed:
+- Proof-007 passed
+- deployer identified from this bundle
+- first minter or buyer identified from this bundle
+- deployer != first_minter established
+
+boundary: branch killed for this tx only; no contract origin found; no Proof-007 pass claimed
