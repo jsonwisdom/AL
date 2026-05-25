@@ -3,6 +3,7 @@ import { canonicalize, utf8Bytes, bytesHex } from "./jcs.ts";
 import { sha256Hex } from "./digest.ts";
 import { engineSignature, exitRuntime } from "./runtime.ts";
 import { runMutation001Audit } from "./mutation-001.ts";
+import { runMutation002Audit } from "./mutation-002.ts";
 
 function assertEqual(label: string, a: string, b: string): void {
   if (a !== b) {
@@ -50,12 +51,19 @@ async function runZeroStateAudit() {
 
 const zero = await runZeroStateAudit();
 const mutation = await runMutation001Audit();
+const mutation002 = await runMutation002Audit();
 
 assertEqual("MUTATION_PRE_HASH_EQUALS_ZERO_HASH", zero.sha256, mutation.pre_state_hash);
+assertEqual(
+  "MUTATION_002_CHAIN_LINK",
+  mutation.post_state_hash,
+  mutation002.previous_post_state_hash
+);
 
 console.log(JSON.stringify({
   audit_status: "PASS",
   engine: engineSignature(),
   zero,
-  mutation
+  mutation,
+  mutation002
 }, null, 2));
