@@ -1,0 +1,34 @@
+BATCH_003_ITEM_005_PROOF_007_FACTORY_TARGET
+
+status: FACTORY_TARGET_COMMITTED
+batch: BATCH_003
+item: ITEM_005
+mode: BUILD_AND_PLAY
+surface: GITHUB_DIRECT
+repository: jsonwisdom/AL
+identity: jaywisdom.eth
+identity_address: 0xa380552a27b0a5a2874ea7aa52cac09f542002e8
+
+scanner_patch_commit: b6e2a7018a03d861b4210a5bdd0acd032c8be541
+scanner_file: tools/replay/proof_007_zora_creator_coin_scanner.py
+
+target_wallet: 0x829AdfEdBe565F9885a7eA6Bc78912acAef055E2
+network: base
+factory: 0x777777751622c0d3258f214F9DF38E35BF45baF3
+
+command:
+python tools/replay/proof_007_zora_creator_coin_scanner.py --wallet 0x829AdfEdBe565F9885a7eA6Bc78912acAef055E2 --network base --factory 0x777777751622c0d3258f214F9DF38E35BF45baF3
+
+current_evidence_status: TARGET_ONLY
+claim_allowed:
+- Proof-007 factory target committed to BATCH_003.
+- Scanner now accepts wallet, network, and factory target inputs.
+
+claim_not_allowed:
+- Creator coin found.
+- first Creator Coin identified.
+- deployer/minter comparison completed.
+- Proof-007 passed.
+- Zora Factory data independently verified.
+
+boundary: GitHub direct target receipt only; no live chain query result; no proof result; no EAS attestation; no wallet signature.
