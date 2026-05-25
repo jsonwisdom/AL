@@ -9,8 +9,16 @@ function isUtcTimestamp(value) {
   return typeof value === 'string' && /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/.test(value);
 }
 
-function isBatchId(value) {
-  return typeof value === 'string' && /^BATCH_\d{3}$/.test(value);
+function isBlockTimestamp(value) {
+  return typeof value === 'string' && /^block:\d+$/.test(value);
+}
+
+function isGithubCommitTimestamp(value) {
+  return typeof value === 'string' && /^github_commit:[a-fA-F0-9]{7,40}$/.test(value);
+}
+
+function isOpenTimestamp(value) {
+  return isUtcTimestamp(value) || isBlockTimestamp(value) || isGithubCommitTimestamp(value);
 }
 
 function expectedBatchId(sequence) {
@@ -67,8 +75,8 @@ function validateReplaySequence(record, priorSealedByBatch = {}) {
       errors.push(`${label}: SEALED/FROZEN_EMPTY requires RFC3339 UTC timestamp ending in Z`);
     }
 
-    if (batch.status === 'OPEN' && batch.timestamp && !isUtcTimestamp(batch.timestamp)) {
-      errors.push(`${label}: OPEN timestamp, when present, must be RFC3339 UTC ending in Z`);
+    if (batch.status === 'OPEN' && batch.timestamp && !isOpenTimestamp(batch.timestamp)) {
+      errors.push(`${label}: OPEN timestamp, when present, must be RFC3339 UTC, block:number, or github_commit:sha`);
     }
 
     if (batch.status === 'PLANNED' && batch.timestamp) {
@@ -98,7 +106,7 @@ function validateReplaySequence(record, priorSealedByBatch = {}) {
           errors.push(`${itemLabel}: item must be object`);
           return;
         }
-        if (!isUtcTimestamp(item.timestamp) && !/^block:\d+$/.test(item.timestamp || '') && !/^github_commit:[a-fA-F0-9]{7,40}$/.test(item.timestamp || '')) {
+        if (!isOpenTimestamp(item.timestamp)) {
           errors.push(`${itemLabel}: timestamp must be UTC, block:number, or github_commit:sha`);
         }
         if (hasPromotionalLanguage(item.neutral_summary)) {
