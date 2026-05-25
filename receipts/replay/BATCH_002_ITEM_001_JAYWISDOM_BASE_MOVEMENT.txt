@@ -1,0 +1,17 @@
+REPLAY BATCH_002 ITEM_001
+
+batch: BATCH_002
+item: ITEM_001
+status: APPENDED_AS_RECEIPT_CANDIDATE
+network: BASE
+surface: JAYWISDOM_BASE_ETH_MOVEMENT
+identity: jaywisdom.base.eth
+identity_alt: jaywisdom.eth
+identity_declared_anchor: 0xa380552a27b0a5a2874ea7aa52cac09f542002e8
+action: JAYWISDOM_BASE_MOVEMENT
+receipt_type: BASE_TX_HASH
+tx_hash: 0xbeb2fdc8d757cf0bf284e0efacd776ab0df081550dbccf9d993aff5882d1fa5e
+neutral_summary: JayWisdom Base movement receipt candidate recorded from provided Base transaction hash.
+verification_status: PENDING_EXTERNAL_CHAIN_VERIFICATION
+batch_effect: BATCH_002_NO_LONGER_EMPTY_AFTER_THIS_COMMIT
+boundary: GitHub records supplied tx hash as receipt candidate; no wallet signature claimed; no EAS attestation claimed; no chain verification claimed in this file.
