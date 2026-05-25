@@ -1,0 +1,19 @@
+REPLAY receipt surface metadata v1
+surface_type: GITHUB_COMMIT_CHAIN
+repository: jsonwisdom/AL
+range_start_commit: 2d0fb75b3ca0e63410b1aad9f194d36b6b44bc51
+range_head_commit: 8db093ef86984756cc4ff286b33441052944f26d
+files:
+- receipts/replay/REPLAY_GITHUB_DIRECT_POINTER_V2.txt
+- receipts/replay/REPLAY_GITHUB_DIRECT_POINTER_V3.txt
+valid_receipt_source_added: github_commit_hash
+batch: BATCH_002
+batch_status: OPEN_EMPTY
+schema: REPLAY_SEQUENCE_SCHEMA_V1
+schema_status: READY_TO_FREEZE
+boundary: receipt surface metadata only; not a BATCH_002 item; no wallet signature; no onchain attestation; no schema freeze
+identity_primary: jaywisdom.eth
+identity_base: jaywisdom.base.eth
+identity_declared_anchor: 0xa380552a27b0a5a2874ea7aa52cac09f542002e8
+jaywisdom_token_contract_declared: 0x694ce46c64d9d1a5e9376a9febcf85ec05d72e9f
+zora_distributed_profile: https://base.app/profile/0x829AdfEdBe565F9885a7eA6Bc78912acAef055E2
