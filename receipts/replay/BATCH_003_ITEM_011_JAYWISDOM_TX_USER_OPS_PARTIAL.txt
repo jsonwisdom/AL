@@ -1,0 +1,36 @@
+BATCH_003 ITEM_011
+status: USER_OPS_PARTIAL_DECODE
+network: base
+explorer: base.blockscout.com
+tx: 0x0d96232a39eb4842ec7cbe72f78350769b630016b9692f6340e98e0085b673dc
+block: 46454006
+method: handleOps
+bundler: Coinbase ERC-4337 Bundler
+user_operations_count: 3
+
+user_ops_visible:
+1. hash: 0xf82e6095cc...7bce | status: Success | sender: CoinbaseSmartWallet | fee_eth: 0.00000112
+2. hash: 0x810cabd8b5...3dd1 | status: Success | sender: 0xE7...00CA | fee_eth: 0.00000265
+3. hash: 0x4cb58353c5...0fe4 | status: Success | sender: 0xCf...C6B1 | fee_eth: 0.00000331
+
+source_text_summary:
+Blockscout transaction page reports that Coinbase ERC-4337 Bundler submitted 3 user operations in transaction 0x0d96232a39eb4842ec7cbe72f78350769b630016b9692f6340e98e0085b673dc.
+
+remaining_evidence_needed:
+- full user op hash for each operation
+- full sender address for each operation
+- operation target or call data
+- logs/events tied to contract 0x694ce46c64d9d1a5e9376a9febcf85ec05d72e9f
+- classification as creation, mint, buy, transfer, or other
+
+claim_allowed:
+- transaction contains 3 successful user operations according to visible Blockscout data
+- user operation details are partially visible
+
+claim_not_allowed:
+- creator/deployer verified
+- first minter/buyer verified
+- Proof-007 passed
+- deployer != first_minter established
+
+boundary: partial user operation decode only; visible fields are truncated; no full address comparison possible yet; no proof result claimed
