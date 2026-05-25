@@ -1,0 +1,14 @@
+{
+  "name": "abi-seed-crystal",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "cast": "tsx src/run-seed.ts",
+    "check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  }
+}
