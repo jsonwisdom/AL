@@ -1,0 +1,41 @@
+BATCH_003 ITEM_013
+status: USER_OP_001_TRANSFER_DECODED
+network: base
+explorer: base.blockscout.com
+parent_tx: 0x0d96232a39eb4842ec7cbe72f78350769b630016b9692f6340e98e0085b673dc
+block: 46454006
+user_op_hash: 0xf82e6095ccd6eafe701141844cfd67652026a62aada096c066d64e02793f7bce
+sender: 0xA380552a27b0a5a2874Ea7AA52CAC09f542002E8
+contract: 0x694ce46c64d9d1a5e9376a9febcf85ec05d72e9f
+contract_label: CreatorCoin
+method_selector: a9059cbb
+method_classification: ERC20_TRANSFER
+transfer_from: 0xA380552a27b0a5a2874Ea7AA52CAC09f542002E8
+transfer_to: 0xC345B26094c63C69222Ee775189a3d3eaead5a84
+amount_raw: 21719653026800000000000
+
+events:
+- Transfer(address indexed from,address indexed to,uint256 value)
+- CoinTransfer(address indexed sender,address indexed recipient,uint256 amount,uint256 senderBalance,uint256 recipientBalance)
+
+coin_transfer_sender_balance: 20964907729586439837336320
+coin_transfer_recipient_balance: 21719653026800000000000
+previous_user_op_details_commit: 1083886227a2b19d96a415ef09a707d21a9f0279
+previous_user_ops_partial_commit: e80fded326b1c8339bd9de6332485e573820d9cb
+
+proof_007_classification:
+- not_creation_tx
+- not_first_mint_or_buy_evidence
+- usable_as_transfer_evidence_only
+
+claim_allowed:
+- User operation 001 decoded as ERC20 transfer on CreatorCoin/JAYWISDOM contract.
+- Transfer moved value from 0xA380552a27b0a5a2874Ea7AA52CAC09f542002E8 to 0xC345B26094c63C69222Ee775189a3d3eaead5a84.
+
+claim_not_allowed:
+- creation transaction identified
+- first minter or buyer identified
+- deployer versus first minter comparison completed
+- Proof-007 passed
+
+boundary: decoded transfer evidence only; not creation evidence; not first mint/buy evidence; no proof result claimed
