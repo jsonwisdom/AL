@@ -1,0 +1,38 @@
+BATCH_003 ITEM_018
+status: BUNDLE_TX_BRANCH_CLOSED_FOR_PROOF_007
+network: base
+explorer: base.blockscout.com
+parent_tx: 0x0d96232a39eb4842ec7cbe72f78350769b630016b9692f6340e98e0085b673dc
+block: 46454006
+contract_under_test: 0x694ce46c64d9d1a5e9376a9febcf85ec05d72e9f
+proof_target: PROOF_007_ZORA_CREATOR_COIN_DEPLOYER_VS_FIRST_MINTER
+
+bundle_findings:
+- user_op_001: JAYWISDOM/CreatorCoin ERC20 transfer evidence
+- user_op_002: non-JAYWISDOM subscription event evidence
+- user_op_003: non-JAYWISDOM USDC to gtUSDCp Morpho swap/deposit evidence
+
+user_op_001_commit: 51d1b1a0230925a9cba0476f09e75f8aa47bed53
+user_op_002_commit: b02130ca791812c2a291f1b8d0532b7afa4f5b30
+user_op_003_commit: 78340f697352703b7b651d6ad15b5e8050308644
+
+classification:
+- bundle_tx_is_activity_evidence
+- bundle_tx_is_not_contract_creation_evidence
+- bundle_tx_does_not_resolve_first_mint_or_buy
+- proof_007_unresolved
+
+next_required_branch:
+Find contract creation transaction for 0x694ce46c64d9d1a5e9376a9febcf85ec05d72e9f, then locate earliest mint/buy or zero-address transfer event.
+
+claim_allowed:
+- Parent bundled transaction branch inspected and closed for Proof-007 origin purposes.
+- Bundle contains JAYWISDOM transfer evidence but not creation or first mint/buy evidence.
+
+claim_not_allowed:
+- Proof-007 passed
+- deployer identified from this bundle
+- first minter or buyer identified from this bundle
+- deployer != first_minter established
+
+boundary: branch close for bundled tx only; no contract origin found; no proof result claimed
