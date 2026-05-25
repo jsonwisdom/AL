@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "REPLAY_SEQUENCE_SCHEMA_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "version", "organism", "network", "surface", "ticker", "authority_model", "replayability", "batches"],
+  "properties": {
+    "schema": { "const": "REPLAY_SEQUENCE_SCHEMA_V1" },
+    "version": { "const": "1.0.0" },
+    "organism": { "const": "REPLAY" },
+    "network": { "const": "BASE" },
+    "surface": { "const": "ZORA_BASE" },
+    "ticker": { "const": "REPLAY" },
+    "authority_model": { "const": "EVIDENCE_ONLY" },
+    "replayability": { "const": "FOREVER" },
+    "batches": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["batch", "sequence", "title", "status", "items", "next_phase"],
+        "properties": {
+          "batch": { "type": "string", "pattern": "^BATCH_[0-9]{3}$" },
+          "sequence": { "type": "integer", "minimum": 1 },
+          "title": { "type": "string", "minLength": 1 },
+          "status": { "enum": ["SEALED", "FROZEN_EMPTY", "OPEN", "PLANNED"] },
+          "timestamp": { "type": "string" },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["action", "surface", "receipt", "timestamp", "neutral_summary"],
+              "properties": {
+                "action": { "type": "string", "minLength": 1 },
+                "surface": { "type": "string", "minLength": 1 },
+                "receipt": { "type": "string", "minLength": 1 },
+                "timestamp": { "type": "string", "minLength": 1 },
+                "neutral_summary": { "type": "string", "minLength": 1 }
+              }
+            }
+          },
+          "next_phase": {
+            "anyOf": [
+              { "type": "string", "pattern": "^BATCH_[0-9]{3}$" },
+              { "type": "null" }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "validator_notes": [
+    "JSON Schema validates shape only.",
+    "Sequence increment, immutability, next_phase matching, and promotional-language filtering require downstream validator logic.",
+    "No client may render planned, sealed, open, or frozen-empty status differently from the source record."
+  ]
+}
