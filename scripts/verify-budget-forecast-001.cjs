@@ -15,7 +15,7 @@ const actual = crypto.createHash("sha256").update(bytes).digest("hex");
 console.log("target:", TARGET);
 console.log("sha256:", actual);
 
-if (EXPECTED_SHA256 === "ebd0028aa9878116bc6b6cdf49b645153582e13dfea95fc8d23ad90a8ef2dccb") {
+if (EXPECTED_SHA256 === "REPLACE_AFTER_FIRST_HASH") {
   console.log("BOOTSTRAP MODE: copy this sha256 into EXPECTED_SHA256");
   process.exit(0);
 }
