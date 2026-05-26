@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Genesis Builder Attestation v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "genesis_id",
+    "builder_id",
+    "environment",
+    "genesis_artifact_hash",
+    "manifest_hash",
+    "head",
+    "tree",
+    "ipfs_tarball_cid",
+    "ipfs_manifest_cid",
+    "reproducibility_log_url",
+    "signature"
+  ],
+  "properties": {
+    "schema": {
+      "const": "genesis.builder.attestation.v0.1"
+    },
+    "genesis_id": {
+      "const": "genesis-v0.1.0"
+    },
+    "builder_id": {
+      "type": "string"
+    },
+    "environment": {
+      "type": "object",
+      "required": ["os", "arch", "runtime"],
+      "properties": {
+        "os": { "type": "string" },
+        "arch": { "type": "string" },
+        "runtime": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "genesis_artifact_hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "manifest_hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "head": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{40}$"
+    },
+    "tree": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{40}$"
+    },
+    "ipfs_tarball_cid": {
+      "type": "string"
+    },
+    "ipfs_manifest_cid": {
+      "type": "string"
+    },
+    "reproducibility_log_url": {
+      "type": "string"
+    },
+    "signature": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}
