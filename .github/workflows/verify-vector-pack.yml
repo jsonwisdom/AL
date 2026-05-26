@@ -1,0 +1,54 @@
+name: Verify ALMS-F Vector Pack
+
+on:
+  push:
+    branches:
+      - jay/base-b20-research-boundary-001
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-vector-pack:
+    name: Verify vector pack roots
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Verify ALMS-F Vector Pack v0.1
+        working-directory: ALMS-F-Vector-Pack-v0.1
+        run: |
+          node scripts/verify-vector-pack-v0.1.cjs > /tmp/alms-f-v0.1-root.txt
+          ROOT_HASH="$(cat /tmp/alms-f-v0.1-root.txt)"
+          EXPECTED_ROOT="d2c182c02eeb437742012316c27bda5100343f3a53beda60a37a121b8e9a95e4"
+          echo "Computed v0.1 root: ${ROOT_HASH}"
+          test "${ROOT_HASH}" = "${EXPECTED_ROOT}"
+          git diff --exit-code -- expected/file_hashes.json
+
+      - name: Verify ALMS-F Vector Pack v0.2 skeleton parent
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const parent = JSON.parse(fs.readFileSync('ALMS-F-Vector-Pack-v0.2/parent.json', 'utf8'));
+          const expected = 'd2c182c02eeb437742012316c27bda5100343f3a53beda60a37a121b8e9a95e4';
+          if (parent.parent_root !== expected) {
+            throw new Error(`v0.2 parent_root mismatch: ${parent.parent_root}`);
+          }
+          if (parent.parent_version !== '0.1') {
+            throw new Error(`v0.2 parent_version mismatch: ${parent.parent_version}`);
+          }
+          if (parent.version !== '0.2') {
+            throw new Error(`v0.2 version mismatch: ${parent.version}`);
+          }
+          console.log('v0.2 parent linkage verified');
+          NODE
