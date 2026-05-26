@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "receipt_chain.v1",
+  "title": "Receipt Chain V1",
+  "type": "object",
+  "required": [
+    "chain_schema_version",
+    "audit_id",
+    "epoch",
+    "receipt_sha256",
+    "parent_receipt_sha256",
+    "parent_git_commit",
+    "git_commit",
+    "git_tag",
+    "schema_uid",
+    "attestation_uid",
+    "created_unix",
+    "amendment_type",
+    "private_key_terminal"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "chain_schema_version": { "type": "string", "const": "receipt_chain.v1" },
+    "audit_id": { "type": "string" },
+    "epoch": { "type": "integer", "minimum": 0 },
+    "receipt_sha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
+    "parent_receipt_sha256": {
+      "anyOf": [
+        { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
+        { "type": "null" }
+      ]
+    },
+    "parent_git_commit": {
+      "anyOf": [
+        { "type": "string", "minLength": 7 },
+        { "type": "null" }
+      ]
+    },
+    "git_commit": { "type": "string", "minLength": 7 },
+    "git_tag": { "type": "string" },
+    "schema_uid": { "type": "string", "pattern": "^0x[a-fA-F0-9]{64}$" },
+    "attestation_uid": { "type": "string", "pattern": "^0x[a-fA-F0-9]{64}$" },
+    "created_unix": { "type": "integer" },
+    "amendment_type": {
+      "type": "string",
+      "enum": ["GENESIS", "PATCH", "SCHEMA_UPGRADE", "SUCCESSOR_LEAF"]
+    },
+    "private_key_terminal": { "type": "boolean", "const": false }
+  }
+}

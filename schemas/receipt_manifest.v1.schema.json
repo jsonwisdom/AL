@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "receipt_manifest.v1",
+  "title": "Receipt Manifest V1",
+  "type": "object",
+  "required": [
+    "audit_id",
+    "network",
+    "git_commit",
+    "git_tag",
+    "schema_uid",
+    "schema_tx_hash",
+    "attestation_uid",
+    "attestation_tx_hash",
+    "canonical_json_sha256",
+    "witness_role",
+    "replay_authority",
+    "private_key_terminal"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "audit_id": {
+      "type": "string",
+      "const": "budget-forecast-001"
+    },
+    "network": {
+      "type": "string",
+      "const": "base-mainnet"
+    },
+    "git_commit": {
+      "type": "string",
+      "minLength": 8
+    },
+    "git_tag": {
+      "type": "string"
+    },
+    "schema_uid": {
+      "type": "string",
+      "pattern": "^0x[a-fA-F0-9]{64}$"
+    },
+    "schema_tx_hash": {
+      "type": "string",
+      "pattern": "^0x[a-fA-F0-9]{64}$"
+    },
+    "attestation_uid": {
+      "type": "string",
+      "pattern": "^0x[a-fA-F0-9]{64}$"
+    },
+    "attestation_tx_hash": {
+      "type": "string",
+      "pattern": "^0x[a-fA-F0-9]{64}$"
+    },
+    "canonical_json_sha256": {
+      "type": "string",
+      "pattern": "^[a-fA-F0-9]{64}$"
+    },
+    "witness_role": {
+      "type": "string",
+      "const": "existence_and_integrity_only"
+    },
+    "replay_authority": {
+      "type": "string",
+      "const": "local_replay_pass_and_git_tag"
+    },
+    "private_key_terminal": {
+      "type": "boolean",
+      "const": false
+    }
+  }
+}
