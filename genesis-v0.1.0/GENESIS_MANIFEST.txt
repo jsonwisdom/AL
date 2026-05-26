@@ -1,0 +1,29 @@
+GENESIS_ID: genesis-v0.1.0
+
+FILE_SET:
+  canonicalize.js
+  canonicalize.py
+  hash.js
+  receipt_schema.json
+  attest_v0.1.0.js
+  interpret_dispatch_v0.1.0.js
+
+CANONICALIZATION: RFC8785
+UNICODE: UTF-8 / NFC
+HASHING: SHA-256
+NETWORK_CALLS: FORBIDDEN
+CLOCK_READS: FORBIDDEN
+ENVIRONMENT_VARIABLES: FORBIDDEN
+MUTABLE_STATE: FORBIDDEN
+
+COMBINED_ARTIFACT_HASH: TO_BE_COMPUTED
+TEST_VECTORS: simple_object.json, unicode_nfc.json, nested_object.json
+MANIFEST_HASH: TO_BE_COMPUTED
+
+GENESIS_SEAL:
+  REQUIRED_BUILDER_QUORUM: 3_of_5
+  REQUIRED_TIMESTAMP_ANCHORS: 3_of_4
+
+BOUNDARY:
+  Genesis defines receipt physics only.
+  Domain interpretation functions are separate artifacts.
