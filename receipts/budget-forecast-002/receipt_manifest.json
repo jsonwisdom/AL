@@ -1,0 +1,28 @@
+{
+  "leaf_id": "leaf-002",
+  "sequence_number": 2,
+  "audit_id": "AL-CHAIN-LEAF-002",
+  "source_url": "https://github.com/jsonwisdom/AL/blob/d4d9b4fc/receipts/budget-forecast-001/receipt_manifest.json",
+  "subject": "Leaf 002 Mechanical Chain Extension From Genesis",
+  "scope": "ALMS receipt-chain extension. No new budget facts. Verifies Leaf 001 receipt hash as genesis input.",
+  "claims": [
+    {
+      "id": "claim-001",
+      "type": "INTEGRITY",
+      "statement": "Leaf 001 receipt manifest hash equals a8b953ae26aa1bbf7d58538190224f751f9a08ea7da14491ebfd5f73b3197383 and is the genesis input for receipt_chain.v1."
+    }
+  ],
+  "previous_leaf_hash": "a8b953ae26aa1bbf7d58538190224f751f9a08ea7da14491ebfd5f73b3197383",
+  "canonical_json_sha256": "53345b507fba092da6f728cd30b0756789cbcc943955b9a84e92e374ca2c3dae",
+  "schema_uid": "0x640f314744e9cf8ad9f72cfbeab54fb71e20b5489540d9e302c69bccceb60177",
+  "attestation_uid": "0xafc8554b571ce92c980dacf302b765b346aa33b1ba15b1d0224326ee13d049a8",
+  "attestation_tx_hash": "0xd7dd727c7a4be1bede86d4f48089f800308143d9d5c7a97555363632f87193e3",
+  "git_commit": "966a24f71b12e95869b044e3eb774335228cb1fe",
+  "git_commit_short": "966a24f7",
+  "schema_version": "receipt_manifest.v1",
+  "witness_status": "SEALED",
+  "review_status": "APPROVED",
+  "private_key_terminal": false,
+  "sealed_at_unix": 1779790796,
+  "receipt_sha256": "dbfa7b7390fd383c372fc21a36612838d1aa6e0b7c7355e4c4f8a9c3a6d449c0"
+}
