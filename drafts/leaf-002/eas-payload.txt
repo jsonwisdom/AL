@@ -1,0 +1,20 @@
+canonical_json_sha256:
+0x53345b507fba092da6f728cd30b0756789cbcc943955b9a84e92e374ca2c3dae
+
+document_sha256:
+0xa8b953ae26aa1bbf7d58538190224f751f9a08ea7da14491ebfd5f73b3197383
+
+policy_hash:
+0xa8b953ae26aa1bbf7d58538190224f751f9a08ea7da14491ebfd5f73b3197383
+
+github_commit:
+f221e86a
+
+replay_command:
+git clone https://github.com/jsonwisdom/AL.git && cd AL && git checkout f221e86a && npm ci && npm run validate:leaf-002:draft
+
+source_url:
+https://github.com/jsonwisdom/AL/blob/f221e86a/drafts/leaf-002/draft-manifest.json
+
+created_unix:
+1779790211
