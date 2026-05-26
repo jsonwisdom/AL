@@ -29,8 +29,10 @@ PY
 
   JS_HEX="$(node - "$vector" <<'JS'
 const fs = require("fs");
-const { canonicalize } = require("./canonicalize");
-const data = JSON.parse(fs.readFileSync(process.argv[2], "utf8"));
+const mod = require("./canonicalize");
+const canonicalize = mod.canonicalize || mod;
+const file = process.argv[1] === "-" ? process.argv[2] : process.argv[1];
+const data = JSON.parse(fs.readFileSync(file, "utf8"));
 console.log(Buffer.from(canonicalize(data), "utf8").toString("hex"));
 JS
 )"
