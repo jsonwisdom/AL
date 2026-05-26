@@ -1,0 +1,21 @@
+{
+  "schema_version": "mmb.adjustment_manifest.v1",
+  "namespace": "mmb/v1/adjustments",
+  "epoch_id": "fy2026_q1",
+  "fund_id": "general",
+  "line_items": [
+    {
+      "line_item_id": "operations",
+      "epoch_id": "fy2026_q1",
+      "fund_id": "general",
+      "amount_delta_cents": -10000
+    },
+    {
+      "line_item_id": "infrastructure",
+      "epoch_id": "fy2026_q1",
+      "fund_id": "general",
+      "amount_delta_cents": 10000
+    }
+  ],
+  "override_flag": false
+}
