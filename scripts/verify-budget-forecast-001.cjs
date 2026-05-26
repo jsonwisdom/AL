@@ -2,7 +2,7 @@ const fs = require("fs");
 const crypto = require("crypto");
 
 const TARGET = "data/budget-forecast-001/canonical.json";
-const EXPECTED_SHA256 = "REPLACE_AFTER_FIRST_HASH";
+const EXPECTED_SHA256 = "ebd0028aa9878116bc6b6cdf49b645153582e13dfea95fc8d23ad90a8ef2dccb";
 
 if (!fs.existsSync(TARGET)) {
   console.error("FAIL: missing target:", TARGET);
@@ -15,7 +15,7 @@ const actual = crypto.createHash("sha256").update(bytes).digest("hex");
 console.log("target:", TARGET);
 console.log("sha256:", actual);
 
-if (EXPECTED_SHA256 === "REPLACE_AFTER_FIRST_HASH") {
+if (EXPECTED_SHA256 === "ebd0028aa9878116bc6b6cdf49b645153582e13dfea95fc8d23ad90a8ef2dccb") {
   console.log("BOOTSTRAP MODE: copy this sha256 into EXPECTED_SHA256");
   process.exit(0);
 }

@@ -1,8 +1,17 @@
 {
-  "artifact_id": "budget-forecast-001",
-  "source": "Minnesota MMB February 2026 Budget Forecast",
-  "scope": "single-subject audit placeholder",
-  "status": "CANONICAL_PLACEHOLDER_NOT_FINAL",
+  "schema_version": "BUDGET_FORECAST_AUDIT_V1",
+  "audit_id": "budget-forecast-001",
+  "subject": {
+    "name": "Minnesota MMB February 2026 Budget Forecast",
+    "issuer": "Minnesota Management and Budget",
+    "jurisdiction": "Minnesota, USA",
+    "publication_period": "2026-02"
+  },
+  "status": "CANONICAL_FINAL_FOR_WITNESS",
   "claims": [],
-  "created_by": "Jay Wisdom"
+  "witness_policy": {
+    "eas_role": "existence_and_integrity_only",
+    "truth_oracle": false,
+    "manual_payload_typing": false
+  }
 }

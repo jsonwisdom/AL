@@ -15,7 +15,7 @@
     "witness:verify": "tsx src/verifier.ts",
     "guardrails:verify": "node scripts/verify-receipt.js",
     "guardrails:replay": "node scripts/replay-verification.js",
-    "verify:budget-forecast-001": "node scripts/verify-budget-forecast-001.js"
+    "verify:budget-forecast-001": "node scripts/verify-budget-forecast-001.cjs"
   },
   "dependencies": {
     "@ethereum-attestation-service/eas-sdk": "^2.7.0",
