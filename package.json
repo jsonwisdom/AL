@@ -19,7 +19,9 @@
     "verify:budget-forecast-001:receipt": "node scripts/verify-budget-forecast-001-receipt.cjs",
     "secure-boot:budget-forecast-001": "npm run verify:budget-forecast-001 && npm run verify:budget-forecast-001:receipt",
     "validate:leaf-002:draft": "node scripts/validate-leaf-draft.cjs",
-    "test:mmb:adjustments": "node scripts/mmb/v1/adjustments/test_invariant_evaluator.cjs"
+    "test:mmb:adjustments": "node scripts/mmb/v1/adjustments/test_invariant_evaluator.cjs",
+    "verify:mmb:leaf-003": "node scripts/mmb/v1/adjustments/verify_leaf_003.cjs",
+    "secure-boot:mmb": "npm run test:mmb:adjustments && npm run verify:mmb:leaf-003"
   },
   "dependencies": {
     "@ethereum-attestation-service/eas-sdk": "^2.7.0",
