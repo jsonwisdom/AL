@@ -1,9 +1,15 @@
 {
-  "audit_id": "AL-BUDGET-2026-LEAF-002",
-  "source_url": "https://github.com/jsonwisdom/AL/tree/v0.0.4-budget-forecast-001",
-  "subject": "Leaf 002 Draft Placeholder",
-  "scope": "DRAFT_ONLY_NO_WITNESS",
-  "claims": [],
+  "audit_id": "AL-CHAIN-LEAF-002",
+  "source_url": "https://github.com/jsonwisdom/AL/blob/5e557035/receipts/budget-forecast-001/receipt_manifest.json",
+  "subject": "Leaf 002 Mechanical Chain Extension From Genesis",
+  "scope": "ALMS receipt-chain extension. No new budget facts. Verifies Leaf 001 receipt hash as genesis input.",
+  "claims": [
+    {
+      "id": "claim-001",
+      "type": "INTEGRITY",
+      "statement": "Leaf 001 receipt manifest hash equals a8b953ae26aa1bbf7d58538190224f751f9a08ea7da14491ebfd5f73b3197383 and is the genesis input for receipt_chain.v1."
+    }
+  ],
   "witness_role": "existence_and_integrity_only",
   "witness_status": "DRAFT",
   "review_status": "APPROVED"
