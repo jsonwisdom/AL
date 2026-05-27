@@ -1,0 +1,14 @@
+{
+  "authority_claims": false,
+  "hash_algorithm": "sha256",
+  "method": "deterministic_json_canonicalization",
+  "profile_hash": "sha256:8f8baf8b2a9c6cbd6f4baf2cb7f6a0db5f3a84a5cf22f0a66126f89f9a1c07f5",
+  "profile_hash_rule": "sha256 over canonical JSON with profile_hash set to sha256:SELF_EXCLUDED",
+  "profile_id": "CANON_PROFILE_V1",
+  "rules": [
+    "sort_object_keys",
+    "remove_optional_whitespace",
+    "utf8_normalized",
+    "no_timestamps_or_nonces_in_payload"
+  ]
+}

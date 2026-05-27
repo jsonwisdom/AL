@@ -1,0 +1,38 @@
+{
+  "authority_claims": false,
+  "critical_set": [
+    "lineage_provenance",
+    "lineage_binding"
+  ],
+  "evaluation_order": [
+    "lineage_provenance",
+    "receipt_shape",
+    "lineage_binding",
+    "fail_closed"
+  ],
+  "profile_hash": "sha256:7299bd4749e7d878739a4102750dcf03f85958c5cb3e8b26bd0626063f9b3704",
+  "profile_hash_rule": "sha256 over canonical JSON with profile_hash set to sha256:SELF_EXCLUDED",
+  "profile_id": "INVARIANT_PROFILE_V1",
+  "invariants": [
+    {
+      "description": "Rejects if receipt missing or lineage_hash does not equal payload_hash.",
+      "id": "lineage_provenance",
+      "version": "1"
+    },
+    {
+      "description": "Validates receipt fields id, lineage_hash, issued_at, issuer_id, and signature exist and are well-typed strings.",
+      "id": "receipt_shape",
+      "version": "1"
+    },
+    {
+      "description": "Verifies receipt lineage_hash equals the canonical payload hash and issuer_id equals membrane/preflight/v1. Signature field is presence-checked only in V1 and creates no cryptographic authority claim.",
+      "id": "lineage_binding",
+      "version": "1"
+    },
+    {
+      "description": "If lineage_provenance or lineage_binding fails, final decision is REJECT.",
+      "id": "fail_closed",
+      "version": "1"
+    }
+  ]
+}
