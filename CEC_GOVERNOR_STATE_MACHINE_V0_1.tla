@@ -22,7 +22,8 @@ Timestamp == 0 .. (TimeHorizon - 1)
 Hash == 0 .. (MaxReceipts - 1)
 
 Receipt == [hash: Hash, root: Root, ts_claimed: Timestamp,
-            signers: SUBSET Signer, submit_time: Timestamp]
+            signers: SUBSET Signer, submit_time: Timestamp,
+            signer_snapshot: SUBSET Signer]
 
 Challenge == [receipt_hash: Hash, valid: BOOLEAN, ts: Timestamp]
 
@@ -54,13 +55,16 @@ Init ==
     /\ frozen = FALSE
     /\ current_time = 0
 
+IsValidSignerSetAgainst(signer_set, signer_snapshot) ==
+    signer_set \subseteq signer_snapshot
+    /\ Cardinality(signer_set) >= M
+
 IsValidSignerSet(signer_set, check_time) ==
     LET active_at_time ==
         IF check_time >= registration_valid_from
         THEN active_signers
         ELSE {}
-    IN signer_set \subseteq active_at_time
-       /\ Cardinality(signer_set) >= M
+    IN IsValidSignerSetAgainst(signer_set, active_at_time)
 
 IsProcessed(receipt) == receipt \in log
 
@@ -75,6 +79,7 @@ ReceiptSubmit(receipt) ==
     /\ frozen = FALSE
     /\ ~IsProcessed(receipt)
     /\ IsValidSignerSet(receipt.signers, current_time)
+    /\ receipt.signer_snapshot = active_signers
     /\ receipt.root \in Root
     /\ receipt.submit_time = current_time
     /\ receipt.ts_claimed \in Timestamp
@@ -202,12 +207,12 @@ NoInvalidRootAccepted ==
     frozen = FALSE =>
         \A h \in accepted_receipts:
             LET r == CHOOSE rr \in log: rr.hash = h
-            IN IsValidSignerSet(r.signers, r.submit_time)
+            IN IsValidSignerSetAgainst(r.signers, r.signer_snapshot)
                /\ r.root = current_root
 
 RevokedSignerCannotAuthorize ==
     \A r \in log:
-        IsValidSignerSet(r.signers, r.submit_time)
+        IsValidSignerSetAgainst(r.signers, r.signer_snapshot)
 
 ValidChallengeBlocksAcceptance ==
     (challenged_receipts \intersect accepted_receipts) = {}
