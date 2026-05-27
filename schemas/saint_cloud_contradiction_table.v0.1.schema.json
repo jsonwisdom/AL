@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.org/schemas/saint_cloud_contradiction_table.v0.1.schema.json",
+  "title": "SaintCloudContradictionTableV01",
+  "type": "object",
+  "required": [
+    "document_date",
+    "agenda_item_id",
+    "source_doc_id",
+    "source_page",
+    "source_line_number",
+    "required_field",
+    "observed_value",
+    "expected_value",
+    "classification",
+    "receipt_hash",
+    "commit_hash"
+  ],
+  "properties": {
+    "document_date": {"type": ["string", "null"]},
+    "agenda_item_id": {"type": ["string", "null"]},
+    "source_doc_id": {"type": "string"},
+    "source_url": {"type": ["string", "null"]},
+    "source_page": {"type": ["integer", "null"], "minimum": 1},
+    "source_line_number": {"type": ["integer", "null"], "minimum": 1},
+    "required_field": {"type": "string"},
+    "observed_value": {"type": ["string", "number", "boolean", "null"]},
+    "expected_value": {"type": ["string", "number", "boolean", "null"]},
+    "classification": {
+      "type": "string",
+      "enum": ["COMPLIANT", "CLEAN", "SOFTENED", "EVADED_PENDING_REVIEW", "CONTRADICTED", "PENDING_REVIEW"]
+    },
+    "extraction_confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "receipt_hash": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "commit_hash": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "source_text_excerpt": {"type": "string"}
+  },
+  "additionalProperties": false
+}
