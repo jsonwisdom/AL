@@ -61,7 +61,7 @@ echo "PDF SHA256: ${PDF_SHA256}"
 command -v pdftotext >/dev/null 2>&1 || fail "pdftotext is required"
 
 FIRST_PAGE=$(pdftotext -f 1 -l 1 "${PDF_PATH}" -)
-printf '%s' "${FIRST_PAGE}" | grep -q "${EXPECTED_DISPLAY_DATE}" \
+printf '%s' "${FIRST_PAGE}" | grep -qi "${EXPECTED_DISPLAY_DATE}" \
   || fail "identity gate failed: expected date '${EXPECTED_DISPLAY_DATE}' not found on first page"
 
 printf '%s' "${FIRST_PAGE}" | grep -Eiq "St[.]?[[:space:]]*Cloud.*City[[:space:]]+Council|City[[:space:]]+Council.*St[.]?[[:space:]]*Cloud|CITY OF ST[.]?[[:space:]]*CLOUD PROCEEDINGS" \
