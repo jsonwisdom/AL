@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "$id": "https://github.com/jsonwisdom/AL/blob/master/agents/base_mcp/schemas/action_receipt.schema.json",
+  "title": "Base MCP Action Receipt",
+  "description": "Immutable record of an action proposed or executed by an agent. This is the constitutional memory layer for audit and accountability.",
+  "type": "object",
+  "required": [
+    "receipt_id",
+    "timestamp",
+    "agent_identity",
+    "action",
+    "resource",
+    "policy_id_evaluated",
+    "authority_granted"
+  ],
+  "properties": {
+    "receipt_id": {
+      "type": "string",
+      "description": "Unique identifier. Immutable."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when the receipt was created before execution."
+    },
+    "agent_identity": {
+      "type": "string",
+      "description": "Identity of the agent proposing or executing the action."
+    },
+    "action": {
+      "type": "string",
+      "description": "Action verb."
+    },
+    "resource": {
+      "type": "string",
+      "description": "Target resource."
+    },
+    "params": {
+      "type": "object",
+      "description": "Parameters specific to the action.",
+      "additionalProperties": true
+    },
+    "policy_id_evaluated": {
+      "type": "string",
+      "description": "Policy ID used to evaluate this action."
+    },
+    "policy_version": {
+      "type": "string",
+      "description": "Version of the policy at evaluation time."
+    },
+    "authority_granted": {
+      "type": "boolean",
+      "description": "Whether permission was granted by policy evaluation."
+    },
+    "requires_human_approval": {
+      "type": "boolean",
+      "description": "Whether human confirmation is required before execution.",
+      "default": true
+    },
+    "human_approval_received": {
+      "type": "boolean",
+      "description": "Whether human approval was received."
+    },
+    "execution_status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "approved",
+        "denied",
+        "executed",
+        "failed",
+        "reverted"
+      ],
+      "description": "Current lifecycle state of the action.",
+      "default": "pending"
+    },
+    "execution_result": {
+      "type": "object",
+      "description": "Result of execution if executed.",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "output": {
+          "type": "string"
+        },
+        "error": {
+          "type": "string"
+        },
+        "tx_hash": {
+          "type": "string"
+        },
+        "executed_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "additionalProperties": false
+    },
+    "signatures": {
+      "type": "array",
+      "description": "Signatures from approving parties where applicable.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "signed_by": {
+            "type": "string"
+          },
+          "signature": {
+            "type": "string"
+          },
+          "signed_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "parent_receipt_id": {
+      "type": "string",
+      "description": "Prior receipt ID for retries or continuations."
+    }
+  },
+  "additionalProperties": false
+}
