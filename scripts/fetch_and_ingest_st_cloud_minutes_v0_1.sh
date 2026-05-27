@@ -2,7 +2,7 @@
 # PR #260 | Saint Cloud lineage membrane v0.1
 # Authority: false | Merge permission: false
 # Empirical replay harness only. This script fetches operator-supplied public source bytes,
-# records custody, and runs the infrastructure-only row emitter.
+# records custody, verifies artifact identity, and runs the infrastructure-only row emitter.
 
 set -euo pipefail
 
@@ -49,11 +49,31 @@ http_code=$(curl -L --fail --silent --show-error --output "${PDF_PATH}" --write-
 PDF_SHA256="sha256:$(sha256sum "${PDF_PATH}" | awk '{print $1}')"
 
 command -v pdftotext >/dev/null 2>&1 || fail "pdftotext is required for replay text extraction"
+
+# Identity gate: verify downloaded bytes before row emission.
+FIRST_PAGE_TEXT=$(pdftotext -f 1 -l 1 "${PDF_PATH}" -)
+FIRST_PAGE_SAMPLE=$(printf '%s' "${FIRST_PAGE_TEXT}" | head -c 500 | tr '\n' ' ')
+
+printf '%s' "${FIRST_PAGE_TEXT}" | grep -q "March 10, 2025" \
+  || fail "artifact identity rejected: meeting date 'March 10, 2025' not found on first page"
+
+printf '%s' "${FIRST_PAGE_TEXT}" | grep -Eiq "St[.]?[[:space:]]*Cloud.*City[[:space:]]+Council|City[[:space:]]+Council.*St[.]?[[:space:]]*Cloud" \
+  || fail "artifact identity rejected: 'St. Cloud City Council' not found on first page"
+
+printf '%s' "${FIRST_PAGE_TEXT}" | grep -qi "Minutes" \
+  || fail "artifact identity rejected: document type 'Minutes' not found; may be agenda, packet, or unrelated artifact"
+
+if printf '%s' "${FIRST_PAGE_TEXT}" | grep -Eiq "^[[:space:]]*Resolution[[:space:]]+No\."; then
+  fail "artifact identity rejected: first page appears to be a resolution, not minutes"
+fi
+
 pdftotext -layout "${PDF_PATH}" "${TEXT_PATH}"
 [[ -s "${TEXT_PATH}" ]] || fail "text extraction produced empty file: ${TEXT_PATH}"
 TEXT_SHA256="sha256:$(sha256sum "${TEXT_PATH}" | awk '{print $1}')"
 
 {
+  printf '{"event":"artifact_identity_confirmed","meeting_date":"%s","source_id":"%s","source_url":"%s","pdf_sha256":"%s","first_page_sample":"%s","timestamp":"%s","authority":false,"merge_permission":false}\n' \
+    "${MEETING_DATE}" "${SOURCE_ID}" "${OFFICIAL_URL}" "${PDF_SHA256}" "${FIRST_PAGE_SAMPLE//"/\"}" "$(date -Iseconds)"
   printf '{"event":"fetch_complete","meeting_date":"%s","source_id":"%s","source_url":"%s","http_code":"%s","pdf_path":"%s","txt_path":"%s","pdf_sha256":"%s","txt_sha256":"%s","timestamp":"%s","authority":false,"merge_permission":false}\n' \
     "${MEETING_DATE}" "${SOURCE_ID}" "${OFFICIAL_URL}" "${http_code}" "${PDF_PATH}" "${TEXT_PATH}" "${PDF_SHA256}" "${TEXT_SHA256}" "$(date -Iseconds)"
 } >> "${MANIFEST}"
@@ -72,6 +92,7 @@ cat > "${INGEST_RECEIPT}" <<EOF
   "authority": false,
   "merge_permission": false,
   "posture": "LINEAGE_MEMBRANE_EXTRACTION_SCAFFOLD",
+  "artifact_identity": "CONFIRMED_MINUTES",
   "meeting_date": "${MEETING_DATE}",
   "source_id": "${SOURCE_ID}",
   "source_url": "${OFFICIAL_URL}",
@@ -86,6 +107,7 @@ cat > "${INGEST_RECEIPT}" <<EOF
 }
 EOF
 
+echo "Artifact identity confirmed: St. Cloud City Council Minutes — March 10, 2025"
 echo "Ingestion complete."
 echo "PDF: ${PDF_PATH} ${PDF_SHA256}"
 echo "Text: ${TEXT_PATH} ${TEXT_SHA256}"
