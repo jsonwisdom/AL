@@ -7,13 +7,20 @@ Rule-based, lineage-aware civic action-block extractor.
 Authority: none.
 LLM role: advisory only.
 Merge rule: no final EVADED without replayable coordinates and confidence >= 0.85.
+
+Output modes:
+- action_blocks: full extracted action-block JSON
+- contradiction_rows: one row per missing required field, with receipt hash + commit hash
 """
 
 from __future__ import annotations
 
 import argparse
+import csv
+import hashlib
 import json
 import re
+import sys
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Iterable, List, Optional
@@ -53,6 +60,34 @@ SECOND_RE = re.compile(r"\bsecond(?:ed)?\s+by\s+(?P<name>[A-Z][A-Za-z .'-]+)", r
 VOTE_RE = re.compile(r"\b(?P<vote>\d+\s*[-–]\s*\d+|unanimous(?:ly)?|approved|carried|passed)\b", re.I)
 MONEY_RE = re.compile(r"\$\s?\d[\d,]*(?:\.\d{2})?")
 DATE_RE = re.compile(r"\b(?:effective\s+)?(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{1,2},\s+\d{4}\b", re.I)
+COMMIT_RE = re.compile(r"^[0-9a-f]{40}$")
+
+CONTRADICTION_FIELDS = [
+    "document_date",
+    "agenda_item_id",
+    "source_doc_id",
+    "source_url",
+    "source_page",
+    "source_line_number",
+    "required_field",
+    "observed_value",
+    "expected_value",
+    "classification",
+    "extraction_confidence",
+    "receipt_hash",
+    "commit_hash",
+    "source_text_excerpt",
+]
+
+EXPECTED_BY_FIELD = {
+    "vote_result": "present_for_action_item",
+    "motion_maker": "present_for_action_item",
+    "second": "present_for_action_item",
+    "resolution_number": "required_for_resolution_action",
+    "ordinance_number": "required_for_ordinance_action",
+    "dollar_amount": "required_for_fiscal_action",
+    "effective_date": "required_for_legal_or_status_change",
+}
 
 
 @dataclass
@@ -192,24 +227,100 @@ def audit_block(source_doc_id: str, source_url: Optional[str], meeting_date: Opt
     )
 
 
+def receipt_hash(text: str) -> str:
+    return "sha256:" + hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+
+def action_to_contradiction_rows(block: ActionBlock, commit_hash: str) -> List[dict[str, object]]:
+    rows: List[dict[str, object]] = []
+    if not block.missing_fields:
+        rows.append({
+            "document_date": block.meeting_date,
+            "agenda_item_id": block.agenda_item_id,
+            "source_doc_id": block.source_doc_id,
+            "source_url": block.source_url,
+            "source_page": block.source_page,
+            "source_line_number": block.source_line_number,
+            "required_field": "ALL_REQUIRED_FIELDS",
+            "observed_value": "present",
+            "expected_value": "present",
+            "classification": "COMPLIANT" if block.membrane_state == "CLEAN" else block.membrane_state,
+            "extraction_confidence": block.extraction_confidence,
+            "receipt_hash": receipt_hash(block.text),
+            "commit_hash": commit_hash,
+            "source_text_excerpt": block.text[:240],
+        })
+        return rows
+
+    for field in block.missing_fields:
+        rows.append({
+            "document_date": block.meeting_date,
+            "agenda_item_id": block.agenda_item_id,
+            "source_doc_id": block.source_doc_id,
+            "source_url": block.source_url,
+            "source_page": block.source_page,
+            "source_line_number": block.source_line_number,
+            "required_field": field,
+            "observed_value": None,
+            "expected_value": EXPECTED_BY_FIELD.get(field, "present"),
+            "classification": block.membrane_state,
+            "extraction_confidence": block.extraction_confidence,
+            "receipt_hash": receipt_hash(block.text),
+            "commit_hash": commit_hash,
+            "source_text_excerpt": block.text[:240],
+        })
+    return rows
+
+
+def write_payload(path: Optional[Path], text: str) -> None:
+    if path:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(text + "\n", encoding="utf-8")
+    else:
+        print(text)
+
+
+def write_csv(path: Optional[Path], rows: List[dict[str, object]]) -> None:
+    if path:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        handle = path.open("w", encoding="utf-8", newline="")
+    else:
+        handle = sys.stdout
+    try:
+        writer = csv.DictWriter(handle, fieldnames=CONTRADICTION_FIELDS)
+        writer.writeheader()
+        for row in rows:
+            writer.writerow(row)
+    finally:
+        if path:
+            handle.close()
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Run Saint Cloud minutes lineage hunter v0.2")
     parser.add_argument("input", type=Path, help="Plain text minutes/proceedings file. Form-feed separates pages.")
     parser.add_argument("--source-url", default=None)
     parser.add_argument("--meeting-date", default=None)
     parser.add_argument("--output", type=Path, default=None)
+    parser.add_argument("--output-mode", choices=["action_blocks", "contradiction_rows"], default="contradiction_rows")
+    parser.add_argument("--commit-hash", required=True, help="40-character commit hash binding this run")
     args = parser.parse_args()
+
+    if not COMMIT_RE.fullmatch(args.commit_hash):
+        raise SystemExit("--commit-hash must be a 40-character lowercase hex commit hash")
 
     blocks = chunk_action_blocks(iter_lines(args.input))
     results = [audit_block(args.input.name, args.source_url, args.meeting_date, page, line, text) for page, line, text in blocks]
-    payload = [asdict(r) for r in results]
 
-    output = json.dumps(payload, indent=2, sort_keys=True)
-    if args.output:
-        args.output.parent.mkdir(parents=True, exist_ok=True)
-        args.output.write_text(output + "\n", encoding="utf-8")
-    else:
-        print(output)
+    if args.output_mode == "action_blocks":
+        payload = [asdict(r) for r in results]
+        write_payload(args.output, json.dumps(payload, indent=2, sort_keys=True))
+        return 0
+
+    rows: List[dict[str, object]] = []
+    for block in results:
+        rows.extend(action_to_contradiction_rows(block, args.commit_hash))
+    write_csv(args.output, rows)
     return 0
 
 
