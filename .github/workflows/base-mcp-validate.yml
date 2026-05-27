@@ -1,0 +1,94 @@
+name: Base MCP Validation
+
+on:
+  pull_request:
+    paths:
+      - 'agents/base_mcp/schemas/**'
+      - 'agents/base_mcp/examples/**'
+  push:
+    branches: [master, main]
+    paths:
+      - 'agents/base_mcp/schemas/**'
+      - 'agents/base_mcp/examples/**'
+
+jobs:
+  validate-schemas:
+    name: Validate JSON Schemas
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install ajv CLI
+        run: npm install -g ajv-cli ajv-formats
+
+      - name: Validate permission_policy schema
+        run: |
+          ajv validate \
+            -s agents/base_mcp/schemas/permission_policy.schema.json \
+            -d agents/base_mcp/examples/policy.example.json
+
+      - name: Validate action_receipt schema
+        run: |
+          ajv validate \
+            -s agents/base_mcp/schemas/action_receipt.schema.json \
+            -d agents/base_mcp/examples/intent_receipt.example.json
+
+      - name: Validate session_log schema
+        run: |
+          ajv validate \
+            -s agents/base_mcp/schemas/session_log.schema.json \
+            -d agents/base_mcp/examples/session.example.json
+
+  validate-examples:
+    name: Validate Example Integrity
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check receipt chain consistency
+        run: |
+          python3 << 'EOF'
+          import json
+          with open('agents/base_mcp/examples/session.example.json') as f:
+              session = json.load(f)
+          with open('agents/base_mcp/examples/intent_receipt.example.json') as f:
+              receipt = json.load(f)
+
+          receipt_id = receipt['receipt_id']
+          assert receipt_id in session['receipt_chain'], f"Receipt {receipt_id} not found in session chain"
+          assert session['authority_limits_used']['action_count'] >= 1, "Session action count should be at least 1"
+          print("Receipt chain consistency check passed")
+          EOF
+
+      - name: Verify no placeholder values remain
+        run: |
+          ! grep -r "your-org" agents/base_mcp/examples/ && \
+          ! grep -r "0xPlaceholder" agents/base_mcp/examples/ || \
+          (echo "Found placeholder values in examples" && exit 1)
+
+  enforce-authority-false:
+    name: Enforce scaffold authority boundary
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check schemas for direct authority enablement
+        run: |
+          if grep -r '"authority"[[:space:]]*:[[:space:]]*true' agents/base_mcp/schemas/; then
+            echo "Found authority true in schemas"
+            exit 1
+          fi
+          echo "Authority boundary invariant enforced for schemas"
+
+      - name: Check README for spend authority enablement
+        run: |
+          if grep -r '"spend_authority_enabled"[[:space:]]*:[[:space:]]*true' agents/base_mcp/README.md; then
+            echo "README has spend authority enabled true"
+            exit 1
+          fi
+          echo "No spend authority enablement found in README"
