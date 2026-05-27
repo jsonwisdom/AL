@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jsonwisdom/AL/docs/replay-governance/explorer/broken_chain_remediation.schema.json",
+  "title": "BROKEN_CHAIN Remediation Event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "event_type",
+    "source",
+    "repository",
+    "remediates_event_hash",
+    "remediation_action",
+    "remediation_status",
+    "root_cause_summary",
+    "successor_receipt_hash",
+    "immutability"
+  ],
+  "properties": {
+    "event_type": {
+      "const": "BROKEN_CHAIN_REMEDIATION"
+    },
+    "source": {
+      "const": "replay-governance-pr-base-gate"
+    },
+    "repository": {
+      "const": "jsonwisdom/AL"
+    },
+    "remediates_event_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "remediation_action": {
+      "type": "string",
+      "minLength": 1
+    },
+    "remediation_status": {
+      "enum": [
+        "EXPLAINED",
+        "SUPERSEDED_BY_SUCCESSOR_RECEIPT",
+        "FALSE_POSITIVE_PROVEN_BY_REPLAY",
+        "NOT_REMEDIATED"
+      ]
+    },
+    "root_cause_summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "successor_receipt_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "immutability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "original_event",
+        "remediation_mode",
+        "override"
+      ],
+      "properties": {
+        "original_event": {
+          "const": "REMAINS_VISIBLE"
+        },
+        "remediation_mode": {
+          "const": "ADD_SUCCESSOR_RECORD_ONLY"
+        },
+        "override": {
+          "const": "FORBIDDEN"
+        }
+      }
+    }
+  }
+}
