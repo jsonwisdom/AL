@@ -1,0 +1,26 @@
+name: Receipt Validate
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  validate-receipts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install -g ajv-cli ajv-formats
+      - name: Validate MCP audit receipts
+        run: |
+          shopt -s nullglob
+          files=(receipts/*.json)
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "No receipts to validate."
+            exit 0
+          fi
+          ajv validate -c ajv-formats -s schemas/mcp_engine_audit_receipt.v0_1.schema.json -d 'receipts/*.json' --strict=false

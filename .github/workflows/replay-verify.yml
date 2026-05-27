@@ -1,0 +1,50 @@
+name: Replay Verification
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+jobs:
+  replay-verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install pytest
+        run: pip install pytest
+
+      - name: Run Merkle tests
+        run: pytest tests/test_merkle.py
+
+      - name: Verify replay manifest
+        run: python scripts/verify_replay.py
+
+      - name: Verify fixture root
+        run: |
+          python scripts/verify_fixture_root.py \
+            --receipts-dir tests/fixtures/receipts/mn_mmb_feb2026 \
+            --vector tests/vectors/mn_mmb_feb2026_full.json \
+            --manifest manifests/mn_mmb_feb2026_manifest.json
+
+  eas-attest:
+    needs: replay-verify
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Attestation gated on replay verification
+        run: echo 'Replay verification passed. EAS attestation permitted; emitter not yet wired.'
