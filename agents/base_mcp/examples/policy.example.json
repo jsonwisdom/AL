@@ -1,0 +1,65 @@
+{
+  "policy_id": "policy-2026-05-27-base-mcp-v1",
+  "policy_name": "Base MCP Conservative Spend Policy",
+  "policy_version": "1.0.0",
+  "agent_identity": "base_mcp_agent/*",
+  "effective_from": "2026-05-27T00:00:00Z",
+  "effective_to": "2026-12-31T23:59:59Z",
+  "statements": [
+    {
+      "effect": "allow",
+      "action": "read",
+      "resource": "docs/*",
+      "conditions": {
+        "max_docs_per_minute": 60
+      },
+      "authority_limits": {
+        "requires_human_approval": false
+      }
+    },
+    {
+      "effect": "allow",
+      "action": "transfer",
+      "resource": "wallet/usdc",
+      "conditions": {
+        "max_amount_usd": 100,
+        "allowed_destinations": [
+          "0xTrusted*",
+          "0xSafe*"
+        ]
+      },
+      "authority_limits": {
+        "max_spend_usd": 100,
+        "requires_human_approval": true,
+        "allowed_signing_keys": [
+          "key-hsm-01",
+          "key-session-ephemeral"
+        ]
+      }
+    },
+    {
+      "effect": "deny",
+      "action": "transfer",
+      "resource": "wallet/*",
+      "conditions": {
+        "reason": "catch-all deny for all transfer actions not explicitly allowed above"
+      },
+      "authority_limits": {}
+    },
+    {
+      "effect": "deny",
+      "action": "*",
+      "resource": "secrets/*",
+      "conditions": {
+        "reason": "never allow access to secrets via Base MCP"
+      },
+      "authority_limits": {}
+    }
+  ],
+  "audit_metadata": {
+    "created_by": "alms-platform",
+    "created_at": "2026-05-27T00:00:00Z",
+    "last_modified_by": "alms-platform",
+    "last_modified_at": "2026-05-27T00:00:00Z"
+  }
+}
