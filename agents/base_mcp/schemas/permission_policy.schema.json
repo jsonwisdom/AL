@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "$id": "https://github.com/jsonwisdom/AL/blob/master/agents/base_mcp/schemas/permission_policy.schema.json",
+  "title": "Base MCP Permission Policy",
+  "description": "Defines what actions an agent may perform, under what conditions, and with what authority limits.",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "policy_name",
+    "agent_identity",
+    "effective_from",
+    "statements"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string",
+      "description": "Unique identifier for this policy."
+    },
+    "policy_name": {
+      "type": "string",
+      "description": "Human-readable policy name."
+    },
+    "policy_version": {
+      "type": "string",
+      "description": "Semantic version of the policy.",
+      "default": "1.0.0"
+    },
+    "agent_identity": {
+      "type": "string",
+      "description": "The agent or agent class this policy applies to."
+    },
+    "effective_from": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when this policy becomes active."
+    },
+    "effective_to": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when this policy expires."
+    },
+    "statements": {
+      "type": "array",
+      "description": "List of permission statements.",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "effect",
+          "action",
+          "resource"
+        ],
+        "properties": {
+          "effect": {
+            "type": "string",
+            "enum": [
+              "allow",
+              "deny"
+            ]
+          },
+          "action": {
+            "type": "string"
+          },
+          "resource": {
+            "type": "string"
+          },
+          "conditions": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "authority_limits": {
+            "type": "object",
+            "properties": {
+              "max_spend_usd": {
+                "type": "number",
+                "minimum": 0
+              },
+              "requires_human_approval": {
+                "type": "boolean",
+                "default": true
+              },
+              "allowed_signing_keys": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "audit_metadata": {
+      "type": "object",
+      "properties": {
+        "created_by": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "last_modified_by": {
+          "type": "string"
+        },
+        "last_modified_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
