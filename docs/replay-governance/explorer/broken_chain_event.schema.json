@@ -15,7 +15,8 @@
     "expected_base_sha",
     "observed_base_sha",
     "failure_reason",
-    "disclosure_status"
+    "disclosure_status",
+    "immutability"
   ],
   "properties": {
     "event_type": {
@@ -57,6 +58,26 @@
     },
     "disclosure_status": {
       "const": "PUBLIC_DISCLOSURE_REQUIRED"
+    },
+    "immutability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "once_emitted",
+        "sha_mismatch_record",
+        "override"
+      ],
+      "properties": {
+        "once_emitted": {
+          "const": "CANNOT_BE_RETRACTED"
+        },
+        "sha_mismatch_record": {
+          "const": "APPEND_ONLY"
+        },
+        "override": {
+          "const": "FORBIDDEN"
+        }
+      }
     }
   }
 }
