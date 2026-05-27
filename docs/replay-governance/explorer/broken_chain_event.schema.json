@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jsonwisdom/AL/docs/replay-governance/explorer/broken_chain_event.schema.json",
+  "title": "BROKEN_CHAIN Explorer Event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "event_type",
+    "source",
+    "repository",
+    "workflow",
+    "run_id",
+    "pr_number",
+    "base_branch",
+    "expected_base_sha",
+    "observed_base_sha",
+    "failure_reason",
+    "disclosure_status"
+  ],
+  "properties": {
+    "event_type": {
+      "const": "BROKEN_CHAIN"
+    },
+    "source": {
+      "const": "replay-governance-pr-base-gate"
+    },
+    "repository": {
+      "const": "jsonwisdom/AL"
+    },
+    "workflow": {
+      "type": "string",
+      "minLength": 1
+    },
+    "run_id": {
+      "type": "string",
+      "pattern": "^[0-9]+$"
+    },
+    "pr_number": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "base_branch": {
+      "type": "string",
+      "minLength": 1
+    },
+    "expected_base_sha": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "observed_base_sha": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "failure_reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "disclosure_status": {
+      "const": "PUBLIC_DISCLOSURE_REQUIRED"
+    }
+  }
+}
