@@ -29,6 +29,13 @@ esac
 
 [[ "${OFFICIAL_URL}" =~ ^https:// ]] || fail "OFFICIAL_URL must be https://"
 [[ "${COMMIT_HASH}" =~ ^[0-9a-f]{40}$ ]] || fail "COMMIT_HASH must be a 40-character lowercase hex commit hash"
+[[ "${MEETING_DATE}" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] || fail "MEETING_DATE must be YYYY-MM-DD"
+
+EXPECTED_DISPLAY_DATE=$(python3 - <<PY
+from datetime import datetime
+print(datetime.strptime(${MEETING_DATE@Q}, "%Y-%m-%d").strftime("%B %-d, %Y"))
+PY
+)
 
 mkdir -p "${PDF_DIR}" "${OUTPUT_DIR}"
 
@@ -38,8 +45,8 @@ TEXT_PATH="${PDF_DIR}/${SOURCE_ID}.txt"
 printf '%s\t%s\t%s\n' "${MEETING_DATE}" "${SOURCE_ID}" "${OFFICIAL_URL}" > "${URL_MAP}"
 
 {
-  printf '{"event":"fetch_start","meeting_date":"%s","source_id":"%s","source_url":"%s","timestamp":"%s","authority":false,"merge_permission":false}\n' \
-    "${MEETING_DATE}" "${SOURCE_ID}" "${OFFICIAL_URL}" "$(date -Iseconds)"
+  printf '{"event":"fetch_start","meeting_date":"%s","expected_display_date":"%s","source_id":"%s","source_url":"%s","timestamp":"%s","authority":false,"merge_permission":false}\n' \
+    "${MEETING_DATE}" "${EXPECTED_DISPLAY_DATE}" "${SOURCE_ID}" "${OFFICIAL_URL}" "$(date -Iseconds)"
 } >> "${MANIFEST}"
 
 http_code=$(curl -L --fail --silent --show-error --output "${PDF_PATH}" --write-out "%{http_code}" "${OFFICIAL_URL}" || true)
@@ -54,17 +61,17 @@ command -v pdftotext >/dev/null 2>&1 || fail "pdftotext is required for replay t
 FIRST_PAGE_TEXT=$(pdftotext -f 1 -l 1 "${PDF_PATH}" -)
 FIRST_PAGE_SAMPLE=$(printf '%s' "${FIRST_PAGE_TEXT}" | head -c 500 | tr '\n' ' ')
 
-printf '%s' "${FIRST_PAGE_TEXT}" | grep -q "March 10, 2025" \
-  || fail "artifact identity rejected: meeting date 'March 10, 2025' not found on first page"
+printf '%s' "${FIRST_PAGE_TEXT}" | grep -q "${EXPECTED_DISPLAY_DATE}" \
+  || fail "artifact identity rejected: expected meeting date '${EXPECTED_DISPLAY_DATE}' not found on first page"
 
 printf '%s' "${FIRST_PAGE_TEXT}" | grep -Eiq "St[.]?[[:space:]]*Cloud.*City[[:space:]]+Council|City[[:space:]]+Council.*St[.]?[[:space:]]*Cloud" \
   || fail "artifact identity rejected: 'St. Cloud City Council' not found on first page"
 
-printf '%s' "${FIRST_PAGE_TEXT}" | grep -qi "Minutes" \
-  || fail "artifact identity rejected: document type 'Minutes' not found; may be agenda, packet, or unrelated artifact"
+printf '%s' "${FIRST_PAGE_TEXT}" | grep -qi "Minutes\|Proceedings" \
+  || fail "artifact identity rejected: document type 'Minutes' or 'Proceedings' not found; may be agenda, packet, or unrelated artifact"
 
 if printf '%s' "${FIRST_PAGE_TEXT}" | grep -Eiq "^[[:space:]]*Resolution[[:space:]]+No\."; then
-  fail "artifact identity rejected: first page appears to be a resolution, not minutes"
+  fail "artifact identity rejected: first page appears to be a resolution, not minutes/proceedings"
 fi
 
 pdftotext -layout "${PDF_PATH}" "${TEXT_PATH}"
@@ -72,10 +79,10 @@ pdftotext -layout "${PDF_PATH}" "${TEXT_PATH}"
 TEXT_SHA256="sha256:$(sha256sum "${TEXT_PATH}" | awk '{print $1}')"
 
 {
-  printf '{"event":"artifact_identity_confirmed","meeting_date":"%s","source_id":"%s","source_url":"%s","pdf_sha256":"%s","first_page_sample":"%s","timestamp":"%s","authority":false,"merge_permission":false}\n' \
-    "${MEETING_DATE}" "${SOURCE_ID}" "${OFFICIAL_URL}" "${PDF_SHA256}" "${FIRST_PAGE_SAMPLE//"/\"}" "$(date -Iseconds)"
-  printf '{"event":"fetch_complete","meeting_date":"%s","source_id":"%s","source_url":"%s","http_code":"%s","pdf_path":"%s","txt_path":"%s","pdf_sha256":"%s","txt_sha256":"%s","timestamp":"%s","authority":false,"merge_permission":false}\n' \
-    "${MEETING_DATE}" "${SOURCE_ID}" "${OFFICIAL_URL}" "${http_code}" "${PDF_PATH}" "${TEXT_PATH}" "${PDF_SHA256}" "${TEXT_SHA256}" "$(date -Iseconds)"
+  printf '{"event":"artifact_identity_confirmed","meeting_date":"%s","expected_display_date":"%s","source_id":"%s","source_url":"%s","pdf_sha256":"%s","first_page_sample":"%s","timestamp":"%s","authority":false,"merge_permission":false}\n' \
+    "${MEETING_DATE}" "${EXPECTED_DISPLAY_DATE}" "${SOURCE_ID}" "${OFFICIAL_URL}" "${PDF_SHA256}" "${FIRST_PAGE_SAMPLE//"/\"}" "$(date -Iseconds)"
+  printf '{"event":"fetch_complete","meeting_date":"%s","expected_display_date":"%s","source_id":"%s","source_url":"%s","http_code":"%s","pdf_path":"%s","txt_path":"%s","pdf_sha256":"%s","txt_sha256":"%s","timestamp":"%s","authority":false,"merge_permission":false}\n' \
+    "${MEETING_DATE}" "${EXPECTED_DISPLAY_DATE}" "${SOURCE_ID}" "${OFFICIAL_URL}" "${http_code}" "${PDF_PATH}" "${TEXT_PATH}" "${PDF_SHA256}" "${TEXT_SHA256}" "$(date -Iseconds)"
 } >> "${MANIFEST}"
 
 python3 scripts/saint_cloud_batch_ingest_v0_1.py \
@@ -92,8 +99,9 @@ cat > "${INGEST_RECEIPT}" <<EOF
   "authority": false,
   "merge_permission": false,
   "posture": "LINEAGE_MEMBRANE_EXTRACTION_SCAFFOLD",
-  "artifact_identity": "CONFIRMED_MINUTES",
+  "artifact_identity": "CONFIRMED_MINUTES_OR_PROCEEDINGS",
   "meeting_date": "${MEETING_DATE}",
+  "expected_display_date": "${EXPECTED_DISPLAY_DATE}",
   "source_id": "${SOURCE_ID}",
   "source_url": "${OFFICIAL_URL}",
   "commit_hash": "${COMMIT_HASH}",
@@ -107,7 +115,7 @@ cat > "${INGEST_RECEIPT}" <<EOF
 }
 EOF
 
-echo "Artifact identity confirmed: St. Cloud City Council Minutes — March 10, 2025"
+echo "Artifact identity confirmed: St. Cloud City Council Minutes/Proceedings — ${EXPECTED_DISPLAY_DATE}"
 echo "Ingestion complete."
 echo "PDF: ${PDF_PATH} ${PDF_SHA256}"
 echo "Text: ${TEXT_PATH} ${TEXT_SHA256}"
