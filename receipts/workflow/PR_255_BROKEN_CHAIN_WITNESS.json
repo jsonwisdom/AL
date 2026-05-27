@@ -1,0 +1,19 @@
+{
+  "event": "PR_255_CHECK_FAILURE_WITNESS",
+  "pr": 255,
+  "branch": "intentional-mismatch-test",
+  "head_sha": "f5cb2fa33ec366facf9718ac4a399476531f5f8d",
+  "github_checks_triggered": true,
+  "observed_failing_checks": [
+    "Exposure Audit/OpenSSF Scorecard",
+    "Validate continuity surface schema freeze"
+  ],
+  "gate_result": "CHECK_FAILURE",
+  "broken_chain_observed": false,
+  "classification": "PRE_CONSTITUTIONAL_BRANCH_REJECTED_UNDER_MASTER_GATE_CANDIDATE",
+  "authority": false,
+  "witness_mode": true,
+  "observation_source": "gh pr checks 255",
+  "timestamp": "2026-05-27T15:38:53Z",
+  "immutable_artifact": "Check failure record; BROKEN_CHAIN not independently observed"
+}
