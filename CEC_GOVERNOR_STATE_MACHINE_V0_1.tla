@@ -139,7 +139,7 @@ TimeAdvance ==
        IF expired = {}
        THEN
            /\ pending_receipts' = pending_receipts
-           /\ UNCHANGED <<current_root, accepted_receipts>>
+           /\ UNCHANGED <<current_root, accepted_receipts, frozen>>
        ELSE
            LET resolution == ResolvedRoot(expired)
            IN
@@ -151,6 +151,7 @@ TimeAdvance ==
                /\ pending_receipts' = pending_receipts \ expired
                /\ accepted_receipts' = accepted_receipts \union expired
                /\ current_root' = resolution.root
+               /\ UNCHANGED frozen
     /\ current_time' = current_time + 1
     /\ UNCHANGED <<challenged_receipts, rejected_receipts, log,
                    active_signers, registration_valid_from>>
