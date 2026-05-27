@@ -114,18 +114,17 @@ ChallengeSubmit(receipt_hash, challenge) ==
 ChallengeResolve(receipt_hash, outcome) ==
     /\ frozen = FALSE
     /\ receipt_hash \in challenged_receipts
-    /\ LET receipt == CHOOSE r \in log: r.hash = receipt_hash
-       IN TRUE
     /\ outcome \in BOOLEAN
-    /\ IF outcome = TRUE
-       THEN
-           /\ challenged_receipts' = challenged_receipts \ {receipt_hash}
-           /\ rejected_receipts' = rejected_receipts \union {receipt_hash}
-           /\ UNCHANGED current_root
-       ELSE
-           /\ challenged_receipts' = challenged_receipts \ {receipt_hash}
-           /\ accepted_receipts' = accepted_receipts \union {receipt_hash}
-           /\ current_root' = receipt.root
+    /\ LET receipt == CHOOSE r \in log: r.hash = receipt_hash
+       IN IF outcome = TRUE
+          THEN
+              /\ challenged_receipts' = challenged_receipts \ {receipt_hash}
+              /\ rejected_receipts' = rejected_receipts \union {receipt_hash}
+              /\ UNCHANGED current_root
+          ELSE
+              /\ challenged_receipts' = challenged_receipts \ {receipt_hash}
+              /\ accepted_receipts' = accepted_receipts \union {receipt_hash}
+              /\ current_root' = receipt.root
     /\ UNCHANGED <<pending_receipts, active_signers, registration_valid_from,
                    log, frozen, current_time>>
 
