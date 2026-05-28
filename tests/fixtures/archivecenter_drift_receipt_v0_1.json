@@ -1,0 +1,27 @@
+{
+  "receipt_id": "RCP_DRIFT_FIXTURE_0001",
+  "receipt_type": "ARCHIVECENTER_DRIFT_V0_1",
+  "version": "0.1",
+  "emitted_at": "2026-05-28T16:45:00Z",
+  "emitter_id": "ARCHIVECENTER_DRIFT_FSM_V0_1",
+  "event_class": "SOURCE_REINDEXED",
+  "prior_state": "POINTER_MISSING",
+  "next_state": "SOURCE_REINDEXED",
+  "core_invariant": "URL_IS_LOCATOR_HASH_IS_IDENTITY",
+  "kill_switch": "NO_SYNTHETIC_POINTER_RECONSTRUCTION",
+  "pointer_evidence": {
+    "prior_pointer": "https://archive.example.gov/item/2145",
+    "new_pointer_observed": "https://archive.example.gov/records/2025/03/10/2145",
+    "resolution_status": "RESOLVED"
+  },
+  "content_evidence": {
+    "prior_content_hash": "sha256:AAA...",
+    "observed_content_hash": "sha256:AAA...",
+    "hash_relation": "MATCH"
+  },
+  "links": {
+    "prior_receipt_id": null,
+    "related_case_ids": []
+  },
+  "notes": "Fixture demonstrating reindex drift with stable content hash."
+}
