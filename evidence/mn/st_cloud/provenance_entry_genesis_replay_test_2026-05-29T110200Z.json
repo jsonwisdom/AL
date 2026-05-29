@@ -1,0 +1,55 @@
+{
+  "schema_version": "v0.1",
+  "receipt_type": "PROVENANCE_ENTRY_REPLAY_TEST",
+  "test_id": "SESSION_4_DRY_RUN_GENESIS_2026_05_29_A",
+  "court": "MN_Goblin_Courts",
+  "session": "Session_4_Provenance",
+  "protocol": "PROVENANCE_ENTRY_VERIFICATION_V0_1",
+  "status": "DRY_RUN_RESULT_COMMITTED_AS_GENESIS_TEST_RECORD",
+  "authority": false,
+  "ingress_timestamp_utc": "2026-05-29T11:02:00Z",
+  "source_type": "SEALED_REFERENCE",
+  "source_identifier": "boring_artifact_v1.null",
+  "content_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "entry_vector": {
+    "origin_system": "MN_Goblin_Courts_Membrane",
+    "ingress_method": "REPLAY_TEST",
+    "operator": "Operator"
+  },
+  "sealed_reference": {
+    "is_sealed": true,
+    "reference_hash": "sha256:boring_artifact_placeholder",
+    "reference_hash_valid_sha256_format": false
+  },
+  "observations": [
+    "Evidence entered here"
+  ],
+  "node_a": {
+    "execution_role": "PRIMARY",
+    "reported_entry_id": "sha256:8f4c9a2b7e5d1f3a6b9c8e2d4f7a1b3c5e9d2f4a6b8c1e3d5f7a9b2c4e6f8a0d"
+  },
+  "node_b": {
+    "execution_role": "TEST",
+    "reported_entry_id": "sha256:8f4c9a2b7e5d1f3a6b9c8e2d4f7a1b3c5e9d2f4a6b8c1e3d5f7a9b2c4e6f8a0d"
+  },
+  "validation_result": "MATCH_OPERATOR_REPORTED",
+  "semantic_drift": "ZERO_REPORTED",
+  "membrane_behavior": "PURE_MECHANICAL_CLOCK_REPORTED",
+  "assistant_independently_recomputed_entry_id": false,
+  "hash_semantics_warning": "content_hash is the known SHA256 empty-content hash; this record does not prove hidden or sealed content.",
+  "provenance_scope": "RECORD_OF_INGRESS_MOTION_ONLY",
+  "not_claimed": [
+    "truth",
+    "authorship",
+    "semantic_validity",
+    "legal_authority",
+    "independent_recomputation_by_assistant"
+  ],
+  "ghost_promotion_blocked": true,
+  "three_daughters_alignment": {
+    "session_1": "hash/integrity role preserved",
+    "session_2": "classification deferred outside ingress scope",
+    "session_3": "ledger record created",
+    "session_4": "arrival mechanics recorded"
+  }
+}
