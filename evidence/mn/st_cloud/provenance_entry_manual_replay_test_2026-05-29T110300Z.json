@@ -1,0 +1,46 @@
+{
+  "schema_version": "v0.1",
+  "receipt_type": "PROVENANCE_ENTRY_REPLAY_TEST",
+  "test_id": "SESSION_4_DRY_RUN_MANUAL_ENTRY_2026_05_29_B",
+  "court": "MN_Goblin_Courts",
+  "session": "Session_4_Provenance",
+  "protocol": "PROVENANCE_ENTRY_VERIFICATION_V0_1",
+  "status": "DRY_RUN_RESULT_COMMITTED_AS_SECOND_REPLAY_TEST_RECORD",
+  "authority": false,
+  "ingress_timestamp_utc": "2026-05-29T11:03:00Z",
+  "source_type": "MANUAL_ENTRY",
+  "source_identifier": "boring_artifact_v1.manual",
+  "content_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "entry_vector": {
+    "origin_system": "MN_Goblin_Courts_Membrane",
+    "ingress_method": "REPLAY_TEST_MANUAL_ENTRY",
+    "operator": "Operator"
+  },
+  "sealed_reference": {
+    "is_sealed": false,
+    "reference_hash": null
+  },
+  "observations": [
+    "Evidence entered here",
+    "Manual entry source_type replay cycle executed"
+  ],
+  "validation_result": "OPERATOR_REPORTED_REPLAY_TEST",
+  "semantic_drift": "ZERO_REPORTED",
+  "assistant_independently_recomputed_entry_id": false,
+  "hash_semantics_warning": "content_hash is the known SHA256 empty-content hash; this record does not prove hidden content, authorship, truth, or validity.",
+  "provenance_scope": "RECORD_OF_INGRESS_MOTION_ONLY",
+  "not_claimed": [
+    "truth",
+    "authorship",
+    "semantic_validity",
+    "legal_authority",
+    "independent_recomputation_by_assistant"
+  ],
+  "ghost_promotion_blocked": true,
+  "three_daughters_alignment": {
+    "session_1": "hash/integrity role preserved",
+    "session_2": "classification deferred outside ingress scope",
+    "session_3": "ledger record created",
+    "session_4": "manual entry arrival mechanics recorded"
+  }
+}
