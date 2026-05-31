@@ -1,0 +1,31 @@
+{
+  "artifact": "EAS_WITNESS_PACKET_TEMPLATE_V0_1",
+  "status": "CLAIM_WITNESS_ONLY",
+  "authority": false,
+  "membrane": "HOLDS",
+  "purpose": "Record what was claimed, when, and by whom. This does not make claims true.",
+  "required_fields": [
+    "claim_id",
+    "claimed_by",
+    "claimed_at",
+    "claim_text",
+    "source_chain",
+    "authority",
+    "membrane"
+  ],
+  "optional_fields": [
+    "receipt_hash",
+    "source_url",
+    "source_description",
+    "related_ens_anchor",
+    "related_alms_event_id"
+  ],
+  "forbidden_claims": [
+    "legal_authority",
+    "medical_authority",
+    "custody_transfer",
+    "official_government_authority",
+    "universal_truth"
+  ],
+  "rule": "EAS witnesses claims. Replay evaluates claims. Authority remains false."
+}
