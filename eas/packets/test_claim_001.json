@@ -1,0 +1,20 @@
+{
+  "packet_id": "test_claim_001",
+  "artifact": "EAS_TEST_CLAIM_PACKET_001",
+  "status": "CLAIM_WITNESS_ONLY",
+  "schema_reference": "EAS_CLAIM_WITNESS_SCHEMA_V0_1",
+  "claimant_ens": "jaywisdom.eth",
+  "claim_statement_plaintext": "This is a test claim for replay verification. No authority asserted. Membrane HOLDS.",
+  "claim_statement_sha256": "087f393013c398f4438074ce8e4cda639f2a26338d84114ea44bcba3d5abcd15",
+  "witness_ens": "jaywisdom.eth",
+  "witness_role": "system_memory_observer",
+  "context_receipt": "8503ee5a8bf9bc795b8664c9e8c1f48794ba598f",
+  "test_claim_declaration": true,
+  "authority_claimed": false,
+  "truth_asserted": false,
+  "emergency_use": false,
+  "custody_implication": false,
+  "legal_implication": false,
+  "on_chain_submission": false,
+  "membrane": "HOLDS"
+}
