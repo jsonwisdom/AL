@@ -1,0 +1,21 @@
+{
+  "receipt_id": "JOURNEY_PR_165_BLOCKED_READY_V0_1",
+  "status": "FINAL_RECEIPT_OBSERVATIONAL",
+  "authority": false,
+  "membrane": "HOLDS",
+  "runtime_activation": "BLOCKED_UNTIL_PR_165_MERGES",
+  "merge_gate": "BLOCKED_BY_RULE_REFERENCE",
+  "quests": {
+    "Q1": "BLOCKED",
+    "Q2": "BLOCKED",
+    "Q3": "COMPLETED_WITH_RECEIPTS",
+    "Q4": "COMPLETED_WITH_RECEIPTS",
+    "Q5": "COMPLETED_WITH_RECEIPTS",
+    "Q6": "COMPLETED_WITH_RECEIPTS"
+  },
+  "blocker": {
+    "documented_required_check": "Verify Federal AI Observers / verify",
+    "live_required_check": "verify"
+  },
+  "next_required_action": "ADMIN_RULESET_CORRECTION"
+}
