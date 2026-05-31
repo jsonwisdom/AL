@@ -1,0 +1,25 @@
+{
+  "artifact": "PLAYER_DASHBOARD_V0_1",
+  "status": "QUEUED",
+  "authority": false,
+  "membrane": "HOLDS",
+  "player": "Jay Wisdom",
+  "runtime_status": "NOT_ACTIVE_UNTIL_PR_165_MERGES",
+  "merge_gate": "BLOCKED_BY_RULE_REFERENCE",
+  "routes": {
+    "3": "ACTIVE",
+    "6": "DISPLAY_ONLY",
+    "9": "QUEUED"
+  },
+  "boss": {
+    "name": "GitHub Rule Reference Goblin",
+    "defeated": false
+  },
+  "invariants": [
+    "memory_before_merge",
+    "display_before_merge",
+    "witness_before_merge",
+    "no_promotion",
+    "no_custody_mutation"
+  ]
+}
