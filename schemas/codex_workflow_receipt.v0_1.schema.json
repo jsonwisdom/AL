@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/codex_workflow_receipt.v0_1.schema.json",
+  "title": "Codex Workflow Receipt V0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "receipt_type",
+    "receipt_id",
+    "created_at",
+    "workflow",
+    "artifact",
+    "evidence_refs",
+    "replay_steps",
+    "annotation_events",
+    "status",
+    "authority"
+  ],
+  "properties": {
+    "receipt_type": {
+      "const": "CODEX_WORKFLOW_RECEIPT_V0_1"
+    },
+    "receipt_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "predecessor_receipt_id": {
+      "type": ["string", "null"]
+    },
+    "successor_receipt_id": {
+      "type": ["string", "null"]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source_article_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "workflow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "role", "description"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "role": {
+          "type": "string",
+          "enum": [
+            "data_analysis",
+            "creative_production",
+            "sales",
+            "product_design",
+            "public_equity_investing",
+            "investment_banking",
+            "other"
+          ]
+        },
+        "description": { "type": "string", "minLength": 1 }
+      }
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "title", "hash", "locations"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["site", "document", "slide", "spreadsheet", "code", "report", "other"]
+        },
+        "title": { "type": "string", "minLength": 1 },
+        "hash": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        },
+        "locations": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 1
+        }
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["type", "description", "ref"],
+        "properties": {
+          "type": { "type": "string", "minLength": 1 },
+          "description": { "type": "string", "minLength": 1 },
+          "ref": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "replay_steps": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "annotation_events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "target",
+          "instruction",
+          "predecessor_artifact_hash",
+          "successor_artifact_hash"
+        ],
+        "properties": {
+          "target": { "type": "string", "minLength": 1 },
+          "instruction": { "type": "string", "minLength": 1 },
+          "predecessor_artifact_hash": {
+            "type": "string",
+            "pattern": "^sha256:[a-f0-9]{64}$"
+          },
+          "successor_artifact_hash": {
+            "type": "string",
+            "pattern": "^sha256:[a-f0-9]{64}$"
+          }
+        }
+      }
+    },
+    "refusal_reasons": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["DRAFT", "VERIFIED", "REFUSED", "STALE", "SUPERSEDED"]
+    },
+    "authority": {
+      "const": false
+    }
+  }
+}
