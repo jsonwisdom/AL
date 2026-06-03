@@ -1,0 +1,38 @@
+{
+  "receipt_type": "CODEX_WORKFLOW_RECEIPT_V0_1",
+  "receipt_id": "receipt-refused-001",
+  "predecessor_receipt_id": null,
+  "successor_receipt_id": null,
+  "created_at": "2026-06-03T16:00:00Z",
+  "source_article_url": "https://openai.com/index/codex-for-every-role-tool-workflow/",
+  "workflow": {
+    "id": "wf-284-demo-refused-001",
+    "role": "sales",
+    "description": "Simulated sales pipeline analysis that refuses verification because the required data evidence is missing."
+  },
+  "artifact": {
+    "type": "site",
+    "title": "Sales Pipeline Dashboard (refused)",
+    "hash": "sha256:8b5b9db0c13db242bb8041c1f1d3e9e5f7e7c6b5a4e3d2c1b0a9f8e7d6c5b4",
+    "locations": [
+      "UNAVAILABLE_REFUSED_ARTIFACT"
+    ]
+  },
+  "evidence_refs": [],
+  "replay_steps": [
+    "Attempted simulated sales workflow wf-284-demo-refused-001.",
+    "Attempted Salesforce-style data connection.",
+    "Data authorization failed before evidence could be bound.",
+    "Workflow halted without verifiable data source evidence.",
+    "Emit REFUSED receipt instead of VERIFIED receipt."
+  ],
+  "annotation_events": [],
+  "refusal_reasons": [
+    "evidence_refs is empty: no tool execution or data source evidence could be verified.",
+    "Data connection was not provisioned, so the workflow cannot prove source lineage.",
+    "Artifact cannot be promoted to VERIFIED without evidence refs and reproducible replay path.",
+    "No successor receipt is emitted because no verified artifact mutation occurred."
+  ],
+  "status": "REFUSED",
+  "authority": false
+}
