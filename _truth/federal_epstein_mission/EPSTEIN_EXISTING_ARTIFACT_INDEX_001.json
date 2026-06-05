@@ -1,0 +1,142 @@
+{
+  "artifact": "EPSTEIN_EXISTING_ARTIFACT_INDEX",
+  "artifact_id": "EPSTEIN_EXISTING_ARTIFACT_INDEX_001",
+  "authority": false,
+  "claim_posture": "PUBLIC_OUTPUT_REVIEW_ONLY",
+  "source": {
+    "path": "_truth/sources/justice_epstein_source.json",
+    "repo_blob_sha": "f2002a72eeca4ba01833a6795974cb7571e07429",
+    "status": "VERIFIED_LIVE_SOURCE_CANDIDATE",
+    "source_url": "https://www.justice.gov/epstein"
+  },
+  "verified_artifacts": [
+    {
+      "artifact_id": "DOJ_INGEST_RECEIPT_001",
+      "path": "_truth/ingest/justice_epstein/DOJ_INGEST_RECEIPT_001.json",
+      "repo_blob_sha": "251113e171cf780cd5bd94a5721ac4381f23f51c",
+      "status": "INGEST_ONLY_QUARANTINED",
+      "promotion_status": "NOT_PROMOTED",
+      "gate_status": "CLOSED"
+    },
+    {
+      "artifact_id": "DOJ_INGEST_RECEIPT_002",
+      "path": "_truth/ingest/justice_epstein/DOJ_INGEST_RECEIPT_002.json",
+      "repo_blob_sha": "69d15dd9884d5a68a0e30e7b240c57c78489bd9e",
+      "status": "INGEST_ONLY_QUARANTINED",
+      "comparison_result": "PAGE_CHANGED",
+      "promotion_status": "NOT_PROMOTED",
+      "gate_status": "CLOSED"
+    },
+    {
+      "artifact_id": "DELTA_SET_003",
+      "path": "_truth/delta/DELTA_SET_003.json",
+      "repo_blob_sha": "a0f43ba6c233539d7672b8105b017d38138afb60",
+      "status": "CANDIDATE",
+      "delta_type": "RENDERED_STABILITY_CHECK",
+      "change_detected": false,
+      "promoted": false,
+      "gate_status": "CLOSED"
+    },
+    {
+      "artifact_id": "justice_epstein_PROMOTE_PROPOSAL_001",
+      "path": "_truth/promotions/justice_epstein_PROMOTE_PROPOSAL_001.json",
+      "repo_blob_sha": "c92fd27f64d421df5796bbfd33715ebbea04a432",
+      "status": "PROPOSED",
+      "validation_status": "PASSED",
+      "promotion_status": "NOT_PROMOTED",
+      "gate_status": "CLOSED"
+    },
+    {
+      "artifact_id": "justice_epstein_HOLD_DECISION_001",
+      "path": "_truth/promotions/justice_epstein_HOLD_DECISION_001.json",
+      "repo_blob_sha": "942390d531aaa0ac5e1154c9bb6122b4fabf7fda",
+      "decision": "HOLD",
+      "reason_code": "NEEDS_SECOND_SNAPSHOT_DIFF",
+      "promotion_status": "NOT_PROMOTED",
+      "gate_status": "CLOSED"
+    },
+    {
+      "artifact_id": "justice_epstein_APPROVE_DECISION_001",
+      "path": "_truth/promotions/justice_epstein_APPROVE_DECISION_001.json",
+      "repo_blob_sha": "5406077d1b3635b8da6544b098d6bdac44890069",
+      "decision": "APPROVE",
+      "promotion_status": "APPROVED_FOR_RELEASE_CONSTRUCTION",
+      "opens_custody_gate": false,
+      "gate_status": "CLOSED"
+    },
+    {
+      "artifact_id": "DOJ_RELEASE_CANDIDATE_001",
+      "path": "_truth/releases/justice_epstein/DOJ_RELEASE_CANDIDATE_001.json",
+      "repo_blob_sha": "944dd60d9a00045a3a7c9bd25e9bf7aa7e8215d8",
+      "status": "CANDIDATE_CONSTRUCTION_ONLY",
+      "creates_hash_index": false,
+      "gate_status": "CLOSED"
+    },
+    {
+      "artifact_id": "justice_epstein_PDF_VALIDATION_001",
+      "path": "_truth/observations/justice_epstein_PDF_VALIDATION_001.json",
+      "repo_blob_sha": "bc4f7172df6a79cb8ee3dbc21535fe1db0f30c60",
+      "integrity": "VERIFIED",
+      "claim_scope": "SNAPSHOT_ONLY",
+      "promotion_status": "NOT_PROMOTED",
+      "gate_status": "CLOSED"
+    },
+    {
+      "artifact_id": "HASH_INDEX_003",
+      "path": "_truth/hash_index/HASH_INDEX_003.json",
+      "repo_blob_sha": "d5a98cab201e8fbea804c878cda802482bf38a88",
+      "lineage": "PDF_ONLY",
+      "entry_count": 1,
+      "status": "CANDIDATE",
+      "promoted": false,
+      "gate_status": "CLOSED"
+    },
+    {
+      "artifact_id": "CLAIM_LEDGER_001",
+      "path": "_truth/claim_ledger/CLAIM_LEDGER_001.json",
+      "repo_blob_sha": "ed54c3c37cd0239b09be54be018c1104a8fae2a7",
+      "claim_count": 3,
+      "verified_claims": 2,
+      "unverified_claims": 1,
+      "status": "CANDIDATE",
+      "promoted": false,
+      "gate_status": "CLOSED"
+    },
+    {
+      "artifact_id": "ENTITY_GRAPH_001",
+      "path": "_truth/entity_graphs/ENTITY_GRAPH_001.json",
+      "repo_blob_sha": "b3604a80d1d64abbe912d8daa0e1571635dbcdd1",
+      "node_count": 3,
+      "edge_count": 2,
+      "status": "CANDIDATE",
+      "promoted": false,
+      "gate_status": "CLOSED"
+    }
+  ],
+  "proves": [
+    "A DOJ Epstein source candidate exists in the repo.",
+    "Quarantined ingest receipts exist.",
+    "A page-change event was recorded between ingest snapshots.",
+    "A rendered stability candidate exists for a sampled window.",
+    "A promotion cycle exists: proposal, hold, approve-for-construction.",
+    "A release candidate exists as construction-only.",
+    "One DOJ PDF snapshot has byte-level validation and hash indexing.",
+    "A candidate claim ledger exists with limited existence/provenance claims.",
+    "A candidate provenance graph exists."
+  ],
+  "does_not_prove": [
+    "Full DOJ corpus completeness.",
+    "Semantic truth of document contents.",
+    "Person-related allegations.",
+    "Client-list claims.",
+    "Suppression or alteration claims.",
+    "Canonical public release authority.",
+    "Custody gate opening."
+  ],
+  "current_status": {
+    "custody_gate": "CLOSED",
+    "authority": false,
+    "promotion": "NOT_CANONICAL",
+    "write_run_0002": "UNCHANGED"
+  }
+}
