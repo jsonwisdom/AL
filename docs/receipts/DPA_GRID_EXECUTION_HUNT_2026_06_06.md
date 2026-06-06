@@ -1,0 +1,1 @@
+Full content placeholder - use push if needed
