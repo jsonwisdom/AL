@@ -1,0 +1,30 @@
+{
+  "receipt_type": "AGENT_DELEGATION_RECEIPT_V1",
+  "receipt_version": "1.0.0",
+  "delegator": {
+    "github_user": "alice",
+    "signing_key": "did:key:zV1MockDelegator"
+  },
+  "agent": {
+    "agent_id": "copilot-agent-123",
+    "runtime": "github-copilot-agent"
+  },
+  "scope": {
+    "repo": "jsonwisdom/AL",
+    "issue": 295,
+    "allowed_actions": ["read", "branch", "commit", "open_pr"],
+    "forbidden_actions": ["merge", "delete_secret", "change_permissions"],
+    "expires_at": "2099-01-01T00:00:00Z"
+  },
+  "authorization": {
+    "intent": "Invalid V1 fixture missing public key and DID",
+    "policy_file": "testdata/v1/valid/policy.json",
+    "policy_hash": "sha256:mock-v1-policy"
+  },
+  "proof": {
+    "canonicalization": "RFC8785-JCS",
+    "digest": "sha256:mock-v1-missing-key",
+    "signature_alg": "Ed25519",
+    "signature": "ed25519:V1_SIGNATURE_PENDING"
+  }
+}
