@@ -24,7 +24,7 @@
   "proof": {
     "canonicalization": "RFC8785-JCS",
     "digest": "sha256:mock-receipt-valid",
-    "signature_alg": "Ed25519-MOCK-V0",
-    "signature": "mock-tampered-signature"
+    "signature_alg": "Ed25519",
+    "signature": "ed25519:000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
   }
 }
