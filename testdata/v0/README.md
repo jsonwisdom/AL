@@ -85,6 +85,10 @@ Expected output:
 FAIL: forbidden file touched: auth.py
 ```
 
+## Continuous Replay
+
+The Replay Loop V0 workflow is intended to run these checks on changes to this corpus or the verifier tools.
+
 ## V0 Boundary
 
 This V0 verifier uses mock proof values. It is a deterministic conformance harness, not production cryptography.
