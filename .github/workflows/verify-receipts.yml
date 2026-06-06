@@ -34,5 +34,5 @@ jobs:
       - name: V1.1 did:key decoder fixtures
         run: |
           pip install base58
-          python tools/check_did_key_fixtures.py
+          PYTHONPATH=. python tools/check_did_key_fixtures.py
           node tools/check_did_key_fixtures.js
