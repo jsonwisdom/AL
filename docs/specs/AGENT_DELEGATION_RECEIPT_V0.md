@@ -2,7 +2,7 @@
 
 **Replay Loop V0** — Replayable delegation receipts for agent actions.
 
-**Status**: V0 — executable harness, fixture corpus, README, dual verifiers, and GitHub Actions continuous replay are live.
+**Status**: V0 — executable harness, fixture corpus, README, dual verifiers, GitHub Actions continuous replay, and Ed25519 receipt verification are live on the `feat/replay-loop-ed25519-v0` branch.
 
 **Core Principle**: Do not inherit trust. Replay it.
 
@@ -13,12 +13,12 @@
 An independent verifier should be able to determine:
 
 - a delegation receipt exists
-- the receipt has not expired
+- the receipt signature verifies
 - a result binding references the receipt
 - the observed files are permitted by policy
 - invalid cases fail deterministically
 
-V0 is intentionally small. It is a conformance harness, not production cryptography.
+V0 is intentionally small. It is a conformance harness, not production key management.
 
 ## 2. Core Objects
 
@@ -61,8 +61,8 @@ A V0 receipt uses this shape:
   "proof": {
     "canonicalization": "RFC8785-JCS",
     "digest": "sha256:mock-receipt-valid",
-    "signature_alg": "Ed25519-MOCK-V0",
-    "signature": "mock-valid-signature"
+    "signature_alg": "Ed25519",
+    "signature": "ed25519:<hex-signature>"
   }
 }
 ```
@@ -88,7 +88,43 @@ A V0 receipt uses this shape:
 - `proof.signature_alg`
 - `proof.signature`
 
-## 4. Result Binding
+## 4. Cryptographic Protection
+
+Replay Loop V0 verifies `proof.signature` using Ed25519.
+
+### 4.1 Signature Scope
+
+The signature covers the entire receipt object except `proof.signature` itself.
+
+Verification message construction:
+
+```text
+receipt
+  -> remove proof.signature
+  -> deterministic sorted compact JSON
+  -> UTF-8 bytes
+  -> Ed25519 verify
+```
+
+### 4.2 Test Vector
+
+The V0 fixture corpus uses this public test key:
+
+```text
+37e9edc1ca6c423ec0955156b9bd318e7581ef4492b28a92235ee900d53174cc
+```
+
+- Algorithm: `Ed25519`
+- Signature prefix: `ed25519:`
+- Signature encoding: lowercase hexadecimal after the prefix
+- Canonicalization: RFC8785-style deterministic sorted compact JSON
+
+### 4.3 Conformance Fixtures
+
+- `testdata/v0/valid/receipt-valid.json` MUST pass receipt signature verification.
+- `testdata/v0/invalid/receipt-tampered-signature.json` MUST fail with `FAIL: signature mismatch`.
+
+## 5. Result Binding
 
 A V0 binding uses this shape:
 
@@ -118,25 +154,19 @@ A V0 binding uses this shape:
 }
 ```
 
-### 4.1 Required V0 Binding Fields
+### 5.1 Required V0 Binding Fields
 
-- `binding_type`
-- `binding_version`
+The historical binding fixture shape contains `binding_type`, `binding_version`, `receipt_digest`, `actor`, `result`, `bound_at`, and `proof`.
+
+The Ed25519 branch verifiers additionally accept the simplified conformance shape:
+
 - `receipt_digest`
-- `actor.id`
-- `actor.key`
-- `result.repo`
-- `result.branch`
-- `result.commit`
-- `result.pr`
-- `result.changed_files`
-- `bound_at`
-- `proof.canonicalization`
-- `proof.digest`
-- `proof.alg`
-- `proof.value`
+- `observed_files`
+- `result_hash`
 
-## 5. Policy
+This compatibility layer exists only for V0 fixture testing and should be normalized in a future version.
+
+## 6. Policy
 
 Replay Loop V0 uses a simple path policy:
 
@@ -154,33 +184,31 @@ Replay Loop V0 uses a simple path policy:
 }
 ```
 
-A changed file fails if:
+A changed or observed file fails if:
 
 - it appears in `forbidden_paths`, or
 - `allowed_paths` is non-empty and the file does not appear in `allowed_paths`
 
-## 6. Verification Algorithm
+## 7. Verification Algorithm
 
 The reference verifiers are:
 
 - `tools/verify_fixture.py`
 - `tools/verify_fixture.js`
 
-A conforming V0 verifier checks, in order:
+A conforming V0 verifier checks:
 
 1. Load receipt, binding, and policy JSON.
-2. Validate required fields.
-3. Verify receipt type is `AGENT_DELEGATION_RECEIPT_V0`.
-4. Verify binding type is `AGENT_RESULT_BINDING_V0`.
-5. Verify policy path lists are arrays.
-6. Verify `scope.expires_at` is valid and not expired, allowing 300 seconds of clock skew.
-7. Verify V0 proof marker on the receipt.
-8. Verify `binding.receipt_digest == receipt.proof.digest`.
-9. Verify V0 proof marker on the binding.
-10. Verify `result.changed_files` against the policy.
-11. Return `PASS` if all checks pass.
+2. Validate V0 receipt type and version.
+3. Confirm `proof.signature` exists.
+4. Verify `proof.signature` with Ed25519 over the canonical receipt with `proof.signature` removed.
+5. Verify binding fields required by the active fixture shape.
+6. Verify policy path lists are arrays.
+7. Verify `binding.receipt_digest == receipt.proof.digest`.
+8. Verify observed files against policy.
+9. Return `PASS` if all checks pass.
 
-## 7. Public Failure Modes
+## 8. Public Failure Modes
 
 The fixture corpus demonstrates these deterministic failures:
 
@@ -189,9 +217,9 @@ The fixture corpus demonstrates these deterministic failures:
 - `FAIL: receipt expired`
 - `FAIL: receipt digest mismatch`
 - `FAIL: forbidden file touched: auth.py`
-- `FAIL: file outside allowed paths: <path>`
+- `FAIL: scope violation - unauthorized file touched`
 
-## 8. Replay Instructions
+## 9. Replay Instructions
 
 ```bash
 git clone --depth 1 https://github.com/JSONWisdom/AL.git
@@ -226,27 +254,29 @@ PASS
 
 Invalid cases are documented in `testdata/v0/README.md`.
 
-## 9. V0 Boundaries
+## 10. V0 Boundaries
 
 Replay Loop V0 is deliberately honest about its limits:
 
-- mock proof values are used
-- real Ed25519 verification is not implemented
-- RFC8785 canonicalization is declared but not implemented
+- receipt signatures are verified with Ed25519
+- canonicalization is deterministic sorted compact JSON, not full RFC8785 coverage
+- binding signatures remain mock V0 proof markers
 - policy hash verification is not implemented
-- GitHub PR diffs are represented by fixture `changed_files`
+- GitHub PR diffs are represented by fixture files
 - revocation is not implemented
+- production key management is not implemented
 
-## 10. Next Milestones
+## 11. Next Milestones
 
-1. Replace mock proof checks with real Ed25519 signatures.
-2. Implement RFC8785 JSON Canonicalization Scheme.
-3. Compute and verify real `sha256:` digests.
-4. Enforce JSON Schema files directly.
-5. Verify real GitHub PR diffs.
-6. Add additional independent implementations.
+1. Normalize the binding fixture shape.
+2. Compute and verify real `sha256:` receipt digests.
+3. Implement full RFC8785 JSON Canonicalization Scheme.
+4. Verify binding signatures.
+5. Enforce JSON Schema files directly.
+6. Verify real GitHub PR diffs.
+7. Add additional independent implementations.
 
-## 11. Canonical Principle
+## 12. Canonical Principle
 
 Agent identity answers who acted.  
 Delegation receipts answer who had authority.
