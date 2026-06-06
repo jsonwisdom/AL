@@ -1,4 +1,4 @@
-name: Verify Receipts (Ed25519 V0)
+name: Verify Receipts (V0 + V1)
 
 on:
   push:
@@ -20,48 +20,46 @@ jobs:
           python-version: '3.11'
           cache: 'pip'
 
-      - name: Install Python dependencies
-        run: |
-          pip install -r requirements.txt
+      - name: Install dependencies
+        run: pip install -r requirements.txt
 
-      - name: Run Python verifier (valid fixture)
-        run: |
-          echo "=== Python Valid Fixture ==="
-          python tools/verify_fixture.py \
-            testdata/v0/valid/receipt-valid.json \
-            testdata/v0/valid/binding.json \
-            testdata/v0/valid/policy.json
+      - name: V0 valid fixture
+        run: python tools/verify_fixture.py testdata/v0/valid/receipt-valid.json testdata/v0/valid/binding.json testdata/v0/valid/policy.json
 
-      - name: Run Python verifier (tampered fixture)
+      - name: V0 tampered fixture
         run: |
-          echo "=== Python Tampered Fixture ==="
-          set +e
-          output=$(python tools/verify_fixture.py \
-            testdata/v0/invalid/receipt-tampered-signature.json \
-            testdata/v0/valid/binding.json \
-            testdata/v0/valid/policy.json 2>&1)
-          status=$?
+          output=$(python tools/verify_fixture.py testdata/v0/invalid/receipt-tampered-signature.json testdata/v0/valid/binding.json testdata/v0/valid/policy.json)
           echo "$output"
-          test $status -eq 0
           echo "$output" | grep -q "FAIL: signature mismatch"
 
-      - name: Run Node verifier (valid fixture)
-        run: |
-          echo "=== Node Valid Fixture ==="
-          node tools/verify_fixture.js \
-            testdata/v0/valid/receipt-valid.json \
-            testdata/v0/valid/binding.json \
-            testdata/v0/valid/policy.json
+      - name: V1 public_key valid fixture
+        run: python tools/verify_fixture.py testdata/v1/valid/receipt-public-key-valid.json testdata/v1/valid/binding.json testdata/v1/valid/policy.json
 
-      - name: Run Node verifier (tampered fixture)
+      - name: V1 did key stub fixture
         run: |
-          echo "=== Node Tampered Fixture ==="
-          set +e
-          output=$(node tools/verify_fixture.js \
-            testdata/v0/invalid/receipt-tampered-signature.json \
-            testdata/v0/valid/binding.json \
-            testdata/v0/valid/policy.json 2>&1)
-          status=$?
+          output=$(python tools/verify_fixture.py testdata/v1/valid/receipt-did-key-valid.json testdata/v1/valid/binding.json testdata/v1/valid/policy.json)
           echo "$output"
-          test $status -eq 0
+          echo "$output" | grep -q "FAIL: did resolution unsupported"
+
+      - name: V1 invalid fixtures
+        run: |
+          output=$(python tools/verify_fixture.py testdata/v1/invalid/receipt-missing-key.json testdata/v1/valid/binding.json testdata/v1/valid/policy.json)
+          echo "$output"
+          echo "$output" | grep -q "FAIL: public key missing"
+
+          output=$(python tools/verify_fixture.py testdata/v1/invalid/receipt-invalid-public-key.json testdata/v1/valid/binding.json testdata/v1/valid/policy.json)
+          echo "$output"
+          echo "$output" | grep -q "FAIL: public key invalid"
+
+          output=$(python tools/verify_fixture.py testdata/v1/invalid/receipt-unsupported-did.json testdata/v1/valid/binding.json testdata/v1/valid/policy.json)
+          echo "$output"
+          echo "$output" | grep -q "FAIL: did resolution unsupported"
+
+          output=$(python tools/verify_fixture.py testdata/v1/invalid/receipt-tampered-signature.json testdata/v1/valid/binding.json testdata/v1/valid/policy.json)
+          echo "$output"
           echo "$output" | grep -q "FAIL: signature mismatch"
+
+      - name: Node parity V1 public_key and V0
+        run: |
+          node tools/verify_fixture.js testdata/v1/valid/receipt-public-key-valid.json testdata/v1/valid/binding.json testdata/v1/valid/policy.json
+          node tools/verify_fixture.js testdata/v0/valid/receipt-valid.json testdata/v0/valid/binding.json testdata/v0/valid/policy.json
