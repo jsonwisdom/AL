@@ -2,8 +2,6 @@
 import sys
 import json
 from datetime import datetime
-import hashlib
-from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives.asymmetric import ed25519
 from cryptography.exceptions import InvalidSignature
 
@@ -33,7 +31,7 @@ def verify_signature(receipt):
         message = canonical_json(receipt_for_signing)
 
         # V0 test vector public key (hardcoded for fixtures only)
-        pub_key_hex = "1a27cc263a97614183762ecd2fdc933cc99129a41140d61083758d8eacc26063"
+        pub_key_hex = "e0b72d1d54cbf9ab369cc17425a87405541576972493adff635673050da0b7a1"
         pub_key_bytes = bytes.fromhex(pub_key_hex)
         public_key = ed25519.Ed25519PublicKey.from_public_bytes(pub_key_bytes)
 
