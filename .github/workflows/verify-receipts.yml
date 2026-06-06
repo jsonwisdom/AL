@@ -30,3 +30,9 @@ jobs:
 
       - name: Node Parity
         run: node tools/verify_fixture.js testdata/v1/valid/receipt-public-key-valid.json testdata/v1/valid/binding.json testdata/v1/valid/policy.json
+
+      - name: V1.1 did:key decoder fixtures
+        run: |
+          pip install base58
+          PYTHONPATH=. python tools/check_did_key_fixtures.py
+          node tools/check_did_key_fixtures.js
