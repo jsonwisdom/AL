@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jsonwisdom/AL/schemas/karen11.schema.json",
+  "title": "KAREN11 Runtime Validation Schema",
+  "description": "Validates KAREN11 audit engine inputs and outputs under Minnesota Math. Authority is always false. Claims cannot skip states.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "claim",
+    "source",
+    "output",
+    "authority"
+  ],
+  "properties": {
+    "claim": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source": {
