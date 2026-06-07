@@ -3,9 +3,25 @@
   "authority": false,
   "vector_id": "HANDSHAKE-005",
   "vector_type": "expression_only_conformance_vector",
-  "purpose": "Demonstrate that expression may exist without receipt or replay while granting no procedural admissibility.",
+  "purpose": "Demonstrate that expression may exist without receipt while granting no procedural admissibility.",
   "story_object": {
     "story_id": "sha256:pending",
     "epoch": "JOY",
     "story_type": "expression",
-    "intent": "
+    "intent": "Preserve a playful memory phrase without claiming procedural admissibility.",
+    "claims_truth": false,
+    "authority": false
+  },
+  "receipt": null,
+  "validator_trace": {
+    "schema_check": "pass",
+    "receipt_check": "not_required",
+    "replay_check": "required"
+  },
+  "semantic_proof": "Replay invoked but cannot elevate expression into admission; authority remains false; replay must reconstruct expression_only with no state mutation.",
+  "expected_validator_output": {
+    "authority": false,
+    "verdict": "expression_only",
+    "reason": "receipt_not_required_for_expression"
+  }
+}
