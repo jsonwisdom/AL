@@ -1,0 +1,26 @@
+name: Verify Ledger Constitution
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install IRL CLI
+        run: pip install -e .
+
+      - name: Run constitution gate
+        run: irl verify-ledger claims/ --schema ledger_schema.json
+
+      - name: Upload claims on
