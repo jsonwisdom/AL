@@ -9,3 +9,50 @@
     "raw_observation": "A missing memory reference caused JOY replay to fail until the Genesis Trinity files were created.",
     "source_membrane": "JOY",
     "claims_truth": false,
+    "authority": false
+  },
+  "story_transform": {
+    "rules_applied": [
+      "preserve_raw_observation",
+      "project_to_story_shape",
+      "forbid_truth_claims",
+      "retain_authority_false",
+      "prepare_for_receipt_generation"
+    ],
+    "forbidden_additions": [
+      "truth_claim",
+      "authority_claim",
+      "unstated_inference"
+    ]
+  },
+  "story_object": {
+    "story_id": "sha256:pending",
+    "epoch": "JOY",
+    "story_type": "narrative",
+    "intent": "Record the first JOY replay repair as a replayable memory event.",
+    "claims_truth": false,
+    "authority": false
+  },
+  "receipt": {
+    "receipt_id": "receipt:joy-replay-repair-001",
+    "executed_action": "created_missing_genesis_trinity_files",
+    "validator_trace": {
+      "schema_check": "pass",
+      "receipt_check": "pass",
+      "replay_check": "pass"
+    },
+    "authority": false
+  },
+  "narrative_projection": {
+    "constraints": {
+      "replay_derivable": true,
+      "exceeds_replay": false,
+      "authority": false
+    }
+  },
+  "expected_validator_output": {
+    "authority": false,
+    "verdict": "admissible",
+    "reason": "narrative_projection_is_replay_derivable_and_does_not_exceed_replay"
+  }
+}
