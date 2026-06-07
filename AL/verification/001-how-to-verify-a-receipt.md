@@ -15,4 +15,15 @@ If replay produces exactly one lawful transition, the receipt is valid.
 If replay produces zero or more than one possible transition, the receipt is invalid.
 
 Verification does not interpret intent.
-Verification does not resolve
+Verification does not resolve disputes.
+Verification does not elevate claims.
+
+It answers a single procedural question:
+
+Can this receipt be reconstructed deterministically from its own evidence?
+
+That is the entire test.
+
+True or false.
+
+No authority invoked.
