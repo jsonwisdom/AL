@@ -12,16 +12,4 @@
 
 Legacy systems often depend on hierarchy, hidden process, and institutional memory that cannot be replayed by outsiders.
 
-The Replay Arcade changes the game:
-
-```text
-Claim
-  ↓
-Schema
-  ↓
-Receipt
-  ↓
-Replay
-  ↓
-Audit
-  ↓
+The Replay Arcade changes the
