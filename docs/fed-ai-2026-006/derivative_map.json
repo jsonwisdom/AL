@@ -1,0 +1,14 @@
+{
+  "bundle_id": "FED-AI-2026-006",
+  "bundle_type": "META_REPLAY",
+  "parent_bundle": "FED-AI-2026-PAS-001",
+  "derivatives": [
+    {
+      "type": "meta_replay",
+      "source": "artifacts/PAS-001.md",
+      "target": "FED-AI-2026-006"
+    }
+  ],
+  "lineage_rule": "replay_from_committed_artifacts_only",
+  "legitimacy_can_override_evidence": false
+}
