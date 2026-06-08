@@ -12,6 +12,9 @@ jobs:
   replay-verify:
     runs-on: ubuntu-latest
 
+    env:
+      PYTHONPATH: ${{ github.workspace }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -24,9 +27,11 @@ jobs:
       - name: Install pytest
         run: pip install pytest
 
+      - name: Guard replay verification imports
+        run: |
+          python -c "import scripts; import scripts.emit_mcp_batch; print('scripts import ok')"
+
       - name: Run Merkle tests
-        env:
-          PYTHONPATH: ${{ github.workspace }}
         run: |
           set +e
           pytest tests/test_merkle.py -vv 2>&1 | tee replay-verify-pytest.log
