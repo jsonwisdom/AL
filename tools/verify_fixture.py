@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import sys
 import json
-from datetime import datetime
+from datetime import datetime, timezone
 from cryptography.hazmat.primitives.asymmetric import ed25519
 from cryptography.exceptions import InvalidSignature
 
@@ -14,6 +14,28 @@ def load_json(path):
 def canonical_json(obj):
     """Deterministic canonical JSON for signing (RFC8785-like via sort_keys + compact)"""
     return json.dumps(obj, sort_keys=True, separators=(',', ':')).encode('utf-8')
+
+
+def parse_iso_datetime(value):
+    if not isinstance(value, str):
+        return None
+    try:
+        if value.endswith('Z'):
+            value = value[:-1] + '+00:00'
+        parsed = datetime.fromisoformat(value)
+        if parsed.tzinfo is None:
+            parsed = parsed.replace(tzinfo=timezone.utc)
+        return parsed
+    except ValueError:
+        return None
+
+
+def receipt_is_expired(receipt):
+    expires_at = receipt.get("scope", {}).get("expires_at")
+    parsed = parse_iso_datetime(expires_at)
+    if parsed is None:
+        return False
+    return parsed < datetime.now(timezone.utc)
 
 
 def verify_signature(receipt):
@@ -98,12 +120,11 @@ def verify(receipt_path, binding_path, policy_path):
             return "FAIL: schema invalid - forbidden_paths must be array"
 
         # === CRYPTO + REPLAY LOGIC ===
+        if receipt_is_expired(receipt):
+            return "FAIL: receipt expired"
+
         if not verify_signature(receipt):
             return "FAIL: signature mismatch"
-
-        # Expiration is retained in receipt.scope.expires_at for this schema.
-        # V0 branch preserves the original mock-harness behavior and focuses
-        # this change on signature verification.
 
         # Binding digest match
         if binding.get("receipt_digest") != receipt.get("proof", {}).get("digest"):
