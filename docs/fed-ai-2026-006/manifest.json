@@ -1,0 +1,36 @@
+{
+  "bundle_id": "FED-AI-2026-006",
+  "bundle_type": "META_REPLAY",
+  "meta_replay": true,
+  "parent_bundle": "FED-AI-2026-PAS-001",
+  "status": "MANIFEST_CREATED_AWAITING_REPLAY",
+  "artifacts": [
+    {
+      "file": "artifacts/issue-303-closure.json",
+      "sha256": "e18f056e849b5ae1acccef49148453fa876cc7e9d7f880f9ad0c6f393cd18d96",
+      "purpose": "issue_303_closure_record"
+    },
+    {
+      "file": "artifacts/issue-304-stranger-test.json",
+      "sha256": "5587481e6d83dcc0cd221fa8afc49addda30b59185afcdd8dc6802de1b3939d3",
+      "purpose": "issue_304_stranger_test_record"
+    },
+    {
+      "file": "artifacts/pas-001-anchor.json",
+      "sha256": "9d4dfbd080db9f6baa44fea20a1ab461084c3316eb21c221f48e9369b2f44cdc",
+      "purpose": "pas_001_anchor_metadata"
+    },
+    {
+      "file": "artifacts/PAS-001.md",
+      "sha256": "854c9041f1daa51bb3456f357262a5d865f3d94283175856d19f8b80f2582a71",
+      "purpose": "pas_001_parent_body"
+    },
+    {
+      "file": "artifacts/repo-state.json",
+      "sha256": "a3c36d58df6f79f38f6d6fa4e3d8bef34a20803533df82a7bc57883b1fdfe96a",
+      "purpose": "meta_replay_state"
+    }
+  ],
+  "expected_output": "SUCCESS: REALITY_CONFIRMED",
+  "stranger_test_required": true
+}
