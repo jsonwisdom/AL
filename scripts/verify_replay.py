@@ -4,7 +4,7 @@ import argparse
 import json
 from pathlib import Path
 
-from emit_mcp_batch import canonical_json_bytes, rfc6962_merkle_root
+from scripts.emit_mcp_batch import canonical_json_bytes, rfc6962_merkle_root
 
 
 def load_receipts(receipts_dir: Path):
