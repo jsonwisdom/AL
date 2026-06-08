@@ -48,7 +48,11 @@ jobs:
           if-no-files-found: ignore
 
       - name: Verify replay manifest
-        run: python scripts/verify_replay.py
+        run: |
+          python scripts/verify_replay.py \
+            --receipts-dir tests/fixtures/receipts/mn_mmb_feb2026 \
+            --manifest manifests/mn_mmb_feb2026_manifest.json \
+            --vector tests/vectors/mn_mmb_feb2026_full.json
 
       - name: Verify fixture root
         run: |
