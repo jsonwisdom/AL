@@ -1,0 +1,41 @@
+{
+  "bundle_id": "FED-AI-2026-005",
+  "parent_issue": 303,
+  "purpose": "Derivative mapping and stranger replay test for White House AI artifact bundle",
+  "captured_at_utc": "2026-06-08T08:18:51Z",
+  "replay_target_minutes": 10,
+  "artifacts": [
+    {
+      "id": "FED-AI-2026-004A",
+      "file": "doc1-executive-order.html",
+      "sha256": "4a9d61f5191e87e186c28a49b10de51ea54ab3f8a7be1caf7ddf08e53aa0195e",
+      "classification": "CANONICAL_ARTIFACT"
+    },
+    {
+      "id": "FED-AI-2026-001-REPLAY",
+      "file": "doc1-fact-sheet.html",
+      "sha256": "c8ab055e11569df63d7b3f83d6f500d519ece56d3b0244ad18742c0ac8e8880a",
+      "classification": "PARENT_DIGEST_REPRODUCED"
+    },
+    {
+      "id": "FED-AI-2026-004B",
+      "file": "doc1-federal-register.html",
+      "sha256": "02ae98126a87262b54ed832f9a6145e2f79a8bec8f9cb3c2f6991a677fba8959",
+      "classification": "CANONICAL_MIRROR"
+    },
+    {
+      "id": "FED-AI-2026-004C",
+      "file": "doc2-nspm11.html",
+      "sha256": "39058748780de3727d987c7ef4344307aa043f13bcdfd0717b3f102b2523d8bc",
+      "classification": "CANONICAL_ARTIFACT"
+    },
+    {
+      "id": "FED-AI-2026-004D",
+      "file": "doc2-fact-sheet.html",
+      "sha256": "0bdc331fdb2a0df61dd2a956230195df4c67ba28e1e40cda2bd5d47c2c466ef1",
+      "classification": "CANONICAL_ARTIFACT"
+    }
+  ],
+  "bundle_integrity_rule": "sha256 of sorted artifact sha256 values",
+  "status": "READY_FOR_STRANGER_REPLAY"
+}
