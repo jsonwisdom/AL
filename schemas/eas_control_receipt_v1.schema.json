@@ -1,0 +1,293 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jsonwisdom/AL/schemas/eas_control_receipt_v1.schema.json",
+  "title": "EAS Control Receipt V1",
+  "description": "Constitutional schema primitive for Base EAS control receipts used as a low-decay replay control group. Schema is law; verifier is executor; CI is gate; network is witness.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "receipt_id",
+    "schema_version",
+    "parent_lineage_digest",
+    "lineage_digest",
+    "chain",
+    "chain_id",
+    "artifact_type",
+    "status",
+    "replay_status",
+    "severity",
+    "rules_applied",
+    "canonical_hash"
+  ],
+  "properties": {
+    "receipt_id": {
+      "type": "string",
+      "pattern": "^FED-AI-2026-EAS-[0-9]{3}$"
+    },
+    "schema_version": {
+      "const": "EAS_CONTROL_RECEIPT_V1"
+    },
+    "parent_receipt_id": {
+      "type": "string",
+      "pattern": "^FED-AI-2026-FL-[0-9]{3}$"
+    },
+    "parent_lineage_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "lineage_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "chain": {
+      "const": "Base"
+    },
+    "chain_id": {
+      "const": 8453
+    },
+    "artifact_type": {
+      "const": "EAS_ATTESTATION"
+    },
+    "selection_method": {
+      "enum": [
+        "MOST_RECENT_PUBLIC_BASE_EAS_ATTESTATION_AT_FETCH_TIME",
+        "SPECIFIC_UID",
+        "SPECIFIC_TX_HASH"
+      ]
+    },
+    "selection_time_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "uid": {
+      "type": "string",
+      "pattern": "^0x[a-fA-F0-9]{64}$"
+    },
+    "schema_uid": {
+      "type": "string",
+      "pattern": "^0x[a-fA-F0-9]{64}$"
+    },
+    "attester": {
+      "type": "string",
+      "pattern": "^0x[a-fA-F0-9]{40}$"
+    },
+    "recipient": {
+      "type": "string",
+      "pattern": "^0x[a-fA-F0-9]{40}$"
+    },
+    "tx_hash": {
+      "type": "string",
+      "pattern": "^0x[a-fA-F0-9]{64}$"
+    },
+    "block_number": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "created_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "retrieved_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "artifact_hash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "canonical_hash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "attestation_payload": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "schema_handler": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "resolver_mode",
+        "schema_hash"
+      ],
+      "properties": {
+        "resolver_mode": {
+          "enum": [
+            "LOCAL_FIXTURE",
+            "CACHED_LIVE_EAS_SNAPSHOT",
+            "LIVE_EAS_GRAPHQL"
+          ]
+        },
+        "schema_hash": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        },
+        "previous_schema_hash": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        },
+        "new_revision": {
+          "type": "boolean"
+        }
+      }
+    },
+    "rules_applied": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_immutability",
+        "lineage_integrity",
+        "replay_determinism",
+        "no_time_travel",
+        "no_retroactive_promotion",
+        "eas_is_control_group_not_truth_oracle",
+        "late_artifacts_become_child_receipts",
+        "missing_artifacts_log_uncertainty"
+      ],
+      "properties": {
+        "schema_immutability": { "const": true },
+        "lineage_integrity": { "const": true },
+        "replay_determinism": { "const": true },
+        "no_time_travel": { "const": true },
+        "no_retroactive_promotion": { "const": true },
+        "eas_is_control_group_not_truth_oracle": { "const": true },
+        "late_artifacts_become_child_receipts": { "const": true },
+        "missing_artifacts_log_uncertainty": { "const": true }
+      }
+    },
+    "status": {
+      "enum": [
+        "PENDING_FETCH",
+        "ANCHORED_CONTROL_SAMPLE",
+        "VERIFIED",
+        "INVALID_SCHEMA",
+        "ORPHANED",
+        "REVOKED",
+        "WITNESS_UNAVAILABLE"
+      ]
+    },
+    "replay_status": {
+      "enum": [
+        "PENDING",
+        "PASS",
+        "FAIL"
+      ]
+    },
+    "severity": {
+      "enum": [
+        "GREEN",
+        "YELLOW",
+        "ORANGE",
+        "RED"
+      ]
+    },
+    "verdict_codes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "SCHEMA_REQUIRED_FIELD_MISSING",
+          "SCHEMA_ADDITIONAL_FIELD",
+          "EAS_UID_MISSING",
+          "EAS_UID_INVALID_FORMAT",
+          "EAS_TX_HASH_MISSING",
+          "EAS_TX_HASH_INVALID_FORMAT",
+          "EAS_WRONG_CHAIN_ID",
+          "EAS_WRONG_CHAIN",
+          "SCHEMA_HASH_DRIFT",
+          "SCHEMA_UID_MISSING",
+          "LINEAGE_PARENT_EMPTY",
+          "LINEAGE_ORPHANED",
+          "LINEAGE_PARENT_MUTATION_ATTEMPT",
+          "CANONICAL_HASH_MISSING",
+          "CANONICAL_HASH_MISMATCH",
+          "REPLAY_NON_DETERMINISTIC",
+          "REPLAY_FALSE_PASS",
+          "ANCHOR_WITHOUT_EVIDENCE",
+          "METADATA_ONLY_CHECKSUM",
+          "URL_DEAD_ARCHIVE_AVAILABLE",
+          "URL_DEAD_NO_EVIDENCE",
+          "RETROACTIVE_PROMOTION_ATTEMPT",
+          "LATE_ARTIFACT_CHILD_OK"
+        ]
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "status": { "const": "PENDING_FETCH" } },
+        "required": ["status"]
+      },
+      "then": {
+        "not": {
+          "anyOf": [
+            { "required": ["uid"] },
+            { "required": ["tx_hash"] },
+            { "required": ["artifact_hash"] }
+          ]
+        },
+        "properties": {
+          "replay_status": { "const": "PENDING" },
+          "severity": { "const": "YELLOW" }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "status": { "enum": ["ANCHORED_CONTROL_SAMPLE", "VERIFIED"] } },
+        "required": ["status"]
+      },
+      "then": {
+        "required": [
+          "uid",
+          "schema_uid",
+          "attester",
+          "recipient",
+          "tx_hash",
+          "block_number",
+          "created_at_utc",
+          "retrieved_at_utc",
+          "source_url",
+          "artifact_hash",
+          "attestation_payload"
+        ],
+        "properties": {
+          "replay_status": { "const": "PASS" },
+          "severity": { "const": "GREEN" }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "status": { "enum": ["INVALID_SCHEMA", "ORPHANED", "REVOKED"] } },
+        "required": ["status"]
+      },
+      "then": {
+        "properties": {
+          "replay_status": { "const": "FAIL" },
+          "severity": { "const": "RED" }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "status": { "const": "WITNESS_UNAVAILABLE" } },
+        "required": ["status"]
+      },
+      "then": {
+        "properties": {
+          "replay_status": { "enum": ["PENDING", "FAIL"] },
+          "severity": { "enum": ["YELLOW", "ORANGE", "RED"] }
+        }
+      }
+    }
+  ]
+}
