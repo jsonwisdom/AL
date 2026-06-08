@@ -1,18 +1,36 @@
 {
   "match_id": "FAFO-0003",
-  "timestamp": "",
-  "players": [],
-  "key_events": [],
+  "timestamp": "2026-06-08",
+  "players": [
+    {
+      "name": "Zero Cool",
+      "faction": "HYPE Aggro"
+    },
+    {
+      "name": "Test Pilot",
+      "faction": "Continuity Midrange"
+    }
+  ],
+  "key_events": [
+    "Turn 5: First Audit triggered",
+    "Turn 6: Inspector General Goblin played - destroyed Authority Inflation + 2 HYPE tokens",
+    "Turn 8: Continuity wins by resource depletion"
+  ],
   "outcome": {
-    "winner": "",
-    "turns_played": null
+    "winner": "continuity",
+    "turns_played": 8
   },
   "metrics": {
-    "audit_timing": [],
-    "fun_factor": [],
+    "audit_timing": [
+      5
+    ],
+    "fun_factor": [
+      4,
+      5
+    ],
     "confusion_points": [],
-    "balance_signals": ""
+    "balance_signals": "All within target. Goblin impact felt right. Continuity resilience tested."
   },
-  "verdict": "",
-  "notes": ""
+  "verdict": "No balance changes needed.",
+  "notes": "Strong game loop. First real test with Goblin in play. HYPE had early pressure but couldn't close before Audit arrived."
 }
