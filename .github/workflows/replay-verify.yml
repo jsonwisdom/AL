@@ -25,7 +25,20 @@ jobs:
         run: pip install pytest
 
       - name: Run Merkle tests
-        run: pytest tests/test_merkle.py
+        run: |
+          set +e
+          pytest tests/test_merkle.py -vv 2>&1 | tee replay-verify-pytest.log
+          status=${PIPESTATUS[0]}
+          echo "PYTEST_EXIT_CODE=$status" >> replay-verify-pytest.log
+          exit "$status"
+
+      - name: Upload replay verification diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: replay-verify-pytest-log
+          path: replay-verify-pytest.log
+          if-no-files-found: ignore
 
       - name: Verify replay manifest
         run: python scripts/verify_replay.py
