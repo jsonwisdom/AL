@@ -1,0 +1,19 @@
+{
+  "bundle_id": "FED-AI-2026-006",
+  "bundle_type": "META_REPLAY",
+  "meta_replay": true,
+  "anchored_bundles": [
+    "FED-AI-2026-005",
+    "FED-AI-2026-PAS-001"
+  ],
+  "source_artifacts": [
+    "issue-303-closure.json",
+    "issue-304-stranger-test.json",
+    "pas-001-anchor.json",
+    "PAS-001.md"
+  ],
+  "status": "READY_FOR_MANIFEST",
+  "drift": false,
+  "federation_link_v1": "BLOCKED_UNTIL_SECOND_VERIFIED_BUNDLE",
+  "authority": "jaywisdom.base.eth"
+}
