@@ -13,6 +13,7 @@ on:
     branches:
       - master
       - feat/eas-control-receipt-v1
+      - chore/decay-genesis-2026-W24
     paths:
       - "schemas/eas_control_receipt_v1.schema.json"
       - "tools/verify_eas_control_receipt.py"
@@ -52,7 +53,7 @@ jobs:
           print("schema_law=COMPILES")
           PY
 
-      - name: Invalid fixtures must fail RED
+      - name: Invalid corpus must fail RED
         run: |
           shopt -s nullglob
           files=(testdata/eas/v1/invalid/*.json)
@@ -62,22 +63,60 @@ jobs:
           fi
           python tools/verify_eas_control_receipt.py --expect-invalid --json "${files[@]}"
 
-      - name: Valid fixtures must pass when present
+      - name: Valid corpus must pass GREEN
         run: |
           shopt -s nullglob
           files=(testdata/eas/v1/valid/*.json)
           if [ ${#files[@]} -eq 0 ]; then
-            echo "No valid fixtures present yet; skipping valid corpus gate."
+            echo "No valid fixtures present; skipping valid corpus gate."
             exit 0
           fi
           python tools/verify_eas_control_receipt.py --json "${files[@]}"
+
+      - name: Pending corpus must remain PENDING or YELLOW only
+        run: |
+          shopt -s nullglob
+          files=(testdata/eas/v1/pending/*.json)
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "No pending fixtures present; skipping pending corpus gate."
+            exit 0
+          fi
+          python - <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+          from jsonschema import Draft202012Validator
+
+          schema = json.loads(Path("schemas/eas_control_receipt_v1.schema.json").read_text(encoding="utf-8"))
+          validator = Draft202012Validator(schema)
+          failures = []
+          for path in Path("testdata/eas/v1/pending").glob("*.json"):
+              data = json.loads(path.read_text(encoding="utf-8"))
+              schema_errors = sorted(validator.iter_errors(data), key=lambda e: list(e.path))
+              if schema_errors:
+                  failures.append({"path": str(path), "error": "PENDING_SCHEMA_INVALID", "details": [e.message for e in schema_errors]})
+                  continue
+              if data.get("status") != "PENDING_FETCH":
+                  failures.append({"path": str(path), "error": "PENDING_STATUS_INVALID", "status": data.get("status")})
+              if data.get("replay_status") != "PENDING":
+                  failures.append({"path": str(path), "error": "PENDING_REPLAY_STATUS_INVALID", "replay_status": data.get("replay_status")})
+              if data.get("severity") not in {"YELLOW", "ORANGE"}:
+                  failures.append({"path": str(path), "error": "PENDING_SEVERITY_INVALID", "severity": data.get("severity")})
+              for forbidden in ("uid", "tx_hash", "artifact_hash"):
+                  if data.get(forbidden):
+                      failures.append({"path": str(path), "error": "PENDING_HAS_WITNESS_FIELD", "field": forbidden})
+          if failures:
+              print(json.dumps(failures, indent=2), file=sys.stderr)
+              sys.exit(1)
+          print("pending_corpus=LAWFUL")
+          PY
 
       - name: Enforce no RED in valid corpus
         run: |
           shopt -s nullglob
           files=(testdata/eas/v1/valid/*.json)
           if [ ${#files[@]} -eq 0 ]; then
-            echo "No valid fixtures present yet; skipping RED scan."
+            echo "No valid fixtures present; skipping RED scan."
             exit 0
           fi
           python - <<'PY'
@@ -98,8 +137,8 @@ jobs:
               print(proc.stderr, file=sys.stderr)
               sys.exit(proc.returncode)
           results = json.loads(proc.stdout)
-          red = [r for r in results if r.get("severity") == "RED"]
-          if red:
-              print(json.dumps(red, indent=2), file=sys.stderr)
+          bad = [r for r in results if r.get("severity") != "GREEN" or r.get("valid") is not True or r.get("replay_status") != "PASS"]
+          if bad:
+              print(json.dumps(bad, indent=2), file=sys.stderr)
               sys.exit(1)
           PY
