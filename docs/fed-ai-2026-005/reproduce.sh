@@ -76,7 +76,7 @@ if ! jq empty derivative_map.json >/dev/null 2>&1; then
   exit 1
 fi
 
-if ! jq --exit-status '.parents | length > 0 and .derivatives | length > 0' derivative_map.json >/dev/null; then
+if ! jq --exit-status '(.parents | length > 0) and (.derivatives | length > 0)' derivative_map.json >/dev/null; then
   echo "❌ Derivative map missing parents or derivatives"
   exit 1
 fi
