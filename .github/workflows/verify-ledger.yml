@@ -18,11 +18,11 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install IRL CLI
-        run: pip install -e .
+      - name: Install validator dependencies
+        run: python -m pip install jsonschema
 
       - name: Run constitution gate
-        run: irl verify-ledger claims/ --schema ledger_schema.json
+        run: python -m irl verify-ledger claims/ --schema ledger_schema.json
 
       - name: Upload claims on failure
         if: failure()
