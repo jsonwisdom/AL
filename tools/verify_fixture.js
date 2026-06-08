@@ -1,9 +1,12 @@
 #!/usr/bin/env node
 const { spawnSync } = require('child_process');
+const path = require('path');
 
 function verify(receiptPath, bindingPath, policyPath) {
+  const verifierPath = path.join(__dirname, 'verify_fixture.py');
+
   const result = spawnSync('python3', [
-    'tools/verify_fixture.py',
+    verifierPath,
     receiptPath,
     bindingPath,
     policyPath
