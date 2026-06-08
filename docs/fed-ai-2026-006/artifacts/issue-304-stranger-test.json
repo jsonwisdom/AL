@@ -1,0 +1,19 @@
+{
+  "artifact_id": "issue-304-stranger-test",
+  "source_issue": 304,
+  "receipt_id": "FED-AI-2026-005",
+  "status": "STRANGER_TEST_VERIFIED",
+  "command": "make verify | grep -E \"SUCCESS|FAILED|missing|mismatch|Duration|Bundle hash\"",
+  "bundle_hash": "52d6078c50cb82637e63f403446d53891851a0bd45f0790807ce824d33830188",
+  "output": [
+    "Bundle hash: 52d6078c50cb82637e63f403446d53891851a0bd45f0790807ce824d33830188",
+    "SUCCESS: REALITY_CONFIRMED",
+    "Duration: 0 seconds"
+  ],
+  "verified_layers": [
+    "manifest hashes",
+    "artifact bytes",
+    "derivative map structure",
+    "bundle integrity"
+  ]
+}
