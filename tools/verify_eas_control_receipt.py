@@ -17,7 +17,6 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-import sys
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
@@ -28,15 +27,29 @@ except ImportError:  # pragma: no cover
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA_PATH = ROOT / "schemas" / "eas_control_receipt_v1.schema.json"
+LINEAGE_INDEX_PATH = ROOT / "testdata" / "lineage-index.json"
 FL001_LINEAGE_DIGEST = "60efc1b3e76c69439f74d2813e02d6f63b8e8869edfc6bfb94a18c04b4d20d9a"
 
-RED_STATUSES = {"INVALID_SCHEMA", "ORPHANED", "REVOKED"}
 ANCHORED_STATUSES = {"ANCHORED_CONTROL_SAMPLE", "VERIFIED"}
 
 
 def load_json(path: Path) -> Dict[str, Any]:
     with path.open("r", encoding="utf-8") as f:
         return json.load(f)
+
+
+def load_lineage_index() -> Dict[str, Any]:
+    if not LINEAGE_INDEX_PATH.exists():
+        return {
+            "root_lineage_digest": FL001_LINEAGE_DIGEST,
+            "receipts": {
+                "FED-AI-2026-FL-001": {
+                    "lineage_digest": FL001_LINEAGE_DIGEST,
+                    "children": []
+                }
+            }
+        }
+    return load_json(LINEAGE_INDEX_PATH)
 
 
 def canonical_bytes(obj: Dict[str, Any]) -> bytes:
@@ -86,16 +99,45 @@ def schema_errors(schema: Dict[str, Any], receipt: Dict[str, Any]) -> List[str]:
     return sorted(set(codes))
 
 
-def constitutional_checks(receipt: Dict[str, Any]) -> List[str]:
+def lineage_checks(receipt: Dict[str, Any], lineage_index: Dict[str, Any]) -> List[str]:
+    codes: List[str] = []
+    receipt_id = receipt.get("receipt_id")
+    parent_digest = receipt.get("parent_lineage_digest")
+    receipt_digest = receipt.get("lineage_digest")
+    receipts = lineage_index.get("receipts", {})
+
+    if not parent_digest:
+        return ["LINEAGE_PARENT_EMPTY"]
+
+    parent_id = None
+    for candidate_id, candidate in receipts.items():
+        if candidate.get("lineage_digest") == parent_digest:
+            parent_id = candidate_id
+            break
+
+    if parent_id is None:
+        codes.append("LINEAGE_ORPHANED")
+        return codes
+
+    children = receipts.get(parent_id, {}).get("children", [])
+    if receipt_id not in children:
+        codes.append("LINEAGE_CLAIM_INVALID")
+
+    indexed = receipts.get(receipt_id)
+    if indexed is not None:
+        if indexed.get("parent_lineage_digest") != parent_digest:
+            codes.append("LINEAGE_CLAIM_INVALID")
+        if receipt_digest and indexed.get("lineage_digest") != receipt_digest:
+            codes.append("CANONICAL_HASH_MISMATCH")
+
+    return sorted(set(codes))
+
+
+def constitutional_checks(receipt: Dict[str, Any], lineage_index: Dict[str, Any]) -> List[str]:
     codes: List[str] = []
     status = receipt.get("status")
 
-    parent = receipt.get("parent_lineage_digest")
-    if not parent:
-        codes.append("LINEAGE_PARENT_EMPTY")
-    elif parent != FL001_LINEAGE_DIGEST:
-        # V1 local gate only knows FL-001 root. Later lineage-index.json can expand this.
-        codes.append("LINEAGE_ORPHANED")
+    codes.extend(lineage_checks(receipt, lineage_index))
 
     if receipt.get("chain") != "Base":
         codes.append("EAS_WRONG_CHAIN")
@@ -145,6 +187,7 @@ def classify(codes: List[str], receipt: Dict[str, Any]) -> Tuple[bool, str, str]
         "EAS_WRONG_CHAIN",
         "LINEAGE_PARENT_EMPTY",
         "LINEAGE_ORPHANED",
+        "LINEAGE_CLAIM_INVALID",
         "LINEAGE_PARENT_MUTATION_ATTEMPT",
         "CANONICAL_HASH_MISSING",
         "CANONICAL_HASH_MISMATCH",
@@ -164,7 +207,6 @@ def classify(codes: List[str], receipt: Dict[str, Any]) -> Tuple[bool, str, str]
     if any(c in orange_codes for c in codes):
         severities.append("ORANGE")
     if any(c in yellow_codes for c in codes):
-        # Missing EAS fields are only soft while pending. Anchored receipts missing witness data are red.
         severities.append("YELLOW" if status == "PENDING_FETCH" else "RED")
 
     severity = max_severity(severities)
@@ -175,8 +217,9 @@ def classify(codes: List[str], receipt: Dict[str, Any]) -> Tuple[bool, str, str]
 
 def verify(path: Path) -> Dict[str, Any]:
     schema = load_json(SCHEMA_PATH)
+    lineage_index = load_lineage_index()
     receipt = load_json(path)
-    codes = sorted(set(schema_errors(schema, receipt) + constitutional_checks(receipt)))
+    codes = sorted(set(schema_errors(schema, receipt) + constitutional_checks(receipt, lineage_index)))
     valid, severity, replay_status = classify(codes, receipt)
 
     actual_hash = sha256_prefixed(canonical_bytes(receipt)) if "canonical_hash" in receipt else None
