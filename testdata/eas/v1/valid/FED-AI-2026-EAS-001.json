@@ -1,0 +1,44 @@
+{
+  "receipt_id": "FED-AI-2026-EAS-001",
+  "schema_version": "EAS_CONTROL_RECEIPT_V1",
+  "parent_receipt_id": "FED-AI-2026-FL-001",
+  "parent_lineage_digest": "60efc1b3e76c69439f74d2813e02d6f63b8e8869edfc6bfb94a18c04b4d20d9a",
+  "lineage_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "chain": "Base",
+  "chain_id": 8453,
+  "artifact_type": "EAS_ATTESTATION",
+  "selection_method": "SPECIFIC_UID",
+  "selection_time_utc": "2026-06-08T00:00:00Z",
+  "uid": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "schema_uid": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "attester": "0x1111111111111111111111111111111111111111",
+  "recipient": "0x2222222222222222222222222222222222222222",
+  "tx_hash": "0xcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+  "block_number": 1,
+  "created_at_utc": "2026-06-08T00:00:00Z",
+  "retrieved_at_utc": "2026-06-08T00:01:00Z",
+  "source_url": "https://base.easscan.org/attestation/view/0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "artifact_hash": "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+  "canonical_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "attestation_payload": {
+    "fixture_mode": "deterministic_local_control_sample"
+  },
+  "schema_handler": {
+    "resolver_mode": "LOCAL_FIXTURE",
+    "schema_hash": "sha256:ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+    "new_revision": false
+  },
+  "rules_applied": {
+    "schema_immutability": true,
+    "lineage_integrity": true,
+    "replay_determinism": true,
+    "no_time_travel": true,
+    "no_retroactive_promotion": true,
+    "eas_is_control_group_not_truth_oracle": true,
+    "late_artifacts_become_child_receipts": true,
+    "missing_artifacts_log_uncertainty": true
+  },
+  "status": "VERIFIED",
+  "replay_status": "PASS",
+  "severity": "GREEN"
+}
