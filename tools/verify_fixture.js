@@ -2,7 +2,7 @@
 const { spawnSync } = require('child_process');
 
 function verify(receiptPath, bindingPath, policyPath) {
-  const result = spawnSync('python', [
+  const result = spawnSync('python3', [
     'tools/verify_fixture.py',
     receiptPath,
     bindingPath,
