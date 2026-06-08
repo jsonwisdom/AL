@@ -17,10 +17,14 @@ jobs:
       - run: npm install -g ajv-cli ajv-formats
       - name: Validate MCP audit receipts
         run: |
-          shopt -s nullglob
-          files=(receipts/*.json)
+          mapfile -t files < <(find receipts -maxdepth 1 -type f -name '*.json' | sort)
           if [ ${#files[@]} -eq 0 ]; then
             echo "No JSON receipts to validate."
             exit 0
           fi
-          ajv validate -c ajv-formats -s schemas/mcp_engine_audit_receipt.v0_1.schema.json -d "${files[@]}" --strict=false
+          echo "Found ${#files[@]} JSON receipt(s):"
+          printf ' - %s\n' "${files[@]}"
+          for file in "${files[@]}"; do
+            echo "Validating $file"
+            ajv validate -c ajv-formats -s schemas/mcp_engine_audit_receipt.v0_1.schema.json -d "$file" --strict=false
+          done
