@@ -1,0 +1,202 @@
+# FED-AI-2026-PAS-001
+
+## Proof at Scale v0.1
+
+**Receipt ID:** FED-AI-2026-PAS-001
+
+**Status:** READY_TO_ANCHOR
+
+**Authority:** jaywisdom.base.eth
+
+**Parent Of:**
+- WITNESS_SHARD_v1
+- FEDERATION_LINK_v1
+- Agent Verification Kernels
+- Rogue Swarm Simulations
+- Future Proof-at-Scale Bundles
+
+---
+
+## Constitutional Invariants
+
+```json
+{
+  "evidence_chain": true,
+  "identity_chain": true,
+  "legitimacy_chain": true,
+  "legitimacy_can_override_evidence": false,
+  "stranger_test_required": true
+}
+```
+
+These invariants are non-configurable.
+
+No governance mechanism may rewrite evidence.
+
+No legitimacy mechanism may override verified artifacts.
+
+---
+
+## Layer 1 — Bundle Verification
+
+Inputs:
+
+- artifacts
+- manifest.json
+- derivative_map.json
+
+Output:
+
+```text
+SUCCESS: REALITY_CONFIRMED
+```
+
+Requirement:
+
+Every bundle must replay independently.
+
+---
+
+## Layer 2 — Witness Federation
+
+Receipt Type:
+
+WITNESS_SHARD_v1
+
+Purpose:
+
+Distributed custody of receipt graphs.
+
+Requirements:
+
+- shard_digest
+- parent_graph_digest
+- replay_proof
+- witness_signature
+
+A witness shard is valid only if replay succeeds against the parent graph.
+
+---
+
+## Layer 3 — Federation Links
+
+Receipt Type:
+
+FEDERATION_LINK_v1
+
+Purpose:
+
+Connect independent graphs without mutating either graph.
+
+Required Fields:
+
+- source_bundle
+- target_bundle
+- lineage_proof
+- witness_quorum_root
+- constitutional_runtime_ref
+- link_digest
+
+Federation creates bridges.
+
+Federation does not merge evidence.
+
+---
+
+## Layer 4 — Agent Verification
+
+Agent Capability:
+
+VERIFY_ONLY
+
+Agents may:
+
+- verify artifacts
+- verify digests
+- verify lineage
+- verify replay
+
+Agents may not:
+
+- promote evidence
+- modify graphs
+- override legitimacy constraints
+
+without a valid governance receipt.
+
+---
+
+## Layer 5 — Governance
+
+Receipt Type:
+
+SUCCESSION_RECEIPT_v1
+
+Purpose:
+
+Transfer mandate without rewriting history.
+
+Invariant:
+
+```text
+valid_key = true
+valid_identity = true
+valid_legitimacy = false
+=> STATE_CHANGE_DENIED
+```
+
+---
+
+## Stranger Replay Standard
+
+Any independent operator must be able to:
+
+1. Clone repository
+2. Run make verify
+3. Reproduce bundle
+4. Verify lineage
+5. Verify federation
+6. Verify legitimacy chain
+
+Target:
+
+Less than 10 minutes.
+
+Required Output:
+
+```text
+SUCCESS: REALITY_CONFIRMED
+```
+
+---
+
+## Deployment Constraint
+
+FEDERATION_LINK_v1 remains blocked until at least two independently verified bundles exist.
+
+Current State:
+
+- FED-AI-2026-005 = STRANGER_TEST_VERIFIED
+- FED-AI-2026-006 = ACTIVE_INGRESS
+
+Federation authorization occurs only after a second verified bundle exists.
+
+---
+
+## Constitutional Signature
+
+Identity Root:
+
+jaywisdom.base.eth
+
+Status:
+
+READY_TO_ANCHOR
+
+Doctrine:
+
+Proof precedes federation.
+
+Receipts precede authority.
+
+Replay precedes trust.
