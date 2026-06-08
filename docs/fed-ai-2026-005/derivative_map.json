@@ -1,0 +1,42 @@
+{
+  "map_id": "FED-AI-2026-005-DERIVATIVE-MAP",
+  "parent_issue": 303,
+  "status": "DRAFT_READY",
+  "rule": "Derivative claims must map to verified parent artifact hashes and bounded source sections.",
+  "parents": [
+    {
+      "receipt_id": "FED-AI-2026-004A",
+      "artifact": "doc1-executive-order.html",
+      "sha256": "4a9d61f5191e87e186c28a49b10de51ea54ab3f8a7be1caf7ddf08e53aa0195e"
+    },
+    {
+      "receipt_id": "FED-AI-2026-004C",
+      "artifact": "doc2-nspm11.html",
+      "sha256": "39058748780de3727d987c7ef4344307aa043f13bcdfd0717b3f102b2523d8bc"
+    }
+  ],
+  "derivatives": [
+    {
+      "source_receipt": "FED-AI-2026-004A",
+      "source_section": "EO_SEC_2D",
+      "target_function": "CYBERSECURITY_CLEARINGHOUSE",
+      "relationship_type": "SECTION_SCOPE_DERIVATION",
+      "verification_logic": "bounded_section_reference_required",
+      "promotion_status": "PENDING_SECTION_EXTRACTION"
+    },
+    {
+      "source_receipt": "FED-AI-2026-004C",
+      "source_section": "NSPM11_SEC_2C",
+      "target_function": "AUTONOMOUS_WEAPONS_POLICY_UPDATE",
+      "relationship_type": "SECTION_SCOPE_DERIVATION",
+      "verification_logic": "bounded_section_reference_required",
+      "promotion_status": "PENDING_SECTION_EXTRACTION"
+    }
+  ],
+  "blocked": [
+    "ghost_promotion",
+    "unbounded_summary",
+    "digest_change_without_new_canonical_artifact",
+    "merge_without_bundle_receipt"
+  ]
+}
