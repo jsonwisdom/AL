@@ -1,0 +1,20 @@
+{
+  "receipt_type": "replay_verification",
+  "repository": "jsonwisdom/AL",
+  "workflow": "Verify Ledger Constitution",
+  "baseline_run": 9,
+  "candidate_run": 10,
+  "event": "workflow_dispatch",
+  "branch": "master",
+  "commit_sha": "b483cb5285174126a1ddb6cb910082f6d5011520",
+  "baseline_conclusion": "success",
+  "candidate_conclusion": "success",
+  "exit_code_match": true,
+  "gate_result_match": true,
+  "duration_match": false,
+  "duration_ignored_for_determinism": true,
+  "replay_deterministic": true,
+  "status": "REPLAY_VERIFIED",
+  "sha256_claimed": "a1bd13d52cbb4e7ed744af31f2adfcb706f6b7e063ab09502187b0650ac02637",
+  "authority": false
+}
