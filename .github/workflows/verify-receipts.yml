@@ -48,10 +48,12 @@ jobs:
       - name: Run Node verifier (valid fixture)
         run: |
           echo "=== Node Valid Fixture ==="
-          node tools/verify_fixture.js \
+          output=$(node tools/verify_fixture.js \
             testdata/v0/valid/receipt-valid.json \
             testdata/v0/valid/binding.json \
-            testdata/v0/valid/policy.json
+            testdata/v0/valid/policy.json)
+          echo "$output"
+          test "$output" = "PASS"
 
       - name: Run Node verifier (tampered fixture)
         run: |
@@ -63,5 +65,5 @@ jobs:
             testdata/v0/valid/policy.json 2>&1)
           status=$?
           echo "$output"
-          test $status -eq 0
+          test $status -ne 0
           echo "$output" | grep -q "FAIL: signature mismatch"
