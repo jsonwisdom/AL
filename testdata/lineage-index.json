@@ -1,10 +1,11 @@
 {
-  "index_version": "LINEAGE_INDEX_V1",
+  "index_version": "LINEAGE_INDEX_V2",
   "root_receipt_id": "FED-AI-2026-FL-001",
   "root_lineage_digest": "60efc1b3e76c69439f74d2813e02d6f63b8e8869edfc6bfb94a18c04b4d20d9a",
   "corpus_semantics": {
     "valid": "machine-proven GREEN receipts only",
     "pending": "schema-shaped receipts awaiting witness data; not admitted to GREEN corpus",
+    "witnessed": "witness data anchored; not admitted to GREEN corpus until verifier proves canonical hash",
     "invalid": "known constitutional attack corpus; must fail RED"
   },
   "receipts": {
@@ -28,8 +29,9 @@
     "FED-AI-2026-EAS-002": {
       "lineage_digest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
       "parent_lineage_digest": "60efc1b3e76c69439f74d2813e02d6f63b8e8869edfc6bfb94a18c04b4d20d9a",
-      "status": "PENDING_FETCH",
-      "corpus": "pending",
+      "status": "WITNESSED",
+      "corpus": "witnessed",
+      "witness_uid": "0xc1f64b95329d674af8838f3b5563fa639bd9714ebe37aa4cce096f00cf7939b2",
       "children": []
     }
   }
