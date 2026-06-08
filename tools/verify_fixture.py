@@ -107,3 +107,4 @@ if __name__ == "__main__":
 
     result = verify(sys.argv[1], sys.argv[2], sys.argv[3])
     print(result)
+    sys.exit(0 if result == "PASS" else 1)
