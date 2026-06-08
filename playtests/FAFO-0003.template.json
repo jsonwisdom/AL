@@ -1,0 +1,32 @@
+{
+  "match_id": "FAFO-0003",
+  "timestamp": "2026-06-08",
+  "players": [
+    {
+      "name": "Player1",
+      "faction": "HYPE Aggro",
+      "hero": "Zero Cool"
+    },
+    {
+      "name": "Player2",
+      "faction": "Continuity Midrange",
+      "hero": "Test Pilot"
+    }
+  ],
+  "key_events": [
+    "Turn X: First Audit triggered",
+    "Turn Y: Goblin play description"
+  ],
+  "outcome": {
+    "winner": "PlayerX",
+    "turns_played": 8
+  },
+  "metrics": {
+    "audit_timing": [5],
+    "fun_factor": [4, 5],
+    "confusion_points": [],
+    "balance_signals": "All within target."
+  },
+  "verdict": "No balance changes. Strong game loop.",
+  "notes": "Additional observations from playtest."
+}
