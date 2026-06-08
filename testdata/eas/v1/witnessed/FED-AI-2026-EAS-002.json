@@ -1,0 +1,49 @@
+{
+  "receipt_id": "FED-AI-2026-EAS-002",
+  "schema_version": "EAS_CONTROL_RECEIPT_V1",
+  "parent_receipt_id": "FED-AI-2026-FL-001",
+  "parent_lineage_digest": "60efc1b3e76c69439f74d2813e02d6f63b8e8869edfc6bfb94a18c04b4d20d9a",
+  "lineage_digest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "chain": "Base",
+  "chain_id": 8453,
+  "artifact_type": "EAS_ATTESTATION",
+  "selection_method": "SPECIFIC_UID",
+  "selection_time_utc": "2026-06-08T06:08:39Z",
+  "uid": "0xc1f64b95329d674af8838f3b5563fa639bd9714ebe37aa4cce096f00cf7939b2",
+  "schema_uid": "0x359875d7396872e2320592e88c85f3c426d639c07e6bc3f11593b89c186521d2",
+  "attester": "0xC345B26094c63C69222Ee775189a3d3eaead5a84",
+  "recipient": "0x0000000000000000000000000000000000000000",
+  "tx_hash": "0xf96730e880f03dfab130374e8e0f315e8132701e18e156e70e7657d8cbe0631c",
+  "created_at_utc": "2026-06-08T06:08:39Z",
+  "retrieved_at_utc": "2026-06-08T06:09:00Z",
+  "source_url": "https://base.easscan.org/attestation/view/0xc1f64b95329d674af8838f3b5563fa639bd9714ebe37aa4cce096f00cf7939b2",
+  "attestation_payload": {
+    "schema_number": 1555,
+    "packet_hash": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "packet_file": "testdata/eas/v1/witnessed/FED-AI-2026-EAS-002.json",
+    "target_chain": "Base",
+    "chain_id": 8453,
+    "method": "WEEKLY_DECAY_LEDGER_EAS_WITNESSED",
+    "authority": false,
+    "decoded_status": ""
+  },
+  "schema_handler": {
+    "resolver_mode": "CACHED_LIVE_EAS_SNAPSHOT",
+    "schema_hash": "sha256:ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+    "new_revision": false
+  },
+  "status": "PENDING_FETCH",
+  "replay_status": "PENDING",
+  "severity": "YELLOW",
+  "canonical_hash": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+  "rules_applied": {
+    "schema_immutability": true,
+    "lineage_integrity": true,
+    "replay_determinism": true,
+    "no_time_travel": true,
+    "no_retroactive_promotion": true,
+    "eas_is_control_group_not_truth_oracle": true,
+    "late_artifacts_become_child_receipts": true,
+    "missing_artifacts_log_uncertainty": true
+  }
+}
