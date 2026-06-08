@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "intel-receipts-ledger"
+version = "0.1.0"
+description = "Append-only receipt ledger validation CLI"
+requires-python = ">=3.11"
+dependencies = ["jsonschema>=4.22"]
+
+[project.scripts]
+irl = "irl:main"
+
+[tool.setuptools]
+py-modules = ["irl", "validation", "intel_receipts_ledger"]
