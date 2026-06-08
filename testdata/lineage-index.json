@@ -2,10 +2,17 @@
   "index_version": "LINEAGE_INDEX_V1",
   "root_receipt_id": "FED-AI-2026-FL-001",
   "root_lineage_digest": "60efc1b3e76c69439f74d2813e02d6f63b8e8869edfc6bfb94a18c04b4d20d9a",
+  "corpus_semantics": {
+    "valid": "machine-proven GREEN receipts only",
+    "pending": "schema-shaped receipts awaiting witness data; not admitted to GREEN corpus",
+    "invalid": "known constitutional attack corpus; must fail RED"
+  },
   "receipts": {
     "FED-AI-2026-FL-001": {
       "lineage_digest": "60efc1b3e76c69439f74d2813e02d6f63b8e8869edfc6bfb94a18c04b4d20d9a",
       "parent_lineage_digest": null,
+      "status": "ROOT",
+      "corpus": "root",
       "children": [
         "FED-AI-2026-EAS-001",
         "FED-AI-2026-EAS-002"
@@ -14,11 +21,15 @@
     "FED-AI-2026-EAS-001": {
       "lineage_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
       "parent_lineage_digest": "60efc1b3e76c69439f74d2813e02d6f63b8e8869edfc6bfb94a18c04b4d20d9a",
+      "status": "VERIFIED",
+      "corpus": "valid",
       "children": []
     },
     "FED-AI-2026-EAS-002": {
       "lineage_digest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
       "parent_lineage_digest": "60efc1b3e76c69439f74d2813e02d6f63b8e8869edfc6bfb94a18c04b4d20d9a",
+      "status": "PENDING_FETCH",
+      "corpus": "pending",
       "children": []
     }
   }
