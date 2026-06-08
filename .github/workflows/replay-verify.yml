@@ -25,6 +25,8 @@ jobs:
         run: pip install pytest
 
       - name: Run Merkle tests
+        env:
+          PYTHONPATH: ${{ github.workspace }}
         run: |
           set +e
           pytest tests/test_merkle.py -vv 2>&1 | tee replay-verify-pytest.log
