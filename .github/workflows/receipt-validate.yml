@@ -15,16 +15,24 @@ jobs:
         with:
           node-version: '20'
       - run: npm install -g ajv-cli ajv-formats
-      - name: Validate MCP audit receipts
+      - name: Discover MCP audit receipts
+        id: discover
         run: |
           mapfile -t files < <(find receipts -maxdepth 1 -type f -name '*.json' | sort)
-          if [ ${#files[@]} -eq 0 ]; then
-            echo "No JSON receipts to validate."
-            exit 0
+          count=${#files[@]}
+          echo "json_receipt_count=$count"
+          echo "json_receipt_count=$count" >> "$GITHUB_OUTPUT"
+          if [ "$count" -eq 0 ]; then
+            echo "No JSON receipts discovered under receipts/."
+          else
+            echo "Discovered JSON receipts:"
+            printf ' - %s\n' "${files[@]}"
           fi
-          echo "Found ${#files[@]} JSON receipt(s):"
-          printf ' - %s\n' "${files[@]}"
+      - name: Validate MCP audit receipts
+        if: steps.discover.outputs.json_receipt_count != '0'
+        run: |
+          mapfile -t files < <(find receipts -maxdepth 1 -type f -name '*.json' | sort)
           for file in "${files[@]}"; do
-            echo "Validating $file"
+            echo "Validating: $file"
             ajv validate -c ajv-formats -s schemas/mcp_engine_audit_receipt.v0_1.schema.json -d "$file" --strict=false
           done
