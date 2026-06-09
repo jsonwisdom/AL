@@ -1,0 +1,32 @@
+{
+  "lane": "MIRROR",
+  "kind": "MIRROR_ANCHOR_V0",
+  "source_commit": "bcc85aa47ee9108a9c409ba6a4ed986ebdd3f64b",
+  "verify_receipt_pointer": "receipts/verify_receipt_migration-guard-v03_v0.json",
+  "verify_receipt_blob_sha": "814724e9c85ef5744200dd2e11b016667d646496fb9e770eb67cd80f1e2200a2",
+  "artifact_pointer": "deploy/migration-guard-v03.json",
+  "artifact_blob_sha": "063f4eb29929826a6a4a6c0f9ba45d55a6b28772",
+  "chain": "base-sepolia",
+  "chain_id": 84532,
+  "contract": "MigrationGuardV03",
+  "address": "0x40CD283C2eA45Ece83625aF06F7Bd83cb8C03d82",
+  "deploy_tx_hash": "0x08bacd1b17a1b972d3b9715506ddafef4a9a30d8dee3a1598f136ed195f9bc34",
+  "mirror_anchor": {
+    "genesis_attestation_uid": "0xc79d3d89dabf16db6a59ba612d0d79db68b20f127baf5fa16e454c911e2beb93",
+    "instrument_hash": "0xa0abea7c8feb12950210600fdf2a5fef2433364afbf7a6eb88d9dfb51d3868f4",
+    "articles_hash": "0xf31e744baa494fb369b3448c80a170c5011f37508428efac743c64d36aa9cf9f",
+    "constitutional_root_schema_uid": "0xf9ab1ef5e8864a163be606d0663ae5a40b97a5622ed0f466fe7e83dc20fc2927"
+  },
+  "timestamp_utc": "2026-06-09T09:55:00Z",
+  "integrity": {
+    "no_fake_green": true,
+    "constitutional_separation": {
+      "source_code": "!= deployment",
+      "deployment": "!= attestation",
+      "attestation": "!= liquidity",
+      "verify": "!= mirror",
+      "mirror": "!= real_delta"
+    }
+  },
+  "status": "MIRROR_ANCHORED_READY_FOR_ATTESTATION"
+}
