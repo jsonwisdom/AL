@@ -30,6 +30,7 @@ scan_fail() {
     --exclude-dir=.next \
     --exclude-dir=dist \
     --exclude-dir=build \
+    --exclude-dir=artifacts \
     --exclude='jay_repo_safety_report.txt' \
     --exclude='jay_repo_safety_scan.sh' \
     --exclude='JASON_GITHUB_DIRECT_REPO_MANUAL.md' \
@@ -55,6 +56,7 @@ scan_report() {
     --exclude-dir=.next \
     --exclude-dir=dist \
     --exclude-dir=build \
+    --exclude-dir=artifacts \
     --exclude='jay_repo_safety_report.txt' \
     --exclude='jay_repo_safety_scan.sh' \
     --exclude='JASON_GITHUB_DIRECT_REPO_MANUAL.md' \
