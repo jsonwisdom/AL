@@ -3,7 +3,7 @@ pragma solidity ^0.8.26;
 
 import "forge-std/Script.sol";
 import { MigrationGuardResolver } from "../contracts/MigrationGuardResolver.sol";
-import { IEAS } from "@ethereum-attestation-service/eas-contracts/contracts/IEAS.sol";
+import { IEAS } from "eas-contracts/IEAS.sol";
 
 contract DeployMigrationGuardResolver is Script {
     address internal constant BASE_SEPOLIA_EAS = 0x4200000000000000000000000000000000000021;
