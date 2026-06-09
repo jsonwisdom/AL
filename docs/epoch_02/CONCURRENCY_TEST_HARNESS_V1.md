@@ -1,0 +1,54 @@
+# CONCURRENCY_TEST_HARNESS_V1
+
+## Purpose
+
+Mechanical verification that multiple observer streams do not corrupt replay lineage.
+
+## Inputs
+
+```text
+observer_event_stream
+observer_id
+jurisdiction_id
+receipt_hash
+prev_receipt_hash
+```
+
+## Tests
+
+```text
+TEST_UNIQUE_OBSERVER_ID
+TEST_DETERMINISTIC_HASH
+TEST_PREV_HASH_RESOLUTION
+TEST_MEMBRANE_PRESERVATION
+TEST_AUTHORITY_FALSE
+TEST_ATTESTATION_DORMANT
+```
+
+## Pass Conditions
+
+```text
+ALL_HASHES_DETERMINISTIC
+ALL_CHAINS_RESOLVABLE
+NO_DUPLICATE_EVENT_COLLISION
+NO_MEMBRANE_BREACH
+```
+
+## Failure Codes
+
+```text
+HARNESS_FAIL_DUPLICATE_COLLISION
+HARNESS_FAIL_HASH_DIVERGENCE
+HARNESS_FAIL_CHAIN_BREAK
+HARNESS_FAIL_MEMBRANE_BREACH
+HARNESS_FAIL_AUTHORITY_MUTATION
+```
+
+## Non-Effects
+
+```text
+NO_INTERPRETATION
+NO_AUTHORITY
+NO_ATTESTATION
+NO_RISK_SCORING
+```
