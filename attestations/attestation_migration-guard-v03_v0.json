@@ -1,0 +1,35 @@
+{
+  "lane": "ATTESTATION",
+  "kind": "ATTESTATION_PACKET_V0",
+  "source_commit": "bcc85aa47ee9108a9c409ba6a4ed986ebdd3f64b",
+  "verify_receipt_pointer": "receipts/verify_receipt_migration-guard-v03_v0.json",
+  "verify_receipt_blob_sha": "814724e9c85ef5744200dd2e11b016667d646496fb9e770eb67cd80f1e2200a2",
+  "mirror_anchor_pointer": "receipts/mirror_anchor_migration-guard-v03_v0.json",
+  "mirror_anchor_blob_sha": "",
+  "artifact_pointer": "deploy/migration-guard-v03.json",
+  "artifact_blob_sha": "063f4eb29929826a6a4a6c0f9ba45d55a6b28772",
+  "chain": "base-sepolia",
+  "chain_id": 84532,
+  "contract": "MigrationGuardV03",
+  "address": "0x40CD283C2eA45Ece83625aF06F7Bd83cb8C03d82",
+  "deploy_tx_hash": "0x08bacd1b17a1b972d3b9715506ddafef4a9a30d8dee3a1598f136ed195f9bc34",
+  "attestation": {
+    "schema_uid": "0x8284257a5cc5544985b831d108d50ff5e4bf39f1b2055b28f340b6a4fe297ed6",
+    "constitutional_root_schema_uid": "0xf9ab1ef5e8864a163be606d0663ae5a40b97a5622ed0f466fe7e83dc20fc2927",
+    "genesis_attestation_uid": "0xc79d3d89dabf16db6a59ba612d0d79db68b20f127baf5fa16e454c911e2beb93",
+    "migration_receipt_schema_uid": "0x8284257a5cc5544985b831d108d50ff5e4bf39f1b2055b28f340b6a4fe297ed6",
+    "agent_output_receipt_schema_uid": "0x43f36f520c1070797c630b4641377765622c3cb45624ef58235e6d3e9337934d"
+  },
+  "timestamp_utc": "2026-06-09T10:05:00Z",
+  "integrity": {
+    "no_fake_green": true,
+    "constitutional_separation": {
+      "source_code": "!= deployment",
+      "deployment": "!= attestation",
+      "attestation": "!= liquidity",
+      "verify": "!= mirror",
+      "mirror": "!= real_delta"
+    }
+  },
+  "status": "ATTESTATION_READY_FOR_EAS_SUBMISSION"
+}
