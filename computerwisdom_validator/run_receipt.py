@@ -8,17 +8,14 @@ It never grants authority. Authority and attestation remain hard-coded false.
 """
 
 import hashlib
-import json
 from pathlib import Path
 from typing import Any, Mapping
 
 try:
     from .receipt_gen import canonical_json, receipt_json
-    from .test_validator import FIXTURES
     from .verify import run_verification_suite
 except ImportError:  # pragma: no cover - supports direct script execution
     from receipt_gen import canonical_json, receipt_json
-    from test_validator import FIXTURES
     from verify import run_verification_suite
 
 
@@ -38,6 +35,93 @@ VALIDATOR_STACK_COMMITS = {
     "test_validator.py": "2c3d607bf1f180b1fe78e87f3e028757bb55aaf8",
     "README.md": "5fd34bc15eb1e5941b72184349cd0db3b8abd714",
 }
+
+FIXTURES = [
+    {
+        "name": "valid_pass",
+        "expected_state": "PASS",
+        "input": {
+            "expected_hash": "0xaaa",
+            "observed_hash": "0xaaa",
+            "attestation_present": True,
+            "schema_version": "1.0.0",
+            "evidence_uri": "ipfs://bafyvalid",
+            "continuity_boundary": "RESPECTED",
+        },
+    },
+    {
+        "name": "blocked_missing_hash",
+        "expected_state": "BLOCKED",
+        "input": {
+            "expected_hash": "0xaaa",
+            "observed_hash": "PENDING_INPUT",
+            "attestation_present": True,
+            "schema_version": "1.0.0",
+            "evidence_uri": "ipfs://bafyvalid",
+            "continuity_boundary": "RESPECTED",
+        },
+    },
+    {
+        "name": "fail_hash_mismatch",
+        "expected_state": "FAIL",
+        "input": {
+            "expected_hash": "0xaaa",
+            "observed_hash": "0xbbb",
+            "attestation_present": True,
+            "schema_version": "1.0.0",
+            "evidence_uri": "ipfs://bafyvalid",
+            "continuity_boundary": "RESPECTED",
+        },
+    },
+    {
+        "name": "pending_no_attestation",
+        "expected_state": "PENDING",
+        "input": {
+            "expected_hash": "0xaaa",
+            "observed_hash": "0xaaa",
+            "attestation_present": False,
+            "schema_version": "1.0.0",
+            "evidence_uri": "ipfs://bafyvalid",
+            "continuity_boundary": "RESPECTED",
+        },
+    },
+    {
+        "name": "fail_schema_mismatch",
+        "expected_state": "FAIL",
+        "input": {
+            "expected_hash": "0xaaa",
+            "observed_hash": "0xaaa",
+            "attestation_present": True,
+            "schema_version": "2.0.0",
+            "evidence_uri": "ipfs://bafyvalid",
+            "continuity_boundary": "RESPECTED",
+        },
+    },
+    {
+        "name": "blocked_invalid_uri",
+        "expected_state": "BLOCKED",
+        "input": {
+            "expected_hash": "0xaaa",
+            "observed_hash": "0xaaa",
+            "attestation_present": True,
+            "schema_version": "1.0.0",
+            "evidence_uri": "not-a-verifiable-uri",
+            "continuity_boundary": "RESPECTED",
+        },
+    },
+    {
+        "name": "fail_continuity_breach",
+        "expected_state": "FAIL",
+        "input": {
+            "expected_hash": "0xaaa",
+            "observed_hash": "0xaaa",
+            "attestation_present": True,
+            "schema_version": "1.0.0",
+            "evidence_uri": "ipfs://bafyvalid",
+            "continuity_boundary": "BREACHED",
+        },
+    },
+]
 
 
 def receipt_hash(receipt: Mapping[str, Any]) -> str:
