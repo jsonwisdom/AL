@@ -22,6 +22,10 @@ function canonicalJson(obj) {
     .join(',') + '}';
 }
 
+function sha256Hex(buffer) {
+  return crypto.createHash('sha256').update(buffer).digest('hex');
+}
+
 function base64Url(buffer) {
   return buffer
     .toString('base64')
@@ -62,6 +66,10 @@ function receiptSigningPayload(receipt) {
   };
 }
 
+function signingMessage(receipt) {
+  return Buffer.from(canonicalJson(receiptSigningPayload(receipt)), 'utf8');
+}
+
 function verifySignature(receipt) {
   try {
     const proof = receipt.proof || {};
@@ -70,13 +78,18 @@ function verifySignature(receipt) {
 
     const sigHex = sigStr.slice(8);
     const signature = Buffer.from(sigHex, 'hex');
-
-    const message = Buffer.from(canonicalJson(receiptSigningPayload(receipt)), 'utf8');
+    const message = signingMessage(receipt);
 
     const pubKeyHex = '37e9edc1ca6c423ec0955156b9bd318e7581ef4492b28a92235ee900d53174cc';
     const publicKey = ed25519PublicKeyFromRawHex(pubKeyHex);
 
-    return crypto.verify(null, message, publicKey, signature);
+    const ok = crypto.verify(null, message, publicKey, signature);
+    if (!ok) {
+      console.error(`DEBUG_NODE_MESSAGE_SHA256 ${sha256Hex(message)}`);
+      console.error(`DEBUG_NODE_SIGNATURE_BYTES ${signature.length}`);
+      console.error(`DEBUG_NODE_PUBLIC_KEY_HEX ${pubKeyHex}`);
+    }
+    return ok;
   } catch (e) {
     console.error('Signature verify error:', e.message);
     return false;
@@ -163,5 +176,7 @@ module.exports = {
   verifySignature,
   canonicalJson,
   receiptSigningPayload,
+  signingMessage,
+  sha256Hex,
   ed25519PublicKeyFromRawHex
 };
