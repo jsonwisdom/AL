@@ -22,6 +22,30 @@ function canonicalJson(obj) {
     .join(',') + '}';
 }
 
+function base64Url(buffer) {
+  return buffer
+    .toString('base64')
+    .replace(/=/g, '')
+    .replace(/\+/g, '-')
+    .replace(/\//g, '_');
+}
+
+function ed25519PublicKeyFromRawHex(pubKeyHex) {
+  const pubKeyBytes = Buffer.from(pubKeyHex, 'hex');
+  if (pubKeyBytes.length !== 32) {
+    throw new Error(`invalid Ed25519 public key length: ${pubKeyBytes.length}`);
+  }
+
+  return crypto.createPublicKey({
+    key: {
+      kty: 'OKP',
+      crv: 'Ed25519',
+      x: base64Url(pubKeyBytes)
+    },
+    format: 'jwk'
+  });
+}
+
 function receiptSigningPayload(receipt) {
   const proof = receipt.proof || {};
   const proofWithoutSignature = {};
@@ -50,17 +74,7 @@ function verifySignature(receipt) {
     const message = Buffer.from(canonicalJson(receiptSigningPayload(receipt)), 'utf8');
 
     const pubKeyHex = '37e9edc1ca6c423ec0955156b9bd318e7581ef4492b28a92235ee900d53174cc';
-    const pubKeyBytes = Buffer.from(pubKeyHex, 'hex');
-
-    // Ed25519 SPKI DER prefix for raw 32-byte public key
-    const spkiHeader = Buffer.from('302a300506032b6570032100', 'hex');
-    const derKey = Buffer.concat([spkiHeader, pubKeyBytes]);
-
-    const publicKey = crypto.createPublicKey({
-      key: derKey,
-      format: 'der',
-      type: 'spki'
-    });
+    const publicKey = ed25519PublicKeyFromRawHex(pubKeyHex);
 
     return crypto.verify(null, message, publicKey, signature);
   } catch (e) {
@@ -144,4 +158,10 @@ if (require.main === module) {
   console.log(result);
 }
 
-module.exports = { verify, verifySignature, canonicalJson, receiptSigningPayload };
+module.exports = {
+  verify,
+  verifySignature,
+  canonicalJson,
+  receiptSigningPayload,
+  ed25519PublicKeyFromRawHex
+};
