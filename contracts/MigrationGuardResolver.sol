@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.26;
 
-import { SchemaResolver } from "@ethereum-attestation-service/eas-contracts/contracts/resolver/SchemaResolver.sol";
-import { IEAS } from "@ethereum-attestation-service/eas-contracts/contracts/IEAS.sol";
-import { Attestation } from "@ethereum-attestation-service/eas-contracts/contracts/Common.sol";
+import { SchemaResolver } from "eas-contracts/resolver/SchemaResolver.sol";
+import { IEAS } from "eas-contracts/IEAS.sol";
+import { Attestation } from "eas-contracts/Common.sol";
 
 contract MigrationGuardResolver is SchemaResolver {
     address public immutable ALLOWED_ATTESTER;
