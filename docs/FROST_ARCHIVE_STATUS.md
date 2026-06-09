@@ -40,3 +40,23 @@ Simulation Attestation #0002:
 - VERIFIED is not LIQUIDITY
 
 No mainnet liquidity claim may be made until a real PoolManager/v4 liquidity event exists.
+
+## Prepared Manifest Boundary
+
+Committed manifest path:
+
+- `frost-mock-emitter/manifest_prepared.json`
+
+Current committed manifest timestamp:
+
+- `1780993154`
+
+Current committed prepared root:
+
+- `0x570b33f52d3a5bf956905aa6cb34b131f975b1706ff1798a43b334aa8a98aae7`
+
+Older or local-only roots are not active unless the matching manifest is committed at `frost-mock-emitter/manifest_prepared.json`.
+
+Additional boundary rule:
+
+- A prepared root is current only if it matches the committed manifest.
