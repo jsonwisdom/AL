@@ -23,7 +23,6 @@ COMMON_EXCLUDES=(
   --exclude-dir=.next
   --exclude-dir=dist
   --exclude-dir=build
-  --exclude-dir=artifacts
   --exclude='.gitignore'
   --exclude='jay_repo_safety_report.txt'
   --exclude='jay_repo_safety_scan.sh'
@@ -68,7 +67,6 @@ scan_env_file_leaks() {
     -not -path '*/.next/*' \
     -not -path '*/dist/*' \
     -not -path '*/build/*' \
-    -not -path '*/artifacts/*' \
     \( -name '.env' -o -name '.env.*' \) \
     ! -name '.env.example' \
     ! -name '.env.sample' \
