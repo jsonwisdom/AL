@@ -7,18 +7,35 @@ function loadJson(path) {
 }
 
 function canonicalJson(obj) {
-  // Deterministic canonical JSON - recursive key sort, compact (matches Python)
-  if (obj === null || typeof obj !== "object") {
+  // Match Python json.dumps(obj, sort_keys=True, separators=(',', ':'))
+  if (obj === null || typeof obj !== 'object') {
     return JSON.stringify(obj);
   }
+
   if (Array.isArray(obj)) {
-    return "[" + obj.map(canonicalJson).join(",") + "]";
+    return '[' + obj.map(canonicalJson).join(',') + ']';
   }
-  const sortedKeys = Object.keys(obj).sort();
-  const pairs = sortedKeys.map(key => {
-    return JSON.stringify(key) + ":" + canonicalJson(obj[key]);
-  });
-  return "{" + pairs.join(",") + "}";
+
+  return '{' + Object.keys(obj)
+    .sort()
+    .map(key => JSON.stringify(key) + ':' + canonicalJson(obj[key]))
+    .join(',') + '}';
+}
+
+function receiptSigningPayload(receipt) {
+  const proof = receipt.proof || {};
+  const proofWithoutSignature = {};
+
+  for (const key of Object.keys(proof)) {
+    if (key !== 'signature') {
+      proofWithoutSignature[key] = proof[key];
+    }
+  }
+
+  return {
+    ...receipt,
+    proof: proofWithoutSignature
+  };
 }
 
 function verifySignature(receipt) {
@@ -30,11 +47,7 @@ function verifySignature(receipt) {
     const sigHex = sigStr.slice(8);
     const signature = Buffer.from(sigHex, 'hex');
 
-    const receiptForSigning = JSON.parse(JSON.stringify(receipt));
-    receiptForSigning.proof = { ...proof };
-    delete receiptForSigning.proof.signature;
-
-    const message = Buffer.from(canonicalJson(receiptForSigning), 'utf8');
+    const message = Buffer.from(canonicalJson(receiptSigningPayload(receipt)), 'utf8');
 
     const pubKeyHex = '37e9edc1ca6c423ec0955156b9bd318e7581ef4492b28a92235ee900d53174cc';
     const pubKeyBytes = Buffer.from(pubKeyHex, 'hex');
@@ -49,8 +62,7 @@ function verifySignature(receipt) {
       type: 'spki'
     });
 
-    const isValid = crypto.verify(null, message, publicKey, signature);
-    return isValid;
+    return crypto.verify(null, message, publicKey, signature);
   } catch (e) {
     console.error('Signature verify error:', e.message);
     return false;
@@ -132,4 +144,4 @@ if (require.main === module) {
   console.log(result);
 }
 
-module.exports = { verify, verifySignature, canonicalJson };
+module.exports = { verify, verifySignature, canonicalJson, receiptSigningPayload };
