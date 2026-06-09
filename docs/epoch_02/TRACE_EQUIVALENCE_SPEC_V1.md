@@ -1,0 +1,48 @@
+# TRACE_EQUIVALENCE_SPEC_V1
+
+## Purpose
+
+Define when two observer traces are mechanically equivalent.
+
+## Inputs
+
+```text
+trace_a
+trace_b
+observer_id
+receipt_hash_chain
+```
+
+## Equivalence Conditions
+
+```text
+EQUIV_RECEIPT_HASH_CHAIN_MATCH
+EQUIV_EVENT_ORDER_MATCH
+EQUIV_STATE_TRANSITION_MATCH
+EQUIV_TERMINAL_STATE_MATCH
+```
+
+## Results
+
+```text
+TRACE_EQUIVALENT
+TRACE_NOT_EQUIVALENT
+TRACE_INCOMPLETE
+```
+
+## Failure Codes
+
+```text
+TRACE_FAIL_HASH_DIVERGENCE
+TRACE_FAIL_EVENT_ORDER_DIVERGENCE
+TRACE_FAIL_STATE_DIVERGENCE
+TRACE_FAIL_INCOMPLETE_TRACE
+```
+
+## Non-Effects
+
+```text
+NO_AUTHORITY
+NO_ATTESTATION
+NO_INTERPRETATION
+```
