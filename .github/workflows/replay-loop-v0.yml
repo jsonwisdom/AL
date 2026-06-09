@@ -6,12 +6,14 @@ on:
       - 'testdata/v0/**'
       - 'tools/verify_fixture.py'
       - 'tools/verify_fixture.js'
+      - 'tools/verify_fixture.cjs'
       - '.github/workflows/replay-loop-v0.yml'
   pull_request:
     paths:
       - 'testdata/v0/**'
       - 'tools/verify_fixture.py'
       - 'tools/verify_fixture.js'
+      - 'tools/verify_fixture.cjs'
       - '.github/workflows/replay-loop-v0.yml'
 
 jobs:
@@ -29,7 +31,7 @@ jobs:
 
       - name: Node verifier happy path
         run: |
-          node tools/verify_fixture.js \
+          node tools/verify_fixture.cjs \
             testdata/v0/valid/receipt-valid.json \
             testdata/v0/valid/binding-valid.json \
             testdata/v0/valid/policy-valid.json
@@ -49,7 +51,7 @@ jobs:
       - name: Node verifier detects digest mismatch
         run: |
           set +e
-          output=$(node tools/verify_fixture.js \
+          output=$(node tools/verify_fixture.cjs \
             testdata/v0/valid/receipt-valid.json \
             testdata/v0/invalid/binding-wrong-receipt-digest.json \
             testdata/v0/valid/policy-valid.json 2>&1)
@@ -73,7 +75,7 @@ jobs:
       - name: Node verifier detects expired receipt
         run: |
           set +e
-          output=$(node tools/verify_fixture.js \
+          output=$(node tools/verify_fixture.cjs \
             testdata/v0/invalid/receipt-expired.json \
             testdata/v0/valid/binding-valid.json \
             testdata/v0/valid/policy-valid.json 2>&1)
@@ -97,7 +99,7 @@ jobs:
       - name: Node verifier detects tampered signature
         run: |
           set +e
-          output=$(node tools/verify_fixture.js \
+          output=$(node tools/verify_fixture.cjs \
             testdata/v0/invalid/receipt-tampered-signature.json \
             testdata/v0/valid/binding-valid.json \
             testdata/v0/valid/policy-valid.json 2>&1)
@@ -121,7 +123,7 @@ jobs:
       - name: Node verifier detects forbidden file
         run: |
           set +e
-          output=$(node tools/verify_fixture.js \
+          output=$(node tools/verify_fixture.cjs \
             testdata/v0/valid/receipt-valid.json \
             testdata/v0/invalid/binding-forbidden-file.json \
             testdata/v0/valid/policy-valid.json 2>&1)
@@ -133,7 +135,7 @@ jobs:
       - name: Node verifier detects schema invalid fixture
         run: |
           set +e
-          output=$(node tools/verify_fixture.js \
+          output=$(node tools/verify_fixture.cjs \
             testdata/v0/invalid/receipt-missing-required-field.json \
             testdata/v0/valid/binding-valid.json \
             testdata/v0/valid/policy-valid.json 2>&1)
