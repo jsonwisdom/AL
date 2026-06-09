@@ -1,0 +1,49 @@
+name: Validator Verification
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'computerwisdom_validator/**'
+      - 'receipts/validator_verification/**'
+      - '.github/workflows/validator-verification.yml'
+
+jobs:
+  validator-verification:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install pytest
+        run: python -m pip install pytest
+
+      - name: Run validator tests
+        run: python -m pytest -q computerwisdom_validator/test_validator.py
+
+      - name: Generate validator run receipt 001
+        run: python computerwisdom_validator/run_receipt.py
+
+      - name: Show generated receipt summary
+        run: |
+          cat receipts/validator_verification/VALIDATOR_RUN_RECEIPT_001.sha256
+          python - <<'PY'
+          import json
+          p='receipts/validator_verification/VALIDATOR_RUN_RECEIPT_001.json'
+          r=json.load(open(p))
+          for k in ['receipt_id','run_result','matched_count','mismatch_count','authority','attestation','membrane','no_fake_green','receipt_hash']:
+              print(f'{k}={r[k]}')
+          PY
+
+      - name: Upload validator verification evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: validator-verification-run-001
+          path: |
+            receipts/validator_verification/VALIDATOR_RUN_RECEIPT_001.json
+            receipts/validator_verification/VALIDATOR_RUN_RECEIPT_001.sha256
