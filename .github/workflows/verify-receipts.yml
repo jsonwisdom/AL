@@ -50,7 +50,7 @@ jobs:
           echo "=== Node Valid Fixture ==="
           mkdir -p _truth/ci
           set +e
-          output=$(node tools/verify_fixture.js \
+          output=$(node tools/verify_fixture.cjs \
             testdata/v0/valid/receipt-valid.json \
             testdata/v0/valid/binding.json \
             testdata/v0/valid/policy.json 2>&1)
@@ -70,7 +70,7 @@ jobs:
         run: |
           echo "=== Node Tampered Fixture ==="
           set +e
-          output=$(node tools/verify_fixture.js \
+          output=$(node tools/verify_fixture.cjs \
             testdata/v0/invalid/receipt-tampered-signature.json \
             testdata/v0/valid/binding.json \
             testdata/v0/valid/policy.json 2>&1)
