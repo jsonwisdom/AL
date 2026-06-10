@@ -17,8 +17,9 @@ def main() -> int:
 
     manifest = json.loads(manifest_path.read_text())
 
+    receipt_paths = sorted(receipts_dir.glob('*.json'))
     receipts = []
-    for path in sorted(receipts_dir.glob('*.json')):
+    for path in receipt_paths:
         receipt = json.loads(path.read_text())
         receipts.append(receipt)
 
@@ -35,14 +36,27 @@ def main() -> int:
         'expected_root': expected_root,
         'rebuilt_root': rebuilt_root,
         'receipt_count': len(receipts),
+        'receipt_files': [str(path) for path in receipt_paths],
+        'receipt_identity_hashes': [receipt.get('identity_hash') for receipt in receipts],
         'verified': rebuilt_root == expected_root,
         'semantic_inference': False,
         'authority': False,
     }
 
-    print(json.dumps(result, indent=2, sort_keys=True))
+    print(json.dumps(result, indent=2, sort_keys=True), flush=True)
 
-    return 0 if result['verified'] else 1
+    if rebuilt_root != expected_root:
+        print('DEBUG_MANIFEST_MISMATCH:', flush=True)
+        print(f'  Expected: {expected_root}', flush=True)
+        print(f'  Rebuilt:  {rebuilt_root}', flush=True)
+        print(f'  Manifest Path: {manifest_path}', flush=True)
+        print(f'  Receipts Dir: {receipts_dir}', flush=True)
+        print(f'  Receipt Count: {len(receipts)}', flush=True)
+        print(f'  Receipt Files: {[str(path) for path in receipt_paths]}', flush=True)
+        print(f"  Identity Hashes: {[receipt.get('identity_hash') for receipt in receipts]}", flush=True)
+        return 1
+
+    return 0
 
 
 if __name__ == '__main__':
