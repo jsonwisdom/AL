@@ -27,6 +27,7 @@ jobs:
       - name: Run Merkle tests
         run: |
           echo "=== REPLAY VERIFY MERKLE TESTS START ==="
+          echo "Replay verification fresh-trigger marker: 2026-06-10T01:58:00Z"
           pytest -q tests/test_merkle.py -vv
           echo "=== REPLAY VERIFY MERKLE TESTS END ==="
 
