@@ -1,0 +1,31 @@
+{
+  "manifest_name": "ETHEREUM_KECCAK_BRIDGE_MANIFEST_V0_1",
+  "manifest_version": "0.1",
+  "operator_root": "jaywisdom.eth",
+  "operator_alias": "jaywisdom.base.eth",
+  "project": "PRESS_YOUR_LUCK_WITH_JAY",
+  "source_verifier": "ALMS_CROSS_ROUND_REPLAY_VERIFIER_V0_1",
+  "source_result_commit_sha": "0a16480220fceb1b29a2e240ab569e15ebea5a39",
+  "source_result_file_sha256": "27b0c7d0a1e18c3012494c5e4c758d6fa1bea819729f55876905abfec51e59ca",
+  "source_attestation_uid": "0x499544987781f0797a6f3afa88108485e47fd3f3981ef52a71d5814514a07b4a",
+  "source_attestation_tx": "0x677f8d1593eb0035784f05c37176b495708b37d75c9c9e19fc58ee5e37e0cfaf",
+  "source_schema_uid": "0x42670c7e031397a449248671b47902c1fbd887b19e4f9db2587c5732b71be5e2",
+  "source_schema_id": 1574,
+  "source_result": "PASS",
+  "source_hash_domain": "SHA3_256_NOT_ETHEREUM_KECCAK256",
+  "source_sha256_replay_hash": "0xf72d4c0460572c8cc3ac3f9cc7ac9d674d635d1f06b085fc2e2c8a31accbefa7",
+  "source_sha3_256_bridge_hash": "0x980edb5f9e5a03d77c595cd1d8f5d31eaecf9918cd562c222377cbe8608c9260",
+  "target_hash_domain": "ETHEREUM_KECCAK256",
+  "bridge_input": {
+    "domain_separator": "ALMS_TO_EVM_BRIDGE_V0_1",
+    "encoding": "UTF8_CANONICAL_JSON",
+    "preimage": "{\"domain_separator\":\"ALMS_TO_EVM_BRIDGE_V0_1\",\"manifest_name\":\"ETHEREUM_KECCAK_BRIDGE_MANIFEST_V0_1\",\"manifest_version\":\"0.1\",\"source_attestation_uid\":\"0x499544987781f0797a6f3afa88108485e47fd3f3981ef52a71d5814514a07b4a\",\"source_hash_domain\":\"SHA3_256_NOT_ETHEREUM_KECCAK256\",\"source_sha256_replay_hash\":\"0xf72d4c0460572c8cc3ac3f9cc7ac9d674d635d1f06b085fc2e2c8a31accbefa7\",\"source_sha3_256_bridge_hash\":\"0x980edb5f9e5a03d77c595cd1d8f5d31eaecf9918cd562c222377cbe8608c9260\",\"source_verifier\":\"ALMS_CROSS_ROUND_REPLAY_VERIFIER_V0_1\",\"target_hash_domain\":\"ETHEREUM_KECCAK256\"}"
+  },
+  "ethereum_keccak256": "0xcc7366b59096b95fb73bfa51764102deb7f889e9f00db0b31bebfd70c2c59b1f",
+  "invariants": {
+    "non_equivalence_asserted": true,
+    "source_domain_preserved": true,
+    "evm_verifiable": true,
+    "doj_receipt_chain_separate_lane": true
+  }
+}
