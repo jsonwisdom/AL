@@ -44,9 +44,12 @@ jobs:
             testdata/v0/invalid/binding-wrong-receipt-digest.json \
             testdata/v0/valid/policy-valid.json 2>&1)
           status=$?
-          echo "$output"
+          echo "=== PYTHON DIGEST MISMATCH OUTPUT START ==="
+          printf '%s\n' "$output"
+          echo "=== PYTHON DIGEST MISMATCH OUTPUT END ==="
+          echo "status=$status"
           test $status -ne 0
-          echo "$output" | grep -q 'FAIL: receipt digest mismatch'
+          printf '%s\n' "$output" | grep -q 'FAIL: receipt digest mismatch'
 
       - name: Node verifier detects digest mismatch
         run: |
