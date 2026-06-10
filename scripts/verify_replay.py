@@ -1,9 +1,20 @@
 #!/usr/bin/env python3
 
 import argparse
+import hashlib
 import json
 from pathlib import Path
 from emit_mcp_batch import canonical_json_bytes, rfc6962_merkle_root
+
+
+def corpus_fingerprint(identity_hashes: list[str | None]) -> dict:
+    normalized = [value or '' for value in identity_hashes]
+    joined = '\n'.join(normalized).encode('utf-8')
+    return {
+        'identity_hash_first_3': normalized[:3],
+        'identity_hash_last_3': normalized[-3:] if normalized else [],
+        'identity_hash_sha256': hashlib.sha256(joined).hexdigest(),
+    }
 
 
 def main() -> int:
@@ -25,6 +36,8 @@ def main() -> int:
         receipts.append(receipt)
 
     receipts.sort(key=lambda item: item['identity_hash'])
+    identity_hashes = [receipt.get('identity_hash') for receipt in receipts]
+    fingerprint = corpus_fingerprint(identity_hashes)
 
     leaves = [canonical_json_bytes(receipt) for receipt in receipts]
 
@@ -40,7 +53,8 @@ def main() -> int:
         'expected_receipt_count': expected_count,
         'receipt_count': len(receipts),
         'receipt_files': [str(path) for path in receipt_paths],
-        'receipt_identity_hashes': [receipt.get('identity_hash') for receipt in receipts],
+        'receipt_identity_hashes': identity_hashes,
+        **fingerprint,
         'verified': rebuilt_root == expected_root and count_matches,
         'semantic_inference': False,
         'authority': False,
@@ -55,6 +69,9 @@ def main() -> int:
         print(f'  Manifest Path: {manifest_path}', flush=True)
         print(f'  Receipts Dir: {receipts_dir}', flush=True)
         print(f'  Receipt Files: {[str(path) for path in receipt_paths]}', flush=True)
+        print(f"  Identity Hash First 3: {fingerprint['identity_hash_first_3']}", flush=True)
+        print(f"  Identity Hash Last 3: {fingerprint['identity_hash_last_3']}", flush=True)
+        print(f"  Identity Hash SHA256: {fingerprint['identity_hash_sha256']}", flush=True)
         return 1
 
     if rebuilt_root != expected_root:
@@ -65,7 +82,10 @@ def main() -> int:
         print(f'  Receipts Dir: {receipts_dir}', flush=True)
         print(f'  Receipt Count: {len(receipts)}', flush=True)
         print(f'  Receipt Files: {[str(path) for path in receipt_paths]}', flush=True)
-        print(f"  Identity Hashes: {[receipt.get('identity_hash') for receipt in receipts]}", flush=True)
+        print(f"  Identity Hash First 3: {fingerprint['identity_hash_first_3']}", flush=True)
+        print(f"  Identity Hash Last 3: {fingerprint['identity_hash_last_3']}", flush=True)
+        print(f"  Identity Hash SHA256: {fingerprint['identity_hash_sha256']}", flush=True)
+        print(f"  Identity Hashes: {identity_hashes}", flush=True)
         return 1
 
     return 0
