@@ -12,6 +12,9 @@ jobs:
   replay-verify:
     runs-on: ubuntu-latest
 
+    env:
+      PYTHONPATH: ${{ github.workspace }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -24,11 +27,44 @@ jobs:
       - name: Install pytest
         run: pip install pytest
 
+      - name: Guard replay verification imports
+        run: |
+          python -c "import scripts; import scripts.emit_mcp_batch; print('scripts import ok')"
+
       - name: Run Merkle tests
-        run: pytest tests/test_merkle.py
+        run: |
+          set +e
+          pytest tests/test_merkle.py -vv 2>&1 | tee replay-verify-pytest.log
+          status=${PIPESTATUS[0]}
+          echo "PYTEST_EXIT_CODE=$status" >> replay-verify-pytest.log
+          exit "$status"
+
+      - name: Upload replay verification diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: replay-verify-pytest-log
+          path: replay-verify-pytest.log
+          if-no-files-found: ignore
 
       - name: Verify replay manifest
-        run: python scripts/verify_replay.py
+        run: |
+          set +e
+          python scripts/verify_replay.py \
+            --receipts-dir tests/fixtures/receipts/mn_mmb_feb2026 \
+            --manifest manifests/mn_mmb_feb2026_manifest.json \
+            --vector tests/vectors/mn_mmb_feb2026_full.json 2>&1 | tee replay-verify-manifest.log
+          status=${PIPESTATUS[0]}
+          echo "MANIFEST_EXIT_CODE=$status" >> replay-verify-manifest.log
+          exit "$status"
+
+      - name: Upload replay manifest diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: replay-verify-manifest-log
+          path: replay-verify-manifest.log
+          if-no-files-found: ignore
 
       - name: Verify fixture root
         run: |

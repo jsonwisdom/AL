@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import sys
 import json
-from datetime import datetime
+from datetime import datetime, timezone
 from cryptography.hazmat.primitives.asymmetric import ed25519
 from cryptography.exceptions import InvalidSignature
 
@@ -14,6 +14,28 @@ def load_json(path):
 def canonical_json(obj):
     """Deterministic canonical JSON for signing (RFC8785-like via sort_keys + compact)"""
     return json.dumps(obj, sort_keys=True, separators=(',', ':')).encode('utf-8')
+
+
+def parse_iso_datetime(value):
+    if not isinstance(value, str):
+        return None
+    try:
+        if value.endswith('Z'):
+            value = value[:-1] + '+00:00'
+        parsed = datetime.fromisoformat(value)
+        if parsed.tzinfo is None:
+            parsed = parsed.replace(tzinfo=timezone.utc)
+        return parsed
+    except ValueError:
+        return None
+
+
+def receipt_is_expired(receipt):
+    expires_at = receipt.get("scope", {}).get("expires_at")
+    parsed = parse_iso_datetime(expires_at)
+    if parsed is None:
+        return False
+    return parsed < datetime.now(timezone.utc)
 
 
 def verify_signature(receipt):
@@ -43,6 +65,28 @@ def verify_signature(receipt):
         return False
 
 
+def binding_observed_files(binding):
+    if isinstance(binding.get("observed_files"), list):
+        return binding["observed_files"]
+
+    result = binding.get("result", {})
+    if isinstance(result.get("changed_files"), list):
+        return result["changed_files"]
+
+    return None
+
+
+def binding_result_hash(binding):
+    if "result_hash" in binding:
+        return binding["result_hash"]
+
+    proof = binding.get("proof", {})
+    if "digest" in proof:
+        return proof["digest"]
+
+    return None
+
+
 def verify(receipt_path, binding_path, policy_path):
     try:
         receipt = load_json(receipt_path)
@@ -59,10 +103,15 @@ def verify(receipt_path, binding_path, policy_path):
         if "signature" not in proof:
             return "FAIL: schema invalid - missing signature in proof"
 
-        required_binding = ["receipt_digest", "observed_files", "result_hash"]
-        for field in required_binding:
-            if field not in binding:
-                return f"FAIL: schema invalid - missing {field} in binding"
+        if "receipt_digest" not in binding:
+            return "FAIL: schema invalid - missing receipt_digest in binding"
+
+        observed_files = binding_observed_files(binding)
+        if observed_files is None:
+            return "FAIL: schema invalid - missing observed_files in binding"
+
+        if binding_result_hash(binding) is None:
+            return "FAIL: schema invalid - missing result_hash in binding"
 
         # Policy structure
         if not isinstance(policy.get("allowed_paths", []), list):
@@ -71,19 +120,18 @@ def verify(receipt_path, binding_path, policy_path):
             return "FAIL: schema invalid - forbidden_paths must be array"
 
         # === CRYPTO + REPLAY LOGIC ===
+        if receipt_is_expired(receipt):
+            return "FAIL: receipt expired"
+
         if not verify_signature(receipt):
             return "FAIL: signature mismatch"
-
-        # Expiration is retained in receipt.scope.expires_at for this schema.
-        # V0 branch preserves the original mock-harness behavior and focuses
-        # this change on signature verification.
 
         # Binding digest match
         if binding.get("receipt_digest") != receipt.get("proof", {}).get("digest"):
             return "FAIL: receipt digest mismatch"
 
         # Policy enforcement
-        observed = set(binding.get("observed_files", []))
+        observed = set(observed_files)
         allowed = set(policy.get("allowed_paths", []))
         forbidden = set(policy.get("forbidden_paths", []))
 
@@ -107,3 +155,4 @@ if __name__ == "__main__":
 
     result = verify(sys.argv[1], sys.argv[2], sys.argv[3])
     print(result)
+    sys.exit(0 if result == "PASS" else 1)

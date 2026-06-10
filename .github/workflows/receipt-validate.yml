@@ -15,12 +15,51 @@ jobs:
         with:
           node-version: '20'
       - run: npm install -g ajv-cli ajv-formats
-      - name: Validate MCP audit receipts
+      - name: Discover MCP audit receipts
+        id: discover
         run: |
-          shopt -s nullglob
-          files=(receipts/*.json)
-          if [ ${#files[@]} -eq 0 ]; then
-            echo "No receipts to validate."
-            exit 0
+          mapfile -t files < <(grep -rl '"receipt_type"[[:space:]]*:[[:space:]]*"MCP_ENGINE_AUDIT_RECEIPT"' receipts --include='*.json' | sort)
+          count=${#files[@]}
+          echo "json_receipt_count=$count"
+          echo "json_receipt_count=$count" >> "$GITHUB_OUTPUT"
+          printf '%s\n' "${files[@]}" > receipt-list.txt
+          if [ "$count" -eq 0 ]; then
+            echo "No MCP audit JSON receipts discovered under receipts/."
+          else
+            echo "Discovered MCP audit JSON receipts:"
+            printf ' - %s\n' "${files[@]}"
           fi
-          ajv validate -c ajv-formats -s schemas/mcp_engine_audit_receipt.v0_1.schema.json -d 'receipts/*.json' --strict=false
+      - name: Validate MCP audit receipts
+        if: steps.discover.outputs.json_receipt_count != '0'
+        run: |
+          set +e
+          : > receipt-validate-debug.txt
+          mapfile -t files < receipt-list.txt
+          overall=0
+          for file in "${files[@]}"; do
+            echo "Validating: $file"
+            {
+              echo "=== FILE: $file ==="
+              echo "--- FIRST 80 LINES ---"
+              sed -n '1,80p' "$file"
+              echo "--- AJV OUTPUT ---"
+            } >> receipt-validate-debug.txt
+            ajv validate --spec=draft2020 -c ajv-formats -s schemas/mcp_engine_audit_receipt.v0_1.schema.json -d "$file" --strict=false >> receipt-validate-debug.txt 2>&1
+            code=$?
+            echo "AJV_EXIT_CODE=$code" >> receipt-validate-debug.txt
+            echo "" >> receipt-validate-debug.txt
+            if [ "$code" -ne 0 ]; then
+              overall=$code
+            fi
+          done
+          cat receipt-validate-debug.txt
+          exit "$overall"
+      - name: Upload receipt validation debug
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: receipt-validate-debug
+          path: |
+            receipt-list.txt
+            receipt-validate-debug.txt
+          if-no-files-found: ignore
