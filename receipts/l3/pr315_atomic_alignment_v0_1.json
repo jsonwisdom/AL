@@ -1,0 +1,38 @@
+{
+  "protocol": "L3_ATOMIC_REPO_ALIGNMENT_V0_1",
+  "operator": "jaywisdom.base.eth",
+  "repo": "jsonwisdom/AL",
+  "source_pr": 315,
+  "source_pr_title": "Add cross-round replay PASS result v0.1",
+  "source_pr_head_sha": "0a16480220fceb1b29a2e240ab569e15ebea5a39",
+  "source_pr_base": "main",
+  "repo_default_branch": "master",
+  "alignment_reason": "PR_315 is oversized and non-mergeable; create atomic replacement surface from current protected default branch.",
+  "oversized_pr_state": {
+    "commits": 3623,
+    "changed_files": 10548,
+    "additions": 4193710,
+    "mergeable": false,
+    "merge_attempt_result": "BLOCKED_MERGE_CONFLICTS"
+  },
+  "atomic_branch": "atomic-pr315-alignment-v0-1",
+  "base_sha": "2753b5e5d0d614efd4361020d5e577343e058c9d",
+  "replay_fields_from_source_pr": {
+    "result_commit_sha": "0a16480220fceb1b29a2e240ab569e15ebea5a39",
+    "vector_file_sha256": "39262e19c01c8761ee33d8e834e1cff6cd5dc4355ffed5dac36e4cbf2f3ad650",
+    "result_file_sha256": "27b0c7d0a1e18c3012494c5e4c758d6fa1bea819729f55876905abfec51e59ca",
+    "result": "PASS",
+    "sha256_replay_hash": "0xf72d4c0460572c8cc3ac3f9cc7ac9d674d635d1f06b085fc2e2c8a31accbefa7",
+    "sha3_256_bridge_hash": "0x980edb5f9e5a03d77c595cd1d8f5d31eaecf9918cd562c222377cbe8608c9260",
+    "bridge_hash_domain": "SHA3_256_NOT_ETHEREUM_KECCAK256"
+  },
+  "scope": {
+    "controller_verified": "NOT_IN_SCOPE",
+    "resolver_verified": "NOT_IN_SCOPE",
+    "schema_uid": "PENDING",
+    "ethereum_keccak_bridge": "PENDING",
+    "authority": false,
+    "no_fake_green": true
+  },
+  "next_gate": "OPEN_MINIMAL_PR_AND_AWAIT_CHECKS"
+}
