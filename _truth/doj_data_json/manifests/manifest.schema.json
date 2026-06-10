@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DOJ_Data_Manifest_Schema",
+  "description": "Schema for DOJ data.json ingest receipts",
+  "type": "object",
+  "properties": {
+    "ingest_id": { "type": "string" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "source": { "type": "string" },
+    "hash_sha256": { "type": "string" },
+    "dataset_count": { "type": "integer" },
+    "byte_count": { "type": "integer" },
+    "authority": { "type": "boolean" },
+    "verification_state": { "type": "string" }
+  },
+  "required": [
+    "ingest_id",
+    "timestamp",
+    "source",
+    "hash_sha256"
+  ]
+}
