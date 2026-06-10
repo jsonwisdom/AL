@@ -47,8 +47,9 @@
     "bridge_input": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["encoding", "preimage"],
+      "required": ["domain_separator", "encoding", "preimage"],
       "properties": {
+        "domain_separator": { "const": "ALMS_TO_EVM_BRIDGE_V0_1" },
         "encoding": { "const": "UTF8_CANONICAL_JSON" },
         "preimage": { "type": "string", "minLength": 1 }
       }
