@@ -17,3 +17,14 @@
       "minLength": 1
     },
     "source": {
+      "type": "string",
+      "minLength": 1
+    },
+    "output": {
+      "type": "object"
+    },
+    "authority": {
+      "const": false
+    }
+  }
+}

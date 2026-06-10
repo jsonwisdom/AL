@@ -25,10 +25,17 @@ jobs:
         run: pip install pytest
 
       - name: Run Merkle tests
-        run: pytest tests/test_merkle.py
+        run: |
+          echo "=== REPLAY VERIFY MERKLE TESTS START ==="
+          echo "Replay verification fresh-trigger marker: 2026-06-10T01:58:00Z"
+          pytest -q tests/test_merkle.py -vv
+          echo "=== REPLAY VERIFY MERKLE TESTS END ==="
 
       - name: Verify replay manifest
-        run: python scripts/verify_replay.py
+        run: |
+          python scripts/verify_replay.py \
+            --manifest manifests/mn_mmb_feb2026_manifest.json \
+            --receipts-dir tests/fixtures/receipts/mn_mmb_feb2026
 
       - name: Verify fixture root
         run: |

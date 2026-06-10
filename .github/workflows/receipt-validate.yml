@@ -18,9 +18,9 @@ jobs:
       - name: Validate MCP audit receipts
         run: |
           shopt -s nullglob
-          files=(receipts/*.json)
+          files=(receipts/mcp/*.json)
           if [ ${#files[@]} -eq 0 ]; then
-            echo "No receipts to validate."
+            echo "No MCP receipts to validate."
             exit 0
           fi
-          ajv validate -c ajv-formats -s schemas/mcp_engine_audit_receipt.v0_1.schema.json -d 'receipts/*.json' --strict=false
+          ajv validate -c ajv-formats -s schemas/mcp_engine_audit_receipt.v0_1.schema.json -d 'receipts/mcp/*.json' --strict=false
