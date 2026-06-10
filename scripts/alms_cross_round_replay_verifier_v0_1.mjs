@@ -7,6 +7,7 @@ import crypto from "crypto";
 
 const INPUT = "vectors/cross_round_invariant_vectors_v0_1.json";
 const OUTPUT = "vectors/cross_round_evaluation_result_v0_1.json";
+const ZERO_BYTES32 = "0x0000000000000000000000000000000000000000000000000000000000000000";
 
 function canonicalJson(value) {
   if (Array.isArray(value)) {
@@ -29,103 +30,118 @@ function sha256Hex(value) {
   return "0x" + crypto.createHash("sha256").update(canonicalJson(value)).digest("hex");
 }
 
-function evaluateVector(vector) {
-  let expectedViolation = "NONE";
+function bridgeHashHex(value) {
+  // Node's built-in crypto does not universally expose Ethereum keccak256.
+  // Until ethers/js-sha3 is added, emit an explicitly domain-labeled bridge hash
+  // derived from SHA3-256 so it can never be confused with Solidity keccak256.
+  return "0x" + crypto.createHash("sha3-256").update(canonicalJson(value)).digest("hex");
+}
 
-  switch (vector.invariant) {
-    case "C1": {
-      const round = vector.rounds?.[0];
-      const explained = round?.explanation_attestation?.submitted === true;
-      const timely = round?.explanation_attestation?.submitted_within_7_days === true;
-      if (round?.final_state === "UNCONSTITUTIONAL" && !(explained && timely)) {
-        expectedViolation = "UNEXPLAINED_UNCONSTITUTIONAL";
-      }
-      break;
-    }
-    case "C2": {
-      const unconstitutionalCount = (vector.rounds || []).filter(
-        (round) => round.final_state === "UNCONSTITUTIONAL"
-      ).length;
-      if (unconstitutionalCount >= 2) {
-        expectedViolation = "IDENTITY_FREEZE_ACTIVATED";
-      }
-      break;
-    }
-    case "C3": {
-      const unconstitutionalCount = (vector.rounds || []).filter(
-        (round) => round.final_state === "UNCONSTITUTIONAL"
-      ).length;
-      if (unconstitutionalCount >= 3) {
-        expectedViolation = "SCHEMA_DEPRECATION";
-      }
-      break;
-    }
-    case "C4": {
-      const driftDetected = (vector.rounds || []).some(
-        (round) => round.drift_detected === true
-      );
-      if (driftDetected) {
-        expectedViolation = "TAX_NOTICE_DRIFT";
-      }
-      break;
-    }
-    case "C5": {
-      if (vector.attestation?.mismatch === true) {
-        expectedViolation = "SCHEMA_UID_MISMATCH";
-      }
-      break;
-    }
-    default:
-      expectedViolation = "UNKNOWN_INVARIANT";
+function isNonZeroBytes32(value) {
+  return typeof value === "string" && value.startsWith("0x") && value.length > 2 && value !== ZERO_BYTES32;
+}
+
+function evaluateHistory(history) {
+  if (!history || typeof history !== "object") {
+    return "INVALID_HISTORY";
   }
 
-  const actualResult = expectedViolation === "NONE" ? "PASS" : "FAIL";
+  if (history.canonicalSchemaUID !== history.submittedSchemaUID) {
+    return "C5_SCHEMA_UID_MISMATCH";
+  }
 
-  const result = {
+  if (
+    history.previousTaxNoticeStructureHash !== ZERO_BYTES32 &&
+    history.currentTaxNoticeStructureHash !== ZERO_BYTES32 &&
+    history.previousTaxNoticeStructureHash !== history.currentTaxNoticeStructureHash &&
+    history.schemaVersionBumped === false
+  ) {
+    return "C4_TAX_NOTICE_DRIFT";
+  }
+
+  if (Number(history.unconstitutionalRounds24m || 0) >= 3) {
+    return "C3_SCHEMA_ROTATION_REQUIRED";
+  }
+
+  if (Number(history.unconstitutionalRounds12m || 0) >= 2) {
+    return "C2_IDENTITY_FREEZE_REQUIRED";
+  }
+
+  if (
+    Number(history.unconstitutionalRounds12m || 0) >= 1 &&
+    Number(history.lastUnconstitutionalTimestamp || 0) > 0 &&
+    Number(history.explanationTimestamp || 0) === 0
+  ) {
+    return "C1_UNEXPLAINED_UNCONSTITUTIONAL";
+  }
+
+  return "NONE";
+}
+
+function evaluateVector(vector) {
+  const violation = evaluateHistory(vector.history);
+  const expectedViolation = vector.expected_violation ?? "NONE";
+
+  const payload = {
     vector_id: vector.vector_id,
-    invariant: vector.invariant,
-    expected_result: vector.expected_result,
-    actual_result: actualResult,
-    matched_expected: actualResult === vector.expected_result,
-    violation: expectedViolation,
-    strike_type: vector.strike_type ?? null
+    history: vector.history,
+    violation,
+    expected_violation: expectedViolation
   };
 
+  const sha256ReplayHash = sha256Hex(payload);
+  const sha3BridgeHash = bridgeHashHex(payload);
+
   return {
-    ...result,
-    sha256_replay_hash: sha256Hex(result)
+    ...payload,
+    passed: violation === expectedViolation,
+    sha256_replay_hash: sha256ReplayHash,
+    sha3_256_bridge_hash: sha3BridgeHash,
+    bridge_hash_domain: "SHA3_256_NOT_ETHEREUM_KECCAK256"
   };
 }
 
 function main() {
   const input = JSON.parse(fs.readFileSync(INPUT, "utf8"));
   const results = input.vectors.map(evaluateVector);
-  const allMatched = results.every((result) => result.matched_expected);
+  const allPassed = results.every((result) => result.passed);
 
-  const output = {
+  const replayPayload = {
     verifier: "ALMS_CROSS_ROUND_REPLAY_VERIFIER_V0_1",
-    schema_uid: input.schema_uid,
+    schema_name: input.schema_name,
+    schema_version: input.schema_version,
     operator_root: input.operator_root,
     operator_alias: input.operator_alias,
     project: input.project,
-    result: allMatched ? "PASS" : "FAIL",
-    results,
-    sha256_replay_hash: sha256Hex(results),
+    results
+  };
+
+  const sha256ReplayHash = sha256Hex(replayPayload);
+  const sha3BridgeHash = bridgeHashHex(replayPayload);
+
+  const output = {
+    ...replayPayload,
+    result: allPassed ? "PASS" : "FAIL",
+    sha256_replay_hash: sha256ReplayHash,
+    sha3_256_bridge_hash: sha3BridgeHash,
+    bridge_hash_domain: "SHA3_256_NOT_ETHEREUM_KECCAK256",
     eas_attestation_payload: {
-      schema_uid: input.schema_uid,
+      schema_uid: input.schema_uid ?? "<REPLACE_AFTER_REGISTRATION>",
       operator_root: input.operator_root,
       operator_alias: input.operator_alias,
       project: input.project,
-      sha256_replay_hash: sha256Hex(results),
+      sha256_replay_hash: sha256ReplayHash,
+      sha3_256_bridge_hash: sha3BridgeHash,
+      bridge_hash_domain: "SHA3_256_NOT_ETHEREUM_KECCAK256",
       verifier: "ALMS_CROSS_ROUND_REPLAY_VERIFIER_V0_1",
-      result: allMatched ? "PASS" : "FAIL"
+      result: allPassed ? "PASS" : "FAIL"
     }
   };
 
   fs.writeFileSync(OUTPUT, JSON.stringify(output, null, 2) + "\n");
   console.log(JSON.stringify(output, null, 2));
 
-  if (!allMatched) {
+  if (!allPassed) {
     process.exit(1);
   }
 }
