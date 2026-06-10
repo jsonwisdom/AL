@@ -1,0 +1,117 @@
+{
+  "schema_version": "0.1",
+  "schema_name": "CROSS_ROUND_INVARIANT_VECTORS",
+  "operator_root": "jaywisdom.eth",
+  "operator_alias": "jaywisdom.base.eth",
+  "project": "PRESS_YOUR_LUCK_WITH_JAY",
+  "description": "Deterministic test vectors for C1-C5 cross-round enforcement. Pure observation layer.",
+  "vectors": [
+    {
+      "vector_id": "C1_UNEXPLAINED_UNCONSTITUTIONAL",
+      "description": "Single unconstitutional round with no timely public explanation",
+      "history": {
+        "unconstitutionalRounds12m": 1,
+        "unconstitutionalRounds24m": 1,
+        "lastUnconstitutionalTimestamp": 1718000000,
+        "explanationTimestamp": 0,
+        "previousTaxNoticeStructureHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "currentTaxNoticeStructureHash": "0x1111111111111111111111111111111111111111111111111111111111111111",
+        "canonicalSchemaUID": "0xSCHEMA_UID_PENDING",
+        "submittedSchemaUID": "0xSCHEMA_UID_PENDING",
+        "schemaVersionBumped": false
+      },
+      "expected_violation": "C1_UNEXPLAINED_UNCONSTITUTIONAL",
+      "sha256_replay_hash": "PENDING_AFTER_VERIFIER_RUN"
+    },
+    {
+      "vector_id": "C2_IDENTITY_FREEZE_TRIGGER",
+      "description": "Two unconstitutional rounds within 12 months",
+      "history": {
+        "unconstitutionalRounds12m": 2,
+        "unconstitutionalRounds24m": 2,
+        "lastUnconstitutionalTimestamp": 1718000000,
+        "explanationTimestamp": 1718100000,
+        "previousTaxNoticeStructureHash": "0x1111111111111111111111111111111111111111111111111111111111111111",
+        "currentTaxNoticeStructureHash": "0x2222222222222222222222222222222222222222222222222222222222222222",
+        "canonicalSchemaUID": "0xSCHEMA_UID_PENDING",
+        "submittedSchemaUID": "0xSCHEMA_UID_PENDING",
+        "schemaVersionBumped": false
+      },
+      "expected_violation": "C2_IDENTITY_FREEZE_REQUIRED",
+      "sha256_replay_hash": "PENDING_AFTER_VERIFIER_RUN"
+    },
+    {
+      "vector_id": "C3_SCHEMA_ROTATION_TRIGGER",
+      "description": "Three unconstitutional rounds within 24 months",
+      "history": {
+        "unconstitutionalRounds12m": 2,
+        "unconstitutionalRounds24m": 3,
+        "lastUnconstitutionalTimestamp": 1718000000,
+        "explanationTimestamp": 1718100000,
+        "previousTaxNoticeStructureHash": "0x2222222222222222222222222222222222222222222222222222222222222222",
+        "currentTaxNoticeStructureHash": "0x3333333333333333333333333333333333333333333333333333333333333333",
+        "canonicalSchemaUID": "0xSCHEMA_UID_PENDING",
+        "submittedSchemaUID": "0xSCHEMA_UID_PENDING",
+        "schemaVersionBumped": false
+      },
+      "expected_violation": "C3_SCHEMA_ROTATION_REQUIRED",
+      "sha256_replay_hash": "PENDING_AFTER_VERIFIER_RUN"
+    },
+    {
+      "vector_id": "C4_TAX_NOTICE_DRIFT",
+      "description": "Tax notice structure changed without schema version bump",
+      "history": {
+        "unconstitutionalRounds12m": 0,
+        "unconstitutionalRounds24m": 0,
+        "lastUnconstitutionalTimestamp": 0,
+        "explanationTimestamp": 0,
+        "previousTaxNoticeStructureHash": "0x4444444444444444444444444444444444444444444444444444444444444444",
+        "currentTaxNoticeStructureHash": "0x5555555555555555555555555555555555555555555555555555555555555555",
+        "canonicalSchemaUID": "0xSCHEMA_UID_PENDING",
+        "submittedSchemaUID": "0xSCHEMA_UID_PENDING",
+        "schemaVersionBumped": false
+      },
+      "expected_violation": "C4_TAX_NOTICE_DRIFT",
+      "sha256_replay_hash": "PENDING_AFTER_VERIFIER_RUN"
+    },
+    {
+      "vector_id": "C5_SCHEMA_UID_MISMATCH",
+      "description": "Submitted schema UID does not match canonical registration",
+      "history": {
+        "unconstitutionalRounds12m": 0,
+        "unconstitutionalRounds24m": 0,
+        "lastUnconstitutionalTimestamp": 0,
+        "explanationTimestamp": 1718100000,
+        "previousTaxNoticeStructureHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "currentTaxNoticeStructureHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "canonicalSchemaUID": "0xCANONICAL_UID_ABC123",
+        "submittedSchemaUID": "0xSUBMITTED_UID_XYZ789",
+        "schemaVersionBumped": true
+      },
+      "expected_violation": "C5_SCHEMA_UID_MISMATCH",
+      "sha256_replay_hash": "PENDING_AFTER_VERIFIER_RUN"
+    },
+    {
+      "vector_id": "CLEAN_NO_VIOLATION",
+      "description": "Fully compliant history — no violations",
+      "history": {
+        "unconstitutionalRounds12m": 0,
+        "unconstitutionalRounds24m": 0,
+        "lastUnconstitutionalTimestamp": 0,
+        "explanationTimestamp": 0,
+        "previousTaxNoticeStructureHash": "0x6666666666666666666666666666666666666666666666666666666666666666",
+        "currentTaxNoticeStructureHash": "0x6666666666666666666666666666666666666666666666666666666666666666",
+        "canonicalSchemaUID": "0xSCHEMA_UID_PENDING",
+        "submittedSchemaUID": "0xSCHEMA_UID_PENDING",
+        "schemaVersionBumped": true
+      },
+      "expected_violation": "NONE",
+      "sha256_replay_hash": "PENDING_AFTER_VERIFIER_RUN"
+    }
+  ],
+  "constitutional_locks": [
+    "NO_REPLAY = NO_EVALUATION",
+    "SHA256_FOR_ALMS = TRUTH_LAYER",
+    "KECCAK_BRIDGE_LABELED = ENFORCEMENT_LAYER"
+  ]
+}
