@@ -1,0 +1,45 @@
+{
+  "schema_name": "CROSS_VERIFIER_TEST_VECTORS",
+  "schema_version": "0.1",
+  "purpose": "Prove independent verifier implementations converge on the same ALMS replay digest.",
+  "result_commit_sha": "0a16480220fceb1b29a2e240ab569e15ebea5a39",
+  "source_result_file": "vectors/cross_round_evaluation_result_v0_1.json",
+  "canonicalization": "RFC_8785_JSON_CANONICALIZATION_SCHEME",
+  "encoding": "UTF8_CANONICAL_JSON",
+  "hash_domain": "SHA256_REPLAY_HASH",
+  "expected_result": "PASS",
+  "expected_sha256_replay_hash": "0xf72d4c0460572c8cc3ac3f9cc7ac9d674d635d1f06b085fc2e2c8a31accbefa7",
+  "expected_sha3_256_bridge_hash": "0x980edb5f9e5a03d77c595cd1d8f5d31eaecf9918cd562c222377cbe8608c9260",
+  "verifier_matrix": [
+    {
+      "implementation_name": "node_reference_verifier",
+      "language": "javascript",
+      "role": "canonical_reference",
+      "verifier": "ALMS_CROSS_ROUND_REPLAY_VERIFIER_V0_1"
+    },
+    {
+      "implementation_name": "python_independent_verifier",
+      "language": "python",
+      "role": "independent_reimplementation",
+      "file": "scripts/python_verifier_v0_1.py"
+    },
+    {
+      "implementation_name": "rust_independent_verifier",
+      "language": "rust",
+      "role": "independent_reimplementation",
+      "file": "scripts/rust_verifier_v0_1.rs"
+    }
+  ],
+  "pass_condition": {
+    "implementations_minimum": 3,
+    "all_match": true,
+    "hash_equivalence": true,
+    "canonicalization_equivalence": true
+  },
+  "non_equivalence_guard": {
+    "replay_hash_domain": "SHA256_REPLAY_HASH",
+    "bridge_hash_domain": "SHA3_256_NOT_ETHEREUM_KECCAK256",
+    "evm_hash_domain": "ETHEREUM_KECCAK256",
+    "domain_collapse_allowed": false
+  }
+}
