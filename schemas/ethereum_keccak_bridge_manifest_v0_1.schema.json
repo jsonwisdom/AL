@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "schemas/ethereum_keccak_bridge_manifest_v0_1.schema.json",
+  "title": "Ethereum Keccak Bridge Manifest v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "manifest_name",
+    "manifest_version",
+    "operator_root",
+    "operator_alias",
+    "project",
+    "source_verifier",
+    "source_result_commit_sha",
+    "source_result_file_sha256",
+    "source_attestation_uid",
+    "source_attestation_tx",
+    "source_schema_uid",
+    "source_schema_id",
+    "source_result",
+    "source_hash_domain",
+    "source_sha256_replay_hash",
+    "source_sha3_256_bridge_hash",
+    "target_hash_domain",
+    "bridge_input",
+    "ethereum_keccak256",
+    "invariants"
+  ],
+  "properties": {
+    "manifest_name": { "const": "ETHEREUM_KECCAK_BRIDGE_MANIFEST_V0_1" },
+    "manifest_version": { "const": "0.1" },
+    "operator_root": { "type": "string", "minLength": 1 },
+    "operator_alias": { "type": "string", "minLength": 1 },
+    "project": { "type": "string", "minLength": 1 },
+    "source_verifier": { "type": "string", "minLength": 1 },
+    "source_result_commit_sha": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+    "source_result_file_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "source_attestation_uid": { "type": "string", "pattern": "^0x[a-fA-F0-9]{64}$" },
+    "source_attestation_tx": { "type": "string", "pattern": "^0x[a-fA-F0-9]{64}$" },
+    "source_schema_uid": { "type": "string", "pattern": "^0x[a-fA-F0-9]{64}$" },
+    "source_schema_id": { "type": "integer", "minimum": 0 },
+    "source_result": { "enum": ["PASS", "FAIL"] },
+    "source_hash_domain": { "const": "SHA3_256_NOT_ETHEREUM_KECCAK256" },
+    "source_sha256_replay_hash": { "type": "string", "pattern": "^0x[a-fA-F0-9]{64}$" },
+    "source_sha3_256_bridge_hash": { "type": "string", "pattern": "^0x[a-fA-F0-9]{64}$" },
+    "target_hash_domain": { "const": "ETHEREUM_KECCAK256" },
+    "bridge_input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["encoding", "preimage"],
+      "properties": {
+        "encoding": { "const": "UTF8_CANONICAL_JSON" },
+        "preimage": { "type": "string", "minLength": 1 }
+      }
+    },
+    "ethereum_keccak256": { "type": "string", "pattern": "^0x[a-fA-F0-9]{64}$" },
+    "invariants": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "non_equivalence_asserted",
+        "source_domain_preserved",
+        "evm_verifiable",
+        "doj_receipt_chain_separate_lane"
+      ],
+      "properties": {
+        "non_equivalence_asserted": { "const": true },
+        "source_domain_preserved": { "const": true },
+        "evm_verifiable": { "const": true },
+        "doj_receipt_chain_separate_lane": { "const": true }
+      }
+    }
+  }
+}
