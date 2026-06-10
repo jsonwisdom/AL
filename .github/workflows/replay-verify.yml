@@ -32,7 +32,10 @@ jobs:
           echo "=== REPLAY VERIFY MERKLE TESTS END ==="
 
       - name: Verify replay manifest
-        run: python scripts/verify_replay.py
+        run: |
+          python scripts/verify_replay.py \
+            --manifest manifests/mn_mmb_feb2026_manifest.json \
+            --receipts-dir tests/fixtures/receipts/mn_mmb_feb2026
 
       - name: Verify fixture root
         run: |
