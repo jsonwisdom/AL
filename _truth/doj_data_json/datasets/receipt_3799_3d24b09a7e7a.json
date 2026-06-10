@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "The Palm Beach County School Safety and Student Performance Partnership Research Project, Palm Beach, Florida, 2014-2018",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThis study evaluated a school-based, wraparound intervention for police- and court-involved youth in four high schools in Florida's School District of Palm Beach County.\r\nThe intervention involved a collaboration between the schools, school police, the juvenile court, and several service providers.\r\nThe collection contains 1 Stata data file (Data.dta (n=863; 118 variables)) and 1 Stata program file (Syntax.do).",
+  "modified": "2019-08-27T10:01:37",
+  "accessLevel": "restricted public",
+  "identifier": "3799",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "adolescents",
+    "counseling",
+    "delinquent behavior",
+    "high school students",
+    "high schools",
+    "intervention",
+    "juvenile offenders",
+    "juveniles",
+    "probation",
+    "school attendance",
+    "truancy",
+    "youthful offenders",
+    "youths"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2019-08-27T09:53:12",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37149.v1",
+      "title": "The Palm Beach County School Safety and Student Performance Partnership Research Project, Palm Beach, Florida, 2014-2018"
+    }
+  ]
+}

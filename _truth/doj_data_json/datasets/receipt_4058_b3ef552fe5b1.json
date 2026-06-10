@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Research on Pathways to Desistance [Maricopa County, AZ and Philadelphia County, PA]: Official Arrest Records, 2000-2010 [Restricted]",
+  "description": "The Pathways to Desistance study was a multi-site study that followed 1,354 serious juvenile offenders from adolescence to young adulthood in two locales between the years 2000 and 2010. Enrolled into the study were adjudicated youths from the juvenile and adult court systems in Maricopa County (Phoenix), Arizona (N=654), and Philadelphia County, Pennsylvania (N=700).\r\nThe official arrests records of all 1,354 youth were obtained from multiple sources. For arrest/petitions under the age of 18, this information is based on petitions appearing in the juvenile and adult court records in each site.  In Philadelphia, this information was gathered based on a hand review of juvenile and adult court documents; in Phoenix, the information is based on reports from two computerized court tracking systems (JOLTS--Juvenile On-Line Tracking System for juvenile court information, ICIS--Maricopa County Superior Court database for adult court information).  For arrests/petitions over 18, FBI arrest records are the source of information. There is no self-reported information contained in this set of data.\r\nInformation from these different data sources is consolidated into the following categories:\r\n\r\nInformation regarding petitions with a date that falls prior to the baseline interview date (\"prior petitions\").\r\nInformation regarding the study index petition (also called the \"initial referring petition\"; this is the adjudication that prompted study enrollment). Information regarding the study index petition can be found by accessing the \"type\" variable associated with the prior petitions (specific variable name: Official Record Prior PetitionXX: Petition type). Depending on the investigator's needs, this petition can remain combined with the \"priors\" or be used as a stand-alone petition.\r\nInformation regarding arrests and court petitions with a date which falls after the baseline interview date in the Pathways study (\"rearrests\").",
+  "modified": "2014-07-24T10:22:24",
+  "accessLevel": "restricted public",
+  "identifier": "4058",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrest records",
+    "felony offenses",
+    "juvenile crime",
+    "juvenile offenders",
+    "misdemeanor offenses",
+    "property crimes",
+    "sex offenses",
+    "substance abuse",
+    "weapons offenses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "4053",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2013-04-30T15:14:31",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR34605.v2",
+      "title": "Research on Pathways to Desistance [Maricopa County, AZ and Philadelphia County, PA]: Official Arrest Records, 2000-2010 [Restricted]"
+    }
+  ]
+}

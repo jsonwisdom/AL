@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "State Court Processing Statistics Series",
+  "description": "\r\nInvestigator(s): Pretrial Services Resource Center (formerly National Pretrial Reporting Program)\r\nThis data collection effort was undertaken to determine whether \r\naccurate and comprehensive pretrial data can be collected at the local \r\nlevel and subsequently aggregated at the state and federal levels. The \r\ndata contained in this collection provide a picture of felony defendants' \r\nmovements through the criminal courts. Offenses were recoded into 14 broad \r\ncategories that conform to the Bureau of Justice Statistics' crime \r\ndefinitions. Other variables include sex, race, age, prior record, \r\nrelationship to criminal justice system at the time of the offense, \r\npretrial release, detention decisions, court appearances, pretrial \r\nrearrest, adjudication, and sentencing. The unit of analysis is the \r\ndefendant.Years Produced: Updated biannually\r\n",
+  "modified": "2019-03-28T09:36:18",
+  "accessLevel": "restricted public",
+  "identifier": "2178",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "case processing",
+    "court cases",
+    "criminal histories",
+    "defendants",
+    "disposition (legal)",
+    "felons",
+    "felony courts",
+    "pretrial detention",
+    "pretrial release",
+    "sentencing",
+    "state courts",
+    "statistical data"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1998-09-11T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/79",
+      "title": "State Court Processing Statistics Series"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Survey of Children's Exposure to Violence (NatSCEV) Series",
+  "description": "The National Survey of Children's Exposure to Violence (NatSCEV) is a nationwide study to document the incidence and prevalence of children's exposure to violence in the United States. NatSCEV is a comprehensive assessment of exposure to violence that incorporates a wide range of victimization experiences and that include children across a wide developmental spectrum. A variety of potential predictors and outcomes of children's exposure to violence are measured.",
+  "modified": "2016-10-11T08:14:52",
+  "accessLevel": "restricted public",
+  "identifier": "4000",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "alcohol consumption",
+    "child abuse",
+    "children",
+    "delinquent behavior",
+    "juvenile victims",
+    "mental health",
+    "self concept",
+    "sexual assault",
+    "victimization",
+    "youths"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2014-08-14T15:44:54",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/586",
+      "title": "National Survey of Children's Exposure to Violence (NatSCEV) Series"
+    }
+  ]
+}

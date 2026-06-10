@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Uniform Crime Reporting Program Data: Supplementary Homicide Reports, 2015",
+  "description": "The UNIFORM CRIME REPORTING PROGRAM DATA: SUPPLEMENTARY HOMICIDE REPORTS, 2015 (SHR) provide detailed information on criminal homicides reported to the police. These homicides consist of murders; non-negligent killings also called non-negligent manslaughter; and justifiable homicides. UCR Program contributors compile and submit their crime data by one of two means: either directly to the FBI or through their State UCR Programs. State UCR Programs frequently impose mandatory reporting requirements which have been effective in increasing both the number of reporting agencies as well as the number and accuracy of each participating agency's reports. Each agency may be identified by its numeric state code, alpha-numeric agency (\"ORI\") code, jurisdiction population, and population group. In addition, each homicide incident is identified by month of occurrence and situation type, allowing flexibility in creating aggregations and subsets.",
+  "modified": "2017-05-04T15:27:39",
+  "accessLevel": "public",
+  "identifier": "2425",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "arrests",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "homicide",
+    "law enforcement",
+    "offenders",
+    "offenses",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2167",
+  "dataQuality": false,
+  "issued": "2017-05-04T15:27:39",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36790.v1",
+      "title": "Uniform Crime Reporting Program Data: Supplementary Homicide Reports, 2015"
+    }
+  ]
+}

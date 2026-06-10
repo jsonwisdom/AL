@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Mapping the School to Prison Pipeline in North Carolina, 1972-2016",
+  "description": "This project was centered on the apparent tension between keeping schools safe and keeping students attached to school. The project used comprehensive administrative data from the North Carolina public school system available through the North Carolina Education Research Data Center (NCERDC). \r\nThis dataset, along with juvenile court record data and publicly-available data from the North Carolina adult criminal justice system, linked administrative information from the same individuals in both school disciplinary records and the juvenile and adult criminal justice systems. The ultimate goal of this project was to determine if different policy choices by schools causally decrease rates of in-school violence in the short run and/or increase rates of conviction and incarceration in the long term. ",
+  "modified": "2022-02-10T15:17:42",
+  "accessLevel": "restricted public",
+  "identifier": "4270",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "conviction records",
+    "education",
+    "juvenile justice",
+    "middle schools",
+    "parole",
+    "probation"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2022-02-10T15:14:08",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR38141.v1",
+      "title": "Mapping the School to Prison Pipeline in North Carolina, 1972-2016"
+    }
+  ]
+}

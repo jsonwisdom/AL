@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Project on Human Development in Chicago Neighborhoods (PHDCN): Demographic File, Wave 3, 2000-2002",
+  "description": "The Project on Human Development in Chicago Neighborhoods\r\n(PHDCN) was a large-scale, interdisciplinary study of how families,\r\nschools, and neighborhoods affect child and adolescent\r\ndevelopment. One component of the PHDCN was the Longitudinal Cohort\r\nStudy, which was a series of coordinated longitudinal studies that\r\nfollowed over 6,000 randomly selected children, adolescents, and young\r\nadults, and their primary caregivers over time to examine the changing\r\ncircumstances of their lives, as well as the personal characteristics,\r\nthat might lead them toward or away from a variety of antisocial\r\nbehaviors. Numerous measures were administered to respondents to\r\ngauge various aspects of human development, including individual\r\ndifferences, as well as family, peer, and school influences. The data\r\nfiles in this study contain basic demographic information including\r\nemployment, income, race/ethnicity, welfare status, and material\r\nhardship.",
+  "modified": "2006-10-11T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "2892",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "adolescents",
+    "caregivers",
+    "children",
+    "demographic characteristics",
+    "domestic partnership",
+    "education",
+    "employment",
+    "ethnic identity",
+    "ethnicity",
+    "income",
+    "marital status",
+    "occupational categories",
+    "occupations",
+    "public assistance programs",
+    "race"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "3702",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2006-10-11T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR13669.v1",
+      "title": "Project on Human Development in Chicago Neighborhoods (PHDCN): Demographic File, Wave 3, 2000-2002"
+    }
+  ]
+}

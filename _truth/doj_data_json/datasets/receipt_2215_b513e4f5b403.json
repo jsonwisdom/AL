@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Police-Public Contact Survey, 2011",
+  "description": "\r\nThe Police-Public Contact Survey (PPCS) provides detailed information on the nature and\r\ncharacteristics of face-to-face contacts between police and the public, including the\r\nreason for and outcome of the contact. The PPCS interviews a nationally representative\r\nsample of U.S. residents age 16 or older as a supplement to the National Crime\r\nVictimization Survey. To date, the PPCS has been conducted six times by BJS:\r\nThe first survey - described in the BJS publication Police Use of Force: Collection of National Data\r\n(NCJ 165040) - documented levels of contacts with police during 1996.\r\nThe second survey - described in Contacts between Police and the Public: Findings from the\r\n1999 National Survey (NCJ 184957) - recorded police-citizen contacts in 1999. These data are\r\narchived as POLICE-PUBLIC CONTACT SURVEY, 1999: [UNITED STATES] (ICPSR 3151).\r\nThe third survey - described in Contacts between Police and the Public: Findings from the\r\n2002 National Survey (NCJ 207845) - covered interactions between police and the public in\r\n2002. These data are archived as POLICE-PUBLIC CONTACT SURVEY, 2002: [UNITED STATES]\r\n(ICPSR 4273). \r\nThe fourth survey - described in the BJS publication Contacts between\r\nPolice and the Public, 2005 (NCJ 215243) - covered interactions between police and the\r\npublic in 2005. These data are archived as POLICE-PUBLIC CONTACT SURVEY, 2005: [UNITED\r\nSTATES] (ICPSR 020020).\r\nThe fifth survey - described in the BJS publication Contacts between Police and the\r\nPublic, 2008 (NCJ 234599) - covered interactions between police and the public in\r\n2008. These data are archived as POLICE-PUBLIC CONTACT SURVEY, 2008 (ICPSR 32022).\r\nThe sixth survey (split sample design due to instrument changes) - new instrument findings described in\r\ntwo publications: Police Behavior During Traffic and Street Stops, 2011 (NCJ 242937) and Requests for Police Assistance, 2011 (NCJ 242938) - covered interactions\r\nbetween police and publice and public perceptions of police in 2011. These data are archived as POLICE-PUBLIC CONTACT SURVEY, 2011 (ICPSR 34276).",
+  "modified": "2014-03-18T11:30:38",
+  "accessLevel": "public",
+  "identifier": "2215",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "police citizen interactions",
+    "police community relations",
+    "police officers",
+    "police use of force",
+    "public interest",
+    "public opinion"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2432",
+  "dataQuality": false,
+  "issued": "2014-03-18T11:30:38",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR34276.v1",
+      "title": "Police-Public Contact Survey, 2011"
+    }
+  ]
+}

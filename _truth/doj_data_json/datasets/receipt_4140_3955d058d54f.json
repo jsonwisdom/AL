@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Census of Law Enforcement Training Academies, 2018",
+  "description": "In 2018, there were 681 state and local law enforcement training academies that provided basic training instruction to 59,511 recruits. As part of the 2018 Census of Law Enforcement Training Academies (CLETA), respondents provided general information about the academies' facilities, resources, programs, and staff.  The core curricula subject areas and hours dedicated to each topic, as well as training offered in some special topics, were also included. The collection included information about recruit demographics, completion, and reasons for non-completion of basic training. BJS administered previous versions of the CLETA in 2002, 2006, and 2013.",
+  "modified": "2021-11-30T10:04:20",
+  "accessLevel": "public",
+  "identifier": "4140",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "law enforcement",
+    "law enforcement agencies",
+    "police departments",
+    "police officers",
+    "police recruits",
+    "police training"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2021-11-30T10:04:20",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR38250.v1",
+      "title": "Census of Law Enforcement Training Academies, 2018"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Somali Youth Longitudinal Study (SYLS) Series",
+  "description": "The Somali Youth Longitudinal Study collected data on Somali-American youth at four time points between 2013-2019. The study was originally designed to address concerns in the Somali community over youth violence. The study broadened its focus to adopt a life-course perspective to examine Somali immigrant experiences with discrimination and marginalization associated with religion, race, ethnicity, and immigration status, and their relationship to health outcomes.\r\nTime 1: May 2013 – January 2014\r\nTime 2: June 2014 – August 2015\r\nTime 3: December 2016 – February 2018, NOTE: Time 3 data are not available from ICPSR.\r\nTime 4: April 2018 – February 2019",
+  "modified": "2020-10-29T09:36:26",
+  "accessLevel": "restricted public",
+  "identifier": "4214",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "community involvement",
+    "community policing",
+    "crime",
+    "extremism",
+    "family relationships",
+    "gang violence",
+    "police",
+    "refugees",
+    "social activism",
+    "social attitudes",
+    "social media",
+    "violence"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2020-09-30T12:55:59",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/1700",
+      "title": "Somali Youth Longitudinal Study (SYLS) Series"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Evaluation of the Shreveport, Louisiana Predictive Policing Programs, 2011-2012",
+  "description": "\r\nThese data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\n\r\n\r\nThis collection was part of a larger two-phase project funded by the National Institute of Justice (NIJ). Phase I focused on the development and estimation of predictive crime models in Shreveport, Louisiana and Chicago, Illinois. Phase II involved the implementation of a prevention model using the predictive model. To evaluate the two predictive policing pilot programs funded by NIJ, RAND evaluated the predictive and preventative models employed by the Shreveport Police Department titled Predictive Intelligence Led Operational Targeting (PILOT). RAND evaluated whether PILOT was associated with a measurable reduction in crime. The data were used to determine whether or not there was a statistically significant reduction in property crime counts in treated districts versus control districts in Shreveport.\r\n\r\n\r\nThe collection includes 1 Excel file (Shreveport_Predictve_Policing_Evaluation_Experiment_Data.xlsx (n=91; 8 variables)) related only to the property crime aspect of the study.  Neither data used to perform the outcomes evaluation for the Chicago Police Department experiment nor qualitative data used to help perform the prediction and prevention model evaluations are available.\r\n",
+  "modified": "2017-12-06T16:02:25",
+  "accessLevel": "restricted public",
+  "identifier": "3240",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime control programs",
+    "crime mapping",
+    "crime prediction",
+    "police effectiveness",
+    "police performance"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2017-12-06T15:55:47",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36031.v1",
+      "title": "Evaluation of the Shreveport, Louisiana Predictive Policing Programs, 2011-2012"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Exploratory Spatial Data Approach to Identify the Context of Unemployment-Crime Linkages in Virginia, 1995-2000",
+  "description": "This research is an exploration of a spatial approach to\r\nidentify the contexts of unemployment-crime relationships at the\r\ncounty level. Using Exploratory Spatial Data Analysis (ESDA)\r\ntechniques, the study explored the relationship between unemployment\r\nand property crimes (burglary, larceny, motor vehicle theft, and\r\nrobbery) in Virginia from 1995 to 2000. Unemployment rates were\r\nobtained from the Department of Labor, while crime rates were obtained\r\nfrom the Federal Bureau of Investigation's Uniform Crime Reports.\r\nDemographic variables are included, and a resource deprivation scale\r\nwas created by combining measures of logged median family income,\r\npercentage of families living below the poverty line, and percentage\r\nof African American residents.",
+  "modified": "2006-08-31T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3770",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "FIPS codes",
+    "auto theft",
+    "burglary",
+    "causes of crime",
+    "counties",
+    "crime mapping",
+    "geographic information systems",
+    "larceny",
+    "robbery",
+    "unemployment",
+    "unemployment rate"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2006-08-31T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04546.v1",
+      "title": "Exploratory Spatial Data Approach to Identify the Context of Unemployment-Crime Linkages in Virginia, 1995-2000"
+    }
+  ]
+}

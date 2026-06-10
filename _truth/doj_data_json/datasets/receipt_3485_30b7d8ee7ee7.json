@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Arrestee Drug Abuse Monitoring (ADAM) Program in the United States, 2000",
+  "description": "Beginning in 1996, the National Institute of Justice (NIJ)\r\ninitiated a major redesign of its multisite drug-monitoring program,\r\nthe Drug Use Forecasting (DUF) system (DRUG USE FORECASTING IN 24\r\nCITIES IN THE UNITED STATES, 1987-1997 [ICPSR 9477]). The program was\r\nretitled Arrestee Drug Abuse Monitoring (ADAM) (see ARRESTEE DRUG\r\nABUSE MONITORING (ADAM) PROGRAM IN THE UNITED STATES, 1998 [ICPSR\r\n2628] and 1999 [ICPSR 2994]). ADAM extended DUF in the number of sites\r\nand improved the quality and generalizability of the data. The\r\nredesign was fully implemented in all sites beginning in the first\r\nquarter of 2000. The ADAM program implemented a new and expanded adult\r\ninstrument in the first quarter of 2000, which was used for both the\r\nmale (Part 1) and female (Part 2) data. The juvenile data for 2000\r\n(Part 3) used the juvenile instrument from previous years. The ADAM\r\nprogram also moved to probability-based sampling for the adult male\r\npopulation during 2000. Therefore, the 2000 adult male sample includes\r\nweights, generated through post-sampling stratification of the\r\ndata. The shift to sampling of the adult male population in 2000\r\nrequired that all 35 sites move to a common catchment area, the\r\ncounty. The core instrument for the adult cases was supplemented by a\r\nfacesheet, which was used to collect demographic and charge\r\ninformation from official records. Core instruments were used to\r\ncollect self-report information from the respondent. Both the adult\r\nand juvenile instruments were administered to persons arrested and\r\nbooked on local or state charges relevant to the jurisdiction (i.e.,\r\nnot federal or out-of-county charges) within the past 48 hours. At the\r\ncompletion of the interview the arrestee was asked to voluntarily\r\nprovide a urine specimen. An external lab used the Enzyme Multiplied\r\nImmunoassay Testing (EMIT) protocols to test for the presence of ten\r\ndrugs or metabolites of the drug in the urine sample. All amphetamine\r\npositives were confirmed by gas chromatography/mass spectrometry\r\n(GC/MS) to determine whether methamphetamine was used. For the adult\r\ndata, variables from the facesheet include arrest precinct, ZIP code\r\nof arrest location, ZIP code of respondent's address, respondent's\r\ngender and race, three most serious arrest charges, sample source\r\n(stock, flow, other), interview status (including reason the\r\nindividual selected in the sample was not interviewed), language of\r\ninstrument used, and the number of hours since arrest. Demographic\r\ninformation from the core instrument includes respondent's age,\r\nethnicity, residency, education, employment, health insurance\r\ncoverage, marital status, housing, and telephone access. Variables\r\nfrom the calendar provide information on inpatient and outpatient\r\nsubstance abuse treatment, inpatient mental health treatment, arrests\r\nand incarcerations, heavy alcohol use, use of marijuana, crack/rock\r\ncocaine, powder cocaine, heroin, methamphetamine, and other drug (ever\r\nand previous 12 months), age of first use of the above six drugs and\r\nheavy alcohol use, drug dependency in the previous 12 months,\r\ncharacteristics of drug transactions in past 30 days, use of\r\nmarijuana, crack/rock cocaine, powder cocaine, heroin, and\r\nmethamphetamine in past 30 days, 7 days, and 48 hours, heavy alcohol\r\nuse in past 30 days, and secondary drug use of 15 other drugs in the\r\npast 48 hours. Urine test results are provided for 11 drugs --\r\nmarijuana, cocaine, opiates, phencyclidine (PCP), benzodiazepines\r\n(Valium), propoxyphene (Darvon), methadone, methaqualone,\r\nbarbiturates, amphetamines, and methamphetamine. The adult data files\r\ninclude several derived variables. The male data also include four\r\nsampling weights, and stratum identifications and percents. For the\r\njuvenile data, demographic variables include age, race, sex,\r\neducational attainment, employment status, and living\r\ncircumstances. Data also include each juvenile arrestee's\r\nself-reported use of 15 drugs (alcohol, tobacco, marijuana, powder\r\ncocaine, crack, heroin, PCP, amphetamines, barbiturates, quaaludes,\r\nmethadone, crystal methamphetamine, Valium, LSD, and inhalants). For\r\neach drug type, arrestees reported whether they had ever used the\r\ndrug, age of first use, whether they had used the drug in the past 30\r\ndays and past 72 hours, number of days they used the drug in past\r\nmonth, whether they tried to cut down or quit using the drug, if they\r\nwere successful, whether they felt dependent on the drug, whether they\r\nwere receiving treatment for the drug, whether they had received\r\ntreatment for the drug in the past, and whether they thought they\r\ncould use treatment for that drug. Additional variables include\r\nwhether juvenile respondents had ever injected drugs, whether they\r\nwere influenced by drugs when they allegedly committed the crime for\r\nwhich they were arrested, whether they had been to an emergency room\r\nfor drug-related incidents, and if so, whether in the past 12 months,\r\nand information on arrests and charges in the past 12 months. As with\r\nthe adult data, urine test results are also provided. Finally,\r\nvariables covering precinct (precinct of arrest) and law (penal law\r\ncode associated with the crime for which the juvenile was arrested)\r\nare also provided for use by local law enforcement officials at each\r\nsite.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "3485",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "ADAM/DUF Program",
+    "alcohol abuse",
+    "arrests",
+    "crime patterns",
+    "demographic characteristics",
+    "drug dependence",
+    "drug offenders",
+    "drug related crimes",
+    "drug testing",
+    "drug treatment",
+    "drug use",
+    "drugs",
+    "substance abuse",
+    "trends"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "3023",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2001-12-21T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03270.v1",
+      "title": "Arrestee Drug Abuse Monitoring (ADAM) Program in the United States, 2000"
+    }
+  ]
+}

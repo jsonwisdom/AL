@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Executions in the United States, 1608-1940: The ESPY File -- Summary Data of Executions Collected by M. Watt Espy Between 1986 and 1996",
+  "description": "This collection consists of four summary variables based on new data collected by M. Watt Espy between 1986 and 1996 after he corrected and updated the data in 1992. See the related collection, EXECUTIONS IN THE UNITED STATES, 1608-2002: THE ESPY FILE (ICPSR 8451). The summary variables consist of the ethnicity of the executed, the state, territory, district or colony of execution, the decade of execution, and the geographical region of execution. They were complete as of March 1, 1996.",
+  "modified": "2008-12-12T08:18:31",
+  "accessLevel": "public",
+  "identifier": "2292",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "capital punishment",
+    "crime",
+    "criminal justice system",
+    "executions",
+    "historical data",
+    "offenders",
+    "offenses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2008-12-12T08:18:31",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR23900.v1",
+      "title": "Executions in the United States, 1608-1940: The ESPY File -- Summary Data of Executions Collected by M. Watt Espy Between 1986 and 1996"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Census of State and Local Law Enforcement Agencies (CSLLEA), 2004 [United States]",
+  "description": "To ensure an accurate sampling frame for its Law\r\nEnforcement Management and Administrative Statistics (LEMAS) survey,\r\nthe Bureau of Justice Statistics sponsors a census of the\r\nnation's state and local law enforcement agencies, known\r\nas the Directory Survey. This census, which is conducted every four years, includes all state and local law enforcement\r\nagencies operating nationwide that are publicly funded and employ at least one full-time or part-time sworn officer with general arrest powers. As in previous\r\nyears, the 2004 census collected data on the number of sworn\r\nand nonsworn personnel employed by each agency, including both\r\nfull-time and part-time employees. The pay period that included September\r\n30, 2004, was the reference date for all personnel data. Variables include personnel totals, type of government, type of agency, and whether the agency had the legal authority to hold a person beyond arraignment for 48 or more hours.\r\nPrevious censuses were conducted in 1986 (DIRECTORY OF LAW\r\nENFORCEMENT AGENCIES, 1986: [UNITED STATES] [ICPSR 8696]), 1992\r\n(DIRECTORY OF LAW ENFORCEMENT AGENCIES, 1992: [UNITED STATES] [ICPSR\r\n2266]), 1996 (DIRECTORY OF LAW ENFORCEMENT AGENCIES, 1996: [UNITED\r\nSTATES] [ICPSR 2260]), and 2000 (Census of State and Local Law Enforcement Agencies (CSLLEA), 2000: [United States] [ICPSR 3484]).",
+  "modified": "2011-05-23T09:42:02",
+  "accessLevel": "public",
+  "identifier": "93",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "law enforcement",
+    "police departments",
+    "police officers"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2436",
+  "dataQuality": false,
+  "issued": "2010-12-15T09:06:30",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR28001.v1",
+      "title": "Census of State and Local Law Enforcement Agencies (CSLLEA), 2004 [United States]"
+    }
+  ]
+}

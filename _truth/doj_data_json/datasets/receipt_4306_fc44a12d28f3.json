@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "NCVS Select - Household Population",
+  "description": "Contains demographic information of participating households. All respondents, regardless of whether they reported a household property crime victimization, are included in this file.",
+  "modified": "2022-09-19T00:00:00",
+  "accessLevel": "public",
+  "identifier": "4306",
+  "publisher": {
+    "name": "Office of Justice Programs",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "ncvs",
+    "national crime victimization survey",
+    "victims",
+    "victimization",
+    "bjs",
+    "bureau of justice statistics"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "public ",
+  "dataQuality": false,
+  "issued": "2022-06-23T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "landingPage": "https://bjs.ojp.gov/national-crime-victimization-survey-ncvs-api#1-0",
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://api.ojp.gov/bjsdataset/v1/ya4e-n9zp.json",
+      "format": "Api",
+      "mediaType": "application/json",
+      "title": "NCVS Select - Household Population Victims - Api "
+    },
+    {
+      "@type": "dcat:Distribution",
+      "downloadURL": "https://api.ojp.gov/bjsdataset/v1/ya4e-n9zp.csv",
+      "mediaType": "text/csv",
+      "title": "NCVS Select - Household Population Victims - Download"
+    }
+  ]
+}

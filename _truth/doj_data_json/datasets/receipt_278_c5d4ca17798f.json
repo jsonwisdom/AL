@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Recidivism of Felons on Probation, 1986-1989:  [United States]",
+  "description": "This data collection provides an overview of how probation \r\n cases are processed in 32 urban and suburban jurisdictions in the \r\n United States and gauges the extent to which variations in probation \r\n patterns exist between jurisdictions. Data were collected on offenders \r\n who were sentenced in 1986 and who committed one or more of the \r\n following types of offenses: homicide, rape, robbery, aggravated \r\n assault, burglary, larceny, drug trafficking, and other felony crimes. \r\n Probation history questionnaires were completed during the last half of \r\n 1989. Information is available on number of conviction charges, race, \r\n age, sex, marital status, educational level, and ethnicity of the \r\n probationer. In addition, data on drug and alcohol use and treatment, \r\nsentencing, restitution, and offenses are provided.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "278",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "assault",
+    "burglary",
+    "case processing",
+    "drug traffic",
+    "felony offenses",
+    "homicide",
+    "larceny",
+    "offenders",
+    "probation",
+    "recidivism",
+    "robbery",
+    "suburbs",
+    "urban areas"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1992-05-12T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09574.v2",
+      "title": "Recidivism of Felons on Probation, 1986-1989:  [United States]"
+    }
+  ]
+}

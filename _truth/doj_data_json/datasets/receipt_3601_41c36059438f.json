@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Child Abuse, Neglect, and Violent Criminal Behavior in a Midwest Metropolitan Area of the United States, 1967-1988",
+  "description": "These data examine the relationships between childhood abuse \r\n and/or neglect and later criminal and violent criminal behavior. In \r\n particular, the data focus on whether being a victim of violence and/or \r\n neglect in early childhood leads to being a criminal offender in \r\n adolescence or early adulthood and whether a relationship exists \r\n between childhood abuse or neglect and arrests as a juvenile, arrests \r\n as an adult, and arrests for violent offenses. For this data \r\n collection, adult and juvenile criminal histories of sampled cases with \r\n backgrounds of abuse or neglect were compared to those of a matched \r\n control group with no official record of abuse or neglect. Variables \r\n contained in Part 1 include demographic information (age, race, sex, \r\n and date of birth). In Part 2, information is presented on the \r\n abuse/neglect incident (type of abuse or neglect, duration of the \r\n incident, whether the child was removed from the home and, if so, for \r\n how long, results of the placement, and whether the individual was \r\n still alive). Part 3 contains family information (with whom the child \r\n was living at the time of the incident, family disruptions, and who \r\n reported the abuse or neglect) and data on the perpetrator of the \r\n incident (relation to the victim, age, race, sex, and whether living in \r\n the home of the victim). Part 4 contains information on the charges \r\n filed within adult arrest incidents (occasion for arrest, multiple \r\n counts of the same type of charge, year and location of arrest, and \r\n type of offense or charge), and Part 5 includes information on the \r\n charges filed within juvenile arrest incidents (year of juvenile \r\n charge, number of arrests, and type of offense or charge). The unit of \r\n analysis for Parts 1 through 3 is the individual at age 11 or younger, \r\n for Part 4 the charge within the adult arrest incident, and for Part 5 \r\nthe charge within the juvenile arrest incident.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3601",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrests",
+    "child abuse",
+    "child neglect",
+    "criminality prediction",
+    "juvenile crime",
+    "offenders",
+    "victims",
+    "violent crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1991-03-05T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09480.v1",
+      "title": "Child Abuse, Neglect, and Violent Criminal Behavior in a Midwest Metropolitan Area of the United States, 1967-1988"
+    }
+  ]
+}

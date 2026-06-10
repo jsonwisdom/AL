@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Uniform Crime Reporting Program Data [United States]: Arson, 2005",
+  "description": "Since 1930, the Federal Bureau of Investigation has\r\n compiled the Uniform Crime Reports (UCR) to serve as periodic\r\n nationwide assessments of reported crimes not available elsewhere in\r\n the criminal justice system. Seven main classifications of crime were\r\n chosen to gauge fluctuations in the overall volume and rate of\r\n crime. These seven classifications that eventually became known as the\r\n Crime Index included the violent crimes of murder and non-negligent\r\n manslaughter, forcible rape, robbery, and aggravated assault, and the\r\n property crimes of burglary, larceny-theft, and motor vehicle theft.\r\n By congressional mandate, arson was added as the eighth Index offense\r\n in 1979. Arson is defined as any willful or malicious burning or\r\n attempt to burn, with or without intent to defraud, a dwelling house,\r\n public building, motor vehicle or aircraft, personal property of\r\n another, etc. The arson data files include monthly data on the number\r\n of arson offenses reported and the number of offenses cleared by\r\n arrest or other means. The counts include all reports of arson\r\n received from victims, officers who discovered infractions, or other\r\nsources.",
+  "modified": "2007-08-09T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2455",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "arrests",
+    "arson",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "law enforcement",
+    "offenses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2167",
+  "dataQuality": false,
+  "issued": "2007-08-09T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04714.v1",
+      "title": "Uniform Crime Reporting Program Data [United States]: Arson, 2005"
+    }
+  ]
+}

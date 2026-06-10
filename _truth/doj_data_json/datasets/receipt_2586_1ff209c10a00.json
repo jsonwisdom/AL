@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Annual Survey of Jails Data Series",
+  "description": "\r\nInvestigator(s): Bureau of Justice Statistics\r\nThe Annual\r\nSurvey of Jails, formerly titled National Survey of Jails, is the only\r\ndata collection effort that provides an annual source of data on local\r\njails and jail inmates. The series was begun in 1982 by the Bureau of\r\nJustice Statistics with data collected by the Bureau of the\r\nCensus. Local jails are locally-operated correctional facilities that\r\nconfine persons before or after adjudication. Inmates sentenced to\r\njails usually have a sentence of a year or less, but jails also\r\nincarcerate persons in a wide variety of other categories. Data on the\r\nsize of the jail population and selected inmate characteristics are\r\nobtained every five to six years from the Census of Jails. In each of\r\nthe years between the full censuses, a sample survey of jails is\r\nconducted to estimate baseline characteristics of the nation's jails\r\nand inmates housed in these jails.  Data are supplied on admissions\r\nand releases, growth in the number of jail facilities, changes in\r\ntheir rated capacities and level of occupancy, growth in the\r\npopulation supervised in the community, changes in methods of\r\ncommunity supervision, and crowding issues in state and federal\r\nprisons. The data are intended for a variety of users, including\r\nfederal and state agencies, local officials in conjunction with jail\r\nadministrators, researchers, planners, and the public.Years\r\nProduced: Annually, except every 5th year when the National\r\nJail Census is produced.\r\n",
+  "modified": "2022-06-29T14:50:00",
+  "accessLevel": "public",
+  "identifier": "2586",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "correctional system",
+    "demographic characteristics",
+    "jail inmates",
+    "jails",
+    "population characteristics",
+    "probation"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1987-10-12T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/7",
+      "title": "Annual Survey of Jails Data Series"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Spatial Analysis of Crime in Appalachia [United States], 1977-1996",
+  "description": "This research project was designed to demonstrate the\r\n contributions that Geographic Information Systems (GIS) and spatial\r\n analysis procedures can make to the study of crime patterns in a\r\n largely nonmetropolitan region of the United States. The project\r\n examined the extent to which the relationship between various\r\n structural factors and crime varied across metropolitan and\r\n nonmetropolitan locations in Appalachia over time. To investigate the\r\n spatial patterns of crime, a georeferenced dataset was compiled at the\r\n county level for each of the 399 counties comprising the Appalachian\r\n region. The data came from numerous secondary data sources, including\r\n the Federal Bureau of Investigation's Uniform Crime Reports, the\r\n Decennial Census of the United States, the Department of Agriculture,\r\n and the Appalachian Regional Commission. Data were gathered on the\r\n demographic distribution, change, and composition of each county, as\r\n well as other socioeconomic indicators. The dependent variables were\r\n index crime rates derived from the Uniform Crime Reports, with\r\n separate variables for violent and property crimes. These data were\r\n integrated into a GIS database in order to enhance the research with\r\n respect to: (1) data integration and visualization, (2) exploratory\r\n spatial analysis, and (3) confirmatory spatial analysis and\r\n statistical modeling. Part 1 contains variables for Appalachian\r\n subregions, Beale county codes, distress codes, number of families and\r\n households, population size, racial and age composition of population,\r\n dependency ratio, population growth, number of births and deaths, net\r\n migration, education, household composition, median family income,\r\n male and female employment status, and mobility. Part 2 variables\r\n include county identifiers plus numbers of total index crimes, violent\r\n index crimes, property index crimes, homicides, rapes, robberies,\r\n assaults, burglaries, larcenies, and motor vehicle thefts annually\r\nfrom 1977 to 1996.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3643",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime mapping",
+    "crime patterns",
+    "crime reporting",
+    "demographic characteristics",
+    "geographic information systems"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2001-10-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03260.v1",
+      "title": "Spatial Analysis of Crime in Appalachia [United States], 1977-1996"
+    }
+  ]
+}

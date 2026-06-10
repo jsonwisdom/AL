@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Federal Justice Statistics Program: Charges Filed Against Defendants in Criminal Cases in District Court -- Terminated, 1997 [United States]",
+  "description": "The data contain records of charges filed against defendants whose cases were terminated by United States attorneys in United States district court during fiscal year 1997. The data are charge-level records, and more than one charge may be filed against a single defendant. The data were constructed from the Executive Office for United States Attorneys (EOUSA) Central Charge file. The charge-level data may be linked to defendant-level data (extracted from the EOUSA Central System file) through the CS_SEQ variable, and it should be noted that some defendants may not have any charges other than the lead charge appearing on the defendant-level record. The Central Charge and Central System data contain variables from the original EOUSA files as well as additional analysis variables, or \"SAF\" variables, that denote subsets of the data. These SAF variables are related to statistics reported in the Compendium of Federal Justice Statistics. Variables containing identifying information (e.g., name, Social Security Number) were replaced with blanks, and the day portions of date fields were also sanitized in order to protect the identities of individuals. These data are part of a series designed by the Urban Institute (Washington, DC) and the Bureau of Justice Statistics. Data and documentation were prepared by the Urban Institute.",
+  "modified": "2011-03-08T10:20:23",
+  "accessLevel": "restricted public",
+  "identifier": "800",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "defendants",
+    "district courts",
+    "offenses",
+    "prosecution"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2174",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2009-02-13T14:36:17",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR24048.v2",
+      "title": "Federal Justice Statistics Program: Charges Filed Against Defendants in Criminal Cases in District Court -- Terminated, 1997 [United States]"
+    }
+  ]
+}

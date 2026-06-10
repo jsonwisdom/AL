@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Domestic Violence Experiment in King's County (Brooklyn), New York, 1995-1997",
+  "description": "The researchers sought to add to the incipient literature\r\non randomized studies of batterer treatment, by conducting an\r\nexperimental study that compared batterers assigned to treatment to\r\nbatterers assigned to a community service program irrelevant to the\r\nproblem of violence. The study was conducted using a true experimental\r\ndesign and consisted of 376 spousal assault cases drawn from the Kings\r\nCounty (New York) Criminal Court which were adjudicated between\r\nFebruary 19, 1995, and March 1, 1996. Batterers were mandated to\r\nattend a 40-hour batterer treatment program or to complete 40 hours of\r\ncommunity service. The random assignment was made at sentencing, after\r\nall parties (judge, prosecutor, and defense) had agreed that batterer\r\ntreatment was appropriate, the defendant agreed to treatment and was\r\naccepted by the Alternatives to Violence (ATV) program, and the\r\nprogram was available based on the random assignment process.\r\nInterviews were also conducted with both the batterer and the victim\r\nat sentencing as well as 6 months post-sentence and 12 months\r\npost-sentence. These interviews collected data in areas regarding\r\ndemographics (first interview only), recidivism, beliefs about\r\ndomestic violence, conflict management strategies, locus of control,\r\nand for victims, self esteem. Administrative records were also used to\r\nobtain data regarding any new crimes committed.",
+  "modified": "2006-08-01T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "3142",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "domestic assault",
+    "domestic violence",
+    "offenders",
+    "recidivism",
+    "treatment",
+    "treatment outcome",
+    "violence against women"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2006-08-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04307.v1",
+      "title": "Domestic Violence Experiment in King's County (Brooklyn), New York, 1995-1997"
+    }
+  ]
+}

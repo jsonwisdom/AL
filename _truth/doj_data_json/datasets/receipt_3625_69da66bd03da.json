@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Alcohol Availability, Type of Alcohol Establishment, Distribution Policies, and Their Relationship to Crime and Disorder in the District of Columbia, 2000-2006",
+  "description": "The purpose of the study was to investigate the relationship between alcohol availability, type of alcohol establishment, distribution policies, and violence and disorder at the block group level in the District of Columbia.  This study developed and tested a grounded comprehensive theoretical model of the relationship between alcohol availability and violence and disorder. The study also developed a geographic information system (GIS) containing neighborhood crime and demographic and physical environmental characteristics at the block group level for 431 block groups in the District of Columbia. The principal investigator calculated density measures of alcohol availability and distribution practices and aggregated characteristics of neighborhoods to examine the relationships of those measures to crime and violence. The project used data from various sources to create multiple variables measuring the physical, social, economic, and cultural characteristics of a given area in addition to the density of alcohol-selling establishments by type and incidence of criminal activity.  This study examined the influence of alcohol outlets on four outcomes: (1) aggravated assault incidents, (2) calls for service for disorderly conduct, (3) calls for services for social disorder more broadly defined, and (4) calls for service for a domestic incident.  The dataset for this study contains a total of 103 variables including crime variables, Census variables, alcohol outlet variables, neighborhood structural constraints variables, motivated offenders variables, and physical environment variables.",
+  "modified": "2009-07-31T10:57:43",
+  "accessLevel": "public",
+  "identifier": "3625",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "alcohol",
+    "alcohol abuse",
+    "alcohol consumption",
+    "crime",
+    "crime patterns",
+    "drinking behavior",
+    "neighborhood characteristics",
+    "neighborhood conditions",
+    "neighborhoods",
+    "violence"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2009-07-31T10:57:43",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR25763.v1",
+      "title": "Alcohol Availability, Type of Alcohol Establishment, Distribution Policies, and Their Relationship to Crime and Disorder in the District of Columbia, 2000-2006"
+    }
+  ]
+}

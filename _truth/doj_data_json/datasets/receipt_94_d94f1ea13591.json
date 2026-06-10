@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Census of State and Local Law Enforcement Agencies (CSLLEA), 2008",
+  "description": "The BJS Census of State and Local Law Enforcement Agencies (CSLLEA) is conducted every 4 years to provide a complete enumeration of agencies and their employees. Employment data are reported by agencies for sworn and nonsworn (civilian) personnel and, within these categories, by full-time or part-time status. The pay period that included September 30, 2008, was the reference date for all personnel data.\r\nAgencies also complete a checklist of functions they regularly perform, or have primary responsibility for, within the following areas: patrol and response, criminal investigation, traffic and vehicle-related functions, detention-related functions, court-related functions, special public safety functions (e.g., animal control), task force participation, and specialized functions (e.g., search and rescue).\r\nThe CSLLEA provides national data on the number of state and local law enforcement agencies and employees for local police departments, sheriffs' offices, state law enforcement agencies, and special jurisdiction agencies. It also serves as the sampling frame for BJS surveys of law enforcement agencies.",
+  "modified": "2011-08-03T13:27:33",
+  "accessLevel": "public",
+  "identifier": "94",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "law enforcement",
+    "personnel",
+    "police departments",
+    "police officers"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2436",
+  "dataQuality": false,
+  "issued": "2011-08-03T13:27:33",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR27681.v1",
+      "title": "Census of State and Local Law Enforcement Agencies (CSLLEA), 2008"
+    }
+  ]
+}

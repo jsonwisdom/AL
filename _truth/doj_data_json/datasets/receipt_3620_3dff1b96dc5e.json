@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Pretrial Release of Latino Defendants in the United States, 1990-2004",
+  "description": "The purpose of the study was to assess the impact of Latino ethnicity on pretrial release decisions in large urban counties. The study examined two questions:\r\n\r\nAre Latino defendants less likely to receive pretrial releases than non-Latino defendants?\r\nAre Latino defendants in counties where the Latino population is rapidly increasing less likely to receive pretrial releases than Latino defendants in counties where the Latino population is not rapidly increasing?\r\nThe study utilized the State Court Processing Statistics (SCPS) Database (see STATE COURT PROCESSING STATISTICS, 1990-2004: FELONY DEFENDANTS IN LARGE URBAN COUNTIES [ICPSR 2038]). The SCPS collects data on felony cases filed in state courts in 40 of the nation's 75 largest counties over selected sample dates in the month of May of every even numbered year, and tracks a representative sample of felony case defendants from arrest through sentencing. Data in the collection include 118,556 cases.\r\nResearchers supplemented the SCPS with county-level information from several sources:\r\n\r\nFederal Bureau of Investigation Uniform Crime Reporting Program county-level data series of index crimes reported to the police for the years 1988-2004 (see UNIFORM CRIME REPORTS: COUNTY-LEVEL DETAILED ARREST AND OFFENSE DATA, 1998 [ICPSR 9335], UNIFORM CRIME REPORTING PROGRAM DATA [UNITED STATES]: COUNTY-LEVEL DETAILED ARREST AND OFFENSE DATA, 1990 [ICPSR 9785], 1992 [ICPSR 6316], 1994 [ICPSR 6669], 1996 [ICPSR 2389], 1998 [ICPSR 2910], 2000 [ICPRS 3451], 2002 [ICPSR 4009], and 2004 [ICPSR 4466]).\r\nBureau of Justice Statistics Annual Survey of Jails, Jurisdiction-Level data series for the years 1988-2004 (see ANNUAL SURVEY OF JAILS: JURISDICTION-LEVEL DATA, 1990 [ICPSR 9569], 1992 [ICPSR 6395], 1994 [ICPSR 6538], 1996 [ICPSR 6856], 1998 [ICPSR 2682], 2000 [ICPSR 3882], 2002 [ICPSR 4428], and 2004 [ICPSR 20200]).\r\nBureau of Justice Statistics National Prosecutors Survey/Census data series 1990-2005 (see NATIONAL PROSECUTORS SURVEY, 1990 [ICPSR 9579], 1992 [ICPSR 6273], 1994 [ICPSR 6785], 1996 [ICPSR 2433], 2001 census [ICPSR 3418], and 2005 [ICPSR 4600]).\r\nUnited States Census Bureau State and County Quickfacts.\r\nNational Center for State Courts, State Court Organization reports, 1993 (see NCJ 148346), 1998 (see NCJ 178932), and 2004 (see NCJ 212351).\r\nBureau of Justice Statistics Felony Defendants in Large Urban Counties reports, 1992 (see NCJ 148826), 1994 (see NCJ 164616), 1996 (see NCJ 176981), 1998 (see NJC 187232), 2000 (see NCJ 202021), and 2002 (see NJC 210818).\r\nThe data include defendant level variables such as most serious current offense charge, number of charges, prior felony convictions, prior misdemeanor convictions, prior incarcerations, criminal justice status at arrest, prior failure to appear, age, gender, ethnicity, and race. County level variables include region, crime rate, two year change in crime rate, caseload rate, jail capacity, two year change in jail capacity, judicial selection by election or appointment, prosecutor screens cases, and annual expenditure on prosecutor's office. Racial threat stimuli variables include natural log of the percentage of the county population that is Latino, natural log of the percentage of the county population that is African American, change in the percentage of the county population that is Latino over the last six years and change in the percentage of the county population that is African American over the last six years. Cross-level interaction variables include percentage minority (Latino/African American) population zero percent to 15 percent, percentage minority (Latino/African American) population 16 percent to 30 percent, and percentage minority (Latino/African American) population 31 percent or higher.",
+  "modified": "2009-07-30T11:17:08",
+  "accessLevel": "public",
+  "identifier": "3620",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "Hispanic or Latino Americans",
+    "bail",
+    "immigration",
+    "population growth",
+    "pretrial release"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2009-07-30T11:17:08",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR25521.v1",
+      "title": "Pretrial Release of Latino Defendants in the United States, 1990-2004"
+    }
+  ]
+}

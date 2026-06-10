@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Criminal Careers of Juveniles in New York City, 1977-1983  ",
+  "description": "This longitudinal study of juvenile offenders traces the\r\n criminal histories of a sample of juveniles, including those who were\r\n \"dropouts\" (juvenile offenders who did not go on to become adult\r\n criminal offenders) and those who continued to be arrested, ranging\r\n from those with only one subsequent arrest to \"persisters\"\r\n (juveniles who did become career criminal offenders). The data are\r\n intended to address the following questions: (1) Are serious juvenile\r\n offenders more likely than nonserious juvenile offenders to become\r\n adult offenders? (2) Are offenders who begin at a younger age more\r\n likely to have more serious criminal careers than those who begin when\r\n they are older? (3) As a criminal career progresses, will the offender\r\n become more skilled at one type of offense and commit that type of\r\n crime more frequently, while decreasing the frequency of other types\r\n of crimes? (4) As a criminal career continues, will the offender\r\n commit progressively more serious offenses? (5) How well can it be\r\n predicted who will become a high-rate offender? Part 1 of this study,\r\n Juvenile Case File, contains data on a subsample of 14- and\r\n 15-year-olds who were brought to Probation Intake in the New York City\r\n Family Court for delinquency offenses. Included are variables for the\r\n date and type of arrest, disposition and sentence of the offender, and\r\n sex and race of the offender, as well as questions concerning the\r\n offender's home environment and highest school grade completed. Part\r\n 2, Arrest and Incarceration Event File, includes information on prior\r\n delinquency arrests, including the date of arrest, the charge and\r\n severity, and the disposition and sentence, as well as similar\r\n information on subsequent offenses that occurred up to six years after\r\n the original delinquency offense. Included for each incarceration is\r\n the status of the offender (juvenile or adult), the date of admission\r\nto a facility, and the length of time incarcerated.",
+  "modified": "1999-03-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3151",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "career criminals",
+    "criminal histories",
+    "criminality prediction",
+    "delinquent behavior",
+    "ex-offenders",
+    "juvenile offenders",
+    "juvenile recidivists",
+    "recidivism prediction"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1993-10-02T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09986.v2",
+      "title": "Criminal Careers of Juveniles in New York City, 1977-1983  "
+    }
+  ]
+}

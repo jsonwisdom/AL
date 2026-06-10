@@ -1,0 +1,52 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Survey of Court Organization, 1971-1972",
+  "description": "The purpose of this study\r\nwas to document the existing organization of courts in the 50 states\r\nand the District of Columbia as of 1971-1972. The survey covers all\r\nappellate courts, courts of general jurisdiction, special courts, and\r\nother courts of limited jurisdiction. Excluded were justices of the\r\npeace and similar magistrates whose compensation is solely on a direct\r\nfee basis, and courts of limited or special jurisdiction located in\r\nmunicipalities or townships with a 1960 population of less than 1,000.\r\nThe data for courts include information on the organization of the\r\ncourt, geographic location, type of court, level of government\r\nadministering the court, number, types, and full- or part-time status\r\nof judicial and other personnel, method of appealing cases, location of\r\ncourt records, and types of statistics. Court subdivision variables cover\r\norganization of the courts, geographic location, type of\r\ncourt, level of government administering the court, types of\r\njurisdiction, percentage of judges' time spent on types of cases,\r\navailability of jury trials, and length of sentence and amounts of\r\nfines which may be imposed by the court.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "261",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "court cases",
+    "court system",
+    "criminal justice system"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-05-03T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR07640.v1",
+      "title": "National Survey of Court Organization, 1971-1972"
+    }
+  ]
+}

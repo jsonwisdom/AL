@@ -1,0 +1,67 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Denver Youth Survey Waves 6-11 (1993-2003) [Denver, Colorado]",
+  "description": "The Denver Youth Survey (DYS) is part of the larger \"Program of Research on the Causes and Correlates of Delinquency\" initiated by the Office of Juvenile Justice and Delinquency Prevention in 1986. It is a longitudinal study of problem and successful behavior over the life course that focuses on delinquency, drug use, victimization, and mental health. DYS variables also address family demographics, neighborhood characteristics, parenting, and involvement in social roles.\r\nThe DYS is based on a probability sample of households in \"high-risk\" neighborhoods of Denver, Colorado. These neighborhoods were selected on the basis of their social ecology in terms of population and housing characteristics. Only socially disorganized neighborhoods with high (top one-third) official crime rates were included. The survey respondents include 1,528 children and youth who were 7, 9, 11, 13, or 15 years old in 1987, and one of their parents, who lived in one of the more than 20,000 randomly selected households.\r\nThe survey respondents include 807 boys and 721 girls and include White (10%), Latino (45%), and African American (33%) youth, as well as 12% from other racial/ethnic backgrounds. The child and youth respondents, along with one caretaker, were interviewed annually from 1988 until 1992 (waves 1-5), annually from 1995 until 1999 (waves 6-10), and in 2003 (wave 11). The study covers an age range of 7 through 26.",
+  "modified": "2016-12-30T13:08:31",
+  "accessLevel": "restricted public",
+  "identifier": "4047",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "alcohol",
+    "child development",
+    "crime",
+    "crime control",
+    "crime patterns",
+    "delinquent behavior",
+    "drug use",
+    "juvenile crime",
+    "juvenile gangs",
+    "juvenile justice",
+    "juvenile offenders",
+    "juvenile recidivists",
+    "juvenile victims",
+    "juveniles",
+    "mental health",
+    "parent child relations"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "3999",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2016-12-30T13:04:38",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36474.v1",
+      "title": "Denver Youth Survey Waves 6-11 (1993-2003) [Denver, Colorado]"
+    }
+  ]
+}

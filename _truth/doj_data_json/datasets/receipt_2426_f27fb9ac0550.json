@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Uniform Crime Reporting Program Data: Police Employee (LEOKA) Data, 2015",
+  "description": "The Uniform Crime Reporting Program Data, Police Employee Data, 2015 file contains monthly data on felonious or accidental killings and assaults upon United States law enforcement officers acting in the line of duty. The Federal Bureau of Investigation (FBI) assembled the data and processed them from UCR Master Police Employee (LEOKA) data tapes.\r\nEach agency record in the file includes the following summary variables: state code, population group code, geographic division, Metropolitan Statistical Area code, and agency name. These variables afford considerable flexibility in creating subsets or aggregations of the data.\r\nSince 1930, the Federal Bureau of Investigation has compiled the Uniform Crime Reports (UCR) to serve as a periodic nationwide assessment of reported crimes not available elsewhere in the criminal justice system. Each year, this information is reported in four types of files: (1) Offenses Known and Clearances by Arrest, (2) Property Stolen and Recovered, (3) Supplementary Homicide Reports (SHR), and (4) Police Employee (LEOKA) Data. The Police Employee (LEOKA) Data provide information about law enforcement officers killed or assaulted (hence the acronym, LEOKA) in the line of duty. The variables created from the LEOKA forms provide in-depth information on the circumstances surrounding killings or assaults, including type of call answered, type of weapon used, and type of patrol the officers were on.",
+  "modified": "2017-05-22T12:29:42",
+  "accessLevel": "public",
+  "identifier": "2426",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "arrests",
+    "assaults on police",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "law enforcement",
+    "offenses",
+    "police deaths",
+    "police officers"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2167",
+  "dataQuality": false,
+  "issued": "2017-05-22T12:29:42",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36791.v1",
+      "title": "Uniform Crime Reporting Program Data: Police Employee (LEOKA) Data, 2015"
+    }
+  ]
+}

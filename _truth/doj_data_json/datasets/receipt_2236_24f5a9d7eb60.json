@@ -1,0 +1,83 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "United Nations World Crime Surveys:  Fourth Survey, 1986-1990",
+  "description": "The Fourth United Nations Survey, covering the years\r\n1986-1990, was designed to increase knowledge regarding the incidence\r\nof reported crime and the structure of criminal justice systems, as a\r\nbasis for improving the international exchange of information. The\r\nmain objectives of the survey were to determine which data are\r\ngenerally available in national databases and to provide an instrument\r\nfor strengthening cooperation among member states of the United Nations\r\nby putting the review and analysis of national crime-related data in a\r\nbroader context. Variables describe combined police and\r\nprosecution expenditure by year and by country, number of police\r\npersonnel by gender, total number of homicides by country and by city,\r\nnumber of assaults, rapes, robberies, thefts, burglaries, frauds, and\r\nembezzlements, amount of drug crime, number of people formally charged with\r\ncrime, age of suspects, number and gender of prosecutors,\r\nnumber of individuals prosecuted and the types of crimes prosecuted for, gender\r\nand age of individuals prosecuted, types of courts, number of\r\nindividuals convicted and acquitted, numbers sentenced to capital\r\npunishment and to various other punishments, number of convictions\r\non various charges, number of individuals sentenced and in detention,\r\nnumber of prisoners, sentence lengths, and prison demographics.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2236",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "United Nations",
+    "acquittals",
+    "assault",
+    "burglary",
+    "convictions (law)",
+    "correctional facilities",
+    "courts",
+    "crime",
+    "crime patterns",
+    "crime prevention",
+    "crime rates",
+    "crime reporting",
+    "criminal justice policy",
+    "criminal justice system",
+    "drug related crimes",
+    "embezzlement",
+    "fraud",
+    "homicide",
+    "international crime statistics",
+    "larceny",
+    "law enforcement",
+    "nations",
+    "offenders",
+    "offenses",
+    "police reports",
+    "population characteristics",
+    "prosecution",
+    "punishment",
+    "rape",
+    "robbery",
+    "sanctions",
+    "sentencing",
+    "trends"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2437",
+  "dataQuality": false,
+  "issued": "1997-09-11T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06945.v1",
+      "title": "United Nations World Crime Surveys:  Fourth Survey, 1986-1990"
+    }
+  ]
+}

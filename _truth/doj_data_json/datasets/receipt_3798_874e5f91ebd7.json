@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Serial Sexual Assaults: A Longitudinal Examination of Offending Patterns Using DNA Evidence, Detroit, Michigan, 2009",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nSerial sexual assault is a pervasive problem: court record recidivism rates show that 10-15% of convicted sex offenders re-assault within five years and self-report studies suggest that 63-78% of males who have committed sexual assaults have raped more than one individual. The current study documents the scope of repeat sexual offending through a previously-unexplored method of documenting serial perpetration: DNA evidence in sexual assault kits (SAKs). Ultimately, the testing of N = 7,287 previously untested SAKs revealed n = 1,270 unique and identifiable perpetrators. When combined with information from lifetime criminal history records, 39.7% (n = 504) of this subsample of unique and identifiable perpetrators were found to be serial sexual offenders who committed, on average, 3.27 sexual assaults. \r\nThis collection contains 10 SPSS files:\r\n\r\nESCALATIONdata_2018-05-15.sav (1142 cases, 6 variables)\r\nForensic_Outcomes_2018-04-03.sav (7287 cases, 7 variables)\r\nPERPdata_2018-04-03.sav (1424 cases, 12 variables)\r\nSAKdata_2018-04-03.sav (1675 cases, 6 variables)\r\nSAK_PERP_2018-04-03.sav (1691 cases, 12 variables)\r\nSSA_ARR_Arrests_Imputed_2018-09-03.sav (9826 cases, 24 variables)\r\nSSA_CHG_PA_Charges_Imputed_2018-09-03.sav (6052 cases, 24 variables)\r\nSSA_IDN_Offenders_2018-09-03.sav (1142 cases, 17 variables)\r\nSSA_INC_Incidents_Imputed_2018-09-03.sav (9550 cases, 16 variables)\r\nSSA_JUD_Judicial_Charges_Imputed_2018-09-03.sav (12522 cases, 30 variables)\r\n\r\nThis collection includes demographic variables on offenders, including sex, race, age, and arrest region.",
+  "modified": "2019-02-28T09:05:34",
+  "accessLevel": "restricted public",
+  "identifier": "3798",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "assault",
+    "criminal histories",
+    "offenders",
+    "rape",
+    "recidivism",
+    "recidivists",
+    "sex offenses",
+    "sexual assault"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2019-02-28T09:03:43",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37134.v1",
+      "title": "Serial Sexual Assaults: A Longitudinal Examination of Offending Patterns Using DNA Evidence, Detroit, Michigan, 2009"
+    }
+  ]
+}

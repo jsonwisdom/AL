@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Impact of Foreclosures on Neighborhood Crime in Five Cities in the United States, 2002-2011",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they there received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except of the removal of direct identifiers. Users should refer to the accompany readme file for a brief description of the files available with this collections and consult the investigator(s) if further information is needed.The purpose of the study was to examine whether and how foreclosures affect neighborhood crime in five cities in the United States. Point-specific crime data was provide by the New York (New York) Police Department, the Chicago (Illinois) Police Department, the Miami (Florida) Police Department, the Philadelphia (Pennsylvania) Police Department, and the Atlanta (Georgia) Police Department.\r\nResearchers also created measures of violent and property crimes based on Uniform Crime Report (UCR) categories, and a measure of public order crime, which includes less serious offenses including loitering, prostitution, drug crimes, graffiti, and weapons offenses. Researchers obtained data on the number of foreclosure notices (Lis Pendens) filed, the number of Lis Pendens filed that do not become real estate owned (REO), and number of REO properties from court fillings, mortgage deeds and tax assessor's offices.",
+  "modified": "2016-10-31T11:12:43",
+  "accessLevel": "restricted public",
+  "identifier": "1193",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime impact",
+    "crime patterns",
+    "crime rates",
+    "foreclosure"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2016-10-31T11:07:39",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR34978.v1",
+      "title": "Impact of Foreclosures on Neighborhood Crime in Five Cities in the United States, 2002-2011"
+    }
+  ]
+}

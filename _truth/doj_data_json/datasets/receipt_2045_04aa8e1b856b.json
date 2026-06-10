@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "United States Supreme Court Judicial Database, 1953-1997 Terms   ",
+  "description": "This data collection encompasses all aspects of United\r\n States Supreme Court decision-making from the beginning of the Warren\r\n Court in 1953 to the completion of the most recent term of the\r\n Rehnquist Court. In this collection, distinct aspects of the Court's\r\n decisions are covered by six types of variables: (1) identification\r\n variables including citations and docket numbers, (2) background\r\n variables offering information on how the Court took jurisdiction,\r\n origin and source of case, and the reason the Court granted cert, (3)\r\n chronological variables covering date of decision, Court term, and\r\n natural court, (4) substantive variables including legal provisions,\r\n issues, and direction of decision, (5) outcome variables supplying\r\n information on disposition of case, winning party, formal alteration\r\n of precedent, and declaration of unconstitutionality, and (6) voting\r\n and opinion variables pertaining to how individual justices voted,\r\ntheir opinions and interagreements, and the direction of their votes.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2045",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Supreme Court decisions",
+    "Supreme Court justices",
+    "United States Supreme Court",
+    "case processing",
+    "court cases",
+    "disposition (legal)",
+    "judicial decisions",
+    "judicial review",
+    "legal history",
+    "twentieth century"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2428",
+  "dataQuality": false,
+  "issued": "1990-12-04T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09422.v9",
+      "title": "United States Supreme Court Judicial Database, 1953-1997 Terms   "
+    }
+  ]
+}

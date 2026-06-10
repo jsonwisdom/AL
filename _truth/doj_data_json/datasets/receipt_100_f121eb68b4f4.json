@@ -1,0 +1,71 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Corrections Statistical Analysis - Prisoners",
+  "description": "National Prisoner Statistics (NPS) on inmates under the jurisdiction of both federal and state correctional authorities.",
+  "modified": "2011-01-01T00:00:00",
+  "accessLevel": "public",
+  "identifier": "100",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Average annual change",
+    "Capacity",
+    "design",
+    "Capacity",
+    "highest",
+    "Capacity",
+    "lowest",
+    "operational capacity",
+    "rated capacity",
+    "Conditional releases",
+    "Conditional release violators",
+    "Imprisonment rate",
+    "New court commitments",
+    "Parole violators",
+    "Supervised mandatory releases",
+    "Unconditio"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2011-01-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://csat.bjs.ojp.gov/map-query",
+      "title": "Correctional Statistics Analysis - Prisoners (Map)"
+    },
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://csat.bjs.ojp.gov/advanced-query",
+      "mediaType": "text/html",
+      "title": "Corrections Statistical Analysis - Prisoners"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Inmate Survey, 2008-2009",
+  "description": "The National Inmate Survey, 2008-2009 (NIS-2) was conducted in 167 state and federal prisons between October 13, 2008, and March 11, 2009; 286 jails between January 20, 2009, and August 13, 2009; and 10 special (military, Indian country, and Immigration and Customs Enforcement (ICE)) facilities between May 11, 2009, and December 17, 2009. The data were collected by RTI International under a cooperative agreement with the Bureau of Justice Statistics (BJS). The NIS-2 comprised two questionnaires -- a survey of sexual victimization and a\r\nsurvey of past drug and alcohol use and treatment. Inmates were randomly assigned to receive one of the questionnaires so that at the time of the interview the content of the survey remained unknown to facility staff and the interviewers. A total of 81,566 inmates participated in the survey, including 32,029 inmates in state and federal prisons, 48,066 inmates in jails, 399 inmates in military facilities, 115 inmates in Indian country jails, and 957 inmates in facilities operated by ICE.\r\nThe respondents were asked about the type of sexual contact, the frequency, when it occurred, and where it occurred. The survey also sought information on any injuries received and the treatment obtained for those injuries. Other questions pertained to the reporting of sexual contact -- if it was reported, to whom it was reported, and any results from reporting sexual contact. Respondents were also asked for reasons why they had not reported the sexual contact if no report was made. Background and demographic information collected includes reasons for incarceration, sexual history, sexual orientation, marital status, gender, ethnicity, and physical characteristics such as height and weight.",
+  "modified": "2014-01-15T15:51:29",
+  "accessLevel": "restricted public",
+  "identifier": "1088",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities (adults)",
+    "correctional guards",
+    "inmates",
+    "prison conditions",
+    "prison violence",
+    "rape",
+    "sex offenders",
+    "sex offenses",
+    "sexual abuse",
+    "sexual assault",
+    "sexual behavior"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2442",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2014-01-15T15:45:59",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR34510.v1",
+      "title": "National Inmate Survey, 2008-2009"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Patterns of Juvenile Delinquency and Co-Offending in Philadelphia, Pennsylvania, 1976-1994  ",
+  "description": "In an attempt to inform and advance the literature on\r\nco-offending, this study tracked through time the patterns of criminal\r\nbehavior among a sample of offenders and their accomplices. This study\r\nconsists of a random sample of 400 offenders selected from all\r\nofficial records of arrest (N=60,821) for offenders under age 18 in\r\nPhiladelphia in 1987. Half of the offenders selected committed a crime\r\nalone and half committed a crime with an accomplice. Criminal history\r\ndata from January 1976 to December 1994 were gathered for all\r\noffenders in the sample and their accomplices.",
+  "modified": "2004-02-24T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "2987",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "criminal histories",
+    "juvenile crime",
+    "juvenile delinquents",
+    "offenders",
+    "violent crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2004-02-24T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03598.v1",
+      "title": "Patterns of Juvenile Delinquency and Co-Offending in Philadelphia, Pennsylvania, 1976-1994  "
+    }
+  ]
+}

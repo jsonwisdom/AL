@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "NCVS Victimization Analysis Tool (NVAT)",
+  "description": "This dynamic analysis tool allows you to examine National Crime Victimization Survey (NCVS) data on both violent and property victimization by select victim, household, and incident characteristics.\r\n\r\nThe NCVS is the nation's primary source of information on criminal victimization. It is an annual data collection conducted by the U.S. Census Bureau for the Bureau of Justice Statistics. The NCVS collects information from a nationally representative sample of U.S. households on nonfatal crimes, reported and not reported to the police, against persons age 12 or older.\r\n\r\nViolent crimes measured by the NCVS include rape and sexual assault, robbery, aggravated assault, and simple assault. Property crimes include burglary/trespassing, motor-vehicle theft, and theft.",
+  "modified": "2012-01-01T00:00:00",
+  "accessLevel": "public",
+  "identifier": "191",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Aggravated assault",
+    "Crime classification",
+    "Domestic violence",
+    "Property crime",
+    "Purse snatching",
+    "pocket picking",
+    "Serious violent victimization",
+    "Sexual assault",
+    "Simple assault",
+    "Household victimization rate"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2012-01-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://bjs.ojp.gov/national-crime-victimization-survey-ncvs-api",
+      "title": "National Crime Victimization Survey (NCVS) API"
+    },
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://ncvs.bjs.ojp.gov/Home",
+      "mediaType": "text/html",
+      "title": "National Crime Victimization Survey Data Dashboard (N-DASH)"
+    }
+  ]
+}

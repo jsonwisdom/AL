@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Elder Mistreatment Study (NEMS) Series",
+  "description": "Wave I of the NEMS occurred in 2008 and included a national sample of 5,777 adults aged 60 and above. The study was designed to determine the prevalence of and risk factors for elder mistreatment and abuse, including physical, sexual, emotional, neglectful, or financial abuse, in community-residing older adults. The Wave II follow-up data were collected in 2016 from a subset of the original participants (n=774), or those who reported psychological, physical, or sexual (but not financial) abuse at Wave I. Wave II was designed to measure the effects of elder abuse in terms of health and mental health outcomes and criminal justice system participation and satisfaction.",
+  "modified": "2019-11-26T09:30:55",
+  "accessLevel": "restricted public",
+  "identifier": "4215",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "assault",
+    "elder abuse",
+    "eldercare",
+    "emotional abuse",
+    "exploitation",
+    "older adults",
+    "sexual assault",
+    "social support"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2013-02-13T10:45:04",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/1840",
+      "title": "National Elder Mistreatment Study (NEMS) Series"
+    }
+  ]
+}

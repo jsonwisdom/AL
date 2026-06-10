@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Juvenile Court Statistics, 1991: [United States]",
+  "description": "This data collection describes in quantitative terms the \r\n volume of juvenile cases disposed in 1991 by courts having jurisdiction \r\n over juvenile matters (delinquency, status offense, and dependency \r\n cases). Inaugurated in 1926 to furnish an index of the problems brought \r\n before the juvenile courts, this series is the oldest continuous source \r\n of information on the processing of delinquent and dependent youth by \r\n juvenile courts. It is the most detailed information available on youth \r\n who come in contact with the juvenile justice system and on the \r\n activities of the nation's juvenile courts. Information is provided on \r\n state, county, number of delinquency cases, number of status offense \r\n cases, number of dependency cases, and total number of cases. The data \r\ndistinguish cases with and without the filing of a petition.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "4034",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "case processing",
+    "county courts",
+    "criminal justice system",
+    "delinquent behavior",
+    "dependents",
+    "juvenile courts",
+    "juvenile justice",
+    "state courts",
+    "statistical data",
+    "status offenses",
+    "youths"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "3986",
+  "dataQuality": false,
+  "issued": "1995-12-20T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06582.v1",
+      "title": "Juvenile Court Statistics, 1991: [United States]"
+    }
+  ]
+}

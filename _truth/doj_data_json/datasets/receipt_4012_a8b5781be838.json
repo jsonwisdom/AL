@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Census of Juveniles in Residential Placement, 2007 [United States]",
+  "description": "The Census of Juveniles in Residential Placement (CJRP) was administered for the first time in 1997 by the United States Bureau of the Census, for the Office of Juvenile Justice and Delinquency Prevention (OJJDP). CJRP replaced the Census of Public and Private Juvenile Detention, Correctional, and Shelter Facilities, also known as the Children in Custody (CIC) census, which had been conducted since the early 1970s. The CJRP differs fundamentally from CIC in that the CIC collected aggregate data on juveniles held in each facility (e.g., number of juveniles in the facility) and the CJRP, which is conducted biennially, collects an individual record on each juvenile held in the residential facility to provide a detailed picture of juveniles in custody. The CJRP asked juvenile residential custody facilities in the United States to describe each youth assigned a bed in the facility on a specified reference date. In 2007, the reference date was the fourth Wednesday in October. Characteristics of the facility, treatment services, and facility population were also collected. Each record in the data that provides information about a juvenile also includes the characteristics of the facility in which the juvenile was held. Therefore, the CJRP data can be analyzed at the juvenile or facility level. Some state and regional agencies provide CJRP data for more than one facility under their jurisdiction. The census was not sent to adult facilities or to facilities exclusively for drug or mental health treatment or for abused or neglected children.",
+  "modified": "2016-08-10T16:08:48",
+  "accessLevel": "restricted public",
+  "identifier": "4012",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "correctional facilities",
+    "drug law offenses",
+    "group homes",
+    "juvenile detention",
+    "juvenile offenders",
+    "juveniles",
+    "property crimes",
+    "status offenses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "3997",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2012-11-13T15:40:18",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR34401.v1",
+      "title": "Census of Juveniles in Residential Placement, 2007 [United States]"
+    }
+  ]
+}

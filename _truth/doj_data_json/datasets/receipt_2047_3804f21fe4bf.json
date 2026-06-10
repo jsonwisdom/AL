@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Pretrial Reporting Program, 1988-1989",
+  "description": "This data collection effort was undertaken to determine \r\n whether accurate and comprehensive pretrial data can be collected at \r\n the local level and subsequently aggregated at the state and federal \r\n levels. The data contained in this collection provide a picture of \r\n felony defendants' movements through the criminal courts. Offenses were \r\n recoded into 14 broad categories that conform to the Bureau of Justice \r\n Statistics' crime definitions. Other variables include sex, race, age, \r\n prior record, relationship to criminal justice system at the time of \r\n the offense, pretrial release, detention decisions, court appearances, \r\n pretrial rearrest, adjudication, and sentencing. The unit of analysis \r\nis the defendant.",
+  "modified": "2013-06-12T16:38:47",
+  "accessLevel": "restricted public",
+  "identifier": "2047",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "case processing",
+    "courts",
+    "criminal histories",
+    "criminal justice system",
+    "defendants",
+    "disposition (legal)",
+    "felons",
+    "felony courts",
+    "offenses",
+    "pretrial detentions",
+    "pretrial hearings",
+    "pretrial procedures",
+    "pretrial release",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2434",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "1991-05-03T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09508.v3",
+      "title": "National Pretrial Reporting Program, 1988-1989"
+    }
+  ]
+}

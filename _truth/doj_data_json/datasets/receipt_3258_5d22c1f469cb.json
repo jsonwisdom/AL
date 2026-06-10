@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Concerns of Police Survivors, 1986:  [United States]",
+  "description": "This data collection was designed to assess the impact of\r\n line-of-duty deaths of law enforcement officers on their family\r\n members in terms of the psychological, emotional, and financial\r\n effects. To assess the impact of the traumatic event, a wide variety\r\n of clinical and psychiatric measures of psychological disorder were\r\n employed. The data are stored in two files. Included in the first file\r\n are variables concerning the respondent's personal characteristics\r\n such as age, sex, ethnic origin, marital status, educational level,\r\n relationship to deceased officer, and employment. Also included are\r\n experiences and emotional reactions to the death of the officer and\r\n clinical symptoms of psychological distress. The file also offers\r\n information on the deceased officer's demographic characteristics such\r\n as age at time of death, sex, ethnic origin, educational level, number\r\n of times married, and number of years in law enforcement, as well as\r\n the date and time of the incident. The second file contains variables\r\n on the respondent's relationship with friends and relatives before and\r\n after the traumatic event, behavioral changes of survivors' children\r\n following the death, financial impacts on survivors, and satisfaction\r\nwith treatment and responses received from police departments.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3258",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "attitudes toward death",
+    "families",
+    "grief",
+    "police deaths",
+    "police officers",
+    "psychological wellbeing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1990-05-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09327.v1",
+      "title": "Concerns of Police Survivors, 1986:  [United States]"
+    }
+  ]
+}

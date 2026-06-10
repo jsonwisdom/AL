@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Antitrust Division Workload Statistics FY 2000-2009",
+  "description": "This dataset summarizes the Antitrust Division workload activities for fiscal years 2000-2009.",
+  "modified": "2012-04-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "6",
+  "publisher": {
+    "name": "Antitrust Division",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Richard Hess",
+    "hasEmail": "mailto:richard.hess2@usdoj.gov"
+  },
+  "keyword": [
+    "Workload Statistics",
+    "Department of Justice",
+    "Antitrust Division",
+    "investigation",
+    "antitrust case",
+    "appellate case",
+    "judgment enforcement",
+    "case results",
+    "confinement",
+    "general antitrust activities",
+    "premerger notification",
+    "fine",
+    "penalty",
+    "civil case",
+    "criminal case"
+  ],
+  "bureauCode": [
+    "011:00"
+  ],
+  "programCode": [
+    "011:022"
+  ],
+  "spatial": "United States and International Territories",
+  "temporal": "1999-10-01T00:00:00.0000000/2009-09-30T00:00:00.0000000",
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "4",
+  "dataQuality": false,
+  "issued": "2012-03-23T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "landingPage": "https://www.justice.gov/atr/division-operations",
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "conformsTo": "https://www.isotc211.org/2005/gmi/",
+      "downloadURL": "https://www.justice.gov/sites/default/files/atr/legacy/2012/04/04/281484.pdf",
+      "format": "pdf",
+      "mediaType": "application/pdf",
+      "title": "Antitrust Division Workload Statistics FY 2000-2009"
+    }
+  ]
+}

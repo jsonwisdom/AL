@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Federal Justice Statistics Program: Guideline Computations for Defendants Sentenced Under the Sentencing Reform Act, 2006",
+  "description": "These data contain records of guideline computations and adjustments for each count of conviction for criminal defendants who were sentenced pursuant to provisions of the Sentencing Reform Act (SRA) of 1984 and reported to the United States Sentencing Commission (USSC) during fiscal year 2006. The data are one of two supplementary files that should be used in conjunction with the primary analysis file, which contains records for all defendants sentenced under the guidelines. These data can be linked to the primary analysis file using the unique identifier variable USSCIDN. The number of records for a defendant in the current data corresponds to the total number of guideline computations, which may or may not equal the total counts of conviction for that defendant, dependent upon the grouping rules of the particular guideline in question (see Section 3D1.2 of the guidelines manual). As an example, a defendant with five counts of drug trafficking will only have one guideline computation because each of the drug weights for each count are simply added together and only one calculation is necessary. However, if a defendant has five counts of bank robbery, he or she will have five separate guideline computations because bank robbery is considered to be a nongroupable offense. The data were obtained from the United States Sentencing Commission's Office of Policy Analysis' (OPA) Standardized Research Data File. These data are part of a series designed by the Urban Institute (Washington, DC) and the Bureau of Justice Statistics. Data and documentation were prepared by the Urban Institute.",
+  "modified": "2011-03-08T11:06:33",
+  "accessLevel": "restricted public",
+  "identifier": "969",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "administration",
+    "court cases",
+    "criminal law",
+    "defendants",
+    "federal courts",
+    "judicial decisions",
+    "legal systems",
+    "sentencing guidelines",
+    "trial courts"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2174",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2009-02-03T14:10:45",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR24129.v2",
+      "title": "Federal Justice Statistics Program: Guideline Computations for Defendants Sentenced Under the Sentencing Reform Act, 2006"
+    }
+  ]
+}

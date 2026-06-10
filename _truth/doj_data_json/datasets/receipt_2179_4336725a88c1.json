@@ -1,0 +1,52 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "State Court Statistics Series",
+  "description": "\r\nInvestigator(s): National Center for State Courts, Court Statistics and Information Management Project\r\nThis data collection provides comparable measures of \r\nstate appellate and trial court caseloads by type of case for the 50 \r\nstates, the District of Columbia, and Puerto Rico. Court caseloads are \r\ntabulated according to generic reporting categories developed by the Court \r\nStatistics and Technology Committee of the Conference of State Court \r\nAdministrators. These categories describe differences in the unit of count \r\nand the point of count when compiling each court's caseload. Major areas \r\nof investigation include: (1) case filings in state appellate and trial \r\ncourts, (2) case dispositions in state appellate and trial courts, and \r\n(3) appellate opinions. Within each of these areas of investigation, cases \r\nare separated by main case type. Types include civil cases, capital \r\npunishment cases, other criminal cases, juvenile cases, administrative \r\nagency appeals, and several other types.\r\nYears Produced: Updated annually\r\n",
+  "modified": "2016-07-05T17:26:45",
+  "accessLevel": "public",
+  "identifier": "2179",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "appellate courts",
+    "criminal courts",
+    "offenses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1990-03-02T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/80",
+      "title": "State Court Statistics Series"
+    }
+  ]
+}

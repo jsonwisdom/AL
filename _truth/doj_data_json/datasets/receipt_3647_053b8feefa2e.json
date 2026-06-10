@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Profiling Inmates in the Los Angeles County Jail, 1996-1998",
+  "description": "By 1996 it became apparent that the Los Angeles county\r\n jails faced a serious overcrowding problem. Two possible solutions to\r\n the problem were to build more jail capacity or to divert a greater\r\n number of incoming inmates to community-based, intermediate\r\n sanctions. The research team for this study was asked to review a 1996\r\n profile of inmates in the Los Angeles jail system and to determine how\r\n many of them might have been good candidates for intermediate\r\n sanctions such as electronic monitoring, work release, house arrest,\r\n and intensive supervision. The researchers selected a sample of 1,000\r\n pre-adjudicated (or unconvicted) inmates from the total census of\r\n inmates in jail custody on January 15, 1996, to study in more detail.\r\n Of the 1,000 offenders, the researchers were able to obtain jail and\r\n recidivism data for two years for 931 inmates. For each of these\r\n offenders, information on their prior criminal history, current\r\n offense, and subsequent recidivism behavior was obtained from official\r\n records maintained by several county agencies, including pretrial\r\n services, sheriff's department, probation, and courts. Demographic\r\n variables include date of birth, race, and gender. Prior criminal\r\n history variables for each prior adult arrest include type of filing\r\n charge, case disposition, type of sentence and sentence length\r\n imposed, and total number of prior juvenile petitions sustained.\r\n Current offense variables include arrest date, crime type for current\r\n arrest, crime charge, type and date of final case disposition, and\r\n sentence type and length, if convicted. Strike information collected\r\n includes number of strikes and the offense that qualified as a\r\n strike. Jail custody variables include the jail entry and exit data\r\n for the current offense and the reason for release, if released.\r\n Lastly, two-year follow-up variables include the date, type, and\r\n disposition of each subsequent arrest between January 15, 1996, and\r\nJanuary 15, 1998.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3647",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "alternatives to institutionalization",
+    "criminal histories",
+    "criminality prediction",
+    "jail inmates",
+    "offender profiles",
+    "prison overcrowding",
+    "recidivism",
+    "sanctions"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2003-05-09T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03271.v2",
+      "title": "Profiling Inmates in the Los Angeles County Jail, 1996-1998"
+    }
+  ]
+}

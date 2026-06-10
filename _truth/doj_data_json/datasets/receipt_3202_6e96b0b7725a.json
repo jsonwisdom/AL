@@ -1,0 +1,53 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Reexamining the Minneapolis Repeat Complaint Address Policing (RECAP) Experiment, 1986-1987",
+  "description": "This study reexamines REPEAT COMPLAINT ADDRESS POLICING:\r\n TWO FIELD EXPERIMENTS IN MINNEAPOLIS, 1985-1987 (ICPSR 9788). The\r\n original Repeat Complaint Address Policing (RECAP) experiment was a\r\n field study of the strategy of problem-oriented policing, which used\r\n control and treatment groups consisting of specific addresses in the\r\n city of Minneapolis. The impact of problem-oriented policing was\r\n measured by comparing the number of 911 calls received for each\r\n address during a baseline period to the number received during a\r\n period when experimental treatments were in effect. Several features\r\n of the original data distort the one-to-one correspondence between a\r\n 911 call and an event, such as the occurrence of multiple versions of\r\n the same call in the databases. The current study identifies and\r\n attempts to correct these occurrences by applying multiple levels of\r\n data cleaning procedures to the original data to establish a better\r\none-to-one call-to-event correspondence.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3202",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "emergency services",
+    "police departments",
+    "police protection",
+    "police response"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1994-05-20T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06172.v1",
+      "title": "Reexamining the Minneapolis Repeat Complaint Address Policing (RECAP) Experiment, 1986-1987"
+    }
+  ]
+}

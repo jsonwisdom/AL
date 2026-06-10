@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Corrections Reporting Program, 1987",
+  "description": "This study was conducted to provide a consistent and\r\ncomprehensive description of convicted persons' entrance into and departure\r\nfrom correctional custody and correctional supervision. To accomplish\r\nthis goal, data were gathered from official state prison records on\r\ntopics such as race, sex, and age of inmates, length of time in jail,\r\nlength of time in prison, and type of offense committed. The data were\r\ncollected from the state prison systems of 35 states, as well\r\nas the Federal Prison System and the California Youth Authority, and the\r\nDistrict of Columbia.",
+  "modified": "2010-04-23T09:29:23",
+  "accessLevel": "restricted public",
+  "identifier": "1062",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "correctional facilities (juveniles)",
+    "correctional system",
+    "demographic characteristics",
+    "federal correctional facilities",
+    "jail inmates",
+    "juvenile offenders",
+    "national crime statistics (USA)",
+    "offenders",
+    "offenses",
+    "parole",
+    "prison inmates",
+    "probation",
+    "state correctional facilities"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2589",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "1991-10-23T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09402.v3",
+      "title": "National Corrections Reporting Program, 1987"
+    }
+  ]
+}

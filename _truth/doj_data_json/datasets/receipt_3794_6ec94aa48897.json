@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Assessment of Crossover Youth in Maryland, 1989-2014",
+  "description": "\r\nThese data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\n\r\n\r\nThe study was designed to begin to build a knowledge base to address the challenges of crossover youth in Maryland - those involved at some point in their lives in the dependency and delinquency systems.  Employing a mix of qualitative and quantitative methods, the research focused on the five most populous jurisdictions in the state, Baltimore City, and Anne Arundel, Montgomery, Prince George's, and Baltimore Counties.\r\n\r\n\r\nThis collection includes 4 SPSS data files:\r\n\r\nCINA BCity_Archive_final_Corrected-ICPSR.sav (n=400; 64 variables)\r\nCY Stakeholder Survey_Archive_final_Corrected_Update2016-ICPSR.sav (n=164; 302 variables)\r\nDelinquency_Risk_Archive_final_Corrected_Update2016-ICPSR.sav (n=1,127; 62 variables)\r\nNeeds_Archive_final-ICPSR.sav (n=700; 67 variables)\r\n\r\n\r\n\r\nData from interviews with 26 officials in state and local agencies to collect information on policies and practices affecting crossover youth in Maryland are not available as part of this collection.\r\n",
+  "modified": "2017-06-29T15:23:45",
+  "accessLevel": "restricted public",
+  "identifier": "3794",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "child welfare",
+    "delinquent behavior",
+    "juvenile justice",
+    "public assistance programs",
+    "social services",
+    "youths"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2017-06-29T15:18:05",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR35253.v1",
+      "title": "Assessment of Crossover Youth in Maryland, 1989-2014"
+    }
+  ]
+}

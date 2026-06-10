@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Youth Survey [United States]:  Wave II, 1977",
+  "description": "Youth data for the second wave of the National Youth Survey\r\nare contained in this data collection. The first wave was conducted in\r\n1976 (ICPSR 8375). Youths were interviewed in early 1978 about events\r\nand behavior that had occurred in 1977. Data were collected on\r\ndemographic and socioeconomic status of respondents, aspirations,\r\nsocial isolation, normlessness, labeling, attitudes toward deviance,\r\nexposure to delinquent peers, commitment to delinquent peers, sex\r\nroles, interpersonal violence, exposure to substance abuse,\r\nself-reported delinquency, drug and alcohol use, and victimization.",
+  "modified": "2008-08-26T14:13:51",
+  "accessLevel": "public",
+  "identifier": "3930",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "aspirations",
+    "behavior problems",
+    "career goals",
+    "community involvement",
+    "delinquent behavior",
+    "depression (psychology)",
+    "deviance",
+    "drugs",
+    "expectations",
+    "family conflict",
+    "family relations",
+    "health services utilization",
+    "life events",
+    "neighborhood conditions",
+    "parenta"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "3996",
+  "dataQuality": false,
+  "issued": "1985-10-09T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08424.v2",
+      "title": "National Youth Survey [United States]:  Wave II, 1977"
+    }
+  ]
+}

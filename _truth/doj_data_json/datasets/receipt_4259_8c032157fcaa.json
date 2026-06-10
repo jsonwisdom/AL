@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Assessing the Impact of Post-Release Community Supervision on Post-Release Recidivism and Employment, United States, 2004-2011",
+  "description": "This study sought to examine the effect of of two separate forms of post-prison supervision on offender recidivism and employment outcomes: split supervision and conditional release supervision. In order to assess the effect of post-prison supervision on reentry outcomes for Florida inmates, this study addressed the following research questions:\r\n\r\nWhat is the impact of post-release supervision on employment and recidivism?\r\nDo various types of post-release supervision result in different outcomes of employment and recidivism?\r\nHow does the length of post-release supervision impact employment and recidivism?\r\n\r\nFlorida was chosen as the state of focus because of its shift from indeterminate to determinate sentencing and elimination of parole in the 1980s. Researchers used arrest data, corrections data, and employment data from the Federal Department of Corrections, the Florida Department of Law Enforcement, and the Florida Department of Revenue.",
+  "modified": "2021-09-15T11:07:26",
+  "accessLevel": "restricted public",
+  "identifier": "4259",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "corrections",
+    "employment",
+    "parole",
+    "prisoner reentry",
+    "recidivism"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2021-09-15T10:56:31",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36148.v1",
+      "title": "Assessing the Impact of Post-Release Community Supervision on Post-Release Recidivism and Employment, United States, 2004-2011"
+    }
+  ]
+}

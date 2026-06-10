@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Disorder and Community Decline in Forty Neighborhoods of the United States, 1977-1983",
+  "description": "This data collection was designed to evaluate the effects\r\nof disorderly neighborhood conditions on community decline and\r\nresidents' reactions toward crime. Data from five previously collected\r\ndatasets were aggregated and merged to produce this collection: (1)\r\nREACTIONS TO CRIME PROJECT, 1977 [CHICAGO, PHILADELPHIA, SAN\r\nFRANCISCO]: SURVEY ON FEAR OF CRIME AND CITIZEN BEHAVIOR (ICPSR 8162),\r\n(2) CHARACTERISTICS OF HIGH AND LOW CRIME NEIGHBORHOODS IN ATLANTA,\r\n1980 (ICPSR 8951), (3) CRIME FACTORS AND NEIGHBORHOOD DECLINE IN\r\nCHICAGO, 1979 (ICPSR 7952), (4) REDUCING FEAR OF CRIME PROGRAM\r\nEVALUATION SURVEYS IN NEWARK AND HOUSTON, 1983-1984 (ICPSR 8496), and\r\n(5) a survey of citizen participation in crime prevention in six\r\nChicago neighborhoods conducted by Rosenbaum, Lewis, and Grant.\r\nNeighborhood-level data cover topics such as disorder, crime, fear,\r\nresidential satisfaction, and other key factors in community decline.\r\nVariables include disorder characteristics such as loitering,\r\ndrugs, vandalism, noise, and gang activity, demographic\r\ncharacteristics such as race, age, and unemployment rate, and\r\nneighborhood crime problems such as burglary, robbery, assault, and\r\nrape. Information is also available on crime avoidance behaviors, fear\r\nof crime on an aggregated scale, neighborhood satisfaction on an\r\naggregated scale, and cohesion and social interaction.",
+  "modified": "1998-04-20T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3207",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime",
+    "drugs",
+    "gang violence",
+    "neighborhood change",
+    "neighborhood conditions",
+    "neighborhoods",
+    "vandalism"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1989-01-10T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08944.v2",
+      "title": "Disorder and Community Decline in Forty Neighborhoods of the United States, 1977-1983"
+    }
+  ]
+}

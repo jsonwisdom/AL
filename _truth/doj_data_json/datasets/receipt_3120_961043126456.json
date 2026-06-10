@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Police Arrest Decisions in Intimate Partner Violence Cases in the United States, 2000 and 2003",
+  "description": "The purpose of the study was to better understand the factors associated with police decisions to make an arrest or not in cases of heterosexual partner violence and how these decisions vary across jurisdictions. The study utilized data from three large national datasets: the National Incident-Based Reporting System (NIBRS) for the year 2003, the Law Enforcement Management and Administrative Statistics (LEMAS) for the years 2000 and 2003, and the United States Department of Health and Human Services Area Resource File (ARF) for the year 2003. Researchers also developed a database of domestic violence state arrest laws including arrest type (mandatory, discretionary, or preferred) and primary aggressor statutes. Next, the research team merged these four databases into one, with incident being the unit of analysis. As a further step, the research team conducted spatial analysis to examine the impact of spatial autocorrelation in arrest decisions by police organizations on the results of statistical analyses. The dependent variable for this study was arrest outcome, defined as no arrest, single male arrest, single female arrest, and dual arrest for an act of violence against an intimate partner. The primary independent variables were divided into three categories: incident factors, police organizational factors, and community factors.",
+  "modified": "2011-05-26T13:51:01",
+  "accessLevel": "public",
+  "identifier": "3120",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "aggravated assault",
+    "arrests",
+    "assault",
+    "communities",
+    "crime patterns",
+    "domestic violence",
+    "intimate partner violence",
+    "intimate partners",
+    "intimidation",
+    "law enforcement",
+    "law enforcement agencies",
+    "police",
+    "police departments",
+    "sexual assault",
+    "spatial data"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2011-05-26T13:51:01",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR31333.v1",
+      "title": "Police Arrest Decisions in Intimate Partner Violence Cases in the United States, 2000 and 2003"
+    }
+  ]
+}

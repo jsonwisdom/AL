@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Census of State and Local Law Enforcement Training Academies, 2013",
+  "description": "From 2011 to 2013, a total of 664 state and local law enforcement academies provided basic training to entry-level officer recruits in the United States. During this period, more than 135,000 recruits (45,000 per year) entered a basic training program, and 86 percent completed the program successfully. This completion rate was the same as was observed for the 57,000 recruits who\r\nentered training programs in 2005. This data collection describes basic training programs for new recruits based on their content, instructors, and teaching methods. It also describes the recruits' demographics, completion rates, and reasons for failure. The data describing recruits cover those entering basic training programs from 2011 to 2013. The data describing academies are based on 2013, the latest year referenced in the survey. Like prior BJS studies conducted in 2002 and 2006, the 2013 CLETA collected data from all state and local academies that provided basic law enforcement training. Academies that provided only in-service, corrections and detention, or other specialized training were excluded. Federal training academies were also excluded. Any on-the-job training received by recruits subsequent to their academy training is not covered.",
+  "modified": "2018-12-12T11:20:27",
+  "accessLevel": "public",
+  "identifier": "2423",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "law enforcement",
+    "law enforcement agencies",
+    "police departments",
+    "police officers",
+    "police recruits",
+    "police training"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2018-12-12T11:20:27",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36764.v1",
+      "title": "Census of State and Local Law Enforcement Training Academies, 2013"
+    }
+  ]
+}

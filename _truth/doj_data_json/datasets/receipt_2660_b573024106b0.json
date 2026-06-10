@@ -1,0 +1,72 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Uniform Crime Reporting Program Data: Arrests by Age, Sex, and Race, United States, 2016",
+  "description": "These data provide information on the number of arrests reported to the Federal Bureau of Investigation's (FBI) Uniform Crime Reporting (UCR) Program each month by police agencies in the United States. Although not as well known as the \"Crimes Known to the Police\" data drawn from the Uniform Crime Report's Return A form, the arrest reports by age, sex, and race provide valuable data on 43 offenses including violent, drug, gambling, and larceny crimes. The data received by ICPSR were structured as a hierarchical file containing (per reporting police agency) an agency header record, and 1 to 12 monthly header reports, and 1 to 43 detail offense records containing the counts of arrests by age, sex, and race for a particular offense. ICPSR restructured the original data to a rectangular format.",
+  "modified": "2018-06-28T12:57:18",
+  "accessLevel": "public",
+  "identifier": "2660",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "arrests",
+    "arson",
+    "assault",
+    "auto theft",
+    "burglary",
+    "counties",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "drug abuse",
+    "fraud",
+    "illegal gambling",
+    "larceny",
+    "law enforcement",
+    "murder",
+    "offenses",
+    "rape",
+    "robbery",
+    "sex offenses",
+    "vandalism",
+    "weapons"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2167",
+  "dataQuality": false,
+  "issued": "2018-06-28T12:57:18",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37056.v1",
+      "title": "Uniform Crime Reporting Program Data: Arrests by Age, Sex, and Race, United States, 2016"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Interaction Between Neighborhood Change and Criminal Activity, 1950-1976: Los Angeles County  ",
+  "description": "This study was conducted in 1979 at the Social Science\r\nResearch Institute, University of Southern California, and explores\r\nthe relationship between neighborhood change and crime rates between\r\nthe years 1950 and 1976. The data were aggregated by unique and\r\nconsistently-defined spatial areas, referred to as dummy tracts or\r\nneighborhoods, within Los Angeles County. By combining United States\r\nCensus data and administrative data from several state, county, and\r\nlocal agencies, the researchers were able to develop measures that\r\ntapped the changing structural and compositional aspects of each\r\nneighborhood and their interaction with the patterns of juvenile\r\ndelinquency. Some of the variables included are annual income, home\r\nenvironment, number of crimes against persons, and number of property\r\ncrimes.",
+  "modified": "1998-05-27T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3220",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "cities",
+    "crime",
+    "juvenile delinquency",
+    "neighborhood characteristics",
+    "neighborhood conditions",
+    "neighborhoods"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09056.v3",
+      "title": "Interaction Between Neighborhood Change and Criminal Activity, 1950-1976: Los Angeles County  "
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Characteristics of Arrestees at Risk for Co-Existing Substance Abuse and Mental Disorder in Cleveland, Ohio, 2003",
+  "description": "The current study was conducted as a supplemental study to the Cleveland/Cuyahoga County Arrestee Drug Abuse Monitoring (ADAM) program in the second quarter of 2003 (April-June). A risk screening instrument was implemented to classify Cleveland/Cuyahoga County adult arrestees into four groups: arrestees at no risk for substance abuse or dependence or mental disorder; arrestees at risk for substance abuse or dependence with no risk for mental disorder; arrestees at risk for mental disorder with no risk for substance abuse or dependence; and arrestees at risk for both mental disorder and substance abuse or dependence. A total of 311 adult arrestees were interviewed and provided a urine sample submitted for testing. The dual risk screening instrument includes six mental disorder risk questions and six substance abuse risk questions.  The mental disorder risk questions include questions on having feelings or emotions that make it difficult to complete normal day to day activities, feeling hopeless or depressed, having thoughts of hurting oneself or committing suicide, and hearing or seeing things that others cannot hear or see. The substance abuse risk questions include questions on problems caused by drinking or drug use, arrests due to alcohol or drug use, time spent on thinking about or trying to get alcohol or drugs, and feelings of guilt about drinking or drug use.",
+  "modified": "2009-02-25T09:53:47",
+  "accessLevel": "restricted public",
+  "identifier": "3110",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "ADAM/DUF Program",
+    "addiction",
+    "alcohol abuse",
+    "drug testing",
+    "drug treatment",
+    "mental disorders",
+    "mental health services",
+    "substance abuse",
+    "urinalysis"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2009-02-25T09:49:55",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR20352.v1",
+      "title": "Characteristics of Arrestees at Risk for Co-Existing Substance Abuse and Mental Disorder in Cleveland, Ohio, 2003"
+    }
+  ]
+}

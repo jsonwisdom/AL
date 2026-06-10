@@ -1,0 +1,67 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Crime Victimization Survey, Concatenated File, [United States], 1992-2020",
+  "description": "The National Crime Victimization Survey (NCVS), previously called the National Crime Survey (NCS), has been collecting data on personal and household victimization through an ongoing survey of a nationally-representative sample of residential addresses since 1973. The NCVS was designed with four primary objectives: (1) to develop detailed information about the victims and consequences of crime, (2) to estimate the number and types of crimes not reported to the police, (3) to provide uniform measures of selected types of crimes, and (4) to permit comparisons over time and types of areas. Beginning in 1992, the survey categorizes crimes as \"personal\" or \"property.\" Personal crimes include rape and sexual assault, robbery, aggravated and simple assault, and purse-snatching/pocket-picking, while property crimes include burglary, theft, motor vehicle theft, and vandalism. Each respondent is asked a series of screen questions designed to determine whether she or he was victimized during the six-month period preceding the first day of the month of the interview. A \"household respondent\" is also asked to report on crimes against the household as a whole (e.g., burglary, motor vehicle theft). The data include type of crime, month, time, and location of the crime, relationship between victim and offender, characteristics of the offender, self-protective actions taken by the victim during the incident and results of those actions, consequences of the victimization, type of property lost, whether the crime was reported to police and reasons for reporting or not reporting, and offender use of weapons, drugs, and alcohol. Basic demographic information such as age, race, gender, and income is also collected, to enable analysis of crime by various subpopulations.\r\nThis dataset represents the concatenated version of the NCVS on a collection year basis for 1992-2020. A collection year contains records from interviews conducted in the 12 months of the given year. Under the collection year format, victimizations are counted in the year the interview is conducted, regardless of the year when the crime incident occurred.\r\nFor additional information on the dataset, please see the documentation for the data from the most current year of the NCVS, ICPSR Study 38090.",
+  "modified": "2021-10-18T07:33:57",
+  "accessLevel": "public",
+  "identifier": "4118",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "assault",
+    "auto theft",
+    "burglary",
+    "crime",
+    "crime costs",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "offenders",
+    "offenses",
+    "property crimes",
+    "rape",
+    "reactions to crime",
+    "robbery",
+    "sex offenses",
+    "victimization",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2432",
+  "dataQuality": false,
+  "issued": "2021-10-18T07:33:57",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR38136.v1",
+      "title": "National Crime Victimization Survey, Concatenated File, [United States], 1992-2020"
+    }
+  ]
+}

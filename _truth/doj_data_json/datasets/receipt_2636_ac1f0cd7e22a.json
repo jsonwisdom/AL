@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Monitoring of Federal Criminal Sentences, [United States], 1987-1998",
+  "description": "This collection contains information on federal criminal\r\ncases sentenced under the Sentencing Guidelines and Policy Statements\r\nof the Sentencing Reform Act of 1984. The data files include all cases\r\nreceived by the United States Sentencing Commission that had\r\nsentencing dates between November 1, 1987, and September 30, 1998, and\r\nwere assessed as constitutional. Constitutionality compares each\r\ncase's sentencing date, circuit, district, and judge to provide\r\nuniformity in reporting the cases. The cases are categorized either as\r\nNew Law, with all offenses occurring after the November 1, 1987,\r\nguidelines, or as Mixed Law, with at least one count occurring after\r\nthe guideline effectiveness date and other counts prior to the\r\nguidelines. The Cross-Reference Data files\r\ncontain data for guidelines that\r\nare cross-referenced or that are considered to be underlying\r\nguidelines.",
+  "modified": "2014-06-25T15:16:20",
+  "accessLevel": "public",
+  "identifier": "2636",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "convictions (law)",
+    "criminal histories",
+    "defendants",
+    "federal courts",
+    "judicial decisions",
+    "offenses",
+    "sentencing",
+    "sentencing guidelines"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2180",
+  "dataQuality": false,
+  "issued": "1990-05-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09317.v5",
+      "title": "Monitoring of Federal Criminal Sentences, [United States], 1987-1998"
+    }
+  ]
+}

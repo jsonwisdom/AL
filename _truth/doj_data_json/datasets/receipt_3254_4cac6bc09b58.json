@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Screening of Youth at Risk for Delinquency in Oregon, 1980-1985",
+  "description": "This is a longitudinal study of three birth cohorts of\r\n youngsters who were considered at risk because of anti-social behavior\r\n or because of officially recorded delinquency at early ages. The study\r\n followed a sample of 245 boys in the fourth, seventh, and tenth grades\r\n in 1980 (Part 1) and again in 1985 (Part 2). Two screening devices, or\r\n \"gatings,\" were used to predict future delinquency. The first\r\n procedure, triple gating, was based on teachers' ratings of school\r\n competence, mothers' reports of anti-social behavior in the home, and\r\n parental monitoring. The second procedure, double gating, used only\r\n the teachers' ratings and mothers' reports. Data were collected on the\r\n boys' family, school, and criminal backgrounds. Variables include\r\n measures of independence and achievement, family criminality, home\r\n conduct problems, school disruptiveness, school competence, parental\r\n authoritarianism, parental conflict, self-reported delinquency, peer\r\ndelinquency, and drug and alcohol use.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3254",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "academic achievement",
+    "behavior problems",
+    "delinquent behavior",
+    "family background",
+    "youths at risk"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1990-05-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09312.v2",
+      "title": "Screening of Youth at Risk for Delinquency in Oregon, 1980-1985"
+    }
+  ]
+}

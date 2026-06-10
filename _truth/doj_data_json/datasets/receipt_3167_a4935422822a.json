@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Crime Incident Data for Selected HOPE VI Sites in  Milwaukee, Wisconsin, 2002-2010, and Washington, DC, 2000-2009",
+  "description": "The purpose of this project was to conduct an evaluation of the impact on crime of the closing, renovation, and subsequent reopening of selected public housing developments under the United States Department of Housing and Urban Development's (HUD) Housing Opportunities for People Everywhere (HOPE VI) initiative. The study examined crime displacement and potential diffusion of benefits in and around five public housing developments that, since 2000, had been redeveloped using funds from HUD's HOPE VI initiative and other sources. In Milwaukee, Wisconsin, three sites were selected for inclusion in the study. However, due to substantial overlap between the various target sites and displacement zones, the research team ultimately decided to aggregate the three sites into a single target area. A comparison area was then chosen based on recommendations from the Housing Authority of the City of Milwaukee (HACM). In Washington, DC, two HOPE VI sites were selected for inclusion in the study. Based on recommendations from the District of Columbia Housing Authority (DCHA), the research team selected a comparison site for each of the two target areas. Displacement areas were then drawn as concentric rings (\"buffers\") around the target areas in both Milwaukee, Wisconsin and Washington, DC. Address-level incident data were collected for the city of Milwaukee from the Milwaukee Police Department for the period January 2002 through February 2010. Incident data included all \"Group A\" offenses as classified under National Incident Based Reporting System (NIBRS). The research team classified the offenses into personal and property offenses. The offenses were aggregated into monthly counts, yielding 98 months of data (Part 1: Milwaukee, Wisconsin Data). Address-level data were also collected for Washington, DC from the Metropolitan Police Department for the time period January 2000 through September 2009. Incident data included all Part I offenses as classified under the Uniform Crime Report (UCR) system. The data were classified by researchers into personal and property offenses and aggregated by month, yielding 117 months of data (Part 2: Washington, DC Data). Part 1 contains 15 variables, while Part 2 contains a total of 27 variables. Both datasets include variables on the number of personal offenses reported per month, the number of property offenses reported per month, and the total number of incidents reported per month for each target site, buffer zone area (1000 feet or 2000 feet), and comparison site. Month and year indicators are also included in each dataset.",
+  "modified": "2011-07-06T15:35:47",
+  "accessLevel": "public",
+  "identifier": "3167",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "community development",
+    "crime",
+    "crime patterns",
+    "crime rates",
+    "crime statistics",
+    "federal housing programs",
+    "low income housing",
+    "public housing",
+    "urban development"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2011-07-06T15:35:47",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR29981.v1",
+      "title": "Crime Incident Data for Selected HOPE VI Sites in  Milwaukee, Wisconsin, 2002-2010, and Washington, DC, 2000-2009"
+    }
+  ]
+}

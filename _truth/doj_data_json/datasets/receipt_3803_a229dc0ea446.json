@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "The Impact of a Forensic Collaborative for Older Adults on Criminal Justice and Victim Outcomes: A Randomized-Control, Longitudinal Design, Denver, Colorado, 2014-2018",
+  "description": "Initially funded in 2013 by the National Institute of Justice, the primary purpose of this project was to conduct a randomized-control test of the impact of a victim-focused, forensic collaborative relative to usual care (UC) on older adult victims' health, mental health, and criminal justice outcomes. During the course of the project, researchers responded to enrollment and consent challenges by implementing Arm 2 that focused on collecting caseworker and victim advocate perceptions of cases as well as administrative data from Adult Protective Services (APS).\r\nThis collection contains 6 datasets:\r\n\r\nArm 1 (DS1) contains survey results from victim-focused interviews of 40 older adults who were reported to be victims of abuse, neglect, and/or financial exploitation over 4 time points. Variables describe victim and case characteristics, service use/needs, risk factors for abuse, consequences of abuse and exploitation, and criminal justice process and outcomes.\r\nArm 2 (DS2) includes a survey of APS caseworkers reporting on a case of older adult abuse, such as client (older adult victim) and perpetrator demographics, mistreatment details (verbal abuse, physical abuse, sexual abuse, neglect, financial exploitation, and/or housing exploitation), and service use.\r\nCollateral assessments (DS3) surveyed a trusted individual related to the older adult respondent in Arm 1. This included data on the perceptions of the older adult's functioning and use of services; and the quality of decision-making procedures, desired treatment, and outcomes in the criminal justice system. Of the 40 Arm 1 participants interviewed, 33 gave collateral contact information. Of those 33, 16 could not be reached, one failed the consent quiz, and two declined to participate. Of the 14 who participated in an initial interview, only three participated at the follow-up nine months later.\r\nRevictimization and Prosecutorial Outcome Data (DS5) includes information on new incidents reported to law enforcement over the nine months following the original incident report and prosecution outcomes, gathered from publicly-accessible police reports and court information for Arm 1 and Arm 2 cases.\r\nAPS administrative data (DS6), such as the demographics of the older adult victim and the primary perpetrator, assessment scores for risk and safety, the alleged mistreatment type, whether mistreatment was substantiated, and APS case status. The data included overall risk/safety scores and summary scores for the domains of physical functioning, environmental context, financial resources, mental health, cognition, medical issues, and mistreatment.\r\n\r\nArm 1 demographic variables includes age, gender, education, employment status, marital status, household size, ethnic minority, and income source. Arm 2 surveys reported ethnicity, gender, age, education, marital status, and employment status; APS data reported age and gender. ",
+  "modified": "2020-07-30T11:15:39",
+  "accessLevel": "restricted public",
+  "identifier": "3803",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "criminal justice system",
+    "elder abuse",
+    "exploitation",
+    "mental health",
+    "older adults",
+    "post-traumatic stress disorder",
+    "victimization"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2020-07-30T11:01:24",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37167.v1",
+      "title": "The Impact of a Forensic Collaborative for Older Adults on Criminal Justice and Victim Outcomes: A Randomized-Control, Longitudinal Design, Denver, Colorado, 2014-2018"
+    }
+  ]
+}

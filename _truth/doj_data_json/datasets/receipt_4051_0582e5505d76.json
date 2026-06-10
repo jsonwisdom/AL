@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Incidence Studies of Missing, Abducted, Runaway and Thrownaway Children (NISMART), [United States], 2011 ",
+  "description": "The National Incidence Studies of Missing, Abducted, Runaway, and Thrownaway Children (NISMART) were undertaken in response to the mandate of the 1984 Missing Children's Assistance Act (Pub.L. 98-473) that requires the Office of Juvenile Justice and Delinquency Prevention (OJJDP) to conduct periodic national incidence studies to determine the actual number of children reported missing and the number of missing children who are recovered for a given year. The third installment, NISMART-3, was undertaken in 2011 and is comprised of three components; an adult household survey, a survey of juvenile facilities and a survey of law enforcement. It was designed to provide a comprehensive picture of the population dealing with missing children issues and each component focusing on a different aspect of that population namely; the general population, law enforcement and juvenile detention centers across the country. Due to low response rates the data from the youth supplement to the household survey and the juvenile detention center data are unavailable and are not provided here.",
+  "modified": "2017-08-28T14:12:36",
+  "accessLevel": "restricted public",
+  "identifier": "4051",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "child abuse",
+    "child custody",
+    "children",
+    "family relationships",
+    "juveniles",
+    "kidnapping",
+    "missing children",
+    "parental kidnapping"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2017-02-01T18:45:43",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36566.v1",
+      "title": "National Incidence Studies of Missing, Abducted, Runaway and Thrownaway Children (NISMART), [United States], 2011 "
+    }
+  ]
+}

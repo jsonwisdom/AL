@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Evaluation of the Los Angeles County Regimented Inmate Diversion (RID) Program, 1990-1991",
+  "description": "This data collection documents an evaluation of the Los\r\n Angeles County Sheriff's Regimented Inmate Diversion (RID) program\r\n conducted with male inmates who were participants in the program\r\n during September 1990-August 1991. The evaluation was designed to\r\n determine whether county-operated boot camp programs for male inmates\r\n were feasible and cost-effective. An evaluation design entailing both\r\n process and impact components was undertaken to fully assess the\r\n overall effects of the RID program on offenders and on the county jail\r\n system. The process component documented how the RID program actually\r\n operated in terms of its selection criteria, delivery of programs,\r\n length of participation, and program completion rates. Variables\r\n include demographic/criminal data (e.g., race, date of birth, arrest\r\n charge, bail and amount, sentence days, certificates acquired, marital\r\n status, employment status, income), historical state and county arrest\r\n data (e.g., date of crime, charge, disposition, probation time, jail\r\n time, type of crime), boot camp data (e.g., entry into and exit from\r\n boot camp, reason for exit, probation dates, living conditions,\r\n restitution order), drug history data (e.g., drug used, frequency,\r\n method), data on drug tests, and serious incidence data. The impact\r\n data were collected on measures of recidivism, program costs,\r\ninstitutional behavior, and RID's effect on jail crowding.",
+  "modified": "1994-10-19T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3493",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "cost effectiveness",
+    "male offenders",
+    "prison inmates",
+    "program evaluation",
+    "shock incarceration programs"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1994-10-19T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06236.v1",
+      "title": "Evaluation of the Los Angeles County Regimented Inmate Diversion (RID) Program, 1990-1991"
+    }
+  ]
+}

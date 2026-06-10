@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Criminal Recidivism in a Large Cohort of Offenders Released from Prison in Florida, 2004-2008",
+  "description": "The purpose of the study was to quantify the effect of the embrace of DNA technology on offender behavior. In particular, researchers examined whether an offender's knowledge that their DNA profile was entered into a database deterred them from offending in the future and if probative effects resulted from DNA sampling. The researchers coded information using criminal history records and data from Florida's DNA database, both of which are maintained by the Florida Department of Law Enforcement (FDLE), and also utilized court docket information acquired through the Florida Department of Corrections (FDOC) to create a dataset of 156,702 cases involving offenders released from the FDOC in the state of Florida between January 1996 and December 2004. The data contain a total of 50 variables. Major categories of variables include demographic variables regarding the offender, descriptive variables relating to the initial crime committed by the offender, and time-specific variables regarding cases of recidivism.",
+  "modified": "2010-07-29T15:38:14",
+  "accessLevel": "restricted public",
+  "identifier": "3315",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "DNA fingerprinting",
+    "conviction rates",
+    "conviction records",
+    "crime",
+    "crime prevention",
+    "criminal histories",
+    "deterrence",
+    "recidivism",
+    "recidivism prediction",
+    "recidivism rates",
+    "recidivists"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2010-07-29T15:10:15",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR27781.v1",
+      "title": "Criminal Recidivism in a Large Cohort of Offenders Released from Prison in Florida, 2004-2008"
+    }
+  ]
+}

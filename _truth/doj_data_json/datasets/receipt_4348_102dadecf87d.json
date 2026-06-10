@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "ATF Office Locations",
+  "description": "The Bureau of Alcohol, Tobacco, Firearms and Explosives (ATF) has locations in several field divisions across the continental United States and several territories. Each field division has several field and satellite offices that cover one or several states. Each office houses staff with specialized expertise to help you address questions or concerns regarding violent crime, federal firearms licensing and regulation, federal explosives licensing and investigation and arson investigations.\r\n\r\nFeel free to also look for locations on the ATF official webpage as well - https://www.atf.gov/contact/local-atf-offices",
+  "modified": "2026-02-27T00:00:00",
+  "accessLevel": "public",
+  "identifier": "4348",
+  "publisher": {
+    "name": "Bureau of Alcohol, Tobacco, Firearms and Explosives",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Bureau of Alcohol, Tobacco, Firearms, and Explosives (USDOJ)",
+    "hasEmail": "mailto:atfopendata@atf.gov"
+  },
+  "keyword": [
+    "ATF",
+    "office"
+  ],
+  "bureauCode": [
+    "011:00"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "temporal": "2025-10-01T00:00:00.0000000/2026-10-01T00:00:00.0000000",
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "accrualPeriodicity": "R/P1Y",
+  "dataQuality": false,
+  "issued": "2025-08-31T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "landingPage": "https://www.atf.gov/contact/locations/atf-field-divisions",
+  "theme": [
+    "geospatial"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "description": "The link will open the OpenData site which will allow one to download the data in many formats",
+      "downloadURL": "https://opendata-atf-geoplatform.hub.arcgis.com/datasets/8456bb4e8e68446aa27e3061ab6d4ac9_0/explore?location=4.235567%2C-6.464722%2C2.02",
+      "mediaType": "application/shf+xml",
+      "title": "ATF Office Locations"
+    },
+    {
+      "@type": "dcat:Distribution",
+      "description": "XML file to allow for easy downloading of metadata of the office locations",
+      "downloadURL": "https://atf-geoplatform.maps.arcgis.com/home/item.html?id=d34a361ae26a4afa97423249d602451b#overview",
+      "mediaType": "text/xml",
+      "title": "ATF Office Locations Metadata"
+    }
+  ]
+}

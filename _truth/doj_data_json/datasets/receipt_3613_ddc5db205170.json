@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Evaluating the Impact of a Specialized Domestic Violence  Police Unit in Charlotte, North Carolina, 2003-2005",
+  "description": "The specific goals of this project were (1) to assess the selection criteria used to determine the domestic violence cases for intensive intervention: what criteria are used, and what differentiates how cases are handled, (2) to track the outcomes through Charlotte-Mecklenburg Police Department (CMPD), Mecklenburg domestic violence court, and the Mecklenburg jail for the different methods of dealing with the cases, and (3) to provide an assessment of the relative effectiveness of a specialized domestic violence unit vis-a-vis normal patrol unit responses in terms of repeat calls, court processing, victim harm, and repeat arrests. The population from which the sample was selected consisted of all police complaint numbers for cases involving domestic violence (DV) in 2003. The unit of analysis was therefore the domestic violence incident. Cases were selected using a randomized stratified sample (stratifying by month) that also triple-sampled DV Unit cases, which generated 255 DV Unit cases for inclusion. The final sample therefore consists of 891 domestic violence cases, each involving one victim and one suspect. Within this final sample of cases, 25 percent were processed by the DV Unit. The data file contains data from multiple sources. Included from the police department's computerized database (KBCOPS) are variables pertaining to the nature of the crime, victim information and suspect information such as suspect and victim demographic data, victim/offender relationship, highest offense category, weapon usage, victim injury, and case disposition status. From police narratives come such variables as victim/offender relationship, weapon use (more refined than what is included in KBCOPS data), victim injury (also a more refined measure), and evidence collected. Variables from tracking data include information regarding the nature of the offense, the level/type of harm inflicted, and if the assault involved the same victim in the sample. Variables such as amount of jail time a suspect may have had, information pertaining to the court charges (as opposed to the charges at arrest) and case disposition status are included from court and jail data.",
+  "modified": "2008-07-01T13:23:38",
+  "accessLevel": "restricted public",
+  "identifier": "3613",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "abuse",
+    "court cases",
+    "courts",
+    "domestic violence",
+    "evidence",
+    "intimate partner violence",
+    "spouse abuse",
+    "victimization",
+    "victims",
+    "violence against women"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2008-06-30T15:01:16",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR20461.v1",
+      "title": "Evaluating the Impact of a Specialized Domestic Violence  Police Unit in Charlotte, North Carolina, 2003-2005"
+    }
+  ]
+}

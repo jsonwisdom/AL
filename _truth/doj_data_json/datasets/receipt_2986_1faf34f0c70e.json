@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Survey of Police-Media Relations, 2000   ",
+  "description": "This study was undertaken to examine the influence police\r\n officers have in creating an image of law enforcement through media\r\n relations and public information offices/officers (PIO). A survey was\r\n mailed nationwide to police departments serving areas with populations\r\n exceeding 100,000 residents. The survey items identified the following\r\n factors: (1) the presence and nature of a formal departmental media\r\n strategy, (2) the prevalence of full-time police PIO, (3) PIO\r\n background characteristics, including educational/vocational training\r\n in media, journalism, or public relations, (4) specific goals of\r\n police media relations offices and PIOs, (5) the various methods by\r\n which these goals are achieved, and (6) the perceived quality of\r\n police-media interaction, the police image, and the public information\r\n office both before and after the adoption of the current media\r\nstrategy.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2986",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "media influence",
+    "media use",
+    "police departments",
+    "police officers",
+    "public opinion",
+    "public relations"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2003-10-30T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03597.v1",
+      "title": "National Survey of Police-Media Relations, 2000   "
+    }
+  ]
+}

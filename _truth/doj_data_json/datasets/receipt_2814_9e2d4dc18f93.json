@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Evaluation of Intensive Probation in Milwaukee, 1980-1981",
+  "description": "The purpose of this study was to evaluate the results and \r\n impact of a two-year experiment in innovative probation practices in \r\n Milwaukee, Wisconsin. After being classified according to the Wisconsin \r\n risk and needs assessment scale, individuals who had been sentenced to \r\n probation between January 2, 1980 and June 30, 1981 and had reported to \r\n the probation department for intake were randomly assigned to one of \r\n eight experimental and control groups. The experiment was limited to \r\n adult residents of Milwaukee County who were not already on probation, \r\n were not judged to be severe psychotic or severe sex-deviant cases, and \r\n were not assigned to jail work-release sentences of more than ten days \r\n followed by probation (Huber cases). There are three files in this data \r\n collection: the Reassessment file, the Admissions/Terminations file, \r\n and the Chronological file. Each case in the Reassessment and \r\n Admissions/Terminations files represents data on an individual \r\n probationer. There are 84 variables for 1343 cases in the Reassessment \r\n file and 218 variables for 1922 cases in the Admissions/Terminations \r\n file, both files have logical record lengths of 100 characters. Of the \r\n 1922 cases for which admissions data were collected (about 133 \r\n variables), 397 cases also have termination data available (an \r\n additional 85 variables). Cases in the Chronological file are records \r\n of probation agent contacts with probationers over the course of the \r\n study. There are 17 variables for 47,169 cases (contacts) in this file \r\n which includes information on 1781 probationers. As many as 270 \r\n contacts with a single probationer are recorded. This file has a \r\nlogical record length of 80.",
+  "modified": "2006-01-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2814",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "criminal justice system",
+    "probation",
+    "probation conditions",
+    "probation officers",
+    "probationers",
+    "program evaluation"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1985-10-09T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08276.v1",
+      "title": "Evaluation of Intensive Probation in Milwaukee, 1980-1981"
+    }
+  ]
+}

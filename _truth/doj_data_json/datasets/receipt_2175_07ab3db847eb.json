@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Monitoring of Federal Criminal Convictions and Sentences: Appeals Data Series",
+  "description": "\r\nInvestigator(s): U.S. Sentencing Commission\r\nThis collection contains appellate information from the 12 \r\ncircuit courts of appeals of the United States. The United States Sentencing \r\nCommission compiled from the Clerk of the Court of each court of appeals the \r\nfinal opinions and orders, both published and unpublished, in all criminal \r\nappeals for the time period surveyed. The Commission also collected habeas \r\ncorpus decisions (although technically civil matters), because such cases \r\noften involve sentencing issues. Both the \"case\" and the \"defendant\" are used \r\nin this collection as units of analysis. Each \"case\" comprises individual \r\nrecords representing all codefendants participating in a consolidated appeal. \r\nEach defendant's record comprises the sentencing-related issues corresponding \r\nto that particular defendant. The 1993 data file (Part 1) includes all appeals\r\ncases received by the U.S. Sentencing Commission as of December 22, 1993, that\r\nhad disposition dates between March 9, 1990, and September 30, 1993 \r\n(inclusive). The 1994 file (Part 2) includes all appeals cases received as of \r\nDecember 23, 1994, that had disposition dates between October 1, 1993, and \r\nSeptember 30, 1994 (inclusive). The 1995 data file (Part 6) includes all \r\nappeals cases received as of December 26, 1995, that had disposition dates \r\nbetween October 1, 1994, and September 30, 1995 (inclusive).Years\r\nProduced: Updated annually.\r\n",
+  "modified": "2022-03-29T13:56:30",
+  "accessLevel": "public",
+  "identifier": "2175",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "appeal procedures",
+    "appellate courts",
+    "convictions (law)",
+    "court cases",
+    "criminal histories",
+    "defendants",
+    "federal courts",
+    "habeas corpus",
+    "judicial decisions",
+    "legal appeals",
+    "offenses",
+    "sentence review",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1996-03-06T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/75",
+      "title": "Monitoring of Federal Criminal Convictions and Sentences: Appeals Data Series"
+    }
+  ]
+}

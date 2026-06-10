@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Incidence Studies of Missing, Abducted, Runaway, and Thrownaway Children (NISMART), 1999",
+  "description": "The National Incidence Studies of Missing, Abducted,\r\nRunaway, and Thrownaway Children (NISMART) were undertaken in response\r\nto the mandate of the 1984 Missing Children's Assistance Act\r\n(Pub.L. 98-473) that requires the Office of Juvenile Justice and\r\nDelinquency Prevention (OJJDP) to conduct periodic national incidence\r\nstudies to determine the actual number of children reported missing\r\nand the number of missing children who are recovered for a given\r\nyear. The first such study, NISMART-1 (NATIONAL INCIDENCE STUDIES OF\r\nMISSING, ABDUCTED, RUNAWAY, AND THROWNAWAY CHILDREN (NISMART), 1988\r\n[ICPSR 9682]), was conducted from 1988 to 1989 and addressed this\r\nmandate by defining major types of missing child episodes and\r\nestimating the number of children who experienced missing child\r\nepisodes of each type in 1988. At that time, the lack of a\r\nstandardized definition of a \"missing child\" made it impossible to\r\nprovide a single estimate of missing children. As a result, one of the\r\nprimary goals of NISMART-2 was to develop a standardized definition\r\nand provide unified estimates of the number of missing children in the\r\nUnited States. Both NISMART-1 and NISMART-2 comprise several component\r\ndatasets designed to provide a comprehensive picture of the population\r\nof children who experienced qualifying episodes, with each component\r\nfocusing on a different aspect of the missing child population. The\r\nHousehold Survey -- Youth Data and the Household Survey -- Adult Data\r\n(Parts 1-2) are similar but separate surveys, one administered to the\r\nadult primary caretaker of the children in the sampled household and\r\nthe other to a randomly selected household youth aged 10 through 18 at\r\nthe time of interview. The Juvenile Facilities Data on Runaways (Part\r\n3) sought to estimate the number of runaways from juvenile residential\r\nfacilities in order to supplement the household survey estimate of the\r\nnumber of runaways from households. And the Law Enforcement Study\r\nData, by case perpetrator, and victim, (Parts 4-6) intended to\r\nestimate the number of children who were victims of stereotypical\r\nkidnappings and to obtain a sample of these cases for in-depth study.",
+  "modified": "2018-02-13T10:56:11",
+  "accessLevel": "restricted public",
+  "identifier": "3964",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "children",
+    "drug use",
+    "family relationships",
+    "juveniles",
+    "kidnapping",
+    "missing children"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2007-07-19T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04566.v2",
+      "title": "National Incidence Studies of Missing, Abducted, Runaway, and Thrownaway Children (NISMART), 1999"
+    }
+  ]
+}

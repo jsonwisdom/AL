@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Examining Prison Stays in Michigan, 1985-2008",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThis research sought to analyze the length of time served by state prisoners in Michigan from 1985 to 2008. It was conducted to address research that showed Michigan had the longest prison stays in the United States of America, the substantial impact that time served had upon state prison populations, and to assess the effect of parole and sentencing policy on time-served. The research utilized National Corrections Reporting Program (NCRP) data available through the National Archive of Criminal Justice Data (NACJD) in order to build upon past-research and contribute to the understanding of state-specific patterns and trends across offenses and racial groups.\r\nIn order to address policy effects upon time served, the purpose of this study was to contextualize patterns of time served across 20 years within the parole and sentencing policy changes in Michigan; the impact of reforms in 1999 were of particular focus.There are no data files available with this study. Only syntax files used by the researcher(s) are provided.",
+  "modified": "2018-05-15T07:37:06",
+  "accessLevel": "public",
+  "identifier": "3897",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "correctional system",
+    "federal correctional facilities",
+    "jail inmates",
+    "national crime statistics (USA)",
+    "offenses",
+    "parole",
+    "prison inmates",
+    "racial discrimination",
+    "sentencing",
+    "sentencing reforms",
+    "state correctional facilities"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2018-05-15T07:37:06",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37034.v1",
+      "title": "Examining Prison Stays in Michigan, 1985-2008"
+    }
+  ]
+}

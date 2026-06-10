@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Survey of Campus Law Enforcement Agencies, 2011-2012",
+  "description": "These data are from the Bureau of Justice Statistics' (BJS) 2011-\r\n12 Survey of Campus Law Enforcement Agencies. In preparation for the\r\nsurvey, a universe list of 4-year and 2-year campuses was compiled using the United States Department of Education's Integrated Postsecondary Education Data System (IPEDS).\r\nThe survey focused primarily on agencies serving 4-year universities and\r\ncolleges with a fall headcount enrollment of 2,500 or more. In addition, 2-year institutions with 2,500 or more students and a sample of 4-year institutions with 1,000 to 2,499 students were surveyed. These\r\ncampuses are covered in a separate report. Schools were classified\r\naccording to the level of the highest proportion of degrees awarded.\r\nThe survey excluded:\r\n\r\nUnited States military academies and schools,\r\nfor-profit institutions,\r\nschools operating primarily online.\r\nOf the 905 4-year campuses with 2,500 or more students identified as being\r\npotentially eligible for the 2011-12 survey, 861 reported that they were\r\noperating their own campus law enforcement agency. These\r\n861 agencies were asked to provide data describing their personnel,\r\nfunctions, expenditures and pay, operations, equipment, computers and\r\ninformation systems, community policing activities, specialized units, and\r\nemergency preparedness activities. ICF International, with the assistance\r\nof BJS, served as the data collection agent.\r\nBJS also conducted surveys of campus law enforcement agencies covering the\r\n1994-95 and 2004-05 school years. The reports produced from these surveys\r\nare available on the BJS Web site and data are available on the ICPSR Web site.",
+  "modified": "2015-08-13T13:58:19",
+  "accessLevel": "public",
+  "identifier": "2155",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "administration",
+    "budgets",
+    "colleges",
+    "law enforcement",
+    "law enforcement agencies",
+    "management",
+    "personnel",
+    "universities",
+    "wages and salaries",
+    "workers"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2431",
+  "dataQuality": false,
+  "issued": "2015-08-13T13:58:19",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36217.v1",
+      "title": "Survey of Campus Law Enforcement Agencies, 2011-2012"
+    }
+  ]
+}

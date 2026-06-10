@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Census of Tribal Justice Agencies, 2002",
+  "description": "The study compiles data on the law enforcement, courts and\r\n administration, corrections and intermediate sanctions, criminal\r\n history records, and justice statistics of the federally recognized\r\n American Indian tribal governing bodies. The data determine which\r\n tribes have sworn law enforcement personnel and the source of\r\n authority, what the number and type of tribal court systems are, who\r\n performs the tribal detention function and what types of sanctions are\r\n imposed. It also looks at whether tribes have access to state and\r\nnational criminal record systems.",
+  "modified": "2006-07-13T00:00:00",
+  "accessLevel": "public",
+  "identifier": "97",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Native Americans",
+    "correctional facilities",
+    "correctional system",
+    "corrections",
+    "corrections management",
+    "demographic characteristics",
+    "inmates",
+    "jail inmates",
+    "jails",
+    "population characteristics",
+    "probation",
+    "substance abuse",
+    "treatment programs"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2006-07-13T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04439.v1",
+      "title": "Census of Tribal Justice Agencies, 2002"
+    }
+  ]
+}

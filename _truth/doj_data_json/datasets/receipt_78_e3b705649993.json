@@ -1,0 +1,53 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Census of Law Enforcement Aviation Units, 2007 [United States]",
+  "description": "The 2007 Census of Law Enforcement Aviation Units is the first systematic, national-level data collection providing information about law enforcement aviation assets and functions.  In general, these units provide valuable airborne support for traditional ground-based police operations.  An additional role following the September 11, 2001 terrorist attacks is the provision of essential\r\nhomeland security functions, such as providing critical facility checks of buildings, ports and harbors, public utilities, inland waterways, oil refineries, bridges and spans, water storage/reservoirs, National and/or State monuments, water treatment plants, irrigation facilities, airports, and natural resources.  Aviation units are thought to be able to perform critical facility checks and routine patrol and support operations with greater efficiency than ground-based personnel. However, little is presently known about the equipment, personnel, operations, expenditures, and safety requirements of these units on a national level. This information is critical to law enforcement policy development, planning, and budgeting at all levels of government.\r\nThe data will supply law enforcement agencies with a benchmark for comparative analysis with other similarly situated agencies, and increase understanding of the support that aviation units provide to ground-based police operations.",
+  "modified": "2009-12-07T07:42:47",
+  "accessLevel": "public",
+  "identifier": "78",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "aircraft",
+    "law enforcement",
+    "national security",
+    "police equipment"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2009-12-02T14:47:54",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR25482.v1",
+      "title": "Census of Law Enforcement Aviation Units, 2007 [United States]"
+    }
+  ]
+}

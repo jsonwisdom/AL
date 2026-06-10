@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Implementation of Quantitative Decision Aids in the Oklahoma Probation and Parole System, 1989-1990",
+  "description": "These data were collected to examine the use of\r\nquantitative decision aids in making probation and parole decisions in\r\nOklahoma. The quantitative aids implemented in Oklahoma were\r\nmodifications of the Wisconsin risks/needs assessment instruments. To\r\ndetermine the uses of and attitudes towards such instruments, Oklahoma\r\nprobation and parole officers were queried regarding the\r\nappropriateness of the instruments in making probation and parole\r\ndecisions, the specific circumstances in which the instruments were\r\nuseful, the reasons why the instruments were used, and the extent to\r\nwhich the instruments were manipulated. In addition, data were\r\ncollected from the officers on job satisfaction and age, length of\r\nemployment, sex, education, and race.",
+  "modified": "1993-12-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3443",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "decision making",
+    "parole officers",
+    "probation officers",
+    "program evaluation",
+    "risk assessment"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1993-12-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09963.v1",
+      "title": "Implementation of Quantitative Decision Aids in the Oklahoma Probation and Parole System, 1989-1990"
+    }
+  ]
+}

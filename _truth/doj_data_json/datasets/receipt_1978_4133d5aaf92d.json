@@ -1,0 +1,72 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Quarterly Uniform Crime Report",
+  "description": "A publication in which the FBI compiles preliminary year-to-date trends of Part I offenses for the nation, regions, population group, and the largest agencies on a quarterly basis.  Trends covering the first three months of the calendar year are released in June, the first six months of the calendar year are released in September, and the first nine months of the calendar year are released in December.  Preliminary year-to-date trends are release for January to December of a calendar year are released the following March.",
+  "modified": "2022-11-28T00:00:00",
+  "accessLevel": "public",
+  "identifier": "1978",
+  "publisher": {
+    "name": "Federal Bureau of Investigation",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Criminal Justice Information Services Division Federal Bureau of Investigation (USDOJ)",
+    "hasEmail": "mailto:CRIMESTATSINFO@fbi.gov"
+  },
+  "keyword": [
+    "crime reporting",
+    "aggravated assault",
+    "arson",
+    "assault",
+    "auto theft",
+    "burglary",
+    "crime statistics",
+    "larceny",
+    "law enforcement",
+    "murder",
+    "offenses",
+    "rape",
+    "robbery",
+    "Uniform Crime Reporting Program",
+    "trends",
+    "year-to-date",
+    "quarterly"
+  ],
+  "bureauCode": [
+    "011:10"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "spatial": "United States",
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "547",
+  "accrualPeriodicity": "R/P3M",
+  "dataQuality": true,
+  "issued": "2021-02-04T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "landingPage": "https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/home",
+  "theme": [
+    "geospatial"
+  ],
+  "references": [
+    "https://ucr.fbi.gov/"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "description": "The Crime Data Explorer (CDE) offers downloadable Uniform Crime Reporting (UCR) data files. The CDE provides quarterly trends of the most recent UCR data.",
+      "downloadURL": "https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/explorer/crime/quarterly",
+      "mediaType": "application/zip",
+      "title": "Preliminary: Crime Data Explorer"
+    }
+  ]
+}

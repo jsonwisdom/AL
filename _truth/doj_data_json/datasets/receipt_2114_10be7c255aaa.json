@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Crime Surveys Extract:  Personal Crime Longitudinal Files, 1976-1982",
+  "description": "The National Crime Survey (NCS) collects data on personal\r\nand household victimization through an ongoing national survey of\r\nhouseholds and household members. Only data for robbery and assaults\r\nare included in this dataset. There are two data files: Assault Victim\r\nExperiences, and Victim and Non-Victim Responses. Items included are\r\ntime and place of occurrence, injuries suffered, medical expenses\r\nincurred, number, age, race, and sex of offender(s), relationship of\r\noffender(s) to victim, marital status, employment, military\r\nexperience, and residency.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2114",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "assault",
+    "crime",
+    "demographic characteristics",
+    "households",
+    "justice",
+    "medical care",
+    "medical history",
+    "robbery",
+    "victimization",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1985-05-24T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08315.v1",
+      "title": "National Crime Surveys Extract:  Personal Crime Longitudinal Files, 1976-1982"
+    }
+  ]
+}

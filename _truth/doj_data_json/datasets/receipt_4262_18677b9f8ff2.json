@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "21st Century Corporate Financial Fraud, United States, 2005-2010",
+  "description": "The Corporate Financial Fraud project is a study of company and top-executive characteristics of firms that ultimately violated Securities and Exchange Commission (SEC) financial accounting and securities fraud provisions compared to a sample of public companies that did not.  The fraud firm sample was identified through systematic review of SEC accounting enforcement releases from 2005-2010, which included administrative and civil actions, and referrals for criminal prosecution that were identified through mentions in enforcement release, indictments, and news searches.\r\nThe non-fraud firms were randomly selected from among nearly 10,000 US public companies censused and active during at least one year between 2005-2010 in\r\nStandard and Poor's Compustat data.  The Company and Top-Executive (CEO) databases combine information from numerous publicly available sources, many in raw form that were hand-coded (e.g., for fraud firms: Accounting and Auditing Enforcement Releases (AAER) enforcement releases, investigation summaries, SEC-filed complaints, litigation proceedings and case outcomes).\r\nFinancial and structural information on companies for the year leading up to the financial fraud (or around year 2000 for non-fraud firms) was collected from Compustat financial statement data on Form 10-Ks, and supplemented by hand-collected data from original company 10-Ks, proxy statements, or other financial reports accessed via Electronic Data Gathering, Analysis, and Retrieval (EDGAR), SEC's data-gathering search tool.\r\nFor CEOs, data on personal background characteristics were collected from Execucomp and BoardEx databases, supplemented by hand-collection from proxy-statement biographies.",
+  "modified": "2021-06-29T13:44:50",
+  "accessLevel": "restricted public",
+  "identifier": "4262",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "business elites",
+    "corporate behavior",
+    "corporate crime",
+    "federal offenses",
+    "finance",
+    "fraud",
+    "organizational behavior",
+    "securities fraud",
+    "white collar crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2021-06-29T13:34:36",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37328.v1",
+      "title": "21st Century Corporate Financial Fraud, United States, 2005-2010"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Long-Range Planning Survey of Federal Judges, 1992: [United States]",
+  "description": "In October 1992, the Federal Judicial Center surveyed nearly \r\n all federal judges on a wide range of issues of concern to the federal \r\n courts. The survey was conducted for two purposes: to inform the \r\n deliberations of the Judicial Conference Committee on Long-Range \r\n Planning and to provide information for the Center's \r\n congressionally-mandated study of structural alternatives for the \r\n federal courts of appeals. Although the purposes were distinct, the \r\n areas of interest overlapped, resulting in a survey instrument that \r\n addressed many issues at differing levels of detail. The survey \r\n questions dealt with the nature and severity of problems in the federal \r\n courts, structure and relationships, jurisdiction size and resources, \r\n administration and governance, discovery, juries, criminal sanctions, \r\n deciding appeals in the current system, availability and compensation \r\nof counsel, and methods of civil dispute resolution.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2071",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "appellate courts",
+    "criminal justice system",
+    "federal courts",
+    "judges"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1995-12-20T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06544.v1",
+      "title": "Long-Range Planning Survey of Federal Judges, 1992: [United States]"
+    }
+  ]
+}

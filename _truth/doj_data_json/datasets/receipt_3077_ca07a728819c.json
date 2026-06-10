@@ -1,0 +1,53 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Sanctions in the Justice System, 1942-1977: The Effects on Offenders in Racine, Wisconsin",
+  "description": "The purpose of this data collection was to evaluate the\r\neffectiveness of judicial intervention and varying degrees of sanction\r\nseverity by comparing persons who have been processed at the juvenile\r\nor adult level in the justice system with persons who have not. The\r\nmain research question was whether the number of judicial interventions\r\nand severity of sanctions had any effects on the seriousness of\r\noffenders' future offenses or the decision to desist from such\r\nbehavior. Variables include characteristics of the person who had the\r\npolice contact as well as items specific to a particular police\r\ncontact. Others are the number of police contacts, seriousness of\r\npolice contacts, severity of sanctions, and age, cohort, and decade the\r\ncontact occurred.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3077",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "criminal justice system",
+    "juvenile delinquency",
+    "recidivism",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1987-01-12T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08530.v1",
+      "title": "Sanctions in the Justice System, 1942-1977: The Effects on Offenders in Racine, Wisconsin"
+    }
+  ]
+}

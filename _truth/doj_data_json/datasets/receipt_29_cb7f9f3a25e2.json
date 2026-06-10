@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Annual Probation Survey, 2000",
+  "description": "The 2000 Annual Probation Survey provides a count of the total number of persons supervised on probation on January 1 and December 31, 2000, and a count of the number of persons entering and exiting probation supervision during 2000. The survey also provides counts of the number of probationers by certain characteristics, such as gender, race and Hispanic or Latino origin, offense, and supervision status. The survey covers all 50 states, the District of Columbia, and the federal system.",
+  "modified": "2013-02-26T09:21:55",
+  "accessLevel": "public",
+  "identifier": "29",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "criminal justice system",
+    "offenses",
+    "probation",
+    "probationers",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2444",
+  "dataQuality": false,
+  "issued": "2013-02-26T09:21:55",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR28361.v1",
+      "title": "Annual Probation Survey, 2000"
+    }
+  ]
+}

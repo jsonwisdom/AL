@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Impact of Forensic Evidence on the Criminal Justice Process in Five Sites in the United States, 2003-2006",
+  "description": "The purpose of the study was to investigate the role and impact of forensic science evidence on the criminal justice process.  The study utilized a prospective analysis of official record data that followed criminal cases in five jurisdictions (Los Angeles County, California; Indianapolis, Indiana; Evansville, Indiana; Fort Wayne, Indiana; and South Bend, Indiana) from the time of police incident report to final criminal disposition. The data were based on a random sample of the population of reported crime incidents between 2003 and 2006, stratified by crime type and jurisdiction. A total of 4,205 cases were sampled including 859 aggravated assaults, 1,263 burglaries, 400 homicides, 602 rapes, and 1,081 robberies. Descriptive and impact data were collected from three sources: police incident and investigation reports, crime lab reports, and prosecutor case files. The data contain a total of 175 variables including site, crime type, forensic variables, criminal offense variables, and crime dispositions variables.",
+  "modified": "2010-10-27T08:03:16",
+  "accessLevel": "public",
+  "identifier": "2913",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "aggravated assault",
+    "arrests",
+    "burglary",
+    "convictions (law)",
+    "crime",
+    "crime laboratories",
+    "criminal investigations",
+    "evidence",
+    "forensic sciences",
+    "homicide",
+    "offenses",
+    "prosecution",
+    "rape",
+    "robbery",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2010-10-27T08:03:16",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR29203.v1",
+      "title": "Impact of Forensic Evidence on the Criminal Justice Process in Five Sites in the United States, 2003-2006"
+    }
+  ]
+}

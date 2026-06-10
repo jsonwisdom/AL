@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Firearm Legislation and Firearm Violence Across Space and Time, United States, 1970-2012",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThe study constructed a comprehensive, longitudinal dataset of all counties nested within U.S. States from 1970 to 2012. The study's main purpose was to facilitate research that would further understanding on firearm legislation and its impacts on violence. This comprehensive data collection effort included information on firearm legislation implemented across U.S. States over time in combination with multiple measures of firearm-related violence and injury. Moreover, to better understand the conditions under which firearm legislation is more or less effective, incorporation of county characteristics allowed for examination of whether the effectiveness of state-level firearm legislation depends upon particular characteristics of counties. The researchers conducted a secondary analysis utilizing a variety of archived external government and census sources.\r\nThe Study's Dataset Include two Stata Files:\r\n\r\nCJRC_firearms_research.dta (95 Variables, 129,027 Cases)\r\nstate_law_data.dta (19 Variables, 2,168 Cases)\r\n",
+  "modified": "2018-05-15T14:57:29",
+  "accessLevel": "restricted public",
+  "identifier": "3698",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "assault",
+    "assault weapons",
+    "firearms",
+    "gun control legislation",
+    "gun legislation",
+    "gun ownership",
+    "gun regulation",
+    "gun use",
+    "legislation",
+    "mass murders",
+    "murder",
+    "offenses",
+    "robbery",
+    "violence",
+    "weapons"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-05-15T14:55:51",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36688.v1",
+      "title": "Firearm Legislation and Firearm Violence Across Space and Time, United States, 1970-2012"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Street Gangs and Drug Sales in Pasadena and Pomona, California, 1989-1991",
+  "description": "These data were collected to explore connections between\r\nstreet gangs and drug distribution. The research objectives for this\r\nstudy were (1) to assess the magnitude of gang involvement in cocaine\r\nand other drug sales in two suburban cities, (2) to compare the\r\ncharacteristics of gang-involved drug sale incidents with those\r\nwithout gang involvement, (3) to assess the generalizability of\r\nfindings on cocaine to other drugs, and from urban to more suburban\r\nsettings, and (4) to translate the implications of the research\r\nfindings into the development of law enforcement strategies. Law\r\nenforcement arrest records and gang membership records were obtained\r\nfor two study sites, Pasadena and Pomona, California. Part 1, the\r\nincident-level file, supplies information on arrest incidents\r\nqualifying as drug sales. Variables in the file include presence at\r\narrest of violence, guns, cash, and drugs, types of charges, gang\r\ncharacteristics of the incident, racial/ethnic makeup of arrestees,\r\ngender of arrestees, and gang affiliation of arrestees. Part 2, the\r\nparticipant-level file, supplies data on each participant in each\r\nincident. Variables in this file include gender, ethnicity, gang\r\nmembership status, and charges.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3496",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrest records",
+    "drug traffic",
+    "gang members",
+    "gangs",
+    "suburbs",
+    "urban areas"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1995-06-05T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06255.v2",
+      "title": "Street Gangs and Drug Sales in Pasadena and Pomona, California, 1989-1991"
+    }
+  ]
+}

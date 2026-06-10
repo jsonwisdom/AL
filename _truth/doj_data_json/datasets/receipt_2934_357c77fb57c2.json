@@ -1,0 +1,53 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Effects of Incarceration on Criminal Trajectories in the United States, 1994",
+  "description": "Using data from RECIDIVISM OF PRISONERS RELEASED IN 1994:\r\n[UNITED STATES] (ICPSR 3355), this study developed an analytical\r\napproach to utilize detailed dated criminal arrest history information\r\nin order to investigate whether, and to what extent, incarceration is\r\nable to deter offenders from future offending. This data collection\r\nconsists of the syntax for a SAS macro used to estimate individual\r\nspecific offending micro-trajectories, project counterfactual\r\ntrajectories, and to assess the actual post-release offending patterns\r\nagainst the backdrop of these counterfactuals. The arrest records of\r\nindividuals were clustered in chronological order and were truncated\r\nafter the first post-release re-arrest event. The key independent\r\nvariables used in estimating the pre-release criminal history\r\naccumulation process included the arrest number, the age at first\r\narrest, whether or not the individual was confined as a result of the\r\nprevious arrest event, and a measure of the number of years taken to\r\nreach each arrest event cumulated through the last arrest event. The\r\nsame set of basic variables were used to model first re-arrest after\r\nrelease (recidivism).",
+  "modified": "2007-02-05T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2934",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrest records",
+    "conviction records",
+    "criminal histories",
+    "recidivism"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2007-02-05T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04578.v1",
+      "title": "Effects of Incarceration on Criminal Trajectories in the United States, 1994"
+    }
+  ]
+}

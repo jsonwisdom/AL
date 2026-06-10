@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "The Interpersonal Conflict and Resolution (iCOR) Study, United States, 2016-2018",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files were zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThis study was designed to determine the nature, incidence, and coincidence of forms of interpersonal conflict and resulting conflict management styles, including physical violence, in an existing nationally-representative cohort of 18 to 32 year old adults between the years 2016 to 2018. Respondent reports of conflicts involving aggressive and violent behavior were distinguished for three relationship categories: intimate partner relationships, friends/acquaintances, and relatively unknown persons/strangers.\r\nThe research design covered questions about the nature and frequency of conflicts experienced irrespective of whether the incidents ended violently; conflict management style/tendencies (remedial actions, apologies, accounts); and differences between conflicts that turn violent and those that do not. Additional questions covered include the frequency of violence during the course of disputes, including experiences with physical victimization and the perpetration of violent acts was assessed.\r\nAlso elements that facilitate conflict escalation that are deemed important theoretical constructs in research on aggression, such as adverse childhood events, low self-control, negative affect, street code attitudes, routine activities/lifestyles, agreeableness, and alcohol and drug use, in addition to demographic and other person-level variables were investigated.\r\n\r\n\r\niCOR.Wave1.PRIME.sav (269 variables, 2284 cases)\r\niCOR.Wave2.PARTNER.sav (266 variables, 480 cases)\r\niCOR.Wave2.PRIME.sav (243 variables, 1629 cases)\r\niCOR.Wave3.PRIME.sav (243 variables, 1603 cases)\r\n",
+  "modified": "2019-04-29T07:32:04",
+  "accessLevel": "restricted public",
+  "identifier": "3801",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "alcohol abuse",
+    "childhood",
+    "communication",
+    "conflict resolution",
+    "demographic characteristics",
+    "domestic partnership",
+    "domestic violence",
+    "food preferences",
+    "friendships",
+    "health problems",
+    "lifestyles",
+    "mental health",
+    "morbidity",
+    "substance abuse",
+    "violence"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2019-04-29T07:29:07",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37164.v1",
+      "title": "The Interpersonal Conflict and Resolution (iCOR) Study, United States, 2016-2018"
+    }
+  ]
+}

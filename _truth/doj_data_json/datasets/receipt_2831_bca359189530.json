@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Criminal Violence and Incapacitation in California, 1962-1988",
+  "description": "These data were gathered to investigate the usefulness of\r\n statistical methods, particularly multiple-regression analysis, in\r\n predicting repeat criminal activity subsequent to an individual's\r\n release from prison. The data collection consists of follow-up\r\n information, collected in 1988, on a sample of males released from\r\n California prisons. The follow-up study identified criminal activity\r\n subsequent to individuals' release from prison through 1988.\r\n Predictor variables include age, prior periods of arrest, history of\r\n drug use, seriousness of original offense, and number of arrests for\r\nnuisance, person, property, and fraud offenses.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2831",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "criminal histories",
+    "criminality prediction",
+    "imprisonment",
+    "inmates",
+    "male offenders",
+    "parole",
+    "recidivism",
+    "recidivists"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1993-10-02T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09922.v1",
+      "title": "Criminal Violence and Incapacitation in California, 1962-1988"
+    }
+  ]
+}

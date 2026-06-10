@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Annual Survey of Jails:  Jurisdiction-Level Data, 1997     ",
+  "description": "This collection provides annual data on jail populations\r\n across the nation and examines the \"spillover\" effect on local jails\r\n resulting from the dramatic growth in federal and state prison\r\n populations. These data permit an assessment of the demands placed on\r\n correctional resources and provide a comprehensive picture of the\r\n adult correctional system and changes that occur within the system.\r\n Information is available on the number of inmates by sex, race, and\r\n adult or juvenile status. Facility characteristics were collected\r\nregarding capacity and average daily population.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "67",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "correctional system",
+    "demographic characteristics",
+    "jail inmates",
+    "jails",
+    "overcrowding effects",
+    "population characteristics",
+    "probation"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2586",
+  "dataQuality": false,
+  "issued": "1998-05-20T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02313.v1",
+      "title": "Annual Survey of Jails:  Jurisdiction-Level Data, 1997     "
+    }
+  ]
+}

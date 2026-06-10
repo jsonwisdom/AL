@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Exploring the Reach of Evidence Outside the Jury Box [United States], 2005-2011",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they there received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except of the removal of direct identifiers. Users should refer to the accompany readme file for a brief description of the files available with this collections and consult the investigator(s) if further information is needed.The purpose of the study was to compare how the quantity versus the quality of evidence influences the likelihood of trial convictions and plea decisions and examine whether evidence has differential impacts on the perceived likelihood of trial convictions and plea values. In Phase I (Phase I Data, n=2,593) defense attorneys, prosecutors, and judges, representing all 50 states and the District of Columbia, completed an online survey of a hypothetical legal case in which the presence of three types of evidence (confession, eyewitness, and DNA) and length of defendant criminal history were manipulated. In Phase II (Phase II Data, n=502), researchers worked with two District Attorneys' offices in New York state to code the contents of case files. Researchers coded 502 closed cases from 2005 and 2006, all of which originated as felony arrests. Researchers also obtained criminal history record information on the defendants involved in the cases.",
+  "modified": "2016-05-20T21:28:42",
+  "accessLevel": "restricted public",
+  "identifier": "1169",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "court cases",
+    "defense (law)",
+    "judges",
+    "plea negotiations",
+    "pleas",
+    "prosecuting attorneys",
+    "prosecution"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2016-05-20T21:24:44",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR34679.v1",
+      "title": "Exploring the Reach of Evidence Outside the Jury Box [United States], 2005-2011"
+    }
+  ]
+}

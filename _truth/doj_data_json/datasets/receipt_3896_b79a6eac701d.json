@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Reducing Gang Violence: A Randomized Trial of Functional Family Therapy, Philadelphia, Pennsylvania, 2013-2016",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThe purpose of this study was to produce knowledge about how to prevent at-risk youth from joining gangs and reduce delinquency among active gang members. The study evaluated a modification of Functional Family Therapy, a model program from the Blueprints for Healthy Youth Development initiative, to assess its effectiveness for reducing gang membership and delinquency in a gang-involved population.\r\nThe collection contains 5 SPSS data files and 4 SPSS syntax files:\r\n\r\nadolpre_archive.sav (129 cases, 190 variables),\r\nadolpost_archive.sav (119 cases, 301 variables),\r\nFidelity.archive.sav (66 cases, 25 variables),\r\nparentpre_archive.sav (129 cases, 157 variables), and\r\nparentpost_archive.sav {116 cases, 220 variables).\r\n",
+  "modified": "2018-07-26T10:27:30",
+  "accessLevel": "restricted public",
+  "identifier": "3896",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "community service programs",
+    "drug use",
+    "family services",
+    "gang members",
+    "gangs",
+    "juvenile crime",
+    "juvenile gangs",
+    "juveniles",
+    "youths",
+    "youths at risk"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-07-26T10:19:28",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37008.v1",
+      "title": "Reducing Gang Violence: A Randomized Trial of Functional Family Therapy, Philadelphia, Pennsylvania, 2013-2016"
+    }
+  ]
+}

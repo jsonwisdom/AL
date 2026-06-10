@@ -1,0 +1,52 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "State Appellate Court Adaptation to Caseload Increase, 1968-1984: [United States]",
+  "description": "This data collection examines the impact of caseload\r\npressures on both intermediate appellate courts and supreme courts for\r\neach state in the nation. The data describe in detail the changes made\r\nby appellate courts and supply information related to each change.\r\nThese changes include (1) adding judges, law clerks and staff\r\nattorneys, (2) expanding or creating intermediate appellate courts, (3)\r\nreducing panel size, (4) using summary procedures, (5) curtailing\r\nopinion practices by deciding cases without opinion or unpublished and\r\nmemo opinions, and (6) curtailing oral argument length.",
+  "modified": "1992-02-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2812",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "court system",
+    "criminal justice system",
+    "judicial process"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1988-10-25T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08262.v1",
+      "title": "State Appellate Court Adaptation to Caseload Increase, 1968-1984: [United States]"
+    }
+  ]
+}

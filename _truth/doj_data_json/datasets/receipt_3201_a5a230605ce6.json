@@ -1,0 +1,53 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Exploring the House Burglar's Perspective: Observing and Interviewing Offenders in St. Louis, 1989-1990",
+  "description": "These data investigate the behaviors and attitudes of\r\n active residential burglars, not presently incarcerated, operating in\r\n St. Louis, Missouri. Through personal interviews, information was\r\n gathered on the burglars' motivation and feelings about committing\r\n crimes, peer pressure, burglary methods, and stolen goods disposal.\r\n Respondents were asked to describe their first residential burglary,\r\n to recreate verbally the most recent residential burglary they had\r\n committed, to discuss their perceptions of the risk values involved\r\n with burglary, and to describe the process through which they selected\r\n potential targets for burglaries. In-depth, semistructured interviews\r\n lasting from one and a half to three hours were conducted in which\r\n participants were allowed to speak freely and informally to the\r\n investigator. These interviews were tape-recorded and transcribed\r\n verbatim, and some were later annotated with content-related markers\r\n or \"tags\" to facilitate analysis. Information was also elicited on\r\n age, race, sex, marital status, employment status, drug history, and\r\ncriminal offense history.",
+  "modified": "1994-03-10T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3201",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "burglary",
+    "criminal histories",
+    "offenders",
+    "stolen property"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1994-03-10T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06148.v1",
+      "title": "Exploring the House Burglar's Perspective: Observing and Interviewing Offenders in St. Louis, 1989-1990"
+    }
+  ]
+}

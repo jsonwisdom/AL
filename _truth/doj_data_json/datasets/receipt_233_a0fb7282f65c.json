@@ -1,0 +1,71 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Crime Victimization Survey: School Crime Supplement, 2009",
+  "description": "The primary purpose of the School Crime Supplement (SCS) is to obtain additional information about school-related victimizations so that policymakers; academic researchers; practitioners at the federal, state, and local levels; and special interest groups who are concerned with crime in schools can make informed decisions concerning policies and programs. The SCS asks questions related to students' experiences with, and perceptions of crime and safety at school, including preventive measures employed by schools; students' participation in after school activities; students' perception of school rules and enforcement of these rules; the presence of weapons, drugs, alcohol, and gangs in school;\r\nstudent bullying; hate-related incidents; and attitudinal questions relating to the fear of victimization at school. These responses are linked to the National Crime Victimization Survey (NCVS) survey instrument responses for a more complete understanding of the individual student's circumstances.",
+  "modified": "2011-01-21T09:24:37",
+  "accessLevel": "public",
+  "identifier": "233",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "crime",
+    "crime in schools",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "drugs",
+    "educational environment",
+    "fear of crime",
+    "juvenile crime",
+    "offenses",
+    "property crimes",
+    "reactions to crime",
+    "robbery",
+    "school attendance",
+    "school security",
+    "school violence",
+    "student attitudes",
+    "student behavior",
+    "vandalism",
+    "victimization",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2432",
+  "dataQuality": false,
+  "issued": "2011-01-21T09:24:37",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR28201.v1",
+      "title": "National Crime Victimization Survey: School Crime Supplement, 2009"
+    }
+  ]
+}

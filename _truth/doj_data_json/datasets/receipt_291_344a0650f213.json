@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Survey of Jail Inmates, 1972",
+  "description": "This study is a follow-up to the National Jail Census, 1970. \r\n In addition to gathering more information concerning jails, the survey \r\n also collected demographic data, incarceration history, and legal \r\n status data from a sample of the inmates of local jails. The study \r\n includes basic demographic data, income and employment data, reason for \r\n incarceration, bail status, dates of admission and sentencing, length \r\nand type of sentence and previous incarceration history.",
+  "modified": "1992-02-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "291",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "criminal histories",
+    "demographic characteristics",
+    "drug use",
+    "inmate programs",
+    "inmates",
+    "jail inmates",
+    "jails",
+    "offenses",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2170",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR07668.v2",
+      "title": "Survey of Jail Inmates, 1972"
+    }
+  ]
+}

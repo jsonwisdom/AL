@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Racial and Ethnic Differences in Youth's Mental Health and Substance Needs and Services: Findings from the Survey of Youth in Residential Placement (SYRP), United States, 2003",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThis study examined differences in youth's mental health and substance abuse needs in seven different racial/ethnic groups of justice-involved youth. Using de-identified data from the Survey of Youth in Residential Placement (SYRP), it was assessed whether differences in mental health and substance abuse needs and services existed in a racially/ethnically diverse sample of youth in custody. Data came from a nationally representative sample of 7,073 youth in residential placements across 36 states, representing five program types. An examination of the extent to which there were racial/ethnic disparities in the delivery of services in relation to need was also conducted. This examination included assessing the differences in substance-related problems, availability of substance services, and receipt of substance-specific counseling.\r\nOne SAS data file (syrp2017.sas7bdat) is included as part of this collection and has 138 variables for 7073 cases, with demographic variables on youth age, sex, race and ethnicity. Also included as part of the data collection are two SAS Program (syntax) files for use in secondary analysis of youth mental health and substance use.",
+  "modified": "2018-11-29T17:14:22",
+  "accessLevel": "restricted public",
+  "identifier": "3180",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities (juveniles)",
+    "educational background",
+    "emotional problems",
+    "expectations",
+    "family background",
+    "juvenile detention",
+    "juvenile justice",
+    "juvenile offenders",
+    "juvenile victims",
+    "psychological wellbeing",
+    "social support",
+    "substance abuse"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-11-29T17:06:40",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36788.v1",
+      "title": "Racial and Ethnic Differences in Youth's Mental Health and Substance Needs and Services: Findings from the Survey of Youth in Residential Placement (SYRP), United States, 2003"
+    }
+  ]
+}

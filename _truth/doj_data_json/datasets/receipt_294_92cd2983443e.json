@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Traffic Stop Data Collection Policies for State Police, 2004",
+  "description": "This collection contains survey data collected at the end\r\nof October 2004 from the 49 state law enforcement agencies in the\r\nUnited States that had traffic patrol responsibility. Information was\r\ngathered about their policies for recording race and ethnicity data\r\nfor persons in traffic stops, including the circumstances under which\r\ndemographic data should be collected for traffic-related stops and\r\nwhether such information should be stored in an electronically\r\naccessible format. The survey was not designed to obtain available\r\nagency databases containing traffic stop records.",
+  "modified": "2005-09-02T00:00:00",
+  "accessLevel": "public",
+  "identifier": "294",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "ethnic identity",
+    "ethnicity",
+    "police patrol",
+    "policies and procedures",
+    "race",
+    "traffic offenses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2005-09-02T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04288.v1",
+      "title": "Traffic Stop Data Collection Policies for State Police, 2004"
+    }
+  ]
+}

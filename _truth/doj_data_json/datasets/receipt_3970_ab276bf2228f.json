@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Juvenile Residential Facility Census, 2006 [United States]",
+  "description": "The Juvenile Residential Facility Census (JRFC) collected basic information on facility characteristics, including size, structure, security arrangements, and ownership. It also collected information on the use of bedspace in the facility to indicate whether the facility was experiencing crowding. The JRFC included questions about the type of facility, such as detention center, training school, ranch, or group home. This information was complemented by a series of questions about other residential services provided by the facility, such as independent living, foster care, or other arrangements. In 2006, the JRFC used four modules to collect information on the physical health services, educational services, substance abuse treatment, and mental health treatment provided to youth in these facilities. While not evaluating the effectiveness or quality of these services, the JRFC gathered important information about the youth the services were directed toward and how the services were provided. The census indicated the use of screenings or tests conducted to determine counseling, education, health, or substance abuse needs, and also examined prominent issues about conditions of confinement, including the restraint of youth and improper absences from the facility. Congress requires the Office of Juvenile Justice and Delinquency Prevention (OJJDP) to report annually on the number of deaths of juveniles in custody; JRFC collected information on such deaths for the one-year period just prior to the census reference date. The census reference date was the fourth Wednesday in October.",
+  "modified": "2016-08-11T09:16:38",
+  "accessLevel": "restricted public",
+  "identifier": "3970",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "correctional education",
+    "correctional facilities",
+    "educational needs",
+    "group homes",
+    "health care services",
+    "juvenile detention",
+    "juvenile offenders",
+    "juveniles",
+    "mental health services",
+    "pregnancy",
+    "substance abuse treatment",
+    "vaccines"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "3998",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2012-02-09T12:10:52",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR25981.v1",
+      "title": "Juvenile Residential Facility Census, 2006 [United States]"
+    }
+  ]
+}

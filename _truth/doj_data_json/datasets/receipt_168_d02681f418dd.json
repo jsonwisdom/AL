@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Juvenile Detention and Correctional Facility Census, 1977",
+  "description": "The 1977 Juvenile Detention and Correctional Facility\r\nCensus, is the fifth in a series of surveys of state and local public\r\nresidential facilities in the juvenile justice system. There is one\r\nrecord for each juvenile detention facility that had a population of\r\nat least 50 percent juveniles. Each record is classified into one of\r\nsix categories: detention centers or shelters, reception or diagnostic\r\ncenters, training schools, ranches, forestry camps and farms, and\r\nhalfway houses and group homes. Data include state, county, and city\r\nidentification, level of government responsible for the facility, type\r\nof agency, agency identification, resident population by sex, age\r\nrange, detention status, and offense, admissions and departures of\r\npopulation, average length of stay, staffing and expenditures, age and\r\ncapacity of the facility, and programs and services available.",
+  "modified": "2008-03-26T09:06:55",
+  "accessLevel": "public",
+  "identifier": "168",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "correctional facilities (juveniles)",
+    "group homes",
+    "inmate populations",
+    "juvenile crime",
+    "juvenile detention",
+    "juvenile inmates",
+    "juvenile offenders",
+    "juveniles",
+    "offenses",
+    "restitution centers",
+    "status offenses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2588",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR07758.v2",
+      "title": "Juvenile Detention and Correctional Facility Census, 1977"
+    }
+  ]
+}

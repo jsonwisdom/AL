@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "September 11th Victim Compensation Fund (VCF) Statistics Report",
+  "description": "Periodic snapshots of VCF activity including submitted claims, eligibility decisions, and compensation determinations/awards.",
+  "modified": "2018-07-01T00:00:00",
+  "accessLevel": "public",
+  "identifier": "4349",
+  "publisher": {
+    "name": "Civil Division",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Civil Division (USDOJ)",
+    "hasEmail": "mailto:opendata@civ.gov"
+  },
+  "keyword": [
+    "Victim Compensation Fund",
+    "VCF",
+    "September 11",
+    "statistics",
+    "claims",
+    "eligibility",
+    "awards"
+  ],
+  "bureauCode": [
+    "011:00"
+  ],
+  "programCode": [
+    "011:024"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "systemOfRecords": "CIV:008",
+  "accrualPeriodicity": "R/P1M",
+  "dataQuality": false,
+  "issued": "2018-07-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "primaryITInvestmentUII": "011-000002065",
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "describedBy": "https://www.vcf.gov/vcf-monthly-report-definitions",
+      "describedByType": "text/html",
+      "description": "PDF showing “VCF Program Statistics — As of [date]”; includes counts/graphs for registrations, claims submitted, eligibility outcomes, compensation determinations, and dollars awarded. (September 11th Victim Compensation Fund).",
+      "downloadURL": "https://www.vcf.gov/programreporting",
+      "format": "pdf",
+      "mediaType": "application/pdf",
+      "title": "Statistics Report (PDF) (September 11th Victim Compensation Fund)"
+    }
+  ]
+}

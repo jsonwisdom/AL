@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Assessing the Influence of Home Visit Themes and Temporal Ordering On High-Risk Parolee Outcomes, Georgia, 2011-2015",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor.  The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers.  Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\n\r\nThis project explored the intensity of supervision conditions on parole failures by considering the role of home visits in five major events: general violations, drug test failures, technical violation arrests, new felony arrests, and revocations. Longitudinal data from the State of Georgia were pooled to examine 28,284 parolees who completed supervision in 2011 - 2013. \r\n\r\nQualitative data analyzing case notes on home visits obtained from an offender case management system on high risk parolees who entered supervision between 2008, 2010 and 2012 and exited between 2011 through 2013 are not archived with  ICPSR. \r\nThe study collection includes 2 SPSS data files:  Historical_Agency_Dataset.sav (n=28,284; 39 variables) and Observational_Dataset.sav (n=383; 122 variables).",
+  "modified": "2018-01-08T14:12:45",
+  "accessLevel": "restricted public",
+  "identifier": "3538",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "parole",
+    "parole officers",
+    "parole violation",
+    "parolees"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-01-08T14:05:42",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36517.v1",
+      "title": "Assessing the Influence of Home Visit Themes and Temporal Ordering On High-Risk Parolee Outcomes, Georgia, 2011-2015"
+    }
+  ]
+}

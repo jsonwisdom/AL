@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Measuring Crime Rates of Prisoners in Colorado, 1988-1989",
+  "description": "In the late 1970s, the Rand Corporation pioneered a method\r\nof collecting crime rate statistics. They obtained reports of\r\noffending behavior--types and frequencies of crimes\r\ncommitted--directly from offenders serving prison sentences. The\r\ncurrent study extends this research by exploring the extent to which\r\nvariation in the methodological approach affects prisoners'\r\nself-reports of criminal activity. If the crime rates reported in this\r\nsurvey remained constant across methods, perhaps one of the new\r\ntechniques developed would be easier and/or less expensive to\r\nadminister. Also, the self-reported offending rate data for female\r\noffenders in this collection represents the first time such data has\r\nbeen collected for females. Male and female prisoners recently\r\nadmitted to the Diagnostic Unit of the Colorado Department of\r\nCorrections were selected for participation in the study. Prisoners\r\nwere given one of two different survey instruments, referred to as the\r\nlong form and short form. Both questionnaires dealt with the number of\r\ntimes respondents committed each of eight types of crimes during a\r\n12-month measurement period. The crimes of interest were burglary,\r\nrobbery, assault, theft, auto theft, forgery/credit card and\r\ncheck-writing crimes, fraud, and drug dealing. The long form of the\r\ninstrument focused on juvenile and adult criminal activity and covered\r\nthe offender's childhood and family. It also contained questions about\r\nthe offender's rap sheet as one of the bases for validating the\r\nself-reported data. The crime count sections of the long form\r\ncontained questions about motivation, initiative, whether the offender\r\nusually acted alone or with others, and if the crimes recorded\r\nincluded crimes against people he or she knew. Long-form data are\r\ngiven in Part 1. The short form of the survey had fewer or no\r\nquestions compared with the long form on areas such as the\r\nrespondent's rap sheet, the number of crimes committed as a juvenile,\r\nthe number of times the respondent was on probation or parole, the\r\nrespondent's childhood experiences, and the respondent's perception of\r\nhis criminal career. These data are contained in Part 2. In addition,\r\nthe surveys were administered under different conditions of\r\nconfidentiality. Prisoners given what were called \"confidential\"\r\ninterviews had their names identified with the survey. Those\r\ninterviewed under conditions of anonymity did not have their names\r\nassociated with the survey. The short forms were all administered\r\nanonymously, while the long forms were either anonymous or\r\nconfidential. In addition to the surveys, data were collected from\r\nofficial records, which are presented in Part 3. The official record\r\ndata collection form was designed to collect detailed criminal history\r\ninformation, particularly during the measurement period identified in\r\nthe questionnaires, plus a number of demographic and drug-use items.\r\nThis information, when compared with the self-reported offense data\r\nfrom the measurement period in both the short and long forms, allows a\r\nvalidity analysis to be performed.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3512",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "assault",
+    "auto theft",
+    "burglary",
+    "crime rates",
+    "crime statistics",
+    "criminal histories",
+    "drug traffic",
+    "female offenders",
+    "fraud",
+    "robbery"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1997-02-24T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09989.v1",
+      "title": "Measuring Crime Rates of Prisoners in Colorado, 1988-1989"
+    }
+  ]
+}

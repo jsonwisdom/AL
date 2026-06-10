@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Deterrent Effects of Arrests and Imprisonment in the United States, 1960-1977",
+  "description": "Emerging from the tradition of econometric models of\r\ndeterrence and crime, this study attempts to improve estimates of how\r\ncrime rates are affected by the apprehension and punishment of persons\r\ncharged with criminal activity. These data are contained in two files:\r\nPart 1, State Data, consists of a panel of observations from each of\r\nthe 50 states and contains information on\r\ncrime rates, clearance rates, length of time served, probability of\r\nimprisonment, socioeconomic factors such as unemployment rates,\r\npopulation levels, and income levels, and state and local expenditures\r\nfor police protection. Part 2, SMSA Data, consists of a panel of 77\r\nSMSAs and contains information on crime rates, clearance rates, length\r\nof time served, probability of imprisonment, socioeconomic factors\r\nsuch as employment rates, population levels, and income levels, and\r\ntaxation and expenditure information.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3721",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrests",
+    "auto theft",
+    "burglary",
+    "convictions (law)",
+    "correctional facilities",
+    "crime",
+    "criminal justice system",
+    "inmates",
+    "jails",
+    "larceny",
+    "police",
+    "police protection",
+    "robbery",
+    "social attitudes",
+    "standard metropolitan statistical areas",
+    "victimization"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR07973.v1",
+      "title": "Deterrent Effects of Arrests and Imprisonment in the United States, 1960-1977"
+    }
+  ]
+}

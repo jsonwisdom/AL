@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Adult Criminal Careers in New York, 1972-1983",
+  "description": "This data collection was designed to estimate the extent and \r\n variation of individual offending by crime type, race, age, and prior \r\n criminal record. Included in this collection are the criminal records \r\n of individuals aged 16 years or older who were arrested in the state of \r\n New York. Two separate data files are supplied. Part 1 contains data on \r\n all adults arrested in New York from 1972 to 1976 for rape, murder, \r\n robbery, aggravated assault, or burglary. Part 2 includes data on all \r\n adults arrested for larceny or auto theft in Albany and Erie counties. \r\n Variables include items such as sex, race, age, number of prior \r\n arrests, date and place of arrest, arrest charged, number of multiple \r\ncounts, court disposition of charges, and type and length of sentence.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3268",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "adult offenders",
+    "assault",
+    "auto theft",
+    "burglary",
+    "career criminals",
+    "criminal histories",
+    "larceny",
+    "murder",
+    "offenders",
+    "rape",
+    "robbery"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1990-07-06T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09353.v1",
+      "title": "Adult Criminal Careers in New York, 1972-1983"
+    }
+  ]
+}

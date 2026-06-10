@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "The Criminalization of LGBQ/GNCT Youth, California, 2014",
+  "description": "The researchers examined sexual-orientation and gender conformity disparities in criminalization for prostitution. The specific purpose of this study was to  explore the links between family rejection, homelessness, child welfare involvement, and prostitution charges for youth in the justice system.",
+  "modified": "2018-10-30T10:13:54",
+  "accessLevel": "restricted public",
+  "identifier": "3957",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "gender identity",
+    "homosexuality",
+    "juvenile crime",
+    "juvenile detention",
+    "juveniles"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-10-30T10:11:04",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37001.v1",
+      "title": "The Criminalization of LGBQ/GNCT Youth, California, 2014"
+    }
+  ]
+}

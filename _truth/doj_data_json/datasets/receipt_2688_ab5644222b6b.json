@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Uniform Crime Reports [United States], 1930-1959",
+  "description": "This collection contains electronic versions of the Uniform\r\n Crime Reports publications for the early years of the Uniform Crime\r\n Reporting Program in the United States. The reports, which were\r\n published monthly from 1930 to 1931, quarterly from 1932 to 1940, and\r\n annually from 1941 to 1959, consist of tables showing the number of\r\n offenses known to the police as reported to the Federal Bureau of\r\n Investigation by contributing police departments. The term \"offenses\r\n known to the police\" includes those crimes designated as Part I\r\n classes of the Uniform Classification code occurring within the police\r\n jurisdiction, whether they became known to the police through reports\r\n of police officers, citizens, prosecuting or court officials, or\r\n otherwise. They were confined to the following group of seven classes\r\n of grave offenses, historically those offenses most often and most\r\n completely reported to the police: felonious homicide, including\r\n murder and nonnegligent manslaughter, and manslaughter by negligence,\r\n rape, robbery, aggravated assault, burglary -- breaking and entering,\r\n and larceny -- theft (including thefts $50 and over, and thefts under\r\n $50, and auto theft). The figures also included the number of\r\n attempted crimes in the designated classes excepting attempted murders\r\n classed as aggravated assaults. In other words, an attempted burglary\r\n or robbery, for example, was reported in the same manner as if the\r\n crimes had been completed. \"Offenses known to the police\" included,\r\n therefore, all of the above offenses, including attempts, which were\r\n reported by the police departments and not merely arrests or cleared\r\ncases.",
+  "modified": "2003-06-19T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2688",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "arrests",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "law enforcement",
+    "offenses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2003-06-19T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03666.v1",
+      "title": "Uniform Crime Reports [United States], 1930-1959"
+    }
+  ]
+}

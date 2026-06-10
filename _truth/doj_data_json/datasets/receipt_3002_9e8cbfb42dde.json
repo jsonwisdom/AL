@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Assessing the Effectiveness of Four Juvenile Justice Interventions on Adult Criminal Justice and Child Welfare Outcomes, Ohio, 2004-2008",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThis study compared the adult criminal justice and child welfare system outcomes of four pathways through the juvenile justice system - Traditional Probation, Intensive Probation, Specialty Court Docket (Crossroads Program), and commitment to state youth correction services (Department of Youth Services). The study compared the effectiveness of a continuum of services and supervision in improving public safety, including re-arrest and re-incarceration, and in improving outcomes in engagement with child welfare as parents, including child welfare complaints and dispositions.\r\nThe core research question is: \"what is the relative effectiveness of four different juvenile justice interventions on improving public safety and child welfare outcomes?\" The study population is all youths (n=2581) who entered the juvenile court from 2004-2008. It then included 7-10 years of follow-up in the adult justice and child welfare systems for all youths. The four interventions are on a continuum of intensity of services and supervision with Traditional Probation having the fewest services followed by Intensive Probation, Crossroads, and Division of Youth Services commitment.\r\nThe study's deposits include 14 SPSS data files:\r\n\r\narrest_final.sav\r\nCW_Custody_Adult_final.sav\r\nCW_Custody_child_final.sav\r\nCW_Intakes_Adult_final.sav\r\nCW_Intakes_child_final.sav\r\nCW_Placements_adult_final.sav\r\nCW_Placements_child_final.sav\r\nGeneral_final.sav\r\nJail_final.sav\r\nJC_charges_final.sav\r\nJC_detention_final.sav\r\nJC_disposition_final.sav\r\nJC_Gal_final.sav\r\nprison_final.sav\r\n",
+  "modified": "2018-03-21T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "3002",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "adult offenders",
+    "child welfare",
+    "intervention strategies",
+    "juvenile courts",
+    "juvenile crime",
+    "juvenile detention",
+    "juvenile inmates",
+    "juvenile justice",
+    "juvenile offenders",
+    "juvenile recidivists",
+    "outcome evaluation",
+    "probation services",
+    "public safety",
+    "recidivism"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-03-21T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36130.v1",
+      "title": "Assessing the Effectiveness of Four Juvenile Justice Interventions on Adult Criminal Justice and Child Welfare Outcomes, Ohio, 2004-2008"
+    }
+  ]
+}

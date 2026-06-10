@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Initiative for Building Community Trust and Justice, 6 United States cities, 2011-2018",
+  "description": "The National Initiative for Building Community Trust and Justice (the National Initiative) is a joint project of the National Network for Safe Communities, the Center for Policing Equity, the Justice Collaboratory at Yale Law School, and the Urban Institute, designed to improve relationships and increase trust between communities and law enforcement. \r\nFunded by the Department of Justice, this mixed-methods evaluation aimed to assess outcomes and impacts in six cities that participated in the National Initiative, which include Birmingham, AL; Fort Worth, TX; Gary, IN;\r\nMinneapolis, MN; Pittsburgh, PA; and Stockton, CA. The data described herein\r\nrepresent two waves of surveys of residents living in the highest-crime, lowest-income residential street segments in the six National Initiative cities.\r\nThe first wave was conducted between September 2015 and January 2016, and the second wave was conducted between July and October 2017. Survey items were designed to measure neighborhood residents' perceptions of their neighborhood conditions--with particular emphases on neighborhood safety, disorder, and victimization--and perceptions of the police as it relates to procedural justice, police legitimacy, officer trust, community-focused policing, police bias, willingness to partner with the police on solving crime, and the law.\r\nThe data described herein are from pre- and post-training assessment surveys of officers who participated in three trainings: 1) procedural justice (PJ) conceptual training, which is the application of PJ in the context of law enforcement-civilian interactions, as well as its role in mitigating historical tensions between law enforcement and communities of color; 2) procedural justice tactical, which provided simulation and scenario-based exercises and techniques to operationalize PJ principles in officers' daily activities; and 3) implicit bias, which engaged officers in critical thought about racial bias, and prepared them to better identify and handle identity traps that enable implicit biases. Surveys for the procedural justice conceptual training were fielded between December 2015 and July 2016; procedural justice tactical between February 2016 and June 2017; and implicit bias between September 2016 and April 2018. Survey items were designed to measure officers' understanding of procedural justice and implicit bias concepts, as well as officers' levels of satisfaction with the trainings.",
+  "modified": "2021-08-16T14:15:50",
+  "accessLevel": "restricted public",
+  "identifier": "4285",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "community policing",
+    "criminal justice policy",
+    "police brutality",
+    "procedural justice"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2021-08-16T14:04:19",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37492.v1",
+      "title": "National Initiative for Building Community Trust and Justice, 6 United States cities, 2011-2018"
+    }
+  ]
+}

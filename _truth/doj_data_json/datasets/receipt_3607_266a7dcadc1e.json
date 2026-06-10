@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Prevalence, Context, and Consequences of Dual Arrest in Intimate Partner Cases in 19 States in the United States, 2000",
+  "description": "This project provided the first large-scale examination of the police response to intimate partner violence and of the practice known as \"dual arrest.\"  The objectives of the project were: (1) to describe the prevalence and context of dual arrest in the United States, (2) to explain the variance in dual arrest rates throughout the United States, (3) to describe dual arrest within the full range of the police response to intimate partner violence, (4) to analyze the factors associated with no arrest, single arrest, and dual arrest, (5) to examine the reasons why women are arrested in intimate partner cases, and (6) to describe how the criminal justice system treats women who have been arrested for domestic violence.  Data for the project were collected in two phases. In Phase I, researchers examined all assault and intimidation cases in the year 2000 National Incident-Based Reporting System (NIBRS) database (NATIONAL INCIDENT-BASED REPORTING SYSTEM, 2000 [ICPSR 3449]) to investigate the extent to which dual arrest is occurring nationwide, the relationship between incident and offender characteristics, and the effect of state laws on police handling of these cases for all relationship types. Because the NIBRS dataset contained a limited number of incident-specific variables that helped explain divergent arrest practices, in Phase II, researchers collected more detailed information on a subset of NIBRS cases from 25 police departments of varying sizes across four states. This phase of the study was restricted to intimate partner and other domestic violence cases. Additional data were collected for these cases to evaluate court case outcomes and subsequent re-offending. This phase also included an assessment of how closely department policy reflected state law in a larger sample of agencies within five states. The data in Part 1 (Phase I Data) contain 577,862 records from the NIBRS. This includes information related to domestic violence incidents such as the most serious offense against the victim, the most serious victim injury, the assault type, date of incident, and the counts of offenses, offenders, victims, and arrests for the incident. The data also include information related to the parties involved in the incident including demographics for the victim(s) and arrestee(s) and the relationship between victim(s) and arrestee(s). There is also information related to the jurisdiction in which the incident occurred such as population, urban/rural classification, and whether the jurisdiction is located in a metropolitan area.  There are also variables pertaining to whether a weapon was used, the date of arrest, and the type of arrest.  Also included are variables regarding the police department such as the number of male and female police officers and civilians employed. The data in Part 2 (Phase II Data) contain 4,388 cases and include all of the same variables as those in Part 1. In addition to these variables, there are variables such as whether the offender was on the scene when the police arrived, who reported the incident, the exact nature of injuries suffered by the involved parties, victim and offender substance use, offender demeanor, and presence of children. Also included are variables related to the number of people including police and civilians who were on the scene, the number of people who were questioned, whether there were warrants for the victim(s) or offender(s), whether citations were issued, whether arrests were made, whether any cases were prosecuted, the number of charges filed and against whom, and the sentences for prosecuted cases that resulted in conviction. The data in Part 3 (Police Department Policy Data) contain 282 cases and include variables regarding whether the department had a domestic violence policy, what the department's arrest policy was, whether a police report needed to be made, whether the policy addressed mutual violence, whether the policy instructed how to determine the primary aggressor, and what factors were taken into account in making a decision to arrest. There is also information related to the proportion of arrests involving intimate partners, the proportion of arrests involving other domestics, the proportion of arrests involving acquaintances, and the proportion of arrests involving strangers.",
+  "modified": "2009-04-30T10:39:53",
+  "accessLevel": "restricted public",
+  "identifier": "3607",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrest procedures",
+    "arrest records",
+    "arrests",
+    "assault",
+    "domestic assault",
+    "domestic violence",
+    "intimate partner violence",
+    "offenders",
+    "offenses",
+    "police departments",
+    "police records",
+    "policies and procedures",
+    "victims",
+    "violence against women"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2009-04-30T10:32:22",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR20400.v1",
+      "title": "Prevalence, Context, and Consequences of Dual Arrest in Intimate Partner Cases in 19 States in the United States, 2000"
+    }
+  ]
+}

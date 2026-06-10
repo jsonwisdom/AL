@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Juvenile Detention and Correctional Facility Census, 1982-1983",
+  "description": "This is the seventh in a series of surveys conducted by the\r\nBureau of the Census. It contains information on state and local\r\npublic residential facilities operated by the juvenile justice system\r\nduring the fiscal year 1982. Each data record is classified into one\r\nof six categories: (1) detention center, (2) shelter, (3) reception or\r\ndiagnostic center, (4) training school, (5) ranch, forestry camp, or\r\nfarm, and (6) halfway house or group home. Data include state, county,\r\nand city identification, level of government responsible for the\r\nfacility, type of agency, agency identification, resident population\r\nby sex, age range, detention status, and offense, and admissions and\r\ndepartures of population. Also included in the data are average length\r\nof stay, staffing expenditures, capacity of the facility, and programs\r\nand services available.",
+  "modified": "2007-11-28T00:00:00",
+  "accessLevel": "public",
+  "identifier": "4064",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "correctional facilities (juveniles)",
+    "inmate populations",
+    "juvenile crime",
+    "juvenile offenders"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2588",
+  "dataQuality": false,
+  "issued": "1985-01-11T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08205.v2",
+      "title": "Juvenile Detention and Correctional Facility Census, 1982-1983"
+    }
+  ]
+}

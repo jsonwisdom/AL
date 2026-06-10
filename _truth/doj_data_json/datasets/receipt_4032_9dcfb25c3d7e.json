@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Census of Public and Private Juvenile Detention, Correctional, and Shelter Facilities, 1992-1993: [United States]",
+  "description": "These data provide information on the population and\r\ncharacteristics of public and private juvenile facilities in operation\r\nin the United States on February 16, 1993. Annual data for the 1992\r\ncalendar year are included as well. Questions designed to categorize\r\neach facility were asked of facility administrators concerning the\r\nnumber of adults held, the juvenile majority's custodial authority,\r\nreason for custody, and access to the community, as well as the\r\nfacility's security arrangements, capacity, age, plans for renovation,\r\ntype of administration, and setting. Extensive data on the total\r\njuvenile residential population of each facility were also gathered.\r\nThe total population is broken down by admission type, legal status,\r\ntype of offense, race, and age. The collection also contains\r\ninformation on the population's movement and average length of stay,\r\nas well as each facility's average daily population, personnel by\r\nrace, number, and staff position, educational, treatment, and medical\r\nprograms available, annual expenditures, court orders and consent\r\ndecrees, and number of juvenile deaths that year.",
+  "modified": "2007-09-28T00:00:00",
+  "accessLevel": "public",
+  "identifier": "4032",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "correctional facilities",
+    "group homes",
+    "juvenile detention",
+    "juvenile offenders",
+    "juveniles",
+    "offenses",
+    "restitution centers",
+    "status offenses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2588",
+  "dataQuality": false,
+  "issued": "1996-06-10T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06491.v2",
+      "title": "Census of Public and Private Juvenile Detention, Correctional, and Shelter Facilities, 1992-1993: [United States]"
+    }
+  ]
+}

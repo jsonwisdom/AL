@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Statewide Impact Evaluation of Domestic Violence Courts and Recidivism in New York, 1993-2010",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they there received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except of the removal of direct identifiers. Users should refer to the accompany readme file for a brief description of the files available with this collections and consult the investigator(s) if further information is needed.The purpose of this study was to answer the following research questions:Do domestic violence courts reduce recidivism?Do domestic violence courts hold defendants accountable through the use of more severe case outcomes and sentences?What, if any, court-level policies make these courts more or less effective (e.g., related to eligibility, program mandates, compliance monitoring, or victim service)?What, if any community characteristics make these courts more or less effective (e.g., related to population size, racial composition, or socioeconomic characteristics)?Based on individual characteristics (e.g., age, criminal history, or current charges), which categories of defendants are at a high risk of re-offending; and are certain categories particularly responsive to the domestic violence court intervention?Outcome were compared between matched samples of defendants (Full File Data, n=17,718 and Convicted File Data, n=7,306) processed in the 24 domestic violence courts and in conventional courts operating in the same 24 jurisdictions in New York state prior to the opening of the specialized court. Cases processed in each domestic violence court during its first two full calendar years of operations comprised the domestic violence court sample. Cases processed in conventional courts during the two full calendar years preceding the opening of the specialized court comprised the comparison sample. Data on court policies and practices was drawn from two survey instruments administered to each of the 24 courts (Court and Community Characteristics Data, n=48). The first survey was administered statewide in 2008; the second was a supplemental survey administered in 2010.",
+  "modified": "2016-04-29T12:19:38",
+  "accessLevel": "restricted public",
+  "identifier": "1163",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "case processing",
+    "court system",
+    "domestic violence",
+    "felony offenses",
+    "intimate partner violence",
+    "misdemeanor offenses",
+    "recidivism prediction"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2016-04-29T12:16:24",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR34484.v1",
+      "title": "Statewide Impact Evaluation of Domestic Violence Courts and Recidivism in New York, 1993-2010"
+    }
+  ]
+}

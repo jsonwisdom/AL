@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Person or Place? A Contextual, Event-History Analysis of Homicide Victimization Risk, United States, 2004-2012",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThe purpose of this research was to examine the influence of neighborhood social disorganization on the risk of homicide victimization, with focus on how community effects changed once individual-level characteristics were considered. This research integrated concepts from social disorganization theory, a neighborhood theory of criminal behavior, with concepts from lifestyle theory and individual theory of criminal behavior, by having examined the effects of both neighborhood-level predictors of disadvantage and individual attributes which may compel that person to behave in certain ways. The data for this secondary analysis project are from the 2004-2012 National Center for Health Statistics' (NCHS) National Health Interview Survey (NHIS) linked National Death Index-Multiple Causes of Death (MDC) data, which provided individual-level data on homicide mortality. Neighborhood-level (block group) characteristics of disadvantage that existed within each respondent's place of residence from the 2005-2009 and 2008-2012 American Community Surveys were integrated using restricted geographic identifiers from the NHIS.\r\nAs a syntax-only study, data included as part of this collection includes 38 SAS Program (syntax) files that were used by the researcher in analyses of external restricted-use data. The data are not included because they are restricted archival data from the NHIS from the Centers for Disease Control and Prevention combined with publicly available American Community Survey (ACS) block group level data.",
+  "modified": "2018-09-25T10:11:16",
+  "accessLevel": "restricted public",
+  "identifier": "3566",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "criminality",
+    "demographic characteristics",
+    "firearms deaths",
+    "homicide",
+    "murder",
+    "neighborhood characteristics",
+    "poverty",
+    "risk factors",
+    "social behavior",
+    "social control",
+    "urban crime",
+    "victimization",
+    "violence",
+    "violent crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-09-25T10:08:15",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37079.v1",
+      "title": "Person or Place? A Contextual, Event-History Analysis of Homicide Victimization Risk, United States, 2004-2012"
+    }
+  ]
+}

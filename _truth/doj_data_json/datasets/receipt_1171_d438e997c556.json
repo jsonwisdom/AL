@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Social Science Research on Wrongful Convictions and Near Misses, 1980-2012",
+  "description": "\r\nThese data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\n\r\n\r\nThis study examined how the criminal justice system avoids wrongful convictions by comparing violent felony cases that ended in an official exoneration after conviction (\"wrongful convictions\") with those in which defendants had charges dismissed before trial or were acquitted on the basis of their factual innocence (\"near misses\"). Data were collected on a total of 460 cases (260 wrongful convictions and 200 near misses), and these cases were compared quantitatively and qualitatively on variables that might explain the different outcomes. These variables included the usual causes of wrongful convictions, such as eyewitness misidentification, false confession, and forensic error, as well as demographic, social, and procedural variables.\r\n",
+  "modified": "2016-05-31T13:22:19",
+  "accessLevel": "restricted public",
+  "identifier": "1171",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "case processing",
+    "confessions (law)",
+    "court cases",
+    "courtroom proceedings",
+    "defendants",
+    "eyewitness memory",
+    "perjury",
+    "prosecution",
+    "witnesses",
+    "wrongful convictions"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2016-05-31T13:20:36",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR34522.v1",
+      "title": "Social Science Research on Wrongful Convictions and Near Misses, 1980-2012"
+    }
+  ]
+}

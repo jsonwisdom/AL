@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Annual Survey of Jails:  Jurisdiction-level and Jail-level Data, 1985  ",
+  "description": "The Bureau of Justice Statistics (BJS) sponsors the Sample \r\n Survey of Jails as part of a series of statistical programs measuring \r\n the correctional population. The Sample Survey meets BJS's need to \r\n analyze continuously the \"spillover\" effect on local jails of the \r\n growth in federal and state prison populations. The data are used in \r\n conjunction with statistics on federal and state prisoners to provide a \r\n complete picture of the adult correctional system and to measure \r\nchanges in that system.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "58",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "correctional system",
+    "demographic characteristics",
+    "jail inmates",
+    "jails",
+    "overcrowding effects",
+    "population characteristics",
+    "probation"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2586",
+  "dataQuality": false,
+  "issued": "1987-10-12T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08687.v1",
+      "title": "Annual Survey of Jails:  Jurisdiction-level and Jail-level Data, 1985  "
+    }
+  ]
+}

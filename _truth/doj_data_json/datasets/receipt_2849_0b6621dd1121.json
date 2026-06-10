@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Neighborhood Violence in Pittsburgh, Pennsylvania, 1996-2007",
+  "description": "This study assessed the implementation and impact of the One Vision One Life (OVOL) violence-prevention strategy in Pittsburgh, Pennsylvania. In 2003, the rise in violence in Pittsburgh prompted community leaders to form the Allegheny County Violence Prevention Imitative, which became the OVOL program. The OVOL program sought to prevent violence using a problem-solving, data-driven model to inform how community organizations and outreach teams respond to homicide incidents. The research team examined the impact of the OVOL program on violence using a quasi-experimental design to compare violence trends in the program's target areas before and after implementation to (1) trends in Pittsburgh neighborhoods where One Vision was not implemented, and (2) trends in specific nontarget neighborhoods whose violence and neighborhood dynamics One Vision staff contended were most similar to those of target neighborhoods. The Pittsburgh Bureau of Police provided the violent-crime data, which the research team aggregated into monthly counts. The Pittsburgh Department of City Planning provided neighborhood characteristics data, which were extracted from the 2000 Census. Monthly data were collected on 90 neighborhoods in Pittsburgh, Pennsylvania from 1996 to 2007, resulting in 12,960 neighborhood-by-month observations.",
+  "modified": "2012-09-24T12:21:22",
+  "accessLevel": "public",
+  "identifier": "2849",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "aggravated assault",
+    "assault",
+    "community organizations",
+    "firearms",
+    "homicide",
+    "intervention strategies",
+    "neighborhood change",
+    "neighborhood characteristics",
+    "neighborhood conditions",
+    "neighborhoods",
+    "outcome evaluation",
+    "violence",
+    "violent crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2012-09-24T12:21:22",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR28441.v1",
+      "title": "Neighborhood Violence in Pittsburgh, Pennsylvania, 1996-2007"
+    }
+  ]
+}

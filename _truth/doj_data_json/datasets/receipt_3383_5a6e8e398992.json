@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Survey of American Prisons and Jails, 1979",
+  "description": "This data collection contains information gathered in a\r\ntwo-part survey that was designed to assess institutional conditions\r\nin state and federal prisons and in halfway houses. It was one of a\r\nseries of data-gathering efforts undertaken during the 1970s to assist\r\npolicymakers in assessing and overcoming deficiencies in the nation's\r\ncorrectional institutions. This particular survey was conducted in\r\nresponse to a mandate set forth in the Crime Control Act of 1976. Data\r\nwere gathered via self-enumerated questionnaires that were mailed to\r\nthe administrators of all 558 federal and state prisons and all 405\r\ncommunity-based prerelease facilities in existence in the United\r\nStates in 1979. Part 1 contains the results of the survey of state and\r\nfederal adult correctional systems, and Part 2 contains the results of\r\nthe survey of community-based prerelease facilities. The two files\r\ncontain similar variables designed to tap certain key aspects of\r\nconfinement: (1) inmate (or resident) counts by sex and by security\r\nclass, (2) age of facility and rated capacity, (3) spatial density,\r\noccupancy, and hours confined for each inmate's (or resident's)\r\nconfinement quarters, (4) composition of inmate (or resident)\r\npopulation according to race, age, and offense type, (5) inmate (or\r\nresident) labor and earnings, (6) race, age, and sex characteristics\r\nof prison (or half-way house) staff, and (7) court orders by type of\r\norder and pending litigation. Other data (contained in both files)\r\ninclude case ID number, state ID number, name of facility, and\r\noperator of facility (e.g., federal, state, local, or private).",
+  "modified": "1992-02-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3383",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "correctional guards",
+    "court orders",
+    "crime statistics",
+    "federal correctional facilities",
+    "halfway houses",
+    "inmate classification",
+    "inmate programs",
+    "inmates",
+    "jails",
+    "lawsuits",
+    "offenses",
+    "prerelease programs",
+    "prison administration",
+    "prison c"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR07899.v2",
+      "title": "Survey of American Prisons and Jails, 1979"
+    }
+  ]
+}

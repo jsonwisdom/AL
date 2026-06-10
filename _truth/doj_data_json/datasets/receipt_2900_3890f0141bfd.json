@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Statewide Study of Stalking and Its Criminal Justice Response in Rhode Island, 2001-2005",
+  "description": "The research team collected data from statewide datasets on 268 stalking cases including a population of 108 police identified stalking cases across Rhode Island between 2001 and 2005 with a sample of 160 researcher identified stalking incidents (incidents that met statutory criteria for stalking but were cited by police for other domestic violence offenses) during the same period. The secondary data used for this study came from the Rhode Island Supreme Court Domestic Violence Training and Monitoring Unit's (DVU) statewide database of domestic violence incidents reported to Rhode Island law enforcement. Prior criminal history data were obtained from records of all court cases entered into the automated Rhode Island court file, CourtConnect. The data contain a total of 121 variables including suspect characteristics, victim characteristics, incident characteristics, police response characteristics, and prosecutor response characteristics.",
+  "modified": "2012-09-24T15:10:43",
+  "accessLevel": "restricted public",
+  "identifier": "2900",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "abuse",
+    "arrest records",
+    "criminal justice system",
+    "domestic violence",
+    "offenders",
+    "police response",
+    "prosecution",
+    "recidivism rates",
+    "stalkers",
+    "stalking",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2012-09-18T14:56:31",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR25961.v1",
+      "title": "Statewide Study of Stalking and Its Criminal Justice Response in Rhode Island, 2001-2005"
+    }
+  ]
+}

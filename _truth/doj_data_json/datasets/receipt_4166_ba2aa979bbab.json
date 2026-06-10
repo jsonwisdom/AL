@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Survey of Tribal Court Systems, 2014",
+  "description": "The National Survey of Tribal Court Systems (NSTCS) is the first complete enumeration of tribal court systems operating in the United States and gathers administrative and operational information from tribal court systems, prosecutors' offices, and indigent defense providers operating in the United States. The NSTCS helps fulfill BJS's legislative mandate under the Tribal Law and Order Act of 2010 (TLOA; P.L. 111-211, 124 Stat. 2258 § 251(b)) to establish and implement a tribal crime data collection system. Data for the NSTCS were collected by Kauffman & Associates, Inc., an American Indian- and woman-owned management consulting firm, in collaboration with the Tribal Law and Policy Institute.\r\nThe National Survey of Tribal Court Systems (NSTCS) consists of three surveys specific to tribal court systems in the lower 48 states, Alaska Native villages, and the Code of Federal Regulations Courts (CFR Courts) operated by the Bureau of Indian Affairs (BIA). Due to data collection challenges and the limited number of Alaska Native villages and CFR Courts that participated in this collection, the Tribal Courts in United States, 2014, report, data file and documentation include information only on tribal court systems in the lower 48 states.\r\nData for the 2014 NSTCS were collected through mail, email, and telephone nonresponse follow-up. Data on the number and type of tribal court systems were obtained from all eligible federally recognized tribes. The final universe of eligible respondents in the lower 48 states included 234 tribal court systems, of which 196 (83.8%) participated in the survey.",
+  "modified": "2022-03-30T13:47:48",
+  "accessLevel": "public",
+  "identifier": "4166",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "diversion programs",
+    "probation",
+    "prosecution",
+    "public defenders",
+    "tribal court",
+    "victim services"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2022-03-30T13:47:48",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR38409.v1",
+      "title": "National Survey of Tribal Court Systems, 2014"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "PSRAC Risk Landscape",
+  "description": "PSRAC Risk Landscape",
+  "modified": "2022-07-29T00:00:00",
+  "accessLevel": "public",
+  "identifier": "4096",
+  "publisher": {
+    "name": "Office of Justice Programs",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "bja",
+    "safety",
+    "risk",
+    "clearinghouse"
+  ],
+  "bureauCode": [
+    "011:00"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "Public",
+  "dataQuality": false,
+  "issued": "2020-07-21T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "landingPage": "https://bja.ojp.gov/program/psrac/selection/risk-assessment-landscape",
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://bja.ojp.gov/program/psrac/selection/risk-assessment-landscape",
+      "mediaType": "text/html",
+      "title": "PSRAC Risk Landscape"
+    },
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://api.ojp.gov/ojpdataset/v1/98ww-3sks.json",
+      "format": "Api",
+      "title": "PSRAC Risk Landscape - Api"
+    }
+  ]
+}

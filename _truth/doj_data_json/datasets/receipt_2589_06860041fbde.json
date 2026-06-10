@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Corrections Reporting Program (NCRP) Series",
+  "description": "\r\nInvestigator(s): Bureau of Justice Statistics\r\nIn 1983, the National Prisoners Statistics program, which \r\ncompiled data on prisoner admissions and releases, and the Uniform Parole \r\nReports were combined into one reporting system, the National Corrections \r\nReporting Program (NCRP). The NCRP evolved from the need to improve and \r\nconsolidate data on corrections at the national level. Its objective was to \r\nprovide a consistent and comprehensive description of prisoners entering and \r\nleaving the custody or supervision of state and federal authorities. In \r\naddition to the state prisons, the California Youth Authority reported data from 1984 to 2011. The Federal Bureau of Prisons reported data to NCRP from 1984 to 1996. Federal data are now collected by BJS under the Federal Justice Statistics Program.NACJD has prepared a resource guide for the NCRP Series.\r\n",
+  "modified": "2021-07-15T11:44:08",
+  "accessLevel": "public",
+  "identifier": "2589",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "correctional facilities (juveniles)",
+    "correctional system",
+    "demographic characteristics",
+    "federal correctional facilities",
+    "jail inmates",
+    "juvenile offenders",
+    "national crime statistics (USA)",
+    "offenders",
+    "offenses",
+    "parole",
+    "prison inmates",
+    "probation",
+    "state correctional facilities"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1986-06-06T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/38",
+      "title": "National Corrections Reporting Program (NCRP) Series"
+    }
+  ]
+}

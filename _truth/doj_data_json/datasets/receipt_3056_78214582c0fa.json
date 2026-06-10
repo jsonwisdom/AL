@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Effects of Crime on After-School Youth Development Programs in the United States, 1993-1994",
+  "description": "This study obtained information on youth-serving\r\n organizations around the country that provide constructive activities\r\n for youth in the after-school and evening hours. It was carried out in\r\n collaboration with seven national youth-serving organizations: Boys\r\n and Girls Clubs of America, Boy Scouts of America, Girls Incorporated,\r\n Girl Scouts of the U.S.A., National Association of Police Athletic\r\n Leagues, National 4-H Council and United States Department of\r\n Agriculture 4-H and Youth Development Service, and YMCA of the\r\n U.S.A. The research involved a national survey of affiliates and\r\n charter members of these organizations. Respondents were asked to\r\n provide information about their programs for the 1993-1994 school\r\n year, including summer 1994 if applicable. A total of 1,234\r\n questionnaires were mailed to the 658 youth-serving organizations in\r\n 376 cities in October 1994. Survey data were provided by 579 local\r\n affiliates. Information was collected on the type of building where\r\n the organization was located, the months, days of the week, and hours\r\n of operation, number of adults on staff, number and sex of school-age\r\n participants, number of hours participants spent at the program\r\n location, other participants served by the program, and\r\n characteristics of the neighborhood where the program was\r\n located. Questions were also asked about the types of contacts the\r\n organization had with the local police department, types of crimes\r\n that occurred at the location in the school year, number of times each\r\n crime type occurred, number of times the respondent was a victim of\r\n each crime type, if the offender was a participant, other youth, adult\r\n with the program, adult from the neighborhood, or adult stranger,\r\n actions taken by the organization because crimes occurred, and crime\r\n prevention strategies recommended and adopted by the\r\n organization. Geographic information includes the organization's\r\nstratum and FBI region.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3056",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "after school programs",
+    "community involvement",
+    "crime prevention",
+    "juvenile offenders",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1998-10-15T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06791.v1",
+      "title": "Effects of Crime on After-School Youth Development Programs in the United States, 1993-1994"
+    }
+  ]
+}

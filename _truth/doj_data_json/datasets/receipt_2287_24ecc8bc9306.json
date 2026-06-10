@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Uniform Crime Reporting Program Data [United States]: Hate Crime Data, 2000 [Record-Type Files]",
+  "description": "In response to a growing concern about hate crimes, the\r\nUnited States Congress enacted the Hate Crime Statistics Act of\r\n1990. The Act requires the attorney general to establish guidelines\r\nand collect, as part of the Uniform Crime Reporting (UCR) Program,\r\ndata \"about crimes that manifest evidence of prejudice based on race,\r\nreligion, sexual orientation, or ethnicity, including where\r\nappropriate the crimes of murder and non-negligent manslaughter,\r\nforcible rape, aggravated assault, simple assault, intimidation,\r\narson, and destruction, damage or vandalism of property.\" Hate crime\r\ndata collection was required by the Act to begin in calendar year 1990\r\nand to continue for four successive years. In September 1994, the\r\nViolent Crime Control and Law Enforcement Act amended the Hate Crime\r\nStatistics Act to add disabilities, both physical and mental, as\r\nfactors that could be considered a basis for hate crimes. Although the\r\nAct originally mandated data collection for five years, the Church\r\nArson Prevention Act of 1996 amended the collection duration \"for each\r\ncalendar year,\" making hate crime statistics a permanent addition to\r\nthe UCR program. As with the other UCR data, law enforcement agencies\r\ncontribute reports either directly or through their state reporting\r\nprograms. Information contained in the data includes number of victims\r\nand offenders involved in each hate crime incident, type of victims,\r\nbias motivation, offense type, and location type.",
+  "modified": "2008-11-14T15:35:08",
+  "accessLevel": "public",
+  "identifier": "2287",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "arrests",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "disabilities",
+    "discrimination",
+    "ethnicity",
+    "hate crimes",
+    "homophobia",
+    "law enforcement",
+    "offenses",
+    "prejudice",
+    "racial tensions",
+    "religion",
+    "violence"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2167",
+  "dataQuality": false,
+  "issued": "2008-11-14T15:35:08",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR23783.v1",
+      "title": "Uniform Crime Reporting Program Data [United States]: Hate Crime Data, 2000 [Record-Type Files]"
+    }
+  ]
+}

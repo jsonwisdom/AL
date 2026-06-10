@@ -1,0 +1,52 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "CrimeSolutions.gov Programs",
+  "description": "A Program is a specific set of activities carried out according to guidelines to achieve a defined purpose. Program profiles on CrimeSolutions tell us whether a specific program was found to achieve its goals when it was carefully evaluated. The results apply to the exact set of activities and procedures used for that one program as it was implemented at the time of evaluation. Thus, the program profile tells us that a program is likely to produce the observed result if implemented in exactly the same way. A hypothetical question that might be answered by a program profile is: Did the ABC Mentoring Program in Anytown, USA achieve its goals",
+  "modified": "2021-10-06T00:00:00",
+  "accessLevel": "public",
+  "identifier": "4079",
+  "publisher": {
+    "name": "Office of Justice Programs",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "not given"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "systemOfRecords": "OJP:007",
+  "dataQuality": false,
+  "issued": "2020-07-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "landingPage": "https://crimesolutions.ojp.gov/rated-programs",
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://crimesolutions.ojp.gov/rated-programs",
+      "title": "CrimeSolutions.gov Programs"
+    },
+    {
+      "@type": "dcat:Distribution",
+      "downloadURL": "https://crimesolutions.ojp.gov/topics/programs/content?all",
+      "mediaType": "text/csv",
+      "title": "CrimeSolutions.gov Programs - Download"
+    }
+  ]
+}

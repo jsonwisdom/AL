@@ -1,0 +1,52 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Felony Prosecution and Sentencing in North Carolina, 1981-1982",
+  "description": "This survey assesses the impact of a determinant sentencing\r\nlaw, the Fair Sentencing Act, which became effective July 1, 1981, in\r\nNorth Carolina. Specific variables include information from official\r\ncourt records on witness testimony and quality of evidence, information\r\nfrom prison staff and probation/parole officers, and social,\r\ndemographic, and criminal history for defendants. In this dataset it is\r\nalso possible to trace defendants through the criminal justice system\r\nfrom arrest to disposition.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2817",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "criminal justice system",
+    "sentencing",
+    "sentencing guidelines"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1985-10-09T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08307.v3",
+      "title": "Felony Prosecution and Sentencing in North Carolina, 1981-1982"
+    }
+  ]
+}

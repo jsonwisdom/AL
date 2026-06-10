@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Trajectories of Violent Offending and Risk Status Across Adolescence and Early Adulthood, 1976-1986 [United States]",
+  "description": "This study investigated violent offending in adolescence\r\n and early adulthood with an aim of building practical knowledge to\r\n guide prevention programs and policies. The study examined risk\r\n factors that influence violent offending and described how offending\r\n and risk levels change over adolescence and into early adulthood. The\r\n study used data from Waves I to VII of the NATIONAL YOUTH SURVEY\r\n (NYS), conducted by Delbert Elliott between 1977 and 1987. Separate\r\n datasets for Waves I to VII were merged to create a single\r\n longitudinal dataset, using SAS system software. The NYS includes\r\n baseline information on youth and family background and demographic\r\n characteristics, as well as longitudinal data on the behaviors and\r\n attitudes of youths, and youths' perceptions of parent, neighborhood,\r\nand peer group factors.",
+  "modified": "2007-10-26T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3867",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "adolescents",
+    "adult offenders",
+    "delinquent behavior",
+    "offenders",
+    "risk factors",
+    "violence",
+    "violent crime",
+    "youthful offenders"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2007-10-26T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR21021.v1",
+      "title": "Trajectories of Violent Offending and Risk Status Across Adolescence and Early Adulthood, 1976-1986 [United States]"
+    }
+  ]
+}

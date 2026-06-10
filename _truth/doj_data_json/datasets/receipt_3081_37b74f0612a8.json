@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Comparing Court Case Processing in Nine Courts, 1979-1980",
+  "description": "This study looks at the characteristics of officials who are\r\ninvolved in court case processing. Data were collected on the cases and\r\ndefendants, the officials involved in the cases, personality\r\ncharacteristics of the officials and the perceptions that these\r\nofficials have of each other.",
+  "modified": "1992-02-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3081",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "attorneys",
+    "civil service",
+    "court cases",
+    "court system",
+    "criminal justice system",
+    "defendants",
+    "defense counsel",
+    "government employees",
+    "legal representation",
+    "plea negotiations",
+    "prosecuting attorneys"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1987-01-12T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08621.v1",
+      "title": "Comparing Court Case Processing in Nine Courts, 1979-1980"
+    }
+  ]
+}

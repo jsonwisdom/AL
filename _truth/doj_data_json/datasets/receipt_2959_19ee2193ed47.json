@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Individual, Institutional, and Community Sources of School Violence:  A Meta-Analysis, 68 Countries, 1977-2016",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor.  The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers.  Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigators if further information is needed.\r\nThe current study subjected the body of empirical literature on school violence to a meta-analysis or \"quantitative synthesis\", to determine the key individual-, school-, and community-level factors that influence violence in school. The data are based on 693 studies of school violence that contributed a total of 8,551 effect size estimates--3,840 for delinquency/aggression (44.91%) and 4,711 for victimization (55.09%). These effect sizes were drawn from 545 independent data sets and 68 different countries. The majority of effect size estimates (56.22%) were based on U.S. samples. A total of 31 different predictors of school violence were coded at the individual, institutional, and community levels.\r\nThe collection includes one Stata file, Meta-Analysis-Data-for-NACJD.dta (n=8,551; 9 variables).",
+  "modified": "2019-06-25T11:10:56",
+  "accessLevel": "public",
+  "identifier": "2959",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "aggression",
+    "delinquent behavior",
+    "meta-analysis",
+    "school violence",
+    "victimization"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2019-06-25T11:10:56",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37247.v1",
+      "title": "Individual, Institutional, and Community Sources of School Violence:  A Meta-Analysis, 68 Countries, 1977-2016"
+    }
+  ]
+}

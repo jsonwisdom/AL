@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Estimating the Prevalence of Wrongful Convictions, Virginia, 1973-1987",
+  "description": "This study extends research on wrongful convictions in the United States and the factors associated with justice system errors that lead to the incarceration of innocent people. Among cases where physical evidence produced a DNA profile of known origin, 12.6 percent of the cases had DNA evidence that would support a claim of wrongful conviction.  Extrapolating to all cases in our dataset, the investigators estimate a slightly smaller rate of 11.6 percent. This result was based on forensics, case processing, and disposition data collected on murder and sexual assault convictions in the 1970s and 1980s across 56 circuit courts in the state of Virginia. To address limitations in the amount and type of information provided in forensic files that were reviewed in the Urban Institute's prior examination of these data, the current research includes data collected through a review of all publicly available documents on court processes and dispositions across the 714 convictions, which the investigators use to reassess prior estimates of wrongful conviction.",
+  "modified": "2021-09-15T09:16:43",
+  "accessLevel": "restricted public",
+  "identifier": "4258",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "conviction records",
+    "court cases",
+    "court system",
+    "courts",
+    "criminal justice system",
+    "evidence",
+    "forensic sciences",
+    "wrongful convictions"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2021-09-15T09:14:03",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36836.v1",
+      "title": "Estimating the Prevalence of Wrongful Convictions, Virginia, 1973-1987"
+    }
+  ]
+}

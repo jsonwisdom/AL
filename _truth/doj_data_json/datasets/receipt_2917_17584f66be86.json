@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Bullying and Violence on the School Bus: A Mixed-Methods Assessment of Behavioral Management Strategies, United States, 2016-2018",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor.  The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers.  Users should refer to the accompanying readme files for a brief dscription of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThe qualitative data are not available as part of the data collection at this time.\r\nNumerous high-profile events involving student victimization on school buses have raised critical questions regarding the safety of school-based transportation for children, the efforts taken by school districts to protect students on buses, and the most effective transportation-based behavioral management strategies for reducing misconduct. To address these questions, a national web-based survey was administered to public school district-level transportation officials throughout the United States to assess the prevalence of misconduct on buses, identify strategies to address misconduct, and describe effective ways to reduce student misbehavior on buses.  Telephone interviews were also conducted with a small group of transportation officials to understand the challenges of transportation-based behavioral management, to determine successful strategies to create safe and positive school bus environments, and to identify data-driven approaches for tracking and assessing disciplinary referrals.\r\nThe collection includes 10 Stata data files: \r\n\r\nBVSBS_analysis file.dta (n=2,595; 1058 variables)\r\nTitle Crosswalk File.dta (n=2,594; 3 variables)\r\nLessons Learned and Open Dummies.dta (n=1,543; 200 variables)\r\nCCD dataset.dta (n=12,494; 89 variables)\r\nBVSB_REGION.dta (n=4; 3 variables)\r\nBVSB_SCHOOLS.dta (n=3; 3 variables)\r\nBVSB_STUDENTS.dta (n=3; 3 variables)\r\nBVSB_URBAN.dta (n=8; 3 variables)\r\nBVSB_WHITE.dta (n=3; 3 variables)\r\nFINALRAKER.dta (n=2,595; 2 variables)\r\n",
+  "modified": "2018-11-29T15:13:46",
+  "accessLevel": "restricted public",
+  "identifier": "2917",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "bullying",
+    "buses",
+    "student behavior",
+    "transportation",
+    "victimization",
+    "violence",
+    "youths"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-11-29T15:11:53",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37043.v1",
+      "title": "Bullying and Violence on the School Bus: A Mixed-Methods Assessment of Behavioral Management Strategies, United States, 2016-2018"
+    }
+  ]
+}

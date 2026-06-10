@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Optimizing Video Surveillance in Correctional Settings, Minnesota, 2015-2019",
+  "description": "The Urban Institute and the Minnesota Department of Corrections (MnDOC) attempted to improve the surveillance system in two state correctional facilities: Stillwater (STW) and Moose Lake (ML). The goal of this study was to conduct a rigorous process and impact evaluation of the steps that STW and ML took to optimize their surveillance systems, which included repositioning existing cameras, installing new cameras, and making other infrastructural upgrades. In addition, ML integrated an audio analytic technology in their system that would alert on-unit security staff through a visual and audio alert when it detected sounds associated with anger, fear, or verbal aggression.\r\nQuantitative administrative data was collected from ML and comparison facilities and comparative interrupted time-series (CITS) analyses were employed to examine changes in two outcomes (total misconduct incidents and guilty dispositions) following the intervention. To support the CITS, another unit in ML was identified that did not upgrade its surveillance system but was similar to the intervention housing unit in terms of population, architecture, and misconduct levels (internal comparison unit), and used the synthetic control method to create another comparison unit derived from the three other medium-security prisons operated by MnDOC (external comparison unit).",
+  "modified": "2022-03-30T15:12:16",
+  "accessLevel": "restricted public",
+  "identifier": "4266",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "correctional facilities (adults)",
+    "corrections",
+    "evaluation",
+    "facilities",
+    "inmate attitudes",
+    "inmates",
+    "prison inmates",
+    "prison security",
+    "prison violence",
+    "security",
+    "security systems",
+    "technology",
+    "video surveillance",
+    "violence"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2022-03-30T15:07:58",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37984.v1",
+      "title": "Optimizing Video Surveillance in Correctional Settings, Minnesota, 2015-2019"
+    }
+  ]
+}

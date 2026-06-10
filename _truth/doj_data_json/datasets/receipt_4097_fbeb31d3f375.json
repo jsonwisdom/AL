@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "PSRAC Tool Selector ",
+  "description": "PSRAC Tool Selector ",
+  "modified": "2022-07-29T00:00:00",
+  "accessLevel": "public",
+  "identifier": "4097",
+  "publisher": {
+    "name": "Office of Justice Programs",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "bja",
+    "safety",
+    "risk",
+    "clearinghouse"
+  ],
+  "bureauCode": [
+    "011:00"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "Public ",
+  "dataQuality": false,
+  "issued": "2020-07-10T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "landingPage": "https://bja.ojp.gov/program/psrac/selection/tool-selector",
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://data.ojp.usdoj.gov/Other/PSRAC-Tool-Selector/e882-m97r",
+      "mediaType": "text/html",
+      "title": "PSRAC Tool Selector "
+    },
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://public.tableau.com/javascripts/api/viz_v1.js",
+      "format": "Api",
+      "mediaType": "application/json",
+      "title": "PSRAC Tool Selector - Api"
+    }
+  ]
+}

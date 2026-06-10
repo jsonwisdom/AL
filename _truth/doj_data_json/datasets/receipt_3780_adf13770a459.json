@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Impact of Institutional Placement on the Recidivism of Delinquent Youth in New York City, 2000-2003",
+  "description": "The primary research goal of this study was to explore the effects of juvenile incarceration on future recidivism using social and legal history data about adjudicated juvenile delinquents in New York City. The secondary research goal of this study was to explore family court decision-making and the nature of family court processing. Study subjects were chosen by examining Family Court calendars in all five New York City boroughs for each day in April, May, and June of 2000, which identified every youth who received a disposition during this period. Research staff located case files for each subject in probation department file rooms in the five family courts, using personal and numeric identifiers taken from court calendars. Using a standardized data collection instrument that was developed by the research team, coded information was derived for 698 total cases by examining documents in each subject's probation case file. Coded data from probation case files offered a baseline portrait of this sample of delinquent youth. In order to measure recidivism, the principal investigator linked baseline records, using personal and numeric identifiers, to arrest and incarceration information provided by other city and state agencies. In this dataset, each record is essentially a snapshot of a particular youth at the time of his or her disposition. Variables about the sampled youth include: demographic profile, case processing, legal history, characteristics of present and past family environments, school performance indicators, community and peer relationships, history of alcohol and drug use, mental health history, and history of victimization.",
+  "modified": "2009-08-10T14:21:11",
+  "accessLevel": "restricted public",
+  "identifier": "3780",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities (juveniles)",
+    "family courts",
+    "imprisonment",
+    "juvenile courts",
+    "juvenile crime",
+    "juvenile inmates",
+    "juvenile offenders",
+    "juveniles",
+    "offenders",
+    "probation",
+    "probation officers",
+    "recidivism"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2008-01-30T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR20347.v2",
+      "title": "Impact of Institutional Placement on the Recidivism of Delinquent Youth in New York City, 2000-2003"
+    }
+  ]
+}

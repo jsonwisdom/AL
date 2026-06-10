@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Federal Court Cases: Integrated Data Base Bankruptcy Petitions, 2008",
+  "description": "In 2008, the Administrative Office of the United States Courts (AOUSC) began implementing the NewSTATS (New Streamline Timely Access to Statistics) Project with respect to bankruptcy data. The project's goals were to modernize the system for collecting, processing, analyzing, and reporting statistics of the federal court system. Based on the records for bankruptcy cases in NewSTATS, a data base for internal use in the Research Division of the Federal Judicial Center has been created. That data base is the Bankruptcy Petition NewSTATS Snapshots [BPNS] Data Base.",
+  "modified": "2017-01-05T10:02:48",
+  "accessLevel": "restricted public",
+  "identifier": "2329",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "administration",
+    "appellate courts",
+    "bankruptcy",
+    "case dismissal",
+    "case processing",
+    "civil law",
+    "court cases",
+    "disposition (legal)",
+    "federal courts",
+    "judicial decisions",
+    "legal systems",
+    "pretrial procedures",
+    "records",
+    "trial courts",
+    "trial procedures"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2173",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2016-08-08T17:01:48",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36468.v1",
+      "title": "Federal Court Cases: Integrated Data Base Bankruptcy Petitions, 2008"
+    }
+  ]
+}

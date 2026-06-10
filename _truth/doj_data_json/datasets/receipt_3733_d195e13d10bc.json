@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Arrests Without Conviction, 1979-1980:  Jacksonville and San Diego",
+  "description": "This data collection includes information on robberies and\r\n burglaries in two cities, Jacksonville, Florida, and San Diego,\r\n California. The unit of analysis is defendants in felony cases.\r\n Information on each defendant includes socioeconomic status, criminal\r\n history, weapon usage, relationship to victim, trial procedures, and\r\n disposition. Demographic information for each defendant includes sex,\r\n race, age, and employment status. There are five files in the\r\n dataset. Parts 4 and 5 must be merged to form the complete\r\nJacksonville burglaries dataset.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3733",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "acquittals",
+    "arrests",
+    "burglary",
+    "conviction rates",
+    "court cases",
+    "criminal histories",
+    "defendants",
+    "disposition (legal)",
+    "felony courts",
+    "robbery",
+    "socioeconomic status",
+    "trials",
+    "weapons"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1985-05-24T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08180.v1",
+      "title": "Arrests Without Conviction, 1979-1980:  Jacksonville and San Diego"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Six-Year Follow-up Study on Career Criminals, 1970-1976: [United States]",
+  "description": "The major objective of the Six-year Follow-up Study on\r\nCareer Criminals was to provide data describing the effects of\r\nsentencing decisions on the behavior of career criminals. A second\r\npurpose was to develop programs to target career offenders at the time\r\nof sentencing who were likely to commit crimes in the future and\r\nincarcerate them accordingly. The data collection includes detailed\r\ndemographic background and complete prior and follow-up criminal\r\nrecords for each selected offender. There are two types of data sets in\r\nthe study, the PSI data set based on pre-sentence investigation (PSI)\r\nreports, and the Parole data set based on Parole Commission records.\r\nThe PSI data set describes each offender's demographic background,\r\ncriminal history, and court entry/exit history. The Parole data set\r\ncontains information about the offender's background characteristics,\r\nprior records of arrests, convictions, dispositions and sentences, and\r\nfollow-up records for a period of six years. Arrests are described in\r\nterms of arrest date, offense charge, disposition, result of sentence,\r\nand months incarcerated.",
+  "modified": "2006-01-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3083",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrests",
+    "crime",
+    "criminal justice system",
+    "demographic characteristics",
+    "parole hearings",
+    "recidivism",
+    "recidivists",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1987-05-19T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08648.v1",
+      "title": "Six-Year Follow-up Study on Career Criminals, 1970-1976: [United States]"
+    }
+  ]
+}

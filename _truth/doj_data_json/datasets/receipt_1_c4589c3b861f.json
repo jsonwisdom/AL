@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Antitrust Division Select Appellate Briefs",
+  "description": "Index of select appellate cases and briefs filed by the U.S. Department of Justice, Antitrust Division since January 1993. Cases are listed in reverse chronological order by brief date and by name of individual defendants, by company name, or by the entity.",
+  "modified": "2025-07-21T00:00:00",
+  "accessLevel": "public",
+  "identifier": "1",
+  "publisher": {
+    "name": "Antitrust Division",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Richard Hess",
+    "hasEmail": "mailto:richard.hess2@usdoj.gov"
+  },
+  "keyword": [
+    "Select Appellate Briefs",
+    "Antitrust Division",
+    "Department of Justice",
+    "United States",
+    "antitrust",
+    "case",
+    "filings",
+    "case filings",
+    "brief",
+    "appeal",
+    "court of appeals",
+    "supreme court",
+    "table of authorities",
+    "statement",
+    "interest of the United States",
+    "statement of related cases",
+    "brief",
+    "Amicus Curiae",
+    "opposition",
+    "motion"
+  ],
+  "bureauCode": [
+    "011:00"
+  ],
+  "programCode": [
+    "011:022"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2017-02-15T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.justice.gov/atr/appellate-briefs",
+      "mediaType": "text/html",
+      "title": "Antitrust Division Select Appellate Briefs"
+    }
+  ]
+}

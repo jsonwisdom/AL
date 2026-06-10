@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Mentally Disordered Offenders in Pursuit of Celebrities and Politicians",
+  "description": "These data were collected to develop a means of identifying\r\nthose individuals most likely to be dangerous to others because of\r\ntheir pursuit of public figures. Another objective of the study was to\r\ngather detailed quantitative information on harassing and threatening\r\ncommunications to public figures and to determine what aspects of\r\nwritten communications are predictive of future behavior. Based on the\r\nfact that each attack by a mentally disordered person in which an\r\nAmerican public figure was wounded had occurred in connection with a\r\nphysical approach within 100 yards, the investigators reasoned that\r\naccurate predictions of such physical approaches could serve as\r\nproxies for the less feasible task of accurate prediction of attacks.\r\nThe investigators used information from case files of subjects who had\r\npursued two groups of public figures, politicians and celebrities. The\r\ndata were drawn from the records of the United States Capitol Police\r\nand a prominent Los Angeles-based security consulting firm, Gavin de\r\nBecker, Inc. Information was gathered from letters and other\r\ncommunications of the subjects, as well as any other sources\r\navailable, such as police records or descriptions of what occurred\r\nduring interviews. The data include demographic information such as\r\nsex, age, race, marital status, religion, and education, family\r\nhistory information, background information such as school and work\r\nrecords, military history, criminal history, number of communications\r\nmade, number of threats made, information about subjects' physical\r\nappearance, psychological and emotional evaluations, information on\r\ntravel/mobility patterns, and approaches made.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3193",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "assault",
+    "celebrities",
+    "crime prediction",
+    "harassment",
+    "mental disorders",
+    "police records",
+    "politicians",
+    "public figures",
+    "stalkers",
+    "stalking"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1993-05-13T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06007.v2",
+      "title": "Mentally Disordered Offenders in Pursuit of Celebrities and Politicians"
+    }
+  ]
+}

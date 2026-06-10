@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Differential Use of Jail Confinement in San Francisco, Los Angeles, and Yolo Counties, 1981",
+  "description": "This study provides detailed information on inmate\r\ncharacteristics, length of time in jail, methods of release, conditions\r\nof release, disciplinary violations, and types of program participation\r\nwhile in jail. The file contains variables for each inmate, including\r\ninformation about inmates' demographic characteristics, current\r\noffenses, prior records, confinement conditions, disciplinary problems,\r\nand nature and time of disposition.",
+  "modified": "1992-02-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3091",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "United States",
+    "arrests",
+    "correctional facilities",
+    "criminal justice system",
+    "demographic characteristics",
+    "inmates"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1988-10-25T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08920.v1",
+      "title": "Differential Use of Jail Confinement in San Francisco, Los Angeles, and Yolo Counties, 1981"
+    }
+  ]
+}

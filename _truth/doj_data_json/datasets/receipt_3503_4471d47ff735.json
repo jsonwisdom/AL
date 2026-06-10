@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Firearms Violence and the Michigan Felony Firearm Law:  Detroit, 1976-1978",
+  "description": "The purpose of this study was to estimate the impact of the\r\nMichigan Firearm Law on the processing of defendants in Detroit's\r\nRecorder's Court. Most variables in the study focus on the defendant\r\nand on court processing decisions made at different stages. Special\r\nattention was given to determining the presence and use of firearms\r\nand other weapons in each offense. Variables included are gender and\r\nrace of the defendant, original charges, type of counsel, amount of\r\nbail, felony firearm charged, number of convictions, race of the\r\nvictim, firearm used, judge, and sentence.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3503",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "Michigan Firearm Law",
+    "court cases",
+    "criminal justice system",
+    "defendants",
+    "law",
+    "sentencing",
+    "trials",
+    "violence"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1986-06-06T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08509.v1",
+      "title": "Firearms Violence and the Michigan Felony Firearm Law:  Detroit, 1976-1978"
+    }
+  ]
+}

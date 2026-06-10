@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Impact Evaluation of the Rhode Island Probation Specialized Domestic Violence Supervision Unit, 2003-2004 [United States]",
+  "description": "The purpose of the research was to learn about the effectiveness of supervision of domestic violence offenders on probation. Specifically, the study sought to determine which, if any, probation practices promote victim safety and hold offenders accountable.  This study used several data collection strategies to better evaluate and compare two domestic violence offender case management strategies. The quantitative analysis was based on the findings from a nonrandom representative sample of 551 male probationers drawn from the nearly 3,000 misdemeanor domestic probationers in Rhode Island as of January 1, 2003. These offenders were, at the time of their sentencing, placed in either a regular or specialized domestic violence caseload determined by probation policies for each of 10 caseloads included in the study. A total of 182 offenders were placed on traditional supervision, while 369 offenders were placed in a specialized domestic violence unit. The probationers were tracked through January 1, 2004, to determine recidivism and reabuse differences between these supervision approaches.  There were three measures used to determine reabuse and recidivism: (1) rearrest for either an offense classified as domestic violence or for any other offense resulting in the defendant being charged and arraigned in a Rhode Island court; (2) a police report filed for an incident classified as domestic violence, whether or not an arrest was made; and (3) a victim report of domestic violence obtained in study interviews (see Data Collection Notes).  The data file contains 115 variables including basic information regarding the offender such as age, caseload number, and caseload type.  Additional variables detail the relationship between the offender and the victim, as well as the offender's previous arrest record, and previous domestic violence incidents involving the offender.",
+  "modified": "2010-09-30T11:13:21",
+  "accessLevel": "restricted public",
+  "identifier": "2853",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrest records",
+    "conviction records",
+    "criminal histories",
+    "domestic violence",
+    "victimization",
+    "violence against women"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2010-09-30T11:06:43",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR28981.v1",
+      "title": "Impact Evaluation of the Rhode Island Probation Specialized Domestic Violence Supervision Unit, 2003-2004 [United States]"
+    }
+  ]
+}

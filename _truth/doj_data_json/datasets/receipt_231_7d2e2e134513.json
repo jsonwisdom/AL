@@ -1,0 +1,71 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Crime Victimization Survey: School Crime Supplement, 2005",
+  "description": "This supplement to the National Crime Victimization Survey\r\n (formerly the National Crime Surveys) was designed to collect data on\r\n crime victimization in schools in the United States. Student\r\n respondents were asked a series of questions to determine their school\r\n attendance in the last six months. Other questions concerning schools\r\n were posed including preventive measures employed by schools,\r\n students' participation in after-school activities, students'\r\n perception of school rules and enforcement of these rules, the\r\n presence of weapons, drugs, alcohol, and gangs in schools, student\r\n bullying, hate-related incidents, and attitudinal questions relating\r\n to the fear of victimization at school. Other variables cover general\r\n violent crimes, personal larceny crimes, and household crimes and\r\n offer information on date, time, and place of crime. Demographic\r\n characteristics of household members such as age, sex, race,\r\n education, employment, household income, and marital status are\r\nprovided.",
+  "modified": "2008-04-30T09:32:16",
+  "accessLevel": "public",
+  "identifier": "231",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "crime",
+    "crime in schools",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "drugs",
+    "educational environment",
+    "fear of crime",
+    "juvenile crime",
+    "offenses",
+    "property crimes",
+    "reactions to crime",
+    "robbery",
+    "school attendance",
+    "school security",
+    "school violence",
+    "student attitudes",
+    "student behavior",
+    "vandalism",
+    "victimization",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2432",
+  "dataQuality": false,
+  "issued": "2006-12-04T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04429.v2",
+      "title": "National Crime Victimization Survey: School Crime Supplement, 2005"
+    }
+  ]
+}

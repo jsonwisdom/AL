@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Effectiveness of Client Specific Planning as an Alternative Sentence, 1981-1982: Washington, DC, and Fairfax, Montgomery, and Prince George Counties",
+  "description": "This data collection was designed to evaluate the Client \r\n Specific Planning (CSP) program of the National Center on Institutions \r\n and Alternatives (NCIA). The CSP program offers non-incarcerative \r\n sentencing options and alternatives prepared for judges and presented \r\n by an NCIA caseworker. The study measures the impact of the program on \r\n sentence length, sentence severity, the effectiveness of the program at \r\n diverting serious felony offenders from incarceration, and the rate, \r\n type, seriousness, and timing of recidivism in a 24-month post-sentence \r\n risk period. Variables are provided for each defendant on demographic \r\n characteristics, criminal history, prior counseling experiences, prior \r\n incarceration, charges and dispositions of the recidivist arrests, and \r\ntypes of sentencing alternatives recommended in CSP.",
+  "modified": "1992-02-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3206",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "alternatives to institutionalization",
+    "criminal histories",
+    "demographic characteristics",
+    "felony offenses",
+    "judges",
+    "offenders",
+    "program evaluation",
+    "recidivism",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1989-01-10T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08943.v1",
+      "title": "Effectiveness of Client Specific Planning as an Alternative Sentence, 1981-1982: Washington, DC, and Fairfax, Montgomery, and Prince George Counties"
+    }
+  ]
+}

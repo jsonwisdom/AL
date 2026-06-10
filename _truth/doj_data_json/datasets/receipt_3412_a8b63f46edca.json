@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Exploratory Research on the Impact of the Growing Oil Industry in North Dakota and Montana on Domestic Violence, Dating Violence, Sexual Assault, and Stalking, 2000-2015",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThis study used secondary analysis of data from several different sources to examine the impact of increased oil development on domestic violence, dating violence, sexual assault, and stalking (DVDVSAS) in the Bakken region of Montana and North Dakota. Distributed here are the code used for the secondary analysis data; the data are not available through other public means. Please refer to the User Guide distributed with this study for a list of instructions on how to obtain all other data used in this study.\r\nThis collection contains a secondary analysis of the Uniform Crime Reports (UCR). UCR data serve as periodic nationwide assessments of reported crimes not available elsewhere in the criminal justice system. Each year, participating law enforcement agencies contribute reports to the FBI either directly or through their state reporting programs. Distributed here are the codes used to create the datasets and preform the secondary analysis. Please refer to the User Guide, distributed with this study, for more information.\r\nThis collection contains a secondary analysis of the National Incident Based Reporting System (NIBRS), a component part of the Uniform Crime Reporting Program (UCR) and an incident-based reporting system for crimes known to the police. For each crime incident coming to the attention of law enforcement, a variety of data were collected about the incident. These data included the nature and types of specific offenses in the incident, characteristics of the victim(s) and offender(s), types and value of property stolen and recovered, and characteristics of persons arrested in connection with a crime incident. NIBRS collects data on each single incident and arrest within 22 offense categories, made up of 46 specific crimes called Group A offenses. In addition, there are 11 Group B offense categories for which only arrest data were reported. NIBRS data on different aspects of crime incidents such as offenses, victims, offenders, arrestees, etc., can be examined as different units of analysis. Distributed here are the codes used to create the datasets and preform the secondary analysis. Please refer to the User Guide, distributed with this study, for more information.\r\nThe collection includes 17 SPSS syntax files.\r\nQualitative data collected for this study are not available as part of the data collection at this time.",
+  "modified": "2018-07-06T08:11:20",
+  "accessLevel": "restricted public",
+  "identifier": "3412",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "abuse",
+    "domestic violence",
+    "oil production",
+    "rape statistics",
+    "sex offenders",
+    "sexual assault",
+    "stalking",
+    "violence against women"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-03-07T13:44:23",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36596.v2",
+      "title": "Exploratory Research on the Impact of the Growing Oil Industry in North Dakota and Montana on Domestic Violence, Dating Violence, Sexual Assault, and Stalking, 2000-2015"
+    }
+  ]
+}

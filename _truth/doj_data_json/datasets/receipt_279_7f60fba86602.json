@@ -1,0 +1,53 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "State and Local Probation and Parole Systems, 1976",
+  "description": "This study is a census of all state and local probation and\r\n parole systems. It was conducted in late 1976 by the United States\r\n Census Bureau for the Bureau of Justice Statistics. The data contain\r\n information on each agency, including jurisdiction, funding and\r\noperation, employment, and client caseload.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "279",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "criminal justice system",
+    "jurisdiction",
+    "parole",
+    "probation"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR07673.v1",
+      "title": "State and Local Probation and Parole Systems, 1976"
+    }
+  ]
+}

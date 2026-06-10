@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Inmate Survey, 2011-2012",
+  "description": "The National Inmate Survey, 2011-2012 (NIS-3) was conducted in 233 state and federal prisons between February 2011 and May 2012; 358 jails between February 2011 and May 2012; and 15 special (military, Indian country, and Immigration and Customs Enforcement (ICE)) facilities between February 2011 and May 2012. The data were collected by RTI International under a cooperative agreement with the Bureau of Justice Statistics (BJS). The NIS-3 comprised two questionnaires -- a survey of sexual victimization and a survey of mental and physical health, past drug and alcohol use, and treatment for substance abuse. Inmates were randomly assigned to receive one of the questionnaires so that at the time of the interview the content of the survey remained unknown to facility staff and the interviewers. A total of 81,566 inmates participated in the survey, including 32,029 inmates in state and federal prisons, 48,066 inmates in jails, 399 inmates in military facilities, 115 inmates in Indian country jails, and 957 inmates in facilities operated by ICE.\r\n The NIS-3 was specially designed to provide estimates of sexual victimization for inmates ages 16 to 17 held in adult facilities. Previous NIS collections excluded inmates age 17 or younger due to special human subject issues (related to consent and assent, as well as risk of trauma in the survey process) and statistical issues (related to clustering of youth and the need to oversample to ensure a representative sample). To address issues of consent and risk, the NIS-3 juvenile sample was restricted to inmates ages 16 to 17 (who represented an estimated 95 percent of the 1,790 juveniles held in prisons at year end 2011 and 97 percent of the 5,870 juveniles held in local jails at midyear 2011). \r\nThe respondents were asked about the type of sexual contact, the frequency, when it occurred, and where it occurred. The survey also sought information on any injuries received and the treatment obtained for those injuries. Other questions pertained to the reporting of sexual contact -- if it was reported, to whom it was reported, and any results from reporting sexual contact. Respondents were also asked for reasons why they had not reported the sexual contact if no report was made. Background and demographic information collected includes reasons for incarceration, sexual history, sexual orientation, marital status, gender, ethnicity, and physical characteristics such as height and weight. The NIS-3 collected data on the mental health problems of inmates for the first time in 2011-12. Inmates were asked whether they had been told by a mental health professional that they had a mental disorder or if because of a mental health problem they had stayed overnight in a hospital or other facility, used prescription medicine, or they had received counseling or treatment from a trained professional.",
+  "modified": "2021-09-27T08:18:09",
+  "accessLevel": "restricted public",
+  "identifier": "2511",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities (adults)",
+    "correctional guards",
+    "inmates",
+    "mental health",
+    "prison conditions",
+    "prison violence",
+    "rape",
+    "sex offenders",
+    "sex offenses",
+    "sexual abuse",
+    "sexual assault",
+    "sexual behavior"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2442",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2015-04-03T11:30:48",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR35009.v2",
+      "title": "National Inmate Survey, 2011-2012"
+    }
+  ]
+}

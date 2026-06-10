@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Project on Human Development in Chicago Neighborhoods (PHDCN):  Oppositional Defiance Disorder (Subject), Wave 2, 1997-2000",
+  "description": "The Project on Human Development in Chicago Neighborhoods\r\n(PHDCN) was a large-scale, interdisciplinary study of how families,\r\nschools, and neighborhoods affect child and adolescent development.\r\nOne component of the PHDCN was the Longitudinal Cohort Study, which\r\nwas a series of coordinated longitudinal studies that followed over\r\n6,000 randomly selected children, adolescents, and young adults, and\r\ntheir primary caregivers over time to examine the changing\r\ncircumstances of their lives, as well as the personal characteristics,\r\nthat might lead them toward or away from a variety of antisocial\r\nbehaviors. Numerous measures were administered to respondents to\r\ngauge various aspects of human development, including individual\r\ndifferences, as well as family, peer, and school influences. The\r\nsubject version of the Oppositional Defiance Disorder instrument was\r\nadministered to subjects for Cohorts 9, 12, and 15. The instrument was\r\nadapted from the Disruptive Behavior module of the Diagnostic\r\nInterview Schedule for Children (DISC 4) and obtained information\r\nregarding subjects' defiant behavior.",
+  "modified": "2005-12-15T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "3293",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "adolescents",
+    "anger",
+    "child development",
+    "childhood",
+    "social behavior"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "3702",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2005-09-12T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR13641.v1",
+      "title": "Project on Human Development in Chicago Neighborhoods (PHDCN):  Oppositional Defiance Disorder (Subject), Wave 2, 1997-2000"
+    }
+  ]
+}

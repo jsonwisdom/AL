@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Elder Mistreatment Study: 8-Year Follow-up of Victims and Matched Non-Victims, United States, 2015-2018",
+  "description": "The purpose of the completed project was to follow the first National Elder Mistreatment Study, which provided prevalence estimates, with a second study of a subset of the same participants to measure the effects of elder abuse in terms of (1) health and mental health outcomes and (2) criminal justice system participation and satisfaction, as well as to specify additional predictors of these effects. Data were collected from 774 older adults 8 years following their participation in Wave I of the NEMS. This represented the results of contacting every locatable participant who reported psychological, physical, or sexual (but not financial) abuse at Wave I (achieved subsample n = 183 of the original 753 Wave I victims) and a comparison sample of 591 randomly selected Wave I non-victims from the remaining 2,149 working phone numbers of the original 5,024 non-victims (at Wave I). As mentioned, financial abuse classification at Wave I was not used to identify the victim subgroup prior to sampling, however retrospective analysis indicated that the two aforementioned sampling groups (every working phone number of Wave I victims of psychological, physical, and sexual abuse AND every working phone number of the 2,149 comparison Wave I participants) accounted for all but 7 financial abuse victims identified as such at Wave I (i.e., no other financial abuse victims at Wave I could have possibly been re-contacted). The cooperation rate (upon contact), for Wave I victims of psychological, physical, or sexual abuse was 66%; the cooperation rate of comparison Wave I participants was 57%. (Note: it had originally been proposed to conduct propensity matching once the sample of Wave I victims was re-contacted, however by conserving funds during this first phase, the study was able to expand from propensity matching to random selection of a much larger group of over 2,149, for a final derived sample of 774.)",
+  "modified": "2019-11-26T09:30:55",
+  "accessLevel": "restricted public",
+  "identifier": "3573",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "anxiety",
+    "criminal justice system",
+    "depression (psychology)",
+    "elder abuse",
+    "social support"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "4215",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2019-11-26T09:28:19",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37275.v1",
+      "title": "National Elder Mistreatment Study: 8-Year Follow-up of Victims and Matched Non-Victims, United States, 2015-2018"
+    }
+  ]
+}

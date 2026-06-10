@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Los Angeles Homicides, 1830-2003",
+  "description": "There has been little research on United States homicide\r\n rates from a long-term perspective, primarily because there has been\r\n no consistent data series on a particular place preceding the Uniform\r\n Crime Reports (UCR), which began its first full year in 1931. To fill\r\n this research gap, this project created a data series that spans two\r\n centuries on homicides per capita for the city of Los Angeles. The\r\n goal was to create a site-specific, individual-based data series that\r\n could be used to examine major social shifts related to homicide, such\r\n as mass immigration, urban growth, war, demographic changes, and\r\n changes in laws. The basic approach to the data collection was to\r\n obtain the best possible estimate of annual counts and the most\r\n complete information on individual homicides. Data were derived from\r\n multiple sources, including Los Angeles court records, as well as\r\n annual reports of the coroner and daily newspapers. Part 1 (Annual\r\n Homicides and Related Data) variables include Los Angeles County\r\n annual counts of homicides, counts of female victims, method of\r\n killing such as drowning, suffocating, or strangling, and the homicide\r\n rate. Part 2 (Individual Homicide Data) variables include the date and\r\n place of the murder, the age, sex, race, and place of birth of the\r\noffender and victim, type of weapon used, and source of data.",
+  "modified": "2012-08-22T09:06:31",
+  "accessLevel": "restricted public",
+  "identifier": "2727",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "crime rates",
+    "crime statistics",
+    "historical data",
+    "homicide",
+    "murder",
+    "offenders",
+    "victims",
+    "weapons"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2003-04-11T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03680.v2",
+      "title": "Los Angeles Homicides, 1830-2003"
+    }
+  ]
+}

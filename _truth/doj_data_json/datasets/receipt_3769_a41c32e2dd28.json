@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Development of Crime Forecasting and Mapping Systems for Use by Police in Pittsburgh, Pennsylvania, and Rochester, New York, 1990-2001",
+  "description": "This study was designed to develop crime forecasting as an\r\napplication area for police in support of tactical deployment of\r\nresources. Data on crime offense reports and computer aided dispatch\r\n(CAD) drug calls and shots fired calls were collected from the\r\nPittsburgh, Pennsylvania Bureau of Police for the years 1990 through\r\n2001. Data on crime offense reports were collected from the Rochester,\r\nNew York Police Department from January 1991 through December 2001.\r\nThe Rochester CAD drug calls and shots fired calls were collected from\r\nJanuary 1993 through May 2001. A total of 1,643,828 records (769,293\r\ncrime offense and 874,535 CAD) were collected from Pittsburgh, while\r\n538,893 records (530,050 crime offense and 8,843 CAD) were collected\r\nfrom Rochester. ArcView 3.3 and GDT Dynamap 2000 Street centerline\r\nmaps were used to address match the data, with some of the Pittsburgh\r\ndata being cleaned to fix obvious errors and increase address match\r\npercentages. A SAS program was used to eliminate duplicate CAD calls\r\nbased on time and location of the calls. For the 1990 through 1999\r\nPittsburgh crime offense data, the address match rate was 91 percent.\r\nThe match rate for the 2000 through 2001 Pittsburgh crime offense data\r\nwas 72 percent. The Pittsburgh CAD data address match rate for 1990\r\nthrough 1999 was 85 percent, while for 2000 through 2001 the match\r\nrate was 100 percent because the new CAD system supplied incident\r\ncoordinates. The address match rates for the Rochester crime offenses\r\ndata was 96 percent, and 95 percent for the CAD data. Spatial overlay\r\nin ArcView was used to add geographic area identifiers for each data\r\npoint: precinct, car beat, car beat plus, and 1990 Census tract. The\r\ncrimes included for both Pittsburgh and Rochester were aggravated\r\nassault, arson, burglary, criminal mischief, misconduct, family\r\nviolence, gambling, larceny, liquor law violations, motor vehicle\r\ntheft, murder/manslaughter, prostitution, public drunkenness, rape,\r\nrobbery, simple assaults, trespassing, vandalism, weapons, CAD drugs,\r\nand CAD shots fired.",
+  "modified": "2006-08-31T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3769",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "aggravated assault",
+    "arson",
+    "assault",
+    "burglary",
+    "crime mapping",
+    "crime patterns",
+    "crime prediction",
+    "driving under the influence",
+    "drug law offenses",
+    "fraud",
+    "geographic information systems",
+    "homicide",
+    "rape",
+    "robbery",
+    "trend analysis"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2006-08-31T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04545.v1",
+      "title": "Development of Crime Forecasting and Mapping Systems for Use by Police in Pittsburgh, Pennsylvania, and Rochester, New York, 1990-2001"
+    }
+  ]
+}

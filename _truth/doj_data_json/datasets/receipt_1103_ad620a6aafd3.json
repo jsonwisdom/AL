@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Prosecutors Survey, 1994",
+  "description": "The National Survey of Prosecutors is a biennial survey of\r\nchief prosecutors in state court systems. A chief prosecutor is an\r\nofficial, usually locally elected and typically with the title of\r\ndistrict attorney or county attorney, who is in charge of a\r\nprosecutorial district made up of one or more counties, and who\r\nconducts or supervises the prosecution of felony cases in a state\r\ncourt system. Prosecutors in courts of limited jurisdiction, such as\r\nmunicipal prosecutors, were not included in the survey. The survey's\r\npurpose was to obtain detailed descriptive information on prosecutors'\r\noffices, as well as information on their policies and practices. The\r\ndata collection instrument was based on questions that were included\r\nin the NATIONAL PROSECUTORS SURVEY, 1992 (ICPSR 6273), and also added\r\nqueries on topics of current concern, including: cross-designation of\r\nstate prosecutors to try cases in federal court, juvenile transfers to\r\ncriminal court, personal liability insurance for prosecutors, and\r\ninvolvement with community-based drug abuse programs. Variables\r\ninclude whether certain categories of felony prosecution, such as\r\ngangs, hate crimes, domestic violence, stalking, fraud, or child abuse\r\nor abduction were handled, whether DNA evidence, videotape, expert or\r\nchild witnesses, polygraph tests, or wiretap evidence were used in\r\ntrials, types of intermediate sanctions used, including house arrest,\r\nelectronic monitoring, work release, substance abuse rehabilitation or\r\ntherapy, community service, and fines or restitution, information on\r\nproblem cases, personal risks associated with the role of the\r\nprosecutor, civil actions against prosecutors, criminal defense of\r\nindigent offenders, staffing, workload, funding, whether the\r\ndefendant's criminal history was used in trials, juvenile matters,\r\nrelationships with victims and other persons aiding prosecution,\r\ncomputerization, and community leadership. The unit of analysis is the\r\ndistrict office.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "1103",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "attorneys",
+    "case processing",
+    "district attorneys",
+    "evidence",
+    "felony courts",
+    "felony offenses",
+    "juvenile courts",
+    "plea negotiations",
+    "policies and procedures",
+    "prosecuting attorneys",
+    "prosecution",
+    "sentencing",
+    "state courts",
+    "treatment programs",
+    "trial procedures"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2181",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "1997-02-13T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06785.v1",
+      "title": "National Prosecutors Survey, 1994"
+    }
+  ]
+}

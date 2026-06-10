@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Survey of Inmates in State and Federal Correctional Facilities, 1997",
+  "description": "Conducted by the Bureau of the Census, this survey provides\r\nnationally representative data on state prison inmates and sentenced\r\nfederal inmates held in federally owned and operated facilities.\r\nThrough personal interviews from June-October 1997, inmates in both\r\nstate and federal prisons provided information about their current\r\noffense and sentence, criminal history, family background and personal\r\ncharacteristics, prior drug and alcohol use and treatment programs,\r\ngun possession and use, gang membership, and prison activities,\r\nprograms, and services. Prior surveys of state prison inmates, called\r\nSURVEY OF INMATES OF STATE CORRECTIONAL FACILITIES, were conducted in\r\n1974, 1979, 1986, and 1991 (see ICPSR 7811, 7856, 8711, and 6086).\r\nSentenced federal prison inmates were first interviewed in 1991 (see\r\nSURVEY OF INMATES OF FEDERAL CORRECTIONAL FACILITIES, 1991 [ICPSR\r\n6037]). The federal data are combined with the state data in this\r\ncollection. Part 1, Numeric Data, consists of numerically-coded\r\nresponses, while Part 2, Alphanumeric Data, contains free-field\r\nresponses to \"Specify, Other\" questions in ASCII text form.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "1121",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "HIV",
+    "correctional facilities",
+    "correctional facilities (adults)",
+    "corrections",
+    "criminal histories",
+    "drug abuse",
+    "inmate classification",
+    "inmate deaths",
+    "inmate populations",
+    "inmate programs",
+    "inmates",
+    "offenses",
+    "prison conditions",
+    "substance abuse",
+    "treatment programs"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2171",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2000-06-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02598.v1",
+      "title": "Survey of Inmates in State and Federal Correctional Facilities, 1997"
+    }
+  ]
+}

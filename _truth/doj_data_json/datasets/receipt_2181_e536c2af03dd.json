@@ -1,0 +1,69 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Prosecutors Survey Series",
+  "description": "\r\nInvestigator(s): Bureau of Justice Statistics\r\nThe National Survey of Prosecutors is a survey of \r\nchief prosecutors in state court systems. A chief prosecutor is an official, \r\nusually locally elected and typically with the title of district attorney or \r\ncounty attorney, who is in charge of a prosecutorial district made up of one \r\nor more counties, and who conducts or supervises the prosecution of felony \r\ncases in a state court system. Prosecutors in courts of limited jurisdiction, \r\nsuch as municipal prosecutors, were not included in the survey. The survey's \r\npurpose was to obtain detailed descriptive information on prosecutors' \r\noffices, as well as information on their policies and practices.\r\nYears Produced: Every 4 to 5 years.\r\n",
+  "modified": "2012-05-14T09:19:59",
+  "accessLevel": "public",
+  "identifier": "2181",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "DNA fingerprinting",
+    "attorneys",
+    "case processing",
+    "criminal investigations",
+    "district attorneys",
+    "evidence",
+    "felony courts",
+    "felony offenses",
+    "juvenile courts",
+    "personnel",
+    "plea negotiations",
+    "policies and procedures",
+    "prosecuting attorneys",
+    "prosecution",
+    "sentencing",
+    "state courts",
+    "training",
+    "treatment programs",
+    "trial procedures",
+    "victim services"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1992-03-04T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/84",
+      "title": "National Prosecutors Survey Series"
+    }
+  ]
+}

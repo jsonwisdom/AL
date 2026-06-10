@@ -1,0 +1,51 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "DOJ Litigation Outcomes FY 2015 - FY 2021",
+  "description": "The annual data tables contained in this document provide summary statistics on the civil enforcement activities of the United States Trustee Program.  This report covers litigation outcomes.  Successful Litigation Outcomes include outcomes where the court entered an order granting the relief sought by the United States Trustee, in whole or in part, or the defendant agreed to other relief satisfactory to the United States Trustee.",
+  "modified": "2022-03-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "4088",
+  "publisher": {
+    "name": "Executive Office for United States Trustees",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Christopher Haverstock",
+    "hasEmail": "mailto:christopher.haverstock@usdoj.gov"
+  },
+  "keyword": [
+    "Civil Enforcement",
+    "Litigation Outcomes",
+    "Prosecution",
+    "Bankruptcy"
+  ],
+  "bureauCode": [
+    "011:00"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "temporal": "2014-10-01T00:00:00.0000000/2021-09-30T00:00:00.0000000",
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "628",
+  "rights": "N/A",
+  "dataQuality": false,
+  "issued": "2022-03-16T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "downloadURL": "https://www.justice.gov/ust/page/file/1484131/download",
+      "mediaType": "application/vnd.ms-excel",
+      "title": "DOJ Litigation Outcomes FY 2015 - FY 2021"
+    }
+  ]
+}

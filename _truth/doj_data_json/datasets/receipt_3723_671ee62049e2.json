@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Citizen Participation and Community Crime Prevention, 1979:  Chicago Metropolitan Area Survey",
+  "description": "This survey was conducted as part of the Citizen\r\n Participation and Community Crime Prevention project at the Center for\r\n Urban Affairs and Policy Research, Northwestern University. The\r\n project was conducted to gain a deeper understanding of the wide range\r\n of activities in which the American public engages to be secure from\r\n crime. In particular, this survey was designed to identify the scope\r\n of anti-crime activities and investigate the processes that facilitate\r\n or inhibit the public's involvement in those activities. The\r\n geographical area for the survey was defined by the \"commuting\r\n basin\" of Chicago, excluding several independent cities and their\r\n suburbs (e.g., Aurora, Waukegan, and Joliet) on the northern and\r\n western fringes of that area, and excluding all areas in\r\n Indiana. Interviewing was carried out by the Survey Research\r\n Laboratory at the University of Illinois during June through August\r\n 1979. Information was gathered on people's opinions toward safety,\r\n their involvement with crime prevention activities, and the quality of\r\n life in their neighborhoods. In addition, data were assembled from\r\n Census Bureau and police reports for each community area in which\r\nrespondents lived in the years immediately preceding the survey.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3723",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "Illinois-Chicago",
+    "United States",
+    "cities",
+    "crime",
+    "crime prevention",
+    "neighborhoods",
+    "police protection",
+    "quality of life",
+    "residential environment",
+    "urban affairs"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-07-12T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08086.v2",
+      "title": "Citizen Participation and Community Crime Prevention, 1979:  Chicago Metropolitan Area Survey"
+    }
+  ]
+}

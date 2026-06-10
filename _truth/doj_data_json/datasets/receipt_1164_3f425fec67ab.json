@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Indicators of Labor Trafficking Among North Carolina Migrant Farmworkers, 2010-2012",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.The purpose of the study was to investigate potential correlates of labor trafficking in an effort to identify indicators of labor trafficking that could be used by state and local law enforcement as signals that labor trafficking may be taking place in their communities. Stakeholder interviews with individuals from organizations who serve migrant workers (n=24) were piloted in September 2010 with the larger data collection effort occurring between October 2011 and March 2012. In-person interviews were conducted with farmworkers (Farmworker Data, n=380) who may have been experiencing labor exploitation or trafficking. The field data collection activities began in September 2012. Interview data were collected at residential migrant labor camps, at community events, and in Western North Carolina, at integrated housing and locations frequented by farmworkers. Finally, researchers extracted secondary data from a number of sources to create profiles of each county (County Data, n=17) in which interviews were conducted.",
+  "modified": "2016-05-03T13:20:07",
+  "accessLevel": "restricted public",
+  "identifier": "1164",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "abuse",
+    "exploitation",
+    "human trafficking",
+    "migrant labor",
+    "migrant workers",
+    "work environment"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2016-05-03T13:18:11",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR34621.v1",
+      "title": "Indicators of Labor Trafficking Among North Carolina Migrant Farmworkers, 2010-2012"
+    }
+  ]
+}

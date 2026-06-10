@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Prosecutor's Management Information System (PROMIS), Rhode Island, 1979",
+  "description": "The Prosecutor's Management Information System (PROMIS) is\r\na computer-based information system for public prosecution agencies.\r\nPROMIS was initially developed with funds from the United States Law\r\nEnforcement Assistance Administration (LEAA) to cope with problems of\r\na large, urban prosecution agency where mass production operations had\r\nsuperseded the traditional practice of a single attorney preparing and\r\nprosecuting a given case from inception to final disposition. The\r\ncombination of massive volumes of cases and assembly-line\r\nfragmentation of responsibility and control had created a situation in\r\nwhich one case was indistinguishable from another and the effects of\r\nproblems at various stages in the assembly line on ultimate case\r\ndisposition went undetected and uncorrected. One unique feature of\r\nPROMIS that addresses these problems is the automated evaluation of\r\ncases. Through the application of a uniform set of criteria, PROMIS\r\nassigns two numerical ratings to each case: one signifying the gravity\r\nof the crimes through the measurement of the amount of harm done to\r\nsociety, and the other signifying the gravity of the prior record of\r\nthe accused. These ratings make it possible to select the more\r\nimportant cases for intensive, pre-trial preparation and to assure\r\neven-handed treatment of cases with similar degrees of gravity. A\r\ncomplementary feature of PROMIS is the automation of reasons for\r\ndecisions made or actions taken along the assembly line. Reasons for\r\ndismissing cases prior to trial on their merits can be related to\r\nearlier cycles of postponement for various reasons and the reasoning\r\nbehind intake and screening decisions. The PROMIS data include\r\ninformation about the defendant, case characteristics and processes,\r\ncharge, sentencing and continuance processes, and the\r\nwitnesses/victims involved in the case. PROMIS was first used in 1971\r\nin the United States Attorney's Office for the District of\r\nColumbia. To enhance the ability to transfer the concepts and software\r\nto other communities, LEAA awarded a grant to the Institute for Law\r\nxand Social Research (INSLAW) in Washington, DC. The Rhode Island\r\nPROMIS data collection is a product of this grant.",
+  "modified": "1992-02-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2112",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "case management",
+    "case processing",
+    "computer programs",
+    "court cases",
+    "crime",
+    "criminal justice system",
+    "databases",
+    "decision making",
+    "defendants",
+    "disposition (legal)",
+    "information systems",
+    "prosecuting attorneys",
+    "sentencing",
+    "victims",
+    "witnesses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1985-01-11T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08288.v1",
+      "title": "Prosecutor's Management Information System (PROMIS), Rhode Island, 1979"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Missing and Unidentified Persons System (NamUs)",
+  "description": "NamUs is the only national repository for missing, unidentified, and unclaimed persons cases. The program provides a singular resource hub for law enforcement, medical examiners, coroners, and investigating professionals. It is the only national database for missing, unidentified, and unclaimed persons that allows limited access to the public, empowering family members to take a more proactive role in the search for their missing loved ones. ",
+  "modified": "2024-04-01T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "4330",
+  "publisher": {
+    "name": "Office of Justice Programs",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "National Missing and Unidentified Persons System (NamUs)",
+    "hasEmail": "mailto:NamUs@usdoj.gov"
+  },
+  "keyword": [
+    "Missing persons"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "temporal": "1902-01-01T00:00:00.0000000/2024-04-19T00:00:00.0000000",
+  "rights": "Four levels of access to the NamUs data are available based on permissions granted. ",
+  "systemOfRecords": "OJP:015",
+  "accrualPeriodicity": "R/PT1S",
+  "dataQuality": false,
+  "issued": "2007-12-31T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "landingPage": "https://namus.nij.ojp.gov/",
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://namus.nij.ojp.gov/",
+      "description": "NamUs is the only national repository for missing, unidentified, and unclaimed persons cases. The program provides a singular resource hub for law enforcement, medical examiners, coroners, and investigating professionals. ",
+      "title": "National Missing and Unidentified Persons System (NamUs)"
+    },
+    {
+      "@type": "dcat:Distribution",
+      "description": "Users may download case data/reports. The amount and content type is controlled by user access level",
+      "downloadURL": "https://namus.nij.ojp.gov/",
+      "mediaType": "text/csv",
+      "title": "National Missing and Unidentified Persons System (NamUs)"
+    }
+  ]
+}

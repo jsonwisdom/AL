@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Juvenile Residential Facility Census, 2012 [United States]",
+  "description": "The Juvenile Residential Facility Census (JRFC), which is conducted biennially, collects basic information on juvenile residential facility characteristics, including security, capacity and crowding, injuries and deaths in custody, and facility ownership and operation. The JRFC also includes questions about facility type (such as detention center, training school, ranch, or group home) and residential services provided by the facility (such as independent living, foster care, or other arrangements).\r\n\r\nIn 2012, the JRFC was divided into four sections:\r\n\r\nGeneral facility information\r\nEvents in the 30 days prior to the census reference date\r\nDeaths in the year prior to the census reference date\r\nSpace shared with other facilities\r\n\r\nCongress requires the Office of Juvenile Justice and Delinquency Prevention (OJJDP) to report annually on the number of deaths of juveniles in custody; the JRFC gathers this information and offers a portrait of the nation's juvenile facilities. The census reference date was the fourth Wednesday in October.",
+  "modified": "2016-08-05T14:22:19",
+  "accessLevel": "restricted public",
+  "identifier": "4048",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "correctional education",
+    "correctional facilities",
+    "educational needs",
+    "group homes",
+    "health care services",
+    "juvenile detention",
+    "juvenile offenders",
+    "juveniles",
+    "mental health services",
+    "substance abuse treatment"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "3998",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2016-08-05T14:13:12",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36476.v1",
+      "title": "Juvenile Residential Facility Census, 2012 [United States]"
+    }
+  ]
+}

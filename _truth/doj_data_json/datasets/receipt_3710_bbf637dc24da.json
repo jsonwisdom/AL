@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Evaluation of the Impact of System-Wide Drug Testing in Multnomah County, Oregon, 1991-1992",
+  "description": "The Multnomah County Drug Testing and Evaluation (DTE)\r\n program was established to help clients rid themselves of drug abusing\r\n behavior. To that end, the DTE program provided random, weekly drug\r\n tests to all clients in the program. These urinalysis tests allowed\r\n DTE to monitor each client's compliance with release conditions and\r\n progress in treatment programs, and to intervene appropriately when a\r\n client showed signs of a drug abuse problem. The DTE program\r\n supplemented drug testing with client drug evaluations and treatment\r\n recommendations, which were provided to the client's probation officer\r\n or case manager. This study was a program evaluation of two of DTE's\r\n divisions: the Pretrial Release Supervision Program (PRSP) and the\r\n probation and parole program. The pretrial division was chosen because\r\n it was the first opportunity for the criminal justice system to\r\n supervise and control the drug use of potential DTE clients. The\r\n probation and parole program was selected for three reasons: it was\r\n the largest component of the DTE program, it linked the pretrial and\r\n post-sentence DTE programs, and the experience of this program could\r\n be readily applied to the development of other such programs in other\r\n jurisdictions. The programs were evaluated using administrative data\r\n collected by corrections technicians, case managers, probation and\r\n parole officers, and the DTE central office. Part 1 (Pretrial Data)\r\n variables include dates of entry into and exit from the program,\r\n number of drug tests, number of positive tests for various drugs, type\r\n of offense and arrest date for each offense, and need assessment\r\n rating for medical, employment, legal, family, psychological, and drug\r\n addiction problems. Part 2 (Probation and Parole Data) variables\r\n include a probation or parole indicator, prior drug arrests, prior\r\n non-drug arrests, prior convictions, technical violations, drug use,\r\n and new drug crimes committed during the program. Demographic\r\nvariables for both files include age, race, and gender.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3710",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "drug abuse",
+    "drug testing",
+    "intervention",
+    "pretrial intervention",
+    "pretrial procedures",
+    "probation conditions",
+    "treatment compliance",
+    "treatment outcomes",
+    "treatment programs",
+    "urinalysis"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2000-10-27T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02589.v1",
+      "title": "Evaluation of the Impact of System-Wide Drug Testing in Multnomah County, Oregon, 1991-1992"
+    }
+  ]
+}

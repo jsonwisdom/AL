@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Victims' Needs and Victim Services, 1988-1989: Evanston, Rochester, Pima County, and Fayette County",
+  "description": "This data collection examines the needs of burglary, \r\n robbery, and assault victims and the responses of local victim \r\n assistance programs to those needs in four metropolitan areas: \r\n Evanston, Illinois, Rochester, New York, Pima County, Arizona, and \r\n Fayette County, Kentucky. Four issues were explored in detail: the \r\n needs of victims, where they seek help, the kinds of help they receive, \r\n and which of their problems do and do not get resolved. Variables \r\n include (1) demographic information such as city of residence, length \r\n of residence, birth date, marital status, race, work status, education, \r\n and income, (2) information on the crime itself, such as type of crime, \r\n when the crime happened, and details of the attack and attacker, and \r\n (3) consequences of the crime, such as problems encountered as a result \r\n of the crime, emotional responses to the crime, and reactions to the \r\ncrime on a practical level.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3270",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "assault",
+    "burglary",
+    "needs assessment",
+    "robbery",
+    "victim services",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1990-10-16T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09399.v1",
+      "title": "Victims' Needs and Victim Services, 1988-1989: Evanston, Rochester, Pima County, and Fayette County"
+    }
+  ]
+}

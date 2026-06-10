@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Survey of Staffing Issues in Large Police Agencies, 2006-2007 [United States]",
+  "description": "The primary objective of this study was to formulate evidence-based lessons on recruitment, retention, and managing workforce profiles in large, United States police departments. The research team conducted a national survey of all United States municipal police agencies that had at least 300 sworn officers and were listed in the 2007 National Directory of Law Enforcement Administrators. The survey instrument was developed based on the research team's experience in working with large personnel systems, instruments used in previous police staffing surveys, and discussions with police practitioners. The research team distributed the initial surveys on February 27, 2008. To ensure an acceptable response rate, the principal investigators developed a comprehensive nonresponse protocol, provided ample field time for departments to compile information and respond, and provided significant one-on-one technical assistance to agencies as they completed the survey. In all, the surveys were in the field for 38 weeks. Respondents were asked to consult their agency's records in order to provide information about their agency's experience with recruiting, hiring, and retaining officers for 2006 and 2007. Of the 146 departments contacted, 107 completed the survey. The police recruitment and retention survey data were supplemented with data on each jurisdiction from the American Community Survey conducted by the United States Census Bureau, the Bureau of Labor Statistics, and the Federal Bureau of Investigation Uniform Crime Reports. The dataset contains a total of 535 variables pertaining to recruitment, hiring, union activity, compensation rates, promotion, retirement, and attrition. Many of these variables are available by rank, sex and race.",
+  "modified": "2012-10-26T15:57:32",
+  "accessLevel": "restricted public",
+  "identifier": "2911",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "employment practices",
+    "hiring practices",
+    "job requirements",
+    "labor force",
+    "personnel management",
+    "personnel policy",
+    "police",
+    "police departments",
+    "police officers",
+    "police records",
+    "police recruits",
+    "police reports",
+    "police training"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2012-10-26T15:54:03",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR29162.v1",
+      "title": "National Survey of Staffing Issues in Large Police Agencies, 2006-2007 [United States]"
+    }
+  ]
+}

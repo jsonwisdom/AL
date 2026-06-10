@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Trends in Substance Abuse and Treatment Needs Among Inmates in the United States, 1996-1997",
+  "description": "This data collection consists of the SPSS syntax used to\r\n recode existing variables and create new variables from the SURVEY OF\r\n INMATES OF LOCAL JAILS, 1996 [ICPSR 6858] and the SURVEY OF INMATES IN\r\n STATE AND FEDERAL CORRECTIONAL FACILITIES, 1997 [ICPSR 2598]. Using\r\n the data from these two national surveys on jail and prison inmates,\r\n this study sought to expand the analyses of these data in order to\r\n fully explore the relationship between type and intensity of substance\r\n abuse and other health and social problems, analyze access to\r\n treatment and services, and make estimates of the need for different\r\ntypes of treatment services in correctional systems.",
+  "modified": "2006-01-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2868",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "causes of crime",
+    "correctional facilities",
+    "drug laws",
+    "drug related crimes",
+    "drugs",
+    "inmate populations",
+    "inmate programs",
+    "inmates",
+    "social problems",
+    "substance abuse",
+    "substance abuse treatment"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2003-06-05T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03714.v1",
+      "title": "Trends in Substance Abuse and Treatment Needs Among Inmates in the United States, 1996-1997"
+    }
+  ]
+}

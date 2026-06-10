@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "A Comparative Study of Violent Extremism and Gangs, United States, 1948-2018 ",
+  "description": "The study assesses the extent of commonalities between individuals who become involved in violent extremist groups and criminal gangs, and the processes by which individuals engage in each group. Following this comparison, the extent to which the empirical results support the potential for anti-gang programs to bolster the resilience of communities against violent extremism and other forms of crime is assessed.\r\nQuantitative assessment was conducted by comparing individuals included in the Profiles of Individual Radicalization in the United States (PIRUS) dataset with a subset of individuals drawn from the National Longitudinal Survey of Youth 1997 (NLSY97) along a number of demographic, social, and socioeconomic characteristics.\r\nSupplementary survey data was also collected from 45 former and current gang members in the United States concurrently with long-form interviews, covering a range of variables including background characteristics, demographic information, and attitudes among the respondents.",
+  "modified": "2021-01-27T10:44:40",
+  "accessLevel": "restricted public",
+  "identifier": "3916",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime patterns",
+    "criminality prediction",
+    "extremism",
+    "gang members",
+    "gangs",
+    "offender profiles",
+    "radicalism",
+    "terrorism"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2021-01-27T10:40:19",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37386.v1",
+      "title": "A Comparative Study of Violent Extremism and Gangs, United States, 1948-2018 "
+    }
+  ]
+}

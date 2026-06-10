@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Justice Agency List Series",
+  "description": "\r\nInvestigator(s): Bureau of Justice Statistics\r\nThe National Justice Agency List is a master name and address \r\nfile created and maintained by the United States Bureau of the Census for the \r\nBureau of Justice Statistics. The file was first created in 1970, and the Census \r\nBureau has continued to maintain and expand the file. For the original survey, \r\neach county in the United States and each municipality and township with a 1960 \r\npopulation of 1,000 or more persons was surveyed to identify the names and \r\naddresses of the criminal justice agencies and institutions controlled by local \r\ngovernment. The survey was conducted by mail canvass. In addition to the mail \r\nsurvey, the Census Bureau collected information on state-level governments and \r\ncounties with a 1960 population of 500,000 or more and cities with a 1960 \r\npopulation of 300,000 or more through in-house research methods. The reference \r\ninformation included a variety of published government documents such as budget \r\nstatements, organization manuals, and state, county, and municipal \r\ndirectories.\r\n",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2166",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "correctional facilities (adults)",
+    "correctional facilities (juveniles)",
+    "courts",
+    "government agencies",
+    "jails",
+    "law enforcement agencies",
+    "local government",
+    "parole",
+    "probation",
+    "prosecuting attorneys",
+    "public defenders",
+    "state correctional facilities",
+    "state government"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/44",
+      "title": "National Justice Agency List Series"
+    }
+  ]
+}

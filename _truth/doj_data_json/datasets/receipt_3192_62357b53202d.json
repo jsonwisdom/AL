@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "New Orleans Offender Study, 1973-1986",
+  "description": "These data focus on persons arrested for burglary or armed\r\n robbery in New Orleans during 1973-1986. Local, state, and federal\r\n arrest records were combined with local and state custody records to\r\n provide a more complete criminal history database for researchers than\r\n previously available. The five files in this collection supply\r\n information on arrests, periods of criminal justice supervision and\r\n custody, employment, and basic demographics (sex, race, birth year,\r\n and state of birth). For a majority of the juvenile offenders, results\r\n of aptitude and diagnostic tests obtained from the Louisiana\r\n Department of Corrections, Juvenile Division, are available as\r\nwell. The unit of analysis is the offender.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3192",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "armed robbery",
+    "arrest records",
+    "burglary",
+    "criminal histories",
+    "databases",
+    "offenders"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1993-10-02T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06005.v1",
+      "title": "New Orleans Offender Study, 1973-1986"
+    }
+  ]
+}

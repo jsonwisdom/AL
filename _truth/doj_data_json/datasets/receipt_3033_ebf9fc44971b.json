@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Validation of the Los Angeles County [California] Probation Department's Risk and Needs Assessment Instruments, 1997-1999",
+  "description": "In 1996, the Los Angeles County Probation Department\r\ndeveloped a set of six instruments to better assess offender risks and\r\nneeds. Each instrument was intended to serve a specific purpose, with\r\nseparate instruments used for adult and juvenile populations and\r\nrelease and placement decisions. The instruments were to be completed\r\nby probation staff. These instruments were tested in a pilot project\r\nby probation field staff in 1997. The probation department then asked\r\nRAND to re-examine the six instruments for instrument integrity, use\r\nof overrides, and relationship to long-term recidivism outcomes. The\r\nprobation department's research staff had completed the instruments\r\nbetween April and December 1997 using available reports and case file\r\ninformation. RAND's involvement in the study began after all samples\r\nhad been selected and instruments completed. The probation department\r\ngave RAND the data on instrument scores. Recidivism data were gathered\r\nat 6, 12, and 18 months after the instruments' administration. For\r\njuveniles data on the nature and date of arrest were available from\r\nthe Juvenile Automated Information files. Data on adult re-arrests\r\nwere unavailable, but the Adult Probation System provided the date,\r\nnature, and disposition of offenses referred to probation.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3033",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "adult offenders",
+    "alcohol consumption",
+    "arrests",
+    "drug use",
+    "gang members",
+    "imprisonment",
+    "juvenile offenders",
+    "juvenile sentencing",
+    "needs assessment",
+    "offenders",
+    "probation",
+    "recidivism",
+    "risk assessment"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2003-12-02T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03715.v1",
+      "title": "Validation of the Los Angeles County [California] Probation Department's Risk and Needs Assessment Instruments, 1997-1999"
+    }
+  ]
+}

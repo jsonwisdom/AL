@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Justice Agency List, 1995   ",
+  "description": "The National Justice Agency List is a master name and\r\naddress file created and maintained by the Census Bureau for the\r\nBureau of Justice Statistics. The 1995 data provide information on 11\r\nseparate sectors of criminal justice agencies. Every sector file has\r\nvariables containing the names and addresses of agencies in that\r\nsector and information relevant only to the agencies within the\r\nsector. The following files comprise the collection: Part 1 -- Public\r\nDefender Agencies: Variables include type of agency and agency\r\nstructure. Part 2 -- Law Enforcement Agencies: Variables include type\r\nof agency and agency structure. Part 3 -- Courts: Variables include\r\ntype of agency and agency structure. Part 4 -- Probation and Parole\r\nAgencies: Variables include type of agency. Part 5 -- Juvenile\r\nDetention and Correctional Facilities: Variables include type of\r\nfacility, sex of residents, and resident population. Part 6 -- Local\r\nAdult Corrections Agencies: Variables include number of female\r\ninmates, number of male inmates, type of facility, and average daily\r\npopulation of inmates. Part 7 -- State Adult Correctional Facilities:\r\nVariables include type of institution, average daily population of\r\ninmates, and sex of inmates. Part 8 -- Federal Adult Correctional\r\nFacilities: Variables include type of facility, average daily\r\npopulation of inmates, and sex of inmates. Part 9 -- Other Justice\r\nAgencies: Variables include type of agency. Part 10 -- Prosecution and\r\nCivil Attorney Agencies: Variables include type of agency and agency\r\nstructure. Part 11 -- Federal and Indian Tribal Agencies: Variables\r\ninclude type of justice sector.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "256",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "government agencies",
+    "law enforcement agencies",
+    "local government",
+    "state government"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2166",
+  "dataQuality": false,
+  "issued": "1996-10-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06726.v1",
+      "title": "National Justice Agency List, 1995   "
+    }
+  ]
+}

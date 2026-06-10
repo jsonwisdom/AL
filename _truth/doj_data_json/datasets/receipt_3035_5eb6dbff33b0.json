@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Non-Fatal Workplace Violence in Lincoln, Nebraska, 1996-1997  ",
+  "description": "This project investigated non-fatal workplace violence in\r\n Lincoln, Nebraska, over an 18-month period. Workplace violence was\r\n defined as any behavior by an individual that was intended to harm\r\n workers of an organization, including all instances of physical and\r\n verbal aggression and violence. The principal investigator coded all\r\n cases of non-fatal workplace violence reported to the Lincoln Police\r\n Department during the study period with regard to 17 factors,\r\n including the type of workplace violence, the intimacy level of the\r\n perpetrator (boyfriend/husband, ex-boyfriend/husband), whether a\r\n weapon was mentioned, whether threats had been made, and the intensity\r\n level of violence. The goals of this project were (1) to present\r\n epidemiological information concerning non-fatal workplace violence,\r\n (2) to address the different types of workplace violence and\r\n differences across those types, and (3) to analyze risk factors\r\nassociated with higher and lower intensity violence.",
+  "modified": "2003-10-01T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3035",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "aggression",
+    "hostility",
+    "interpersonal conflict",
+    "job stress",
+    "occupational safety and health",
+    "physical assault",
+    "threats",
+    "violence",
+    "weapons offenses",
+    "workplace violence"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2003-10-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03717.v1",
+      "title": "Non-Fatal Workplace Violence in Lincoln, Nebraska, 1996-1997  "
+    }
+  ]
+}

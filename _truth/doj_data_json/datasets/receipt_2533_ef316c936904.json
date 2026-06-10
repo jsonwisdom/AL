@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Law Enforcement Assistance Administration Profile Data, [1968-1978]",
+  "description": "The Law Enforcement Assistance Administration File\r\n (PROFILE) System was designed for the automated storage and retrieval\r\n of information describing programs sponsored by the Bureau of Justice\r\n Statistics. The two types of data elements used to describe the\r\n projects in this file are basic data and program descriptors. The\r\n basic data elements include the title of the grant, information\r\n regarding the location of the grantee and the project, critical\r\n funding dates, the government level and type of grantee, financial\r\n data, the name of the project director, indication of the availability\r\n of reports, and identification numbers. The program descriptor\r\n elements form the program classification system and describe the key\r\n characteristics of the program. Key characteristics include subject of\r\n the program, primary and secondary activity, whether the program\r\n covered a juvenile or adult problem, and what specific crimes,\r\n clients, staff, program strategies, agencies, equipment, or research\r\nmethods were to be used or would be affected by the project.",
+  "modified": "1992-02-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2533",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "computer software",
+    "criminal justice programs",
+    "criminal justice system",
+    "grants",
+    "law enforcement"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1985-05-24T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08075.v1",
+      "title": "Law Enforcement Assistance Administration Profile Data, [1968-1978]"
+    }
+  ]
+}

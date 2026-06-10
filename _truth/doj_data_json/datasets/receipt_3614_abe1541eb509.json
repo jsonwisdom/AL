@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Reentry Mapping Network Project in Milwaukee, Wisconsin, Washington, DC, and Winston-Salem, North Carolina, 2003-2004",
+  "description": "The Urban Institute established the Reentry Mapping Network (RMN), a group of jurisdictions applying a data-driven, spatial approach to prisoner reentry. The purpose of the study was to examine three National Institute of Justice-funded RMN sites: Milwaukee, Wisconsin, Washington, DC, and Winston-Salem, North Carolina.  As members of the Reentry Mapping Network, the three sites collected local data related to incarceration, reentry, and community well-being. The Nonprofit Center of Milwaukee's Neighborhood Data Center was the lead Reentry Mapping Network partner in Milwaukee.  Data on a total of 168 census tracts in Milwaukee (Part 1) during the calendar year 2003 were obtained from the Wisconsin Department of Corrections.  NeighborhoodInfo DC was the lead reentry mapping network partner in Washington, DC.  Data on a total of 7,286 ex-offenders in Washington, DC (Part 2) during the calendar year 2004 were obtained from the Court Services and Offender Supervision Agency (CSOSA) for the District of Columbia.  The Winston-Salem Reentry Mapping Network project was managed by the Center for Community Safety (CCS), a public service and research center of Winston-Salem State University. Data on a total of 2,896 ex-offenders in Forsyth County (Part 3) during the calendar year 2003 were obtained from the North Carolina Department of Corrections (DOC), the Forsyth County Sheriff's Department (Forsyth County Detention Center [FCDC]), and the North Carolina Department of Juvenile Justice and Delinquency Prevention (DJJDP).  The Milwaukee, Wisconsin Data (Part 1) contain a total of 95 variables including race, ethnicity, gender, marital status, education, job status, dependents, general risk assessment, alcohol risk, drug risk, need for alcohol treatment, and need for drug treatment. Also included are four geographic variables. The Washington, DC Data (Part 2) contain a total of 13 variables including supervision type, whether supervision began in calendar year 2004, date supervision period began, date supervision period ended, sex, marital status, ethnicity, age, education, unemployment status, state, and Census tract. The Winston-Salem, North Carolina Data (Part 3) contain a total of 14 variables including race, sex, primary offense, admittance date, date pardoned, street, city, state, status, jurisdiction, and age at admission.",
+  "modified": "2010-07-30T09:46:57",
+  "accessLevel": "restricted public",
+  "identifier": "3614",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "communities",
+    "computer aided mapping",
+    "crime mapping",
+    "environment",
+    "ex-offenders",
+    "inmate release plans",
+    "mapping",
+    "prisoner reentry",
+    "trend analysis"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2010-07-30T09:35:59",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR20560.v1",
+      "title": "Reentry Mapping Network Project in Milwaukee, Wisconsin, Washington, DC, and Winston-Salem, North Carolina, 2003-2004"
+    }
+  ]
+}

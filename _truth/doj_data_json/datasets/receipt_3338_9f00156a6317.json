@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "State-Mandated Criminal Background Employment Screening: A High Stakes Window into the Desistance Process, New York, 2008-2009",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThis study examines criminal background checks that were carried out by the New York State Department of Health (DOH) for individuals with criminal history records who have been provisionally hired to work as unlicensed direct care employees in the long term care industry. These individuals applied for jobs in this industry for the first time in 2008 and 2009.\r\nThis information was then augmented with criminal history information provided by the NY Division of Criminal Justice Services (DCJS).\r\nThe collection contains 1 Stata data file (Criminal_background_check.dta (n=7209; 40 variables)).",
+  "modified": "2018-02-27T09:47:58",
+  "accessLevel": "restricted public",
+  "identifier": "3338",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "conviction records",
+    "criminal histories",
+    "employment",
+    "employment potential",
+    "long term care",
+    "risk assessment"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-02-27T09:44:55",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36414.v1",
+      "title": "State-Mandated Criminal Background Employment Screening: A High Stakes Window into the Desistance Process, New York, 2008-2009"
+    }
+  ]
+}

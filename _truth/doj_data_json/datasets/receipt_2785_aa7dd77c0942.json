@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Evaluation of the Midtown Community Court in New York City, 1992-1994",
+  "description": "In October 1993, the Midtown Community Court opened as a\r\nthree-year demonstration project designed to forge links with the\r\ncommunity in developing a problem-solving approach to quality-of-life\r\noffenses. The problems that this community-based courthouse sought to\r\naddress were specific to the court's midtown New York City location:\r\nhigh concentration of quality-of-life crimes, broad community\r\ndissatisfaction with court outcomes, visible signs of disorder, and\r\nclusters of persistent high-rate offenders with serious problems,\r\nincluding addiction and homelessness. This study was conducted to\r\nevaluate how well the new court was able to dispense justice locally\r\nand whether the establishment of the Midtown Community Court made a\r\ndifference in misdemeanor case processing. Data were collected at two\r\ntime periods for a comparative analysis. First, a baseline dataset\r\n(Part 1, Baseline Data) was constructed from administrative records,\r\nconsisting of a ten-percent random sample of all nonfelony\r\narraignments in Manhattan during the 12 months prior to the opening of\r\nthe Midtown Community Court. Second, comparable administrative data\r\n(Part 2, Comparison Data) were collected from all cases arraigned at\r\nthe Midtown Court during its first 12 months of operation, as well as\r\nfrom a random sample of all downtown nonfelony arraignments held\r\nduring this same time period. Both files contain variables on precinct\r\nof arrest, arraignment type, charges, bonds, dispositions, sentences,\r\ntotal number of court appearances, and total number of warrants\r\nissued, as well as prior felony and misdemeanor\r\nconvictions. Demographic variables include age, sex, and race of\r\noffender.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2785",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "addiction",
+    "case processing",
+    "communities",
+    "courts",
+    "homelessness",
+    "misdemeanor offenses",
+    "offenders",
+    "quality of life"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2000-04-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02311.v1",
+      "title": "Evaluation of the Midtown Community Court in New York City, 1992-1994"
+    }
+  ]
+}

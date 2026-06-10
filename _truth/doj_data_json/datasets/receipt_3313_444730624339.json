@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Evaluation of Less-Lethal Technologies on Police Use-of-Force Outcomes in 13 Sites in the United States, 1992-2007",
+  "description": "The study examined how law enforcement agencies (LEAs) manage the use of force by officers. It was conducted to produce practical information that can help LEAs establish guidelines that assist in the effective design of Conducted Energy Device (CED) deployment programs that support increased safety for officers and citizens. The study used a quasi-experimental design to compare seven LEAs with CED deployment to a set of six matched LEAs that did not deploy CEDs on a variety of safety outcomes. From 2006-2008, data were collected on the details of every use of force incident during a specified time period (1992-2007), as well as demographic and crime statistics for each site. For the agencies that deployed CEDs, at least two years of data on use of force incidents were collected for the period before CED deployment and at least two years of data for the period after CED deployment. For the agencies that did not deploy CEDs, at least four years of data were collected over a similar period.",
+  "modified": "2013-10-29T17:09:37",
+  "accessLevel": "restricted public",
+  "identifier": "3313",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "law enforcement agencies",
+    "police equipment",
+    "police records",
+    "police safety",
+    "police use of force",
+    "police weapons",
+    "policies and procedures"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2013-10-29T17:03:09",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR27561.v1",
+      "title": "Evaluation of Less-Lethal Technologies on Police Use-of-Force Outcomes in 13 Sites in the United States, 1992-2007"
+    }
+  ]
+}

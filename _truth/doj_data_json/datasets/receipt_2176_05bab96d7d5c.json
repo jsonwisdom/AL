@@ -1,0 +1,68 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Judicial Reporting Program Series",
+  "description": "\r\nInvestigator(s): Bureau of Justice Statistics\r\nThis series tabulates the number of persons convicted of \r\nfelonies in state courts and describes their sentences. Data were collected \r\nfrom state courts and state prosecutors in 300 counties of the United States. \r\nThe collection contains socio-demographic information such as age, race, and sex of the felon. Types of offenses committed include homicide, rape, and \r\nrobbery. Adjudication variables referring to the process between arrest and \r\nsentencing are also included. Data can be analyzed at the national level or \r\nby the individual counties.Years Produced: Every 2 years\r\n",
+  "modified": "2012-12-07T10:28:18",
+  "accessLevel": "restricted public",
+  "identifier": "2176",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "arrests",
+    "assault",
+    "auto theft",
+    "burglary",
+    "case processing",
+    "convictions (law)",
+    "counties",
+    "demographic characteristics",
+    "drug law offenses",
+    "felony courts",
+    "felony offenses",
+    "homicide",
+    "larceny",
+    "manslaughter",
+    "murder",
+    "rape",
+    "robbery",
+    "sentencing",
+    "state courts"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1989-08-02T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/77",
+      "title": "National Judicial Reporting Program Series"
+    }
+  ]
+}

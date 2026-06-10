@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Drugs, Alcohol, and Student Crime in the United States, April-May 1989  ",
+  "description": "This project examined different aspects of campus crime --\r\n specifically, the prevalence of crimes among college students, whether\r\n the crime rate was increasing or decreasing on college campuses, and\r\n the factors related to campus crime. Researchers made the assumption\r\n that crimes committed by and against college students were likely to\r\n be related to drug and alcohol use. Specific questions designed to be\r\n answered by the data include: (1) Do students who commit crimes differ\r\n in their use of drugs and alcohol from students who do not commit\r\n crimes? (2) Do students who are victims of crimes differ in their use\r\n of drugs and alcohol from students who are not victims? (3) How do\r\n multiple offenders differ from single offenders in their use of drugs\r\n and alcohol? (4) How do victims of violent crimes differ from victims\r\n of nonviolent crimes in their use of drugs and alcohol? (5) What types\r\n of student crimes are more strongly related to drug or alcohol use\r\n than others? (6) Other than drug and alcohol use, in what ways can\r\n victims and perpetrators of crimes be differentiated from students who\r\n have had no direct experiences with crime? Variables include basic\r\n demographic information, academic information, drug use information,\r\nand experiences with crime since becoming a student.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3603",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "alcohol abuse",
+    "campus crime",
+    "college students",
+    "colleges",
+    "drug abuse",
+    "drug use",
+    "universities"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1991-10-23T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09585.v2",
+      "title": "Drugs, Alcohol, and Student Crime in the United States, April-May 1989  "
+    }
+  ]
+}

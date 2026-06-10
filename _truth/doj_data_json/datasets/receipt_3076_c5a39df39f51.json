@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Matching Treatment and Offender:  North Carolina, 1980-1982",
+  "description": "These data were gathered in order to evaluate the \r\n implications of rational choice theory for offender rehabilitation. The \r\n hypothesis of the research was that income-enhancing prison \r\n rehabilitation programs are most effective for the economically \r\n motivated offender. The offender was characterized by demographic and \r\n socio-economic characteristics, criminal history and behavior, and work \r\n activities during incarceration. Information was also collected on type \r\n of release and post-release recidivistic and labor market measures. \r\n Recividism was measured by arrests, convictions, and reincarcerations, \r\n length of time until first arrest after release, and seriousness of \r\noffense leading to reincarceration.",
+  "modified": "1992-02-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3076",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "United States",
+    "arrests",
+    "correctional facilities",
+    "crime prevention",
+    "criminal justice system",
+    "inmates"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1986-08-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08515.v1",
+      "title": "Matching Treatment and Offender:  North Carolina, 1980-1982"
+    }
+  ]
+}

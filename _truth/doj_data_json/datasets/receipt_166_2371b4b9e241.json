@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Juvenile Detention and Correctional Facility Census, 1974",
+  "description": "The 1974 census includes juvenile detention and\r\ncorrectional facilities that were operated by state or local\r\ngovernments in November 1974, and had been in operation for at least a\r\nmonth prior to June 30, 1974. There is one record for each juvenile\r\ndetention facility that had a population of at least 50 percent\r\njuveniles. Each record is classified into one of six categories:\r\ndetention centers or shelters, reception or diagnostic centers,\r\ntraining schools, ranches, forestry camps and farms, and halfway\r\nhouses and group homes. Data include state, county, and city\r\nidentification, level of government responsible for the facility, type\r\nof agency, agency identification, resident population by sex, age\r\nrange, detention status, and offense, admissions and departures of\r\npopulation, average length of stay, staffing and expenditures, age and\r\ncapacity of the facility, and programs and services available.",
+  "modified": "2008-03-26T09:12:22",
+  "accessLevel": "public",
+  "identifier": "166",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "correctional facilities (juveniles)",
+    "inmate populations",
+    "juvenile crime",
+    "juvenile offenders"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2588",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR07706.v2",
+      "title": "Juvenile Detention and Correctional Facility Census, 1974"
+    }
+  ]
+}

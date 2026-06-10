@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Crime Days Precursors Study:  Baltimore, 1952-1976",
+  "description": "This data collection focuses on 354 male narcotic addicts\r\n who were selected using a stratified random sample from a population\r\n of 6,149 known narcotic abusers arrested or identified by the\r\n Baltimore, Maryland, Police Department between 1952 and\r\n 1976. Variables include respondent's use of controlled drugs,\r\n including marijuana, hallucinogens, amphetamines, barbiturates,\r\n codeine, heroin, methadone, cocaine, tranquilizers, and other\r\n narcotics. Also of interest is the respondent's past criminal activity\r\n including arrests, length of incarceration, educational attainment,\r\n employment history, personal income, mobility, and drug treatment, if\r\nany.",
+  "modified": "1992-02-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2803",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "addiction",
+    "arrests",
+    "controlled drugs",
+    "criminal histories",
+    "drug dependence",
+    "drug related crimes",
+    "drug treatment",
+    "drug use",
+    "education",
+    "income",
+    "job history",
+    "social history"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1985-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08222.v1",
+      "title": "Crime Days Precursors Study:  Baltimore, 1952-1976"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Former Prisoner Survey, 2008",
+  "description": "Under the Prison Rape Elimination Act of 2003, Congress mandated that the United States Department of Justice, Bureau of Justice Statistics (BJS) investigate former prisoners' experiences in prison to assist in understanding the incidence and prevalence of sexual victimization within the prison setting. BJS and its subcontractor, NORC at the University of Chicago, led a national data collection effort focusing on prison sexual assault as reported by former state prisoners.\r\nThe focus of the National Former Prisoner Survey (NFPS) was sexual victimization among former state prisoners. The survey was divided into 6 sections. The first two sections were administered using a computer-assisted personal interviewing (CAPI) method and focused on demographic and criminal history information. The remaining sections, covering more sensitive information, were administered using a touch-screen-audio-assisted-computer-self-interviewing (TACASI) method.\r\nSections A and B of the instrument collected demographic and criminal history information, as well as information on placements during the last continuous incarceration. Sections C and D captured detailed inmate-on-inmate sexual victimization during the last continuous incarceration, including the type of sexual activity, identification of facilities at which such incidents occurred, frequency of occurrences, and other specifics regarding sexual victimization. Section E addressed staff-on-inmate sexual victimization and misconduct, whether considered willing or unwilling, and gathered specifics of activity indicated. The last section, F, focused on the impacts of sexual assault on victimized respondents, as well as parole supervision characteristics for all respondents.\r\nThe National Former Prisoner Survey (NFPS) began in January 2008 and concluded in October 2008, and involved the random selection of approximately 250 parole offices across the country using probability proportional-to-size (PPS) sampling procedures.  Completed interviews were obtained for 17,738 respondents; supplemental data was collected on all former prisoners sampled in order to develop weights for national estimations.",
+  "modified": "2012-08-03T14:33:15",
+  "accessLevel": "restricted public",
+  "identifier": "1086",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "correctional guards",
+    "criminal histories",
+    "inmates",
+    "prison conditions",
+    "prison violence",
+    "rape",
+    "sex offenders",
+    "sex offenses",
+    "sexual abuse",
+    "sexual assault",
+    "sexual behavior"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2442",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2012-08-03T14:30:56",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR31441.v1",
+      "title": "National Former Prisoner Survey, 2008"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "PSRAC Validation Resources",
+  "description": "PSRAC Validation Resources",
+  "modified": "2022-08-01T00:00:00",
+  "accessLevel": "public",
+  "identifier": "4099",
+  "publisher": {
+    "name": "Office of Justice Programs",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "PSRAC Validation Resources"
+  ],
+  "bureauCode": [
+    "011:00"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "Public ",
+  "dataQuality": false,
+  "issued": "2020-07-16T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "landingPage": "https://bja.ojp.gov/program/psrac/validation/validation-resources",
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://bja.ojp.gov/program/psrac/validation/validation-resources",
+      "mediaType": "text/html",
+      "title": "PSRAC Validation Resources"
+    }
+  ]
+}

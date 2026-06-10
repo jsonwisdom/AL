@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Homicides in Chicago, 1965-1995",
+  "description": "These datasets contain information on every homicide in the\r\n murder analysis files of the Chicago Police Department for the years\r\n 1965-1995. For the victim-level file, Part 1, data are provided on the\r\n relationship of victim to offender, whether the victim or offender had\r\n previously committed a violent or nonviolent offense, time of\r\n occurrence and place of homicide, type of weapon used, cause and\r\n motivation for the incident, whether the incident involved drugs,\r\n alcohol, gangs, child abuse, or a domestic relationship, if or how the\r\n offender was identified, and information on the death of the\r\n offender(s). Demographic variables such as the age, sex, and race of\r\n each victim and offender are also provided. The victim-level file\r\n contains one record for each victim. Information for up to five\r\n offenders is included on each victim record. The same offender\r\n information is duplicated depending on the number of victims. For\r\n example, if a sole offender is responsible for five victims, the file\r\n contains five victim records with the offender's information repeated\r\n on each record. Part 2, Offender-Level Data, is provided to allow the\r\n creation of offender rates and risk analysis that could not be\r\n accurately prepared using the victim-level file due to the repeating\r\n of the offender information on each victim record. Offender variables\r\n were reorganized during the creation of the offender file so that each\r\n known offender is associated with a single record. A majority of the\r\n variables in the offender-level file are replicas of variables in the\r\n victim-level file. The offender records contain demographic\r\n information about the offender, demographic and relationship\r\n information about the offender's first victim (or sole victim if there\r\n was only one), and information about the homicide incident.\r\n Information pertaining to the homicide incident such as location,\r\n weapon, or drug use are the same as in the victim-level file. In cases\r\n where the offender data were completely missing in the victim-level\r\n data, no offender records were generated in the offender-level\r\n file. The offender-level data do not contain information about the\r\n victims in these cases. Geographic variables in both files include the\r\ncensus tract, community area, police district, and police area.",
+  "modified": "2005-07-06T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "3502",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "criminal histories",
+    "demographic characteristics",
+    "homicide",
+    "murder",
+    "offenders",
+    "police departments",
+    "relationships",
+    "victims",
+    "weapons"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "1995-01-11T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06399.v5",
+      "title": "Homicides in Chicago, 1965-1995"
+    }
+  ]
+}

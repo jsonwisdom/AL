@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Identifying Effective Counter-Trafficking Programs and Practices in the Unites States, 2003-2012",
+  "description": "\r\nThese data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\n\r\n\r\nAfter a decade of efforts to combat human trafficking in the United States through legislation, law enforcement, victim services, and public awareness, it was critical to begin to assess what legislative, legal, and civic responses have been most effective in achieving the desired outcome of reducing opportunities and instances of human trafficking. This study began to fill gaps in the understanding of effective anti-trafficking responses by evaluating three strategic platforms to combat human trafficking in the United States.\r\n\r\nResearchers examined the effectiveness of state-level human trafficking legislation.\r\nInvestigators described how state human trafficking laws have been used to prosecute human trafficking offenders.\r\nResearchers explored public opinion on human trafficking through a nationally representative survey containing embedded experiments.\r\n\r\n\r\n\r\nThe collection includes 2 Stata data files: (1) Effective Countertrafficking Law_Legislation Dataset.dta (n=500; 32 variables) and (2) Effective Countertrafficking_State Case Data-ICPSR.dta (n=479; 109 variables).  Data from the public opinion survey are not available at this time.\r\n",
+  "modified": "2017-12-08T09:43:23",
+  "accessLevel": "restricted public",
+  "identifier": "3548",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "human trafficking",
+    "law enforcement",
+    "law reform",
+    "legal systems",
+    "legislation",
+    "lobbying",
+    "public opinion",
+    "state legislatures"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2017-12-08T09:36:33",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36348.v1",
+      "title": "Identifying Effective Counter-Trafficking Programs and Practices in the Unites States, 2003-2012"
+    }
+  ]
+}

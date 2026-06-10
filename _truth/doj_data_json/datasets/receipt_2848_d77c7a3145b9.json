@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Alaska Sexual Assault Nurse Examiner (SANE) Data, 1996-2006",
+  "description": "This project examined the characteristics of sexual assault victimizations in Alaska, as observed and recorded by sexual assault nurse examiners in Anchorage, Kodiak, Bethel, Soldotna, Nome, Fairbanks, Homer, and Kotzebue. The sample utilized for this study included all sexual assault nurse examinations conducted in Anchorage from 1996 to 2004, in Bethel and Fairbanks in 2005 and 2006, and in Homer, Kodiak, Kotzebue, Nome, and Soldotna in 2005. A total of 1,699 examinations were collected. More specifically, the information contains  demographic characteristics of patients, pre-assault patient characteristics, assault characteristics, post assault characteristics, exam characteristics and findings, and suspect characteristics. Demographic characteristics of patients include gender, race / ethnicity, and age, whether the patient was disabled, and whether the patient reported being homeless. Pre-assault characteristics included whether the patient reported engaging in consensual sexual activity within three days prior to the assault and information on the location of the initial contact with the suspect. Assault characteristics included information on the location of the assault, methods employed by the suspect, the patients' condition at the time of the assault, the patients' use of drugs and alcohol, and a detailed description of the assault itself. This detailed description included the patient's position during the assault, whether condoms and lubricants had been used, whether ejaculation had occurred, and an inventory of 17 different sexual acts. Post-assault characteristics included information on post-assault actions taken by the patient, whether the patient engaged in consensual sexual activity between the time of the assault to the examination, and the time elapsed from the assault to the examination. Exam characteristics and findings included information on whether the exam was completed, the type of exam that was conducted, the patients' behavioral and emotional state during the exam, whether the patient required emergency medical care, whether the presence of sperm was documented, whether patients tested positive for sexually transmitted infections or other genital infections, whether the patient was pregnant, and whether injuries were documented. Injury characteristics included descriptions of both non-genital and genital injury. A total of 108 indicators of non-genital injury were captured. These included nine possible injuries (i.e., bruising, redness, abrasions, lacerations, swelling, fractures, bite marks, pain, and other) to 12 possible sites (i.e., head/face, mouth, neck, shoulders, arms, hands, chest, abdomen, back, buttocks/hips, legs, and feet). A total of 60 indicators of genital injury were also captured. These included four possible injuries (i.e., bruising, abrasions, lacerations, and tenderness) to 15 possible sites (i.e., mons pubis, labia majora, labia minora, labia majora / minora junction, clitoral hood, clitoris, periurethra, hymen, fossa navicularis, posterior fourchette, perineum, vaginal walls, cervix, anus, and rectum). Suspect characteristics included the number of suspects, whether the identity of the suspect was known, demographic characteristics (gender, race/ethnicity, and age), whether the suspect had used alcohol or drugs, and the relationship between the patient and the suspect. In addition to providing detailed information from sexual assault nurse examinations, the data also include three indicators of legal resolutions - whether cases were referred for prosecution, whether cases were accepted for prosecution, and whether cases resulted in a conviction. Data on legal resolutions are only available for 1,229 cases examined from 1999 to 2005.",
+  "modified": "2012-10-05T08:53:41",
+  "accessLevel": "restricted public",
+  "identifier": "2848",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "alcohol consumption",
+    "convictions (law)",
+    "drug use",
+    "homelessness",
+    "injuries",
+    "medical evaluation",
+    "medical records",
+    "prosecution",
+    "rape",
+    "rape statistics",
+    "sexual assault",
+    "sexual behavior",
+    "victimization",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2012-09-13T11:05:11",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR28367.v1",
+      "title": "Alaska Sexual Assault Nurse Examiner (SANE) Data, 1996-2006"
+    }
+  ]
+}

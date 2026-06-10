@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Directory of Law Enforcement Agencies Series",
+  "description": "\r\nInvestigator(s): Bureau of Justice Statistics\r\nTo ensure an accurate sampling frame for its Law \r\nEnforcement Management and Administrative Statistics (LEMAS) survey, the \r\nBureau of Justice Statistics periodically sponsors a census of the \r\nnation's state and local law enforcement agencies. This census, known as \r\nthe Directory Survey, gathers data on all police and sheriffs' department \r\nthat are publicly funded and employ at least one full-time or part-time \r\nsworn officer with general arrest powers. Variables include personnel \r\ntotals, type of agency, geographic location of agency, and whether the \r\nagency had the legal authority to hold a person beyond arraignment for \r\n48 or more hours.\r\n",
+  "modified": "2011-08-03T13:27:33",
+  "accessLevel": "public",
+  "identifier": "2436",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "authority",
+    "full-time employment",
+    "law enforcement",
+    "law enforcement agencies",
+    "part-time employment",
+    "personnel",
+    "police departments",
+    "policies and procedures"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1987-10-12T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/169",
+      "title": "Directory of Law Enforcement Agencies Series"
+    }
+  ]
+}

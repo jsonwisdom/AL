@@ -1,0 +1,46 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Pro Bono List",
+  "description": "Data related to the creation and maintenance of Pro Bono attorney list for distribution to the public. ",
+  "modified": "2023-04-06T00:00:00",
+  "accessLevel": "public",
+  "identifier": "1127",
+  "publisher": {
+    "name": "Executive Office for Immigration Review",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Office of Policy, Communications and Legislative Affairs Division Executive Office for Immigration Review (USDOJ)",
+    "hasEmail": "mailto:PAO.EOIR@usdoj.gov"
+  },
+  "keyword": [
+    "Pro Bono Attorney "
+  ],
+  "bureauCode": [
+    "011:00"
+  ],
+  "programCode": [
+    "011:008"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "systemOfRecords": "EOIR:001",
+  "dataQuality": false,
+  "issued": "2017-02-26T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.justice.gov/eoir/list-pro-bono-legal-service-providers",
+      "description": "Data related to the creation and maintenance of Pro Bono attorney list for distribution to the public. ",
+      "title": "Pro Bono List"
+    }
+  ]
+}

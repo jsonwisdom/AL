@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Effects of Drug Testing on Defendant Risk in Dade County, Florida, 1987  ",
+  "description": "The purpose of this data collection was to explore the\r\nrelationship between drug use and crime. Specifically, the collection\r\nwas undertaken to determine whether drug test results could provide\r\nimportant predictive information on pretrial misconduct over and above\r\nthat provided by other variables, thus supplying more data for judges\r\nto use in making bail and pretrial release decisions. Data about\r\ndefendants and their criminal and drug use history were gathered. In\r\naddition, defendants were subjected to urinalysis drug testing\r\nprocedures to determine the presence or absence of drugs in the urine.\r\nBoth the drug testing methods and subsequent results were subjected to\r\nreliability and validity testing procedures. The independent variables\r\nin the study include demographic attributes such as defendant's sex,\r\nrace, birthdate, marital status, and employment, charge-related\r\nattributes such as current offense, arrest, and court disposition,\r\nprior criminal record of the defendant, current and past drug use, and\r\ndrug testing results. The dependent variables pertain to the\r\ndefendant's pretrial performance and include items such as failure to\r\nappear and any rearrests.",
+  "modified": "1999-08-20T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2821",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "controlled drugs",
+    "criminal histories",
+    "criminality prediction",
+    "defendants",
+    "drug abuse",
+    "drug related crimes",
+    "drug testing",
+    "drug use"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1992-10-31T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09791.v1",
+      "title": "Effects of Drug Testing on Defendant Risk in Dade County, Florida, 1987  "
+    }
+  ]
+}

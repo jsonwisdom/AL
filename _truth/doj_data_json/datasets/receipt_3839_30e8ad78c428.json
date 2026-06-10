@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Retail-Level Heroin Enforcement and Property Crime in 30 Cities in Massachusetts, 1980-1986",
+  "description": "In undertaking this data collection, the principal\r\ninvestigators sought to determine (1) whether police enforcement\r\nagainst drug crimes, specifically heroin crimes, had any influence on\r\nthe rates of nondrug crimes, and (2) what effect intensive law\r\nenforcement programs against drug dealers had on residents where those\r\nprograms were operating. To achieve these objectives, data on crime\r\nrates for seven successive years were collected from police records of\r\n30 cities in Massachusetts. Data were collected for the following\r\noffenses: murder, rape, robbery, assault, larceny, and automobile\r\ntheft. The investigators also interviewed a sample of residents from 3\r\nof those 30 cities. Residents were queried about their opinions of the\r\nmost serious problem facing people today, their degree of concern about\r\nbeing victims of crime, and their opinions of the effectiveness of law\r\nenforcement agencies in handling drug problems.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3839",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "assault",
+    "auto theft",
+    "citizen attitudes",
+    "crime control",
+    "crime rates",
+    "drug law enforcement",
+    "drug law offenses",
+    "drug related crimes",
+    "drug traffic",
+    "larceny",
+    "law enforcement agencies",
+    "murder",
+    "rape",
+    "robbery"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1992-01-10T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09667.v1",
+      "title": "Retail-Level Heroin Enforcement and Property Crime in 30 Cities in Massachusetts, 1980-1986"
+    }
+  ]
+}

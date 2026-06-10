@@ -1,0 +1,67 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Missing Data in the Uniform Crime Reports (UCR), 1977-2000 [United States]",
+  "description": "This study reexamined and recoded missing data in the Uniform Crime Reports (UCR) for the years 1977 to 2000 for all police agencies in the United States.  The principal investigator conducted a data cleaning of 20,067 Originating Agency Identifiers (ORIs) contained within the Offenses-Known UCR data from 1977 to 2000. Data cleaning involved performing agency name checks and creating new numerical codes for different types of missing data including missing data codes that identify whether a record was aggregated to a particular month, whether no data were reported (true missing), if more than one index crime was missing, if a particular index crime (motor vehicle theft, larceny, burglary, assault, robbery, rape, murder) was missing, researcher assigned missing value codes according to the \"rule of 20\", outlier values, whether an ORI was covered by another agency, and whether an agency did not exist during a particular time period.",
+  "modified": "2012-11-26T10:54:17",
+  "accessLevel": "public",
+  "identifier": "3334",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "assault",
+    "auto theft",
+    "burglary",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "larceny",
+    "law enforcement",
+    "murder",
+    "offenses",
+    "police",
+    "police departments",
+    "police records",
+    "police reports",
+    "rape",
+    "records management",
+    "robbery"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2012-11-26T10:54:17",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR32061.v1",
+      "title": "Missing Data in the Uniform Crime Reports (UCR), 1977-2000 [United States]"
+    }
+  ]
+}

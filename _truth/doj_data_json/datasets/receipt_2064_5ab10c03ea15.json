@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Census of State and Federal Adult Correctional Facilities, 2012",
+  "description": "The 2012 Census of State and Federal Correctional Facilities (CSFCF) was the eighth enumeration of state institutions and the fifth enumeration of federal institutions sponsored by the Bureau of Justice Statistics and its predecessors. Earlier censuses were conducted in 1974, 1979 (ICPSR 7852), 1984 (ICPSR 8444), 1990 (ICPSR 9908), 1995 (ICPSR 6953), 2000 (ICPSR 4021), and 2005 (ICPSR 24642). For each facility in the 2012 census, information was provided on security level, facility operator, sex of inmates housed, one-day counts by sex, percentage of inmates authorized to leave the facility, and anticipated changes to or closures of the facility.\r\nThe census counted prisoners held in the facilities, a custody count. Some inmates in custody in one jurisdiction may be held for a different jurisdiction. The custody count is distinct from a count of inmates under a correctional authority's jurisdiction, which includes all inmates over whom a correctional authority exercises control, regardless of where the inmate is housed. A jurisdictional count is more inclusive than a prison custody count and includes state and federal prisoners housed in local jails or other non-correctional facilities.",
+  "modified": "2020-09-15T14:54:07",
+  "accessLevel": "public",
+  "identifier": "2064",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "correctional facilities (adults)",
+    "corrections",
+    "corrections management",
+    "inmate populations",
+    "inmate programs",
+    "inmates",
+    "jails",
+    "prison administration",
+    "prison construction",
+    "prison overcrowding"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2168",
+  "dataQuality": false,
+  "issued": "2020-02-06T08:37:35",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37294.v2",
+      "title": "Census of State and Federal Adult Correctional Facilities, 2012"
+    }
+  ]
+}

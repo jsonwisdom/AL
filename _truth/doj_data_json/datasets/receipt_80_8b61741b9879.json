@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Census of Law Enforcement Training Academies, 2002: [United States]  ",
+  "description": "The 2002 Census of Law Enforcement Training Academies\r\n (CLETA02) was the first effort by the Bureau of Justice Statistics\r\n (BJS) to collect information from law enforcement training academies\r\n across the United States. The CLETA02 included all currently\r\n operating academies that provided basic law enforcement training.\r\n Academies that provided only in-service training,\r\n corrections/detention training, or other special types of training\r\n were excluded. Data were collected on personnel, expenditures,\r\n facilities, equipment, trainees, training curricula, and a variety of\r\n special topic areas. As of year-end 2002, a total of 626 law\r\n enforcement academies operating in the United States offered basic law\r\n enforcement training to individuals recruited or seeking to become law\r\nenforcement officers.",
+  "modified": "2005-06-09T00:00:00",
+  "accessLevel": "public",
+  "identifier": "80",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "law enforcement",
+    "police departments",
+    "police officers",
+    "police training"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2005-06-09T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04255.v1",
+      "title": "Census of Law Enforcement Training Academies, 2002: [United States]  "
+    }
+  ]
+}

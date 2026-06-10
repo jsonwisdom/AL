@@ -1,0 +1,53 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Evidence-Based Review of Rape and Sexual Assault Preventive Intervention Programs in the United States, 1990-2003",
+  "description": "This study was an evidence-based review of sexual assault\r\n preventive intervention (SAPI) programs. A total of 67 publications\r\n including articles, government reports, and book chapters (excluding\r\n dissertations) representing 59 studies met the inclusion criteria and\r\n were included in the data abstraction process. In order to be included\r\n in the review, the resource had to be an English-language publication,\r\n published between 1990 and June 2003, of a SAPI evaluation of a\r\n primary or secondary preventive intervention program that targeted\r\n people who were adolescent-age or older, and which included outcome\r\n measures and a pre-test/post-test or between-group differences\r\n design. The findings for the article reviews are presented in evidence\r\n tables, for the general population in Part 1 and the evidence tables\r\nfor individuals with disabilities in Part 2.",
+  "modified": "2006-12-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3432",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime prevention",
+    "intervention strategies",
+    "rape",
+    "sexual assault"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2006-12-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04453.v1",
+      "title": "Evidence-Based Review of Rape and Sexual Assault Preventive Intervention Programs in the United States, 1990-2003"
+    }
+  ]
+}

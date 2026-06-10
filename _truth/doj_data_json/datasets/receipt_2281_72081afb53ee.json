@@ -1,0 +1,72 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Uniform Crime Reporting Program Data: Arrests by Age, Sex, and Race, United States, 1983",
+  "description": "These data provide information on the number of arrests\r\nreported to the Federal Bureau of Investigation's (FBI) Uniform Crime\r\nReporting (UCR) Program each year by police agencies in the United\r\nStates. Although not as well known as the \"Crimes Known to the Police\" data drawn from the Uniform crime report's Return A form, the arrest reports by age, sex, and race provide valuable data on 43 offenses including violent, drug, gambling, and larceny crimes.",
+  "modified": "2014-10-16T08:19:07",
+  "accessLevel": "public",
+  "identifier": "2281",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "arrests",
+    "arson",
+    "assault",
+    "auto theft",
+    "burglary",
+    "counties",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "drug abuse",
+    "fraud",
+    "illegal gambling",
+    "larceny",
+    "law enforcement",
+    "murder",
+    "offenses",
+    "rape",
+    "robbery",
+    "sex offenses",
+    "vandalism",
+    "weapons"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2167",
+  "dataQuality": false,
+  "issued": "2009-02-26T17:13:56",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR23326.v2",
+      "title": "Uniform Crime Reporting Program Data: Arrests by Age, Sex, and Race, United States, 1983"
+    }
+  ]
+}

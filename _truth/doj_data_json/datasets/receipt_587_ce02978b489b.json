@@ -1,0 +1,49 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "DOJ Information Technology Policy & Guidance",
+  "description": "Policy & Guidance relating to Department of Justice Information Technology Practices and Management",
+  "modified": "2016-05-31T00:00:00",
+  "accessLevel": "public",
+  "identifier": "587",
+  "publisher": {
+    "name": "Justice Management Division",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Data Management US Department of Justice (USDOJ)",
+    "hasEmail": "mailto:DataManagement@usdoj.gov"
+  },
+  "keyword": [
+    "Policy",
+    "guidance",
+    "technology",
+    "practices",
+    "management"
+  ],
+  "bureauCode": [
+    "011:00"
+  ],
+  "programCode": [
+    "011:004"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2016-05-31T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.justice.gov/jmd/department-justice-information-technology-it-policies",
+      "mediaType": "text/html",
+      "title": "DOJ Information Technology Policy & Guidance"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Survey of Campus Law Enforcement Agencies [United States] Series",
+  "description": "\r\n\r\nInvestigator(s): Bureau of Justice\r\nStatistics\r\nIn 1995, to determine the nature of law enforcement\r\nservices provided on campus, the Bureau of Justice Statistics (BJS)\r\nsurveyed four-year institutions of higher education in the United\r\nStates with 2,500 or more students. This survey describes nearly 600\r\nof these campus law enforcement agencies in terms of their personnel,\r\nexpenditures and pay, operations, equipment, computers and information\r\nsystems, policies, and special programs.  The survey was based on the\r\nBJS Law Enforcement Management and Administrative Statistics (LEMAS)\r\nprogram, which collected similar data from a national sample of state\r\nand local law enforcement agencies.\r\n",
+  "modified": "2015-08-13T13:58:19",
+  "accessLevel": "public",
+  "identifier": "2431",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "administration",
+    "budgets",
+    "colleges",
+    "law enforcement",
+    "law enforcement agencies",
+    "management",
+    "personnel",
+    "universities",
+    "wages and salaries",
+    "workers"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1997-05-16T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/93",
+      "title": "Survey of Campus Law Enforcement Agencies [United States] Series"
+    }
+  ]
+}

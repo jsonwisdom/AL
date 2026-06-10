@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Incidence Studies of Missing, Abducted, Runaway, and Thrownaway Children (NISMART), 1988",
+  "description": "This collection was undertaken in response to the mandate of the\r\n1984 Missing Children Act. The objective of the act was to estimate the\r\nincidence of five categories of children: children abducted by family\r\nmembers, children abducted by nonfamily members, runaways, thrownaways\r\n(those not wanted by their families or taken from families because of abuse\r\nor neglect), and children considered missing. Data were collected by\r\nseveral different methods. The centerpiece of this collection is a\r\nhousehold survey (Parts 19, 20, and 35) that interviewed families to\r\ndetermine whether any children fit the categories under study. Basic\r\ndemographic information on age, race, and sex was collected, and questions\r\non the family situation were asked of identified children and their parents\r\nand siblings. A survey of juvenile facilities (Parts 28 and 29) was also\r\nconducted to determine how many children had run away from these\r\nfacilities. Facility administrators were prompted for demographic\r\ninformation on the runaways as well as for information on the structure of\r\nthe runaways' families. In addition, a survey of returned runaways\r\n(children who had run away and returned home) (Part 30) was completed to\r\nfind out whether children's accounts of runaway episodes matched the\r\naccounts given by their parents. Children were queried about their\r\nrelationships with their parents and their views of their contributions to\r\nthe family. They were also asked about each specific runaway episode:\r\nwhether they actually ran away or were asked to leave, how long the episode\r\nlasted, whether friends knew about it, whether friends accompanied them,\r\nwhether they used drugs before, during, or after the episode, how they were\r\nfound, where they were found, and whether disciplinary action was taken.\r\nThe police records component (Parts 31-33) contains information on\r\nhomicides, abductions, and sexual assaults.",
+  "modified": "1996-11-21T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3941",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "drug use",
+    "family relationships",
+    "juveniles",
+    "kidnapping",
+    "missing children"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1992-03-04T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09682.v1",
+      "title": "National Incidence Studies of Missing, Abducted, Runaway, and Thrownaway Children (NISMART), 1988"
+    }
+  ]
+}

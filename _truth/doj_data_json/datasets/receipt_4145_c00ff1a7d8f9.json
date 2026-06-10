@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Census of Jails, 2019",
+  "description": "To reduce respondent burden for the 2019 collection, the Census of Jails was combined with the Deaths in Custody Reporting Program (DCRP). The census provides the sampling frame for the nationwide Survey of Inmates in Local Jails (SILJ) and the Annual Survey of Jails (ASJ). Previous jail enumerations were conducted in 1970 (ICPSR 7641), 1972 (ICPSR 7638), 1978 (ICPSR 7737), 1983 (ICPSR 8203), 1988 (ICPSR 9256), 1993 (ICPSR 6648), 1999 (ICPSR 3318), 2005 (ICPSR 20367), 2006 (ICPSR 26602), and 2013 (ICPSR 36128). The RTI International collected the data for the Bureau of Justice Statistics in 2013 and 2019. The United States Census Bureau was the collection agent from 1970-2006.\r\nThe 2019 Census of Jails gathered data from all jail detention facilities holding inmates beyond arraignment, a period normally exceeding 72 hours. Jail facilities were operated by cities and counties, by private entities under contract to correctional authorities, and by the Federal Bureau of Prisons (BOP).\r\nExcluded from the census were physically separate temporary holding facilities such as drunk tanks and police lockups that do not hold persons after being formally charged in court. Also excluded were state-operated facilities in Connecticut, Delaware, Hawaii, Rhode Island, Vermont, and Alaska, which have combined jail-prison systems. Fifteen independently operated jails in Alaska were included in the Census.\r\nThe 2019 census collected information on the number of confined inmates, number of persons supervised outside jail, number of inmates participating in weekend programs, number of confined non-U.S. citizens, number of inmates by sex and adult or juvenile status, number of juveniles held as adults, number of inmates who were parole or probation violators, number of inmates by conviction status, number of inmates by felony or misdemeanor status, number of inmates held by race or Hispanic origin, number of inmates held for other jurisdictions or authorities, average daily population, rated capacity, admissions and releases, number of staff employed by local jails, facility functions, and number of jails under court orders and consent decrees.\r\nThe 2019 census also included a module to collect data on the effects of the opioid epidemic on local jails and jail responses to the\r\nepidemic. Items included:\r\n\r\nJail practices on opioid use disorder testing, screening, and treatment.\r\nNumber of local jail admissions screened during June 2019.\r\nNumber of positive screens.\r\nNumber of admissions treated for opioid use disorder.\r\nNumber of jail inmates treated for opioid withdrawal at midyear 2019.\r\n",
+  "modified": "2022-03-30T14:09:02",
+  "accessLevel": "restricted public",
+  "identifier": "4145",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "correctional facilities",
+    "correctional officers",
+    "correctional system",
+    "corrections management",
+    "demographic characteristics",
+    "inmate populations",
+    "inmate programs",
+    "inmates",
+    "jail inmates",
+    "jails",
+    "personnel"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2169",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2022-03-30T14:04:15",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR38323.v1",
+      "title": "Census of Jails, 2019"
+    }
+  ]
+}

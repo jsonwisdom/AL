@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Research on Minorities, [1981]: Race and Crime in Atlanta and Washington, DC",
+  "description": "This data collection effort is an investigation of\r\ncriminological and sociological factors within the Black community\r\nwith a focus on the alleged high incidence of violent crime committed\r\nby Blacks. Four communities within Atlanta, Georgia, and four within\r\nWashington, DC, were selected for the study. Two communities in each\r\narea were designated high-crime areas, the other two low-crime areas.\r\nVariables include the respondents' opinions on the relationship of race\r\nand socioeconomic class to crime, their fear of crime and experiences\r\nwith crime, and contacts and attitudes toward the police. Demographic\r\ndata include respondents' gender and religion.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3744",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "African Americans",
+    "crime",
+    "fear of crime",
+    "police community relations",
+    "race",
+    "reactions to crime",
+    "socioeconomic status",
+    "violent crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1985-12-20T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08459.v2",
+      "title": "Research on Minorities, [1981]: Race and Crime in Atlanta and Washington, DC"
+    }
+  ]
+}

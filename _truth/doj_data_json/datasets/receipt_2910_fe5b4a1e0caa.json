@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Juvenile Domestic and Family Violence Court Evaluation in Contra Costa, Santa Clara, and San Francisco Counties, California, 1999-2005",
+  "description": "This study tested the effectiveness of two court-based intervention programs in California (Santa Clara County, San Francisco County) that addressed juvenile domestic and family violence. The court-based intervention programs included an intake assessment process for domestic and family violence, specialized prosecution and defense, a dedicated docket, intensive supervision, offender programs, and victim services. Probation and court records of juvenile domestic/family violence offenders provided the source of data to compare the intervention programs with a third county that did not have a specialized response (Contra Costa County). The final study group included 303 closed cases (201 cases from Santa Clara County, 40 cases from San Francisco County, and 62 cases from Contra Costa County).",
+  "modified": "2013-05-17T11:03:10",
+  "accessLevel": "restricted public",
+  "identifier": "2910",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrest records",
+    "domestic violence",
+    "family violence",
+    "intervention",
+    "juvenile courts",
+    "juvenile justice",
+    "juvenile offenders",
+    "outcome evaluation",
+    "program evaluation",
+    "recidivism",
+    "recidivism rates"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2013-05-17T10:51:38",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR34564.v1",
+      "title": "Juvenile Domestic and Family Violence Court Evaluation in Contra Costa, Santa Clara, and San Francisco Counties, California, 1999-2005"
+    }
+  ]
+}

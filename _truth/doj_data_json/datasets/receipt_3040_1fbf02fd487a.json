@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Outcome Evaluation of the Residential Substance Abuse Treatment (RSAT) Program for State Prisoners in Massachusetts, 1999-2002",
+  "description": "This study was an outcome evaluation of the Residential\r\nSubstance Abuse Treatment (RSAT) program at the Barnstable House of\r\nCorrections in Massachusetts. The study is based on the 188 inmates\r\nreferred to the RSAT program at Barnstable between January 1, 1999,\r\nand June 6, 2001. Data on participants' criminal histories were\r\ngathered from the Criminal History Systems Board through March\r\n2002. Data on offender age, entry, and discharge dates were supplied\r\nby the Barnstable County House of Corrections. Data from offender\r\nscores on psychological inventories and offender outcomes in the RSAT\r\nprogram were supplied by AdCare Criminal Justice Services.",
+  "modified": "2003-10-01T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "3040",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "addiction",
+    "adjustment",
+    "aftercare",
+    "crime",
+    "inmate programs",
+    "inmates",
+    "outcome evaluation",
+    "recidivism",
+    "rehabilitation",
+    "residential programs"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2003-10-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03794.v1",
+      "title": "Outcome Evaluation of the Residential Substance Abuse Treatment (RSAT) Program for State Prisoners in Massachusetts, 1999-2002"
+    }
+  ]
+}

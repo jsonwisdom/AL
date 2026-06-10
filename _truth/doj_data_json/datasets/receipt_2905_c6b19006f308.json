@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Survey of Juvenile Justice Professionals, 2005-2007 [United States]",
+  "description": "This study involved a survey of juvenile court judges, chief probation officers, prosecutors, and public defenders to measure their impressions of recent policy changes and the critical needs facing today's juvenile justice system. In addition the study garnered recommendations for improving the administration and effectiveness of this system. The study's primary objective was to provide policymakers, administrators, and practitioners with actionable information about how to improve the operations and effectiveness of the juvenile justice system, and to examine the role practitioners could play in constructing sound juvenile justice policy. A total of 534 juvenile court judges, chief probation officers, court administrators, prosecutors, and defense\r\nattorneys in 44 states and the District of Columbia participated in the Assessing the Policy Options (APO) national practitioner survey. The survey consisted of four major sections: demographics, critical needs, policies and practices, and practitioner recommendations. Critical needs facing the juvenile justice system were measured by asking respondents about the policy priority of 13 issues in their respective jurisdictions; topics ranged from staff training and development to effective juvenile defense counsel to information technology. Respondents were also asked to assess the effectiveness of 17 different policies and practices -- ranging from parental accountability laws to transfer and treatment -- in achieving 6 vital juvenile justice outcomes.",
+  "modified": "2013-03-21T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "2905",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "curfew",
+    "decision making",
+    "gangs",
+    "juvenile courts",
+    "juvenile crime",
+    "juvenile detention",
+    "juvenile justice",
+    "juvenile offenders",
+    "juvenile recidivists",
+    "mental health services",
+    "needs assessment",
+    "policy making",
+    "restorative justice",
+    "risk assessment",
+    "sex offenders"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2013-03-21T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR26381.v1",
+      "title": "National Survey of Juvenile Justice Professionals, 2005-2007 [United States]"
+    }
+  ]
+}

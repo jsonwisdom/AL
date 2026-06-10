@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Alternative Probation Strategies in Baltimore, Maryland",
+  "description": "The purpose of this study was to assess the relative\r\ncost-effectiveness of supervised probation, unsupervised probation,\r\nand community service. Data were collected from several sources:\r\ninput-intake forms used by the State of Maryland, probation officers'\r\ncase record files, Maryland state police rap sheets, FBI sources, and\r\ninterviews with Maryland probationers. Non-violent, less serious\r\noffenders who normally received probation sentences of 12 months or\r\nless were offered randomly selected assignments to one of three\r\ntreatment methods over a five-month period. Baseline data for\r\nprobationers in each of the three samples were drawn from an intake\r\nform that was routinely completed for cases. An interim assessment of\r\nrecidivism was made at the midpoint of the intervention for each\r\nprobationer using information drawn from police records. Probationers\r\nwere interviewed six and twelve months after probation\r\nended. Demographic information on the probationers includes sex, race,\r\nage, birthplace, marital status, employment status, and education.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2818",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "alternatives to institutionalization",
+    "community service programs",
+    "cost effectiveness",
+    "criminal justice system",
+    "inmate release plans",
+    "offenders",
+    "postrelease programs",
+    "probation services",
+    "probationers",
+    "program evaluation",
+    "recidivism",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1985-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08355.v1",
+      "title": "Alternative Probation Strategies in Baltimore, Maryland"
+    }
+  ]
+}

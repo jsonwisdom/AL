@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Survey of Youth in Custody Alternate, Supplemental Survey on Drug and Alcohol Use, [United States], 2008-2009, 2012 ",
+  "description": "The National Survey of Youth in Custody (NSYC) is part of the BJS National Prison Rape Statistics Program to gather mandated data on the incidence of prevalence of sexual assault in juvenile facilities under the Prison Rape Elimination Act of 2003 (PREA; P.L. 108-79). The Act requires a 10 percent sample of juvenile facilities to be listed by incidence of sexual assault. Data are collected directly from youth in a private setting using audio computer-assisted self interview (ACASI) technology with a touch-screen laptop and an audio feed to maximize inmate confidentiality and minimize literacy issues. The first year of collection includes nearly 200 juvenile facilities, with an estimated 10,000 completed interviews with youth.\r\nThe National Survey of Youth in Custody Alternate (NSYC-A) is a supplement to NSYC that collected information on drug and alcohol use by youth in juvenile facilities. The survey was divided into six sections. Section A collected background information, such as age, gender, education level, and whether respondent had stayed overnight in a facility or had forced sexual contact prior to current incarceration. Section B, Facility Perceptions and Victimization, is not included in this dataset. Section C, Drug Use, included whether the respondent had ever used specific types of drugs, frequency of use in the past and immediately before being taken into custody, source of drugs, and symptoms of drug abuse and dependence. Section D, Alcohol Use, captured alcohol dependence and abuse symptoms. Section E, Treatment, focused on drug or alcohol treatment programs respondent had attended prior to being taken into custody. Section F, Family and Peer Background is not included in this dataset.\r\nOther items include weights variables and derived variables regarding DSM IV drug dependence symptoms, alcohol and drug use/dependence/abuse status, outliers/illogical responses, and categorized demographic variables.",
+  "modified": "2018-09-10T10:23:12",
+  "accessLevel": "restricted public",
+  "identifier": "2481",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "alcohol",
+    "drug abuse",
+    "drug dependence",
+    "juvenile detention",
+    "juvenile inmates",
+    "prison conditions",
+    "sexual assault",
+    "substance abuse treatment"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2442",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-09-10T10:21:20",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37025.v1",
+      "title": "National Survey of Youth in Custody Alternate, Supplemental Survey on Drug and Alcohol Use, [United States], 2008-2009, 2012 "
+    }
+  ]
+}

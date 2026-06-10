@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "American Terrorism Study, 1980-2002",
+  "description": "This study was conducted in response to a lack of existing\r\n data collections relating specifically to acts of American\r\n terrorism. A primary goal of the study was to create an empirical\r\n database from which criminological theories and governmental policies\r\n could be effectively evaluated. The American Terrorism Study began in\r\n 1989 when the Federal Bureau of Investigation's (FBI) Terrorist\r\n Research and Analytical Center released a list of persons indicted as\r\n a result of investigation under the FBI's Counterterrorism\r\n Program. Since that time, FBI has released additional lists to the\r\n principal investigators. After receiving a list of persons indicted\r\n in federal criminal court as a result of an official terrorism\r\n investigation, the researchers reviewed the cases at either the\r\n federal district court where the cases were tried or at the federal\r\n regional records center where the cases were archived. The researchers\r\n divided the dataset into five distinct datasets. Part 1, Counts Data,\r\n provides data on every count for each indictee in each indictment.\r\n This is the basic dataset. There were 7,306 counts from 1980 to\r\n 2002. Part 2, Indictees Data, provides data on each of the 574\r\n indictees from 1980-2002. Part 3, Persons Data, provides data on the\r\n 510 individuals who were indicted by the federal government as a\r\n result of a terrorism investigation. Part 4, Cases Data, provides one\r\n line of data for each of the 172 criminal terrorism cases that\r\n resulted from a federal terrorism investigation. Part 5, Group Data,\r\n provides one line of case data for each of the 85 groups that were\r\n tried in federal court for terrorism-related activity. Each of the\r\n five datasets includes information on approximately 80 variables\r\n divided into four major categories: (1) demographic information, (2)\r\n information about the terrorist group to which the individual belongs,\r\n (3) prosecution and defense data, and (4) count/case outcome and\r\nsentencing data.",
+  "modified": "2007-07-30T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "2937",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "FBI",
+    "crime prevention",
+    "district courts",
+    "federal prisoners",
+    "national security",
+    "sentencing",
+    "terrorism",
+    "terrorist attacks",
+    "terrorist prosecution",
+    "terrorists"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2007-07-30T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04639.v1",
+      "title": "American Terrorism Study, 1980-2002"
+    }
+  ]
+}

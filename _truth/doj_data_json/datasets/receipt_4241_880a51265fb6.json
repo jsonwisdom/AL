@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Understanding Online Hate Speech as a Motivator and Predictor of Hate Crime, Los Angeles, California, 2017-2018",
+  "description": " In the United States, a number of challenges prevent an accurate assessment of the prevalence of hate crimes in different areas of the country. These challenges create huge gaps in knowledge about hate crime--who is targeted, how, and in what areas--which in turn hinder appropriate policy efforts and allocation of resources to the prevention of hate crime. In the absence of high-quality hate crime data, online platforms may provide information that can contribute to a more accurate estimate of the risk of hate crimes in certain places and against certain groups of people. Data on social media posts that use hate speech or internet search terms related to hate against specific groups has the potential to enhance and facilitate timely understanding of what is happening offline, outside of traditional monitoring (e.g., police crime reports). This study assessed the utility of Twitter data to illuminate the prevalence of hate crimes in the United States with the goals of (i) addressing the lack of reliable knowledge about hate crime prevalence in the U.S. by (ii) identifying and analyzing online hate speech and (iii) examining the links between the online hate speech and offline hate crimes. \r\n The project drew on four types of data: recorded hate crime data, social media data, census data, and data on hate crime risk factors. An ecological framework and Poisson regression models were adopted to study the explicit link between hate speech online and hate crimes offline. Risk terrain modeling (RTM) was used to further assess the ability to identify places at higher risk of hate crimes offline.",
+  "modified": "2021-07-28T13:51:10",
+  "accessLevel": "restricted public",
+  "identifier": "4241",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "Internet",
+    "disability",
+    "gender",
+    "hate crimes",
+    "hate speech",
+    "race",
+    "religion",
+    "sexual preference",
+    "social media"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2021-07-28T13:47:31",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37470.v1",
+      "title": "Understanding Online Hate Speech as a Motivator and Predictor of Hate Crime, Los Angeles, California, 2017-2018"
+    }
+  ]
+}

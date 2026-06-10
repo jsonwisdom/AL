@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Jail Census, 1993",
+  "description": "This data collection is part of a series of data collection \r\n efforts aimed at studying the nation's locally administered jails. The \r\n 1993 census included all locally administered confinement facilities \r\n (3,287) that held inmates beyond arraignment and were staffed by \r\n municipal or county employees. The census also included 17 jails that \r\n were privately operated under contract for local governments and seven \r\n facilities maintained by the Federal Bureau of Prisons and functioning \r\n as jails. For purposes of this data collection, a local jail was \r\n defined as a confinement facility intended for holding adults, and in \r\n some cases juveniles pending adjudication or having sentences of a year \r\n or less. Jails were further defined as being administered by a local \r\n law enforcement agency. Variables include information on jail \r\n population by legal status, age, and sex of prisoners, maximum \r\n sentence, admissions and releases, available services and programs, \r\n structure and capacity, facility age and use of space, expenditure, \r\n employment, staff information, and health issues, which include \r\nstatistics on drugs, AIDS, and tuberculosis.",
+  "modified": "1996-07-13T00:00:00",
+  "accessLevel": "public",
+  "identifier": "250",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "correctional facilities",
+    "correctional system",
+    "corrections management",
+    "demographic characteristics",
+    "inmate populations",
+    "inmates",
+    "jail inmates",
+    "jails"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2169",
+  "dataQuality": false,
+  "issued": "1996-07-13T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06648.v1",
+      "title": "National Jail Census, 1993"
+    }
+  ]
+}

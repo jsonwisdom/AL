@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Violent Offending by Drug Users: Longitudinal Arrest Histories of Adults Arrested in Washington, DC, 1985-1986",
+  "description": "This data collection effort examined the influence of drug\r\n use on three key aspects of offenders' criminal careers in violence:\r\n participation, frequency of offending, and termination rate. A random\r\n sample of arrestees was taken from those arrested in Washington, DC,\r\n during the period July 1, 1985, to June 6, 1986. The sample was\r\n stratified to overrepresent groups other than Black males. Drug use\r\n was determined by urinalysis results at the time of arrest, as\r\n contrasted with previous studies that relied on self-reports of drug\r\n use. The research addresses the following questions: (1) Does drug use\r\n have an influence on participation in violent criminal activity? (2)\r\n Does drug use influence the frequency of violent offending? (3) Is\r\n there a difference in the types and rates of violent offending between\r\n drug-using offenders who use stimulants and those who use depressants?\r\n Variables regarding arrests include date of arrest, drug test result,\r\n charges filed, disposition date, disposition type, and sentence length\r\n imposed. Demographic variables include race, sex, birthdate, and place\r\nof birth.",
+  "modified": "1996-01-22T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3495",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "career criminals",
+    "drug offenders",
+    "drug testing",
+    "drug use",
+    "recidivism",
+    "violence",
+    "violent crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1996-01-22T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06254.v1",
+      "title": "Violent Offending by Drug Users: Longitudinal Arrest Histories of Adults Arrested in Washington, DC, 1985-1986"
+    }
+  ]
+}

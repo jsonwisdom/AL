@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Youth Survey [United States]:  Wave VII, 1987",
+  "description": "Youth data for the seventh wave of the National Youth\r\nSurvey are contained in this collection. This research project,\r\ndesigned to gain a better understanding of both conventional and\r\ndeviant types of behavior by youths, involved collecting information\r\nfrom a representative sample of young people in the United States. The\r\nfirst wave of this survey was conducted in 1976 (ICPSR 8375), the\r\nsecond in 1977 (ICPSR 8424), the third in 1978 (ICPSR 8506), the\r\nfourth in 1979 (ICPSR 8917), the fifth in 1980 (ICPSR 9112), and the\r\nsixth in 1983 (ICPSR 9948). For this wave, young adults were\r\ninterviewed in early 1987 about events and behavior occurring in\r\ncalendar year 1986, when they were 20 to 29 years of age. Data are\r\navailable on the demographic and socioeconomic status of respondents,\r\nparents and friends, neighborhood problems, education, employment,\r\nskills, aspirations, encouragement, normlessness, attitudes toward\r\ndeviance, exposure to delinquent peers, self-reported depression,\r\ndelinquency, drug and alcohol use, victimization, pregnancy, abortion,\r\nuse of mental health and outpatient services, violence by respondent\r\nand acquaintances, use of controlled drugs, and sexual activity.",
+  "modified": "2009-04-01T10:04:57",
+  "accessLevel": "public",
+  "identifier": "3003",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "aspirations",
+    "behavior problems",
+    "career goals",
+    "community involvement",
+    "delinquent behavior",
+    "depression (psychology)",
+    "deviance",
+    "drugs",
+    "expectations",
+    "family conflict",
+    "family relations",
+    "health services utilization",
+    "life events",
+    "neighborhood conditions",
+    "parenta"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "3996",
+  "dataQuality": false,
+  "issued": "1996-05-14T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06542.v3",
+      "title": "National Youth Survey [United States]:  Wave VII, 1987"
+    }
+  ]
+}

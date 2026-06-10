@@ -1,0 +1,53 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Census of Victim Service Providers, [United States], 2017",
+  "description": "The purpose of the National Census of Victim Service Providers (NCVSP) is to describe the field of organizations or programs that are dedicated to serving victims of crime or abuse. The NCVSP collects characteristics about victim service providers (VSPs) over the past year, including the structure of the organization, the services the organization provided to victims, the availability of a hotline/helpline for victims, the types of crimes for which victims received services, the number of staff providing victim services, and current issues of concern to victim service providers. The information is intended for use by policymakers, practitioners at the Federal, state and local levels, academic researchers, and special interest groups to inform decisions related to victim services and the organizations that provide these services. The NCVSP also provides descriptive information about the full universe of organizations that provide crime victim services that can be used to develop representative samples for the National Survey of Victim Service Providers (NSVSP) and other VSP surveys.",
+  "modified": "2020-02-27T10:58:23",
+  "accessLevel": "public",
+  "identifier": "2355",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "abuse",
+    "crime",
+    "victim services",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2020-02-27T10:58:23",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37518.v1",
+      "title": "National Census of Victim Service Providers, [United States], 2017"
+    }
+  ]
+}

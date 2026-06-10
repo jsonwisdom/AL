@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Evaluation of the Psychological Effects of Administrative Segregation in Colorado, 2007-2010",
+  "description": "The study was conducted to evaluate the psychological effects of long-term administrative segregation (AS) on offenders, particularly those with mental illness. The longitudinal study examined five groups of inmates in the Colorado prison system over the course of one year: inmates in AS at the Colorado State Penitentiary (CSP) with mental illness, inmates in AS at the CSP without mental illness, inmates at risk of AS in the general population (GP) with mental illness, inmates at risk of AS in the GP without mental illness, and inmates at the San Carlos Correctional Facility, a facility for offenders with severe mental illness. Over the course of the study, researchers assessed each group of inmates using 14 psychological instruments, most of which were administered at three month intervals. Of the 14 psychological instruments, 12 were self-reports by inmates, 1 was filled out by mental health clinicians, and 1 was filled out by correctional staff.",
+  "modified": "2014-02-05T15:43:55",
+  "accessLevel": "restricted public",
+  "identifier": "3119",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities (adults)",
+    "inmate classification",
+    "male offenders",
+    "mental health",
+    "prison conditions",
+    "prison inmates",
+    "psychological effects",
+    "psychological wellbeing",
+    "solitary confinement"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2014-02-05T15:26:32",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR31321.v1",
+      "title": "Evaluation of the Psychological Effects of Administrative Segregation in Colorado, 2007-2010"
+    }
+  ]
+}

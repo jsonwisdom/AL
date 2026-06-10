@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Crime and Mental Disorder, 1972",
+  "description": "The purpose of this data collection was to explore the\r\nrelationship between crime and mental disorder among jail inmates.\r\nThree sample groups were studied: jail inmates who had psychiatric\r\ncontacts, jail inmates who did not have psychiatric contacts, and a\r\ncontrol group of psychiatric patients who were not in jail. Psychiatric\r\ndiagnosis history for inmates and patients with psychiatric contacts\r\nspanning 18 years (1960-1977) is available along with each subject's\r\ncrime record and sentencing history. Variables include demographic\r\ncharacteristics, type of offenses sentenced, and number of arrests.\r\nAlso included are psychiatric contact information including date of\r\ncontact, diagnosis, type of service given, date of treatment\r\ntermination, and reason for termination.",
+  "modified": "1992-02-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3221",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime patterns",
+    "criminal histories",
+    "jail inmates",
+    "mental disorders",
+    "mental health services",
+    "psychiatric services",
+    "psychological evaluation",
+    "psychological wellbeing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1989-05-04T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09088.v1",
+      "title": "Crime and Mental Disorder, 1972"
+    }
+  ]
+}

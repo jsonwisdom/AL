@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Census of State Adult Correctional Facilities, 1984",
+  "description": "This study provides a descriptive analysis of confinement\r\nfacilities and state-operated community-based correctional facilities\r\nnationwide. Decision-makers, practitioners, and researchers may use the\r\ncensus to analyze the current conditions and needs of state\r\ncorrectional facilities for adults. Variables of interest include\r\nphysical security, age of facilities, functions of facilities,\r\nprograms, inmate work assignments, staff employment, facilities under\r\ncourt order/consent decree for conditions of confinement, capital and\r\noperating expenditures, custody level of residents/inmates, one-day and\r\naverage daily population counts, race/ethnicity of inmates, inmate work\r\nassignments, inmate deaths, special inmate counts, and assaults and\r\nincidents by inmates. The institution is the unit of analysis.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "87",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "correctional facilities (adults)",
+    "corrections",
+    "corrections management",
+    "inmate deaths",
+    "inmate populations",
+    "inmate programs",
+    "inmates",
+    "jails",
+    "personnel",
+    "prison administration",
+    "prison conditions",
+    "prison construction",
+    "prison overcrowding",
+    "prison security",
+    "prison violence"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2168",
+  "dataQuality": false,
+  "issued": "1987-01-12T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08444.v1",
+      "title": "Census of State Adult Correctional Facilities, 1984"
+    }
+  ]
+}

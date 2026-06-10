@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "The Benefits of Body-Worn Cameras: New Findings from a Randomized Controlled Trial at the Las Vegas Metropolitan Police Department, Nevada, 2014-2015",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThis study reports the findings of a randomized controlled trial (RCT) involving more than 400 police officers and the use of body-worn cameras (BWC) in the Las Vegas Metropolitan Police Department (LVMPD). Officers were surveyed before and after the trial, and a random sample was interviewed to assess their level of comfort with technology, perceptions of self, civilians, other officers, and the use of BWCs. Information was gathered during ride-alongs with BWC officers and from a review of BWC videos. \r\nThe collection includes 2 SPSS data files, 4 Excel data files, and 2 files containing aggregated treatment groups and rank-and-treatment groups, in Stata, Excel, and CSV format:\r\n\r\nSPSS: officer-survey---pretest.sav (n=422; 30 variables)\r\nSPSS: officer-survey---posttest2.sav (n=95; 33 variables)\r\nExcel: officer-interviews---form-a.xlsx (n=23; 52 variables)\r\nExcel: officer-interviews---form-b.xlsx (n=27; 52 variables)\r\nExcel: ride-along-observations.xlsx (n=72; 20 variables)\r\nExcel: video-review-data.xlsx (n=53; 21 variables)\r\nStata: hours-and-compensation-rollup-to-treatment-group.dta (n=4; 42 variables) \r\nExcel: hours-and-compensation-rollup-to-treatment-group.xls (n=4; 42 variables) \r\nCSV: hours-and-compensation-rollup-to-treatment-group.csv (n=4; 42 variables) \r\nStata: hours-and-compensation-rollup-to-rank-and-treatment-group.dta (n=12; 43 variables)\r\nExcel: hours-and-compensation-rollup-to-rank-and-treatment-group.xls (n=12; 43 variables)\r\nCSV: hours-and-compensation-rollup-to-rank-and-treatment-group.csv (n=12; 43 variables)\r\n",
+  "modified": "2018-10-30T11:59:35",
+  "accessLevel": "restricted public",
+  "identifier": "2918",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "cost effectiveness",
+    "police body-worn cameras",
+    "police citizen interactions",
+    "police departments",
+    "police effectiveness",
+    "police equipment",
+    "police use of force"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-10-30T11:56:15",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37048.v1",
+      "title": "The Benefits of Body-Worn Cameras: New Findings from a Randomized Controlled Trial at the Las Vegas Metropolitan Police Department, Nevada, 2014-2015"
+    }
+  ]
+}

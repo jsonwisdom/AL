@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Uniform Crime Reporting Program Data [United States]: 1975-1997",
+  "description": "Since 1930, the Federal Bureau of Investigation has\r\ncompiled the Uniform Crime Reports (UCR) to serve as periodic\r\nnationwide assessments of reported crimes not available elsewhere in\r\nthe criminal justice system. By 1985, there were approximately 17,000\r\nlaw enforcement agencies contributing reports either directly or\r\nthrough their state reporting programs. Each year, this information is\r\nreported in four types of files: (1) Offenses Known and Clearances by\r\nArrest, (2) Property Stolen and Recovered, (3) Supplementary Homicide\r\nReports (SHR), and (4) Police Employee (LEOKA) Data. Offenses Known\r\nand Clearances by Arrest data files include monthly data on the number\r\nof Crime Index offenses reported and the number of offenses cleared by\r\narrest or other means. The counts include all reports of Index Crimes\r\n(excluding arson) received from victims, officers who discovered\r\ninfractions, or other sources. The Property Stolen and Recovered data\r\nare collected on a monthly basis by all UCR contributing agencies.\r\nThese data, aggregated at the agency level, report on the nature of\r\nthe crime, the monetary value of the property stolen, and the type of\r\nproperty stolen. Similar information regarding recovered property is\r\nalso included in the data. The Supplementary Homicide Reports provide\r\nincident-based information on criminal homicides. Further, the data,\r\nprovided monthly by UCR agencies, contain information describing the\r\nvictim of the homicide, the offender, and the relationship between\r\nvictim and offender. The Police Employee (LEOKA) Data provide\r\ninformation about law enforcement officers killed or assaulted (hence\r\nthe acronym, LEOKA) in the line of duty. The variables created from\r\nthe LEOKA forms provide in-depth information on the circumstances\r\nsurrounding killings or assaults, including type of call answered,\r\ntype of weapon used, and type of patrol the officers were on.",
+  "modified": "2016-02-15T16:02:34",
+  "accessLevel": "public",
+  "identifier": "2408",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "arrest records",
+    "arrests",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "homicide",
+    "justifiable homicide",
+    "larceny",
+    "law enforcement",
+    "offenders",
+    "offenses",
+    "police deaths",
+    "police officers",
+    "stolen property"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2167",
+  "dataQuality": false,
+  "issued": "1997-02-13T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09028.v7",
+      "title": "Uniform Crime Reporting Program Data [United States]: 1975-1997"
+    }
+  ]
+}

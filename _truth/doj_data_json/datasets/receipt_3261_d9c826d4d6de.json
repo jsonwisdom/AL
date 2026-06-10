@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Illegal Immigration and Crime in San Diego and El Paso Counties, 1985-1986",
+  "description": "This study was conducted to examine whether a rising crime \r\n rate in El Paso, Texas and San Diego, California in 1986 could be \r\n attributed to, among other factors, the influx of undocumented aliens. \r\n Variables include level of involvement of undocumented aliens in \r\n serious felony arrests in San Diego and El Paso Counties, the outcome \r\n of serious felony arrest cases involving undocumented persons compared \r\n to others arrested for similar offenses, the impact of arrests of \r\n undocumented aliens on the criminal justice system in terms of workload \r\n and cost, the extent that criminal justice agencies coordinate their \r\n efforts to apprehend and process undocumented aliens who have committed \r\n serious crimes in San Diego and El Paso counties, and how differences \r\n in agency objectives impede or enhance coordination. Data are also \r\n provided on how many undocumented persons were arrested/convicted for \r\n repeat offense in these counties and which type of policies or \r\n procedures could be implemented in criminal justice agencies to address \r\n the issue of crimes committed by undocumented aliens. Data were \r\n collected in the two cities with focus on serious felony offenses. The \r\n collection includes sociodemographic characteristics, citizenship \r\n status, current arrest, case disposition, and prior criminal history \r\n with additional data from San Diego to compute the costs involving \r\nundocumented aliens.",
+  "modified": "2006-01-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3261",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrests",
+    "crime rates",
+    "criminal justice system",
+    "felony offenses",
+    "illegal immigrants",
+    "immigration"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1990-05-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09330.v1",
+      "title": "Illegal Immigration and Crime in San Diego and El Paso Counties, 1985-1986"
+    }
+  ]
+}

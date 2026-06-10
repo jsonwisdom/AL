@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Guardian Angels:  Citizen Response to Crime in Selected Cities of the United States, 1984",
+  "description": "This study was designed to assess the effects of the\r\nactivities of the Guardian Angels on citizens' fear of crime, incidence\r\nof crime, and police officers' perceptions of the Guardian Angels. The\r\ndata, which were collected in several large American cities, provide\r\ninformation useful for evaluating the activities of the Guardian Angels\r\nfrom the perspectives of transit riders, residents, merchants, and\r\npolice officers. Respondents who were transit riders were asked to\r\nprovide information on their knowledge of and contacts with the Angels,\r\nattitudes toward the group, feelings of safety on public transit,\r\nvictimization experience, and demographic characteristics. Police\r\nofficers were asked about their knowledge of the Angels, attitudes\r\ntoward the group, opinions regarding the benefits and effectiveness of\r\nthe group, and law enforcement experiences. Data for residents and\r\nmerchants include demographic characteristics, general problems in the\r\nneighborhood, opinions regarding crime problems, crime prevention\r\nactivities, fear of crime, knowledge of the Angels, attitudes toward\r\nthe group, and victimization experiences.",
+  "modified": "2006-01-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3204",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "commuting (travel)",
+    "crime",
+    "crime prevention",
+    "neighborhoods",
+    "police activity",
+    "public transportation",
+    "victimization"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1988-10-25T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08935.v1",
+      "title": "Guardian Angels:  Citizen Response to Crime in Selected Cities of the United States, 1984"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Incident-Based Reporting System, 2004",
+  "description": "The National Incident-Based Reporting System (NIBRS) is a\r\n part of the Uniform Crime Reporting Program (UCR), administered by the\r\n Federal Bureau of Investigation (FBI). In the late 1970s, the law\r\n enforcement community called for a thorough evaluative study of the\r\n UCR with the objective of recommending an expanded and enhanced UCR\r\n program to meet law enforcement needs into the 21st century. The FBI\r\n fully concurred with the need for an updated program to meet\r\n contemporary needs and provided its support, formulating a\r\n comprehensive redesign effort. Following a multiyear study, a\r\n \"Blueprint for the Future of the Uniform Crime Reporting Program\" was\r\n developed. Using the \"Blueprint,\" and in consultation with local and\r\n state law enforcement executives, the FBI formulated new guidelines\r\n for the Uniform Crime Reports. The National Incident-Based Reporting\r\n System (NIBRS) was implemented to meet these guidelines. NIBRS data\r\n are archived at ICPSR as 13 separate data files per year, which may be\r\n merged by using linkage variables. The data focus on a variety of\r\n aspects of a crime incident. Part 4, Administrative Segment, offers\r\n data on the incident, itself (date and time). Each crime incident is\r\n delineated by one administrative segment record. Also provided are\r\n Part 5, Offense Segment (offense type, location, weapon use, and bias\r\n motivation), Part 6, Property Segment (type of property loss, property\r\n description, property value, drug type and quantity), Part 7, Victim\r\n Segment (age, sex, race, ethnicity, and injuries), Part 8, Offender\r\n Segment (age, sex, and race), and Part 9, Arrestee Segment (arrest\r\n date, age, sex, race, and weapon use). The Batch Header Segment (Parts\r\n 1-3) separates and identifies individual police agencies by\r\n Originating Agency Identifier (ORI). Batch Header information, which\r\n is contained on three records for each ORI, includes agency name,\r\n geographic location, and population of the area. Part 10, Group B\r\n Arrest Report Segment, includes arrestee data for Group B crimes.\r\n Window Segments files (Parts 11-13) pertain to incidents for which the\r\n complete Group A Incident Report was not submitted to the FBI. In\r\n general, a Window Segment record will be generated if the incident\r\n occurred prior to January 1 of the previous year or if the incident\r\n occurred prior to when the agency started NIBRS reporting. As with the\r\n UCR, participation in NIBRS is voluntary on the part of law\r\n enforcement agencies. The data are not a representative sample of\r\ncrime in the United States.",
+  "modified": "2006-09-20T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2132",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "arrests",
+    "crime",
+    "crime rates",
+    "crime reporting",
+    "law enforcement agencies",
+    "national crime statistics (USA)",
+    "offenders",
+    "offenses",
+    "property crime",
+    "victims",
+    "violent crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2433",
+  "dataQuality": false,
+  "issued": "2006-09-20T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04468.v1",
+      "title": "National Incident-Based Reporting System, 2004"
+    }
+  ]
+}

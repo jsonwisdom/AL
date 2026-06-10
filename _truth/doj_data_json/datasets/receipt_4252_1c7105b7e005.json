@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "The Impacts of Restrictive Housing on Inmate Behavior, Mental Health, and Recidivism, and Prison Systems and Personnel, Florida, 2007-2020",
+  "description": "In partnership with the Florida Department of Corrections (FDC), this study a) collected prison administrative data to create person-level cohort-analysis files of inmates admitted to and released from Florida prisons between July 1, 2007 and December 31, 2015, b) collected stock population data of inmates incarcerated on June 30, 2011, c) examined recidivism outcomes, d) examined the effects of long-term solitary confinement on inmate behavior and mental health, and e) conducted a survey of prison personnel from November 4, 2019 to January 10, 2020, in order to conduct an analysis to address the need in public policy decision-making for evidence on the impacts of restricted housing on inmates, prisons and personnel, and public safety overall.",
+  "modified": "2021-10-14T10:55:05",
+  "accessLevel": "restricted public",
+  "identifier": "4252",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "correctional officers",
+    "correctional system",
+    "living conditions",
+    "mental health",
+    "prison conditions",
+    "prison inmates",
+    "recidivism",
+    "recidivism rates",
+    "solitary confinement"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2021-10-14T10:46:18",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37849.v1",
+      "title": "The Impacts of Restrictive Housing on Inmate Behavior, Mental Health, and Recidivism, and Prison Systems and Personnel, Florida, 2007-2020"
+    }
+  ]
+}

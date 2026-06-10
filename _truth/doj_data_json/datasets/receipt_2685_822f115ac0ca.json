@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Monitoring of Federal Criminal Sentences, [United States], 2001",
+  "description": "This collection contains information on federal criminal\r\ncases sentenced under the Sentencing Guidelines and Policy Statements\r\nof the Sentencing Reform Act of 1984. The data files include all cases\r\nreceived by the United States Sentencing Commission that had\r\nsentencing dates between October 1, 2000, and September 30, 2001, and\r\nwere assessed as constitutional. Constitutionality compares each\r\ncase's sentencing date, circuit, district, and judge to provide\r\nuniformity in reporting the cases. In 1999, the United States\r\nSentencing Commission added more variables from its databases to this\r\ncollection, so the data are now provided in two files. Part 1, Main\r\nData File, includes the most important variables for each case, such\r\nas defendant's age, criminal history points, armed criminal status,\r\ncase disposition, sentence, and fines applied. Part 2, Supplemental\r\nData File, contains additional variables involving multiple guideline\r\ncomputation and count-based statutes. For a more detailed discussion\r\nof the two files, users should consult the codebook.",
+  "modified": "2014-06-25T13:34:31",
+  "accessLevel": "public",
+  "identifier": "2685",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "convictions (law)",
+    "criminal histories",
+    "defendants",
+    "federal courts",
+    "judicial decisions",
+    "offenses",
+    "sentencing",
+    "sentencing guidelines"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2180",
+  "dataQuality": false,
+  "issued": "2002-11-08T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03497.v1",
+      "title": "Monitoring of Federal Criminal Sentences, [United States], 2001"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Youth Gang Intervention and Suppression Survey, 1980-1987",
+  "description": "This survey was conducted by the National Youth Gang\r\n Intervention and Suppression Program. The primary goals of the program\r\n were to assess the national scope of the gang crime problem, to\r\n identify promising programs and approaches for dealing with the\r\n problem, to develop prototypes from the information gained about the\r\n most promising programs, and to provide technical assistance for the\r\n development of gang intervention and suppression programs nationwide.\r\n The survey was designed to encompass every agency in the country that\r\n was engaged in or had recently engaged in organized responses specifically\r\n intended to deal with gang crime problems. Cities were screened with\r\n selection criteria including the presence and recognition of a youth\r\n gang problem and the presence of a youth gang program as an organized\r\n response to the problem. Respondents were classified into several major\r\n categories and subcategories: law enforcement (mainly police,\r\n prosecutors, judges, probation, corrections, and parole), schools\r\n (subdivided into security and academic personnel), community, county,\r\n or state planners, other, and community/service (subdivided into youth\r\n service, youth and family service/treatment, comprehensive crisis\r\n intervention, and grassroots groups). These data include variables\r\n coded from respondents' definitions of the gang, gang member, and gang\r\n incident. Also included are respondents' historical accounts of the\r\n gang problems in their areas. Information on the size and scope of the\r\ngang problem and response was also solicited.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3944",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "communities",
+    "crime",
+    "gang violence",
+    "gangs",
+    "intervention",
+    "intervention strategies",
+    "juvenile gangs",
+    "law enforcement",
+    "schools"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1992-10-31T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09792.v2",
+      "title": "National Youth Gang Intervention and Suppression Survey, 1980-1987"
+    }
+  ]
+}

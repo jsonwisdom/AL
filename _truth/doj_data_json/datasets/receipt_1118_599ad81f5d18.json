@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Recidivism of Prisoners Released in 1994",
+  "description": "RECIDIVISM OF PRISONERS RELEASED IN 1994\r\nis a database containing information on each of 38,624 sampled\r\nprisoners released from prisons in 15 states in 1994 and tracked for\r\nthree years following their release. The majority of the database\r\nconsists of information on each released prisoner's entire officially\r\nrecorded criminal history (before and after the 1994 release). Sources\r\nfor criminal history information are state and FBI automated RAP\r\n(\"Records of Arrests and Prosecutions\") sheets, which contain records\r\nof arrests, adjudications, and sentences. The study is the second\r\nmajor recidivism study conducted by the Bureau of Justice Statistics.\r\nThe first study, RECIDIVISM AMONG RELEASED PRISONERS, 1983: [UNITED\r\nSTATES] (ICPSR 8875), tracked over 16,000 prisoners released in 11\r\nstates in 1983 for three years. These two studies are the\r\nclosest approximation to \"national\" recidivism studies in the United\r\nStates. They are distinguished by their large sample size (over 16,000\r\nreleased prisoners in the first study, 38,624 in the second),\r\ngeographic breadth of coverage (11 states in the first study, 15 in\r\nthe second), length of prospective tracking (three years from date of\r\nrelease in both studies), ability to track the movement of released\r\nprisoners across state boundaries (both studies), and multiple\r\nmeasures of recidivism (both studies). Demographic data include race,\r\nethnicity, sex, and date of birth.",
+  "modified": "2014-12-05T14:51:37",
+  "accessLevel": "restricted public",
+  "identifier": "1118",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "arrest records",
+    "conviction records",
+    "criminal histories",
+    "offenses",
+    "recidivism"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2002-09-25T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03355.v8",
+      "title": "Recidivism of Prisoners Released in 1994"
+    }
+  ]
+}

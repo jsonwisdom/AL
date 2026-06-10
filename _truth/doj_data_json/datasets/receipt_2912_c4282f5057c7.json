@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Crime in Boomburb Cities: 1970-2004 [United States]",
+  "description": "This study focused on the effect of economic resources and racial/ethnic composition on the change in crime rates from 1970-2004 in United States cities in metropolitan areas that experienced a large growth in population after World War II. A total of 352 cities in the following United States metropolitan areas were selected for this study: Atlanta, Dallas, Denver, Houston, Las Vegas, Miami, Orange County, Orlando, Phoenix, Riverside, San Bernardino, San Diego, Silicon Valley (Santa Clara), and Tampa/St. Petersburg. Selection was based on the fact that these areas developed during a similar time period and followed comparable development trajectories. In particular, these 14 areas, known as the \"boomburbs\" for their dramatic, post-World War II population growth, all faced issues relating to the rapid growth of tract-style housing and the subsequent development of low density, urban sprawls.\r\nThe study combined place-level data obtained from the United States Census with crime data from the Uniform Crime Reports for five categories of Type I crimes: aggravated assaults, robberies, murders, burglaries, and motor vehicle thefts. The dataset contains a total of 247 variables pertaining to crime, economic resources, and race/ethnic composition.",
+  "modified": "2011-08-10T09:55:04",
+  "accessLevel": "public",
+  "identifier": "2912",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "aggravated assault",
+    "auto theft",
+    "burglary",
+    "crime patterns",
+    "crime rates",
+    "economic conditions",
+    "homicide",
+    "income distribution",
+    "metropolitan areas",
+    "race",
+    "racial integration",
+    "racial segregation",
+    "robbery",
+    "trend analysis",
+    "urban crime",
+    "wealth"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2011-08-10T09:55:04",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR29202.v1",
+      "title": "Crime in Boomburb Cities: 1970-2004 [United States]"
+    }
+  ]
+}

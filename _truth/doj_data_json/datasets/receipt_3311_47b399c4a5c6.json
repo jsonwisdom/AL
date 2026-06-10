@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Portrait of Domestic Violence Courts",
+  "description": "The study was designed to create a portrait of domestic violence courts across America, specifically courtroom policies, procedures and goals were examined as described by court employees and prosecutors that work with the domestic violence courts. Geographic information on 338 courts was collected and organized in a national compendium of domestic violence courts. From this compendium a sample of 129 domestic violence courts was surveyed along with 74 prosecutors offices.",
+  "modified": "2014-04-16T13:38:32",
+  "accessLevel": "restricted public",
+  "identifier": "3311",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "court cases",
+    "court system",
+    "courts",
+    "deterrence",
+    "domestic violence",
+    "goals",
+    "prosecuting attorneys",
+    "prosecution",
+    "rehabilitation",
+    "victim rights",
+    "victim safety"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2014-04-16T13:36:19",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR27282.v1",
+      "title": "National Portrait of Domestic Violence Courts"
+    }
+  ]
+}

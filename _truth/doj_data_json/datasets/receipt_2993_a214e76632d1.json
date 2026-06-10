@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Impact of Information Security in Academic Institutions on Public Safety and Security in the United States, 2005-2006",
+  "description": "Despite the critical information security issues faced by academic institutions, little research has been conducted at the policy, practice, or theoretical levels to address these issues, and few policies or cost-effective controls have been developed. The purpose of this research study was three-fold: (1) to create an empirically-based profile of issues and approaches, (2) to develop a practical road map for policy and practice, and (3) to advance the knowledge, policy, and practice of academic institutions, law enforcement, government, and researchers. The study design incorporated three methods of data collection: a quantitative field survey, qualitative one-on-one interviews, and an empirical assessment of the institutions' network activity. Survey data collection involved simple random sampling of 600 academic institutions from the Department of Education's National Center for Education Statistics (NCES) Integrated Postsecondary Education Data System (IPEDS) database, recruitment via postcard, telephone, and email, Web-based survey administration, and three follow-ups. Results are contained in Part 1, Quantitative Field Survey Data. Interview data collection involved selecting a sample size of 15 institutions through a combination of simple random and convenience sampling, recruitment via telephone and email, and face-to-face or telephone interviews. Results are contained in Part 2, Qualitative One-on-One Interview Data. Network analysis data collection involved convenience sampling of two academic institutions, recruitment via telephone and email, installing Higher Education Network Analysis (HENA) on participants' systems, and six months of data collection. Results are in Part 3, Subject 1 Network Analysis Data, and Part 4, Subject 2 Network Analysis Data. The Quantitative Field Survey Data (Part 1) contains 19 variables on characteristics of institutions that participated in the survey component of this study, as well as 263 variables derived from responses to the Information Security in Academic Institutions Survey, which was organized into five sections: Environment, Policy, Information Security Controls, Information Security Challenges, and Resources. The Qualitative One-on-One Interview Data (Part 2) contains qualitative responses to a combination of closed-response and open-response formats. The data are divided into the following seven sections: Environment, Institution's Potential Vulnerability, Institution's Potential Threat, Information Value and Sharing, End Users, Countermeasures, and Insights. Data collected through the empirical analysis of network activity (Part 3 and Part 4) include type and protocol of attack, source and destination information, and geographic location.",
+  "modified": "2008-08-22T10:36:34",
+  "accessLevel": "restricted public",
+  "identifier": "2993",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "Internet",
+    "colleges",
+    "computer related crimes",
+    "higher education",
+    "information",
+    "information policy",
+    "information systems",
+    "information technology",
+    "national security",
+    "public safety",
+    "security",
+    "terrorism",
+    "terrorist threat",
+    "threats",
+    "universities"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2008-08-21T14:01:05",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR21188.v1",
+      "title": "Impact of Information Security in Academic Institutions on Public Safety and Security in the United States, 2005-2006"
+    }
+  ]
+}

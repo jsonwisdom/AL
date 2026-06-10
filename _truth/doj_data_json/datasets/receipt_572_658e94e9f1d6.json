@@ -1,0 +1,51 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Easy Access to State and County Juvenile Court Case Counts",
+  "description": "This OJJDP supported data analysis tool provides access to State and county juvenile court case counts for delinquency, status offense, and dependency cases. The data used in this application are collected as part of the National Juvenile Court Data Archi",
+  "modified": "2005-07-05T00:00:00",
+  "accessLevel": "public",
+  "identifier": "572",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "delinquency",
+    "juvenile court statistics",
+    "status offense",
+    "status offense cases"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2005-07-05T00:00:00",
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "http://ojjdp.gov/ojstatbb/ezaco/",
+      "mediaType": "application/pdf",
+      "title": "Easy Access to State and County Juvenile Court Case Counts"
+    }
+  ]
+}

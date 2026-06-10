@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Evaluation of Arizona Pretrial Services Drug Testing Programs, 1987-1989",
+  "description": "The purpose of this data collection was to examine the\r\n relationship between drug use and pretrial misconduct in Pima and\r\n Maricopa counties in Arizona. Data assess the effectiveness of Arizona\r\n pretrial services, which were designed to monitor those defendants who\r\n tested positive for selected drugs. The collection includes variables\r\n for drugs such as marijuana and cocaine, previous criminal history,\r\n results of urinalysis testing, pretrial misconduct, and drug\r\n monitoring. Demographic information includes defendant's sex,\r\nethnicity, age, marital status, employment, and last grade completed.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2823",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "defendants",
+    "drug abuse",
+    "drug testing",
+    "pretrial procedures",
+    "urinalysis"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1992-10-31T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09807.v1",
+      "title": "Evaluation of Arizona Pretrial Services Drug Testing Programs, 1987-1989"
+    }
+  ]
+}

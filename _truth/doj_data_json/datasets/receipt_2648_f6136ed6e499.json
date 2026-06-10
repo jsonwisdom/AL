@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Survey of Inmates of Federal Correctional Facilities, 1991",
+  "description": "This survey provides nationally representative data on\r\npersons held in federal prisons. The survey was designed to supply\r\ninformation on individual characteristics of prison inmates, such as\r\ntheir current offenses and sentences, criminal histories, prior drug and\r\nalcohol use and treatment, gun possession and use, gang membership, and\r\nfamily background. Data on characteristics of victims and on prison\r\nactivities, programs, and services are provided as well.",
+  "modified": "2006-01-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2648",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "HIV",
+    "correctional facilities",
+    "correctional facilities (adults)",
+    "corrections",
+    "criminal histories",
+    "drug abuse",
+    "inmate classification",
+    "inmate deaths",
+    "inmate populations",
+    "inmate programs",
+    "inmates",
+    "offenses",
+    "prison conditions",
+    "substance abuse",
+    "treatment programs"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2171",
+  "dataQuality": false,
+  "issued": "1994-03-10T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06037.v1",
+      "title": "Survey of Inmates of Federal Correctional Facilities, 1991"
+    }
+  ]
+}

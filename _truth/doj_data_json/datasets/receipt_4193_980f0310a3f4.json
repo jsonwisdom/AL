@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Crime Victimization Survey: Supplemental Fraud Survey, [United States], 2017",
+  "description": "The Supplemental Fraud Survey (SFS) obtained additional information about fraud-related victimizations so that policymakers; academic researchers; practitioners at the federal, state, and local levels; and special interest groups who are concerned with these crimes can make informed decisions concerning policies and programs. The SFS asked questions related to victims' experiences with fraud. These responses are linked to the National Crime Victimization Survey (NCVS) survey instrument responses for a more complete understanding of the individual victim's circumstances.\r\nThe 2017 Supplemental Fraud Survey (SFS) was the first implementation of this supplement to the annual NCVS to obtain specific information about fraud-related victimization and disorder on a national level. Since the SFS is a supplement to the NCVS, it is conducted under the authority of Title 34, United States Code, section 10132. Only Census employees sworn to preserve confidentiality may see the completed questionnaires.",
+  "modified": "2021-04-15T15:32:35",
+  "accessLevel": "public",
+  "identifier": "4193",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "crime",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "debt",
+    "family relationships",
+    "finance",
+    "fraud",
+    "investments",
+    "offenses",
+    "payments",
+    "reactions to crime",
+    "trust (psychology)",
+    "victimization",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2432",
+  "dataQuality": false,
+  "issued": "2021-04-15T15:32:35",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37825.v1",
+      "title": "National Crime Victimization Survey: Supplemental Fraud Survey, [United States], 2017"
+    }
+  ]
+}

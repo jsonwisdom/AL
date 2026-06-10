@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Census of State Adult Correctional Facilities, 1979",
+  "description": "This census, designed by the Bureau of Justice Statistics\r\n and conducted by the United States Census Bureau, includes\r\n all state correctional facilities known to the Census Bureau in 1979.\r\n Each facility is classified into one of ten categories such as\r\n community center, prison farm, road camp, or reception center. Data\r\n for 1979 include number of inmates by security classification and by\r\n sex, number of full- and part-time staff, number of paid and volunteer\r\n staff broken down by position, age, pay, and education, number and age of\r\n facilities, type of facilities provided in each cell by size of cell,\r\n hospital facilities available, programs provided for the inmates, job\r\ntraining, and inmate IQ scores.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "86",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "correctional facilities (adults)",
+    "corrections",
+    "corrections management",
+    "inmate classification",
+    "inmate deaths",
+    "inmate populations",
+    "inmate programs",
+    "inmates",
+    "jails",
+    "personnel",
+    "prison administration",
+    "prison conditions",
+    "prison construction",
+    "prison overcrowding",
+    "prison violence"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2168",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR07852.v2",
+      "title": "Census of State Adult Correctional Facilities, 1979"
+    }
+  ]
+}

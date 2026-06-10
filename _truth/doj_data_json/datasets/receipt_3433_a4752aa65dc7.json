@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Offender Characteristics, Offense Mix, and Escalation in Domestic Violence in Colorado Springs, Colorado, Miami-Dade, Florida, Omaha, Nebraska, Charlotte, North Carolina, and Milwaukee, Wisconsin, 1987-1989",
+  "description": "Using data from five Spouse Assault Replication Program\r\n(SARP) sites, this study examined the extent to which domestic\r\nviolence offenders exhibit a specialized proclivity toward violence\r\nand the extent to which attack severity escalates, de-escalates, or\r\nstays about the same over time. The specialization question was\r\nexamined using official arrest records from the Charlotte, North\r\nCarolina, Colorado Springs, Colorado, Milwaukee, Wisconsin, and Omaha,\r\nNebraska sites. Escalation was examined using victim interview data\r\nfrom the Charlotte, Milwaukee, Omaha, and Miami-Dada, Florida\r\nsites. This collection consists of 18 SAS setup files used to recode\r\nthe variables from the original datasets, organized in five groups, by\r\ncity of each data collection site. This collection does not contain\r\nthe original data files, themselves.",
+  "modified": "2007-02-06T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3433",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrests",
+    "battered women",
+    "criminal histories",
+    "deterrence",
+    "domestic assault",
+    "domestic violence",
+    "intervention strategies",
+    "offender profiles",
+    "offenders",
+    "offenses",
+    "police records",
+    "police response",
+    "recidivism",
+    "spouse abuse",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2007-02-06T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04454.v1",
+      "title": "Offender Characteristics, Offense Mix, and Escalation in Domestic Violence in Colorado Springs, Colorado, Miami-Dade, Florida, Omaha, Nebraska, Charlotte, North Carolina, and Milwaukee, Wisconsin, 1987-1989"
+    }
+  ]
+}

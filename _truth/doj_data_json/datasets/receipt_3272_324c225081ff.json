@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Community Policing in Baltimore, 1986-1987",
+  "description": "This data collection was designed to investigate the\r\neffects of foot patrol and ombudsman policing on perceptions of the\r\nincidence of crime and community policing practices in Baltimore,\r\nMaryland. Data collected at Wave 1 measured perceptions of crime and\r\ncommunity policing practices before the two new policing programs were\r\nintroduced. Follow-up data for Wave 2 were collected approximately one\r\nyear later and were designed to measure the effects of the new\r\npolicing practices. Included in the data collection instrument were\r\nquestions on the perceived incidence of various crimes, police\r\neffectiveness and presence, disorder, property and personal crime and\r\nthe likelihood of crime in general, feelings of safety, crime\r\navoidance behaviors and the use of crime prevention devices, cohesion\r\nand satisfaction with neighborhoods, and awareness of victimization\r\nand victimization history. The instrument also included demographic\r\nquestions on employment, education, race, and income.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3272",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "community policing",
+    "fear of crime",
+    "foot patrol",
+    "police community relations",
+    "police effectiveness"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1990-10-16T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09401.v1",
+      "title": "Community Policing in Baltimore, 1986-1987"
+    }
+  ]
+}

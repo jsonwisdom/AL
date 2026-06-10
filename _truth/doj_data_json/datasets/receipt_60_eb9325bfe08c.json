@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Annual Survey of Jails:  Jurisdiction-Level and Jail-Level Data, 1992  ",
+  "description": "This collection provides annual data on jail populations \r\n across the nation and examines the \"spillover\" effect on local jails \r\n resulting from the dramatic growth in federal and state prison \r\n populations. These data permit an assessment of the demands placed on \r\n correctional resources and provide a comprehensive picture of the adult \r\n correctional system and changes that occur within the system. \r\n Information is available on the number of inmates by sex, race, adult \r\n or juvenile status, reason being held, and cause of death. Also added \r\n in the 1992 survey were variables on citizenship, population movement, \r\n and total number of inmate deaths for inmates originally confined to \r\n the facility in question who died either at that facility or elsewhere. \r\n Also, the 1992 version included a more complete survey of jail programs \r\n and a supplemental questionnaire (CJ-5S), which dealt with AIDS-related \r\n questions. In addition, information was collected for the first time on \r\n drug testing, programs that treated or educated inmates, boot camps, work \r\n release, and alternatives to incarceration such as electronic \r\n monitoring, house arrest, community service, and weekend or day \r\nreporting.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "60",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "alternatives to institutionalization",
+    "correctional facilities",
+    "correctional system",
+    "demographic characteristics",
+    "drug testing",
+    "jail inmates",
+    "jails",
+    "overcrowding effects",
+    "population characteristics",
+    "prerelease programs",
+    "probation"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2586",
+  "dataQuality": false,
+  "issued": "1995-06-06T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06395.v1",
+      "title": "Annual Survey of Jails:  Jurisdiction-Level and Jail-Level Data, 1992  "
+    }
+  ]
+}

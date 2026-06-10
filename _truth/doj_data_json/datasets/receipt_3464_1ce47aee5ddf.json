@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Changing Attitudes and Motivation in Parolees (CHAMPS) Pilot Study in Dallas, Denver, and Des Moines, 2015-2016",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThis study examined the implementation of a pilot parole-based intervention, known as the Next Generation of Parole Supervision (NG). Drs. Caleb Lloyd and Ralph Serin developed the NG model with funding from the National Institute of Justice (NIJ), and the National Institute of Corrections developed the NG curriculum for parole officers to implement. The Bureau of Justice Assistance funded the implementation of NG in three study sites: Dallas, Texas; Denver, Colorado; and Des Moines, Iowa.\r\nThis mixed-methods study focused on understanding how NG was implemented as it was piloted in the three sites, and assessed NG-trained parole officers' fidelity to the NG model. In order to better understand NG's implementation and the business as usual practices it was intended to replace, the study also included a second group of parole officers who were not trained in NG. The groups were not randomly assigned. Data collected for this study included interview data, parole officer questionnaires related to concepts of the NG curriculum, coaching logs providing measures of whether officers received coaching and its frequency, video recordings of parole supervision meetings, and parole caseload data.\r\nDemographic variables included as part of this collection are parole officers' age and sex, and site location. The data collection includes 3 SAS data files:\r\n\r\nParole officer-level data (archive_raf170831_po): Includes 31 cases and 26 variables.\r\nVideo-level data (archive_raf170831_video): Includes 241 cases and 15 variables.\r\nQuestionnaire-level data (archive_raf180719_tests): Includes 50 cases and 8 variables.\r\n",
+  "modified": "2018-09-17T17:16:07",
+  "accessLevel": "restricted public",
+  "identifier": "3464",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "curriculum",
+    "intervention",
+    "intervention strategies",
+    "knowledge (awareness)",
+    "knowledge level",
+    "parole officers",
+    "parole services",
+    "program evaluation",
+    "skills",
+    "training"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "3705",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-09-17T17:13:03",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37091.v1",
+      "title": "Changing Attitudes and Motivation in Parolees (CHAMPS) Pilot Study in Dallas, Denver, and Des Moines, 2015-2016"
+    }
+  ]
+}

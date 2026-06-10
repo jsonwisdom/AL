@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Alabama Sentencing Simulation Model, 1998-2003",
+  "description": "Prior to 2003, the State of Alabama had no formal methodology to forecast prison populations, including a simulation model or statistical time-series and forecasting methods. Instead, the Alabama Department of Corrections relied on percent growth models, using the existing prison population to forecast future statewide prison populations. As Alabama moved toward a structured sentencing system, more precision was needed to investigate the impact statewide sentencing reform would have on the prison population. Adding to the need for more precise forecast methods, the Alabama Sentencing Commission intended to incorporate Virginia worksheet-style sentencing guidelines into its sentencing reform efforts. The Virginia sentencing guidelines uses offender and offense factors identified with statistical models and weights to guide sentence recommendations. Alabama require an analytical tool to guide the Commission during development of such a complicated sentencing system. To shepherd this process, the simulation model development project was undertaken which consisted of three phases;The development of a baseline projection of current practices for later comparison with projections made following implementation of the sentencing standards;Incorporating the initial sentencing standards into the simulation model; and Integrating disparate modules together into a user-friendly model interface.",
+  "modified": "2014-09-30T15:10:29",
+  "accessLevel": "restricted public",
+  "identifier": "3881",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "corrections",
+    "judicial decisions",
+    "judicial process",
+    "sentence review",
+    "sentencing",
+    "sentencing guidelines",
+    "simulation models"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2014-09-30T15:00:34",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR34671.v1",
+      "title": "Alabama Sentencing Simulation Model, 1998-2003"
+    }
+  ]
+}

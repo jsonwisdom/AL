@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Examining Prosecutorial Decision-Making Across Federal District Courts, 2000-2009 [UNITED STATES]",
+  "description": "\r\nThese data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\n\r\n\r\nThis study utilized data from the Bureau of Justice Statistics on federal criminal case processing to study jurisdictional variations in prosecutorial decision-making outcomes. It linked information across multiple federal agencies in order to track individual offenders across the various stages of the federal justice system. Specifically, it combined arrest information from the United States Marshall's Service with charging information from the Executive and Administrative Offices of the United States Attorney and with sentencing information from the United States Sentencing Commission. These individual data were subsequently augmented with additional information on federal courts to examine contextual variations in charging decisions across federal jurisdictions.\r\n\r\n\r\nThere are three data files.  Dataset 1 (Executive Office for United States Attorneys (EOUSA) and United States Marshals Service (USMS) Data) contains 88 variables and 284,869 cases.  Dataset 2 (Administrative Office of the United States Courts (AOUSC) and United States Sentencing Commission (USSC) Data) contains 717 variables and 256,598 cases.  Dataset 3 (United States District Court Characteristics Data) contains 6 variables and 89 cases.\r\n\r\n\r\nOnly Dataset 3 is being released as part of the available study materials.  Datasets 1 and 2 can be re-created using the syntax files which are included in the study materials.\r\n",
+  "modified": "2016-09-22T16:32:05",
+  "accessLevel": "public",
+  "identifier": "566",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "administration",
+    "arrest records",
+    "arrests",
+    "court cases",
+    "criminal law",
+    "defendants",
+    "district courts",
+    "federal courts",
+    "federal offenses",
+    "federal prisoners",
+    "judicial decisions",
+    "legal systems",
+    "offenders",
+    "offenses",
+    "prosecution",
+    "sentencing guidelines",
+    "trial courts"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2016-09-22T16:32:05",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR34513.v1",
+      "title": "Examining Prosecutorial Decision-Making Across Federal District Courts, 2000-2009 [UNITED STATES]"
+    }
+  ]
+}

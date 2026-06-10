@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Boston Police Department Domestic Violence Research Project, 1993-1994",
+  "description": "The Domestic Violence Research Project was a pilot study\r\n designed to examine the dynamics of domestic violence within two of\r\n the ten police districts that comprise the city of Boston. The\r\n objectives were to collect data on domestic violence in greater detail\r\n than previously possible, conduct various analyses on this\r\n information, and determine how the findings could best be used to\r\n improve the police, prosecutorial, and social service responses to\r\n domestic violence. Data for 1993 are a stratified random sample of\r\n reported domestic violence incidents occurring throughout the\r\n year. The sample represents approximately 27 percent of the domestic\r\n violence incidents reported in 1993 for the two districts studied, B3\r\n and D4. The 1994 data include all reported incidents occurring in the\r\n two districts during the period May to July. After the incident\r\n selection process was completed, data were collected from police\r\n incident reports, follow-up investigation reports, criminal history\r\n reports, and court dockets. Variables include arrest offenses, time of\r\n incident, location of incident, witnesses (including children), nature\r\n and extent of injuries, drug and alcohol use, history of similar\r\n incidents, whether there were restraining orders in effect, and basic\r\n demographic information on victims and offenders. Criminal history\r\n information was coded into five distinct categories: (1) violent\r\n offenses, (2) nonviolent offenses, (3) domestic violence offenses, (4)\r\ndrug/alcohol offenses, and (5) firearms offenses.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3661",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrest records",
+    "criminal histories",
+    "domestic violence",
+    "police departments",
+    "police response"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1996-07-13T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06483.v1",
+      "title": "Boston Police Department Domestic Violence Research Project, 1993-1994"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Multiple Imputation for the Supplementary Homicide Reports: Evaluation in Unique Test Data, 1990-1995, Chicago, Philadelphia, Phoenix and St. Louis",
+  "description": "\r\nThis study was an evaluation of multiple imputation strategies to address missing data using the New Approach to Evaluating Supplementary Homicide Report (SHR) Data Imputation, 1990-1995 (ICPSR 20060) dataset.\r\n",
+  "modified": "2016-03-31T14:10:51",
+  "accessLevel": "public",
+  "identifier": "564",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "crime reporting",
+    "crime statistics",
+    "murder",
+    "offenders",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2016-03-31T14:10:51",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36379.v1",
+      "title": "Multiple Imputation for the Supplementary Homicide Reports: Evaluation in Unique Test Data, 1990-1995, Chicago, Philadelphia, Phoenix and St. Louis"
+    }
+  ]
+}

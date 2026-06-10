@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Using Public Health Databases to Analyze Legal Intervention Shootings, United States, 2006-2017",
+  "description": "This project used national databases to describe the incidence and distribution of fatal and nonfatal police shootings and to develop an empirically based typology of legal intervention homicides. To accomplish this, the study team evaluated the comprehensiveness of the National Violent Death Reporting System (NVDRS) for fatal police shootings along with various open-source databases. The study team also explained the variation across states in fatal police shootings using a validated national database (Washington Post \"Fatal Force Database\") and is currently examining the variation in fatal police shooting across urban vs. rural areas.",
+  "modified": "2020-06-30T10:01:21",
+  "accessLevel": "restricted public",
+  "identifier": "3639",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "gun use",
+    "homicide",
+    "intervention",
+    "police",
+    "police reports"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2020-06-30T09:56:40",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37339.v1",
+      "title": "Using Public Health Databases to Analyze Legal Intervention Shootings, United States, 2006-2017"
+    }
+  ]
+}

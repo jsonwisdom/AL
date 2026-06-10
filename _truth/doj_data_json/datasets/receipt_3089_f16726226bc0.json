@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Evaluation of the Community Anti-Crime Program, 1979-1981",
+  "description": "The survey was designed to explore the thesis that\r\n effective prevention and control of crime requires a community-wide\r\n effort that involves law enforcement agencies, other elements of\r\n government, and the citizens in a coordinated attack on problems of\r\n crime. The data include information on program start-up,\r\n implementation, and the community itself, as well as information on\r\nthe specific activities undertaken by the programs.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3089",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "United States",
+    "communities",
+    "crime",
+    "crime prevention",
+    "government agencies",
+    "government performance",
+    "government services",
+    "police activity",
+    "police protection",
+    "public expenditures",
+    "public programs",
+    "social expenditures"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1988-01-06T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08704.v2",
+      "title": "National Evaluation of the Community Anti-Crime Program, 1979-1981"
+    }
+  ]
+}

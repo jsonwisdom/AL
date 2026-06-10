@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Police Response to Street Gang Violence in California:  Improving the Investigative Process, 1985",
+  "description": "This data collection examines gang and non-gang homicides as \r\n well as other types of offenses in small California jurisdictions. Data \r\n are provided on violent gang offenses and offenders as well as on a \r\n companion sample of non-gang offenses and offenders. Two separate data \r\n files are supplied, one for participants and one for incidents. The \r\n participant data include age, gender, race, and role of participants. \r\n The incident data include information from the \"violent incident data \r\n collection form\" (setting, auto involvement, and amount of property \r\n loss), and the \"group indicators coding form\" (argot, tattoos, \r\nclothing, and slang terminology).",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3096",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime",
+    "criminal justice system",
+    "death",
+    "demographic characteristics",
+    "gangs",
+    "murder",
+    "violence"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1988-10-25T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08934.v1",
+      "title": "Police Response to Street Gang Violence in California:  Improving the Investigative Process, 1985"
+    }
+  ]
+}

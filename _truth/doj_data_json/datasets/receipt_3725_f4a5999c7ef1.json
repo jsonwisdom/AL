@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Xenon (New Jersey) Commercial Burglary Data, 1979-1981",
+  "description": "This data collection is one of three quantitative databases\r\ncomprising the Commercial Theft Studies component of the Study of the\r\nCauses of Crime for Gain, which focuses on patterns of commercial\r\ntheft and characteristics of commercial thieves. This data collection\r\ncontains information on commercial burglary incidents in Xenon, New\r\nJersey. The data collection includes incident characteristics, theft\r\nitem, value of stolen property, and demographic information about the\r\nsuspect(s), such as police contacts, number of arrests, sex, race, and\r\nage.",
+  "modified": "1992-02-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3725",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrests",
+    "burglary",
+    "commercial theft",
+    "larceny",
+    "police records",
+    "property crime statistics",
+    "property crimes",
+    "robbery",
+    "stolen property",
+    "stolen property recovery"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08088.v1",
+      "title": "Xenon (New Jersey) Commercial Burglary Data, 1979-1981"
+    }
+  ]
+}

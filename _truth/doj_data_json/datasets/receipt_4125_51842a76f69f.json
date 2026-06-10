@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Federal Justice Statistics Program: Offenders Admitted to Prison, 2017",
+  "description": "The data contain records of sentenced offenders committed to the custody of the Bureau of Prisons (BOP) during fiscal year 2017. The data include commitments of United States District Court, violators of conditions of release (e.g., parole, probation, or supervised release violators), offenders convicted in other courts (e.g., military or District of Columbia courts), and persons admitted to prison as material witnesses or for purposes of treatment, examination, or transfer to another authority. These data include variables that describe the offender, such as age, race, citizenship, as well as variables that describe the sentences and expected prison terms. The data file contains original variables from the Bureau of Prisons' SENTRY database as well as additional analysis variables. Variables containing identifying information (e.g., name, Social Security Number) were either removed, coarsened, or blanked in order to protect the identities of individuals. These data are part of a series designed by the Urban Institute (Washington, D.C.) and the Bureau of Justice Statistics. Data and documentation were prepared by the Urban Institute through 2012. Data from 2013 and on were prepared by Abt Associates.",
+  "modified": "2022-04-28T15:08:43",
+  "accessLevel": "restricted public",
+  "identifier": "4125",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "correctional system",
+    "imprisonment",
+    "offenders",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2174",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2022-04-28T14:03:10",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR38214.v1",
+      "title": "Federal Justice Statistics Program: Offenders Admitted to Prison, 2017"
+    }
+  ]
+}

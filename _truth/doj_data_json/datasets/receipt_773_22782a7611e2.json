@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Census of Medical Examiners' and Coroners' Offices, 2004",
+  "description": "The Census of Medical Examiners' and Coroners' Offices\r\n(MECO) is a compilation of data on the practices of these offices,\r\nwhich are responsible for medical-legal death investigations. The data\r\ncover information such as the prevalence of unidentified human remains\r\non record in medical examiners' and coroners' offices across the\r\ncountry, record-keeping practices, and final disposition practices\r\nsuch as burial, cremation, or other means. In addition, data were\r\ngathered on FTE employees, contractors, and annual budgets.",
+  "modified": "2011-04-19T16:38:49",
+  "accessLevel": "restricted public",
+  "identifier": "773",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "autopsy",
+    "coroners",
+    "death records",
+    "forensic medicine",
+    "victim identification"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2440",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2007-07-26T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR20342.v3",
+      "title": "Census of Medical Examiners' and Coroners' Offices, 2004"
+    }
+  ]
+}

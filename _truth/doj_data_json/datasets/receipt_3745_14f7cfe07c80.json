@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Women in Prison, 1800-1935:  Tennessee, New York, and Ohio  ",
+  "description": "This data collection focused on problems in the women's\r\n correctional system over a 135-year period. More specifically, it\r\n examined the origins and development of prisoner and sentencing\r\n characteristics in three states. Demographic data on female inmates\r\n cover age, race, parents' place of birth, prisoner's occupation,\r\n religion, and marital status. Other variables include correctional\r\n facilities, offenses, minimum and maximum sentences, prior\r\n commitments, method of release from prison, and presence of crime\r\npartners.",
+  "modified": "2000-10-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3745",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "New York",
+    "Ohio",
+    "Tennessee",
+    "United States",
+    "correctional facilities",
+    "criminal justice system",
+    "demographic characteristics",
+    "sentencing",
+    "women"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1986-08-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08481.v2",
+      "title": "Women in Prison, 1800-1935:  Tennessee, New York, and Ohio  "
+    }
+  ]
+}

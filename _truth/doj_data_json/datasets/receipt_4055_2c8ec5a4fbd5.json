@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Research on Pathways to Desistance [Maricopa County, AZ and Philadelphia County, PA]: Calendar Data, 2000-2010 [Restricted]",
+  "description": "The Calendar data files are comprised of 47 total parts spread across 13 distinct topical domains.\r\n\r\nAcademic Achievement\r\nAntisocial Activity\r\nCommunity-Based Services\r\nContact With the Justice System\r\nCourt Monitoring\r\nGainful Activity\r\nHead Injury\r\nLiving Situation\r\nMaking and Spending Money\r\nMedication\r\nOut of Community Placement\r\nRomance\r\nSchool\r\nEach topical domain contains multiple reference periods for looking at the topic across the entire data collection period of the study.\r\nUsers who request these restricted data should first review the documentation available from NAHDAP (user guide and frequency codebooks) and from the Pathways Website (domain content codebooks). This review will help determine which specific datasets will be needed for your project. The \"Research Description\" in ICPSR's Data Access Request System (IDARS) must include a specific explanation of why you need each topic domain selected on the \"Data Selection\" page in IDARS. Most projects should only require one reference period per topic domain being requested. Data requests for all reference periods within a given domain will not be approved without a satisfactory explanation of why all of the reference periods are required for your project. Since the Calendar data collection is very extensive and Restricted Data Use Agreements are only for 2 years, data requests are not expected to need the entire Calendar data collection.\r\nThe Pathways to Desistance study was a multi-site study that followed 1,354 serious juvenile offenders from adolescence to young adulthood in two locales between the years 2000 and 2010. Enrolled into the study were adjudicated youths from the juvenile and adult court systems in Maricopa County (Phoenix), Arizona (N=654) and Philadelphia County, Pennsylvania (N=700).Respondents were enrolled and baseline interviews conducted from November 2000 to January 2003. Follow-up interviews were then scheduled with the respondents at 6, 12, 18, 24, 30, 36, 48, 60, 72 and 84 months past their baseline interview.The enrolled youth were at least 14 years old and under 18 years old at the time of their committing offense and were found guilty of a serious offense (predominantly felonies, with a few exceptions for some misdemeanor property offenses, sexual assault, or weapons offenses).",
+  "modified": "2017-03-27T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "4055",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "academic achievement",
+    "community involvement",
+    "crime",
+    "demographic characteristics",
+    "employment",
+    "family life",
+    "friendships",
+    "household composition",
+    "income",
+    "injuries",
+    "interpersonal relations",
+    "juvenile crime",
+    "juvenile offenders",
+    "medications",
+    "personal adjustment"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "4053",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2014-09-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR32282.v3",
+      "title": "Research on Pathways to Desistance [Maricopa County, AZ and Philadelphia County, PA]: Calendar Data, 2000-2010 [Restricted]"
+    }
+  ]
+}

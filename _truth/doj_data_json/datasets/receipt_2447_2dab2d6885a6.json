@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Law Enforcement Agency Identifiers Crosswalk [United States], 2005",
+  "description": "The crosswalk file is designed to provide geographic and\r\nother identification information for each record included in either\r\nthe Federal Bureau of Investigation's Uniform Crime Reporting (UCR)\r\nProgram files or in the Bureau of Justice Statistics' Census of State\r\nand Local Law Enforcement Agencies (CSLLEA). The main variables each\r\nrecord contains are the alpha state code, county name, place name,\r\ngovernment agency name, police agency name, government identification\r\nnumber, Federal Information Processing Standards (FIPS) state, county,\r\nand place codes, and Originating Agency Identifier (ORI) code. These\r\nvariables allow a researcher to take agency-level data, combine it\r\nwith Bureau of the Census and BJS data, and perform place-level and\r\ngovernment-level analyses.",
+  "modified": "2007-01-10T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2447",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "crime mapping",
+    "crime patterns",
+    "databases",
+    "information systems",
+    "law enforcement agencies"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2632",
+  "dataQuality": false,
+  "issued": "2007-01-10T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04634.v1",
+      "title": "Law Enforcement Agency Identifiers Crosswalk [United States], 2005"
+    }
+  ]
+}

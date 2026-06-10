@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Cross-National Comparison of Interagency Coordination Between Law Enforcement and Public Health",
+  "description": "This project examined strategies for interagency coordination in the United States, the United Kingdom, Canada, and Ireland. The project's primary goal was to produce promising practices that will help law enforcement and public health agencies improve interagency coordination related to terrorist threats, as well as other public health emergencies. Phase I of this study used the Surveillance System Inventory (SSI). The SSI is a database that documents and describes public health and public safety surveillance systems in the United States, the United Kingdom, Canada, and Ireland. The purpose of the SSI was to summarize the status of coordination between law enforcement and public health agencies across these systems, as well as to highlight potentially useful systems for coordination and dual-use integration.",
+  "modified": "2014-05-02T11:45:29",
+  "accessLevel": "public",
+  "identifier": "3162",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "bioterrorism",
+    "emergency preparedness",
+    "law enforcement",
+    "public health",
+    "public safety",
+    "terrorism",
+    "terrorist threat"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2014-05-02T11:45:29",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR29522.v1",
+      "title": "Cross-National Comparison of Interagency Coordination Between Law Enforcement and Public Health"
+    }
+  ]
+}

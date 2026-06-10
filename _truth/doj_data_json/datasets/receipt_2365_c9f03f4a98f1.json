@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Capital Punishment in the United States, 1973-2018",
+  "description": "CAPITAL PUNISHMENT IN THE UNITED STATES, 1973-2018 provides annual data on prisoners under a sentence of death, as well as those who had their sentences commuted or vacated and prisoners who were executed. This study examines basic sociodemographic classifications including age, sex, race and ethnicity, marital status at time of imprisonment, level of education, and state and region of incarceration. Criminal history information includes prior felony convictions and prior convictions for criminal homicide and the legal status at the time of the capital offense. Additional information is provided on those inmates removed from death row by yearend 2018. The dataset consists of one part which contains 9,583 cases. The file provides information on inmates whose death sentences were removed in addition to information on those inmates who were executed. The file also gives information about inmates who received a second death sentence by yearend 2018 as well as inmates who were already on death row.",
+  "modified": "2022-05-31T15:07:37",
+  "accessLevel": "restricted public",
+  "identifier": "2365",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "capital punishment",
+    "commuted sentences",
+    "criminal histories",
+    "death row inmates",
+    "demographic characteristics",
+    "executions",
+    "felony offenses",
+    "prison inmates",
+    "sentencing",
+    "states (USA)"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2587",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2020-11-19T12:52:35",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37879.v2",
+      "title": "Capital Punishment in the United States, 1973-2018"
+    }
+  ]
+}

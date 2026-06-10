@@ -1,0 +1,53 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Potential Financial Impact FY 2013 - FY 2019",
+  "description": "The annual data tables contained in this document provide summary statistics on the civil enforcement activities of the United States Trustee Program.  This report covers potential financial impact.  Financial Impact represents debt that potentially is not discharged in a bankruptcy case as a result of Program efforts.  The measure also includes funds that become part of or remain in bankruptcy estates, funds that are returned to debtors, funds that are paid to the Treasury, and sanctions and fines as a result of Program efforts.",
+  "modified": "2019-11-06T00:00:00",
+  "accessLevel": "public",
+  "identifier": "1930",
+  "publisher": {
+    "name": "Executive Office for United States Trustees",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Christopher Haverstock",
+    "hasEmail": "mailto:christopher.haverstock@usdoj.gov"
+  },
+  "keyword": [
+    "Civil Enforcement",
+    "Bankruptcy",
+    "Financial Impact",
+    "Debt",
+    "Discharge",
+    "Fines",
+    "Sanctions"
+  ],
+  "bureauCode": [
+    "011:00"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "temporal": "2012-10-01T00:00:00.0000000/2019-09-30T00:00:00.0000000",
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "649",
+  "dataQuality": false,
+  "issued": "2019-11-06T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "downloadURL": "https://www.justice.gov/ust/file/potential_financial_impact_fy13_19_1.xlsx/download",
+      "mediaType": "application/vnd.ms-excel",
+      "title": "Potential Financial Impact FY 2013 - FY 2019"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "California Vital Statistics and Homicide Data, 1990-1999",
+  "description": "This data collection resulted from the project \"Linked\r\nHomicide File for 1990-1999,\" which was conducted by the California\r\nDepartment of Health Services (CDHS), Epidemiology and Prevention for\r\nInjury Control Branch, for the purpose of studying homicide and\r\nproviding evidence for the development of strategies to reduce\r\nhomicide in California. The researchers combined the strengths of law\r\nenforcement reporting and medical reporting in one dataset. The\r\nhomicide data contain information on victims and circumstances of the\r\n34,542 homicides investigated by law enforcement agencies in\r\nCalifornia for the period 1990 to 1999. The data are Supplementary\r\nHomicide Reports (SHR), which are received monthly by the Department\r\nof Justice from all local California law enforcement agencies as part\r\nof the national Uniform Crime Reporting program (UNIFORM CRIME REPORTS\r\n[UNITED STATES]: SUPPLEMENTARY HOMICIDE REPORTS, 1976-1999 [ICPSR\r\n3180]). The researchers linked the SHRs to the CDHS vital statistics\r\nmortality data, which contain the death records provided by the\r\nmedical examiner or coroner of each county after investigation of the\r\ndeath. Variables include total number of offenders involved, weapon\r\nused in the homicide, county of the victim's residence, location and\r\ndate of the incident, date of death, cause of death, date of arrest\r\nfor the suspect, and whether supplemental homicide report matched the\r\ndeath record. Demographic data include age, sex, and race of the victim\r\nand the suspect, relationships between the suspect and the victim, and\r\nthe victim's marital status.",
+  "modified": "2006-02-17T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2680",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "causes of death",
+    "homicide",
+    "offenders",
+    "victims",
+    "vital statistics"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2002-10-02T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03482.v2",
+      "title": "California Vital Statistics and Homicide Data, 1990-1999"
+    }
+  ]
+}

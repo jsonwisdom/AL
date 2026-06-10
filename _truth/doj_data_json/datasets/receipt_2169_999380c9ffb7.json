@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Jail Census Series",
+  "description": "\r\nInvestigator(s): Bureau of Justice Statistics\r\nThe National Jail Census was conducted by the U.S. \r\nCensus Bureau for the Bureau of Justice Statistics. Excluded from the \r\ncensus were federal- or state-administered facilities, including the \r\ncombined jail-prison systems in Alaska, Connecticut, Delaware, Hawaii, \r\nRhode Island, and Vermont. Data include jail population by reason being \r\nheld, age (juvenile or adult) and sex, maximum sentence that can be \r\nserved in the facility, available services, type of security available, \r\nfacility capacity, age, construction and renovation of the facility, \r\nemployment, and operating expenditures.Years Produced: \r\nEvery 5 years\r\n",
+  "modified": "2022-03-30T14:09:02",
+  "accessLevel": "public",
+  "identifier": "2169",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "correctional facilities",
+    "correctional system",
+    "corrections management",
+    "demographic characteristics",
+    "inmate populations",
+    "inmates",
+    "jail inmates",
+    "jails"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/68",
+      "title": "National Jail Census Series"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Safe Schools Research Initiative, Texas, 2015-2017",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.This study sought to examine any major changes in schools in the past two years as an evaluation of the Safe and Civil Schools Initiative. Students, faculty, and administrators were asked questions on topics including school safety, climate, and the discipline process.This collection includes 6 SAS data files: \"psja_schools.sas7bdat\" with 66 variables and 15 cases, \"psja_schools_v01.sas7bdat\" with 104 variables and 15  cases, \"psja_staff.sas7bdat\" with 39 variables and 2,921 cases, \"psja_staff_v01.sas7bdat\" with 202 variables and 2,398 cases, \"psja_students.sas7bdat\"\r\nwith 97 variables and 4,382 cases, and \"psja_students_v01.sas7bdat\" with 332 variables and 4,267 cases.\r\nAdditionally, the collection includes 1 SAS formats catalog \"formats.sas7bcat\", and 10 SAS syntax files.",
+  "modified": "2018-11-29T12:57:36",
+  "accessLevel": "restricted public",
+  "identifier": "3890",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "academic achievement",
+    "administration",
+    "bullying",
+    "school attendance",
+    "school safety and security",
+    "students",
+    "teachers",
+    "victimization"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-11-29T12:54:46",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36988.v1",
+      "title": "Safe Schools Research Initiative, Texas, 2015-2017"
+    }
+  ]
+}

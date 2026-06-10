@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Temporal Variation in Rates of Police Notification by Victims of Rape, 1973-2000 [United States]",
+  "description": "The purpose of this study was to use data from the National Crime Survey (NCS) and the National Crime Victimization Survey (NCVS) to explore whether the likelihood of police notification by rape victims had increased between 1973-2000. To avoid the ambiguities that could arise in analyses across the two survey periods, the researchers analyzed the NCS (1973-1991) and NCVS data (1992-2000) separately. They focused on incidents that involved a female victim and one or more male offenders. The sample for 1973-1991 included 1,609 rapes and the corresponding sample for 1992-2000 contained 636 rapes. In their analyses, the researchers controlled for changes in forms of interviewing used in the NCS and NCVS. Logistic regression was used to estimate effects on the measures of police notification. The analyses incorporated the currently best available methods of accounting for design effects in the NCS and NCVS.  Police notification served as the dependent variable in the study and was measured in two ways. First, the analysis included a polytomous dependent variable that contrasted victim reported incidents and third-party reported incidents, respectively, with nonreported incidents. Second, a binary dependent variable, police notified, also was included.  The primary independent variables in the analysis were the year of occurrence of the incident reported by the victim and the relationship between the victim and the offender. The regression models estimated included several control variables, including measures of respondents' socioeconomic status, as well as other victim, offender, and incident characteristics that may be related both to the nature of rape and to the likelihood that victims notify the police.",
+  "modified": "2008-09-16T15:32:52",
+  "accessLevel": "public",
+  "identifier": "2995",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "assault",
+    "citizen crime reporting",
+    "crime reporting",
+    "domestic violence",
+    "police citizen interactions",
+    "rape",
+    "reactions to crime",
+    "victims",
+    "violence against women"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2008-09-16T15:32:52",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR21220.v1",
+      "title": "Temporal Variation in Rates of Police Notification by Victims of Rape, 1973-2000 [United States]"
+    }
+  ]
+}

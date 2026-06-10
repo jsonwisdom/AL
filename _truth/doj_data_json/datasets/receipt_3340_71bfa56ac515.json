@@ -1,0 +1,67 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Victimization and Fear of Crime among Arab Americans in Metro-Detroit 2014",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.This study examines the experiences of Arab versus non-Arab households with crime and their relationships with and attitudes towards the police in their communities. Face to face interviews were conducted in 414 households. Data were analyzed to gauge respondents' level of fear regarding crime and other factors that affect their risk of victimization.This collection includes one SPSS data file: \"Arab_study_data.sav\" with 201 variables and 414 cases and one SPSS syntax file: \"Arab_study_syntax.sps\".",
+  "modified": "2018-01-29T10:42:40",
+  "accessLevel": "restricted public",
+  "identifier": "3340",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "Arab Americans",
+    "burglary",
+    "crime",
+    "crime prevention",
+    "crime reporting",
+    "ethnic discrimination",
+    "fear of crime",
+    "hate crimes",
+    "neighborhood characteristics",
+    "neighborhood conditions",
+    "opinions",
+    "police",
+    "police performance",
+    "robbery",
+    "vandalism",
+    "victimization",
+    "violent"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-01-29T10:39:47",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36418.v1",
+      "title": "Victimization and Fear of Crime among Arab Americans in Metro-Detroit 2014"
+    }
+  ]
+}

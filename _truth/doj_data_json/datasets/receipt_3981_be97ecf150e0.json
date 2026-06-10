@@ -1,0 +1,53 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Assessing the Impact of a Graduated Response Approach for Youth in the Maryland Juvenile Justice System, 2013-2017",
+  "description": "The Accountability and Incentives Management (AIM) system is a graduated response system that was implemented by the Maryland Department of Juvenile Services (DJS) to promote supervision compliance and reduce rates of supervision violations and recidivism, among other juvenile justice-related outcomes. The purpose of this study was to assess AIM's implementation and outcomes. The treatment group (or AIM group) included adjudicated youths who started/completed probation or aftercare supervision with DJS between November 1, 2015 and October 30, 2017. A comparison group was comprised of youth who were supervised prior to AIM implementation (July 1, 2013 to June 30, 2015).\r\nData were gathered from de-identified administrative records provided by DJS. The unit of analysis is the individual. Variables include: youth delinquency history before supervision; risk/needs assessment; detentions, complaints, and arrests during supervision; AIM sanctions and incentives; youth responses in the AIM program; and demographic characteristics such as age, gender, and race/ethnicity.",
+  "modified": "2020-09-29T13:17:49",
+  "accessLevel": "restricted public",
+  "identifier": "3981",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "graduated responses",
+    "juvenile justice",
+    "probation"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2020-09-29T13:13:03",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37617.v1",
+      "title": "Assessing the Impact of a Graduated Response Approach for Youth in the Maryland Juvenile Justice System, 2013-2017"
+    }
+  ]
+}

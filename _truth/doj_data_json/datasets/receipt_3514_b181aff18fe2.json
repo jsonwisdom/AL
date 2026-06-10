@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Arrests As Communications to Criminals in St. Louis, 1970, 1972-1982    ",
+  "description": "This data collection was designed to assess the deterrent\r\neffects over time of police sanctioning activity, specifically that of\r\narrests. Arrest and crime report data were collected from the\r\nSt. Louis Police Department and divided into two categories: all\r\nUniform Crime Reporting Program Part I crime reports, including\r\narrests, and Part I felony arrests. The police department also\r\ngenerated geographical \"x\" and \"y\" coordinates corresponding to\r\nthe longitude and latitude where each crime and arrest took\r\nplace. Part 1 of this collection contains data on all reports made to\r\npolice regarding Part I felony crimes from 1970 to 1982 (excluding\r\n1971). Parts 2-13 contain the yearly data that were concatenated into\r\none file for Part 1. Variables in Parts 2-13 include offense code,\r\ncensus tract, police district, police area, city block, date of crime,\r\ntime crime occurred, value of property taken, and \"x\" and \"y\"\r\ncoordinates of crime and arrest locations. Part 14 contains data on\r\nall Part I felony arrests. Included is information on offense charged,\r\nthe marital status, sex, and race of the person arrested, census tract\r\nof arrest, and \"x\" and \"y\" coordinates.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3514",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrest rates",
+    "arrests",
+    "crime mapping",
+    "crime statistics",
+    "deterrence",
+    "felony offenses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1993-10-02T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09998.v1",
+      "title": "Arrests As Communications to Criminals in St. Louis, 1970, 1972-1982    "
+    }
+  ]
+}

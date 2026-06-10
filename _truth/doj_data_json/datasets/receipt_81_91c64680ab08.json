@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Census of Public Defender Offices: County-Based and Local Offices, 2007",
+  "description": "The Bureau of Justice Statistics' (BJS) 2007 Census of Public Defender Offices (CPDO) collected data from public defender offices located across 49 states and the District of Columbia.  Public defender offices are one of three methods through which states and localities ensure that indigent defendants are granted the Sixth and Fourteenth Amendment right to counsel. (In addition to defender offices, indigent defense services may also be provided by court-assigned private counsel or by a contract system in which private attorneys contractually agree to take on a specified number of indigent defendants or indigent defense cases.) Public defender offices have a salaried staff of full- or part-time attorneys who represent indigent defendants and are employed as direct government employees or through a public, nonprofit organization.\r\nPublic defenders play an important role in the United States criminal justice system.  Data from prior BJS surveys on indigent defense representation indicate that most criminal defendants rely on some form of publicly provided defense counsel, primarily public defenders. Although the United States Supreme Court has mandated that the states provide counsel for indigent persons accused of crime, documentation on the nature and provision of these services has not been readily available.\r\nStates have devised various systems, rules of organization, and funding mechanisms for indigent defense programs. While the operation and funding of public defender offices varies across states, public defender offices can be generally classified as being part of either a state program or a county-based system. The 22 state public defender programs functioned entirely under the direction of a central administrative office that funded and administered all the public defender offices in the state. For the 28 states with county-based offices, indigent defense services were administered at the county or local jurisdictional level and funded principally by the county or through a combination of county and state funds.\r\nThe CPDO collected data from both state- and county-based offices. All public defender offices that were principally funded by state or local governments and provided general criminal defense services, conflict services, or capital case representation were within the scope of the study. Federal public defender offices and offices that provided primarily contract or assigned counsel services with private attorneys were excluded from the data collection. In addition, public defender offices that were principally funded by a tribal government, or provided primarily appellate or juvenile services were outside the scope of the project and were also excluded.\r\nThe CPDO gathered information on public defender office staffing, expenditures, attorney training, standards and guidelines, and caseloads, including the number and type of cases received by the offices. The data collected by the CPDO can be compared to and analyzed against many of the existing national standards for the provision of indigent defense services.",
+  "modified": "2011-05-13T11:26:36",
+  "accessLevel": "public",
+  "identifier": "81",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "expenditures",
+    "law enforcement agencies",
+    "offender",
+    "personnel",
+    "police departments",
+    "policies and procedures"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2011-05-13T11:26:36",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR29502.v1",
+      "title": "Census of Public Defender Offices: County-Based and Local Offices, 2007"
+    }
+  ]
+}

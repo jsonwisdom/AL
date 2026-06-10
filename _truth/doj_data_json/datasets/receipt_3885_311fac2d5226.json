@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Post-Conviction DNA Testing and Wrongful Conviction Data from Sexual Assault and Homicide Cases in Virginia, 1973-1988",
+  "description": "This study examined the results of new DNA testing of old physical evidence from 634 sexual assault and homicide cases resulting in 715 convictions that took place in Virginia between 1973 and 1988. The research team conducted a retrospective study using data collected from the Virginia Department of Forensic Science files, visits to three Virginia county courthouses, and the COUNTY STATISTICS FILE 1 (CO-STAT): [UNITED STATES] (ICPSR 8314) to estimate the rate at which defendants are wrongly convicted and to identify case attributes associated with such wrongful convictions.",
+  "modified": "2013-08-29T11:06:40",
+  "accessLevel": "restricted public",
+  "identifier": "3885",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "DNA fingerprinting",
+    "conviction rates",
+    "convictions (law)",
+    "evidence",
+    "forensic sciences",
+    "homicide",
+    "sexual assault",
+    "wrongful convictions"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2013-08-29T11:03:09",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR34306.v1",
+      "title": "Post-Conviction DNA Testing and Wrongful Conviction Data from Sexual Assault and Homicide Cases in Virginia, 1973-1988"
+    }
+  ]
+}

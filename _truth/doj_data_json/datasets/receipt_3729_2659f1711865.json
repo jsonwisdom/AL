@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Juvenile Delinquency and Adult Crime, 1948-1977 [Racine, Wisconsin]: Three Birth Cohorts",
+  "description": "This data collection contains information on juvenile\r\ndelinquency and adult crime for three birth cohorts born in 1942, 1949,\r\nand 1955 in Racine, Wisconsin. These individual-level data are\r\norganized into three basic types: police contact data for the three\r\ncohorts, interview and contact data for the 1942 and 1949 cohorts, and\r\ncontact data classified by age for all three cohorts. The police\r\ncontact data include information on the type and frequency of police\r\ncontacts by individual as well as the location, date, and number of the\r\nfirst contact. The interview datasets contain information on police\r\ncontacts and a number of variables measured during personal interviews\r\nwith the 1942 and 1949 cohorts. The interview variables include\r\nretrospective measures of the respondents' attitudes toward the police\r\nand a variety of other variables such as socioeconomic status and age\r\nat marriage. The age-by-age datasets provide juvenile court and police\r\ncontact data classified by age.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3729",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrests",
+    "crime",
+    "criminal justice system",
+    "delinquent behavior",
+    "police response"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-07-13T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08163.v2",
+      "title": "Juvenile Delinquency and Adult Crime, 1948-1977 [Racine, Wisconsin]: Three Birth Cohorts"
+    }
+  ]
+}

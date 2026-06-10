@@ -1,0 +1,69 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Survey of Prison Inmates (SPI) Series (Formerly Survey of Inmates in State and Federal Correctional Facilities (SISFCF))",
+  "description": "\r\nInvestigator(s): Bureau of Justice Statistics\r\nConducted by the Bureau of Justice Statistics, this survey is part of a series of data gathering efforts undertaken to assist policymakers in assessing and remedying deficiencies in the nation's correctional institutions. Its primary objective is to produce national statistics of the state and sentenced federal prison populations across a variety of domains. The survey gathered information on demographic, socioeconomic, and criminal history characteristics of prisoners. Also obtained were details of prisoner’ military service, current offense and sentence, incident characteristics, and firearm possession and sources. Other information includes age at time of interview, ethnicity, education, lifetime drug use and alcohol use and treatment, mental and physical health and treatment, and pre-arrest employment and income. Data on characteristics of victims, prison programs and services, and rule violations are provided as well.\r\nWith the 2016 administration, the survey was renamed the Survey of Prison Inmates.\r\nNACJD has prepared a resource guide for the Survey of Prison Inmates Series.",
+  "modified": "2021-09-15T13:51:15",
+  "accessLevel": "public",
+  "identifier": "2171",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "correctional facilities (adults)",
+    "corrections",
+    "corrections management",
+    "criminal histories",
+    "drug abuse",
+    "inmate classification",
+    "inmate deaths",
+    "inmate populations",
+    "inmate programs",
+    "inmates",
+    "jails",
+    "offenses",
+    "prison administration",
+    "prison conditions",
+    "prison construction",
+    "prison overcrowding",
+    "prison violence",
+    "substance abuse",
+    "treatment programs"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/70",
+      "title": "Survey of Prison Inmates (SPI) Series (Formerly Survey of Inmates in State and Federal Correctional Facilities (SISFCF))"
+    }
+  ]
+}

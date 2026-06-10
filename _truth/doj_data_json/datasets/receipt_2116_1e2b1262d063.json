@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Indigent Criminal Defense Survey, 1982",
+  "description": "This survey was conducted to provide national-level data on\r\nbasic information such as system types, funding sources, costs, and\r\ncaseloads of indigent defense programs for defense practitioners,\r\npolicymakers, and planners in the criminal justice system. The goal of\r\nthe survey was to provide data that could begin to answer questions\r\nregarding the nature and scope of indigent service delivery.\r\nSpecifically, the three basic objectives were to provide descriptive\r\ndata, to assess the level of response to defense service delivery\r\nrequirements, and to facilitate further research.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2116",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "caseloads",
+    "criminal justice system",
+    "defense (law)",
+    "legal aid",
+    "legal representation",
+    "public defenders"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1986-06-06T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08417.v2",
+      "title": "National Indigent Criminal Defense Survey, 1982"
+    }
+  ]
+}

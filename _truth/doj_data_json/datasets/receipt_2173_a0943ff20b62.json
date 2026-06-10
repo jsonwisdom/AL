@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Federal Court Cases: Integrated Database Series",
+  "description": "\r\nInvestigator(s): Federal Judicial Center\r\nThe purpose of this data collection is to provide an \r\nofficial public record of the business of the federal courts. The data \r\noriginate from 100 court offices throughout the United States. Information \r\nwas obtained at two points in the life of a case: filing and termination. The \r\ntermination data contain information on both filing and terminations, while \r\nthe pending data contain only filing information. For the appellate and civil \r\ndata, the unit of analysis is a single case. The unit of analysis for the \r\ncriminal data is a single defendant.Years Produced: Updated \r\nbi-annually with annual data.\r\n",
+  "modified": "2018-04-30T14:21:04",
+  "accessLevel": "public",
+  "identifier": "2173",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "administration",
+    "appellate courts",
+    "bankruptcy",
+    "case dismissal",
+    "case processing",
+    "civil law",
+    "court cases",
+    "disposition (legal)",
+    "federal courts",
+    "judicial decisions",
+    "legal systems",
+    "pretrial procedures",
+    "records",
+    "trial courts",
+    "trial procedures"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-05-03T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/72",
+      "title": "Federal Court Cases: Integrated Database Series"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Multi-Site Study of the Potential of Technology in Policing  [United States], 2012-2013.",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThis study examined the impact of technology on social, organizational, and behavioral aspects of policing. The present data represents an officer-level survey of four law enforcement agencies, designed to answer the following questions: (1) how are technologies used in police agencies across ranks and organizational sub-units? (2) how does technology influence organizational and personal aspects of police including - operations, culture, behavior, and satisfaction? (3) how do organizational and individual aspects of policing concurrently shape the use and effectiveness of technology? (4) how does technology affect crime control efforts and police-community relationships? (5) what organizational practices help to optimize the use of technology with an emphasis on enhance effectiveness and legitimacy?",
+  "modified": "2017-06-06T08:33:57",
+  "accessLevel": "restricted public",
+  "identifier": "2945",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime reduction",
+    "job satisfaction",
+    "police performance",
+    "surveillance",
+    "technological change",
+    "technology"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2017-06-06T08:29:47",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR35479.v1",
+      "title": "Multi-Site Study of the Potential of Technology in Policing  [United States], 2012-2013."
+    }
+  ]
+}

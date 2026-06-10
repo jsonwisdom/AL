@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Juvenile Court Statistics, 1983 [United States]",
+  "description": "This data collection describes the volume of juvenile cases\r\ndisposed of during calendar year 1983 in courts having jurisdiction\r\nover juvenile matters (delinquency and dependency/neglect cases) in the\r\nfifty states, the District of Columbia, and the territories of the\r\nVirgin Islands and Puerto Rico. This collection is part of the oldest\r\ncontinuous source of information on the processing of delinquent and\r\ndependent youth done by juvenile courts, a record inaugurated in 1926.\r\nIt furnishes an index of the general nature and extent of the problems\r\nbrought before the juvenile courts.",
+  "modified": "1992-02-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3933",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "case processing",
+    "county courts",
+    "criminal justice system",
+    "delinquent behavior",
+    "dependents",
+    "juvenile courts",
+    "juvenile justice",
+    "state courts",
+    "statistical data",
+    "status offenses",
+    "youths"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "3986",
+  "dataQuality": false,
+  "issued": "1987-05-19T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08656.v1",
+      "title": "Juvenile Court Statistics, 1983 [United States]"
+    }
+  ]
+}

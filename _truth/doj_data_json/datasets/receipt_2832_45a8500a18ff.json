@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Assessment Program Survey of Criminal Justice Personnel in the United States, 1986",
+  "description": "This survey probed the needs and problems facing local\r\n criminal justice practitioners. Within each sampled county, survey\r\n questionnaires were distributed to the police chief of the largest\r\n city, the sheriff, the jail administrator, the prosecutor, the chief\r\n trial court judge, the trial court administrator (where applicable),\r\n and probation and parole agency heads. Although the general topics\r\n covered in the questionnaires are similar, specific items are not\r\n repeated across the questionnaires, except for those given to the\r\n sheriffs and the police chiefs. The sheriffs surveyed were those with\r\n law enforcement responsibilities, so the questions asked of the police\r\n chiefs and the sheriffs were identical. The questionnaires were\r\n tailored to each group of respondents, and dealt with five general\r\n areas: (1) background characteristics, including staff size, budget\r\n totals, and facility age, (2) criminal justice system problems, (3)\r\n prison crowding, (4) personnel issues such as training needs and\r\n programs, and (5) operations and procedures including management,\r\n management information, and the specific operations in which the\r\n respondents were involved. In some cases, sets of question items were\r\n grouped into question batteries that dealt with specific topic areas\r\n (e.g., staff recruitment, judicial training, and number of personnel).\r\n For example, the Staff Recruitment battery items in the Probation and\r\n Parole Questionnaire asked respondents to use a 4 point scale to\r\n indicate the seriousness of each of the following problems: low\r\n salaries, poor image of corrections work, high entrance requirements,\r\n location of qualified staff, shortage of qualified minority\r\napplicants, and hiring freezes.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2832",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "budgets",
+    "correctional facilities",
+    "courts",
+    "criminal justice system",
+    "law enforcement agencies",
+    "personnel",
+    "personnel management",
+    "police departments",
+    "prison administration",
+    "prison overcrowding",
+    "training"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1993-10-02T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09923.v1",
+      "title": "National Assessment Program Survey of Criminal Justice Personnel in the United States, 1986"
+    }
+  ]
+}

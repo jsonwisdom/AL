@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Intercity Variation in Youth Homicide, Robbery, and Assault, 1984-2006 [United States]",
+  "description": "The research team collected data on homicide, robbery, and assault offending from 1984-2006 for youth 13 to 24 years of age in 91 of the 100 largest cities in the United States (based on the 1980 Census) from various existing data sources. Data on youth homicide perpetration were acquired from the Supplementary Homicide Reports (SHR) and data on nonlethal youth violence (robbery and assault) were obtained from the Uniform Crime Reports (UCR).   Annual homicide, robbery, and assault arrest rates per 100,000 age-specific populations (i.e., 13 to 17 and 18 to 24 year olds) were calculated by year for each city in the study. Data on city characteristics were derived from several sources including the County and City Data Books, SHR, and the Vital Statistics Multiple Cause of Death File. The research team constructed a dataset representing lethal and nonlethal offending at the city level for 91 cities over the 23-year period from 1984 to 2006, resulting in 2,093 city year observations.",
+  "modified": "2012-09-20T09:49:18",
+  "accessLevel": "public",
+  "identifier": "3114",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "age",
+    "assault",
+    "crime patterns",
+    "crime statistics",
+    "drug related crimes",
+    "firearms",
+    "gang violence",
+    "gangs",
+    "homicide",
+    "juvenile crime",
+    "juveniles",
+    "robbery",
+    "trends",
+    "violence",
+    "violent crime",
+    "violent crime statistics",
+    "youths"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2012-09-20T09:49:18",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR30981.v1",
+      "title": "Intercity Variation in Youth Homicide, Robbery, and Assault, 1984-2006 [United States]"
+    }
+  ]
+}

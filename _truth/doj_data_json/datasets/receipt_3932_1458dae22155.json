@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Youth Survey [United States]:  Wave III, 1978",
+  "description": "Youth data for the third wave of the National Youth Survey\r\nare contained in this data collection, which includes data for youth\r\ninterviewed in 1979 about events and behavior of the preceding year.\r\nThe first wave of this study was conducted in 1976 (ICPSR 8375) and the\r\nsecond wave in 1977 (ICPSR 8424). Data were collected on the\r\ndemographic and socioeconomic status of respondents, disruptive events\r\nin the home, youth aspirations, expectations for future goals, social\r\nisolation, normlessness, labeling, perceived disapproval, attitudes\r\ntoward deviance, exposure and commitment to delinquent peers, sex\r\nroles, attitudes toward sexual assault, interpersonal violence,\r\npressure for substance abuse by peers, exposure to substance abuse by\r\nparents, self-reported delinquency, and drug and alcohol use.",
+  "modified": "2008-09-10T11:36:31",
+  "accessLevel": "public",
+  "identifier": "3932",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "aspirations",
+    "behavior problems",
+    "career goals",
+    "community involvement",
+    "delinquent behavior",
+    "depression (psychology)",
+    "deviance",
+    "drugs",
+    "expectations",
+    "family conflict",
+    "family relations",
+    "health services utilization",
+    "life events",
+    "neighborhood conditions",
+    "parenta"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "3996",
+  "dataQuality": false,
+  "issued": "1986-08-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08506.v2",
+      "title": "National Youth Survey [United States]:  Wave III, 1978"
+    }
+  ]
+}

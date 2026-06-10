@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Civil Justice Survey of Trials on Appeal, 2005",
+  "description": "The Bureau of Justice Statistics' (BJS) Civil Justice Survey\r\nof Trials on Appeal (CJSTA) was based on 26,950 general\r\ncivil (i.e., tort, contract, and real property) cases that were\r\ndisposed by bench or jury trial in 156 counties participating\r\nin the 2005 Civil Justice Survey of State Courts (ICPSR 23862).\r\nSubsequently, 3,970 of those cases were appealed to 84\r\nappellate courts in 35 states.\r\nThis data collection examines civil bench and jury trials\r\nconcluded in state trial courts in 2005 that were appealed\r\nto an intermediate appellate court or court of last resort.\r\nIt is the first report based on data collected in the Bureau\r\nof Justice Statistics' (BJS) Civil Justice Survey of Trials on\r\nAppeal (CJSTA). The CJSTA included information from\r\ncourt records on civil trials concluded in 2005 and tracked\r\nthe subsequent appeals from 2005 through March 2010.\r\nInformation collected included the types of civil cases\r\nappealed, appeals dismissed or withdrawn before being\r\ndecided on the merits, and appeals resulting in the trial\r\ncourt decision being reversed or affirmed. The time from the\r\nfiling of an appeal to final appellate court disposition was\r\nalso measured.",
+  "modified": "2012-01-10T15:50:17",
+  "accessLevel": "restricted public",
+  "identifier": "778",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "case processing",
+    "civil courts",
+    "civil law",
+    "court cases",
+    "court system",
+    "disposition (legal)",
+    "lawsuits",
+    "state courts"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2172",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2012-01-10T08:58:48",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR32501.v1",
+      "title": "Civil Justice Survey of Trials on Appeal, 2005"
+    }
+  ]
+}

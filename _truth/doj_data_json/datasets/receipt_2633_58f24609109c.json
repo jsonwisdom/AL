@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Prisoner Statistics (NPS) Series",
+  "description": "Investigator(s): United States. Bureau of Justice Statistics\r\nProduces annual national- and state-level data on the number of prisoners in state and federal prison facilities. Aggregate data are collected on race and sex of prison inmates, inmates held in private facilities and local jails, system capacity, noncitizens, and persons age 17 or younger. Findings are released in the Prisoners series and the Corrections Statistical Analysis Tool (CSAT) - Prisoners. Data are from the 50 states departments of correction, the Federal Bureau of Prisons, and until 2001, from the District of Columbia (after 2001, felons sentenced under the District of Columbia criminal code were housed in federal facilities).\r\n",
+  "modified": "2021-12-16T11:02:13",
+  "accessLevel": "public",
+  "identifier": "2633",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "HIV",
+    "correctional system",
+    "demographic characteristics",
+    "offenders",
+    "parole",
+    "prison inmates",
+    "state correctional facilities"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2013-06-25T10:59:58",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/886",
+      "title": "National Prisoner Statistics (NPS) Series"
+    }
+  ]
+}

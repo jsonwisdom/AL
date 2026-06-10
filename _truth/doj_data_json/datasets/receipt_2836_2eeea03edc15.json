@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Arson Measurement, Analysis, and Prevention in Massachusetts, 1983-1985",
+  "description": "These data were gathered to test a model of the\r\nsocioeconomic and demographic determinants of the crime of arson.\r\nDatasets for this analysis were developed by the principal\r\ninvestigator from records of the Massachusetts Fire Incident Reporting\r\nSystem and from population and housing data from the 1980 Census of\r\nMassachusetts. The three identically-structured data files include\r\nvariables such as population size, fire incident reports, employment,\r\nincome, family structure, housing type, housing quality, housing\r\noccupancy, housing availability, race, and age.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2836",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arson",
+    "causes of crime",
+    "crime prevention",
+    "family size",
+    "housing",
+    "population size",
+    "property crimes"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1993-10-02T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09972.v2",
+      "title": "Arson Measurement, Analysis, and Prevention in Massachusetts, 1983-1985"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "United Nations World Surveys on Crime Trends and Criminal Justice Systems, 1970-1994: Restructured Five-Wave Data",
+  "description": "The United Nations International Crime Prevention and\r\n Criminal Justice Branch began the Surveys of Crime Trends and\r\n Operations of Criminal Justice Systems (formerly known as the World\r\n Crime Surveys) in 1978. The goal of the data collection effort was to\r\n conduct a more focused inquiry into the incidence of crime worldwide.\r\n To date, there have been five quinquennial surveys, covering the years\r\n 1970-1975, 1975-1980, 1980-1986, 1986-1990, and 1990-1994,\r\n respectively. Starting with the 1980 data, the waves overlap by one\r\n year to allow for reliability and validity checks of the data. For\r\n this data collection, the original United Nations data were\r\n restructured into a standard contemporary file structure, with each\r\n file consisting of all data for one year. Naming conventions were\r\n standardized, and each country and each variable was given a unique\r\n identifying number. Crime variables include counts of recorded crime\r\n for homicide, assault, rape, robbery, theft, burglary, fraud,\r\n embezzlement, drug trafficking, drug possession, bribery, and\r\n corruption. There are also counts of suspects, persons prosecuted,\r\n persons convicted, and prison admissions by crime, gender, and adult\r\n or juvenile status. Other variables include the population of the\r\n country and largest city, budgets and salaries for police, courts, and\r\n prisons, and types of sanctions, including imprisonment, corporal\r\n punishment, deprivation of liberty, control of freedom, warning, fine,\r\n and community sentence. The countries participating in the survey and\r\nthe variables available vary by year.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2876",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "United Nations",
+    "acquittals",
+    "assault",
+    "burglary",
+    "convictions (law)",
+    "correctional facilities",
+    "courts",
+    "courts",
+    "crime",
+    "crime patterns",
+    "crime prevention",
+    "crime rates",
+    "crime reporting",
+    "criminal justice policy",
+    "criminal justice system",
+    "drug related crimes",
+    "drug traffic",
+    "embezzlement",
+    "fraud",
+    "international crime statistics",
+    "larceny",
+    "law enforcement",
+    "nations",
+    "offenders",
+    "offenses",
+    "police reports",
+    "population characteristics",
+    "prosecution",
+    "punishment",
+    "rape",
+    "robbery",
+    "sanctions",
+    "sentencing",
+    "trends"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2437",
+  "dataQuality": false,
+  "issued": "1999-04-30T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02513.v1",
+      "title": "United Nations World Surveys on Crime Trends and Criminal Justice Systems, 1970-1994: Restructured Five-Wave Data"
+    }
+  ]
+}

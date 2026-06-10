@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Profiles of Individual Radicalization in the United States (PIRUS), 1948-2014",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThe Empirical Assessment of Domestic Radicalization (EADR) project seeks to provide practitioners, researchers, and the public with an empirical foundation for understanding the radicalization processes of United States-based extremists. Project researchers utilized a mixed-method, nested approach to explore a number of key research questions related to radicalization, including:\r\n\r\nwhat are the demographic, background, and radicalization differences between and within the different ideological milieus?\r\nare there important contextual, personal, ideological, or experiential differences between radicals who commit violent acts and those who do not?\r\nis it possible to identify sufficient pathways to violent extremism?\r\nare the causal mechanisms highlighted by extant theories of radicalization supported by empirical evidence?\r\n\r\nTo address these questions, EADR researchers built the largest known database on individual radicalization in the United States: Profiles of Individual Radicalization in the United States (PIRUS). The database includes 147 variables covering demographic, background, group affiliation, and ideological information for a sample of 1,473 violent and non-violent extremists who radicalized in the United States from 1948-2014. The database is not limited to a particular ideological milieu, but instead contains information on individuals who adhere(d) to far right, far left, Islamist, and single-issue ideologies\r\nThe collection includes 5 SPSS datasets and 2 SPSS syntax files:\r\n\r\nPIRUS_full_dataset_ICPSR_archive.sav (n=1,473; 113 variables)\r\nPIRUS_expected_maximization_version.sav (n=16,203; 27 variables)\r\nPIRUS_fixed_value_imputation_version.sav (n=1,473; 27 variables)\r\nPIRUS_regression_based_imputation_version.sav (n=16,203; 28 variables)\r\nPIRUS_subgroup_mean_substitution_version.sav (n=1,473; 27 variables)\r\nquantitative_analysis_syntax.sps\r\nvariable_prep_syntax.sps\r\n\r\n",
+  "modified": "2018-05-21T11:35:11",
+  "accessLevel": "restricted public",
+  "identifier": "3011",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "extremism",
+    "radicalism",
+    "terrorist attacks",
+    "terrorist profiles",
+    "terrorist threat",
+    "violence"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-05-21T11:31:11",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36309.v1",
+      "title": "Profiles of Individual Radicalization in the United States (PIRUS), 1948-2014"
+    }
+  ]
+}

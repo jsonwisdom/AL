@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Prosecutor's Management and Information System (PROMIS), New Orleans, 1979",
+  "description": "The Prosecutor's Management and Information System (PROMIS)\r\n is a computer-based management information system for public\r\n prosecution agencies. PROMIS was initially developed with funds from\r\n the United States Law Enforcement Assistance Administration (LEAA) to\r\n cope with the problems of a large, urban prosecution agency where mass\r\n production operations had superseded the traditional practice of a\r\n single attorney preparing and prosecuting a given case from inception\r\n to final disposition. The combination of massive volumes of cases and\r\n the assembly-line fragmentation of responsibility and control had\r\n created a situation in which one case was indistinguishable from\r\n another and the effects of problems at various stages in the assembly\r\n line on ultimate case disposition went undetected and uncorrected. One\r\n unique feature of PROMIS that addresses these problems is the\r\n automated evaluation of cases. Through the application of a uniform\r\n set of criteria, PROMIS assigns two numerical ratings to each case:\r\n one signifying the gravity of the crime through a measurement of the\r\n amount of harm done to society, and the other signifying the gravity\r\n of the prior criminal record of the accused. These ratings make it\r\n possible to select the more important cases for intensive, pre-trial\r\n preparation and to assure even-handed treatment of cases of like\r\n gravity. A complementary feature of PROMIS is the automation of\r\n reasons for decisions made or actions taken along the assembly\r\n line. Reasons for dismissing cases prior to trial on their merits can\r\n be related to earlier cycles of postponements for various reasons and\r\n to the reasoning behind intake and screening decisions. The PROMIS\r\n data include information about the defendant, case characteristics and\r\n processes, charge, sentencing and continuance processes, and the\r\n witnesses/victims involved with a case. PROMIS was first used in 1971\r\n in the United States Attorney's Office for the District of\r\n Columbia. To enhance the ability to transfer the PROMIS concepts and\r\n software to other communities, LEAA awarded a grant to the Institute\r\n for Law and Social Research (INSLAW) in Washington, DC. The New\r\nOrleans PROMIS data collection is a product of this grant.",
+  "modified": "1992-02-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2552",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "case management",
+    "case processing",
+    "computer programs",
+    "court cases",
+    "crime",
+    "criminal justice system",
+    "databases",
+    "decision making",
+    "defendants",
+    "disposition (legal)",
+    "information systems",
+    "prosecuting attorneys",
+    "sentencing",
+    "victims",
+    "witnesses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-11-14T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08219.v1",
+      "title": "Prosecutor's Management and Information System (PROMIS), New Orleans, 1979"
+    }
+  ]
+}

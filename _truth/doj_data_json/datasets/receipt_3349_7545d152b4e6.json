@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Felonious Homicides of American Police Officers, 1977-1992",
+  "description": "The study was a comprehensive analysis of felonious\r\n killings of officers. The purposes of the study were (1) to analyze\r\n the nature and circumstances of incidents of felonious police killings\r\n and (2) to analyze trends in the numbers and rates of killings across\r\n different types of agencies and to explain these differences. For Part\r\n 1, Incident-Level Data, an incident-level database was created to\r\n capture all incidents involving the death of a police officer from\r\n 1983 through 1992. Data on officers and incidents were collected from\r\n the Law Enforcement Officers Killed and Assaulted (LEOKA) data\r\n collection as coded by the Uniform Crime Reporting (UCR) program. In\r\n addition to the UCR data, the Police Foundation also coded information\r\n from the LEOKA narratives that are not part of the computerized LEOKA\r\n database from the FBI. For Part 2, Agency-Level Data, the researchers\r\n created an agency-level database to research systematic differences\r\n among rates at which law enforcement officers had been feloniously\r\n killed from 1977 through 1992. The investigators focused on the 56\r\n largest law enforcement agencies because of the availability of data\r\n for explanatory variables. Variables in Part 1 include year of\r\n killing, involvement of other officers, if the officer was killed with\r\n his/her own weapon, circumstances of the killing, location of fatal\r\n wounds, distance between officer and offender, if the victim was\r\n wearing body armor, if different officers were killed in the same\r\n incident, if the officer was in uniform, actions of the killer and of\r\n the officer at entry and final stage, if the killer was visible at\r\n first, if the officer thought the killer was a felon suspect, if the\r\n officer was shot at entry, and circumstances at anticipation, entry,\r\n and final stages. Demographic variables for Part 1 include victim's\r\n sex, age, race, type of assignment, rank, years of experience, agency,\r\n population group, and if the officer was working a security job. Part\r\n 2 contains variables describing the general municipal environment,\r\n such as whether the agency is located in the South, level of poverty\r\n according to a poverty index, population density, percent of\r\n population that was Hispanic or Black, and population aged 15-34 years\r\n old. Variables capturing the crime environment include the violent\r\n crime rate, property crime rate, and a gun-related crime\r\n index. Lastly, variables on the environment of the police agencies\r\n include violent and property crime arrests per 1,000 sworn officers,\r\n percentage of officers injured in assaults, and number of sworn\r\nofficers.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3349",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime rates",
+    "felony offenses",
+    "homicide",
+    "law enforcement agencies",
+    "police deaths",
+    "police officers",
+    "police safety"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2001-11-29T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03187.v1",
+      "title": "Felonious Homicides of American Police Officers, 1977-1992"
+    }
+  ]
+}

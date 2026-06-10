@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "A Multi-site Comparison of Risk Assessments within the Juvenile Justice System, 2007-2013 [United States]",
+  "description": "\r\nThese data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\n\r\n\r\nThis study examined the validity, reliability, equity and cost of nine juvenile justice risk assessment instruments.  It was designed to provide a comprehensive examination of how several risk assessments perform in practice.\r\nThis study posed the following questions:\r\n\r\nIs each risk assessment instrument sufficiently reliable (i.e., inter-rater reliability) to ensure that decisions regarding level of risk and identified service needs are consistent across the organization?\r\nWhat specific risk assessment items are associated with less reliability? What items are rated reliably by staff?\r\n Is each risk assessment instrument valid? Specifically, what degree of discrimination is attained between assigned risk levels? Could the instrument be improved by adding or deleting specific factors and/or altering cut-off scores? \r\n Is each risk assessment instrument valid for population subgroups: White/Caucasian, Black/African American, Hispanic/Latino, females, probationers, and youth in aftercare status? Could equity be improved by adding or deleting specific factors or altering cut-off scores?\r\n What costs are associated with each risk assessment instrument?\r\n\r\n\r\n\r\nThe study collection includes 31 SPSS data files\r\n\r\n\r\n\r\nall_jais_combined.sav (n=1,141; 6 variables)\r\nar_fire_final_file_ojjdp-ICPSR.sav (n=119; 205 variables)\r\nAR_yls_irr_FINAL-ICPSR.sav (n=155; 136 variables)\r\nazaoc_FINALFILE-ICPSR.sav (n=7,589; 438 variables)\r\nAZAOC_irr_FINAL-ICPSR.sav (n=458; 101 variables)\r\nAZDJC_FINAL_FILE-ICPSR.sav (n=1,265; 1,290 variables)\r\nAZDJC_irr_FINAL-ICPSR.sav (n=55; 120 variables)\r\nCOMMITMENT_FINAL_SAMPLE2-ICPSR.sav (n=11,154; 719 variables)\r\nFinalDJJReleasesWithRecid_BothYears2-ICPSR.sav (n=90,818; 31 variables)\r\nFIRE_NE_COMM_FINAL_FILE_OJJDP-ICPSR.sav (n=597; 174 variables)\r\nfire_ne_probation_final-ICPSR.sav (n=1,077; 237 variables)\r\nFL_irr_FINAL-ICPSR.sav (n=519; 140 variables)\r\nGA_irr_FINAL-ICPSR.sav (n=509; 263 variables)\r\ngafire_boyscommunityALL_FINAL-ICPSR.sav (n=5,009; 781 variables)\r\ngafire_communityALLforretrofit2-ICPSR.sav (n=6,943; 666 variables)\r\ngafire_finalsampforanalysis_all-ICPSR.sav (n=7,412; 642 variables)\r\ngafire_finalsampforanalysis_girls-ICPSR.sav (n=2,005; 768 variables)\r\njais_boys_wk_1-ICPSR.sav (n=1,989; 484 variables)\r\njais_girls_wk_1-ICPSR.sav (n=745; 484 variables)\r\nNE_irr_FINAL-ICPSR.sav (n=727; 160 variables)\r\nOR_irr_FINAL-ICPSR.sav (n=477; 112 variables)\r\nORE_FIRE_final-ICPSR.sav (n=12,370; 340 variables)\r\nPROBATION_FINAL_BOYS_ALL-ICPSR.sav (n=20,621; 837 variables)\r\nPROBATION_FINAL_GIRLS_ALL-ICPSR.sav (n=6,748; 849 variables)\r\nva_boyssample-ICPSR.sav (n=1,106; 1,273 variables)\r\nva_final_sample_fullscreen-ICPSR.sav (n=1,439; 1,237 variables)\r\nva_girlssample-ICPSR.sav (n=333; 1,256 variables)\r\nVA_irr_expert_FINAL-ICPSR.sav (n=10; 308 variables)\r\nVA_irr_worker_FINAL-ICPSR.sav (n=685; 308 variables)\r\nvafinalsample-ICPSR.sav (n=1,919; 1,200 variables)\r\nworkersurveyfinal-ICPSR.sav (n=400; 69 variables)\r\n\r\n",
+  "modified": "2018-03-02T14:47:22",
+  "accessLevel": "restricted public",
+  "identifier": "4018",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "juvenile detention",
+    "juvenile justice",
+    "probation",
+    "risk assessment"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-03-02T14:35:02",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR34934.v1",
+      "title": "A Multi-site Comparison of Risk Assessments within the Juvenile Justice System, 2007-2013 [United States]"
+    }
+  ]
+}

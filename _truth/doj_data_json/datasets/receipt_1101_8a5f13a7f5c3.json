@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Prosecutors Survey, 1990",
+  "description": "This survey queried chief prosecuting attorneys of state\r\nprosecutorial districts (district attorneys, commonwealth attorneys,\r\netc.) about the prosecution of felony cases within their jurisdictions\r\nduring 1989-1990. Questions regarding the prefiling, filing, and\r\npretrial stages of felony prosecution asked about policies limiting\r\nthe time for plea negotiations, the role of the grand jury, how felony\r\ncases were screened, and the amount of time that usually elapsed\r\nbefore the prosecutor was notified of persons arrested for a felony.\r\nProsecutors were also asked to report the percentage of court case\r\nfilings by grand jury indictment, by information following a\r\npreliminary hearing, or by other means, and the percentage of felony\r\ncases processed by a court of general jurisdiction, a felony court, or\r\nother court(s). The trial stage of felony prosecution was covered by\r\nquestions about the conduct of voir dire examination of prospective\r\njurors, limits on time allowed to commence trial, the number of\r\npermitted peremptory challenges, who was responsible for notifying\r\ngovernment witnesses to appear in court, whether the prosecution had\r\nthe right to request a jury trial, whether the jurisdiction's felony\r\ncourt discouraged motions on trial date that would delay trial, and\r\nwhether the felony court normally granted a continuance on trial date\r\nto permit additional time for plea negotiations. Questions on felony\r\nsentencing and appeals asked whether the prosecutor was usually\r\npresent at felony sentence proceedings, whether the judge usually\r\nordered a presentence report, whether victim information was requested\r\nor provided by the court, whether the prosecutor normally recommended\r\na type or duration of sentence to be imposed, whether police, victims,\r\nor witnesses were notified of the disposition of felony cases, whether\r\nthe prosecutor was involved in various types of appellate work, and\r\nwhether the prosecutor had any right of appeal from rulings on\r\nmotions, from sentences, and from determination of guilt or\r\ninnocence. General information gathered by the survey includes the\r\nnumber of jurisdictions contained in the prosecutorial district, the\r\nnumber of attorneys and investigators employed in the sampled\r\njurisdiction and in the prosecutorial district as a whole, the length\r\nof the prosecutor's term of office, the number of law enforcement\r\nagencies that brought arrests into the jurisdiction's court, how much\r\nof the prosecutor's felony caseload was assigned on a vertical basis,\r\nthe kinds of nonfelony matters the prosecutor had responsibility for\r\nor jurisdiction over (e.g., family and domestic relations, mental\r\ncommitments, environmental protection, traffic, etc.), whether the\r\noffice of prosecutor was an elective position, and whether it was a\r\nfull- or part-time position. Other general items include whether any\r\nfelony defendants were provided an attorney on the grounds of\r\nindigency, whether, in criminal cases involving both state and federal\r\njurisdiction, the prosecutor would ordinarily be cross-designated to\r\nrepresent the prosecutor in both courts, whether the prosecutor's\r\noffice contained a \"career criminal\" unit, whether the state's\r\nattorney general was entitled to try cases in the jurisdiction's\r\nfelony court, which types of criminal history data normally were of\r\npractical value in felony prosecution, and who supervised the\r\nprobationer in most cases of adult felons sentenced to probation.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "1101",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "attorneys",
+    "case processing",
+    "district attorneys",
+    "evidence",
+    "felony courts",
+    "felony offenses",
+    "plea negotiations",
+    "policies and procedures",
+    "prosecuting attorneys",
+    "prosecution",
+    "sentencing",
+    "state courts",
+    "trial procedures"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2181",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "1992-03-04T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09579.v1",
+      "title": "National Prosecutors Survey, 1990"
+    }
+  ]
+}

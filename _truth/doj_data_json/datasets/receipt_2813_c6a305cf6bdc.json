@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Census of Urban Crime, 1970",
+  "description": "This data collection contains information on urban crime in\r\nthe United States. The 331 variables include crime incidence, criminal\r\nsanctions, police employment, police expenditures, police\r\nunionization, city revenues and sources of revenue (including\r\nintergovernmental transfers), property values, public sector package\r\ncharacteristics, demographic and socioeconomic characteristics, and\r\nhousing and land use characteristics. The data were primarily gathered\r\nfrom various governmental censuses: Census of Population, Census of\r\nHousing, Census of Government, Census of Manufactures, and Census of\r\nBusiness. UNIFORM CRIME REPORTING PROGRAM DATA [UNITED STATES] (ICPSR\r\n9028) and EXPENDITURE AND EMPLOYMENT DATA FOR THE CRIMINAL JUSTICE\r\nSYSTEM (ICPSR 7818) were used as supplemental sources.",
+  "modified": "1992-02-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2813",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "cities",
+    "crime",
+    "crime control programs",
+    "crime prevention",
+    "criminal justice policy",
+    "government revenues",
+    "housing",
+    "municipal expenditures",
+    "police",
+    "police effectiveness",
+    "property values",
+    "revenues",
+    "urban crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1985-01-11T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08275.v1",
+      "title": "Census of Urban Crime, 1970"
+    }
+  ]
+}

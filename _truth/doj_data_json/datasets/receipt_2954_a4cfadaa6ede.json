@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "A Systematic Analysis of Product Counterfeiting Schemes, Offenders, and Victims, 43 states and 42 countries, 2000-2015",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor.  The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers.  Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nProduct counterfeiting is the fraudulent reproduction of trademark, copyright, or other intellectual property related to tangible products without the authorization of the producer and motivated by the desire for profit. This  study create a Product Counterfeiting Database (PCD) by assessing multiple units of analysis associated with counterfeiting crimes from 2000-2015: (1) scheme; (2) offender (individual); (3) offender (business); (4) victim (consumer); and (5) victim (trademark owner). Unique identification numbers link records for each unit of analysis in a relational database. \r\nThe collection contains 5 Stata files and 1 Excel spreadsheet file.\r\n\r\nScheme-Data.dta                    (n=196, 35 variables)\r\nOffender-Individual-Data.dta       (n=551, 16 variables)\r\nOffender-Business-Data.dta         (n=310, 5 variables)\r\nVictim-Consumer-Data.dta           (n=54, 8 variables)\r\nVictim-Trademark-Owner-Data.dta    (n=146, 5 variables)\r\nRelational-Data.xlsx               (4 spreadsheet tabs)\r\n\r\n",
+  "modified": "2021-07-07T19:53:20",
+  "accessLevel": "restricted public",
+  "identifier": "2954",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "electronics",
+    "food industry",
+    "intellectual property",
+    "offenders",
+    "pharmaceutical",
+    "product counterfeiting",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2019-05-28T13:25:40",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37177.v2",
+      "title": "A Systematic Analysis of Product Counterfeiting Schemes, Offenders, and Victims, 43 states and 42 countries, 2000-2015"
+    }
+  ]
+}

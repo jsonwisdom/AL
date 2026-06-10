@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Linking Theory to Practice: Examining Geospatial Predictive Policing, Denver, Colorado, 2013-2015",
+  "description": "This research sought to examine and evaluate geospatial predictive policing models across the United States. The purpose of this applied research is three-fold: (1) to link theory and appropriate data/measures to the practice of predictive policing; (2) to determine the accuracy of various predictive policing algorithms to include traditional hotspot analyses, regression-based analyses, and data-mining algorithms; and (3) to determine how algorithms perform in a predictive policing process.\r\nSpecifically, the research project sought to answer questions such as:\r\n\r\nWhat are the underlying criminological theories that guide the development of the algorithms and subsequent strategies? \r\n What data are needed in what capacity and when? \r\n What types of software and hardware are useful and necessary? \r\n How does predictive policing \"work\" in the field? What is the practical utility of it? \r\n How do we measure the impacts of predictive policing? \r\n \r\nThe project's primary phases included: (1) employing report card strategies to analyze, review and evaluate available data sources, software and analytic methods; (2) reviewing the literature on predictive tools and predictive strategies; and (3) evaluating how police agencies and researchers tested predictive algorithms and predictive policing processes.",
+  "modified": "2020-02-26T09:27:00",
+  "accessLevel": "restricted public",
+  "identifier": "3631",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime mapping",
+    "crime prediction",
+    "forecasting models",
+    "police departments",
+    "police reports"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2020-02-26T09:19:10",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37299.v1",
+      "title": "Linking Theory to Practice: Examining Geospatial Predictive Policing, Denver, Colorado, 2013-2015"
+    }
+  ]
+}

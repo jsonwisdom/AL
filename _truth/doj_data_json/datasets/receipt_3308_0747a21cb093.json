@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Gender and Violent Victimization, 1973-2005 [United States]",
+  "description": "The purpose of this project was to estimate long-term trends in violent victimization by gender and various socio-demographic factors. These factors included race and ethnicity, age, type of place (urban, suburban, rural), socio-economic status, marital status (for adults), and family status (for juveniles). The principal investigators also further disaggregated these violent victimization trends by victim-offender relationship to reveal trends in violence committed by strangers, intimate partners, and known/non-intimate offenders.  The researchers produced these various trends in violent victimization by pooling and appropriately weighting the National Crime Survey and its successor, the National Crime Victimization Survey for the period 1973 to 2005, resulting in 33 years of data. In total, a series of 135 trends in violent victimization were developed.",
+  "modified": "2012-09-20T09:23:57",
+  "accessLevel": "public",
+  "identifier": "3308",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "age",
+    "crime",
+    "crime patterns",
+    "crime statistics",
+    "gender",
+    "intimate partner violence",
+    "marital status",
+    "poverty",
+    "race",
+    "trends",
+    "victimization",
+    "violence",
+    "violent crime",
+    "violent crime statistics"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2012-09-20T09:23:57",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR27082.v1",
+      "title": "Gender and Violent Victimization, 1973-2005 [United States]"
+    }
+  ]
+}

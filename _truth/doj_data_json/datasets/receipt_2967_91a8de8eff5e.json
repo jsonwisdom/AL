@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Evaluating a Lethality Scale for the Seattle Police Department Domestic Violence Unit, 1995-1997",
+  "description": "The specific aim of this project was to evaluate the\r\nusefulness of the Seattle Police Department's (SPD) Lethality Scale in\r\nidentifying misdemeanor cases that might be high risk for escalating\r\nviolence and subsequent felony incidents. Data provide information on\r\n11,972 unique couples with incidents occurring between January 1,\r\n1995, and December 31, 1997, involving intimate couples in which the\r\nsuspect was at least 18 years old and the victim was at least 16,\r\nwith no age restriction for cases referred to the juvenile\r\ndivision. The researchers reformatted the Domestic Violence Unit's\r\n(DVU) database to reflect a three-year history of violence between\r\nunique couple members. Only intimate couples were considered, meaning\r\nsuspects and victims who were married, divorced, had a child in\r\ncommon, or were dating. The Lethality Scale was derived from the data\r\nin the DVU database. It was composed of six incident characteristic\r\ncomponents (offense score, weapon score, location score, injury score,\r\npersonal score, and incident/other score) with varying values that\r\ncontributed to an overall score. The Total Lethality Score was the sum\r\nof the values from these six components. The lethality score referred\r\nto an individual only and did not reflect information about other\r\npeople involved in the incident. To interpret the score, the DVU\r\nspecified a period of time--for example, six months--and computed\r\nlethality score values for every person involved in an incident during\r\nthis period. Information on individuals with a Total Lethality Score\r\nover a certain cut-off was printed and reviewed by a detective. Data\r\nare provided for up to 25 incidents per unique couple. Incident\r\nvariables in the dataset provide information on number of persons\r\ninvolved in the incident, time and weekday of the incident, beat,\r\nprecinct, census tract, and place where the incident occurred, type of\r\nprimary and secondary offenses, if a warrant was served, charges\r\nbrought, final disposition, weapon type used, arrests made, court\r\norder information, if evidence was collected, if statements or photos\r\nwere taken by the DVU, and sergeant action. Dates were converted to\r\ntime intervals and provide the number of days between the incident\r\ndate and the date the file was sent to the prosecutor, the date\r\ncharges were brought, and the date the case was officially\r\nclosed. Time intervals were also calculated for days between each\r\nincident for that couple. Personal information on the two persons in a\r\ncouple includes age, gender, injuries and treatment, relationship and\r\ncohabitation status of the individuals, pregnancy status of each\r\nindividual, alcohol and drug use at the time of the incident, and role\r\nof the individual in the incident (victim, suspect,\r\nvictim/suspect). Lethality scale scores are included as well as the\r\nnumber of incidents in which the unique couple was involved in 1995\r\nand 1996, and 1989 median household income for the census tract.",
+  "modified": "2012-08-22T09:05:04",
+  "accessLevel": "restricted public",
+  "identifier": "2967",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime prediction",
+    "criminal histories",
+    "domestic violence",
+    "felony offenses",
+    "misdemeanor offenses",
+    "program evaluation",
+    "risk assessment"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2001-12-21T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03026.v1",
+      "title": "Evaluating a Lethality Scale for the Seattle Police Department Domestic Violence Unit, 1995-1997"
+    }
+  ]
+}

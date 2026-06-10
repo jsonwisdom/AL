@@ -1,0 +1,67 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Uniform Crime Reports:  Offenses Known and Clearances by Arrest Time Series Data, 1965-1983",
+  "description": "The Uniform Crime Reporting (UCR) Program Data is a system \r\n designed to monitor the incidence of crime and the activities of law \r\n enforcement agencies at the community level. Participating local law \r\n enforcement agencies throughout the nation report regularly (usually on \r\n a monthly basis) on the volume of selected crimes and arrests and also \r\n on the levels of police personnel and types of police activities. This \r\n collection consists of time series data relating to offenses known and \r\n clearances by arrest for the years 1965-1983, 1970-1983, and 1975-1983. \r\n Only those agencies that consistently reported over the three time \r\n periods of the study were included. Consistently reporting agencies \r\n were defined as those agencies that were in operation during the time \r\n of the study and submitted nine or more monthly reports during the \r\n calendar year for the three specified time periods. Variables include \r\n number of actual offenses reported to the police, the total number of \r\n offenses for each category cleared by arrest, and the number of \r\n clearances by arrest involving only persons under 18 years of age. \r\n Crimes covered are criminal homicide, forcible rape, robbery, assault, \r\nburglary, larceny-theft, and motor vehicle theft.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2136",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "arrests",
+    "assault",
+    "auto theft",
+    "burglary",
+    "clearance rates",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "homicide",
+    "larceny",
+    "law enforcement",
+    "offenses",
+    "rape",
+    "robbery",
+    "vandalism",
+    "weapons offenses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2167",
+  "dataQuality": false,
+  "issued": "1990-05-09T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08631.v1",
+      "title": "Uniform Crime Reports:  Offenses Known and Clearances by Arrest Time Series Data, 1965-1983"
+    }
+  ]
+}

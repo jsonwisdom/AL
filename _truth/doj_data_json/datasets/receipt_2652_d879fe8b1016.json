@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Pretrial Reporting Program, 1992-1993",
+  "description": "This data collection effort was undertaken to determine\r\n whether accurate and comprehensive pretrial data can be collected at\r\n the local level and subsequently aggregated at the state and federal\r\n levels. The data contained in this collection provide a picture of\r\n felony defendants' movements through the criminal courts. The\r\n 1992-1993 National Pretrial Reporting Program database includes cases\r\n filed in May 1992 that were tracked through April 1993. Offenses were\r\n recoded into 15 broad categories that conformed to the Bureau of\r\n Justice Statistics' crime definitions. Other variables include sex,\r\n race, age, prior criminal record, relationship to the criminal justice\r\n system at the time of the offense, pretrial release, detention\r\n decisions, court appearances, pretrial rearrest, adjudication, and\r\nsentencing. The unit of analysis is the defendant.",
+  "modified": "2011-04-20T14:31:52",
+  "accessLevel": "restricted public",
+  "identifier": "2652",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "case processing",
+    "courts",
+    "criminal histories",
+    "criminal justice system",
+    "defendants",
+    "disposition (legal)",
+    "felons",
+    "felony courts",
+    "offenses",
+    "pretrial detentions",
+    "pretrial hearings",
+    "pretrial procedures",
+    "pretrial release",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2434",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "1995-06-06T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06489.v1",
+      "title": "National Pretrial Reporting Program, 1992-1993"
+    }
+  ]
+}

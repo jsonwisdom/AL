@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Exploring Alternative Data Sources for the Study of Assault in Miami, Florida, St. Louis, Missouri, and Pittsburgh, Pennsylvania, 1994 -1997",
+  "description": "The study involved the collection of data on serious assaults that occured in three cities: Miami, Florida (1996-1997), Pittsburgh, Pennsylvania (1994-1996), and St. Louis, Missouri (1995-1996). The data were extracted from police offense reports, and included detailed information about the incidents (Part 1) as well as information about the victims, suspects, and witnesses for each incident (Parts 2-9).",
+  "modified": "2013-06-10T16:59:36",
+  "accessLevel": "restricted public",
+  "identifier": "3427",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "aggravated assault",
+    "arrest records",
+    "arrest warrants",
+    "assault",
+    "crime reporting",
+    "police reports",
+    "victimization",
+    "violent crime",
+    "witnesses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2013-06-10T16:53:16",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04358.v1",
+      "title": "Exploring Alternative Data Sources for the Study of Assault in Miami, Florida, St. Louis, Missouri, and Pittsburgh, Pennsylvania, 1994 -1997"
+    }
+  ]
+}

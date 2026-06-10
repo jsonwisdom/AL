@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "State Court Organization, United States, 2011 ",
+  "description": "This data collection provides detailed comparative information about the structure, policies, and procedures of state-wide trial and appellate court systems for the 50 states and the District of Columbia in the United States for 2011. Information gathered includes: the number of courts and judges, judicial selection, governance of court systems (including judicial funding, administration, staffing, and procedures), jury qualifications and verdict rules, and processing and sentencing procedures of criminal cases. Data collection was carried out by the National Center for State Courts.  These data are part of a related collection from the 50 states, the District of Columbia, Puerto Rico, American Samoa, Guam, Northern Mariana Islands, and U.S. Virgin Islands in the United States for the years 1980, 1987, 1993, 1998, and 2004.\r\nIn 2011, State Court Organization added new variables to the data collection process. The State Court Organization 2011 file contains the historical variables for 2011, as well as the new variables that were introduced in the 2004 collection. The new variables included data about\r\nthe courts' information technology systems, including the functions of the court's IT staff, e-filing procedures, accessibility of court information through online systems, and the implementation of case management systems as a means of organizing and managing a court's caseload. The data are reported for trial and appellate courts.\r\nThe SCO Trial Court Level Data 2011 file includes a subset of the State Court Organization 2011 file, but only for trial level courts. Some variables in the State Court Organization 2011 file were recoded in the Trial Court Level Data 2011 file.",
+  "modified": "2019-04-22T11:53:24",
+  "accessLevel": "public",
+  "identifier": "2673",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "appellate courts",
+    "caseloads",
+    "court system",
+    "information technology",
+    "judge selection",
+    "judges",
+    "juries",
+    "policies and procedures",
+    "state courts",
+    "trial courts"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2019-04-22T11:53:24",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37195.v1",
+      "title": "State Court Organization, United States, 2011 "
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Community Context and Sentencing Decisions in 39 Counties in the United States, 1998  ",
+  "description": "This study aimed to understand the extent to which\r\n punishment is influenced by the larger social context in which it\r\n occurs by examining both the main and conditioning influence of\r\n community context on individual sentences. The primary research\r\n questions for this study were (1) Does community context affect\r\n sentencing outcomes for criminal defendants net of the influence of\r\n defendant and case characteristics? and (2) Does community context\r\n condition the influences of defendant age, race, and sex on sentencing\r\n outcomes? Data from the 1998 State Court Processing Statistics (SCPS)\r\n were merged with a unique county-level dataset that provided\r\n information on the characteristics of the counties in which defendants\r\n were adjudicated. County-level data included unemployment, crime\r\n rates, sex ratio, age structure, religious group affiliation, and\r\npolitical orientation.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3051",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "case processing",
+    "communities",
+    "counties",
+    "court cases",
+    "defendants",
+    "felons",
+    "sentencing",
+    "state courts"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2004-05-20T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03923.v1",
+      "title": "Community Context and Sentencing Decisions in 39 Counties in the United States, 1998  "
+    }
+  ]
+}

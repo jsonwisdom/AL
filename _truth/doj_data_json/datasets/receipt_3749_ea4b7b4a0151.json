@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Impact of Sentencing Reforms and Speedy Trial Laws in the United States, 1969-1989",
+  "description": "The certainty and promptness of punishment have long been \r\n hypothesized to be important variables in deterring crime. This data \r\n collection evaluates whether sentencing reforms to enhance certainty of \r\n punishment and speedy trial laws to enhance promptness of punishment \r\n affected crime rates, prison admissions, and prison populations. \r\n Variables include state, year, crime reports, economic conditions, \r\n population (including age structure), prison population, prison \r\n releases, and prison admissions. The unit of observation is the state \r\nby the year.",
+  "modified": "1992-03-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3749",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime rates",
+    "deterrence",
+    "inmate populations",
+    "prisons",
+    "punishment",
+    "sentencing",
+    "sentencing reforms",
+    "trials"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1992-03-04T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09736.v1",
+      "title": "Impact of Sentencing Reforms and Speedy Trial Laws in the United States, 1969-1989"
+    }
+  ]
+}

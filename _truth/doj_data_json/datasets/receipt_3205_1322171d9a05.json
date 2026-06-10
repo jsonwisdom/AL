@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Nature and Patterns of Homicide in Eight American Cities, 1978",
+  "description": "This dataset contains detailed information on homicides in \r\n eight United States cities: Philadelphia, Newark, Chicago, St. Louis, \r\n Memphis, Dallas, Oakland, and \"Ashton\" (a representative large \r\n western city). Detailed characteristics for each homicide victim \r\n include time and date of homicide, age, gender, race, place of birth, \r\n marital status, living arrangement, occupation, socioeconomic status \r\n (SES), employment status, method of assault, location where homicide \r\n occurred, relationship of victim to offender, circumstances surrounding \r\n death, precipitation or resistance of victim, physical evidence \r\n collected, victim's drug history, victim's prior criminal record, and \r\n number of offenders identified. Data on up to two offenders and three \r\n witnesses are also available and include the criminal history, justice \r\n system disposition, and age, sex, and race of each offender. \r\n Information on the age, sex, and race of each witness also was \r\n collected, as were data on witness type (police informant, child, \r\n eyewitness, etc.). Finally, information from the medical examiner's \r\n records including results of narcotics and blood alcohol tests of the \r\nvictim are provided.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3205",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "demographic characteristics",
+    "drug use",
+    "evidence",
+    "homicide",
+    "offenders",
+    "substance abuse",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1988-10-25T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08936.v1",
+      "title": "Nature and Patterns of Homicide in Eight American Cities, 1978"
+    }
+  ]
+}

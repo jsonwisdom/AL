@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Survey of DNA Crime Laboratories, 2001  ",
+  "description": "This study contains data from a survey of publicly operated\r\n forensic crime labs that perform deoxyribonucleic acid (DNA)\r\n testing. The survey was a follow-up to the initial survey of DNA crime\r\n labs in 1998 (ICPSR study 2879). The survey included questions about\r\n each lab's budget, personnel, procedures, equipment, and workloads in\r\n terms of known subject cases, unknown subject cases, and convicted\r\n offender DNA samples. The survey was sent to 135 forensic laboratories,\r\n and 124 responses were received from individual public laboratories and\r\n headquarters for statewide forensic crime laboratory systems. The\r\n responses included 110 publicly funded forensic laboratories that\r\nperformed DNA testing in 47 states.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "263",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "DNA fingerprinting",
+    "crime laboratories",
+    "criminal investigations",
+    "forensic sciences",
+    "personnel",
+    "policies and procedures"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2003-11-10T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03550.v1",
+      "title": "National Survey of DNA Crime Laboratories, 2001  "
+    }
+  ]
+}

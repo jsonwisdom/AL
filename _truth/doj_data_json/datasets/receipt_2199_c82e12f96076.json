@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Survey of Judges and Court Practitioners, 1991  ",
+  "description": "The United States Sentencing Commission, established by the\r\n 98th Congress, is an independent agency in the judicial branch of\r\n government. The Commission's primary function is to institute\r\n guidelines that prescribe the appropriate form and severity of\r\n punishment for offenders convicted of federal crimes. This survey was\r\n developed in response to issues that arose during site visits\r\n conducted in conjunction with an implementation study of sentencing\r\n guidelines and was intended to supplement the information obtained in\r\n the more extensive site visit interviews. Topics include the impact of\r\n the plea agreement, departures by the court, mandatory minimum\r\n sentences, the general issue of unwarranted sentencing disparity, and\r\n whether this disparity had increased, decreased, or stayed about the\r\nsame since the sentencing guidelines were imposed in 1987.",
+  "modified": "2000-10-27T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2199",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "convictions (law)",
+    "courts",
+    "federal offenses",
+    "judges",
+    "offenders",
+    "plea negotiations",
+    "pleas",
+    "policies and procedures",
+    "punishment",
+    "sentencing",
+    "sentencing guidelines"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1993-04-09T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09837.v1",
+      "title": "National Survey of Judges and Court Practitioners, 1991  "
+    }
+  ]
+}

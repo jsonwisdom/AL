@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Geographies of Urban Crime in Nashville, Tennessee, Portland, Oregon, and Tucson, Arizona, 1998-2002",
+  "description": "This research involved the exploration of how the\r\ngeographies of different crimes intersect with the geographies of\r\nsocial, economic, and demographic characteristics in Nashville,\r\nTennessee, Portland, Oregon, and Tucson, Arizona. Violent crime data\r\nwere collected from all three cities for the years 1998 through\r\n2002. The data were geo-coded and then aggregated to block groups and\r\ncensus tracts. The data include variables on 28 different crimes,\r\nnumerous demographic variables taken from the 2000 Census, and several\r\nland use variables.",
+  "modified": "2006-08-31T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2928",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "assault",
+    "census tract level",
+    "crime mapping",
+    "geographic information systems",
+    "homicide",
+    "larceny",
+    "neighborhoods"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2006-08-31T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04547.v1",
+      "title": "Geographies of Urban Crime in Nashville, Tennessee, Portland, Oregon, and Tucson, Arizona, 1998-2002"
+    }
+  ]
+}

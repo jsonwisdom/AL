@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Federal Justice Statistics Program: Criminal Appeals Cases in Courts of Appeals - Terminated, 2015",
+  "description": "The data contain records of criminal appeals cases terminated in United States Courts of Appeals during fiscal year 2015. The data were constructed from the Administrative Office of the United States Courts' (AOUSC) Court of Appeals file. These contain variables on the nature of the criminal appeal, the underlying offense, and the disposition of the appeal. An appeal can be filed by the government or the offender, and the appellant can appeal the sentence, the verdict, or both sentence and verdict. Appeals may be terminated on the merits or on procedural grounds. Of those that are terminated on the merits, the district court ruling may be affirmed, reversed, remanded to criminal court, or dismissed. The data file contains variables from the original AOUSC files as well as additional analysis variables. Variables containing identifying information (e.g., name, Social Security number) were either removed, coarsened, or blanked in order to protect the identities of individuals.\r\nThese data are part of a series designed by the Urban Institute (Washington, D.C.) and the Bureau of Justice Statistics. Data and documentation were prepared by the Urban Institute through 2012. Data from 2013 and on were prepared by Abt Associates.",
+  "modified": "2019-09-26T08:54:35",
+  "accessLevel": "restricted public",
+  "identifier": "2222",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "administration",
+    "appellate courts",
+    "court cases",
+    "criminal law",
+    "defendants",
+    "federal courts",
+    "judicial decisions",
+    "legal systems"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2174",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2019-09-26T08:52:38",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37343.v1",
+      "title": "Federal Justice Statistics Program: Criminal Appeals Cases in Courts of Appeals - Terminated, 2015"
+    }
+  ]
+}

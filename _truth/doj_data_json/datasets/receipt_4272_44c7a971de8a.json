@@ -1,0 +1,52 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Project on Human Development in Chicago Neighborhoods (PHDCN): Census Tract Crosswalk, 1994-2002",
+  "description": "The Project on Human Development in Chicago Neighborhoods (PHDCN) is a large-scale, interdisciplinary study of how families, schools, and neighborhoods affect child and adolescent development. The crosswalk file contains census tract to neighborhood cluster level data, enabling researchers to merge and aggregate additional crime and census data with the PHDCN data. Access to these data is restricted. Users must provide justification for their request to access the crosswalk file, as well as a description of any datasets they plan to link to the PHDCN data.",
+  "modified": "2021-10-28T09:09:22",
+  "accessLevel": "restricted public",
+  "identifier": "4272",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "census tract",
+    "neighborhood cluster"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2021-10-28T09:09:22",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR38204.v1",
+      "title": "Project on Human Development in Chicago Neighborhoods (PHDCN): Census Tract Crosswalk, 1994-2002"
+    }
+  ]
+}

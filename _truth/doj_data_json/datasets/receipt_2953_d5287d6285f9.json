@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Quantifying the Size and Geographic Extent of CCTV's Impact on Reducing Crime in Philadelphia, Pennsylvania, 2003-2013",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThis study was designed to investigate whether the presence of CCTV cameras can reduce crime by studying the cameras and crime statistics of a controlled area. The viewsheds of over 100 CCTV cameras within the city of Philadelphia, Pennsylvania were defined and grouped into 13 clusters, and camera locations were digitally mapped. Crime data from 2003-2013 was collected from areas that were visible to the selected cameras, as well as data from control and displacement areas using an incident reporting database that records the location of crime events. Demographic information was also collected from the mapped areas, such as population density, household information, and data on the specific camera(s) in the area. This study also investigated the perception of CCTV cameras, and interviewed members of the public regarding topics such as what they thought the camera could see, who was watching the camera feed, and if they were concerned about being filmed.",
+  "modified": "2017-08-25T11:57:29",
+  "accessLevel": "restricted public",
+  "identifier": "2953",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrests",
+    "crime",
+    "crime prevention",
+    "crime reduction",
+    "geographic information systems",
+    "video surveillance"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2017-08-25T11:55:42",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR35514.v1",
+      "title": "Quantifying the Size and Geographic Extent of CCTV's Impact on Reducing Crime in Philadelphia, Pennsylvania, 2003-2013"
+    }
+  ]
+}

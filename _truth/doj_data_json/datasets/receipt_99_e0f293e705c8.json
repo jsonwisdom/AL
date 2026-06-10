@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Commercial Victimization Surveys, 1973-1977 [United States]: National Sample",
+  "description": "These Commercial Victimization Surveys were collected as\r\npart of the National Crime Surveys. They document burglary and robbery\r\nincidents for all types of commercial establishments, as well as\r\npolitical, cultural, and religious organizations. Business\r\ncharacteristics gathered include form of ownership and operation, size\r\nand type of business, and security measures. Information regarding the\r\nreported incidents includes time and place, weapon involvement,\r\noffender and entry characteristics, injuries and deaths, and type and\r\nvalue of stolen property. Data were collected by calendar quarter for\r\nfour quarters in 1973-1976 and for two quarters in 1977, while the\r\nactual incidents reported in the files reflect those occurring six\r\nmonths prior to the interview date.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "99",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "armed robbery",
+    "burglary",
+    "cities",
+    "crime rates",
+    "larceny",
+    "national crime statistics (USA)",
+    "offenders",
+    "organizations",
+    "robbery",
+    "security systems",
+    "urban crime",
+    "victimization"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08003.v2",
+      "title": "Commercial Victimization Surveys, 1973-1977 [United States]: National Sample"
+    }
+  ]
+}

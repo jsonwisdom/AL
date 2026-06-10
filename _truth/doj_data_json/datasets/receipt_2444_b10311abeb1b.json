@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Annual Probation Survey Series",
+  "description": "The Annual Probation Surveys collect administrative data from probation agencies in the United States. Data Collected include the total number of adults on state and federal probation on January 1 and December 31 of each year,  the number of adults entering and exiting probation supervision each year, and the characteristics of adults under the supervision of probation agencies. The surveys cover all 50 states, the federal system, and the District of Columbia.\r\nA crosswalk of the items included in each year of the Annual Probation Survey series, and the variable names and variable labels that have been assigned in the NACJD documentation and datasets is available.\r\nResearchers may also be interested in the companion series Annual Parole Survey Series.\r\n",
+  "modified": "2021-10-28T11:13:30",
+  "accessLevel": "public",
+  "identifier": "2444",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "criminal justice system",
+    "offenses",
+    "probation",
+    "probationers",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2011-06-22T18:02:48",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/327",
+      "title": "Annual Probation Survey Series"
+    }
+  ]
+}

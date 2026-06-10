@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Improving Correctional Classification, New York, 1981-1983",
+  "description": "There were three specific goals of this research. The first\r\n was to evaluate three procedures currently available for the\r\n classification of correctional inmates: the Risk Analysis method,\r\n Megargee's Minnesota Multiphasic Personality Inventory Typology, and\r\n Toch's Prison Preference Inventory. Second, the research devised and\r\n tested a postdictive model of adjustment to prison life. Third, a new\r\n classification scheme was developed for predicting inmate adjustment\r\n to prison life that considers individual and organizational\r\n (contextual) factors and various interactions between the two. These\r\n data were collected from a sample of 942 volunteer inmates from ten\r\n New York state correctional facilities, five of which were maximum\r\n security and five of which were medium security facilities. Only\r\n one-half of the original 942 inmates completed the MMPI. Background\r\n and questionnaire data were collected during the summer and fall of\r\n 1983. Outcome data on each inmate infraction were collected for a\r\n three-year period prior to that time. Each case in Part 1, Merged\r\n Survey Response File [PPQ, PEI, PAQ], represents survey response data\r\n from an individual inmate, with variables from the Prison Preference\r\n Questionnaire (PPQ), the Prison Environment Inventory (PEI), and the\r\n Prison Adjustment Questionnaire (PAQ). Cases in Part 2, Medical\r\n Records, are records of medical contacts and diagnoses of inmates'\r\n illnesses. Part 3, Minnesota Multiphasic Personality Inventory,\r\n contains personality assessment information and scores for each\r\n individual offender. Data in Part 4, Sample Data [Background\r\n Characteristics], consist of individual-based variables covering\r\n inmates' background characteristics. Part 5, Offenses and Disciplinary\r\n Action Records, contains records of offenses and disciplinary action\r\n by individual offender. The client number is unique and consistent\r\nacross all data files.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3742",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "United States",
+    "correctional facilities",
+    "criminal justice system",
+    "health",
+    "inmates",
+    "mental health"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1985-10-09T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08437.v1",
+      "title": "Improving Correctional Classification, New York, 1981-1983"
+    }
+  ]
+}

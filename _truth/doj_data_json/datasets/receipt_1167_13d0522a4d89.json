@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Dating Violence Among Latino Adolescents (DAVILA) Study [United States], 2010-2012",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.The Dating Violence among Latino Adolescents (DAVILA) study assessed the victimization experience of a national sample of 1,525 Latino adolescents living in the United States. Trained professionals from an experienced survey research firm conducted the interviews over the phone in either English or Spanish, from September 2011 through February 2012.The purpose of the study was to: Determine extent of dating violence in a sample of male and female Latino adolescents;Determine the coexistence of other forms of victimization among those who experienced dating violence;Examine formal service utilization among Latino adolescents who experienced dating violence;Examine informal help-seeking among Latino adolescents who experienced data violence;Examine culturally-relevant factors associated with the experience of and responses to dating violence;Determine the psychological impact of dating violence on Latino adolescents; andEvaluate the role of social resources on victimizations and psychosocial functioning among victimized Latino adolescents.",
+  "modified": "2016-05-20T21:50:59",
+  "accessLevel": "restricted public",
+  "identifier": "1167",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "Hispanic or Latino Americans",
+    "adolescents",
+    "dating (social)",
+    "domestic violence",
+    "victimization"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2016-05-20T21:48:30",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR34630.v1",
+      "title": "Dating Violence Among Latino Adolescents (DAVILA) Study [United States], 2010-2012"
+    }
+  ]
+}

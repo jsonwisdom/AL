@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Monitoring of Federal Criminal Convictions and Sentences: Appeals Data, 2015",
+  "description": "This collection contains appellate information from the 12\r\ncircuit courts of appeals of the United States. From the Clerk of the\r\nCourt of each court of appeals, the United States Sentencing\r\nCommission compiled the final opinions and orders, both published and\r\nunpublished, in all criminal appeals for the time period surveyed. The\r\nCommission also collected habeas corpus decisions even though they are\r\ntechnically civil matters, because such cases often involve sentencing\r\nissues. Both the \"case\" and the \"defendant\" are used in this\r\ncollection as units of analysis. Each case comprises individual\r\nrecords representing all codefendants participating in a consolidated\r\nappeal. Each defendant's record comprises the sentencing-related\r\nissues corresponding to that particular defendant.",
+  "modified": "2016-12-07T15:08:36",
+  "accessLevel": "public",
+  "identifier": "2574",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "appeal procedures",
+    "appellate courts",
+    "convictions (law)",
+    "court cases",
+    "criminal histories",
+    "defendants",
+    "federal courts",
+    "habeas corpus",
+    "judicial decisions",
+    "legal appeals",
+    "offenses",
+    "sentence review",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2175",
+  "dataQuality": false,
+  "issued": "2016-12-07T15:08:36",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36572.v1",
+      "title": "Monitoring of Federal Criminal Convictions and Sentences: Appeals Data, 2015"
+    }
+  ]
+}

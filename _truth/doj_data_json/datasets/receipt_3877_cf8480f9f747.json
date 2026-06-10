@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "An Examination of Child Support, Debt and Prisoner Reentry Using the SVORI Adult Male Dataset, 2004-2007 (United States)",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed. \r\n\r\nThis study is a secondary analysis of data from ICPSR Study Number 27101, Serious and Violent Offender Reentry Initiative (SVORI) Multi-site Impact Evaluation, 2004-2011 [United States]- specifically the adult male dataset -to examine the associations among child support obligations, employment and reentry outcomes. The study addressed the following research questions:\r\n\r\n Are the demographic, criminal justice and employment-related characteristics of incarcerated men with child support orders significantly different in any important way from incarcerated males without child support orders?\r\n Did SVORI clients receive more support and services related to child support orders and modification of debt after release from prison compared to non-SVORI participants?\r\n Does having legal child support obligations decrease the likelihood of employment in later waves, net of key demographic and criminal justice history factors? \r\nHow does employment influence the relationship between child support debt and recidivism? and \r\n Is family instrumental support a significant predictor of reduced recidivism or increased employment in models assessing the relationship between child support obligations, employment and recidivism? \r\n\r\n\r\nThe study includes one document (Syntax_ChildSupport_Reentry_forICPSR_2012-IJ-CX-0012.docx) which contains SPSS and Stata syntax used to create research variables.",
+  "modified": "2018-01-23T15:34:22",
+  "accessLevel": "public",
+  "identifier": "3877",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "child support",
+    "debt",
+    "employment",
+    "financial support",
+    "inmate release plans",
+    "offenders",
+    "prisoner reentry",
+    "recidivism",
+    "recidivists",
+    "violence",
+    "violent crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2018-01-23T15:34:22",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36066.v1",
+      "title": "An Examination of Child Support, Debt and Prisoner Reentry Using the SVORI Adult Male Dataset, 2004-2007 (United States)"
+    }
+  ]
+}

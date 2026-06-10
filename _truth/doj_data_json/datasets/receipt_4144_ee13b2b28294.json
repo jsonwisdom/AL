@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Crime Victimization Survey: MSA Public-Use Data, 2000-2015",
+  "description": "Through a cooperative agreement, RTI International worked with the Bureau of Justice Statistics (BJS) to create public-use files of victimization data for the 52 largest metropolitan statistical areas (MSAs) covering the 2000-2015 survey years. The National Crime Victimization Survey (NCVS) is one of two national indicators of crime in the U.S. Historically, NCVS estimates of crime were not available at the state or local level because, prior to 2016, the NCVS sample was designed to exclusively produce national estimates. It is important to be able to understand victimization and victimization risk at the local level to inform and improve crime prevention efforts, investigation and victim response practices, and the location and mix of victim services.\r\nTo protect respondent confidentiality, with a few exceptions, subnational identifiers are traditionally not included on NCVS public-use files. Instead, information required to conduct analyses of crime at subnational levels must be accessed through a Federal Statistical Research Data Center (FSRDC) by obtaining Special Sworn Status from the U.S. Census Bureau. To provide a greater number of analysts with access to NCVS subnational data, in 2007 the Bureau of Justice Statistics (BJS) released a public-use file containing person- and incident-level data from 1979-2004 for the \"core\" counties (i.e., self-representing PSUs) within the 40 largest metropolitan statistical areas (MSAs). To accommodate interest from analysts and other interested parties in updating the file with more recent data, BJS has created public-use files for the 52 largest MSAs covering the 2000-2015 survey years.\r\nThe 52 MSAs included on these files are those with a 2015 population of 1 million or more persons and an average annual NCVS sample size of at least 250 persons during the period of 2006-2015. While some of the MSAs from these files were also included on the 1979-2004 version, the definitions used to define MSAs are not the same. The 1979-2004 files were based on the \"core\" counties that were common to the MSA definitions determined by the Office of Management and Budget (OMB) for the 1970-, 1980-, and 1990-based NCVS sample designs. For the current files (i.e., 2000-2015), MSA definitions are based on the most recent delineation files available from OMB at the time of data collection for each survey year included on the files.",
+  "modified": "2022-03-21T17:48:05",
+  "accessLevel": "public",
+  "identifier": "4144",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "crime",
+    "metropolitan statistical areas",
+    "victimization",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2432",
+  "dataQuality": false,
+  "issued": "2022-03-21T17:48:05",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR38321.v1",
+      "title": "National Crime Victimization Survey: MSA Public-Use Data, 2000-2015"
+    }
+  ]
+}

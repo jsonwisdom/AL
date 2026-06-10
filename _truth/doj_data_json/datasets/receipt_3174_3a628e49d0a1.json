@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Multi-site National Institute of Justice Evaluation of Second Chance Act Reentry Courts in Seven States, 2012-2016",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they there received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except of the removal of direct identifiers. Users should refer to the accompany readme file for a brief description of the files available with this collections and consult the investigator(s) if further information is needed.The study used a multi-method approach including 1. a process evaluation in all eight sites involving yearly site visits from 2012 to 2014 with key stakeholder interviews, observations, and participant focus groups; 2. a prospective impact evaluation (in four sites) including interviews at release from jail or prison and at 12 months after release (as well as oral swab drug tests) with reentry court participants and a matched comparison group; 3. a recidivism impact evaluation (in seven sites) with a matched comparison group tracking recidivism for 2 years post reentry court entry and 4. a cost-benefit evaluation (in seven sites) involving a transactional and institutional cost analysis (TICA) approach. Final administrative data were collected through the end of 2016.This collection includes four SPSS data files: \"interview_archive2.sav\" with 746 variables and 412 cases, \"NESCCARC_Archive_File_3.sav\" with 518 variables and 3,710 cases, \"Interview Data1.sav\" with 1,356 variables and 412 cases, \"NESCCARC Admin Data File.sav\" with 517 variables and 3,710 cases, and three SPSS syntax files: \"Interview Syntax.sps\", \"archive_2-17.sps\", and \"NESCCARC Admin Data Syntax.sps\".",
+  "modified": "2018-07-24T09:59:16",
+  "accessLevel": "restricted public",
+  "identifier": "3174",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "court costs",
+    "courts",
+    "criminal histories",
+    "drug use",
+    "justice",
+    "mental health",
+    "parole",
+    "prisoner reentry",
+    "probation",
+    "process evaluation",
+    "punishment",
+    "recidivism",
+    "sanctions",
+    "substance abuse treatment",
+    "victimization"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-07-24T09:57:09",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36748.v1",
+      "title": "Multi-site National Institute of Justice Evaluation of Second Chance Act Reentry Courts in Seven States, 2012-2016"
+    }
+  ]
+}

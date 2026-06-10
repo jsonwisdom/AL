@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Census of Juveniles in Residential Placement, 2017 [United States]",
+  "description": "The Census of Juveniles in Residential Placement (CJRP), conducted every other year, asks juvenile residential custody facilities in the United States to describe all youth assigned a bed in the facility on a specified reference date. In 2017, the reference date was Wednesday, October 25 (the fourth Wednesday in October).\r\nEach record in the data provides information on a juvenile in a residential facility on the reference date, including information on placement (e.g. placing agency), the judicial process (e.g. court adjudication status), and demographics (e.g. age). Each record that provides information about a juvenile also includes information about institutional characteristics (e.g. facility type, use of locked doors or gates), treatment services, and population of the facility in which the juvenile was held. Therefore, CJRP data can be analyzed at the individual or facility level.\r\nThe census was not sent to adult facilities or to facilities exclusively for drug or mental health treatment or for abused or neglected children. Some state and regional agencies provide CJRP data for more than one facility under their jurisdiction.",
+  "modified": "2021-07-29T12:06:55",
+  "accessLevel": "restricted public",
+  "identifier": "4290",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "correctional facilities",
+    "drug law offenses",
+    "group homes",
+    "juvenile detention",
+    "juvenile offenders",
+    "juveniles",
+    "property crimes",
+    "status offenses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "3997",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2021-07-29T12:05:21",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37952.v1",
+      "title": "Census of Juveniles in Residential Placement, 2017 [United States]"
+    }
+  ]
+}

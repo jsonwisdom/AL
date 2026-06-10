@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Improving the Success of Reentry Programs: Identifying the Impact of Service-Need Fit on Recidivism in 14 States, 2004-2011",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThis study, with assistance from the National Institute of Justice's Data Resources Program (FY2012), is a reanalysis of data from the national evaluation of the federal Serious and Violent Offender Reentry Initiative (SVORI). SVORI provided funding to 69 agencies across the United States to enhance reentry programs and coordination between corrections and community services. The national evaluation covered 16 of these sites, twelve of which provided services to the 2,054 adult ex-prisoners who are the focus of the present study. \r\n The purpose of this study is to understand whether or not offenders receive the services they say they need, and whether the degree of 'fit' between this self-reported criminogenic need and services received is related to recidivism. This study analyzes data from the SVORI multisite evaluation to assess the potential explanations for the mixed effectiveness of reentry programs. The goal is to understand whether or not service-risk/need fit is related to successful reentry outcomes, or whether the needs of returning prisoners are unrelated to their risk of recidivism regardless of how well they are addressed. For the present study researchers obtained the SVORI (ICPSR 27101) outcome evaluation datasets from the National Archive of Criminal Justice Data (NACJD). The archive holds four separate datasets from the evaluation: Adult Males Data (Part 1, N=1,697), Adult Females Data (Part 2, N=357), Juvenile Males Data (Part 3, N=337) and official recidivism and reincarceration data (Part 4, N=35,469), which can be linked on a one-to-many basis with the individual-level data in the other three datasets. To prepare the SVORI data for analysis researchers merged Datasets 1 and 2 (Adult Males and Adult Females) and created seven separate datasets containing Waves 1 through 4 survey data, National Crime Information Center (NCIC) crime data, administrative data, and sampling weights.\r\nThis deposit to NACJD is intended to complement the existing SVORI dataset (ICPSR 27101). It contains an R syntax file to be used with the datasets contained in the ICPSR 27101 collection. ",
+  "modified": "2017-06-29T08:50:05",
+  "accessLevel": "public",
+  "identifier": "3335",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "community service programs",
+    "corrections",
+    "criminal histories",
+    "ex-offenders",
+    "inmate release plans",
+    "job training",
+    "needs assessment",
+    "offenders",
+    "outcome evaluation",
+    "postrelease programs",
+    "prisoner reentry",
+    "program evaluation",
+    "recidivism",
+    "recidivists",
+    "substance"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2017-06-29T08:50:05",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR35610.v1",
+      "title": "Improving the Success of Reentry Programs: Identifying the Impact of Service-Need Fit on Recidivism in 14 States, 2004-2011"
+    }
+  ]
+}

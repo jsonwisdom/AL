@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Termination of Criminal Careers:  Measurement of Rates and Their Determinants in Detroit SMSA, 1974-1977",
+  "description": "The purpose of this collection was to measure the length of \r\n criminal careers and to correlate these lengths with other \r\n characteristics such as age, race, sex, type of crimes committed, and \r\n frequency of prior arrests. Determining the length of criminal activity \r\n and its relation to other attributes is important in planning for \r\n services such as prison space. Because of the difficulty in directly \r\n monitoring illegal acts, arrests were used instead as an indicator of \r\n criminal activity. Arrest data were gathered for murder, rape, robbery, \r\n aggravated assault, burglary, and automobile theft. Using the first \r\n arrest as an adult which took place between 1974 and 1977 as a \r\n reference point, individuals' prior and continued activities were \r\n followed. The data provide basic demographic information about \r\n offenders and extensive information about arrests, from arrest charges \r\nthrough final disposition.",
+  "modified": "1995-03-31T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3838",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrests",
+    "assault",
+    "auto theft",
+    "burglary",
+    "career criminals",
+    "criminal histories",
+    "murder",
+    "rape",
+    "robbery"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1992-01-10T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09666.v1",
+      "title": "Termination of Criminal Careers:  Measurement of Rates and Their Determinants in Detroit SMSA, 1974-1977"
+    }
+  ]
+}

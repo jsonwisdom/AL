@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Directory of Law Enforcement Agencies, 1996:  [United States]  ",
+  "description": "To ensure an accurate sampling frame for its Law\r\n Enforcement Management and Administrative Statistics (LEMAS) survey,\r\n the Bureau of Justice Statistics periodically sponsors a census of the\r\n nation's state and local law enforcement agencies. This census, known\r\n as the Directory Survey, gathers data on 49 primary state law\r\n enforcement agencies and all sheriffs' departments, local police\r\n departments, and special police agencies (state or local) that are\r\n publicly funded and employ at least one sworn officer with general\r\n arrest powers. The 1996 Directory Survey collected data on the number\r\n of sworn and nonsworn personnel employed by each agency, including\r\n both full-time and part-time employees. Within the full-time sworn\r\n category, data were collected from all agencies on the number who were\r\n uniformed officers with regularly assigned duties that included\r\n responding to calls for service. For agencies with at least 10\r\n full-time sworn officers, the number whose primary duties were related\r\n to investigations, court operations, or jail operations was also\r\n obtained. This data collection, compiled in June 1996, represents the\r\n third such census, with the first occurring in 1986 (DIRECTORY OF LAW\r\n ENFORCEMENT AGENCIES, 1986: [UNITED STATES] [ICPSR 8696]) and the\r\n second in 1992 (DIRECTORY OF LAW ENFORCEMENT AGENCIES, 1992: [UNITED\r\n STATES] [ICPSR 2266]). Variables include personnel totals, type of\r\n government, type of agency, and whether the agency had the legal\r\nauthority to hold a person beyond arraignment for 48 or more hours.",
+  "modified": "1998-09-11T00:00:00",
+  "accessLevel": "public",
+  "identifier": "104",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "authority",
+    "full-time employment",
+    "law enforcement",
+    "law enforcement agencies",
+    "part-time employment",
+    "personnel",
+    "police departments",
+    "policies and procedures"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2436",
+  "dataQuality": false,
+  "issued": "1998-09-11T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02260.v1",
+      "title": "Directory of Law Enforcement Agencies, 1996:  [United States]  "
+    }
+  ]
+}

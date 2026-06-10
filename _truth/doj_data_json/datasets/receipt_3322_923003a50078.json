@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "The Long-Term Effects of Civil Legal Services on Battered Women [Iowa], 2012-2015",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThis study was a two-year panel study of how the receipt of civil legal services provided by Iowa Legal Aid (ILA), influences safety, psychological well-being and economic self-sufficiency outcomes for women who experienced Intimate Partner Violence (IPV) residing in metro and non-metro communities in Iowa. The study looked at both the provision of family law services (divorce, child custody, child support) and CPOs.  Also examined was the impact of the quality of the attorney-client relationship on women's sense of empowerment on these outcomes. Five waves of data were collected, starting with an initial assessment interview with four follow-up interviews conducted at 6-month intervals. Information collected includes women's history of IPV, measures of repeat abuse, psychological well-being and parenting, quality of the attorney-client relationship, and empowerment.",
+  "modified": "2017-12-20T08:23:44",
+  "accessLevel": "restricted public",
+  "identifier": "3322",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "battered women",
+    "civil law",
+    "domestic violence",
+    "intimate partner violence",
+    "legal aid",
+    "psychological wellbeing",
+    "victimization"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2017-12-20T08:19:28",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36451.v1",
+      "title": "The Long-Term Effects of Civil Legal Services on Battered Women [Iowa], 2012-2015"
+    }
+  ]
+}

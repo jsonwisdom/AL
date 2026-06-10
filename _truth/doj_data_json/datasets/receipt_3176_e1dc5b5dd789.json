@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "State-Level Data on Juvenile Delinquency and Violence, Mental-Health and Psychotropic-Medication Related Issues, and School Accountability, United States, 1990-2014",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\n\r\nThe research project has tested a possible explanation for the Great American Crime Decline of the 1990s and especially 2000s: the increasing rates at which psychotropic drugs are prescribed, especially to children and adolescents. Psychotropic drugs are often prescribed to youth for mental health conditions that involve disruptive and impulsive behaviors and learning difficulties. The effects of these drugs are thus expected to lead to the decrease in the juveniles' involvement in delinquency and violence.\r\nThe effects of two legislative changes are hypothesized to have contributed to the increased prescribing of psychotropic drugs to children growing up in families in poverty: 1) changes in eligibility for Supplemental Security Income (SSI) that made it possible for poor children to qualify for additional financial assistance due to mental health conditions (1990 and 1996), and 2) changes in school accountability rules following the passage of No Child Left Behind Act (2002) that put pressure on schools in some low-income areas to qualify academically challenged students as having ADHD or other learning disabilities.\r\n\r\nThe objectives of the project are: 1) to assemble a data set, using state-level data from various publicly available sources, containing information about trends in juvenile delinquency and violence, trends in psychotropic drug prescribing to children and adolescents, and various control variables associated with these two sets of trends; 2) to test the proposed hypotheses about the effect of increasing psychotropic medication prescribing to children and adolescents on juvenile delinquency and violence, using the assembled data set; and 3) to disseminate the scientific knowledge gained through this study among criminal justice researchers, psychiatric and public health scientists, as well as among a wider audience of practitioners and the general public.\r\nThis collection includes one SPSS file (Dataset_NIJ_GRANT_2014-R2-CX-0003_DV-IV_3-29-17.sav; n=1,275, 113 variables) and one Word syntax file (doc36775-0001_syntax.docx).",
+  "modified": "2019-06-25T10:44:07",
+  "accessLevel": "public",
+  "identifier": "3176",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "children",
+    "delinquent behavior",
+    "disabilities",
+    "juvenile offenders",
+    "mental health",
+    "poverty",
+    "prescription drugs",
+    "states (USA)",
+    "students",
+    "supplemental security income",
+    "violence"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2019-06-25T10:44:07",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36775.v1",
+      "title": "State-Level Data on Juvenile Delinquency and Violence, Mental-Health and Psychotropic-Medication Related Issues, and School Accountability, United States, 1990-2014"
+    }
+  ]
+}

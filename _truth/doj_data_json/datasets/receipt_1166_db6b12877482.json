@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Analysis of Rhode Island Domestic Violence Offenders on Probation, 1977-2012",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they there received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except of the removal of direct identifiers. Users should refer to the accompany readme file for a brief description of the files available with this collections and consult the investigator(s) if further information is needed.The purpose of the study was to:  Describe the prosecution and sentencing histories for domestic violence and other offenses;Determine the severity gap in prosecution and sentencing between these domestic violence and non-domestic violence over a six year period; andTo answer whether the variation in prosecution and sentencing severity predicts being subsequently charged for domestic violence in the future.Rhode Island was selected as the study site because it has a high domestic violence arrest rate and specifically distinguishes domestic violence from non-domestic violence offenses based on the relationships of the parties, not by specific type of crime. Further, Rhode Island's judiciary maintains a public web-based database, called CourtConnect, that includes an index of defendants by name and date of birth and lists all arrests followed by prosecution and court actions through final sentence. The criminal history information includes all charges filed in any Rhode Island court for the last 25 years. Two researchers independently coded offender data (Differential Sentencing Data - Persons, n=982) available on CourtConnect. Coders then determined whether the defendants were prosecuted for the charges brought against them (Differential Sentencing Data - Offenses, n=6,649). Offenses that were not prosecuted were differentiated from offenses that were prosecuted. Each charge was classified as domestic violence or non-domestic violence as defined by state statute.",
+  "modified": "2016-05-20T21:02:51",
+  "accessLevel": "restricted public",
+  "identifier": "1166",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "domestic violence",
+    "offenders",
+    "offenders sentencing",
+    "probation",
+    "recidivism",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2016-05-20T20:59:30",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR34571.v1",
+      "title": "Analysis of Rhode Island Domestic Violence Offenders on Probation, 1977-2012"
+    }
+  ]
+}

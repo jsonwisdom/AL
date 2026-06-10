@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Impact of Sentencing Guidelines on the Use of Incarceration in Federal Criminal Courts in the United States, 1984-1990  ",
+  "description": "The primary purpose of this data collection was to examine\r\n the impact of the implementation of sentencing guidelines on the rate\r\n of incarcerative and nonincarcerative sentences imposed and on the\r\n average length of expected time to be served in incarceration for all\r\n offenses as well as for select groups of offenses. The measure of\r\n sentence length, \"expected time to be served,\" was used to allow for\r\n assumed good time and parole reductions. This term represents the\r\n amount of time an offender can expect to spend in prison at the time\r\n of sentencing, a roughly equivalent standard that can be measured\r\n before and after the implementation of federal criminal sentencing\r\n guidelines in 1987. Three broad offense categories were studied: drug\r\n offenses, robbery, and economic crimes. Drug offenses include a wide\r\n range of illegal activities involving marijuana, heroin, and\r\n cocaine. Robbery includes bank and postal robbery (both armed and\r\n unarmed) as well as other types of robbery offenses that appear less\r\n frequently in the federal system, such as carrying a firearm during\r\n the commission of a robbery. Economic offenses include fraud (bank,\r\n postal, and other), embezzlement (bank, postal, and other), and tax\r\n evasion. Other monthly data are provided on the number of prison and\r\nprobation sentences for all offenses and by offense categories.",
+  "modified": "2000-06-05T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2201",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "courts",
+    "drug law offenses",
+    "imprisonment",
+    "parole",
+    "probation",
+    "program evaluation",
+    "robbery",
+    "sentencing",
+    "sentencing guidelines",
+    "tax evasion"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1993-04-09T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09845.v1",
+      "title": "Impact of Sentencing Guidelines on the Use of Incarceration in Federal Criminal Courts in the United States, 1984-1990  "
+    }
+  ]
+}

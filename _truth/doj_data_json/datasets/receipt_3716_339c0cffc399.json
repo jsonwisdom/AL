@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Police Corruption in Thirty Agencies in the United States, 1997  ",
+  "description": "This study examined police officers' perceptions of and\r\n tolerance for corruption. In contrast to the popular viewpoint that\r\n police corruption is a result of moral defects in the individual\r\n police officer, this study investigated corruption from an\r\n organizational viewpoint. The approach examined the ways rules are\r\n communicated to officers, how rules are enforced by supervisors,\r\n including sanctions for violation of ethical guidelines, the unspoken\r\n code against reporting the misconduct of a fellow officer, and the\r\n influence of public expectations about police behavior. For the\r\n survey, a questionnaire describing 11 hypothetical scenarios of police\r\n misconduct was administered to 30 police agencies in the United\r\n States. Specifically, officers were asked to compare the violations in\r\n terms of seriousness and to assess the level of sanctions each\r\n violation of policies and procedures both should and would likely\r\n receive. For each instance of misconduct, officers were asked about\r\n the extent to which they supported agency discipline for it and their\r\n willingness to report it. Scenarios included issues such as off-duty\r\n private business, free meals, bribes for speeding, free gifts,\r\n stealing, drinking on duty, and use of excessive force. Additional\r\n information was collected about the officers' personal\r\n characteristics, such as length of time in the police force (in\r\n general and at their agency), the size of the agency, and the level of\r\nrank the officer held.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3716",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "law enforcement agencies",
+    "perceptions",
+    "police corruption",
+    "police misconduct",
+    "police officers",
+    "policies and procedures",
+    "professional ethics",
+    "sanctions"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1999-08-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02629.v1",
+      "title": "Police Corruption in Thirty Agencies in the United States, 1997  "
+    }
+  ]
+}

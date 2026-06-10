@@ -1,0 +1,47 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "FOIA Request Logs",
+  "description": "A record of all Freedom of Information Act (FOIA) requests received and processed by the Civil Division. Includes details such as the subject of the request, the date received, and the disposition or status of the request. These logs help ensure accountability and allow the public to track the Civil Division's responsiveness to FOIA obligations.",
+  "modified": "2021-12-31T00:00:00",
+  "accessLevel": "public",
+  "identifier": "4350",
+  "publisher": {
+    "name": "Civil Division",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Civil Division (USDOJ)",
+    "hasEmail": "mailto:opendata@civ.gov"
+  },
+  "keyword": [
+    "FOIA",
+    "transparency",
+    "public records",
+    "information requests",
+    "accountability",
+    "disclosure"
+  ],
+  "bureauCode": [
+    "011:00"
+  ],
+  "programCode": [
+    "011:015"
+  ],
+  "temporal": "2009-01-01T00:00:00.0000000/2021-12-31T00:00:00.0000000",
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "systemOfRecords": "CIV:001",
+  "accrualPeriodicity": "R/PT1S",
+  "dataQuality": false,
+  "issued": "2015-01-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "landingPage": "https://www.justice.gov/civil/foia-library/logs",
+  "distribution": []
+}

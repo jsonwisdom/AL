@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Census of State and Federal Adult Correctional Facilities, 1995      ",
+  "description": "This census is the fifth enumeration of state adult\r\n correctional institutions and the second of federal institutions\r\n sponsored by the Bureau of Justice Statistics and conducted by the\r\n Bureau of the Census. Earlier censuses were completed in 1974 (ICPSR\r\n 7811), 1979 (ICPSR 7852), 1984 (ICPSR 8444), and 1990 (ICPSR 9908).\r\n Unlike the previous censuses, all respondents in 1995 were sent the\r\n same survey form. For each facility, information was provided on\r\n physical security, age, functions, capacity, court orders for specific\r\n conditions, one-day counts and average populations, race/ethnicity of\r\n inmates, inmate work assignments, inmate deaths, special inmate\r\ncounts, assaults, and incidents caused by inmates.",
+  "modified": "2003-03-21T00:00:00",
+  "accessLevel": "public",
+  "identifier": "89",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "correctional facilities (adults)",
+    "corrections",
+    "corrections management",
+    "inmate deaths",
+    "inmate populations",
+    "inmate programs",
+    "inmates",
+    "jails",
+    "prison administration",
+    "prison conditions",
+    "prison construction",
+    "prison overcrowding"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2168",
+  "dataQuality": false,
+  "issued": "1998-04-20T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06953.v1",
+      "title": "Census of State and Federal Adult Correctional Facilities, 1995      "
+    }
+  ]
+}

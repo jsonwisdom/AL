@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Improving the Investigation of Homicide and the Apprehension Rate of Murderers in Washington State, 1981-1986",
+  "description": "This data collection contains information on solved murders\r\n occurring in Washington State between 1981 and 1986. The collection is\r\n a subset of data from the Homicide Investigation Tracking System\r\n (HITS), a computerized database maintained by the state of Washington\r\n that contains information on murders and sexual assault cases in that\r\n state. The data for HITS are provided voluntarily by police and\r\n sheriffs' departments covering 273 jurisdictions, medical examiners'\r\n and coroners' offices in 39 counties, prosecuting attorneys' offices\r\n in 39 counties, the Washington State Department of Vital Statistics,\r\n and the Uniform Crime Report Unit of the Washington State Association\r\n of Sheriffs and Police Chiefs. Collected data include crime evidence,\r\n victimology, offender characteristics, geographic locations, weapons,\r\nand vehicles.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3198",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "databases",
+    "demographic characteristics",
+    "evidence",
+    "homicide",
+    "murder",
+    "offender profiles",
+    "police departments",
+    "police records",
+    "sexual assault",
+    "vehicles",
+    "victims",
+    "weapons"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1994-03-10T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06134.v1",
+      "title": "Improving the Investigation of Homicide and the Apprehension Rate of Murderers in Washington State, 1981-1986"
+    }
+  ]
+}

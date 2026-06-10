@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Examination of Crime Guns and Homicide in Pittsburgh, Pennsylvania, 1987-1998",
+  "description": "This study examined spatial and temporal features of crime\r\nguns in Pittsburgh, Pennsylvania, in order to ascertain how gun\r\navailability affected criminal behavior among youth, whether the\r\neffects differed between young adults and juveniles, and whether that\r\nrelationship changed over time. Rather than investigating the general\r\nprevalence of guns, this study focused only on those firearms used in\r\nthe commission of crimes. Crime guns were defined specifically as\r\nthose used in murders, assaults, robberies, weapons offenses, and drug\r\noffenses. The emphasis of the project was on the attributes of crime\r\nguns and those who possess them, the geographic sources of those guns,\r\nthe distribution of crime guns over neighborhoods in a city, and the\r\nrelationship between the prevalence of crime guns and the incidence of\r\nhomicide. Data for Part 1, Traced Guns Data, came from the City of\r\nPittsburgh Bureau of Police. Gun trace data provided a detailed view\r\nof crime guns recovered by police during a two-year period, from 1995\r\nto 1997. These data identified the original source of each crime gun\r\n(first sale to a non-FFL, i.e., a person not holding a Federal\r\nFirearms License) as well as attributes of the gun and the person\r\npossessing the gun at the time of the precipitating crime, and the\r\nZIP-code location where the gun was recovered. For Part 2, Crime\r\nLaboratory Data, data were gathered from the local county crime\r\nlaboratory on guns submitted by Pittsburgh police for forensic\r\ntesting. These data were from 1993 to 1998 and provided a longer time\r\nseries for examining changes in crime guns over time than the data in\r\nPart 1. In Parts 3 and 4, Stolen Guns by ZIP-Code Data and Stolen Guns\r\nby Census Tract Data, data on stolen guns came from the local\r\npolice. These data included the attributes of the guns and residential\r\nneighborhoods of owners. Part 3 contains data from 1987 to 1996\r\norganized by ZIP code, whereas Part 4 contains data from 1993 to 1996\r\norganized by census tract. Part 5, Shots Fired Data, contains the\r\nfinal indicator of crime gun prevalence for this study, which was 911\r\ncalls of incidents involving shots fired. These data provided vital\r\ninformation on both the geographic location and timing of these\r\nincidents. Shots-fired incidents not only captured varying levels of\r\naccess to crime guns, but also variations in the willingness to\r\nactually use crime guns in a criminal manner. Part 6, Homicide Data,\r\ncontains homicide data for the city of Pittsburgh from 1990 to\r\n1995. These data were used to examine the relationship between varying\r\nlevels of crime gun prevalence and levels of homicide, especially\r\nyouth homicide, in the same city. Part 7, Pilot Mapping Application,\r\nis a pilot application illustrating the potential uses of mapping\r\ntools in police investigations of crime guns traced back to original\r\npoint of sale. NTC. It consists of two ArcView 3.1 project files and\r\n90 supporting data and mapping files. Variables in Part 1 include date\r\nof manufacture and sale of the crime gun, weapon type, gun model,\r\ncaliber, firing mechanism, dealer location (ZIP code and state),\r\nrecovery date and location (ZIP code and state), age and state of\r\nresidence of purchaser and possessor, and possessor role. Part 2 also\r\ncontains gun type and model, as well as gun make, precipitating\r\noffense, police zone submitting the gun, and year the gun was\r\nsubmitted to the crime lab. Variables in Parts 3 and 4 include month\r\nand year the gun was stolen, gun type, make, and caliber, and owner\r\nresidence. Residence locations are limited to owner ZIP code in Part\r\n3, and 1990 Census tract number and neighborhood name in Part 4. Part\r\n5 contains the date, time, census tract and police zone of 911 calls\r\nrelating to shots fired. Part 6 contains the date and census tract of\r\nthe homicide incident, drug involvement, gang involvement, weapon, and\r\nvictim and offender ages. Data in Part 7 include state, county, and\r\nZIP code of traced guns, population figures, and counts of crime guns\r\nrecovered at various geographic locations (states, counties, and ZIP\r\ncodes) where the traced guns first originated in sales by an FFL to a\r\nnon-FFL individual. Data for individual guns are not provided in Part\r\n7.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3577",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "armed robbery",
+    "assault",
+    "criminality",
+    "drug law offenses",
+    "firearms",
+    "forensic sciences",
+    "gun control",
+    "gun ownership",
+    "gun registration",
+    "gun use",
+    "handguns",
+    "homicide",
+    "neighborhoods",
+    "public safety",
+    "weapons offenses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2001-04-12T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02895.v1",
+      "title": "Examination of Crime Guns and Homicide in Pittsburgh, Pennsylvania, 1987-1998"
+    }
+  ]
+}

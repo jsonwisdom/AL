@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Survey of Police Call Management Strategies and Community Policing Activities, 2000",
+  "description": "For this study, two different projects with an overlap of\r\npurpose made use of the same data, which were based on a national\r\nsample of 695 police departments. One project conducted background\r\nresearch for a guidebook on call management for community policing.\r\nThe other focused on the use of computer-aided dispatch (CAD) systems\r\nin community policing. Survey questions focused on the types of CAD\r\nsystems, call management strategies, and community policing activities\r\nemployed by each of the departments. Variables include types of CAD\r\ndata used, use of different call management strategies, problem\r\nsolving measures used, resource allocation measures used, community\r\ninvolvement/satisfaction measures used, support for special units,\r\nmethods used for management accountability, and involvement in\r\ncommunity policing activities.",
+  "modified": "2006-01-31T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "3360",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "community policing",
+    "police departments",
+    "police records",
+    "police response"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2004-05-05T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03931.v2",
+      "title": "National Survey of Police Call Management Strategies and Community Policing Activities, 2000"
+    }
+  ]
+}

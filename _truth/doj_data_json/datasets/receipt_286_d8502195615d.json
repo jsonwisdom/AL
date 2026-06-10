@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Survey of Inmates in Local Jails, 1996: [United States]",
+  "description": "This collection provides nationally representative data on\r\n persons held prior to trial and on convicted offenders serving\r\n sentences in local jails or awaiting transfer to state prisons. Data\r\n cover demographic characteristics of jail inmates (sex, race,\r\n ethnicity, Hispanic origin, employment), current offenses and\r\n sentences, detention status, trial, bail, characteristics of victims,\r\n criminal histories, incident characteristics, socioeconomic\r\n circumstances, jail conditions and activities, and prior drug and\r\n alcohol use and treatment. Part 1, Numeric Data, contains numeric data\r\n for all questions in the survey, while Part 2, Alphanumeric Data,\r\n consists of nonnumeric answers to the \"Other, Specify\" selection\r\navailable for some of the questions.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "286",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "criminal histories",
+    "demographic characteristics",
+    "drug use",
+    "inmate programs",
+    "inmates",
+    "jail inmates",
+    "jails",
+    "offenses",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2170",
+  "dataQuality": false,
+  "issued": "1999-06-02T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06858.v1",
+      "title": "Survey of Inmates in Local Jails, 1996: [United States]"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Federal Justice Statistics Program: Arrests and Bookings for Federal Offenses, 2007 [United States]",
+  "description": "The data contain records of arrests and bookings for federal offenses in the United States during fiscal year 2007. The data were constructed from the United States Marshals Service (USMS) Prisoner Tracking System database. Records include arrests made by federal law enforcement agencies (including the USMS), state and local agencies, and self-surrenders. Offenders arrested for federal offenses are transferred to the custody of the USMS for processing, transportation, and detention. The Prisoner Tracking System contains data on all offenders within the custody of the USMS. The data file contains variables from the original USMS files as well as additional analysis variables, or \"SAF\" variables, that denote subsets of the data. These SAF variables are related to statistics reported in the Compendium of Federal Justice Statistics, Tables 1.1-1.3. Variables containing identifying information (e.g., name, Social Security Number) were replaced with blanks, and the day portions of date fields were also sanitized in order to protect the identities of individuals. These data are part of a series designed by the Urban Institute (Washington, DC) and the Bureau of Justice Statistics. Data and documentation were prepared by the Urban Institute.",
+  "modified": "2013-09-13T15:06:37",
+  "accessLevel": "restricted public",
+  "identifier": "793",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "arrest records",
+    "arrests",
+    "federal offenses",
+    "federal prisoners",
+    "offenders"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2174",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2009-02-09T14:04:13",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR24231.v3",
+      "title": "Federal Justice Statistics Program: Arrests and Bookings for Federal Offenses, 2007 [United States]"
+    }
+  ]
+}

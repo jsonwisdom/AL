@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Civil Justice Survey of State Courts, 2001",
+  "description": "This data collection examined general civil cases (torts,\r\ncontracts, and real property) disposed of by bench or jury trial in\r\nthe nation's 75 most populous counties in 2001. Information reported\r\nincludes the type of case, types of plaintiffs and defendants, trial\r\nwinners, amount of total damages awarded, amount of punitive damages\r\nawarded, and case processing time. This is the third in a series of\r\ndata collections begun in 1992:  CIVIL JUSTICE SURVEY OF STATE COURTS,\r\n1992 (ICPSR 6587), and CIVIL JUSTICE SURVEY OF STATE\r\nCOURTS, 1996 (ICPSR 2883).",
+  "modified": "2011-11-03T09:25:59",
+  "accessLevel": "restricted public",
+  "identifier": "776",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "case processing",
+    "civil courts",
+    "civil law",
+    "court cases",
+    "court system",
+    "disposition (legal)",
+    "lawsuits",
+    "state courts"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2172",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2004-05-28T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03957.v3",
+      "title": "Civil Justice Survey of State Courts, 2001"
+    }
+  ]
+}

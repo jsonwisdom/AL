@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Police-Public Contact Survey, 2018",
+  "description": "The Police-Public Contact Survey (PPCS) provides detailed information on the nature and characteristics of face-to-face contacts between police and the public, including the reason for and outcome of the contact and the respondent's satisfaction with the contact. The data can be used to estimate the likelihood of different types of contact for residents with different demographic characteristics, including contacts involving the use of nonfatal force by police. The PPCS is used to collect data from a nationally representative sample of U.S. residents age 16 or older as a supplement to the National Crime Victimization Survey. To date, the PPCS has been conducted eight times by BJS:\r\n1. 1996. Described in the BJS publication Police Use of Force: Collection of National Data (NCJ 165040).\r\n2. 1999. Described in Contacts between Police and the Public: Findings from the 1999 National Survey (NCJ 184957). These data are archived as POLICE-PUBLIC CONTACT SURVEY, 1999: [UNITED STATES] (ICPSR 3151).\r\n3. 2002. Described in Contacts between Police and the Public: Findings from the 2002 National Survey (NCJ 207845). These data are archived as POLICE-PUBLIC CONTACT SURVEY, 2002: [UNITED STATES] (ICPSR 4273).\r\n4. 2005. Described in the BJS publication Contacts between Police and the Public, 2005 (NCJ 215243). These data are archived as POLICE-PUBLIC CONTACT SURVEY, 2005: [UNITED STATES] (ICPSR 020020).\r\n5. 2008. Described in the BJS publication Contacts between Police and the Public, 2008 (NCJ 234599). These data are archived as POLICE-PUBLIC CONTACT SURVEY, 2008 (ICPSR 32022).\r\n6. 2011. Split sample design due to instrument changes. New instrument findings described in two publications: Police Behavior During Traffic and Street Stops, 2011 (NCJ 242937) and Requests for Police Assistance, 2011 (NCJ 242938). These data are archived as POLICE-PUBLIC CONTACT SURVEY, 2011 (ICPSR 34276).\r\n7. 2015. Described in the BJS publication Contacts between Police and Public, 2015 (NCJ 251145). These data are archived as POLICE-PUBLIC CONTACT SURVEY, 2015 (ICPSR 36653).\r\n8. 2018.Described in the BJS publication Contacts between Police and Public, 2018. These data are archived as POLICE-PUBLIC CONTACT SURVEY, 2018 (ICPSR 37916).",
+  "modified": "2021-12-13T11:12:57",
+  "accessLevel": "public",
+  "identifier": "2366",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "police citizen interactions",
+    "police community relations",
+    "police officers",
+    "police use of force",
+    "public interest",
+    "public opinion"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2432",
+  "dataQuality": false,
+  "issued": "2020-12-21T09:46:31",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37916.v2",
+      "title": "Police-Public Contact Survey, 2018"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Census of Jails, 2013",
+  "description": "To reduce respondent burden for the 2013 collection, the Census of Jails was combined with the Deaths in Custody Reporting Program (DCRP). The census provides the sampling frame for the nationwide Survey of Inmates in Local Jails (SILJ) and the Annual Survey of Jails (ASJ). Previous jail enumerations were conducted in 1970 (ICPSR 7641), 1972 (ICPSR 7638), 1978 (ICPSR 7737), 1983 (ICPSR 8203), 1988 (ICPSR 9256), 1993 (ICPSR 6648), 1999 (ICPSR 3318), 2005 (ICPSR 20367), and 2006 (ICPSR 26602). The RTI International collected the data for the Bureau of Justice Statistics in 2013. The United States Census Bureau was the collection agent from 1970-2006.\r\nThe 2013 Census of Jails gathered data from all jail detention facilities holding inmates beyond arraignment, a period normally exceeding 72 hours. Jail facilities were operated by cities and counties, by private entities under contract to correctional authorities, and by the Federal Bureau of Prisons (BOP).\r\nExcluded from the census were physically separate temporary holding facilities such as drunk tanks and police lockups that do not hold persons after being formally charged in court. Also excluded were state-operated facilities in Connecticut, Delaware, Hawaii, Rhode Island, Vermont, and Alaska, which have combined jail-prison systems. Fifteen independently operated jails in Alaska were included in the Census.\r\nThe 2013 census collected facility-level information on the number of confined and nonconfined inmates, number of inmates participating in weekend programs, number of confined non-U.S. citizens, number of confined inmates by sex and adult or juvenile status, number of juveniles held as adults, conviction and sentencing status, offense type, number of inmates held by race or Hispanic origin, number of inmates held for other jurisdictions or authorities, average daily population, rated capacity, number of admissions and releases, program participation for nonconfined inmates, operating expenditures, and staff by occupational category. ",
+  "modified": "2018-04-25T12:15:10",
+  "accessLevel": "public",
+  "identifier": "2011",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "correctional facilities",
+    "correctional officers",
+    "correctional system",
+    "corrections management",
+    "demographic characteristics",
+    "inmate populations",
+    "inmate programs",
+    "inmates",
+    "jail inmates",
+    "jails",
+    "personnel"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2169",
+  "dataQuality": false,
+  "issued": "2015-12-08T12:17:20",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36128.v4",
+      "title": "Census of Jails, 2013"
+    }
+  ]
+}

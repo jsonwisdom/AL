@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Impact of Legislation to Prohibit 'Happy Hours' in Indiana, 1983-1986",
+  "description": "This research program was undertaken in Indiana to evaluate \r\n the effectiveness of legislation that prohibited \"happy hours,\" the \r\n sale of alcoholic beverages at reduced prices during specified times. \r\n The happy hour ban sought to curb abusive drinking that can occur when \r\n alcoholic beverages are served at significantly reduced prices for a \r\n limited time only. The goal of the data collection was to determine \r\n whether any reduction in automobile accidents could be attributed to \r\n the ban on happy hours. Researchers used an interrupted time-series \r\n design to observe trends over time. Data used in this evaluation were \r\n extracted from the Accident Statistical Master Tapes for 1983 through \r\n 1986 for the state of Indiana, which include annual compilations of all \r\n accidents. Variables measure the number of accidents during the \r\n specified times. The first data file has as its unit of analysis weeks, \r\n defined as beginning Monday and ending on Friday. The second data file \r\nhas as its unit of analysis bi-weekly periods.",
+  "modified": "2006-01-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3274",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "alcohol",
+    "alcohol abuse",
+    "drinking behavior",
+    "driving under the influence",
+    "traffic accidents"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1992-03-04T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09732.v1",
+      "title": "Impact of Legislation to Prohibit 'Happy Hours' in Indiana, 1983-1986"
+    }
+  ]
+}

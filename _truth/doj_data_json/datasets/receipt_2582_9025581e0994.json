@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Law Enforcement Agency Roster (LEAR), 2016",
+  "description": "In the past several years, BJS has made efforts to develop a national roster of publicly funded law enforcement agencies. The Census of State and Local Law Enforcement Agencies (CSLLEA) represents the core of the BJS's law enforcement statistics program, and is currently used as the primary universe for all BJS law enforcement collections. The CSLLEA was last conducted in 2014 but encountered data collection issues. Since the last law enforcement universe list was the 2008 CSLLEA, BJS decided further work was needed to have a reliable and complete roster of law enforcement agencies. Using the 2008 and 2014 CSLLEA universe as the base, the LEAR integrated multiple datasets in an effort to compile a complete list of active general purpose law enforcement agencies. The goal of the LEAR was to serve as the universe list for which the Law Enforcement Management and Administrative Statistics (LEMAS) core and supplement samples could be pulled. The 2016 LEAR contains a census of 15,810 general purpose law enforcement agencies, including 12,695 local and county police departments, 3,066 sheriffs' offices and 49 primary state police departments. Staffing size from multiple datasets has also been merged into the LEAR file.",
+  "modified": "2017-04-05T11:46:50",
+  "accessLevel": "public",
+  "identifier": "2582",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "administration",
+    "law enforcement",
+    "law enforcement agencies",
+    "management",
+    "personnel",
+    "police",
+    "police departments",
+    "statistical data",
+    "workers"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2017-03-31T15:11:51",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36697.v1",
+      "title": "Law Enforcement Agency Roster (LEAR), 2016"
+    }
+  ]
+}

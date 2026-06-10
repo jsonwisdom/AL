@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Optimizing Prescription Drug Monitoring Programs to Support Law Enforcement Activities, United States, 2013-2014",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThe purpose of this study was to characterize Prescription Drug Monitoring Programs' (PDMP) features and practices that are optimal for supporting law enforcement investigations and prosecutions of prescription drug diversion cases.\r\nThe study collection includes 1 CSV data file (OptimizingPDMPsToSup_DATA_NOHDRS_2015-01-29_1235.csv, n=1,834, 204 variables). The qualitative data is not available as part of this collection at this time.",
+  "modified": "2018-07-19T10:50:43",
+  "accessLevel": "restricted public",
+  "identifier": "3875",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "controlled drugs",
+    "drug abuse",
+    "drug dispensing",
+    "drug law enforcement",
+    "drug traffic",
+    "law enforcement",
+    "law enforcement agencies",
+    "police",
+    "prescription drugs",
+    "public health"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-07-19T10:48:08",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36043.v1",
+      "title": "Optimizing Prescription Drug Monitoring Programs to Support Law Enforcement Activities, United States, 2013-2014"
+    }
+  ]
+}

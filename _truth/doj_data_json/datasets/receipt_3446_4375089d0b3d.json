@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Milwaukee Domestic Violence Experiment, 1987-1989",
+  "description": "This study represents a modified replication of the\r\nMinneapolis Domestic Violence Experiment (SPECIFIC DETERRENT EFFECTS\r\nOF ARREST FOR DOMESTIC ASSAULT: MINNEAPOLIS, 1981-1982 [ICPSR 8250]).\r\nThe Minneapolis study found arrest to be an effective deterrent\r\nagainst repeat domestic violence. The two key purposes of the current\r\nstudy were (1) to examine the possible differences in reactions to\r\narrest, and (2) to compare the effects of short and long incarceration\r\nassociated with arrest. Research protocol involved 35 patrol officers\r\nin four Milwaukee police districts screening domestic violence cases\r\nfor eligibility, then calling police headquarters to request a\r\nrandomly-assigned disposition. The three possible randomly assigned\r\ndispositions were (1) Code 1, which consisted of arrest and at least\r\none night in jail, unless the suspect posted bond, (2) Code 2, which\r\nconsisted of arrest and immediate release on recognizance from the\r\nbooking area at police headquarters, or as soon as possible, and (3)\r\nCode 3, which consisted of a standard Miranda-style script warning\r\nread by police to both suspect and victim. A battered women's shelter\r\nhotline system provided the primary measurement of the frequency of\r\nviolence by the same suspects both before and after each case leading\r\nto a randomized police action. Other forms of measurement included\r\narrests of the suspect both before and after the offense, as well as\r\noffenses against the same victim. Initial victim interviews were\r\nattempted within one month after the first 900 incidents were\r\ncompiled. A second victim interview was attempted six months after the\r\nincident for all 1,200 cases. Data collected for this study included\r\ndetailed data on each of the 1,200 randomized events, less detailed\r\ndata on an additional 854 cases found ineligible, \"pipeline\" data on\r\nthe frequency of domestic violence in the four Milwaukee police\r\ndistricts, official measures of prior and subsequent domestic violence\r\nfor both suspects and victims, interviews of arrested suspects for\r\neligible and ineligible cases, criminal justice system dispositions of\r\nthe randomized arrests, results of urinalysis tests of drug and\r\nalcohol use for some arrestees, and log attempts to obtain interviews\r\nfrom suspects and victims. Demographic variables include victim and\r\nsuspect age, race, education, employment status, and marital status.\r\nAdditional information obtained includes victim-offender\r\nrelationships, alcohol and drug use during incident, substance of\r\nconflict, nature of victim injury and medical treatment as reported by\r\npolice and victims, characteristics of suspects in the Code 1 and 2\r\narrest groups, victim and suspect reports of who called police, and\r\nvictim and suspect versions of speed of police response.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3446",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrest records",
+    "arrests",
+    "deterrence",
+    "domestic assault",
+    "domestic violence",
+    "imprisonment",
+    "police response",
+    "recidivism",
+    "victims",
+    "womens shelters"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1995-03-16T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09966.v1",
+      "title": "Milwaukee Domestic Violence Experiment, 1987-1989"
+    }
+  ]
+}

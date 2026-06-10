@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Factors Influencing the Quality and Utility of Government-Sponsored Criminal Justice Research in the United States, 1975-1986",
+  "description": "This data collection examines the effects of organizational \r\n environment and funding level on the utility of criminal justice \r\n research projects sponsored by the National Institute of Justice (NIJ). \r\n The data represent a unique source of information on factors that \r\n influence the quality and utility of criminal justice research. \r\n Variables describing the research grants include NIJ office responsible \r\n for monitoring the grant (e.g., courts, police, corrections, etc.), \r\n organization type receiving the grant (academic or nonacademic), type \r\n of data (collected originally, existing, merged), and priority area \r\n (crime, victims, parole, police). The studies are also classified by: \r\n (1) sampling method employed, (2) presentation style, (3) statistical \r\n analysis employed, (4) type of research design, (5) number of \r\n observation points, and (6) unit of analysis. Additional variables \r\n provided include whether there was a copy of the study report in the \r\n National Criminal Justice Archive, whether the study contained \r\n recommendations for policy or practice, and whether the project was \r\n completed on time. The data file provides two indices--one that \r\n represents quality and one that represents utility. Each measure is \r\ngenerated from a combination of variables in the dataset.",
+  "modified": "1992-02-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3222",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "criminal justice system",
+    "funding",
+    "grants",
+    "policies and procedures",
+    "research"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1989-03-03T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09089.v1",
+      "title": "Factors Influencing the Quality and Utility of Government-Sponsored Criminal Justice Research in the United States, 1975-1986"
+    }
+  ]
+}

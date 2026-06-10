@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Study of Law Enforcement Agencies' Policies Regarding Missing Children and Homeless Youth, 1986",
+  "description": "The purpose of the study was to provide information about \r\n law enforcement agencies' handling of missing child cases, including \r\n the rates of closure for these cases, agencies' initial investigative \r\n procedures for handling such reports, and obstacles to investigation. \r\n Case types identified include runaway, parental abduction, stranger \r\n abduction, and missing for unknown reasons. Other key variables provide \r\n information about the existence and types of policies within law \r\n enforcement agencies regarding missing child reports, such as a waiting \r\n period and classification of cases. The data also contain information \r\n about the cooperation of and use of the National Center of Missing and \r\n Exploited Children (NCMEC) and the National Crime Information Center \r\n(NCIC).",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "4028",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "homelessness",
+    "kidnapping",
+    "law enforcement agencies",
+    "missing children",
+    "parental kidnapping",
+    "police investigations",
+    "policies and procedures"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1995-10-30T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06127.v1",
+      "title": "National Study of Law Enforcement Agencies' Policies Regarding Missing Children and Homeless Youth, 1986"
+    }
+  ]
+}

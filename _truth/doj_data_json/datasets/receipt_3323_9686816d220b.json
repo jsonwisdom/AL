@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "A Behavioral Study of the Radicalization Trajectories of American \"Homegrown\" Al Qaeda-Inspired Terrorist Offenders, 2001-2015 [UNITED STATES]",
+  "description": "\r\nThese data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\n\r\n\r\nThe study aimed to develop and empirically test a dynamic risk assessment model of radicalization process characteristics of homegrown terrorists inspired by Al Qaeda's ideology. The New York Police Department (NYPD) model developed by Mitchell D. Silber and Arvin Bhatt was chosen as the basis for creating a typology of overt and detectable indicators of individual behaviors widely thought to be associated with extremism. Specific behavioral cues associated with each stage of radicalization were coded and used to estimate the sequencing of behaviors and the duration of the average radicalization trajectory. Out of 331 homegrown American Jihadists (Group A), 135 were selected for further examination of their radicalization (Group B). Data were collected from public records ranging from social media postings by the offenders themselves to evidence introduced in the adjudication of the offenses for which the offenders were incarcerated. Life histories were compiled for Group B, whose detailed biographies were used to chart the timelines of their radicalization trajectories.\r\n\r\n\r\nThe collection includes an Excel file which contains one data table for Group A (10 variables, n=331) and two data tables for Group B (32 variables, n=135 and 5 variables, n=135, respectively).  An accompanying codebook file details the variables in these tables.  There is also a document with approximately 1 page narratives for each of the 135 individuals in Group B.  A file containing a key indicating the names of the subjects is not available with this collection.\r\n",
+  "modified": "2016-12-15T10:00:43",
+  "accessLevel": "restricted public",
+  "identifier": "3323",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "al Qaeda",
+    "radicalism",
+    "terrorism",
+    "terrorist profiles",
+    "terrorist prosecution",
+    "terrorists"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2016-12-15T09:50:35",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36452.v1",
+      "title": "A Behavioral Study of the Radicalization Trajectories of American \"Homegrown\" Al Qaeda-Inspired Terrorist Offenders, 2001-2015 [UNITED STATES]"
+    }
+  ]
+}

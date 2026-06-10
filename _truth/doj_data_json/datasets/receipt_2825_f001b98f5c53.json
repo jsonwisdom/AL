@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Crime Commission Rates Among Incarcerated Felons in Nebraska, 1986-1990",
+  "description": "These data focus on rates of criminal offending obtained\r\n through the use of self-report surveys. Specifically, the study\r\n investigates whether two different types of self-report surveys\r\n produce different estimates of lambda, an individual's frequency of\r\n criminal offending. The surveys, which were administered during\r\n personal interviews with inmates in Nebraska prisons, differed in how\r\n respondents were asked about their frequency of criminal offending.\r\n The more detailed survey asked respondents to indicate their offenses\r\n on a month-by-month basis for the reporting period. The less detailed\r\n survey only asked respondents to indicate their offending for the\r\n entire reporting period. These data also provide information on the\r\n relationship between race and offending frequencies, the rates of\r\n offending over time and by crime category, and the individual's\r\n subjective probability of punishment and offending frequency. The\r\n specific crimes targeted in this collection include burglary, business\r\n robbery, personal robbery, assault, theft, forgery, fraud, drug\r\n dealing, and rape. All respondents were asked questions on criminal\r\n history, substance abuse, attitudes about crime and the judicial\r\n system, predictions of future criminal behavior, and demographic\r\ninformation, including age, race, education, and marital status.",
+  "modified": "1994-02-17T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2825",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime prediction",
+    "crime rates",
+    "crime reporting",
+    "criminal histories",
+    "felons",
+    "prison inmates",
+    "race",
+    "recidivism"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1993-10-02T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09916.v2",
+      "title": "Crime Commission Rates Among Incarcerated Felons in Nebraska, 1986-1990"
+    }
+  ]
+}

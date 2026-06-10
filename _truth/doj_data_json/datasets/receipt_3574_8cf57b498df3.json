@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Rehabilitation Programs for Adult Offenders: A Meta-Analysis in Support of Guidelines for Effective Practice, 5 Countries, 1950-2014",
+  "description": "This is a comprehensive meta-analysis of available research on the effects of intervention programs for adult offenders, which is based on 801 eligible controlled studies reported through 2014 identified by researchers. Variables describing the intervention, participating offender samples, research methods, and effects found on a range of outcome constructs were coded into a database for analysis. The major outcome categories examined were recidivism, substance use, employment, mental health, anger/hostility, and aggression/violence. Broad intervention approaches included those such as cognitive behavioral, structured group, counseling, and drug court programs.The meta-analysis seeks to examine outcomes of various types of interventions and identify the characteristics of programs and participants most closely associated with positive outcomes. It seeks to use the findings to construct and obtain feedback on effective practice guidelines within the adult correctional system.",
+  "modified": "2019-10-29T12:16:33",
+  "accessLevel": "restricted public",
+  "identifier": "3574",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "adult offenders",
+    "recidivism",
+    "rehabilitation programs",
+    "treatment outcome"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2019-10-29T12:13:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37281.v1",
+      "title": "Rehabilitation Programs for Adult Offenders: A Meta-Analysis in Support of Guidelines for Effective Practice, 5 Countries, 1950-2014"
+    }
+  ]
+}

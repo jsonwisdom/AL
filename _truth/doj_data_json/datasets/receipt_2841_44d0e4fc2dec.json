@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Mental Disorder and Violent Crime:  A 20-Year Cohort Study in New York State, 1968-1988",
+  "description": "The objectives of this study were (1) to compare long-term\r\npatterns of violent crime for mentally disordered patients and for\r\nprison inmates, and (2) to evaluate the predictive validity of a\r\ndiagnosis of schizophrenia for subsequent arrests for violent crimes.\r\nFor purposes of this data collection, violent crimes were defined as\r\nincluding murder, manslaughter, rape, assault, kidnapping, and sodomy.\r\nThe study analyzed individual state mental hospital patients and\r\ninmates of state prisons in New York State over a 20-year span. In the\r\nprocess of obtaining information regarding the individuals, three\r\ndifferent areas were focused on: hospital, incarceration, and arrest\r\nhistories. Variables for hospital histories include inpatient\r\nhospitalizations, admission and discharge dates, legal status for all\r\nstate hospitals through 1988, primary diagnosis for target and most\r\nrecent admissions, and placements in New York State Department of\r\nCorrectional Services mental hospitals. Incarceration history variables\r\ninclude time spent in adult state prisons, incarcerations through 1988,\r\nand dates of release (including re-entry to community on parole,\r\noutright release, or escape). Arrest histories include information on\r\nthe subject's first adult arrest through 1988 (only the most serious\r\ncharge for each incident is recorded) and out-of-state arrests, when\r\navailable. Demographic variables include age, race, and date of birth.",
+  "modified": "1996-02-09T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2841",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "assault",
+    "kidnapping",
+    "manslaughter",
+    "mental disorders",
+    "mental hospitals",
+    "mental patients",
+    "murder",
+    "prison inmates",
+    "rape",
+    "schizophrenia",
+    "violent crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1993-10-11T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09978.v3",
+      "title": "Mental Disorder and Violent Crime:  A 20-Year Cohort Study in New York State, 1968-1988"
+    }
+  ]
+}

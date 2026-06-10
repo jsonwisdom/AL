@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Early Identification of the Chronic Offender, [1978-1980:  California]   ",
+  "description": "Patterns of adult criminal behavior are examined in this \r\n data collection. Data covering the adult years of peak criminal \r\n activity (from approximately 18 to 26 years of age) were obtained from \r\n samples of delinquent youths who had been incarcerated in three \r\n California Youth Authority institutions during the 1960s: Preston, \r\n Fricot, and the Northern California Youth Center. Data were obtained \r\n from three sources: official arrest records of the California Bureau of \r\n Criminal Investigation and Identification (CII), supplementary data \r\n from the Federal Bureau of Investigation, and the California Bureau of \r\n Vital Statistics. Follow-up data were collected between 1978 and 1981. \r\n There are two files per sample site. The first is a background data \r\n file containing information obtained while the subjects were housed in \r\n Youth Authority institutions, and the second is a follow-up history \r\n offense file containing data from arrest records. Each individual is \r\n identified by a unique ID number, which is the same in the background \r\nand offense history files.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2804",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "United States",
+    "arrests",
+    "crime",
+    "crime prevention",
+    "criminal justice system",
+    "juvenile delinquency"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1985-12-20T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08226.v1",
+      "title": "Early Identification of the Chronic Offender, [1978-1980:  California]   "
+    }
+  ]
+}

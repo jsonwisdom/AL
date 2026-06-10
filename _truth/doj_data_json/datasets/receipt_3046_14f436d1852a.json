@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Public Opinion on the Courts in the United States, 2000",
+  "description": "This study centered on two questions fundamental to\r\nunderstanding public opinion about the courts: (1) Do African\r\nAmericans, Latinos, and Whites view the state courts differently? and\r\n(2) What impact did recent direct court experience have on people's\r\nopinions about state courts? Between March 22, 2000, and May 3, 2000,\r\ninterviewers conducted 1,567 telephone interviews with randomly\r\nselected United States residents. Variables include respondents'\r\ngender, race, age, education, and other demographic information,\r\nrespondents' perception of the fairness of local courts, including\r\nwhether African Americans and Latinos were discriminated against,\r\nwhether the respondent or a member of the respondent's household had\r\nbeen involved with the courts in the past 12 months, and if so, how\r\nfairly that case was conducted.",
+  "modified": "2006-12-15T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "3046",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "African Americans",
+    "Hispanic or Latino Americans",
+    "White Americans",
+    "court system",
+    "courts",
+    "ethnicity",
+    "media influence",
+    "perceptions",
+    "public opinion",
+    "racial discrimination",
+    "state courts"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2004-01-07T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03864.v2",
+      "title": "Public Opinion on the Courts in the United States, 2000"
+    }
+  ]
+}

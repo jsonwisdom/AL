@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Police Human Resource Planning: National Surveys, 2011-2013 [United States and Canada]",
+  "description": "\r\nThis study utilized: a national survey of law enforcement officials; a national survey of criminal justice faculty; a survey of criminal justice students at Arizona State University, Kutztown University, Michigan State University, and Sam Houston State University; four separate surveys of a small expert panel; and mini-case studies to investigate issues associated with police human resource management and planning, such as recruitment, selection, training, and promotion.\r\n",
+  "modified": "2016-09-13T13:34:41",
+  "accessLevel": "restricted public",
+  "identifier": "1178",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "educational assessment",
+    "educational needs",
+    "hiring practices",
+    "human resources",
+    "personnel policy",
+    "police cadets",
+    "police officers",
+    "police recruits",
+    "police training",
+    "student attitudes",
+    "work attitudes"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2016-09-13T13:32:15",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR34885.v1",
+      "title": "Police Human Resource Planning: National Surveys, 2011-2013 [United States and Canada]"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Criminal Victimization and Perceptions of Community Safety in 12 United States Cities, 1998",
+  "description": "This collection presents survey data from 12 cities in the\r\nUnited States regarding criminal victimization, perceptions of\r\ncommunity safety, and satisfaction with local police. Participating\r\ncities included Chicago, IL, Kansas City, MO, Knoxville, TN, Los\r\nAngeles, CA, Madison, WI, New York, NY, San Diego, CA, Savannah, GA,\r\nSpokane, WA, Springfield, MA, Tucson, AZ, and Washington, DC. The\r\nsurvey used the current National Crime Victimization Survey (NCVS)\r\nquestionnaire with a series of supplemental questions measuring the\r\nattitudes in each city. Respondents were asked about incidents that\r\noccurred within the past 12 months. Information on the following\r\ncrimes was collected: violent crimes of rape, robbery, aggravated\r\nassault, and simple assault, personal crimes of theft, and household\r\ncrimes of burglary, larceny, and motor vehicle theft.\r\nPart 1, Household-Level Data, covers the number of household\r\nrespondents, their ages, type of housing, size of residence, number of\r\ntelephone lines and numbers, and language spoken in the household.\r\nPart 2, Person-Level Data, includes information on respondents' sex,\r\nrelationship to householder, age, marital status, education, race,\r\ntime spent in the housing unit, personal crime and victimization\r\nexperiences, perceptions of neighborhood crime, job and professional\r\ndemographics, and experience and satisfaction with local police.\r\nVariables in Part 3, Incident-Level Data, concern the details of\r\ncrimes in which the respondents were involved, and the police response\r\nto the crimes.",
+  "modified": "2006-01-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "101",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "assault",
+    "attitudes",
+    "burglary",
+    "fear of crime",
+    "neighborhoods",
+    "perceptions",
+    "petty theft",
+    "police performance",
+    "public safety",
+    "rape",
+    "robbery",
+    "victimization"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1999-10-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02743.v1",
+      "title": "Criminal Victimization and Perceptions of Community Safety in 12 United States Cities, 1998"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Survey of Children's Exposure to Violence III, 1997-2014 [United States]",
+  "description": "The National Survey of Children's Exposure to Violence (NatSCEV) series involved three rounds of data collection, NatSCEV I (baseline), NatSCEV II, and this study, NatSCEV III. For more information on other parts to the series, please use the following links: \r\nNatSCEV I  (ICPSR 35203) - http://doi.org/10.3886/ICPSR35203.v1\r\nNatSCEV II (ICPSR 36177) - http://doi.org/10.3886/ICPSR36177.v1 \r\nThe National Survey of Children's Exposure to Violence III was designed to obtain lifetime and one-year incidence estimates of a comprehensive range of childhood victimizations across gender, race, and developmental stage. Conducted between August 2013 and April 2014, it assessed the experiences of a nationally representative sample of 4,000 children less than 18 years of age living in the contiguous United States (excluding New Hampshire).\r\nA short interview was conducted with an adult caregiver (usually a parent) to obtain family demographic information. One child was randomly selected from all eligible children in a household by selecting the child with the most recent birthday. If the selected child was 1 month to 9 years old, the main interview was conducted with the caregiver. If the selected child was 10-17 years old, the main interview was conducted with the child.The NatSCEV III questionnaire was very similar to the previous wave minus the extended family exposure to violence follow-up section that was included in NatSCEV II. The questionnaire asked for household demographics and questions about the focal child's health. A series of 52 juvenile victimization screening questions (JVQ) were asked, and for every screener the respondent endorsed, a series of follow-up questions about that victimization was asked. In addition, the survey included sections on lifetime and past year adversity, internet victimization, community disorder, bullying, delinquency, and the child/parent relationship.",
+  "modified": "2016-09-29T14:50:17",
+  "accessLevel": "restricted public",
+  "identifier": "1190",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "alcohol consumption",
+    "child abuse",
+    "children",
+    "delinquent behavior",
+    "juvenile victims",
+    "mental health",
+    "self concept",
+    "sexual assault",
+    "victimization",
+    "youths"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "4000",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2016-09-29T14:42:36",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36523.v1",
+      "title": "National Survey of Children's Exposure to Violence III, 1997-2014 [United States]"
+    }
+  ]
+}

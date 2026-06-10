@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "DEA Domestic Office's Area of Responsibility (AOR) Boundaries",
+  "description": "This dataset contains the boundaries of each area of responsibility (AOR). An AOR is the inventory of counties/territories over which each domestic DEA office has primary enforcement responsibility. An AOR is assigned to each domestic DEA office larger than a post of duty (POD). The population of each AOR and its DEA field division is also included in this dataset.",
+  "modified": "2023-07-26T00:00:00",
+  "accessLevel": "public",
+  "identifier": "4326",
+  "publisher": {
+    "name": "Drug Enforcement Administration",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Drug Enforcement Agency (USDOJ)",
+    "hasEmail": "mailto:opendata@dea.gov"
+  },
+  "keyword": [
+    "Area of Responsibility",
+    "AOR",
+    "Boundaries"
+  ],
+  "bureauCode": [
+    "011:12"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "spatial": "U.S. State/Territory",
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": true,
+  "issued": "2022-05-27T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "landingPage": "https://dea-geoportal-opendata-dea-geoportal.hub.arcgis.com/",
+  "theme": [
+    "geospatial"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://dea-geoportal-opendata-dea-geoportal.hub.arcgis.com/datasets/813caeccdeba4f2f9ac4c9747e9dab52_0/explore",
+      "mediaType": "text/html",
+      "title": "DEA Domestic Office's Area of Responsibility (AOR) Boundaries"
+    },
+    {
+      "@type": "dcat:Distribution",
+      "conformsTo": "https://www.isotc211.org/2005/gmd",
+      "downloadURL": "https://www.arcgis.com/sharing/rest/content/items/813caeccdeba4f2f9ac4c9747e9dab52/info/metadata/metadata.xml?format=default",
+      "mediaType": "text/xml",
+      "title": "DEA Domestic Office's Area of Responsibility (AOR) Boundaries - Metadata Information"
+    }
+  ]
+}

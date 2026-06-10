@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Pretrial Release Practices in the United States, 1976-1978",
+  "description": "Funded by the National Institute of Justice, this data collection\r\nrepresents Phase II of a larger project to evaluate pretrial release\r\npractices. The\r\nstudy focuses on four major topics: (1) release--rates and types of\r\nreleases, defendant or case characteristics and their impact on the\r\nrelease decision, (2) court appearance --extent to which released\r\ndefendants appear in court, factors associated with defendants'\r\nfailure to appear in court, (3) pretrial criminality--number of\r\nrearrests during the pretrial period and the factors predicting\r\nrearrest, charges and rates of conviction for crimes committed during\r\nthe pretrial period, and (4) impact of pretrial release programs--effect of\r\nprograms on release decisions and on the behavior of defendants. The study\r\nis limited to adult defendants processed through state and local trial\r\ncourts, and to pretrial release rather than pretrial intervention or\r\ndiversion programs. Part 1 is an analysis of release practices and\r\noutcomes in eight jurisdictions (Baltimore City and Baltimore County,\r\nMaryland, Washington, DC, Dade County, Florida, Jefferson County,\r\nKentucky, Pima County, Arizona, Santa Cruz County, California, and\r\nSanta Clara County, California). The pretrial release \"delivery\r\nsystems,\" that is, the major steps and individuals and organizations\r\nin the pretrial release process, were analyzed in each jurisdiction.\r\nAdditionally, a sample of defendants from each site was studied from\r\npoint of arrest to final case disposition and sentencing. Part 2 of\r\nthis study examines the impact of the existence of pretrial release\r\nprograms on release, court appearance, and pretrial release outcomes.\r\nAn experimental design was used to compare a group of\r\ndefendants who participated in a pretrial release program with a\r\ncontrol group who did not. Experiments were conducted in Pima County\r\n(Tucson), Arizona, Baltimore City, Maryland, Lincoln, Nebraska, and\r\nJefferson County (Beaumont-Port Arthur), Texas. In Tucson, separate\r\nexperiments were conducted for felony and misdemeanor cases.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3720",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "courts",
+    "criminal histories",
+    "defendants",
+    "judicial process",
+    "pretrial hearings",
+    "pretrial procedures",
+    "pretrial release"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR07972.v2",
+      "title": "Pretrial Release Practices in the United States, 1976-1978"
+    }
+  ]
+}

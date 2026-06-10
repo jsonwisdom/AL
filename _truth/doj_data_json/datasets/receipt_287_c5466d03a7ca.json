@@ -1,0 +1,70 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Survey of Inmates of State Correctional Facilities and Census of State Adult Correctional Facilities, 1974",
+  "description": "The survey and census were part of a series of data \r\n collection efforts undertaken to assist policymakers in assessing and \r\n remedying deficiencies in the nation's correctional institutions. The \r\n survey was designed to provide information on social and economic \r\n characteristics of inmates, criminal and correctional background, court \r\n experience, and prison routine. The census gathered a wide range of \r\n information on all federal correctional facilities operating in 1974. \r\n The focus of the survey file is on the inmate, while the focus of the \r\ncensus file is on the facility.",
+  "modified": "1992-02-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "287",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "correctional facilities (adults)",
+    "corrections",
+    "corrections management",
+    "criminal histories",
+    "drug abuse",
+    "inmate classification",
+    "inmate deaths",
+    "inmate populations",
+    "inmate programs",
+    "inmates",
+    "jails",
+    "offenses",
+    "prison administration",
+    "prison conditions",
+    "prison construction",
+    "prison overcrowding",
+    "prison violence",
+    "substance abuse",
+    "treatment programs"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2171",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR07811.v3",
+      "title": "Survey of Inmates of State Correctional Facilities and Census of State Adult Correctional Facilities, 1974"
+    }
+  ]
+}

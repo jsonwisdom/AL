@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Is Burglary a Crime of Violence? An Analysis of National Data 1998-2007 [United States]",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed. \r\nThis study was a secondary analysis of data from the National Crime Victimization Survey (NCVS)  and National Incidents Based Reporting System (NIBRS) for the period 1998-2007. The analysis calculates two separate measures of the incidents of violence that occurred during burglaries. The study addressed the following research questions:\r\nIs burglary a violent crime? \r\nAre different levels of violence associated with residential versus nonresidential burglaries? \r\nHow frequently is a household member present during a residential burglary?\r\nHow frequently does violence occur in the commission of a burglary?\r\nWhat forms does burglary-related violence take? \r\nAre there differences in rates of violence between attempted and completed burglaries?\r\nWhat constitutes the crime of burglary in current statutory law?\r\n How do the federal government and the various states define burglary (grades and elements)?\r\n Does statutory law comport with empirical observations of what the typical characteristics of acts of burglary are? \r\nThe SPSS code distributed here alters an existing dataset drawn from pre-existing studies. In order to use this code users must first create the original data file drawn from National Crime Victimization Survey (NCVS) and National Incidents Based Reporting System (NIBRS) data from the period of 1998-2007. All data used for this study are publicly available through ICPSR. See the variable description section for a comprehensive list of, and direct links to, all datasets used to create this original dataset. ",
+  "modified": "2016-09-22T13:49:20",
+  "accessLevel": "public",
+  "identifier": "567",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "burglary",
+    "federal offenses",
+    "nonviolent crime",
+    "policy",
+    "violence",
+    "violent crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2016-09-22T13:49:20",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR34971.v1",
+      "title": "Is Burglary a Crime of Violence? An Analysis of National Data 1998-2007 [United States]"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Evaluation of the Statewide Automated Victim Information and Notification (SAVIN) Program [United States], 2010-2012",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they there received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except of the removal of direct identifiers. Users should refer to the accompany readme file for a brief description of the files available with this collections and consult the investigator(s) if further information is needed.The purpose of the study was to evaluate the Bureau of Justice Assistance (BJA) Statewide Automated Victim Information and Notification (SAVIN) program; evaluate victims' awareness and use of automated victim notification (AVN) systems and the role service providers play in ensuring that victims are aware of, and able to successfully register for, AVN services. Researchers conducted three waves of telephone interviews with automated victim notification (AVN) system administrators (AVN System Administrator Interview Data, n=52), including those in states not participating in the BJA SAVIN program. Researchers also interviewed individuals overseeing victim notification services in states without AVN.  Researchers also created two online surveys to supplement the information collected in the telephone interviews (Survey of Service Providers, n = 1,246). Finally, Researchers contacted selected service providers via email and telephone to inform them that they had been identified to participate in the survey of victims (Survey of Victims Data, n=1,355) and asked to confirm their participation. Participating service providers displayed the surveys in a public area where they could be completed by anyone visiting the office for an issue related to victim services. To encourage participation from victims who did not receive in-office services, the research team gave providers a sample email (in both English and Spanish) that they could provide to remote clients with information about how to access the online survey. The research team fielded the survey for three months in 2012, with reminder emails sent to participating providers on a bi-weekly basis.",
+  "modified": "2016-09-30T09:35:09",
+  "accessLevel": "restricted public",
+  "identifier": "1189",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "service providers",
+    "victim rights",
+    "victim safety",
+    "victim services",
+    "victimization"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2016-09-30T09:32:27",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR34593.v1",
+      "title": "Evaluation of the Statewide Automated Victim Information and Notification (SAVIN) Program [United States], 2010-2012"
+    }
+  ]
+}

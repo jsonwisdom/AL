@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Florida's Criminal Justice Workforce Research Information System, 1985-1996",
+  "description": "This project sought to prove that research files could be\r\n created through the extraction of personnel management systems\r\n data. There were five goals associated with designing and creating the\r\n Florida Criminal Justice Workforce Research Information System: (1) to\r\n extract data from two transaction management information systems,\r\n which could then be used by researchers to describe and analyze the\r\n workforce that administers justice in Florida, (2) to pilot test the\r\n concept of developing a new research information source from existing\r\n data systems, (3) to forge partnerships with diverse criminal justice\r\n agencies having a mutual need to understand their respective\r\n workforces, (4) to design research files to enable internal and\r\n external researchers to utilize the data for analytical purposes, and\r\n (5) to describe the methodology used to create the workforce\r\n information system in sufficient detail to enable other states to\r\n replicate the process and develop their own criminal justice workforce\r\n research databases. The project was jointly conceived, designed, and\r\n completed by two state-level criminal justice agencies with diverse\r\n missions and responsibilities: the Florida Department of Law\r\n Enforcement (FDLE) and the Florida Department of Corrections\r\n (FDC). Data were extracted from two personnel management systems: the\r\n Automated Transaction Management System (ATMS) operated by the Florida\r\n Department of Law Enforcement, which contains data on all certified\r\n law enforcement, correctional, and correctional probation officers in\r\n Florida (Part 1), and the Cooperative Personnel Employment System\r\n (COPES) operated by the Department of Management Services, which\r\n contains data on all state employees (Part 2). Parts 3-5 consist of\r\n data extracted from Parts 1 and 2 regarding certification status (Part\r\n 3), education (Part 4), and training (Part 5). Two demographic\r\n variables, race and sex, are found in all parts. Parts 1 and 2 also\r\n contain variables on employment event type, employer type, position\r\n type, salary plan, job class, appointment status, and supervisor\r\n indicator. Part 3 variables are certification event type and\r\n certificate type. Part 4 variables include degree earned and area of\r\n degree. Part 5 includes a variable for passing or failing training\r\ncertification.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3133",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "correctional officers",
+    "criminal justice system",
+    "information management",
+    "information systems",
+    "law enforcement agencies",
+    "personnel management",
+    "personnel records",
+    "police officers",
+    "probation officers"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2000-10-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02542.v1",
+      "title": "Florida's Criminal Justice Workforce Research Information System, 1985-1996"
+    }
+  ]
+}

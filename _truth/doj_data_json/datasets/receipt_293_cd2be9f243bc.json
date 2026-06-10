@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Survey of Youths in Custody, 1987:  [United States]",
+  "description": "This data collection, the first survey of youths confined to \r\n long-term, state-operated institutions, was undertaken to complement \r\n existing Children in Custody censuses. It also serves as a companion to \r\n the Surveys of State Prisons, allowing comparisons between adult and \r\n juvenile populations. The survey provides detailed information on the \r\n characteristics of youths held primarily in secure settings within the \r\n juvenile justice system. The data contain information on criminal \r\n histories, family situations, drug and alcohol use, and peer group \r\n activities. For youths committed for violent acts, data are available \r\non the victims of their crimes and on weapon use.",
+  "modified": "1995-03-31T00:00:00",
+  "accessLevel": "public",
+  "identifier": "293",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "alcohol abuse",
+    "criminal histories",
+    "drug abuse",
+    "family history",
+    "juvenile crime",
+    "juvenile inmates",
+    "juvenile offenders",
+    "prisons"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1989-01-10T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08992.v3",
+      "title": "Survey of Youths in Custody, 1987:  [United States]"
+    }
+  ]
+}

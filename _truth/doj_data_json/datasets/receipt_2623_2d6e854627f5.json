@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Crime Victimization Survey: Identity Theft Supplement, 2016",
+  "description": "The primary purpose of the Identity Theft Supplement (ITS) is to measure the prevalence of identity theft among persons, the characteristics of identity theft victims, and patterns of reporting to the police, credit bureaus, and other authorities. The ITS was also designed to collect important characteristics of identity theft such as how the victim's personal information was obtained; the physical, emotional and financial impact on victims; offender information; and the measures people take to avoid or minimize their risk of becoming an identity theft victim. The information is intended for use by policymakers, academic researchers, practitioners at the Federal, state and local levels, and special interest groups who are concerned with identity theft to make informed decisions concerning policies and programs. Responses are linked to the NCVS survey instrument responses for a more complete understanding of the individual's circumstances.\r\nThe 2016 Identity Theft Supplement (ITS) was the fourth implementation of this supplement to the annual NCVS to obtain specific information about identity theft-related victimization on a national level. Since the ITS is a supplement to the NCVS, it is conducted under the authority of title 42, United States Code, sections 3732. Only Census employees sworn to preserve confidentiality may see the completed questionnaires.",
+  "modified": "2021-07-12T13:41:48",
+  "accessLevel": "public",
+  "identifier": "2623",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "crime",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "identity theft",
+    "larceny",
+    "victimization",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2432",
+  "dataQuality": false,
+  "issued": "2019-01-09T08:33:36",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36829.v2",
+      "title": "National Crime Victimization Survey: Identity Theft Supplement, 2016"
+    }
+  ]
+}

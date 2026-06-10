@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Police Use of Force Data, 1996: [United States]",
+  "description": "In 1996, the Bureau of Justice Statistics sponsored a\r\n pretest of a survey instrument designed to compile data on citizen\r\n contacts with police, including contacts in which police use force.\r\n The survey, which involved interviews (both face-to-face and by phone)\r\n carried out by the United States Census Bureau, was conducted as a\r\n special supplement to the National Crime Victimization Survey (NCVS),\r\n an ongoing household survey of the American public that elicits\r\n information concerning recent crime victimization\r\n experiences. Questions asked in the supplement covered reasons for\r\n contact with police officer(s), characteristics of the officer, weapons\r\n used by the officer, whether there were any injuries involved in the\r\n confrontation between the household member and the officer, whether\r\n drugs were involved in the incident, type of offense the respondent\r\n was charged with, and whether any citizen action was\r\ntaken. Demographic variables include race, sex, and age.",
+  "modified": "1998-01-13T00:00:00",
+  "accessLevel": "public",
+  "identifier": "267",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "crime",
+    "police citizen interactions",
+    "police officers",
+    "police use of force",
+    "public opinion",
+    "victimization"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1998-01-13T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06999.v1",
+      "title": "Police Use of Force Data, 1996: [United States]"
+    }
+  ]
+}

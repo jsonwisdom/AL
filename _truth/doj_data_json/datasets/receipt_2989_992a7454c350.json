@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Validation of the RAND Selective Incapacitation Survey and the Iowa Risk Assessment Scale in Colorado, 1982 and 1986",
+  "description": "This data collection was designed to replicate the Rand \r\n Selective Incapacitation Survey and the Iowa Risk Assessment Scale \r\n using a group of Colorado offenders. The Iowa model provides two \r\n assessments of offender risk: (1) a measure of general risk to society \r\n and (2) a measure of the risk of new violence. The Iowa dataset \r\n includes crime information from defendants' self-reports and from \r\n official crime records. Both files contain important self-report items \r\n such as perceived probability of being caught, weapon used in the \r\n offense committed, months free on the street during the reference \r\n period, and detailed activity description during the free period. Other \r\n items covered include employment history, plans, reasons for committing \r\nthe crime, and attitudes toward life, law, prisons, and police.",
+  "modified": "2006-01-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2989",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "criminal histories",
+    "criminality prediction",
+    "offenders",
+    "recidivism prediction",
+    "risk assessment",
+    "selective incapacitation"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1990-03-02T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09292.v1",
+      "title": "Validation of the RAND Selective Incapacitation Survey and the Iowa Risk Assessment Scale in Colorado, 1982 and 1986"
+    }
+  ]
+}

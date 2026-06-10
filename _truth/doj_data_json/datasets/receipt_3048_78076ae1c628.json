@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Impact of Immigration on Ethnic-Specific Violence in Miami, Florida, 1997  ",
+  "description": "Does the rate of violent victimization differ across race\r\n and ethnic groups? In an effort to answer this question, this study\r\n sought to examine the violent victimization rate and the factors\r\n influencing ethnic-specific rates of violence in the city of\r\n Miami. Administrative data were obtained from the United States Bureau\r\n of the Census and the Miami Police Department Research Unit. For the\r\n groups of people identified as Afro Americans, Latinos, and Haitians,\r\n the numbers who were victims of aggravated assault and robbery in 1997\r\n are included along with the assault and robbery rates for each\r\n group. The remaining variables are the percent of female-headed\r\n households, percent below poverty line, percent of young males out of\r\n the labor force and unemployed, residential instability, vacant and\r\nhousehold instability, and the percent of 1980-1990 immigrants.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3048",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "aggravated assault",
+    "census tract level",
+    "crime rates",
+    "ethnicity",
+    "immigration",
+    "race",
+    "robbery",
+    "victimization",
+    "violent crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2004-02-27T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03872.v1",
+      "title": "Impact of Immigration on Ethnic-Specific Violence in Miami, Florida, 1997  "
+    }
+  ]
+}

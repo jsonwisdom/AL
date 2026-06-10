@@ -1,0 +1,83 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Incident-Based Reporting System (NIBRS)",
+  "description": "This collection provides data submitted to the FBI’s Uniform Crime Reporting (UCR) Program via the National Incident-Based Reporting System (NIBRS) for one or more months of the calendar year. It presents an overview of the offense categories that show the diversity and complexity of the data collected via NIBRS.  In addition, it includes detailed agency-level data by offense type.  ",
+  "modified": "2025-12-15T00:00:00",
+  "accessLevel": "public",
+  "identifier": "543",
+  "publisher": {
+    "name": "Federal Bureau of Investigation",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Criminal Justice Information Services Division Federal Bureau of Investigation (USDOJ)",
+    "hasEmail": "mailto:CRIMESTATSINFO@fbi.gov"
+  },
+  "keyword": [
+    "incident based",
+    "NIBRS",
+    "crimes against persons",
+    "crimes against property",
+    "crimes against society",
+    "aggravated assault",
+    "arrests",
+    "arson",
+    "assault",
+    "crime statistics",
+    "drug abuse",
+    "embezzlement",
+    "fraud",
+    "gambling",
+    "larceny",
+    "law enforcement",
+    "murder",
+    "offenses",
+    "rape",
+    "robbery",
+    "Uniform Crime Reporting Program",
+    "UCR Program"
+  ],
+  "bureauCode": [
+    "011:10"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "spatial": "United States",
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "accrualPeriodicity": "R/P1M",
+  "dataQuality": true,
+  "issued": "2017-02-27T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "landingPage": "https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/home",
+  "theme": [
+    "geospatial"
+  ],
+  "references": [
+    "https://ucr.fbi.gov/"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "description": "Historical Uniform Crime Reporting (UCR) publications are maintained in an archive on FBI.gov. The FBI.gov archive provides National Incident-Based Reporting System (NIBRS) data for years 2011 to 2019.",
+      "downloadURL": "https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/ucr/publications#NIBRS",
+      "mediaType": "application/zip",
+      "title": "2011 to 2019: FBI.gov archive"
+    },
+    {
+      "@type": "dcat:Distribution",
+      "description": "The Crime Data Explorer (CDE) offers downloadable Uniform Crime Reporting (UCR) data files. The CDE provides National Incident-Based Reporting System (NIBRS) Tables for years 2020 to present.",
+      "downloadURL": "https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/downloads",
+      "mediaType": "application/zip",
+      "title": "2020 to Present: Crime Data Explorer"
+    }
+  ]
+}

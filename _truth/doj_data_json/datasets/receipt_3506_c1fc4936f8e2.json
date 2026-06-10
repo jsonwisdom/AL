@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Evaluation of Minnesota's Felony Sentencing Guidelines, 1978-1984",
+  "description": "This data collection gauges the effects of the Minnesota\r\nfelony sentencing guidelines on prosecutional charging practices, plea\r\nnegotiations, and sentencing decisions. The collection provides\r\nprimary sources for evaluating the statewide changes in the\r\ndeterminants of charging and sentencing decisions after the sentencing\r\nguidelines were enacted. The statewide defendants file (Part 2)\r\ncontains information on the offender's demographic characteristics\r\n(age, sex, race, and marital and employment status), year of\r\ndisposition, descriptions of the convicted offense, criminal history\r\nscore, type of sentence imposed, the presumptive disposition and\r\nduration of confinement, dispositional location in the sentencing grid\r\nof the guidelines, and types of dispositional departure from\r\npresumptive sentences. Variables in the eight-county sample data (Part\r\n1) are similar to those available in the statewide data. However, the\r\ncounty sample data contain additional information on characteristics\r\nof cases and case processing variables such as whether the defendant\r\nwas convicted of multiple behavioral incidents and various types of\r\nplea bargaining.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3506",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "felony offenses",
+    "plea negotiations",
+    "prosecution",
+    "sentencing",
+    "sentencing guidelines"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1989-09-26T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09235.v1",
+      "title": "Evaluation of Minnesota's Felony Sentencing Guidelines, 1978-1984"
+    }
+  ]
+}

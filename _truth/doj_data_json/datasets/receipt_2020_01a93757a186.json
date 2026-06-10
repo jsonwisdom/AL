@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Annual Survey of Jails in Indian Country, 2016",
+  "description": "The purpose of the Survey of Jails in Indian Country is an enumeration of all known adult and juvenile facilities -- jails, confinement facilities,\r\ndetention centers, and other correctional facilities operated by tribal authorities or the Bureau of Indian Affairs (BIA), U.S. Department of\r\nthe Interior. For the purpose of this collection, Indian country includes reservations, pueblos, rancherias, and other Native American and\r\nAlaska Native communities throughout the United States. The survey collects data on the number of adults and juveniles held on the last\r\nweekday in June 2016, type of offense, average daily population in June, most crowded day in June, admissions and releases in June,\r\nnumber of inmate deaths and suicide attempts, rated capacity, and jail staffing.",
+  "modified": "2021-11-22T17:06:49",
+  "accessLevel": "restricted public",
+  "identifier": "2020",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Alaskan Natives",
+    "Native Americans",
+    "correctional facilities",
+    "correctional system",
+    "corrections management",
+    "jail inmates",
+    "jails",
+    "population characteristics"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2435",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-05-23T12:32:47",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37006.v2",
+      "title": "Annual Survey of Jails in Indian Country, 2016"
+    }
+  ]
+}

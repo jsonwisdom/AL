@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "United States Firearm Transfer Analysis (2005-2010)",
+  "description": "\r\nThese data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\n\r\n\r\nThis study examines the increase in firearm background checks and the increase in firearm transfer and permit application denials. The study is a secondary analysis, primarily of data already available through public sources. Distributed here are the code used for the secondary analysis and the data not otherwise available through other public means. Please refer to the readme file, distributed with this study, for a list of instructions on how to obtain all other data used in this study.\r\n",
+  "modified": "2016-02-15T16:40:21",
+  "accessLevel": "public",
+  "identifier": "562",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "federal regulations",
+    "firearms",
+    "law",
+    "regulation",
+    "state regulations"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2016-02-15T16:40:21",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36358.v1",
+      "title": "United States Firearm Transfer Analysis (2005-2010)"
+    }
+  ]
+}

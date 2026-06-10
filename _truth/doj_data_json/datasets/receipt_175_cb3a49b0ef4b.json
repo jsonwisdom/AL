@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Law Enforcement Management and Administrative Statistics (LEMAS): 1997 Sample Survey of Law Enforcement Agencies",
+  "description": "This survey, the fourth in the Bureau of Justice Statistics' program on Law Enforcement and Administrative Statistics (LEMAS), presents information on law enforcement agencies: state police, county police, special police (state and local), municipal police, and sheriff's departments. Variables include size of the population served by the police or sheriff's department, levels of employment and spending, various functions of the department, average salary levels for uniformed officers, policies and programs, and other matters related to management and personnel.",
+  "modified": "2008-12-04T09:55:18",
+  "accessLevel": "public",
+  "identifier": "175",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "administration",
+    "budgets",
+    "law enforcement",
+    "law enforcement agencies",
+    "management",
+    "personnel",
+    "police departments",
+    "statistical data",
+    "wages and salaries",
+    "workers"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2430",
+  "dataQuality": false,
+  "issued": "1999-06-16T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02700.v1",
+      "title": "Law Enforcement Management and Administrative Statistics (LEMAS): 1997 Sample Survey of Law Enforcement Agencies"
+    }
+  ]
+}

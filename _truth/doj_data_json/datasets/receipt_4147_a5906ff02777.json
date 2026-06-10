@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Annual Probation Survey, 2017",
+  "description": "The 2017 Annual Probation Survey provides a count of the total number of persons supervised on probation on January 1 and December 31, 2017, and a count of the number of persons entering and exiting probation supervision during 2017. The survey also provides counts of the number of probationers by certain characteristics, such as gender, race, Hispanic or Latino origin, offense, and supervision status. The survey covers all 50 states, the District of Columbia, and the federal system.",
+  "modified": "2021-09-09T16:15:45",
+  "accessLevel": "public",
+  "identifier": "4147",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "criminal justice system",
+    "offenses",
+    "probation",
+    "probationers",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2444",
+  "dataQuality": false,
+  "issued": "2021-09-09T16:15:45",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37482.v1",
+      "title": "Annual Probation Survey, 2017"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Census of State and Federal Adult Correctional Facilities, 2005",
+  "description": "This census is the seventh enumeration of state adult correctional institutions and the fourth of federal institutions sponsored by the Bureau of Justice Statistics and conducted by the Bureau of the Census. Earlier censuses were completed in 1979 (ICPSR 7852), 1984 (ICPSR 8444), 1990 (ICPSR 9908), 1995 (ICPSR 6953), and 2000 (ICPSR 4021). For each facility, information was provided on physical security, age, functions, capacity, court orders for specific conditions, one-day counts and average populations, race/ethnicity of inmates, inmate work assignments, inmate deaths, special inmate counts, assaults, and incidents caused by inmates.",
+  "modified": "2017-05-12T10:43:33",
+  "accessLevel": "public",
+  "identifier": "91",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "correctional facilities (adults)",
+    "corrections",
+    "corrections management",
+    "inmate deaths",
+    "inmate populations",
+    "inmate programs",
+    "inmates",
+    "jails",
+    "prison administration",
+    "prison conditions",
+    "prison construction",
+    "prison overcrowding"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2168",
+  "dataQuality": false,
+  "issued": "2009-04-03T11:24:27",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR24642.v3",
+      "title": "Census of State and Federal Adult Correctional Facilities, 2005"
+    }
+  ]
+}

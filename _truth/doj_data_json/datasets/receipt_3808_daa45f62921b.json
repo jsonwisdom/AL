@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Prosecution of Child Sexual Abuse: A Partnership to Improve Outcomes, New England, 2009-2013",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigators if further information is needed.\r\nThis study conducted a retrospective analysis of how child sexual abuse cases referred for prosecution in several counties in one New England state over a five year period (2009-2013) progressed through the system. In particular, the study focused on the distribution of the cases' outcomes and factors associated with these outcomes.\r\nThe collection contains eight SPSS data files:\r\n\r\nD1_General-Case-Details.sav (n=500; 103 variables)\r\nD2_Background-Checks.sav (n=614; 9 variables)\r\nD3_Trial-Information.sav (n=89; 123 variables)\r\nD4_First-Victim-Details.sav (n=500; 289 variables)\r\nD5_Add-Victim-Details.sav (n=54; 289 variables)\r\nD6_First-Perp-Details.sav (n=500; 62 variables)\r\nD7_Add-Perp-Details.sav (n=60; 62 variables)\r\nD8_Medical-Information.sav (n=97; 35 variables)\r\n\r\nDemographic variables include age, birth date (month and year), gender, race, ethnicity, living arrangements, number of siblings, immigration status and ability to speak English.",
+  "modified": "2019-06-27T12:04:42",
+  "accessLevel": "restricted public",
+  "identifier": "3808",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "child sexual abuse",
+    "children",
+    "criminal prosecution",
+    "rape",
+    "sex offenders",
+    "special prosecutors",
+    "victimization"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2019-06-27T11:28:42",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37173.v2",
+      "title": "Prosecution of Child Sexual Abuse: A Partnership to Improve Outcomes, New England, 2009-2013"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Project on Human Development in Chicago Neighborhoods (PHDCN):  Wechsler Adult Intelligence Scale-Revised, Wave 2, 1997-2000",
+  "description": "The Project on Human Development in Chicago Neighborhoods\r\n (PHDCN) was a large-scale, interdisciplinary study of how families,\r\n schools, and neighborhoods affect child and adolescent\r\n development. One component of the PHDCN was the Longitudinal Cohort\r\n Study, which was a series of coordinated longitudinal studies that\r\n followed over 6,000 randomly selected children, adolescents, and young\r\n adults, and their primary caregivers over time to examine the changing\r\n circumstances of their lives, as well as the personal characteristics,\r\n that might lead them toward or away from a variety of antisocial\r\n behaviors. Numerous measures were administered to respondents to\r\n gauge various aspects of human development, including individual\r\n differences, as well as family, peer, and school influences. The\r\n Wechsler Adult Intelligence Scale-Revised (WAIS-R) was a general test\r\n of intelligence, which David Wechsler, the test's author, defined as\r\n \"the global capacity of the individual to act purposefully, to think\r\n rationally, and to deal effectively with his environment.\" In keeping\r\n with this definition of intelligence as an aggregate of mental\r\n aptitudes or abilities, the WAIS-R has traditionally consisted of 11\r\n subtests divided into two parts, verbal and performance. For this\r\n study, the WAIS-R included definitions of words only. It was only\r\nadministered to Cohort 18.",
+  "modified": "2006-03-17T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "2886",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "adolescents",
+    "child development",
+    "childhood",
+    "neighborhoods",
+    "testing and measurement"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "3702",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2006-03-17T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR13663.v1",
+      "title": "Project on Human Development in Chicago Neighborhoods (PHDCN):  Wechsler Adult Intelligence Scale-Revised, Wave 2, 1997-2000"
+    }
+  ]
+}

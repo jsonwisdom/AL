@@ -1,0 +1,67 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Arrestee Drug Abuse Monitoring (ADAM) Program in the United States, 1998",
+  "description": "The Arrestee Drug Abuse Monitoring (ADAM) Program measures\r\nlevels of and trends in drug use among persons arrested and booked in\r\nthe United States. The ADAM Program is a redesigned version of the Drug\r\nUse Forecasting (DUF) Program (DRUG USE FORECASTING IN 24 CITIES IN\r\nTHE UNITED STATES, 1987-1997 [ICPSR 9477]), upgraded methodologically\r\nand expanded to include 35 cities. The data address the following\r\ntopics: (1) types of drugs used by arrestees (based on self-reports\r\nand urinalysis), (2) self-reported dependency on drugs, (3)\r\nself-reported need for alcohol/drug treatment, (4) the relationship\r\nbetween drug use and certain types of offenses, and (5) the\r\nrelationship between self-reported indicators of drug use and\r\nindicators of drug use based on urinalysis. Participation in the\r\nproject is voluntary, and all information collected from the arrestees\r\nis anonymous and confidential. The data include the arrestee's age,\r\nrace, gender, educational attainment, marital status, and the charge\r\nat the time of booking. The recently modified ADAM/DUF interview\r\ninstrument (used for part of the 1995 DUF data and all of the DUF\r\n1996, DUF 1997, and ADAM 1998 data) also collected information about\r\nthe arrestee's self-reported use of 15 drugs. For each drug type,\r\narrestees were asked whether they had ever used the drug, the age at\r\nwhich they first used the drug, whether they had used the drug within\r\nthe past three days, how many days they had used the drug within the\r\npast month, whether they had ever needed or felt dependent on the\r\ndrug, and whether they were dependent on the drug at the time of the\r\ninterview. Data from the new interview instrument also included\r\ninformation about whether arrestees had ever injected drugs and\r\nwhether they were influenced by drugs when they allegedly committed\r\nthe crimes for which they were arrested. The data also include\r\ninformation about whether the arrestee had been to an emergency room\r\nfor drug-related incidents and whether he or she had prior arrests in\r\nthe last 12 months. Data that continue to be collected with the new\r\nversion of the ADAM/DUF interview provide information about arrestees'\r\nhistories of drug/alcohol treatment, including whether they ever\r\nreceived drug/alcohol treatment and whether they needed drug/alcohol\r\ntreatment. As part of the ADAM program, arrestees were asked to\r\nprovide a urine specimen, which was screened for the presence of the\r\nfollowing ten drug types: marijuana, opiates, cocaine, PCP, methadone,\r\nbenzodiazepines (Valium), methaqualone, propoxyphene (Darvon),\r\nbarbiturates, and amphetamines (positive test results for amphetamines\r\nwere confirmed by gas chromatography).",
+  "modified": "1999-11-10T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "2927",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "ADAM/DUF Program",
+    "alcohol abuse",
+    "arrests",
+    "crime patterns",
+    "demographic characteristics",
+    "drug dependence",
+    "drug offenders",
+    "drug related crimes",
+    "drug testing",
+    "drug treatment",
+    "drug use",
+    "drugs",
+    "juvenile offenders",
+    "substance abuse",
+    "trends",
+    "urinalysis"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "3023",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "1999-11-10T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02826.v1",
+      "title": "Arrestee Drug Abuse Monitoring (ADAM) Program in the United States, 1998"
+    }
+  ]
+}

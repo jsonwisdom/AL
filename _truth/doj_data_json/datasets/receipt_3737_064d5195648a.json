@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Armed Criminals in America:  A Survey of Incarcerated Felons, 1983",
+  "description": "The data for this study were collected using\r\nself-administered questionnaires given to a nonprobability sample of\r\nincarcerated felons in ten states. Information in the data include\r\nsocioeconomic status of the inmate, prior criminal record, drug use,\r\nweapon usage, family history, and demographic information.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3737",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime",
+    "demographic characteristics",
+    "drug law offenses",
+    "drug use",
+    "families",
+    "inmates",
+    "justice",
+    "socioeconomic indicators"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1985-05-24T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08357.v1",
+      "title": "Armed Criminals in America:  A Survey of Incarcerated Felons, 1983"
+    }
+  ]
+}

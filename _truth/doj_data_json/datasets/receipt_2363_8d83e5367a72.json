@@ -1,0 +1,82 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Survey of Prison Inmates, United States, 2016",
+  "description": "To fulfill part of its mission, the Bureau of Justice Statistics (BJS) conducted the Survey of Prison Inmates (SPI), a national, wide-ranging survey of prisoners age 18 or older who were incarcerated in state or federal correctional facilities within the United States. SPI provides national statistics on prisoner characteristics across a variety of domains, such as current offense and sentence, incident characteristics, firearm possession and sources, criminal history, demographic and socioeconomic characteristics, family background, drug and alcohol use and treatment, mental and physical health and treatment, and facility programs and rules violations. SPI can also be used to track changes in these characteristics over time, describe special populations of prisoners, and identify policy-relevant changes in the state and federal prison populations. Formerly the Survey of Inmates in State and Federal Correctional Facilities (SISFCF), this survey was renamed SPI with the 2016 iteration.",
+  "modified": "2021-09-15T13:51:15",
+  "accessLevel": "restricted public",
+  "identifier": "2363",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Hispanic or Latino origins",
+    "alcohol",
+    "correctional facilities",
+    "correctional facilities (adults)",
+    "correctional system",
+    "crime",
+    "criminal histories",
+    "demographic characteristics",
+    "drugs",
+    "family background",
+    "federal correctional facilities",
+    "federal prisoners",
+    "firearms",
+    "inmates",
+    "mental health",
+    "national crime statistics (USA)",
+    "offenders",
+    "offenses",
+    "physical condition",
+    "prison inmates",
+    "prison sentences",
+    "prison visits",
+    "prisoners",
+    "prisoners--health and hygiene",
+    "race",
+    "socioeconomic status",
+    "state correctional facilities",
+    "substance use",
+    "treatment",
+    "victims",
+    "weapons"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2171",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2020-12-21T10:28:46",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37692.v4",
+      "title": "Survey of Prison Inmates, United States, 2016"
+    }
+  ]
+}

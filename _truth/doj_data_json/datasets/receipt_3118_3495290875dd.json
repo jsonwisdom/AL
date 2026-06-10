@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "The Historically Black College and University Campus Sexual Assault (HBCU-CSA) Study, 2008",
+  "description": "The Historically Black College and University Campus Sexual Assault Study was undertaken to document the prevalence, personal and behavioral factors, context, consequences, and reporting of distinct forms of sexual assault. This study examined campus police and service provider perspectives on sexual victimization and student attitudes toward law enforcement and ideas about prevention and policy. The HBCU-CSA Study was a web survey administered in the fall semester of 2008 at 4 different colleges and universities. The participants included 3,951 undergraduate women and 88 staff from campus police, counseling centers, student health services, office of judicial affairs, women's center, office of the dean of students, and residential life.",
+  "modified": "2013-12-03T13:24:38",
+  "accessLevel": "restricted public",
+  "identifier": "3118",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "African Americans",
+    "alcohol",
+    "campus crime",
+    "drugs",
+    "minorities",
+    "rape",
+    "sexual assault",
+    "students"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2013-11-12T09:47:27",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR31301.v1",
+      "title": "The Historically Black College and University Campus Sexual Assault (HBCU-CSA) Study, 2008"
+    }
+  ]
+}

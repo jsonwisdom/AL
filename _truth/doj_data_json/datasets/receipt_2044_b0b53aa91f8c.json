@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Mandatory Drug offender Processing Data, 1986: Alaska, California, Iowa, Minnesota, Nebraska, New York, North Carolina, and Virginia",
+  "description": "The National Consortium for Assessing Drug Control\r\nInitiatives, funded by the Bureau of Justice Assistance and\r\ncoordinated by the Criminal Justice Statistics Association, collected\r\ndrug offender processing data from eight states: Alaska, California,\r\nIowa, Minnesota, Nebraska, New York, North Carolina, and Virginia. The\r\npurpose of the project was to track adult drug offenders from the\r\npoint of entry into the criminal justice system (typically by arrest)\r\nthrough final court disposition, regardless of whether the offender\r\nwas released without trial, acquitted, or convicted. These data allow\r\nresearchers to examine how the criminal justice system processes drug\r\noffenders, to measure the changing volume of drug offenders moving\r\nthrough the different segments of the criminal justice system, to\r\ncalculate processing time intervals between major decision-making\r\nevents, and to assess the changing structure of the drug offender\r\npopulation. For purposes of this project, a drug offender was defined\r\nas any person who had been charged with a felony drug offense. The\r\ndata are structured into six segments pertaining to (1) record\r\nidentification, (2) the offender (date of birth, sex, race, ethnic\r\norigin), (3) arrest information (date of arrest, age at arrest, arrest\r\ncharge code), (4) prosecution information (filed offense code and\r\nlevel, prosecution disposition and date), (5) court disposition\r\ninformation (disposition offense and level, court disposition, final\r\ndisposition date, final pleading, type of trial), and (6) sentencing\r\ninformation (sentence and sentence date, sentence minimum and\r\nmaximum). Also included are elapsed time variables. The unit of\r\nanalysis is the felony drug offender.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2044",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "acquittals",
+    "arrest procedures",
+    "convictions (law)",
+    "disposition (legal)",
+    "drug law enforcement",
+    "drug offenders",
+    "sentencing",
+    "trials"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1992-03-04T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09420.v1",
+      "title": "Mandatory Drug offender Processing Data, 1986: Alaska, California, Iowa, Minnesota, Nebraska, New York, North Carolina, and Virginia"
+    }
+  ]
+}

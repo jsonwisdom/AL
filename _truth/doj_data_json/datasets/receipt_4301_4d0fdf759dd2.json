@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Quarterly FOIA Report",
+  "description": "Each quarter, agencies must provide the number of requests received, processed, and in the agency's backlog. Additionally, agencies must report the status of the agency's ten oldest pending requests each quarter. ",
+  "modified": "2008-01-01T00:00:00",
+  "accessLevel": "public",
+  "identifier": "4301",
+  "publisher": {
+    "name": "Justice Management Division",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Data Management US Department of Justice (USDOJ)",
+    "hasEmail": "mailto:DataManagement@usdoj.gov"
+  },
+  "keyword": [
+    "Quarterly FOIA Report",
+    "Quarterly Report"
+  ],
+  "bureauCode": [
+    "011:00"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "accrualPeriodicity": "R/P3M",
+  "dataQuality": false,
+  "issued": "2008-01-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "landingPage": "https://www.foia.gov/reports.html",
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.foia.gov/quarterly.html",
+      "title": "Create a Quarterly FOIA Report"
+    },
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://api.foia.gov/api/quarterly_foia_report",
+      "description": "This is a JSON API endpoint for the quarterly report data as it is stored in the Drupal backend. An access token is required and can be created here: https://www.foia.gov/developer/#api-key-signup",
+      "format": "Api",
+      "title": "Quarterly Report JSON API"
+    }
+  ]
+}

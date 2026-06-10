@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Data from Urban Institute's Survey on Forced Marriage in the United States, 2017",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThe Urban Institute, in collaboration with Tahirih Justice Center, sought to examine forced marriages in the United States via an exploratory study of the victimization experiences of those subjected to and threatened with forced marriage. The study also sought to begin to understand elements at the intersection of forced marriage with intimate partner and sexual violence, such as: how perpetrators threaten and actually force victims into marriages; the elements of force, fraud, or coercion in the tactics used to carry out victimization; other case demographics and dynamics (e.g., overseas marriages versus those in the United States); factors that put individuals at risk of forced marriage or that trigger or elevate their risk of related abuses; help-seeking behavior; the role of social, cultural, and religious norms in forced marriage; and the ability (or lack thereof) of service providers, school officials, and government agencies with protection mandates (law enforcement, child protection, and social workers) to screen for, and respond to, potential and reported cases of forced marriage.\r\nThis collection contains 1 Stata file: ICPSR-Data-File.dta (21007 cases; 48 variables).\r\nThe qualitative data are not available as part of this data collection at this time.",
+  "modified": "2018-12-20T10:40:47",
+  "accessLevel": "restricted public",
+  "identifier": "3467",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "family violence",
+    "forced marriage",
+    "human trafficking",
+    "marriage",
+    "sexual abuse",
+    "victim rights",
+    "victimization"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-12-20T10:39:24",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36855.v1",
+      "title": "Data from Urban Institute's Survey on Forced Marriage in the United States, 2017"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "School Health Center Healthy Adolescent Relationship Program (SHARP) Integrating Prevention and Intervention in Northern California School Health Centers, 2012-2013",
+  "description": "\r\nThese data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\n\r\n\r\nThe School Health Center Healthy Adolescent Relationship Program (SHARP) was a school health center (SHC) provider-delivered multi-level intervention to reduce adolescent relationship abuse (ARA) among adolescents ages 14-19 seeking care in SHCs. This study tested the effectiveness of a brief relationship abuse education and counseling intervention in SHCs.\r\n\r\n\r\nThe SHARP intervention consisted of three levels of integrated intervention:\r\n\r\nA brief clinical intervention on healthy and unhealthy relationships for SHC (cisgender and transgender) male and female patients delivered by SHC providers during all clinic visits (evaluated via client pre- and post-surveys and chart review)\r\nDevelopment of an ARA-informed SHC staff and clinic environment (evaluated via provider pre and post-training surveys and interviews)\r\nSHC-based youth-led outreach activities within the school to promote healthy relationships and improve student safety (evaluated by focus groups with youth leaders and measures of school climate)\r\n\r\n\r\n\r\nThe collection consists of:\r\n\r\n\r\n3 SAS data files\r\n\r\nsharp_abuse_data_archive.sas7bdat (n=1,011; 272 variables)\r\nsharp_blt2exit_long_data_archive.sas7bdat (n=1,949; 259 variables)\r\nsharp_chart_data_archive_icpsr.sas7bdat (n=936; 24 variables)\r\n\r\n2 Stata data files\r\n\r\nSHARP_Provider Immediate Post_0829 and 0905 training_final-ICPSR.dta (n=38; 21 variables)\r\nSHARP_Provider Pre and Followup_final.dta-ICPSR.dta (n=66; 102 variables)\r\n\r\n\r\n\r\n5 SAS syntax files\r\n\r\nNIJ SHARP - Analyses.sas\r\nNIJ SHARP - DataMgmt_Final.sas\r\nNIJ SHARP - Formats.sas\r\nSHARP - Chart Extraction Data-MASKED.sas\r\nSHARP - Chart Extraction Formats.sas\r\n\r\n\r\n\r\n3 Stata syntax files\r\n\r\ncode-for-SHARP-dating-violence-analyses-deidentified-MASKED.do\r\nSHARP_Provider Data to Archive-MASKED.do\r\nSHARP-analyses-deidentified-MASKED.do\r\n\r\n\r\n\r\n3 PI provided codebooks\r\n\r\nSHARP Codebook_Client Chart Data.xlsx (1 worksheet)\r\nSHARP Codebook_Client Survey Data.xlsx (3 worksheets)\r\nSHARP Codebook_Provider Survey Data.xlsx (1 worksheet)\r\n\r\n\r\n\r\nFor confidentiality reasons, qualitative data from focus groups are not currently available.  Focus groups were conducted with each student outreach team following the conclusion of data collection. Discussions focused on awareness about ARA, the school-wide campaign, using the SHC as a resource, and what else can be done to prevent ARA in schools.\r\n",
+  "modified": "2017-12-20T15:00:27",
+  "accessLevel": "restricted public",
+  "identifier": "3336",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "adolescents",
+    "dating (social)",
+    "pregnancy",
+    "self concept",
+    "sexual attitudes",
+    "sexual awareness",
+    "sexual behavior",
+    "social networks",
+    "violence"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2017-12-20T14:52:21",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR35612.v1",
+      "title": "School Health Center Healthy Adolescent Relationship Program (SHARP) Integrating Prevention and Intervention in Northern California School Health Centers, 2012-2013"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Women Correctional Officers in California, 1979",
+  "description": "This study examined women correctional officers working in\r\nthe 11 institutions for men operated by the California Department of\r\nCorrections in 1979. For Part 1, Census, researchers conducted a\r\ncensus of all 386 female correctional officers working in these\r\ninstitutions to collect demographic characteristics and baseline\r\ndata. For Parts 2 (Staff) and 3 (Inmate), a survey was administered to\r\nstaff and inmates asking their opinions about differences in\r\nperformance between male and female correctional officers. Part 4,\r\nProfile, contains demographic and background data for the officers\r\nparticipating in the Part 2 survey. For Parts 5 (Female) and 6 (Male),\r\nresearchers gathered job performance data for female correctional\r\nofficers in 7 of the 11 institutions, as well as a matched sample of\r\nmale correctional officers. Variables in Parts 1 and 4-6 include\r\ndemographic information such as age, ethnicity, marital status, number\r\nof children, and educational and occupational history. Other variables\r\nmeasure attributes such as age, weight, and height, and record career\r\ninformation such as date and location of permanent assignment as a\r\ncorrectional officer, any breaks in service, and other criminal\r\njustice work experience. Additional variables in Parts 5 and 6 include\r\njob performance measures, such as ratings on skills, knowledge, work\r\nhabits, learning ability, overall work habits, quality and quantity of\r\nwork, and commendations. Parts 2 and 3 present information on staff\r\nand inmate evaluations of male and female correctional officers\r\nperforming specific roles, such as control work officer, yard officer,\r\nor security squad officer. Additional variables include opinions on\r\nhow well male and female officers handled emergency situations,\r\nmaintained control under stress, and used firearms when\r\nnecessary. Questions were also asked about whether inmates' or\r\nofficers' safety was endangered with female officers, whether women\r\nshould be hired as correctional officers, and whether female officers\r\nwere gaining acceptance in correctional facilities.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3087",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "criminal justice system",
+    "gender roles",
+    "women"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1987-10-12T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08684.v2",
+      "title": "Women Correctional Officers in California, 1979"
+    }
+  ]
+}

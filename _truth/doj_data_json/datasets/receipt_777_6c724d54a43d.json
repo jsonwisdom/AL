@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Civil Justice Survey of State Courts, 2005 ",
+  "description": "The Civil Justice Survey of State Courts (CJSSC), 2005 is a systematic examination of general civil (that is, tort, contract, and real property) cases disposed of by bench or jury trial in a national sample of state courts of general jurisdiction in 2005. This study expands on the 1992, 1996, and 2001 CJSSC by collecting a nationally representative sample of bench and jury trials concluded in 156 urban, suburban, and rural counties. Prior iterations of the CJSSC focused on general civil cases concluded by bench or jury trial in a sample of the nation's 75 most populous counties. The 2005 CJSSC was designed and carried out by the National Center for State Courts. Westat designed the national sampling framework for this survey.\r\nThe data collection produced two datasets. The first contains information on general civil (tort, contract, and real property) cases disposed of by bench or jury trial in a national sample of counties in 2005. Detailed case level information was obtained on these trials, including types of civil cases litigated at trial, characteristics of litigants involved in trials, who wins in trials, compensatory award amounts, punitive damages, case processing times, and post-trial litigation. The other data file contains aggregate information on the number of general civil trial and nontrial dispositions that occurred in 2005 in CJSCC counties that had the capacity to provide these data.\r\nThis is the fourth in a series of data collections begun in 1992 [CIVIL JUSTICE SURVEY OF STATE COURTS, 1992 (ICPSR 6587), CIVIL JUSTICE SURVEY OF STATE COURTS, 1996 (ICPSR 2883), and CIVIL JUSTICE SURVEY OF STATE COURTS, 2001 (ICPSR 3957)].",
+  "modified": "2011-11-02T16:04:45",
+  "accessLevel": "restricted public",
+  "identifier": "777",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "case processing",
+    "civil courts",
+    "civil law",
+    "court cases",
+    "court system",
+    "disposition (legal)",
+    "lawsuits",
+    "state courts"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2172",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2009-01-14T14:45:17",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR23862.v2",
+      "title": "Civil Justice Survey of State Courts, 2005 "
+    }
+  ]
+}

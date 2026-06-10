@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Crime Changes in Baltimore, 1970-1994",
+  "description": "These data were collected to examine the relationships\r\namong crime rates, residents' attitudes, physical deterioration, and\r\nneighborhood structure in selected urban Baltimore neighborhoods. The\r\ndata collection provides both block- and individual-level neighborhood\r\ndata for two time periods, 1981-1982 and 1994. The block-level files\r\n(Parts 1-6) include information about physical conditions, land use,\r\npeople counts, and crime rates. Parts 1-3, the block assessment files,\r\ncontain researchers' observations of street layout, traffic, housing\r\ntype, and general upkeep of the neighborhoods. Part 1, Block\r\nAssessments, 1981 and 1994, contains the researchers' observations of\r\nsampled blocks in 1981, plus selected variables from Part 3 that\r\ncorrespond to items observed in 1981. Nonsampled blocks (in Part 2)\r\nare areas where block assessments were done, but no interviews were\r\nconducted. The \"people counts\" file (Part 4) is an actual count of\r\npeople seen by the researchers on the sampled blocks in 1994.\r\nVariables for this file include the number, gender, and approximate\r\nage of the people seen and the types of activities they were engaged\r\nin during the assessment. Part 5, Land Use Inventory for Sampled\r\nBlocks, 1994, is composed of variables describing the types of\r\nbuildings in the neighborhood and their physical condition. Part 6,\r\nCrime Rates and Census Data for All Baltimore Neighborhoods,\r\n1970-1992, includes crime rates from the Baltimore Police Department\r\nfor aggravated assault, burglary, homicide, larceny, auto theft, rape,\r\nand robbery for 1970-1992, and census information from the 1970, 1980,\r\nand 1990 United States Censuses on the composition of the housing\r\nunits and the age, gender, race, education, employment, and income of\r\nresidents. The individual-level files (Parts 7-9) contain data from\r\ninterviews with neighborhood leaders, as well as telephone surveys of\r\nresidents. Part 7, Interviews with Neighborhood Leaders, 1994,\r\nincludes assessments of the level of involvement in the community by\r\nthe organization to which the leader belongs and the types of\r\nactivities sponsored by the organization. The 1982 and 1994 surveys of\r\nresidents (Parts 8 and 9) asked respondents about different aspects of\r\ntheir neighborhoods, such as physical appearance, problems, and crime\r\nand safety issues, as well as the respondents' level of satisfaction\r\nwith and involvement in their neighborhoods. Demographic information\r\non respondents, such as household size, length of residence, marital\r\nstatus, income, gender, and race, is also provided in this file.",
+  "modified": "2008-04-04T09:17:56",
+  "accessLevel": "restricted public",
+  "identifier": "3123",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "attitudes",
+    "community involvement",
+    "crime rates",
+    "neighborhood change",
+    "neighborhood conditions",
+    "neighborhoods",
+    "urban areas",
+    "urban crime",
+    "urban decline"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "1998-10-08T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02352.v2",
+      "title": "Crime Changes in Baltimore, 1970-1994"
+    }
+  ]
+}

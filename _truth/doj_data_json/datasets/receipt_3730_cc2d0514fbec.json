@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Juvenile Delinquency and Adult Crime, 1948-1977 [Racine, Wisconsin]: City Ecological Data",
+  "description": "These data, intended for use in conjunction with JUVENILE\r\nDELINQUENCY AND ADULT CRIME, 1948-1977 [RACINE, WISCONSIN]: THREE BIRTH\r\nCOHORTS (ICPSR 8163), are organized into two different types: Block\r\ndata and Home data. Part 1, Block Data, contains the characteristics of\r\neach block in Racine for the years 1950, 1960, and 1970 as selected\r\nfrom the United States Census of Housing for each of these years. The\r\ndata are presented for whole blocks for each year and for blocks\r\nagglomerated into equal spaces so that comparison may be made between\r\nthe 1950, 1960, and 1970 data. In addition, land use and target density\r\n(gas stations, grocery and liquor stores, restaurants, and taverns)\r\nmeasures are included. The data were obtained from land use maps and\r\ncity directories. These block data have been aggregated into census\r\ntracts, police grid areas, natural areas, and neighborhoods for the\r\npurpose of describing the spatial units of each in comparable fashion\r\nfor 1950, 1960, and 1970. The information contained within the Block\r\nData file is intended to be used to merge ecological data with any of\r\nthe files described in the ICPSR 8163 codebook. The Home datasets\r\n(Parts 2-6) contain selected variables from the Block Data file merged\r\nwith the Cohort Police Contact data or the Cohort Interview data from\r\nICPSR 8163. The Home datasets represent the merged files used by the\r\nprincipal investigators for their analysis and are included here only\r\nas examples of how the files from ICPSR 8163 may be merged with the\r\nBlock data.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3730",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "crime",
+    "juvenile delinquency",
+    "neighborhood characteristics",
+    "neighborhood conditions",
+    "neighborhoods"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-07-12T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08164.v2",
+      "title": "Juvenile Delinquency and Adult Crime, 1948-1977 [Racine, Wisconsin]: City Ecological Data"
+    }
+  ]
+}

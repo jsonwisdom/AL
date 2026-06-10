@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Drinking and Driving:  A Survey of Licensed Drivers in the United States, 1983    ",
+  "description": "This study focuses on the drinking and driving habits of\r\n Americans. The questionnaire contained 51 questions. Respondents were\r\n interviewed over the telephone and asked about their frequency of\r\n consumption of alcoholic beverages, where they most often drank, \r\n their mode of transportation to and from this location, their driving\r\n and drinking experiences, and their age, sex, educational attainment,\r\nand socioeconomic status.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3736",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "United States",
+    "alcohol",
+    "alcohol consumption",
+    "demographic characteristics",
+    "drinking behavior",
+    "driving habits",
+    "driving under the influence"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1985-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08356.v2",
+      "title": "Drinking and Driving:  A Survey of Licensed Drivers in the United States, 1983    "
+    }
+  ]
+}

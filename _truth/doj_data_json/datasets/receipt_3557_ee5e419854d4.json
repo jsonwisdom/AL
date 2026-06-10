@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Police Decision Making in Sexual Assault Cases: An Analysis of Crime Reported to the Los Angeles Police Department and the Los Angeles County Sheriff's Department, 2008",
+  "description": "\r\nThis study used a mixed-methods approach to pursue five interrelated objectives: (1) to document the extent of case attrition and to identify the stages of the criminal justice process where attrition is most likely to occur; (2) to identify the case complexities and evidentiary factors that affect the likelihood of attrition in sexual assault cases; (3) to identify the predictors of case outcomes in sexual assault cases; (4) to provide a comprehensive analysis of the factors that lead police to unfound the charges in sexual assault cases; and (5) to identify the situations in which sexual assault cases are being cleared by exceptional means.\r\nToward this end, three primary data sources were used: (1) quantitative data on the outcomes of sexual assaults reported to the Los Angeles Police Department (LAPD) and the Los Angeles County Sheriff's Department (LASD) from 2005 to 2009, (2) qualitative data from interviews with detectives and with deputy district attorneys with the Los Angeles District Attorney's Office who handled sexual assault cases during this time period, and (3) detailed quantitative and qualitative data from case files for a sample of cases reported to the two agencies in 2008.\r\n\r\nThe complete case files for sexual assaults that were reported to the Los Angeles Police Department and the Los Angeles County Sheriff's Department in 2008 were obtained by members of the research team and very detailed information (quantitative and qualitative data) was extracted from the files on each case in Dataset 1 (Case Outcomes and Characteristics: Reports from 2008). The case file included the crime report prepared by the patrol officer who responded to the crime and took the initial report from the complainant, all follow-up reports prepared by the detective to whom the case was assigned for investigation, and the detective's reasons for unfounding the report or for clearing the case by arrest or by exceptional means. The case files also included either verbatim accounts or summaries of statements made by the complainant, by witnesses (if any), and by the suspect (if the suspect was interviewed); a description of physical evidence recovered from the alleged crime scene, and the results of the physical exam (Sexual Assault Response Team (SART) exam) of the victim (if the victim reported the crime within 72 hours of the alleged assault). Members of the research team read through each case file and recorded data in an SPSS data file. There are 650 cases and 261 variables in the data file.  The variables in the data file include administrative police information and charges listed on the police report. There is also information related to the victim, the suspect, and the case.\r\n\r\n\r\nDatasets 2-5 were obtained from the district attorney's office and contain outcome data that resulted in the arrest of a suspect.\r\nThe outcome data obtained from the agency was for the following sex crimes: rape, attempted rape, sexual penetration with a foreign object, oral copulation, sodomy, unlawful sex, and sexual battery.\r\n\r\n\r\nDataset 3 (Sexual Assault Case Attrition: 2005 to 2009, Los Angeles Police Department - Adult Arrests) is a subset of Dataset 2 (Sexual Assault Case Attrition: 2005 to 2009, Los Angeles Police Department - All Cases) in that it only contains cases that resulted in the arrest of at least one adult suspect.  Dataset 2 (Sexual Assault Case Attrition: 2005 to 2009, Los Angeles Police Department - All Cases) contains 10,832 cases and 29 variables.  Dataset 3 (Sexual Assault Case Attrition: 2005 to 2009, Los Angeles Police Department - Adult Arrests) contains 891 cases and 45 variables.\r\n\r\n\r\nSimilarly, Dataset 5 (Sexual Assault Case Attrition: 2005 to 2009, Los Angeles Sheriff's Department - Adult Arrests) is a subset of Dataset 4 (Sexual Assault Case Attrition: 2005 to 2009, Los Angeles Sheriff's Department - All Cases) in that it only contains cases that resulted in the arrest of at least one adult suspect.  Dataset 4 (Sexual Assault Case Attrition: 2005 to 2009, Los Angeles Sheriff's Department - All Cases) contains 3,309 cases and 33 variables.  Dataset 5 (Sexual Assault Case Attrition: 2005 to 2009, Los Angeles Sheriff's Department - Adult Arrests) contains 904 cases and 47 variables.\r\n",
+  "modified": "2013-11-18T14:49:52",
+  "accessLevel": "restricted public",
+  "identifier": "3557",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime reporting",
+    "criminal investigations",
+    "domestic violence",
+    "intimate partner violence",
+    "police",
+    "police reports",
+    "rape",
+    "sexual assault",
+    "violence",
+    "violence against women"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2012-04-11T13:46:13",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR32601.v2",
+      "title": "Police Decision Making in Sexual Assault Cases: An Analysis of Crime Reported to the Los Angeles Police Department and the Los Angeles County Sheriff's Department, 2008"
+    }
+  ]
+}

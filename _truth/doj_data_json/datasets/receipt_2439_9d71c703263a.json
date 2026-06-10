@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Violent Death Reporting System Series",
+  "description": "\r\nThe\r\nNational Violent Death Reporting System (NVDRS) is a state-based,\r\nactive surveillance system designed to obtain a complete census of all\r\nresident and occurrent violent deaths in participating states. Data\r\nare collected from multiple sources and entered into a relational data\r\nbase. NVDRS is coordinated by the Centers for Disease Control and\r\nPrevention, National Center for Injury Prevention and\r\nControl.\r\n",
+  "modified": "2007-05-14T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2439",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "crime",
+    "death",
+    "homicide",
+    "victims",
+    "violent crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2006-12-12T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/217",
+      "title": "National Violent Death Reporting System Series"
+    }
+  ]
+}

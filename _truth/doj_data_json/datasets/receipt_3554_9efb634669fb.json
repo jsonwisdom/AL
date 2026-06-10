@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Detection of Crime, Resource Deployment, and Predictors of Success: A Multi-Level Analysis of CCTV in Newark, New Jersey, 2007-2011",
+  "description": "The Detection of Crime, Resource Deployment, and Predictors of Success: A Multi-Level Analysis of Closed-Circuit Television (CCTV) in Newark, NJ  collection represents the findings of a multi-level analysis of the Newark, New Jersey Police Department's video surveillance system. This collection contains multiple quantitative data files (Datasets 1-14) as well as spatial data files (Dataset 15 and Dataset 16). The overall project was separated into three components:\r\n\r\nComponent 1 (Dataset 1, Individual CCTV Detections and Calls-For-Service Data and Dataset 2, Weekly CCTV Detections in Newark Data) evaluates CCTV's ability to increase the \"certainty of punishment\" in target areas;\r\nComponent 2 (Dataset 3, Overall Crime Incidents Data; Dataset 4, Auto Theft Incidents Data; Dataset 5, Property Crime Incidents Data; Dataset 6, Robbery Incidents Data; Dataset 7, Theft From Auto Incidents Data; Dataset 8, Violent Crime Incidents Data; Dataset 9, Attributes of CCTV Catchment Zones Data; Dataset 10, Attributes of CCTV Camera Viewsheds Data; and Dataset 15, Impact of Micro-Level Features Spatial Data) analyzes the context under which CCTV cameras best deter crime. Micro-level factors were grouped into five categories: environmental features, line-of-sight, camera design and enforcement activity (including both crime and arrests); and\r\nComponent 3 (Dataset 11, Calls-for-service Occurring Within CCTV Scheme Catchment Zones During the Experimental Period Data; Dataset 12, Calls-for-service Occurring Within CCTV Schemes During the Experimental Period Data; Dataset 13, Targeted Surveillances Conducted by the Experimental Operators Data; Dataset 14, Weekly Surveillance Activity Data; and Dataset 16, Randomized Controlled Trial Spatial Data) was a randomized, controlled trial measuring the effects of coupling proactive CCTV monitoring with directed patrol units.\r\nOver 40 separate four-hour tours of duty, an additional camera operator was funded to monitor specific CCTV cameras in Newark. Two patrol units were dedicated solely to the operators and were tasked with exclusively responding to incidents of concern detected on the experimental cameras. Variables included throughout the datasets include police report and incident dates, crime type, disposition code, number of each type of incident that occurred in a viewshed precinct, number of CCTV detections that resulted in any police enforcement, and number of schools, retail stores, bars and public transit within the catchment zone.",
+  "modified": "2019-09-24T09:50:34",
+  "accessLevel": "restricted public",
+  "identifier": "3554",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrest records",
+    "assault",
+    "auto theft",
+    "crime",
+    "crime mapping",
+    "crime prevention",
+    "deterrence",
+    "geographic information systems",
+    "law enforcement",
+    "police records",
+    "police response",
+    "spatial data",
+    "video surveillance",
+    "violent crime statistics"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2019-06-27T07:20:59",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR34619.v3",
+      "title": "Detection of Crime, Resource Deployment, and Predictors of Success: A Multi-Level Analysis of CCTV in Newark, New Jersey, 2007-2011"
+    }
+  ]
+}

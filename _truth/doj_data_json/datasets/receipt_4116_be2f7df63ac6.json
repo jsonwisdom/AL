@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Annual Survey of Jails in Indian Country, 2019",
+  "description": "The purpose of the Survey of Jails in Indian Country is an enumeration of all known adult and juvenile facilities -- jails, confinement facilities, detention centers, and other correctional facilities operated by tribal authorities or the Bureau of Indian Affairs (BIA), U.S. Department of the Interior. For the purpose of this collection, Indian country includes reservations, pueblos, rancherias, and other Native American and Alaska Native communities throughout the United States. The survey collects data on the number of adults and juveniles held on the last weekday in June 2019, type of offense, average daily population in June, most crowded day in June, admissions and releases in June, number of inmate deaths and suicide attempts from July 1, 2018 through June 30, 2019, rated capacity on June 28, and jail staffing on June 28, 2019.",
+  "modified": "2021-10-20T14:18:36",
+  "accessLevel": "restricted public",
+  "identifier": "4116",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Alaskan Natives",
+    "Native Americans",
+    "correctional facilities",
+    "correctional system",
+    "corrections management",
+    "jail inmates",
+    "jails",
+    "population characteristics"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2435",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2021-10-20T14:14:13",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR38111.v1",
+      "title": "Annual Survey of Jails in Indian Country, 2019"
+    }
+  ]
+}

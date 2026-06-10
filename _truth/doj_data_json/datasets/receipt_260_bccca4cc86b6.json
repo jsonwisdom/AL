@@ -1,0 +1,70 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Prosecutors Survey, 2005",
+  "description": "The National Survey of Prosecutors is a biennial survey of\r\nchief prosecutors in state court systems. A chief prosecutor is an\r\nofficial, usually locally elected and typically with the title of\r\ndistrict attorney or county attorney, who is in charge of a\r\nprosecutorial district made up of one or more counties, and who\r\nconducts or supervises the prosecution of felony cases in a state\r\ncourt system. Prosecutors in courts of limited jurisdiction, such as\r\nmunicipal prosecutors, were not included in the survey. The survey's\r\npurpose was to obtain detailed descriptive information on prosecutors'\r\noffices, as well as information on their policies and practices. The\r\ndata collection instrument was based on questions that were included\r\nin the NATIONAL PROSECUTORS SURVEY, 1994 (ICPSR 6785), and added\r\nqueries on topics of current concern. Variables cover staffing,\r\nworkload, funding, what type of computer access the office had,\r\nwhether the office was part of an integrated computerized system with\r\nother specific criminal agencies, the use of DNA evidence in plea\r\nnegotiations of felony trials, which laboratories performed these DNA\r\nanalyses, juvenile matters, and risks associated with the role of the\r\nprosecutor, such as threatening letters or calls, face-to-face\r\nassaults, or batter/assaults. The unit of analysis is the district\r\noffice.",
+  "modified": "2007-02-23T00:00:00",
+  "accessLevel": "public",
+  "identifier": "260",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "DNA fingerprinting",
+    "attorneys",
+    "case processing",
+    "criminal investigations",
+    "district attorneys",
+    "evidence",
+    "felony courts",
+    "felony offenses",
+    "juvenile courts",
+    "personnel",
+    "plea negotiations",
+    "policies and procedures",
+    "prosecuting attorneys",
+    "prosecution",
+    "sentencing",
+    "state courts",
+    "training",
+    "treatment programs",
+    "trial procedures",
+    "victim services"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2181",
+  "dataQuality": false,
+  "issued": "2007-01-17T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04600.v1",
+      "title": "National Prosecutors Survey, 2005"
+    }
+  ]
+}

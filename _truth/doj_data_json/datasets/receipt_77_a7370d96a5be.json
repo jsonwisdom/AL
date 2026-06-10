@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Census of Jail Inmates: Individual-Level Data, 2005",
+  "description": "The Census of Jail Inmates is the eighth in a series of\r\n data collection efforts aimed at studying the nation's\r\n locally-administered jails. Beginning in 2005, the National Jail\r\n Census was broken out into two collections. The 2005 Census of Jail\r\n Inmates (CJI) collects data on the facilities' supervised populations,\r\n inmate counts and movements, and persons supervised in the community.\r\n The forthcoming 2006 Census of Jail Facilities collects information\r\n on staffing levels, programming, and facility policies. Previous\r\n censuses were conducted in 1970, 1972, 1978, 1983, 1988, 1993, and\r\n 1999. The 2005 CJI enumerated 2,960 locally administered confinement\r\n facilities that held inmates beyond arraignment and were staffed by\r\n municipal or county employees. Among these were 42 privately-operated\r\n jails under contract to local governments and 65 regional jails that\r\n were operated for two or more jail authorities. In addition, the\r\n census identified 12 facilities maintained by the Federal Bureau of\r\n Prisons that functioned as jails. These 12 facilities, together with\r\n the 2,960 nonfederal facilities, brought the number of jails in\r\n operation on June 30, 2005, to a nationwide total of 2,972. The CJI\r\n supplies data on characteristics of jails such as admissions and\r\n releases, growth in the number of jail facilities, changes in their\r\n rated capacities and level of occupancy, crowding issues, growth in\r\n the population supervised in the community, and changes in methods of\r\n community supervision. The CJI also provides information on changes in\r\n the demographics of the jail population, supervision status of persons\r\n held, and a count of non-United States citizens in custody. The data\r\n are intended for a variety of users, including federal and state\r\n agencies, local officials in conjunction with jail administrators,\r\nresearchers, planners, and the public.",
+  "modified": "2007-07-27T00:00:00",
+  "accessLevel": "public",
+  "identifier": "77",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "correctional facilities",
+    "correctional system",
+    "corrections management",
+    "demographic characteristics",
+    "inmate populations",
+    "inmate programs",
+    "inmates",
+    "jail inmates",
+    "jails"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2169",
+  "dataQuality": false,
+  "issued": "2007-07-27T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR20367.v1",
+      "title": "Census of Jail Inmates: Individual-Level Data, 2005"
+    }
+  ]
+}

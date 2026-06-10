@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Modeling Impacts of Policing Initiatives on Drug and Criminal Careers of Arrestees in New York City, New York, 1999",
+  "description": "This study sought to understand the accuracy and validity\r\nof arrestee self-reports of drug use and the overall contact of\r\narrestees with the criminal justice system, with a secondary focus on\r\nhow arrestee self-reports of drug use correspond to urinalysis\r\nresults. Moreover, this study investigated whether arrestees were\r\naware of the New York City Police Department's Quality-of-Life (QOL)\r\npolicing efforts and whether they had changed their criminal behavior\r\nas a result. A QOL Policing Supplement, designed to explore new means\r\nof evaluating police behavior, was administered to all adult arrestees\r\nin the five boroughs of New York City (Bronx, Brooklyn, Manhattan,\r\nStaten Island, and Queens) who had completed an Arrestee Drug Abuse\r\nMonitoring (ADAM) program interview, provided a urine specimen, and\r\nwere willing to answer additional questions concerning QOL policing.\r\nPart 1, Policing Study Data, is a large integrated dataset containing\r\nall of the variables derived from the 1999 ADAM interviews, the\r\nPolicing Supplement instrument, and administrative records data from\r\nthe Criminal Justice Agency (CJA) and the New York State Division of\r\nCriminal Justice Services. This dataset is linked, via an anonymous\r\ncase number, to Part 2, Arrestee Criminal History Data, which contains\r\neach arrestee's official criminal history.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "3828",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrest records",
+    "career criminals",
+    "criminal histories",
+    "drug testing",
+    "drug use",
+    "urinalysis"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "3023",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2003-06-05T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03604.v1",
+      "title": "Modeling Impacts of Policing Initiatives on Drug and Criminal Careers of Arrestees in New York City, New York, 1999"
+    }
+  ]
+}

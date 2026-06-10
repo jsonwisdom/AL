@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Delinquency in a Birth Cohort II: Philadelphia, 1958-1988",
+  "description": "The purpose of this data collection was to follow a birth\r\ncohort born in Philadelphia during 1958 with a special focus on\r\ndelinquent activities as children and as adults. The respondents were\r\nfirst interviewed in DELINQUENCY IN A BIRTH COHORT IN PHILADELPHIA,\r\nPENNSYLVANIA, 1945-1963 (ICPSR 7729). Part 1 offers basic demographic\r\ninformation, such as sex, race, date of birth, church membership, age,\r\nand socioeconomic status, on each cohort member. Two files supply\r\noffense data: Part 2 pertains to offenses committed while a juvenile\r\nand Part 3 details offenses as an adult. Offense-related variables\r\ninclude most serious offense, police disposition, location of crime,\r\nreason for police response, complainant's sex, age, and race, type of\r\nvictimization, date of offense, number of victims, average age of\r\nvictims, number of victims killed or hospitalized, property loss,\r\nweapon involvement, and final court disposition. Part 4, containing\r\nfollow-up survey interview data collected in 1988, was designed to\r\ninvestigate differences in the experiences and attitudes of individuals\r\nwith varying degrees of involvement with the juvenile justice system.\r\nVariables include individual histories of delinquency, health,\r\nhousehold composition, marriage, parent and respondent employment and\r\neducation, parental contacts with the legal system, and other social\r\nand demographic variables.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3937",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "adult offenders",
+    "criminal histories",
+    "criminal justice system",
+    "delinquent behavior",
+    "demographic characteristics",
+    "disposition (legal)",
+    "juvenile offenders",
+    "police response",
+    "victimization"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1990-03-02T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09293.v3",
+      "title": "Delinquency in a Birth Cohort II: Philadelphia, 1958-1988"
+    }
+  ]
+}

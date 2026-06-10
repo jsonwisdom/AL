@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Law Enforcement Management and Administrative Statistics (LEMAS), 2007",
+  "description": "Every three to four years, the Bureau of Justice Statistics (BJS) surveys a nationally\r\nrepresentative sample of state and local law enforcement agencies. The surveys\r\nare conducted as part of the Law Enforcement Management and Administrative\r\nStatistics (LEMAS) program. Data include agency\r\npersonnel, expenditures and pay, operations, community policing\r\ninitiatives, equipment, computers and information systems, and written\r\npolicies. The LEMAS survey has been conducted in 1987, 1990, 1993,\r\n1997, 1999 (limited scope), 2000, 2003, and 2007.",
+  "modified": "2011-07-07T14:33:29",
+  "accessLevel": "public",
+  "identifier": "174",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "administration",
+    "budgets",
+    "law enforcement",
+    "law enforcement agencies",
+    "management",
+    "personnel",
+    "police departments",
+    "statistical data",
+    "wages and salaries",
+    "workers"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2430",
+  "dataQuality": false,
+  "issued": "2011-07-07T14:33:29",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR31161.v1",
+      "title": "Law Enforcement Management and Administrative Statistics (LEMAS), 2007"
+    }
+  ]
+}

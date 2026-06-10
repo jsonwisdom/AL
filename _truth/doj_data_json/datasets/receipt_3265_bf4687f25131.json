@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Survey of Field Training Programs for Police Officers, 1985-1986",
+  "description": "This national survey of field training programs for police \r\n officers contains data gathered from state and local criminal justice \r\n agencies regarding the format of their programs, costs of programs, \r\n impact on civil liability suits, and other complaints. Topics covered \r\n include length of time since the implementation of the program, reasons \r\n for initiating the program, objectives of the program, evaluation \r\n criteria and characteristics of the program, and number of dismissals \r\n based on performance in field training programs. Other topics deal with \r\n hours of classroom training, characteristics of field service training \r\n officers, and incentives for pursuing this position. Topics pertaining \r\n to agency evaluation include impact of program on the number of civil \r\n liability complaints, number of successful equal employment opportunity \r\n complaints, presence of alternative training such as with a senior \r\n officer, and additional classroom training during probation when there \r\nis no field training program.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3265",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "evaluation",
+    "law enforcement agencies",
+    "police officers",
+    "police training",
+    "programs"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1990-10-16T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09350.v1",
+      "title": "National Survey of Field Training Programs for Police Officers, 1985-1986"
+    }
+  ]
+}

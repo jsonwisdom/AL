@@ -1,0 +1,67 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Estimating the Elasticities of Demand for Cocaine and Heroin with Data from 21 Cities from the Drug Use Forecasting (DUF) Program, 1987-1991",
+  "description": "The objective of this research was to estimate the\r\n elasticity of the demand for cocaine and heroin with respect to the\r\n price. Price elasticity is the percentage of change in the dependent\r\n quantity corresponding to a one-percent change in price. The project\r\n involved the development of an econometric model to determine price\r\n elasticity, given that national- and city-level data on the\r\n consumption of cocaine and heroin are insufficient or nonexistent. The\r\n researchers circumvented this lack of data by partitioning the desired\r\n elasticity into the product of two elasticities, involving a\r\n measurable intermediate quantity whose relationship to the quantity of\r\n consumption could be modeled and estimated by measurable\r\n techniques. The intermediate quantity used for this project was the\r\n fraction of arrestees testing positive for cocaine or heroin as\r\n measured by the Drug Use Forecasting (DUF) System. From the Drug\r\n Enforcement Administration's (DEA's) System to Retrieve Information\r\n from Drug Evidence (STRIDE) data, expected purity was computed by\r\n regressing on log quantity and dummy variables for location and\r\n quarter. Price series were produced by finding the median standardized\r\n price per expected pure gram for each location and quarter. Variables\r\n for Part 1, National Data, include year, quarter, standardized prices\r\n for a gram of cocaine and a gram of heroin, and expected purity of\r\n cocaine and heroin. The Cities Data, Part 2, cover city, year,\r\n quarter, number of observations used to compute the median price of\r\ncocaine and heroin, standardized prices, and expected purity.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3368",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "ADAM/DUF Program",
+    "alcohol abuse",
+    "cocaine",
+    "consumption",
+    "crime patterns",
+    "criminal histories",
+    "demographic characteristics",
+    "drug dependence",
+    "drug law offenses",
+    "drug offenders",
+    "drug related crimes",
+    "drug testing",
+    "drug traffic",
+    "drug use",
+    "gun use",
+    "handguns",
+    "heroi"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "3023",
+  "dataQuality": false,
+  "issued": "1997-02-24T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06567.v1",
+      "title": "Estimating the Elasticities of Demand for Cocaine and Heroin with Data from 21 Cities from the Drug Use Forecasting (DUF) Program, 1987-1991"
+    }
+  ]
+}

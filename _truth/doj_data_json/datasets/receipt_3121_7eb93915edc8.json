@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Estimating the Flow of Methamphetamine and Other Synthetic Drugs from Quebec, Canada, 1999-2009",
+  "description": "\r\nThese data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\n\r\n\r\nIn this study, researchers used capture-recapture sampling and multiple data sources to gauge the impact of drug trafficking in Quebec, Canada on the United States drug market. The main analyses were based on arrest data that were obtained for Quebec. In addition, analysis of the chemical composition and price assessments of the Quebec synthetic drugs was done.\r\n\r\n\r\nThe study includes one SPSS data file (Quebec Arrest Data (Synthetic Drugs Cases, September 2014; n=20261)-ICPSR.sav ; n=20,261 ; 13 variables) and one Excel data file (Chemical composition of seized synthetic drugs.xls ; n=365 ; 14 variables).\r\n\r\n\r\nSpatial analyses of border seizure data was performed by the researchers, but these data are not available at this time.  The data used for these analyses concerned synthetic drug seizures at Canadian borders from 2007 to 2012. The dataset was provided by the Canadian Border Services Agency (CBSA). For each seizure, the specific border crossing where the seizure was made was provided, as well as the value of the seizure (except for precursors), the country of origin and the type of drug seized. The types of drugs were classified into five types: (1) Precursors, (2) MDMA, (3) Amphetamine, (4) Methamphetamine and (5) Others. Most of the seizures (86.6 percent) were classified in this last category. The country of origin of the seizure was also provided.\r\n",
+  "modified": "2017-06-16T13:04:41",
+  "accessLevel": "restricted public",
+  "identifier": "3121",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "amphetamines",
+    "drug law offenses",
+    "drug offenders",
+    "drug traffic",
+    "drugs",
+    "methamphetamine",
+    "stimulants"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2017-06-16T12:49:20",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR35295.v1",
+      "title": "Estimating the Flow of Methamphetamine and Other Synthetic Drugs from Quebec, Canada, 1999-2009"
+    }
+  ]
+}

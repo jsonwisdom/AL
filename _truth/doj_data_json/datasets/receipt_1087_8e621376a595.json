@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Inmate Survey, 2007",
+  "description": "Data for this study were collected as part of the 2007 National Inmate Survey (NIS), which is comprised of two questionnaires -- a survey of sexual victimization and a survey of past drug and alcohol use and abuse. The survey of sexual victimization resulted in data from 23,398 inmates held in 146 sampled prisons and 40,419 inmates in 282 local jails in the NIS.\r\nRespondents were asked if they had been forced or otherwise coerced into any sexual contact with other inmates or facility staff while incarcerated.  The respondents were asked about the type of sexual contact, the frequency, when it occurred, and where it occurred.  The survey also sought information on any injuries received and treatment obtained for those injuries. Other questions pertained to the reporting of sexual contact -- if it was reported, to whom it was reported, and any results from reporting sexual contact.  Respondents were also asked for reasons why they had not reported the sexual contact if no report was made.\r\nBackground and demographic information collected included reasons for incarceration, sexual history, sexual orientation, marital status, gender, ethnicity, and physical characteristics such as height and weight.",
+  "modified": "2012-05-25T10:26:37",
+  "accessLevel": "restricted public",
+  "identifier": "1087",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "correctional guards",
+    "inmates",
+    "prison conditions",
+    "prison violence",
+    "rape",
+    "sex offenders",
+    "sex offenses",
+    "sexual abuse",
+    "sexual assault",
+    "sexual behavior"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2442",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2011-11-11T14:34:54",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR26361.v1",
+      "title": "National Inmate Survey, 2007"
+    }
+  ]
+}

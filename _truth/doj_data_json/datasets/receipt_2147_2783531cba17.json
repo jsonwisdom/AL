@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Violent Death Reporting System, 2004",
+  "description": "The National Violent Death Reporting System (NVDRS)\r\ncollects data on violent deaths, i.e., suicides, homicides, and legal\r\nintervention, including terrorism-related incidents. The system also\r\nincludes some other types of deaths, namely deaths due to undetermined\r\nintent and unintentional deaths due to firearms. One of the main\r\nreasons for including these types of deaths is that there is overlap\r\nin how these deaths are coded. For example, a particular poisoning\r\ncase may be classified as an undetermined death in one state, but in a\r\nneighboring state, the same case may be coded as a suicide or an\r\nunintentional poisoning. NVDRS is an incident-based system that\r\ncollects data from different data sources, including death\r\ncertificates, coroner and medical examiner records, police reports,\r\ncrime lab data, and child fatality review records. The system collects\r\ndata on a violent incident, the deaths belonging to that incident, the\r\ninjury mechanisms leading to death, and the alleged perpetrators\r\n(suspects) involved in the violent incident. The relationship of the\r\nvictim to the suspect is also recorded, as are the relationships of\r\neach person to the injury mechanisms included. State health\r\ndepartments participating in NVDRS typically identify relevant violent\r\ndeaths as their death certificates are filed and then establish the\r\ndetails of the cases from medical examiner, coroner, and law\r\nenforcement records. Data collection is ongoing as the source\r\ndocuments from the different data providers become available at\r\ndifferent times and intervals. The data represent the violent\r\nincidents that occurred between January and December of that data year\r\nas submitted by the participating states.",
+  "modified": "2006-12-15T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2147",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "crime",
+    "death",
+    "homicide",
+    "victims",
+    "violent crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2439",
+  "dataQuality": false,
+  "issued": "2006-12-15T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04574.v1",
+      "title": "National Violent Death Reporting System, 2004"
+    }
+  ]
+}

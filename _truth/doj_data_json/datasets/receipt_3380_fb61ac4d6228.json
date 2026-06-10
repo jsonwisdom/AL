@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Survey of California Prison Inmates, 1976",
+  "description": "This survey of inmates in five California prisons was\r\nconducted by the RAND Corporation with a grant from the National\r\nInstitute of Justice. Researchers distributed an anonymous\r\nself-administered questionnaire to groups of 10-20 inmates at a time.\r\nUsing the self-report technique, the survey obtained detailed\r\ninformation about the crimes committed by these prisoners prior to\r\ntheir incarceration. Variables were calculated to examine the\r\ncharacteristics of repeatedly arrested or convicted offenders\r\n(recidivists) as well as offenders reporting the greatest number of\r\nserious crimes (habitual criminals). The variables include crimes\r\ncommitted leading to incarceration, rates of criminal activity, and\r\nsocial-psychological scales for analyzing motivations to commit crimes,\r\nas well as self-reports of age, race, education, marital status,\r\nemployment, income, and drug use.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3380",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "convictions (law)",
+    "correctional facilities",
+    "crime",
+    "criminal justice system",
+    "prison inmates",
+    "recidivism",
+    "recidivists",
+    "victimization"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR07797.v2",
+      "title": "Survey of California Prison Inmates, 1976"
+    }
+  ]
+}

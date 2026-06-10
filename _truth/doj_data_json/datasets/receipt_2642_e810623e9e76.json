@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Uniform Crime Reporting Program Data [United States]:  Arrests by Age, Sex, and Race for Police Agencies in Metropolitan Statistical Areas, 1960-1997",
+  "description": "These data provide information on the number of arrests\r\n reported to the Federal Bureau of Investigation's (FBI) Uniform Crime\r\n Reporting (UCR) Program each year by police agencies in metropolitan\r\n statistical areas. Although not as well known as the \"Crimes Known to\r\n the Police\" data drawn from the Uniform Crime Report's Return A form,\r\n the arrest reports by age, sex, and race provide valuable data on 43\r\n offenses. For this collection, the arrests reported by each agency\r\n were summarized for each of the years 1960 through 1997, and the\r\n original Uniform Crime Reports data were restructured to create two\r\n separate files for each year, a header record and a detail\r\n record. Header files can be linked to detail files by the originating\r\n agency identifier (ORI). Other variables that are common to both types\r\n of files are state, census group, year, division, and metropolitan\r\n statistical agency (MSA). The header datasets also include the agency\r\n name and the population covered. The detail files also contain the\r\noffense code and the age, sex, and race of the arrestees.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2642",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "arrest records",
+    "arrests",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "drug abuse",
+    "illegal gambling",
+    "larceny",
+    "law enforcement",
+    "offenses",
+    "violent crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2167",
+  "dataQuality": false,
+  "issued": "1999-04-12T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02538.v2",
+      "title": "Uniform Crime Reporting Program Data [United States]:  Arrests by Age, Sex, and Race for Police Agencies in Metropolitan Statistical Areas, 1960-1997"
+    }
+  ]
+}

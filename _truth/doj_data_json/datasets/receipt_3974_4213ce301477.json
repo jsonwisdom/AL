@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Survey of Youth in Residential Placement (SYRP) 2003 [United States]",
+  "description": "The Survey of Youth in Residential Placement (SYRP) is the only national survey that gathers data directly from youth in the juvenile justice system.  The Office of Juvenile Justice and Delinquency Prevention (OJJDP) designed the survey in 2000 and 2001 to survey offender youth between the ages of 10 and 20.  SYRP asks the youth about their backgrounds, offense histories and problems; the facility environment; experiences in the facility; experiences with alcohol and drugs; experiences of victimization in placement; medical needs and services received; and their expectations for the future. SYRP research provides answers to a number of questions about the characteristics and experiences of youth in custody including:\r\n\r\nWho are the youth in placement?\r\nWhat are their offenses? \r\nWhat are their family backgrounds?\r\nWhat are their expectations for the future?\r\nHow are youth grouped in living units and programs?\r\nWhat activities are available in each facility?\r\nHow accessible are social, emotional, and legal supports?\r\nWhat is the quality of the youth-staff relationships?\r\nHow clear are the facility's rules?\r\nHow clear is the facility's commitment to justice and due process?\r\nWhat methods of control and discipline do staff use?\r\nSYRP's findings are based on anonymous interviews with a nationally representative sample of youth in custody during the spring of 2003 using audio computer-assisted self-interview (ACASI) technology. SYRP is the latest addition to two ongoing data collections that OJJDP designed and implemented in the 1990s. It joins the Census of Juveniles in Residential Placement and the Juvenile Residential Facility Census to provide updated statistics on youth in custody in the juvenile justice system. \r\nSYRP bulletins, reports, and a simplified online analysis tool are available from the SYRP Project Web site.",
+  "modified": "2013-03-15T12:31:36",
+  "accessLevel": "restricted public",
+  "identifier": "3974",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities (juveniles)",
+    "educational background",
+    "emotional problems",
+    "expectations",
+    "family background",
+    "juvenile detention",
+    "juvenile justice",
+    "juvenile offenders",
+    "juvenile victims",
+    "psychological wellbeing",
+    "social support",
+    "substance abuse"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2013-03-15T10:32:58",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR34304.v1",
+      "title": "Survey of Youth in Residential Placement (SYRP) 2003 [United States]"
+    }
+  ]
+}

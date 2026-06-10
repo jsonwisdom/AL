@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Youth Involvement in the Sex Trade, United States, 2008-2014",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThis multi-method, multi-site study aimed to increase scientific knowledge on the population size, needs, characteristics, and criminal justice experiences of youth who are involved in exchanging sex for money, food, housing, drugs, or other goods. Youth interviews were conducted in each of six geographically diverse research sites, as well as interviews with social service and law enforcement agency staff in four of the sites. In addition, state-level data on prostitution arrests of youth under the age of 18 and case-level data on prostitution arrests of youth under the age of 24 in the six research sites were obtained, but are not included in this collection.\r\nThe collection includes one SPSS data file, Youth_in_the_Sex_Trade_Final_Quantitative_Dataset.sav (n=949, vars= 88).\r\nThe qualitative data are not available as part of this collection at this time.",
+  "modified": "2018-05-15T08:25:02",
+  "accessLevel": "restricted public",
+  "identifier": "4050",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "prostitution",
+    "school age children",
+    "sex trafficking",
+    "sexual exploitation",
+    "youths"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-05-15T08:21:31",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36522.v1",
+      "title": "Youth Involvement in the Sex Trade, United States, 2008-2014"
+    }
+  ]
+}

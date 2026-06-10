@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Forensic Markers of Physical Elder Abuse, Los Angeles, California, 2014-2017",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\n\r\nThis study sought to: (1) document the spectrum of injuries and injury characteristics observed among physically-abused older adults reported to Adult Protective Services (APS) and compare those findings to injuries found among non-abused older adults, (2) identify observable injury characteristics and abuse circumstances that healthcare providers, law enforcement and prosecutors consider to be key forensic markers of physical abuse, (3) document information and evidence integral for achieving successful criminal prosecution, and (4) describe approaches that community-based frontline workers can employ to better document evidence of physical abuse.\r\n\r\nThe data included in this collection were collected under a National Institute of Justice-funded project that sought to document the spectrum and characteristics of injuries observed among physically abused, community-dwelling APS clients.\r\n\r\nThe collection includes two SAS datasets: injury.sas7bdat (with 47 variables and 403 cases) and subjectleveldata.sas7bdat (with 122 variables and 165 cases); and three SAS System Program Files: analysis-code-v1.sas, cleaned-injury-datasets-v1.sas, and formats.sas. Demographic variables in the collection are in the subjectleveldata.sas7bdat dataset, and include age, year of birth, gender, race, language, and level of education.",
+  "modified": "2018-08-07T13:12:01",
+  "accessLevel": "restricted public",
+  "identifier": "3565",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "ability",
+    "abuse",
+    "cognitive functioning",
+    "elder abuse",
+    "family violence",
+    "health",
+    "health problems",
+    "health status",
+    "injuries",
+    "medical evaluation",
+    "medical history",
+    "medications",
+    "mental health",
+    "physical condition",
+    "risk assessment"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-08-07T13:09:38",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37050.v1",
+      "title": "Forensic Markers of Physical Elder Abuse, Los Angeles, California, 2014-2017"
+    }
+  ]
+}

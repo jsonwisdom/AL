@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Police-Public Contact Survey, 2008",
+  "description": "The Police-Public Contact Survey (PPCS) provides detailed information on the nature and characteristics of face-to-face contacts between police and the public, including the reason for and outcome of the contact. The PPCS interviews a nationally representative sample of United States residents aged 16 years or older as a supplement to the National Crime Victimization Survey. To date, the PPCS has been conducted five times by the Bureau of Justice Statistics (BJS):\r\n\r\nThe first survey -- described in the BJS publication Police Use of Force: Collection of National Data\r\n(NCJ 165040) -- documented levels of contacts with police during 1996.\r\nThe second survey -- described in Contacts between Police and the Public: Findings from the\r\n1999 National Survey (NCJ 184957) -- recorded police-citizen contacts in 1999. These data are\r\narchived as POLICE-PUBLIC CONTACT SURVEY, 1999: [UNITED STATES] (ICPSR 3151).\r\nThe third survey -- described in Contacts between Police and the Public: Findings from the 2002\r\nNational Survey (NCJ 207845) -- covered interactions between police and the public in 2002. These data are archived as POLICE-PUBLIC CONTACT SURVEY, 2002: [UNITED STATES] (ICPSR 4273).\r\nThe fourth survey -- described in the BJS publication, Contacts between Police and the Public, 2005 (NCJ 215243) -- covered interactions between police and the public in 2005. These data are archived as POLICE-PUBLIC CONTACT SURVEY, 2005: [UNITED STATES] (ICPSR 20020).\r\nThe fifth survey -- described in the BJS publication, Contacts between Police and the Public, 2008 (NCJ 234599) -- covered interactions between police and the public in 2008. These data are archived as POLICE-PUBLIC CONTACT SURVEY, 2008 (ICPSR 32022).",
+  "modified": "2011-10-05T13:42:19",
+  "accessLevel": "public",
+  "identifier": "271",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "police citizen interactions",
+    "police community relations",
+    "police officers",
+    "police use of force",
+    "public interest",
+    "public opinion"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2432",
+  "dataQuality": false,
+  "issued": "2011-10-05T13:42:19",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR32022.v1",
+      "title": "Police-Public Contact Survey, 2008"
+    }
+  ]
+}

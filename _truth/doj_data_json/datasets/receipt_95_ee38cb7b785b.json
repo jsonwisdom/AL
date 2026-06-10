@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Census of State and Local Law Enforcement Training Academies, 2006",
+  "description": "As of year-end 2006 a total of 648 state and local law\r\nenforcement academies were providing basic training to\r\nentry-level recruits in the United States. State agencies\r\napproved 98 percent of these academies. This data collection describes\r\nthe academies in terms of their personnel, expenditures,\r\nfacilities, curricula, and trainees using data from the 2006\r\nCensus of State and Local Law Enforcement Training Academies (CLETA)\r\nsponsored by the Bureau of Justice Statistics (BJS).\r\nThe 2006 CLETA, like the initial 2002 study, collected data\r\nfrom all state and local academies that provided basic law\r\nenforcement training. Academies that provided only\r\nin-service training, corrections and detention training, or\r\nother special types of training were excluded. Federal training\r\nacademies were also excluded.",
+  "modified": "2012-09-13T09:01:46",
+  "accessLevel": "public",
+  "identifier": "95",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "law enforcement",
+    "law enforcement agencies",
+    "police departments",
+    "police officers",
+    "police recruits",
+    "police training"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2010-05-24T14:16:44",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR27262.v1",
+      "title": "Census of State and Local Law Enforcement Training Academies, 2006"
+    }
+  ]
+}

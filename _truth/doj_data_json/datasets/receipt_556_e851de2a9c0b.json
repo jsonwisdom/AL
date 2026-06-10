@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Crime Hot Spot Forecasting with Data from the Pittsburgh [Pennsylvania] Bureau of Police, 1990-1998",
+  "description": " This study used crime count data from the Pittsburgh, Pennsylvania, Bureau of Police offense reports and 911 computer-aided dispatch (CAD) calls to determine the best univariate forecast method for crime and to evaluate the value of leading indicator crime forecast models. \r\n The researchers used the rolling-horizon experimental design, a design that maximizes the number of forecasts for a given time series at different times and under different conditions. Under this design, several forecast models are used to make alternative forecasts in parallel. For each forecast model included in an experiment, the researchers estimated models on training data, forecasted one month ahead to new data not previously seen by the model, and calculated and saved the forecast error. Then they added the observed value of the previously forecasted data point to the next month's training data, dropped the oldest historical data point, and forecasted the following month's data point. This process continued over a number of months. \r\n A total of 15 statistical datasets and 3 geographic information systems (GIS) shapefiles resulted from this study. \r\n The statistical datasets consist of \r\n \r\nUnivariate Forecast Data by Police Precinct (Dataset 1) with 3,240 cases\r\nOutput Data from the Univariate Forecasting Program: Sectors and Forecast Errors (Dataset 2) with 17,892 cases\r\nMultivariate, Leading Indicator Forecast Data by Grid Cell (Dataset 3) with 5,940 cases\r\nOutput Data from the 911 Drug Calls Forecast Program (Dataset 4) with 5,112 cases\r\nOutput Data from the Part One Property Crimes Forecast Program (Dataset 5) with 5,112 cases\r\nOutput Data from the Part One Violent Crimes Forecast Program (Dataset 6) with 5,112 cases\r\nInput Data for the Regression Forecast Program for 911 Drug Calls (Dataset 7) with 10,011 cases\r\nInput Data for the Regression Forecast Program for Part One Property Crimes (Dataset 8) with 10,011 cases\r\nInput Data for the Regression Forecast Program for Part One Violent Crimes (Dataset 9) with 10,011 cases \r\nOutput Data from Regression Forecast Program for 911 Drug Calls: Estimated Coefficients for Leading Indicator Models (Dataset 10) with 36 cases \r\nOutput Data from Regression Forecast Program for Part One Property Crimes: Estimated Coefficients for Leading Indicator Models (Dataset 11) with 36 cases \r\nOutput Data from Regression Forecast Program for Part One Violent Crimes: Estimated Coefficients for Leading Indicator Models (Dataset 12) with 36 cases \r\nOutput Data from Regression Forecast Program for 911 Drug Calls: Forecast Errors (Dataset 13) with 4,936 cases \r\nOutput Data from Regression Forecast Program for Part One Property Crimes: Forecast Errors (Dataset 14) with 4,936 cases \r\nOutput Data from Regression Forecast Program for Part One Violent Crimes: Forecast Errors (Dataset 15) with 4,936 cases. \r\nThe GIS Shapefiles (Dataset 16) are provided with the study in a single zip file: Included are polygon data for the 4,000 foot, square, uniform grid system used for much of the Pittsburgh crime data (grid400); polygon data for the 6 police precincts, alternatively called districts or zones, of Pittsburgh(policedist); and polygon data for the 3 major rivers in Pittsburgh the Allegheny, Monongahela, and Ohio (rivers). ",
+  "modified": "2015-08-07T15:12:10",
+  "accessLevel": "public",
+  "identifier": "556",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime",
+    "crime mapping",
+    "crime patterns",
+    "forecasting models",
+    "geographic distribution",
+    "geographic information systems",
+    "mapping",
+    "police effectiveness",
+    "police records",
+    "prediction",
+    "trends"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2015-08-07T15:12:10",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03469.v1",
+      "title": "Crime Hot Spot Forecasting with Data from the Pittsburgh [Pennsylvania] Bureau of Police, 1990-1998"
+    }
+  ]
+}

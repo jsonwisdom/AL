@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Police Use of Deadly Force, 1970-1979",
+  "description": "The circumstances surrounding \"justifiable homicides\" by\r\npolice are the focus of this data collection, which examines\r\noccurrences in 57 United States cities during the period\r\n1970-1979. Homicides by on- and off-duty police officers serving\r\ncommunities of 250,000 or more were studied. Data were collected\r\nthrough a survey questionnaire sent to police executives of the 57\r\ncities. The Federal Bureau of Investigation supplied data on\r\njustifiable homicides by police, including age, sex, and race\r\ndata. The variables include number of sworn officers, number of\r\nsupervisory officers, average years of education, department\r\nregulations about issues such as off-duty employment, uniforms,\r\ncarrying firearms, and disciplinary actions, in-service training,\r\npre-service training, firearms practice, assignments without firearms,\r\non-duty deaths, and off-duty deaths.  The study was funded by a grant\r\nfrom the National Institute of Justice to the International\r\nAssociation of Chiefs of Police.",
+  "modified": "1992-02-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3217",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "fatalities",
+    "firearms",
+    "homicide",
+    "police response",
+    "police training",
+    "police use of deadly force",
+    "police weapons",
+    "policies and procedures",
+    "violence"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1985-01-11T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09018.v1",
+      "title": "Police Use of Deadly Force, 1970-1979"
+    }
+  ]
+}

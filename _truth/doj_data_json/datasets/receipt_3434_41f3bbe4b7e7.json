@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Impact of State Sentencing Policies on Incarceration Rates in the United States, 1975-2002",
+  "description": "In order to assess the impacts of state-level sentencing\r\nand corrections policies in the United States implemented between 1975\r\nand 2002 on state incarceration rates during that same time period,\r\nresearchers conducted a two-phase study between November 2002 and\r\nMarch 2004. The first phase of the research involved building a\r\nframework for understanding the types of state-level sentencing and\r\ncorrections policies in use between 1975 and 2002. Phase two of the\r\nproject consisted of state-level data collection for all 50 states for\r\nall study years, 1975 to 2002. The researchers produced a dataset\r\ncontaining outcome variables that focus on the change and growth in\r\nstate incarceration rates, non-policy control variables that were\r\nfound in previous studies to be associated with changes in\r\nincarceration rates, and policy variables regarding sentencing\r\nstructure, drug policy, time served requirements, habitual offender\r\nlaws (HOL), and mandatory sentences.",
+  "modified": "2007-09-27T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3434",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "corrections",
+    "criminal justice policy",
+    "drug law offenses",
+    "imprisonment",
+    "mandatory sentences",
+    "offenders",
+    "postrelease programs",
+    "recidivism",
+    "recidivists",
+    "sentencing",
+    "sentencing guidelines",
+    "sentencing reforms"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2007-09-27T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04456.v1",
+      "title": "Impact of State Sentencing Policies on Incarceration Rates in the United States, 1975-2002"
+    }
+  ]
+}

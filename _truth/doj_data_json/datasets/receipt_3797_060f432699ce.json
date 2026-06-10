@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Blind Collaborative Justice Survey, 2014 [UNITED STATES]",
+  "description": "\r\nThese data are part of NACJD's Fast Track Release and are distributed as they there received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except of the removal of direct identifiers. Users should refer to the accompany readme file for a brief description of the files available with this collections and consult the investigator(s) if further information is needed.\r\n\r\n\r\nThis study conducted an experimental investigation of two potential contributors to invalid testimony within adversarial litigation involving forensic evidence. First, the experts' knowledge of their party representation (i.e., prosecution vs. defense counsel), and secondly the lack of input from the relevant scientific community. The study used an experimental survey design with a realistic criminal case to examine the effects of blinding experts to their party representation and consensus feedback from a panel of experts to quantify and reduce testimonial bias.\r\n",
+  "modified": "2017-06-29T14:24:52",
+  "accessLevel": "restricted public",
+  "identifier": "3797",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "expert witnesses",
+    "forensic sciences",
+    "trial procedures",
+    "trials"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2017-06-29T14:22:59",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR35258.v1",
+      "title": "Blind Collaborative Justice Survey, 2014 [UNITED STATES]"
+    }
+  ]
+}

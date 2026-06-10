@@ -1,0 +1,70 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Crime Victimization Survey (NCVS) Series",
+  "description": "\r\nInvestigator(s): Bureau of Justice Statistics\r\nThe National Crime Victimization Survey (NCVS) series was designed to achieve three primary objectives: to develop detailed information about the victims and consequences of crime, to estimate the number and types of crimes not reported to police, and to provide uniform measures of selected types of crime.\r\nAll persons in the United States 12 years of age and older were interviewed in each household sampled. Each respondent was asked a series of screen questions to determine if he or she was victimized during the six-month period preceding the first day of the month of the interview. Screen questions cover the following types of crimes, including attempts: rape, robbery, assault, burglary, larceny, and motor vehicle theft.\r\nThe data include type of crime; severity of the crime; injuries or losses; time and place of occurrence; medical expenses incurred; number, age, race, and sex of offender(s); and relationship of offender(s) to the victim (stranger, casual acquaintance, relative, etc.). Demographic information on household members includes age, sex, race, education, employment, median family income, marital status, and military history. A stratified multistage cluster sample technique was employed, with the person-level files consisting of a full sample of victims and a 10 percent sample of nonvictims for up to four incidents.\r\nThe NCVS data are organized by collection quarter, and six quarters comprise an annual file. For example, for a 1979 file, the four quarters of 1979 are included as well as the first two quarters of 1980.\r\nNACJD has prepared a resource guide on NCVS.\r\nYears Produced: Updated annually",
+  "modified": "2022-03-21T17:48:05",
+  "accessLevel": "public",
+  "identifier": "2432",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "crime",
+    "crime in schools",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "drugs",
+    "educational environment",
+    "fear of crime",
+    "juvenile crime",
+    "offenses",
+    "property crimes",
+    "reactions to crime",
+    "robbery",
+    "school attendance",
+    "school security",
+    "school violence",
+    "student attitudes",
+    "student behavior",
+    "vandalism",
+    "victimization",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1996-10-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/95",
+      "title": "National Crime Victimization Survey (NCVS) Series"
+    }
+  ]
+}

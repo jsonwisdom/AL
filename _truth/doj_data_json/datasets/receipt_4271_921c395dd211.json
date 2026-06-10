@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Police Officer Learning, Mentoring, and Racial Bias in Traffic Stops, Syracuse, New York, 2006-2009",
+  "description": "This project is concerned with understanding the determinants of racial bias in police traffic stops and  in the city of Syracuse, New York. Using an officer-level panel of data on vehicle stops and vehicle searches by 512 officers from 2006 to 2009, the primary goal of this research is to better understand the effects of officer experience on their proclivities for racial bias in traffic stops, while controlling for officer, citizen, and neighborhood demographics.\r\nIncluded in these data are variables for census tracts as well as their racial and ethnic makeup, times and dates when traffic stops occurred, sunrise and sunset data for the City of Syracuse, and the racial and ethnic makeup of citizens involved in stops.",
+  "modified": "2022-01-13T11:27:19",
+  "accessLevel": "restricted public",
+  "identifier": "4271",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "police citizen interactions",
+    "police community relations",
+    "police departments",
+    "racial discrimination",
+    "traffic offenses",
+    "vehicles"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2022-01-13T11:23:33",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR38201.v1",
+      "title": "Police Officer Learning, Mentoring, and Racial Bias in Traffic Stops, Syracuse, New York, 2006-2009"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Tool Mark Analysis of Cut Costal Cartilage, 2009-2010 [United States]",
+  "description": "The study was designed to establish the potential error rate associated with the generally accepted method of tool mark analysis of cut marks in costal cartilage. Three knives with different blade types were used to make experimental cut marks in costal cartilage of pigs. Each cut surface was cast, and each cast was examined by three analysts working independently. Presence of striations, regularity of striations, and presence of a primary and secondary striation pattern were recorded for each cast. The distance between each striation was measured. The Cut Mark Measurement Data (Dataset 1) are comprised of the observations and measurements of three analysts on 180 distinct specimen identifiers. The repeated measurements were aggregated by taking the Mean Interstriation Distance (MID) and the medians of the numeric variables for each combination of the categorical variables, resulting in the Aggregated Cut Mark Measurement Data (Dataset 2).",
+  "modified": "2014-09-16T16:06:37",
+  "accessLevel": "public",
+  "identifier": "2851",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "anthropology",
+    "forensic sciences"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2014-09-16T16:06:37",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR28741.v1",
+      "title": "Tool Mark Analysis of Cut Costal Cartilage, 2009-2010 [United States]"
+    }
+  ]
+}

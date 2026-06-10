@@ -1,0 +1,49 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Foreign Agent Registration Act eFile System",
+  "description": "The Foreign Agent Registration Act (FARA) eFile System is a document management system that tracks persons acting as agents of foreign principals and disclosure of their relationships with the foreign principals as well as activities.",
+  "modified": "2020-07-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "1216",
+  "publisher": {
+    "name": "National Security Division",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Smita Patel",
+    "hasEmail": "mailto:smita.patel@usdoj.gov"
+  },
+  "keyword": [
+    "FARA",
+    "foreign principal"
+  ],
+  "bureauCode": [
+    "011:08"
+  ],
+  "programCode": [
+    "011:037"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "systemOfRecords": "NSD:002",
+  "accrualPeriodicity": "R/PT1S",
+  "dataQuality": false,
+  "issued": "2014-11-30T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "landingPage": "https://www.justice.gov/nsd-fara",
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://efile.fara.gov/ords/f?p=API",
+      "mediaType": "text/html",
+      "title": "Foreign Agent Registration Act eFile Data"
+    }
+  ]
+}

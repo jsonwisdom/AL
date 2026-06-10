@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Mandatory Drug Offender Processing Data, 1987: New York",
+  "description": "The National Consortium for Assessing Drug Control\r\n Initiatives, funded by the Bureau of Justice Assistance and\r\n coordinated by the Criminal Justice Statistics Association, collected\r\n drug offender processing data from the state of New York. The purpose\r\n of the project was to track adult drug offenders from the point of\r\n entry into the criminal justice system (typically by arrest) through\r\n final court disposition, regardless of whether the offender was\r\n released without trial, acquitted, or convicted. These data allow\r\n researchers to examine how the criminal justice system processes drug\r\n offenders, to measure the changing volume of drug offenders moving\r\n through the different segments of the criminal justice system, to\r\n calculate processing time intervals between major decision-making\r\n events, and to assess the changing structure of the drug offender\r\n population. For purposes of this project, a drug offender was defined\r\n as any person who had been charged with a felony drug offense. The\r\n data are structured into six segments pertaining to (1) record\r\n identification, (2) the offender (date of birth, sex, race, and ethnic\r\n origin), (3) arrest information (date of arrest, age at arrest, arrest\r\n charge code), (4) prosecution information (filed offense code and\r\n level, prosecution disposition and date), (5) court disposition\r\n information (disposition offense and level, court disposition, final\r\n disposition date, final pleading, type of trial), and (6) sentencing\r\n information (sentence and sentence date, sentence minimum and\r\n maximum). Also included are elapsed time variables. The unit of\r\nanalysis is the felony drug offender.",
+  "modified": "1997-08-25T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2191",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "adults",
+    "arrests",
+    "case processing",
+    "criminal justice system",
+    "disposition (legal)",
+    "drug offenders",
+    "prosecution",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1992-03-04T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09565.v1",
+      "title": "Mandatory Drug Offender Processing Data, 1987: New York"
+    }
+  ]
+}

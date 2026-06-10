@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "SLATS Truck Theft Data of New York City, 1976-1980",
+  "description": "This data collection is one of three quantitative databases\r\ncomprising the Commercial Theft Studies component of the Study of the\r\nCauses of Crime for Gain, which focuses on patterns of commercial\r\ntheft and characteristics of commercial thieves. This data collection\r\nexamines the methods used to commit various acts of theft that\r\ninvolved a truck or the contents of a truck. These data were collected\r\nfrom the files of a specialized New York City Police Department\r\ndetective squad called the Safe, Loft, and Truck Squad (SLATS), which\r\nwas created specifically to investigate commercial truck thefts. The\r\nvariables include type and value of stolen property, weapon\r\ninvolvement, treatment of driver and helper, suspect characteristics,\r\nand recovery information.",
+  "modified": "1992-02-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3727",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "armed robbery",
+    "arrests",
+    "auto theft",
+    "burglary",
+    "cargo security",
+    "cargo shipments",
+    "carjacking",
+    "commercial theft",
+    "larceny",
+    "police records",
+    "property crime statistics",
+    "property crimes",
+    "punishment",
+    "robbery",
+    "stolen property",
+    "stolen property recovery",
+    "victimization"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08090.v1",
+      "title": "SLATS Truck Theft Data of New York City, 1976-1980"
+    }
+  ]
+}

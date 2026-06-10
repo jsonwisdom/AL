@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Federal Court Cases, 1962-1964",
+  "description": "This study collected data from both civil and criminal\r\n federal cases tried in the fiscal years 1962-1963 and\r\n 1963-1964. Procedural, jurisdictional, and other legal information is\r\nprovided, including the disposition of each case.",
+  "modified": "2011-04-14T10:21:25",
+  "accessLevel": "public",
+  "identifier": "2238",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "administration",
+    "appellate courts",
+    "case dismissal",
+    "case processing",
+    "civil law",
+    "court cases",
+    "criminal law",
+    "defendants",
+    "disposition (legal)",
+    "federal courts",
+    "judicial decisions",
+    "legal systems",
+    "pretrial procedures",
+    "records",
+    "trial courts",
+    "trial procedures"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2173",
+  "dataQuality": false,
+  "issued": "1984-05-03T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR07245.v1",
+      "title": "Federal Court Cases, 1962-1964"
+    }
+  ]
+}

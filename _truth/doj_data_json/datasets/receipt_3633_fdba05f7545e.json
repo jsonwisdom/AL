@@ -1,0 +1,53 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "School Climate Enhancement and Bullying Prevention in Southern Illinois, 2016-2019",
+  "description": "The study assesses school climate and bullying across 45 schools in 20 rural districts and 5 counties of Southern Illinois. Investigators also evaluated the effectiveness of a low-cost, component-based intervention that focused on improving classroom management, playground monitoring, and school-wide disciplinary procedures. This mixed-methods study incorporated hierarchical linear modeling, with mixed-effects longitudinal models for repeated outcomes. The project design incorporated random assignment, with multiple pre- and post-intervention assessments.\r\nMajor categories of variables include: students' feeling of safety in school areas; students' history of involvement in or observation of bullying; staff opinion and experience of bullying prevention methods; school policies on bullying; staff completion of training workshops; and demographics.\r\nThe units of analysis are individuals and schools.",
+  "modified": "2020-12-17T10:44:49",
+  "accessLevel": "restricted public",
+  "identifier": "3633",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "bullying",
+    "public schools",
+    "school violence"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2020-12-17T10:22:31",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37311.v1",
+      "title": "School Climate Enhancement and Bullying Prevention in Southern Illinois, 2016-2019"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Federal Court Cases: Integrated Data Base Bankruptcy Petitions, 2000",
+  "description": "The purpose of this data collection is to provide an\r\n official public record of the business of the federal bankruptcy\r\n courts. The data include all petitions filed under the Bankruptcy Code\r\n in the United States Bankruptcy Courts on or after October 1, 1993,\r\n and any petitions filed before October 1, 1993, that were still\r\n pending on that date. The records in this file are organized according\r\n to the fiscal year of termination with cases still pending at the end\r\n of the year 2000 included in a separate pending dataset not currently\r\n in this collection. For the bankruptcy data, the unit of analysis is a\r\nsingle case.",
+  "modified": "2011-04-13T11:51:36",
+  "accessLevel": "restricted public",
+  "identifier": "2384",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "administration",
+    "appellate courts",
+    "bankruptcy",
+    "case dismissal",
+    "case processing",
+    "civil law",
+    "court cases",
+    "disposition (legal)",
+    "federal courts",
+    "judicial decisions",
+    "legal systems",
+    "pretrial procedures",
+    "records",
+    "trial courts",
+    "trial procedures"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2173",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2005-06-09T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04249.v1",
+      "title": "Federal Court Cases: Integrated Data Base Bankruptcy Petitions, 2000"
+    }
+  ]
+}

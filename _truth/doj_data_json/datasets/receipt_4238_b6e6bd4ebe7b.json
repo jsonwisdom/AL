@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Improving the Production and Use of Forensic Science, 5 U.S. counties, 2006-2009",
+  "description": "This study collection sought to thoroughly understand the creation, testing, and use of forensic science in five jurisdictions across the country. A random sample was selected of recent criminal cases in the following jurisdictions and tracked from investigation to adjudication to understand how forensic evidence functions:\r\n\r\nSacramento County, CA: 990 cases\r\nSegwick County, KS: 936 cases\r\nAllegheny County, PA: 978 cases\r\nBexar County (San Antonio), TX: 936 cases\r\nKing County, WA: 892 cases\r\n\r\nThe Principal Investigator sought answers to the following seven primary research questions:\r\n\r\nHow often is forensic evidence collected and analyzed and how is it used pre-arrest?\r\nWhat are the outcomes of forensic evidence testing?\r\nWhat is the effect of forensic evidence on arrest and charging?\r\nHow does forensic evidence affect the plea-bargaining process?\r\nWhat effect does forensic evidence have on conviction and sentencing outcomes?\r\nDoes the turnaround time for analysis of forensic evidence have any impact on case disposition?\r\nDoes the institutional configuration of the crime laboratory have any effect on its productivity?\r\n\r\nData for the following types of forensic testing are included in this data collection: hair, fibers, glass, paint, gas chromatography / mass spectrometry (GC/MS), Fourier transform infrared spectroscopy (FTIR), scanning electron microscopy / energy dispersive x-ray spectroscopy (SEM/EDX), physical match, drug identification, toxicology, serology, combined DNA index system (CODIS), DNA short tandem repeat (Y-STR), blood pattern, test fire, and comparison scope.",
+  "modified": "2022-03-16T19:07:54",
+  "accessLevel": "restricted public",
+  "identifier": "4238",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "aggravated assault",
+    "arrests",
+    "burglary",
+    "convictions (law)",
+    "crime",
+    "evidence",
+    "forensic sciences",
+    "murder",
+    "rape",
+    "robbery",
+    "trial courts",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2022-03-16T18:57:38",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36727.v1",
+      "title": "Improving the Production and Use of Forensic Science, 5 U.S. counties, 2006-2009"
+    }
+  ]
+}

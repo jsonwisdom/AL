@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Monitoring of Federal Criminal Convictions and Sentences:  Appeals Data, 1999  ",
+  "description": "This collection contains appellate information from the 12\r\ncircuit courts of appeals of the United States. The United States\r\nSentencing Commission compiled from the Clerk of the Court of each\r\ncourt of appeals the final opinions and orders, both published and\r\nunpublished, in all criminal appeals for the time period surveyed. The\r\nCommission also collected habeas corpus decisions (although\r\ntechnically civil matters), because such cases often involve\r\nsentencing issues. Both the \"case\" and the \"defendant\" are used in\r\nthis collection as units of analysis. Each \"case\" comprises\r\nindividual records representing all codefendants participating in a\r\nconsolidated appeal. Each defendant's record comprises the\r\nsentencing-related issues corresponding to that particular defendant.\r\nThe 1999 data includes all appeals cases received as of December 27,\r\n1999, that had disposition dates between October 1, 1998, and\r\nSeptember 30, 1999 (inclusive).",
+  "modified": "2014-06-27T14:16:37",
+  "accessLevel": "public",
+  "identifier": "2185",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "appeal procedures",
+    "appellate courts",
+    "convictions (law)",
+    "court cases",
+    "defendants",
+    "federal courts",
+    "habeas corpus",
+    "judicial decisions",
+    "legal appeals",
+    "offenses",
+    "sentence review",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2175",
+  "dataQuality": false,
+  "issued": "2001-03-27T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03105.v1",
+      "title": "Monitoring of Federal Criminal Convictions and Sentences:  Appeals Data, 1999  "
+    }
+  ]
+}

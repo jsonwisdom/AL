@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "White-Collar Criminal Careers, 1976-1978:  Federal Judicial Districts",
+  "description": "This study examined the criminal careers of 1,331 offenders\r\n convicted of white-collar crimes in the United States District Courts\r\n to assess the relative effectiveness of court-imposed prison sanctions\r\n in preventing or modifying future criminal behavior. The white-collar\r\n crime event that was the central focus of this study, the\r\n \"criterion\" offense, provided the standard point of entry for sample\r\n members. Researchers for this study supplemented the data collected by\r\n Wheeler et al. in their 1988 study (NATURE AND SANCTIONING OF WHITE\r\n COLLAR CRIME, 1976-1978: FEDERAL JUDICIAL DISTRICTS [ICPSR 8989]) with\r\n criminal history data subsequent to the criterion offense through to\r\n 1990. As in the 1988 study, white-collar crime was considered to\r\n include economic offenses committed through the use of some\r\n combination of fraud, deception, or collusion. Eight federal offenses\r\n were examined: antitrust, securities fraud, mail and wire fraud, false\r\n claims and statements, credit fraud, bank embezzlement, income tax\r\n fraud, and bribery. Arrests were chosen as the major measure of\r\n criminal conduct. The data contain information coded from Federal\r\n Bureau of Investigation (FBI) criminal history records (\"rap\r\n sheets\") for a set of offenders convicted of white-collar crimes in\r\n federal courts in fiscal years 1976 to 1978. The seven federal\r\n judicial districts from which the sample was drawn were central\r\n California, northern Georgia, northern Illinois, Maryland, southern\r\n New York, northern Texas, and western Washington. To correct for a\r\n bias that can be introduced when desistance from criminality is\r\n confused with the death of the offender, the researchers examined the\r\n National Death Index (NDI) data to identify offenders who had died\r\n between the date of sentencing for the criterion offense and when data\r\n collection began for this study in 1990. This data collection contains\r\n three types of records. The first record type (Part 1, Summary Data)\r\n contains summary and descriptive information about the offender's rap\r\n sheet as a whole. Variables include dates of first entry and last\r\n entry on the rap sheet, number of separate crimes on the rap sheet,\r\n whether the criterion crime was listed on the rap sheet, whether the\r\n rap sheet listed crimes prior to or subsequent to the criterion crime,\r\n and date of death of offender. The second and third record types are\r\n provided in one data file (Part 2, Event and Event Interim Data). The\r\n second record type contains information about each crime event on the\r\n rap sheet. Variables include custody status of offender at arrest,\r\n type of arresting agency, state of arrest, date of arrest, number of\r\n charges for each arrest, number of charges resulting in no formal\r\n charges filed, number of charges dismissed, number of charges for\r\n white-collar crimes, type of sanction, length of definite sentence,\r\n probation sentence, and suspended probation sentence, amount of fines,\r\n amount of court costs, and restitution ordered, first, second, and\r\n third offense charged, arrest and court disposition for each charge,\r\n and date of disposition. The third record type contains information\r\n about the interim period between events or between the final event and\r\n the end of the follow-up period. Variables include date of first,\r\n second, and third incarceration, date discharged or transferred from\r\n each incarceration, custody/supervision status at each incarceration,\r\n total number of prisons, jails, or other institutions resided in\r\n during the interval, final custody/supervision status and date\r\n discharged from incarceration for the interval, dates parole and\r\n probation started and expired, if parole or probation terms were\r\n changed or completed, amount of fines, court costs, and restitution\r\n paid, whether the conviction was overturned during the interval, and\r\n date the conviction was overturned. A single offender has as many of\r\n record types two and three as were needed to code the entire rap\r\nsheet.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "2871",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrest records",
+    "career criminals",
+    "crime prevention",
+    "criminal histories",
+    "disposition (legal)",
+    "imprisonment",
+    "offenders",
+    "prisons",
+    "sanctions",
+    "sentencing",
+    "white collar crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2000-08-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06540.v1",
+      "title": "White-Collar Criminal Careers, 1976-1978:  Federal Judicial Districts"
+    }
+  ]
+}

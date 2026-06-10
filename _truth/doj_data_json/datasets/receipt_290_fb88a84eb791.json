@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Survey of Inmates of State Correctional Facilities, 1991: [United States]",
+  "description": "This survey provides nationally representative data on\r\npersons held in state prisons and is similar to surveys conducted in\r\n1974 (ICPSR 7811), 1979 (ICPSR 7856), and 1986 (ICPSR 8711). The survey\r\nwas designed to provide information on individual characteristics of\r\nprison inmates, their current offenses and sentences, characteristics\r\nof victims, criminal histories, prior drug and alcohol use and\r\ntreatment, gun possession and use, gang membership, family background,\r\nand prison activities, programs, and services.",
+  "modified": "1993-10-11T00:00:00",
+  "accessLevel": "public",
+  "identifier": "290",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "HIV",
+    "correctional facilities",
+    "correctional facilities (adults)",
+    "corrections",
+    "criminal histories",
+    "drug abuse",
+    "inmate classification",
+    "inmate deaths",
+    "inmate populations",
+    "inmate programs",
+    "inmates",
+    "offenses",
+    "prison conditions",
+    "substance abuse",
+    "treatment programs"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2171",
+  "dataQuality": false,
+  "issued": "1993-10-11T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06068.v1",
+      "title": "Survey of Inmates of State Correctional Facilities, 1991: [United States]"
+    }
+  ]
+}

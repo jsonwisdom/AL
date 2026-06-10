@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Forensic Evidence in Homicide Investigations, Cleveland, Ohio, 2008-2011",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThe objective of this study was to determine how homicide investigators use evidence during the course of their investigations. Data on 294 homicide cases (315 victims) that occurred in Cleveland between 2008 and 2011 was collected from investigative reports, forensic analysis reports, prosecutors and homicide investigators, provided by the Cleveland Ohio Police Department, Cuyahoga County Medical Examiner's Office, and Cuyahoga County Clerk of Courts.\r\nThe study collection includes 1 Stata data file (NIJ_Cleveland_Homicides.dta, n=294, 109 variables).",
+  "modified": "2018-02-13T09:08:28",
+  "accessLevel": "restricted public",
+  "identifier": "3006",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrests",
+    "criminal investigations",
+    "evidence",
+    "forensic sciences",
+    "homicide",
+    "offenders",
+    "prosecution",
+    "sentencing",
+    "victims",
+    "violent crime",
+    "weapons"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-02-09T08:12:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36202.v2",
+      "title": "Forensic Evidence in Homicide Investigations, Cleveland, Ohio, 2008-2011"
+    }
+  ]
+}

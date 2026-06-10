@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Juvenile Court Statistics, 1982: [United States]",
+  "description": "These data describe the volume of juvenile cases disposed of\r\nby courts in the fifty states, the District of Columbia and the\r\nterritories of the Virgin Islands and Puerto Rico during calendar year\r\n1982. The data contain all available summary information on children's\r\ncases disposed of in courts having jurisdiction over juvenile matters,\r\ndelinquency status, and dependency or neglect.",
+  "modified": "1992-02-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3931",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "case processing",
+    "county courts",
+    "criminal justice system",
+    "delinquent behavior",
+    "dependents",
+    "juvenile courts",
+    "juvenile justice",
+    "state courts",
+    "statistical data",
+    "status offenses",
+    "youths"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "3986",
+  "dataQuality": false,
+  "issued": "1985-12-20T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08440.v1",
+      "title": "Juvenile Court Statistics, 1982: [United States]"
+    }
+  ]
+}

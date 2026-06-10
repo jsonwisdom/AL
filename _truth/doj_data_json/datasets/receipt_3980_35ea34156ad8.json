@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "A Micro and Macro-Level Assessment of Juvenile Justice Placement Reform in Ohio, 2008-2015",
+  "description": "Much of the analysis of juvenile justice reform to date has focused on assessing particular programs and their impacts on subgroups of cases at a particular point in time. While this is instructive as to the effects of those initiatives, it is essential to evaluate the impact of policy across multiple levels and with multiple stakeholders in mind. Ohio has implemented a series of initiatives in its juvenile justice system designed to reduce reliance on state custody of youth in favor of local alternatives. In doing so, they have focused on multiple segments of the population of justice involved-youths throughout the state. The main vehicle for these shifts has been the state's Reasoned and Equitable Community and Local Alternatives to the Incarceration of Minors (RECLAIM) legislation and a series of initiatives that have followed from its inception. Other steps were followed and programming modifications were made during the study period as well.\r\nThis research project focused on these initiatives as a case study of juvenile justice reform initiatives in order to provide insights about the impact of those recent reforms across multiple dimensions that were viewed as relevant to the discussion of juvenile justice reform. The data set analyzed at the individual level included the records of more than 5,000 youths sampled from cases processed from 2008 to 2015. First, presumed reductions in the number of youth committed to state residential correctional facilities in favor of community-based alternatives were analyzed. The relative effectiveness of residential facilities and community-based alternatives in terms of youth recidivism were then assessed with a subsample of 2,855 case records from randomly-selected counties.\r\nA third research objective focused on county-level trends and variation. Specifically, the longitudinal trends in key juvenile justice inputs and official juvenile crime rates across Ohio's 88 counties were formally modeled using data from public reports, data collection with counties, and official juvenile arrest data archived by the Federal Bureau of Investigation. Elements of the previous analyses (especially comparative recidivism rates) and cost data collected from existing sources and public reports were used in a preliminary fashion to quantify the potential return on investment that accrued from Ohio's investment in these juvenile justice initiatives.\r\nThis deposit contains two datasets: Individual Level Data and County Level Data. The Individual Level Data contains the following demographic data: age at admission, sex, and race (White, Black, Asian, Native American, and other).",
+  "modified": "2020-05-14T16:57:54",
+  "accessLevel": "restricted public",
+  "identifier": "3980",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "county juvenile justice trends",
+    "deinstitutionalization",
+    "diversion programs",
+    "juvenile arrests",
+    "juvenile justice",
+    "juvenile justice reform",
+    "youth deinstitutionalization",
+    "youth diversion"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2020-05-14T16:49:38",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37496.v1",
+      "title": "A Micro and Macro-Level Assessment of Juvenile Justice Placement Reform in Ohio, 2008-2015"
+    }
+  ]
+}

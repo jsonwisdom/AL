@@ -1,0 +1,53 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Socioeconomic and Demographic Characteristics of Synthetic Drug Users in San Diego and Washington, DC, 1990  ",
+  "description": "This data collection offers information on socioeconomic and\r\n demographic characteristics of synthetic drug users, characteristics of\r\n synthetic drug use such as frequency and method of intake, and factors\r\n that prompt drug users to begin to use synthetic drugs or to switch\r\n from agricultural drugs to synthetic drugs. Synthetic drugs\r\n investigated in the collection include PCP, ice, ecstasy, and speed,\r\n while nonsynthetic drugs include alcohol, marijuana, heroin, cocaine,\r\n and crack. Patterns of use for all of these drugs are explored.\r\n Questions about specific drugs include whether the respondent had ever\r\n used the drug, age first used, number of days in the past 30 days the\r\n drug was used, whether the drug was used more than two times per week,\r\n method of drug intake, and the drug used most often by the respondent\r\n and by the respondent's friends. Additional variables include reasons\r\n for preferring synthetic or nonsynthetic drugs, reasons the respondent\r\n would discontinue use or switch to another drug, availability and cost\r\n of certain drugs, and extent of involvement in selling, money handling,\r\n and protection. Finally, demographic variables such as sex, ethnicity,\r\n age, highest grade completed, employment activity in the past month,\r\n geographical location, and subject source (criminal justice system or\r\n drug treatment center) are included in the file. The unit of analysis\r\nis the individual drug user.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3750",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "demographic characteristics",
+    "drug use",
+    "social influences",
+    "socioeconomic status"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1992-03-04T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09737.v2",
+      "title": "Socioeconomic and Demographic Characteristics of Synthetic Drug Users in San Diego and Washington, DC, 1990  "
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Debtor Education Administrative Decisions",
+  "description": "The United States Trustee Program's duties include approving providers of an instructional course concerning personal financial management (debtor education providers) for inclusion on a publicly available list of approved providers. If a United States Trustee decides not to approve or to remove a provider from the approved list, that provider may obtain administrative review of the decision from the Executive Office for U.S. Trustees. Links to these decisions are provided here, although certain information has been redacted",
+  "modified": "2013-02-21T00:00:00",
+  "accessLevel": "public",
+  "identifier": "626",
+  "publisher": {
+    "name": "Executive Office for United States Trustees",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Christopher Haverstock",
+    "hasEmail": "mailto:christopher.haverstock@usdoj.gov"
+  },
+  "keyword": [
+    "Debtor Education",
+    "Administrative Review",
+    "Bankruptcy"
+  ],
+  "bureauCode": [
+    "011:00"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "N/A",
+  "dataQuality": false,
+  "issued": "2013-02-21T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.justice.gov/ust/rules-and-federal-register-notices/administrative-decisions-regarding-debtor-education-providers",
+      "format": "text/html",
+      "mediaType": "text/html",
+      "title": "Debtor Education Administrative Decisions"
+    }
+  ]
+}

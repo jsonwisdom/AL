@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Use and Effectiveness of Fines, Jail, and Probation in Municipal Courts in Los Angeles County, 1981-1984  ",
+  "description": "The purpose of this data collection was to identify those\r\n attributes of offenders that are most often associated with receiving\r\n particular types of financial penalties along with probation, such as\r\n fines, restitution, and cost of probation. A further purpose was to\r\n estimate the relative effectiveness of these penalties in preventing\r\n recidivism. Variables include descriptions of the type of offense and\r\n penalties received, the location of the court where sentencing took\r\n place, and information about the individual's race, age, gender, level\r\n of education, employment, living arrangements, and financial status.\r\n Prior arrests and convictions are included, as are arrests,\r\n convictions, and penalties subsequent to the original case under\r\n study. Also provided are six sets of variables that describe all\r\n offenders within each conviction category. These six groups provide\r\n additional information about the offender's background and\r\n behavior. The conviction categories include assault, burglary, drug\r\ncrimes, driving under the influence, theft, and indecent exposure.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3751",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "criminal histories",
+    "fines",
+    "imprisonment",
+    "municipal courts",
+    "offender profiles",
+    "offenders",
+    "probation",
+    "restitution programs",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1993-05-13T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09742.v1",
+      "title": "Use and Effectiveness of Fines, Jail, and Probation in Municipal Courts in Los Angeles County, 1981-1984  "
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Plea Bargaining in the United States, 1978",
+  "description": "This study was conducted in 1978 at the Institute of\r\nCriminal Law and Procedure of the Georgetown University Law Center. The\r\nstudy consists of three files. The first contains information from\r\n3,397 case files in six United States cities. The 63 variables include\r\ndemographic information on the accused and the victim, past record of\r\nthe accused, seriousness of the offense, pleas entered, speed of trial\r\nprocess, and sentencing. The second file contains information gathered\r\nfrom in-court observations focused on the formal supervision of plea\r\nbargaining by judges. There are approximately 33 variables for each of\r\nthe 711 court observations. The third file consists of the results of a\r\nplea bargaining simulation game. There are 17 variables for each of the\r\n479 cases in the file.",
+  "modified": "2006-01-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3379",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "court cases",
+    "court system",
+    "crime",
+    "criminal justice system",
+    "plea negotiations",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR07775.v1",
+      "title": "Plea Bargaining in the United States, 1978"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Census of Publicly Funded Forensic Crime Laboratories, 2002",
+  "description": "To obtain current baseline information about the workload\r\n and operations of the nation's forensic crime laboratories, the Bureau\r\n of Justice Statistics (BJS) conducted its first census of publicly\r\n funded forensic crime laboratories from 2003 to 2004. Data were\r\n collected on the organization, functions, budget, staffing, workload,\r\n and performance expectations of the nation's publicly funded federal,\r\nstate, and local forensic crime laboratories currently operating.",
+  "modified": "2005-09-02T00:00:00",
+  "accessLevel": "public",
+  "identifier": "83",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "DNA fingerprinting",
+    "budgets",
+    "crime laboratories",
+    "criminal investigations",
+    "expenditures",
+    "forensic sciences",
+    "personnel",
+    "policies and procedures"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2443",
+  "dataQuality": false,
+  "issued": "2005-09-02T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04287.v1",
+      "title": "Census of Publicly Funded Forensic Crime Laboratories, 2002"
+    }
+  ]
+}

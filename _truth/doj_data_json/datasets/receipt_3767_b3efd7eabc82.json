@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Sexual Assault Among Latinas (SALAS) Study, May-September 2008 [United States]",
+  "description": "This Sexual Assault Among Latinas (SALAS) study was designed to examine interpersonal victimization among a national sample of Latino women, particularly focusing on help-seeking behaviors, culturally relevant factors, and psychosocial impacts. A national sample of 2,000 adult Latino women living in the United States participated in the study. An experienced survey research firm with specialization in doing surveys that ask about sensitive subjects conducted interviews between May 28, 2008 and September 3, 2008 using a Computer Assisted Telephone Interview (CATI) system. The data contain a total of 1,388 variables including demographics, victimization history, help-seeking efforts, mental health status, and religious behavior and beliefs variables.",
+  "modified": "2012-10-05T14:27:05",
+  "accessLevel": "restricted public",
+  "identifier": "3767",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "Hispanic or Latino Americans",
+    "acculturation",
+    "assault",
+    "coping",
+    "crime reporting",
+    "gender roles",
+    "kidnapping",
+    "mental health",
+    "post-traumatic stress disorder",
+    "psychological effects",
+    "psychological wellbeing",
+    "rape",
+    "reactions to crime",
+    "religious behavior",
+    "religious"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2012-09-24T15:33:40",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR28142.v1",
+      "title": "Sexual Assault Among Latinas (SALAS) Study, May-September 2008 [United States]"
+    }
+  ]
+}

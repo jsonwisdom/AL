@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Federal Firearms Licensees",
+  "description": "Complete listing of federal firearms licensees in December 2021",
+  "modified": "2025-09-01T00:00:00",
+  "accessLevel": "public",
+  "identifier": "4092",
+  "publisher": {
+    "name": "Bureau of Alcohol, Tobacco, Firearms and Explosives",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Bureau of Alcohol, Tobacco, Firearms, and Explosives (USDOJ)",
+    "hasEmail": "mailto:atfopendata@atf.gov"
+  },
+  "keyword": [
+    "FFL",
+    "firearm"
+  ],
+  "bureauCode": [
+    "011:14"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "spatial": "U.S. State/Territory",
+  "temporal": "2021-12-01T00:00:00.0000000/2025-09-30T00:00:00.0000000",
+  "accrualPeriodicity": "R/P1M",
+  "dataQuality": false,
+  "issued": "2021-12-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "landingPage": "https://www.atf.gov/firearms/listing-federal-firearms-licensees",
+  "theme": [
+    "geospatial"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "conformsTo": "http://www.isotc211.org/2005/gmd",
+      "downloadURL": "https://atf-geoplatform.maps.arcgis.com/home/item.html?id=d5d9caf6b6a94220bb8971ffa3319da5",
+      "mediaType": "text/xml",
+      "title": "Federal Firearms Licensee (FFL) ISO 19139 metadata"
+    },
+    {
+      "@type": "dcat:Distribution",
+      "downloadURL": "https://atf-geoplatform.maps.arcgis.com/home/item.html?id=e7a13c9919314e51b240031e697ae095",
+      "mediaType": "application/vnd.ms-excel",
+      "title": "Federal Firearms Licensees"
+    }
+  ]
+}

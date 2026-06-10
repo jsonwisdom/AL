@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Federal Justice Statistics Program: Statutes for Counts of Convictions for Defendants Sentenced Under the Sentencing Reform Act, 2015",
+  "description": "These data contain records of statutes for each count of conviction for criminal defendants who were sentenced pursuant to provisions of the Sentencing Reform Act (SRA) of 1984 and reported to the United States Sentencing Commission (USSC) during fiscal year 2015. The data are one of two supplementary files that should be used in conjunction with the primary analysis file, which contains records for all defendants sentenced under the guidelines. These data can be linked to the primary analysis file using the unique identifier variable USSCIDN. The number of records for a defendant in the current data corresponds to the total number of counts of conviction for that defendant, and that total is recorded in the NOCOUNT variable. As an example, if a defendant has five counts of conviction (NOCOUNT=5), he or she will have five records in the current data. As it is possible for defendants to have multiple statutes applying to a single count of conviction, up to three statutes (STA1-STA3) are recorded for each count of conviction. The data were obtained from the United States Sentencing Commission's Office of Policy Analysis' (OPA) Standardized Research Data File. These data are part of a series designed by Abt and the Bureau of Justice Statistics. Data and documentation were prepared by Abt.",
+  "modified": "2019-09-24T10:36:26",
+  "accessLevel": "restricted public",
+  "identifier": "2223",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "administration",
+    "court cases",
+    "criminal law",
+    "defendants",
+    "federal courts",
+    "judicial decisions",
+    "legal systems",
+    "sentencing guidelines",
+    "trial courts"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2174",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2019-09-24T10:26:30",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37344.v1",
+      "title": "Federal Justice Statistics Program: Statutes for Counts of Convictions for Defendants Sentenced Under the Sentencing Reform Act, 2015"
+    }
+  ]
+}

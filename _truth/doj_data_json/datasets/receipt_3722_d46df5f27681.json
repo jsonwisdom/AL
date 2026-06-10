@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Civil Litigation in the United States, 1977-1979",
+  "description": "The Civil Litigation Research Project, based at the \r\n University of Wisconsin Law School, was organized in 1979 to develop a \r\n large database on dispute processing and litigation and to collect \r\n information on the costs of civil litigation. Data were gathered on \r\n topics such as negotiation proceedings, relationship between lawyer and \r\nclient, and organizations' influence on the outcome of a dispute.",
+  "modified": "1994-02-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3722",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrests",
+    "attorneys",
+    "civil law",
+    "court cases",
+    "court system",
+    "criminal justice system",
+    "disposition (legal)",
+    "legal systems",
+    "plea negotiations"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-05-03T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR07994.v3",
+      "title": "Civil Litigation in the United States, 1977-1979"
+    }
+  ]
+}

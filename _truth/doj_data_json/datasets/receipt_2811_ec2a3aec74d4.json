@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Age Cohort Arrest Rates, 1970-1980",
+  "description": "The data for this collection were gathered from the 1970 and\r\n1980 Censuses and the Uniform Crime Reports for 1970 through 1980. The\r\nunit of analysis in this data collection is cities. Included are\r\npopulation totals by age group and arrest data for selected crimes by\r\nage group for Atlanta, Georgia, Chicago, Illinois, Denver, Colorado,\r\nKnoxville, Tennessee, San Jose, California, Spokane, Washington, and\r\nTucson, Arizona. Population data by sex and age for all cities are\r\ncontained in Part 4. The 123 variables provide data by age categories\r\nranging from age 5 to age 69. Part 1, the arrest file for Atlanta and\r\nChicago, provides arrest data for 1970 to 1980 by sex and age, ranging\r\nfrom age 10 and under to age 65 and over. The arrest data for other\r\ncities span two data files. Part 2 includes arrest data by sex for ages\r\n15 to 24 for the years 1970 to 1980. Part 3 provides arrest data for\r\nages 25 to 65 and over for the years 1970, 1975, and 1980. Arrest data\r\nare collected for the following crimes: murder, forcible rape, robbery,\r\naggravated assault, burglary, larceny, motor vehicle theft, other\r\nassaults, arson, forgery, fraud, embezzlement, stolen property,\r\nvandalism, weapons, prostitution, other sex offenses, opium abuse,\r\nmarijuana abuse, gambling, family offenses, drunk driving, liquor law\r\nviolations, drunkenness, disorderly conduct, vagrancy, and all other\r\noffenses combined.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2811",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrest rates",
+    "arrests",
+    "census data",
+    "crime",
+    "offenses",
+    "population size"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1985-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08261.v1",
+      "title": "Age Cohort Arrest Rates, 1970-1980"
+    }
+  ]
+}

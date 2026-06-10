@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Preventing and Controlling Corporate Crime: The Dual Role of Corporate Boards and Legal Sanctions, United States, 1996-2013",
+  "description": "This project consists of secondary analysis material (syntax only, no data). The original study that the material pertains to examines two distinct but related types of corporate crime prevention and control mechanisms--one that rests on firm governance (specifically, the Board of Directors) and the other on formal legal interventions. Specifically, the study examines whether (ceteris paribus) firms with more gender diversity on their boards are less involved in offending than firms whose boards are less diverse and whether changes in board diversity over time affect firm offending patterns. Of additional interest is how firms respond to legal discovery and punishment. Do they change their governance structures (i.e., become more diverse) due to formal legal discovery? Are firms generally deterred from reoffending (recidivism) when discovered or does deterrence depend on the government's response to offenders? In particular, are certain regimes (criminal, civil, or regulatory) more successful at crime control than others? Relevant data are collected from a variety of secondary sources, including corporate financial, statistical, and governance information. These data are then linked to cases of corporate offending (accounting fraud, bribery, environmental and anti-competitive) for 3,327 US based companies between 1996 and 2013. Analyses-NIJ-5.21.2019--2-.do: Syntax (Stata) used to create type of offense count; domain of processing (civil, criminal, regulatory); offense distribution (by corporate year), female board membership (count and percent); Reoffending (by enforcement type and governance characteristics).",
+  "modified": "2021-04-29T16:10:03",
+  "accessLevel": "public",
+  "identifier": "4242",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "bribery",
+    "corporate behavior",
+    "corporate crime",
+    "corporate responsibility",
+    "corporate sentencing",
+    "corporations",
+    "corruption",
+    "environmental regulations",
+    "gender",
+    "white collar crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2021-04-29T16:10:03",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37463.v1",
+      "title": "Preventing and Controlling Corporate Crime: The Dual Role of Corporate Boards and Legal Sanctions, United States, 1996-2013"
+    }
+  ]
+}

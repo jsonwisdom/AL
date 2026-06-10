@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Penal Code Citations:  Sentencing in 18 American Felony Courts, 1983",
+  "description": "The purpose of this study was to describe sentencing\r\n outcomes in 18 jurisdictions across the United States based on\r\n sentences actually imposed on adjudicated felons. Such descriptive\r\n information provides an overview of how sentencing is operating in a\r\n jurisdiction as a whole and supplies a baseline against which the\r\n impact of changes in sentencing codes and practices can be\r\n assessed. The data focus on sentences handed down in courts of general\r\n jurisdiction for selected crimes of homicide, rape, robbery,\r\naggravated assault, burglary, theft, and drug trafficking.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2135",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "courts",
+    "felony offenses",
+    "homicide",
+    "judicial decisions",
+    "rape",
+    "robbery",
+    "sentencing",
+    "sentencing guidelines"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1985-10-09T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08396.v3",
+      "title": "Penal Code Citations:  Sentencing in 18 American Felony Courts, 1983"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Operation Hardcore [Crime] Evaluation: Los Angeles, 1976-1980",
+  "description": "This evaluation was developed and implemented by the Los\r\nAngeles District Attorney's Office to examine the effectiveness of\r\nspecialized prosecutorial activities in dealing with the local problem\r\nof rising gang violence, in particular the special gang prosecution\r\nunit Operation Hardcore. One part of the evaluation was a system\r\nperformance analysis. The purposes of this system performance analysis\r\nwere (1) to describe the problems of gang violence in Los Angeles and\r\nthe ways that incidents of gang violence were handled by the Los\r\nAngeles criminal justice system, and (2) to document the activities of\r\nOperation Hardcore and its effect on the criminal justice system's\r\nhandling of the cases prosecuted by that unit. Computer-generated\r\nlistings from the Los Angeles District Attorney's Office of all\r\nindividuals referred for prosecution by local police agencies were used\r\nto identify those individuals who were subsequently prosecuted by the\r\nDistrict Attorney. Data from working files on all cases prosecuted,\r\nincluding copies of police, court, and criminal history records as well\r\nas information on case prosecution, were used to describe criminal\r\njustice handling. Information from several supplementary sources was\r\nalso included, such as the automated Prosecutors Management Information\r\nSystem (PROMIS) maintained by the District Attorney's Office, and court\r\nrecords from the Superior Court of California in Los Angeles County,\r\nthe local felony court.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3218",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrests",
+    "assault",
+    "burglary",
+    "correctional facilities",
+    "crime",
+    "criminal histories",
+    "criminal justice system",
+    "defendants",
+    "delinquent behavior",
+    "demographic characteristics",
+    "disposition (legal)",
+    "district attorneys",
+    "driving under the influence",
+    "drug possession",
+    "f"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09038.v2",
+      "title": "Operation Hardcore [Crime] Evaluation: Los Angeles, 1976-1980"
+    }
+  ]
+}

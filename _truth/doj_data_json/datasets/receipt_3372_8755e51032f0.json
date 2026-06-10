@@ -1,0 +1,52 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Study of Private Ownership of Firearms in the United States, 1994  ",
+  "description": "This data collection consists of a survey of private\r\n ownership of firearms by adults in the United States. Respondents who\r\n both did and did not own firearms were included. The variables cover\r\n topics such as the number and type of guns owned privately, methods\r\n of, and reasons for, firearms acquisition, the storage and carrying of\r\n guns, the defensive use of firearms against criminal attackers, and\r\n reasons for and against firearm ownership. Basic demographic\r\nvariables include sex, age, education, and employment.",
+  "modified": "1998-10-08T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3372",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "firearms",
+    "gun ownership",
+    "handguns"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1998-10-08T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06955.v1",
+      "title": "National Study of Private Ownership of Firearms in the United States, 1994  "
+    }
+  ]
+}

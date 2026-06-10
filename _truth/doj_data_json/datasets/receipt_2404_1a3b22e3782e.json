@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "City Police Expenditures, 1946-1985: [United States]",
+  "description": "This study examines police expenditures for selected cities \r\n for an extended period of time. The data set contains one variable per \r\n year for each of the following items: total general expenditures, \r\n expenditure for police protection, deflated general expenditures \r\n adjusted for inflation, deflated police expenditures adjusted for \r\n inflation, residential population, land area, patterns of population \r\n change during the study period, government identification, and implicit \r\nprice deflators of goods and services.",
+  "modified": "1992-02-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2404",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "crime",
+    "crime prevention",
+    "expenditures",
+    "government services",
+    "local government",
+    "municipal expenditures",
+    "police protection",
+    "public expenditures"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1987-10-12T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08706.v1",
+      "title": "City Police Expenditures, 1946-1985: [United States]"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Sentencing in Eight United States District Courts, 1973-1978",
+  "description": "This data collection provides information about sentencing\r\npatterns established by the United States District Courts for federal\r\noffenses. It is one of only a few studies that examine federal\r\nsentencing patterns, court involvement, sentencing, and criminal\r\nhistories. Eleven types of crimes are included: bank robbery,\r\nembezzlement, income tax evasion, mail theft, forgery, drugs, random\r\nother, false claims, homicide, bribery of a public official, and mail\r\nfraud. There are three kinds of data files that pertain to the 11 types\r\nof crimes: psi files, offense files, and AO files. The psi files\r\ndescribe defendant demographic background and criminal history. The\r\noffense files contain questions tailored to a particular type of\r\noffense committed by a defendant and the results of conviction and\r\nsentencing. The AO files provide additional information on defendants'\r\nbackground characteristics, court records, and dates of court entry and\r\nexit.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3082",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "convictions (law)",
+    "corruption",
+    "court cases",
+    "crime",
+    "criminal justice system",
+    "drug law offenses",
+    "drugs",
+    "federal courts",
+    "murder",
+    "robbery",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1987-05-19T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08622.v3",
+      "title": "Sentencing in Eight United States District Courts, 1973-1978"
+    }
+  ]
+}

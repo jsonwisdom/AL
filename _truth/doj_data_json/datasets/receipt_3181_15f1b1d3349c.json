@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Changing Patterns of Homicide and Social Policy in Philadelphia, Phoenix, and St. Louis, 1980-1994",
+  "description": "This study sought to assess changes in the volume and types\r\nof homicide committed in Philadelphia, Phoenix, and St. Louis from\r\n1980 to 1994 and to document the nature of those changes. Three of the\r\neight cities originally studied by Margaret Zahn and Marc Riedel\r\n(NATURE AND PATTERNS OF HOMICIDE IN EIGHT AMERICAN CITIES, 1978 [ICPSR\r\n8936]) were revisited for this data collection. In each city, police\r\nrecords were coded for each case of homicide occurring in the city\r\neach year from 1980 to 1994. Homicide data for St. Louis were provided\r\nby the St. Louis Homicide Project with Scott Decker and Richard\r\nRosenfeld as the principal investigators. Variables describing the\r\nevent cover study site, year of the case, date and time of assault,\r\nlocation of fatal injury, method used to kill the victim, and\r\ncircumstances surrounding the death. Variables pertaining to offenders\r\ninclude total number of homicide and assault victims, number of\r\noffenders arrested, number of offenders identified, and disposition of\r\nevent for offenders. Variables on victims focus on whether the victim\r\nwas killed at work, if the victim was using drugs or alcohol, the\r\nvictim's blood alcohol level, and the relationship of the victim to\r\nthe offender. Demographic variables include age, sex, race, and\r\nmarital status of victims and offenders.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3181",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime patterns",
+    "homicide",
+    "offenders",
+    "police records",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1999-12-29T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02729.v1",
+      "title": "Changing Patterns of Homicide and Social Policy in Philadelphia, Phoenix, and St. Louis, 1980-1994"
+    }
+  ]
+}

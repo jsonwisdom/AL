@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Age-by-Race Specific Crime Rates, 1965-1985:  [United States]",
+  "description": "These data examine the effects on total crime rates of \r\n changes in the demographic composition of the population and changes in \r\n criminality of specific age and race groups. The collection contains \r\n estimates from national data of annual age-by-race specific arrest \r\n rates and crime rates for murder, robbery, and burglary over the \r\n 21-year period 1965-1985. The data address the following questions: (1) \r\n Are the crime rates reported by the Uniform Crime Reports (UCR) data \r\n series valid indicators of national crime trends? (2) How much of the \r\n change between 1965 and 1985 in total crime rates for murder, robbery, \r\n and burglary is attributable to changes in the age and race composition \r\n of the population, and how much is accounted for by changes in crime \r\n rates within age-by-race specific subgroups? (3) What are the effects \r\n of age and race on subgroup crime rates for murder, robbery, and \r\n burglary? (4) What is the effect of time period on subgroup crime rates \r\n for murder, robbery, and burglary? (5) What is the effect of birth \r\n cohort, particularly the effect of the very large (baby-boom) cohorts \r\n following World War II, on subgroup crime rates for murder, robbery, \r\n and burglary? (6) What is the effect of interactions among age, race, \r\n time period, and cohort on subgroup crime rates for murder, robbery, \r\n and burglary? (7) How do patterns of age-by-race specific crime rates \r\n for murder, robbery, and burglary compare for different demographic \r\n subgroups? The variables in this study fall into four categories. The \r\n first category includes variables that define the race-age cohort of \r\n the unit of observation. The values of these variables are directly \r\n available from UCR and include year of observation (from 1965-1985), \r\n age group, and race. The second category of variables were computed \r\n using UCR data pertaining to the first category of variables. These are \r\n period, birth cohort of age group in each year, and average cohort size \r\n for each single age within each single group. The third category \r\n includes variables that describe the annual age-by-race specific arrest \r\n rates for the different crime types. These variables were estimated for \r\n race, age, group, crime type, and year using data directly available \r\n from UCR and population estimates from Census publications. The fourth \r\n category includes variables similar to the third group. Data for \r\n estimating these variables were derived from available UCR data on the \r\n total number of offenses known to the police and total arrests in \r\n combination with the age-by-race specific arrest rates for the \r\ndifferent crime types.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3835",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "age",
+    "arrests",
+    "burglary",
+    "crime rates",
+    "demographic characteristics",
+    "murder",
+    "population characteristics",
+    "race",
+    "rape",
+    "robbery"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1991-10-23T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09589.v1",
+      "title": "Age-by-Race Specific Crime Rates, 1965-1985:  [United States]"
+    }
+  ]
+}

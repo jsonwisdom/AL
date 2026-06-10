@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "The Role and Impact of Forensic Evidence on the Criminal Justice System, 2004-2008 [United States]",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they there received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except of the removal of direct identifiers. Users should refer to the accompany readme file for a brief description of the files available with this collections and consult the investigator(s) if further information is needed.This collection includes data gathered through three separate study designs. The first study called for tracking cases and forensic evidence through local criminal justice processes for five offenses: homicide, sexual assault, aggravated assault, robbery and burglary. Two sites, Denver, Colorado, and San Diego, California, participated in the study. Demographic data were collected on victims (Victim Data n = 7,583) and defendants (Defendant Data n = 2,318). Data on forensic evidence collected at crime scenes included DNA material (DNA Evidence Data n = 1,894), firearms evidence (Ballistics Evidence Data n = 488), latent prints (Latent Print Evidence Data n = 766), trace evidence (Other Impressions Evidence Data n = 49), and drug evidence (Drug Evidence Data n = 43). Comparisons were then made between open and closed cases from the participating sites. Two smaller studies were conducted as part of this grant. The second study was an analysis of an experiment in the Miami-Date, Florida Police Department (Miami-Data County Data n = 1,421) to determine whether clearance rates for no-suspect property crimes could be improved through faster processing of DNA evidence. The third study was a survey of 75 police departments across the nation (Crime Labs Survey Data) to obtain information on the organizational placement, staffing and responsibilities of crime lab units.",
+  "modified": "2017-03-30T16:42:57",
+  "accessLevel": "restricted public",
+  "identifier": "3787",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "DNA fingerprinting",
+    "aggravated assault",
+    "burglary",
+    "crime laboratories",
+    "criminal investigations",
+    "evidence",
+    "forensic sciences",
+    "homicide",
+    "robbery",
+    "sexual assault",
+    "suspect identification",
+    "victim identification"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2017-03-30T16:39:59",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR33462.v1",
+      "title": "The Role and Impact of Forensic Evidence on the Criminal Justice System, 2004-2008 [United States]"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Judicial Reporting Program, 2000",
+  "description": "This data collection provides detailed information on the\r\nsentences and characteristics of convicted felons based on data\r\ncollected from state courts. The 2000 survey was based on a sample of\r\n344 counties selected to be nationally representative. The collection\r\ncontains sociodemographic information such as age, race, and sex of\r\nthe felon. Types of offenses committed include homicide, rape, and\r\nrobbery. Adjudication variables referring to the process between\r\narrest and sentencing are also a part of this dataset. Data can be\r\nanalyzed at the national level or by individual counties.",
+  "modified": "2011-04-11T14:47:08",
+  "accessLevel": "restricted public",
+  "identifier": "1097",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "arrests",
+    "assault",
+    "auto theft",
+    "burglary",
+    "case processing",
+    "convictions (law)",
+    "counties",
+    "demographic characteristics",
+    "drug law offenses",
+    "felony courts",
+    "felony offenses",
+    "homicide",
+    "larceny",
+    "manslaughter",
+    "murder",
+    "rape",
+    "robbery",
+    "sentencing",
+    "state courts"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2176",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2003-09-10T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03802.v1",
+      "title": "National Judicial Reporting Program, 2000"
+    }
+  ]
+}

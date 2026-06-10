@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Phoenix [Arizona] Use of Force Project, June 1994",
+  "description": "In 1994, the Phoenix Police Department, in conjunction with\r\n Rutgers University and Arizona State University, designed and\r\n implemented a study on the use of force by and against Phoenix police\r\n officers. This study was concerned with describing the amount of force\r\n used in different arrest situations and determining the extent to\r\n which officer, suspect, offense, and arrest situation characteristics\r\n can predict the amount of force used. Data were collected primarily\r\n through a one-page, two-sided survey instrument given to police\r\n officers. In addition, screening interviews regarding the use of force\r\n during the arrest were conducted with both officers and suspects to\r\n assess the reliability of the officer surveys. During the screening\r\n interviews, officers and suspects were asked brief questions about the\r\n use and extent of force by officers and suspects. In the officer\r\n survey form, six potential areas of force were identified: voice,\r\n motion, restraints, tactics, weapons, and injuries. Three dimensions\r\n of weapons use--possession, threatened use, and actual use--were also\r\n recorded. Basic demographic information on officers and suspects,\r\n descriptions of the arrest, and information regarding injuries were\r\nalso collected.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2878",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrest procedures",
+    "offenders",
+    "police departments",
+    "police officers",
+    "police use of force"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1996-07-13T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06626.v1",
+      "title": "Phoenix [Arizona] Use of Force Project, June 1994"
+    }
+  ]
+}

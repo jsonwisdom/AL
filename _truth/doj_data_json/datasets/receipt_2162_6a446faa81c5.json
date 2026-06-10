@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Deaths in Custody Reporting Program: Non-standardized Jail Data, 2001",
+  "description": "The Deaths in Custody Reporting Program (DCRP) is an annual data collection conducted by the Bureau of Justice Statistics (BJS). The DCRP began in 2000 under the Death in Custody Reporting Act of 2000 (P.L. 106-297). It is the only national statistical collection that obtains detailed information about deaths in adult correctional facilities. The DCRP collects data on persons dying in state prisons, local jails and in the process of arrest. Each collection is a separate subcollection, but each is under the umbrella of the DCRP collection. The DCRP collects inmate death records from each of the nation's 50 state prison systems and approximately 2,800 local jail jurisdictions. In addition, this program collects records of all deaths occurring during the process of arrest. Data are collected directly from state and local law enforcement agencies.\r\nDeath records include information on decedent personal characteristics (age, race or Hispanic origin, and sex), decedent criminal background (legal status, offense type, and time served), and the death itself (date, time, location, and cause of death, as well as information on the autopsy and medical treatment provided for any illness or disease).\r\nThis data collection represents a single year of DCRP Jails data. The variable names and coding, while similar to other years, have not been standardized across years. The concatenated multi-year versions of the DCRP Jails population data have been edited to correct outliers and other data anomalies. Researchers are encouraged to use the concatenated multi-year data for final jail population data.",
+  "modified": "2016-08-31T10:12:15",
+  "accessLevel": "restricted public",
+  "identifier": "2162",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "corrections",
+    "death",
+    "jails"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2441",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2016-08-31T10:10:11",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36293.v1",
+      "title": "Deaths in Custody Reporting Program: Non-standardized Jail Data, 2001"
+    }
+  ]
+}

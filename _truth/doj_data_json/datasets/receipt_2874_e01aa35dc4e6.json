@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Extended National Assessment Survey of Law Enforcement Anti-Gang Information Resources, 1993-1994",
+  "description": "This survey extended a 1992 survey (NATIONAL ASSESSMENT\r\nSURVEY OF LAW ENFORCEMENT ANTI-GANG INFORMATION RESOURCES, 1990-1992\r\n[ICPSR 6237]) in two ways: (1) by updating the information on the 122\r\nmunicipalities included in the 1992 survey, and (2) by including data\r\non all cities in the United States ranging in population from 150,000\r\nto 200,000 and including a random sample of 284 municipalities ranging\r\nin population from 25,000 to 150,000. Gang crime problems were defined\r\nin the same manner as in the 1992 survey, i.e., a gang (1) was\r\nidentified by the police as a \"gang,\" (2) participated in criminal\r\nactivity, and (3) involved youth in its membership. As in the 1992\r\nsurvey, a letter was sent to the senior law enforcement departmental\r\nadministrator of each agency describing the nature of the survey. For\r\njurisdictions included in the 1992 survey, the letter listed the\r\nspecific information that had been provided in the 1992 survey and\r\nidentified the departmental representative who provided the 1992 data.\r\nThe senior law enforcement administrator was asked to report whether a\r\ngang crime problem existed within the jurisdiction in 1994. If a\r\nproblem was reported, the administrator was asked to identify a\r\nrepresentative of the department to provide gang crime statistics and\r\na representative who was most knowledgeable on anti-gang field\r\noperations. Annual statistics on gang-related crime were then\r\nsolicited from the departmental statistical representative. Variables\r\ninclude city, state, ZIP code, and population category of the police\r\ndepartment, and whether the department reported a gang problem in\r\n1994. Data on the number of gangs, gang members, and gang-related\r\nincidents reported by the police department are also provided. If\r\nactual numbers were not provided by the police department, estimates\r\nof the number of gangs, gang members, and gang-related incidents were\r\ncalculated by sampling category.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2874",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "cities",
+    "crime",
+    "gang members",
+    "gang violence",
+    "gangs",
+    "police departments",
+    "youths"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1997-02-13T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06565.v1",
+      "title": "Extended National Assessment Survey of Law Enforcement Anti-Gang Information Resources, 1993-1994"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Incident-Based Reporting System (NIBRS) Estimates",
+  "description": "Estimated national, regional, and state figures using NIBRS data.  Estimates are produced on the number and characteristics of incidents, offenses, victims, and persons arrested.  For each indicator, as appropriate, three types of estimates are produced: • a total (i.e., the volume of crime) • a rate (i.e., the per capita amount of crime per the population served) • a percentage (i.e., the proportion of a crime attributable to a particular level of a characteristic).  Estimates are produced in 109 estimate domains which, in addition to national estimates, include population groups, agency types, regions, and states. ",
+  "modified": "2025-12-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "4315",
+  "publisher": {
+    "name": "Federal Bureau of Investigation",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Criminal Justice Information Services Division Federal Bureau of Investigation (USDOJ)",
+    "hasEmail": "mailto:CRIMESTATSINFO@fbi.gov"
+  },
+  "keyword": [
+    "Estimation",
+    "incident based estimates",
+    "NIBRS estimation",
+    "crimes against persons estimates",
+    "crimes against property estimates",
+    "crimes against society estimates",
+    "crime statistics",
+    "drug crime estimates",
+    "Uniform Crime Reporting Program"
+  ],
+  "bureauCode": [
+    "011:10"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "spatial": "United States",
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "547",
+  "accrualPeriodicity": "R/P1Y",
+  "dataQuality": true,
+  "issued": "2022-10-05T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "landingPage": "https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/home",
+  "theme": [
+    "geospatial"
+  ],
+  "references": [
+    "https://ucr.fbi.gov/"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "description": "The Crime Data Explorer (CDE) offers downloadable Uniform Crime Reporting (UCR) data files. The CDE provides downloadable NIBRS Estimation Tables for years 2021 to present.",
+      "downloadURL": "https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/downloads",
+      "mediaType": "application/zip",
+      "title": "2021 to Present: Crime Data Explorer"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Instant Criminal Background Check System (FBI)",
+  "description": "The National Instant Criminal Background Check System (NICS) is a national system that provides the timely and accurate determination of a person's eligibility to possess firearms and/or explosives in accordance with the Brady Handgun Violence Prevention",
+  "modified": "2017-02-27T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "1129",
+  "publisher": {
+    "name": "Federal Bureau of Investigation",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Federal Bureau of Investigation (USDOJ)",
+    "hasEmail": "mailto:opendata@fbi.gov"
+  },
+  "keyword": [
+    "eligibility check",
+    "firearms background check",
+    "explosives background check",
+    "denied firearm application",
+    "flagged firearm application",
+    "firearm application overturned denial",
+    "firearm license",
+    "firearm transfer",
+    "explosives permit",
+    "explosives license",
+    "Federal Fi"
+  ],
+  "bureauCode": [
+    "011:10"
+  ],
+  "programCode": [
+    "011:044"
+  ],
+  "dataQuality": false,
+  "issued": "2017-02-27T00:00:00",
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "http://www.nicsezcheckfbi.gov",
+      "mediaType": "text/html",
+      "title": "National Instant Criminal Background Check System (FBI)"
+    }
+  ]
+}

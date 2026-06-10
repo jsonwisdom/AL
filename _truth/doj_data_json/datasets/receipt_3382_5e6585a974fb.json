@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Illegal Corporate Behavior, 1975-1976",
+  "description": "This study represents the first large-scale comprehensive\r\ninvestigation of corporate violations of law. It examines the extent\r\nand nature of these illegal activities, the internal corporate\r\nstructure and the economic setting in which the violations occurred.",
+  "modified": "1992-02-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3382",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "businesses",
+    "corporate behavior",
+    "corporate crime",
+    "corporations",
+    "corruption",
+    "crime",
+    "criminal justice system",
+    "financial management",
+    "manufacturing industry"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR07855.v3",
+      "title": "Illegal Corporate Behavior, 1975-1976"
+    }
+  ]
+}

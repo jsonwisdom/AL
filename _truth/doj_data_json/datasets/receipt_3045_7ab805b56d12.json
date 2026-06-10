@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Criminal Histories and Criminal Justice Processing of Drug Use Forecasting (DUF) Sample Members in Washington, DC, 1989-1991",
+  "description": "These data provide information on the relationship between\r\n arrestee drug tests and future criminality once other risk factors,\r\n such as prior criminal history, are accounted for. Also explored is\r\n whether the association between drug test results and future offending\r\n varies depending upon the attributes of individual offenders. The\r\n dataset contains information drawn from the Pretrial Services Agency\r\n (PSA) in Washington, DC, and the National Institute of Justice's Drug\r\n Use Forecasting (DUF) program. Data are available from each source for\r\n 1989 and 1990 with subsequent arrest data provided by PSA through\r\n August 1991. The 1989-1990 data supplied by PSA contain information on\r\n criminal history and drug test results taken at the time of arrest.\r\n Data provided from the DUF program include drug test results from a\r\n sample of persons arrested as well as information obtained from\r\n arrestee interviews on items such as family and work status. The\r\n combined data contain the arrestees' demographic characteristics,\r\n arrest and charge information, prior criminal history, and subsequent\r\n offending. Drugs tested for include cocaine, opiates, methadone, PCP,\r\n amphetamines, barbiturates, marijuana, methaqualone, Darvon, and\r\n Valium. In addition, self-reported information regarding an\r\n individual's use of and dependency on these drugs is supplied.\r\n Demographic information includes age, sex, income, and employment\r\n status. Due to changes in the DUF measurement instrument from 1989 to\r\n 1990, the variables contained in the two data files are not completely\r\nidentical.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3045",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "ADAM/DUF Program",
+    "alcohol abuse",
+    "crime patterns",
+    "criminal histories",
+    "demographic characteristics",
+    "drug dependence",
+    "drug law offenses",
+    "drug offenders",
+    "drug related crimes",
+    "drug testing",
+    "drug use",
+    "gun use",
+    "handguns",
+    "recidivism prediction",
+    "substance abuse",
+    "t"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "3023",
+  "dataQuality": false,
+  "issued": "1994-10-19T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06122.v1",
+      "title": "Criminal Histories and Criminal Justice Processing of Drug Use Forecasting (DUF) Sample Members in Washington, DC, 1989-1991"
+    }
+  ]
+}

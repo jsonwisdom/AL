@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Criminal Justice Outcomes of Male Offenders in 14 Jurisdictions in the United States, 1985-1988",
+  "description": "This data collection provides information on multiple \r\n prosecutions for individual offenders. The data are intended for use in \r\n the exploration and description of relationships among the various \r\n elements of the adjudication process (characteristics of the offender \r\n and offense and decisions made by various actors in the prosecution and \r\n sentencing of the offenders). The sampled incidents were drawn from two \r\n types of offenses: residential burglary and armed robbery. The \r\n collection includes only those incidents involving male offenders who \r\n were previously unknown to their victims and who were facing \r\n adjudication in adult court. The data collection instrument probed five \r\n areas for each offender and incident sampled: A. Related Incidents \r\n (information to identify all other incidents for which processing \r\n overlapped that of the sampled incident), B. Incident Description \r\n (information about the criminal incident itself, such as date and \r\n location of the incident, date of arrest, victims, weapons, \r\n accomplices, witnesses, and evidence), C. Adjudication Process \r\n (information such as bond amount, legal representation, adjudication \r\n events and outcomes, date of sentencing, and type and length of \r\n incarceration), D. Defendant (information about the defendant himself, \r\n including date of birth, race/descent, and employment status), and E. \r\n Prior Record (information about the defendant's record, such as his age \r\n at first arrest and first incarceration, the number of times he was \r\nincarcerated, and history of drug and/or alcohol abuse).",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2198",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "armed robbery",
+    "arrests",
+    "burglary",
+    "criminal histories",
+    "judicial process",
+    "male offenders",
+    "prosecution",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1993-04-09T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09671.v1",
+      "title": "Criminal Justice Outcomes of Male Offenders in 14 Jurisdictions in the United States, 1985-1988"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Recognition and Accreditation (R&A)",
+  "description": "Data related to Attorney's and Accredited representative's recognition and accreditation to represent cases within the EOIR adjudication process and Discipline or removal from Accreditation",
+  "modified": "2023-04-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "499",
+  "publisher": {
+    "name": "Executive Office for Immigration Review",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Office of Policy, Communications and Legislative Affairs Division Executive Office for Immigration Review (USDOJ)",
+    "hasEmail": "mailto:PAO.EOIR@usdoj.gov"
+  },
+  "keyword": [
+    "Attorneys",
+    "Accredited Representatives"
+  ],
+  "bureauCode": [
+    "011:00"
+  ],
+  "programCode": [
+    "011:008"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "systemOfRecords": "BIA:002",
+  "accrualPeriodicity": "R/P1W",
+  "dataQuality": false,
+  "issued": "2017-02-26T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "landingPage": "https://www.justice.gov/eoir/recognition-accreditation-roster-reports",
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "description": "Accredited Representatives Roster",
+      "downloadURL": "https://www.justice.gov/eoir/page/file/942311/download",
+      "mediaType": "application/pdf",
+      "title": "Accredited Representatives Roster"
+    },
+    {
+      "@type": "dcat:Distribution",
+      "description": "Recognized Organizations and Accredited Representatives Roster",
+      "downloadURL": "https://www.justice.gov/eoir/page/file/942301/download",
+      "mediaType": "application/pdf",
+      "title": "Recognized Organizations and Accredited Representatives Roster"
+    },
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.justice.gov/eoir/recognized-organizations-and-accredited-representatives-roster-state-and-city",
+      "description": "Recognized Organizations and Accredited Representatives Roster by State and City",
+      "title": "Recognized Organizations and Accredited Representatives Roster by State and City"
+    }
+  ]
+}

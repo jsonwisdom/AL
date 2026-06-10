@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "State Court Organization Trends, United States, 1980-2011  ",
+  "description": "This data collection provides detailed comparative information about the structure, policies, and procedures of state-wide trial and appellate court systems for the 50 states and the District of Columbia within the United States for the years 1980, 1987, 1993, 1998, 2004, and 2011. Information gathered includes: the number of courts and judges, judicial selection, governance of court systems (including judicial funding, administration, staffing, and procedures), jury qualifications and verdict rules, and processing and sentencing procedures of criminal cases. Data collection was carried out by the National Center for State Courts.",
+  "modified": "2019-04-22T12:22:39",
+  "accessLevel": "public",
+  "identifier": "2674",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "appellate courts",
+    "court system",
+    "judge selection",
+    "judges",
+    "juries",
+    "policies and procedures",
+    "state courts",
+    "trial courts"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2019-04-22T12:22:39",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37196.v1",
+      "title": "State Court Organization Trends, United States, 1980-2011  "
+    }
+  ]
+}

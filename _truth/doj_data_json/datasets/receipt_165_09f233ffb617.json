@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Juvenile Detention and Correctional Facility Census, 1973",
+  "description": "This survey provides information on the characteristics and\r\n administration of juvenile detention and correctional facilities. Six\r\n types of facilities are covered in this study: (1) detention centers,\r\n (2) shelters, (3) reception or diagnostic centers, (4) ranches,\r\n forestry camps, and farms, (5) halfway houses and group homes, and (6)\r\n training schools. Survey items include facility capacity, number of\r\n full-and part-time staff, number of admissions and discharges, average\r\n quarterly population, and expenditures by the facility. Data for\r\nfacility residents include age and sex, and average length of stay.",
+  "modified": "2008-06-04T13:26:37",
+  "accessLevel": "public",
+  "identifier": "165",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "correctional facilities",
+    "crime",
+    "criminal justice system",
+    "juvenile delinquency"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2588",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR07639.v3",
+      "title": "Juvenile Detention and Correctional Facility Census, 1973"
+    }
+  ]
+}

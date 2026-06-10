@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Juvenile Defendants in Criminal Courts (JDCC):  Survey of 40 Counties in the United States, 1998  ",
+  "description": "This is an independent sample of juvenile defendants drawn\r\nfrom the State Court Processing Statistics (SCPS) for 1998 (see ICPSR\r\n2038). SCPS 1998 tracked felony cases filed in May 1998 until final\r\ndisposition or until one year had elapsed from the date of filing.\r\nSCPS 1998 presents data on felony cases filed in approximately\r\n40 of the nation's 75 most populous counties in 1998. These 75\r\ncounties account for more than a third of the United States population\r\nand approximately half of all reported crimes. The cases from these 40\r\njurisdictions were weighted to represent all felony filings during the\r\nmonth of May in the 75 most populous counties. Data were collected on\r\narrest charges, demographic characteristics, criminal history,\r\npretrial release and detention, adjudication, and sentencing. Within\r\neach sampled site, data were gathered on each juvenile felony\r\ncase. Cases were tracked through adjudication or for up to one\r\nyear. The source used to identify the upper age for juveniles and the\r\nfiling mechanism appropriate to each state was the OJJDP publication,\r\nTrying Juveniles as Adults in Criminal Court: An Analysis of State\r\nTransfer Provisions (December 1998).",
+  "modified": "2003-09-25T00:00:00",
+  "accessLevel": "public",
+  "identifier": "163",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "case processing",
+    "court cases",
+    "criminal histories",
+    "defendants",
+    "disposition (legal)",
+    "felons",
+    "felony courts",
+    "juveniles",
+    "pretrial detention",
+    "pretrial release",
+    "sentencing",
+    "state courts",
+    "statistical data"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2003-09-25T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03750.v1",
+      "title": "Juvenile Defendants in Criminal Courts (JDCC):  Survey of 40 Counties in the United States, 1998  "
+    }
+  ]
+}

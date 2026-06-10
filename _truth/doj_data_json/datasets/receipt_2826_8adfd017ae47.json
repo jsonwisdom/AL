@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Management of Death Row Inmates, 1986-1987: [United States]",
+  "description": "These data offer objective and subjective information about\r\n current death row inmates and the management policies and procedures\r\n related to their incarceration. The major objectives of the study were\r\n to gather data about the inmate population and current management\r\n policies and procedures, to identify issues facing correctional\r\n administrators in supervising the growing number of condemned inmates,\r\n and to offer options for improved management. Four survey instruments\r\n were developed: (1) a form for the Department of Corrections in each\r\n of the 37 states that had a capital punishment statute as of March\r\n 1986, (2) a form for each warden of an institution that housed\r\n death-sentenced inmates, (3) a form for staff members who worked with\r\n such inmates, and (4) a form for a sample of the inmates. The surveys\r\n included questions about inmate demographics (e.g., date of birth,\r\n sex, race, Hispanic origin, level of education, marital status, and\r\n number of children), the institutional facilities available to death\r\n row inmates, state laws pertaining to them, training for staff who\r\n deal with them, the usefulness of various counseling, medical, and\r\n recreational programs, whether the inmates expected to be executed,\r\n and the challenges in managing the death row population. The surveys\r\n did not probe legal, moral, or political arguments about the death\r\npenalty itself.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2826",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "capital punishment",
+    "correctional facilities",
+    "correctional guards",
+    "corrections management",
+    "death row inmates",
+    "imprisonment",
+    "inmate populations",
+    "policies and procedures"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1993-10-02T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09917.v1",
+      "title": "Management of Death Row Inmates, 1986-1987: [United States]"
+    }
+  ]
+}

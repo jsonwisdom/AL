@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Capital Punishment in the United States, 1973-1990",
+  "description": "This data collection provides annual data on prisoners under \r\n a sentence of death and on those whose offense sentences were commuted \r\n or vacated during the period 1973-1990. Information is supplied for \r\n basic sociodemographic characteristics such as age, sex, race, \r\n ethnicity, marital status at time of imprisonment, level of education, \r\n and state of incarceration. Criminal history data include prior felony \r\n convictions for criminal homicide and legal status at the time of the \r\n capital offense. Additional information is available for those inmates \r\n removed from death row by yearend 1990 and for those inmates who were \r\nexecuted.",
+  "modified": "2008-11-12T10:24:55",
+  "accessLevel": "restricted public",
+  "identifier": "752",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "capital punishment",
+    "commuted sentences",
+    "criminal histories",
+    "death row inmates",
+    "demographic characteristics",
+    "executions",
+    "felony offenses",
+    "prison inmates",
+    "sentencing",
+    "states (USA)"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2587",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "1993-02-14T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09819.v1",
+      "title": "Capital Punishment in the United States, 1973-1990"
+    }
+  ]
+}

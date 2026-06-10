@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Experimental Evaluation of Drug Testing and Treatment Interventions for Probationers in Maricopa County, Arizona, 1992-1994",
+  "description": "This data collection represents a combined experimental\r\nevaluation of a drug court program, implemented in 1992 in cooperation\r\nwith the Maricopa County Adult Probation Department, in comparison to\r\nstandard probation with different levels of drug testing. The\r\nexperiment's objective was to compare the drug use and criminal\r\nbehavior of probationers assigned to four alternative regimes or\r\ntracks: (1) standard probation, but no drug testing, (2) standard\r\nprobation with random monthly drug tests, (3) standard probation with\r\ntesting scheduled twice a week, and (4) drug court, an integrated\r\nprogram of drug testing, treatment, and sanctions that utilized a\r\ncarefully structured set of rewards and punishments. The experiment\r\nwas limited to first-time felony offenders convicted of drug\r\npossession or use (not sales) and sentenced to a term of three years'\r\nprobation. A total of 630 probationers from Maricopa County were\r\nrandomly assigned to one of the four experimental regimes and tracked\r\nfor a 12-month period. Data collection efforts included: (1)\r\nbackground information on each participant, (2) process information on\r\nthe characteristics of supervision and services provided under each\r\nexperimental condition, and (3) follow-up data on subsequent drug use,\r\ncrime, and pro-social activities for 12 full months. Background Data\r\n(Part 1) include demographic variables such as race, sex, education,\r\nmarital status, living arrangements, and employment history. In\r\naddition, there are variables on prior drug use and abuse, drug\r\ntreatment, criminal histories as both a juvenile and an adult, and\r\nrisk and need assessment scores. Other variables include the results\r\nof drug testing and any sanctions taken for a positive result (Part\r\n2), new arrests while on probation and corresponding disposition and\r\nconviction (Part 3), and technical violations and any actions taken\r\nfor these violations (Part 4). For probationers assigned to drug court\r\n(Part 5) there are variables measuring probationers' status, probation\r\nrecommendations, and judges' decisions at 11 different progress\r\nassessments. The follow-up information (Parts 6-8) includes monthly\r\ndata on the status of the probationer, the number of face-to-face\r\noffice contacts, phone contacts, work/school contacts, and community\r\ncontacts, collateral checks, employment/school verification,\r\ncounseling sessions, alcohol tests, drug tests, substance abuse\r\ntreatment, the number of hours the probationer spent job hunting, in\r\neducational training, in vocational training, and in community\r\nservice, the number of days employed full- and part-time, and the\r\namount of earnings, fines paid, restitution paid, and fees paid.",
+  "modified": "2013-05-15T14:36:31",
+  "accessLevel": "public",
+  "identifier": "2780",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "criminal histories",
+    "drug testing",
+    "drug treatment",
+    "felony offenses",
+    "intervention",
+    "probationers",
+    "program evaluation",
+    "treatment programs"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2000-07-27T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02025.v2",
+      "title": "Experimental Evaluation of Drug Testing and Treatment Interventions for Probationers in Maricopa County, Arizona, 1992-1994"
+    }
+  ]
+}

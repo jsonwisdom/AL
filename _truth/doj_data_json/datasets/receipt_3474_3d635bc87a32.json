@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "A Multi-Site Assessment of Police Consolidation: California, Michigan, Minnesota, Pennsylvania, 2014-2015",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThe study gathered information from police officers and residents of four different community areas that had undergone some form of police consolidation or contracting. The communities were the city of Pontiac in Michigan; the cities of Chisago and Lindstrom in Minnesota; York and Windsor Townships and the boroughs of Felton, Jacobus, Yoe, Red Lion, and Windsor in Pennsylvania; and the city of Compton in California. Surveys were administered to gauge the implementation and effectiveness of three models of police consolidation: merger of agencies, regionalization under which two or more agencies join to provide services in a broader area, and contracting by municipalities with other organizations for police services. \r\nThe collection includes 5 SPSS files:\r\n\r\nComptonFinal_Masked-by-ICPSR.sav (176 cases / 99 variables)\r\nMinnesotaFinal_Masked-by-ICPSR.sav (228 cases / 99 variables)\r\nPontiacFinal_Masked-by-ICPSR.sav (230 cases / 99 variables)\r\nYorkFinal_Masked-by-ICPSR.sav (219 cases / 99 variables)\r\nOfficerWebFINALrecodesaug2015revised_Masked-by-ICPSR.sav (139 cases / 88 variables)\r\n",
+  "modified": "2018-10-25T17:44:38",
+  "accessLevel": "restricted public",
+  "identifier": "3474",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "community policing",
+    "crime reduction",
+    "police community relations",
+    "police department consolidation",
+    "police departments",
+    "police effectiveness",
+    "police performance",
+    "police response"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-10-25T17:35:47",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36951.v1",
+      "title": "A Multi-Site Assessment of Police Consolidation: California, Michigan, Minnesota, Pennsylvania, 2014-2015"
+    }
+  ]
+}

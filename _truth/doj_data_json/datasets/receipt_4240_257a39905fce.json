@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Testing and Evaluating Body Worn Video Technology in the Los Angeles Police Department, California, 2012-2018",
+  "description": "This research sought to evaluate the implementation of body worn cameras (BWCs) in the Los Angeles Police Department (LAPD). Researchers employed three strategies to evaluate the impact of BWCs in the department: 1) two-wave officer surveys about BWCs, 2) two-wave Systematic Social Observations (SSOs) of citizen interactions from officer ride-alongs, and 3) a time series analysis of existing LAPD data of use of force and complaint data.\r\nThe officer surveys were conducted in the Mission and Newton divisions of the LAPD before and after BWCs were implemented. The survey instrument was designed to measure perceptions of BWCs across a variety of domains and took approximately 20 minutes to complete. Researchers attended roll calls for all shifts and units to request officer participation and administered the surveys on tablets using the Qualtrics software. The pre-deployment survey was administered in both divisions August and September 2015. The post-deployment surveys were conducted with a subset of officers who participated in the pre-deployment surveys during a two-week period in the summer of 2016, approximately nine months following the initial rollout of BWCs.\r\nThe SSO data was collected in the Mission and Newton divisions prior to and following BWC implementation. The pre-administration SSOs were conducted in August and September 2015 and the post-administration SSOs were conducted in June and August, 2016. Trained observers spent 725 hours riding with and collecting observational data on the encounters between officers and citizens using tablets to perform field coding using Qualtrics software. A total of 124 rides (71 from Wave I and 53 from Wave II) were completed between both Newton and Mission Divisions. These observations included 514 encounters and involved coding the interactions of 1,022 citizens, 555 of which were deemed to be citizens who had full contact, which was defined as a minute or more of face-time or at least three verbal exchanges.\r\nPatrol officers (including special units) for ride-alongs were selected from a master list of officers scheduled to work each day and shift throughout the observation period. Up to five officers within each shift were randomly identified as potential participants for observation from this master list and observers would select the first available officer from this list. For each six-hour observation period, or approximately one-half of a shift, the research staff observed the interactions between the assigned officer, his or her partner, and any citizens he or she encountered. In Wave 2, SSOs were conducted with the same officers from Wave 1.\r\nThe time series data were obtained from the LAPD use of force and complaint databases for each of the 21 separate patrol divisions, a metropolitan patrol division, and four traffic divisions of the LAPD. These data cover the time period where BWC were implemented throughout the LAPD on a staggered basis by division from 2015 to 2018. The LAPD operates using four-week deployment periods (DPs), and there are approximately 13 deployment periods per year. These data span the period of the beginning of 2012 through the 2017 DP 12. These data were aggregated to counts by deployment period based on the date of the originating incident. The LAPD collects detailed information about each application of force by an officer within an encounter. For this reason, separate use of force counts are based on incidents, officers, and use of force applications. Similarly, the LAPD also collects information on each allegation for each officer within a complaint and public complaint counts are based on incidents, officers, and allegations.",
+  "modified": "2021-04-28T10:02:27",
+  "accessLevel": "restricted public",
+  "identifier": "4240",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "law enforcement",
+    "police citizen interactions",
+    "police equipment",
+    "police records",
+    "police use of force",
+    "procedural justice",
+    "social behavior",
+    "wearable cameras",
+    "wearable video devices"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2021-04-28T09:58:14",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37467.v1",
+      "title": "Testing and Evaluating Body Worn Video Technology in the Los Angeles Police Department, California, 2012-2018"
+    }
+  ]
+}

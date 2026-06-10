@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Project on Human Development in Chicago Neighborhoods (PHDCN):  Gun Ownership, Wave 2, 1997-2000",
+  "description": "The Project on Human Development in Chicago Neighborhoods\r\n (PHDCN) was a large-scale, interdisciplinary study of how families,\r\n schools, and neighborhoods affect child and adolescent development.\r\n One component of the PHDCN was the Longitudinal Cohort Study, which\r\n was a series of coordinated longitudinal studies that followed over\r\n 6,000 randomly selected children, adolescents, and young adults, and\r\n their primary caregivers over time to examine the changing\r\n circumstances of their lives, as well as the personal characteristics,\r\n that might lead them toward or away from a variety of antisocial\r\n behaviors. Numerous measures were administered to respondents to\r\n gauge various aspects of human development, including individual\r\n differences, as well as family, peer, and school influences. One such\r\n measure was the Gun Ownership instrument that obtained information\r\n related to the accessibility and use of guns. It was conducted with\r\nsubjects in Cohorts 9, 12, 15, and 18.",
+  "modified": "2006-04-24T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "3850",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "adolescents",
+    "child development",
+    "childhood",
+    "gun ownership",
+    "gun use",
+    "handguns",
+    "neighborhoods",
+    "social behavior"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "3702",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2006-04-24T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR13626.v1",
+      "title": "Project on Human Development in Chicago Neighborhoods (PHDCN):  Gun Ownership, Wave 2, 1997-2000"
+    }
+  ]
+}

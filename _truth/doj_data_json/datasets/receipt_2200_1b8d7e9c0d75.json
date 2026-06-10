@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Prosecutorial Discretion and Plea Bargaining in Federal Criminal Courts in the United States, 1983-1990  ",
+  "description": "The primary purpose of this data collection was to study\r\n whether prosecutorial behavior was affected by the implementation of\r\n federal criminal sentencing guidelines in 1987. Monthly time series\r\n data were constructed on a number of prosecutorial outcomes,\r\n representing either discrete decision steps in the processing of\r\n criminal cases or the characteristics of cases that passed through the\r\n system. Variables include disposition year and month, number of matters\r\n initiated, number of cases filed, declined, and dismissed, number of\r\n convictions by trial, by jury, and by bench trial, number of guilty\r\n pleas, ratio of guilty pleas to cases resolved, and ratio of trials to\r\n cases resolved. The collection also provides a series of dichotomous\r\n variables to assess the impact of various events on prosecutorial\r\n outcomes over time. These events include the Anti-Drug Abuse Act of\r\n 1986 (effective November 1986), implementation of the sentencing\r\n guidelines (November 1987), Anti-Drug Abuse Act of 1988 (November\r\n 1988), United States Supreme Court's decision in the Minstretta case\r\n affirming the constitutionality of the sentencing guidelines (January\r\n 1989), and Attorney General Thornburgh's memo outlining Justice\r\nDepartment policy on charging and prosecution (March 1989).",
+  "modified": "2000-06-05T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2200",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "case dismissal",
+    "case processing",
+    "court cases",
+    "courts",
+    "disposition (legal)",
+    "guilty pleas",
+    "plea negotiations",
+    "pleas",
+    "policies and procedures",
+    "prosecution",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1993-04-09T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09844.v1",
+      "title": "Prosecutorial Discretion and Plea Bargaining in Federal Criminal Courts in the United States, 1983-1990  "
+    }
+  ]
+}

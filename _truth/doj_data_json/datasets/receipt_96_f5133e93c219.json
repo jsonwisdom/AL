@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Census of State Felony Courts, 1985: [United States]",
+  "description": "The purpose of this study was to provide a current listing\r\nof all felony courts in this country and to provide a universe from\r\nwhich a sample of courts could be selected based on felony caseload.\r\nThe study includes information on all state felony courts in the United\r\nStates, including the number of cases filed and disposed by conviction,\r\nacquittal, dismissal, or other means. Court administrators were asked\r\nto indicate the manner in which cases filed and disposed were counted,\r\nsuch as by defendant, charge, or indictment information. The total\r\nnumber of cases disposed during the period was also collected for\r\njuvenile delinquents and for traffic offenses (moving violations) where\r\napplicable. Finally, data were gathered on whether felonies reduced to\r\nmisdemeanors were included in the felony count and whether lower courts\r\nin the jurisdiction accepted guilty pleas to felonies.",
+  "modified": "1992-02-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "96",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "convictions (law)",
+    "court cases",
+    "court system",
+    "criminal justice system",
+    "juvenile delinquency",
+    "states (USA)"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1988-06-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08667.v2",
+      "title": "Census of State Felony Courts, 1985: [United States]"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Technology-Involved Harassment Victimization: Placement in a Broader Victimization Context, 2013-2014 [United States]",
+  "description": "\r\nThese data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\n\r\n\r\nThe study provides nationally representative and detailed data on technology-based harassment victimization incidents, understanding these victimizations in the context of a broad range of previous and current youth victimization experiences.  Data are from the Technology Harassment Victimization (THV) Study, funded by the National Institute of Justice - a national telephone survey of a subset of 791 youth who took part in the National Survey of Children's Exposure to Violence II, 1993-2012 [United States] (ICPSR 36177).\r\n\r\n\r\nThe collection includes 2 SPSS data files and 1 Stata syntax file:\r\n\r\nFull_THV_child-level_Wave_2_dataset__archive_ICPSR.sav (n=791; 677 variables)\r\nTHV_incident-level_data__archive_ICPSR.sav (n=311; 140 variables)\r\nsummary_do_file.do\r\n\r\nThe syntax file is designed to reproduce tables from the study's final report.\r\n",
+  "modified": "2017-12-18T16:54:05",
+  "accessLevel": "restricted public",
+  "identifier": "3878",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "Internet",
+    "adolescents",
+    "bullying",
+    "harassment",
+    "technology",
+    "victimization",
+    "youths"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2017-12-18T16:45:50",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36096.v1",
+      "title": "Technology-Involved Harassment Victimization: Placement in a Broader Victimization Context, 2013-2014 [United States]"
+    }
+  ]
+}

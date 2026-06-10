@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Evaluating Program Enhancements for Mentors Working with Children of Incarcerated Parents (COIP), United States, 2016-2020",
+  "description": "The Children of Incarcerated Parents (COIP) Project was established as a means of evaluating mentorships between children whose parents are incarcerated and program mentors. This establishment was done as a result of the fact that over half of currently incarcerated Americans are parents, and over half of children whose parents are incarcerated are below the age of 10. The consequences of children having parents incarcerated can include family instability and possible future criminal activity of such children. The COIP Project was implemented across various mentorship programs throughout the United States with the objective of countering these issues.",
+  "modified": "2022-03-30T11:33:34",
+  "accessLevel": "restricted public",
+  "identifier": "4292",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "adolescents",
+    "child development",
+    "children",
+    "family background",
+    "family relations",
+    "juvenile justice",
+    "mentoring",
+    "opinions",
+    "parent child relationship",
+    "parental attitudes",
+    "parental influence",
+    "parents",
+    "program evaluation",
+    "youths",
+    "youths at risk"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2022-03-30T10:51:23",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR38055.v1",
+      "title": "Evaluating Program Enhancements for Mentors Working with Children of Incarcerated Parents (COIP), United States, 2016-2020"
+    }
+  ]
+}

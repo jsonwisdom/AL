@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Prevalence of Intimate Partner Violence in a Sample of Arrestees in Sacramento, California, 1999",
+  "description": "This study served as the pilot study for the domestic violence addendum to the National Institute of Justice's Arrestee Drug Abuse Monitoring (ADAM) program. The domestic violence addendum was administered during the third (Part 1) and fourth (Part 2) quarters of 1999 in Sacramento, California, to all arrestees who completed the ADAM interview, provided a urine specimen, and agreed to answer additional questions about domestic violence. The addendum was based on the Revised Conflict Tactics Scale (Staus and Gelles, 1986) and sought to examine the issue of being the victim and/or perpetrator of domestic violence, age of onset of domestic violence, and injuries from domestic violence. The data also include demographic variables, arrest and charge variables, and alcohol and drug use variables.",
+  "modified": "2008-06-30T14:59:17",
+  "accessLevel": "restricted public",
+  "identifier": "2933",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "ADAM/DUF Program",
+    "alcohol abuse",
+    "arrests",
+    "domestic violence",
+    "drug use",
+    "offenders",
+    "substance abuse",
+    "urinalysis"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2008-06-30T14:54:07",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04577.v1",
+      "title": "Prevalence of Intimate Partner Violence in a Sample of Arrestees in Sacramento, California, 1999"
+    }
+  ]
+}

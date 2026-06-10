@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Crime Stoppers:  A National Evaluation of Program Operations and Effects, [United States], 1984",
+  "description": "The goal of this data collection was to answer three basic\r\nquestions about the Crime Stoppers (CS) program, a program encouraging\r\ncitizen involvement in averting crime and apprehending suspects. First,\r\nhow does Crime Stoppers work in theory and in practice? Second, what\r\nare the opinions and attitudes of program participants toward the Crime\r\nStoppers program? Third, how do various components of the program such\r\nas rewards, anonymity, use of informants, and media participation\r\naffect criminal justice outcome measures such as citizen calls and\r\narrests? This collection marks the first attempt to examine the\r\noperational procedures and effectiveness of Crime Stoppers programs in\r\nthe United States. Police coordinators and board chairs of local Crime\r\nStoppers programs described their perceptions of and attitudes toward\r\nthe Crime Stoppers program. The Police Coordinator File includes\r\nvariables such as the police coordinator's background and experience,\r\nprogram development and support, everyday operations and procedures,\r\noutcome statistics on citizen calls (suspects arrested, property\r\nrecovered, and suspects prosecuted), reward setting and distribution,\r\nand program relations with media, law enforcement, and the board of\r\ndirectors. Also available in this file are data on citizen calls\r\nreceived by the program, the program's arrests and clearances, and the\r\nprogram's effects on investigation procedure. The merged file contains\r\ndata from police coordinators and from Crime Stoppers board members.\r\nOther variables include city population, percent of households living\r\nin poverty, percent of white population, number of Uniform Crime\r\nReports (UCR) Part I crimes involved, membership and performance of the\r\nboard, fund raising methods, and ratings of the program.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3264",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "Crime Stoppers programs",
+    "arrests",
+    "attitudes",
+    "community involvement",
+    "community policing",
+    "crime prevention",
+    "criminal investigations",
+    "criminal justice system",
+    "police",
+    "program evaluation"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1990-10-16T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09349.v1",
+      "title": "Crime Stoppers:  A National Evaluation of Program Operations and Effects, [United States], 1984"
+    }
+  ]
+}

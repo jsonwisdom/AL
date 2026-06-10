@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Police Use of Force [United States]: Official Reports, Citizen Complaints, and Legal Consequences, 1991-1992",
+  "description": "This national survey was designed to collect information on\r\n police departmental policies and practices pertaining to the use of\r\n physical force--both deadly and less than lethal--by law enforcement\r\n officers. A further objective was to investigate the enforcement of\r\n these policies by examining the extent to which complaints of policy\r\n violations were reviewed and violations punished. Additionally, the\r\n survey sought to determine the extent to which departments kept\r\n records on the use of force, and to collect from those agencies that\r\n recorded this information data relating to how frequently officers\r\n used force, the characteristics of officers who did and did not have\r\n complaints filed against them, and the training of recruits on the\r\n appropriate use of force. The study also provides data on citizen\r\n complaints of excessive force, the disposition of those complaints,\r\n and litigation concerning allegations of excessive force. Additional\r\n variables provide agency size, demographic characteristics, and\r\nworkload.",
+  "modified": "1996-07-13T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3497",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "citizen grievances",
+    "police citizen interactions",
+    "police departments",
+    "police officers",
+    "police training",
+    "police use of force",
+    "policies and procedures"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1994-10-17T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06274.v1",
+      "title": "Police Use of Force [United States]: Official Reports, Citizen Complaints, and Legal Consequences, 1991-1992"
+    }
+  ]
+}

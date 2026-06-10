@@ -1,0 +1,50 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Informal Enforcement Actions FY 2013 - FY 2019",
+  "description": "The annual data tables contained in this document provide summary statistics on the civil enforcement activities of the United States Trustee Program.  This report covers informal actions.  Informal actions include documented telephone calls, letters, e-mail transmissions, facsimile transmissions, and documented personal conversations by the United States Trustee to the debtor, debtor's counsel, or a third party (such as a trustee), raising a specific issue in a specific case that requires a response.",
+  "modified": "2019-11-06T00:00:00",
+  "accessLevel": "public",
+  "identifier": "1935",
+  "publisher": {
+    "name": "Executive Office for United States Trustees",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Christopher Haverstock",
+    "hasEmail": "mailto:christopher.haverstock@usdoj.gov"
+  },
+  "keyword": [
+    "Civil Enforcement",
+    "Bankruptcy",
+    "Inquiry"
+  ],
+  "bureauCode": [
+    "011:00"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "temporal": "2012-10-01T00:00:00.0000000/2019-09-30T00:00:00.0000000",
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "642",
+  "rights": "N/A",
+  "dataQuality": false,
+  "issued": "2019-11-06T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "downloadURL": "https://www.justice.gov/ust/file/Informal_Enforcement_Actions_FY13_19_1.xlsx/download",
+      "mediaType": "application/vnd.ms-excel",
+      "title": "Informal Enforcement Actions FY 2013 - FY 2019"
+    }
+  ]
+}

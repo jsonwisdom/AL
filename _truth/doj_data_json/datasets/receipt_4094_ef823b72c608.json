@@ -1,0 +1,53 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "CrimeSolutions.gov Practices",
+  "description": "CrimeSolutions.gov Practices",
+  "modified": "2022-07-26T00:00:00",
+  "accessLevel": "public",
+  "identifier": "4094",
+  "publisher": {
+    "name": "Office of Justice Programs",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "CrimeSolutions.gov Practices"
+  ],
+  "bureauCode": [
+    "011:00"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "Public ",
+  "dataQuality": false,
+  "issued": "2020-07-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "landingPage": "https://crimesolutions.ojp.gov/rated-practices",
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://crimesolutions.ojp.gov/rated-practices",
+      "mediaType": "text/html",
+      "title": "CrimeSolutions.gov Practices"
+    },
+    {
+      "@type": "dcat:Distribution",
+      "downloadURL": "https://crimesolutions.ojp.gov/topics/practices/content?all",
+      "mediaType": "text/csv",
+      "title": "CrimeSolutions.gov Practices - Download"
+    }
+  ]
+}

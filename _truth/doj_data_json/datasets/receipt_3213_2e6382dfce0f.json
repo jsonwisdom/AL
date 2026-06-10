@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Effects of Sentences on Subsequent Criminal Behavior in New Jersey, 1976-1977",
+  "description": "This data collection examines the effects of sentencing on \r\n offenders' subsequent criminal behaviors. The data address the \r\n following questions: (1) At what point in the criminal career is the \r\n criminal career interrupted or halted by the criminal justice system \r\n because the offender is \"taken off the streets?\" (2) How long is the \r\n criminal career interrupted as a result of intervention from the \r\n criminal justice system? (3) How significant are the effects of past \r\n criminal behavior, as opposed to offender characteristics, such as \r\n education, employment history, or drug use, on criminal behavior \r\n subsequent to sentencing? (4) How do the effects of sentencing differ \r\n among offenders according to background, criminal history, and offense? \r\n Special characteristics of the collection include detailed information \r\n on the demographic and psychological background of defendants, a \r\n description of the offenses and the victims, and criminal recidivism \r\n information for adult defendants. More specifically, the sentence file \r\n contains data on the defendant's family, educational background, \r\n psychological condition, social activities, financial status, \r\n employment history, substance abuse, prior and follow-up criminal \r\n records, sentence and correctional histories, and other disposition \r\n information. The event file provides data on arrest and court \r\n appearances as well as data on incarcerations, escapes, transfers, \r\nreleases, paroles, and furloughs.",
+  "modified": "1993-05-08T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3213",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "career criminals",
+    "criminal histories",
+    "criminal justice system",
+    "criminality",
+    "intervention",
+    "offender profiles",
+    "recidivism",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1989-03-03T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08986.v2",
+      "title": "Effects of Sentences on Subsequent Criminal Behavior in New Jersey, 1976-1977"
+    }
+  ]
+}

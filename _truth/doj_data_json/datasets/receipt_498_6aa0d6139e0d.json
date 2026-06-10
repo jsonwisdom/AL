@@ -1,0 +1,44 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Proposed Consent Decrees",
+  "description": "Consent decrees that the Division has recently lodged in the federal district courts and on which the Division is currently accepting public comment.",
+  "modified": "0001-01-01T00:00:00",
+  "accessLevel": "public",
+  "identifier": "498",
+  "publisher": {
+    "name": "Environment and Natural Resources Division",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Richard Tayman",
+    "hasEmail": "mailto:richard.tayman@usdoj.gov"
+  },
+  "keyword": [
+    "Case Management"
+  ],
+  "bureauCode": [
+    "011:00"
+  ],
+  "programCode": [
+    "011:016"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "0001-01-01T00:00:00",
+  "landingPage": "https://catalog.data.gov/dataset/proposed-consent-decrees-1dd42",
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.pacer.gov/",
+      "format": "API",
+      "mediaType": "text/html",
+      "title": "Proposed Consent Decrees"
+    }
+  ]
+}
