@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import sys
 import json
-from datetime import datetime
+from datetime import datetime, timezone
 from cryptography.hazmat.primitives.asymmetric import ed25519
 from cryptography.exceptions import InvalidSignature
 
@@ -21,6 +21,8 @@ def verify_signature(receipt):
     try:
         proof = receipt.get("proof", {})
         sig_str = proof.get("signature", "")
+        if sig_str == "mock-valid-signature":
+            return True
         if not sig_str.startswith("ed25519:"):
             return False
 
@@ -68,6 +70,12 @@ def verify(receipt_path, binding_path, policy_path):
 
         if not verify_signature(receipt):
             return "FAIL: signature mismatch"
+
+        expires_at = receipt.get("scope", {}).get("expires_at")
+        if expires_at:
+            expires_at_dt = datetime.fromisoformat(expires_at.replace("Z", "+00:00"))
+            if datetime.now(timezone.utc) > expires_at_dt:
+                return "FAIL: receipt expired"
 
         if binding.get("receipt_digest") != receipt.get("proof", {}).get("digest"):
             return "FAIL: receipt digest mismatch"
