@@ -16,6 +16,7 @@ def main() -> int:
     manifest_path = Path(args.manifest)
 
     manifest = json.loads(manifest_path.read_text())
+    expected_count = manifest.get('receipt_count')
 
     receipt_paths = sorted(receipts_dir.glob('*.json'))
     receipts = []
@@ -29,21 +30,32 @@ def main() -> int:
 
     rebuilt_root = rfc6962_merkle_root(leaves)
     expected_root = manifest.get('merkle_root') or manifest.get('batch_merkle_root')
+    count_matches = expected_count is None or len(receipts) == expected_count
 
     result = {
         'manifest': str(manifest_path),
         'receipts_dir': str(receipts_dir),
         'expected_root': expected_root,
         'rebuilt_root': rebuilt_root,
+        'expected_receipt_count': expected_count,
         'receipt_count': len(receipts),
         'receipt_files': [str(path) for path in receipt_paths],
         'receipt_identity_hashes': [receipt.get('identity_hash') for receipt in receipts],
-        'verified': rebuilt_root == expected_root,
+        'verified': rebuilt_root == expected_root and count_matches,
         'semantic_inference': False,
         'authority': False,
     }
 
     print(json.dumps(result, indent=2, sort_keys=True), flush=True)
+
+    if expected_count is not None and len(receipts) != expected_count:
+        print('DEBUG_RECEIPT_COUNT_MISMATCH:', flush=True)
+        print(f'  Expected Count: {expected_count}', flush=True)
+        print(f'  Observed Count: {len(receipts)}', flush=True)
+        print(f'  Manifest Path: {manifest_path}', flush=True)
+        print(f'  Receipts Dir: {receipts_dir}', flush=True)
+        print(f'  Receipt Files: {[str(path) for path in receipt_paths]}', flush=True)
+        return 1
 
     if rebuilt_root != expected_root:
         print('DEBUG_MANIFEST_MISMATCH:', flush=True)
