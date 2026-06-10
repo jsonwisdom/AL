@@ -1,6 +1,11 @@
 import json
 import os
+import sys
 from pathlib import Path
+
+REPO_ROOT = Path(__file__).resolve().parents[1]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
 
 from scripts.emit_mcp_batch import rfc6962_merkle_root
 
@@ -10,8 +15,10 @@ VECTOR_PATH = Path('tests/vectors/mn_mmb_feb2026.json')
 def merkle_debug() -> str:
     return (
         "\n--- MERKLE_DEBUG_STATE ---\n"
+        f"REPO_ROOT={REPO_ROOT}\n"
         f"VECTOR_PATH={VECTOR_PATH.resolve()}\n"
         f"CWD={os.getcwd()}\n"
+        f"PYTHONPATH_HEAD={sys.path[:3]}\n"
         f"VECTOR_EXISTS={VECTOR_PATH.exists()}\n"
         f"EMPTY_ROOT={rfc6962_merkle_root([])}\n"
         "--------------------------"
