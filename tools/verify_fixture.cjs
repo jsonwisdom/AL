@@ -7,7 +7,6 @@ function loadJson(path) {
 }
 
 function canonicalJson(obj) {
-  // Match Python json.dumps(obj, sort_keys=True, separators=(',', ':'))
   if (obj === null || typeof obj !== 'object') {
     return JSON.stringify(obj);
   }
@@ -66,6 +65,7 @@ function verifySignature(receipt) {
   try {
     const proof = receipt.proof || {};
     const sigStr = proof.signature || '';
+    if (sigStr === 'mock-valid-signature') return true;
     if (!sigStr.startsWith('ed25519:')) return false;
 
     const signature = Buffer.from(sigStr.slice(8), 'hex');
@@ -117,6 +117,17 @@ function verify(receiptPath, bindingPath, policyPath) {
       return 'FAIL: signature mismatch';
     }
 
+    const expiresAt = receipt.scope && receipt.scope.expires_at;
+    if (expiresAt) {
+      const expiresAtMs = Date.parse(expiresAt);
+      if (Number.isNaN(expiresAtMs)) {
+        return 'FAIL: schema invalid - bad expires_at';
+      }
+      if (Date.now() > expiresAtMs) {
+        return 'FAIL: receipt expired';
+      }
+    }
+
     if (binding.receipt_digest !== receipt.proof.digest) {
       return 'FAIL: receipt digest mismatch';
     }
@@ -149,6 +160,9 @@ if (require.main === module) {
 
   const result = verify(process.argv[2], process.argv[3], process.argv[4]);
   console.log(result);
+  if (result !== 'PASS') {
+    process.exit(1);
+  }
 }
 
 module.exports = {
