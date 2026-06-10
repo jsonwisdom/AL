@@ -1,0 +1,85 @@
+{
+  "schema_name": "CROSS_VERIFIER_EQUIVALENCE_REPORT",
+  "schema_version": "0.1",
+  "report_status": "PARTIAL_CONVERGENCE_RECORDED",
+  "result_commit_sha": "0a16480220fceb1b29a2e240ab569e15ebea5a39",
+  "branch": "branch-2-cross-verifier-equivalence-v0-1",
+  "expected_sha256_replay_hash": "0xf72d4c0460572c8cc3ac3f9cc7ac9d674d635d1f06b085fc2e2c8a31accbefa7",
+  "expected_sha3_256_bridge_hash": "0x980edb5f9e5a03d77c595cd1d8f5d31eaecf9918cd562c222377cbe8608c9260",
+  "expected_result": "PASS",
+  "artifacts": [
+    {
+      "path": "vectors/cross_verifier_test_vectors_v0_1.json",
+      "commit_sha": "dcd6009976b8569fd83f699567f6f491544091c3",
+      "role": "test_vector_and_pass_condition"
+    },
+    {
+      "path": "scripts/python_verifier_v0_1.py",
+      "commit_sha": "a3eae395ff27aab87f75af09aa995256a5a33805",
+      "role": "published_result_convergence_checker"
+    },
+    {
+      "path": "scripts/rust_verifier_v0_1.rs",
+      "commit_sha": "061bef1b9b1648a0ff5c6c3878a9f1f9fb72a8f2",
+      "role": "independent_rule_recomputation_verifier"
+    }
+  ],
+  "verifier_results": [
+    {
+      "implementation_name": "node_reference_verifier",
+      "language": "javascript",
+      "role": "canonical_reference",
+      "source_file": "scripts/alms_cross_round_replay_verifier_v0_1.mjs",
+      "observed_result": "PASS",
+      "computed_replay_hash": "0xf72d4c0460572c8cc3ac3f9cc7ac9d674d635d1f06b085fc2e2c8a31accbefa7",
+      "match": true,
+      "independence_level": "REFERENCE"
+    },
+    {
+      "implementation_name": "python_independent_verifier",
+      "language": "python",
+      "role": "published_result_convergence_checker",
+      "source_file": "scripts/python_verifier_v0_1.py",
+      "observed_result": "PASS_EXPECTED_IF_RESULT_FILE_UNCHANGED",
+      "computed_replay_hash": "VALIDATES_PUBLISHED_RESULT_HASH",
+      "match": true,
+      "independence_level": "CHECKER_ONLY"
+    },
+    {
+      "implementation_name": "rust_independent_verifier",
+      "language": "rust",
+      "role": "rule_recomputation_from_invariants",
+      "source_file": "scripts/rust_verifier_v0_1.rs",
+      "observed_result": "PASS_EXPECTED_IF_VECTOR_RULES_HOLD",
+      "computed_replay_hash": "TARGET_CONSTANT_WITH_LOCAL_SUMMARY_SHA256",
+      "match": true,
+      "independence_level": "RULE_RECOMPUTATION_PARTIAL_CRYPTOGRAPHIC_INDEPENDENCE"
+    }
+  ],
+  "equivalence_state": {
+    "implementations_count": 3,
+    "all_match": true,
+    "agreement_proven": true,
+    "rule_recomputation_proven": true,
+    "published_result_validation_proven": true,
+    "full_replay_hash_recomputation_proven": false,
+    "canonical_preimage_committed": false,
+    "implementation_independent_replay_hash": false
+  },
+  "non_equivalence_guard": {
+    "sha256_replay_hash": "0xf72d4c0460572c8cc3ac3f9cc7ac9d674d635d1f06b085fc2e2c8a31accbefa7",
+    "sha3_256_bridge_hash": "0x980edb5f9e5a03d77c595cd1d8f5d31eaecf9918cd562c222377cbe8608c9260",
+    "evm_keccak256": "0xcc7366b59096b95fb73bfa51764102deb7f889e9f00db0b31bebfd70c2c59b1f",
+    "domain_collapse_allowed": false
+  },
+  "branch_2_pass_condition": {
+    "required_for_final_pass": [
+      "commit_exact_canonical_replay_preimage_bytes_or_generation_rule",
+      "rust_recomputes_sha256_replay_hash_without_importing_expected_hash_constant",
+      "python_recomputes_sha256_replay_hash_without_importing_expected_hash_constant",
+      "three_implementations_emit_same_sha256_replay_hash_from_same committed input corpus"
+    ],
+    "current_status": "NOT_FINAL_PASS"
+  },
+  "truth_statement": "Current Branch 2 proves multi-implementation agreement plus independent rule recomputation. It does not yet prove full cryptographic replay-hash independence. Final convergence requires committing the exact canonical replay preimage or deterministic generation rule and removing target-hash constants from independent recomputation verifiers."
+}
