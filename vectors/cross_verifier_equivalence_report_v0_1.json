@@ -1,7 +1,7 @@
 {
   "schema_name": "CROSS_VERIFIER_EQUIVALENCE_REPORT",
   "schema_version": "0.1",
-  "report_status": "PARTIAL_CONVERGENCE_RECORDED",
+  "report_status": "BYTE_GATE_READY_PREIMAGE_STILL_INSUFFICIENT",
   "result_commit_sha": "0a16480220fceb1b29a2e240ab569e15ebea5a39",
   "branch": "branch-2-cross-verifier-equivalence-v0-1",
   "expected_sha256_replay_hash": "0xf72d4c0460572c8cc3ac3f9cc7ac9d674d635d1f06b085fc2e2c8a31accbefa7",
@@ -20,8 +20,14 @@
     },
     {
       "path": "scripts/rust_verifier_v0_1.rs",
-      "commit_sha": "061bef1b9b1648a0ff5c6c3878a9f1f9fb72a8f2",
-      "role": "independent_rule_recomputation_verifier"
+      "commit_sha": "911a42d0727535e5d33b2bf68577be33f01e4257",
+      "role": "byte_level_preimage_gate"
+    },
+    {
+      "path": "vectors/alms_replay_preimage_v0_1.json",
+      "commit_sha": "7004713f58bd300f68c09a9677aa70ce51db0db9",
+      "role": "preimage_disclosure_candidate_metadata",
+      "ipfs_cid": "bafkreibi27qjnbt5jvqjd5cs2bqjdyeb5apyxgbdvahxx3a3cmzutrfuja"
     }
   ],
   "verifier_results": [
@@ -46,25 +52,36 @@
       "independence_level": "CHECKER_ONLY"
     },
     {
-      "implementation_name": "rust_independent_verifier",
+      "implementation_name": "rust_preimage_byte_gate",
       "language": "rust",
-      "role": "rule_recomputation_from_invariants",
+      "role": "byte_level_preimage_gate",
       "source_file": "scripts/rust_verifier_v0_1.rs",
-      "observed_result": "PASS_EXPECTED_IF_VECTOR_RULES_HOLD",
-      "computed_replay_hash": "TARGET_CONSTANT_WITH_LOCAL_SUMMARY_SHA256",
-      "match": true,
-      "independence_level": "RULE_RECOMPUTATION_PARTIAL_CRYPTOGRAPHIC_INDEPENDENCE"
+      "observed_result": "EXPECTED_FAIL_UNTIL_EXACT_REPLAY_PREIMAGE_BYTES_ARE_COMMITTED",
+      "computed_replay_hash": "SHA256_OF_COMMITTED_FILE_BYTES",
+      "match": false,
+      "independence_level": "GATE_READY_PREIMAGE_METADATA_NOT_EXACT_REPLAY_BYTES"
     }
   ],
+  "preimage_state": {
+    "preimage_candidate_committed": true,
+    "preimage_candidate_commit_sha": "7004713f58bd300f68c09a9677aa70ce51db0db9",
+    "preimage_candidate_cid": "bafkreibi27qjnbt5jvqjd5cs2bqjdyeb5apyxgbdvahxx3a3cmzutrfuja",
+    "committed_file_is_metadata_about_preimage": true,
+    "exact_replay_preimage_bytes_committed": false,
+    "candidate_file_declared_sha256": "0x28d7e096867d4d6091f452d06091e081e81f8b9823a80f7bec1b133349c4b448"
+  },
   "equivalence_state": {
     "implementations_count": 3,
-    "all_match": true,
     "agreement_proven": true,
     "rule_recomputation_proven": true,
     "published_result_validation_proven": true,
+    "byte_level_gate_ready": true,
+    "rust_imports_expected_hash_constant": false,
+    "rust_gate_expected_to_pass_now": false,
     "full_replay_hash_recomputation_proven": false,
     "canonical_preimage_committed": false,
-    "implementation_independent_replay_hash": false
+    "implementation_independent_replay_hash": false,
+    "branch_2_complete": false
   },
   "non_equivalence_guard": {
     "sha256_replay_hash": "0xf72d4c0460572c8cc3ac3f9cc7ac9d674d635d1f06b085fc2e2c8a31accbefa7",
@@ -75,11 +92,12 @@
   "branch_2_pass_condition": {
     "required_for_final_pass": [
       "commit_exact_canonical_replay_preimage_bytes_or_generation_rule",
-      "rust_recomputes_sha256_replay_hash_without_importing_expected_hash_constant",
-      "python_recomputes_sha256_replay_hash_without_importing_expected_hash_constant",
-      "three_implementations_emit_same_sha256_replay_hash_from_same committed input corpus"
+      "rust_computes_sha256_over_that_exact_preimage_without_importing_expected_hash_constant",
+      "rust_emits_expected_replay_digest_from committed bytes alone",
+      "python_recomputation_upgrade_preferred",
+      "update_report_to implementation_independent_replay_hash true only after byte gate passes"
     ],
     "current_status": "NOT_FINAL_PASS"
   },
-  "truth_statement": "Current Branch 2 proves multi-implementation agreement plus independent rule recomputation. It does not yet prove full cryptographic replay-hash independence. Final convergence requires committing the exact canonical replay preimage or deterministic generation rule and removing target-hash constants from independent recomputation verifiers."
+  "truth_statement": "Current Branch 2 proves agreement, published-result validation, rule recomputation, and a real byte-level Rust gate. The disclosed preimage artifact is currently metadata about a preimage candidate, not the exact replay preimage bytes. Therefore the Rust gate should fail honestly until exact replay preimage bytes or a deterministic preimage-generation rule are committed. No fake green."
 }
