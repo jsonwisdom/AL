@@ -34,16 +34,16 @@
         "lastUnconstitutionalTimestamp": 1718000000,
         "explanationTimestamp": 1718100000,
         "previousTaxNoticeStructureHash": "0x1111111111111111111111111111111111111111111111111111111111111111",
-        "currentTaxNoticeStructureHash": "0x2222222222222222222222222222222222222222222222222222222222222222",
+        "currentTaxNoticeStructureHash": "0x1111111111111111111111111111111111111111111111111111111111111111",
         "canonicalSchemaUID": "1000",
         "submittedSchemaUID": "1000",
         "schemaVersionBumped": false
       },
-      "violation": "C4_TAX_NOTICE_DRIFT",
+      "violation": "C2_IDENTITY_FREEZE_REQUIRED",
       "expected_violation": "C2_IDENTITY_FREEZE_REQUIRED",
-      "passed": false,
-      "sha256_replay_hash": "0xa566d64071c655c175f8ab957bf35efa1484a3ca548cff44b908215efd7a75f8",
-      "sha3_256_bridge_hash": "0x38fdbd8ec9ef96098c18687b6a3d978b3dc3f422110f6338f293ae532aa3aeeb",
+      "passed": true,
+      "sha256_replay_hash": "0x9106c57c57dada1bf05421fd9959d02740397a8477ad0b8b90678c8b253bb950",
+      "sha3_256_bridge_hash": "0x5762c052c626fbdf115a51f8e939ed43e27e488122cf7d4ec575dc35030b335d",
       "bridge_hash_domain": "SHA3_256_NOT_ETHEREUM_KECCAK256"
     },
     {
@@ -54,16 +54,16 @@
         "lastUnconstitutionalTimestamp": 1718000000,
         "explanationTimestamp": 1718100000,
         "previousTaxNoticeStructureHash": "0x2222222222222222222222222222222222222222222222222222222222222222",
-        "currentTaxNoticeStructureHash": "0x3333333333333333333333333333333333333333333333333333333333333333",
+        "currentTaxNoticeStructureHash": "0x2222222222222222222222222222222222222222222222222222222222222222",
         "canonicalSchemaUID": "1000",
         "submittedSchemaUID": "1000",
         "schemaVersionBumped": false
       },
-      "violation": "C4_TAX_NOTICE_DRIFT",
+      "violation": "C3_SCHEMA_ROTATION_REQUIRED",
       "expected_violation": "C3_SCHEMA_ROTATION_REQUIRED",
-      "passed": false,
-      "sha256_replay_hash": "0x209308d992e7378d5e837a465bd824f71143a0fb81a9308addd4c2c8ccd453be",
-      "sha3_256_bridge_hash": "0x7debe1d041d06eb657c28f09b969b831409c73e87b11e399eeca15d246b4112d",
+      "passed": true,
+      "sha256_replay_hash": "0xb7b566f77b59203a3932403eb7507d256c2935ea2f94af00f55d768d6772d403",
+      "sha3_256_bridge_hash": "0x4936cd086a2e87d9018de34151122d258bb9e43551869115cca549b32ca12d72",
       "bridge_hash_domain": "SHA3_256_NOT_ETHEREUM_KECCAK256"
     },
     {
@@ -127,19 +127,19 @@
       "bridge_hash_domain": "SHA3_256_NOT_ETHEREUM_KECCAK256"
     }
   ],
-  "result": "FAIL",
-  "sha256_replay_hash": "0x994c28d9b7e175f79c975b718e24b5a0c299d9367cb164575fe8fbc03fbeb9d6",
-  "sha3_256_bridge_hash": "0x4174f45f090b84a42f37fd0a90b8aeb275c2bd3c4104a680065783d7ebf08733",
+  "result": "PASS",
+  "sha256_replay_hash": "0xf72d4c0460572c8cc3ac3f9cc7ac9d674d635d1f06b085fc2e2c8a31accbefa7",
+  "sha3_256_bridge_hash": "0x980edb5f9e5a03d77c595cd1d8f5d31eaecf9918cd562c222377cbe8608c9260",
   "bridge_hash_domain": "SHA3_256_NOT_ETHEREUM_KECCAK256",
   "eas_attestation_payload": {
     "schema_uid": "1000",
     "operator_root": "jaywisdom.eth",
     "operator_alias": "jaywisdom.base.eth",
     "project": "PRESS_YOUR_LUCK_WITH_JAY",
-    "sha256_replay_hash": "0x994c28d9b7e175f79c975b718e24b5a0c299d9367cb164575fe8fbc03fbeb9d6",
-    "sha3_256_bridge_hash": "0x4174f45f090b84a42f37fd0a90b8aeb275c2bd3c4104a680065783d7ebf08733",
+    "sha256_replay_hash": "0xf72d4c0460572c8cc3ac3f9cc7ac9d674d635d1f06b085fc2e2c8a31accbefa7",
+    "sha3_256_bridge_hash": "0x980edb5f9e5a03d77c595cd1d8f5d31eaecf9918cd562c222377cbe8608c9260",
     "bridge_hash_domain": "SHA3_256_NOT_ETHEREUM_KECCAK256",
     "verifier": "ALMS_CROSS_ROUND_REPLAY_VERIFIER_V0_1",
-    "result": "FAIL"
+    "result": "PASS"
   }
 }

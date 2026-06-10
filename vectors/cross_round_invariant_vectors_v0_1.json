@@ -16,8 +16,8 @@
         "explanationTimestamp": 0,
         "previousTaxNoticeStructureHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
         "currentTaxNoticeStructureHash": "0x1111111111111111111111111111111111111111111111111111111111111111",
-        "canonicalSchemaUID": "0xSCHEMA_UID_PENDING",
-        "submittedSchemaUID": "0xSCHEMA_UID_PENDING",
+        "canonicalSchemaUID": "1000",
+        "submittedSchemaUID": "1000",
         "schemaVersionBumped": false
       },
       "expected_violation": "C1_UNEXPLAINED_UNCONSTITUTIONAL",
@@ -32,9 +32,9 @@
         "lastUnconstitutionalTimestamp": 1718000000,
         "explanationTimestamp": 1718100000,
         "previousTaxNoticeStructureHash": "0x1111111111111111111111111111111111111111111111111111111111111111",
-        "currentTaxNoticeStructureHash": "0x2222222222222222222222222222222222222222222222222222222222222222",
-        "canonicalSchemaUID": "0xSCHEMA_UID_PENDING",
-        "submittedSchemaUID": "0xSCHEMA_UID_PENDING",
+        "currentTaxNoticeStructureHash": "0x1111111111111111111111111111111111111111111111111111111111111111",
+        "canonicalSchemaUID": "1000",
+        "submittedSchemaUID": "1000",
         "schemaVersionBumped": false
       },
       "expected_violation": "C2_IDENTITY_FREEZE_REQUIRED",
@@ -49,9 +49,9 @@
         "lastUnconstitutionalTimestamp": 1718000000,
         "explanationTimestamp": 1718100000,
         "previousTaxNoticeStructureHash": "0x2222222222222222222222222222222222222222222222222222222222222222",
-        "currentTaxNoticeStructureHash": "0x3333333333333333333333333333333333333333333333333333333333333333",
-        "canonicalSchemaUID": "0xSCHEMA_UID_PENDING",
-        "submittedSchemaUID": "0xSCHEMA_UID_PENDING",
+        "currentTaxNoticeStructureHash": "0x2222222222222222222222222222222222222222222222222222222222222222",
+        "canonicalSchemaUID": "1000",
+        "submittedSchemaUID": "1000",
         "schemaVersionBumped": false
       },
       "expected_violation": "C3_SCHEMA_ROTATION_REQUIRED",
@@ -67,8 +67,8 @@
         "explanationTimestamp": 0,
         "previousTaxNoticeStructureHash": "0x4444444444444444444444444444444444444444444444444444444444444444",
         "currentTaxNoticeStructureHash": "0x5555555555555555555555555555555555555555555555555555555555555555",
-        "canonicalSchemaUID": "0xSCHEMA_UID_PENDING",
-        "submittedSchemaUID": "0xSCHEMA_UID_PENDING",
+        "canonicalSchemaUID": "1000",
+        "submittedSchemaUID": "1000",
         "schemaVersionBumped": false
       },
       "expected_violation": "C4_TAX_NOTICE_DRIFT",
@@ -93,7 +93,7 @@
     },
     {
       "vector_id": "CLEAN_NO_VIOLATION",
-      "description": "Fully compliant history — no violations",
+      "description": "Fully compliant history \u2014 no violations",
       "history": {
         "unconstitutionalRounds12m": 0,
         "unconstitutionalRounds24m": 0,
@@ -101,8 +101,8 @@
         "explanationTimestamp": 0,
         "previousTaxNoticeStructureHash": "0x6666666666666666666666666666666666666666666666666666666666666666",
         "currentTaxNoticeStructureHash": "0x6666666666666666666666666666666666666666666666666666666666666666",
-        "canonicalSchemaUID": "0xSCHEMA_UID_PENDING",
-        "submittedSchemaUID": "0xSCHEMA_UID_PENDING",
+        "canonicalSchemaUID": "1000",
+        "submittedSchemaUID": "1000",
         "schemaVersionBumped": true
       },
       "expected_violation": "NONE",
