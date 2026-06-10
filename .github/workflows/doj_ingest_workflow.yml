@@ -1,0 +1,34 @@
+name: DOJ Data Ingest Pipeline
+
+on:
+  schedule:
+    - cron: '0 9 * * *'
+  workflow_dispatch:
+
+jobs:
+  pipeline_execution:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Environment
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Execute Pipeline Sequence
+        run: |
+          bash scripts/capture_doj_data_json.sh
+          bash scripts/extract_doj_datasets.sh
+          bash scripts/analyze_doj_diff.sh
+
+      - name: Commit and Push Receipts
+        run: |
+          git add _truth/doj_data_json/
+          git commit -m "chore(pipeline): automated DOJ ingestion and diff [skip ci]" || echo "No changes to commit."
+          git push
