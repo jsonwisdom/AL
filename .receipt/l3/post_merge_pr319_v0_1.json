@@ -1,0 +1,31 @@
+{
+  "protocol": "L3_POST_MERGE_ANCHOR_RECEIPT_V0_1",
+  "operator": "jaywisdom.base.eth",
+  "repo": "jsonwisdom/AL",
+  "pr": "jsonwisdom/AL #319",
+  "merge_commit_sha": "95dafa1259828313c3a938f65d8a569943f51504",
+  "source_head_sha": "c2876f0be60a576e8c1cf51cfb6f3e25b2abbdc3",
+  "changed_files": 1,
+  "commits": 1,
+  "merge_timestamp": "2026-06-11T00:11:49Z",
+  "atomicity": true,
+  "topology": "clean",
+  "merkle_branch": "slim",
+  "inherited_forest": "none",
+  "replay_chain_continuity": true,
+  "membrane": "HOLDS",
+  "no_fake_green": true,
+  "authority": false,
+  "lineage": {
+    "pr_315": "oversized_surface",
+    "pr_318": "topology_lesson",
+    "pr_319": "merged_atomic_alignment_surface"
+  },
+  "engine_status": "ALIGNED",
+  "compounding_basis": [
+    "legibility",
+    "replayability"
+  ],
+  "next_gate": "CROSS_ROUND_VERIFIER_RUN",
+  "anchor_slot": ".receipt/l3/post_merge_pr319_v0_1.json"
+}
