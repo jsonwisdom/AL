@@ -1,0 +1,51 @@
+name: PR319 Cross-Round Verifier
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/verifiers/pr319_post_merge_wrapper_v0_1.mjs'
+      - '.receipt/l3/post_merge_pr319_v0_1.json'
+      - '.github/workflows/pr319-cross-round-verifier.yml'
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Ensure logs directory exists
+        run: mkdir -p logs
+
+      - name: Execute PR319 wrapper with real Node runtime
+        run: |
+          node scripts/verifiers/pr319_post_merge_wrapper_v0_1.mjs \
+            > logs/cross_round_verifier_pr319_v0_1.json
+
+      - name: Print raw verifier log
+        run: cat logs/cross_round_verifier_pr319_v0_1.json
+
+      - name: Commit updated runtime log if changed
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Execute PR319 post-merge cross-round verifier wrapper v0.1 — real GitHub runtime proof"
+          file_pattern: logs/cross_round_verifier_pr319_v0_1.json
+
+      - name: Upload raw verifier log artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pr319-verifier-log
+          path: logs/cross_round_verifier_pr319_v0_1.json
