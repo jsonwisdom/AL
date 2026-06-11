@@ -73,6 +73,16 @@ Allowed future evidence:
 - explorer link
 - receipt file
 
+## Cross-Links v2.1
+
+- [COMPUTERWISDOM observer/replay](./../COMPUTERWISDOM/)
+- [EAS Schema Registry + Attest Hub](https://attest.org/) — PROOF_007 gated
+- [EAS Scan](https://easscan.org) — schema/resolver explorer
+- [Smart Wallet AA flows](jaywisdom.eth)
+- Historical contracts: null surface post-audit
+
+Boundary: cross-links route observers to evidence surfaces only. They do not promote PROOF_007, payment mechanics, resolver deployment, schema UID, attestation count, governance authority, or wallet control.
+
 ## Proof Boundary
 
 - PROOF_007 is not active canon in this lattice.
