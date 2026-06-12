@@ -25,7 +25,7 @@ jobs:
         run: pip install pytest
 
       - name: Run Merkle tests
-        run: pytest tests/test_merkle.py
+        run: pytest -s tests/test_merkle.py
 
       - name: Verify replay manifest
         run: python scripts/verify_replay.py
