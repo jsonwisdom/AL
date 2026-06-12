@@ -6,7 +6,7 @@ from scripts.emit_mcp_batch import rfc6962_merkle_root
 VECTOR_PATH = Path('tests/vectors/mn_mmb_feb2026.json')
 
 
-def test_known_good_root_shape():
+def test_expected_root_shape():
     vector = json.loads(VECTOR_PATH.read_text())
 
     print(
@@ -15,7 +15,7 @@ def test_known_good_root_shape():
             {
                 'semantic_inference': vector.get('semantic_inference'),
                 'authority': vector.get('authority'),
-                'known_good_root_len': len(vector.get('known_good_root', '')),
+                'expected_root_len': len(vector.get('expected_root', '')),
             },
             sort_keys=True,
         )
@@ -23,7 +23,7 @@ def test_known_good_root_shape():
 
     assert vector['semantic_inference'] is False
     assert vector['authority'] is False
-    assert len(vector['known_good_root']) == 64
+    assert len(vector['expected_root']) == 64
 
 
 def test_rfc6962_empty_tree_stability():
