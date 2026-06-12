@@ -24,15 +24,15 @@ jobs:
         run: |
           python3 tools/verify_fixture.py \
             testdata/v0/valid/receipt-valid.json \
-            testdata/v0/valid/binding-valid.json \
-            testdata/v0/valid/policy-valid.json
+            testdata/v0/valid/binding.json \
+            testdata/v0/valid/policy.json
 
       - name: Node verifier happy path
         run: |
           node tools/verify_fixture.js \
             testdata/v0/valid/receipt-valid.json \
-            testdata/v0/valid/binding-valid.json \
-            testdata/v0/valid/policy-valid.json
+            testdata/v0/valid/binding.json \
+            testdata/v0/valid/policy.json
 
       - name: Python verifier detects digest mismatch
         run: |
@@ -40,7 +40,7 @@ jobs:
           output=$(python3 tools/verify_fixture.py \
             testdata/v0/valid/receipt-valid.json \
             testdata/v0/invalid/binding-wrong-receipt-digest.json \
-            testdata/v0/valid/policy-valid.json 2>&1)
+            testdata/v0/valid/policy.json 2>&1)
           status=$?
           echo "$output"
           test $status -ne 0
@@ -52,7 +52,7 @@ jobs:
           output=$(node tools/verify_fixture.js \
             testdata/v0/valid/receipt-valid.json \
             testdata/v0/invalid/binding-wrong-receipt-digest.json \
-            testdata/v0/valid/policy-valid.json 2>&1)
+            testdata/v0/valid/policy.json 2>&1)
           status=$?
           echo "$output"
           test $status -ne 0
@@ -63,8 +63,8 @@ jobs:
           set +e
           output=$(python3 tools/verify_fixture.py \
             testdata/v0/invalid/receipt-expired.json \
-            testdata/v0/valid/binding-valid.json \
-            testdata/v0/valid/policy-valid.json 2>&1)
+            testdata/v0/valid/binding.json \
+            testdata/v0/valid/policy.json 2>&1)
           status=$?
           echo "$output"
           test $status -ne 0
@@ -75,8 +75,8 @@ jobs:
           set +e
           output=$(node tools/verify_fixture.js \
             testdata/v0/invalid/receipt-expired.json \
-            testdata/v0/valid/binding-valid.json \
-            testdata/v0/valid/policy-valid.json 2>&1)
+            testdata/v0/valid/binding.json \
+            testdata/v0/valid/policy.json 2>&1)
           status=$?
           echo "$output"
           test $status -ne 0
@@ -87,8 +87,8 @@ jobs:
           set +e
           output=$(python3 tools/verify_fixture.py \
             testdata/v0/invalid/receipt-tampered-signature.json \
-            testdata/v0/valid/binding-valid.json \
-            testdata/v0/valid/policy-valid.json 2>&1)
+            testdata/v0/valid/binding.json \
+            testdata/v0/valid/policy.json 2>&1)
           status=$?
           echo "$output"
           test $status -ne 0
@@ -99,8 +99,8 @@ jobs:
           set +e
           output=$(node tools/verify_fixture.js \
             testdata/v0/invalid/receipt-tampered-signature.json \
-            testdata/v0/valid/binding-valid.json \
-            testdata/v0/valid/policy-valid.json 2>&1)
+            testdata/v0/valid/binding.json \
+            testdata/v0/valid/policy.json 2>&1)
           status=$?
           echo "$output"
           test $status -ne 0
@@ -112,7 +112,7 @@ jobs:
           output=$(python3 tools/verify_fixture.py \
             testdata/v0/valid/receipt-valid.json \
             testdata/v0/invalid/binding-forbidden-file.json \
-            testdata/v0/valid/policy-valid.json 2>&1)
+            testdata/v0/valid/policy.json 2>&1)
           status=$?
           echo "$output"
           test $status -ne 0
@@ -124,7 +124,7 @@ jobs:
           output=$(node tools/verify_fixture.js \
             testdata/v0/valid/receipt-valid.json \
             testdata/v0/invalid/binding-forbidden-file.json \
-            testdata/v0/valid/policy-valid.json 2>&1)
+            testdata/v0/valid/policy.json 2>&1)
           status=$?
           echo "$output"
           test $status -ne 0
@@ -135,8 +135,8 @@ jobs:
           set +e
           output=$(node tools/verify_fixture.js \
             testdata/v0/invalid/receipt-missing-required-field.json \
-            testdata/v0/valid/binding-valid.json \
-            testdata/v0/valid/policy-valid.json 2>&1)
+            testdata/v0/valid/binding.json \
+            testdata/v0/valid/policy.json 2>&1)
           status=$?
           echo "$output"
           test $status -ne 0
