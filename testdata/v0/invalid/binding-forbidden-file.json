@@ -1,23 +1,5 @@
 {
-  "binding_type": "AGENT_RESULT_BINDING_V0",
-  "binding_version": "0.0.1",
   "receipt_digest": "sha256:mock-receipt-valid",
-  "actor": {
-    "id": "copilot-agent-123",
-    "key": "did:key:zMockAgent"
-  },
-  "result": {
-    "repo": "jsonwisdom/AL",
-    "branch": "agent/docs-adr-001",
-    "commit": "def456mockcommit",
-    "pr": 291,
-    "changed_files": ["auth.py"]
-  },
-  "bound_at": "2026-06-05T23:50:00Z",
-  "proof": {
-    "canonicalization": "RFC8785-JCS",
-    "digest": "sha256:mock-binding-forbidden-file",
-    "alg": "MOCK-V0",
-    "value": "mock-valid-proof"
-  }
+  "observed_files": ["auth.py"],
+  "result_hash": "sha256:mock-result"
 }

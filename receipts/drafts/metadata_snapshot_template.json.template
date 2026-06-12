@@ -1,0 +1,22 @@
+{
+  "artifact_type": "metadata_snapshot",
+  "authority": false,
+  "reversibility_class": "OBSERVED",
+  "fields": {
+    "contract_address": "OPERATOR_DECLARED",
+    "fetch_timestamp_iso": "OPERATOR_DECLARED",
+    "token_uri": "OPERATOR_DECLARED",
+    "image_uri": "OPERATOR_DECLARED",
+    "metadata_hash": "OPERATOR_DECLARED",
+    "acquisition_class": "DIRECT_RPC|MIRROR_GATEWAY|CACHED_SOURCE",
+    "title": "OPERATOR_DECLARED",
+    "description": "OPERATOR_DECLARED",
+    "raw_json": {}
+  },
+  "rules": [
+    "Do not invent hashes or timestamps.",
+    "Do not claim external verification without a cited source.",
+    "Preserve operator-returned boundary when applicable."
+  ],
+  "no_fake_green": true
+}

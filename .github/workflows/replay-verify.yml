@@ -46,5 +46,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Attestation gated on replay verification
-        run: echo 'Replay verification passed. EAS attestation permitted; emitter not yet wired.'
+      - name: Attestation status note
+        run: echo 'Replay verification completed; attestation emitter not wired.'

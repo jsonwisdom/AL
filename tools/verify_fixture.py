@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import sys
 import json
+import hashlib
 from datetime import datetime
 from cryptography.hazmat.primitives.asymmetric import ed25519
 from cryptography.exceptions import InvalidSignature
@@ -31,6 +32,7 @@ def verify_signature(receipt):
         receipt_for_signing = {k: v for k, v in receipt.items()}
         receipt_for_signing["proof"] = {k: v for k, v in proof.items() if k != "signature"}
         message = canonical_json(receipt_for_signing)
+        print(f"DEBUG_CANONICAL_HASH_PY: {hashlib.sha256(message).hexdigest()}")
 
         # V0 test vector public key (hardcoded for fixtures only)
         pub_key_hex = "37e9edc1ca6c423ec0955156b9bd318e7581ef4492b28a92235ee900d53174cc"
