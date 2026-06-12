@@ -24,11 +24,15 @@ jobs:
       - name: Install pytest
         run: pip install pytest
 
+      - name: Prep Merkle debug artifact
+        run: |
+          echo '{"status":"pending","source":"workflow-prep"}' > merkle_debug.json
+
       - name: Run Merkle tests
         run: pytest -s tests/test_merkle.py
 
       - name: Upload Merkle debug artifact
-        if: failure()
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: merkle-debug-data
