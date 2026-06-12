@@ -34,7 +34,9 @@ function verifySignature(receipt) {
     receiptForSigning.proof = { ...proof };
     delete receiptForSigning.proof.signature;
 
-    const message = Buffer.from(canonicalJson(receiptForSigning), 'utf8');
+    const canonicalString = canonicalJson(receiptForSigning);
+    console.log("DEBUG_CANONICAL_HASH_NODE: " + crypto.createHash('sha256').update(canonicalString, 'utf8').digest('hex'));
+    const message = Buffer.from(canonicalString, 'utf8');
 
     const pubKeyHex = '37e9edc1ca6c423ec0955156b9bd318e7581ef4492b28a92235ee900d53174cc';
     const pubKeyBytes = Buffer.from(pubKeyHex, 'hex');
