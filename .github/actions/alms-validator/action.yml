@@ -1,0 +1,55 @@
+name: 'ALMS Validator'
+description: 'Standardized constitutional compliance check for AL agents and receipt artifacts'
+
+inputs:
+  target_path:
+    required: true
+    description: 'Path to the receipt or workflow artifact to validate'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: ALMS standardized constitutional check
+      shell: bash
+      run: |
+        set -euo pipefail
+
+        TARGET="${{ inputs.target_path }}"
+
+        if [ -z "$TARGET" ]; then
+          echo "::error::ALMS validator received empty target_path"
+          exit 1
+        fi
+
+        if [ ! -f "$TARGET" ]; then
+          echo "::error::ALMS validator target does not exist: $TARGET"
+          exit 1
+        fi
+
+        echo "ALMS validating: $TARGET"
+
+        # 1. Authority Check
+        # Accepts either ledger text style or JSON/YAML style.
+        if ! grep -Eq 'authority[[:space:]]*[:=][[:space:]]*false' "$TARGET"; then
+          echo "::error::Authority boundary missing or not false in $TARGET"
+          exit 1
+        fi
+
+        # 2. No Fake Green Check
+        # Accepts either ledger text style or JSON/YAML style.
+        if ! grep -Eq 'no_fake_green[[:space:]]*[:=][[:space:]]*true' "$TARGET"; then
+          echo "::error::No-fake-green boundary missing or not true in $TARGET"
+          exit 1
+        fi
+
+        # 3. Forbidden Language Check
+        # These terms are prohibited in generated receipt outputs because they imply validation or market judgment.
+        FORBIDDEN=("Moon" "Bullish" "Traction" "Growth" "Community-led" "Success")
+        for term in "${FORBIDDEN[@]}"; do
+          if grep -Eiq "(^|[^A-Za-z])${term}([^A-Za-z]|$)" "$TARGET"; then
+            echo "::error::Forbidden validation language detected in $TARGET: $term"
+            exit 1
+          fi
+        done
+
+        echo "ALMS validator passed: $TARGET"
