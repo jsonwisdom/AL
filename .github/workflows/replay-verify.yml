@@ -27,6 +27,14 @@ jobs:
       - name: Run Merkle tests
         run: pytest -s tests/test_merkle.py
 
+      - name: Upload Merkle debug artifact
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: merkle-debug-data
+          path: merkle_debug.json
+          if-no-files-found: warn
+
       - name: Verify replay manifest
         run: python scripts/verify_replay.py
 
