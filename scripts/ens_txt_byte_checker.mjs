@@ -19,6 +19,15 @@ function byteLength(value) {
   return Buffer.byteLength(value, 'utf8');
 }
 
+function expectedByteWitness(expected) {
+  return {
+    expected_utf8: expected,
+    expected_sha256: sha256Utf8(expected),
+    expected_byte_length: byteLength(expected),
+    expected_bytes_hex: utf8Hex(expected)
+  };
+}
+
 function readBaseline() {
   if (!fs.existsSync(BASELINE_PATH)) {
     throw new Error(`Missing baseline file: ${BASELINE_PATH}`);
@@ -73,6 +82,7 @@ async function readTextRecord(provider, name, keyCandidates) {
 function evaluateBytes({ name, role, record, read }) {
   const expected = record.expected_utf8;
   const required = record.required !== false;
+  const expectedWitness = expectedByteWitness(expected);
 
   if (!read.found) {
     return {
@@ -83,13 +93,18 @@ function evaluateBytes({ name, role, record, read }) {
       required,
       status: read.status || 'READ_FAILED',
       no_fake_green: true,
+      ...expectedWitness,
+      actual_utf8: null,
+      actual_sha256: null,
+      actual_byte_length: 0,
+      actual_bytes_hex: null,
       error: read.error || null,
       attempts: read.attempts || []
     };
   }
 
   const actual = read.value;
-  const expectedBytes = utf8Hex(expected);
+  const expectedBytes = expectedWitness.expected_bytes_hex;
   const actualBytes = utf8Hex(actual);
   const exactMatch = expectedBytes === actualBytes;
 
@@ -101,13 +116,10 @@ function evaluateBytes({ name, role, record, read }) {
     required,
     status: exactMatch ? 'OK_BYTE_MATCH' : 'BYTE_MISMATCH',
     no_fake_green: true,
-    expected_utf8: expected,
+    ...expectedWitness,
     actual_utf8: actual,
-    expected_sha256: sha256Utf8(expected),
     actual_sha256: sha256Utf8(actual),
-    expected_byte_length: byteLength(expected),
     actual_byte_length: byteLength(actual),
-    expected_bytes_hex: expectedBytes,
     actual_bytes_hex: actualBytes,
     attempts: read.attempts || []
   };
@@ -136,7 +148,7 @@ async function main() {
   const failures = results.filter((result) => result.required && result.status !== 'OK_BYTE_MATCH');
   const report = {
     generated_at: new Date().toISOString(),
-    checker: 'ENS_TXT_BYTE_CHECKER_V0_1',
+    checker: 'ENS_TXT_BYTE_CHECKER_V0_2',
     baseline_path: BASELINE_PATH,
     eth_block_number: ethBlock,
     base_block_number_observed: baseBlock,
@@ -153,16 +165,17 @@ async function main() {
     '# ENS TXT Byte Check',
     '',
     `Generated: ${report.generated_at}`,
+    `Checker: ${report.checker}`,
     `Truth state: ${report.truth_state}`,
     `NO_FAKE_GREEN: ${report.no_fake_green}`,
     `Failure count: ${report.failure_count}`,
     '',
-    '| Name | Role | Key | Found Key | Status | Expected SHA256 | Actual SHA256 |',
-    '| --- | --- | --- | --- | --- | --- | --- |'
+    '| Name | Role | Key | Found Key | Status | Expected Length | Actual Length | Expected SHA256 | Actual SHA256 |',
+    '| --- | --- | --- | --- | --- | ---: | ---: | --- | --- |'
   ];
 
   for (const result of results) {
-    lines.push(`| ${result.name} | ${result.role} | ${result.canonical_key} | ${result.found_key || ''} | ${result.status} | ${result.expected_sha256 || ''} | ${result.actual_sha256 || ''} |`);
+    lines.push(`| ${result.name} | ${result.role} | ${result.canonical_key} | ${result.found_key || ''} | ${result.status} | ${result.expected_byte_length ?? ''} | ${result.actual_byte_length ?? ''} | ${result.expected_sha256 || ''} | ${result.actual_sha256 || ''} |`);
   }
 
   const summary = `${lines.join('\n')}\n`;
