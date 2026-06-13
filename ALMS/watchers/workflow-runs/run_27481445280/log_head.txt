@@ -1,0 +1,180 @@
+watcher	Set up job	﻿2026-06-13T22:48:58.4248740Z Current runner version: '2.335.1'
+watcher	Set up job	2026-06-13T22:48:58.4275116Z ##[group]Runner Image Provisioner
+watcher	Set up job	2026-06-13T22:48:58.4275983Z Hosted Compute Agent
+watcher	Set up job	2026-06-13T22:48:58.4276574Z Version: 20260527.539
+watcher	Set up job	2026-06-13T22:48:58.4277300Z Commit: a891dd388383b896fa6ac04a82c0b75cec981078
+watcher	Set up job	2026-06-13T22:48:58.4278033Z Build Date: 2026-05-27T21:39:57Z
+watcher	Set up job	2026-06-13T22:48:58.4278770Z Worker ID: {e2d2f60c-d200-4d12-af8d-c91c59704688}
+watcher	Set up job	2026-06-13T22:48:58.4279505Z Azure Region: eastus
+watcher	Set up job	2026-06-13T22:48:58.4280067Z ##[endgroup]
+watcher	Set up job	2026-06-13T22:48:58.4281741Z ##[group]Operating System
+watcher	Set up job	2026-06-13T22:48:58.4282383Z Ubuntu
+watcher	Set up job	2026-06-13T22:48:58.4282952Z 24.04.4
+watcher	Set up job	2026-06-13T22:48:58.4283476Z LTS
+watcher	Set up job	2026-06-13T22:48:58.4284238Z ##[endgroup]
+watcher	Set up job	2026-06-13T22:48:58.4284868Z ##[group]Runner Image
+watcher	Set up job	2026-06-13T22:48:58.4285483Z Image: ubuntu-24.04
+watcher	Set up job	2026-06-13T22:48:58.4286077Z Version: 20260607.184.1
+watcher	Set up job	2026-06-13T22:48:58.4287148Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260607.184/images/ubuntu/Ubuntu2404-Readme.md
+watcher	Set up job	2026-06-13T22:48:58.4288938Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260607.184
+watcher	Set up job	2026-06-13T22:48:58.4289905Z ##[endgroup]
+watcher	Set up job	2026-06-13T22:48:58.4291024Z ##[group]GITHUB_TOKEN Permissions
+watcher	Set up job	2026-06-13T22:48:58.4292917Z Contents: write
+watcher	Set up job	2026-06-13T22:48:58.4293622Z Metadata: read
+watcher	Set up job	2026-06-13T22:48:58.4294415Z ##[endgroup]
+watcher	Set up job	2026-06-13T22:48:58.4296401Z Secret source: Actions
+watcher	Set up job	2026-06-13T22:48:58.4297312Z Prepare workflow directory
+watcher	Set up job	2026-06-13T22:48:58.4617340Z Prepare all required actions
+watcher	Set up job	2026-06-13T22:48:58.4655130Z Getting action download info
+watcher	Set up job	2026-06-13T22:48:58.6738354Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+watcher	Set up job	2026-06-13T22:48:58.8351137Z Complete job name: watcher
+watcher	Checkout	﻿2026-06-13T22:48:58.9226208Z ##[group]Run actions/checkout@v4
+watcher	Checkout	2026-06-13T22:48:58.9227102Z with:
+watcher	Checkout	2026-06-13T22:48:58.9227550Z   repository: jsonwisdom/AL
+watcher	Checkout	2026-06-13T22:48:58.9231700Z   token: ***
+watcher	Checkout	2026-06-13T22:48:58.9232143Z   ssh-strict: true
+watcher	Checkout	2026-06-13T22:48:58.9232606Z   ssh-user: git
+watcher	Checkout	2026-06-13T22:48:58.9233064Z   persist-credentials: true
+watcher	Checkout	2026-06-13T22:48:58.9233658Z   clean: true
+watcher	Checkout	2026-06-13T22:48:58.9234454Z   sparse-checkout-cone-mode: true
+watcher	Checkout	2026-06-13T22:48:58.9235202Z   fetch-depth: 1
+watcher	Checkout	2026-06-13T22:48:58.9235669Z   fetch-tags: false
+watcher	Checkout	2026-06-13T22:48:58.9236121Z   show-progress: true
+watcher	Checkout	2026-06-13T22:48:58.9236572Z   lfs: false
+watcher	Checkout	2026-06-13T22:48:58.9236994Z   submodules: false
+watcher	Checkout	2026-06-13T22:48:58.9237450Z   set-safe-directory: true
+watcher	Checkout	2026-06-13T22:48:58.9238267Z ##[endgroup]
+watcher	Checkout	2026-06-13T22:48:59.0386488Z Syncing repository: jsonwisdom/AL
+watcher	Checkout	2026-06-13T22:48:59.0389311Z ##[group]Getting Git version info
+watcher	Checkout	2026-06-13T22:48:59.0390484Z Working directory is '/home/runner/work/AL/AL'
+watcher	Checkout	2026-06-13T22:48:59.0392147Z [command]/usr/bin/git version
+watcher	Checkout	2026-06-13T22:48:59.0476781Z git version 2.54.0
+watcher	Checkout	2026-06-13T22:48:59.0502718Z ##[endgroup]
+watcher	Checkout	2026-06-13T22:48:59.0517472Z Temporarily overriding HOME='/home/runner/work/_temp/43e9bd4f-792a-44b2-b67e-9263f18a4b20' before making global git config changes
+watcher	Checkout	2026-06-13T22:48:59.0519788Z Adding repository directory to the temporary git global config as a safe directory
+watcher	Checkout	2026-06-13T22:48:59.0529634Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/AL/AL
+watcher	Checkout	2026-06-13T22:48:59.0577246Z Deleting the contents of '/home/runner/work/AL/AL'
+watcher	Checkout	2026-06-13T22:48:59.0580672Z ##[group]Initializing the repository
+watcher	Checkout	2026-06-13T22:48:59.0584195Z [command]/usr/bin/git init /home/runner/work/AL/AL
+watcher	Checkout	2026-06-13T22:48:59.0687313Z hint: Using 'master' as the name for the initial branch. This default branch name
+watcher	Checkout	2026-06-13T22:48:59.0689137Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+watcher	Checkout	2026-06-13T22:48:59.0690735Z hint: to use in all of your new repositories, which will suppress this warning,
+watcher	Checkout	2026-06-13T22:48:59.0691699Z hint: call:
+watcher	Checkout	2026-06-13T22:48:59.0692217Z hint:
+watcher	Checkout	2026-06-13T22:48:59.0692996Z hint: 	git config --global init.defaultBranch <name>
+watcher	Checkout	2026-06-13T22:48:59.0694021Z hint:
+watcher	Checkout	2026-06-13T22:48:59.0694919Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+watcher	Checkout	2026-06-13T22:48:59.0696981Z hint: 'development'. The just-created branch can be renamed via this command:
+watcher	Checkout	2026-06-13T22:48:59.0698297Z hint:
+watcher	Checkout	2026-06-13T22:48:59.0698970Z hint: 	git branch -m <name>
+watcher	Checkout	2026-06-13T22:48:59.0699568Z hint:
+watcher	Checkout	2026-06-13T22:48:59.0700668Z hint: Disable this message with "git config set advice.defaultBranchName false"
+watcher	Checkout	2026-06-13T22:48:59.0702333Z Initialized empty Git repository in /home/runner/work/AL/AL/.git/
+watcher	Checkout	2026-06-13T22:48:59.0706106Z [command]/usr/bin/git remote add origin https://github.com/jsonwisdom/AL
+watcher	Checkout	2026-06-13T22:48:59.0748404Z ##[endgroup]
+watcher	Checkout	2026-06-13T22:48:59.0749247Z ##[group]Disabling automatic garbage collection
+watcher	Checkout	2026-06-13T22:48:59.0752127Z [command]/usr/bin/git config --local gc.auto 0
+watcher	Checkout	2026-06-13T22:48:59.0779052Z ##[endgroup]
+watcher	Checkout	2026-06-13T22:48:59.0779820Z ##[group]Setting up auth
+watcher	Checkout	2026-06-13T22:48:59.0785787Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+watcher	Checkout	2026-06-13T22:48:59.0817013Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+watcher	Checkout	2026-06-13T22:48:59.1160392Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+watcher	Checkout	2026-06-13T22:48:59.1188183Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+watcher	Checkout	2026-06-13T22:48:59.1397102Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+watcher	Checkout	2026-06-13T22:48:59.1425902Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+watcher	Checkout	2026-06-13T22:48:59.1648078Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+watcher	Checkout	2026-06-13T22:48:59.1679990Z ##[endgroup]
+watcher	Checkout	2026-06-13T22:48:59.1680855Z ##[group]Fetching the repository
+watcher	Checkout	2026-06-13T22:48:59.1688517Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +52d6b0ea4316e07a7ecaebdb56ccca653eaabdf1:refs/remotes/origin/master
+watcher	Checkout	2026-06-13T22:49:02.5524631Z From https://github.com/jsonwisdom/AL
+watcher	Checkout	2026-06-13T22:49:02.5527698Z  * [new ref]         52d6b0ea4316e07a7ecaebdb56ccca653eaabdf1 -> origin/master
+watcher	Checkout	2026-06-13T22:49:02.5563457Z ##[endgroup]
+watcher	Checkout	2026-06-13T22:49:02.5565608Z ##[group]Determining the checkout info
+watcher	Checkout	2026-06-13T22:49:02.5567508Z ##[endgroup]
+watcher	Checkout	2026-06-13T22:49:02.5570178Z [command]/usr/bin/git sparse-checkout disable
+watcher	Checkout	2026-06-13T22:49:02.5614260Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+watcher	Checkout	2026-06-13T22:49:02.5640267Z ##[group]Checking out the ref
+watcher	Checkout	2026-06-13T22:49:02.5642945Z [command]/usr/bin/git checkout --progress --force -B master refs/remotes/origin/master
+watcher	Checkout	2026-06-13T22:49:03.6034504Z Updating files:  96% (10581/10909)
+watcher	Checkout	2026-06-13T22:49:03.7664055Z Updating files:  97% (10582/10909)
+watcher	Checkout	2026-06-13T22:49:03.7990170Z Updating files:  98% (10691/10909)
+watcher	Checkout	2026-06-13T22:49:03.8055120Z Updating files:  99% (10800/10909)
+watcher	Checkout	2026-06-13T22:49:03.8056102Z Updating files: 100% (10909/10909)
+watcher	Checkout	2026-06-13T22:49:03.8056700Z Updating files: 100% (10909/10909), done.
+watcher	Checkout	2026-06-13T22:49:03.8172225Z Reset branch 'master'
+watcher	Checkout	2026-06-13T22:49:03.8179018Z branch 'master' set up to track 'origin/master'.
+watcher	Checkout	2026-06-13T22:49:03.8213217Z ##[endgroup]
+watcher	Checkout	2026-06-13T22:49:03.8256824Z [command]/usr/bin/git log -1 --format=%H
+watcher	Checkout	2026-06-13T22:49:03.8279187Z 52d6b0ea4316e07a7ecaebdb56ccca653eaabdf1
+watcher	Ensure dependencies	﻿2026-06-13T22:49:03.8471235Z ##[group]Run sudo apt-get update
+watcher	Ensure dependencies	2026-06-13T22:49:03.8471699Z ^[[36;1msudo apt-get update^[[0m
+watcher	Ensure dependencies	2026-06-13T22:49:03.8472101Z ^[[36;1msudo apt-get install -y jq curl coreutils^[[0m
+watcher	Ensure dependencies	2026-06-13T22:49:03.8661633Z shell: /usr/bin/bash -e {0}
+watcher	Ensure dependencies	2026-06-13T22:49:03.8662020Z ##[endgroup]
+watcher	Ensure dependencies	2026-06-13T22:49:03.9625257Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+watcher	Ensure dependencies	2026-06-13T22:49:03.9967446Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+watcher	Ensure dependencies	2026-06-13T22:49:03.9982818Z Hit:6 https://packages.microsoft.com/repos/azure-cli noble InRelease
+watcher	Ensure dependencies	2026-06-13T22:49:03.9997905Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+watcher	Ensure dependencies	2026-06-13T22:49:04.0005736Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+watcher	Ensure dependencies	2026-06-13T22:49:04.0034951Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+watcher	Ensure dependencies	2026-06-13T22:49:04.0076558Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+watcher	Ensure dependencies	2026-06-13T22:49:04.0205449Z Get:8 https://dl.google.com/linux/chrome-stable/deb stable InRelease [1825 B]
+watcher	Ensure dependencies	2026-06-13T22:49:04.1669626Z Get:9 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [175 kB]
+watcher	Ensure dependencies	2026-06-13T22:49:04.1801761Z Get:10 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [146 kB]
+watcher	Ensure dependencies	2026-06-13T22:49:04.2230494Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1723 kB]
+watcher	Ensure dependencies	2026-06-13T22:49:04.2357446Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [331 kB]
+watcher	Ensure dependencies	2026-06-13T22:49:04.2391280Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [181 kB]
+watcher	Ensure dependencies	2026-06-13T22:49:04.2412101Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 c-n-f Metadata [17.4 kB]
+watcher	Ensure dependencies	2026-06-13T22:49:04.2444972Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1689 kB]
+watcher	Ensure dependencies	2026-06-13T22:49:04.2525407Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [331 kB]
+watcher	Ensure dependencies	2026-06-13T22:49:04.2562469Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [388 kB]
+watcher	Ensure dependencies	2026-06-13T22:49:04.2615425Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 c-n-f Metadata [34.7 kB]
+watcher	Ensure dependencies	2026-06-13T22:49:04.2624834Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [2733 kB]
+watcher	Ensure dependencies	2026-06-13T22:49:04.2789209Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [649 kB]
+watcher	Ensure dependencies	2026-06-13T22:49:04.3347076Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+watcher	Ensure dependencies	2026-06-13T22:49:04.3365116Z Get:22 http://azure.archive.ubuntu.com/ubuntu noble-backports/main amd64 Packages [40.6 kB]
+watcher	Ensure dependencies	2026-06-13T22:49:04.3377952Z Get:23 http://azure.archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [5768 B]
+watcher	Ensure dependencies	2026-06-13T22:49:04.3393612Z Get:24 http://azure.archive.ubuntu.com/ubuntu noble-backports/main amd64 c-n-f Metadata [368 B]
+watcher	Ensure dependencies	2026-06-13T22:49:04.3406023Z Get:25 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [31.0 kB]
+watcher	Ensure dependencies	2026-06-13T22:49:04.3431665Z Get:26 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [10.5 kB]
+watcher	Ensure dependencies	2026-06-13T22:49:04.3438464Z Get:27 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 c-n-f Metadata [1588 B]
+watcher	Ensure dependencies	2026-06-13T22:49:04.3746528Z Get:28 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1424 kB]
+watcher	Ensure dependencies	2026-06-13T22:49:04.3855361Z Get:29 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [245 kB]
+watcher	Ensure dependencies	2026-06-13T22:49:04.3881156Z Get:30 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Components [44.9 kB]
+watcher	Ensure dependencies	2026-06-13T22:49:04.3899372Z Get:31 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 c-n-f Metadata [11.4 kB]
+watcher	Ensure dependencies	2026-06-13T22:49:04.3906192Z Get:32 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1186 kB]
+watcher	Ensure dependencies	2026-06-13T22:49:04.3991405Z Get:33 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [231 kB]
+watcher	Ensure dependencies	2026-06-13T22:49:04.4035135Z Get:34 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Components [76.3 kB]
+watcher	Ensure dependencies	2026-06-13T22:49:04.4046113Z Get:35 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 c-n-f Metadata [23.3 kB]
+watcher	Ensure dependencies	2026-06-13T22:49:04.4059474Z Get:36 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [2573 kB]
+watcher	Ensure dependencies	2026-06-13T22:49:04.4225259Z Get:37 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [615 kB]
+watcher	Ensure dependencies	2026-06-13T22:49:04.4601180Z Get:38 https://dl.google.com/linux/chrome-stable/deb stable/main amd64 Packages [1215 B]
+watcher	Ensure dependencies	2026-06-13T22:49:09.9279565Z Fetched 15.3 MB in 2s (8438 kB/s)
+watcher	Ensure dependencies	2026-06-13T22:49:10.6785374Z Reading package lists...
+watcher	Ensure dependencies	2026-06-13T22:49:10.7094046Z Reading package lists...
+watcher	Ensure dependencies	2026-06-13T22:49:10.8762085Z Building dependency tree...
+watcher	Ensure dependencies	2026-06-13T22:49:10.8769510Z Reading state information...
+watcher	Ensure dependencies	2026-06-13T22:49:11.0469811Z jq is already the newest version (1.7.1-3ubuntu0.24.04.2).
+watcher	Ensure dependencies	2026-06-13T22:49:11.0470355Z curl is already the newest version (8.5.0-2ubuntu10.9).
+watcher	Ensure dependencies	2026-06-13T22:49:11.0470749Z coreutils is already the newest version (9.4-3ubuntu6.2).
+watcher	Ensure dependencies	2026-06-13T22:49:11.0471145Z 0 upgraded, 0 newly installed, 0 to remove and 34 not upgraded.
+watcher	Run ALMS watcher	﻿2026-06-13T22:49:11.0522609Z ##[group]Run bash scripts/watch_infra_v04.sh
+watcher	Run ALMS watcher	2026-06-13T22:49:11.0523004Z ^[[36;1mbash scripts/watch_infra_v04.sh^[[0m
+watcher	Run ALMS watcher	2026-06-13T22:49:11.0555696Z shell: /usr/bin/bash -e {0}
+watcher	Run ALMS watcher	2026-06-13T22:49:11.0555987Z ##[endgroup]
+watcher	Run ALMS watcher	2026-06-13T22:49:42.3909412Z ALMS_INFRA_WATCH_V0.4 run_id=20260613T224911Z run_hash=dd1e9bd82cc3c8e5f561965149093a35d283c88bd31aacffc3633aa711a99c7b diff_status=GENESIS bad_fetches=1
+watcher	Commit fresh receipts	﻿2026-06-13T22:49:42.3962046Z ##[group]Run git config user.name "alms-bot"
+watcher	Commit fresh receipts	2026-06-13T22:49:42.3962418Z ^[[36;1mgit config user.name "alms-bot"^[[0m
+watcher	Commit fresh receipts	2026-06-13T22:49:42.3962809Z ^[[36;1mgit config user.email "alms-bot@users.noreply.github.com"^[[0m
+watcher	Commit fresh receipts	2026-06-13T22:49:42.3963153Z ^[[36;1m^[[0m
+watcher	Commit fresh receipts	2026-06-13T22:49:42.3963352Z ^[[36;1mif git diff --quiet _truth/; then^[[0m
+watcher	Commit fresh receipts	2026-06-13T22:49:42.3963629Z ^[[36;1m  echo "NO_RECEIPT_DIFF"^[[0m
+watcher	Commit fresh receipts	2026-06-13T22:49:42.3964184Z ^[[36;1melse^[[0m
+watcher	Commit fresh receipts	2026-06-13T22:49:42.3964391Z ^[[36;1m  git add _truth/^[[0m
+watcher	Commit fresh receipts	2026-06-13T22:49:42.3964709Z ^[[36;1m  git commit -m "ALMS watcher receipt $(date -u +%Y%m%dT%H%M%SZ)"^[[0m
+watcher	Commit fresh receipts	2026-06-13T22:49:42.3965064Z ^[[36;1m  git push^[[0m
+watcher	Commit fresh receipts	2026-06-13T22:49:42.3965280Z ^[[36;1mfi^[[0m
+watcher	Commit fresh receipts	2026-06-13T22:49:42.3996401Z shell: /usr/bin/bash -e {0}
+watcher	Commit fresh receipts	2026-06-13T22:49:42.3996654Z ##[endgroup]
+watcher	Commit fresh receipts	2026-06-13T22:49:42.4848433Z NO_RECEIPT_DIFF
+watcher	Post Checkout	﻿2026-06-13T22:49:42.5022683Z Post job cleanup.

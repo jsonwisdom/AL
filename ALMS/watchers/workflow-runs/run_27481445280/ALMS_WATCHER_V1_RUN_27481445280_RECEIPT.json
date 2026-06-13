@@ -1,0 +1,20 @@
+{
+  "receipt_type": "ALMS_WATCHER_V1_WORKFLOW_RUN_RECEIPT_V0_1",
+  "observed_at_utc": "2026-06-13T22:53:08Z",
+  "run_id": 27481445280,
+  "workflow": "ALMS Watcher v1",
+  "branch": "master",
+  "meta_path": "ALMS/watchers/workflow-runs/run_27481445280/meta.json",
+  "artifacts_api_path": "ALMS/watchers/workflow-runs/run_27481445280/artifacts_api.json",
+  "log_head_path": "ALMS/watchers/workflow-runs/run_27481445280/log_head.txt",
+  "sha256": {
+    "meta": "44a6ade106ba1de3e1bc2c3129fc453fa33edbde241f2892778d9389020ed4d2",
+    "artifacts_api": "244563f989470892c537c9a4622920af0d228ee4528f7d00c64a06d6cd95856c",
+    "log_head": "ee6957a520fece1d74387fec3d3102cb69769bc10ccfbb07b7a742cbf71060de"
+  },
+  "state": "WATCHER_RUN_OBSERVED_SUCCESS",
+  "authority": false,
+  "green": false,
+  "no_fake_green": true,
+  "ruling": "Watcher success observed. This does not promote Base, resolver, or atomic UID proof to GREEN."
+}
