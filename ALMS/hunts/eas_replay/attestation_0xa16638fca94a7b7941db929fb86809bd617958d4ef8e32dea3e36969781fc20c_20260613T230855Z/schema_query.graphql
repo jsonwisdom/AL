@@ -1,0 +1,9 @@
+query {
+  schema(where: { id: "0xed5ef9168064d51396fb2e50e626efe1f63a0e70858c19b9651661aa867a2045" }) {
+    id
+    schema
+    resolver
+    revocable
+    txid
+  }
+}

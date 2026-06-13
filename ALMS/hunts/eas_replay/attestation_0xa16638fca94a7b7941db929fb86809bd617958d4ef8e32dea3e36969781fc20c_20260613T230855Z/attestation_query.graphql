@@ -1,0 +1,22 @@
+query {
+  attestation(where: { id: "0xa16638fca94a7b7941db929fb86809bd617958d4ef8e32dea3e36969781fc20c" }) {
+    id
+    attester
+    recipient
+    refUID
+    revocable
+    revocationTime
+    expirationTime
+    time
+    txid
+    schemaId
+    data
+    decodedDataJson
+    schema {
+      id
+      schema
+      resolver
+      revocable
+    }
+  }
+}
