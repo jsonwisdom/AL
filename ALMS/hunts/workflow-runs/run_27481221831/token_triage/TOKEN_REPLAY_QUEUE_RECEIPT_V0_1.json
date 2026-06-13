@@ -1,0 +1,13 @@
+{
+  "receipt_type": "TOKEN_REPLAY_QUEUE_RECEIPT_V0_1",
+  "observed_at_utc": "2026-06-13T22:43:28Z",
+  "source_workflow_run_id": 27481221831,
+  "triage_path": "ALMS/hunts/workflow-runs/run_27481221831/token_triage/token_replay_queue_v0_1.tsv",
+  "triage_sha256": "02403d821292a49f33d70e8a3a60ca1b5406544995ca2c0fc3777dec7267802b",
+  "token_count": 46,
+  "state": "TOKEN_REPLAY_QUEUE_OBSERVED",
+  "authority": false,
+  "green": false,
+  "no_fake_green": true,
+  "ruling": "Tokens are ranked replay candidates only. UID/TX candidates require chain replay before proof promotion."
+}
