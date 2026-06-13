@@ -1,0 +1,21 @@
+{
+  "receipt_type": "ATOMIC_UID_FROM_RELATION_ARTIFACT_RECEIPT_V0_1",
+  "observed_at_utc": "2026-06-13T23:00:00Z",
+  "source_workflow_run_id": 27481221831,
+  "source_workflow": "Jay Relation Hunt Flywheel",
+  "source_branch": "alms-v2-machine-speed",
+  "source_head_sha": "227da8ea16a0f1e91c0c3e971e7b82d90778a4f9",
+  "source_artifact_id": 7615136595,
+  "source_artifact_name": "jay-relation-hunt-flywheel",
+  "source_artifact_size_bytes": 22069,
+  "source_artifact_digest": "sha256:028a0d6b2d06f1204ebf1ccf4ce9923b32c35ecb4c7b79f2473f85cd7df02603",
+  "uid": "0x5aa1dd96735e02ba2d7a9cc41b4a4ed4cb0c11ed5366303eeb00262a4a9773ed",
+  "uid_observed_in_relation_hunt_log": true,
+  "uid_observation_context": "The UID appears in the Jay Relation Hunt Flywheel workflow log top-token output for run 27481221831.",
+  "state": "ATOMIC_UID_ARTIFACT_SEARCH_OBSERVED_REMOTE_CREATED",
+  "evidence_class": "GITHUB_ACTIONS_ARTIFACT_AND_LOG_DERIVED_RECEIPT",
+  "authority": false,
+  "green": false,
+  "no_fake_green": true,
+  "ruling": "Atomic UID observation was preserved from the already-observed relation hunt workflow run and artifact metadata. This is not chain proof, not EAS attestation validity, and not resolver GREEN. Next required step is chain/EAS replay for the UID."
+}
