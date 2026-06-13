@@ -1,0 +1,31 @@
+name: Jay Relation Hunt Flywheel
+
+on:
+  schedule:
+    - cron: "23 10 * * *"
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/hunt/jay_relation_hunt_flywheel.sh"
+      - "ALMS/hunts/config/jay_relation_seeds_v0_1.txt"
+      - ".github/workflows/jay-relation-hunt-flywheel.yml"
+
+jobs:
+  hunt:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+      - name: Run Jay relation hunt inside checked-out repo
+        env:
+          HUNT_ROOT: "."
+          DAYS: "30"
+          MAX_REPOS: "5"
+          MAX_COMMITS: "150"
+        run: bash scripts/hunt/jay_relation_hunt_flywheel.sh
+      - name: Upload hunt run artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: jay-relation-hunt-flywheel
+          path: ALMS/hunts/runs/jay_relation_hunt_*
