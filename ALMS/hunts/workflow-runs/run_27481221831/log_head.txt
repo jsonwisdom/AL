@@ -1,0 +1,220 @@
+hunt	Set up job	﻿2026-06-13T22:38:33.5617715Z Current runner version: '2.335.1'
+hunt	Set up job	2026-06-13T22:38:33.5643381Z ##[group]Runner Image Provisioner
+hunt	Set up job	2026-06-13T22:38:33.5644595Z Hosted Compute Agent
+hunt	Set up job	2026-06-13T22:38:33.5645241Z Version: 20260527.539
+hunt	Set up job	2026-06-13T22:38:33.5645898Z Commit: a891dd388383b896fa6ac04a82c0b75cec981078
+hunt	Set up job	2026-06-13T22:38:33.5646751Z Build Date: 2026-05-27T21:39:57Z
+hunt	Set up job	2026-06-13T22:38:33.5647466Z Worker ID: {54748015-e191-4618-9363-6b53f49ffb9e}
+hunt	Set up job	2026-06-13T22:38:33.5648187Z Azure Region: eastus
+hunt	Set up job	2026-06-13T22:38:33.5648894Z ##[endgroup]
+hunt	Set up job	2026-06-13T22:38:33.5650327Z ##[group]Operating System
+hunt	Set up job	2026-06-13T22:38:33.5651090Z Ubuntu
+hunt	Set up job	2026-06-13T22:38:33.5651638Z 24.04.4
+hunt	Set up job	2026-06-13T22:38:33.5652160Z LTS
+hunt	Set up job	2026-06-13T22:38:33.5652800Z ##[endgroup]
+hunt	Set up job	2026-06-13T22:38:33.5653385Z ##[group]Runner Image
+hunt	Set up job	2026-06-13T22:38:33.5654040Z Image: ubuntu-24.04
+hunt	Set up job	2026-06-13T22:38:33.5654819Z Version: 20260607.184.1
+hunt	Set up job	2026-06-13T22:38:33.5655950Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260607.184/images/ubuntu/Ubuntu2404-Readme.md
+hunt	Set up job	2026-06-13T22:38:33.5657904Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260607.184
+hunt	Set up job	2026-06-13T22:38:33.5658978Z ##[endgroup]
+hunt	Set up job	2026-06-13T22:38:33.5662590Z ##[group]GITHUB_TOKEN Permissions
+hunt	Set up job	2026-06-13T22:38:33.5665161Z Actions: write
+hunt	Set up job	2026-06-13T22:38:33.5665803Z ArtifactMetadata: write
+hunt	Set up job	2026-06-13T22:38:33.5666598Z Attestations: write
+hunt	Set up job	2026-06-13T22:38:33.5667201Z Checks: write
+hunt	Set up job	2026-06-13T22:38:33.5667809Z CodeQuality: write
+hunt	Set up job	2026-06-13T22:38:33.5668441Z Contents: write
+hunt	Set up job	2026-06-13T22:38:33.5669011Z CopilotRequests: write
+hunt	Set up job	2026-06-13T22:38:33.5669748Z Deployments: write
+hunt	Set up job	2026-06-13T22:38:33.5670356Z Discussions: write
+hunt	Set up job	2026-06-13T22:38:33.5670974Z Issues: write
+hunt	Set up job	2026-06-13T22:38:33.5671556Z Metadata: read
+hunt	Set up job	2026-06-13T22:38:33.5672132Z Models: read
+hunt	Set up job	2026-06-13T22:38:33.5672805Z Packages: write
+hunt	Set up job	2026-06-13T22:38:33.5673460Z Pages: write
+hunt	Set up job	2026-06-13T22:38:33.5674055Z PullRequests: write
+hunt	Set up job	2026-06-13T22:38:33.5674944Z RepositoryProjects: write
+hunt	Set up job	2026-06-13T22:38:33.5675579Z SecurityEvents: write
+hunt	Set up job	2026-06-13T22:38:33.5676303Z Statuses: write
+hunt	Set up job	2026-06-13T22:38:33.5676918Z VulnerabilityAlerts: read
+hunt	Set up job	2026-06-13T22:38:33.5677513Z ##[endgroup]
+hunt	Set up job	2026-06-13T22:38:33.5679685Z Secret source: Actions
+hunt	Set up job	2026-06-13T22:38:33.5680497Z Prepare workflow directory
+hunt	Set up job	2026-06-13T22:38:33.5998142Z Prepare all required actions
+hunt	Set up job	2026-06-13T22:38:33.6035309Z Getting action download info
+hunt	Set up job	2026-06-13T22:38:33.8831027Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+hunt	Set up job	2026-06-13T22:38:34.1333306Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+hunt	Set up job	2026-06-13T22:38:34.3412687Z Complete job name: hunt
+hunt	Run actions/checkout@v4	﻿2026-06-13T22:38:34.4113988Z ##[group]Run actions/checkout@v4
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.4115064Z with:
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.4115508Z   repository: jsonwisdom/AL
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.4120274Z   token: ***
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.4120708Z   ssh-strict: true
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.4121155Z   ssh-user: git
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.4121600Z   persist-credentials: true
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.4122114Z   clean: true
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.4122568Z   sparse-checkout-cone-mode: true
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.4123098Z   fetch-depth: 1
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.4123525Z   fetch-tags: false
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.4123964Z   show-progress: true
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.4124557Z   lfs: false
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.4124967Z   submodules: false
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.4125411Z   set-safe-directory: true
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.4126065Z ##[endgroup]
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.5257419Z Syncing repository: jsonwisdom/AL
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.5259384Z ##[group]Getting Git version info
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.5260034Z Working directory is '/home/runner/work/AL/AL'
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.5260950Z [command]/usr/bin/git version
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.5320246Z git version 2.54.0
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.5347740Z ##[endgroup]
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.5359873Z Temporarily overriding HOME='/home/runner/work/_temp/b32f22ee-a3ba-4b39-88a6-d014a6a3111a' before making global git config changes
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.5361305Z Adding repository directory to the temporary git global config as a safe directory
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.5376197Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/AL/AL
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.5420442Z Deleting the contents of '/home/runner/work/AL/AL'
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.5424728Z ##[group]Initializing the repository
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.5429411Z [command]/usr/bin/git init /home/runner/work/AL/AL
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.5498418Z hint: Using 'master' as the name for the initial branch. This default branch name
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.5499631Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.5503573Z hint: to use in all of your new repositories, which will suppress this warning,
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.5505084Z hint: call:
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.5505747Z hint:
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.5506544Z hint: 	git config --global init.defaultBranch <name>
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.5507583Z hint:
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.5508576Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.5510094Z hint: 'development'. The just-created branch can be renamed via this command:
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.5511340Z hint:
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.5512020Z hint: 	git branch -m <name>
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.5512827Z hint:
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.5513822Z hint: Disable this message with "git config set advice.defaultBranchName false"
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.5515621Z Initialized empty Git repository in /home/runner/work/AL/AL/.git/
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.5518014Z [command]/usr/bin/git remote add origin https://github.com/jsonwisdom/AL
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.5556213Z ##[endgroup]
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.5557059Z ##[group]Disabling automatic garbage collection
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.5562147Z [command]/usr/bin/git config --local gc.auto 0
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.5594789Z ##[endgroup]
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.5595547Z ##[group]Setting up auth
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.5604842Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.5641325Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.5970108Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.6002945Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.6250889Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.6283470Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.6530918Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.6567829Z ##[endgroup]
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.6569341Z ##[group]Fetching the repository
+hunt	Run actions/checkout@v4	2026-06-13T22:38:34.6577323Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +227da8ea16a0f1e91c0c3e971e7b82d90778a4f9:refs/remotes/origin/alms-v2-machine-speed
+hunt	Run actions/checkout@v4	2026-06-13T22:38:35.0642889Z From https://github.com/jsonwisdom/AL
+hunt	Run actions/checkout@v4	2026-06-13T22:38:35.0645319Z  * [new ref]         227da8ea16a0f1e91c0c3e971e7b82d90778a4f9 -> origin/alms-v2-machine-speed
+hunt	Run actions/checkout@v4	2026-06-13T22:38:35.0677427Z ##[endgroup]
+hunt	Run actions/checkout@v4	2026-06-13T22:38:35.0678653Z ##[group]Determining the checkout info
+hunt	Run actions/checkout@v4	2026-06-13T22:38:35.0680116Z ##[endgroup]
+hunt	Run actions/checkout@v4	2026-06-13T22:38:35.0686419Z [command]/usr/bin/git sparse-checkout disable
+hunt	Run actions/checkout@v4	2026-06-13T22:38:35.0731696Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+hunt	Run actions/checkout@v4	2026-06-13T22:38:35.0759889Z ##[group]Checking out the ref
+hunt	Run actions/checkout@v4	2026-06-13T22:38:35.0764677Z [command]/usr/bin/git checkout --progress --force -B alms-v2-machine-speed refs/remotes/origin/alms-v2-machine-speed
+hunt	Run actions/checkout@v4	2026-06-13T22:38:35.1177187Z Switched to a new branch 'alms-v2-machine-speed'
+hunt	Run actions/checkout@v4	2026-06-13T22:38:35.1179162Z branch 'alms-v2-machine-speed' set up to track 'origin/alms-v2-machine-speed'.
+hunt	Run actions/checkout@v4	2026-06-13T22:38:35.1188051Z ##[endgroup]
+hunt	Run actions/checkout@v4	2026-06-13T22:38:35.1228149Z [command]/usr/bin/git log -1 --format=%H
+hunt	Run actions/checkout@v4	2026-06-13T22:38:35.1251516Z 227da8ea16a0f1e91c0c3e971e7b82d90778a4f9
+hunt	Install jq	﻿2026-06-13T22:38:35.1471934Z ##[group]Run sudo apt-get update && sudo apt-get install -y jq
+hunt	Install jq	2026-06-13T22:38:35.1473710Z ^[[36;1msudo apt-get update && sudo apt-get install -y jq^[[0m
+hunt	Install jq	2026-06-13T22:38:35.1602082Z shell: /usr/bin/bash -e {0}
+hunt	Install jq	2026-06-13T22:38:35.1603072Z ##[endgroup]
+hunt	Install jq	2026-06-13T22:38:35.2475667Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+hunt	Install jq	2026-06-13T22:38:35.2835917Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+hunt	Install jq	2026-06-13T22:38:35.2839506Z Hit:6 https://packages.microsoft.com/repos/azure-cli noble InRelease
+hunt	Install jq	2026-06-13T22:38:35.2842964Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+hunt	Install jq	2026-06-13T22:38:35.2850780Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+hunt	Install jq	2026-06-13T22:38:35.2911021Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+hunt	Install jq	2026-06-13T22:38:35.2938004Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+hunt	Install jq	2026-06-13T22:38:35.3127662Z Get:8 https://dl.google.com/linux/chrome-stable/deb stable InRelease [1825 B]
+hunt	Install jq	2026-06-13T22:38:35.4524518Z Get:9 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [175 kB]
+hunt	Install jq	2026-06-13T22:38:35.4638886Z Get:10 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [146 kB]
+hunt	Install jq	2026-06-13T22:38:35.5042846Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1723 kB]
+hunt	Install jq	2026-06-13T22:38:35.5193318Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [331 kB]
+hunt	Install jq	2026-06-13T22:38:35.5203283Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [181 kB]
+hunt	Install jq	2026-06-13T22:38:35.5222741Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 c-n-f Metadata [17.4 kB]
+hunt	Install jq	2026-06-13T22:38:35.5235369Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1689 kB]
+hunt	Install jq	2026-06-13T22:38:35.5328663Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [331 kB]
+hunt	Install jq	2026-06-13T22:38:35.5353341Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [388 kB]
+hunt	Install jq	2026-06-13T22:38:35.5386256Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 c-n-f Metadata [34.7 kB]
+hunt	Install jq	2026-06-13T22:38:35.5399138Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [2733 kB]
+hunt	Install jq	2026-06-13T22:38:35.5540497Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [649 kB]
+hunt	Install jq	2026-06-13T22:38:35.6008270Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+hunt	Install jq	2026-06-13T22:38:35.6025279Z Get:22 http://azure.archive.ubuntu.com/ubuntu noble-backports/main amd64 Packages [40.6 kB]
+hunt	Install jq	2026-06-13T22:38:35.6036568Z Get:23 http://azure.archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [5768 B]
+hunt	Install jq	2026-06-13T22:38:35.6045087Z Get:24 http://azure.archive.ubuntu.com/ubuntu noble-backports/main amd64 c-n-f Metadata [368 B]
+hunt	Install jq	2026-06-13T22:38:35.6055780Z Get:25 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [31.0 kB]
+hunt	Install jq	2026-06-13T22:38:35.6069321Z Get:26 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [10.5 kB]
+hunt	Install jq	2026-06-13T22:38:35.6078253Z Get:27 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 c-n-f Metadata [1588 B]
+hunt	Install jq	2026-06-13T22:38:35.6195407Z Get:28 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1424 kB]
+hunt	Install jq	2026-06-13T22:38:35.6285760Z Get:29 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [245 kB]
+hunt	Install jq	2026-06-13T22:38:35.6299704Z Get:30 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Components [44.9 kB]
+hunt	Install jq	2026-06-13T22:38:35.6312006Z Get:31 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 c-n-f Metadata [11.4 kB]
+hunt	Install jq	2026-06-13T22:38:35.6335781Z Get:32 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1186 kB]
+hunt	Install jq	2026-06-13T22:38:35.6387522Z Get:33 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [231 kB]
+hunt	Install jq	2026-06-13T22:38:35.6424428Z Get:34 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Components [76.3 kB]
+hunt	Install jq	2026-06-13T22:38:35.6438420Z Get:35 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 c-n-f Metadata [23.3 kB]
+hunt	Install jq	2026-06-13T22:38:35.6455690Z Get:36 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [2573 kB]
+hunt	Install jq	2026-06-13T22:38:35.6619185Z Get:37 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [615 kB]
+hunt	Install jq	2026-06-13T22:38:35.6944376Z Get:38 https://dl.google.com/linux/chrome-stable/deb stable/main amd64 Packages [1215 B]
+hunt	Install jq	2026-06-13T22:38:42.1143936Z Fetched 15.3 MB in 2s (8245 kB/s)
+hunt	Install jq	2026-06-13T22:38:42.8590671Z Reading package lists...
+hunt	Install jq	2026-06-13T22:38:42.8914846Z Reading package lists...
+hunt	Install jq	2026-06-13T22:38:43.0576546Z Building dependency tree...
+hunt	Install jq	2026-06-13T22:38:43.0584076Z Reading state information...
+hunt	Install jq	2026-06-13T22:38:43.2355836Z jq is already the newest version (1.7.1-3ubuntu0.24.04.2).
+hunt	Install jq	2026-06-13T22:38:43.2357209Z 0 upgraded, 0 newly installed, 0 to remove and 34 not upgraded.
+hunt	Run Jay relation hunt inside checked-out repo	﻿2026-06-13T22:38:43.2437471Z ##[group]Run bash scripts/hunt/jay_relation_hunt_flywheel.sh
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:43.2438144Z ^[[36;1mbash scripts/hunt/jay_relation_hunt_flywheel.sh^[[0m
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:43.2481796Z shell: /usr/bin/bash -e {0}
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:43.2482134Z env:
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:43.2482333Z   HUNT_ROOT: .
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:43.2482533Z   DAYS: 30
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:43.2482812Z   MAX_REPOS: 5
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:43.2483148Z   MAX_COMMITS: 150
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:43.2483525Z ##[endgroup]
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:43.2669385Z CURRENT .
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.4318371Z HISTORY .
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.4417550Z grep: write error: Broken pipe
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6122895Z == HUNT SUMMARY ==
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6132681Z # JAY_RELATION_HUNT_FLYWHEEL_RUN
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6132988Z 
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6133090Z STATUS: COMPLETE
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6133434Z TRUTH_STATE: OBSERVED
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6133775Z AUTHORITY: FALSE
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6134114Z NO_FAKE_GREEN: TRUE
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6134470Z 
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6134780Z Repos: 1
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6135194Z Current hits: 539
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6135635Z History hits: 80
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6136154Z UID/TX/address/CID tokens: 46
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6136534Z 
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6136991Z Final ruling: repo evidence only. Tokens are replay candidates, not chain proof.
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6137537Z 
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6137674Z == TOP TOKENS ==
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6148280Z 0x0000000000000000000000000000000000000000
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6149081Z 0x0000000000000000000000000000000000000000000000000000000000000000
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6149718Z 0x0237c0eb82e167471985a3243e6ce167f75748e81a5b3589966daafeace5c74d
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6150476Z 0x1111111111111111111111111111111111111111111111111111111111111111
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6151171Z 0x1dB2C056c7DeCD9f9fC574692b05F62aE34Fb8b5
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6151729Z 0x2222222222222222222222222222222222222222222222222222222222222222
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6152405Z 0x265500ec2cf65367783ca7337afc1988d77a3f214ec1e6c05cf5ce1feb9d257f
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6153108Z 0x2849b43074093a05396b6f2a937dee8565b15a48a7b3d4bffb732a5017380af5
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6153835Z 0x309DA30D6A76AFA25C775F1A87A857CE204F506A48F28189C816E635D1D6D203
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6154838Z 0x3333333333333333333333333333333333333333333333333333333333333333
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6155617Z 0x35d79ab81f2b2017e19afb5c5571778877782d7a8786f5907f93b0f4702f4f23
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6156283Z 0x36d3ffa7ee0d1d183f385e3205775f448dcefa1981a18bbc12f9f9930af86ac7
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6156869Z 0x4200000000000000000000000000000000000021
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6157421Z 0x46a650f89159596c6a08ffbc567680d4874fb11081f6a4ca424e703f391c673c
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6158297Z 0x5aa1dd96735e02ba2d7a9cc41b4a4ed4cb0c11ed5366303eeb00262a4a9773ed
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6158769Z 0x5acb442d42213fa5d79049a91b4e6496999e2090840c0400c6c90f3a66d66e68
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6159220Z 0x5f68181e98309b6b77b88de4e25a3b50b4742d62a0426cdb4eeb8374cae8c19c
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6159645Z 0x60d7a27800000000000000000000000000000000000000000000000000000000
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6160082Z 0x635f6a72f2eee47ec46cad532fba9554c87bf27692483159ce299419c290e586
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6160555Z 0x67A8C483EFA19950D4D8917CC125D201F41DDDECF76779CB9EDEA7AFFC0B6714
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6161005Z 0x67a6208cfcc0801d50f6cbe764733f4fddf66ac0b04442061a8a8c0cb6b63f62
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6161453Z 0x718594027abd4eaed59f95162563e0cc6d0e8d5b86b1c7be8b1b0ac3343d0396
+hunt	Run Jay relation hunt inside checked-out repo	2026-06-13T22:38:44.6161907Z 0x7ff126db8024424bbfd9826e8ab82ff59136289ea440b04b39a0df1b03b9cabf

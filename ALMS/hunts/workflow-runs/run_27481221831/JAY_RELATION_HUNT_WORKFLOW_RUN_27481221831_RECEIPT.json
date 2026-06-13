@@ -1,0 +1,23 @@
+{
+  "receipt_type": "JAY_RELATION_HUNT_WORKFLOW_RUN_RECEIPT_V0_1",
+  "observed_at_utc": "2026-06-13T22:42:03Z",
+  "run_id": 27481221831,
+  "workflow": "Jay Relation Hunt Flywheel",
+  "branch": "alms-v2-machine-speed",
+  "meta_path": "ALMS/hunts/workflow-runs/run_27481221831/meta.json",
+  "artifacts_api_path": "ALMS/hunts/workflow-runs/run_27481221831/artifacts_api.json",
+  "log_head_path": "ALMS/hunts/workflow-runs/run_27481221831/log_head.txt",
+  "artifact_manifest_path": "ALMS/hunts/workflow-runs/run_27481221831/artifact_manifest.sha256",
+  "sha256": {
+    "meta": "c39bf8732e3ae3895f8a6035a6c2043a65af2a442e75caa73851b3c9bd924e28",
+    "artifacts_api": "23dd22a30f68a0e054369b260d930d3f9e9a246dda8a153a69dbd765d1d0707e",
+    "log_head": "c4a1952702d643557e066846f3c59c744062b6ea30f75eabc792b22f96528f1b",
+    "artifact_manifest": "a2975c2bbe2b83786dcb10556501a59a9505b225406e5b12616ffdc3105a3d23"
+  },
+  "state": "WORKFLOW_RUN_OBSERVED_SUCCESS",
+  "evidence_class": "GITHUB_ACTIONS_WORKFLOW_RECEIPT",
+  "authority": false,
+  "green": false,
+  "no_fake_green": true,
+  "ruling": "Flywheel run passed. Hunt artifacts are replay candidates only; UID/TX tokens require chain or resolver replay before proof promotion."
+}
