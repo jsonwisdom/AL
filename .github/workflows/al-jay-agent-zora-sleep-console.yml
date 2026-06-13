@@ -1,0 +1,31 @@
+name: AL Jay-Agent Zora Sleep Console
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/15 * * * *"
+  push:
+    paths:
+      - "projects/zora-jay-agent/**"
+      - ".github/workflows/al-jay-agent-zora-sleep-console.yml"
+
+jobs:
+  sleep-console:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - name: Checkout AL
+        uses: actions/checkout@v4
+
+      - name: Run jay-agent sleep console
+        run: |
+          chmod +x projects/zora-jay-agent/scripts/jay_agent_sleep_console.sh
+          projects/zora-jay-agent/scripts/jay_agent_sleep_console.sh
+
+      - name: Upload sleep console artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: al-jay-agent-zora-sleep-console
+          path: projects/zora-jay-agent/artifacts/
