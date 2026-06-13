@@ -6,53 +6,25 @@
   <title>AL Evidence Collector | NO_FAKE_GREEN</title>
   <style>
     :root {
-      --base: #0a0a0f;
-      --surface: #1a1a2e;
-      --card: #16213e;
-      --green: #00ff88;
-      --red: #ff4444;
-      --amber: #ffaa00;
-      --ghost: #888888;
-      --text: #f2f2f2;
-      --line: #2b3559;
+      --base: #0a0a0f; --surface: #1a1a2e; --card: #16213e;
+      --green: #00ff88; --red: #ff4444; --amber: #ffaa00; --ghost: #888888;
+      --text: #f2f2f2; --line: #2b3559;
       --mono: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Consolas, monospace;
       --sans: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
-
     * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: var(--base);
-      color: var(--text);
-      font-family: var(--sans);
-      min-height: 100vh;
-    }
+    body { margin: 0; background: var(--base); color: var(--text); font-family: var(--sans); min-height: 100vh; }
     .wrap { max-width: 1180px; margin: 0 auto; padding: 28px 18px 60px; }
-    .boot {
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 24px;
-    }
-    .boot-card, .panel, .field, .report {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      box-shadow: 0 0 0 1px rgba(255,255,255,0.02);
-    }
+    .boot { min-height: 100vh; display: grid; place-items: center; padding: 24px; }
+    .boot-card, .panel, .field, .report { background: var(--surface); border: 1px solid var(--line); box-shadow: 0 0 0 1px rgba(255,255,255,0.02); }
     .boot-card { width: min(720px, 100%); padding: 28px; }
     h1, h2, h3 { margin: 0 0 14px; letter-spacing: .02em; }
     h1 { font-family: var(--mono); font-size: clamp(25px, 4vw, 42px); }
     h2 { font-size: 17px; color: var(--ghost); font-weight: 600; }
     p, li { color: #d9d9d9; line-height: 1.55; }
     code, textarea, input, pre, .mono { font-family: var(--mono); }
-    .trigger-row { display: flex; gap: 10px; margin-top: 20px; }
-    input, textarea, button {
-      border: 1px solid var(--line);
-      background: #07070b;
-      color: var(--text);
-      padding: 12px 14px;
-      font: inherit;
-    }
+    .trigger-row, .action-row { display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
+    input, textarea, button { border: 1px solid var(--line); background: #07070b; color: var(--text); padding: 12px 14px; font: inherit; }
     input { flex: 1; font-family: var(--mono); }
     button { cursor: pointer; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; }
     button:hover { border-color: var(--green); }
@@ -60,10 +32,7 @@
     .topbar { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: start; margin-bottom: 18px; }
     .badge-row { display: flex; flex-wrap: wrap; gap: 8px; }
     .badge { border: 1px solid var(--line); background: var(--card); padding: 7px 10px; font-family: var(--mono); font-size: 12px; }
-    .green { color: var(--green); }
-    .red { color: var(--red); }
-    .amber { color: var(--amber); }
-    .ghost { color: var(--ghost); }
+    .green { color: var(--green); } .red { color: var(--red); } .amber { color: var(--amber); } .ghost { color: var(--ghost); }
     .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
     .panel { padding: 16px; margin-bottom: 14px; }
     .field { padding: 12px; background: var(--card); }
@@ -100,6 +69,7 @@
         <span class="badge red">AUTHORITY = FALSE</span>
         <span class="badge green">NO_FAKE_GREEN = TRUE</span>
         <span class="badge amber">DEFAULT = UNKNOWN</span>
+        <span class="badge amber">GITHUB BACKEND = READ ONLY</span>
       </div>
     </section>
 
@@ -110,21 +80,26 @@
         <li>DO NOT claim Sepolia success without transaction hash and receipt.</li>
         <li>DO NOT claim workflow success without observed run status.</li>
         <li>DO NOT claim artifact existence without artifact readback.</li>
+        <li>DO NOT put GitHub, AI, RPC, or wallet secrets in this browser.</li>
         <li>DO NOT promote UNKNOWN to TRUE or FALSE.</li>
       </ul>
+      <div class="action-row">
+        <button id="fetchBtn">Fetch GitHub Evidence</button>
+        <button id="analyzeBtn">Run Local NO_FAKE_GREEN Analysis</button>
+        <span id="backendStatus" class="mono amber">backend: not called</span>
+      </div>
     </section>
 
     <section class="grid">
-      <div class="field"><label>Commits since receipt <span id="sCommits" class="status amber">⚠ UNKNOWN</span></label><textarea id="commits" placeholder="Paste: git log 44da17d..HEAD --oneline --decorate --stat"></textarea></div>
-      <div class="field"><label>Workflow runs <span id="sWorkflow" class="status amber">⚠ UNKNOWN</span></label><textarea id="workflow" placeholder="Paste GitHub Actions run status/API output/log summary"></textarea></div>
-      <div class="field"><label>Artifacts <span id="sArtifacts" class="status amber">⚠ UNKNOWN</span></label><textarea id="artifacts" placeholder="Paste artifact list or readback"></textarea></div>
-      <div class="field"><label>Sepolia wallet evidence <span id="sSepolia" class="status red">✗ FALSE / UNPROVEN</span></label><textarea id="sepolia" placeholder="Paste balance + tx hash + receipt, if any"></textarea></div>
+      <div class="field"><label>Commits since receipt <span id="sCommits" class="status amber">⚠ UNKNOWN</span></label><textarea id="commits" placeholder="Manual paste or fetched from /api/github-evidence"></textarea></div>
+      <div class="field"><label>Workflow runs <span id="sWorkflow" class="status amber">⚠ UNKNOWN</span></label><textarea id="workflow" placeholder="Manual paste or fetched from /api/github-evidence"></textarea></div>
+      <div class="field"><label>Artifacts <span id="sArtifacts" class="status amber">⚠ UNKNOWN</span></label><textarea id="artifacts" placeholder="Manual paste or fetched from /api/github-evidence"></textarea></div>
+      <div class="field"><label>Sepolia wallet evidence <span id="sSepolia" class="status red">✗ FALSE / UNPROVEN</span></label><textarea id="sepolia" placeholder="Paste balance + tx hash + receipt, if any. GitHub backend does not fetch chain data."></textarea></div>
       <div class="field"><label>MCP / jay-agent findings <span id="sMcp" class="status amber">⚠ UNKNOWN</span></label><textarea id="mcp" placeholder="Paste MCP_AGENT_15_MINUTE_TASKS / jay-agent output"></textarea></div>
       <div class="field"><label>Unknowns preserved <span id="sUnknowns" class="status amber">⚠ PRESERVED</span></label><textarea id="unknowns" placeholder="List what cannot be verified yet"></textarea></div>
     </section>
 
     <section class="panel">
-      <button id="analyzeBtn">Run Local NO_FAKE_GREEN Analysis</button>
       <pre id="report" class="report mono"></pre>
     </section>
   </main>
@@ -147,24 +122,54 @@
       }
     }
 
-    function analyze() {
-      set("sCommits", has("commits", /[a-f0-9]{7,40}/i) ? "✓ EVIDENCE PRESENT" : "⚠ UNKNOWN", has("commits", /[a-f0-9]{7,40}/i) ? "green" : "amber");
-      set("sWorkflow", has("workflow", /(success|failure|cancelled|queued|in_progress|completed|run_id|workflow_run)/i) ? "✓ STATUS OBSERVED" : "⚠ UNKNOWN", has("workflow", /(success|failure|cancelled|queued|in_progress|completed|run_id|workflow_run)/i) ? "green" : "amber");
-      set("sArtifacts", has("artifacts", /(artifact|download|archive|zip|al-jay-agent-zora-sleep-console)/i) ? "✓ ARTIFACT EVIDENCE" : "⚠ UNKNOWN", has("artifacts", /(artifact|download|archive|zip|al-jay-agent-zora-sleep-console)/i) ? "green" : "amber");
+    async function fetchGithubEvidence() {
+      q("backendStatus").textContent = "backend: fetching read-only GitHub evidence...";
+      q("backendStatus").className = "mono amber";
+      try {
+        const res = await fetch(`/api/github-evidence?repo=jsonwisdom/AL&base=${receipt}&head=master`);
+        const json = await res.json();
+        if (!res.ok) throw new Error(json.error || `HTTP ${res.status}`);
+
+        q("commits").value = JSON.stringify(json.compare, null, 2);
+        q("workflow").value = JSON.stringify(json.workflow, null, 2);
+        q("artifacts").value = JSON.stringify(json.artifacts, null, 2);
+        q("unknowns").value = [
+          "Sepolia RPC not included in GitHub backend.",
+          "Wallet action remains FALSE unless chain tx hash + receipt are provided.",
+          "Semantic truth final remains FALSE until decoded evidence exists."
+        ].join("\n");
+
+        q("backendStatus").textContent = "backend: GitHub evidence fetched";
+        q("backendStatus").className = "mono green";
+        analyze(json);
+      } catch (err) {
+        q("backendStatus").textContent = `backend: ${err.message}`;
+        q("backendStatus").className = "mono red";
+        q("unknowns").value = `GitHub backend unavailable or not configured: ${err.message}\nGITHUB_TOKEN must stay server-side.`;
+        analyze();
+      }
+    }
+
+    function analyze(apiEvidence = null) {
+      set("sCommits", has("commits", /[a-f0-9]{7,40}|total_commits|ahead_by/i) ? "✓ EVIDENCE PRESENT" : "⚠ UNKNOWN", has("commits", /[a-f0-9]{7,40}|total_commits|ahead_by/i) ? "green" : "amber");
+      set("sWorkflow", has("workflow", /(success|failure|cancelled|queued|in_progress|completed|run_id|workflow_run|runs_observed|latest_run)/i) ? "✓ STATUS OBSERVED" : "⚠ UNKNOWN", has("workflow", /(success|failure|cancelled|queued|in_progress|completed|run_id|workflow_run|runs_observed|latest_run)/i) ? "green" : "amber");
+      set("sArtifacts", has("artifacts", /(artifact|download|archive|zip|observed|items|al-jay-agent-zora-sleep-console)/i) ? "✓ ARTIFACT FIELD OBSERVED" : "⚠ UNKNOWN", has("artifacts", /(artifact|download|archive|zip|observed|items|al-jay-agent-zora-sleep-console)/i) ? "green" : "amber");
       const tx = has("sepolia", /0x[a-f0-9]{64}/i);
       const bal = has("sepolia", /(balance|eth|wei)/i);
       set("sSepolia", tx && bal ? "✓ TX + BALANCE EVIDENCE" : "✗ FALSE / UNPROVEN", tx && bal ? "green" : "red");
       set("sMcp", has("mcp", /(jay-agent|MCP|finding|alarm|check|PASS|FAIL)/i) ? "✓ FINDINGS PRESENT" : "⚠ UNKNOWN", has("mcp", /(jay-agent|MCP|finding|alarm|check|PASS|FAIL)/i) ? "green" : "amber");
       set("sUnknowns", q("unknowns").value.trim() ? "⚠ PRESERVED" : "⚠ PRESERVED / EMPTY", "amber");
 
-      const report = `GITHUB OVERNIGHT MAINTENANCE REPORT\n\nBEFORE:\n- repo: jsonwisdom/AL\n- branch: master\n- receipt commit: ${receipt}\n- expected workflow: .github/workflows/al-jay-agent-zora-sleep-console.yml\n- expected cadence: 15_minutes\n- staged Sepolia wallet: ${wallet}\n\nAFTER:\n- commits evidence: ${q("sCommits").textContent}\n- workflow evidence: ${q("sWorkflow").textContent}\n- artifacts evidence: ${q("sArtifacts").textContent}\n- MCP/jay-agent evidence: ${q("sMcp").textContent}\n- Sepolia action: ${q("sSepolia").textContent}\n- unknowns: ${q("sUnknowns").textContent}\n\nRULING:\n- maintenance loop: ${q("sWorkflow").className.includes("green") ? "YELLOW / RUN STATUS OBSERVED" : "YELLOW / NOT ENOUGH EVIDENCE"}\n- workflow visibility: ${q("sWorkflow").className.includes("green") ? "GREEN" : "UNKNOWN"}\n- artifacts: ${q("sArtifacts").className.includes("green") ? "GREEN" : "UNKNOWN"}\n- wallet action: ${q("sSepolia").className.includes("green") ? "EVIDENCE PRESENT, STILL VERIFY RECEIPT" : "FALSE"}\n- semantic truth final: FALSE\n- authority: FALSE\n- no_fake_green: TRUE\n\nNEXT BEST ACTION:\nPaste observed GitHub Actions run JSON/logs and artifact readback before any green promotion.`;
+      const apiLine = apiEvidence ? `\n- backend generated_at: ${apiEvidence.generated_at}\n- backend mode: ${apiEvidence.mode}` : "";
+      const report = `GITHUB OVERNIGHT MAINTENANCE REPORT\n\nBEFORE:\n- repo: jsonwisdom/AL\n- branch: master\n- receipt commit: ${receipt}\n- expected workflow: .github/workflows/al-jay-agent-zora-sleep-console.yml\n- expected cadence: 15_minutes\n- staged Sepolia wallet: ${wallet}${apiLine}\n\nAFTER:\n- commits evidence: ${q("sCommits").textContent}\n- workflow evidence: ${q("sWorkflow").textContent}\n- artifacts evidence: ${q("sArtifacts").textContent}\n- MCP/jay-agent evidence: ${q("sMcp").textContent}\n- Sepolia action: ${q("sSepolia").textContent}\n- unknowns: ${q("sUnknowns").textContent}\n\nRULING:\n- maintenance loop: ${q("sWorkflow").className.includes("green") ? "YELLOW / RUN STATUS OBSERVED" : "YELLOW / NOT ENOUGH EVIDENCE"}\n- workflow visibility: ${q("sWorkflow").className.includes("green") ? "GREEN" : "UNKNOWN"}\n- artifacts: ${q("sArtifacts").className.includes("green") ? "GREEN_FIELD_VISIBLE / READBACK STILL REQUIRED" : "UNKNOWN"}\n- wallet action: ${q("sSepolia").className.includes("green") ? "EVIDENCE PRESENT, STILL VERIFY RECEIPT" : "FALSE"}\n- semantic truth final: FALSE\n- authority: FALSE\n- no_fake_green: TRUE\n\nNEXT BEST ACTION:\nUse server-side GITHUB_TOKEN with actions:read + contents:read. Inspect run logs/artifact contents before stronger promotion.`;
       q("report").textContent = report;
     }
 
     q("bootBtn").addEventListener("click", boot);
     q("trigger").addEventListener("keydown", (e) => { if (e.key === "Enter") boot(); });
-    q("analyzeBtn").addEventListener("click", analyze);
-    ids.forEach(id => q(id).addEventListener("input", analyze));
+    q("fetchBtn").addEventListener("click", fetchGithubEvidence);
+    q("analyzeBtn").addEventListener("click", () => analyze());
+    ids.forEach(id => q(id).addEventListener("input", () => analyze()));
   </script>
 </body>
 </html>
