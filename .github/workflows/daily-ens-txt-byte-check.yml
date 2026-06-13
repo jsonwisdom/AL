@@ -39,10 +39,12 @@ jobs:
           ENS_TXT_BASELINE: ${{ env.ENS_TXT_BASELINE }}
           ENS_TXT_REPORT: ${{ env.ENS_TXT_REPORT }}
 
-      - name: Upload byte-check report
+      - name: Upload byte-check report and baseline
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: ens-txt-byte-check-report
-          path: artifacts/ens_txt_byte_check_report.json
+          path: |
+            artifacts/ens_txt_byte_check_report.json
+            projects/zora-jay-agent/config/ens_txt_byte_baseline_v0_1.json
           if-no-files-found: warn
