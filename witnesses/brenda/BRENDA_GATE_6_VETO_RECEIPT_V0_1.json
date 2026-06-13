@@ -1,0 +1,22 @@
+{
+  "receipt_type": "BRENDA_GATE_6_VETO_RECEIPT_V0_1",
+  "observed_at_utc": "2026-06-13T23:40:48Z",
+  "repo": "jsonwisdom/AL",
+  "branch": "alms-v2-machine-speed",
+  "head_commit": "89eb47f9c4118775827a2ff893237567f924a596",
+  "emission_id": "69c90f7",
+  "veto_path": "witnesses/brenda/veto.json",
+  "veto_sha256": "20a4546b0d6cfc9d3cf76a4a43764c9e74d06720804c5a772e97612e8a4407cb",
+  "veto_signature_path": "witnesses/brenda/veto.sig",
+  "veto_signature_sha256": "c6c33c22894993eddbfd29b5535a27910f7106966cf80f933a1b909dd22c5fc8",
+  "public_key_sha256": "bce19b6dbb29a3546b23eaf0809730f4f93bca387a1f25002ffac42d825cfe6d",
+  "veto": false,
+  "signature_verified_locally": true,
+  "brenda_state": "YELLOW_BRENDA_GATE_6_VETO_READY",
+  "enforcing": false,
+  "authority": false,
+  "verified": false,
+  "production_green": false,
+  "no_fake_green": true,
+  "ruling": "Gate 6 veto surface exists and signed veto=false verifies locally. Brenda still not enforcing until expiry and resolver gate passes."
+}
