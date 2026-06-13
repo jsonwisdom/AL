@@ -1,6 +1,12 @@
 import { decodeEventLog, parseAbiItem, type Address } from "viem";
 
-import { JOY_CONTRACT_ADDRESS, START_BLOCK, ZERO_KEY_RULING } from "./config.js";
+import {
+  JOY_CONTRACT_ADDRESS,
+  START_BLOCK,
+  ZERO_KEY_RULING,
+  assertVerifiedTarget,
+  targetReceipt
+} from "./config.js";
 import { client } from "./rpc.js";
 import { applyTransfer, snapshotOwnership, type OwnershipState } from "./state.js";
 
@@ -14,15 +20,12 @@ async function main() {
   console.log(JSON.stringify({
     subsystem: "joy-revenue-indexer",
     mode: "read_only_event_indexer",
-    contract: JOY_CONTRACT_ADDRESS,
+    target: targetReceipt(),
     start_block: START_BLOCK.toString(),
     ...ZERO_KEY_RULING
   }));
 
-  if (JOY_CONTRACT_ADDRESS === "0x0000000000000000000000000000000000000000") {
-    console.error("JOY_CONTRACT_ADDRESS is not set. Refusing fake revenue indexing.");
-    process.exit(1);
-  }
+  assertVerifiedTarget();
 
   await client.watchEvent({
     address: JOY_CONTRACT_ADDRESS,
@@ -55,6 +58,7 @@ async function main() {
           to,
           token_id: tokenId.toString(),
           ownership_snapshot: snapshotOwnership(ownership),
+          target: targetReceipt(),
           ...ZERO_KEY_RULING
         }));
       }
@@ -63,6 +67,7 @@ async function main() {
       console.error(JSON.stringify({
         type: "indexer_error",
         error: error.message,
+        target: targetReceipt(),
         ...ZERO_KEY_RULING
       }));
     }
@@ -70,6 +75,11 @@ async function main() {
 }
 
 main().catch((err) => {
-  console.error(err);
+  console.error(JSON.stringify({
+    type: "indexer_halted",
+    error: err instanceof Error ? err.message : String(err),
+    target: targetReceipt(),
+    ...ZERO_KEY_RULING
+  }));
   process.exit(1);
 });
