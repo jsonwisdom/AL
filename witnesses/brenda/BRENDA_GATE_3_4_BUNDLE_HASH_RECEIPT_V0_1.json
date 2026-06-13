@@ -1,0 +1,26 @@
+{
+  "receipt_type": "BRENDA_GATE_3_4_BUNDLE_HASH_RECEIPT_V0_1",
+  "observed_at_utc": "2026-06-13T23:38:58Z",
+  "repo": "jsonwisdom/AL",
+  "branch": "alms-v2-machine-speed",
+  "head_commit": "ea85d61cd52af6982ccf2a1b3c8188e9e8754587",
+  "emission_id": "69c90f7",
+  "bundle_path": "external/brenda/emission-69c90f7.tar.gz",
+  "bundle_sha256": "1a173fb9796309be0e3461d100794f2f73dd5bbf00612bde8b253f9018982b5c",
+  "bundle_manifest_path": "external/brenda/emission-69c90f7.bundle.sha256",
+  "bundle_manifest_sha256": "8dae338e0d56f845d8ac81cf1818d43c8472d0114d2125a80641b35da0f7e9e9",
+  "unpack_hash_check_passed": true,
+  "artifact_hashes": {
+    "CARD_EXTERNAL.md": "69d52ab4da6f87a4e3c8b13269d39775a35c7ece28f06248cd4c76c602d03291",
+    "RECEIPT_EXTERNAL.json": "45de030a0a967fa7a420350a841bb427c4e43f7e6ec7cdcb9b90a69339adc332",
+    "POST_LANDING_STATE.txt": "2b3b0bcdd6e6b27cb87e8f70b447d1a600b61be9f59051cdabdc89729881f3f9",
+    "artifact_hashes.sha256": "ce86234a7b964bc9ac4ed25078db788f21be0647129645c547322c08e8950f0b"
+  },
+  "brenda_state": "YELLOW_BRENDA_GATE_4_HASHED",
+  "enforcing": false,
+  "authority": false,
+  "verified": false,
+  "production_green": false,
+  "no_fake_green": true,
+  "ruling": "Gates 3 and 4 prepared: external bundle exists, unpacks, and internal artifact hashes verify. Brenda still not enforcing until reported binding, veto, expiry, and resolver gates pass."
+}
