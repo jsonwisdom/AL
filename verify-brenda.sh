@@ -60,7 +60,10 @@ echo "PASS gate_3: bundle hash verifies"
 
 TMP="$(mktemp -d)"
 tar -xzf "$BUNDLE" -C "$TMP"
-sha256sum -c "$TMP/artifact_hashes.sha256"
+(
+  cd "$TMP"
+  sha256sum -c artifact_hashes.sha256
+)
 
 echo "PASS gate_4: unpacked artifact hashes verify"
 
