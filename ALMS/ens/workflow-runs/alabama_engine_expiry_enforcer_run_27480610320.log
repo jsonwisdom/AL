@@ -1,0 +1,190 @@
+expiry-enforcer	Set up job	﻿2026-06-13T22:10:49.3332238Z Current runner version: '2.335.1'
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3368313Z ##[group]Runner Image Provisioner
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3369589Z Hosted Compute Agent
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3370713Z Version: 20260527.539
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3371842Z Commit: a891dd388383b896fa6ac04a82c0b75cec981078
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3373043Z Build Date: 2026-05-27T21:39:57Z
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3374326Z Worker ID: {4d53017b-0c24-46f4-b0d0-1ee56acebaf9}
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3375485Z Azure Region: eastus
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3376383Z ##[endgroup]
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3379187Z ##[group]Operating System
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3380394Z Ubuntu
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3381134Z 24.04.4
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3381789Z LTS
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3382384Z ##[endgroup]
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3383006Z ##[group]Runner Image
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3383674Z Image: ubuntu-24.04
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3384313Z Version: 20260607.184.1
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3385474Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260607.184/images/ubuntu/Ubuntu2404-Readme.md
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3387320Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260607.184
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3388387Z ##[endgroup]
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3391792Z ##[group]GITHUB_TOKEN Permissions
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3394342Z Actions: write
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3394986Z ArtifactMetadata: write
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3395727Z Attestations: write
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3396369Z Checks: write
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3396988Z CodeQuality: write
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3397596Z Contents: write
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3398194Z CopilotRequests: write
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3399159Z Deployments: write
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3399785Z Discussions: write
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3400652Z Issues: write
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3401307Z Metadata: read
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3401875Z Models: read
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3402629Z Packages: write
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3403245Z Pages: write
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3403790Z PullRequests: write
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3404464Z RepositoryProjects: write
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3405113Z SecurityEvents: write
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3405763Z Statuses: write
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3406402Z VulnerabilityAlerts: read
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3407028Z ##[endgroup]
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3409158Z Secret source: Actions
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3410422Z Prepare workflow directory
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3825247Z Prepare all required actions
+expiry-enforcer	Set up job	2026-06-13T22:10:49.3877792Z Getting action download info
+expiry-enforcer	Set up job	2026-06-13T22:10:49.5937463Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+expiry-enforcer	Set up job	2026-06-13T22:10:49.7787800Z Complete job name: expiry-enforcer
+expiry-enforcer	Run actions/checkout@v4	﻿2026-06-13T22:10:49.8603760Z ##[group]Run actions/checkout@v4
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.8604651Z with:
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.8605097Z   repository: jsonwisdom/AL
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.8609366Z   token: ***
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.8609817Z   ssh-strict: true
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.8610520Z   ssh-user: git
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.8610973Z   persist-credentials: true
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.8611467Z   clean: true
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.8612008Z   sparse-checkout-cone-mode: true
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.8612556Z   fetch-depth: 1
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.8612994Z   fetch-tags: false
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.8613437Z   show-progress: true
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.8613877Z   lfs: false
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.8614286Z   submodules: false
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.8614734Z   set-safe-directory: true
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.8615458Z ##[endgroup]
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.9717756Z Syncing repository: jsonwisdom/AL
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.9719542Z ##[group]Getting Git version info
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.9720400Z Working directory is '/home/runner/work/AL/AL'
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.9721337Z [command]/usr/bin/git version
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.9787318Z git version 2.54.0
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.9811640Z ##[endgroup]
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.9826041Z Temporarily overriding HOME='/home/runner/work/_temp/dae7f9c5-36f3-4e92-9bac-200f180383dc' before making global git config changes
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.9828172Z Adding repository directory to the temporary git global config as a safe directory
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.9839081Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/AL/AL
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.9880176Z Deleting the contents of '/home/runner/work/AL/AL'
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.9883977Z ##[group]Initializing the repository
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.9887752Z [command]/usr/bin/git init /home/runner/work/AL/AL
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.9960469Z hint: Using 'master' as the name for the initial branch. This default branch name
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.9962026Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.9963431Z hint: to use in all of your new repositories, which will suppress this warning,
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.9964308Z hint: call:
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.9964722Z hint:
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.9965241Z hint: 	git config --global init.defaultBranch <name>
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.9965868Z hint:
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.9966460Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.9967383Z hint: 'development'. The just-created branch can be renamed via this command:
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.9968118Z hint:
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.9968555Z hint: 	git branch -m <name>
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.9969034Z hint:
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.9969664Z hint: Disable this message with "git config set advice.defaultBranchName false"
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.9976163Z Initialized empty Git repository in /home/runner/work/AL/AL/.git/
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:49.9986923Z [command]/usr/bin/git remote add origin https://github.com/jsonwisdom/AL
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:50.0025513Z ##[endgroup]
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:50.0026681Z ##[group]Disabling automatic garbage collection
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:50.0029182Z [command]/usr/bin/git config --local gc.auto 0
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:50.0058003Z ##[endgroup]
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:50.0059077Z ##[group]Setting up auth
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:50.0064601Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:50.0096287Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:50.0408357Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:50.0437427Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:50.0667126Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:50.0697959Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:50.0938897Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:50.0973982Z ##[endgroup]
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:50.0975093Z ##[group]Fetching the repository
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:50.0982100Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +fdcf81f2b3bd9aab176961d4685a1c870300db3b:refs/remotes/origin/alms-v2-machine-speed
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:50.6050737Z From https://github.com/jsonwisdom/AL
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:50.6052059Z  * [new ref]         fdcf81f2b3bd9aab176961d4685a1c870300db3b -> origin/alms-v2-machine-speed
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:50.6088526Z ##[endgroup]
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:50.6089355Z ##[group]Determining the checkout info
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:50.6091906Z ##[endgroup]
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:50.6098229Z [command]/usr/bin/git sparse-checkout disable
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:50.6141573Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:50.6168062Z ##[group]Checking out the ref
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:50.6172368Z [command]/usr/bin/git checkout --progress --force -B alms-v2-machine-speed refs/remotes/origin/alms-v2-machine-speed
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:50.6572794Z Switched to a new branch 'alms-v2-machine-speed'
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:50.6574682Z branch 'alms-v2-machine-speed' set up to track 'origin/alms-v2-machine-speed'.
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:50.6583745Z ##[endgroup]
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:50.6624047Z [command]/usr/bin/git log -1 --format=%H
+expiry-enforcer	Run actions/checkout@v4	2026-06-13T22:10:50.6646908Z fdcf81f2b3bd9aab176961d4685a1c870300db3b
+expiry-enforcer	Install jq	﻿2026-06-13T22:10:50.6856592Z ##[group]Run sudo apt-get update && sudo apt-get install -y jq
+expiry-enforcer	Install jq	2026-06-13T22:10:50.6857670Z ^[[36;1msudo apt-get update && sudo apt-get install -y jq^[[0m
+expiry-enforcer	Install jq	2026-06-13T22:10:50.6994909Z shell: /usr/bin/bash -e {0}
+expiry-enforcer	Install jq	2026-06-13T22:10:50.6995584Z ##[endgroup]
+expiry-enforcer	Install jq	2026-06-13T22:10:50.7856910Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+expiry-enforcer	Install jq	2026-06-13T22:10:50.8244639Z Hit:6 https://packages.microsoft.com/repos/azure-cli noble InRelease
+expiry-enforcer	Install jq	2026-06-13T22:10:50.8248592Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+expiry-enforcer	Install jq	2026-06-13T22:10:50.8273215Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+expiry-enforcer	Install jq	2026-06-13T22:10:50.8286425Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+expiry-enforcer	Install jq	2026-06-13T22:10:50.8338323Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+expiry-enforcer	Install jq	2026-06-13T22:10:50.8357809Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+expiry-enforcer	Install jq	2026-06-13T22:10:50.8487997Z Get:8 https://dl.google.com/linux/chrome-stable/deb stable InRelease [1825 B]
+expiry-enforcer	Install jq	2026-06-13T22:10:50.9403548Z Get:9 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [175 kB]
+expiry-enforcer	Install jq	2026-06-13T22:10:50.9501547Z Get:10 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [146 kB]
+expiry-enforcer	Install jq	2026-06-13T22:10:51.0471294Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1723 kB]
+expiry-enforcer	Install jq	2026-06-13T22:10:51.0558433Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [331 kB]
+expiry-enforcer	Install jq	2026-06-13T22:10:51.0593003Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [181 kB]
+expiry-enforcer	Install jq	2026-06-13T22:10:51.0603521Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 c-n-f Metadata [17.4 kB]
+expiry-enforcer	Install jq	2026-06-13T22:10:51.0611397Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1689 kB]
+expiry-enforcer	Install jq	2026-06-13T22:10:51.0714920Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [331 kB]
+expiry-enforcer	Install jq	2026-06-13T22:10:51.0742211Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [388 kB]
+expiry-enforcer	Install jq	2026-06-13T22:10:51.0769784Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 c-n-f Metadata [34.7 kB]
+expiry-enforcer	Install jq	2026-06-13T22:10:51.0782255Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [2733 kB]
+expiry-enforcer	Install jq	2026-06-13T22:10:51.0946383Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [649 kB]
+expiry-enforcer	Install jq	2026-06-13T22:10:51.1430872Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+expiry-enforcer	Install jq	2026-06-13T22:10:51.1459052Z Get:22 http://azure.archive.ubuntu.com/ubuntu noble-backports/main amd64 Packages [40.6 kB]
+expiry-enforcer	Install jq	2026-06-13T22:10:51.1469582Z Get:23 http://azure.archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [5768 B]
+expiry-enforcer	Install jq	2026-06-13T22:10:51.1483177Z Get:24 http://azure.archive.ubuntu.com/ubuntu noble-backports/main amd64 c-n-f Metadata [368 B]
+expiry-enforcer	Install jq	2026-06-13T22:10:51.1487830Z Get:25 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [31.0 kB]
+expiry-enforcer	Install jq	2026-06-13T22:10:51.1502205Z Get:26 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [10.5 kB]
+expiry-enforcer	Install jq	2026-06-13T22:10:51.1516357Z Get:27 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 c-n-f Metadata [1588 B]
+expiry-enforcer	Install jq	2026-06-13T22:10:51.1703068Z Get:28 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1424 kB]
+expiry-enforcer	Install jq	2026-06-13T22:10:51.1771622Z Get:29 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [245 kB]
+expiry-enforcer	Install jq	2026-06-13T22:10:51.1797318Z Get:30 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Components [44.9 kB]
+expiry-enforcer	Install jq	2026-06-13T22:10:51.1824464Z Get:31 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 c-n-f Metadata [11.4 kB]
+expiry-enforcer	Install jq	2026-06-13T22:10:51.1890791Z Get:32 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1186 kB]
+expiry-enforcer	Install jq	2026-06-13T22:10:51.1938882Z Get:33 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [231 kB]
+expiry-enforcer	Install jq	2026-06-13T22:10:51.1944727Z Get:34 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Components [76.3 kB]
+expiry-enforcer	Install jq	2026-06-13T22:10:51.1972343Z Get:35 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 c-n-f Metadata [23.3 kB]
+expiry-enforcer	Install jq	2026-06-13T22:10:51.2012233Z Get:36 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [2573 kB]
+expiry-enforcer	Install jq	2026-06-13T22:10:51.2182585Z Get:37 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [615 kB]
+expiry-enforcer	Install jq	2026-06-13T22:10:51.2593752Z Get:38 https://dl.google.com/linux/chrome-stable/deb stable/main amd64 Packages [1215 B]
+expiry-enforcer	Install jq	2026-06-13T22:10:56.7722941Z Fetched 15.3 MB in 2s (8169 kB/s)
+expiry-enforcer	Install jq	2026-06-13T22:10:57.5290296Z Reading package lists...
+expiry-enforcer	Install jq	2026-06-13T22:10:57.5627125Z Reading package lists...
+expiry-enforcer	Install jq	2026-06-13T22:10:57.7574700Z Building dependency tree...
+expiry-enforcer	Install jq	2026-06-13T22:10:57.7581389Z Reading state information...
+expiry-enforcer	Install jq	2026-06-13T22:10:57.9514364Z jq is already the newest version (1.7.1-3ubuntu0.24.04.2).
+expiry-enforcer	Install jq	2026-06-13T22:10:57.9515495Z 0 upgraded, 0 newly installed, 0 to remove and 34 not upgraded.
+expiry-enforcer	Enforce Alabama Engine YELLOW expiry	﻿2026-06-13T22:10:57.9578561Z ##[group]Run bash scripts/ens/alabama_engine_expiry_enforcer.sh
+expiry-enforcer	Enforce Alabama Engine YELLOW expiry	2026-06-13T22:10:57.9579105Z ^[[36;1mbash scripts/ens/alabama_engine_expiry_enforcer.sh^[[0m
+expiry-enforcer	Enforce Alabama Engine YELLOW expiry	2026-06-13T22:10:57.9615649Z shell: /usr/bin/bash -e {0}
+expiry-enforcer	Enforce Alabama Engine YELLOW expiry	2026-06-13T22:10:57.9615973Z ##[endgroup]
+expiry-enforcer	Enforce Alabama Engine YELLOW expiry	2026-06-13T22:10:57.9925879Z YELLOW subject=jaywisdom.base.eth rule=MISSING_WITH_PENDING_UPDATE_RECEIPT expires_at=2026-06-16T22:04:10Z missing=alms.packet.cid alms.packet.sha256 alms.matrix.hash
+expiry-enforcer	Enforce Alabama Engine YELLOW expiry	2026-06-13T22:10:57.9927334Z EXPIRY_ENFORCER_OK pending_update_unexpired expires_at=2026-06-16T22:04:10Z
+expiry-enforcer	Post Run actions/checkout@v4	﻿2026-06-13T22:10:58.0120863Z Post job cleanup.
+expiry-enforcer	Post Run actions/checkout@v4	2026-06-13T22:10:58.1091741Z [command]/usr/bin/git version
+expiry-enforcer	Post Run actions/checkout@v4	2026-06-13T22:10:58.1128126Z git version 2.54.0
+expiry-enforcer	Post Run actions/checkout@v4	2026-06-13T22:10:58.1168814Z Temporarily overriding HOME='/home/runner/work/_temp/f0b18136-5476-40ec-869d-e9ae71456dfb' before making global git config changes
+expiry-enforcer	Post Run actions/checkout@v4	2026-06-13T22:10:58.1169682Z Adding repository directory to the temporary git global config as a safe directory
+expiry-enforcer	Post Run actions/checkout@v4	2026-06-13T22:10:58.1174555Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/AL/AL
+expiry-enforcer	Post Run actions/checkout@v4	2026-06-13T22:10:58.1216766Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+expiry-enforcer	Post Run actions/checkout@v4	2026-06-13T22:10:58.1249352Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+expiry-enforcer	Post Run actions/checkout@v4	2026-06-13T22:10:58.1487940Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+expiry-enforcer	Post Run actions/checkout@v4	2026-06-13T22:10:58.1512594Z http.https://github.com/.extraheader
+expiry-enforcer	Post Run actions/checkout@v4	2026-06-13T22:10:58.1525131Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+expiry-enforcer	Post Run actions/checkout@v4	2026-06-13T22:10:58.1580389Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+expiry-enforcer	Post Run actions/checkout@v4	2026-06-13T22:10:58.1821520Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+expiry-enforcer	Post Run actions/checkout@v4	2026-06-13T22:10:58.1859484Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+expiry-enforcer	Complete job	﻿2026-06-13T22:10:58.2230932Z Cleaning up orphan processes
+expiry-enforcer	Complete job	2026-06-13T22:10:58.2557656Z ##[warning]Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/checkout@v4. Actions will be forced to run with Node.js 24 by default starting June 16th, 2026. Node.js 20 will be removed from the runner on September 16th, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
