@@ -1,0 +1,17 @@
+{
+  "name": "al-zora-jay-agent-github-evidence-backend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Read-only GitHub evidence backend for AL Zora Jay Agent NO_FAKE_GREEN collector.",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
