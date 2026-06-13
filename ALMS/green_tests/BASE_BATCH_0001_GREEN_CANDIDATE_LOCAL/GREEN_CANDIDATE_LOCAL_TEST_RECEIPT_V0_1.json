@@ -1,14 +1,14 @@
 {
   "receipt_type": "GREEN_CANDIDATE_LOCAL_TEST_RECEIPT_V0_1",
-  "observed_at_utc": "2026-06-13T23:14:23Z",
+  "observed_at_utc": "2026-06-13T23:17:52Z",
   "repo": "jsonwisdom/AL",
   "branch": "alms-v2-machine-speed",
-  "head_commit": "8f945bd909230579bf4bf6801e5e9cc14e46b9c8",
+  "head_commit": "100cea7a1e25c6e3456f6fb70fd943d962ee6a98",
   "attestation_uid": "0xa16638fca94a7b7941db929fb86809bd617958d4ef8e32dea3e36969781fc20c",
   "schema_uid": "0xed5ef9168064d51396fb2e50e626efe1f63a0e70858c19b9651661aa867a2045",
   "local_green_candidate_inputs": {
     "batch_root": "0xdd4a72d33e2c01bc114e21cb279889afb50415f562ad36b9bfba041ebdbfea54",
-    "artifact_manifest_uri": "ipfs://bafkreigk4nktwdwonsvidxd7tanjlfoiv4hia46ghnyesyhptchahpteci",
+    "artifact_manifest_uri": "ipfs://bafkreidjbm2gyfz5wg5itrv7addqld5t2axxem4tzws4wtlnlv5wcde2pa",
     "artifact_count": 3
   },
   "blockers_cleared_locally": {
@@ -18,8 +18,8 @@
   },
   "sha256": {
     "artifact_hashes": "dd4a72d33e2c01bc114e21cb279889afb50415f562ad36b9bfba041ebdbfea54",
-    "artifact_manifest": "cae3553b0ece6caa81dc7f981a9595c8af0e8073c63b704960ef988e03be6412",
-    "batch_descriptor": "c91e29dece91a342bf1ecd5c39ec80688337c49f49361ac4de60dc1f341c0949"
+    "artifact_manifest": "690b346c173db1ba89c6bf00c7058fb3d02f723393cda5cb4d6d5d7b610c9a78",
+    "batch_descriptor": "52d9a1329ee38d1be45e2df101aae23e13864529dc576bbb1853d77e7d835b33"
   },
   "truth_state": "GREEN_CANDIDATE_LOCAL",
   "production_green": false,
