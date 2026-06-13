@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "tsx src/indexer.ts",
+    "readback": "tsx src/revenue-readback.ts",
     "check:no-keys": "tsx scripts/check-no-keys.ts",
     "lint": "npm run check:no-keys"
   },
