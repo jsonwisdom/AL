@@ -1,0 +1,19 @@
+name: Brenda Gate
+
+on:
+  push:
+    branches:
+      - alms-v2-machine-speed
+  pull_request:
+
+jobs:
+  brenda-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq openssl
+
+      - name: Run Brenda verifier
+        run: ./verify-brenda.sh 69c90f7
