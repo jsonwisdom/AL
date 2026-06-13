@@ -1,0 +1,61 @@
+{
+  "version": "0.1",
+  "status": "BASELINE_DRAFT",
+  "truth_state": "YELLOW",
+  "no_fake_green": true,
+  "purpose": "Daily byte-for-byte resolver read-back for ENS TXT witness records.",
+  "challenge_period_seconds": 604800,
+  "names": [
+    {
+      "name": "jaywisdom.eth",
+      "role": "SEAL_L1",
+      "required": true,
+      "read_via": "ethereum_mainnet_ens_resolver",
+      "text_records": [
+        {
+          "canonical_key": "alms.public_key",
+          "key_candidates": ["alms.public_key"],
+          "expected_utf8": "did:key:jaywisdom-v1",
+          "required": true,
+          "source": "user_supplied_2026-06-13"
+        },
+        {
+          "canonical_key": "key: al.verified",
+          "key_candidates": ["key: al.verified", "al.verified", "alms.verified", "alms.verified_root"],
+          "expected_utf8": "root=sha256:65377be53afaa04856a5bad16a6f90481ef703e4ce1af35763647f0dbb86d460;commit=03e0e1711a6294d8a35b478a5b90ee17046b2f64;advisory=ipfs://QmbrGfzwy5DmzGhE5Txscs7BfaRknNosc3G5r1pfQEsdqF",
+          "required": true,
+          "source": "user_supplied_2026-06-13"
+        }
+      ]
+    },
+    {
+      "name": "jaywisdom.base.eth",
+      "role": "ENGINE_L2",
+      "required": true,
+      "read_via": "ens_resolution_path_with_ccip/base_observation",
+      "text_records": [
+        {
+          "canonical_key": "alms.public_key",
+          "key_candidates": ["alms.public_key"],
+          "expected_utf8": "did:key:jaywisdom-v1",
+          "required": true,
+          "source": "user_requested_engine_check_2026-06-13"
+        },
+        {
+          "canonical_key": "key: al.verified",
+          "key_candidates": ["key: al.verified", "al.verified", "alms.verified", "alms.verified_root"],
+          "expected_utf8": "root=sha256:65377be53afaa04856a5bad16a6f90481ef703e4ce1af35763647f0dbb86d460;commit=03e0e1711a6294d8a35b478a5b90ee17046b2f64;advisory=ipfs://QmbrGfzwy5DmzGhE5Txscs7BfaRknNosc3G5r1pfQEsdqF",
+          "required": true,
+          "source": "user_requested_engine_check_2026-06-13"
+        }
+      ]
+    }
+  ],
+  "failure_policy": {
+    "missing_resolver": "fail",
+    "missing_record": "fail",
+    "byte_mismatch": "fail",
+    "empty_record": "fail",
+    "base_name_unreadable": "fail_yellow_no_fake_green"
+  }
+}
