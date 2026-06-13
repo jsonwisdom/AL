@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "required": [
+    "receipt_type",
+    "subject_name",
+    "missing_record",
+    "expected_value_hash",
+    "reason",
+    "opened_at_utc",
+    "expires_at_utc",
+    "controller",
+    "signature_or_commit_sha",
+    "no_fake_green"
+  ],
+  "properties": {
+    "receipt_type": { "const": "PENDING_UPDATE_RECEIPT_V0_1" },
+    "subject_name": { "type": "string" },
+    "missing_record": { "type": "string" },
+    "expected_value_hash": { "type": "string" },
+    "reason": { "type": "string" },
+    "opened_at_utc": { "type": "string" },
+    "expires_at_utc": { "type": "string" },
+    "controller": { "type": "string" },
+    "signature_or_commit_sha": { "type": "string" },
+    "no_fake_green": { "const": true }
+  }
+}
