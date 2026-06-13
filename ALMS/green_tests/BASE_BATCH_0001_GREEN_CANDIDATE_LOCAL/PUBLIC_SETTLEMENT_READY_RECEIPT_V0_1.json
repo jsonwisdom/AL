@@ -1,0 +1,24 @@
+{
+  "receipt_type": "PUBLIC_SETTLEMENT_READY_RECEIPT_V0_1",
+  "observed_at_utc": "2026-06-13T23:22:05Z",
+  "repo": "jsonwisdom/AL",
+  "branch": "alms-v2-machine-speed",
+  "head_commit": "076221b710f33a2f1bfad3b5fe7a8a4c855e1ea4",
+  "settlement_payload": {
+    "batch_root": "0xdd4a72d33e2c01bc114e21cb279889afb50415f562ad36b9bfba041ebdbfea54",
+    "artifact_manifest_uri": "ipfs://bafkreidjbm2gyfz5wg5itrv7addqld5t2axxem4tzws4wtlnlv5wcde2pa",
+    "artifact_count": 3,
+    "replay_state": "GREEN_CANDIDATE_LOCAL_REPLAYED"
+  },
+  "sha256": {
+    "public_settlement_payload": "71dbe2f7a7e6650a9ad3fb90521e7df1483709f7c956f6633bb53a43f4bf8eb6",
+    "independent_replay": "027d8a93da2b808300ce354c3fa3f0c1a870314d5ab9510d84603ebf6ee6d5da",
+    "green_candidate_receipt": "cdf72e2e41cc90f7707bd99c45d33b85f7a32aecf5c1db144411c8a1f45c12fc"
+  },
+  "settlement_ready": true,
+  "production_green": false,
+  "authority": false,
+  "verified": false,
+  "no_fake_green": true,
+  "ruling": "Public settlement payload is ready and immutable for next anchoring step. Production GREEN begins only after new EAS attestation or resolver update is observed and replayed."
+}
