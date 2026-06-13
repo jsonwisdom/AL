@@ -1,12 +1,14 @@
 # JAYWISDOM_FIRST50_OPERATOR_EXECUTION_PACKET_V0_1
 
-## STATUS: OPERATOR_EXECUTION_PACKET
+## STATUS: LOCAL_RUNBOOK_ONLY
 ## AUTHORITY: FALSE
 ## NO_FAKE_GREEN: TRUE
 
-This packet is the local execution handoff for populating and validating the first 50 `$JAYWISDOM` Transfer events on Base.
+This packet is a local runbook for collecting **up to 50 real** `$JAYWISDOM` ERC-20 `Transfer` events on Base.
 
-No fake rows. No assistant-side RPC claim. No BaseScan crawling claim. No revenue claim.
+It is not a live node, not a classifier, not a validated chain result, and not a revenue receipt.
+
+No fake rows. No padded rows. No assistant-side RPC claim. No BaseScan crawling claim. No revenue claim.
 
 ## Target
 
@@ -15,6 +17,32 @@ network=Base
 contract=0x694cE46C64D9D1a5e9376A9feBcF85Ec05D72e9F
 output_csv=docs/zora/fixtures/JAYWISDOM_first50_transfers.csv
 validator=tools/replay/jaywisdom_inception_replay_validator.py
+```
+
+## Critical Row Rule
+
+```text
+requested_limit=50
+csv_rows=min(50, actual_real_transfer_event_count)
+padding_allowed=false
+placeholder_rows_allowed=false
+```
+
+If the token has only 2 real `Transfer` events, the CSV must contain exactly 2 rows, not 50.
+
+Shortfall is recorded as validator or receipt metadata, not as fake CSV rows.
+
+## Operator-Reported Current Claim
+
+The following is operator-reported until backed by a CSV export, screenshot, RPC output, or explorer/API evidence:
+
+```text
+reported_transfer_event_count=2
+reported_holders=92
+reported_total_supply=1000000000
+reported_decimals=18
+reported_contract_type=CreatorCoin proxy
+assistant_independent_verification=false
 ```
 
 ## Path A — Public Base RPC
@@ -26,7 +54,7 @@ set -e
 
 cd ~/AL 2>/dev/null || cd ~/COMPUTERWISDOM/AL 2>/dev/null || cd ~/COMPUTERWISDOM/JOY 2>/dev/null || pwd
 
-echo "== JAYWISDOM FIRST50 RPC FETCH =="
+echo "== JAYWISDOM UP-TO-50 REAL TRANSFER FETCH =="
 python3 tools/replay/fetch_first_50_jaywisdom_transfers.py \
   --rpc-url "$BASE_RPC_URL" \
   --contract 0x694cE46C64D9D1a5e9376A9feBcF85Ec05D72e9F \
@@ -92,7 +120,7 @@ git add \
   docs/zora/fixtures/JAYWISDOM_first50_transfers.csv \
   docs/zora/fixtures/JAYWISDOM_first50_validation_receipt.json
 
-git commit -m "data(zora): add JAYWISDOM first50 transfer replay receipt"
+git commit -m "data(zora): add JAYWISDOM transfer replay receipt"
 git push origin master
 
 git log --oneline -5
@@ -106,16 +134,17 @@ Paste either:
 ```text
 1. docs/zora/fixtures/JAYWISDOM_first50_validation_receipt.json
 2. sha256sum outputs
-3. first 5 CSV rows
+3. real CSV rows
 4. final commit SHA after push
 ```
 
 ## Validation Meaning
 
 ```text
-first50_rows_present=true only after real CSV rows exist
-inception_anchor_ready=true only after earliest row is validated
+rows_present=true only after real CSV rows exist
+inception_anchor_ready=true only after earliest real row is validated
 rpc_total_supply_checked=true only if BASE_RPC_URL validation succeeded
+short_event_set_valid=true if fewer than 50 real events exist and no padding is used
 revenue_confirmed=false always unless a separate creator earnings receipt exists
 ```
 
@@ -135,10 +164,12 @@ no_fake_green=true
 ## Ruling
 
 ```text
-FULL_SEND_PACKET = LANDED
+LOCAL_RUNBOOK = LANDED
 LOCAL_OPERATOR_ACTION_REQUIRED = TRUE
+CSV_ROWS = REAL_TRANSFER_EVENTS_ONLY
+PADDING_ALLOWED = FALSE
 FIRST50_ROWS = NOT_POPULATED_BY_ASSISTANT
-NEXT_RECEIPT = CSV_OR_VALIDATOR_STDOUT
+NEXT_RECEIPT = REAL_CSV_OR_VALIDATOR_STDOUT
 AUTHORITY = FALSE
 NO_FAKE_GREEN = TRUE
 ```
