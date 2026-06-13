@@ -25,6 +25,13 @@
           "expected_utf8": "root=sha256:65377be53afaa04856a5bad16a6f90481ef703e4ce1af35763647f0dbb86d460;commit=03e0e1711a6294d8a35b478a5b90ee17046b2f64;advisory=ipfs://QmbrGfzwy5DmzGhE5Txscs7BfaRknNosc3G5r1pfQEsdqF",
           "required": true,
           "source": "user_supplied_2026-06-13"
+        },
+        {
+          "canonical_key": "receipts_engine",
+          "key_candidates": ["receipts_engine", "receipts_engine_root", "receipts_engine_hash", "receipts_engine_sha256"],
+          "expected_utf8": "9f73ce11d4bc0f9870ee1a9e46d45c9526632b8defd14a7f378f50d0497d3942",
+          "required": true,
+          "source": "user_supplied_2026-06-13"
         }
       ]
     },
@@ -47,6 +54,13 @@
           "expected_utf8": "root=sha256:65377be53afaa04856a5bad16a6f90481ef703e4ce1af35763647f0dbb86d460;commit=03e0e1711a6294d8a35b478a5b90ee17046b2f64;advisory=ipfs://QmbrGfzwy5DmzGhE5Txscs7BfaRknNosc3G5r1pfQEsdqF",
           "required": true,
           "source": "user_requested_engine_check_2026-06-13"
+        },
+        {
+          "canonical_key": "receipts_engine",
+          "key_candidates": ["receipts_engine", "receipts_engine_root", "receipts_engine_hash", "receipts_engine_sha256"],
+          "expected_utf8": "9f73ce11d4bc0f9870ee1a9e46d45c9526632b8defd14a7f378f50d0497d3942",
+          "required": true,
+          "source": "user_supplied_engine_baseline_2026-06-13"
         }
       ]
     }
