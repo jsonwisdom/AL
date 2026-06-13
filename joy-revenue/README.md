@@ -17,6 +17,7 @@ joy-revenue/src/rpc.ts
 joy-revenue/src/state.ts
 joy-revenue/src/indexer.ts
 joy-revenue/scripts/check-no-keys.ts
+joy-revenue/CONTRACT_VERIFICATION_GATE.md
 .github/workflows/joy-revenue-ci-no-keys.yml
 ```
 
@@ -27,11 +28,26 @@ cd joy-revenue
 npm install
 RPC_URL=wss://your-sepolia-or-base-node.example/ws \
 JOY_CONTRACT_ADDRESS=0x0000000000000000000000000000000000000000 \
+CONTRACT_VERIFICATION_STATUS=unverified \
+ZORA_PRODUCT_TYPE=unknown \
 START_BLOCK=0 \
 npm run dev
 ```
 
-The zero address placeholder refuses fake indexing. Set `JOY_CONTRACT_ADDRESS` to a real contract only when the contract target is verified.
+The zero address placeholder refuses fake indexing.
+
+A non-zero address is still not enough. The indexer now requires:
+
+```text
+CONTRACT_VERIFICATION_STATUS=verified
+ZORA_PRODUCT_TYPE=<accepted product type>
+```
+
+See:
+
+```text
+joy-revenue/CONTRACT_VERIFICATION_GATE.md
+```
 
 ## Zero-key gate
 
@@ -71,6 +87,7 @@ It must produce unsigned JSON only and must not import wallet clients or broadca
 
 ```text
 PATH_C_REVENUE_REPORTING = SCAFFOLDED_READ_ONLY
+CONTRACT_VERIFICATION_GATE = ACTIVE
 ZERO_KEY_CI = LANDED
 PATH_D_CALLDATA = NOT_INCLUDED
 CHAIN_WRITE = FALSE
