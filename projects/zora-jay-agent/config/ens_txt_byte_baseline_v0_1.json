@@ -1,18 +1,63 @@
 {
-  "version": "0.1",
+  "version": "0.2",
   "status": "BASELINE_DRAFT",
   "truth_state": "YELLOW",
   "no_fake_green": true,
-  "purpose": "Daily byte-for-byte resolver read-back for ENS TXT witness records.",
+  "purpose": "Daily byte-for-byte resolver read-back for ENS TXT witness records on the L1 Seal and L2 Engine names.",
+  "accountability_level": "BYTE_FOR_BYTE_UTF8_AND_HEX",
   "challenge_period_seconds": 604800,
+  "promotion_rule": "GREEN only after resolver read-back returns every required TXT record, byte-for-byte UTF-8 matches the baseline, and the report artifact exists.",
   "names": [
     {
       "name": "jaywisdom.eth",
       "role": "SEAL_L1",
       "required": true,
+      "expected_record_count": 7,
       "read_via": "ethereum_mainnet_ens_resolver",
+      "source": "user_provided_ens_records_screen_2026-06-13",
       "text_records": [
         {
+          "screen_order": 1,
+          "canonical_key": "receipts_engine",
+          "key_candidates": ["receipts_engine", "receipts_engine_root", "receipts_engine_hash", "receipts_engine_sha256"],
+          "expected_utf8": "9f73ce11d4bc0f9870ee1a9e46d45c9526632b8defd14a7f378f50d0497d3942",
+          "required": true,
+          "source": "user_supplied_receipts_engine_hash_2026-06-13"
+        },
+        {
+          "screen_order": 2,
+          "canonical_key": "friar.image_cid",
+          "key_candidates": ["friar.image_cid"],
+          "expected_utf8": "bafybeiaqsfol2ke33jhpyjylhsxflt2izmxzd3qwj7brj7m3yd5qra6ahja",
+          "required": true,
+          "source": "screen_observed_2026-06-13"
+        },
+        {
+          "screen_order": 3,
+          "canonical_key": "friar.title",
+          "key_candidates": ["friar.title"],
+          "expected_utf8": "Jay's Wisdom",
+          "required": true,
+          "source": "screen_observed_2026-06-13"
+        },
+        {
+          "screen_order": 4,
+          "canonical_key": "friar.version",
+          "key_candidates": ["friar.version"],
+          "expected_utf8": "1",
+          "required": true,
+          "source": "screen_observed_2026-06-13"
+        },
+        {
+          "screen_order": 5,
+          "canonical_key": "friar.payload_hash",
+          "key_candidates": ["friar.payload_hash", "friar.payload_root", "friar.payload_sha256", "friar.payload"],
+          "expected_utf8": "0x8b7df5e6c9d2f4a1e3b5c7d9f1a3c5e7b9d1f3a5c7e9b1d3f5a7c9e1b3d5f7c9",
+          "required": true,
+          "source": "screen_observed_2026-06-13_wrapped_value"
+        },
+        {
+          "screen_order": 6,
           "canonical_key": "alms.public_key",
           "key_candidates": ["alms.public_key"],
           "expected_utf8": "did:key:jaywisdom-v1",
@@ -20,16 +65,10 @@
           "source": "user_supplied_2026-06-13"
         },
         {
+          "screen_order": 7,
           "canonical_key": "key: al.verified",
           "key_candidates": ["key: al.verified", "al.verified", "alms.verified", "alms.verified_root"],
           "expected_utf8": "root=sha256:65377be53afaa04856a5bad16a6f90481ef703e4ce1af35763647f0dbb86d460;commit=03e0e1711a6294d8a35b478a5b90ee17046b2f64;advisory=ipfs://QmbrGfzwy5DmzGhE5Txscs7BfaRknNosc3G5r1pfQEsdqF",
-          "required": true,
-          "source": "user_supplied_2026-06-13"
-        },
-        {
-          "canonical_key": "receipts_engine",
-          "key_candidates": ["receipts_engine", "receipts_engine_root", "receipts_engine_hash", "receipts_engine_sha256"],
-          "expected_utf8": "9f73ce11d4bc0f9870ee1a9e46d45c9526632b8defd14a7f378f50d0497d3942",
           "required": true,
           "source": "user_supplied_2026-06-13"
         }
@@ -39,28 +78,65 @@
       "name": "jaywisdom.base.eth",
       "role": "ENGINE_L2",
       "required": true,
+      "expected_record_count": 7,
       "read_via": "ens_resolution_path_with_ccip/base_observation",
+      "source": "required_engine_mirror_policy_from_jaywisdom_eth_screen_2026-06-13",
       "text_records": [
         {
-          "canonical_key": "alms.public_key",
-          "key_candidates": ["alms.public_key"],
-          "expected_utf8": "did:key:jaywisdom-v1",
-          "required": true,
-          "source": "user_requested_engine_check_2026-06-13"
-        },
-        {
-          "canonical_key": "key: al.verified",
-          "key_candidates": ["key: al.verified", "al.verified", "alms.verified", "alms.verified_root"],
-          "expected_utf8": "root=sha256:65377be53afaa04856a5bad16a6f90481ef703e4ce1af35763647f0dbb86d460;commit=03e0e1711a6294d8a35b478a5b90ee17046b2f64;advisory=ipfs://QmbrGfzwy5DmzGhE5Txscs7BfaRknNosc3G5r1pfQEsdqF",
-          "required": true,
-          "source": "user_requested_engine_check_2026-06-13"
-        },
-        {
+          "screen_order": 1,
           "canonical_key": "receipts_engine",
           "key_candidates": ["receipts_engine", "receipts_engine_root", "receipts_engine_hash", "receipts_engine_sha256"],
           "expected_utf8": "9f73ce11d4bc0f9870ee1a9e46d45c9526632b8defd14a7f378f50d0497d3942",
           "required": true,
-          "source": "user_supplied_engine_baseline_2026-06-13"
+          "source": "engine_required_mirror_2026-06-13"
+        },
+        {
+          "screen_order": 2,
+          "canonical_key": "friar.image_cid",
+          "key_candidates": ["friar.image_cid"],
+          "expected_utf8": "bafybeiaqsfol2ke33jhpyjylhsxflt2izmxzd3qwj7brj7m3yd5qra6ahja",
+          "required": true,
+          "source": "engine_required_mirror_2026-06-13"
+        },
+        {
+          "screen_order": 3,
+          "canonical_key": "friar.title",
+          "key_candidates": ["friar.title"],
+          "expected_utf8": "Jay's Wisdom",
+          "required": true,
+          "source": "engine_required_mirror_2026-06-13"
+        },
+        {
+          "screen_order": 4,
+          "canonical_key": "friar.version",
+          "key_candidates": ["friar.version"],
+          "expected_utf8": "1",
+          "required": true,
+          "source": "engine_required_mirror_2026-06-13"
+        },
+        {
+          "screen_order": 5,
+          "canonical_key": "friar.payload_hash",
+          "key_candidates": ["friar.payload_hash", "friar.payload_root", "friar.payload_sha256", "friar.payload"],
+          "expected_utf8": "0x8b7df5e6c9d2f4a1e3b5c7d9f1a3c5e7b9d1f3a5c7e9b1d3f5a7c9e1b3d5f7c9",
+          "required": true,
+          "source": "engine_required_mirror_2026-06-13"
+        },
+        {
+          "screen_order": 6,
+          "canonical_key": "alms.public_key",
+          "key_candidates": ["alms.public_key"],
+          "expected_utf8": "did:key:jaywisdom-v1",
+          "required": true,
+          "source": "engine_required_mirror_2026-06-13"
+        },
+        {
+          "screen_order": 7,
+          "canonical_key": "key: al.verified",
+          "key_candidates": ["key: al.verified", "al.verified", "alms.verified", "alms.verified_root"],
+          "expected_utf8": "root=sha256:65377be53afaa04856a5bad16a6f90481ef703e4ce1af35763647f0dbb86d460;commit=03e0e1711a6294d8a35b478a5b90ee17046b2f64;advisory=ipfs://QmbrGfzwy5DmzGhE5Txscs7BfaRknNosc3G5r1pfQEsdqF",
+          "required": true,
+          "source": "engine_required_mirror_2026-06-13"
         }
       ]
     }
@@ -70,6 +146,7 @@
     "missing_record": "fail",
     "byte_mismatch": "fail",
     "empty_record": "fail",
+    "record_count_below_expected": "fail",
     "base_name_unreadable": "fail_yellow_no_fake_green"
   }
 }
