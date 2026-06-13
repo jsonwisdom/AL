@@ -24,6 +24,11 @@ jobs:
           chmod +x projects/zora-jay-agent/scripts/jay_agent_sleep_console.sh
           projects/zora-jay-agent/scripts/jay_agent_sleep_console.sh
 
+      - name: Run MCP maintenance check
+        run: |
+          chmod +x projects/zora-jay-agent/scripts/mcp_agent_production_alarm.sh
+          projects/zora-jay-agent/scripts/mcp_agent_production_alarm.sh
+
       - name: Upload sleep console artifacts
         uses: actions/upload-artifact@v4
         with:
