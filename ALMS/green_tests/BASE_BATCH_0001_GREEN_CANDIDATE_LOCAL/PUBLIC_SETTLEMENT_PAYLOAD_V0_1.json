@@ -1,0 +1,32 @@
+{
+  "payload_type": "ALMS_PUBLIC_SETTLEMENT_PAYLOAD_V0_1",
+  "observed_at_utc": "2026-06-13T23:21:01Z",
+  "repo": "jsonwisdom/AL",
+  "branch": "alms-v2-machine-speed",
+  "head_commit": "4db50442ae31418db2d39957742964d5666d2866",
+  "network": "Base",
+  "eas_schema_uid": "0xed5ef9168064d51396fb2e50e626efe1f63a0e70858c19b9651661aa867a2045",
+  "previous_attestation_uid": "0xa16638fca94a7b7941db929fb86809bd617958d4ef8e32dea3e36969781fc20c",
+  "proposed_new_attestation_fields": {
+    "batch_id": "BASE_BATCH_0001",
+    "lane": "BASE_BATCH_LANE_V0_1",
+    "controller": "jaywisdom.base.eth",
+    "batch_root": "0xdd4a72d33e2c01bc114e21cb279889afb50415f562ad36b9bfba041ebdbfea54",
+    "artifact_manifest_uri": "ipfs://bafkreidjbm2gyfz5wg5itrv7addqld5t2axxem4tzws4wtlnlv5wcde2pa",
+    "artifact_count": 3,
+    "replay_state": "GREEN_CANDIDATE_LOCAL_REPLAYED",
+    "authority": false,
+    "verified": false,
+    "no_fake_green": true
+  },
+  "proposed_resolver_text_records": {
+    "alms.batch.root": "0xdd4a72d33e2c01bc114e21cb279889afb50415f562ad36b9bfba041ebdbfea54",
+    "alms.manifest.uri": "ipfs://bafkreidjbm2gyfz5wg5itrv7addqld5t2axxem4tzws4wtlnlv5wcde2pa",
+    "alms.artifact.count": "3",
+    "alms.replay.state": "GREEN_CANDIDATE_LOCAL_REPLAYED",
+    "alms.no_fake_green": "true"
+  },
+  "production_green": false,
+  "no_fake_green": true,
+  "ruling": "Payload prepared for public settlement. Do not mark production GREEN until the new attestation or resolver update is observed and replayed."
+}
