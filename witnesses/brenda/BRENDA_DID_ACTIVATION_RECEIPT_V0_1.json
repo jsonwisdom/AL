@@ -1,0 +1,18 @@
+{
+  "receipt_type": "BRENDA_DID_ACTIVATION_RECEIPT_V0_1",
+  "observed_at_utc": "2026-06-13T23:37:15Z",
+  "repo": "jsonwisdom/AL",
+  "branch": "alms-v2-machine-speed",
+  "head_commit": "f7526d45223841212f47709bf1f1e4d11011c95e",
+  "did_path": "witnesses/brenda/brenda.did.json",
+  "did_sha256": "4755f78483d349e96e9e101a9cc7a87726bd61775d3bd455d88f3896050b16e2",
+  "public_key_sha256": "bce19b6dbb29a3546b23eaf0809730f4f93bca387a1f25002ffac42d825cfe6d",
+  "gate_1_status": "ACTIVE_LOCAL_KEY",
+  "brenda_state": "YELLOW_BRENDA_GATE_1_READY",
+  "enforcing": false,
+  "authority": false,
+  "verified": false,
+  "production_green": false,
+  "no_fake_green": true,
+  "ruling": "Gate 1 upgraded from placeholder failure to local DID readiness. Remaining gates must pass before Brenda enforces."
+}
