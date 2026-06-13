@@ -11,6 +11,55 @@ Contributors may propose changes.
 The membrane decides whether the change is representable.
 ```
 
+## Evidence Boundary Standard
+
+Before adding or updating any fixture, receipt, runbook, replay note, token note, Zora note, Base note, revenue note, or claim-bearing document, check it against:
+
+```text
+docs/templates/CLAIM_EVIDENCE_BOUNDARY_TEMPLATE_V0_1.md
+docs/templates/FIXTURE_EVIDENCE_CHECKLIST_V0_1.md
+```
+
+Every claim-bearing file should answer:
+
+```text
+what_is_claimed
+what_is_source
+what_is_verified
+what_is_not_verified
+what_action_is_required_next
+```
+
+Default boundary:
+
+```text
+AUTHORITY: FALSE
+NO_FAKE_GREEN: TRUE
+```
+
+Avoid language that implies validation, execution, or authority unless there is a specific command output, commit readback, API response, RPC output, screenshot, CSV export, hash, or transaction receipt attached.
+
+Recommended substitutions:
+
+```text
+locked -> recorded
+validated -> pending validation or validated_by_output
+classifier -> script or manual review
+node query -> RPC command
+anchor -> candidate anchor
+operator-reported -> self-reported, when applicable
+```
+
+Do not claim revenue, holder count, market value, token supply, vesting status, claimable balance, or creator earnings unless the file includes evidence and states the source.
+
+When evidence is missing, use:
+
+```text
+REVENUE = NOT_CONFIRMED
+AUTHORITY = FALSE
+NO_FAKE_GREEN = TRUE
+```
+
 ## Contributor Mental Model
 
 The constitution is not only a document.
