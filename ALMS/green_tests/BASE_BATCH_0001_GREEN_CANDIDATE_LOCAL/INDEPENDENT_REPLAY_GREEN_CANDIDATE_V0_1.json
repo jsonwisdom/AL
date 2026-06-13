@@ -1,0 +1,30 @@
+{
+  "receipt_type": "INDEPENDENT_REPLAY_GREEN_CANDIDATE_V0_1",
+  "observed_at_utc": "2026-06-13T23:19:58Z",
+  "repo": "jsonwisdom/AL",
+  "branch": "alms-v2-machine-speed",
+  "head_commit": "e8b07e95bd2140652c56850e1c3f1fb231ea9230",
+  "replayed_candidate": {
+    "batch_root": "0xdd4a72d33e2c01bc114e21cb279889afb50415f562ad36b9bfba041ebdbfea54",
+    "artifact_manifest_uri": "ipfs://bafkreidjbm2gyfz5wg5itrv7addqld5t2axxem4tzws4wtlnlv5wcde2pa",
+    "artifact_count": 3
+  },
+  "recomputed_sha256": {
+    "artifact_hashes": "dd4a72d33e2c01bc114e21cb279889afb50415f562ad36b9bfba041ebdbfea54",
+    "artifact_manifest": "690b346c173db1ba89c6bf00c7058fb3d02f723393cda5cb4d6d5d7b610c9a78",
+    "batch_descriptor": "52d9a1329ee38d1be45e2df101aae23e13864529dc576bbb1853d77e7d835b33",
+    "green_candidate_receipt": "cdf72e2e41cc90f7707bd99c45d33b85f7a32aecf5c1db144411c8a1f45c12fc"
+  },
+  "replay_checks": {
+    "batch_root_nonzero": true,
+    "manifest_uri_present": true,
+    "manifest_not_awaiting_cid": true,
+    "artifact_count_nonzero": true
+  },
+  "truth_state": "GREEN_CANDIDATE_LOCAL_REPLAYED",
+  "production_green": false,
+  "authority": false,
+  "verified": false,
+  "no_fake_green": true,
+  "ruling": "Independent replay confirms the committed local green candidate fields. Public anchoring is still required before production GREEN."
+}
