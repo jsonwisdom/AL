@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AL Evidence Collector | NO_FAKE_GREEN</title>
+  <style>
+    :root {
+      --base: #0a0a0f;
+      --surface: #1a1a2e;
+      --card: #16213e;
+      --green: #00ff88;
+      --red: #ff4444;
+      --amber: #ffaa00;
+      --ghost: #888888;
+      --text: #f2f2f2;
+      --line: #2b3559;
+      --mono: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Consolas, monospace;
+      --sans: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--base);
+      color: var(--text);
+      font-family: var(--sans);
+      min-height: 100vh;
+    }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 28px 18px 60px; }
+    .boot {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+    .boot-card, .panel, .field, .report {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.02);
+    }
+    .boot-card { width: min(720px, 100%); padding: 28px; }
+    h1, h2, h3 { margin: 0 0 14px; letter-spacing: .02em; }
+    h1 { font-family: var(--mono); font-size: clamp(25px, 4vw, 42px); }
+    h2 { font-size: 17px; color: var(--ghost); font-weight: 600; }
+    p, li { color: #d9d9d9; line-height: 1.55; }
+    code, textarea, input, pre, .mono { font-family: var(--mono); }
+    .trigger-row { display: flex; gap: 10px; margin-top: 20px; }
+    input, textarea, button {
+      border: 1px solid var(--line);
+      background: #07070b;
+      color: var(--text);
+      padding: 12px 14px;
+      font: inherit;
+    }
+    input { flex: 1; font-family: var(--mono); }
+    button { cursor: pointer; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; }
+    button:hover { border-color: var(--green); }
+    .hidden { display: none !important; }
+    .topbar { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: start; margin-bottom: 18px; }
+    .badge-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .badge { border: 1px solid var(--line); background: var(--card); padding: 7px 10px; font-family: var(--mono); font-size: 12px; }
+    .green { color: var(--green); }
+    .red { color: var(--red); }
+    .amber { color: var(--amber); }
+    .ghost { color: var(--ghost); }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .panel { padding: 16px; margin-bottom: 14px; }
+    .field { padding: 12px; background: var(--card); }
+    label { display: flex; justify-content: space-between; gap: 12px; font-weight: 800; margin-bottom: 8px; }
+    textarea { width: 100%; min-height: 120px; resize: vertical; font-size: 13px; line-height: 1.45; }
+    .status { font-family: var(--mono); font-size: 12px; }
+    .report { margin-top: 14px; padding: 16px; background: #07070b; white-space: pre-wrap; line-height: 1.5; }
+    .rules { display: grid; gap: 6px; padding-left: 0; list-style: none; }
+    .rules li { font-family: var(--mono); color: var(--ghost); }
+    @media (max-width: 780px) { .grid { grid-template-columns: 1fr; } .trigger-row { flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <main id="boot" class="boot">
+    <section class="boot-card">
+      <h1>AL EVIDENCE COLLECTOR</h1>
+      <h2>Receipts before theater. Green only when evidence exists.</h2>
+      <p class="mono amber">LOCKED: type exact trigger <strong>replay</strong></p>
+      <div class="trigger-row">
+        <input id="trigger" autocomplete="off" spellcheck="false" placeholder="replay" />
+        <button id="bootBtn">Boot</button>
+      </div>
+      <p id="bootMsg" class="mono red"></p>
+    </section>
+  </main>
+
+  <main id="app" class="wrap hidden">
+    <section class="topbar">
+      <div>
+        <h1>GITHUB OVERNIGHT MAINTENANCE REPORT</h1>
+        <h2 class="mono">repo=jsonwisdom/AL · lane=projects/zora-jay-agent</h2>
+      </div>
+      <div class="badge-row">
+        <span class="badge red">AUTHORITY = FALSE</span>
+        <span class="badge green">NO_FAKE_GREEN = TRUE</span>
+        <span class="badge amber">DEFAULT = UNKNOWN</span>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h3>Hard Boundaries</h3>
+      <ul class="rules">
+        <li>DO NOT claim wallet control from address alone.</li>
+        <li>DO NOT claim Sepolia success without transaction hash and receipt.</li>
+        <li>DO NOT claim workflow success without observed run status.</li>
+        <li>DO NOT claim artifact existence without artifact readback.</li>
+        <li>DO NOT promote UNKNOWN to TRUE or FALSE.</li>
+      </ul>
+    </section>
+
+    <section class="grid">
+      <div class="field"><label>Commits since receipt <span id="sCommits" class="status amber">⚠ UNKNOWN</span></label><textarea id="commits" placeholder="Paste: git log 44da17d..HEAD --oneline --decorate --stat"></textarea></div>
+      <div class="field"><label>Workflow runs <span id="sWorkflow" class="status amber">⚠ UNKNOWN</span></label><textarea id="workflow" placeholder="Paste GitHub Actions run status/API output/log summary"></textarea></div>
+      <div class="field"><label>Artifacts <span id="sArtifacts" class="status amber">⚠ UNKNOWN</span></label><textarea id="artifacts" placeholder="Paste artifact list or readback"></textarea></div>
+      <div class="field"><label>Sepolia wallet evidence <span id="sSepolia" class="status red">✗ FALSE / UNPROVEN</span></label><textarea id="sepolia" placeholder="Paste balance + tx hash + receipt, if any"></textarea></div>
+      <div class="field"><label>MCP / jay-agent findings <span id="sMcp" class="status amber">⚠ UNKNOWN</span></label><textarea id="mcp" placeholder="Paste MCP_AGENT_15_MINUTE_TASKS / jay-agent output"></textarea></div>
+      <div class="field"><label>Unknowns preserved <span id="sUnknowns" class="status amber">⚠ PRESERVED</span></label><textarea id="unknowns" placeholder="List what cannot be verified yet"></textarea></div>
+    </section>
+
+    <section class="panel">
+      <button id="analyzeBtn">Run Local NO_FAKE_GREEN Analysis</button>
+      <pre id="report" class="report mono"></pre>
+    </section>
+  </main>
+
+  <script>
+    const receipt = "44da17d559f7df8f6a0d5049375a9a823a63c2b9";
+    const wallet = "0x1dB2C056c7DeCD9f9fC574692b05F62aE34Fb8b5";
+    const ids = ["commits", "workflow", "artifacts", "sepolia", "mcp", "unknowns"];
+    const q = (id) => document.getElementById(id);
+    const has = (id, re) => re.test(q(id).value);
+    const set = (id, text, cls) => { q(id).textContent = text; q(id).className = "status " + cls; };
+
+    function boot() {
+      if (q("trigger").value === "replay") {
+        q("boot").classList.add("hidden");
+        q("app").classList.remove("hidden");
+        analyze();
+      } else {
+        q("bootMsg").textContent = "DENIED: trigger must be exact lowercase replay";
+      }
+    }
+
+    function analyze() {
+      set("sCommits", has("commits", /[a-f0-9]{7,40}/i) ? "✓ EVIDENCE PRESENT" : "⚠ UNKNOWN", has("commits", /[a-f0-9]{7,40}/i) ? "green" : "amber");
+      set("sWorkflow", has("workflow", /(success|failure|cancelled|queued|in_progress|completed|run_id|workflow_run)/i) ? "✓ STATUS OBSERVED" : "⚠ UNKNOWN", has("workflow", /(success|failure|cancelled|queued|in_progress|completed|run_id|workflow_run)/i) ? "green" : "amber");
+      set("sArtifacts", has("artifacts", /(artifact|download|archive|zip|al-jay-agent-zora-sleep-console)/i) ? "✓ ARTIFACT EVIDENCE" : "⚠ UNKNOWN", has("artifacts", /(artifact|download|archive|zip|al-jay-agent-zora-sleep-console)/i) ? "green" : "amber");
+      const tx = has("sepolia", /0x[a-f0-9]{64}/i);
+      const bal = has("sepolia", /(balance|eth|wei)/i);
+      set("sSepolia", tx && bal ? "✓ TX + BALANCE EVIDENCE" : "✗ FALSE / UNPROVEN", tx && bal ? "green" : "red");
+      set("sMcp", has("mcp", /(jay-agent|MCP|finding|alarm|check|PASS|FAIL)/i) ? "✓ FINDINGS PRESENT" : "⚠ UNKNOWN", has("mcp", /(jay-agent|MCP|finding|alarm|check|PASS|FAIL)/i) ? "green" : "amber");
+      set("sUnknowns", q("unknowns").value.trim() ? "⚠ PRESERVED" : "⚠ PRESERVED / EMPTY", "amber");
+
+      const report = `GITHUB OVERNIGHT MAINTENANCE REPORT\n\nBEFORE:\n- repo: jsonwisdom/AL\n- branch: master\n- receipt commit: ${receipt}\n- expected workflow: .github/workflows/al-jay-agent-zora-sleep-console.yml\n- expected cadence: 15_minutes\n- staged Sepolia wallet: ${wallet}\n\nAFTER:\n- commits evidence: ${q("sCommits").textContent}\n- workflow evidence: ${q("sWorkflow").textContent}\n- artifacts evidence: ${q("sArtifacts").textContent}\n- MCP/jay-agent evidence: ${q("sMcp").textContent}\n- Sepolia action: ${q("sSepolia").textContent}\n- unknowns: ${q("sUnknowns").textContent}\n\nRULING:\n- maintenance loop: ${q("sWorkflow").className.includes("green") ? "YELLOW / RUN STATUS OBSERVED" : "YELLOW / NOT ENOUGH EVIDENCE"}\n- workflow visibility: ${q("sWorkflow").className.includes("green") ? "GREEN" : "UNKNOWN"}\n- artifacts: ${q("sArtifacts").className.includes("green") ? "GREEN" : "UNKNOWN"}\n- wallet action: ${q("sSepolia").className.includes("green") ? "EVIDENCE PRESENT, STILL VERIFY RECEIPT" : "FALSE"}\n- semantic truth final: FALSE\n- authority: FALSE\n- no_fake_green: TRUE\n\nNEXT BEST ACTION:\nPaste observed GitHub Actions run JSON/logs and artifact readback before any green promotion.`;
+      q("report").textContent = report;
+    }
+
+    q("bootBtn").addEventListener("click", boot);
+    q("trigger").addEventListener("keydown", (e) => { if (e.key === "Enter") boot(); });
+    q("analyzeBtn").addEventListener("click", analyze);
+    ids.forEach(id => q(id).addEventListener("input", analyze));
+  </script>
+</body>
+</html>
