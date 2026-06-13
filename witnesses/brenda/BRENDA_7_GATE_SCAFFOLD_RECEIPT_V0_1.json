@@ -1,0 +1,29 @@
+{
+  "receipt_type": "BRENDA_7_GATE_SCAFFOLD_RECEIPT_V0_1",
+  "observed_at_utc": "2026-06-13T23:36:26Z",
+  "repo": "jsonwisdom/AL",
+  "branch": "alms-v2-machine-speed",
+  "head_commit": "69c90f7d2c25ba9e95809e93883e735a088e6507",
+  "brenda_state": "YELLOW_BRENDA_WITNESS_ONLY",
+  "gate_completion": "2_of_7_scaffolded",
+  "files": {
+    "gate_spec": "witnesses/brenda/GATE_SPEC_v1.md",
+    "did": "witnesses/brenda/brenda.did.json",
+    "verifier": "verify-brenda.sh"
+  },
+  "sha256": {
+    "gate_spec": "3d0cb779ac2111aec431673fbcb08643754f4802ced7ba95249af7eb5a08d182",
+    "did": "0a3ad0c9e475233e76c4a9cc8f89f14fff79da1f2c812a0789dacbd0a60d3f06",
+    "verifier": "061006bd8baec219d4e4215cd8e96d33beeb805c0d6f57db9d1f81f50da38390"
+  },
+  "expected_result": {
+    "command": "./verify-brenda.sh 69c90f7",
+    "expected_exit_code": 1,
+    "expected_reason": "DID placeholder and signatures missing"
+  },
+  "authority": false,
+  "verified": false,
+  "production_green": false,
+  "no_fake_green": true,
+  "ruling": "Brenda enforcement scaffold added. Brenda remains witness-only until all seven gates verify."
+}
