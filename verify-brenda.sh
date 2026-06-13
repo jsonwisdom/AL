@@ -119,6 +119,30 @@ fi
 
 echo "PASS gate_6: veto=false, signature valid, not expired"
 
-echo "FAIL gate_7: resolver TXT status not implemented yet"
-echo "state=YELLOW_BRENDA_GATE_6_ENFORCED_GATE_7_PENDING"
-exit 1
+RESOLVER_STATUS="witnesses/brenda/resolver_status.json"
+
+if [ ! -f "$RESOLVER_STATUS" ]; then
+  echo "FAIL gate_7: resolver status witness missing"
+  echo "state=YELLOW_BRENDA_GATE_7_RESOLVER_MISSING"
+  exit 1
+fi
+
+if ! jq -e '.txt_key == "brenda.status"' "$RESOLVER_STATUS" >/dev/null; then
+  echo "FAIL gate_7: resolver txt_key mismatch"
+  exit 1
+fi
+
+if ! jq -e '.txt_value == "ACTIVE"' "$RESOLVER_STATUS" >/dev/null; then
+  echo "FAIL gate_7: brenda.status not ACTIVE"
+  exit 1
+fi
+
+if ! jq -e '.no_fake_green == true and .authority == false' "$RESOLVER_STATUS" >/dev/null; then
+  echo "FAIL gate_7: resolver witness boundary flags invalid"
+  exit 1
+fi
+
+echo "PASS gate_7: resolver witness ACTIVE"
+echo "BRENDA_ALL_LOCAL_GATES_PASS"
+echo "state=BRENDA_LOCAL_ENFORCING_CANDIDATE"
+exit 0

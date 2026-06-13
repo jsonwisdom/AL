@@ -1,0 +1,23 @@
+{
+  "receipt_type": "BRENDA_GATE_7_FAIL_CLOSED_RESOLVER_RECEIPT_V0_1",
+  "observed_at_utc": "2026-06-13T23:46:36Z",
+  "repo": "jsonwisdom/AL",
+  "branch": "alms-v2-machine-speed",
+  "head_commit": "4c8a271cfa17193b72fd80c1d16b1beebf07b124",
+  "emission_id": "69c90f7",
+  "resolver_spec_path": "witnesses/brenda/GATE_7_RESOLVER_SPEC_V0_1.md",
+  "resolver_spec_sha256": "9559d5a1ad8133357cd675d78edc76420c2b4df41f148b484b5e936919f3fda3",
+  "verifier_path": "verify-brenda.sh",
+  "verifier_sha256": "0c420d63f3ef4b3a29db510a61640c17342e6a30670f65f950d88e9664cd32bf",
+  "expected_fail_log": "audits/brenda/gate7_missing_resolver_fail_closed.log",
+  "expected_fail_log_sha256": "9944e4d0908ba350bd4a821f009e5cd8a249f39cef0a96dd4911ae0cd0de5e2d",
+  "expected_exit_code": 1,
+  "gate_7_fail_closed": true,
+  "brenda_state": "YELLOW_BRENDA_GATE_7_RESOLVER_MISSING",
+  "enforcing": false,
+  "authority": false,
+  "verified": false,
+  "production_green": false,
+  "no_fake_green": true,
+  "ruling": "Gate 7 now fails closed when resolver status witness is missing. Brenda still cannot fully enforce until brenda.status ACTIVE is observed and preserved."
+}
