@@ -25,9 +25,10 @@ jobs:
           projects/zora-jay-agent/scripts/jay_agent_sleep_console.sh
 
       - name: Run MCP maintenance check
+        timeout-minutes: 5
         run: |
           chmod +x projects/zora-jay-agent/scripts/mcp_agent_production_alarm.sh
-          projects/zora-jay-agent/scripts/mcp_agent_production_alarm.sh
+          timeout 300s projects/zora-jay-agent/scripts/mcp_agent_production_alarm.sh
 
       - name: Upload sleep console artifacts
         uses: actions/upload-artifact@v4

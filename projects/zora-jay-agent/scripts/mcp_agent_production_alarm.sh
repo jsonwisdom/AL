@@ -39,7 +39,7 @@ BRANCH="$(git branch --show-current 2>/dev/null || echo UNKNOWN_BRANCH)"
   echo "TASK_006_SEMANTIC_TRUTH=YELLOW_UNLESS_PROVEN"
   echo
   echo "== MARKER SCAN =="
-  grep -RInE "UNKNOWN|YELLOW|TODO|FIXME|NO_FAKE_GREEN|AUTHORITY|SEPOLIA|MCP_AGENT" "$BASE" .github/workflows 2>/dev/null || true
+  timeout 30s grep -RInE "UNKNOWN|YELLOW|TODO|FIXME|NO_FAKE_GREEN|AUTHORITY|SEPOLIA|MCP_AGENT" "$BASE" .github/workflows 2>/dev/null | head -200 || true
   echo
   echo "== SEPOLIA WALLET STAGING =="
   echo "sepolia_wallet_creation=STAGED_ONLY"
