@@ -1,11 +1,17 @@
 {
   "lane_id": "evidence_lane_1",
   "case_anchor": "1:26-cv-01007",
-  "case_label_user_supplied": "MN v. DOJ",
+  "case_label_verified_public_surface": "STATE OF MINNESOTA v. U.S. DEPARTMENT OF JUSTICE",
+  "court": "U.S. District Court for the District of Columbia",
+  "filed_date_public_surface": "2026-03-24",
   "repo": "jsonwisdom/AL",
-  "remote_witness_commit": "127282adab89d5d7a35b327b1303ae68c068a40f",
-  "public_surface": "site/alms-nuclear-constitution-docket.html",
-  "truth_state": "YELLOW_PUBLIC_METADATA_ONLY",
+  "remote_witness_commit": "098dc188fbb6cfde2ff668566fe22bff36bad781",
+  "truth_state": "YELLOW_SOURCE_REFERENCED",
+  "public_sources": [
+    "CourtListener docket surface",
+    "Minnesota Attorney General litigation tracker"
+  ],
   "private_payload_status": "NOT_PUBLISHED_IN_PUBLIC_DOCKET",
-  "no_fake_green": true
+  "no_fake_green": true,
+  "rule": "Public case existence is referenced; filing hashes and private payload require separate receipt."
 }
