@@ -1,0 +1,33 @@
+# ALMS UID Replay Query — Issue #328
+#
+# Target endpoint:
+#   https://<render-service>.onrender.com/graphql
+#
+# Target UIDs:
+#   original:   0x4d6a7df50cba18e1086820732c158274b51adf9f17722c40d55fd3f73b5d6874
+#   correction: 0xcc3e5448328c3ca29282e05bacbc4dc96d4cd533f7144d0a437a6f39cceec1f1
+#
+# This query uses the upstream Prisma/TypeGraphQL field names:
+#   Attestation.id == EAS UID
+#   decodedDataJson == decoded payload as stored by the indexer
+
+query ALMSReplayOfficial($uids: [String!]) {
+  attestations(
+    where: {
+      id: {
+        in: $uids
+      }
+    }
+    take: 10
+  ) {
+    id
+    schemaId
+    attester
+    recipient
+    time
+    revocationTime
+    revoked
+    txid
+    decodedDataJson
+  }
+}
