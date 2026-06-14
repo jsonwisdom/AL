@@ -1,0 +1,26 @@
+{
+  "observer": "base_l1standardbridge",
+  "generated_at": "2026-04-25T05:59:25Z",
+  "layer": "ethereum_l1",
+  "contract": {
+    "address": "0x3154Cf16ccdb4C6d922629664174b904d80F2C35",
+    "codehash_proxy": "90991ad1c0ca5c7eeb58dba9da1c2a61f835c2b807909a6cb16e4ae98c1be3ce"
+  },
+  "sample_window": {
+    "from_block": "24935070",
+    "latest_block": "24955070"
+  },
+  "activity": {
+    "observed_topics": {
+      "0x35d79ab8": 447,
+      "0x2849b430": 447,
+      "0x71859402": 214,
+      "0x7ff126db": 214
+    },
+    "total_observed_events": 1322
+  },
+  "status": {
+    "visibility": "GREEN",
+    "reason": "bridge event flow confirmed from observed topics"
+  }
+}
