@@ -1,0 +1,47 @@
+# ALMS EAS Indexer Render Blueprint Template
+#
+# Purpose:
+#   Render + Postgres deployment scaffold for Issue #328.
+#   Keeps YELLOW_READY until a live endpoint and UID replay output are committed.
+#
+# Source indexer:
+#   https://github.com/ethereum-attestation-service/eas-indexing-service
+#
+# Notes:
+#   - The upstream indexer already includes Base mainnet chainId 8453 in chainConfigs.ts.
+#   - Set ALCHEMY_BASE_API_KEY in Render as a secret value.
+#   - Render will inject DATABASE_URL from the Postgres database below.
+#   - This is a template. Copy/point Render to this file when creating the Blueprint.
+
+services:
+  - type: web
+    name: alms-eas-indexer-base
+    runtime: docker
+    plan: starter
+    repo: https://github.com/ethereum-attestation-service/eas-indexing-service
+    branch: master
+    autoDeployTrigger: off
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: CHAIN_ID
+        value: "8453"
+      - key: GRAPH_PORT
+        value: "4000"
+      - key: REQUEST_DELAY
+        value: "500"
+      - key: BATCH_SIZE
+        value: "2000"
+      - key: CONCURRENCY_LIMIT
+        value: "5"
+      - key: ALCHEMY_BASE_API_KEY
+        sync: false
+      - key: DATABASE_URL
+        fromDatabase:
+          name: alms-eas-indexer-db
+          property: connectionString
+
+databases:
+  - name: alms-eas-indexer-db
+    plan: starter
