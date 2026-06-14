@@ -1,0 +1,38 @@
+{
+  "receipt_type": "GROK_DAILY_WISDOM_PACKET_REPLAY_RECEIPT",
+  "receipt_version": "0.1",
+  "timestamp_utc": "2026-06-14T23:59:00Z",
+  "repo": "jsonwisdom/AL",
+  "anchor_state": "YELLOW_READY",
+  "no_fake_green": true,
+  "packet_date": "2026-06-14",
+  "protocol": {
+    "path": "_truth/grok-daily-wisdom/GROK_DAILY_WISDOM_ACCESS_PROTOCOL_V0_1.md",
+    "commit": "175278120530fb644abee4d484c71c95e4c44dee",
+    "git_blob_sha1": "bcc926c68e5d5c0d4e5f4631287fa979d2f1a2af",
+    "sha256": "bb29405fabbd90c4a740ffc01526cdd3d8fb6543731506ffc42f9fb3a5b97298"
+  },
+  "packet": {
+    "path": "_truth/grok-daily-wisdom/packets/20260614_DAILY_WISDOM_PACKET.md",
+    "commit": "477e6082dec33b8b8d3219a09bafb7e08227aa28",
+    "git_blob_sha1": "a0f9c767b77b7f17719bb2e073fc86943955a1f1",
+    "sha256": "97b3b846a20be30648ad8fa3eb06da2ea7ad18e1d4ee38584cb083167c35241c"
+  },
+  "replay_check": {
+    "public_read_only": true,
+    "private_state_required": false,
+    "literal_consciousness_claim": false,
+    "official_authority_claim": false,
+    "green_claim": false,
+    "external_model_consumption": "allowed_as_context_packet"
+  },
+  "green_gates": {
+    "sha256sums": true,
+    "packet_replay_receipt": true,
+    "live_eas_endpoint": false,
+    "uid_query_output": false,
+    "resolver_event_status": false,
+    "zora_indexed_profile": false
+  },
+  "ruling": "Packet 001 is replayable from public repo content. Overall lane remains YELLOW_READY until external live gates are proven."
+}
