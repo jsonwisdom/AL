@@ -2,7 +2,10 @@
 set -euo pipefail
 
 OUT="_truth/alerts/alerts.jsonl"
+SUMMARY="_truth/alerts/alerts_summary.json"
 TMP="$(mktemp)"
+OUT_TMP="$(mktemp)"
+mkdir -p _truth/alerts
 
 FILES=(
   "_truth/logs/root_events.jsonl"
@@ -11,6 +14,7 @@ FILES=(
 )
 
 > "$TMP"
+> "$OUT_TMP"
 
 # === SAFE LOAD + COMPACT ===
 for f in "${FILES[@]}"; do
@@ -22,6 +26,7 @@ done
 INFO=0
 WATCH=0
 ALERT=0
+TOTAL=0
 
 while IFS= read -r line; do
   # skip empty lines
@@ -44,8 +49,10 @@ while IFS= read -r line; do
     INFO=$((INFO + 1))
   fi
 
-  jq -n \
-    --arg ts "$(echo "$line" | jq -r '.ts')" \
+  TOTAL=$((TOTAL + 1))
+
+  jq -c -n \
+    --arg ts "$(echo "$line" | jq -r '.ts // ""')" \
     --arg type "$TYPE" \
     --arg severity "$SEVERITY" \
     --argjson raw "$line" \
@@ -54,10 +61,24 @@ while IFS= read -r line; do
       type:$type,
       severity:$severity,
       raw:$raw
-    }' >> "$OUT"
+    }' >> "$OUT_TMP"
 
 done < "$TMP"
 
-echo "ALERT_ESCALATION_DONE alert=$ALERT watch=$WATCH info=$INFO"
+# Important: rewrite, do not append forever. The old behavior grew alerts.jsonl past GitHub's 100MB limit.
+mv "$OUT_TMP" "$OUT"
+
+jq -n -cS \
+  --arg ts "$(date -u +%FT%TZ)" \
+  --arg status "ALERT_ESCALATION_SUMMARY" \
+  --arg source "$OUT" \
+  --arg policy "alerts_jsonl_runtime_only_not_committed" \
+  --argjson total "$TOTAL" \
+  --argjson alert "$ALERT" \
+  --argjson watch "$WATCH" \
+  --argjson info "$INFO" \
+  '{ts:$ts,status:$status,source:$source,policy:$policy,total:$total,alert:$alert,watch:$watch,info:$info}' > "$SUMMARY"
+
+echo "ALERT_ESCALATION_DONE alert=$ALERT watch=$WATCH info=$INFO total=$TOTAL"
 
 rm -f "$TMP"
