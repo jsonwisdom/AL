@@ -9,3 +9,6 @@ replay-membrane-v0/
 constitutional-runtime/
 __pycache__/
 *.pyc
+
+# Runtime streams: generated during ALMS runs, never commit huge JSONL alert ledgers.
+_truth/alerts/*.jsonl
