@@ -1,0 +1,25 @@
+name: ALMS Auto-Drip Night Watch
+
+on:
+  workflow_dispatch:
+  schedule:
+    # America/Chicago overnight during CDT: 10:17 PM, 12:17 AM, 2:17 AM, 4:17 AM
+    - cron: "17 3,5,7,9 * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: alms-auto-drip-night-watch
+  cancel-in-progress: false
+
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout Merkle tree
+        uses: actions/checkout@v4
+
+      - name: Run ALMS auto-drip health gate
+        run: scripts/alms_auto_drip_health.sh
