@@ -1,0 +1,11 @@
+{
+  "name": "alms-factory-console",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": { "start": "node server.js" },
+  "dependencies": {
+    "express": "^4.19.2",
+    "body-parser": "^1.20.2"
+  },
+  "engines": { "node": ">=18" }
+}
