@@ -1,39 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>ALMS LIVE</title>
-<style>
-body { background:#050505; color:#00ff88; font-family:monospace; padding:40px; }
-.box { border:1px solid #00ff88; padding:20px; margin-bottom:20px; }
-</style>
+  <meta charset="utf-8">
+  <title>ALMS LIVE</title>
+  <style>
+    body{background:#000;color:#00ff88;font-family:monospace;padding:40px}
+    pre{border:1px solid #00ff88;padding:20px;white-space:pre-wrap}
+    h1,h2{color:#00ff88}
+  </style>
 </head>
 <body>
+  <h1>ALMS LIVE ⚙️</h1>
+  <pre id="status">Booting Mission Control...</pre>
 
-<h1>ALMS LIVE ⚙️</h1>
+  <h2>Last 600 Days Replay Log</h2>
+  <pre id="replay600">Booting Replay...</pre>
 
-<div class="box">
-<pre id="data">Loading...</pre>
-</div>
-
-<script>
-fetch('live.json')
-  .then(r=>r.json())
-  .then(d=>{
-    document.getElementById('data').textContent = JSON.stringify(d,null,2);
-  });
-</script>
-
-
-<h2>Last 600 Days Replay Log</h2>
-<pre id="replay600">Loading 600-day replay...</pre>
-<script>
-fetch('./factory-console/logs/last-600-days.json')
-  .then(r => r.json())
-  .then(j => document.getElementById('replay600').textContent = JSON.stringify(j, null, 2))
-  .catch(e => document.getElementById('replay600').textContent = String(e));
-</script>
-
-<script src="./app.js"></script>
+  <script src="./app.js?v=2"></script>
 </body>
 </html>
