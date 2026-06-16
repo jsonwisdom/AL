@@ -1,0 +1,50 @@
+BRENDA_GITHUB_ACTIONS_RUN_48_SUCCESS_OBSERVED_V0_1
+
+observed_at_utc: 2026-06-16T07:39:48Z
+repo: jsonwisdom/AL
+branch: alms-v2-machine-speed
+observed_commit: 5a3f444b
+current_head_before_commit: 5a3f444b0fc27c02edf9b3a3ee1894e4656f9e32
+
+source:
+GitHub Actions mobile UI screenshot
+
+workflow:
+Alabama Engine Expiry Enforcer
+
+run:
+#48
+
+trigger:
+push
+
+actor:
+jsonwisdom
+
+status:
+Success
+
+duration:
+14s
+
+workflow_file:
+alabama-engine-expiry-enforcer.yml
+
+job:
+expiry-enforcer
+
+job_status:
+Success
+
+observed_state:
+GITHUB_ACTIONS_RUN_OBSERVED: YES
+REMOTE_CI_SUCCESS: YES
+BRENDA_REMOTE_CI_CONFIRMED: YES
+BRENDA_REMOTE_ENFORCING_CANDIDATE: YES
+PRODUCTION_GREEN: FALSE
+NO_FAKE_GREEN: TRUE
+
+ruling:
+Remote GitHub Actions success observed for commit 5a3f444 on alms-v2-machine-speed.
+This promotes Brenda from local enforcing candidate to remote CI enforcing candidate.
+This does not assert production green.
