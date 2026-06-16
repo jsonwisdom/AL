@@ -24,5 +24,15 @@ fetch('live.json')
   });
 </script>
 
+
+<h2>Last 600 Days Replay Log</h2>
+<pre id="replay600">Loading 600-day replay...</pre>
+<script>
+fetch('./factory-console/logs/last-600-days.json')
+  .then(r => r.json())
+  .then(j => document.getElementById('replay600').textContent = JSON.stringify(j, null, 2))
+  .catch(e => document.getElementById('replay600').textContent = String(e));
+</script>
+
 </body>
 </html>
