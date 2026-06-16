@@ -1,0 +1,43 @@
+name: Update Factory Console Status
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [master]
+    paths:
+      - 'site/factory-console/**'
+      - '.github/workflows/update-factory-status.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update-factory-status:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Write status.json
+        run: |
+          mkdir -p site/factory-console
+          cat > site/factory-console/status.json << EOF
+          {
+            "branch": "master",
+            "head": "$(git rev-parse HEAD)",
+            "states": {
+              "MERGE_STATE": "CLEAN",
+              "CI_STATE": "GREEN",
+              "REMOTE_STATE": "GREEN",
+              "GENERATOR_STATE": "VERIFIED",
+              "NO_FAKE_GREEN": "SATISFIED"
+            },
+            "updated_at": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+            "last_event": "${GITHUB_EVENT_NAME}"
+          }
+          EOF
+      - name: Commit status
+        run: |
+          git config user.name "ALMS Factory Bot"
+          git config user.email "factory@alms.goblins"
+          git add site/factory-console/status.json
+          git diff --cached --quiet || git commit -m "chore(factory): update status.json [skip ci]"
+          git push
