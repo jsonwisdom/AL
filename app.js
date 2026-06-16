@@ -1,25 +1,62 @@
+const $ = (id) => document.getElementById(id);
+
 async function loadJson(path) {
-  const res = await fetch(path + '?t=' + Date.now());
-  if (!res.ok) throw new Error(path + ' -> HTTP ' + res.status);
-  return res.json();
+  const r = await fetch(path + "?t=" + Date.now());
+  if (!r.ok) throw new Error(`${path} -> HTTP ${r.status}`);
+  return r.json();
+}
+
+function isGreen(v) {
+  return ["GREEN","CLEAN","VERIFIED","SATISFIED","success"].includes(String(v));
+}
+
+function badge(v) {
+  return `${isGreen(v) ? "🟢" : "🔴"} ${v}`;
+}
+
+function render(status, replay) {
+  const states = status.states || {};
+  const head = status.head || "unknown";
+
+  $("status").innerHTML = `
+ALMS FACTORY MISSION CONTROL
+============================
+
+FACTORY STATE: ${badge(states.CI_STATE || "UNKNOWN")}
+CONTROLLER: jaywisdom.base.eth
+BRANCH: ${status.branch || "unknown"}
+HEAD: ${head.slice(0, 12)}
+EVENT: ${status.last_event || "unknown"}
+UPDATED: ${status.updated_at || "unknown"}
+
+PRODUCTION GREEN BOARD
+----------------------
+${Object.entries(states).map(([k,v]) => `${k.padEnd(18)} ${badge(v)}`).join("\n")}
+
+GOBLIN PRESS
+------------
+GENERATOR STATE: ${badge(states.GENERATOR_STATE || "UNKNOWN")}
+NO FAKE GREEN:   ${badge(states.NO_FAKE_GREEN || "UNKNOWN")}
+PUBLIC STATUS:   LIVE
+`;
+
+  if ($("replay600")) {
+    $("replay600").textContent =
+      `REPLAY WINDOW: ${replay.window_days} DAYS\n` +
+      `GENERATED: ${replay.generated_at}\n\n` +
+      (replay.events || []).map(e =>
+        `${e.state === "GREEN" ? "🟢" : "🔴"} ${e.date} | ${e.type}\n${e.title}\n${e.commits ? `COMMITS: ${e.commits}\n` : ""}`
+      ).join("\n");
+  }
 }
 
 async function main() {
-  const statusBox = document.getElementById('status');
-  const replayBox = document.getElementById('replay600');
-
   try {
-    const status = await loadJson('./status.json');
-    if (statusBox) statusBox.textContent = JSON.stringify(status, null, 2);
+    const status = await loadJson("./status.json");
+    const replay = await loadJson("./factory-console/logs/last-600-days.json");
+    render(status, replay);
   } catch (e) {
-    if (statusBox) statusBox.textContent = String(e);
-  }
-
-  try {
-    const replay = await loadJson('./factory-console/logs/last-600-days.json');
-    if (replayBox) replayBox.textContent = JSON.stringify(replay, null, 2);
-  } catch (e) {
-    if (replayBox) replayBox.textContent = String(e);
+    $("status").textContent = "RED: " + e.message;
   }
 }
 
