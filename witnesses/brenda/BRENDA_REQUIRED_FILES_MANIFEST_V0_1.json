@@ -1,0 +1,41 @@
+{
+  "manifest_type": "BRENDA_REQUIRED_FILES_MANIFEST_V0_1",
+  "observed_at_utc": "2026-06-14T00:01:28Z",
+  "repo": "jsonwisdom/AL",
+  "branch": "alms-v2-machine-speed",
+  "head_commit": "92d7f69659233822c0ede4af18c3612d66ee806d",
+  "files": [
+    {
+      "path": "audits/27482826536.json",
+      "sha256": "cc62e74e1305392a4a6d8633719e1a07fff3ab79e8c1f1f1fc45597684320d0d",
+      "purpose": "Preserve GitHub Actions run 27482826536 as bounded CI evidence"
+    },
+    {
+      "path": "witnesses/brenda/abilities.json",
+      "sha256": "4a76b932e20bb4aebd9f3eba230135ca5decc871d2095f8f4d2302e6221ee68b",
+      "purpose": "Machine-readable Brenda boss/base/meta assistant abilities"
+    },
+    {
+      "path": "policy/RECEIPT_TAIL_RULE.md",
+      "sha256": "f4df2659fd4947d3ca9baac86131ad77e1cd52bac31e32850813726a8dc683cb",
+      "purpose": "Stop infinite CI receipt recursion"
+    },
+    {
+      "path": "scripts/check-base-batch.js",
+      "sha256": "99783e9f615d0a767b1d31fbf0d5b16a335782c265cc4348664496529b5bafb7",
+      "purpose": "Check Base Batch boundary fields"
+    },
+    {
+      "path": "witnesses/brenda/revocation.json",
+      "sha256": "82ed998b2746fb000897ffed847da7ce7635269ae98ea7458078f8d50cfd948e",
+      "purpose": "Template for Brenda L1 revocation witness"
+    }
+  ],
+  "brenda_state": "BRENDA_REQUIRED_FILES_BUILT",
+  "repo_enforcement": true,
+  "live_l1_verified": false,
+  "authority": false,
+  "verified": false,
+  "production_green": false,
+  "no_fake_green": true
+}

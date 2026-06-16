@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "version": "invariants_v1",
+  "description": "Core invariant contracts for Machine Speed ALMS V2",
+  "invariants": {
+    "temporal_order": {
+      "id": "temporal_order",
+      "category": "temporal",
+      "name": "Temporal Order",
+      "description": "Claimed events must respect chronological order: cause before effect, event time less than or equal to publish time, etc.",
+      "formal_rule": "forall events: event_time <= reference_time",
+      "failure_message": "Temporal order violated: {details}"
+    },
+    "numerical_consistency": {
+      "id": "numerical_consistency",
+      "category": "numerical",
+      "name": "Numerical Consistency",
+      "description": "Stated totals, percentages, and calculations must be mathematically consistent with components.",
+      "formal_rule": "stated_total == sum(components) OR percentage_calculations_hold",
+      "failure_message": "Numerical inconsistency detected: {details}"
+    },
+    "identity_resolution": {
+      "id": "identity_resolution",
+      "category": "identity",
+      "name": "Identity Resolution",
+      "description": "All named entities must resolve to a unique, unambiguous referent.",
+      "formal_rule": "every_entity_ref resolves to exactly one grounded identity",
+      "failure_message": "Identity resolution failed: {details}"
+    },
+    "cardinality_match": {
+      "id": "cardinality_match",
+      "category": "cardinality",
+      "name": "Cardinality Match",
+      "description": "Claimed counts, quantities, or lists must match the actual number of distinct items.",
+      "formal_rule": "claimed_count == actual_unique_count",
+      "failure_message": "Cardinality mismatch: claimed {claimed} but found {actual}"
+    },
+    "causal_direction": {
+      "id": "causal_direction",
+      "category": "causal",
+      "name": "Causal Direction",
+      "description": "Claimed cause-effect relationships must respect logical and temporal direction.",
+      "formal_rule": "cause precedes and enables effect",
+      "failure_message": "Causal direction reversed or unsupported: {details}"
+    },
+    "source_presence": {
+      "id": "source_presence",
+      "category": "source",
+      "name": "Source Presence",
+      "description": "Every material claim must be backed by at least one primary or archival source.",
+      "formal_rule": "primary_source_exists == true",
+      "failure_message": "Missing or insufficient primary source"
+    },
+    "entity_uniqueness": {
+      "id": "entity_uniqueness",
+      "category": "identity",
+      "name": "Entity Uniqueness",
+      "description": "The same entity must not be treated as multiple distinct entities within the claim.",
+      "formal_rule": "no duplicate entity references under different names without justification",
+      "failure_message": "Entity uniqueness violation: {details}"
+    },
+    "logical_consistency": {
+      "id": "logical_consistency",
+      "category": "logical",
+      "name": "Logical Consistency",
+      "description": "The claim must not contain internal contradictions or mutually exclusive assertions.",
+      "formal_rule": "no logical contradictions between statements",
+      "failure_message": "Internal logical inconsistency: {details}"
+    }
+  }
+}

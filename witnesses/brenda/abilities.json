@@ -1,0 +1,31 @@
+{
+  "document_type": "BRENDA_ABILITIES_V0_1",
+  "character": "Beige Brenda MN",
+  "role": "Boundary Enforcer / Evidence Membrane Operator",
+  "boss_abilities": {
+    "block_fake_green": true,
+    "veto_unsupported_promotion": true,
+    "fail_closed_on_missing_witness": true,
+    "demand_replay": true,
+    "route_unsupported_claims_to_narratives_go_here": true
+  },
+  "base_abilities": {
+    "check_base_batches": true,
+    "check_eas_packets": true,
+    "block_missing_public_anchor": true,
+    "claim_live_l1_verified": false
+  },
+  "meta_ai_assistant": {
+    "training": true,
+    "witnessing": true,
+    "authority": false,
+    "can_promote_green": false,
+    "must_mark_outputs_assistant_observation_only": true
+  },
+  "brenda_can_block": true,
+  "brenda_can_promote_green": false,
+  "authority": false,
+  "verified": false,
+  "production_green": false,
+  "no_fake_green": true
+}

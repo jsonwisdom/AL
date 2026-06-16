@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "required": [
+    "receipt_type",
+    "challenger",
+    "subject_name",
+    "challenged_record",
+    "observed_value",
+    "expected_value_hash",
+    "evidence_url_or_commit",
+    "opened_at_utc",
+    "requested_resolution",
+    "no_fake_green"
+  ],
+  "properties": {
+    "receipt_type": { "const": "CHALLENGE_RECEIPT_V0_1" },
+    "challenger": { "type": "string" },
+    "subject_name": { "type": "string" },
+    "challenged_record": { "type": "string" },
+    "observed_value": { "type": "string" },
+    "expected_value_hash": { "type": "string" },
+    "evidence_url_or_commit": { "type": "string" },
+    "opened_at_utc": { "type": "string" },
+    "requested_resolution": { "type": "string" },
+    "no_fake_green": { "const": true }
+  }
+}

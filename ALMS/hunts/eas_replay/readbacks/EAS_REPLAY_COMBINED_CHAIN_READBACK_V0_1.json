@@ -1,0 +1,29 @@
+{
+  "receipt_type": "EAS_REPLAY_COMBINED_CHAIN_READBACK_V0_1",
+  "observed_at_utc": "2026-06-13T23:12:02Z",
+  "repo": "jsonwisdom/AL",
+  "branch": "alms-v2-machine-speed",
+  "head_commit": "730c40655feae21c125b27919c165fd931ccdc5d",
+  "atomic_uid_receipt_commit": "f458b399298573de6d6bba298391da3086774893",
+  "eas_replay_commit": "730c40655feae21c125b27919c165fd931ccdc5d",
+  "attestation_uid": "0xa16638fca94a7b7941db929fb86809bd617958d4ef8e32dea3e36969781fc20c",
+  "schema_uid": "0xed5ef9168064d51396fb2e50e626efe1f63a0e70858c19b9651661aa867a2045",
+  "observed_state": {
+    "atomic_uid_receipt_preserved": true,
+    "eas_attestation_found": true,
+    "schema_found": true,
+    "schema_match": true,
+    "controller": "jaywisdom.base.eth",
+    "batch_id": "BASE_BATCH_0001",
+    "lane": "BASE_BATCH_LANE_V0_1",
+    "batch_root_zero": true,
+    "artifact_manifest_awaiting_cid": true,
+    "artifact_count": 0,
+    "authority": false,
+    "verified": false,
+    "no_fake_green": true
+  },
+  "truth_state": "YELLOW_STRONG_EAS_PAIR_OBSERVED",
+  "green": false,
+  "ruling": "Atomic UID receipt and EAS attestation/schema replay are preserved on the same remote branch. Promotion to GREEN remains blocked until batch_root, manifest CID, artifact count, and replay verification are complete."
+}

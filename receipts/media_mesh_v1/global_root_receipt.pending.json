@@ -1,0 +1,17 @@
+{
+  "receipt_type": "ALMS_GLOBAL_ROOT_RECEIPT",
+  "version": "v1",
+  "state": "AWAITING_OPERATOR_SUPPLIED_GLOBAL_ROOT",
+  "next_gate": "SUPPLY_GLOBAL_ROOT",
+  "merkle_rule": "ALMS_GLOBAL_MERKLE_RULE_V1",
+  "leaf_order": "locked_manifest_order",
+  "single_leaf_rule": "global_root = leaf_hash",
+  "leaf_count": 1,
+  "included_leaf": {
+    "leaf_id": "MEDIA_MESH_V1",
+    "leaf_hash": "0x5aa1dd96735e02ba2d7a9cc41b4a4ed4cb0c11ed5366303eeb00262a4a9773ed"
+  },
+  "global_root": "0x5aa1dd96735e02ba2d7a9cc41b4a4ed4cb0c11ed5366303eeb00262a4a9773ed",
+  "global_root_status": "OPERATOR_COMPUTED_TERMINAL_BASH",
+  "receipt_hash": null
+}

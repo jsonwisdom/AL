@@ -1,0 +1,20 @@
+{
+  "receipt_type": "BRENDA_REQUIRED_FILES_RECEIPT_V0_1",
+  "observed_at_utc": "2026-06-14T00:01:28Z",
+  "repo": "jsonwisdom/AL",
+  "branch": "alms-v2-machine-speed",
+  "head_commit": "92d7f69659233822c0ede4af18c3612d66ee806d",
+  "manifest_path": "witnesses/brenda/BRENDA_REQUIRED_FILES_MANIFEST_V0_1.json",
+  "manifest_sha256": "2e7e826013c023a05d998e531c3f579b1e0789d041480bd7474f6f0b6d6ab544",
+  "required_files_built": true,
+  "files_count": 5,
+  "next_step": "Patch workflow to enforce tail rule, Base Batch checker, and revocation check.",
+  "brenda_state": "BRENDA_REQUIRED_FILES_BUILT",
+  "repo_enforcement": true,
+  "live_l1_verified": false,
+  "authority": false,
+  "verified": false,
+  "production_green": false,
+  "no_fake_green": true,
+  "ruling": "Five required Brenda boundary files added. This prepares workflow enforcement but does not claim live L1 or production GREEN."
+}

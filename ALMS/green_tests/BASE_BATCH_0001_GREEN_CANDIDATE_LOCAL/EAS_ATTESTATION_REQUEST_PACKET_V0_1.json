@@ -1,0 +1,39 @@
+{
+  "packet_type": "EAS_ATTESTATION_REQUEST_PACKET_V0_1",
+  "observed_at_utc": "2026-06-13T23:23:06Z",
+  "repo": "jsonwisdom/AL",
+  "branch": "alms-v2-machine-speed",
+  "head_commit": "9269160ba529746a450ce576afc8fb4ab71ae28f",
+  "network": "Base",
+  "eas_contract": "0x4200000000000000000000000000000000000021",
+  "schema_uid": "0xed5ef9168064d51396fb2e50e626efe1f63a0e70858c19b9651661aa867a2045",
+  "previous_attestation_uid": "0xa16638fca94a7b7941db929fb86809bd617958d4ef8e32dea3e36969781fc20c",
+  "attestation_request": {
+    "recipient": "0x0000000000000000000000000000000000000000",
+    "revocable": true,
+    "refUID": "0xa16638fca94a7b7941db929fb86809bd617958d4ef8e32dea3e36969781fc20c",
+    "fields": {
+      "batch_id": "BASE_BATCH_0001",
+      "lane": "BASE_BATCH_LANE_V0_1",
+      "controller": "jaywisdom.base.eth",
+      "batch_root": "0xdd4a72d33e2c01bc114e21cb279889afb50415f562ad36b9bfba041ebdbfea54",
+      "artifact_manifest_uri": "ipfs://bafkreidjbm2gyfz5wg5itrv7addqld5t2axxem4tzws4wtlnlv5wcde2pa",
+      "artifact_count": 3,
+      "replay_state": "GREEN_CANDIDATE_LOCAL_REPLAYED",
+      "authority": false,
+      "verified": false,
+      "no_fake_green": true
+    }
+  },
+  "sha256": {
+    "public_settlement_payload": "71dbe2f7a7e6650a9ad3fb90521e7df1483709f7c956f6633bb53a43f4bf8eb6",
+    "public_settlement_ready_receipt": "9967121a28032bc9f27da06400f5f7863e73c5a63d6adf11e544ec0e83a51230"
+  },
+  "signing_status": "NOT_SIGNED",
+  "transaction_status": "NOT_SUBMITTED",
+  "production_green": false,
+  "authority": false,
+  "verified": false,
+  "no_fake_green": true,
+  "ruling": "This packet is ready for EAS signing. It is not a transaction and does not assert production GREEN until a new on-chain attestation is observed and replayed."
+}

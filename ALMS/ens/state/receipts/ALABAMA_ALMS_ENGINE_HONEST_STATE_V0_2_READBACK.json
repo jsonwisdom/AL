@@ -1,0 +1,20 @@
+{
+  "schema": "ALABAMA_ALMS_ENGINE_HONEST_STATE_V0_2_READBACK",
+  "observed_at_utc": "2026-06-13T22:13:26Z",
+  "branch": "alms-v2-machine-speed",
+  "state_file": "ALMS/ens/state/ALABAMA_ALMS_ENGINE_HONEST_STATE_V0_2.json",
+  "state_sha256": "985f384bad3bb840193932717cb65f8d34485db80dc1af0b0cb2b41b5849a794",
+  "state_artifact_commit": "74946017d5690d0c40a94a0d577120a2c74e2d13",
+  "remote_head_observed": "74946017d5690d0c40a94a0d577120a2c74e2d13",
+  "finding": {
+    "honest_state_v0_2_remote_preserved": true,
+    "workflow_run": "OBSERVED",
+    "engine_state": "YELLOW",
+    "resolver_txt_match": "NOT_PROVEN",
+    "green": "BLOCKED",
+    "authority": false,
+    "no_fake_green": true
+  },
+  "precision_note": "The honest state file records the pre-state commit head because it was generated before its own commit. This readback receipt records the post-state remote preservation.",
+  "final_ruling": "ACCOUNTABILITY_ACTIVE_TRANSPARENCY_ACTIVE_GREEN_BLOCKED"
+}

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CW Receipt v1",
+  "type": "object",
+  "required": [
+    "kernel",
+    "fetch_uri",
+    "golden_uri",
+    "policy_hash",
+    "sovereign_hash",
+    "uri_hash",
+    "content_hash",
+    "receipt_hash",
+    "sovereign"
+  ],
+  "properties": {
+    "kernel": { "const": "cw-sovereign-replay-kernel-v1" },
+    "fetch_uri": { "type": "string" },
+    "golden_uri": { "type": "string" },
+    "policy_hash": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+    "sovereign_hash": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+    "uri_hash": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+    "content_hash": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+    "receipt_hash": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+    "sovereign": {
+      "type": "object",
+      "required": [
+        "ens_root",
+        "ens_alias",
+        "chain",
+        "chain_id",
+        "sovereign_epoch",
+        "authorized_signer"
+      ],
+      "properties": {
+        "ens_root": { "const": "jaywisdom.eth" },
+        "ens_alias": { "const": "jaywisdom.base.eth" },
+        "chain": { "const": "base" },
+        "chain_id": { "const": 8453 },
+        "sovereign_epoch": { "type": "string" },
+        "authorized_signer": { "type": "string" }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "segment_id": "ALMS_TEST_SEGMENT_MULTI_ODD",
+  "state": "SEGMENT_SEALED",
+  "leaf_order": "locked_manifest_order",
+  "global_root": "0x635f6a72f2eee47ec46cad532fba9554c87bf27692483159ce299419c290e586",
+  "receipts": [
+    {
+      "leaf_id": "MEDIA_MESH_V1_FINAL_RECEIPT",
+      "receipt_path": "tests/fixtures/alms_receipt.good.json",
+      "receipt_hash": "0x5acb442d42213fa5d79049a91b4e6496999e2090840c0400c6c90f3a66d66e68"
+    },
+    {
+      "leaf_id": "SYNTHETIC_LEAF_2",
+      "receipt_path": "tests/fixtures/segment.multi.odd/leaf_2_receipt.json",
+      "receipt_hash": "0x95987d56f2c512503805758c7e201548164ca9c297faf5712edae5500810fd89"
+    },
+    {
+      "leaf_id": "SYNTHETIC_LEAF_3",
+      "receipt_path": "tests/fixtures/segment.multi.odd/leaf_3_receipt.json",
+      "receipt_hash": "0xa967708f1128dd5492f8fabc03a1e8836c86309f2615042fdad420808c730996"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "ALABAMA_ENGINE_REQUIRED_TXT_V0_1",
+  "subject_name": "jaywisdom.base.eth",
+  "role": "ENGINE",
+  "required_txt": [
+    "alms.packet.cid",
+    "alms.packet.sha256",
+    "alms.matrix.hash"
+  ],
+  "green_rule": "BYTE_MATCH_WITH_RESOLVER_ARTIFACT",
+  "yellow_rule": "MISSING_WITH_PENDING_UPDATE_RECEIPT",
+  "red_rule": "MISSING_AND_UNEXPLAINED",
+  "no_fake_green": true
+}

@@ -1,0 +1,78 @@
+name: ALMS Receipt Verification
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  verify-receipts:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install jq
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq
+
+      - name: Ensure scripts are executable
+        run: |
+          chmod +x scripts/verify_receipt.sh
+          chmod +x scripts/test_verify_receipt.sh
+
+      - name: Run ALMS receipt verifier tests
+        run: |
+          ./scripts/test_verify_receipt.sh
+
+      - name: Verify public receipt artifacts
+        run: |
+          ./scripts/verify_receipt.sh receipts/media_mesh_v1/global_root_receipt.final.json
+          ./scripts/verify_receipt.sh receipts/segment_002/leaf_001_receipt.final.json
+
+      - name: Run ALMS segment verifier tests
+        run: |
+          chmod +x scripts/verify_segment.sh
+          chmod +x scripts/test_verify_segment.sh
+          ./scripts/test_verify_segment.sh
+
+      - name: Verify public segment manifests
+        run: |
+          ./scripts/verify_segment.sh receipts/segments/segment_001_manifest.json
+          ./scripts/verify_segment.sh receipts/segments/segment_002_manifest.json
+
+      - name: Verify public bootstrap artifacts
+        run: |
+          jq -e '
+            .segment_id == "ALMS_CHAIN_SEGMENT_002"
+            and .state == "BOOTSTRAP_READY"
+            and .parent_segment_id == "ALMS_CHAIN_SEGMENT_001"
+            and .parent_global_root == "0x5aa1dd96735e02ba2d7a9cc41b4a4ed4cb0c11ed5366303eeb00262a4a9773ed"
+            and .next_gate == "OPEN_NEXT_LEAF"
+            and (.receipts | type == "array")
+            and (.receipts | length == 0)
+          ' receipts/segments/segment_002_bootstrap.json
+
+          SEG2_ROOT="$(jq -r '.global_root' receipts/segments/segment_002_manifest.json)"
+
+          jq -e --arg root "$SEG2_ROOT" '
+            .segment_id == "ALMS_CHAIN_SEGMENT_003"
+            and .state == "BOOTSTRAP_READY"
+            and .parent_segment_id == "ALMS_CHAIN_SEGMENT_002"
+            and .parent_global_root == $root
+            and .next_gate == "OPEN_NEXT_LEAF"
+            and (.receipts | type == "array")
+            and (.receipts | length == 0)
+          ' receipts/segments/segment_003_bootstrap.json
+
+      - name: Run ALMS rollover verifier tests
+        run: |
+          chmod +x scripts/verify_rollover.sh
+          chmod +x scripts/test_verify_rollover.sh
+          ./scripts/test_verify_rollover.sh
+
+      - name: Verify public rollover artifacts
+        run: |
+          ./scripts/verify_rollover.sh receipts/rollover/segment_001_to_002.json
+          ./scripts/verify_rollover.sh receipts/rollover/segment_002_to_003.json

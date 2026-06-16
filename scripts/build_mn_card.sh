@@ -15,7 +15,22 @@ CID="$(jq -r '.cid // .root.cid // "bafkrei..."' "$IN")"
 HASH="$(jq -r '.hash // .root.hash // .receipt_hash // "UNKNOWN_HASH"' "$IN")"
 STATUS="$(jq -r '.status // "VERIFIED"' "$IN")"
 TITLE="$(jq -r '.title // .leaf // "'"$LEAF"'"' "$IN")"
-LINE="$(jq -r '.claim // .extracted_line // .line // "verified public record line"' "$IN")"
+LINE="$(jq -r '.claim // .extracted_line // .line // .source_line // .content_hash // empty' "$IN")"
+
+if [ -z "$LINE" ] || [ "$LINE" = "null" ]; then
+  echo "FATAL: missing extracted line for $LEAF in $IN"
+  exit 1
+fi
+
+if [ "$LINE" = "verified public record line" ]; then
+  echo "FATAL: placeholder extracted_line detected for $LEAF"
+  exit 1
+fi
+
+if [ "$HASH" = "UNKNOWN_HASH" ]; then
+  echo "FATAL: UNKNOWN_HASH detected for $LEAF"
+  exit 1
+fi
 
 jq -n -cS \
   --arg leaf "$LEAF" \

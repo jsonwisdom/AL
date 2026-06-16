@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>ALMS Base Schema Registration</title>
+  <style>
+    body { background:#050505; color:#f5f5f5; font-family:monospace; padding:32px; }
+    button { font-size:18px; padding:14px 20px; margin:12px 0; cursor:pointer; }
+    pre { background:#111; padding:16px; white-space:pre-wrap; word-break:break-all; border:1px solid #333; }
+    .ok { color:#7CFF8A; }
+    .warn { color:#FFCC66; }
+    .bad { color:#FF6666; }
+  </style>
+</head>
+<body>
+  <h1>ALMS Schema Registration — Base Mainnet</h1>
+
+  <p class="warn">Jason must approve this in MetaMask. No private key enters terminal.</p>
+
+  <pre>
+Network: Base Mainnet
+Chain ID: 8453
+To: 0x4200000000000000000000000000000000000020
+Value: 0
+Schema UID: 0x879d4e37dcd2fe24f977b78f7e8628902af9a54896cb731f5ee7c9e4f5b78c97
+Schema: bytes32 merkleRoot,string epoch,string mode,uint8 witnessCount
+  </pre>
+
+  <button onclick="connect()">1. Connect MetaMask</button><br>
+  <button onclick="switchBase()">2. Switch to Base</button><br>
+  <button onclick="sendTx()">3. Register Schema</button>
+
+  <h2>Status</h2>
+  <pre id="status">READY</pre>
+
+<script>
+const TO = "0x4200000000000000000000000000000000000020";
+const DATA = "0x60d7a278000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000003e62797465733332206d65726b6c65526f6f742c737472696e672065706f63682c737472696e67206d6f64652c75696e7438207769746e657373436f756e740000";
+const BASE_CHAIN_ID = "0x2105";
+
+function log(x) {
+  document.getElementById("status").textContent += "\n" + x;
+}
+
+async function connect() {
+  if (!window.ethereum) {
+    log("FAIL: MetaMask not found.");
+    return;
+  }
+  const accounts = await ethereum.request({ method: "eth_requestAccounts" });
+  log("CONNECTED: " + accounts[0]);
+}
+
+async function switchBase() {
+  try {
+    await ethereum.request({
+      method: "wallet_switchEthereumChain",
+      params: [{ chainId: BASE_CHAIN_ID }]
+    });
+    log("BASE_CHAIN_ACTIVE");
+  } catch (err) {
+    log("SWITCH_FAILED: " + err.message);
+  }
+}
+
+async function sendTx() {
+  const accounts = await ethereum.request({ method: "eth_requestAccounts" });
+  const from = accounts[0];
+
+  const chainId = await ethereum.request({ method: "eth_chainId" });
+  if (chainId !== BASE_CHAIN_ID) {
+    log("FAIL: wrong chain " + chainId + " expected " + BASE_CHAIN_ID);
+    return;
+  }
+
+  log("SENDING_FROM: " + from);
+  log("TO: " + TO);
+
+  const txHash = await ethereum.request({
+    method: "eth_sendTransaction",
+    params: [{
+      from: from,
+      to: TO,
+      value: "0x0",
+      data: DATA
+    }]
+  });
+
+  log("TX_HASH=" + txHash);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+{
+  "schema": "ALABAMA_ALMS_ENGINE_HONEST_STATE_V0_2",
+  "observed_at_utc": "2026-06-13T22:12:39Z",
+  "branch": "alms-v2-machine-speed",
+  "local_head": "6ca98780308ebaa6294c2c7f791aede1147ff752",
+  "remote_head": "6ca98780308ebaa6294c2c7f791aede1147ff752",
+  "identity_split": {
+    "seal": "jaywisdom.eth",
+    "engine": "jaywisdom.base.eth"
+  },
+  "states": {
+    "policy": "REMOTE_PRESERVED",
+    "remote_witness": "REMOTE_PRESERVED",
+    "checker": "REMOTE_PRESERVED",
+    "transition_law": "REMOTE_PRESERVED",
+    "expiry_enforcer": "REMOTE_PRESERVED",
+    "workflow_run": "OBSERVED",
+    "resolver_txt_match": "NOT_PROVEN",
+    "engine_state": "YELLOW",
+    "green": "BLOCKED"
+  },
+  "workflow_run": {
+    "run_id": 27480610320,
+    "receipt_path": "ALMS/ens/workflow-runs/alabama_engine_expiry_enforcer_run_27480610320.receipt.json",
+    "receipt_sha256": "218a057106d1d010d394947b40bb97b918f48860867d6b8e64f0173aa0985a6b",
+    "log_path": "ALMS/ens/workflow-runs/alabama_engine_expiry_enforcer_run_27480610320.log",
+    "log_sha256": "1ecb2afe1b6f661da67e8bcdac4d1d709681a9a08904c85f12619bb454dd7b5b",
+    "conclusion": "success",
+    "green": false,
+    "authority": false,
+    "no_fake_green": true
+  },
+  "required_txt": [
+    "alms.packet.cid",
+    "alms.packet.sha256",
+    "alms.matrix.hash"
+  ],
+  "checker_output": "YELLOW subject=jaywisdom.base.eth rule=MISSING_WITH_PENDING_UPDATE_RECEIPT expires_at=2026-06-16T22:04:10Z missing=alms.packet.cid alms.packet.sha256 alms.matrix.hash",
+  "expiry_enforcer_output": "YELLOW subject=jaywisdom.base.eth rule=MISSING_WITH_PENDING_UPDATE_RECEIPT expires_at=2026-06-16T22:04:10Z missing=alms.packet.cid alms.packet.sha256 alms.matrix.hash
+EXPIRY_ENFORCER_OK pending_update_unexpired expires_at=2026-06-16T22:04:10Z",
+  "unproven": [
+    "resolver TXT records present",
+    "byte-for-byte resolver match",
+    "independent witness signature",
+    "civic-grade status"
+  ],
+  "final_ruling": {
+    "accountability": "ACTIVE",
+    "transparency": "ACTIVE",
+    "temporary_authority": "FORBIDDEN",
+    "no_fake_green": true
+  }
+}

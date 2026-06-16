@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "required": [
+    "artifact_type",
+    "subject_name",
+    "chain_id",
+    "resolver_address_or_endpoint",
+    "observed_at_utc",
+    "block_number_or_resolution_epoch",
+    "txt_records",
+    "txt_records_sha256",
+    "checker_output",
+    "workflow_run_id",
+    "no_fake_green"
+  ],
+  "properties": {
+    "artifact_type": { "const": "ALABAMA_ENGINE_RESOLVER_ARTIFACT_V0_1" },
+    "subject_name": { "const": "jaywisdom.base.eth" },
+    "chain_id": { "type": "integer" },
+    "resolver_address_or_endpoint": { "type": "string" },
+    "observed_at_utc": { "type": "string" },
+    "block_number_or_resolution_epoch": {},
+    "txt_records": { "type": "object" },
+    "txt_records_sha256": { "type": "string" },
+    "checker_output": { "type": "string" },
+    "workflow_run_id": { "type": "integer" },
+    "no_fake_green": { "const": true }
+  }
+}

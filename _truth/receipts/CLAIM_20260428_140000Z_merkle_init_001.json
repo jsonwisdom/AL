@@ -1,0 +1,21 @@
+{
+  "claim_id": "CLAIM_20260428_140000Z_merkle_init_001",
+  "timestamp_utc": "2026-04-28T14:00:00Z",
+  "actor": "jaywisdom.base",
+  "nonce": "merkle-init-001",
+  "inputs": {
+    "source": "_truth/ledger/2026-04.jsonl",
+    "domain": "meme_court_flywheel",
+    "claim_type": "merkle_root_initialization",
+    "algorithm": "sha256_pairwise_sorted_v1"
+  },
+  "outputs": {
+    "statement": "ALMS Merkle root initialized as the compressed proof of the monthly receipt ledger.",
+    "merkle_root_path": "_truth/merkle/root.json",
+    "builder": "scripts/merkle/build_merkle_root.sh",
+    "validator": "scripts/merkle/verify_merkle_root.sh",
+    "status": "READY_FOR_EAS_ANCHOR",
+    "doctrine": "Ledger is ordered memory. Merkle is compressed proof. EAS is public finality."
+  },
+  "verdict": "VERIFIED"
+}

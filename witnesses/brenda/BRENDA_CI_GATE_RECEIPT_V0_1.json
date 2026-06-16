@@ -1,0 +1,22 @@
+{
+  "receipt_type": "BRENDA_CI_GATE_RECEIPT_V0_1",
+  "observed_at_utc": "2026-06-13T23:48:22Z",
+  "repo": "jsonwisdom/AL",
+  "branch": "alms-v2-machine-speed",
+  "head_commit": "7deafa188e03a68702333466439e27a2cf85f9d5",
+  "workflow_path": ".github/workflows/brenda-gate.yml",
+  "workflow_sha256": "701a7149b6e8b3e958776ca407677d5a43611bd920e8d9ad47f4803587d7a078",
+  "verifier_path": "verify-brenda.sh",
+  "verifier_sha256": "0c420d63f3ef4b3a29db510a61640c17342e6a30670f65f950d88e9664cd32bf",
+  "local_dry_run_log": "audits/brenda/brenda_ci_gate_local_dry_run.log",
+  "local_dry_run_log_sha256": "3c112455ce8301055f7b263a20075cd449975fde5d33fef9d448080cb047878a",
+  "local_dry_run_exit_code": 0,
+  "brenda_state": "BRENDA_CI_GATE_READY",
+  "ci_enforcing": true,
+  "live_l1_verified": false,
+  "authority": false,
+  "verified": false,
+  "production_green": false,
+  "no_fake_green": true,
+  "ruling": "Brenda verifier is wired into GitHub Actions. CI can now block failed Brenda gates. This remains local/repo enforcement, not live L1 production GREEN."
+}

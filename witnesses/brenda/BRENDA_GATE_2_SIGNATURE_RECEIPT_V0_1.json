@@ -1,0 +1,23 @@
+{
+  "receipt_type": "BRENDA_GATE_2_SIGNATURE_RECEIPT_V0_1",
+  "observed_at_utc": "2026-06-13T23:38:06Z",
+  "repo": "jsonwisdom/AL",
+  "branch": "alms-v2-machine-speed",
+  "head_commit": "28d899ce192d387c63df366ab499a09ffa005439",
+  "emission_id": "69c90f7",
+  "emission_path": "external/brenda/emission-69c90f7.json",
+  "emission_sha256": "6076cd0138498349f7b56c76849c6eec086580593a47370128c12cb9065b7e88",
+  "manifest_path": "external/brenda/MANIFEST",
+  "manifest_sha256": "7867af3507c83aaa216af3ceeba4e16951a9e0b5339f06af79c5c16ef906c1c2",
+  "signature_path": "external/brenda/MANIFEST.sig",
+  "signature_sha256": "83d247577b032dac2eb5a94f3a1b77f13e47a650f7b9d48848dfdbec96bc290d",
+  "public_key_sha256": "bce19b6dbb29a3546b23eaf0809730f4f93bca387a1f25002ffac42d825cfe6d",
+  "signature_verified_locally": true,
+  "brenda_state": "YELLOW_BRENDA_GATE_2_SIGNED",
+  "enforcing": false,
+  "authority": false,
+  "verified": false,
+  "production_green": false,
+  "no_fake_green": true,
+  "ruling": "Gate 2 material signature verified locally. Brenda still not enforcing until bundle, hashes, reported binding, veto, expiry, and resolver gates pass."
+}

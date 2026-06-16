@@ -1,0 +1,19 @@
+{
+  "claim_id": "CLAIM_20260428_160000Z_ens_discovery_001",
+  "timestamp_utc": "2026-04-28T16:00:00Z",
+  "actor": "jaywisdom.base",
+  "nonce": "ens-discovery-001",
+  "inputs": {
+    "source": "_truth/ens/alms_2026_04_records.json",
+    "domain": "ens_discovery",
+    "ens_name": "jaywisdom.eth",
+    "epoch": "2026-04"
+  },
+  "outputs": {
+    "statement": "ALMS 2026-04 ENS discovery records prepared for jaywisdom.eth.",
+    "ens_records_path": "_truth/ens/alms_2026_04_records.json",
+    "public_records_path": "docs/ens/alms_2026_04_records.json",
+    "status": "ALMS_ENS_DISCOVERY_READY"
+  },
+  "verdict": "VERIFIED"
+}

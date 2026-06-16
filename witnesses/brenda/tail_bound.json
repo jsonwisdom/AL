@@ -1,0 +1,13 @@
+{
+  "witness_type": "RECEIPT_TAIL_BOUND_WITNESS_V0_1",
+  "observed_at_utc": "2026-06-14T00:03:03Z",
+  "policy": "policy/RECEIPT_TAIL_RULE.md",
+  "max_depth": 3,
+  "current_depth": 3,
+  "tail_bound_reached": true,
+  "authority": false,
+  "verified": false,
+  "production_green": false,
+  "no_fake_green": true,
+  "ruling": "Receipt tail bound reached. Stop infinite CI receipt recursion."
+}

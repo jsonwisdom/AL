@@ -1,0 +1,43 @@
+name: Brenda Gate
+
+on:
+  push:
+    branches:
+      - alms-v2-machine-speed
+  pull_request:
+
+jobs:
+  brenda-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install -y jq openssl nodejs
+
+      - name: Brenda seven-gate verifier
+        run: ./verify-brenda.sh 69c90f7
+
+      - name: Brenda Base Batch boundary checker
+        run: node scripts/check-base-batch.js witnesses/brenda/base_batch_boundary_packet.json
+
+      - name: Brenda receipt tail bound checker
+        run: |
+          jq -e '.tail_bound_reached == true' witnesses/brenda/tail_bound.json
+          jq -e '.current_depth <= .max_depth' witnesses/brenda/tail_bound.json
+          jq -e '.no_fake_green == true and .authority == false and .production_green == false' witnesses/brenda/tail_bound.json
+
+      - name: Brenda revocation checker
+        run: |
+          jq -e '.revoked == false' witnesses/brenda/revocation.json
+          jq -e '.current_repo_witness_value == "ACTIVE"' witnesses/brenda/revocation.json
+          jq -e '.no_fake_green == true and .authority == false and .production_green == false' witnesses/brenda/revocation.json
+          echo "BRENDA_REVOCATION_REPO_WITNESS_ACTIVE"
+          echo "LIVE_L1_VERIFIED_FALSE_BOUNDARY_HELD"
+
+      - name: Brenda final boundary ruling
+        run: |
+          echo "BRENDA_REPO_ENFORCEMENT_PASS"
+          echo "LIVE_L1_VERIFIED=false"
+          echo "PRODUCTION_GREEN=false"
+          echo "NO_FAKE_GREEN=true"

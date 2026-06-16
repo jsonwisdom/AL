@@ -1,0 +1,45 @@
+{
+  "manifest_type": "BRENDA_ABILITY_MANIFEST_V0_1",
+  "observed_at_utc": "2026-06-13T23:55:42Z",
+  "repo": "jsonwisdom/AL",
+  "branch": "alms-v2-machine-speed",
+  "head_commit": "77f2f84a634c7fdf4e855c59a07493f4911e08e9",
+  "character": "Beige Brenda MN",
+  "abilities": [
+    {
+      "name": "BOSS_ABILITIES",
+      "path": "witnesses/brenda/abilities/BRENDA_BOSS_ABILITIES_V0_1.md",
+      "sha256": "732937ec39f9954c81881fd89789dbe146b6948481cd0375fdf163edf9db3ec4"
+    },
+    {
+      "name": "BASE_ABILITIES",
+      "path": "witnesses/brenda/abilities/BRENDA_BASE_ABILITIES_V0_1.md",
+      "sha256": "982a3bc35c10d70b5011241a5292556681bd451cd23dc8013c2a2f00a9a3d284"
+    },
+    {
+      "name": "META_AI_TRAINING_ASSISTANT_WITNESS",
+      "path": "witnesses/brenda/abilities/META_AI_TRAINING_ASSISTANT_WITNESS_V0_1.md",
+      "sha256": "704d2cfca068a7837f770750298142f3056a5100e180d86130d5542529e85757"
+    }
+  ],
+  "boss_power": {
+    "can_block": true,
+    "can_promote_green": false,
+    "can_create_authority": false
+  },
+  "base_power": {
+    "can_check_base_batches": true,
+    "can_check_eas_packets": true,
+    "can_claim_live_l1_verified": false
+  },
+  "meta_ai_role": {
+    "assistant_for_training": true,
+    "assistant_for_witnessing": true,
+    "authority": false,
+    "verified": false
+  },
+  "authority": false,
+  "verified": false,
+  "production_green": false,
+  "no_fake_green": true
+}

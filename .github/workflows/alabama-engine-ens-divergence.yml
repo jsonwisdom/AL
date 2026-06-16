@@ -1,0 +1,16 @@
+name: Alabama Engine ENS Divergence
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  divergence-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+      - name: Run Alabama Engine divergence checker
+        run: bash scripts/ens/alabama_engine_divergence_check.sh

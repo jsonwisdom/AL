@@ -1,0 +1,42 @@
+ALMS_COPILOT_READY_AUDIT_V1
+time=20260429T231159Z
+
+=== ROOT SURFACE CHECK ===
+canonical_root=40367a8c4b68ebd564d3e0558d417fb209a82d33622761a3c804a74ce02120d3
+manifest_root=40367a8c4b68ebd564d3e0558d417fb209a82d33622761a3c804a74ce02120d3
+status_root=dc4b992f9f6eb41139056a5f75af6d523ed6f55a9775da21401e8bc185e86f5c
+CANONICAL_ROOT_MATCH=YES
+CLASSIFICATION=ROOT_SURFACE_DRIFT
+
+=== PREFLIGHT ===
+PREFLIGHT_REPO_AUDIT
+WARN ROOT_SURFACE_DRIFT status_root=dc4b992f9f6eb41139056a5f75af6d523ed6f55a9775da21401e8bc185e86f5c canonical_root=40367a8c4b68ebd564d3e0558d417fb209a82d33622761a3c804a74ce02120d3
+docs/ALMS_OPERATOR_GUIDE.md:1. No `UNKNOWN_HASH` in production.
+scripts/preflight_repo_audit.sh:if grep -R "UNKNOWN_HASH" _truth/receipts receipts docs studio scripts site 2>/dev/null; then
+scripts/preflight_repo_audit.sh:  echo "WARN UNKNOWN_HASH present"
+scripts/preflight_repo_audit.sh.broken.20260429T014629Z:if grep -R "UNKNOWN_HASH" _truth/receipts _truth/cards site/cards 2>/dev/null; then
+scripts/preflight_repo_audit.sh.broken.20260429T014629Z:  echo "WARN UNKNOWN_HASH present"
+scripts/preflight_repo_audit.sh.broken.20260429T014629Z:if grep -R "UNKNOWN_HASH" _truth 2>/dev/null; then
+scripts/preflight_repo_audit.sh.broken.20260429T014629Z:  echo "FATAL: UNKNOWN_HASH_DETECTED"
+scripts/preflight_repo_audit.sh.broken.20260429T014629Z:if grep -R "UNKNOWN_HASH" _truth 2>/dev/null; then
+scripts/preflight_repo_audit.sh.broken.20260429T014629Z:  echo "FATAL: UNKNOWN_HASH_DETECTED"
+scripts/preflight_repo_audit.sh.broken.20260429T014629Z:    jq -r '.sources[]? | select(.raw_hash? and (.raw_hash | test("^sha256:1{64}$|REPLACE_WITH_ACTUAL_HASH|UNKNOWN_HASH"))) | "\(.id):\(.raw_hash)"' contracts/source_registry.v1.json 2>/dev/null || true
+scripts/audit_genesis_arena.sh:grep -R "UNKNOWN_HASH" _truth contracts receipts site scripts 2>/dev/null || echo "NO_UNKNOWN_HASH"
+scripts/adversarial_matrix_v2.sh:sed -i 's/sha256:[a-f0-9]\{64\}/UNKNOWN_HASH/1' "$TMP/_truth/receipts/MN_001.json"
+scripts/adversarial_matrix_v2.sh:expect_fail "UNKNOWN_HASH injection" "$TMP"
+scripts/preflight_repo_audit.sh.broken.20260429T231158Z:grep -R "UNKNOWN_HASH" _truth --exclude-dir=audit 2>/dev/null && { echo "FATAL: UNKNOWN_HASH_DETECTED"; exit 1; } || true
+scripts/preflight_repo_audit.sh.broken.20260429T231158Z:  jq -r '.sources[]? | select(.raw_hash? and (.raw_hash | test("^sha256:1{64}$|REPLACE_WITH_ACTUAL_HASH|UNKNOWN_HASH"))) | "\(.id):\(.raw_hash)"' contracts/source_registry.v1.json 2>/dev/null || true
+scripts/build_mn_card.sh:HASH="$(jq -r '.hash // .root.hash // .receipt_hash // "UNKNOWN_HASH"' "$IN")"
+scripts/build_mn_card.sh:if [ "$HASH" = "UNKNOWN_HASH" ]; then
+scripts/build_mn_card.sh:  echo "FATAL: UNKNOWN_HASH detected for $LEAF"
+scripts/preflight_repo_audit.sh.fullchain_bad.20260429T020327Z:grep -R "UNKNOWN_HASH" _truth --exclude-dir=audit 2>/dev/null && { echo "FATAL: UNKNOWN_HASH_DETECTED"; exit 1; } || true
+scripts/preflight_repo_audit.sh.fullchain_bad.20260429T020327Z:  jq -r '.sources[]? | select(.raw_hash? and (.raw_hash | test("^sha256:1{64}$|REPLACE_WITH_ACTUAL_HASH|UNKNOWN_HASH"))) | "\(.id):\(.raw_hash)"' contracts/source_registry.v1.json 2>/dev/null || true
+scripts/preflight_repo_audit.sh.fullchain_bad.20260429T020537Z:grep -R "UNKNOWN_HASH" _truth --exclude-dir=audit 2>/dev/null && { echo "FATAL: UNKNOWN_HASH_DETECTED"; exit 1; } || true
+scripts/preflight_repo_audit.sh.fullchain_bad.20260429T020537Z:  jq -r '.sources[]? | select(.raw_hash? and (.raw_hash | test("^sha256:1{64}$|REPLACE_WITH_ACTUAL_HASH|UNKNOWN_HASH"))) | "\(.id):\(.raw_hash)"' contracts/source_registry.v1.json 2>/dev/null || true
+scripts/adversarial_matrix_v1.sh:# 1. UNKNOWN_HASH injection
+scripts/adversarial_matrix_v1.sh:jq '.receipt_hash="UNKNOWN_HASH"' "$TMP/_truth/receipts/MN_001.json" > "$TMP/_truth/receipts/MN_001.tmp"
+scripts/adversarial_matrix_v1.sh:expect_preflight_fail "UNKNOWN_HASH injection" "$TMP"
+WARN UNKNOWN_HASH present
+PREFLIGHT_OK
+
+AUDIT_REPORT=_truth/audit/alms_copilot_ready_20260429T231159Z.txt

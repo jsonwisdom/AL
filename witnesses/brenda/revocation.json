@@ -1,0 +1,18 @@
+{
+  "document_type": "BRENDA_REVOCATION_TEMPLATE_V0_1",
+  "created_at_utc": "2026-06-14T00:01:28Z",
+  "name": "jaywisdom.eth",
+  "txt_key": "brenda.status",
+  "accepted_values": [
+    "ACTIVE",
+    "REVOKED;since=<block>"
+  ],
+  "current_repo_witness_value": "ACTIVE",
+  "live_l1_verified": false,
+  "revoked": false,
+  "rule": "If live resolver or accepted witness says REVOKED, Brenda gates fail closed.",
+  "authority": false,
+  "verified": false,
+  "production_green": false,
+  "no_fake_green": true
+}

@@ -1,0 +1,21 @@
+{
+  "claim_id": "CLAIM_20260428_150000Z_eas_batch_prepare_001",
+  "timestamp_utc": "2026-04-28T15:00:00Z",
+  "actor": "jaywisdom.base",
+  "nonce": "eas-batch-prepare-001",
+  "inputs": {
+    "source": "_truth/merkle/root.json",
+    "domain": "meme_court_flywheel",
+    "claim_type": "eas_batch_anchor_preparation",
+    "network": "base"
+  },
+  "outputs": {
+    "statement": "ALMS EAS batch anchor payload prepared from the monthly Merkle root for Base notarization.",
+    "eas_payload_path": "_truth/eas/merkle_anchor_2026-04.json",
+    "builder": "scripts/eas/build_merkle_anchor_payload.sh",
+    "validator": "scripts/eas/verify_merkle_anchor_payload.sh",
+    "status": "READY_FOR_EAS_UI_SIGNATURE",
+    "doctrine": "Merkle root is prepared before EAS finality is claimed."
+  },
+  "verdict": "VERIFIED"
+}

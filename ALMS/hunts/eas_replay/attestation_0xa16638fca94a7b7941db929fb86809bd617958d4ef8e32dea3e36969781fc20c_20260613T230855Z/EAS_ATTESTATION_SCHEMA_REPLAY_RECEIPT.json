@@ -1,0 +1,25 @@
+{
+  "receipt_type": "EAS_ATTESTATION_SCHEMA_REPLAY_RECEIPT_V0_1",
+  "observed_at_utc": "2026-06-13T23:08:56Z",
+  "network": "Base",
+  "eas_scan": "base.easscan.org",
+  "attestation_uid": "0xa16638fca94a7b7941db929fb86809bd617958d4ef8e32dea3e36969781fc20c",
+  "schema_uid": "0xed5ef9168064d51396fb2e50e626efe1f63a0e70858c19b9651661aa867a2045",
+  "observed": {
+    "attestation_found": true,
+    "schema_found": true,
+    "attestation_schema": "0xed5ef9168064d51396fb2e50e626efe1f63a0e70858c19b9651661aa867a2045",
+    "schema_match": true,
+    "uid_is_transaction_hash": false
+  },
+  "sha256": {
+    "attestation_response": "5755d55fb3528cdbe756b4058fb86bd0daf22498c7dd6a281d69d001d54ab5f1",
+    "schema_response": "02708d4afdfaa51f2bcc3b137584189df25bcbe58e5dda0c73b6b3d21c9d2ab2",
+    "tx_probe": "ca3db3fe00f86a9485058afc1daf2f0547027fc3262b67c570f89d0b4638c8c6"
+  },
+  "state": "EAS_REPLAY_OBSERVED",
+  "authority": false,
+  "green": false,
+  "no_fake_green": true,
+  "ruling": "EAS attestation/schema replay only. Promote only if attestation exists, schema exists, schema matches, and Jay binding is separately verified."
+}

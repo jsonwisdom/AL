@@ -1,0 +1,20 @@
+{
+  "receipt_type": "BRENDA_GATE_5_REPORTED_BINDING_RECEIPT_V0_1",
+  "observed_at_utc": "2026-06-13T23:39:46Z",
+  "repo": "jsonwisdom/AL",
+  "branch": "alms-v2-machine-speed",
+  "head_commit": "65169764dd75171f4ed580abc8d7e073ee3eb9b9",
+  "emission_id": "69c90f7",
+  "reported_path": "external/brenda/reported.txt",
+  "reported_sha256": "060c0621254428d805a5c33321c94049e3be75f4b2067a9c12ea4ca7c74678fb",
+  "reported_external_hash": "bec6aa98d8b2e5ba9b18d869c29b9940fbe4cc6fbdc7c99906d9200eadf45269",
+  "binding_algorithm": "keccak256_if_cast_available_else_sha256_fallback",
+  "binding": "0x4d32ba561b63c5fa6a0dae0e225ca87d4745502b76d49f4cd5d5dae086c9c578",
+  "brenda_state": "YELLOW_BRENDA_GATE_5_BOUND",
+  "enforcing": false,
+  "authority": false,
+  "verified": false,
+  "production_green": false,
+  "no_fake_green": true,
+  "ruling": "Gate 5 reported binding preserved. Brenda still not enforcing until veto and expiry/resolver gates pass."
+}

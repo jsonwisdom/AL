@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ALMS Human Receipt Loop</title>
+<style>
+body{background:#030805;color:#eafff1;font-family:monospace;padding:32px}
+h1{color:#00ff88;font-size:42px}
+h2{color:#00ff88}
+button{display:block;margin:12px 0;padding:14px 18px;font-size:16px;cursor:pointer;background:#eaeaea;color:#050505;border:0}
+pre{background:#07110c;border:1px solid #164d34;padding:16px;white-space:pre-wrap;word-break:break-all}
+a{color:#63c7ff}
+.warn{color:#ffd166}.ok{color:#00ff88}.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.card{border:1px solid #164d34;background:#06100b;padding:22px;margin:18px 0;border-radius:12px}
+</style>
+</head>
+<body>
+<h1>ALMS Human Receipt Loop</h1>
+<p class="warn">Browser signs. Terminal verifies. GitHub shows receipts. ENS anchors identity.</p>
+
+<div class="grid">
+<section class="card">
+<h2>1. Wallet Action</h2>
+<button onclick="connect()">Connect Wallet</button>
+<button onclick="switchBase()">Switch to Base</button>
+<button onclick="registerSchema()">Register ALMS Schema</button>
+<button onclick="exportReceipt()">Export Receipt JSON</button>
+</section>
+
+<section class="card">
+<h2>2. GitHub Direct</h2>
+<p>Inspect the machine directly. No narrative required.</p>
+<button onclick="window.open('https://github.com/jsonwisdom/AL','_blank')">Open GitHub Repo</button>
+<button onclick="window.open('https://github.com/jsonwisdom/AL/tree/alms-v2-machine-speed/_truth','_blank')">Open _truth Ledger</button>
+<button onclick="window.open('https://github.com/jsonwisdom/AL/tree/alms-v2-machine-speed/docs/alms-browser','_blank')">Open Browser Tool Source</button>
+<pre>git clone https://github.com/jsonwisdom/AL.git
+cd AL
+git checkout alms-v2-machine-speed
+bash verify.sh</pre>
+</section>
+</div>
+
+<section class="card">
+<h2>Registration Target</h2>
+<pre>
+Chain: Base Mainnet / 8453
+Schema Registry: 0x4200000000000000000000000000000000000020
+Schema: bytes32 merkleRoot,string epoch,string mode,uint8 witnessCount
+Resolver: 0x0000000000000000000000000000000000000000
+Revocable: true
+ENS Target: jaywisdom.base.eth
+</pre>
+</section>
+
+<section class="card">
+<h2>Status Console</h2>
+<pre id="out">READY
+NO_PRIVATE_KEY
+NO_TERMINAL_SIGNER
+WAITING_FOR_WALLET</pre>
+</section>
+
+<script>
+const out=document.getElementById("out");
+const BASE_CHAIN_ID="0x2105";
+const SCHEMA_REGISTRY="0x4200000000000000000000000000000000000020";
+const ALMS_SCHEMA="bytes32 merkleRoot,string epoch,string mode,uint8 witnessCount";
+const SCHEMA_RESOLVER="0x0000000000000000000000000000000000000000";
+const SCHEMA_REVOCABLE=true;
+const ENS_TARGET="jaywisdom.base.eth";
+const REGISTER_CALLDATA="0x60d7a278000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000003e62797465733332206d65726b6c65526f6f742c737472696e672065706f63682c737472696e67206d6f64652c75696e7438207769746e657373436f756e740000";
+
+let account=null,lastTx=null;
+function log(x){out.textContent+="\n"+x;}
+
+async function connect(){
+ if(!window.ethereum){log("FAIL MetaMask/Rabby/Coinbase Wallet not found");return;}
+ const a=await ethereum.request({method:"eth_requestAccounts"});
+ account=a[0]; log("CONNECTED="+account);
+}
+async function switchBase(){
+ try{
+  await ethereum.request({method:"wallet_switchEthereumChain",params:[{chainId:BASE_CHAIN_ID}]});
+  log("BASE_CHAIN_ACTIVE");
+ }catch(e){log("SWITCH_FAILED="+e.message);}
+}
+async function registerSchema(){
+ if(!account) await connect();
+ const chain=await ethereum.request({method:"eth_chainId"});
+ if(chain!==BASE_CHAIN_ID){log("FAIL wrong_chain="+chain+" expected "+BASE_CHAIN_ID);return;}
+ log("REQUESTING_WALLET_SIGNATURE");
+ lastTx=await ethereum.request({method:"eth_sendTransaction",params:[{from:account,to:SCHEMA_REGISTRY,value:"0x0",data:REGISTER_CALLDATA}]});
+ log("TX_HASH="+lastTx);
+ log("NEXT=VERIFY_SCHEMA_LIVE_THEN_ANCHOR_ENS");
+}
+function exportReceipt(){
+ const receipt={type:"ALMS_BROWSER_RECEIPT_V1",chain_id:8453,account,schema_registry:SCHEMA_REGISTRY,schema:ALMS_SCHEMA,resolver:SCHEMA_RESOLVER,revocable:SCHEMA_REVOCABLE,tx_hash:lastTx,ens_target:ENS_TARGET,github:"https://github.com/jsonwisdom/AL/tree/alms-v2-machine-speed",next:"verify tx, verify schema live, update ENS text records"};
+ log(JSON.stringify(receipt,null,2));
+}
+</script>
+</body>
+</html>

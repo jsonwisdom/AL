@@ -1,0 +1,30 @@
+{
+  "manifest_type": "BRENDA_EXTERNAL_EMISSION_MANIFEST_V0_1",
+  "observed_at_utc": "2026-06-13T23:32:03Z",
+  "repo": "jsonwisdom/AL",
+  "branch": "alms-v2-machine-speed",
+  "head_commit": "52236313e04404b2e333ed664684bfe3add65d11",
+  "artifacts": [
+    {
+      "path": "ALMS/characters/brenda_external_emission_v0_1/BEIGE_BRENDA_MN_BOSS_CARD_V0_1.external.md",
+      "sha256": "92e704c5f505bff563764010e15689f2508b167501ee949a885f346da7f2447c"
+    },
+    {
+      "path": "ALMS/characters/brenda_external_emission_v0_1/BEIGE_BRENDA_MN_BOSS_CARD_RECEIPT_V0_1.external.json",
+      "sha256": "851c6c026a1dfbe28d6f6717bec7db2182ca5f9865653aa07d7b4aa334ffe77e"
+    },
+    {
+      "path": "ALMS/characters/brenda_external_emission_v0_1/BRENDA_POST_LANDING_STATE.txt",
+      "sha256": "2b3b0bcdd6e6b27cb87e8f70b447d1a600b61be9f59051cdabdc89729881f3f9"
+    }
+  ],
+  "external_reported_sha256": {
+    "BEIGE_BRENDA_MN_BOSS_CARD_V0_1.md": "bec6aa98d8b2e5ba9b18d869c29b9940fbe4cc6fbdc7c99906d9200eadf45269"
+  },
+  "truth_state": "BRENDA_EXTERNAL_EMISSION_PRESERVED",
+  "authority": false,
+  "verified": false,
+  "production_green": false,
+  "no_fake_green": true,
+  "ruling": "Three-file Brenda external emission set preserved with manifest. External byte-level verification remains pending."
+}
