@@ -8,12 +8,21 @@
   "closure_pr": "PR330",
   "closure_head_sha": "1e4d92df41ba6335b6de55a431902d88b8f968ca",
   "merge_commit": "9a3d9dca6922b5d4ae8300a2c363a821cb0b8473",
+  "post_closure_receipts": [
+    {
+      "source_pr": "PR329",
+      "path": "receipts/replay_receipt_20260616T045855Z.json",
+      "master_commit": "64095a2b0ec20369721202f8d7d223b268f67924",
+      "mode": "ONE_FILE_RECEIPT_EXTRACTION",
+      "reason": "PR329 is a non-atomic conflicted envelope after PR330; receipt preserved without merging 10562-file branch."
+    }
+  ],
   "lineage": [
     "PR314",
     "PR315_SUPERSEDED_BY_319",
     "PR318_SUPERSEDED_BY_319",
     "PR319_CANONICAL_HEAD",
-    "PR329_TRANSPORT_VERIFIED",
+    "PR329_RECEIPT_EXTRACTED_NOT_MERGED",
     "PR330_COURT_CLOSURE"
   ],
   "verified_surfaces": [
@@ -33,5 +42,5 @@
   "no_fake_green": true,
   "authority": false,
   "supersession_rules_enforced": true,
-  "notes": "PR330 merged cleanly after full green gate. PR315 and PR318 remain superseded by PR319. PR319 remains canonical head. Replay-court v1.1 closure is anchored on master."
+  "notes": "PR330 merged cleanly after full green gate. PR329 receipt was extracted onto master as a one-file receipt because PR329 remained a non-atomic conflicted envelope. PR315 and PR318 remain superseded by PR319. PR319 remains canonical head. Replay-court v1.1 closure is anchored on master."
 }
