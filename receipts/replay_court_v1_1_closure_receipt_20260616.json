@@ -1,0 +1,37 @@
+{
+  "receipt_type": "REPLAY_COURT_V1_1_CLOSURE_RECEIPT",
+  "state": "GREEN",
+  "court": "CLOSED",
+  "timestamp": "2026-06-16T00:00:00Z",
+  "operator": "jsonwisdom/AL",
+  "canonical_head": "PR319",
+  "closure_pr": "PR330",
+  "closure_head_sha": "1e4d92df41ba6335b6de55a431902d88b8f968ca",
+  "merge_commit": "9a3d9dca6922b5d4ae8300a2c363a821cb0b8473",
+  "lineage": [
+    "PR314",
+    "PR315_SUPERSEDED_BY_319",
+    "PR318_SUPERSEDED_BY_319",
+    "PR319_CANONICAL_HEAD",
+    "PR329_TRANSPORT_VERIFIED",
+    "PR330_COURT_CLOSURE"
+  ],
+  "verified_surfaces": [
+    "Exposure Audit",
+    "ALMS CI Enforcement V1",
+    "Replay Verification",
+    "Replay Court Validator",
+    "Lapis Replay Court",
+    "Jay Repo Safety Scan",
+    "Receipt Validate",
+    "Replay Matrix",
+    "Verify Receipts Ed25519 V0",
+    "ALMS Global Integrity Audit"
+  ],
+  "replay_continuity": true,
+  "json_integrity": true,
+  "no_fake_green": true,
+  "authority": false,
+  "supersession_rules_enforced": true,
+  "notes": "PR330 merged cleanly after full green gate. PR315 and PR318 remain superseded by PR319. PR319 remains canonical head. Replay-court v1.1 closure is anchored on master."
+}
