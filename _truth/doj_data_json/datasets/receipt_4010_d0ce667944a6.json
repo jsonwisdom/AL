@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Pittsburgh Youth Study Other Constructs, Pittsburgh, Pennsylvania, 1987-2001",
+  "description": "The Pittsburgh Youth Study (PYS) is part of the larger \"Program of Research on the Causes and Correlates of Delinquency\" initiated by the Office of Juvenile Justice and Delinquency Prevention in 1986. PYS aims to document the development of antisocial and delinquent behavior from childhood to early adulthood, the risk factors that impinge on that development, and help seeking and service provision of boys' behavior problems. The study also focuses on boys' development of alcohol and drug use, and internalizing problems. PYS consists of three samples of boys who were in the first, fourth, and seventh grades in Pittsburgh, Pennsylvania public schools during the 1987-1988 academic year (called the youngest, middle, and oldest sample, respectively). Using a screening risk score that measured each boy's antisocial behavior, boys identified at the top 30 percent within each grade sample on the screening risk measure (n=~250), as well as an equal number of boys randomly selected from the remainder (n=~250), were selected for follow-up. Consequently, the final sample for the study consisted of 1,517 total students selected for follow-up. 506 of these students were in the oldest sample, 508 were in the middle sample, and 503 were in the youngest sample.\r\nAssessments were conducted semiannually and then annually using multiple informants (i.e., boys, parents, teachers) between 1987 and 2010. The youngest sample was assessed from ages 6-19 and again at ages 25 and 28. The middle sample was assessed from ages 9-13 and again at age 23. The oldest sample was assessed from ages 13-25, with an additional assessment at age 35. Information has been collected on a broad range of risk and protective factors across multiple domains (e.g., individual, family, peer, school, neighborhood). Measures of conduct problems, substance use/abuse, criminal behavior, mental health problems have been collected.\r\n This collection contains data and syntax files for constructs not included in other releases. The datasets include constructs on academic achievement, attitudes toward school, attitudes toward substance use and abuse, attitudes toward delinquency, birth and development, the relationships between participants' primary caretakers and their partners, expectations and aspirations, gang membership, relationships with peers, physical health, interactions with interviewers and household members, neighborhood impressions, physical development, prosocial behavior, resources, and sexual activity. These constructs were created by using the PYS raw data. The raw data are available at ICPSR in the following studies: Pittsburgh Youth Study Youngest Sample (1987 - 2001) [Pittsburgh, Pennsylvania], Pittsburgh Youth Study Middle Sample (1987 - 1991) [Pittsburgh, Pennsylvania] , and Pittsburgh Youth Study Oldest Sample (1987 - 2000) [Pittsburgh, Pennsylvania]. ",
+  "modified": "2019-09-30T18:31:11",
+  "accessLevel": "restricted public",
+  "identifier": "4010",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "alcohol",
+    "child development",
+    "crime control",
+    "crime patterns",
+    "crime prediction",
+    "delinquent behavior",
+    "drug use",
+    "juvenile crime",
+    "juvenile gangs",
+    "juvenile justice",
+    "juvenile offenders",
+    "juvenile recidivists",
+    "parent child relationship",
+    "peer influence",
+    "school age c"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "3999",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2019-09-30T16:07:13",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37357.v1",
+      "title": "Pittsburgh Youth Study Other Constructs, Pittsburgh, Pennsylvania, 1987-2001"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Murder Cases in 33 Large Urban Counties in the United States, 1988",
+  "description": "This study was conducted in an effort to better understand \r\n the circumstances surrounding murder cases in large urban areas. To \r\n evaluate the 75 largest counties in the nation, 33 counties were \r\n chosen. The ranking of these counties was based on a combination of \r\n crime data and population data. The criteria for including a case on a \r\n roster from which cases would be sampled was that (1) one or more \r\n defendants must have been arrested for murder and (2) the case must \r\n have been adjudicated during 1988. These cases were a sample of about \r\n half of all those in the 33 counties studied that had a murder charge \r\n brought to the prosecutors in 1988, or earlier, and that were disposed \r\n during 1988. When statistically weighted, the sample cases represent a \r\n total of 9,576 murder defendants in the nation's 75 largest counties. \r\n Demographic information on victims and defendants includes sex, date of \r\n birth, area of residence, and occupation. Variables are also provided \r\n on the circumstances of the crime, including the relationship between the \r\n victim and the defendant, the type of weapon used, the time of death, \r\nand the number of victims.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "179",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "felony offenses",
+    "murder",
+    "offenders",
+    "population characteristics",
+    "urban areas",
+    "urban crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1993-10-11T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09907.v1",
+      "title": "Murder Cases in 33 Large Urban Counties in the United States, 1988"
+    }
+  ]
+}

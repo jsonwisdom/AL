@@ -1,0 +1,74 @@
+{
+  "version": "1.0.0",
+  "nodes": [
+    {
+      "id": "eeb48f874a8cd3ab8adf9a34da7f78bc5504761c",
+      "type": "SUBSTRATE_CHECKPOINT",
+      "properties": {}
+    },
+    {
+      "id": "jaywisdom.eth",
+      "type": "EVALUATOR",
+      "properties": {
+        "software_version": "v0.1.0"
+      }
+    },
+    {
+      "id": "b6a090e54d6fae10fbc286c189bfa886ef866085a2fa3ee7bd5d4483a9ee4ff9",
+      "type": "RECEIPT",
+      "properties": {
+        "timestamp": 1774136112
+      }
+    },
+    {
+      "id": "da66dbe226e6d1fbcd5a7707e78eeea6e885141b71be5a755d72f10d7a04870f",
+      "type": "RECEIPT",
+      "properties": {
+        "timestamp": 1774136200
+      }
+    },
+    {
+      "id": "malformed_or_tampered_receipt_hash_value_here",
+      "type": "RECEIPT",
+      "properties": {
+        "timestamp": 1774136350
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_001",
+      "source": "b6a090e54d6fae10fbc286c189bfa886ef866085a2fa3ee7bd5d4483a9ee4ff9",
+      "target": "eeb48f874a8cd3ab8adf9a34da7f78bc5504761c",
+      "type": "SHARES_SUBSTRATE"
+    },
+    {
+      "id": "edge_002",
+      "source": "jaywisdom.eth",
+      "target": "b6a090e54d6fae10fbc286c189bfa886ef866085a2fa3ee7bd5d4483a9ee4ff9",
+      "type": "EVALUATED_AT"
+    },
+    {
+      "id": "edge_003",
+      "source": "da66dbe226e6d1fbcd5a7707e78eeea6e885141b71be5a755d72f10d7a04870f",
+      "target": "b6a090e54d6fae10fbc286c189bfa886ef866085a2fa3ee7bd5d4483a9ee4ff9",
+      "type": "DERIVED_FROM"
+    },
+    {
+      "id": "edge_004",
+      "source": "malformed_or_tampered_receipt_hash_value_here",
+      "target": "da66dbe226e6d1fbcd5a7707e78eeea6e885141b71be5a755d72f10d7a04870f",
+      "type": "LINEAGE_BREAK",
+      "properties": {
+        "drifted_fields": [
+          "telemetry.observed_runs"
+        ]
+      }
+    }
+  ],
+  "constraints": {
+    "semantic_weighting": false,
+    "authority_scoring": false,
+    "truth_ranking": false
+  }
+}

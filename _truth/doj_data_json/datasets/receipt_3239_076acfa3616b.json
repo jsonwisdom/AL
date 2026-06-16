@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Comparative Evaluation of Court-Based Responses to Offenders with Mental Illnesses, Cook County, Illinois, 1953-2014",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThis study was designed to provide a mixed methods comparative evaluation of three established court-based programs that serve offenders with serious mental illness (SMI). These programs were selected in response to criticism of similar research for studying young programs that are still in development, employing short follow up periods that are unable to indicate sustained effectiveness, and utilizing less than ideal comparison conditions. The study was conducted in Cook County, Illinois, and data were collected from three distinct court-based programs: the Cook County Felony Mental Health Court (MHC) which serves individuals with SMI who have been arrested for nonviolent felonies, the Specialized Mental Health Probation Unit which involves specially trained probation officers who supervise a reduced caseload of probationers diagnosed with SMI, and the Cook County Adult Probation Department which has an active caseload of approximately 25,000 probationers, a portion of whom have SMI. Probation officer interviews were coded for themes regarding beliefs about the relationship between mental illness and crime, views on the purpose of their program, and approaches used with probationers with SMI. The coding of probationer interviews focused on experiences related to having SMI and being on probation, including: the extent to which probation was involved with mental health treatment; development of awareness of mental health issues; evaluations of the programs based on subjective experiences; and the relationship dynamics between probationers and staff.\r\nThe collection includes 3 Stata data files: DRI-R_data_for_NACJD_041315.dta with 98 cases and 61 variables, Epperson_NIJ_Quantitative_Data_for_NACJD_041315.dta with 25203 cases and 49 variables, and incarceration_data_061515.dta with 676 cases and 4 variables. The qualitative data are not available as part of this data collection at this time.",
+  "modified": "2018-05-09T11:42:26",
+  "accessLevel": "restricted public",
+  "identifier": "3239",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrests",
+    "courts",
+    "mental health",
+    "mental health services",
+    "probation conditions",
+    "probation services",
+    "probationers"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-05-09T11:39:44",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR35650.v1",
+      "title": "Comparative Evaluation of Court-Based Responses to Offenders with Mental Illnesses, Cook County, Illinois, 1953-2014"
+    }
+  ]
+}

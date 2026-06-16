@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Minneapolis Intervention Project, 1986-1987",
+  "description": "This collection investigates the impact of increased \r\n activity of community intervention projects on the incidence of \r\n domestic abuse. In particular, the data provide an opportunity to \r\n evaluate the impact of police actions and court-ordered abuser \r\n treatment on the continued abuse of victims. The data file includes \r\n demographic information such as victim's age, race, and sex, and \r\n perpetrator's age, birthdate, relationship to the victim, sex, and \r\n physical or mental disabilities. Other variables describe the location \r\n and description of the incident, the number and gender of victims and \r\n perpetrators, and the outcome of the police intervention, i.e., arrest \r\n or nonarrest. Interviews with victims provided information regarding \r\n previous history of police intervention for domestic abuse, specific \r\n information about the violence suffered and resulting injuries, the \r\n frequency and type of abuse suffered in the six months prior to the \r\n violent incident in question, the type of police intervention used, and \r\n the victim's satisfaction with the responses of police. In addition, \r\n the 6- and 12-month interviews contain data regarding the change in the \r\n victim's relationship status since the last interview, satisfaction \r\n with the relationship, continued abuse and criminal justice \r\n involvement, use of support services by the victim or members of the \r\nvictim's family, and satisfaction with these services.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2824",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "abuse",
+    "domestic violence",
+    "intervention strategies",
+    "police intervention",
+    "program evaluation",
+    "recidivists",
+    "treatment",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1993-01-06T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09808.v2",
+      "title": "Minneapolis Intervention Project, 1986-1987"
+    }
+  ]
+}

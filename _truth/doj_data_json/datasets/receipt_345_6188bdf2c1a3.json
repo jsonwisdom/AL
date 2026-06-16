@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "The Office of Special Counsel for Immigration-Related Unfair Employment Practices Technical Assistance Letters",
+  "description": "This collection of documents includes written responses to technical assistance received by the Office of Special Counsel",
+  "modified": "2017-04-19T00:00:00",
+  "accessLevel": "public",
+  "identifier": "345",
+  "publisher": {
+    "name": "Civil Rights Division",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Data Management US Department of Justice (USDOJ)",
+    "hasEmail": "mailto:DataManagement@usdoj.gov"
+  },
+  "keyword": [
+    "civil rights enforcement",
+    "discrimination",
+    "anti-discrimination",
+    "discriminates",
+    "Immigration",
+    "unfair employment practices",
+    "national origin",
+    "retaliation",
+    "intimidation",
+    "Form I-9",
+    "hiring",
+    "firing",
+    "document abuse",
+    "technical assistance"
+  ],
+  "bureauCode": [
+    "011:05"
+  ],
+  "programCode": [
+    "011:019"
+  ],
+  "spatial": "United States",
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2017-04-19T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.justice.gov/crt/technical-assistance-letters",
+      "mediaType": "text/html",
+      "title": "The Office of Special Counsel for Immigration-Related Unfair Employment Practices Technical Assistance Letters"
+    }
+  ]
+}

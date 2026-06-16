@@ -1,0 +1,22 @@
+{
+  "artifact": "PARENT_CHILD_EMERGENCY_PACKET_SCHEMA_V0_1",
+  "status": "CLAIM_WITNESS_ONLY",
+  "authority": false,
+  "membrane": "HOLDS",
+  "parent": {
+    "role": "ROOT_OR_GUARDIAN_CONTEXT",
+    "public": true
+  },
+  "child": {
+    "role": "PROTECTED_DEPENDENT_CONTEXT",
+    "public_by_default": false
+  },
+  "required_fields": [
+    "event_id",
+    "declared_at",
+    "parent_route",
+    "child_visibility",
+    "safety_boundary"
+  ],
+  "rule": "No child identity is public by default."
+}

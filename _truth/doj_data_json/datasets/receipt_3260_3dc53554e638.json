@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Helping Crime Victims:  Levels of Trauma and Effectiveness of Services in Arizona, 1983-1984",
+  "description": "This data collection was designed to gauge the impact of a \r\n victim assistance program on the behavior and attitudes of victims and \r\n to evaluate the program as assessed by police and prosecutors. Program \r\n impact was estimated by examining the change in psychological, social, \r\n and financial conditions of the victims following the service \r\n intervention. Three types of victim service conditions can be compared: \r\n crisis intervention service, delayed assistance service, and no \r\n service. The victim files contain information on the victim's \r\n demographic characteristics, various kinds of psychological indicators \r\n and stress symptoms following the incident, respondent's assessments of \r\n impacts of victimization on social activity, family, job, and financial \r\n conditions. The follow-up files have information on the victims' \r\n financial and emotional state some time after the incident. The police \r\n files include respondent's personal background, types and frequency of \r\n victim-witness services used, and opinions about contacts with police. \r\n The prosecutor files include variables relating to personal background \r\nand satisfaction with the court system.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3260",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "attitudes",
+    "intervention",
+    "personal finances",
+    "program evaluation",
+    "psychological wellbeing",
+    "social indicators",
+    "stress",
+    "victim services",
+    "victimization",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1990-05-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09329.v1",
+      "title": "Helping Crime Victims:  Levels of Trauma and Effectiveness of Services in Arizona, 1983-1984"
+    }
+  ]
+}

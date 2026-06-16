@@ -1,0 +1,61 @@
+{
+  "module_id": "CIS_NOTICE_EVICTION_V1",
+  "version": "1.0.0",
+  "domain": "HOUSING_GOVERNANCE",
+  "trigger_signals": [
+    "eviction_notice",
+    "lease_termination_notice",
+    "notice_to_quit",
+    "rent_demand_notice"
+  ],
+  "panic_failure_modes": [
+    "premature_abandonment",
+    "process_abandonment",
+    "self_eviction",
+    "temporal_reasoning_collapse"
+  ],
+  "stabilizer": {
+    "statement": "A notice is not a court eviction order.",
+    "semantic_class": "status_clarification",
+    "interrupt_type": "temporal_reasoning_stabilizer"
+  },
+  "preserved_properties": {
+    "cognitive": [
+      "agency_retention",
+      "panic_interruption",
+      "temporal_orientation"
+    ],
+    "procedural": [
+      "court_awareness",
+      "evidence_preservation",
+      "response_window_reasoning"
+    ]
+  },
+  "required_operator_actions": [
+    "preserve_notice",
+    "read_deadlines",
+    "seek_authorized_help",
+    "verify_court_status"
+  ],
+  "topology_dependencies": [
+    "COURT_ORDER_REQUIRED_FOR_EVICTION"
+  ],
+  "runtime_destabilizers": [
+    "ambiguous_notice_language",
+    "court_date_confusion",
+    "lockout_threat_language",
+    "portal_notice_delay"
+  ],
+  "non_claims": [
+    "does_not_guarantee_tenancy_continuation",
+    "does_not_invalidate_notice",
+    "does_not_predict_court_outcome",
+    "does_not_replace_legal_advice"
+  ],
+  "source_requirements": [
+    "official_court_source",
+    "official_housing_authority_source",
+    "state_law_source"
+  ],
+  "last_verified": "2026-05-06"
+}

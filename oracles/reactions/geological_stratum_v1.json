@@ -1,0 +1,17 @@
+{
+  "schema": "geological_stratum_v1",
+  "kind": "KIND_2_REACTION",
+  "derivation_type": "correlated_fallback",
+  "required_fields": {
+    "source_ids": "array",
+    "computed_fields": {
+      "correlated_index": "number",
+      "fallback_density": "number",
+      "regime": "string"
+    },
+    "commit_record": "object",
+    "reveal_record": "object"
+  },
+  "commit_reveal_binding_required": true,
+  "binding_invariant": "KIND_5_COMMIT_REVEAL_BINDING"
+}

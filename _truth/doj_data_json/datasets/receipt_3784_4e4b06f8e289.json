@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Monitoring Drug Epidemics and the Markets That Sustain Them, Arrestee Drug Abuse Monitoring (ADAM) and ADAM II Data, 2000-2003 and 2007-2010",
+  "description": "This study examined trends in the use of five widely abused drugs among arrestees at 10 geographically diverse locations from 2000 to 2010: Atlanta, Charlotte, Chicago, Denver, Indianapolis, Manhattan, Minneapolis, Portland Oregon, Sacramento, and Washington DC. The data came from the Arrestee Drug Abuse Monitoring Program reintroduced in 2007 (ADAM II) and its predecessor the ADAM program. ADAM data included urinalysis results that provided an objective measure of recent drug use, provided location specific estimates over time, and provided sample weights that yielded unbiased estimates for each location. The ADAM data were analyzed according to a drug epidemics framework, which has been previously employed to understand the decline of the crack epidemic, the growth of marijuana use in the 1990s, and the persistence of heroin use. Similar to other diffusion of innovation processes, drug epidemics tend to follow a natural course passing through four distinct phases: incubation, expansion, plateau, and decline. The study also searched for changes in drug markets over the course of a drug epidemic.",
+  "modified": "2012-12-13T11:55:51",
+  "accessLevel": "public",
+  "identifier": "3784",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "ADAM/DUF Program",
+    "arrests",
+    "cocaine",
+    "crack cocaine",
+    "crime patterns",
+    "drug abuse",
+    "drug offenders",
+    "drug related crimes",
+    "drug testing",
+    "drug treatment",
+    "drug use",
+    "heroin",
+    "marijuana",
+    "methamphetamine",
+    "trends",
+    "urinalysis"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2012-12-13T11:55:51",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR33201.v1",
+      "title": "Monitoring Drug Epidemics and the Markets That Sustain Them, Arrestee Drug Abuse Monitoring (ADAM) and ADAM II Data, 2000-2003 and 2007-2010"
+    }
+  ]
+}

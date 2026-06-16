@@ -1,0 +1,94 @@
+{
+  "capsule_type": "FAF_EPOCH_03_REPLAY_CAPSULE",
+  "version": "1.0.0",
+  "status": "INITIALIZED_RUNTIME_AND_FIXTURES_PENDING_HASHES",
+  "operator": "jaywisdom.base.eth",
+  "project": "Parody Paradox Jay FAF",
+  "doctrine": {
+    "name": "Replay Over Agreement",
+    "runtime": "FAF Constitutional Runtime",
+    "governance_layer": "ALMS",
+    "meaning_boundary": "bounded_versioned_attested_replay_surface"
+  },
+  "runtime": {
+    "container_digest": null,
+    "container_digest_requirement": "sha256:<IMAGE_DIGEST>; full image digest required before ALPHA_VERIFIED",
+    "code_version": "git:refs/tags/faf-epoch-03-runtime-v1",
+    "code_version_requirement": "tag must resolve to immutable Git object before replay",
+    "entrypoint": "npm run replay",
+    "entrypoint_rule": "Replay using any other entrypoint MUST be refused"
+  },
+  "fixtures": {
+    "faf_epoch_03_inputs": {
+      "path": "fixtures/faf/epoch_03",
+      "type": "directory",
+      "hash_algo": "sha256-tree",
+      "hash": null,
+      "hash_requirement": "computed from sorted file list: find path -type f -print0 | sort -z | xargs -0 sha256sum | sha256sum"
+    },
+    "prior_epoch_evidence": {
+      "path": "receipts/faf/epoch_02",
+      "type": "directory",
+      "hash_algo": "sha256-tree",
+      "hash": null,
+      "hash_requirement": "computed from sorted file list: find path -type f -print0 | sort -z | xargs -0 sha256sum | sha256sum"
+    }
+  },
+  "source_visual_artifact": {
+    "title": "Parody Paradox Jay FAF",
+    "artifact_status": "FAF_CONSTITUTIONAL_ARTIFACT_CANDIDATE",
+    "receipt_id_visible": "a9f3c7b8e2d14f9aa7c0e8d4f1b2c6d7",
+    "interpretation_rule": "visual_artifact_may_define_doctrine_surface_but_runtime_claims_require_replay_receipts"
+  },
+  "frozen_inputs": {
+    "fixtures": ["alpha", "beta", "gamma", "delta", "epsilon", "zeta"],
+    "commands": ["npm run doctrine:lint", "npm run test:constitutional", "npm run replay"],
+    "invariants": [
+      {"id": 1, "name": "Bounded Meaning", "enforcement_target": "Prevents semantic drift"},
+      {"id": 2, "name": "Canonical Fixtures", "enforcement_target": "Locks reference inputs"},
+      {"id": 3, "name": "Deterministic Replay", "enforcement_target": "Guarantees reproducibility"},
+      {"id": 4, "name": "Veto Propagation", "enforcement_target": "Ensures human oversight"},
+      {"id": 5, "name": "Cognition Limits", "enforcement_target": "Prevents AI overreach"},
+      {"id": 6, "name": "Runtime Subordination", "enforcement_target": "Runtime may reproduce, never reinterpret"},
+      {"id": 7, "name": "Visible Mutation", "enforcement_target": "All changes logged"},
+      {"id": 8, "name": "Human Reproduction", "enforcement_target": "Two receipts required"},
+      {"id": 9, "name": "Infrastructure Neutral", "enforcement_target": "CI witnesses, not oracles"}
+    ]
+  },
+  "expected_outputs": {
+    "doctrine_lint": "PASS_REQUIRED",
+    "constitutional_tests": "PASS_REQUIRED",
+    "replay_matrix": "alpha_through_zeta_PASS_REQUIRED",
+    "human_reproduction_receipts": 2,
+    "merkle_root": null
+  },
+  "gates": {
+    "epoch_03_capsule_initialized": true,
+    "runtime_identity_declared": true,
+    "container_digest_locked": false,
+    "code_version_tag_verified": false,
+    "fixture_paths_declared": true,
+    "fixture_hashes_locked": false,
+    "local_replay_completed": false,
+    "ci_witness_completed": false,
+    "human_reproduction_completed": false,
+    "onchain_anchor_permitted": false
+  },
+  "anchor_policy": {
+    "github_commit_receipt_required": true,
+    "eas_base_anchor_optional_after_replay": true,
+    "ens_text_record_optional_after_anchor": true,
+    "no_anchor_without_replay": true
+  },
+  "verification_policy": {
+    "canonicalization": "jq -cS",
+    "hashing": "sha256",
+    "self_reference_rule": "receipt_hash MUST be null before hashing",
+    "runtime_role": "reproduce_only_never_reinterpret",
+    "ci_role": "witness_not_oracle",
+    "runtime_identity_rule": "container_digest, code_version, and entrypoint must match capsule before replay authority is granted",
+    "fixture_identity_rule": "pinned fixture paths must exist and hashes must match capsule before replay authority is granted",
+    "network_rule": "replay must not require network reads to complete"
+  },
+  "receipt_hash": null
+}

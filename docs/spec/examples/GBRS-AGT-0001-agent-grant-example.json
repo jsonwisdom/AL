@@ -1,0 +1,81 @@
+{
+  "scenario": "Agent Admin grants Tool X to Agent User",
+  "agents": {
+    "admin": {
+      "agent_id": "AGENT_ADMIN_001",
+      "identity_receipt": {
+        "receipt_id": "AGT_IDENTITY_ADMIN_001",
+        "kind": "agent_identity_root",
+        "agent_id": "AGENT_ADMIN_001",
+        "public_key": "admin_pubkey_v1",
+        "timestamp": "2026-05-22T01:58:00Z"
+      }
+    },
+    "user": {
+      "agent_id": "AGENT_USER_001",
+      "identity_receipt": {
+        "receipt_id": "AGT_IDENTITY_USER_001",
+        "kind": "agent_identity_root",
+        "agent_id": "AGENT_USER_001",
+        "public_key": "user_pubkey_v1",
+        "timestamp": "2026-05-22T01:58:00Z"
+      }
+    }
+  },
+  "capability": {
+    "tool_id": "alms.receipt.verify",
+    "capability_receipt": {
+      "receipt_id": "MCP_CAPABILITY_001",
+      "kind": "capability_definition",
+      "tool_id": "alms.receipt.verify",
+      "projection_payload": {
+        "method": "alms.receipt.verify",
+        "input_schema": {
+          "receipt_hash": "string"
+        },
+        "output_schema": {
+          "valid": "boolean"
+        }
+      },
+      "projected_surfaces": [
+        "MCP"
+      ],
+      "timestamp": "2026-05-22T01:58:00Z"
+    }
+  },
+  "grant": {
+    "grant_receipt": {
+      "receipt_id": "AGT_GRANT_001",
+      "kind": "agent_capability_grant",
+      "agent_id": "AGENT_USER_001",
+      "granted_by": "AGENT_ADMIN_001",
+      "capability_id": "alms.receipt.verify",
+      "successor_of": "AGT_IDENTITY_USER_001",
+      "timestamp": "2026-05-22T01:58:00Z"
+    },
+    "authority_rule": "Agent User may invoke Tool X only while grant receipt is CANONICAL",
+    "failure_rule": "If grant is revoked, superseded, or unindexed, invocation fails closed"
+  },
+  "invocation_happy_path": {
+    "agent": "AGENT_USER_001",
+    "tool": "alms.receipt.verify",
+    "preconditions": [
+      "AGT_IDENTITY_USER_001 is CANONICAL",
+      "MCP_CAPABILITY_001 is CANONICAL",
+      "AGT_GRANT_001 is CANONICAL",
+      "No revocation or superseding successor exists"
+    ],
+    "result": "Invocation permitted"
+  },
+  "invocation_failure_path": {
+    "agent": "AGENT_USER_001",
+    "tool": "alms.receipt.verify",
+    "failure_conditions": [
+      "AGT_GRANT_001 missing from canonical index",
+      "AGT_GRANT_001 superseded by revocation",
+      "Agent lineage broken or revoked",
+      "Capability receipt removed from canonical index"
+    ],
+    "result": "Invocation denied (fail-closed)"
+  }
+}

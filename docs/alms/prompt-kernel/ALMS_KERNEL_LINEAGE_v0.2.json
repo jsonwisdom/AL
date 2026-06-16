@@ -1,0 +1,47 @@
+{
+  "id": "ALMS_KERNEL_LINEAGE_v0.2",
+  "component": "PROMPT_KERNEL",
+  "lineage": [
+    {
+      "version": "ALMS_PROMPT_KERNEL_v0.1",
+      "purpose": "minimal ALMS classifier",
+      "schema": {
+        "verified": [],
+        "verified_negative": [],
+        "unverified": []
+      },
+      "constraints": [
+        "no_inference",
+        "no_commentary",
+        "schema_locked"
+      ]
+    },
+    {
+      "version": "ALMS_PROMPT_KERNEL_v0.2",
+      "purpose": "input-bounded ALMS classifier",
+      "schema": {
+        "verified": [],
+        "verified_negative": [],
+        "unverified": []
+      },
+      "constraints": [
+        "use_only_provided_input_as_evidence",
+        "no_external_knowledge_import",
+        "no_inference",
+        "no_commentary",
+        "no_additional_fields"
+      ]
+    }
+  ],
+  "invariant": "schema_stable_between_v0.1_and_v0.2",
+  "delta": {
+    "added": [
+      "use_only_provided_input_as_evidence",
+      "no_external_knowledge_import"
+    ],
+    "removed": [],
+    "modified": []
+  },
+  "next": "ALMS_PROMPT_KERNEL_v0.3",
+  "notes": "v0.2 is the final minimal kernel before provenance expansion."
+}

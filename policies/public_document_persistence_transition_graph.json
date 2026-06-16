@@ -1,0 +1,93 @@
+{
+  "policy_id": "PUBLIC_DOCUMENT_PERSISTENCE_TRANSITION_GRAPH_V1",
+  "character": "Sardine Marshal",
+  "doctrine": "Verification is temporal. Trust may degrade without becoming accusation.",
+  "allegation_mode": "blocked",
+  "states": [
+    "unknown",
+    "unverified",
+    "pending_public_evidence",
+    "verified",
+    "stale",
+    "hash_mismatch",
+    "unavailable",
+    "sealed",
+    "destroyed_with_receipt",
+    "destroyed_without_receipt"
+  ],
+  "allowed_transitions": [
+    {
+      "from": "pending_public_evidence",
+      "to": "verified",
+      "requires": ["source_uri", "document_hash", "verification_path", "successful_replay"]
+    },
+    {
+      "from": "verified",
+      "to": "stale",
+      "requires": ["prior_verified_receipt", "replay_path_failure", "review_required"]
+    },
+    {
+      "from": "verified",
+      "to": "hash_mismatch",
+      "requires": ["prior_verified_receipt", "observed_hash", "previous_hash", "review_required"]
+    },
+    {
+      "from": "verified",
+      "to": "unavailable",
+      "requires": ["prior_verified_receipt", "source_unavailable", "review_required"]
+    },
+    {
+      "from": "verified",
+      "to": "destroyed_with_receipt",
+      "requires": ["destruction_authorization", "custody_note", "review_required"]
+    },
+    {
+      "from": "verified",
+      "to": "sealed",
+      "requires": ["seal_authority", "custody_note", "review_required"]
+    },
+    {
+      "from": "hash_mismatch",
+      "to": "verified",
+      "requires": ["new_receipt", "new_document_hash", "new_successful_replay", "human_review"]
+    },
+    {
+      "from": "stale",
+      "to": "verified",
+      "requires": ["new_successful_replay", "human_review"]
+    },
+    {
+      "from": "unavailable",
+      "to": "verified",
+      "requires": ["source_restored", "successful_replay", "human_review"]
+    }
+  ],
+  "forbidden_transitions": [
+    {
+      "from": "pending_public_evidence",
+      "to": "verified",
+      "forbidden_without": ["source_uri", "document_hash", "verification_path"]
+    },
+    {
+      "from": "hash_mismatch",
+      "to": "verified",
+      "forbidden_without": ["new_receipt", "new_successful_replay", "human_review"]
+    },
+    {
+      "from": "stale",
+      "to": "verified",
+      "forbidden_without": ["new_successful_replay", "human_review"]
+    },
+    {
+      "from": "unavailable",
+      "to": "verified",
+      "forbidden_without": ["source_restored", "successful_replay", "human_review"]
+    },
+    {
+      "from": "any",
+      "to": "accusation",
+      "forbidden_reason": "allegation_mode is blocked"
+    }
+  ],
+  "teaching_rule": "The machine may downgrade trust. It may not invent guilt, innocence, motive, or hidden content."
+}

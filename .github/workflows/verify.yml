@@ -1,10 +1,56 @@
-name: verify
-on: [push, pull_request]
+name: Sovereign Replay Court — Membrane Guard
+
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+
 jobs:
-  check:
+  stranger-court:
+    name: "Host Clerk — Python ${{ matrix.python-version }}"
     runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [ '3.8', '3.9', '3.10', '3.11', '3.12', '3.13' ]
+
     steps:
-      - uses: actions/checkout@v4
-      - run: sudo apt-get update && sudo apt-get install -y jq
-      - run: chmod +x verify.sh docs/protocols/vclp/verify.sh studio/watchers/claim_emitter.sh
-      - run: ./verify.sh
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Prepare Environment
+        run: |
+          chmod +x verify.sh
+          python --version
+
+      - name: Execute Public Oath (Host Clerk)
+        run: ./verify.sh
+
+      - name: Court Verdict
+        if: success()
+        run: echo "🟢 HOST_CLERK_HOLDING: Python ${{ matrix.python-version }} verified Execution ≡ Registry"
+
+  docker-replay:
+    name: "Docker Chamber — Portable Replay Witness"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Build Replay Chamber
+        run: docker build -t al-court -f Dockerfile.replay .
+
+      - name: Execute Replay Chamber
+        run: docker run --rm al-court
+
+      - name: Chamber Verdict
+        if: success()
+        run: echo "🟢 CHAMBER_HOLDING: Docker replay confirmed public oath"

@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Controlling Fraud in Small Business Health Benefits Programs in the United States, 1990-1996  ",
+  "description": "The focus of this project was insider fraud -- crimes\r\n committed by the owners and operators of insurance companies that were\r\n established for the purposes of defrauding businesses and\r\n employees. The quantitative data for this collection were taken from a\r\n database maintained by the National Association of Insurance\r\n Commissioners (NAIC), an organization that represents state insurance\r\n departments collectively and acts as a clearinghouse for information\r\n obtained from individual departments. Created in 1988, the Regulatory\r\n Information Retrieval System (RIRS) database contains information on\r\n actions taken by state insurance departments against individuals and\r\n firms, including cease and desist orders, license revocations, fines,\r\n and penalties imposed. Data available for this project include a total\r\n of 123 actions taken against firms labeled as Multiple Employer\r\n Welfare Arrangements or Multiple Employer Trusts (MEWA/MET) in the\r\n RIRS database. Variables available in this data collection include the\r\n date action was taken, state where action was taken, dollar amount of\r\nthe penalty imposed in the action, and disposition for action taken.",
+  "modified": "1999-06-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3714",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "businesses",
+    "crime control",
+    "employee benefits",
+    "fraud",
+    "insurance claims",
+    "white collar crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1999-06-16T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02627.v1",
+      "title": "Controlling Fraud in Small Business Health Benefits Programs in the United States, 1990-1996  "
+    }
+  ]
+}

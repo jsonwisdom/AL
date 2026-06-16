@@ -1,0 +1,31 @@
+{
+  "spec": "HASH_CANONICALIZATION_SPEC",
+  "version": "1.0.0",
+  "rules": {
+    "artifact_ordering": "LEXICOGRAPHICAL_BY_ARTIFACT_ID",
+    "normalization": {
+      "encoding": "UTF-8_NFC",
+      "newlines": "LF_ONLY",
+      "trailing_newline": "REQUIRED",
+      "whitespace": "STRIP_EXTERNAL_TRIM_INTERNAL_SINGLE_SPACE"
+    },
+    "merkle_leaf_construction": {
+      "hashing_algorithm": "SHA256",
+      "input_format": "JSON_CANONICALIZED",
+      "leaf_order": "DETERMINISTIC_BY_SORTED_KEY",
+      "pair_canonicalization": {
+        "rule": "CANONICALIZE_JSON_ARRAY_BEFORE_HASH",
+        "description": "Merkle node = SHA256(canonicalize([left_leaf, right_leaf]))"
+      }
+    },
+    "duplicate_handling": {
+      "policy": "REJECT",
+      "error_type": "DUPLICATE_ARTIFACT_IN_BATCH"
+    },
+    "empty_batch": {
+      "policy": "STRICT_NULL_HASH_PROHIBITED",
+      "behavior": "REQUIRE_MINIMUM_ONE_ARTIFACT"
+    }
+  },
+  "enforcement": "REPLAY_FAIL_ON_NON_COMPLIANCE"
+}

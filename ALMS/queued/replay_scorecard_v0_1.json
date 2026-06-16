@@ -1,0 +1,26 @@
+{
+  "artifact": "ALMS_REPLAY_SCORECARD_V0_1",
+  "status": "QUEUED",
+  "authority": false,
+  "membrane": "HOLDS",
+  "routes": {
+    "3": "JOY_PROTECTION",
+    "6": "ENS_DISPLAY_ONLY",
+    "9": "ALMS_MEMORY"
+  },
+  "runtime_status": "NOT_ACTIVE_UNTIL_PR_165_MERGES",
+  "merge_gate": "BLOCKED_BY_RULE_REFERENCE",
+  "spine_health": "INTACT",
+  "invariants": [
+    "no_silent_promotion",
+    "no_custody_mutation",
+    "replay_not_judgment",
+    "visibility_not_authority"
+  ],
+  "next_moves": [
+    "PLAYER_DASHBOARD",
+    "BOSS_BLOCKER_REPORT",
+    "QUEST_LOG",
+    "HOLD_POSITION"
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Youth Survey [United States]: Wave VI, 1983",
+  "description": "Youth data for the sixth wave of the National Youth Survey\r\nare contained in this collection. This research project, which was\r\ndesigned to gain a better understanding of both conventional and\r\ndeviant types of behavior by youths, involved collecting information\r\nfrom a representative sample of young people in the United States. The\r\nfirst wave of this survey was conducted in 1976 (ICPSR 8375), the\r\nsecond wave in 1977 (ICPSR 8424), the third wave in 1978 (ICPSR 8506),\r\nthe fourth wave in 1979 (ICPSR 8917), and the fifth wave in 1980 (ICPSR\r\n9112). For this wave, youths and young adults were interviewed in early\r\n1984 about events and behavior occurring in calendar year 1983, when\r\nthey were 17 to 26 years of age. Data are available on the demographic\r\nand socioeconomic status of respondents, disruptive events for parents,\r\nneighborhood problems, employment, children, aspirations and current\r\nsuccesses, normlessness, labeling by parents, perceived disapproval by\r\nparents, peers, co-workers, and partner, attitudes toward deviance,\r\nexposure to delinquent peers, self-reported delinquency, drug and\r\nalcohol use, victimization, pregnancy, depression, use of outpatient\r\nservices, spouse violence by respondent and partner, and sexual\r\nactivity.",
+  "modified": "2008-10-10T12:54:15",
+  "accessLevel": "public",
+  "identifier": "4063",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "aspirations",
+    "behavior problems",
+    "career goals",
+    "community involvement",
+    "delinquent behavior",
+    "depression (psychology)",
+    "deviance",
+    "drugs",
+    "employment",
+    "expectations",
+    "family conflict",
+    "family relations",
+    "health services utilization",
+    "life events",
+    "neighborhood conditi"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "3996",
+  "dataQuality": false,
+  "issued": "1993-05-13T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09948.v1",
+      "title": "National Youth Survey [United States]: Wave VI, 1983"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "artifact_type": "epoch_3_receipt",
+  "artifact": "openai_epoch_3_receipt_005_l2_capital_asymmetry_firewall.json",
+  "receipt_id": "OPENAI_EPOCH_3_RECEIPT_005",
+  "institution_id": "OPENAI",
+  "epoch": 3,
+  "receipt_class": "L2_governance_integrity",
+  "gap_targets": [
+    "GAP_002",
+    "GAP_008",
+    "GAP_009"
+  ],
+  "event_type": "CAPITAL_ASYMMETRY_FIREWALL_DURABILITY_CHECK",
+  "governance_surface": {
+    "claim_category": "epoch_3_capital_pressure_firewall_and_governance_independence_continuity",
+    "governance_receipt_hash": null,
+    "evidence_uri": null,
+    "source_visibility": "PENDING_PUBLIC_URI_OR_ATTESTATION",
+    "timestamp_observed": null
+  },
+  "delta_inputs": {
+    "capital_firewall_delta": null,
+    "investor_veto_constraint_delta": null,
+    "board_independence_delta": null,
+    "authority_reallocation_delta": null,
+    "transparency_penalty_delta": null
+  },
+  "recompute_status": "PENDING_RECEIPT_COMPLETION",
+  "parent_transition_artifact": "institution_state_transition_openai_epoch_3_v4.json",
+  "previous_epoch3_recompute_commit_sha": "426968acdb7db0882cdf015f4107f871ac8ec4de",
+  "previous_epoch3_receipt_commit_sha": "64aa30aefde699ccc91eb64b061b75ec5bde9bc3",
+  "previous_epoch_freeze_commit_sha": "800e1ab64268ebe66469c14b86ff80329bc603cc",
+  "epoch_3_open_commit_sha": "1d30f981710a41df48582871650f4d2ee8fe583a",
+  "baseline_divergence_inherited": 0.291,
+  "doctrine_version": "ALMS_DOCTRINE_V1.3",
+  "schema_version": "ALMS_GAP_SCHEMA_V2",
+  "timestamp_issued": "2026-05-14T20:20:00Z",
+  "mutation_policy": "APPEND_ONLY_RECEIPT_NO_PRIOR_EPOCH_MUTATION",
+  "next_allowed_action": "FILL_CAPITAL_FIREWALL_EVIDENCE_AND_RECOMPUTE_EPOCH_3_DELTA",
+  "forbidden_actions": [
+    "APPEND_EPOCH_2_RECEIPTS_AFTER_FREEZE",
+    "MUTATE_EPOCH_2_FREEZE",
+    "MUTATE_FROZEN_TAXONOMY",
+    "OVERWRITE_PRIOR_RECEIPTS"
+  ]
+}

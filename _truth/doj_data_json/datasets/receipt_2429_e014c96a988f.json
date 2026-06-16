@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Expenditure and Employment Data for the Criminal Justice System Series",
+  "description": "\r\nInvestigator(s): Bureau of Justice Statistics\r\nThese data collections present public expenditure and \r\nemployment data pertaining to criminal justice activities in the United States. \r\nThe data were collected by the U.S. Bureau of the Census for the Bureau of \r\nJustice Statistics. Information on employment, payroll, and expenditures is \r\nprovided for police, courts, prosecutors' offices, and corrections agencies. \r\nSpecific variables include identification of each government, number of full- \r\nand part-time employees, level of full- and part-time payroll, current \r\nexpenditures, capital outlay, and intergovernmental expenditures.\r\nYears Produced: Annually\r\nRelated Data\r\n\r\nLongitudinal \r\nFile (ICPSR 7636, ICPSR 7618)\r\nIndividual Units File and Estimates File (ICPSR 9446, ICPSR 8650)\r\n\r\n",
+  "modified": "2007-04-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2429",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional system",
+    "criminal justice system",
+    "employment",
+    "federal government",
+    "full-time employment",
+    "government expenditures",
+    "law enforcement",
+    "local government",
+    "part-time employment",
+    "state government",
+    "wages and salaries"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/87",
+      "title": "Expenditure and Employment Data for the Criminal Justice System Series"
+    }
+  ]
+}

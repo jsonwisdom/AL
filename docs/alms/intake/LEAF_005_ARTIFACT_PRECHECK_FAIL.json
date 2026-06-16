@@ -1,0 +1,9 @@
+{
+  "leaf_id": "005",
+  "state": "ARTIFACT_PRECHECK_FAIL",
+  "observed_artifact_sha256": "590414a09ccd925b629852b92f1c232c257bc9aea7e8c68c91babe486a66fe37",
+  "observed_artifact_size_bytes": 409,
+  "reason": "artifact bytes did not match jq -cS canonical output",
+  "anchor_allowed": false,
+  "next_gate": "PROMOTE_CANONICAL_ARTIFACT_BYTES"
+}

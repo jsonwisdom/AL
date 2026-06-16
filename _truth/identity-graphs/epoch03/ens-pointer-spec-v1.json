@@ -1,0 +1,48 @@
+{
+  "spec_id": "EPOCH03_ENS_POINTER_SPEC_V1",
+  "status": "READY_FOR_ENS_CONFIGURATION",
+  "root_identity": "jaywisdom.base.eth",
+  "purpose": "Define discovery-only ENS/Basename text record pointers for the receipt-bound Epoch03 Witness identity graph.",
+  "source": {
+    "graph_id": "EPOCH03_IDENTITY_GRAPH_WITNESS_PRIMITIVE_001",
+    "graph_path": "_truth/identity-graphs/epoch03/witness-primitive-001.json",
+    "graph_commit": "66267edb11cab0db48512411734e7d171ae8f4bd",
+    "graph_receipt_path": "_truth/identity-graphs/epoch03/witness-primitive-001.receipt.json",
+    "graph_receipt_commit": "6e8b3f8fd33642f26a90b30a8f8a2c5cdb963aab",
+    "diagram_spec_path": "_truth/identity-graphs/epoch03/witness-primitive-001.diagram.json",
+    "diagram_spec_commit": "51a5b7dcd80eae6e436cd04d70a695a0feb1715d"
+  },
+  "portable_sha256": "bd14d54188da6f98a18ef2e5dd0dee8edd08a89b9e5a890104ac07d176c2d139",
+  "recommended_txt_records": {
+    "graph.latest.id": "EPOCH03_IDENTITY_GRAPH_WITNESS_PRIMITIVE_001",
+    "graph.latest.sha256": "bd14d54188da6f98a18ef2e5dd0dee8edd08a89b9e5a890104ac07d176c2d139",
+    "graph.latest.commit": "66267edb11cab0db48512411734e7d171ae8f4bd",
+    "graph.latest.receipt": "_truth/identity-graphs/epoch03/witness-primitive-001.receipt.json",
+    "graph.latest.diagram": "_truth/identity-graphs/epoch03/witness-primitive-001.diagram.json",
+    "witness.latest.uid": "0x69ac3aa79adfadce4e0861ee7405474cade13f1d804ba426281c1e92c5db7981",
+    "witness.latest.hash": "0x83620a9b85b76b0439547898687e294607a50f09e5d83e27871b2ecc8c0112b4",
+    "witness.latest.repo": "jsonwisdom/AL",
+    "witness.latest.registry": "_truth/canonical-items/index.json"
+  },
+  "forbidden_targets": [
+    "runtime_urls",
+    "dashboards",
+    "mutable_apis",
+    "execution_endpoints",
+    "temporary_hosting_urls"
+  ],
+  "invariants": [
+    "ens_pointer_is_discovery_only",
+    "ens_pointer_is_not_runtime",
+    "ens_pointer_is_not_truth_surface",
+    "ens_pointer_must_reference_receipt_bound_graph",
+    "runtime != identity",
+    "runtime != anchor",
+    "runtime != truth"
+  ],
+  "doctrine": [
+    "no ghost anchors",
+    "replay first",
+    "scale later"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Formal Enforcement Actions FY 2004 - FY 2010",
+  "description": "The annual data tables contained in this document provide summary statistics on the civil enforcement activities of the United States Trustee Program.  This report covers formal actions.  Formal actions include all motions, complaints, and objections filed by Program personnel with the bankruptcy court seeking some type of relief.",
+  "modified": "2011-01-26T00:00:00",
+  "accessLevel": "public",
+  "identifier": "636",
+  "publisher": {
+    "name": "Executive Office for United States Trustees",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Christopher Haverstock",
+    "hasEmail": "mailto:christopher.haverstock@usdoj.gov"
+  },
+  "keyword": [
+    "Civil Enforcement",
+    "Litigation Outcomes",
+    "Prosecution",
+    "Bankruptcy",
+    "Motions",
+    "Complaints",
+    "Objections"
+  ],
+  "bureauCode": [
+    "011:00"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "temporal": "2004-10-01T00:00:00.0000000/2010-09-30T00:00:00.0000000",
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "635",
+  "rights": "N/A",
+  "dataQuality": false,
+  "issued": "2011-01-26T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "downloadURL": "https://www.justice.gov/ust/eo/public_affairs/data_files/enf_act/docs/Formal_Enforcement_Actions.zip",
+      "format": "application/vnd.ms-excel",
+      "mediaType": "application/vnd.ms-excel",
+      "title": "Formal Enforcement Actions FY 2004 - FY 2010"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Evaluating the Elder Abuse Forensic Center Model in Los Angeles County, California, 2007-2009",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they there received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except of the removal of direct identifiers. Users should refer to the accompany readme file for a brief description of the files available with this collections and consult the investigator(s) if further information is needed.The purpose of the study was to examine the effectiveness of a multidisciplinary team (MDT) intervention - the Los Angeles County Elder Abuse Forensic Center to: 1) prosecute elder abuse, 2) protect vulnerable older adults through conservatorship, and 3) reduce or prevent recurring cases of abuse. The study used a quasi-experimental design and focused on elder abuse cases involving victims aged 65 or older reviewed at the Los Angeles County Elder Abuse Forensic Center (the Center) between April 1, 2007 and December 31, 2009. These Center cases were compared to a propensity score match sample of Los Angeles County Adult Protective Services (APS) cases. Data were collected from Adult Protective Services case files, District Attorney filings, and Office of the Public Guardian conservatorship records. ",
+  "modified": "2016-11-30T14:44:15",
+  "accessLevel": "restricted public",
+  "identifier": "3317",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "abuse",
+    "elder abuse",
+    "emotional abuse",
+    "exploitation",
+    "intervention",
+    "sexual abuse",
+    "victim services",
+    "victimization"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2016-11-30T14:40:06",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR34979.v1",
+      "title": "Evaluating the Elder Abuse Forensic Center Model in Los Angeles County, California, 2007-2009"
+    }
+  ]
+}

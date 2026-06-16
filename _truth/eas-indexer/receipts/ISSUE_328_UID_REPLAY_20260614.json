@@ -1,0 +1,71 @@
+{
+  "receipt_type": "ISSUE_328_UID_REPLAY",
+  "generated_utc": "2026-06-14T23:01:02Z",
+  "repo": "jsonwisdom/AL",
+  "issue": 328,
+  "issue_comment_checkpoint_id": "4703349429",
+  "checkpoint_file": "_truth/eas-indexer/ISSUE_328_REPLAY_CHECKPOINT_20260614.md",
+  "checkpoint_commit": "5a1a10be9de4323db124337d5e88e29d71dddae9",
+  "anchor_state": "YELLOW_READY",
+  "no_fake_green": true,
+  "green_status": "BLOCKED_PENDING_LIVE_EVIDENCE",
+  "eas_indexer": {
+    "chain_id": 8453,
+    "network": "Base mainnet",
+    "eas_contract": "0x4200000000000000000000000000000000000021",
+    "schema_registry": "0x4200000000000000000000000000000000000020",
+    "live_graphql_endpoint": null,
+    "status": "PENDING_LIVE_DEPLOYMENT_AND_QUERY",
+    "notes": "Populate live_graphql_endpoint only after the Render/Base indexer endpoint is reachable."
+  },
+  "uid_query": {
+    "query_name": "ALMSReplay",
+    "uids": [
+      "0x4d6a7df50cba18e1086820732c158274b51adf9f17722c40d55fd3f73b5d6874",
+      "0xcc3e5448328c3ca29282e05bacbc4dc96d4cd533f7144d0a437a6f39cceec1f1"
+    ],
+    "graphql_template": "query ALMSReplay { attestations(where: { id_in: [\"0x4d6a7df50cba18e1086820732c158274b51adf9f17722c40d55fd3f73b5d6874\", \"0xcc3e5448328c3ca29282e05bacbc4dc96d4cd533f7144d0a437a6f39cceec1f1\"] }) { uid attester decodedData { name value } time revocationTime } }",
+    "output": {
+      "status": "PENDING_LIVE_QUERY",
+      "raw_response": null,
+      "attestations": [],
+      "timestamp_utc": null,
+      "notes": "Run this query against the live endpoint. Paste the full JSON response here before promotion to GREEN."
+    }
+  },
+  "resolver_event_status": {
+    "status": "PENDING",
+    "expected_events": [
+      "NoFakeGreenEnforced",
+      "ReceiptHashVerified",
+      "VersionGateChecked"
+    ],
+    "events_captured": [],
+    "notes": "Capture tx hashes, block numbers, contract address, and decoded event fields once indexed."
+  },
+  "green_gates": {
+    "live_graphql_endpoint": false,
+    "uid_query_output": false,
+    "resolver_event_status": false,
+    "replay_receipt_hash": false,
+    "committed_receipt": true
+  },
+  "lanes_summary": {
+    "eas_alms_indexer": "YELLOW_READY",
+    "whitehouse_federal_ai": "YELLOW_READY",
+    "doj_public_record": "YELLOW_READY",
+    "computer_wisdom_explainer": "YELLOW_READY",
+    "joy_family_approvals": "YELLOW_READY"
+  },
+  "receipt_hashing_plan": {
+    "sha256": null,
+    "ipfs_cid": null,
+    "status": "PENDING_FINAL_EVIDENCE",
+    "notes": "Hash this receipt after live endpoint, UID output, and resolver event status are populated."
+  },
+  "commit_evidence": {
+    "target_commit": null,
+    "committed_receipt": true,
+    "verification_note": "This scaffold is committed as YELLOW evidence. GREEN requires all five gates to be populated and verifiable from repo history."
+  }
+}

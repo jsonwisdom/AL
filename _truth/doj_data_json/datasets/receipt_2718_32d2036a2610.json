@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Survey of Youth in Custody, 2012",
+  "description": "The National Survey of Youth in Custody (NSYC) is part of the BJS National Prison Rape Statistics Program to gather mandated data on the incidence of prevalence of sexual assault in juvenile facilities under the Prison Rape Elimination Act of 2003 (PREA; P.L. 108-79). The Act requires a 10 percent sample of juvenile facilities to be listed by incidence of sexual assault. Data are collected directly from youth in a private setting using audio computer-assisted self interview (ACASI) technology with a touch-screen laptop and an audio feed to maximize inmate confidentiality and minimize literacy issues. The NSYC-2 was administered to 8,707 youth in 326 state operated and locally or privately operated juvenile facilities within the United States.\r\nThe NSYC-2 utilized two questionnaires, based on the age of the respondent. The Older Youth questionnaire was administered to youths ages 15 and up, and the Younger Youth questionnaire was administered to those 14 and younger. The survey was divided into five sections. Section A collected background information, such as details of admission to facility and demographics including education, height, weight, race, ethnicity, gender, sexual orientation, and history of any forced sexual contact. Section B, Facility Perceptions and Victimization, included respondents' opinions of the facility and staff, any incidence of gang activity, and any injuries that had occurred. Section C, Sexual Activity Within Facility, captured the types of sexual contact that occurred and the circumstances of sexual contact. Section D, Description of Event(s) with Youth, and Section E, Description of Event(s) with Staff, focused on when and where the contact occurred, the race and gender of the other youths or staff members, if threats or coercion were involved, and outcomes, including whether or not the sexual contact was reported.\r\nOther variables include debriefing questions about respondents' experiences completing the survey, interviewer observations, created variables to summarize victimization reports (due to the complicated routing in Section C), weight and stratification data, and administrative data about the facilities.",
+  "modified": "2015-10-23T15:04:07",
+  "accessLevel": "restricted public",
+  "identifier": "2718",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities (juveniles)",
+    "correctional guards",
+    "juvenile detention",
+    "juvenile inmates",
+    "juvenile offenders",
+    "juvenile victims",
+    "prison conditions",
+    "prison violence",
+    "rape",
+    "sex offenders",
+    "sex offenses",
+    "sexual abuse",
+    "sexual assault",
+    "sexual behavior"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2442",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2015-04-28T16:44:08",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR35039.v1",
+      "title": "National Survey of Youth in Custody, 2012"
+    }
+  ]
+}

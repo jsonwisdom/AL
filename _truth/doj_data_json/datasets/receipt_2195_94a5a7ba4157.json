@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Uniform Crime Reports [United States]:  Supplementary Homicide Reports, 1976-1998",
+  "description": "These data provide incident-level information on criminal\r\n homicides including location, circumstances, and method of offense, as\r\n well as demographic characteristics of victims and perpetrators and\r\n the relationship between the two. The data were provided monthly to\r\n the Federal Bureau of Investigation (FBI) by local law enforcement\r\nagencies participating in the FBI's Uniform Crime Reporting Program.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2195",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "arrests",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "homicide",
+    "law enforcement",
+    "offenders",
+    "offenses",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2167",
+  "dataQuality": false,
+  "issued": "2000-09-11T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03000.v1",
+      "title": "Uniform Crime Reports [United States]:  Supplementary Homicide Reports, 1976-1998"
+    }
+  ]
+}

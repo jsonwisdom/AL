@@ -1,0 +1,28 @@
+{
+  "schema": "alms.ws_anchor_bundle.v0.1",
+  "bundle": "ANCHOR_FIRST_RECEIPT",
+  "protocol": "ALMS-WS v0.3",
+  "status": "PENDING_EXTERNAL_COORDINATES",
+  "receipt_target": "_truth/websocket_sessions/anchor_first_receipt.json",
+  "local_generation_command": "printf '%s\\n' '{\"b\":2,\"a\":1}' '{\"type\":\"anchor_first_receipt\",\"protocol\":\"ALMS-WS v0.3\"}' | bash scripts/ws_session_receipt.sh anchor_first_receipt --json --stdin",
+  "local_verify_command": "bash scripts/verify_ws_session.sh _truth/websocket_sessions/anchor_first_receipt.json",
+  "hash_command": "sha256sum _truth/websocket_sessions/anchor_first_receipt.json",
+  "required_external_coordinates": {
+    "ipfs_cid": "PENDING",
+    "receipt_sha256": "PENDING",
+    "eas_uid_base": "PENDING",
+    "ens_bns_text_record": "PENDING"
+  },
+  "acceptance": {
+    "local_verifier": "valid:true and replay_match:true",
+    "ipfs": "CID resolves to bytes matching receipt_sha256",
+    "eas": "UID exists on Base and payload references CID/hash/schema",
+    "ens_bns": "text record resolves to the same CID/hash/UID"
+  },
+  "hard_boundary": [
+    "no_private_keys_in_terminal",
+    "no_token_movement",
+    "no_narrative_only_anchor_claim",
+    "sequence_authoritative_time_non_authoritative"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Directory of Law Enforcement Agencies, 1986: [United States]",
+  "description": "This dataset lists law enforcement agencies and contains \r\n variables regarding employment categories such as total full-time, \r\n part-time, sworn-in, and other employees. It also contains FIPS codes \r\nand populations.",
+  "modified": "1992-02-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "102",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "authority",
+    "full-time employment",
+    "law enforcement",
+    "law enforcement agencies",
+    "part-time employment",
+    "personnel",
+    "police departments",
+    "policies and procedures"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2436",
+  "dataQuality": false,
+  "issued": "1987-10-12T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08696.v1",
+      "title": "Directory of Law Enforcement Agencies, 1986: [United States]"
+    }
+  ]
+}

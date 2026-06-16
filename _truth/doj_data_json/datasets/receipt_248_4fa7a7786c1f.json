@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Jail Census, 1983",
+  "description": "The National Jail Census was conducted by the United States\r\nBureau of the Census for the Bureau of Justice Statistics. The census was\r\ntaken of all locally administered county and municipal jails with the\r\nauthority to hold prisoners for more than 48 hours. Data are presented\r\nfor 3,338 jails in 45 states. Excluded are Connecticut, Delaware,\r\nHawaii, Rhode Island, and Vermont. Information includes jail\r\npopulation by legal status, age and sex of prisoners, maximum\r\nsentence, admissions and releases, available services, structure and\r\ncapacity, expenditure, and employment.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "248",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "correctional facilities",
+    "correctional system",
+    "corrections management",
+    "demographic characteristics",
+    "inmate populations",
+    "inmates",
+    "jail inmates",
+    "jails"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2169",
+  "dataQuality": false,
+  "issued": "1985-01-11T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08203.v1",
+      "title": "National Jail Census, 1983"
+    }
+  ]
+}

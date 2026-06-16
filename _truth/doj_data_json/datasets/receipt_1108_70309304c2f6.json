@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Offender Based Transaction Statistics (OBTS), 1981: California, Ohio, Pennsylvania, Utah, Minnesota, New York, and Virginia",
+  "description": "Offender Based Transaction Statistics (OBTS) studies are\r\n designed to collect information by tracking adult offenders from the\r\n point of entry into the criminal justice system (typically by arrest)\r\n through final disposition, regardless of whether the offender is\r\n convicted or acquitted. Information is provided on arrest, police\r\n action, prosecutor action, level of charges, charges filed by the\r\n prosecutor, type of counsel, pretrial status, type of trial, sentence\r\n type, and sentence length. This allows researchers to examine how the\r\n criminal justice system processes offenders, to measure the changing\r\n volume of offenders moving through the different segments of the\r\n criminal justice system, to calculate processing time intervals\r\n between major decision-making events, and to assess the changing\r\nstructure of the offender population.",
+  "modified": "2005-08-08T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "1108",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "adult offenders",
+    "arrests",
+    "case processing",
+    "criminal justice system",
+    "disposition (legal)",
+    "policies and procedures",
+    "prosecution",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2177",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "1984-11-14T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08277.v5",
+      "title": "Offender Based Transaction Statistics (OBTS), 1981: California, Ohio, Pennsylvania, Utah, Minnesota, New York, and Virginia"
+    }
+  ]
+}

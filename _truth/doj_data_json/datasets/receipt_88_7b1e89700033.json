@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Census of State and Federal Adult Correctional Facilities, 1990  ",
+  "description": "This census is the fourth enumeration of state adult\r\ncorrectional institutions and the first of federal institutions\r\nsponsored by the Bureau of Justice Statistics and conducted by the\r\nBureau of the Census. Earlier censuses were completed in 1974 (ICPSR\r\n7811), 1979 (ICPSR 7852), and 1984 (ICPSR 8444). Separate\r\nquestionnaires were devised for confinement facilities and for\r\ncommunity-based facilities. Variables describing the facilities\r\ninclude physical security, age, functions, capacity, confinement\r\nspace, available medical facilities, programs, inmate/resident work\r\nassignments, staff employment, facilities under court order/consent\r\ndecree for conditions of confinement, capital and operating\r\nexpenditures, custody level of inmates/residents, one-day count and\r\naverage daily population, race/ethnicity of inmates/residents,\r\ninmate/resident deaths, special inmate/resident counts, and assaults\r\nand incidents by inmates. An addendum on drug control activities in\r\nstate and federal facilities was included for the first time in the\r\n1990 census. Facilities were asked to provide information on the\r\nfollowing: procedures used with inmates/residents, visitors, and staff\r\nto keep out illegal drugs and drug paraphernalia, inmate/resident\r\ndrug-testing practices, including the criteria for testing\r\ninmates/residents, the number of inmates/residents tested in total and\r\nby specific drug, and the number that tested positive, staff drug\r\ntesting, including groups and basis for testing, number tested, and\r\nprocedures when tests were positive, and capacity and enrollment in\r\nvarious types of drug treatment and intervention programs.",
+  "modified": "2001-12-21T00:00:00",
+  "accessLevel": "public",
+  "identifier": "88",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "correctional facilities (adults)",
+    "corrections management",
+    "drug abuse",
+    "drug testing",
+    "drug treatment",
+    "inmate deaths",
+    "inmate populations",
+    "inmate programs",
+    "inmates",
+    "jails",
+    "prison administration",
+    "prison conditions",
+    "prison construction",
+    "prison overcrowding",
+    "prison violence"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2168",
+  "dataQuality": false,
+  "issued": "1993-10-31T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09908.v2",
+      "title": "Census of State and Federal Adult Correctional Facilities, 1990  "
+    }
+  ]
+}

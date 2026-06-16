@@ -1,0 +1,37 @@
+{
+  "schema_version": "alms.receipt.v1",
+  "receipt_id": "ENS_WEBSITE_TARGET_LEAF001_RECEIPT",
+  "timestamp": "2026-05-22T01:40:00Z",
+  "claim_type": "ENS_WEBSITE_TARGET_ACTIVATION",
+  "claims": [
+    "jaywisdom.base.eth-website-target-live-verified",
+    "al-dashboard-target-is-jsonwisdom-github-io-al-site",
+    "placeholder-repos-excluded-from-active-ens-target",
+    "github-issue-242-records-website-target-readiness",
+    "ens-website-target-leaf001-is-append-only"
+  ],
+  "subject": {
+    "ens_name": "jaywisdom.base.eth",
+    "target_url": "https://jsonwisdom.github.io/AL/site/",
+    "verification_url": "https://jsonwisdom.github.io/AL/alms_trilogy/verify.html"
+  },
+  "evidence": {
+    "repo": "https://github.com/jsonwisdom/AL",
+    "branch": "master",
+    "repair_commit": "f73275eb77cc48469e5e18f95f0918e5c0762053",
+    "leaf_commit": "2d3661d7ffe244b8ac723ca686a289d85e74c68c",
+    "github_issue": "https://github.com/jsonwisdom/AL/issues/242",
+    "leaf_path": "nodes/ENS_WEBSITE_TARGET_LEAF001.json",
+    "live_json_path": "site/live.json"
+  },
+  "status": "LIVE_VERIFIED",
+  "mutation_status": "ENS_WEBSITE_RECORD_UPDATED_VERIFIED_BY_RECEIPT",
+  "canonical_boundary": {
+    "index_binding_required": true,
+    "corrections": "successor receipt required; no silent mutation",
+    "excluded_repos": [
+      "jsonwisdom/ENS",
+      "jsonwisdom/base-live"
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Characteristics and Movement of Felons in California Prisons, 1851-1964",
+  "description": "Felons in the California prison system are documented in\r\nthis data collection. The data are arranged by year and type of\r\nmovement within the prison system, and include admissions, paroles,\r\nparole violations, suspensions or reinstatements of parole, discharges,\r\ndeaths, and executions. Each record contains information on certain\r\ncharacteristics of the person involved, such as age at admission, race,\r\nmarital status, education, military history, occupation, number of\r\nprior arrests, escape record, date and type of releases, and parole\r\nviolations.",
+  "modified": "1992-02-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3719",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrests",
+    "convictions (law)",
+    "correctional facilities",
+    "criminal justice system",
+    "demographic characteristics",
+    "fatalities",
+    "felons",
+    "inmates",
+    "parole"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1985-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR07971.v3",
+      "title": "Characteristics and Movement of Felons in California Prisons, 1851-1964"
+    }
+  ]
+}

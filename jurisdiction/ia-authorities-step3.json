@@ -1,0 +1,83 @@
+{
+  "state": "Iowa",
+  "artifact": "ia-authorities-step3",
+  "kernel_phase": "STATE_ONBOARDING_V1_STEP_3",
+  "runtime_state": "DIVERGENCE_VERIFICATION",
+  "last_verified": "2026-05-06",
+  "verifier": "jsonwisdom",
+  "depends_on": "jurisdiction/ia-authorities-step2.json",
+  "doctrine": {
+    "authority_surface_first": true,
+    "facts_before_guidance": true,
+    "workflows_inferred": false,
+    "unresolved_questions_are_active_constraints": true,
+    "verified_divergence_before_workflow_synthesis": true
+  },
+  "verified_divergences": {
+    "OPEN_GOVERNMENT_MODEL": {
+      "status": "VERIFIED_DIVERGENT",
+      "value": "HYBRID_BOARD_MEDIATION_ENFORCEMENT",
+      "authority": "Iowa Public Information Board",
+      "source_url": "https://ipib.iowa.gov",
+      "verified_features": [
+        "contested_case_process",
+        "declaratory_order_authority",
+        "facial_review_gate",
+        "investigation_authority",
+        "mediation_or_informal_resolution",
+        "public_information_complaint_intake"
+      ],
+      "kernel_impact": "Open-government escalation topology must be modeled before Iowa guidance is drafted",
+      "portability_risk_level": "HIGH"
+    },
+    "SYSTEM_MODERNIZATION_DATE": {
+      "status": "VERIFIED_RUNTIME_RISK",
+      "domain": "UNEMPLOYMENT_INSURANCE",
+      "date": "2025-06-03",
+      "authority": "Iowa Workforce Development",
+      "source_url": "https://workforce.iowa.gov",
+      "verified_features": [
+        "centralized_IowaWORKS_runtime",
+        "claims_workflow_modernization",
+        "identity_or_account_management_risk",
+        "reemployment_workflow_integration"
+      ],
+      "kernel_impact": "Workflow drift may originate from platform modernization without statutory amendment",
+      "portability_risk_level": "HIGH"
+    }
+  },
+  "remaining_active_constraints": {
+    "UTILITY_TYPE": {
+      "status": "UNRESOLVED_PENDING_PROVIDER_SCOPE_VERIFICATION",
+      "known_risk": "Municipal and cooperative utility complaint routing may diverge from Minnesota and Wisconsin",
+      "portability_risk_level": "HIGH"
+    },
+    "PUBLIC_RECORD_SCOPE_MODEL": {
+      "status": "UNRESOLVED_PENDING_SCOPE_VERIFICATION",
+      "known_risk": "Vendor-held or contractor-held records may create portability-sensitive disclosure questions",
+      "portability_risk_level": "HIGH"
+    },
+    "HHS_COUNTY_INTAKE_MODEL": {
+      "status": "UNRESOLVED_PENDING_INTAKE_VERIFICATION",
+      "known_risk": "County intake centralization may differ from Minnesota and Wisconsin benefits routing",
+      "portability_risk_level": "MEDIUM"
+    }
+  },
+  "state_runtime_classification": {
+    "Minnesota": "REFERENCE_RUNTIME",
+    "Wisconsin": "PORTABILITY_RUNTIME",
+    "Iowa": "GOVERNANCE_STRESS_RUNTIME"
+  },
+  "next_allowed_actions": [
+    "Draft Iowa open-records/open-meetings guide only if it preserves IPIB topology constraints",
+    "Verify utility municipal/cooperative scope before Iowa utility guide",
+    "Verify Iowa UI portal behavior before Iowa UI guide",
+    "Keep unresolved constraints active until official-source verification"
+  ],
+  "blocked_actions": [
+    "Do not infer Wisconsin PSC routing into Iowa utilities",
+    "Do not infer Minnesota Chapter 13 classification model into Iowa open government",
+    "Do not draft Iowa UI workflow from pre-modernization assumptions",
+    "Do not treat IPIB complaint filing as automatic enforcement"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "policy_version": "NAMESPACE_POLICY_V1",
+  "policy_id": "sha256:genesis-perimeter",
+  "policy_branch_id": "LOCAL_BRANCH",
+  "policy_pubkey": "<local_branch_pubkey>",
+  "timestamp": "2026-05-07T00:00:00Z",
+  "protected_namespaces": [
+    {
+      "namespace_id": "ns-internal",
+      "pattern": "doc:internal-*",
+      "protection_mode": "LOCAL_ONLY",
+      "description": "Internal documents. Never admissible from external branches.",
+      "alert_on_violation": true,
+      "exceptions": []
+    },
+    {
+      "namespace_id": "ns-critical-ip",
+      "pattern": "doc:critical-ip-*",
+      "protection_mode": "LOCAL_ONLY",
+      "description": "Critical intellectual property. External claims are hostile until proven otherwise.",
+      "alert_on_violation": true,
+      "exceptions": []
+    },
+    {
+      "namespace_id": "ns-shared-research",
+      "pattern": "doc:shared-*",
+      "protection_mode": "ALLOW",
+      "description": "Shared research assets. Open to external attestation and rebinding.",
+      "alert_on_violation": false,
+      "exceptions": []
+    },
+    {
+      "namespace_id": "ns-external-intake",
+      "pattern": "doc:external-*",
+      "protection_mode": "ALLOW",
+      "description": "Explicitly external assets accepted for reference.",
+      "alert_on_violation": false,
+      "exceptions": []
+    },
+    {
+      "namespace_id": "ns-sovereign-override",
+      "pattern": "sovereign:override-*",
+      "protection_mode": "LOCAL_ONLY",
+      "description": "Sovereign override artifacts. Never admissible from external branches. Used for manual adoption justifications and lineage corrections.",
+      "alert_on_violation": true,
+      "exceptions": []
+    }
+  ],
+  "default_rule": {
+    "protection_mode": "QUARANTINE",
+    "description": "Unrecognized namespaces require manual review before admission."
+  },
+  "policy_signature": "<signature_over_all_above>"
+}

@@ -1,0 +1,38 @@
+BATCH_003 ITEM_021
+status: ORIGIN_TX_USER_OPS_INDEX
+network: base
+explorer: base.blockscout.com
+origin_tx: 0x49c29d9b305a297c6a754f068fbf8ec4921e5e038b3c037757d99635da477a10
+block: 31825577
+bundler: Pimlico ERC-4337 Bundler 56
+user_operations_count: 2
+
+user_op_001_visible:
+hash: 0x68226bf97d...9a7b
+status: Success
+sender_label: CoinbaseSmartWallet
+fee_eth: 0.00090659
+
+user_op_002_visible:
+hash: 0x0e8e5923c1...8280
+status: Success
+sender_label: CoinbaseSmartWallet
+fee_eth: 0.00047183
+
+prior_origin_tx_candidate_commit: 331389ddbd07195188d5fb32e6c2b408ad014238
+
+required_next_decode:
+- open user_op_001 full page
+- copy full user op hash, sender, target, logs, raw calldata
+- classify whether it created JAYWISDOM or Brielle token
+- if unresolved, open user_op_002
+
+claim_allowed:
+- Origin transaction contains 2 successful user operations according to visible Blockscout data.
+
+claim_not_allowed:
+- creator/deployer identified
+- first minter/buyer identified
+- Proof-007 passed
+
+boundary: visible user-op index only; no user-op decode; no role comparison; no proof result

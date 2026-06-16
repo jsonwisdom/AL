@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Federal Criminal Case Processing Statistics (FCCPS)",
+  "description": "The Federal Criminal Case Processing Statistics (FCCPS) data tool is an interface that can be used to analyze federal case processing data. Users can generate various statistics in the areas of federal law enforcement, prosecution/courts, and incarceration from 1998. Users can also look up data based on title and section of the U.S. Criminal Code from 1994. This data tool includes offenders held for violating federal laws. It excludes commitments from the D.C. Superior Court.",
+  "modified": "2010-01-01T00:00:00",
+  "accessLevel": "public",
+  "identifier": "131",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Suspects in investigations",
+    "Persons arrested and booked",
+    "Suspects in investigations concluded",
+    "Defendants charged in criminal cases",
+    "Defendants in criminal cases closed",
+    "Offenders sentenced",
+    "Prisoners entering Federal prison",
+    "Prisoners in Federal prison at year-end"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2010-01-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.bjs.gov/fjsrc/",
+      "mediaType": "text/html",
+      "title": "Federal Criminal Case Processing Statistics (FCCPS)"
+    }
+  ]
+}

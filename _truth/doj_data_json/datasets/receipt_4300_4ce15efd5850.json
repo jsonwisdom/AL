@@ -1,0 +1,45 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "DOJ Annual FOIA Report Raw Data",
+  "description": "The underlying data elements behind each request, administrative appeal, and consultation received and processed that is used to create the Annual FOIA Report at the conclusion of each fiscal year.",
+  "modified": "2017-01-01T00:00:00",
+  "accessLevel": "public",
+  "identifier": "4300",
+  "publisher": {
+    "name": "Justice Management Division",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Data Management US Department of Justice (USDOJ)",
+    "hasEmail": "mailto:DataManagement@usdoj.gov"
+  },
+  "keyword": [
+    "Raw Data"
+  ],
+  "bureauCode": [
+    "011:00"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2017-01-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "downloadURL": "https://www.justice.gov/oip/reports-1#s1",
+      "mediaType": "text/csv",
+      "title": "DOJ Annual FOIA Report Raw Data CSV"
+    }
+  ]
+}

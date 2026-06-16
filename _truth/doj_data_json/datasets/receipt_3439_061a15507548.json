@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Shock Incarceration in Louisiana, 1987-1989",
+  "description": "These data describe the results of one component of an\r\nevaluation of the \"shock incarceration\" program in the Louisiana\r\nDepartment of Public Safety and Corrections (LDPSC). This program,\r\nformally called IMPACT (Intensive Motivational Program of Alternative\r\nCorrectional Treatment), began in 1987 and consisted of two phases. In\r\nthe first phase offenders spent 90 to 180 days in a medium security\r\nprison participating in a rigorous boot camp-type program. Offenders\r\nwho successfully completed the program were released from prison and\r\nplaced under intensive supervision in the community--the second phase\r\nof the program. Changes in offender behavior and attitudes during the\r\nprison and community supervision phases of the shock program were\r\nexamined in a quasi-experimental design to determine the impact of the\r\nprogram on the individual offenders. Comparisons were made with\r\nsimilar offenders who were not in the shock program who had been\r\nsentenced to prison and parole/probation. Shock and nonshock\r\nincarcerated offenders were asked to complete self-report\r\nquestionnaires. Information was also collected from LDPSC records and\r\nfrom monthly parole performance evaluations completed by parole and\r\nprobation officers. Information collected from LDPSC records included\r\ndemographics, sentence characteristics, release date, offense,\r\ncriminal history, I.Q. (Beta II) and MMPI scores, and diagnostic\r\npersonnel evaluations of mental health, substance abuse, general\r\nattitude, adjustment, and violence potential. Part 1 of the collection\r\nconsists of inmate data collected from the incarcerated\r\nshock program participants (N = 208) and the incarcerated nonshock\r\noffenders (N = 98, with partial records for an additional 46).\r\nInformation includes police record data, clinical diagnostic data,\r\noffender's self-reported demographic data, scales for self-reported\r\nattitudes and personality measures, and offender's self-reported\r\ncriminal and substance abuse history. Part 2 contains demographic data\r\ncollected for all samples, including police record data and clinical\r\ndiagnostic data. Part 3 consists of parole and probation data for all\r\ninmates. Offenders were followed for 12 months after leaving prison or\r\nuntil they failed community supervision (by absconding, being jailed\r\nfor a lengthy period of time, or having their parole/probation\r\nrevoked). Consequently, there is monthly data for between 1 to 12\r\nmonths for each offender. Information includes items relating to\r\nparolees' performance at work and school, personal adjustment,\r\nemployment, substance abuse counseling, interpersonal relations,\r\ncompliance with intensive supervision program requirements, and\r\ncontacts with the criminal justice system.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3439",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "imprisonment",
+    "offender profiles",
+    "offenders",
+    "outcome evaluation",
+    "parole",
+    "probation",
+    "program evaluation",
+    "shock incarceration programs"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1993-12-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09926.v1",
+      "title": "Shock Incarceration in Louisiana, 1987-1989"
+    }
+  ]
+}

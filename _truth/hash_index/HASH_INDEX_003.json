@@ -1,0 +1,25 @@
+{
+  "artifact": "HASH_INDEX",
+  "hash_index_id": "HASH_INDEX_003",
+  "lineage": "PDF_ONLY",
+  "source_id": "justice_epstein_pdf",
+  "source_url": "https://www.justice.gov/epstein/files/DataSet%209/EFTA00818213.pdf",
+  "entries": [
+    {
+      "file_id": "justice_epstein_pdf_001",
+      "path": "_truth/ingest/justice_epstein_pdf/2026-05-05T11-04-05Z.pdf",
+      "sha256": "b5ead1dcf7c710d8246b84ff59cfe39d6a609aaaf234cb29359c65d2f6a5d56e",
+      "size_bytes": 76296,
+      "content_type": "application/pdf",
+      "origin": "PLAYWRIGHT_AGE_VERIFIED"
+    }
+  ],
+  "entry_count": 1,
+  "status": "CANDIDATE",
+  "promoted": false,
+  "opens_custody_gate": false,
+  "write_run_0002": "UNCHANGED",
+  "gate_status": "CLOSED",
+  "hash_index_manifest_sha256": null,
+  "custody_note": "PDF lineage from age-gated DOJ data set. Single snapshot. No promotion."
+}

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.dev/schemas/mcp_engine_audit_receipt.v0_1.schema.json",
+  "title": "MCP Engine Audit Receipt V0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "receipt_type",
+    "version",
+    "timestamp_utc",
+    "identity_hash",
+    "request_hash",
+    "response_hash",
+    "tool_name",
+    "policy_version",
+    "decision",
+    "semantic_inference",
+    "authority"
+  ],
+  "properties": {
+    "receipt_type": { "const": "MCP_ENGINE_AUDIT_RECEIPT" },
+    "version": { "const": "0.1" },
+    "timestamp_utc": { "type": "string", "format": "date-time" },
+    "identity_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "request_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "response_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "tool_name": { "type": "string", "minLength": 1 },
+    "policy_version": { "type": "string", "minLength": 1 },
+    "decision": { "enum": ["ALLOW", "DENY"] },
+    "denial_reason": {
+      "type": ["string", "null"],
+      "enum": [
+        null,
+        "UNBOUNDED_PACKET",
+        "MISSING_CAPABILITY_METADATA",
+        "UNAUTHORIZED_TOOL",
+        "SEMANTIC_AUTHORITY_REQUEST",
+        "MUTATION_WITHOUT_RECEIPT"
+      ]
+    },
+    "semantic_inference": { "const": false },
+    "authority": { "const": false }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "decision": { "const": "DENY" } } },
+      "then": { "required": ["denial_reason"] }
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Reactions to Crime in Atlanta and Chicago, 1979-1980  ",
+  "description": "Two previously released data collections from ICPSR are\r\ncombined in this dataset: CHARACTERISTICS OF HIGH AND LOW CRIME\r\nNEIGHBORHOODS IN ATLANTA, 1980 (ICPSR 7951) and CRIME FACTORS AND\r\nNEIGHBORHOOD DECLINE IN CHICAGO, 1979 (ICPSR 7952). Information for\r\nICPSR 7951 was obtained from 523 residents interviewed in six selected\r\nneighborhoods in Atlanta, Georgia. A research team from the Research\r\nTriangle Institute sampled and surveyed the residents.  ICPSR 7952\r\ncontains 3,310 interviews of Chicago residents in eight selected\r\nneighborhoods. The combined data collection contains variables on\r\ntopics such as residents' demographics and socioeconomic status,\r\npersonal crime rates, property crime rates, neighborhood crime rates,\r\nand neighborhood characteristics. The documentation contains three\r\npieces of information for each variable: variable reference numbers\r\nfor both the Atlanta and Chicago datasets, the complete wording of the\r\nquestions put to the respondents of each survey, and the exact wording of\r\nthe coding schemes adopted by the researchers.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2801",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "cities",
+    "communities",
+    "community participation",
+    "crime",
+    "crime impact",
+    "fear of crime",
+    "juvenile offenders",
+    "neighborhood conditions",
+    "police effectiveness",
+    "police protection",
+    "property values",
+    "race relations",
+    "reactions to crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1985-01-11T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08215.v2",
+      "title": "Reactions to Crime in Atlanta and Chicago, 1979-1980  "
+    }
+  ]
+}

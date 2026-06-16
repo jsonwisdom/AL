@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Criminal Case Processing in Metropolitan Courts, 1976",
+  "description": "In 1977 the National Center for State Courts, in\r\n cooperation with the National Conference of Metropolitan Courts, began\r\n a research and demonstration project on the delay in processing criminal\r\n cases in major metropolitan\r\n courts. The objectives were (1) to determine the scope and extent of\r\n the delay in such courts, (2) to identify factors associated with the delay,\r\n and (3) to suggest and ultimately test techniques that might work to\r\n reduce the delay. The variables include geographic location, disposition\r\n type, most serious charge against the defendant, and dates of arrest,\r\ntrial, disposition, and sentencing.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2530",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "case processing",
+    "cities",
+    "courtroom proceedings",
+    "courts",
+    "disposition (legal)"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR07750.v1",
+      "title": "Criminal Case Processing in Metropolitan Courts, 1976"
+    }
+  ]
+}

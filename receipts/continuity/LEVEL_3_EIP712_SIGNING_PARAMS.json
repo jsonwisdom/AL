@@ -1,0 +1,44 @@
+{
+  "receipt": "LEVEL_3_EIP712_SIGNING_PARAMS",
+  "status": "PARAMETERS_ONLY_UNSIGNED",
+  "signing_gate": "EIP_712_READY_AFTER_CANONICAL_HASH_VERIFICATION",
+  "domain": {
+    "name": "DIGITAL_ABI_DOMAIN",
+    "version": "1.0.0",
+    "chainId": 8453
+  },
+  "types": {
+    "WitnessEnvelope": [
+      {
+        "name": "envelopeHash",
+        "type": "bytes32"
+      },
+      {
+        "name": "authority",
+        "type": "string"
+      },
+      {
+        "name": "directive",
+        "type": "string"
+      }
+    ]
+  },
+  "message": {
+    "envelopeHash": "0xb5e9c0a3f81e97d2643a7b5d142c9e8f62a4d9c7e1b5f8a0d36c274b9f0e1a3d",
+    "authority": "LOCAL_REPLAY",
+    "directive": "PROTECT_OUR_ASSETS"
+  },
+  "constraints": {
+    "signature_included": false,
+    "base_authority": "NONE",
+    "chain_id_role": "ROUTING_COORDINATE_NOT_AUTHORITY",
+    "forbidden_fields": [
+      "timestamp",
+      "latest",
+      "current_block",
+      "explorer_status",
+      "wallet_display_status"
+    ]
+  },
+  "doctrine": "Proof may travel. Meaning stays replayable."
+}

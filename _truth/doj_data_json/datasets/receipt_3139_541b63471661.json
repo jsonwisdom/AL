@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Problem Behaviors in Maltreated Children and Youth:  Influential Child, Peer, and Caregiver Characteristics, 1999-2000 [United States]",
+  "description": "This project examined the problem behaviors of maltreated\r\nchildren and adolescents and the predictors of changes in behavior\r\nover an 18-month period. Problem behaviors included aggression,\r\ndelinquency, risky sexual practices, substance abuse, and suicidal\r\nbehaviors. The project used data from the National Survey of Child and\r\nAdolescent Well-Being (NSCAW), a national probability survey of\r\nchildren assessed following a child maltreatment report. This\r\ncollection consists of SAS code used to produce subsets of the NSCAW\r\ndata and the analyses for three chapters of the project's final\r\nreport. Chapter 2 examined aggression and changes in behavior over 18\r\nmonths for children aged six to ten years at the time of the baseline\r\ninterview. Chapter 3 examined self-reported delinquency and\r\ncaregiver-reported aggressive and delinquent behavior and changes in\r\nbehavior over 18 months for youth aged 11 to 15 years at the time of\r\nthe baseline interview. Chapter 4 examined risky behavior changes\r\n(risky sexual behavior, substance abuse, and suicidal risk behavior)\r\nover 18 months for youth aged 11 to 15 years at the time of the\r\nbaseline interview.",
+  "modified": "2005-07-06T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3139",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "abused children",
+    "adolescents",
+    "aggression",
+    "behavior problems",
+    "caregivers",
+    "child welfare",
+    "delinquent behavior",
+    "family histories",
+    "parent child relationship",
+    "risk factors"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2005-07-06T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04258.v1",
+      "title": "Problem Behaviors in Maltreated Children and Youth:  Influential Child, Peer, and Caregiver Characteristics, 1999-2000 [United States]"
+    }
+  ]
+}

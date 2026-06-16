@@ -1,0 +1,33 @@
+BATCH_003_OPEN_GITHUB_DIRECT_V1
+
+status: BATCH_003_OPEN
+open_mode: GITHUB_DIRECT
+repository: jsonwisdom/AL
+batch: BATCH_003
+authority_model: EVIDENCE_ONLY
+owner_identity: jaywisdom.eth
+owner_address: 0xa380552a27b0a5a2874ea7aa52cac09f542002e8
+
+genesis_key_commit: db3885a92a8cba1fcddf5f74bfa3b711bebd3fbc
+genesis_key_file: receipts/replay/BATCH_003_GENESIS_KEY_V1.txt
+prior_state: BATCH_002 validator pass attested on EAS/Base by delegated recorder
+prior_eas_uid: 0xed2eed117f8b888d597910ed88cda166217babfcdcfc54e4c70b02a49ee2dc25
+prior_eas_tx_hash: 0x8a3ccc41ab7611a940f21fee77d58fbd3fde647d197e2315e4e07824351e712c
+prior_state_commit: 10594c70e8c58c58d3e3699a50248d5b782d2c9d
+
+state_transition:
+from: BATCH_003_PREPARED_NOT_OPEN
+to: BATCH_003_OPEN
+basis: existing GitHub genesis key commit plus prior EAS-attested BATCH_002 validator pass
+
+claim_allowed:
+- BATCH_003 opened on GitHub direct receipt surface.
+- BATCH_003 may now accept ordinary GitHub receipt candidates.
+
+claim_not_allowed:
+- jaywisdom.eth wallet signed BATCH_003 open.
+- BATCH_003 EAS attested.
+- BATCH_003 sealed.
+- owner-signed finality.
+
+boundary: GitHub direct opening only; no wallet signature; no EAS attestation; no external transaction verification; no batch seal.

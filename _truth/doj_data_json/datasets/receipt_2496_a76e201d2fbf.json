@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Uniform Crime Reporting Program Data [United States]: Property Stolen and Recovered, 2005",
+  "description": "Since 1930, the Federal Bureau of Investigation has\r\n compiled the Uniform Crime Reports (UCR) to serve as periodic\r\n nationwide assessments of reported crimes not available elsewhere in\r\n the criminal justice system. Law enforcement agencies contribute\r\n reports either directly or through their state reporting programs.\r\n Each year, this information is reported in four types of files: (1)\r\n Offenses Known and Clearances by Arrest, (2) Property Stolen and\r\n Recovered, (3) Supplementary Homicide Reports (SHR), and (4) Police\r\n Employee (LEOKA) Data. The Property Stolen and Recovered data are\r\n collected on a monthly basis by all UCR contributing agencies. These\r\n data, aggregated at the agency level, report on the nature of the\r\n crime, the monetary value of the property stolen, and the type of\r\n property stolen. Similar information regarding recovered property is\r\nalso included in the data.",
+  "modified": "2007-07-10T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2496",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "arrests",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "larceny",
+    "law enforcement",
+    "offenses",
+    "property crime statistics",
+    "property crimes",
+    "stolen property",
+    "stolen property recovery"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2167",
+  "dataQuality": false,
+  "issued": "2007-07-10T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR20160.v1",
+      "title": "Uniform Crime Reporting Program Data [United States]: Property Stolen and Recovered, 2005"
+    }
+  ]
+}

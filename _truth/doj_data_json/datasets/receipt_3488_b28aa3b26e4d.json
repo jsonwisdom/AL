@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Crime Control Effects of Sentencing in Essex County, New Jersey, 1976-1997  ",
+  "description": "This study was undertaken to examine the ways in which\r\n different felony sanctions impact the future behavior of felony\r\n offenders. The study sought to determine whether the following made a\r\n difference in subsequent criminal behavior: (1) sentences of\r\n confinement, (2) the length of sentence (both the sentence imposed and\r\n that which was actually served), and (3) sentences of probation\r\n combined with jail (\"split\" sentences), or combined with fines,\r\n restitution, or other alternative sanctions. Data were collected from\r\n questionnaires completed by 18 judges of the Essex County, New Jersey,\r\n courts and by probation staff. Follow-up data were collected from\r\n official records provided by probation, jail, prison, and parole case\r\n files. Follow-up data were also collected from the following official\r\n records: (1) the New Jersey Offender-Based Transaction System\r\n Computerized Criminal History, (2) the New Jersey Department of\r\n Corrections Offender-Based Correctional Information System, (3) the\r\n United States Department of Justice Interstate Identification Index,\r\n (4) the National Crime Information Center Wanted Persons File, (5) the\r\n New Jersey PROMIS/GAVEL Prosecutors Case Tracking System, and (6)\r\n administrative record files of the New Jersey Department of\r\n Corrections. Variables in the data file include the most serious\r\n offense charge, most serious offense of conviction, dimension of\r\n conviction, offense type (person, property, social order, fraud, or\r\n drug offense), number of prior probations, number of probation\r\n revocations, number of prior jail and prison terms, mitigating and\r\n aggravating factors affecting the sentence, type of sentence, special\r\n conditions of probation, fines and restitutions imposed, minimum and\r\n maximum incarceration terms (in months), history of drug offenses,\r\n type of drugs used, probation and parole violations, total number of\r\n prior arrests and prior convictions, and longest arrest-free period\r\n after first arrest. The type of post-sentence offense, dimension,\r\n disposition charge, sentence, and date of arrest are provided for\r\n arresting events and charge episodes 1 through 108 for any\r\n offender. For up to 43 arrest events (for any offender), the date of\r\n lockup and date of exit from confinement are provided. The file also\r\n includes recommendations made by prosecutors and probation officers,\r\n and judges' ratings (on a scale of one to nine) with respect to the\r\n likelihood of an offender committing future property crimes, crimes\r\n against persons, or any crime. Judges also rated the arrest record\r\n length, conviction record length, and social stability of each\r\n offender. Retribution points, incapacitation points, and specific\r\n deterrence points assigned by the judges complete the\r\n file. Demographic variables include the race and sex of each convicted\r\noffender, and the age of the offender at first conviction.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3488",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrest records",
+    "convictions (law)",
+    "crime control",
+    "crime prevention",
+    "drug law offenses",
+    "felons",
+    "fines",
+    "imprisonment",
+    "jails",
+    "probation",
+    "recidivism",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2001-03-15T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02857.v1",
+      "title": "Crime Control Effects of Sentencing in Essex County, New Jersey, 1976-1997  "
+    }
+  ]
+}

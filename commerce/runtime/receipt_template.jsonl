@@ -1,0 +1,4 @@
+{"type":"PAYMENT_RECEIVED","timestamp":"<ISO_8601>","product_id":"receipts_over_narrative_shirt_v0","constitution_v0":"e3a1fbffab785dd6ffa69cbcc17a19fec68130b9","gateway":"Fourthwall","gateway_order_id":"<ORDER_ID>","payment_status":"CONFIRMED","amount_usd":25}
+{"type":"FULFILLMENT_CONFIRMED","timestamp":"<ISO_8601>","product_id":"receipts_over_narrative_shirt_v0","gateway_order_id":"<ORDER_ID>","fulfillment_state":"SHIPPED_OR_DELIVERED"}
+{"type":"RECEIPT_EMITTED","timestamp":"<ISO_8601>","product_id":"receipts_over_narrative_shirt_v0","receipt_sha256":"<RECEIPT_HASH>","linked_payment_order":"<ORDER_ID>"}
+{"type":"PROMOTION_EVENT","timestamp":"<ISO_8601>","from":"PUBLIC_WITNESSED","to":"COMMERCE_WITNESSED","trigger":"FIRST_RECONCILED_COMMERCE_RECEIPT"}

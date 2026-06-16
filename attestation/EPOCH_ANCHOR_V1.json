@@ -1,0 +1,90 @@
+{
+  "spec_version": "v1",
+  "artifact": "EPOCH_ANCHOR_V1",
+  "purpose": "Define the minimal immutable anchor that binds an epoch_id to its canonical manifest CID and closes replay bootstrapping ambiguity.",
+  "last_verified": "2026-05-06",
+  "verifier": "jsonwisdom",
+  "problem_statement": {
+    "object_integrity_is_not_epoch_identity": true,
+    "cid_alone_is_necessary_but_insufficient": true,
+    "manifest_cid_must_be_replay_addressable": true
+  },
+  "anchor_shape": {
+    "epoch_id": "deterministic_epoch_identifier",
+    "manifest_cid": "content_addressed_manifest_identifier",
+    "manifest_sha256": "sha256_of_manifest_bytes",
+    "epoch_root_sha256": "merkle_or_epoch_root_over_manifest_artifacts",
+    "prev_epoch_anchor": "previous_epoch_anchor_hash_or_null",
+    "timestamp_unix_ms": "anchor_observation_time",
+    "anchor_context": {
+      "chain": "optional_external_anchor_chain",
+      "tx_id": "optional_external_anchor_transaction",
+      "attester": "optional_signer_or_attester"
+    }
+  },
+  "replay_chain": [
+    "epoch_id",
+    "canonical_manifest_cid",
+    "manifest_bytes",
+    "artifact_cids",
+    "artifact_bytes",
+    "merkle_replay",
+    "verdict"
+  ],
+  "constitutional_ordering": [
+    {
+      "layer": "raw_bytes",
+      "role": "physical_object"
+    },
+    {
+      "layer": "cid",
+      "role": "object_identity"
+    },
+    {
+      "layer": "manifest",
+      "role": "epoch_context_identity"
+    },
+    {
+      "layer": "manifest_cid",
+      "role": "replay_root"
+    },
+    {
+      "layer": "epoch_anchor",
+      "role": "canonical_bootstrapping"
+    },
+    {
+      "layer": "merkle_root",
+      "role": "replay_closure_proof"
+    }
+  ],
+  "external_anchor_targets": [
+    "arweave",
+    "bitcoin_op_return",
+    "base_eas",
+    "ots",
+    "content_addressed_log"
+  ],
+  "validation_rules": [
+    "Resolve epoch_id to exactly one canonical manifest_cid for the selected anchor chain.",
+    "Fetch manifest bytes by manifest_cid from any available storage substrate.",
+    "Hash manifest bytes and require manifest_sha256 match.",
+    "Recompute epoch_root_sha256 from manifest artifacts and require match.",
+    "Follow prev_epoch_anchor only as history linkage, never as mutable current truth.",
+    "Reject competing manifest CIDs for the same epoch unless they are explicit fork epochs."
+  ],
+  "failure_modes": [
+    "EPOCH_ANCHOR_MISSING",
+    "MANIFEST_CID_AMBIGUITY",
+    "MANIFEST_HASH_MISMATCH",
+    "EPOCH_ROOT_MISMATCH",
+    "PREV_ANCHOR_BROKEN",
+    "SILENT_EPOCH_REBIND_ATTEMPT"
+  ],
+  "invariants": [
+    "The constitutional object is the file bound into a specific epoch topology, not the file alone.",
+    "Manifest CID is the signature block of epoch identity.",
+    "External anchors attest the manifest root, not every artifact byte directly.",
+    "Storage persistence is operational; addressing is constitutional.",
+    "Truth remains reconstructible even after infrastructure decay."
+  ]
+}

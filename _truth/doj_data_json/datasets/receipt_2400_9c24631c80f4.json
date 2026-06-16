@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Crime Surveys: Redesign Data: Peoria Record Check Study",
+  "description": "The purpose of this study was to measure criminal activity\r\nin the United States based on survey reports of crime victims. In the\r\nstudy two different questionnaire forms were used in order to assess\r\nwhich provided better responses. One form was very lengthy and asked\r\ndetailed questions about each household, person, and incident. The\r\nsecond form was much shorter and asked very generalized questions. The\r\ndata collection was an attempt to find alternative methods of sampling,\r\ninterviewing, designing questionnaires, managing data, and reporting\r\nresults. Detailed information is provided on household characteristics\r\nand other characteristics of the respondents, as well as on crime\r\nincidents, including burglary, vandalism, assault, and rape.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2400",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "assault",
+    "crime",
+    "demographic characteristics",
+    "households",
+    "justice",
+    "medical care",
+    "medical history",
+    "robbery",
+    "victimization",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1987-05-19T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08669.v1",
+      "title": "National Crime Surveys: Redesign Data: Peoria Record Check Study"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "artifact": "WRITE_RUN_0002_ACCEPTANCE_FRAME",
+  "version": "v1.1",
+  "state": "CONTROLLED_RAMP",
+  "live_packet_path": "_truth/write_runs/WRITE_RUN_0002_packet.json",
+  "live_packet_invariant": "ABSENT_BY_DESIGN_UNTIL_REAL_RUNNER_OUTPUT",
+  "fixture_path": "_truth/write_runs/fixtures/WRITE_RUN_0002_packet.FIXTURE.json",
+  "fixture_status": "QUARANTINED_FOR_TESTING_ONLY",
+  "validator_path": "scripts/validate_write_run_0002.sh",
+  "schema_path": "schemas/WRITE_RUN_0002_packet.schema.json",
+  "gate_status": "CLOSED",
+  "write_run_0002": "PENDING_REAL_PACKET",
+  "write_run_0003": "BLOCKED",
+  "valid_packet_source": "REAL_RUNNER_OUTPUT_ONLY",
+  "requirements": [
+    "real_ingestion_event",
+    "real_PROMOTE_json",
+    "non_placeholder_hashes",
+    "replay_reproducible",
+    "REL_0001_unchanged",
+    "VIEW_LAYER_audit_clean",
+    "kill_switch_false"
+  ],
+  "valid_command": "bash scripts/validate_write_run_0002.sh _truth/write_runs/WRITE_RUN_0002_packet.json",
+  "valid_output_required": [
+    "WRITE_RUN_0002_PACKET_VALID",
+    "WRITE_RUN_0003_UNBLOCKED_CANDIDATE"
+  ],
+  "authority": "REPO_EXECUTABLE_VALIDATOR_PLUS_PROVENANCE_CLASSIFICATION"
+}

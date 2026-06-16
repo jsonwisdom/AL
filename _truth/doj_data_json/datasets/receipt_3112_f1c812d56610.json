@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Impact of Prisoner Litigation Reform, 1992-2000 [United States]",
+  "description": "In 1996, the United States Congress enacted two policies\r\n to regulate the use of the legal system by state prisoners. They were\r\n the Prisoner Litigation Reform Act (PLRA) and the Antiterrorism and\r\n Effective Death Penalty Act (AEDPA). The purpose of this research\r\n project was to examine whether the PLRA and the AEDPA had their\r\n intended effects of reducing the number of Section 1983 lawsuits and\r\n habeas corpus petitions, respectively, at both the national and\r\n circuit court levels. The researchers obtained data, from the Research\r\n and Statistics Division of the Administrative Office of the United\r\n States Courts, on the number of civil rights suits and the number of\r\n habeas corpus petitions filed by state prisoners in district courts\r\n from April 1992 to December 2000. These data were organized into\r\n monthly increments. Dataset 1, Civil Rights Suits Filed, contains 105\r\n cases, and Dataset 2, Habeas Corpus Petitions Filed, also contains 105\r\n cases. The trends in civil rights suits filed (Dataset 1) and habeas\r\n corpus petitions filed (Dataset 2) were measured by the number of\r\n petitions filed per 10,000 state prisoners. Filing rates were measured\r\n at the level of district courts, grouped together by the circuit court\r\n that has jurisdiction over them.\r\nVariables in Dataset 1, Civil Rights Suits Filed, include filing\r\n date and the number of civil rights suits filed per 10,000 state\r\n prisoners at the national level as well as for district courts within\r\n each of the 11 circuits and the District of Columbia. An intervention\r\n flag variable is also included. Variables in Dataset 2, Habeas Corpus\r\n Petitions Filed, include filing date and the number of habeas\r\n corpus petitions filed per 10,000 state prisoners at the national\r\n level, as well as for district courts within each of the 11 circuits\r\n and the District of Columbia. A pulse flag variable and two\r\nintervention flag variables are also included.",
+  "modified": "2008-04-10T15:21:11",
+  "accessLevel": "public",
+  "identifier": "3112",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "Supreme Court decisions",
+    "civil rights",
+    "convictions (law)",
+    "evaluation",
+    "habeas corpus",
+    "judicial decisions",
+    "lawsuits",
+    "legislation",
+    "legislative impact",
+    "prison conditions",
+    "prison inmates",
+    "prisoners rights"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2008-03-28T10:59:50",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR20354.v1",
+      "title": "Impact of Prisoner Litigation Reform, 1992-2000 [United States]"
+    }
+  ]
+}

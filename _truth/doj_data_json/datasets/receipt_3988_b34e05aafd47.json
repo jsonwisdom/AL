@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Outcome Evaluation of Parents Anonymous, United States, 2003-2004",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\n'Parents Anonymous' is a self-help group aimed at strengthening families and reducing child maltreatment outcomes. This study assessed whether parent's participation in the program was associated with child maltreatment outcomes and with their change in risk and protective factors. The study contains both qualitative and quantitative data.\r\nFor the quantitative segment, group facilitators completed a survey at the  beginning of the study. Through these surveys facilitators provided information regarding their level of education, how they heard about their positions, whether they were paid workers or volunteers, and more. Following the completion of facilitator surveys, 206 parents new to the 'Parents Anonymous' program were interviewed. The first interview took place 1 month into the program and the third 6 months later. Parents were asked about their demographics, their living situations, parenting style, and stressors in their lives.\r\nIn the qualitative segment 36 parents from two states participating in the Spanish-language 'Parents Anonymous' groups were assessed with semi-structured in-person and over the phone interviews. The interviews were conducted once at the beginning of the program, 1 month into the program, and again at 6 months. Additional qualitative data was collected through group observations and focus groups.",
+  "modified": "2018-11-19T15:55:21",
+  "accessLevel": "restricted public",
+  "identifier": "3988",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "abuse",
+    "child abuse",
+    "child neglect",
+    "parenting skills",
+    "parents"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-11-19T15:52:14",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37126.v1",
+      "title": "Outcome Evaluation of Parents Anonymous, United States, 2003-2004"
+    }
+  ]
+}

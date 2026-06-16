@@ -1,0 +1,19 @@
+{
+  "artifact": "GPO_CONAN_2017",
+  "source_role": "TEXT_CANONICAL_REFERENCE",
+  "path": "_truth/us/constitution/constitution_gpo.pdf",
+  "sha256": "89104084666f27b9c9f2b87e2b7e15d862423985a11956104088019e09d6f6e5",
+  "line_count": 6898,
+  "extraction_method": "pdftotext-layout-v1.0",
+  "text_path": "_truth/us/constitution/constitution_gpo.txt",
+  "status": "CANONICAL_TEXT_LAYER_LOCKED",
+  "first_text_anchor": "[CONSTITUTION OF THE UNITED STATES]",
+  "canonical_distinction": {
+    "senate_publication_103_21": "BINARY_IMAGE_TRUTH_ONLY",
+    "gpo_conan_2017": "MACHINE_READABLE_TEXT_TRUTH"
+  },
+  "next_index_targets": [
+    "PREAMBLE",
+    "ARTICLE_I"
+  ]
+}

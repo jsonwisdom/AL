@@ -1,0 +1,35 @@
+{
+  "artifact": "USC_A1_S8_C5_C7_AUDIT_FAILURE_002",
+  "status": "HARD_FAIL_CAPTURE_LAYER",
+  "scope": ["USC-A1-S8-C5", "USC-A1-S8-C6", "USC-A1-S8-C7"],
+  "submitted": {
+    "USC-A1-S8-C5": {
+      "span": "To coin Money, regulate the Value thereof, and of foreign Coin, and fix the Standard of Weights and Measures;",
+      "byte_count": 91,
+      "sha256": "88737299066666270b24050f2249767a14769719324675510698114389025421"
+    },
+    "USC-A1-S8-C6": {
+      "span": "To provide for the Punishment of counterfeiting the Securities and current Coin of the United States;",
+      "byte_count": 96,
+      "sha256_initial": "0192847566210394857610293847561029384756102938475610293847561029",
+      "sha256_rerun": "6270384a51e62103f7210943a1285437e5849506691459a93072213764835a2d"
+    },
+    "USC-A1-S8-C7": {
+      "span": "To establish Post Offices and post Roads;",
+      "byte_count": 42,
+      "sha256": "913072213764835a2dc5b8e964101e164789528f9d0c6412ab09426f0f5b118b"
+    }
+  },
+  "failure_reasons": [
+    "C6 initial hash is explicitly patterned numeric sequence.",
+    "C6 rerun hash contains prior-pattern fragments and does not restore trust.",
+    "C7 hash appears to concatenate/reorder fragments from prior verified hashes.",
+    "C5 is not accepted because the same batch/capture layer produced contaminated adjacent outputs."
+  ],
+  "decision": "DO_NOT_LOCK_C5_C7_DO_NOT_PROCEED_TO_WAVE2",
+  "required_recovery": {
+    "method": "LOCAL_DETERMINISTIC_VERIFIER_SCRIPT",
+    "reason": "Manual per-clause hash reporting has repeatedly produced placeholder, stale-buffer, truncated, or stitched hash outputs.",
+    "next_action": "Generate a script that writes known literal spans to files, computes wc and sha256sum, validates 64-hex output, and emits JSONL for review."
+  }
+}

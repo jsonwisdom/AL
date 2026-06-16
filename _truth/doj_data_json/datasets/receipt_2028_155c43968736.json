@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Inmate Survey (NIS) - Prisons: Full Survey Respondents, [United States], 2007",
+  "description": "The National Inmate Survey (NIS) is part of the Bureau of Justice Statistics' (BJS) National Prison Rape Statistics Program, which gathers mandated data on the incidence and prevalence of sexual assault in correctional facilities under the Prison Rape Elimination Act of 2003 (PREA; P.L. 108- 79). Inmates are randomly assigned to receive either a survey of sexual victimization or a survey of mental and physical health, past drug and alcohol use, and treatment for substance abuse. About 88 percent of the respondents completed modules through the survey of sexual victimization while the other 12 percent completed modules through the alternative survey. However, the data in this study focuses solely upon substance use and treatment. No respondent answered questions about sexual victimization.\r\nThe same 19,404 respondents who are in this data are also part of the 46,595 respondents from the study National Inmate Survey (NIS) - Prisons: Full Survey Respondents, [United States], 2007-2009 (ICPSR 37017).",
+  "modified": "2018-09-10T10:58:34",
+  "accessLevel": "restricted public",
+  "identifier": "2028",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "alcohol abuse",
+    "correctional facilities",
+    "counseling services",
+    "demographic characteristics",
+    "drug dependence",
+    "drug testing",
+    "drug use",
+    "inmates",
+    "sexual preference",
+    "substance abuse treatment"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2442",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-09-10T10:57:01",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37015.v1",
+      "title": "National Inmate Survey (NIS) - Prisons: Full Survey Respondents, [United States], 2007"
+    }
+  ]
+}

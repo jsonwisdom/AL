@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Predicting Crime through Incarceration: The Impact of Prison Cycling on Crime in Communities in Boston, Massachusetts, Newark, New Jersey, Trenton, New Jersey, and Rural New Jersey, 2000-2010",
+  "description": "\r\nThese data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\n\r\n\r\nResearchers compiled datasets on prison admissions and releases that would be comparable across places and geocoded and mapped those data onto crime rates across those same places. The data used were panel data. The data were quarterly or annual data, depending on the location, from a mix of urban (Boston, Newark and Trenton) and rural communities in New Jersey covering various years between 2000 and 2010.\r\n\r\n\r\nThe crime, release, and admission data were individual level data that were then aggregated from the individual incident level to the census tract level by quarter (in Boston and Newark) or year (in Trenton). The analyses centered on the effects of rates of prison removals and returns on rates of crime in communities (defined as census tracts) in the cities of Boston, Massachusetts, Newark, New Jersey, and Trenton, New Jersey, and across rural municipalities in New Jersey.\r\n\r\n\r\nThere are 4 Stata data files.  The Boston data file has 6,862 cases, and 44 variables.  The Newark data file has 1,440 cases, and 45 variables.  The Trenton data file has 66 cases, and 32 variables.  The New Jersey Rural data file has 1,170 cases, and 32 variables.\r\n",
+  "modified": "2017-03-22T09:55:25",
+  "accessLevel": "public",
+  "identifier": "3172",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "communities",
+    "convictions (law)",
+    "corrections",
+    "crime rates",
+    "imprisonment",
+    "prisoner reentry"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2017-03-22T09:55:25",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR35014.v1",
+      "title": "Predicting Crime through Incarceration: The Impact of Prison Cycling on Crime in Communities in Boston, Massachusetts, Newark, New Jersey, Trenton, New Jersey, and Rural New Jersey, 2000-2010"
+    }
+  ]
+}

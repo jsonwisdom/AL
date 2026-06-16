@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Arrestee Drug Abuse Monitoring (ADAM) Program/Drug Use Forecasting (DUF) Series",
+  "description": "\r\n\r\n\r\n\r\nThe Arrestee\r\nDrug Abuse Monitoring (ADAM) Program/Drug Use Forecasting (DUF) Series\r\nis an expanded and redesigned version of the Drug Use Forecasting\r\n(DUF) program, which was upgraded methodologically and expanded to 35\r\ncities in 1998. The redesign was fully implemented beginning in the\r\nfirst quarter of 2000 using new sampling procedures that improved the\r\nquality and generalizability of the data. The DUF program began in\r\n1987 and was designed to estimate the prevalence of drug use among\r\npersons in the United States who are arrested and booked, and to\r\ndetect changes in trends in drug use among this population. The DUF\r\nprogram was a nonexperimental survey of drug use among adult male and\r\nfemale arrestees. In addition to supplying information on\r\nself-reported drug use, arrestees also provide a urine specimen, which\r\nis screened for the presence of ten illicit drugs.  Between 1987 and\r\n1997 the DUF program collected information in 24 sites across the\r\nUnited States, although the number of data collection sites varied\r\nslightly from year to year. Data collection took place four times a\r\nyear (once each calendar quarter) in each site and selection criteria\r\nand catchment areas (central city or county) varied from site to\r\nsite. The original DUF interview instrument (used for the 1987-1994\r\ndata and part of the 1995 data) elicited information about the use of\r\n22 drugs. A modified DUF interview instrument (used for part of the\r\n1995 data and all of the 1996-1999 data) included detailed questions\r\nabout each arrestee's use of 15 drugs. Juvenile data were added in\r\n1991. The ADAM program, redesigned from the DUF program, moved to a\r\nprobability-based sampling for the adult male population during\r\n2000. The shift to sampling of the adult male population in 2000\r\nrequired that all 35 sites move to a common catchment area, the\r\ncounty. The ADAM program also implemented a new and expanded adult\r\ninstrument in the first quarter of 2000, which was used for both the\r\nmale and female data. The term \"arrestee\" is used in the\r\ndocumentation, but because no identifying data are collected in the\r\ninterview setting, the data represent numbers of arrests rather than\r\nan unduplicated count of persons arrested.\r\nFunding\r\nThe\r\nNational Institute of Justice (NIJ) initiated ADAM in 1998 to replace\r\nDUF. In 2007, the Office of National Drug Control Policy (ONDCP)\r\ninitiated ADAM II.\r\n",
+  "modified": "2012-08-22T08:58:49",
+  "accessLevel": "public",
+  "identifier": "3023",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "ADAM/DUF Program",
+    "alcohol abuse",
+    "crime patterns",
+    "criminal histories",
+    "demographic characteristics",
+    "drug dependence",
+    "drug law offenses",
+    "drug offenders",
+    "drug related crimes",
+    "drug testing",
+    "drug use",
+    "gun use",
+    "handguns",
+    "recidivism prediction",
+    "substance abuse",
+    "t"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1991-03-05T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/110",
+      "title": "Arrestee Drug Abuse Monitoring (ADAM) Program/Drug Use Forecasting (DUF) Series"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Sandhills [North Carolina] Vocational Delivery System Evaluation Project, 1983-1987",
+  "description": "This data collection was designed to evaluate the\r\neffectiveness of a vocational training program on post-release\r\nvocational skills, employment, and recidivism of youthful male inmates\r\n18 to 21 years old. The study used an experimental design to examine\r\nthe differences in post-release activities among three inmate groups. A\r\ncomprehensive inmate data base was created to describe inmates'\r\nconfinement history, employment history, and their criminal records.\r\nThe contextual data files provide additional information relevant to\r\ninmates' post-release activities.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3505",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "criminal histories",
+    "employment",
+    "male inmates",
+    "postrelease programs",
+    "program evaluation",
+    "recidivism",
+    "vocational education",
+    "youths"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1989-12-15T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09224.v1",
+      "title": "Sandhills [North Carolina] Vocational Delivery System Evaluation Project, 1983-1987"
+    }
+  ]
+}

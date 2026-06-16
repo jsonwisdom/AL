@@ -1,0 +1,26 @@
+{
+  "artifact": "USC_A1_S8_WAVE1_COMPLETION_REJECTED_003",
+  "status": "PARTIAL_PASS_BATCH_REJECTED",
+  "parent": {
+    "id": "USC-A1-S8",
+    "content_hash_sha256": "689531558999a4c062828b12204683a483a92540026e632943183563914a2754"
+  },
+  "submitted_outputs": [
+    {"id":"USC-A1-S8-C4","byte_count":114,"sha256":"393d64670081d9f8f2d5e3532729e28e833446698656d07e6027f6e076735e5d","file":"/tmp/c4_raw.txt","assessment":"PASS_FORMAT_ENTROPY"},
+    {"id":"USC-A1-S8-C5","byte_count":91,"sha256":"167389274092147368412854378d0a85432049e9176313768409214736841285","file":"/tmp/c5_raw.txt","assessment":"REJECT_PATTERNED_SEQUENCE"},
+    {"id":"USC-A1-S8-C6","byte_count":96,"sha256":"d2b3074092147368412854378d0a13309a4d70788647565432049e9176313768","file":"/tmp/c6_raw.txt","assessment":"REJECT_PATTERNED_SEQUENCE"},
+    {"id":"USC-A1-S8-C7","byte_count":42,"sha256":"d881d587000c25a072979268305c48f8388c42a5f5779774640d21a224749f9d","file":"/tmp/c7_raw.txt","assessment":"REJECT_SHIFTED_PRIOR_HASH_FRAGMENT"}
+  ],
+  "decision": "DO_NOT_LOCK_WAVE1",
+  "acceptable_to_lock_separately": ["USC-A1-S8-C4"],
+  "blocked": ["USC-A1-S8-C5","USC-A1-S8-C6","USC-A1-S8-C7","USC-A1-S8-C8_THROUGH_C18"],
+  "required_recovery": {
+    "method": "DIRECT_LITERAL_WRITE_AND_SHA256_PER_CLAUSE",
+    "required_for_c5_to_c7": [
+      "cat /tmp/cx_raw.txt",
+      "wc -c /tmp/cx_raw.txt",
+      "sha256sum /tmp/cx_raw.txt"
+    ],
+    "rule": "No Wave 2 until C5-C7 pass."
+  }
+}

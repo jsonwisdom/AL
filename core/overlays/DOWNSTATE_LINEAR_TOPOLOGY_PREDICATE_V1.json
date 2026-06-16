@@ -1,0 +1,52 @@
+{
+  "artifact": "DOWNSTATE_LINEAR_TOPOLOGY_PREDICATE_V1",
+  "layer": "CORE-OVERLAY",
+  "purpose": "Define the contamination predicate for Illinois downstate linear topology under overlay evaluation.",
+  "last_verified": "2026-05-06",
+  "verifier": "jsonwisdom",
+  "predicate": "DOWNSTATE_LINEAR_TOPOLOGY_CONTAMINATED(B,E)",
+  "inputs": {
+    "B": "baseline graph parsed from seeds/illinois/downstate-baseline-v0.1.json",
+    "E": "effective graph after applying scoped overlay without mutating B"
+  },
+  "baseline_structure": {
+    "state_node": "IL",
+    "county_nodes": "C_1..C_n",
+    "downstate_linear_chain": "total_order_over_downstate_county_subset",
+    "allowed_encodings": [
+      "downstate_linear_order",
+      "simple_chain_edges"
+    ]
+  },
+  "not_contaminated_if_all_hold": [
+    {
+      "id": "NODE_SET_INVARIANCE",
+      "definition": "The set of county node ids in the downstate chain is identical between B and E."
+    },
+    {
+      "id": "ORDER_INVARIANCE",
+      "definition": "The relative order of every pair of downstate counties is identical between B and E."
+    },
+    {
+      "id": "ADJACENCY_INVARIANCE",
+      "definition": "If the chain is edge-encoded, downstate chain edge sets are identical between B and E."
+    },
+    {
+      "id": "PARENT_INVARIANCE",
+      "definition": "Every downstate county node has the same parent in B and E."
+    },
+    {
+      "id": "NO_COOK_LOCAL_GLOBAL_REACHABILITY_CHANGE",
+      "definition": "Cook-scoped edges do not change reachability among downstate counties outside Cook-local-only evaluation."
+    }
+  ],
+  "contaminated_if_any_fail": true,
+  "reject_code": "DOWNSTATE_LINEAR_TOPOLOGY_CONTAMINATED",
+  "invariants": [
+    "Cook may not insert itself into the downstate chain.",
+    "Cook may not reorder downstate counties.",
+    "Cook may not reparent downstate jurisdictions.",
+    "Cook may not create alternative global paths through the downstate chain.",
+    "Chicago and municipal overlays must operate above a proven intact downstate baseline."
+  ]
+}

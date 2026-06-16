@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Civil Justice Survey of State Courts: [United States] Series",
+  "description": "\r\n Investigator(s): Bureau\r\nof Justice Statistics\r\nThese\r\nsurveys provide a broad-based, systematic examination of the nature of\r\ngeneral civil litigation (e.g., tort, contract, and real property\r\ncases) disposed in a sample of the nation's 75 most populous\r\ncounties. Data collection was carried out by the National Center for\r\nState Courts with the assistance of WESTAT. Data collected includes\r\ninformation about the types of civil cases litigated at trial, types\r\nof plaintiffs and defendants, trial winners, amount of total damages\r\nawarded, amount of punitive damages awarded, and case processing\r\ntime. In addition, information was collected on general civil cases\r\nconcluded by bench or jury trial that were subsequently appealed to a\r\nstate's intermediate appellate court or court of last resort. The\r\nappellate datasets examine information on the types of civil bench and\r\njury trials appealed, the characteristics of litigants filing an\r\nappeal, the frequency in which appellate courts affirm, reverse, or\r\nmodify trial court outcomes and cases further appealed from an\r\nintermediate appellate court to a state court of last\r\nresort.\r\n",
+  "modified": "2012-01-10T15:50:17",
+  "accessLevel": "restricted public",
+  "identifier": "2172",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "case processing",
+    "civil courts",
+    "civil law",
+    "court cases",
+    "court system",
+    "disposition (legal)",
+    "lawsuits",
+    "state courts"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1996-10-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/71",
+      "title": "Civil Justice Survey of State Courts: [United States] Series"
+    }
+  ]
+}

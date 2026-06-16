@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Criminal Victimization Among Women in Cleveland, Ohio:  Impact on Health Status and Medical Service Usage, 1986",
+  "description": "The impact of criminal victimization on the health status\r\n of women is the focus of this data collection. The researchers\r\n examined the extent to which victimized women differed from\r\n nonvictimized women in terms of their physical and psychological\r\n well-being and differences in their use of medical services. The\r\n sample was drawn from female members of a health maintenance plan at a\r\n worksite in Cleveland, Ohio. Questions used to measure criminal\r\n victimization were taken from the National Crime Survey and focused on\r\n purse snatching, home burglary, attempted robbery, robbery with force,\r\n threatened assault, and assault. In addition, specific questions\r\n concerning rape and attempted rape were developed for the\r\n study. Health status was assessed by using a number of instruments,\r\n including the Cornell Medical Index, the Mental Health Index, and the\r\n RAND Corporation test battery for their Health Insurance\r\n Experiment. Medical service usage was assessed by reference to medical\r\n records. Demographic information includes age, race, income, and\r\neducation.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2829",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "assault",
+    "burglary",
+    "petty theft",
+    "physical condition",
+    "psychological wellbeing",
+    "rape",
+    "reactions to crime",
+    "robbery",
+    "victims",
+    "women"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1994-01-04T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09920.v1",
+      "title": "Criminal Victimization Among Women in Cleveland, Ohio:  Impact on Health Status and Medical Service Usage, 1986"
+    }
+  ]
+}

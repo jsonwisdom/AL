@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Florida State University and Florida Department of Juvenile Justice Research Partnership Project, 2002-2017",
+  "description": "\r\nThese data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\n\r\nA researcher-practitioner partnership was established between the College of Criminology and Criminal Justice at Florida State University and the Florida Department of Juvenile Justice (FDJJ). The purpose of this partnership was to collaborate on three timely and policy relevant research projects--(1) juvenile civil citation (JCC), (2) juvenile visitation (JV), and (3) juvenile school-based arrests (JSBA).\r\n\r\n\r\nThis collection includes 9 Stata data files: \"JV-Full-Data-Set\" with 78 vars, 1,202 cases, \"JCC-County-Data\" with 18 vars, 938 cases, \"JCC-Individual-Data\" with 22 vars, 110,088 cases, \"JCC-Individual-Data-with-Risk-Factors\" with 35 vars, 51,263 cases, \"JCC-Trend-Data\" with 6 vars, 11,725 cases, \"JSBA-Descriptives-Data\" with 14 vars, 94,708 cases, \"JSBA-Dropout-Data\" with 4 vars, 94,708 cases, \"JSBA-Recidivism-Data\" with 51 vars, 30,723 cases,\r\n\"JSBA-School-level-Data\" with 45 vars, 893 cases, and 9 Stata syntax files\r\n\"JV-Full-Data-Set-Syntax.do\", \"JCC-County-Data.do\", \"JCC-Individual-Data.do\",\r\n\"JCC-Individual-Data-with-Risk-Factors.do\", \"JCC-Trend-Data.do\", \"JSBA-Descriptives-Code.do\", \"JSBA-Dropout-Code.do\", \"JSBA-Recidivism-Code.do\", and\r\n\"JSBA-School-level-Code\".\r\n",
+  "modified": "2018-10-29T09:17:42",
+  "accessLevel": "restricted public",
+  "identifier": "3887",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrest records",
+    "correctional facilities (juveniles)",
+    "correctional system",
+    "criminal histories",
+    "family relationships",
+    "felony offenses",
+    "juvenile crime",
+    "juvenile recidivists",
+    "mental health",
+    "misdemeanor offenses",
+    "offenses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-10-29T09:15:06",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36972.v1",
+      "title": "Florida State University and Florida Department of Juvenile Justice Research Partnership Project, 2002-2017"
+    }
+  ]
+}

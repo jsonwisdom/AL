@@ -1,0 +1,11 @@
+{
+  "artifact": "CI_TRIGGER",
+  "system": "Machine LIVE 2.0",
+  "reason": "Trigger ALMS GitHub Direct Anchor after CI script was patched to write runtime anchor receipt deterministically.",
+  "expected_outputs": [
+    "alms/national/national_root_ci_latest.json",
+    "alms/anchors/runtime/github_direct_anchor_state.json"
+  ],
+  "created_utc": "2026-05-03T21:08:00Z",
+  "boundary": "GitHub Direct trigger only. No Base/EAS/ENS claim."
+}

@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Survey of Adults on Probation, 1995:  [United States]",
+  "description": "The 1995 Survey of Adults on Probation (SAP) was the first\r\n national survey to gather information on the individual\r\n characteristics of adult probationers. The SAP was a two-part\r\n nationally representative survey consisting of a records check based\r\n on probation office administrative records and personal interviews\r\n with probationers. The records check provided detailed information\r\n for 5,867 probationers on current offenses and sentences, criminal\r\n histories, levels of supervision and contacts, disciplinary hearings\r\n and outcomes, and demographic characteristics. Only adults with a\r\n formal sentence to probation who were not considered absconders were\r\n included in the records check. Excluded were persons supervised by a\r\n federal probation agency, those only on parole, persons on presentence\r\n or pretrial diversion, juveniles, and absconders. The records check\r\n forms were completed by a probation officer or by another person\r\n knowledgeable about probation office records. A subset of the\r\n population selected for the records check was selected for a personal\r\n interview, resulting in a total of 2,030 completed interviews. The\r\n personal interview sample excluded from the records check sample\r\n probationers not on active probation (defined as being required to\r\n make office visits at any interval), those incarcerated, and those in\r\n residential treatment. Respondents were asked about current\r\n offense(s) and supervision, criminal history, alcohol and drug use and\r\n treatment, mental health treatment, demographic characteristics, and a\r\n variety of socioeconomic characteristics such as employment, income,\r\n receipt of welfare, housing, number of children and child support, and\r\nliving conditions while growing up.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "281",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "arrest records",
+    "criminal histories",
+    "demographic characteristics",
+    "offender profiles",
+    "probation",
+    "probationers",
+    "sentencing",
+    "supervised liberty"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1999-08-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02039.v1",
+      "title": "Survey of Adults on Probation, 1995:  [United States]"
+    }
+  ]
+}

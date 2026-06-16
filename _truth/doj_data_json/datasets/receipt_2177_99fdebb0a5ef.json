@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Offender Based Transaction Statistics (OBTS) Series",
+  "description": "\r\nInvestigator(s): Bureau of Justice Statistics\r\nThe Offender Based Transaction Statistics (OBTS) series was\r\ndesigned by the Bureau of Justice Statistics to collect information tracking \r\nadult offenders from the point of entry into the criminal justice system \r\n(typically by arrest), through final disposition, regardless of whether the \r\noffender is convicted or acquitted. Collected by individual states from \r\nexisting data, the datasets include all cases that reached disposition during \r\nthe calendar year. Using the individual adult offender as the unit for \r\nanalysis, selected information is provided about the offender and his or her \r\narrest, prosecution, and court disposition. Examples of variables included \r\nare arrest and level of arrest charge, date of arrest, charge filed by the \r\nprosecutor, prosecutor or grand jury disposition, type of counsel, type of \r\ntrial, court disposition, sentence type, and minimum and maximum sentence \r\nlength. Dates of disposition of each stage of the process allow for tracking \r\nof time spent at each stage.\r\n",
+  "modified": "2005-09-02T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2177",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "adult offenders",
+    "arrests",
+    "case processing",
+    "criminal justice system",
+    "disposition (legal)",
+    "policies and procedures",
+    "prosecution",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-07-12T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/78",
+      "title": "Offender Based Transaction Statistics (OBTS) Series"
+    }
+  ]
+}

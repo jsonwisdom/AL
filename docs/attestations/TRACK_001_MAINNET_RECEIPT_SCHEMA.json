@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jsonwisdom/AL/docs/attestations/TRACK_001_MAINNET_RECEIPT_SCHEMA.json",
+  "title": "TRACK_001 Mainnet Receipt Schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "artifact",
+    "track_id",
+    "environment",
+    "network",
+    "operator",
+    "testnet_reference",
+    "mainnet",
+    "git",
+    "governance"
+  ],
+  "properties": {
+    "artifact": { "const": "TRACK_001_MAINNET_RECEIPT" },
+    "track_id": { "const": "TRACK_001_DOJ_EPSTEIN" },
+    "environment": { "const": "mainnet" },
+    "network": { "const": "base-mainnet" },
+    "operator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primary_identity", "primary_identity_base", "operator_wallet"],
+      "properties": {
+        "primary_identity": { "const": "jaywisdom.eth" },
+        "primary_identity_base": { "const": "jaywisdom.base.eth" },
+        "operator_wallet": { "const": "0x992d94aA31dcD8fDb7d8E6885370ef8202AED399" }
+      }
+    },
+    "testnet_reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema_uid", "attestation_uid", "receipt_commit", "receipt_sha256"],
+      "properties": {
+        "schema_uid": { "const": "0x0de9dd56c4a71de33f3b5b2eefbdf35c21c9b1f836a92d161ed86c6b10d2a57d" },
+        "attestation_uid": { "const": "0xabfcfbe62114e5962d8916ca152748de1eb48dd3373e8a4c85733426a6cfdd96" },
+        "receipt_commit": { "const": "26e91c4206b1c7cc17ca403bc610dee15b65f3b0" },
+        "receipt_sha256": { "const": "db785f570ceab73ca1575da140bbb28c73f80d01e71a570eb01fcacae7c1fd1a" }
+      }
+    },
+    "mainnet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema_uid", "schema_tx_hash", "attestation_uid", "attestation_tx_hash"],
+      "properties": {
+        "schema_uid": { "type": "string", "pattern": "^0x[a-fA-F0-9]{64}$" },
+        "schema_tx_hash": { "type": "string", "pattern": "^0x[a-fA-F0-9]{64}$" },
+        "attestation_uid": { "type": "string", "pattern": "^0x[a-fA-F0-9]{64}$" },
+        "attestation_tx_hash": { "type": "string", "pattern": "^0x[a-fA-F0-9]{64}$" }
+      }
+    },
+    "git": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["receipt_path", "receipt_commit", "tree_sha256", "receipt_sha256"],
+      "properties": {
+        "receipt_path": { "const": "docs/attestations/TRACK_001_MAINNET_RECEIPT.json" },
+        "receipt_commit": { "type": "string", "pattern": "^[a-fA-F0-9]{40}$" },
+        "tree_sha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
+        "receipt_sha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" }
+      }
+    },
+    "governance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pr_ref", "ghost_anchor", "status"],
+      "properties": {
+        "pr_ref": { "const": "PR_86" },
+        "ghost_anchor": { "const": false },
+        "status": { "enum": ["MAINNET_REGISTERED_NOT_ACTIVATED", "MAINNET_ACTIVE"] }
+      }
+    }
+  }
+}

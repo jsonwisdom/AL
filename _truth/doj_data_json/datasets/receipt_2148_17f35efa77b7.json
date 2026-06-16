@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "State Court Organizations, 2004 [United States]",
+  "description": "This data collection provides detailed comparative information\r\n about the structure, policies, and procedures of state-wide trial and\r\n appellate court systems for the 50 states, the District of Columbia, and\r\n Puerto Rico in the United States as of June 31, 2004. Information\r\n gathered includes: the number of courts and judges, judicial selection,\r\n governance of court systems (including judicial funding, administration,\r\n staffing, and procedures), jury qualifications and verdict rules, and\r\n processing and sentencing procedures of criminal cases. Data collection\r\nwas carried out by the National Center for State Courts.",
+  "modified": "2006-10-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2148",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "appellate courts",
+    "court system",
+    "judge selection",
+    "judges",
+    "juries",
+    "policies and procedures",
+    "state courts",
+    "trial courts"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2006-10-30T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04575.v1",
+      "title": "State Court Organizations, 2004 [United States]"
+    }
+  ]
+}

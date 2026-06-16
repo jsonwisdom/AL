@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "United States Supreme Court Judicial Database, Phase II:  1953-1993",
+  "description": "The purpose of this data collection was to record\r\n information about the cases, litigants, amicus participants, and the\r\n opinions decided by the Supreme Court under the tenure of Chief\r\n Justices Earl Warren (1953-1969) and Warren Burger (1969-1986) and\r\n others through 1993. The approach of this study was to proceed\r\n deductively, rather than seek to infer values of a particular group of\r\n justices. This method allows the investigation of value conflicts that\r\n are not litigated, as well as the value conflicts represented in\r\n Supreme Court opinions. Opinions are coded on the basis of their\r\n literal content, and the data are organized around the opinions. There\r\n are eight types of opinions. Within each type, up to six topics are\r\n coded, and within each topic, up to two values are coded. There are\r\n three integrated parts to this study, each of which can be linked to\r\n the other files by specific variables. Part 1, Supreme Court Database,\r\n contains basic case attributes from UNITED STATES SUPREME COURT\r\n JUDICIAL DATABASE, 1953-1993 TERMS (ICPSR 9422) and the opinions given\r\n in the cases.  Part 2, Briefs, gives information on the filers and\r\n co-filers for cases in which amicus curie briefs were filed. Part 3,\r\n Groups, lists the litigants' names. The distinct aspects of the\r\n Court's decisions are covered by six types of variables in Part 1: (1)\r\n identification variables including case citation, docket number, unit\r\n of analysis, and number of records per unit of analysis, (2)\r\n background variables offering information on origin of case, source of\r\n case, reason for granting cert, parties to the case, direction of the\r\n lower court's decision, and manner in which the Court takes\r\n jurisdiction, (3) chronological variables covering date of term of\r\n court, chief justice, and natural court, (4) substantive variables\r\n including multiple legal provisions, authority for decision, issue,\r\n issue areas, and direction of decision, (5) outcome variables\r\n supplying information on form of decision, disposition of case,\r\n winning party, declaration of unconstitutionality, and multiple\r\n memorandum decisions, and (6) voting and opinion variables pertaining\r\n to the vote in the case and to the direction of the individual\r\njustices' votes.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2237",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Supreme Court decisions",
+    "Supreme Court justices",
+    "United States Supreme Court",
+    "case processing",
+    "court cases",
+    "disposition (legal)",
+    "judicial decisions",
+    "judicial review",
+    "legal history",
+    "twentieth century"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2428",
+  "dataQuality": false,
+  "issued": "1997-12-11T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06987.v1",
+      "title": "United States Supreme Court Judicial Database, Phase II:  1953-1993"
+    }
+  ]
+}

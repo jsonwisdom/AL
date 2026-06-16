@@ -1,0 +1,36 @@
+{
+  "verdict_version": "VERDICT_V1",
+  "verdict_id": "verdict-verifier-error-fixture-001",
+  "created_at": "2026-05-24T08:41:00Z",
+  "governance_anchor": {
+    "tag": "GOVERNANCE_V1",
+    "manifest_commit": "0ef5076170008ff428a0c9163c7c4822c42ebfdd",
+    "verifier_schema_ref": "VERIFIER_V1"
+  },
+  "receipt_id": "receipt-valid-v1-fixture-001",
+  "status": "VERIFIER_ERROR",
+  "expected_roots": {
+    "state_transitions_root": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+    "tool_graph_root": "sha256:0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "observed_roots": {
+    "state_transitions_root": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+    "tool_graph_root": "sha256:0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "diff": {
+    "diff_required": false,
+    "divergent_invocations": [],
+    "divergent_transitions": [],
+    "diff_root": "sha256:9999999999999999999999999999999999999999999999999999999999999999"
+  },
+  "verifier": {
+    "verifier_id": "noop-court-v1",
+    "verifier_env_hash": "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "verifier_spec_ref": "VERIFIER_V1"
+  },
+  "settlement_readiness": {
+    "eligible_for_challenge": true,
+    "eligible_for_settlement": false,
+    "recommended_action": "NONE"
+  }
+}

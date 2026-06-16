@@ -1,0 +1,26 @@
+{
+  "bundle_version": "ALMS_BUILD_REPLAY_BUNDLE_V0_1",
+  "artifact_name": "alms-core-v0.1-reference-kernel",
+  "source_archive_sha256": "sha256:6e1a2650f10ff97bd27efe2500a92c74d035e29b2c22f9bc1ffa2d55ae0323e0",
+  "generated_at": "2026-05-08T20:42:00Z",
+  "runtime": {
+    "os": "Linux 4.4.0 x86_64",
+    "python": "3.13.5",
+    "compiler": "GCC 14.2.0",
+    "glibc": "2.41",
+    "pytest": "9.0.2"
+  },
+  "environment_constraints": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONHASHSEED": "0",
+    "TZ": "UTC",
+    "LC_ALL": "C.UTF-8",
+    "LANG": "C.UTF-8",
+    "network_required": false
+  },
+  "golden_vectors": {
+    "claim.pass.json": "sha256:e40ec1f8fbe50938b739a4c8e3ac74ed264e719a5d87b9be7e54d6364db18832",
+    "bundle.pass.json": "sha256:2347b91688f2f2e52dfd85080737eea25707273032c283b27d536f46726c3480",
+    "runtime.pass.json": "sha256:7ab21151c6096225b549a88381e2a5f0257046359fd50c4cc268183137e5b23e"
+  }
+}

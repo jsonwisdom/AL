@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Elder Mistreatment Study, 2008 [United States]",
+  "description": "The overall aim of this project was to conduct a national epidemiological study to determine prevalence and risk factors for elder mistreatment in community residing older adults, defined generally as physical, sexual, emotional, neglectful, or financial mistreatment of a person aged 60 years or older. A second goal was to determine whether proxy reports of mistreatment would yield prevalence estimates similar to those of older adult respondents themselves, thereby demonstrating the validity of an alternate method of assessing elder mistreatment. Random Digit Dialing methodology was used to derive a nationally representative sample (based on age, race, and gender) of 6,052 older adults (target goal 4,000) and 538 proxy respondents (target goal 500) for this study. Participants were interviewed via telephone in English or Spanish about a variety of mistreatment types and mistreatment risk factors, in addition to questions regarding health, social support, and demographics. Specific elder mistreatment categories included emotional, physical, sexual, financial, and neglect.",
+  "modified": "2013-02-13T10:48:39",
+  "accessLevel": "restricted public",
+  "identifier": "2850",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "assault",
+    "elder abuse",
+    "eldercare",
+    "emotional abuse",
+    "exploitation",
+    "older adults",
+    "sexual assault",
+    "social support"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "4215",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2013-02-13T10:45:04",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR28561.v1",
+      "title": "National Elder Mistreatment Study, 2008 [United States]"
+    }
+  ]
+}

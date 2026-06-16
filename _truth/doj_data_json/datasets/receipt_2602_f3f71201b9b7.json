@@ -1,0 +1,71 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Uniform Crime Reports:  Arrest Data for 121 Counties in the United States, 1986",
+  "description": "The files in this collection contain counts of arrests and \r\n offenses for index crimes and other offenses committed by adults and \r\n juveniles. Types of offenses include murder, rape, robbery, assault, \r\n burglary, larceny, auto theft, arson, forgery, fraud, embezzlement, \r\n vandalism, weapons violations, sex offenses, drug and alcohol abuse \r\n violations, gambling, vagrancy, curfew, and runaways. County \r\npopulations are also reported.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2602",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "arrests",
+    "arson",
+    "assault",
+    "auto theft",
+    "burglary",
+    "counties",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "drug abuse",
+    "fraud",
+    "illegal gambling",
+    "larceny",
+    "law enforcement",
+    "murder",
+    "offenses",
+    "rape",
+    "robbery",
+    "vandalism",
+    "weapons offenses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2167",
+  "dataQuality": false,
+  "issued": "1989-09-26T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09226.v1",
+      "title": "Uniform Crime Reports:  Arrest Data for 121 Counties in the United States, 1986"
+    }
+  ]
+}

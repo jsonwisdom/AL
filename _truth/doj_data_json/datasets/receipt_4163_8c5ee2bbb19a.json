@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Census of State and Federal Adult Correctional Facilities, 2019",
+  "description": "The 2019 Census of State and Federal Adult Correctional Facilities (CCF) was the ninth enumeration of state institutions and the sixth enumeration of federal institutions sponsored by the Bureau of Justice Statistics and its predecessors. Earlier censuses were completed in 1979 (ICPSR 7852), 1984 (ICPSR 8444), 1990 (ICPSR 9908), 1995 (ICPSR 6953), 2000 (ICPSR 4021), 2005 (ICPSR 24642), and 2012 (ICPSR 37294). The 2019 CCF consisted of two data collection instruments - one for confinement facilities and one for community-based facilities. For each facility, information was provided on facility operator; sex of prisoners authorized to be housed by facility; facility functions; percentage of prisoners authorized to leave the facility; one-day counts of prisoners by sex, race/ethnicity, special populations, and holding authority; number of walkaways occurring over a one-year period; and educational and other special programs offered to prisoners. Additional information was collected from confinement facilities, including physical security level; housing for special populations; capacity; court orders for specific conditions; one-day count of correctional staff by payroll status and sex; one-day count of security staff by sex and race/ethnicity; assaults and incidents caused by prisoners; number of escapes occurring over a one-year period; and work assignments available to prisoners. Late in the data collection to avoid complete nonresponse from facilities, BJS offered the option of providing critical data elements from the two data collection instruments. These elements included facility operator; sex of prisoners authorized to be housed by facility; facility functions; percentage of prisoners authorized to leave the facility; one-day counts of prisoners by sex, and holding authority. Physical security level was an additional critical data element for confinement facilities.\r\nThe census counted prisoners held in the facilities, a custody count. Some prisoners who are held in the custody of one jurisdiction may be under the authority of a different jurisdiction. The custody count is distinct from a count of prisoners under a correctional authority's jurisdiction, which includes all prisoners over whom a correctional authority exercises control, regardless of where the prisoner is housed. A jurisdictional count is more inclusive than a prison custody count and includes state and federal prisoners housed in local jails or other non-correctional facilities.",
+  "modified": "2022-06-16T14:25:07",
+  "accessLevel": "public",
+  "identifier": "4163",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "correctional facilities (adults)",
+    "corrections",
+    "corrections management",
+    "inmate populations",
+    "inmate programs",
+    "inmates",
+    "jails",
+    "prison administration",
+    "prison construction",
+    "prison overcrowding",
+    "prison security"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2168",
+  "dataQuality": false,
+  "issued": "2022-06-16T14:25:07",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR38325.v1",
+      "title": "Census of State and Federal Adult Correctional Facilities, 2019"
+    }
+  ]
+}

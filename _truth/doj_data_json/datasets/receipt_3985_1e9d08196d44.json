@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Optimizing Juvenile Assessment Performance, United States, 2003-2019",
+  "description": "In nearly every state and in the vast majority of juvenile justice agencies, risk assessments are incorporated into diversion, case management, supervision, and placement practices. Despite two decades of use within the juvenile justice system, little research regarding the methods of risk assessment development is discussed or translated to the field and practitioners. Many of the contemporary tools used today are implemented off-the-shelf, meaning that tools were developed with a specific set of methods, selecting and weighting items used in the prediction of a specified sample of youth. What is not known is how the various designs, methods, and circumstances of tool development impact the predictive performance when adopted by a jurisdiction. This study seeks to provide input into this dilemma. Demographic information in this study includes age, race, and sex.",
+  "modified": "2021-03-25T12:47:44",
+  "accessLevel": "restricted public",
+  "identifier": "3985",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "criminal histories",
+    "drug use",
+    "family relations",
+    "family relationships",
+    "juvenile crime",
+    "juvenile justice",
+    "juvenile offenders",
+    "juvenile recidivists",
+    "needs assessment",
+    "recidivism prediction",
+    "risk assessment"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2021-03-25T12:37:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37840.v1",
+      "title": "Optimizing Juvenile Assessment Performance, United States, 2003-2019"
+    }
+  ]
+}

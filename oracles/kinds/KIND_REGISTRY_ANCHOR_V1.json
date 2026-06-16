@@ -1,0 +1,55 @@
+{
+  "spec_version": "v1",
+  "artifact": "KIND_REGISTRY_ANCHOR_V1",
+  "purpose": "Anchor schema-kind registry epochs so schema_type_of(record_id) is resolved from hash-bound registry commits, not mutable local claims.",
+  "last_verified": "2026-05-06",
+  "verifier": "jsonwisdom",
+  "registry_rule": {
+    "registry_is_epoch_bound": true,
+    "schema_type_resolution_requires_registry_epoch": true,
+    "payload_declared_kind_ignored": true,
+    "mutable_registry_lookup_forbidden": true
+  },
+  "registry_epoch_shape": {
+    "registry_epoch_id": "deterministic_registry_epoch_identifier",
+    "registry_commit_sha": "git_commit_containing_registry_epoch",
+    "registry_root_sha256": "merkle_root_over_schema_kind_entries",
+    "entries": [
+      {
+        "schema_id": "schema_name_version",
+        "kind": "KIND_1_SUBSTRATE_OR_KIND_2_REACTION_OR_OTHER",
+        "schema_path": "repo_path",
+        "schema_sha256": "sha256_of_schema_bytes"
+      }
+    ]
+  },
+  "resolution_algorithm": [
+    "Load registry epoch by explicit registry_epoch_id.",
+    "Verify registry_commit_sha and registry_root_sha256.",
+    "Resolve schema_id to kind from registry entries only.",
+    "Ignore payload-declared kind for authority decisions.",
+    "Reject records whose schema_id is absent, duplicated, or hash-mismatched."
+  ],
+  "fork_handling": {
+    "registry_fork_allowed": true,
+    "fork_must_have_new_registry_epoch_id": true,
+    "cross_epoch_kind_equivalence_requires_explicit_mapping": true,
+    "silent_registry_redefinition_forbidden": true
+  },
+  "failure_modes": [
+    "REGISTRY_EPOCH_MISSING",
+    "REGISTRY_ROOT_MISMATCH",
+    "SCHEMA_HASH_MISMATCH",
+    "SCHEMA_ID_DUPLICATE",
+    "SCHEMA_ID_UNKNOWN",
+    "PAYLOAD_KIND_AUTHORITY_ATTEMPT",
+    "SILENT_REGISTRY_REDEFINITION"
+  ],
+  "invariants": [
+    "Kind authority comes from anchored registry epochs, not payloads.",
+    "Registry forks are explicit epochs, not silent mutations.",
+    "Schema-kind mappings are replay inputs and must be hash-bound.",
+    "The validator is only constitutional when its registry epoch is pinned.",
+    "No record may upgrade its own authority by declaring its own kind."
+  ]
+}

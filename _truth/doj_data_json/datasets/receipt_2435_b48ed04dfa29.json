@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Annual Survey of Jails in Indian Country Series",
+  "description": "\r\nInvestigator(s): Bureau of Justice\r\nStatistics\r\nThis series\r\nwas begun in 1998 by the United States Bureau of Justice Statistics\r\nand was collected as a component of the Annual Survey of Jails\r\n(ASJ). The purpose of this data series was to gather data on all adult\r\nand juvenile jail facilities and detention centers in Indian\r\nreservations, pueblos, rancherias, and other Native American and\r\nAlaska Native communities throughout the United States. The survey\r\nprovides data on the number of inmates, staffing, and facility\r\ncharacteristics and operations of all confinement facilities operated\r\nby tribal authorities or the Bureau of Indian Affairs (BIA),\r\nUnited States Department of the Interior.\r\n",
+  "modified": "2021-11-22T19:13:28",
+  "accessLevel": "restricted public",
+  "identifier": "2435",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Alaskan Natives",
+    "Native Americans",
+    "correctional facilities",
+    "correctional system",
+    "corrections management",
+    "jail inmates",
+    "jails",
+    "population characteristics"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2001-10-31T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/158",
+      "title": "Annual Survey of Jails in Indian Country Series"
+    }
+  ]
+}

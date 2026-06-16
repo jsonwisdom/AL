@@ -1,0 +1,15 @@
+BATCH_003 ITEM_008
+status: DECODE_REQUEST
+contract: 0x694ce46c64d9d1a5e9376a9febcf85ec05d72e9f
+tx: 0x0d96232a39eb4842ec7cbe72f78350769b630016b9692f6340e98e0085b673dc
+network: base
+proof_target: PROOF_007
+previous_item_007: 73e90eb8f10a1edb84f74da2362f9dad1192d56e
+required_decode:
+- classify tx as creation, mint, buy, transfer, or other
+- extract from address
+- extract to address
+- extract contract interaction target
+- extract relevant event logs if available
+- determine whether tx can serve as creation evidence or first mint/buy evidence
+boundary: decode request recorded only; tx not decoded here; no proof result claimed

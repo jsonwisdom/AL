@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Characteristics of High and Low Crime Neighborhoods in Atlanta, 1980",
+  "description": "This study examines the question of how some urban\r\nneighborhoods maintain a low crime rate despite their proximity and\r\nsimilarity to relatively high crime areas. The purpose of the study is\r\nto investigate differences in various dimensions of the concept of\r\nterritoriality (spatial identity, local ties, social cohesion,\r\ninformal social control) and physical characteristics (land use,\r\nhousing, street type, boundary characteristics) in three pairs of\r\nneighborhoods in Atlanta, Georgia. The study neighborhoods were\r\nselected by locating pairs of adjacent neighborhoods with distinctly\r\ndifferent crime levels. The criteria for selection, other than the\r\ndifference in crime rates and physical adjacency, were comparable\r\nracial composition and comparable economic status. This data\r\ncollection is divided into two files. Part 1, Atlanta Plan File,\r\ncontains information on every parcel of land within the six\r\nneighborhoods in the study. The variables include ownership, type of\r\nland use, physical characteristics, characteristics of structures, and\r\nassessed value of each parcel of land within the six\r\nneighborhoods. This file was used in the data analysis to measure a\r\nnumber of physical characteristics of parcels and blocks in the study\r\nneighborhoods, and as the sampling frame for the household survey. The\r\noriginal data were collected by the City of Atlanta Planning Bureau.\r\nPart 2, Atlanta Survey File, contains the results of a household\r\nsurvey administered to a stratified random sample of households within\r\neach of the study neighborhoods. Variables cover respondents'\r\nattitudes and behavior related to the neighborhood, fear of crime,\r\navoidance and protective measures, and victimization\r\nexperiences. Crime rates, land use, and housing characteristics of the\r\nblock in which the respondent resided were coded onto each case\r\nrecord.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3437",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Jennifer Scherer",
+    "hasEmail": "mailto:Jennifer.Scherer@usdoj.gov"
+  },
+  "keyword": [
+    "cities",
+    "communities",
+    "crime",
+    "crime rates",
+    "criminal justice system",
+    "delinquent behavior",
+    "fear of crime",
+    "household composition",
+    "housing",
+    "neighborhood characteristics",
+    "neighborhood conditions",
+    "neighborhoods",
+    "police protection",
+    "police response",
+    "race relations"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR07951.v1",
+      "title": "Characteristics of High and Low Crime Neighborhoods in Atlanta, 1980"
+    }
+  ]
+}

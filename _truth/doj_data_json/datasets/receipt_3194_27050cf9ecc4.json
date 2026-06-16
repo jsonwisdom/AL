@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Spouse Abuse Replication Project in Metro-Dade County, Florida, 1987-1989",
+  "description": "The Metro-Dade project replicated an earlier study of\r\ndomestic violence, the Minneapolis Domestic Violence Experiment\r\n(SPECIFIC DETERRENT EFFECTS OF ARREST FOR DOMESTIC ASSAULT:\r\nMINNEAPOLIS, 1981-1982 [ICPSR 8250]), which was conducted by the\r\nPolice Foundation with a grant from the National Institute of Justice.\r\nThe Metro-Dade study employed a research design that tested the\r\nrelative effectiveness of various combinations of treatments that were\r\nrandomly assigned in two stages. Initially, eligible spouse battery\r\ncases were assigned to either an arrest or a nonarrest condition.\r\nLater, cases were assigned either to receive or not to receive a\r\nfollow-up investigation and victim counseling from a detective working\r\nwith the Safe Streets Unit (SSU), a unit that deals specifically with\r\ndomestic violence. Given the various treatment conditions employed,\r\nthree types of dependent variables were examined: (1) prevalence--the\r\nproportion of suspects who engaged in repeat incidents, (2)\r\nincidence--the frequency with which repeat incidents occurred, and (3)\r\n\"time to failure\"--the interval between the presenting incident and\r\nsubsequent incidents. Initial interviews were conducted with victims\r\nsoon after the presenting incident, and follow-up interviews were\r\nattempted six months later. The interviews were conducted in either\r\nEnglish or Spanish. The interview questions requested detailed\r\nbackground information about the suspect, victim, and any family\r\nmembers living with the victim at the time of the interview, including\r\nage, gender, and marital and employment status. Parallel sets of\r\nemployment and education questions were asked about the victim and the\r\nsuspect. Additionally, the interview questionnaire was designed to\r\ncollect information on (1) the history of the victim's relationship\r\nwith the suspect, (2) the nature of the presenting incident, including\r\nphysical violence, property damage, and threats, (3) causes of the\r\npresenting incident, including the use of alcohol and drugs by both\r\nthe victim and the offender, (4) actions taken by the police when they\r\narrived on the scene, (5) the victim's evaluation of the services\r\nrendered by the police on the scene, (6) the nature of the follow-up\r\ncontact by a detective from the Safe Street Unit and an evaluation of\r\nthe services provided, (7) the victim's history of abuse by the\r\noffender, and (8) the nature of subsequent abuse since the presenting\r\nincident. Data for Parts 1 and 2 are self-reported data, obtained\r\nfrom interviews with victims. Part 4 consists of data recorded on\r\nDomestic Violence Continuation Report forms, indicating subsequent\r\nassaults or domestic disputes, and Part 5 contains criminal history\r\ndata on suspects from arrest reports, indicating a subsequent arrest.\r\nThe police report of the incident and information on the type of\r\nrandomized treatment assigned to each case is given in Part 6.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3194",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "battered women",
+    "counseling",
+    "domestic violence",
+    "police response",
+    "program evaluation",
+    "recidivists",
+    "spouse abuse",
+    "treatment outcomes",
+    "treatment programs",
+    "victims",
+    "victims services"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1995-03-16T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06008.v1",
+      "title": "Spouse Abuse Replication Project in Metro-Dade County, Florida, 1987-1989"
+    }
+  ]
+}

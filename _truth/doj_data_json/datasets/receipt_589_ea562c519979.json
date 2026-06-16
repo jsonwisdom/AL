@@ -1,0 +1,48 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "CIO Board Membership",
+  "description": "Data describing the Department of Justice CIO's membership on governance boards",
+  "modified": "2016-05-31T00:00:00",
+  "accessLevel": "public",
+  "identifier": "589",
+  "publisher": {
+    "name": "Justice Management Division",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Data Management US Department of Justice (USDOJ)",
+    "hasEmail": "mailto:DataManagement@usdoj.gov"
+  },
+  "keyword": [
+    "Policy",
+    "Governance",
+    "board",
+    "json"
+  ],
+  "bureauCode": [
+    "011:00"
+  ],
+  "programCode": [
+    "011:004"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2016-05-31T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "downloadURL": "https://www.justice.gov/digitalstrategy/governanceboards.json",
+      "mediaType": "text/html",
+      "title": "CIO Board Membership"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "spec_version": "v1",
+  "hash_function": "sha256",
+  "hash_rule": "sha256(bytes_left + bytes_right)",
+  "leaf_source": "_truth/courts/*/verdict_*.canonical.json",
+  "inclusion_rule": "ONLY_UPHELD_VERDICTS",
+  "ordering": "index-based left-to-right deterministic sibling pairing",
+  "proof_format": [{"direction": "left|right", "sibling": "hex"}],
+  "verification": "iteratively hash sibling path until computed root equals published root",
+  "forbidden": ["_truth/intake", "_truth/receipts", "_truth/raw"]
+}

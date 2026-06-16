@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "St Louis County Hot Spots in Residential Areas (SCHIRA) 2011-2013",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThis study applied an experimental design to examine the crime and short- and long-term community impact of different hot spots policing approaches in 71 residential crime hot spots in St Louis County, MO. Hot spots were selected using Part I and Part II incidents in the year preceding the study (2011).  The design contrasted a traditional enforcement-oriented hot spots approach versus place-based problem solving responses expected to change the routine activities of places over the long term. Twenty hot spots were randomly assigned to collaborative problem solving, while 20 were randomly assigned to directed patrol. Thirty-one randomly assigned hot spots received standard police practices.  The treatment lasted five months (June-October, 2012).\r\nIn order to assess community impact, researchers conducted 2,851 surveys of hot spots residents over three time points: March-May, 2012, at baseline; November 2012-January 2013, immediately following treatment; and May-July 2013, six to nine months after treatment concluded. In addition to collecting data on the crime and community effects, the study also collected data on the time officers spent in hot spots and the activities performed while on directed patrol.  Officers were surveyed to learn their views about implementing hot spots policing.",
+  "modified": "2017-12-13T14:16:18",
+  "accessLevel": "restricted public",
+  "identifier": "3880",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "police citizen interactions",
+    "police community relations",
+    "police intervention",
+    "police patrol"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2017-12-13T14:14:35",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36098.v1",
+      "title": "St Louis County Hot Spots in Residential Areas (SCHIRA) 2011-2013"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+name: Validate continuity surface schema freeze
+
+on:
+  push:
+    paths:
+      - "schemas/continuity_surface.v1.schema.json"
+      - "receipts/continuity_surface_schema_freeze.v1.json"
+      - ".github/workflows/validate-continuity-surface-schema-freeze.yml"
+      - "scripts/validate_continuity_surface_schema_freeze.py"
+  pull_request:
+    paths:
+      - "schemas/continuity_surface.v1.schema.json"
+      - "receipts/continuity_surface_schema_freeze.v1.json"
+      - ".github/workflows/validate-continuity-surface-schema-freeze.yml"
+      - "scripts/validate_continuity_surface_schema_freeze.py"
+
+jobs:
+  validate-schema-freeze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - run: scripts/validate_continuity_surface_schema_freeze.py

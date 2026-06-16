@@ -1,0 +1,58 @@
+BATCH_003 ITEM_019
+status: EARLIEST_TRANSFER_CSV_ANALYSIS
+network: base
+contract: 0x694cE46C64D9D1a5e9376A9feBcF85Ec05D72e9F
+token_symbol: jaywisdom
+source_file: token_transfers_0x694ce46c64d9d1a5e9376a9febcf85ec05d72e9f_2024-05-24T03_56_2026-05-25T03_56.csv
+rows_analyzed: 2386
+
+first_observed_block: 31825577
+first_observed_timestamp: 2025-06-20 17:28:21.000000Z
+first_observed_tx: 0x49c29d9b305a297c6a754f068fbf8ec4921e5e038b3c037757d99635da477a10
+
+first_observed_transfer_1:
+from: 0x0000000000000000000000000000000000000000
+to: 0x694cE46C64D9D1a5e9376A9feBcF85Ec05D72e9F
+amount_raw: 1000000000000000000000000000
+classification: mint_to_contract_or_initial_supply_event
+
+first_observed_transfer_2:
+from: 0x694cE46C64D9D1a5e9376A9feBcF85Ec05D72e9F
+to: 0xffF800B76768dA8AB6aab527021e4a6A91219040
+amount_raw: 500000000000000000000000000
+classification: contract_out_transfer_same_tx
+
+first_observed_transfer_3:
+from: 0xffF800B76768dA8AB6aab527021e4a6A91219040
+to: 0x498581fF718922c3f8e6A244956aF099B2652b2b
+amount_raw: 499999999999999999999999999
+classification: downstream_transfer_same_tx
+
+first_observed_transfer_to_0x829_wallet:
+block: 32165138
+timestamp: 2025-06-28 14:07:03.000000Z
+tx: 0x0780ca405c1d9fe6726eec71e1c9af1b42894f1c0a14c10e5b44d5fd33fab68b
+from: 0x498581fF718922c3f8e6A244956aF099B2652b2b
+to: 0x829AdfEdBe565F9885a7eA6Bc78912acAef055E2
+amount_raw: 37947188888560484824582
+
+proof_007_interpretation:
+- earliest token transfer surface found
+- first observed event is mint from zero address to token contract itself
+- first downstream recipient is 0xffF800B76768dA8AB6aab527021e4a6A91219040
+- first observed transfer to the 0x829 wallet occurs later at block 32165138
+- CSV alone does not identify contract creator/deployer address
+- CSV alone does not identify first external minter or buyer as a decoded role
+
+claim_allowed:
+- Earliest visible JAYWISDOM token transfer records from CSV are committed.
+- First observed tx includes mint-from-zero to the JAYWISDOM contract and same-tx downstream transfers.
+- The 0x829 wallet is not the first observed recipient in this CSV export.
+
+claim_not_allowed:
+- creator/deployer verified
+- first minter/buyer verified as role
+- Proof-007 passed
+- deployer != first_minter established
+
+boundary: CSV transfer analysis only; transfer chronology does not equal creator/deployer proof; no EAS attestation; no wallet signature

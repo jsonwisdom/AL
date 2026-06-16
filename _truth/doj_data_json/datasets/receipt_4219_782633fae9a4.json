@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Wisconsin School Violence and Bullying Prevention Study, 2015-2017",
+  "description": " The Wisconsin School Violence and Bullying Prevention Study sought to understand the impact of comprehensive bullying prevention programs on outcomes related to violence, safety, and bullying rates. This study focused on 24 middle schools (grades 6 to 8) in Wisconsin.\r\n To examine the effectiveness of the school's current anti-bullying program, the Bullying Prevention Program Assessment tool (BPPAT) was completed at the end of the school year. The BPPAT focused on administrative policy and procedures geared towards students, faculty, parents, or administrators. This tool examined the following items: policy and procedures, program implementation, staff training, parental education and communication, student training, reporting systems, and continuous quality improvement (CQI). Students and faculty were given surveys to determine bullying rates and perceptions of school safety. The school safety survey was given to all students concerning their bullying victimization and perception of school safety. This survey contains the following demographic variables: age, sex, grade, and race. The verified bullying incident data contains incident reporting from faculty, which focused on the type of bullying and the demographics of the perpetrator and victim. After new bullying prevention programs were implemented, students were given the safety and bullying victimization survey which focused on perceptions of bullying and school safety.\r\n The number of bullying incidents, number of student victims and perpetrators, and the demographic characteristics of victims and perpetrators were retained in aggregate form for each school were submitted to the Department of Public Instruction (DPI) for analysis.",
+  "modified": "2021-05-26T12:16:03",
+  "accessLevel": "restricted public",
+  "identifier": "4219",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "abuse",
+    "bullying",
+    "educational environment",
+    "educational policy",
+    "middle schools",
+    "program evaluation",
+    "school age children",
+    "school security",
+    "training",
+    "victimization"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2021-05-26T12:08:17",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37228.v1",
+      "title": "Wisconsin School Violence and Bullying Prevention Study, 2015-2017"
+    }
+  ]
+}

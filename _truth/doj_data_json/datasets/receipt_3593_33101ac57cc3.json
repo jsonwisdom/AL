@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Processing and Outcome of Death Penalty Appeals After Furman v. Georgia, 1973-1995:  [United States]",
+  "description": "This data collection effort was undertaken to analyze the\r\noutcomes of capital appeals in the United States between 1973 and 1995\r\nand as a means of assessing the reliability of death penalty verdicts\r\n(also referred to herein as \"capital judgments\" or \"death penalty\r\njudgments\") imposed under modern death-sentencing procedures. Those\r\nprocedures have been adopted since the decision in Furman v. Georgia\r\nin 1972. The United States Supreme Court's ruling in that case\r\ninvalidated all then-existing death penalty laws, determining that the\r\ndeath penalty was applied in an \"arbitrary and capricious\" manner and\r\nviolated Eighth Amendment protections against cruel and unusual\r\npunishment. Data provided in this collection include state\r\ncharacteristics and the outcomes of review of death verdicts by state\r\nand year at the state direct appeal, state post-conviction, federal\r\nhabeas corpus, and all three stages of review (Part 1). Data were\r\ncompiled from published and unpublished official and archived\r\nsources. Also provided in this collection are state and county\r\ncharacteristics and the outcome of review of death verdicts by county,\r\nstate, and year at the state direct appeal, state post-conviction,\r\nfederal habeas corpus, and all three stages of review (Part 2). After\r\ndesigning a systematic method for identifying official court decisions\r\nin capital appeals and state and federal post-conviction proceedings\r\n(no official or unofficial lists of those decisions existed prior to\r\nthis study), the authors created three databases original to this\r\nstudy using information reported in those decisions. The first of the\r\nthree original databases assembled as part of this project was the\r\nDirect Appeal Database (DADB) (Part 3). This database contains\r\ninformation on the timing and outcome of decisions on state direct\r\nappeals of capital verdicts imposed in all years during the 1973-1995\r\nstudy period in which the relevant state had a valid post-Furman\r\ncapital statute. The appeals in this database include all those that\r\nwere identified as having been finally decided during the 1973 to 1995\r\nperiod (sometimes called \"the study period\"). The second original\r\ndatabase, State Post-Conviction Database (SPCDB) (Part 4), contains a\r\nlist of capital verdicts that were imposed during the years between\r\n1973 and 2000 when the relevant state had a valid post-Furman capital\r\nstatute and that were finally reversed on state post-conviction review\r\nbetween 1973 and April 2000. The third original database, Habeas\r\nCorpus Database (HCDB) (Part 5), contains information on all decisions\r\nof initial (non-successive) capital federal habeas corpus cases\r\nbetween 1973 and 1995 that finally reviewed capital verdicts imposed\r\nduring the years 1973 to 1995 when the relevant state had a valid\r\npost-Furman capital statute. Part 1 variables include state and state\r\npopulation, population density, death sentence year, year the state\r\nenacted a valid post-Furman capital statute, total homicides, number\r\nof African-Americans in the state population, number of white and\r\nAfrican-American homicide victims, number of prison inmates, number of\r\nFBI Index Crimes, number of civil, criminal, and felony court cases\r\nawaiting decision, number of death verdicts, number of Black\r\ndefendants sentenced to death, rate of white victims of homicides for\r\nwhich defendants were sentenced to death per 100 white homicide\r\nvictims, percentage of death row inmates sentenced to death for\r\noffenses against at least one white victim, number of death verdicts\r\nreviewed, awaiting review, and granted relief at all three states of\r\nreview, number of welfare recipients and welfare expenditures, direct\r\nexpenditures on the court system, party-adjusted judicial ideology\r\nindex, political pressure index, and several other created\r\nvariables. Part 2 provides this same state-level information and also\r\nprovides similar variables at the county level. Court expenditure and\r\nwelfare data are not provided in Part 2, however. Part 3 provides data\r\non each capital direct appeal decision, including state, FIPS state\r\nand county code for trial court county, year of death verdict, year of\r\ndecision, whether the verdict was affirmed or reversed, and year of\r\nfirst fully valid post-Furman statute. The date and citation for\r\nrehearing in the state system and on certiorari to the United States\r\nSupreme Court are provided in some cases. For reversals in Part 4\r\ninformation was collected about state of death verdict, FIPS state and\r\ncounty code for trial court county, year of death verdict, date of\r\nrelief, basis for reversal, stage of trial and aspect of verdict\r\n(guilty of aggravated capital murder, death sentence) affected by\r\nreversal, outcome on retrial, and citation. Part 5 variables include\r\nstate, FIPS state and county codes for trial court county, year of\r\ndeath verdict, defendant's history of alcohol or drug abuse, whether\r\nthe defendant was intoxicated at the time of the crime, whether the\r\ndefense attorney was from in-state, whether the defendant was\r\nconnected to the community where the crime occurred, whether the\r\nvictim had a high standing in the community, sex of the victim,\r\nwhether the defendant had a prior record, whether a state evidentiary\r\nhearing was held, number of claims for final federal decision, whether\r\na majority of the judges voting to reverse were appointed by\r\nRepublican presidents, aggravating and mitigating circumstances,\r\nwhether habeas corpus relief was granted, what claims for habeas\r\ncorpus relief were presented, and the outcome on each claim that was\r\npresented. Part 5 also includes citations to the direct appeal\r\ndecision, the state post-conviction decision (last state decision on\r\nmerits), the judicial decision at the pre-penultimate federal stage,\r\nthe decision at the penultimate federal stage, and the final federal\r\ndecision.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3593",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "Supreme Court decisions",
+    "appeal procedures",
+    "appellate courts",
+    "capital punishment",
+    "civil rights",
+    "death row inmates",
+    "habeas corpus",
+    "judicial decisions",
+    "judicial review",
+    "legal appeals"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2002-08-29T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03468.v1",
+      "title": "Processing and Outcome of Death Penalty Appeals After Furman v. Georgia, 1973-1995:  [United States]"
+    }
+  ]
+}

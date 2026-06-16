@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Survey of Children's Exposure to Violence I, 1990-2008 [United States]",
+  "description": "The National Survey of Children's Exposure to Violence (NatSCEV) series involved three rounds of data collection, this study NatSCEV I (baseline), NatSCEV II, and NatSCEV III. For more information on other parts to the series, please use the following links:\r\nNatSCEV II (ICPSR 36177) - http://doi.org/10.3886/ICPSR36177.v1\r\nNatSCEV III (ICPSR 36523) - http://doi.org/10.3886/ICPSR36523.v1\r\n\r\nThe National Survey of Children's Exposure to Violence I was designed to obtain lifetime and one-year incidence estimates of a comprehensive range of childhood victimizations across gender, race, and developmental stage. Conducted between January and July, 2008, it assessed the experiences of a nationally representative sample of 4,549 children aged 1 month to 17 years living in the contiguous United States (excluding New Hampshire). The primary sample of households was selected from a nationwide sampling frame of residential telephone numbers by random digit dialing (RDD). A second sample was drawn by over-sampling United States telephone exchanges that had a population of 70 percent or more of African American, Hispanic, or low-income households.   A short interview was conducted with an adult caregiver (usually a parent) to obtain family demographic information. One child was randomly selected from all eligible children in a household by selecting the child with the most recent birthday.\r\nThe survey used an enhanced version of the Juvenile Victimization Questionnaire (JVQ), an inventory of childhood victimization. This version of the JVQ obtains reports on 48 forms of offenses against youth that cover five general areas of concern including: conventional crime, child maltreatment, peer and sibling victimization, sexual assault, and witnessing and indirect victimization. Follow-up questions for each victimization item gathered additional information about the victimization incident.  The data set has 1,824 variables and 4,549 cases. ",
+  "modified": "2016-09-21T12:24:21",
+  "accessLevel": "restricted public",
+  "identifier": "4021",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "alcohol consumption",
+    "child abuse",
+    "children",
+    "delinquent behavior",
+    "juvenile victims",
+    "mental health",
+    "self concept",
+    "sexual assault",
+    "victimization",
+    "youths"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "4000",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2014-08-14T15:44:54",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR35203.v1",
+      "title": "National Survey of Children's Exposure to Violence I, 1990-2008 [United States]"
+    }
+  ]
+}

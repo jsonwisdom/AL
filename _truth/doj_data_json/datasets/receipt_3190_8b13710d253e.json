@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Arrestee Drug Abuse Monitoring (ADAM) Program in the United States, 1999",
+  "description": "The Arrestee Drug Abuse Monitoring (ADAM) Program, the\r\nsuccessor to the Drug Use Forecasting (DUF) Program (DRUG USE\r\nFORECASTING IN 24 CITIES IN THE UNITED STATES, 1987-1997 [ICPSR\r\n9477]), measures levels of and trends in drug use among persons\r\narrested and booked in 35 sites across the United States. The data address the\r\nfollowing topics: (1) types of drugs used by arrestees (based on\r\nself-reports and urinalysis), (2) self-reported dependency on drugs,\r\n(3) self-reported need for alcohol/drug treatment, (4) the\r\nrelationship between drug use and certain types of offenses, and (5)\r\nthe relationship between self-reported indicators of drug use and\r\nindicators of drug use based on urinalysis. Participation in the\r\nproject is voluntary, and all information collected from the arrestees\r\nis anonymous and confidential. The data include the arrestee's age,\r\nrace, gender, educational attainment, marital status, and the charge\r\nat the time of booking. The modified ADAM/DUF interview\r\ninstrument (used for part of the 1995 data and all of the 1996, 1997,\r\n1998, and 1999 data) also collected information about the arrestee's\r\nuse of 15 drugs, including recent and past use (e.g., 3-day and 30-day\r\ndrug use), age at first use, and whether the arrestee had ever been\r\ndependent on drugs. As part of the ADAM program, arrestees were asked\r\nto provide a urine specimen, which was screened for the presence of\r\nten drugs, including marijuana, opiates, cocaine, PCP, methadone,\r\nbenzodiazepines (Valium), methaqualone, propoxyphene (Darvon),\r\nbarbiturates, and amphetamines (positive test results for amphetamines\r\nwere confirmed by gas chromatography).",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "3190",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "ADAM/DUF Program",
+    "alcohol abuse",
+    "arrests",
+    "crime patterns",
+    "demographic characteristics",
+    "drug dependence",
+    "drug offenders",
+    "drug related crimes",
+    "drug testing",
+    "drug treatment",
+    "drug use",
+    "drugs",
+    "substance abuse",
+    "trends",
+    "urinalysis"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "3023",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2000-11-15T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02994.v1",
+      "title": "Arrestee Drug Abuse Monitoring (ADAM) Program in the United States, 1999"
+    }
+  ]
+}

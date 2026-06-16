@@ -1,0 +1,47 @@
+{
+  "observer": "base_nitro_enclave_verifier",
+  "generated_at": "2026-04-25T05:29:05Z",
+  "contract": "0x08e49F31Ab11b17f3a5BaA36e6744E9B532bC87B",
+  "networks": {
+    "base_mainnet": {
+      "revoker_event_state": {
+        "chain": "base-mainnet",
+        "contract": "0x08e49F31Ab11b17f3a5BaA36e6744E9B532bC87B",
+        "last_checked_at": "2026-04-25T03:57:38Z",
+        "last_block": 45150055,
+        "last_revoker": "UNKNOWN"
+      },
+      "revoker_live": "READ_ERROR",
+      "revoke_call_state": {
+        "chain": "base-mainnet",
+        "contract": "0x08e49F31Ab11b17f3a5BaA36e6744E9B532bC87B",
+        "last_checked_at": "2026-04-25T03:57:39Z",
+        "last_block": 45150056,
+        "total_revoke_calls": 0
+      }
+    },
+    "base_sepolia": {
+      "revoker_event_state": {
+        "chain": "base-sepolia",
+        "contract": "0x08e49F31Ab11b17f3a5BaA36e6744E9B532bC87B",
+        "last_checked_at": "2026-04-25T03:57:38Z",
+        "last_block": 40660585,
+        "last_revoker": "UNKNOWN"
+      },
+      "revoker_live": "READ_ERROR",
+      "revoke_call_state": {
+        "chain": "base-sepolia",
+        "contract": "0x08e49F31Ab11b17f3a5BaA36e6744E9B532bC87B",
+        "last_checked_at": "2026-04-25T03:57:39Z",
+        "last_block": 40660585,
+        "total_revoke_calls": 0
+      }
+    }
+  },
+  "status": {
+    "role_visibility": true,
+    "live_revoker_visibility": true,
+    "action_visibility": true,
+    "alerting": true
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Uniform Crime Reports [United States]:  Supplementary Homicide Reports, 1976-1994",
+  "description": "These data provide incident-level information on criminal\r\n homicides including date, location, circumstances, and method of\r\n offense, as well as demographic characteristics of victims and\r\n perpetrators and the relationship between the two. The data were\r\n provided monthly to the Federal Bureau of Investigation (FBI) by local\r\n law enforcement agencies participating in the FBI's Uniform Crime\r\n Reporting Program. For this dataset, the original Uniform Crime\r\n Reports data were completely restructured into a nested, or\r\n hierarchical, form with repeating offender records. Specifically, the\r\n file contains one record for each agency per year (record type \"A\"),\r\n nested within which is one record per incident (record type\r\n \"I\"). Victim records (record type \"V\") are in turn nested within\r\n incident records, and offender data are repeated for all offenders on\r\n each victim record. The data file structure is the same as that used\r\n in UNIFORM CRIME REPORTS [UNITED STATES]: SUPPLEMENTARY HOMICIDE\r\n REPORTS, 1976-1992 (ICPSR 6387), except that negligent manslaughters,\r\n justifiable homicides, and one variable (RETAHOM) are not available in\r\n this updated file. Part 2, ORI List, contains Originating Agency\r\n Identifier codes used by the FBI, along with the corresponding agency\r\nname.",
+  "modified": "2006-01-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2083",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "arrests",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "homicide",
+    "law enforcement",
+    "offenders",
+    "offenses",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2167",
+  "dataQuality": false,
+  "issued": "1996-10-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06754.v1",
+      "title": "Uniform Crime Reports [United States]:  Supplementary Homicide Reports, 1976-1994"
+    }
+  ]
+}

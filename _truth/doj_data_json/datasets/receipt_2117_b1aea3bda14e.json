@@ -1,0 +1,67 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Federal Court Cases: Integrated Data Base, 1970-2000",
+  "description": "The purpose of this data collection is to provide an\r\n official public record of the business of the federal courts. The data\r\n originate from 94 district and 12 appellate court offices throughout\r\n the United States. Information was obtained at two points in the life\r\n of a case: filing and termination. The termination data contain\r\n information on both filing and terminations, while the pending data\r\n contain only filing information. For the appellate and civil data, the\r\n unit of analysis is a single case. The unit of analysis for the\r\ncriminal data is a single defendant.",
+  "modified": "2012-05-22T15:10:22",
+  "accessLevel": "restricted public",
+  "identifier": "2117",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "administration",
+    "appellate courts",
+    "case dismissal",
+    "case processing",
+    "civil law",
+    "court cases",
+    "criminal law",
+    "defendants",
+    "disposition (legal)",
+    "federal courts",
+    "judicial decisions",
+    "legal systems",
+    "pretrial procedures",
+    "records",
+    "trial courts",
+    "trial procedures"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2173",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "1990-04-30T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08429.v7",
+      "title": "Federal Court Cases: Integrated Data Base, 1970-2000"
+    }
+  ]
+}

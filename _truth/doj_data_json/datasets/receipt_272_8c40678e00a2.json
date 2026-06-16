@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Prisoner Recidivism",
+  "description": "recidivism rates for persons released from state prisons with specific demographic, criminal history, and sentence attributes.",
+  "modified": "2005-01-01T00:00:00",
+  "accessLevel": "public",
+  "identifier": "272",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "nonnegligent manslaughte",
+    "negligent manslaughter",
+    "Aggravated assault",
+    "burglary",
+    "larceny",
+    "Motor vehicle theft",
+    "Drug trafficking",
+    "Drug possession"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2005-01-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.bjs.gov/index.cfm?ty=datool&surl=/recidivism/index.cfm",
+      "mediaType": "text/html",
+      "title": "Prisoner Recidivism"
+    }
+  ]
+}

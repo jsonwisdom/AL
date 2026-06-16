@@ -1,0 +1,22 @@
+{
+  "artifact": "REJECTION_REASON_VOCABULARY_V1",
+  "layer": "FEDERATION_V2",
+  "purpose": "Canonical rejection reasons for adversarial V2 federation pressure tests.",
+  "last_verified": "2026-05-06",
+  "verifier": "jsonwisdom",
+  "rejection_reasons": {
+    "LATEST_EPOCH_AMBIGUITY": "Query or compact references latest/current epoch instead of explicit root-bound epoch.",
+    "UNPROVABLE_OBLIGATION_MET": "Artifact attempts to write obligation_met or compliance verdict instead of attestation presence.",
+    "UNPROVABLE_DEONTIC_STATE": "Artifact attempts to derive must/shall/penalty state from predicate proof without local sovereign replay.",
+    "PRIVILEGED_INTERPRETER_ATTEMPT": "Artifact requires federation to interpret substantive meaning beyond deterministic proof verification.",
+    "PROOF_BOUNDS_EXCEEDED": "Proof material exceeds bounded predicate or attestation limits.",
+    "RAW_UNBOUNDED_EVIDENCE": "Artifact embeds unbounded raw evidence instead of typed hashed proof reference.",
+    "FEDERATION_ENFORCEMENT_ATTEMPT": "Artifact attempts to make federation enforce, command, or adjudicate rather than attest.",
+    "COMPACT_BASELINE_MUTATION_ATTEMPT": "Compact attempts to mutate or rewrite participant state baselines."
+  },
+  "invariants": [
+    "Every adversarial rejection must resolve to a named reason code.",
+    "No rejection may require narrative discretion.",
+    "Failure codes are part of replay output, not commentary."
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Criminal Careers, Criminal Violence, and Substance Abuse in California, 1963-1983",
+  "description": "The purpose of the study was to investigate the criminal\r\ncareer patterns of violent offenders. These data are intended to\r\nfacilitate the development of models to predict recidivism and\r\nviolence, and to construct parole supervision programs. Original data\r\nwere collected on young male offenders in 1964 and 1965 as they\r\nentered the California Youth Authority (CYA). At this time, data were\r\ncollected on criminal history, including current offenses, drug and\r\nalcohol use, psychological and personality variables, and sentencing, and\r\ndemographics such as age, education, work experience, and family\r\nstructure. The data collection also contains results from a number of\r\nstandardized psychological instruments: California Psychological\r\nInventory, Minnesota Multiphasic Personality Inventory, California\r\nAchievement Test Battery, General Aptitude Test Battery, Army General\r\nClassification Test, and the Revised Beta Test. After release from the\r\nCYA and over the following 20 years, subsequent arrest information\r\nwas collected on the offenders, including the nature of the offense,\r\ndisposition, and arrest and parole dates.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3444",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrest records",
+    "career criminals",
+    "crime prediction",
+    "criminal histories",
+    "criminality prediction",
+    "male offenders",
+    "parole",
+    "personality assessment",
+    "psychological evaluation",
+    "recidivism",
+    "substance abuse",
+    "violent crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1998-12-23T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09964.v1",
+      "title": "Criminal Careers, Criminal Violence, and Substance Abuse in California, 1963-1983"
+    }
+  ]
+}

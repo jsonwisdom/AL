@@ -1,0 +1,63 @@
+{
+  "type": "epoch_convergence_summary",
+  "epoch": "Epoch_03",
+  "status": "PENDING_PRE_ANCHOR_DOSSIER",
+  "capsule": {
+    "path": "receipts/faf/epoch_03/parody_paradox_jay_faf_epoch_03_capsule.v1.json",
+    "canonical_hash_algo": "sha256",
+    "canonical_hash": null,
+    "commit_sha": "cfb0f2b0f8614f19a9dd06cfa0fac3da9066d8e6"
+  },
+  "alpha": {
+    "receipts": [
+      "receipts/faf/epoch_03/alpha_state_verification.observer_1.json",
+      "receipts/faf/epoch_03/alpha_state_verification.observer_2.json"
+    ],
+    "verdict": "PENDING",
+    "refusal_codes": []
+  },
+  "replay": {
+    "human_replay_receipts": [
+      "receipts/faf/epoch_03/human_replay_receipt.observer_1.json",
+      "receipts/faf/epoch_03/human_replay_receipt.observer_2.json"
+    ],
+    "ci_witness_receipt": "receipts/faf/epoch_03/ci_replay_witness.json",
+    "minimum_human_receipts": 2,
+    "observed_human_receipts": 0
+  },
+  "merkle": {
+    "root": null,
+    "leaf_count": null,
+    "tree_layout_hash": null,
+    "proof_bundle_hash": null
+  },
+  "parity": {
+    "human_roots_match": false,
+    "ci_matches_humans": false,
+    "alpha_canonical_hash_match": false,
+    "fixture_hashes_match_capsule": false
+  },
+  "refusals": {
+    "present": false,
+    "codes": []
+  },
+  "anchor_eligibility": {
+    "status": "INELIGIBLE",
+    "reason": "PENDING_ALPHA_AND_REPLAY_RECEIPTS",
+    "target": {
+      "ens_name": "jaywisdom.base.eth",
+      "anchor_medium": "ENS_TEXT+IPFS+EAS"
+    }
+  },
+  "eligibility_rules": {
+    "alpha_verdict_required": "ALPHA_VERIFIED",
+    "minimum_human_receipts_required": 2,
+    "human_replay_verdict_required": "REPLAY_CONVERGED",
+    "all_human_merkle_values_identical": true,
+    "ci_witness_must_match_humans": true,
+    "refusals_present_must_equal": false,
+    "capsule_hash_must_match_alpha_receipts": true,
+    "failure_status": "INELIGIBLE"
+  },
+  "receipt_hash": null
+}

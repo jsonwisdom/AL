@@ -1,0 +1,11 @@
+{
+  "policy_type": "REPLAY_LOOP_POLICY_V0",
+  "policy_version": "0.0.1",
+  "allowed_paths": [
+    "README.md",
+    "docs/adr/001-agent-delegation-receipts.md"
+  ],
+  "forbidden_paths": [
+    "auth.py"
+  ]
+}

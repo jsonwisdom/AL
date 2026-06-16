@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Federal Justice Statistics Program: Defendants in Federal Criminal Cases - Terminated, 2015",
+  "description": "The data contain records of defendants in federal criminal cases terminated in United States District Court during fiscal year 2015. The data were constructed from the Executive Office for United States Attorneys (EOUSA) Central System file. According to the EOUSA, the United States attorneys conduct approximately 95 percent of the prosecutions handled by the Department of Justice. The Central Charge and Central System data contain variables from the original EOUSA files as well as additional analysis variables. Variables containing identifying information (e.g., name, Social Security Number) were either removed, coarsened, or blanked in order to protect the identities of individuals. These data are part of a series designed by Abt and the Bureau of Justice Statistics. Data and documentation were prepared by Abt.",
+  "modified": "2019-09-25T10:52:38",
+  "accessLevel": "restricted public",
+  "identifier": "2773",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "defendants",
+    "district courts",
+    "offenses",
+    "prosecution"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2174",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2019-09-25T10:50:07",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37383.v1",
+      "title": "Federal Justice Statistics Program: Defendants in Federal Criminal Cases - Terminated, 2015"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "claim_ledger_id": "CLAIM_LEDGER_002",
+  "lineage": "RENDERED_ONLY",
+  "source": "justice_epstein",
+  "claims": [
+    {
+      "claim_id": "claim_render_001",
+      "statement": "Rendered DOJ Epstein Library page content was successfully captured.",
+      "type": "EXISTENCE",
+      "status": "VERIFIED",
+      "evidence_sha256": "8601485862b2e914eeb2b5ae5fe7f33a3df292946c8f5ccbecbc91dbb207ca89"
+    },
+    {
+      "claim_id": "claim_render_002",
+      "statement": "Rendered page content is stable across two snapshots.",
+      "type": "STABILITY",
+      "status": "VERIFIED",
+      "evidence": ["DELTA_SET_003"]
+    }
+  ],
+  "status": "CANDIDATE",
+  "promoted": false,
+  "opens_custody_gate": false,
+  "write_run_0002": "UNCHANGED"
+}

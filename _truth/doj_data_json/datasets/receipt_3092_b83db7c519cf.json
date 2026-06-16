@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Prison Crowding and Forced Releases in Illinois, 1979-1982",
+  "description": "These data were collected in the Illinois prison system\r\n where, in response to a prison overcrowding crisis, approximately\r\n two-thirds of the inmates released by the Illinois Department of\r\n Corrections (IDOC) were discharged prior to serving their expected\r\n sentences. This study was designed to evaluate the effects of an early\r\n release program on prisoners, prison populations, offense rates, local\r\n criminal justice systems, and the general public. The files contain\r\n extensive Federal Bureau of Investigation arrest history information\r\n and other personal and social indicators describing inmates released\r\n from the state prison system. Data are available for three comparison\r\n groups: (1) a sample of prisoners who served their regular sentences\r\n prior to the \"forced release\" program, (2) a group that served regular\r\n sentences after implementation of the program, and (3) a group of\r\n inmates who were released early under the program (i.e., before\r\n serving their full sentences). The \"inmate jacket file,\" which is the\r\n comprehensive institutional file maintained for all inmates, contains\r\n variables for each inmate on social and personal characteristics,\r\n criminal history, risk scales, court decisions for each offense,\r\n institutional conduct, prior release and return records, method of\r\n release, condition of supervision, and parole violation records. The\r\n arrest file includes variables that describe the type and number of\r\n charges at arrest, case disposition of each charge, probation length,\r\nincarceration length, admission and release dates, and release type.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3092",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "United States",
+    "arrests",
+    "correctional facilities",
+    "criminal justice system",
+    "demographic characteristics",
+    "inmates",
+    "parole system",
+    "probation",
+    "socioeconomic indicators"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1988-10-25T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08921.v1",
+      "title": "Prison Crowding and Forced Releases in Illinois, 1979-1982"
+    }
+  ]
+}

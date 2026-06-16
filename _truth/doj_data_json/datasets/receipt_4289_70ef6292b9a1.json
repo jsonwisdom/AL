@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Rochester Intergenerational Study (RIGS), New York, United States, 1999-2019",
+  "description": " The Rochester Intergenerational Study (RIGS), is an extension of the Rochester Youth Development Study (RYDS).  RIGS investigates intergenerational continuity and discontinuity of drug use in a three-generation prospective design. The focal participant is the oldest biological child (G3) of the original participant in the RYDS study. The project contains developmental data collected since 1988 on the G2 parents and G1 grandparents; combining those data with the prospective data collected from 1999 to 2019 allows examination of how the parent's own developmental course influences their transition to adulthood and their behavior as parents which, in turn, can be used to explain the onset and development of the G3 child's drug use.\r\n Variables included pertain to the parent's stressors, drug use and problem behaviors, prosocial bonds, peer networks, gang affiliation, family context, major family events, and parenting behaviors. G3 assessments include their general psychosocial development, with detailed information on the onset and course of their drug use, problem behaviors, school behavior, and prosocial behavior.",
+  "modified": "2021-10-26T10:18:05",
+  "accessLevel": "restricted public",
+  "identifier": "4289",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "alcohol abuse",
+    "alcohol consumption",
+    "coping",
+    "drug abuse",
+    "drug use",
+    "family violence",
+    "gangs",
+    "gun ownership",
+    "intimate partner violence",
+    "job security",
+    "marital relations",
+    "military service",
+    "peer influence",
+    "social networks",
+    "stress"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2021-10-26T10:11:35",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37920.v1",
+      "title": "Rochester Intergenerational Study (RIGS), New York, United States, 1999-2019"
+    }
+  ]
+}

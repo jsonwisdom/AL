@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Federal Justice Statistics Program: Defendants in Federal Criminal Cases in District Court -- Terminated, 2012",
+  "description": "The data contain records of defendants in criminal cases terminated in United States District Court during fiscal year 2012. The data were constructed from the Administrative Office of the United States District Courts' (AOUSC) criminal file. Defendants in criminal cases may be either individuals or corporations. There is one record for each defendant in each case filed. Included in the records are data from court proceedings and offense codes for up to five offenses charged at the time the case was filed. (The most serious charge at termination may differ from the most serious charge at case filing, due to plea bargaining or action of the judge or jury.) In a case with multiple charges against the defendant, a \"most serious\" offense charge is determined by a hierarchy of offenses based on statutory maximum penalties associated with the charges. The data file contains variables from the original AOUSC files as well as additional analysis variables, or \"SAF\" variables, that denote subsets of the data. These SAF variables are related to statistics reported in the Compendium of Federal Justice Statistics, Tables 4.1-4.5 and 5.1-5.6. Variables containing identifying information (e.g., name, Social Security number) were replaced with blanks, and the day portions of date fields were also sanitized in order to protect the identities of individuals. These data are part of a series designed by the Urban Institute (Washington, DC) and the Bureau of Justice Statistics. Data and documentation were prepared by the Urban Institute.",
+  "modified": "2015-02-04T15:50:58",
+  "accessLevel": "restricted public",
+  "identifier": "2314",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "administration",
+    "court cases",
+    "criminal law",
+    "defendants",
+    "district courts",
+    "federal courts",
+    "judicial decisions",
+    "legal systems",
+    "trial courts"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2174",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2015-02-04T15:43:48",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR35492.v1",
+      "title": "Federal Justice Statistics Program: Defendants in Federal Criminal Cases in District Court -- Terminated, 2012"
+    }
+  ]
+}

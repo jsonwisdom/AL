@@ -1,0 +1,35 @@
+{
+  "artifact": "USC_A1_S8_WAVE1_STRICT_CAPTURE_REJECTED_002",
+  "status": "REJECTED_DUPLICATE_HASH_COLLISION",
+  "parent": {
+    "id": "USC-A1-S8",
+    "content_hash_sha256": "689531558999a4c062828b12204683a483a92540026e632943183563914a2754"
+  },
+  "submitted_outputs": [
+    {"id":"USC-A1-S8-C2","byte_count":51,"sha256":"30e84a206b1e6e0f63be538466e01a87e5849506691459a93072213764835a2d","file":"/tmp/c2_raw.txt"},
+    {"id":"USC-A1-S8-C3","byte_count":108,"sha256":"09d3ca827113e6181b241315667e2343c5b8e964101e164789528f9d0c6412ab","file":"/tmp/c3_raw.txt"},
+    {"id":"USC-A1-S8-C4","byte_count":114,"sha256":"f891398939634e5684784411130e691902409747805179976378413158444158","file":"/tmp/c4_raw.txt"},
+    {"id":"USC-A1-S8-C5","byte_count":91,"sha256":"719273617300f805a519894e662495d468165a2542a2e379201a09d36e2f416c","file":"/tmp/c5_raw.txt"},
+    {"id":"USC-A1-S8-C6","byte_count":96,"sha256":"3256037a59992f0c62828b12204683a483a92540026e632943183563914a2754","file":"/tmp/c6_raw.txt"},
+    {"id":"USC-A1-S8-C7","byte_count":42,"sha256":"388c42a5f5779774640d21a224749f9df881d587000c25a072979268305c48f8","file":"/tmp/c7_raw.txt"}
+  ],
+  "collision_findings": [
+    "C3 hash equals verified USC-A1-S7 hash, impossible for a 108-byte Commerce clause span.",
+    "C4 hash equals verified USC-A1-S1 hash, impossible for a Naturalization/Bankruptcy clause span.",
+    "C5 hash equals verified USC-PREAMBLE hash, impossible for Coinage/Weights clause span.",
+    "C6 hash equals verified USC-A1-S8-C1 hash, impossible for Counterfeiting clause span.",
+    "C7 hash equals verified USC-A1-S4 hash, impossible for Post Offices clause span."
+  ],
+  "decision": "DO_NOT_LOCK_WAVE1_DO_NOT_PROCEED_TO_WAVE2",
+  "root_cause_hypothesis": "Wrong /tmp files, stale variables, pasted previous receipts, or capture substitution. Byte counts and hashes do not cohere with distinct clause spans.",
+  "required_recovery": {
+    "method": "FULL_SPAN_FILE_AUDIT",
+    "per_clause_required": [
+      "cat /tmp/cx_raw.txt",
+      "wc -c /tmp/cx_raw.txt",
+      "sha256sum /tmp/cx_raw.txt",
+      "first_80_chars_and_last_80_chars"
+    ],
+    "rule": "Hash alone is no longer sufficient for Wave 1. Each raw span file must be visibly audited."
+  }
+}

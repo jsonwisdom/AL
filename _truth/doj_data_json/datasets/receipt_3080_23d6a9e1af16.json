@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Employment Services for Ex-Offenders, 1981-1984:  Boston, Chicago, and San Diego",
+  "description": "This study was conducted to test whether job counseling and\r\nplacement services, accompanied by intensive follow-up after\r\nplacement, would significantly increase the effectiveness of\r\nemployment programs for individuals recently released from\r\nprison. Data were collected on personal, criminal, and employment\r\nbackgrounds, including the type, duration, and pay of previous\r\nemployment, living arrangements, marital status, criminal history, and\r\ncharacteristics of the employment placement.",
+  "modified": "2006-01-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3080",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "crime",
+    "crime prevention",
+    "criminal justice system",
+    "employment",
+    "living conditions",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1987-01-12T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08619.v2",
+      "title": "Employment Services for Ex-Offenders, 1981-1984:  Boston, Chicago, and San Diego"
+    }
+  ]
+}

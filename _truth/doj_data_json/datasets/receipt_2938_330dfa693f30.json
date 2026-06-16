@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Impact of Terrorism on State and Local Law Enforcement Agencies and Criminal Justice Systems in the United States, 2004",
+  "description": "This study explored the new roles of state and local law\r\n enforcement agencies and the changing conditions that came about as a\r\n result of the events of September 11, 2001. In order to examine the\r\n impact of terrorism on state and local police agencies, the research\r\n team developed a survey that was administered to all state police,\r\n highway patrol agencies, and general-purpose state bureaus of\r\n investigation and a sample population of 400 local police and sheriff\r\n agencies in the spring of 2004. The survey asked these state and local\r\n law enforcement agencies questions concerning how their allocation of\r\n resources, homeland security responsibilities, and interactions with\r\nother agencies had changed since September 11, 2001.",
+  "modified": "2007-07-20T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "2938",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "government agencies",
+    "homeland security",
+    "law enforcement agencies",
+    "terrorism",
+    "terrorist threat"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2007-07-20T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04677.v1",
+      "title": "Impact of Terrorism on State and Local Law Enforcement Agencies and Criminal Justice Systems in the United States, 2004"
+    }
+  ]
+}

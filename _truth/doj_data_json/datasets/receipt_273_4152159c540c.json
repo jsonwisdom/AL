@@ -1,0 +1,53 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Public Image of Courts, 1977: General Public Data",
+  "description": "This data collection and its companion study, PUBLIC IMAGE\r\nOF COURTS, 1977: SPECIAL PUBLICS DATA (ICPSR 7704), were undertaken to\r\nexplore attitudes toward\r\ncourts and justice. These surveys sought to measure perceptions of and\r\nexperiences with local, state, and federal courts as well as general\r\nattitudes toward the administration of justice and legal actors. The\r\ngeneral objectives of the studies were to (1) determine levels of public\r\nknowledge of courts, (2) test reactions to situations that might, or\r\nmight not, prompt recourse to courts, (3) determine the incidence,\r\nnature, and evaluations of court experience, (4) describe and account\r\nfor evaluations of court performance, (5) indicate attitudes toward\r\nlegal actors, and (6) indicate reactions to alternative means of dispute\r\nresolution. Two samples were drawn: a national sample of the general\r\npublic and a \"special publics\" sample of judges, lawyers, and\r\ncommunity leaders (ICPSR 7704). The 1,931 respondents in the general\r\npublic sample were interviewed in person by the National Consumer\r\nField Staff of Yankelovich, Skelly, and White, Inc.",
+  "modified": "1997-02-25T00:00:00",
+  "accessLevel": "public",
+  "identifier": "273",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "court system",
+    "judges",
+    "judicial process",
+    "justice"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR07703.v1",
+      "title": "Public Image of Courts, 1977: General Public Data"
+    }
+  ]
+}

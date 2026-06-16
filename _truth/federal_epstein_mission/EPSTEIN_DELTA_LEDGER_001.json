@@ -1,0 +1,27 @@
+{
+  "artifact": "DELTA_LEDGER",
+  "ledger_id": "EPSTEIN_DELTA_LEDGER_001",
+  "authority": false,
+  "custody_gate": "CLOSED",
+  "base_index": "EPSTEIN_EXISTING_ARTIFACT_INDEX_001",
+  "deltas": [
+    {
+      "delta_id": "DELTA_SET_001",
+      "description": "Initial scaffold merge PR #261",
+      "files_added": 3,
+      "files_modified": 0,
+      "merge_commit": "a6ea550cbe395565dccb30f9549e2ca0c8cb352d",
+      "merged_at": "2026-05-27T19:44:25Z"
+    },
+    {
+      "delta_id": "DELTA_SET_002",
+      "description": "Proposed v0.2 hard objects (pending)",
+      "files_added": 6,
+      "status": "PENDING_PR"
+    }
+  ],
+  "boundaries": [
+    "Tracks file-level changes only",
+    "No content interpretation"
+  ]
+}

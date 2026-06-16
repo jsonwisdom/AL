@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Participation in Illegitimate Activities:  Ehrlich Revisited, 1960",
+  "description": "This study re-analyzes Isaac Ehrlich's 1960 cross-section\r\ndata on the relationship between aggregate levels of punishment and\r\ncrime rates. It provides alternative model specifications and\r\nestimations. The study examined the deterrent effects of punishment on\r\nseven FBI index crimes: murder, rape, assault, larceny, robbery,\r\nburglary, and auto theft. Socio-economic variables include family\r\nincome, percentage of families earning below half of the median income,\r\nunemployment rate for urban males in the age groups 14-24 and 35-39,\r\nlabor force participation rate, educational level, percentage of young\r\nmales and non-whites in the population, percentage of population in the\r\nSMSA, sex ratio, and place of occurrence. Two sanction variables are\r\nalso included: 1) the probability of imprisonment, and 2) the average\r\ntime served in prison when sentenced (severity of punishment). Also\r\nincluded are: per capita police expenditure for 1959 and 1960, and the\r\ncrime rates for murder, rape, assault, larceny, robbery, burglary, and\r\nauto theft.",
+  "modified": "1992-02-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3086",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "assault",
+    "auto theft",
+    "burglary",
+    "crime",
+    "crime prevention",
+    "criminal justice system",
+    "demographic characteristics",
+    "education",
+    "income",
+    "larceny",
+    "low income groups",
+    "murder",
+    "police protection",
+    "rape",
+    "robbery",
+    "sentencing",
+    "unemployment"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1987-10-12T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08677.v1",
+      "title": "Participation in Illegitimate Activities:  Ehrlich Revisited, 1960"
+    }
+  ]
+}

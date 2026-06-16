@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Annual Survey of Jails: Individual Reporting-Level Data, 2007",
+  "description": "The Annual Survey of Jails (ASJ) is the only data collection effort that provides an\r\nannual source of data on local jails and jail inmates.  Data on the size of the\r\njail population and selected inmate characteristics are obtained every five to\r\nsix years from the Census of Jails.  In each of the years between the full censuses,\r\na sample survey of jails is conducted to estimate\r\nbaseline characteristics of the Nation's jails and inmates housed in these jails.\r\nThe 2007 Annual Survey of Jails is the 20th such survey in a series begun in 1982.\r\nThe ASJ supplies data on characteristics of jails such as admissions and releases,\r\ngrowth in the number of jail facilities, changes in their rated capacities and level\r\nof occupancy, growth in the population supervised in the community, changes in methods\r\nof community supervision, and crowding issues.  The ASJ\r\nalso provides information on changes in the demographics of the jail population,\r\nsupervision status of persons held, and a count of non-citizens in custody.\r\nThe data presented in this study were collected in the Annual Survey of\r\nJails, 2007.  These data are used to track growth in the number of\r\njails and the capacities nationally, changes in the demographics of the\r\njail population and supervision status of persons held, the prevalence of\r\ncrowding issues, and a count of non-United States citizens within the jail\r\npopulation.  The data are intended for a variety of users, including\r\nFederal and State agencies, local officials in conjunction with jail\r\nadministrators, researchers, planners, and the public.  The reference date\r\nfor the survey is June 29, 2007.",
+  "modified": "2010-01-27T07:53:48",
+  "accessLevel": "public",
+  "identifier": "52",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "correctional system",
+    "demographic characteristics",
+    "jail inmates",
+    "jails",
+    "population characteristics",
+    "probation"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2010-01-27T07:53:48",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR24641.v1",
+      "title": "Annual Survey of Jails: Individual Reporting-Level Data, 2007"
+    }
+  ]
+}

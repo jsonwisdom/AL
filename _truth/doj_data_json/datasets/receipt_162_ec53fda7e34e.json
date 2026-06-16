@@ -1,0 +1,53 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Historical Statistics on Prisoners in State and Federal institutions, Yearend 1925-1986: [United States]",
+  "description": "This data collection supplies annual data on the size of\r\n the prison population and the size of the general population in the\r\n United States for the period 1925 to 1986. These yearend counts\r\n include tabulations for prisons in each of the 50 states and the\r\n District of Columbia, as well as the federal prisons, and are intended\r\n to provide a measure of the overall size of the prison population. The\r\n figures were provided from a voluntary reporting program in which each\r\n state, the District of Columbia, and the Federal Bureau of Prisons\r\n reported summary statistics as part of the statistical information on\r\nprison populations in the United States.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "162",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "United States",
+    "crime",
+    "criminal justice system",
+    "inmates"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1989-05-04T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08912.v1",
+      "title": "Historical Statistics on Prisoners in State and Federal institutions, Yearend 1925-1986: [United States]"
+    }
+  ]
+}

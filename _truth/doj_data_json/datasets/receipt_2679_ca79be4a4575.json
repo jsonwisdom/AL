@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Firearm Injury Surveillance Study, 1993-2007 [United States]",
+  "description": "These data were collected using the National Electronic\r\nInjury Surveillance System (NEISS), the primary data system of the\r\nUnited States Consumer Product Safety Commission (CPSC). CPSC began\r\noperating NEISS in 1972 to monitor product-related injuries treated in\r\nUnited States hospital emergency departments (EDs). In June 1992, the\r\nNational Center for Injury Prevention and Control (NCIPC), within the\r\nCenters for Disease Control and Prevention, established an interagency\r\nagreement with CPSC to begin collecting data on nonfatal\r\nfirearm-related injuries in order to monitor the incidents and the\r\ncharacteristics of persons with nonfatal firearm-related injuries\r\ntreated in United States hospital EDs over time. This dataset\r\nrepresents all nonfatal firearm-related injuries (i.e., injuries\r\nassociated with powder-charged guns) and all nonfatal BB and pellet\r\ngun-related injuries reported through NEISS from 1993 through\r\n2007. The cases consist of initial ED visits for treatment of the\r\ninjuries. Cases were reported even if the patients subsequently died.\r\nSecondary visits and transfers from other hospitals were excluded.\r\nInformation is available on injury diagnosis, firearm type, use of\r\ndrugs or alcohol, criminal incident, and locale of the\r\nincident. Demographic information includes age, sex, and race of the\r\ninjured person.",
+  "modified": "2010-01-25T09:14:17",
+  "accessLevel": "public",
+  "identifier": "2679",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "accidents",
+    "firearms",
+    "handguns",
+    "medical care",
+    "nonfatal injuries",
+    "product safety",
+    "public health",
+    "public safety"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2438",
+  "dataQuality": false,
+  "issued": "2010-01-25T09:14:17",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR27002.v1",
+      "title": "Firearm Injury Surveillance Study, 1993-2007 [United States]"
+    }
+  ]
+}

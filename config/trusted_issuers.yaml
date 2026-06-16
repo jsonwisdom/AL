@@ -1,0 +1,56 @@
+# Trusted Issuers v0.1
+# Status: DESIGN_CONFIG_NOT_OPERATIONAL
+#
+# This file governs issuer roots for RAP request credentials.
+# It is a constitutional access surface, not a convenience allowlist.
+# Any change must pass tests/membrane/test_trusted_issuers.py.
+
+version: "0.1"
+status: "DESIGN_CONFIG_NOT_OPERATIONAL"
+policy:
+  operator_signature_required: true
+  no_ghost_anchor: true
+  config_changes_require_pr: true
+  revocation_endpoint_required: true
+  added_by_pr_required: true
+  rationale_required: true
+  forbidden_semantics:
+    - guilt
+    - intent
+    - motive
+    - corruption
+    - threat
+    - risk_score
+    - bad_actor
+    - law_enforcement
+    - police
+    - prosecution
+    - intelligence
+    - surveillance
+
+trusted_issuers:
+  - issuer_id: "seed-spj-placeholder"
+    name: "Society of Professional Journalists Placeholder"
+    category: "journalism_ethics_org"
+    credential_scope:
+      - "journalist_identity"
+      - "newsroom_affiliation"
+    issuer_url: "https://www.spj.org/"
+    did_or_jwks_ref: "PENDING_OPERATOR_VERIFICATION"
+    revocation_endpoint: "PENDING_OPERATOR_VERIFICATION"
+    added_by_pr: "PENDING_INITIAL_GOVERNANCE_PR"
+    rationale: "Seed placeholder for journalism credential issuer evaluation; not operational until DID/JWKS and revocation endpoint are verified."
+    operational_state: "NOT_OPERATIONAL"
+
+  - issuer_id: "seed-ire-placeholder"
+    name: "Investigative Reporters and Editors Placeholder"
+    category: "journalism_training_org"
+    credential_scope:
+      - "journalist_identity"
+      - "investigative_research_affiliation"
+    issuer_url: "https://www.ire.org/"
+    did_or_jwks_ref: "PENDING_OPERATOR_VERIFICATION"
+    revocation_endpoint: "PENDING_OPERATOR_VERIFICATION"
+    added_by_pr: "PENDING_INITIAL_GOVERNANCE_PR"
+    rationale: "Seed placeholder for investigative journalism credential issuer evaluation; not operational until DID/JWKS and revocation endpoint are verified."
+    operational_state: "NOT_OPERATIONAL"

@@ -1,0 +1,15 @@
+{
+  "leaf_id": "004",
+  "target": "GENERAL_FUND_BALANCE_POLICY",
+  "state": "AWAITING_POLICY_GREP_OUTPUT",
+  "mode": "EXTRACTION_ONLY",
+  "anchor_allowed": false,
+  "batch_id_allowed": false,
+  "required_terminal_commands": [
+    "grep -n -i \"fund balance policy\" out.txt | head -20",
+    "grep -n -i \"general fund balance\" out.txt | head -20",
+    "grep -n -i \"policy requires\" out.txt | head -20"
+  ],
+  "next_required_input": "paste raw grep hits exactly as terminal produced them",
+  "doctrine": "NO_EXTRACTION_NO_INTERPRETATION_NO_PAGE_GUESSING_UNTIL_GREP_HITS"
+}

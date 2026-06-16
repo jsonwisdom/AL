@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Predicting Intimate Partner Violence for At-Risk Young Adults and Their Romantic Partners, United States, 1991-2009",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed. \r\nThe primary research aims of this study were to: examine a theoretical mediational risk model, examine long-term intervention impacts of the LIFT program on IPV in young adulthood, and to examine proximal associations between youth, partner adjustment (e.g., depressive symptoms), and adulthood. Data was collected over a 15-year period through interview format. Secondary analyses was performed with 323 adults (184 women, 139 men; average age 21 years) and their romantic partners (146 women, 177 men; average age 22 years) who participated in the community-based Linking the Interests of Families and Teachers (LIFT). Overall the study contains one SPSS file called 'NIJArc_LIFTCO_SubUseIPVItems.sav'. This SPSS file includes 166 variables and 316 cases.",
+  "modified": "2018-08-14T11:07:52",
+  "accessLevel": "restricted public",
+  "identifier": "3411",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "domestic assault",
+    "domestic violence",
+    "intimate partner violence",
+    "young adults"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-08-14T11:05:26",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36595.v1",
+      "title": "Predicting Intimate Partner Violence for At-Risk Young Adults and Their Romantic Partners, United States, 1991-2009"
+    }
+  ]
+}

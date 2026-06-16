@@ -1,0 +1,45 @@
+name: Lapis Replay Court
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  replay-court:
+    name: Replay Court
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout full repository history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install jsonschema pytest
+
+      - name: Run verifier regression tests
+        run: pytest tests/test_verify_replay_demo.py
+
+      - name: Run Lapis replay verifier
+        run: python tools/verify_replay_demo.py
+
+      - name: Upload replay summary receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: REPLAY_SUMMARY
+          path: REPLAY_SUMMARY.json
+          if-no-files-found: warn

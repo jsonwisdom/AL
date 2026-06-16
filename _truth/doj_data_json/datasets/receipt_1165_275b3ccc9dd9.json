@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Examination of Resident Abuse in Assisted Living Facilities in the United States, 2011",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.The purpose of the study was to: Examine resident abuse from staff report by direct care workers in a nationally representative sample of assisted living settings;Expand the scope of our understanding of resident abuse by including medication abuse in assisted living settings; and Use the data collected to examine: a. rates of abuse; b. the association of external organizational, and internal factors with resident abuse; c. direct care worker characteristics associated with abuse; d. resident characteristics associated with abuse; e. leadership characteristics associated with abuse; f. the inter-correlations of different types of abuse; and, g. resident-to-resident abuse.For the purposes of this research, an assisted living facility is defined as a long term care setting that typically provides residents for activities of daily living and instrumental activities of daily living. Using state listings from websites, researchers identified approximately 21,000 of assisting living facilities. A random sample of approximately seven percent (n=1,500) of these eligible assisted living facilities were selected from all 50 states. Administrators of assisted living facilities were asked if they were willing to complete the questionnaire (n=1,376). Administrators were also asked if they would be willing to distribute the questionnaire to direct care workers (n=12,555). Researchers requested that they distribute the survey to all full-time and part-time direct care workers on all shifts. Follow up reminder mailings and emails were used for the administrators.",
+  "modified": "2016-05-20T21:08:44",
+  "accessLevel": "restricted public",
+  "identifier": "1165",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "abuse",
+    "assisted living facilities",
+    "elder abuse",
+    "emotional abuse",
+    "sexual abuse"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2016-05-20T21:06:03",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR34575.v1",
+      "title": "Examination of Resident Abuse in Assisted Living Facilities in the United States, 2011"
+    }
+  ]
+}

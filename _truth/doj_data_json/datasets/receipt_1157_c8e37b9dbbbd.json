@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Violence Against American Indian and Alaska Native Women and Men: 2010 Findings from the National Intimate Partner and Sexual Violence Survey (NISVS)",
+  "description": "This study examines the prevalence of violence against American Indian\r\nand Alaska Native women and men, using a large nationally representative\r\nsample from the National Intimate Partner and Sexual Violence Survey\r\n(NISVS). More specifically, it provides estimates of sexual violence,\r\nphysical violence by intimate partners, stalking, and psychological\r\naggression by intimate partners. It also provides estimates of interracial\r\nand intraracial victimizations and briefly examines the impact of violence.\r\nThis study is based on two of the NISVS samples that were included in the\r\n2010 data collection effort --the general population sample and the\r\nAmerican Indian and Alaska Native oversample. This American Indian and\r\nAlaska Native oversample was collected from geographical areas\r\n(telephone exchanges) where at least 50% of the population identifies\r\nthemselves as American Indian or Alaska Native.\r\nTo increase the generalizability of the American Indian and Alaska Native\r\nsample (and to add interviews conducted by cell phone), a new \"combined\"\r\nsample was created by including (a) all respondents in the American Indian\r\nand Alaska Native oversample and (b) 677 respondents in the general\r\npopulation sample who identified themselves as American Indian or Alaska\r\nNative. By combining these samples, a new sample was obtained that is\r\nlarge enough to produce reliable and valid estimates for all women and men\r\nin the United States who identify themselves as American Indian or Alaska\r\nNative. For a more exact discussion of the sample, see the NIJ Technical\r\nReport.\r\nThe combined sample includes 2,473 women and 1,505 men who identified\r\nthemselves as American Indian or Alaska Native. Results from the combined\r\nAmerican Indian and Alaska Native sample were compared to results from\r\nthe sample of respondents in the general population sample who identified\r\nthemselves as non-Hispanic White alone. The comparison sample includes\r\n7,646 women and 6,050 men who identified themselves as non-Hispanic\r\nWhite alone.\r\n There are 5 data files included with this study. Dataset 1 (General Population Raw Data) contains 18,957 cases and 26,114 variables. Dataset 2 (American Indian and Alaska Native (AIAN) Oversample Raw Data) contains 3,612 cases and 22,932 variables. Dataset 3 (Respondent-level Data) contains 21,378 cases and 493 variables. Dataset 4 (Perpetrator-level Data) contains 51,535 cases and 446 variables. Dataset 5 (Weights File) contains 3,978 cases and 9 variables. ",
+  "modified": "2016-06-09T15:09:18",
+  "accessLevel": "restricted public",
+  "identifier": "1157",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "Alaskan Natives",
+    "Native Americans",
+    "demographic characteristics",
+    "domestic violence",
+    "intimate partner violence",
+    "medical history",
+    "sexual assault",
+    "stalking",
+    "victimization",
+    "violence against women"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "3704",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2016-03-31T18:04:12",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36140.v1",
+      "title": "Violence Against American Indian and Alaska Native Women and Men: 2010 Findings from the National Intimate Partner and Sexual Violence Survey (NISVS)"
+    }
+  ]
+}

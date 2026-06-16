@@ -1,0 +1,18 @@
+{
+  "artifact": "ALMS_TRILOGY_V1_MEDIA_CLASSIFICATION",
+  "status": "AWAITING_OPERATOR_FINAL_CANONICAL_MEDIA_SELECTION",
+  "note": "Operator reported uploaded media may be mixed JPG/PNG text cards rather than the intended three character portrait PNGs. Do not bind EAS child attestations until final canonical media roles are explicitly confirmed and exact SHA256 hashes are produced from real bytes.",
+  "known_trilogy_hash": "0xbff64af27865e7967a9992c4ac8089bc8ca6a637e58194236d1b3abd25e1ac57",
+  "known_cids": {
+    "media_1_unconfirmed_role": "bafybeieyx5thqorpsnjgamdukpdkwzpuor7fqgkdusmigda2fnwkd2ixdi",
+    "media_2_unconfirmed_role": "bafybeihvkyhmudnaejxylmtr43vp2ungmt7aalr6jggmjb2ww6fxkhob6a",
+    "media_3_unconfirmed_role": "bafybeicf7xi4pzna63roxyhtpu5d4c2frhdbfp2wrnlio47zbhxvfv63ra"
+  },
+  "required_next": [
+    "Confirm which CID/file maps to ANDY, GARY, and ALLISON",
+    "Compute SHA256 for each exact final media byte object",
+    "Update media receipt with final role mapping and hashes",
+    "Only then encode EAS parent and child attestations"
+  ],
+  "rule": "CID alone is not enough for ALMS child attestation; exact image SHA256 and role mapping must be confirmed."
+}

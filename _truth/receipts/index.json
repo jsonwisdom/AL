@@ -1,0 +1,103 @@
+{
+  "schema_version": "alms.receipt_index.v1",
+  "last_updated": "2026-05-22T01:40:00Z",
+  "canonical_boundary": {
+    "authoritative_index": "_truth/receipts/index.json",
+    "binding_rule": "Only indexed and replay-linked receipts are canonical AL claims.",
+    "non_canonical_classes": [
+      "EXPERIMENTAL",
+      "PENDING_REPLAY_BINDING",
+      "NON_CANONICAL"
+    ]
+  },
+  "receipt_buckets": {
+    "CANONICAL": [
+      "_truth/receipts/2026-05-09T00-00-00Z-attestation-ledger-root.json",
+      "_truth/receipts/root_authority_gap_audit_2026-05-14.json",
+      "_truth/receipts/readme_proof_surface_clarification_2026-05-14.json",
+      "_truth/receipts/repo_structure_attestation_2026-05-14.json",
+      "_truth/receipts/experimental_artifact_disclaimer_2026-05-14.json",
+      "_truth/receipts/ens_website_target_leaf001_2026-05-22.json"
+    ],
+    "PENDING_REPLAY_BINDING": [
+      "NY-001 through NY-012 referenced in historical documentation but not yet fully replay-bound in the canonical index"
+    ],
+    "EXPERIMENTAL": [
+      "epoch-chain artifacts",
+      "draft receipts",
+      "working surfaces outside canonical index binding"
+    ],
+    "NON_CANONICAL": []
+  },
+  "index": {
+    "total_receipts": 6,
+    "receipts": [
+      {
+        "path": "_truth/receipts/2026-05-09T00-00-00Z-attestation-ledger-root.json",
+        "hash": "sha256:fe8897c2fb0686d99679364e70aaa936b884e18aef371c0bbd8fbf37c1d19a26",
+        "timestamp": "2026-05-09T00:00:00Z",
+        "claims": [
+          "attestation-index-is-root-authority"
+        ],
+        "size_bytes": 491
+      },
+      {
+        "path": "_truth/receipts/root_authority_gap_audit_2026-05-14.json",
+        "hash": "sha256:a805bbbba83cca8b433eb9a52f79b237ec03706b08ae71928c6c66876b852c79",
+        "timestamp": "2026-05-14T20:20:00Z",
+        "claims": [
+          "al-root-authority-boundary-audited",
+          "github-public-files-are-not-canonical-without-index-binding",
+          "openai-epoch-artifacts-remain-experimental-until-indexed-and-replay-linked"
+        ],
+        "size_bytes": 1498
+      },
+      {
+        "path": "_truth/receipts/readme_proof_surface_clarification_2026-05-14.json",
+        "hash": "sha256:e1c2ca6dbd09947cecbee1f6b08da96c85fd7d1b6bcbae36c4919e7f96c922a4",
+        "timestamp": "2026-05-14T20:20:00Z",
+        "claims": [
+          "readme-proof-surface-clarified",
+          "canonical-truth-source-is-receipt-index",
+          "public-files-are-non-canonical-without-index-binding"
+        ],
+        "size_bytes": 873
+      },
+      {
+        "path": "_truth/receipts/repo_structure_attestation_2026-05-14.json",
+        "hash": "sha256:180e0987b66e7f4809d5e4878b4050be3df6eace0fa699b65ac429672e4c76fe",
+        "timestamp": "2026-05-14T20:20:00Z",
+        "claims": [
+          "repo-structure-boundary-attested",
+          "truth-receipts-directory-is-canonical-receipt-directory",
+          "docs-receipts-data-are-public-working-surfaces-until-indexed"
+        ],
+        "size_bytes": 1132
+      },
+      {
+        "path": "_truth/receipts/experimental_artifact_disclaimer_2026-05-14.json",
+        "hash": "sha256:9be1f96280a75e5da29d7cde1a1e7c411780f6a9329b5a138425f6c1c957267c",
+        "timestamp": "2026-05-14T20:20:00Z",
+        "claims": [
+          "experimental-artifacts-disclaimed",
+          "epoch-chain-artifacts-do-not-assert-public-legitimacy-claims",
+          "index-binding-required-for-public-canon"
+        ],
+        "size_bytes": 1118
+      },
+      {
+        "path": "_truth/receipts/ens_website_target_leaf001_2026-05-22.json",
+        "hash": "sha256:f136e1471f1422de481d125bfe1f62c5fea61718a1c70d9d3ec82af85707265c",
+        "timestamp": "2026-05-22T01:40:00Z",
+        "claims": [
+          "jaywisdom.base.eth-website-target-live-verified",
+          "al-dashboard-target-is-jsonwisdom-github-io-al-site",
+          "placeholder-repos-excluded-from-active-ens-target",
+          "github-issue-242-records-website-target-readiness",
+          "ens-website-target-leaf001-is-append-only"
+        ],
+        "size_bytes": 1383
+      }
+    ]
+  }
+}

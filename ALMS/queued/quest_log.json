@@ -1,0 +1,17 @@
+{
+  "artifact": "QUEST_LOG_V0_1",
+  "status": "QUEUED",
+  "authority": false,
+  "membrane": "HOLDS",
+  "quests": [
+    {"id":"Q1","status":"QUEUED"},
+    {"id":"Q2","status":"QUEUED"},
+    {"id":"Q3","status":"QUEUED"},
+    {"id":"Q4","status":"QUEUED"},
+    {"id":"Q5","status":"QUEUED"},
+    {"id":"Q6","status":"QUEUED"}
+  ],
+  "boss":"GitHub Rule Reference Goblin",
+  "blocked":["Q1","Q2"],
+  "progressable":["Q3","Q4","Q5","Q6"]
+}

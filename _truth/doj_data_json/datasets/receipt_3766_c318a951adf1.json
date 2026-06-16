@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Elder Abuse in the 2010 National Intimate Partner and Sexual Violence Survey (NISVS)",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThis study examines the prevalence and correlates of psychological abuse and physical abuse against women and men aged 70 or older. Self-report data from 2,185 respondents in the 2010 National Intimate Partner and Sexual Violence Survey (NISVS) were used to create weighted estimates for past-year experiences of abuse. Correlates were then examined using survey logistic regression models.",
+  "modified": "2018-01-03T07:42:07",
+  "accessLevel": "restricted public",
+  "identifier": "3766",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "abuse",
+    "aggression",
+    "domestic violence",
+    "elder abuse",
+    "intimate partner violence",
+    "mental health",
+    "older adults",
+    "sexual assault",
+    "stalking",
+    "victimization",
+    "violence against women"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "3704",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-01-03T07:38:36",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36808.v1",
+      "title": "Elder Abuse in the 2010 National Intimate Partner and Sexual Violence Survey (NISVS)"
+    }
+  ]
+}

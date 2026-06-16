@@ -1,0 +1,40 @@
+{
+  "schema_version": "alms.public_canon_notice.v1",
+  "artifact": "public_canon_genesis_notice_2026-05-14.json",
+  "classification": "PUBLIC_CANON_NOTICE",
+  "status": "SAFE_TO_INDEX_AFTER_CA_SIGNATURE",
+  "principle": "visibility is not authority",
+  "source_of_truth": "_truth/receipts/index.json",
+  "scope": "declares AL canonical boundary and public proof rules",
+  "membrane_definition": {
+    "canonical_truth_source": "_truth/receipts/index.json",
+    "nothing_outside_index_is_canonical": true,
+    "epoch_4_working_files_are_visible_not_canonical": true,
+    "images_narratives_cover_art_are_not_truth": true,
+    "experimental_claims_never_auto_emit": true
+  },
+  "proof_rules": [
+    "Canonical claims must be indexed in _truth/receipts/index.json.",
+    "Canonical receipts must be content-addressed by sha256.",
+    "Canonical receipts require CA signature binding before public authority is asserted.",
+    "WK or working keys are rejected for canonical promotion.",
+    "Visual art and narrative summaries are public presentation surfaces, not truth surfaces.",
+    "Epoch closure requires a threshold signature over the final root before freeze."
+  ],
+  "sigs": [
+    {
+      "key_id": "CA-PLACEHOLDER-1",
+      "signature": null,
+      "status": "PENDING_REAL_CA_SIGNATURE"
+    }
+  ],
+  "not_scope": [
+    "OpenAI legitimacy",
+    "epoch-chain factual claims",
+    "RED_TO_GREEN narrative elevation",
+    "visual art as truth",
+    "unverified epoch-chain conclusions"
+  ],
+  "operator": "Jay Wisdom",
+  "timestamp_issued": "2026-05-14T20:20:00Z"
+}

@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Examination of Homicides in Houston, Texas, 1985-1994  ",
+  "description": "As a contribution to nationwide efforts to more thoroughly\r\n understand urban violence, this study was conducted to assess the\r\n impact of cultural dynamics on homicide rates in Houston, Texas, and\r\n to profile homicides in the city from 1985 to 1994. This data\r\n collection provides the results of quantitative analysis of data\r\n collected from all Houston homicide cases recorded in the police\r\n murder logs for 1985-1994. Variables describe the homicide\r\n circumstances, the victim-offender relationship, the type of weapon\r\n used, and any drug- or gang-related activity involved. Other variables\r\n include the year and month in which the homicide occurred, whether the\r\n homicide occurred on a weekday or over the weekend, the motive of the\r\n homicide, whether the homicide was drug-related, whether the case was\r\n cleared by police at time of data entry, weapon type and means of\r\n killing, the relationship between the victim and the offender, whether\r\n a firearm was the homicide method, whether it was a multiple victim\r\n incident or multiple offender incident, whether the victim or the\r\n offender was younger than age 15, and the inter-racial relationship\r\n between the victim and the offender. Demographic variables include\r\nage, sex, and race of the victim as well as the offender.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3247",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrest records",
+    "crime rates",
+    "homicide",
+    "murder",
+    "offenders",
+    "police records",
+    "urban crime",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2002-07-11T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03399.v1",
+      "title": "Examination of Homicides in Houston, Texas, 1985-1994  "
+    }
+  ]
+}

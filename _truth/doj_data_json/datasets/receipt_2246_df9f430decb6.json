@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Uniform Crime Reporting Program Data: Property Stolen and Recovered, 2011",
+  "description": "The UNIFORM CRIME REPORTING PROGRAM DATA: PROPERTY STOLEN AND RECOVERED,\r\n2011 file (also known as the Supplement to Return A) is collected at the agency level and includes detailed monthly data on the nature of crime and the value and type of property stolen and recovered incident to each crime. The Return A Supplement requires that a value be established for property stolen and recovered in each Crime Index category except aggravated assault. It is designed to record the value of property stolen and recovered in the following eleven classifications: Currency/notes, Jewelry and Precious Metals, Clothing and Furs, Locally Stolen Motor Vehicles, Office Equipment, Televisions/Radios, Firearms, Household Goods, Consumable Goods, Livestock, and Miscellaneous. The determination of the value of property stolen is an obligation of the investigating officer, and such information is essential to assure the completeness of a law enforcement investigative report on stolen property. The data were originally assembled by the Federal Bureau of Investigation (FBI) from reports submitted by agencies participating in the UCR. The ICPSR file was processed from Return A Supplement files provided by the FBI.",
+  "modified": "2013-08-06T11:10:46",
+  "accessLevel": "public",
+  "identifier": "2246",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "arrests",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "larceny",
+    "law enforcement",
+    "offenses",
+    "property crime statistics",
+    "property crimes",
+    "stolen property",
+    "stolen property recovery"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2167",
+  "dataQuality": false,
+  "issued": "2013-08-06T11:10:46",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR34587.v1",
+      "title": "Uniform Crime Reporting Program Data: Property Stolen and Recovered, 2011"
+    }
+  ]
+}

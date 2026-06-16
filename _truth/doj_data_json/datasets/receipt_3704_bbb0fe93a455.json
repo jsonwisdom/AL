@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Intimate Partner and Sexual Violence Survey (NISVS) Series",
+  "description": "The National Intimate Partner and Sexual Violence Survey (NISVS) is an ongoing nationally representative survey that assessed experiences of sexual violence, stalking, and intimate partner violence among adult women and men in the United States and for each individual state. The survey focused exclusively on violence and collected information about:\r\n\r\nSexual violence by any perpetrator, including information related to rape, being made to penetrate someone else, sexual coercion, unwanted sexual contact, and non-contact unwanted sexual experiences\r\nStalking, including the use of newer technologies such as text messages, emails, monitoring devices (e.g., cameras and GPS, or global positioning system devices), by perpetrators known and unknown to the victim\r\nPhysical violence by an intimate partner\r\nPsychological aggression by an intimate partner, including information on expressive forms of aggression and coercive control\r\nControl of reproductive or sexual health by an intimate partner\r\nThe NISVS project and data collection was overseen by the Centers for Disease and Prevention (CDC). The overall cost of the NISVS project was shared between the CDC, the Department of Defense (DoD) and the National Institute of Justice (NIJ).\r\nICPSR has multiple versions of NISVS data that you can access by clicking on the links provided below.",
+  "modified": "2018-07-31T15:34:54",
+  "accessLevel": "restricted public",
+  "identifier": "3704",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "Alaskan Natives",
+    "Native Americans",
+    "demographic characteristics",
+    "domestic violence",
+    "intimate partner violence",
+    "medical history",
+    "sexual assault",
+    "stalking",
+    "victimization",
+    "violence against women"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2014-10-06T11:20:23",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/567",
+      "title": "National Intimate Partner and Sexual Violence Survey (NISVS) Series"
+    }
+  ]
+}

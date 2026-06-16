@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Effects of Intimate Partner Violence on the Workplace in the United States, 2005-2008",
+  "description": "This research, which was conducted in two phases, explored the effects of intimate partner violence (IPV) on the workplace between 2005 and 2008. Phase One (Dataset 1, Phase One Data) examined the prevalence of IPV among employed individuals, how IPV affects the personal and professional well-being of employees, and its costs for employers. Researchers focused on two research questions:Does IPV affect employees, and, if so, how?What is the impact of IPV on organizations?\r\nPhase Two (Dataset 2, Phase Two Data) focused more specifically on the interactions between employed IPV victims and their coworkers, focusing on the following questions:Does work-related social support have positive effects on the well-being, attitudes, and behaviors of employed IPV victims?How and when will coworkers provide assistance to IPV victims at work?When and to whom will IPB victims disclose their victimization at work?What organizational conditions are associated with stronger feelings of hopefulness on the part of employed IPB victims?",
+  "modified": "2014-06-30T16:15:08",
+  "accessLevel": "restricted public",
+  "identifier": "2901",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "domestic violence",
+    "economic behavior",
+    "intimate partner violence",
+    "work environment"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2014-06-30T16:11:52",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR26041.v1",
+      "title": "Effects of Intimate Partner Violence on the Workplace in the United States, 2005-2008"
+    }
+  ]
+}

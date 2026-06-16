@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Effects of \"United States vs. Leon\" on Police Search Warrant Practices, 1984-1985",
+  "description": "This data collection examines the impact of the Supreme\r\nCourt decision in \"UNITED STATES VS. LEON\" on police search warrant\r\napplications in seven jurisdictions. For this collection, which is one\r\nof the few data collections currently available for the study of\r\nwarrant activities, data were gathered from search warrant applications\r\nfiled during a three-month period before the Leon decision and three\r\nmonths after it. Each warrant application can be tracked through the\r\ncriminal justice system to its disposition. The file contains variables\r\non the contents of the warrant such as rank of applicant, specific area\r\nof search, offense type, material sought, basis of evidence, status of\r\ninformants, and reference to good faith. Additional variables concern\r\nthe results of the warrant application and include items such as\r\nmaterials seized, arrest made, cases charged by prosecutor, type of\r\nattorney, whether a motion to suppress the warrant was filed, outcomes\r\nof motions, appeal status, and number of arrestees.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3263",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "Supreme Court decisions",
+    "United States Supreme Court",
+    "criminal justice system",
+    "disposition (legal)",
+    "search warrants"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1990-10-16T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09348.v1",
+      "title": "Effects of \"United States vs. Leon\" on Police Search Warrant Practices, 1984-1985"
+    }
+  ]
+}

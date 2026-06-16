@@ -1,0 +1,41 @@
+{
+  "artifact_id": "WFG-0001",
+  "title": "How to Create Artifacts",
+  "class": "learning_card",
+  "creator": "Jay Wisdom / Wisdom Family",
+  "identity": "jaywisdom.base",
+  "purpose": "Teach artifact creation through Wisdom Family Gaming and ALMS 5.0 learning mode.",
+  "source_paths": [
+    "docs/learning/WISDOM_FAMILY_GAMING_ARTIFACTS.md",
+    "alms/meme_court/cases/MC-0001.json",
+    "alms/meme_court/zora/ZMC-0001.json"
+  ],
+  "hash": "sha256:ae607f7ffa3a3dcedad15866410e6470739a50919d460ed159e1d5215e11119f",
+  "state": "REPLAY_REQUIRED",
+  "learning_mode": true,
+  "artifact_levels": {
+    "level_1": "idea named",
+    "level_2": "draft written",
+    "level_3": "structured JSON added",
+    "level_4": "receipt/hash attached",
+    "level_5": "replay passed"
+  },
+  "family_702": {
+    "private_keys_present": false,
+    "private_personal_data_present": false,
+    "wallet_signing_required": false,
+    "label": "SAFE_TO_DRAFT"
+  },
+  "meme_court": {
+    "case_id": "MC-0001",
+    "verdict": "APPROVED_FOR_FUN"
+  },
+  "zora_game": {
+    "zora_card_id": "ZMC-0001",
+    "chain_status": "READY_TO_MINT",
+    "contract_address": "UNVERIFIED_IDENTIFIER",
+    "verified_label_allowed": true
+  },
+  "caption": "Create the object. Name the proof. Level up the receipt.",
+  "next_action": "replay WFG-0001 and update Meme Court/Zora readiness only after verification."
+}

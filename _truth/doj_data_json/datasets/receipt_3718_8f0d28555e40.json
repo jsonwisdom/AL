@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Crime Factors and Neighborhood Decline in Chicago, 1979  ",
+  "description": "This study explores the relationship between crime and\r\nneighborhood deterioration in eight neighborhoods in Chicago. The\r\nneighborhoods were selected on the basis of slowly or rapidly\r\nappreciating real estate values, stable or changing racial\r\ncomposition, and high or low crime rates. These data provide the\r\nresults of a telephone survey administered to approximately 400 heads\r\nof households in each study neighborhood, a total of 3,310 completed\r\ninterviews. The survey was designed to measure victimization\r\nexperience, fear and perceptions of crime, protective measures taken,\r\nattitudes toward neighborhood quality and resources, attitudes toward\r\nthe neighborhood as an investment, and density of community\r\ninvolvement. Each record includes appearance ratings for the block of\r\nthe respondent's residence and aggregate figures on personal and\r\nproperty victimization for that city block. The aggregate appearance\r\nratings were compiled from windshield surveys taken by trained\r\npersonnel of the National Opinion Research Center. The criminal\r\nvictimization figures came from Chicago City Police files.",
+  "modified": "1997-09-26T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3718",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "cities",
+    "communities",
+    "community participation",
+    "crime",
+    "criminal justice system",
+    "delinquent behavior",
+    "fear of crime",
+    "household composition",
+    "housing conditions",
+    "neighborhood characteristics",
+    "neighborhood conditions",
+    "neighborhoods",
+    "police protection",
+    "police re"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR07952.v1",
+      "title": "Crime Factors and Neighborhood Decline in Chicago, 1979  "
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Optimizing the Use of Video Technology to Improve Criminal Justice Outcomes, Milwaukee, WI, 2017-2018",
+  "description": "The goal of this project was to analyze the collaboration between the Urban Institute and Milwaukee Police Department (MPD) to develop a plan to optimize MPD's public surveillance system. This was done through a process and impact evaluation of the MPD's strategy to improve operations, install new cameras, and integrate video analytic (VA) technologies centered around automatic license plate recognition (ALPR) and high-definition cameras connected to gunshot detection technology. The unit of analysis was two neighborhoods in Milwaukee, identified as \"focus areas\" by the researchers, where VA efforts were intensified. Additionally, all block groups within Milwaukee were included to measure crime before and after intervention, along with all intersections and block groups that received VA technologies against control groups. Variables include crimes based on date and location, along with whether or not locations had VA technologies. The following neighborhood demographic variables were included from the United States Census Bureau: resided in a different home, renters, under age eighteen, black residents, female headed households, public assistance recipients, below poverty line, unemployment, Hispanic residents, and foreign born.",
+  "modified": "2022-02-28T10:55:40",
+  "accessLevel": "restricted public",
+  "identifier": "4232",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrest rates",
+    "crime",
+    "crime control policies",
+    "crime prevention",
+    "police",
+    "video surveillance"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2022-02-28T10:51:38",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37683.v1",
+      "title": "Optimizing the Use of Video Technology to Improve Criminal Justice Outcomes, Milwaukee, WI, 2017-2018"
+    }
+  ]
+}

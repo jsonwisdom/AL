@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Anticipating and Combating Community Decay and Crime in Washington, DC, and Cleveland, Ohio, 1980-1990",
+  "description": "The Urban Institute undertook a comprehensive assessment of\r\ncommunities approaching decay to provide public officials with\r\nstrategies for identifying communities in the early stages of decay\r\nand intervening effectively to prevent continued deterioration and\r\ncrime. Although community decline is a dynamic spiral downward in\r\nwhich the physical condition of the neighborhood, adherence to laws\r\nand conventional behavioral norms, and economic resources worsen, the\r\nquestion of whether decay fosters or signals increasing risk of crime,\r\nor crime fosters decay (as investors and residents flee as reactions\r\nto crime), or both, is not easily answered. Using specific indicators\r\nto identify future trends, predictor models for Washington, DC, and\r\nCleveland were prepared, based on data available for each city. The\r\nmodels were designed to predict whether a census tract should be\r\nidentified as at risk for very high crime and were tested using\r\nlogistic regression. The classification of a tract as a \"very high\r\ncrime\" tract was based on its crime rate compared to crime rates for\r\nother tracts in the same city. To control for differences in\r\npopulation and to facilitate cross-tract comparisons, counts of crime\r\nincidents and other events were converted to rates per 1,000\r\nresidents. Tracts with less than 100 residents were considered\r\nnonresidential or institutional and were deleted from the analysis.\r\nWashington, DC, variables include rates for arson and drug sales or\r\npossession, percentage of lots zoned for commercial use, percentage of\r\nhousing occupied by owners, scale of family poverty, presence of\r\npublic housing units for 1980, 1983, and 1988, and rates for\r\naggravated assaults, auto thefts, burglaries, homicides, rapes, and\r\nrobberies for 1980, 1983, 1988, and 1990. Cleveland variables include\r\nrates for auto thefts, burglaries, homicides, rapes, robberies, drug\r\nsales or possession, and delinquency filings in juvenile court, and\r\nscale of family poverty for 1980 through 1989. Rates for aggravated\r\nassaults are provided for 1986 through 1989 and rates for arson are\r\nprovided for 1983 through 1988.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3663",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "communities",
+    "crime prediction",
+    "crime prevention",
+    "crime rates",
+    "intervention strategies",
+    "neighborhood conditions",
+    "urban decline"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1995-08-16T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06486.v1",
+      "title": "Anticipating and Combating Community Decay and Crime in Washington, DC, and Cleveland, Ohio, 1980-1990"
+    }
+  ]
+}

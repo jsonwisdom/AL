@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Public and Private Resources in Public Safety [United States]:  Metropolitan Area Panel Data, 1977 and 1982",
+  "description": "This data collection provides a series of measures relating \r\n to public safety for all SMSAs in the United States at two time \r\n periods. Variables include: municipal employment (e.g. number of \r\n municipal employees, number of police employees, police payrolls, \r\n municipal employees per 10,000 inhabitants), municipal revenue (total \r\n debt, property taxes, utility revenues, income taxes), nonmunicipal \r\n employment (retail services, mining services, construction services, \r\n finance services), crime rates (murder, robbery, auto theft, rape), \r\n labor force and unemployment, property value, and other miscellaneous \r\ntopics.",
+  "modified": "1992-02-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3215",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime rates",
+    "municipal expenditures",
+    "municipal services",
+    "police officers",
+    "public interest",
+    "public safety"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1989-01-10T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08988.v1",
+      "title": "Public and Private Resources in Public Safety [United States]:  Metropolitan Area Panel Data, 1977 and 1982"
+    }
+  ]
+}

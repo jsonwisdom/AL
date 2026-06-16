@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Predicting Recidivism in North Carolina, 1978 and 1980",
+  "description": "This data collection examines the relationship between\r\nindividual characteristics and recidivism for two cohorts of inmates\r\nreleased from North Carolina prisons in 1978 and 1980. The survey\r\ncontains questions on the background of the offenders, including their\r\ninvolvement in drugs or alcohol, level of schooling, nature of the\r\ncrime resulting in the sample conviction, number of prior\r\nincarcerations and recidivism following release from the sample\r\nincarceration. The data collection also contains information on the\r\nlength of time until recidivism occurs.",
+  "modified": "2006-01-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3214",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime prediction",
+    "criminal histories",
+    "imprisonment",
+    "offenders",
+    "prison inmates",
+    "recidivism"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1989-01-10T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08987.v1",
+      "title": "Predicting Recidivism in North Carolina, 1978 and 1980"
+    }
+  ]
+}

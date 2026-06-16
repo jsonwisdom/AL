@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Assessing Mental Health Problems Among Serious Delinquents Committed to the California Youth Authority, 1997-1999",
+  "description": "This study was conducted to explore the usefulness of the\r\ninstruments used in the California Youth Authority's (CYA) Treatment\r\nNeeds Assessment (TNA) battery. A total of 836 wards who completed\r\nscreening questionnaires were followed to determine whether they were\r\nsubsequently placed in mental health programs, were prescribed\r\nmedications used to treat serious mental health problems, and/or were\r\nidentified by staff as requiring these services. Data for this study\r\nwere collected from hard-copy files maintained in CYA ward\r\ninstitutions and the CYA central office. Specific variables include\r\nthe scale scores of the four instruments used in the TNA, demographic\r\nvariables of the ward, treatment received by the ward, and ward\r\nbehavior.",
+  "modified": "2006-01-16T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "3145",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities (juveniles)",
+    "juvenile crime",
+    "juvenile detention",
+    "juvenile inmates",
+    "juvenile offenders",
+    "mental health",
+    "mental health services",
+    "treatment programs",
+    "youthful offenders"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2006-01-16T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04337.v1",
+      "title": "Assessing Mental Health Problems Among Serious Delinquents Committed to the California Youth Authority, 1997-1999"
+    }
+  ]
+}

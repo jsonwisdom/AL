@@ -1,0 +1,35 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Federal register notices",
+  "description": "Federal register notices",
+  "modified": "2014-01-23T00:00:00",
+  "accessLevel": "public",
+  "identifier": "411",
+  "publisher": {
+    "name": "Drug Enforcement Administration",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Steven Purkeypile",
+    "hasEmail": "mailto:Steven.J.Purkeypile@usdoj.gov"
+  },
+  "keyword": [
+    "Federal register notices"
+  ],
+  "bureauCode": [
+    "011:12"
+  ],
+  "programCode": [
+    "011:019"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2014-01-23T00:00:00",
+  "distribution": []
+}

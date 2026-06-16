@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Law Enforcement Management and Administrative Statistics (LEMAS), 1990",
+  "description": "This survey, the second in the Bureau of Justice Statistics' program on Law Enforcement and Administrative Statistics (LEMAS), presents information on four types of general-purpose law enforcement agencies: state police, local police, special police, and sheriff's departments. Variables include size of the population served by the police or sheriff's department, levels of employment and spending, various functions of the department, average salary levels for uniformed officers, and other matters related to management and personnel.",
+  "modified": "2012-08-02T12:21:58",
+  "accessLevel": "public",
+  "identifier": "172",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "administration",
+    "budgets",
+    "law enforcement",
+    "law enforcement agencies",
+    "management",
+    "personnel",
+    "police departments",
+    "statistical data",
+    "wages and salaries",
+    "workers"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2430",
+  "dataQuality": false,
+  "issued": "1993-04-03T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09749.v3",
+      "title": "Law Enforcement Management and Administrative Statistics (LEMAS), 1990"
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WRITE_RUN_0002_packet",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "write_run_0002_manifest",
+    "replay_result",
+    "rel_0001_integrity",
+    "claim_transitions",
+    "view_layer_audit",
+    "kill_switch"
+  ],
+  "properties": {
+    "write_run_0002_manifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "run_id",
+        "mode",
+        "source",
+        "promotion",
+        "artifacts",
+        "hash_verification",
+        "violations",
+        "status"
+      ],
+      "properties": {
+        "run_id": { "const": "WRITE_RUN_0002" },
+        "mode": { "const": "WRITE" },
+        "source": { "type": "string", "minLength": 1 },
+        "promotion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "decision",
+            "approved",
+            "promote_json_sha256",
+            "policy_manifest_sha256",
+            "runner_manifest_sha256"
+          ],
+          "properties": {
+            "decision": { "const": "REQUIRE_MANUAL_REVIEW" },
+            "approved": { "const": true },
+            "promote_json_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+            "policy_manifest_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+            "runner_manifest_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+          }
+        },
+        "artifacts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["release_id", "files"],
+          "properties": {
+            "release_id": { "const": "REL_0002" },
+            "files": {
+              "type": "array",
+              "minItems": 7,
+              "maxItems": 7,
+              "uniqueItems": true,
+              "items": {
+                "enum": [
+                  "DOJ_RELEASE.json",
+                  "HASH_INDEX.json",
+                  "TEXT_INDEX.json",
+                  "DELTA_SET.json",
+                  "ENTITY_GRAPH.json",
+                  "CLAIM_LEDGER.json",
+                  "VIEW_LAYER.json"
+                ]
+              }
+            }
+          }
+        },
+        "hash_verification": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["all_hashes_ok", "re_run_byte_identical"],
+          "properties": {
+            "all_hashes_ok": { "const": true },
+            "re_run_byte_identical": { "const": true }
+          }
+        },
+        "violations": { "type": "array", "maxItems": 0 },
+        "status": { "const": "SUCCESS" }
+      }
+    },
+    "replay_result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["re_run_byte_identical", "changed_artifacts"],
+      "properties": {
+        "re_run_byte_identical": { "const": true },
+        "changed_artifacts": { "type": "array", "maxItems": 0 }
+      }
+    },
+    "rel_0001_integrity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["unchanged", "changed_files"],
+      "properties": {
+        "unchanged": { "const": true },
+        "changed_files": { "type": "array", "maxItems": 0 }
+      }
+    },
+    "claim_transitions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["claim_id", "prev", "next", "reason"],
+        "properties": {
+          "claim_id": { "type": "string", "pattern": "^CLAIM_[0-9]{3,}$" },
+          "prev": { "enum": ["VERIFIED", "FALSIFIED", "UNVERIFIED", "NO_EVIDENCE_FOUND", "OUT_OF_SCOPE"] },
+          "next": { "enum": ["VERIFIED", "FALSIFIED", "UNVERIFIED", "NO_EVIDENCE_FOUND", "OUT_OF_SCOPE"] },
+          "reason": { "enum": ["PROVENANCE_FOUND", "NONE", "CONTRADICTION_FOUND", "OUT_OF_SCOPE"] }
+        }
+      }
+    },
+    "view_layer_audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "cites_ledger_only", "uncited_sentences"],
+      "properties": {
+        "status": { "const": "CLEAN" },
+        "cites_ledger_only": { "const": true },
+        "uncited_sentences": { "type": "array", "maxItems": 0 }
+      }
+    },
+    "kill_switch": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["triggered"],
+      "properties": {
+        "triggered": { "const": false }
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+BATCH_003_ITEM_001_IDEA_FACTORY
+
+status: RECEIPT_CANDIDATE_RECORDED
+batch: BATCH_003
+item: ITEM_001
+mode: BUILD_AND_PLAY
+surface: GITHUB_DIRECT
+repository: jsonwisdom/AL
+identity: jaywisdom.eth
+identity_address: 0xa380552a27b0a5a2874ea7aa52cac09f542002e8
+
+idea:
+The Idea Factory can reside here.
+
+interpretation:
+BATCH_003 is opened as a GitHub-direct build surface for small ideas, renders, posts, responses, validation notes, and future receipt candidates.
+
+rules:
+- commit many
+- attest few
+- validate meaningful boundaries
+- no finality without signature or checkpoint
+- ordinary ideas may be recorded without EAS
+- claims must remain bounded to the receipt surface
+
+claim_allowed:
+- BATCH_003 now contains the first Idea Factory receipt candidate.
+- The Idea Factory is operating on the GitHub direct receipt surface.
+
+claim_not_allowed:
+- Idea Factory is sealed.
+- Idea Factory is EAS attested.
+- jaywisdom.eth wallet signed this item.
+- owner-signed finality.
+
+boundary: GitHub direct receipt candidate only; no wallet signature; no EAS attestation; no batch seal.

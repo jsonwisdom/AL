@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Prosecution of Felony Arrests, 1986: Indianapolis, Los Angeles, New Orleans, Portland, St. Louis, and Washington, DC",
+  "description": "This data collection represents the sixth in a series of\r\nstatistical reports sponsored by the Bureau of Justice Statistics. The\r\npurpose of the series is to provide statistical information on how\r\nprosecutors and the courts dispose of criminal cases involving adults\r\narrested for felony crimes. With this purpose in mind, information was\r\ncollected on items such as an individual's arrest date, sentencing\r\ndate, court charge, and case disposition.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2599",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "arrest records",
+    "case processing",
+    "court cases",
+    "courts",
+    "disposition (legal)",
+    "felony offenses",
+    "prosecuting attorneys",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1989-09-26T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09094.v3",
+      "title": "Prosecution of Felony Arrests, 1986: Indianapolis, Los Angeles, New Orleans, Portland, St. Louis, and Washington, DC"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Patterns of Drug Use and Their Relation to Improving Prediction of Patterns of Delinquency and Crime in Racine, Wisconsin, 1961-1988",
+  "description": "This dataset presents information on the relationship\r\nbetween drug and alcohol use and contacts with police for persons in\r\nRacine, Wisconsin, born in 1955. The collection is part of an ongoing\r\nlongitudinal study of three Racine, Wisconsin, birth cohorts: those\r\nborn in 1942, 1949, and 1955. Only those born in 1955 were considered\r\nto have potential for substantial contact with drugs, and thus only\r\nthe younger cohort was targeted for this collection. Data were\r\ngathered for ages 6 to 33 for the cohort members. The file contains\r\ninformation on the most serious offense during the juvenile and adult\r\nperiods, the number of police contacts grouped by age of the cohort\r\nmember, seriousness of the reason for police contact, drugs involved\r\nin the incident, the reason police gave for the person having the\r\ndrugs, the reason police gave for the contact, and the neighborhood in\r\nwhich the juvenile was socialized. Other variables include length of\r\nresidence in Racine of the cohort member, and demographic information\r\nincluding age, sex, and race.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3843",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "adults",
+    "alcohol abuse",
+    "criminality",
+    "delinquent behavior",
+    "drug abuse",
+    "historical data",
+    "juveniles",
+    "offenses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1992-03-04T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09684.v1",
+      "title": "Patterns of Drug Use and Their Relation to Improving Prediction of Patterns of Delinquency and Crime in Racine, Wisconsin, 1961-1988"
+    }
+  ]
+}

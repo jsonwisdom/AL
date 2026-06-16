@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Police-Public Contact Survey, 1999:  [United States]    ",
+  "description": "This survey was undertaken to learn more about how often\r\n and under what circumstances police-public contact becomes\r\n problematic. The Bureau of Justice Statistics (BJS) initiated surveys\r\n of the public on their interactions with police in 1996 with the first\r\n Police-Public Contact Survey, a pretest among a nationally\r\n representative sample of 6,421 persons aged 12 or older. That initial\r\n version of the questionnaire revealed that about 20 percent of the\r\n public had direct, face-to-face contact with a police officer at least\r\n once during the year preceding the survey. At that time, the principal\r\n investigator estimated that about 1 in 500 residents, or about a half\r\n million people, who had an encounter with a police officer also\r\n experienced either a threat of force or the actual use of force by the\r\n officer. The current survey, an improved version of the 1996\r\n Police-Public Contact Survey, was fielded as a supplement to the\r\n National Crime Victimization Survey (ICPSR 6406) during the last six\r\n months of 1999. A national sample nearly 15 times as large as the\r\n pretest sample in 1996 was used. The 1999 survey yielded nearly\r\n identical estimates of the prevalence and nature of contacts between\r\n the public and the police. This survey, because of its much larger\r\n sample size, permits more extensive analysis of demographic\r\n differences in police contacts than the 1996 pretest. In addition, it\r\n added a new and more detailed set of questions about traffic stops by\r\n police, the most frequent reason given for contact with police.\r\n Variables in the dataset cover type of contact with police, including\r\n whether it was face-to-face, initiated by the police or the citizen,\r\n whether an injury to the officer or the citizen resulted from the\r\n contact, crimes reported, and police use of force. Demographic\r\n variables supplied for the citizens include gender, race, and Hispanic\r\norigin.",
+  "modified": "2001-06-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "268",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "police citizen interactions",
+    "police community relations",
+    "police officers",
+    "police use of force",
+    "public interest",
+    "public opinion"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2432",
+  "dataQuality": false,
+  "issued": "2001-04-17T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03151.v2",
+      "title": "Police-Public Contact Survey, 1999:  [United States]    "
+    }
+  ]
+}

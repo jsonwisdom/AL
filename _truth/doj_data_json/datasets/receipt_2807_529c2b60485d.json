@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Search Warrant Procedures in Seven Cities, 1984:  [United States] ",
+  "description": "These data were collected in seven unnamed cities by the\r\nNational Center of State Courts. Court cases were identified in one of\r\nthree ways: (1) observation during real-time interviews, (2) court\r\nrecords of real-time interviews, or (3) court records of historical\r\ncases. The variables in this dataset include the rank of the law\r\nenforcement officer applying for the warrant, the type of agency\r\napplying for the warrant, general object of the search requested,\r\nspecific area to be searched, type of crime being investigated,\r\ncentral offense named in the warrant, evidence upon which the warrant\r\napplication is based, and disposition of the warrant application.",
+  "modified": "1992-02-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2807",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrests",
+    "criminal investigations",
+    "criminal justice system",
+    "disposition (legal)",
+    "police response",
+    "search warrants",
+    "state courts"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1985-10-09T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08254.v1",
+      "title": "Search Warrant Procedures in Seven Cities, 1984:  [United States] "
+    }
+  ]
+}

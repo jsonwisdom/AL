@@ -1,0 +1,17 @@
+{
+  "receipt": "NY-004",
+  "artifact": "NY_NOAA_INCOME_OVERLAY",
+  "source": "bigquery-public-data.noaa_gsod.gsod2024",
+  "method": "GSOD_2024_station_to_county_sparse_overlay",
+  "rows": 62,
+  "rows_with_noaa": 6,
+  "hash": "13b5fde21ad4081fe1c982a6ce5c4413bf561dcde6de877cc69c2e77f5551b51",
+  "output": "_truth/bigquery/ny_noaa_income_overlay_62.csv",
+  "timestamp_utc": "2026-05-03T00:10:21.295998+00:00",
+  "guardrails": [
+    "NOAA station coverage is sparse and uneven.",
+    "County values are station aggregates, not gridded climate normals.",
+    "Do not claim risk model.",
+    "Do not infer climate trends from one GSOD year."
+  ]
+}

@@ -1,0 +1,37 @@
+name: 404 Nightly
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+jobs:
+  crawl-404:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests pyyaml pytest
+
+      - name: Run 404 crawler
+        run: python agents/four04_crawler/main.py
+
+      - name: Run membrane compliance tests
+        run: pytest tests/test_404_runtime_surface.py -v
+
+      - name: Build dashboard
+        run: python dashboards/404_overview/build.py
+
+      - name: Commit receipts and dashboard artifacts
+        run: |
+          git config user.name "404-bot"
+          git config user.email "404-bot@jsonwisdom.org"
+          git add receipts/ dashboards/404_overview/public/
+          git diff --staged --quiet || git commit -m "chore: update 404 receipts and dashboard [skip ci]"
+          git push

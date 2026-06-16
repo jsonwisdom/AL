@@ -1,0 +1,70 @@
+{
+  "artifact": "PROOF_CARRYING_OBLIGATIONS_V1",
+  "layer": "FEDERATION_V2",
+  "purpose": "Define replay-verifiable obligations as predicates over attested epochs rather than federation commands or centralized enforcement.",
+  "last_verified": "2026-05-06",
+  "verifier": "jsonwisdom",
+  "core_rule": {
+    "obligations_are_predicates": true,
+    "federation_enforcement_forbidden": true,
+    "federation_mutation_forbidden": true,
+    "attestation_only": true
+  },
+  "obligation_shape": {
+    "obligation_id": "deterministic_obligation_identifier",
+    "source_epoch": "epoch_where_obligation_originated",
+    "target_epoch": "epoch_where_predicate_is_evaluated",
+    "compact_id": "associated_compact_identifier",
+    "predicate": {
+      "predicate_id": "deterministic_predicate_identifier",
+      "predicate_type": "typed_predicate_class",
+      "predicate_expression": "canonical_predicate_expression"
+    },
+    "proof_requirements": {
+      "required_attestations": [
+        "attestation_identifiers"
+      ],
+      "required_epoch_roots": [
+        "epoch_root_hashes"
+      ],
+      "required_quorum": "explicit_quorum_rule"
+    }
+  },
+  "attestation_shape": {
+    "attestation_id": "deterministic_attestation_identifier",
+    "predicate_id": "predicate_being_attested",
+    "bound_root_sha256": "root_where_predicate_claimed_true",
+    "claim": "predicate_claim",
+    "signers": [
+      "quorum_members"
+    ],
+    "signature_bundle": "canonical_signature_bundle_hash"
+  },
+  "federation_behavior": {
+    "writes_obligation_met": false,
+    "writes_attestation_present": true,
+    "replay_determines_significance": true,
+    "local_enforcement_only": true
+  },
+  "forbidden_behaviors": [
+    "centralized_enforcement",
+    "federation_override",
+    "cross_state_baseline_mutation",
+    "implicit_predicate_interpretation",
+    "privileged_compact_interpreter"
+  ],
+  "failure_modes": [
+    "PREDICATE_NOT_PROVEN",
+    "ATTESTATION_ROOT_MISMATCH",
+    "QUORUM_NOT_SATISFIED",
+    "PREDICATE_REPLAY_DIVERGENCE",
+    "FEDERATION_ENFORCEMENT_ATTEMPT"
+  ],
+  "invariants": [
+    "Obligations are proof-carrying predicates, not commands.",
+    "Federation attests presence of proof, not substantive compliance.",
+    "Replay determines whether a predicate held at a bound root.",
+    "Enforcement remains local to sovereign runtimes.",
+    "No federation component gains interpretive supremacy."
+  ]
+}

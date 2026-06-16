@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Annual Survey of Jails: Jurisdiction-Level Data, 2003",
+  "description": "This collection provides annual data on jail populations\r\n across the nation and examines the \"spillover\" on local jails\r\n resulting from the dramatic growth in federal and state prison\r\n populations. These data are used to track growth in the number of\r\n jails and their capacities nationally, changes in the demographics of\r\n the jail population (including sex, race, and adult or juvenile\r\n status), supervision status of persons held, prevalence of crowding\r\n issues, and a count of non-United States citizens within the jail\r\npopulation.",
+  "modified": "2008-03-27T13:15:14",
+  "accessLevel": "public",
+  "identifier": "72",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "correctional system",
+    "demographic characteristics",
+    "jail inmates",
+    "jails",
+    "population characteristics",
+    "probation"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2586",
+  "dataQuality": false,
+  "issued": "2007-05-25T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04635.v1",
+      "title": "Annual Survey of Jails: Jurisdiction-Level Data, 2003"
+    }
+  ]
+}

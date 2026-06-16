@@ -1,0 +1,12 @@
+{
+  "schema": "jurisdiction_event_v1",
+  "kind": "KIND_1_SUBSTRATE",
+  "fields": {
+    "sovereign_id": "string",
+    "event_type": "string",
+    "legal_basis_hash": "hex",
+    "effective_ns": "integer"
+  },
+  "reaction_refs_allowed": false,
+  "forbidden_fields_inherited_from": "oracles/kinds/SUBSTRATE_REACTION_KIND_V1.json"
+}

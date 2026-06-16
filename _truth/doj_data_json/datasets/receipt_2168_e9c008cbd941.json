@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Census of State and Federal Adult Correctional Facilities Series",
+  "description": "\r\n\r\n\r\nInvestigator(s): Bureau of Justice Statistics\r\nThis series of studies contains a descriptive\r\nanalysis of federal and state-operated adult confinement and\r\ncorrectional facilities nationwide.  The census included prisons,\r\npenitentiaries, and correctional facilities; boot camps; community\r\ncorrections; prison farms; reception, diagnostic, and classification\r\ncenters; road camps; forestry and conservation camps; youthful\r\noffender facilities (except in California); vocational training\r\nfacilities; prison hospitals; and correctional drug and alcohol\r\ntreatment facilities.  Variables include physical security, age of\r\nfacilities, functions of facilities, programs, inmate work\r\nassignments, staff employment, facilities under court order/consent\r\ndecree for conditions of confinement, capital and operating\r\nexpenditures, custody level of residents/inmates, one-day and average\r\ndaily population counts, race/ethnicity of inmates, inmate deaths,\r\nspecial inmate counts, and assaults and incidents by inmates. The\r\ninstitution is the unit of analysis.  The Census of State and Federal\r\nAdult Correctional Facilities is produced every 5\r\nyears. \r\n",
+  "modified": "2022-06-16T14:25:07",
+  "accessLevel": "public",
+  "identifier": "2168",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "correctional facilities (adults)",
+    "corrections",
+    "corrections management",
+    "inmate deaths",
+    "inmate populations",
+    "inmate programs",
+    "inmates",
+    "jails",
+    "prison administration",
+    "prison conditions",
+    "prison construction",
+    "prison overcrowding"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/67",
+      "title": "Census of State and Federal Adult Correctional Facilities Series"
+    }
+  ]
+}

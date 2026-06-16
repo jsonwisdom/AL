@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Uniform Crime Reports [United States]:  Homicide Victimization and Offending Rates, 1976-1999  ",
+  "description": "Drawing on information from several sources, this dataset\r\n provides cross-sectional time-series data on homicide victimization\r\n and offending counts and rates for the United States and each of the\r\n 50 states for the years 1976-1999, disaggregated by age, sex, and\r\n race. Specifically, data from the FBI's Supplementary Homicide Reports\r\n (SHR) were used to assemble victim and offender counts for various\r\n demographic groups, and U.S. Bureau of the Census estimates for\r\n population by age, race, and sex were employed to transform these\r\n counts into rates per 100,000. In addition, because the SHR program\r\n fails to provide a complete count of homicides, national and state\r\n estimates, published in the FBI's annual publication CRIME IN THE\r\n UNITES STATES, were used to benchmark and adjust SHR homicide\r\n counts. To ensure consistency between these rates and those published\r\n by the FBI, population data were also adjusted to match the population\r\ntotals used in the FBI's publication.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2485",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "arrests",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "homicide",
+    "law enforcement",
+    "offenders",
+    "offenses",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2167",
+  "dataQuality": false,
+  "issued": "2001-06-27T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03181.v1",
+      "title": "Uniform Crime Reports [United States]:  Homicide Victimization and Offending Rates, 1976-1999  "
+    }
+  ]
+}

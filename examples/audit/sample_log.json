@@ -1,0 +1,70 @@
+{
+  "type": "PUBLIC_DOCUMENT_AUDIT_LOG",
+  "log_id": "sample_epistemic_timeline_001",
+  "subject": "public_document_temporal_memory_example",
+  "source_uri": "https://example.org/document.pdf",
+  "allegation_mode": "blocked",
+  "append_only": true,
+  "events": [
+    {
+      "entry_id": "entry_001",
+      "event_type": "initial_observation",
+      "actor": "marshal_a",
+      "observed_at": "2026-05-10T00:00:00Z",
+      "from_state": null,
+      "to_state": "pending_public_evidence",
+      "hash_before": null,
+      "hash_after": null,
+      "replay_path": null,
+      "receipt_ref": "receipt_001",
+      "prev_entry_hash": null,
+      "entry_hash": "sha256:entry001",
+      "review_required": false
+    },
+    {
+      "entry_id": "entry_002",
+      "event_type": "successful_replay",
+      "actor": "marshal_a",
+      "observed_at": "2026-05-10T01:00:00Z",
+      "from_state": "pending_public_evidence",
+      "to_state": "verified",
+      "hash_before": null,
+      "hash_after": "sha256:abc123",
+      "replay_path": "download -> sha256 -> compare abc123",
+      "receipt_ref": "receipt_002",
+      "prev_entry_hash": "sha256:entry001",
+      "entry_hash": "sha256:entry002",
+      "review_required": false
+    },
+    {
+      "entry_id": "entry_003",
+      "event_type": "hash_drift",
+      "actor": "marshal_c",
+      "observed_at": "2026-05-10T02:00:00Z",
+      "from_state": "verified",
+      "to_state": "hash_mismatch",
+      "hash_before": "sha256:abc123",
+      "hash_after": "sha256:def456",
+      "replay_path": "download -> sha256 -> observed def456 != previous abc123",
+      "receipt_ref": "receipt_003",
+      "prev_entry_hash": "sha256:entry002",
+      "entry_hash": "sha256:entry003",
+      "review_required": true
+    },
+    {
+      "entry_id": "entry_004",
+      "event_type": "divergence_recorded",
+      "actor": "marshal_network",
+      "observed_at": "2026-05-10T03:00:00Z",
+      "from_state": "verified",
+      "to_state": "divergent",
+      "hash_before": "sha256:abc123",
+      "hash_after": "sha256:def456",
+      "replay_path": "multi-marshal comparison",
+      "receipt_ref": "vector_005_blocked_majority_upgrade",
+      "prev_entry_hash": "sha256:entry003",
+      "entry_hash": "sha256:entry004",
+      "review_required": true
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+name: Replay Verification
+on:
+  push:
+  pull_request:
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify canonical index structure
+        run: |
+          test -f _truth/receipts/index.json
+          COUNT=$(jq '.index.receipts | length' _truth/receipts/index.json)
+          test "$COUNT" -gt 0
+          jq -c '.index.receipts[]' _truth/receipts/index.json >/dev/null
+      - name: Run replay
+        run: |
+          chmod +x reproduce.sh
+          ./reproduce.sh

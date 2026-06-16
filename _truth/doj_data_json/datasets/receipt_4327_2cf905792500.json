@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "DEA Domestic Field Division Boundaries",
+  "description": "This dataset contains the boundaries of each of the DEA's 23 domestic field divisions. Each such boundary aggregates the Area of Responsibilities (AORs) within the division.",
+  "modified": "2023-07-21T00:00:00",
+  "accessLevel": "public",
+  "identifier": "4327",
+  "publisher": {
+    "name": "Drug Enforcement Administration",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Drug Enforcement Agency (USDOJ)",
+    "hasEmail": "mailto:opendata@dea.gov"
+  },
+  "keyword": [
+    "Field Division",
+    "Boundaries"
+  ],
+  "bureauCode": [
+    "011:12"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "spatial": "U.S. State/Territory",
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": true,
+  "issued": "2022-05-09T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "landingPage": "https://dea-geoportal-opendata-dea-geoportal.hub.arcgis.com/",
+  "theme": [
+    "geospatial"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://dea-geoportal-opendata-dea-geoportal.hub.arcgis.com/datasets/86e1228b00b54d21a8f8f5509c22fe5d_0/explore",
+      "mediaType": "text/html",
+      "title": "DEA Domestic Field Division Boundaries"
+    },
+    {
+      "@type": "dcat:Distribution",
+      "conformsTo": "https://www.isotc211.org/2005/gmd",
+      "downloadURL": "https://www.arcgis.com/sharing/rest/content/items/86e1228b00b54d21a8f8f5509c22fe5d/info/metadata/metadata.xml?format=default",
+      "mediaType": "text/xml",
+      "title": "DEA Domestic Field Division Boundaries - Metadata Information"
+    }
+  ]
+}

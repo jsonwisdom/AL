@@ -1,0 +1,53 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Evaluation of Title I of the 1994 Crime Act: Survey Sampling Frame of Law Enforcement Agencies, 1993-1997",
+  "description": "The data in this collection represent the sampling frame\r\n used to draw a national sample of law enforcement agencies. The\r\n sampling frame was a composite of law enforcement agencies in\r\n existence between June 1993 and June 1997 and was used in a subsequent\r\n study, a national evaluation of Title I of the 1994 Crime Act. The\r\n evaluation was undertaken to (1) measure differences between Community\r\n Oriented Policing Services (COPS) grantees and nongrantees at the time\r\n of application, (2) measure changes over time in grantee agencies, and\r\n (3) compare changes over time between grantees and nongrantees. The\r\n sampling frame was comprised of two components: (a) a grantee\r\n component consisting of agencies that had received funding during\r\n 1995, and (b) a nongrantee component consisting of agencies that\r\nappeared potentially eligible but remained unfunded through 1995.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2976",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "community policing",
+    "crime control programs",
+    "law enforcement agencies",
+    "policies and procedures"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2001-08-06T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03080.v1",
+      "title": "National Evaluation of Title I of the 1994 Crime Act: Survey Sampling Frame of Law Enforcement Agencies, 1993-1997"
+    }
+  ]
+}

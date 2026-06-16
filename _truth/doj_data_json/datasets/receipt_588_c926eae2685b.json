@@ -1,0 +1,46 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "IT Leadership",
+  "description": "Data describing the IT Leadership of the Department of Justice",
+  "modified": "2016-05-31T00:00:00",
+  "accessLevel": "public",
+  "identifier": "588",
+  "publisher": {
+    "name": "Justice Management Division",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Data Management US Department of Justice (USDOJ)",
+    "hasEmail": "mailto:DataManagement@usdoj.gov"
+  },
+  "keyword": [
+    "leadership",
+    "IT"
+  ],
+  "bureauCode": [
+    "011:00"
+  ],
+  "programCode": [
+    "011:004"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2016-05-31T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "downloadURL": "https://www.justice.gov/digitalstrategy/bureaudirectory.json",
+      "mediaType": "text/html",
+      "title": "IT Leadership"
+    }
+  ]
+}

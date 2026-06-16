@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Evaluation of Operation Drug Test, 1998-1999",
+  "description": "This study is an evaluation of Operation Drug TEST (ODT), a\r\n pretrial intervention program that was implemented in fiscal year 1997\r\n in 25 of the 94 federal judicial districts in the United States. The\r\n name of the program, \"TEST,\" is both a reference to testing and an\r\n acronym representing the program's three objectives: (1) Testing to\r\n identify drug-involved defendants before their first court appearance,\r\n (2) Effective Sanctions when defendants on release were found to be\r\n using drugs, and (3) Treatment referrals for drug-using defendants, as\r\n needed. The program was based on the view that drug testing, when\r\n closely linked to sanctions and treatment placements in response to\r\n ongoing drug use, can reduce drug use among defendants on pretrial\r\n release. The overall goal of the program was to deter drug use and its\r\n adverse consequences among defendants on pretrial release. The\r\n purposes of the evaluation were to describe the process of program\r\n implementation and to document ODT's impact on sanctioning and\r\n treatment. Data for this evaluation were gathered from official\r\n records collected from the ODT database, which was maintained by the\r\n Administrative Office of the United States Courts (AOUSC). Parts 1 and\r\n 2 contain data from fiscal year 1998 for initial drug tests and\r\n subsequent drug tests, respectively. Data from fiscal year 1999 (Parts\r\n 3 and 4) were divided into two groups, depending on the model of ODT\r\n implementation and the stage at which initial drug testing took place.\r\n DOJ and AOUSC determined that districts could choose to implement the\r\n program under either of two models. Model 1 (Part 3) followed the\r\n original concept, namely, initial testing at the pre-bail stage. In\r\n Model 2 (Part 4), the initial test was to occur as soon as possible\r\n after the defendant's first court appearance, if he/she was being\r\n released, but before release into the community. Variables unique to\r\n Part 1 include date of birth, arrest date, initial hearing date,\r\n hearing date, decision date, and release date. Variables for all parts\r\n include the district name, its circuit and office, which model a\r\n defendant conformed to, current or prior drug charges, and drug\r\n history. Additional variables for all parts include whether the\r\n defendant tested positive for amphetamines, cocaine, cannabis,\r\n opiates, PCP, and other drugs, whether testing had increased, type of\r\n test administered, if treatment was added or had increased, whether a\r\n test was taken by pretrial services or by a contractor, and if by\r\n pretrial services, where it was taken, testing devices used, whether\r\n an outside laboratory was used, and if results were reported to the\r\ncourt.",
+  "modified": "2006-01-18T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "3642",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "drug abuse",
+    "drug testing",
+    "drug treatment",
+    "pretrial intervention",
+    "pretrial procedures",
+    "pretrial release",
+    "program evaluation",
+    "treatment compliance"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2002-06-19T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03259.v1",
+      "title": "National Evaluation of Operation Drug Test, 1998-1999"
+    }
+  ]
+}

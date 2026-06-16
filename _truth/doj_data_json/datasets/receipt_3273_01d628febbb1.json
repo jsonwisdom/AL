@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Drug Testing of Juvenile Detainees to Identify High-Risk Youth in Florida, 1986-1987",
+  "description": "This data collection examines the interrelationships among\r\ndrug/alcohol use, childhood sexual or physical abuse, and encounters\r\nwith the juvenile justice system. To identify high-risk individuals,\r\nyouths in a Tampa juvenile detention center were given urine tests and\r\nwere asked a series of questions about past sexual and/or physical\r\nabuse. Official record searches were also conducted 6, 12, and 18\r\nmonths afterward to measure later encounters with the juvenile or\r\ncriminal justice systems. The investigators used the youths' urine\r\ntest results as the primary measure of drug use. On the basis of their\r\nreview of Florida's statutes, the investigators developed outcome\r\nmeasures for the following offense categories: violent felonies\r\n(murder/manslaughter, robbery, sex offenses, aggravated assault),\r\nproperty felonies (arson, burglary, auto theft, larceny/theft, stolen\r\nproperty offenses, damaging property offenses), drug felonies (drug\r\noffenses), violent misdemeanors (sex offenses, nonaggravated assault),\r\nproperty misdemeanors (larceny/theft, stolen property offenses,\r\ndamaging property offenses), drug misdemeanors (drug offenses), and\r\npublic disorder misdemeanors (public disorder offenses, trespassing\r\noffenses). Other variables measured physical and sexual abuse,\r\nemotional and psychological functioning, and prior drug use.\r\nDemographic variables on sex, race, age, and education are also\r\ncontained in the data. The individual is the unit of analysis.",
+  "modified": "2002-06-07T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3273",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "aggravated assault",
+    "drug law offenses",
+    "drug testing",
+    "felony offenses",
+    "juvenile justice",
+    "juvenile offenders",
+    "juveniles",
+    "property crimes",
+    "psychological evaluation",
+    "sex offenses",
+    "substance abuse",
+    "urinalysis",
+    "youths at risk"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1992-03-04T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09686.v1",
+      "title": "Drug Testing of Juvenile Detainees to Identify High-Risk Youth in Florida, 1986-1987"
+    }
+  ]
+}

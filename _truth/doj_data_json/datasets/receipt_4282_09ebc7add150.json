@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Census of Juveniles in Residential Placement and Juvenile Residential Facility Census, 1997-2010 -- Concatenated Matched Facility-Level Data [United States]",
+  "description": "This collection includes data from the CENSUS OF JUVENILES IN RESIDENTIAL PLACEMENT (CJRP) AND JUVENILE RESIDENTIAL FACILITY CENSUS (JRFC), 1997-2010 -- CONCATENATED MATCHED DATA [UNITED STATES] (ICPSR 27543) that were aggregated to the facility level. The CJRP asked juvenile residential custody facilities in the United States to describe each youth assigned a bed in the facility on a specified reference date. For 1997, the reference date was the fifth Wednesday in October. For 1999-2003 and 2007, the reference date was the fourth Wednesday in October. For 2006 and 2010, the reference date was the fourth Wednesday in February. Characteristics of the facility, treatment services, and facility population were also collected in the CJRP. The JRFC collected information on facility characteristics, including size, structure, security arrangements, ownership, and use of bed space in the facility. The JRFC used four modules to collect information on the physical health services, educational services, substance abuse treatment, and mental health treatment provided to youth in these facilities. These four modules were not always collected each year. The JRFC also identified the type of facility, which was complemented with a series of questions about other residential services provided by the facility, such as independent living, foster care, or other arrangements. The JRFC has been administered biennially since 2000, in even-numbered years. The JRFC census reference date is the fourth Wednesday in October. Records in the concatenated matched data file (ICPSR 27543) were aggregated to the facility level. Therefore, the CJRP/JRFC concatenated matched facility-level data provide information about the characteristics of the facility from both the CJRP and JRFC collections and the juvenile population held in that facility from the CJRP collection. Only facilities that held at least one juvenile for an offense on the CJRP census reference date are included in this file, i.e., all facilities in the biennial JRFC data may not be included in this concatenated matched facility-level file. Data were harmonized so that variables present across years are identically named to facilitate analysis.",
+  "modified": "2013-03-08T15:57:56",
+  "accessLevel": "restricted public",
+  "identifier": "4282",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "correctional facilities",
+    "drug law offenses",
+    "educational needs",
+    "group homes",
+    "health care services",
+    "juvenile detention",
+    "juvenile offenders",
+    "juveniles",
+    "mental health services",
+    "person offenses",
+    "pregnancy",
+    "property crimes",
+    "status offenses",
+    "substan"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "4280",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2012-05-07T16:28:09",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR27544.v2",
+      "title": "Census of Juveniles in Residential Placement and Juvenile Residential Facility Census, 1997-2010 -- Concatenated Matched Facility-Level Data [United States]"
+    }
+  ]
+}

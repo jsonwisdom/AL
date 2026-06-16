@@ -1,0 +1,10 @@
+{
+  "metadata": {
+    "constraint_id": "HALT-002",
+    "expect": "FAIL"
+  },
+  "proof": {
+    "pre_capabilities": ["read"],
+    "post_capabilities": ["read", "write", "execute"]
+  }
+}

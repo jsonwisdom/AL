@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "RECA Claims Summary Report",
+  "description": "The report titled Radiation Exposure Compensation Program Summary Report, Fiscal Year 1992 to 2010 includes two tables. The first table is a count of receipts (new claim filing) and reflects the number of receipts since FY 1992. The second table reflects the number of claims awarded and denied, with award amounts for each fiscal year since 1992.",
+  "modified": "2017-03-14T00:00:00",
+  "accessLevel": "public",
+  "identifier": "297",
+  "publisher": {
+    "name": "Civil Division",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Civil Division (USDOJ)",
+    "hasEmail": "mailto:opendata@civ.gov"
+  },
+  "keyword": [
+    "civil division",
+    "civil",
+    "department of justice",
+    "doj",
+    "radiation exposure compensation program",
+    "reca",
+    "claims",
+    "awards",
+    "awarded",
+    "log",
+    "outreach"
+  ],
+  "bureauCode": [
+    "011:06"
+  ],
+  "programCode": [
+    "011:015"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2017-03-14T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "downloadURL": "https://www.justice.gov/civil/omp/omi/Mpb_SysSummary.xls",
+      "mediaType": "application/vnd.ms-excel",
+      "title": "RECA Claims Summary Report"
+    }
+  ]
+}

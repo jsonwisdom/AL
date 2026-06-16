@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Evaluation of Residential Substance Abuse Treatment (RSAT) Programs in the United States, 1995-1999",
+  "description": "The Residential Substance Abuse Treatment (RSAT) for State Prisoners \r\n Formula Grant Program, created by Title III (Subtitle U of the Violent Crime \r\n Control and Law Enforcement Act of 1994), was designed by Congress \r\n to implement residential substance abuse programs providing individual and group \r\n treatment for inmates in residential facilities operated by state and local \r\n correctional agencies. Under the Corrections Program Office of the Office of \r\n Justice Programs of the United States Department of Justice, state and local \r\n correctional agencies received funds to develop or enhance existing programs \r\n that: (1) lasted between six and 12 months, (2) provided residential treatment \r\n facilities set apart from the general correctional population, (3) were \r\n directed at the substance abuse problems of the inmate, (4) were intended to \r\n develop the inmate's cognitive, behavioral, social, vocational, and other \r\n skills in order to treat related problems as well as the substance abuse, and (5) \r\n continued to require urinalysis and/or other proven reliable forms of drug \r\n and alcohol testing of individuals assigned to treatment programs during and \r\n after release from residential custody. The National Development and Research \r\n Institutes, Inc. (NDRI) entered into a cooperative agreement with \r\n the National Institute of Justice wherein NDRI would evaluate the extent to which the goals of the RSAT program \r\n were being accomplished and the problems that were encountered by the \r\n participating states. The methods of this national evaluation were: (1) \r\n an initial state survey to ascertain the RSAT programs and program directors \r\n in each of the 50 states plus five territories and the District of Columbia \r\n and to collect basic information on the aggregate impact of the RSAT-funded \r\n programs in each state or territory (Part 1, State Data), (2) a follow-up state survey to \r\n collect more detailed information on the aggregate impact of the RSAT-funded \r\n programs in each state (Part 1, State Data), and (3) an initial program survey to describe \r\n the separate RSAT programs as they came on line and to assess whether a few of \r\n the programs might serve as model programs which could undergo subsequent \r\n intensive evaluation (Part 2, Program Data). The sampling method used was a census of all the existing RSAT-funded \r\n programs and all of the state RSAT officials. Part 1 variables include the \r\n amount of RSAT funds received by the state in fiscal years 1996 to 1998, \r\n amounts from other sources of funding, and amount spent on salaries, training, \r\n drug tests, other supplies, and facilities, as well as number of residents, number of \r\n staff, reasons why funding was delayed, RSAT award date, and RSAT end date.\r\n Part 2 variables include the number of clients in the program, number of beds \r\n available, number of staff by gender, race, age, education, profession, and \r\n years of experience, admission inclusion criteria, reporting procedures, treatment \r\n type and duration, type of drug testing and number of tests, annual budget, \r\nsources of funding, and cost per capita.",
+  "modified": "2006-01-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3579",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "drug testing",
+    "drug treatment",
+    "grants",
+    "inmate programs",
+    "program evaluation",
+    "substance abuse"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2002-10-02T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02914.v1",
+      "title": "National Evaluation of Residential Substance Abuse Treatment (RSAT) Programs in the United States, 1995-1999"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Homicides in New York City, 1797-1999 [And Various Historical Comparison Sites]",
+  "description": "There has been little research on United States homicide\r\nrates from a long-term perspective, primarily because there has been\r\nno consistent data series on a particular place preceding the Uniform\r\nCrime Reports (UCR), which began its first full year in 1931. To fill\r\nthis research gap, this project created a data series on homicides per\r\ncapita for New York City that spans two centuries. The goal was to\r\ncreate a site-specific, individual-based data series that could be\r\nused to examine major social shifts related to homicide, such as mass\r\nimmigration, urban growth, war, demographic changes, and changes in\r\nlaws. Data were also gathered on various other sites, particularly in\r\nEngland, to allow for comparisons on important issues, such as the\r\npost-World War II wave of violence. The basic approach to the data\r\ncollection was to obtain the best possible estimate of annual counts\r\nand the most complete information on individual homicides. The annual\r\ncount data (Parts 1 and 3) were derived from multiple sources,\r\nincluding the Federal Bureau of Investigation's Uniform Crime Reports\r\nand Supplementary Homicide Reports, as well as other official counts\r\nfrom the New York City Police Department and the City Inspector in the\r\nearly 19th century. The data include a combined count of murder and\r\nmanslaughter because charge bargaining often blurs this legal\r\ndistinction. The individual-level data (Part 2) were drawn from\r\ncoroners' indictments held by the New York City Municipal Archives,\r\nand from daily newspapers. Duplication was avoided by keeping a record\r\nfor each victim. The estimation technique known as \"capture-recapture\"\r\nwas used to estimate homicides not listed in either source. Part 1\r\nvariables include counts of New York City homicides, arrests, and\r\nconvictions, as well as the homicide rate, race or ethnicity and\r\ngender of victims, type of weapon used, and source of data. Part 2\r\nincludes the date of the murder, the age, sex, and race of the\r\noffender and victim, and whether the case led to an arrest, trial,\r\nconviction, execution, or pardon. Part 3 contains annual homicide\r\ncounts and rates for various comparison sites including Liverpool,\r\nLondon, Kent, Canada, Baltimore, Los Angeles, Seattle, and San\r\nFrancisco.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3354",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime statistics",
+    "death records",
+    "historical data",
+    "homicide",
+    "manslaughter",
+    "murder",
+    "nineteenth century",
+    "social change",
+    "twentieth century"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2001-11-29T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03226.v1",
+      "title": "Homicides in New York City, 1797-1999 [And Various Historical Comparison Sites]"
+    }
+  ]
+}

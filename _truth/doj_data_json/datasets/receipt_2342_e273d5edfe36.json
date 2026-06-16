@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Federal Justice Statistics Program: Arrests and Bookings for Federal Offenses, 2016",
+  "description": "The data contain records of arrests and bookings for federal offenses in the United States during fiscal year 2016. The data were constructed from the United States Marshals Service (USMS) Prisoner Tracking System database. Records include arrests made by federal law enforcement agencies (including the USMS), state and local agencies, and self-surrenders. Offenders arrested for federal offenses are transferred to the custody of the USMS for processing, transportation, and detention. The Prisoner Tracking System contains data on all offenders within the custody of the USMS. The data file contains variables from the original USMS files as well as additional analysis variables. Variables containing identifying information (e.g., name, Social Security number) were either removed, coarsened, or blanked in order to protect the identities of individuals. These data are part of a series designed by Abt and the Bureau of Justice Statistics. Data and documentation were prepared by Abt.",
+  "modified": "2019-12-17T10:12:42",
+  "accessLevel": "restricted public",
+  "identifier": "2342",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "arrest records",
+    "arrests",
+    "federal offenses",
+    "federal prisoners",
+    "offenders"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2174",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2019-12-17T10:10:47",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37409.v1",
+      "title": "Federal Justice Statistics Program: Arrests and Bookings for Federal Offenses, 2016"
+    }
+  ]
+}

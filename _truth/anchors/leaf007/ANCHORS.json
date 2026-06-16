@@ -1,0 +1,27 @@
+{
+  "leaf_id": "007",
+  "title": "Bootstrap Signal",
+  "payload": {
+    "transport": "GITHUB_BASE64",
+    "sha256": "c2711066a5543c49d33222f69aa5d22a48d9e73f874b7e3790d32683c930471e",
+    "size_bytes": 30,
+    "integrity": "BYTE_IDENTICAL"
+  },
+  "canonical_public_receipt": {
+    "repo": "jsonwisdom/AL",
+    "commit": "4473af2eca5e4099e29fe449bd795456cbd0cea7",
+    "payload_path": "_truth/anchors/leaf007/payload.b64"
+  },
+  "base_eas_anchor": {
+    "schema_number": 1464,
+    "schema_uid": "0x53a4a43dfb91a23d683202e22aa9e59be86ad67fd650aff11be6929b5654bf95",
+    "attestation_uid": "PENDING"
+  },
+  "designation": "LEAF_007_BOOTSTRAP_SIGNAL",
+  "description": "Initial payload to verify pipeline continuity from Leaf 006.",
+  "classification": {
+    "github": "VERIFIED",
+    "base": "PENDING",
+    "status": "READY_FOR_ATTESTATION"
+  }
+}

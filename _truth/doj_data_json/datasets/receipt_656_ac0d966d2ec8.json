@@ -1,0 +1,51 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Language Assistance Program",
+  "description": "Each person who files bankruptcy is required to attend a meeting of creditors and respond to questions under oath from the trustee and creditors. The meetings are held nationwide. In those locations where the room is controlled by the USTP, if a participant (debtor or creditor) has limited English proficiency, an interpreter is provided free of charge via a conference phone. The number and type of languages interpreted, along with the location where the service was provided, is collected monthly by the USTP for oversight, billing, and statistical purposes. Data are provided in delimited text files. Each entry represents one interpreting session, which may include more than one case.",
+  "modified": "2017-01-31T00:00:00",
+  "accessLevel": "public",
+  "identifier": "656",
+  "publisher": {
+    "name": "Executive Office for United States Trustees",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Christopher Haverstock",
+    "hasEmail": "mailto:christopher.haverstock@usdoj.gov"
+  },
+  "keyword": [
+    "Bankruptcy",
+    "Language Assistance",
+    "Limited English Proficiency",
+    "Interpreter Services"
+  ],
+  "bureauCode": [
+    "011:00"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "N/A",
+  "dataQuality": false,
+  "issued": "2017-01-31T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.justice.gov/ust/bankruptcy-data-statistics/language-assistance-program-data",
+      "describedBy": "https://www.justice.gov/ust/file/language_assistance_program_codebook.pdf/download",
+      "format": "text/csv",
+      "mediaType": "text/csv",
+      "title": "Language Assistance Program"
+    }
+  ]
+}

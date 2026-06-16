@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Immigration, Marriage and Desistance from Crime, 1997-2009 [United States]",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed. \r\nThis study is an analysis of 13 waves of data retrieved from the National Longitudinal Survey of Youth 1997 survey (NLSY97) in order to examine the influence of marriage on immigrant offending trajectories from adolescence to young adulthood.  There were three specific research questions considered:\r\n Are second generation immigrants entering into marriage at a slower pace than their first generation immigrant peers?\r\nWhat role does marriage play in understanding immigrant offending?\r\nIs the relationship between marriage and offending affected by immigrant generation or country/region of birth (i.e., nativity)? \r\nDistributed here is the code used for the secondary analysis and the code to compile the datasets. ",
+  "modified": "2016-09-30T12:48:10",
+  "accessLevel": "public",
+  "identifier": "565",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime prediction",
+    "delinquent behavior",
+    "immigration",
+    "marriage",
+    "place of birth",
+    "poverty",
+    "youths"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2016-08-24T07:07:08",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR34687.v1",
+      "title": "Immigration, Marriage and Desistance from Crime, 1997-2009 [United States]"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Survey of Police Chiefs' and Data Analysts' Use of Data in Police Departments in the United States, 2004",
+  "description": "This study surveyed police chiefs and data analysts in order to determine the use of data in police departments. The surveys were sent to 1,379 police agencies serving populations of at least 25,000. The survey sample for this study was selected from the 2000 Law Enforcement Management and Administrative Statistics (LEMAS) survey. All police agencies serving populations of at least 25,000 were selected from the LEMAS database for inclusion. Separate surveys were sent for completion by police chiefs and data analysts. Surveys were used to gather information on data sharing and integration efforts to identify the needs and capacities for data usage in local law enforcement agencies. The police chief surveys focused on five main areas of interest: use of data, personnel response to data collection, the collection and reporting of incident-based data, sharing data, and the providing of statistics to the community and media. Like the police chief surveys, the data analyst surveys focused on five main areas of interest: use of data, agency structures and resources, data for strategies, data sharing and outside assistance, and incident-based data. The final total of police chief surveys included in the study is 790, while 752 data analyst responses are included.",
+  "modified": "2013-02-21T10:02:28",
+  "accessLevel": "restricted public",
+  "identifier": "3534",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime reporting",
+    "crime statistics",
+    "data",
+    "databases",
+    "information systems",
+    "law enforcement agencies",
+    "police departments",
+    "police records",
+    "police reports",
+    "policy analysis",
+    "policy making"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2013-02-21T09:53:29",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR32103.v1",
+      "title": "Survey of Police Chiefs' and Data Analysts' Use of Data in Police Departments in the United States, 2004"
+    }
+  ]
+}

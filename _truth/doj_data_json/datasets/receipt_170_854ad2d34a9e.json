@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Law Enforcement Agency Identifiers Crosswalk [United States], 2000",
+  "description": "Researchers have long been able to analyze crime and law\r\nenforcement data at the individual agency level (see UNIFORM CRIME\r\nREPORTING PROGRAM DATA: [UNITED STATES] [ICPSR 9028]) and at the\r\ncounty level (see, for example, UNIFORM CRIME REPORTING PROGRAM DATA\r\n[UNITED STATES]: COUNTY-LEVEL DETAILED ARREST AND OFFENSE DATA, 1997\r\n[ICPSR 2764]). However, analyzing crime data at the intermediate\r\nlevel, the city or place, has been difficult. To facilitate the\r\ncreation and analysis of place-level data, the Bureau of Justice\r\nStatistics (BJS) and the National Archive of Criminal Justice Data\r\n(NACJD) created the Law Enforcement Agency Identifiers Crosswalk. The\r\ncrosswalk file was designed to provide geographic and other\r\nidentification information for each record included in either the\r\nFederal Bureau of Investigation's Uniform Crime Reports (UCR) files or\r\nBJS's Directory of Law Enforcement Agencies.  The main variables for\r\neach record are the UCR originating agency identifier number, agency\r\nname, mailing address, Census Bureau's government identification\r\nnumber, UCR state and county codes, and Federal Information Processing\r\nStandards (FIPS) state, county, and place codes. These variables make\r\nit possible for researchers to take police agency-level data, combine\r\nthem with Bureau of the Census and BJS data, and perform place-level,\r\njurisdiction-level, and government-level analyses.",
+  "modified": "2004-09-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "170",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "crime mapping",
+    "crime patterns",
+    "databases",
+    "information systems",
+    "law enforcement agencies"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2632",
+  "dataQuality": false,
+  "issued": "2004-09-16T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04082.v1",
+      "title": "Law Enforcement Agency Identifiers Crosswalk [United States], 2000"
+    }
+  ]
+}

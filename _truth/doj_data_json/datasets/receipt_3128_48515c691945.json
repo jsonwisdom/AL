@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Survey on Street Disorder in Large Municipalities in the United States, 1994-1996  ",
+  "description": "The objective of this survey was to provide city officials\r\n and police with information on how to carry out street disorder\r\n enforcement strategies within the constitutional guidelines\r\n established by the courts. To that end, a survey of 512 municipal\r\n police departments was conducted in the spring of 1996. The agencies\r\n were asked to supply data for the current year as well as for 1994 and\r\n 1995. Information was collected on the existence of particular street\r\n disorder ordinances, when such ordinances were passed, the number of\r\n citations and arrests resulting from each ordinance, and whether the\r\n ordinances were challenged in court. Data covered the following types\r\n of street disorder: panhandling, open containers of alcohol, public\r\n intoxication, disorderly conduct, sleeping in public places,\r\n unregulated day labor solicitation, vending, dumpster diving, camping\r\n in public, and juvenile curfews. Departments were also asked about\r\n their written policies regarding certain types of street\r\n disorder. Other departmental information includes location, number of\r\npersonnel, and population of jurisdiction.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3128",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrests",
+    "cities",
+    "civil disorders",
+    "disorderly conduct",
+    "law enforcement",
+    "police departments",
+    "police officers",
+    "police response",
+    "policies and procedures"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1999-06-02T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02479.v1",
+      "title": "Survey on Street Disorder in Large Municipalities in the United States, 1994-1996  "
+    }
+  ]
+}

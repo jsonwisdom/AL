@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ALMS Version Registry",
+  "type": "object",
+  "required": ["registry_version", "entries"],
+  "properties": {
+    "registry_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "layer", "version", "state", "artifact_path", "hash", "depends_on", "notes"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[A-Z0-9_.-]+$" },
+          "layer": {
+            "type": "string",
+            "enum": ["protocol_version", "schema_version", "corpus_version", "workflow_version"]
+          },
+          "version": {
+            "type": "string",
+            "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+          },
+          "state": {
+            "type": "string",
+            "enum": ["DRAFT", "LOCKED", "REPLAY_REQUIRED", "REPLAY_PASSED", "BLOCKED", "DEPRECATED"]
+          },
+          "artifact_path": { "type": "string", "minLength": 1 },
+          "hash": {
+            "type": "string",
+            "pattern": "^(UNSET|sha256:[0-9a-f]{64})$"
+          },
+          "depends_on": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "notes": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,23 @@
+{
+  "artifact": "USC_A1_S8_C8_C10_REPORTED_VALUES_REJECTED_001",
+  "status": "REJECTED_REPORTED_HASHES_INDEPENDENT_VALUES_COMPUTED",
+  "scope": ["USC-A1-S8-C8", "USC-A1-S8-C9", "USC-A1-S8-C10"],
+  "reported": {
+    "C8": {"bytes":164,"sha256":"176f1c499256e2978f8062943183563914a27546895315582b2e8824147781f8"},
+    "C9": {"bytes":54,"sha256":"6064f205c0883b194f45d881d587000c25a072979268305c48f8388c42a5f577"},
+    "C10": {"bytes":105,"sha256":"d2b3074092147368412854378d0a13309a4d70788647565432049e9176313768"}
+  },
+  "independent_values_from_visible_literals": {
+    "C8": {"bytes":172,"sha256":"4a939fdd7641e626fd9424ac628924ef49cd3c94bdf7c2b6464ca750fb8f1ccc"},
+    "C9": {"bytes":54,"sha256":"5fc7fe396c1e601019465e60be270f48dd0f7c949634d5f58b2fb596bc51ef86"},
+    "C10": {"bytes":111,"sha256":"444be439fb23b313df15913d3b966d2787ee29a24ba8f5080d2ad3f681d898d7"}
+  },
+  "failure_reasons": [
+    "C8 reported byte count is 164 but visible literal is 172 bytes.",
+    "C10 reported byte count is 105 but visible literal is 111 bytes.",
+    "Reported digests contain recognizable prior-fragment patterns and do not match independent computation.",
+    "C9 byte count matches but digest does not match independent computation."
+  ],
+  "decision": "DO_NOT_LOCK_C8_C10_DO_NOT_PROCEED_TO_MILITARY_CLUSTER",
+  "next_action": "Use independent values or perform exact character audit for C8 and C10 to resolve span mismatch."
+}

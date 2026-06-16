@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jsonwisdom/AL/schemas/cipher_court/telemetry_v1.schema.json",
+  "title": "Cipher Court Telemetry V1",
+  "description": "Open telemetry schema for measuring human calibration under adversarial evidence. Personal data minimized by design.",
+  "type": "object",
+  "required": [
+    "schema",
+    "session_id",
+    "mission_id",
+    "engine",
+    "timestamp_utc",
+    "player_actions",
+    "noise_attacks",
+    "replay_events",
+    "vulnerability_profile",
+    "receipt_hash"
+  ],
+  "properties": {
+    "schema": { "const": "CIPHER_COURT_TELEMETRY_V1" },
+    "session_id": {
+      "type": "string",
+      "description": "Random or hashed session identifier. Must not contain direct personal identity."
+    },
+    "mission_id": { "type": "string" },
+    "engine": {
+      "type": "string",
+      "enum": ["ADDITIVE_V1", "LOG_ODDS_V1"]
+    },
+    "timestamp_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "player_actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["t", "evidence_type", "event", "confidence_pre", "confidence_post", "actual_evidence_strength", "visible_confidence_delta"],
+        "properties": {
+          "t": { "type": "number", "minimum": 0 },
+          "evidence_type": {
+            "type": "string",
+            "enum": ["CRIB", "DIST", "COLLISION", "ENTROPY", "SECOND_MESSAGE", "REPLAY"]
+          },
+          "event": { "type": "string" },
+          "confidence_pre": { "type": "number", "minimum": 0, "maximum": 1 },
+          "confidence_post": { "type": "number", "minimum": 0, "maximum": 1 },
+          "actual_evidence_strength": { "type": "number" },
+          "visible_confidence_delta": { "type": "number" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "noise_attacks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["t", "attack_type", "target_bias", "player_response_confidence_delta"],
+        "properties": {
+          "t": { "type": "number", "minimum": 0 },
+          "attack_type": {
+            "type": "string",
+            "enum": ["FALSE_CRIB", "DISTRIBUTION_SPOOF", "KEY_COLLISION_TRAP", "ENTROPY_MASKING"]
+          },
+          "target_bias": {
+            "type": "string",
+            "enum": ["crib_dependency", "frequency_bias", "collision_blindness", "entropy_insensitivity", "replay_impatience", "confidence_inflation"]
+          },
+          "player_response_confidence_delta": { "type": "number" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "replay_events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["t", "confidence_before", "outcome", "calibration_error", "reason"],
+        "properties": {
+          "t": { "type": "number", "minimum": 0 },
+          "confidence_before": { "type": "number", "minimum": 0, "maximum": 1 },
+          "outcome": {
+            "type": "string",
+            "enum": ["ADMIT", "REJECT", "HOLD_FOR_MORE_EVIDENCE", "ESCALATE_TO_REPLAY"]
+          },
+          "calibration_error": { "type": "number", "minimum": 0, "maximum": 1 },
+          "reason": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "vulnerability_profile": {
+      "type": "object",
+      "required": ["crib_dependency", "frequency_bias", "collision_blindness", "entropy_insensitivity", "replay_impatience", "confidence_inflation"],
+      "properties": {
+        "crib_dependency": { "type": "number", "minimum": 0, "maximum": 1 },
+        "frequency_bias": { "type": "number", "minimum": 0, "maximum": 1 },
+        "collision_blindness": { "type": "number", "minimum": 0, "maximum": 1 },
+        "entropy_insensitivity": { "type": "number", "minimum": 0, "maximum": 1 },
+        "replay_impatience": { "type": "number", "minimum": 0, "maximum": 1 },
+        "confidence_inflation": { "type": "number", "minimum": 0, "maximum": 1 }
+      },
+      "additionalProperties": false
+    },
+    "receipt_hash": {
+      "type": ["string", "null"],
+      "description": "Set to null before canonical hashing; may contain sha256 digest after receipt generation."
+    }
+  },
+  "additionalProperties": false
+}

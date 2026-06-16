@@ -1,0 +1,46 @@
+{
+  "fixture_meta": {
+    "version": "v0.1.0",
+    "environment": "DRY_RUN_SANDBOX",
+    "target_domain": "MMB_FORECAST_VERIFICATION"
+  },
+  "compliance_reference": {
+    "constitutional_invariants": {
+      "version": "v0.1.0",
+      "compatibility_rule": "ALL_REQUIRED",
+      "rules": {
+        "family_before_economy": true,
+        "kids_mode_compatible": true,
+        "semantic_authority": false,
+        "global_finality": false
+      }
+    }
+  },
+  "mock_brp_manifest": {
+    "probe_id": "brp-dry-run-001",
+    "detected_anomaly": {
+      "expected_floor": 1.50
+    },
+    "cross_biome_verification": {
+      "required_independent_validators": [
+        "did:key:z6MkpTHR8VNsBxRkW7N43sQWJ5X",
+        "did:key:z6MkgX6v7VNsBxRkW7N43sQWJ2Y"
+      ],
+      "anti_collusion_entropy_seed": "0x7a9b1c2d3e4f"
+    },
+    "cryptographic_escrow": {
+      "challenge_stake_amount": "250.00",
+      "denomination": "SIMULATED_ETH_ESCROW"
+    }
+  },
+  "mock_target_trace": {
+    "internal_friction": {
+      "hidden_compression_signals": {
+        "entropy_drop": 1.87,
+        "replay_cost_surface": {
+          "estimated_unexplored_branches": 182
+        }
+      }
+    }
+  }
+}

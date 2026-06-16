@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Measure 11 Sentencing Reform in Oregon: Implementation and System Impact, 1990-1999",
+  "description": "This study explored the implementation and impact of\r\nMeasure 11 (passed by Oregon voters in 1994), which imposed long\r\nmandatory prison terms for 16 designated violent and sex-related\r\noffenses, prohibited \"earned time,\" and provided for mandatory waiver\r\nof youthful offenders to adult court. Measure 11 penalties were longer\r\nthan those imposed under sentencing guidelines. Juveniles aged 15\r\nyears or older were also subject to the measure. The researchers\r\naddressed the implementation and impact of the measure on prosecution,\r\nsentencing, and convictions, both statewide and in three separate\r\ncounties based on the Oregon Criminal Justice Commission (OCJC) data\r\nand the Oregon Department of Corrections (DOC) data. Variables\r\ninclude offender characteristics, plea trial information, number of\r\nconvictions, prison term for convictions, severity of offense,\r\nM11-eligible and alternate offense, and description of most severe\r\noffense.",
+  "modified": "2006-01-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2794",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arson",
+    "assault",
+    "kidnapping",
+    "manslaughter",
+    "murder",
+    "robbery",
+    "sentencing guidelines",
+    "sentencing reforms",
+    "sex offenses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2005-03-04T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04087.v1",
+      "title": "Measure 11 Sentencing Reform in Oregon: Implementation and System Impact, 1990-1999"
+    }
+  ]
+}

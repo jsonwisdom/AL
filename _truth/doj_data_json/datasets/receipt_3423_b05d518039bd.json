@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Inventory of Data Elements in State and Federal Corrections Information Systems, 1998",
+  "description": "This survey summarizes the data elements maintained by\r\nstate and federal corrections information systems that track adult,\r\nsentenced offenders, and assesses the severity of obstacles in\r\nreporting statistical information. Two instruments, an Inventory\r\nQuestionnaire and an Obstacles Survey, were mailed to Departments of\r\nCorrection in all 50 states and the District of Columbia, and to the\r\nFederal Bureau of Prisons. The Inventory Questionnaire asked 207\r\nquestions about data elements describing offenders, 15 questions about\r\nelements describing facility management, and 20 questions about the\r\ncapabilities of the information system to process data\r\nelectronically. For some elements, questions were asked to determine\r\nif more detailed information (subvalues) about the element existed.\r\nThe Obstacles Survey asked departments to rate the severity of\r\nproblems they may encounter when processing requests for statistical\r\ninformation. The items were grouped into five categories: legislative\r\nand institutional factors, hardware factors, software factors,\r\nstaffing factors, and data factors.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3423",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "adults",
+    "correctional facilities",
+    "corrections management",
+    "information systems",
+    "information use",
+    "offenders",
+    "prison inmates",
+    "program evaluation"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1999-03-25T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02575.v1",
+      "title": "Inventory of Data Elements in State and Federal Corrections Information Systems, 1998"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Database for Forensic Anthropology in the United States, 1962-1991",
+  "description": "This project was undertaken to establish a computerized\r\nskeletal database composed of recent forensic cases to represent the\r\npresent ethnic diversity and demographic structure of the United\r\nStates population. The intent was to accumulate a forensic skeletal\r\nsample large and diverse enough to reflect different socioeconomic\r\ngroups of the general population from different geographical regions\r\nof the country in order to enable researchers to revise the standards\r\nbeing used for forensic skeletal identification. The database is\r\ncomposed of eight data files, comprising four categories. The primary\r\n\"biographical\" or \"identification\" files (Part 1, Demographic\r\nData, and Part 2, Geographic and Death Data) comprise the first\r\ncategory of information and pertain to the positive identification of\r\neach of the 1,514 data records in the database. Information in Part 1\r\nincludes sex, ethnic group affiliation, birth date, age at death,\r\nheight (living and cadaver), and weight (living and\r\ncadaver). Variables in Part 2 pertain to the nature of the remains,\r\nmeans and sources of identification, city and state/country born,\r\noccupation, date missing/last seen, date of discovery, date of death,\r\ntime since death, cause of death, manner of death, deposit/exposure of\r\nbody, area found, city, county, and state/country found, handedness,\r\nand blood type. The Medical History File (Part 3) represents the\r\nsecond category of information and contains data on the documented\r\nmedical history of the individual. Variables in Part 3 include general\r\ncomments on medical history as well as comments on congenital\r\nmalformations, dental notes, bone lesions, perimortem trauma, and\r\nother comments. The third category consists of an inventory file (Part\r\n4, Skeletal Inventory Data) in which data pertaining to the specific\r\ncontents of the database are maintained. This includes the inventory\r\nof skeletal material by element and side (left and right), indicating\r\nthe condition of the bone as either partial or complete. The variables\r\nin Part 4 provide a skeletal inventory of the cranium, mandible,\r\ndentition, and postcranium elements and identify the element as\r\ncomplete, fragmentary, or absent. If absent, four categories record\r\nwhy it is missing. The last part of the database is composed of three\r\nskeletal data files, covering quantitative observations of age-related\r\nchanges in the skeleton (Part 5), cranial measurements (Part 6), and\r\npostcranial measurements (Part 7). Variables in Part 5 provide\r\nassessments of epiphyseal closure and cranial suture closure (left and\r\nright), rib end changes (left and right), Todd Pubic Symphysis,\r\nSuchey-Brooks Pubic Symphysis, McKern & Steward--Phases I, II, and\r\nIII, Gilbert & McKern--Phases I, II, and III, auricular surface, and\r\ndorsal pubic pitting (all for left and right). Variables in Part 6\r\ninclude cranial measurements (length, breadth, height) and mandibular\r\nmeasurements (height, thickness, diameter, breadth, length, and angle)\r\nof various skeletal elements. Part 7 provides postcranial measurements\r\n(length, diameter, breadth, circumference, and left and right, where\r\nappropriate) of the clavicle, scapula, humerus, radius, ulna, scarum,\r\ninnominate, femur, tibia, fibula, and calcaneus. A small file of noted\r\nproblems for a few cases is also included (Part 8).",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "3706",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "autopsy",
+    "cultural diversity",
+    "databases",
+    "demographic characteristics",
+    "ethnicity",
+    "forensic sciences",
+    "information systems",
+    "medical history",
+    "physical characteristics",
+    "population characteristics"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2000-05-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02581.v1",
+      "title": "Database for Forensic Anthropology in the United States, 1962-1991"
+    }
+  ]
+}

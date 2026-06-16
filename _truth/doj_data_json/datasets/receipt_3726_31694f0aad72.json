@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Port Authority Cargo Theft Data of New Jersey and New York, 1978-1980",
+  "description": "This data collection is one of three quantitative databases\r\n comprising the Commercial Theft Studies component of the Study of the\r\n Causes of Crime for Gain, which focuses on patterns of commercial\r\n theft and characteristics of commercial thieves. This data collection\r\n contains information on methods used to commit commericial thefts\r\n involving cargo. The data include incident and missing cargo\r\n characteristics, suspect characteristics and punishments, and type and\r\n value of stolen property. Cargo thefts that occurred at John\r\n F. Kennedy International Airport, LaGuardia Airport, Newark\r\n International Airport, and the New York Marine Terminals at Brooklyn,\r\n Port Elizabeth, and Port Newark were included in the data, which were\r\n collected from the Crime Analysis Unit files of the Port Authorities\r\nof New York and New Jersey.",
+  "modified": "1992-02-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3726",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "New Jersey",
+    "New York (state)",
+    "New York City",
+    "United States",
+    "airport security",
+    "arrests",
+    "burglary",
+    "cargo security",
+    "cargo shipments",
+    "commercial theft",
+    "larceny",
+    "police records",
+    "property crime statistics",
+    "property crimes",
+    "punishment",
+    "robbery",
+    "stolen property"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08089.v1",
+      "title": "Port Authority Cargo Theft Data of New Jersey and New York, 1978-1980"
+    }
+  ]
+}

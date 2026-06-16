@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Law Enforcement Management and Administrative Statistics Body-Worn Camera Supplement (LEMAS-BWCS), 2016",
+  "description": "Beginning in 2016, the Law Enforcement Management and Administrative Statistics (LEMAS) survey adopted a core and supplement structure. The LEMAS core has been conducted every 3 to 4 years since 1987 with approximately 3,200 local, county and state law enforcement agencies across the United States. Due to the breadth of the survey, detailed analysis of any specific law enforcement topic cannot be done with the LEMAS core. The LEMAS supplements are designed to fill this void by allowing for a more comprehensive examination on a key topic in law enforcement and are administered in between core years.  The 2016 LEMAS Body-Worn Camera Supplement (LEMAS-BWCS) is the first supplement administered under the new structure.",
+  "modified": "2019-06-20T07:48:36",
+  "accessLevel": "public",
+  "identifier": "2067",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "administration",
+    "body-worn cameras",
+    "law enforcement",
+    "law enforcement agencies",
+    "management",
+    "personnel",
+    "police departments",
+    "policies and procedures",
+    "statistical data"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2430",
+  "dataQuality": false,
+  "issued": "2019-06-20T07:48:36",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37302.v1",
+      "title": "Law Enforcement Management and Administrative Statistics Body-Worn Camera Supplement (LEMAS-BWCS), 2016"
+    }
+  ]
+}

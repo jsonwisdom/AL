@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Survey of Inmates in Local Jails, 2002 [United States]",
+  "description": "This collection provides nationally representative data on\r\n persons held prior to trial and on convicted offenders serving\r\n sentences in local jails or awaiting transfer to state prisons. Data\r\n cover individual characteristics of jail inmates, current offenses,\r\n sentences and time served, criminal histories, jail activities,\r\n conditions and programs, prior drug and alcohol use and treatment, and\r\n health care services provided while in jail. Part 1, Numeric Data,\r\n contains numeric data for all questions in the survey, while Part 2,\r\n Alphanumeric Data, consists of non-numeric answers to the \"Other,\r\nSpecify\" selection available for some of the questions.",
+  "modified": "2012-08-22T09:09:32",
+  "accessLevel": "restricted public",
+  "identifier": "1120",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "criminal histories",
+    "demographic characteristics",
+    "drug use",
+    "inmate programs",
+    "inmates",
+    "jail inmates",
+    "jails",
+    "offenses",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2170",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2006-03-17T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04359.v2",
+      "title": "Survey of Inmates in Local Jails, 2002 [United States]"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Policing by Place: A Proposed Multi-level Analysis of the Effectiveness of Risk Terrain Modeling for Allocating Police Resources, 2014-2015 [New York City]",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThis study contains data from a project by the New York City Police Department (NYPD) involving GIS data on environmental risk factors that correlate with criminal behavior. The general goal of this project was to test whether risk terrain modeling (RTM) could accurately and effectively predict different crime types occurring across New York City. The ultimate aim was to build an enforcement prediction model to test strategies for effectiveness before deploying resources. Three separate phases were completed to assess the effectiveness and applicability of RTM to New York City and the NYPD. A total of four boroughs (Manhattan, Brooklyn, the Bronx, Queens), four patrol boroughs (Brooklyn North, Brooklyn South, Queens North, Queens South), and four precincts (24th, 44th, 73rd, 110th) were examined in 6-month time periods between 2014 and 2015. Across each time period, a total of three different crime types were analyzed: street robberies, felony assaults, and shootings.\r\nThe study includes three shapefiles relating to New York City Boundaries, four shapefiles relating to criminal offenses, and 40 shapefiles relating to risk factors.",
+  "modified": "2018-07-26T10:33:48",
+  "accessLevel": "restricted public",
+  "identifier": "3473",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime",
+    "crime control",
+    "forecasting models",
+    "geographic information systems"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-07-26T10:30:58",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36899.v1",
+      "title": "Policing by Place: A Proposed Multi-level Analysis of the Effectiveness of Risk Terrain Modeling for Allocating Police Resources, 2014-2015 [New York City]"
+    }
+  ]
+}

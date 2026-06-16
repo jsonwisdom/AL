@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Lineage",
+  "type": "object",
+  "properties": {
+    "genesis": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "tip": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "events": {
+      "type": "object",
+      "additionalProperties": { "$ref": "event.schema.json" }
+    }
+  },
+  "required": ["genesis", "tip", "events"],
+  "additionalProperties": false
+}

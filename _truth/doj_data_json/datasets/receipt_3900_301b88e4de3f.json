@@ -1,0 +1,68 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Adjusting the National Crime Victimization Survey's Estimates of Rape and Domestic Violence for Gag Factors, 1986-1990",
+  "description": "The purpose of this project was to use statistical modeling\r\n techniques to estimate rape and domestic assault rates, adjusting for\r\n interviewing conditions under which the National Crime Victimization\r\n Survey (NCVS) was administered. Data for women 16 years of age and\r\n older interviewed in the NCVS (see NATIONAL CRIME SURVEYS: NATIONAL\r\n SAMPLE, 1986-1990 [NEAR-TERM DATA] [ICPSR 8864]) were analyzed. The\r\n researchers considered whether the type of interview (personal or\r\n telephone) and the presence of another person (particularly a spouse)\r\n influenced or \"gagged\" the reporting of rape and domestic violence\r\n in the NCVS. The researchers also investigated correlates, primarily\r\n demographic in nature, of reporting rape, domestic violence, other\r\n assaults, and breaking and entry. In total, the data file contains\r\n reports of 434 rapes, 1,973 incidents of domestic violence, 13,459\r\n other assaults, and 88,950 incidents of breaking and entry. The\r\n binary-coded variables provide information on whether the respondent\r\n was alone during the interview, others who were present, whether the\r\n interview was by telephone, whether the respondent refused a telephone\r\n interview, the number of persons who lived in the household, whether\r\n the respondent owned her home, whether the land use was urban, whether\r\n the household the respondent was living in was the same household from\r\n the last interview, whether the respondent had moved more than three\r\n times in the last five years, and whether an assault, domestic\r\n violence incident, rape, breaking and entry, or no crime was\r\n reported. Demographic information includes the respondent's education,\r\n income, employment during the last six months, marital status at the\r\n time of the interview, and whether the respondent was white (or\r\n non-white) or Hispanic (or non-Hispanic). Variables coded the same as\r\n the NCVS variables include age, respondent's relationship to the\r\n offender, type of crime, year and quarter of interview, NCVS control\r\nnumber, and person weight.",
+  "modified": "1996-10-01T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3900",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "assault",
+    "burglary",
+    "crime",
+    "crime costs",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "domestic violence",
+    "living arrangements",
+    "offenders",
+    "offenses",
+    "rape",
+    "reactions to crime",
+    "robbery",
+    "sexual offenses",
+    "victimization",
+    "victims",
+    "women"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2432",
+  "dataQuality": false,
+  "issued": "1996-10-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06558.v1",
+      "title": "Adjusting the National Crime Victimization Survey's Estimates of Rape and Domestic Violence for Gag Factors, 1986-1990"
+    }
+  ]
+}

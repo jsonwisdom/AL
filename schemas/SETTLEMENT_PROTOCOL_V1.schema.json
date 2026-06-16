@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jsonwisdom/AL/schemas/SETTLEMENT_PROTOCOL_V1.schema.json",
+  "title": "SETTLEMENT_PROTOCOL_V1",
+  "description": "Separated enforcement boundary for Glass-Box Republic challenge remedies. The protocol applies sanctions, escrow, breach, and finality rules without directly performing external execution.",
+  "type": "object",
+  "required": ["meta", "authority_boundary", "inputs", "enforcement", "execution_boundary", "forbidden_actions"],
+  "additionalProperties": false,
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["schema_version", "protocol_id"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": { "const": "SETTLEMENT_PROTOCOL_V1" },
+        "protocol_id": { "type": "string", "minLength": 1 }
+      }
+    },
+    "authority_boundary": {
+      "type": "object",
+      "required": ["role", "may_enforce", "may_execute_external_action"],
+      "additionalProperties": false,
+      "properties": {
+        "role": { "const": "ENFORCEMENT_NOT_EXECUTION" },
+        "may_enforce": { "type": "boolean", "const": true },
+        "may_execute_external_action": { "type": "boolean", "const": false }
+      }
+    },
+    "inputs": {
+      "type": "object",
+      "required": ["challenge_verdict_receipt_hash", "remedy_order_hash", "target_receipt_id"],
+      "additionalProperties": false,
+      "properties": {
+        "challenge_verdict_receipt_hash": { "$ref": "#/$defs/sha256_uri" },
+        "remedy_order_hash": { "$ref": "#/$defs/sha256_uri" },
+        "target_receipt_id": { "type": "string", "minLength": 1 }
+      }
+    },
+    "enforcement": {
+      "type": "object",
+      "required": ["allowed_actions", "refusal_state", "finality_states"],
+      "additionalProperties": false,
+      "properties": {
+        "allowed_actions": {
+          "type": "array",
+          "prefixItems": [
+            { "const": "ESCROW_HOLD" },
+            { "const": "SLASH" },
+            { "const": "BREACH_FLAG" },
+            { "const": "FINALITY_MARK" },
+            { "const": "REMEDY_REFUSAL_LOG" }
+          ],
+          "items": false,
+          "minItems": 5,
+          "maxItems": 5
+        },
+        "refusal_state": { "type": "string", "const": "REMEDY_REFUSED" },
+        "finality_states": {
+          "type": "array",
+          "prefixItems": [
+            { "const": "PENDING" },
+            { "const": "SETTLED" },
+            { "const": "BREACHED" },
+            { "const": "ESCALATED" }
+          ],
+          "items": false,
+          "minItems": 4,
+          "maxItems": 4
+        }
+      }
+    },
+    "execution_boundary": {
+      "type": "object",
+      "required": ["corrective_execution_actor", "execution_receipt_required"],
+      "additionalProperties": false,
+      "properties": {
+        "corrective_execution_actor": { "type": "string", "enum": ["PLATFORM_ORCHESTRATION_LAYER", "NEUTRAL_EXECUTOR", "LEGAL_EXECUTOR"] },
+        "execution_receipt_required": { "type": "boolean", "const": true }
+      }
+    },
+    "forbidden_actions": {
+      "type": "array",
+      "prefixItems": [
+        { "const": "DIRECT_CORRECTIVE_EXECUTION" },
+        { "const": "DELETE_PRIOR_RECEIPT" },
+        { "const": "SILENT_FINALITY" },
+        { "const": "UNRECEIPTED_SANCTION" }
+      ],
+      "items": false,
+      "minItems": 4,
+      "maxItems": 4
+    }
+  },
+  "$defs": {
+    "sha256_uri": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

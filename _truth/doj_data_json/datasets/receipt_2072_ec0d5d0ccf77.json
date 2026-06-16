@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Expanded United States Supreme Court Judicial Database, 1946-1968 Terms      ",
+  "description": "This data collection is an expanded version of UNITED\r\n STATES SUPREME COURT JUDICIAL DATABASE, 1953-1996 TERMS (ICPSR 9422),\r\n encompassing all aspects of United States Supreme Court\r\n decision-making from the beginning of the Vinson Court in 1946 to the\r\n end of the Warren Court in 1968. Two major differences distinguish the\r\n expanded version of the database from the original collection: the\r\n addition of data on the decisions of the Vinson Court, and the\r\n inclusion of the conference votes of the Vinson and Warren\r\n courts. Whereas the original collection contained only the vote as\r\n reported in the UNITED STATES SUPREME COURT REPORTS, the expanded\r\n database includes all votes cast in conference. Concomitant with the\r\n expansion of the database is a shift in its basic unit of\r\n analysis. The original collection contained every case in which at\r\n least one justice wrote an opinion, and cases without opinions were\r\n excluded. This version includes every case in which the Court cast a\r\n conference vote, with and without opinions. The justices cast many\r\n more votes than they wrote opinions, and hence, the number of Warren\r\n Court records in this version increased by more than a factor of two\r\n over the original version. As in the original collection, distinct\r\n aspects of the Court's decisions are covered by six types of\r\n variables: (1) identification variables including case citation,\r\n docket number, unit of analysis, and number of records per unit of\r\n analysis, (2) background variables offering information on origin of\r\n case, source of case, reason for granting cert, parties to the case,\r\n direction of the lower court's decision, and manner in which the Court\r\n takes jurisdiction, (3) chronological variables covering date of term\r\n of court, chief justice, and natural court, (4) substantive variables\r\n including multiple legal provisions, authority for decision, issue,\r\n issue areas, and direction of decision, (5) outcome variables\r\n supplying information on form of decision, disposition of case,\r\n winning party, declaration of unconstitutionality, and multiple\r\n memorandum decisions, and (6) voting and opinion variables pertaining\r\n to the vote in the case and to the direction of the individual\r\njustices' votes.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2072",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Supreme Court decisions",
+    "Supreme Court justices",
+    "United States Supreme Court",
+    "case processing",
+    "court cases",
+    "disposition (legal)",
+    "judicial decisions",
+    "judicial review",
+    "legal history",
+    "twentieth century"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2428",
+  "dataQuality": false,
+  "issued": "1996-03-06T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06557.v4",
+      "title": "Expanded United States Supreme Court Judicial Database, 1946-1968 Terms      "
+    }
+  ]
+}

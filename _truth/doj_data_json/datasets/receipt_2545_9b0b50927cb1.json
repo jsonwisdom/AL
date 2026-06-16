@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Uniform Crime Reporting Program Data [United States]: Arrests by Age, Sex, and Race, Summarized Yearly, 1990",
+  "description": "These data provide information on the number of arrests\r\nreported to the Federal Bureau of Investigation's Uniform Crime\r\nReporting (UCR) Program each year by police agencies in the United\r\nStates. These arrest reports provide data on 43 offenses including\r\nviolent crime, drug use, gambling, and larceny. The data received by\r\nICPSR were structured as a hierarchical file containing, per reporting\r\npolice agency: an agency header record, and 1 to 43 detail offense\r\nrecords containing the counts of arrests by age, sex, and race for a\r\nparticular offense. ICPSR restructured the original data to logical\r\nrecord length format with the agency header record variables copied\r\nonto the detail records. Consequently, each record contains arrest\r\ncounts for a particular agency-offense.",
+  "modified": "2009-09-21T18:08:55",
+  "accessLevel": "public",
+  "identifier": "2545",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "arrest records",
+    "arrests",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "drug abuse",
+    "illegal gambling",
+    "larceny",
+    "law enforcement",
+    "offenders",
+    "offenses",
+    "violent crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2167",
+  "dataQuality": false,
+  "issued": "2009-09-21T18:08:55",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR23341.v1",
+      "title": "Uniform Crime Reporting Program Data [United States]: Arrests by Age, Sex, and Race, Summarized Yearly, 1990"
+    }
+  ]
+}

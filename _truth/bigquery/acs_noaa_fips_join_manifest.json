@@ -1,0 +1,10 @@
+{
+  "artifact": "ACS_NOAA_FIPS_JOIN_RESULT",
+  "status": "MEASURED",
+  "join_key": "acs.geo_id == noaa.county_fips_norm",
+  "rows": 4,
+  "hash": "716422a1df9100002aa6753639ed1a1a67fa75da1478b547042b5b7fcc837e44",
+  "output": "_truth/bigquery/acs_noaa_fips_join_result.csv",
+  "guardrail": "FIPS normalized from Receipt #9 county_name map; full NOAA county_fips still pending upstream.",
+  "blocked_claim": "Do not claim NOAA source shipped FIPS until county_fips is populated upstream."
+}

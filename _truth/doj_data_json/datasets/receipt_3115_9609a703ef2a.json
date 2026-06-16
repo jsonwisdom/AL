@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Alternative Sentencing Policies for Drug Offenders: Evaluating the Effectiveness of Kansas Senate Bill 123, 2001-2010",
+  "description": "\r\nThe study examined the first five years of operation of Kansas senate bill 123 (November 2003-November 2008) examining individual-level and system-level outcomes over\r\ntime and across community corrections districts and judicial actors. The study also assesses the impact of SB 123 on the work routines of criminal justice system actors, examining changes in sentencing and supervision practices and interactions across agencies following the implementation of SB 123.\r\n\r\nIndividual-level impacts of SB 123 on recidivism rates are assessed using sentencing and revocation data collected by the Kansas Sentencing Commission for drug possessors sentenced in Kansas between November 1, 2001 and October 31, 2008 (Dataset 1). Propensity score matching was used to compare the revocation and reconviction rates of drug possessors sentenced to SB 123 with the recidivism rates of similar individuals sentenced to regular probation (standard supervision by community corrections or court services) (Dataset 2). Supervision and program participation data provided by the Kansas Department of Corrections were used to assess the use of drug treatment services, education and employment services, and sanctions for individuals sentenced to SB 123 or standard community corrections (Dataset 3). These quantitative data were complemented by a set qualitative data derived from interviews with SB 123-eligible offenders (Dataset 4), community corrections managers, and courtroom actors (judges, prosecutors, public defenders) (Dataset 5). ",
+  "modified": "2014-01-31T09:52:23",
+  "accessLevel": "restricted public",
+  "identifier": "3115",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "drug courts",
+    "drug law offenses",
+    "drug treatment",
+    "intervention",
+    "mandatory sentences",
+    "offenses",
+    "probation",
+    "recidivism",
+    "sentencing guidelines",
+    "sentencing reforms"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2014-01-31T09:49:23",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR30982.v1",
+      "title": "Alternative Sentencing Policies for Drug Offenders: Evaluating the Effectiveness of Kansas Senate Bill 123, 2001-2010"
+    }
+  ]
+}

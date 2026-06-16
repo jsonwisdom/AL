@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Understanding the Causes and Consequences of Inmate Misconduct Within and Across Correctional Facilities in Kentucky and Ohio, 2007-2009",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.This study involved an examination of the relative effects of measures of inmate characteristics, features of facility environments, and managerial practices, including the perceived legitimacy of the correctional staff, on both the prevalence and incidence of violent, drug, and other nonviolent misconduct.Inmate, officer, and facility data were collected from each of the 33 facilities for adults in Ohio and each of the 13 state operated facilities for adults in Kentucky. The inmate data (Inmate Level Data, n=5,640) includes information on inmates collected through on-site surveys, and then supplemented with information from administrative records. The officer data (Correctional Officer Data, n=1,841) includes information on correctional officers collected through a mail survey, and then supplemented with information retrieved from administrative records. Facility data (Facility Level Data, n=46) were derived from aggregating responses to the inmate survey, from administrative records and from semi-structured interviews conducted with the wardens of each facility.",
+  "modified": "2016-03-11T12:37:47",
+  "accessLevel": "restricted public",
+  "identifier": "1154",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "correctional facilities (adults)",
+    "correctional officers",
+    "correctional system",
+    "inmate attitudes",
+    "inmate classification",
+    "inmate populations",
+    "inmates"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2016-03-11T12:35:22",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR34317.v1",
+      "title": "Understanding the Causes and Consequences of Inmate Misconduct Within and Across Correctional Facilities in Kentucky and Ohio, 2007-2009"
+    }
+  ]
+}

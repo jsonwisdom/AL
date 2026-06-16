@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.github.io/AL/schemas/state_jurisdiction_enum_v1.schema.json",
+  "title": "State Jurisdiction Enum v1",
+  "description": "Closed jurisdiction status enum for state-level ALMS intake. ACTIVE is forbidden unless tier-scoped.",
+  "type": "string",
+  "enum": [
+    "NOT_ESTABLISHED",
+    "SUSPENDED",
+    "ACTIVE_SCAFFOLD_ONLY",
+    "ACTIVE_ECONOMIC_ONLY",
+    "ACTIVE_SPARSE_OVERLAY_ONLY",
+    "ACTIVE_FULL_STATE_WORKFLOW"
+  ],
+  "$comment": "Forbidden ambiguous terms: ACTIVE, OPERATIONAL, VERIFIED, COMPLETE, FULLY_VERIFIED, READY, GREEN. Unknown values must be rejected. Fail closed, never open."
+}

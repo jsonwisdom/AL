@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Outcomes of DNA \"Cold Hits\": Social Science Research in Forensic Science, United States, 2000-2013",
+  "description": "Through case studies in two sites, this project provides an in-depth view of the relationship between cases, DNA database hits and persons that contribute to those hits generated from two specific laboratories during two specific periods of time. It explores how well the primary Combined DNA Index System (CODIS) database metric, the hit, may correspond to case-level criminal justice system outcomes and examines how an uploaded profile is an investment in both short-term and long-term investigative leads.\r\nA two-pronged approach was designed to address these issues. First, laboratory processing and CODIS datasets was analyzed according to traditional metrics used to track CODIS utility, such as upload and hit rate per case, per profile and for different offenses and evidence types. Next, a survival analysis was conducted to describe how uploading specimens to CODIS creates hits both in the short-term (at or near the time of upload) and in the long-term.",
+  "modified": "2021-08-16T10:21:27",
+  "accessLevel": "restricted public",
+  "identifier": "4257",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "DNA",
+    "crime",
+    "forensics",
+    "offenses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2021-08-16T10:16:19",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36518.v1",
+      "title": "Outcomes of DNA \"Cold Hits\": Social Science Research in Forensic Science, United States, 2000-2013"
+    }
+  ]
+}

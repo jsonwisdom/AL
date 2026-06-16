@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Relationship of Mental Disorder to Violent Behavior in the United States, 1983-1984",
+  "description": "This study investigates the relationship between mental\r\n disorder and violent behavior. Detailed interviews were conducted with\r\n inmates in the North Carolina prison system. Each respondent was given\r\n a psychological assessment using the Diagnostic Interview Schedule,\r\n Version III. Conditions of particular interest were schizophrenia,\r\n mood disorders (depression and dysthymia), traumatic stress disorder,\r\n and alcohol disorders. The data supply information on the respondent's\r\n criminal history, psychological status at the time of interview, and\r\n history of rule infractions while incarcerated for the current\r\n offense. In addition to the psychological assessment, questions were\r\n also asked covering areas of general health status, criminal history,\r\n and drug and alcohol use.  Demographic information includes age,\r\neducation, marital status, and race.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2837",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "alcoholism",
+    "criminal histories",
+    "depression (psychology)",
+    "health status",
+    "mental disorders",
+    "prison inmates",
+    "psychological evaluation",
+    "schizophrenia",
+    "violence"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1993-10-02T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09973.v1",
+      "title": "Relationship of Mental Disorder to Violent Behavior in the United States, 1983-1984"
+    }
+  ]
+}

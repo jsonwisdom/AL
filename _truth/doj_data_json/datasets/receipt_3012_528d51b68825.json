@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Research and Evaluation in Justice Systems, Multi Jurisdiction Research on Automated Reporting Systems: Kiosk Supervision, 2012-2015 [United States]",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThe Multi-jurisdiction Research on Kiosk Supervision examined the prevalence of kiosk reporting, implementation experience of agencies using it, and outcomes and costs associated with its use. A telephone screener survey of 492 community supervision agencies nationally in 2012 identified 21 agencies currently using kiosk reporting, agencies that formerly used it, and those that considered but decided against using kiosk reporting. Telephone interviews with 30 agencies and site visits with five agencies measured the benefits and limitations of kiosk reporting and the issues for adopting and implementing kiosk reporting systems. This information served as the basis for a guidebook on kiosk reporting developed for community supervision agencies.\r\nTwo outcome studies assessed the effectiveness of kiosk reporting for low-risk clients on public safety outcomes, relative to traditional face-to-face officer reporting and another electronic reporting approach. These studies analyzed administrative data from two large community supervision agencies, which used separate quasi-experimental designs for each site. At one of the sites, two separate designs and datasets were used to compare kiosk reporting and traditional face-to-face officer reporting on outcomes over a 6-month period. At the other site, clients assigned to kiosk supervision were compared to clients assigned to telephone reporting with interactive voice response (IVR) over a 6-month period.",
+  "modified": "2017-12-20T15:07:47",
+  "accessLevel": "restricted public",
+  "identifier": "3012",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "demographic characteristics",
+    "electronic monitoring",
+    "parole violation",
+    "parolees",
+    "recidivism"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2017-12-20T14:30:01",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36311.v1",
+      "title": "Research and Evaluation in Justice Systems, Multi Jurisdiction Research on Automated Reporting Systems: Kiosk Supervision, 2012-2015 [United States]"
+    }
+  ]
+}

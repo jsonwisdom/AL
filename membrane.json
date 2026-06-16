@@ -1,0 +1,89 @@
+{
+  "schema_id": "JSONWISDOM_MEMBRANE_RULE_V1",
+  "version": "1.0.0",
+  "status": "ACTIVE",
+  "title": "Cognition inside, receipts outside",
+  "core_rule": "Cognition may change internal state. Only receipts may promote truth state.",
+  "membrane": {
+    "inside": {
+      "layer": "cognitive_reasoning",
+      "authority": "provisional_internal_state_only",
+      "allowed_actions": [
+        "explore",
+        "classify",
+        "detect_drift",
+        "prepare_verifier_paths",
+        "generate_hypotheses",
+        "map_assumptions",
+        "identify_failure_modes"
+      ],
+      "forbidden_actions": [
+        "self_certify_truth",
+        "declare_verified_without_receipt",
+        "claim_anchor_without_witness",
+        "promote_private_reasoning_to_public_authority"
+      ]
+    },
+    "outside": {
+      "layer": "receipt_boundary",
+      "authority": "external_replayable_commitment_only",
+      "promotion_requirements": [
+        "content_hash",
+        "timestamp",
+        "witness_reference",
+        "verifier_path_reference"
+      ],
+      "accepted_witnesses": [
+        "github_commit",
+        "ens_text_record",
+        "base_tx",
+        "eas_uid"
+      ]
+    }
+  },
+  "truth_state_transitions": {
+    "UNVERIFIED": {
+      "may_be_entered_by": ["cognitive_output", "draft_artifact", "unanchored_claim"],
+      "may_promote_to": ["GITHUB_ANCHORED", "PUBLIC_WITNESSED"]
+    },
+    "GITHUB_ANCHORED": {
+      "requires": ["github_commit", "content_hash"],
+      "may_promote_to": ["PUBLIC_WITNESSED"]
+    },
+    "PUBLIC_WITNESSED": {
+      "requires_one_of": ["base_tx", "eas_uid", "ens_text_record"],
+      "requires": ["verifier_path_reference"],
+      "may_promote_to": ["VERIFIED"]
+    },
+    "VERIFIED": {
+      "requires": [
+        "recomputed_content_hash_matches_receipt",
+        "witness_reference_resolves",
+        "verifier_path_replay_succeeds"
+      ]
+    }
+  },
+  "promotion_boundary": {
+    "rule": "No cognitive act crosses the membrane as authority without an external replayable receipt.",
+    "receipt_is_not": [
+      "a thought",
+      "a claim",
+      "a vibe",
+      "a narrative",
+      "a private memory"
+    ],
+    "receipt_is": [
+      "a commitment with a checkable shape",
+      "a content-addressed artifact",
+      "a public or independently verifiable witness",
+      "a replay path others can execute"
+    ]
+  },
+  "jsonwisdom_application": {
+    "product": "Replayable Resilience Audit",
+    "minimum_sellable_state": "GITHUB_ANCHORED",
+    "minimum_defensible_state": "PUBLIC_WITNESSED",
+    "minimum_verified_state": "VERIFIED",
+    "operator_rule": "Sell the receipt, not the mythology."
+  }
+}

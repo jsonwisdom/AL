@@ -1,0 +1,53 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "DEA Laboratory Information Management System (LIMS) Drugs Analyzed Public Use File",
+  "description": "Data on received drugs analyzed in DEA Office of Forensic Sciences laboratories. Data is reported by drug type, by state, and by month. \r\n\r\nThe DEA Office of Forensic Sciences oversees decentralized accredited laboratories, which analyze evidence obtained by DEA law enforcement to support investigations. The laboratories use a laboratory information management system (LIMS) to receive, process, analyze and store the data. Before 2013, DEA’s LIMS system was referred to as the System to Retrieve Information on Drug Evidence (STRIDE).",
+  "modified": "2023-08-29T00:00:00",
+  "accessLevel": "public",
+  "identifier": "1123",
+  "publisher": {
+    "name": "Drug Enforcement Administration",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Drug Enforcement Agency (USDOJ)",
+    "hasEmail": "mailto:opendata@dea.gov"
+  },
+  "keyword": [
+    "drugs",
+    "laboratory",
+    "forensics"
+  ],
+  "bureauCode": [
+    "011:12"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "spatial": "United States, Limited to 50 States and the District of Columbia",
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": true,
+  "issued": "2023-08-29T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "landingPage": "https://www.dea.gov/resources/data-and-statistics",
+  "theme": [
+    "geospatial"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "description": "The download file includes a data dictionary with a brief description of the methodology used to prepare the dataset.",
+      "downloadURL": "https://www.dea.gov/dea-laboratory-information-management-system-lims-data",
+      "mediaType": "application/vnd.ms-excel",
+      "title": "DEA Laboratory Information Management System (LIMS) Received Drugs Analyzed"
+    }
+  ]
+}

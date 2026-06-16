@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Drugs and Crime in Public Housing, 1986-1989: Los Angeles, Phoenix, and Washington, DC",
+  "description": "This study investigates rates of serious crime for selected\r\n public housing developments in Washington, DC, Phoenix, Arizona, and\r\n Los Angeles, California, for the years 1986 to 1989. Offense rates in\r\n housing developments were compared to rates in nearby areas of private\r\n housing as well as to city-wide rates. In addition, the extent of law\r\n enforcement activity in housing developments as represented by arrests\r\n was considered and compared to arrest levels in other areas. This\r\n process allowed both intra-city and inter-city comparisons to be\r\n made. Variables cover study site, origin of data, year of event,\r\n offense codes, and location of event. Los Angeles files also include\r\npolice division.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3492",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrest rates",
+    "arrests",
+    "cities",
+    "crime rates",
+    "drug traffic",
+    "public housing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1995-03-16T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06235.v1",
+      "title": "Drugs and Crime in Public Housing, 1986-1989: Los Angeles, Phoenix, and Washington, DC"
+    }
+  ]
+}

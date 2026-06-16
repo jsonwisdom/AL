@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Santa Cruz Research Partnership, California, 2012-2014",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThis project, The Santa Cruz Research Partnership, was developed to document how one central coast California county probation department adopted evidence based practices (EBP) and whether the adoption of these practices reduced gender and racial/ethnic disparities. To examine how these EBP related changes have affected their department, the National Council on Crime and Delinquency (NCCD) completed three studies for this National Institute of Justice (NIJ) grant. Specifically, NCCD: 1) completed interviews with the entire probation department staff to examine how the adoption of EBP affects the daily practices of the probation department, 2) analyzed case management system data to understand how the adoption of a probation violation graduated response grid affected outcomes for probationers, and 3) analyzed case management system data to examine why Latino probationers are more likely to have bench warrants issued against them even though they have statistically significantly lower risk levels.",
+  "modified": "2018-02-22T15:20:34",
+  "accessLevel": "restricted public",
+  "identifier": "2947",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "decision making",
+    "information technology",
+    "prison overcrowding",
+    "probation",
+    "probation officers",
+    "probation services",
+    "probationers"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-02-22T15:18:30",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR35485.v1",
+      "title": "Santa Cruz Research Partnership, California, 2012-2014"
+    }
+  ]
+}

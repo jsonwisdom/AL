@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "State and Local Prosecution and Civil Attorney Systems, 1976",
+  "description": "The purpose of this data collection was to establish a\r\n current name and address listing of state and local government\r\n prosecution and civil attorney agencies and to obtain information\r\n about agency function, jurisdiction, employment, funding, and attorney\r\n compensation arrangements. The data for each agency include\r\n information for any identifiable local police prosecutors. Excluded\r\n from the study were private law firms that perform legal services\r\n periodically for a government and are compensated by retainers and\r\n fees. Variables cover agency functions and jurisdiction, agency\r\n funding, number and types of employees, compensation and employment\r\n restrictions for attorneys, agency's geographical jurisdiction, number\r\nof branch offices, and number of branch office employees.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "280",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "attorneys",
+    "databases",
+    "law enforcement agencies",
+    "legal aid",
+    "legal systems",
+    "prosecuting attorneys",
+    "prosecution"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR07674.v2",
+      "title": "State and Local Prosecution and Civil Attorney Systems, 1976"
+    }
+  ]
+}

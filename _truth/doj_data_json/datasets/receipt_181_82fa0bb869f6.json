@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Crime Surveys: Cities, 1972-1975",
+  "description": "This sample of the National Crime Survey contains\r\ninformation about victimization in 26 central cities in the United\r\nStates. The data are designed to achieve three primary objectives: 1)\r\nto develop detailed information about the victims and consequences of\r\ncrime, 2) to estimate the numbers and types of crimes not reported to\r\npolice, and 3) to provide uniform measures of selected types of crimes\r\nand permit reliable comparisons over time and between areas of the\r\ncountry. Information about each household or personal victimization was\r\nrecorded. The data include type of crime (attempts are covered as\r\nwell), description of offender, severity of crime, injuries or losses,\r\ntime and place of occurrence, age, race and sex of offender(s),\r\nrelationship of offenders to victims, education, migration, labor force\r\nstatus, occupation, and income of persons involved.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "181",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "cities",
+    "crime",
+    "criminal justice system",
+    "households",
+    "victimization"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR07658.v3",
+      "title": "National Crime Surveys: Cities, 1972-1975"
+    }
+  ]
+}

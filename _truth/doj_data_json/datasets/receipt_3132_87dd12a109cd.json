@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Impacts of Specific Incivilities on Responses to Crime and Local Commitment, 1979-1994: [Atlanta, Baltimore, Chicago, Minneapolis-St. Paul, and Seattle]",
+  "description": "This data collection was designed to test the\r\n\"incivilities thesis\": that incivilities such as extant neighborhood\r\nphysical conditions of disrepair or abandonment and troubling street\r\nbehaviors contribute to residents' concerns for personal safety and\r\ntheir desire to leave their neighborhood. The collection examines\r\nbetween-individual versus between-neighborhood and between-city\r\ndifferences with respect to fear of crime and neighborhood commitment\r\nand also explores whether some perceived incivilities are more\r\nrelevant to these outcomes than others. The data represent a secondary\r\nanalysis of five ICPSR collections: (1) CHARACTERISTICS OF HIGH AND\r\nLOW CRIME NEIGHBORHOODS IN ATLANTA, 1980 (ICPSR 7951), (2) CRIME\r\nCHANGES IN BALTIMORE, 1970-1994 (ICPSR 2352), (3) CITIZEN\r\nPARTICIPATION AND COMMUNITY CRIME PREVENTION, 1979: CHICAGO\r\nMETROPOLITAN AREA SURVEY (ICPSR 8086), (4) CRIME, FEAR, AND CONTROL IN\r\nNEIGHBORHOOD COMMERCIAL CENTERS: MINNEAPOLIS AND ST. PAUL, 1970-1982\r\n(ICPSR 8167), and (5) TESTING THEORIES OF CRIMINALITY AND\r\nVICTIMIZATION IN SEATTLE, 1960-1990 (ICPSR 9741). Part 1, Survey Data,\r\nis an individual-level file that contains measures of residents' fear\r\nof victimization, avoidance of dangerous places, self-protection,\r\nneighborhood satisfaction, perceived incivilities (presence of litter,\r\nabandoned buildings, vandalism, and teens congregating), and\r\ndemographic variables such as sex, age, and education. Part 2,\r\nNeighborhood Data, contains crime data and demographic variables from\r\nPart 1 aggregated to the neighborhood level, including percentage of\r\nthe neighborhood that was African-American, gender percentages,\r\naverage age and educational attainment of residents, average household\r\nsize and length of residence, and information on home ownership.",
+  "modified": "2008-04-23T10:35:21",
+  "accessLevel": "public",
+  "identifier": "3132",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "fear of crime",
+    "neighborhood conditions",
+    "public interest",
+    "relocation",
+    "urban areas",
+    "urban crime",
+    "urban decline",
+    "victimization"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1998-10-08T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02520.v1",
+      "title": "Impacts of Specific Incivilities on Responses to Crime and Local Commitment, 1979-1994: [Atlanta, Baltimore, Chicago, Minneapolis-St. Paul, and Seattle]"
+    }
+  ]
+}

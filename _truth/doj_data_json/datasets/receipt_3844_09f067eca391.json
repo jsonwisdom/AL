@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Minimum Legal Drinking Age and Crime in the United States, 1980-1987",
+  "description": "This collection focuses on how changes in the legal drinking\r\n age affect the number of fatal motor vehicle accidents and crime rates.\r\n The principal investigators identified three areas of study.\r\n First, they looked at blood alcohol content of drivers involved in\r\n fatal accidents in relation to changes in the drinking age. Second,\r\n they looked at how arrest rates correlated with changes in the drinking\r\n age. Finally, they looked at the relationship between blood alcohol\r\n content and arrest rates. In this context, the investigators used the\r\n percentage of drivers killed in fatal automobile accidents who had\r\n positive blood alcohol content as an indicator of drinking in the\r\n population. Arrests were used as a measure of crime, and arrest rates\r\n per capita were used to create comparability across states and over\r\n time. Arrests for certain crimes as a proportion of all arrests were\r\n used for other analyses to compensate for trends that affect the\r\n probability of arrests in general. This collection contains three\r\n parts. Variables in the Federal Bureau of Investigation Crime Data file\r\n (Part 1) include the state and year to which the data apply, the type of\r\n crime, and the sex and age category of those arrested for crimes. A\r\n single arrest is the unit of analysis for this file. Information in\r\n the Population Data file (Part 2) includes population counts for the\r\n number of individuals within each of seven age categories, as well as\r\n the number in the total population. There is also a figure for the number\r\n of individuals covered by the reporting police agencies from which data\r\n were gathered. The individual is the unit of analysis. The Fatal Accident\r\n Data file (Part 3) includes six variables: the FIPS code for the state,\r\n year of accident, and the sex, age group, and blood alcohol content of\r\n the individual killed. The final variable in each record is a count of\r\n the number of drivers killed in fatal motor vehicle accidents for that\r\n state and year who fit into the given sex, age, and blood alcohol content\r\ngrouping. A driver killed in a fatal accident is the unit of analysis.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3844",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "alcohol consumption",
+    "arrest rates",
+    "crime",
+    "drinking age",
+    "driving under the influence",
+    "fatalities",
+    "traffic accidents"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1992-03-04T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09685.v2",
+      "title": "Minimum Legal Drinking Age and Crime in the United States, 1980-1987"
+    }
+  ]
+}

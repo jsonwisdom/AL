@@ -1,0 +1,15 @@
+{
+  "policy_id": "gov-pdf-v1.2",
+  "description": "Deterministic PDF to text normalization",
+  "transform": {
+    "tool": "pdftotext",
+    "flags": ["-layout", "-nopgbrk"],
+    "encoding": "UTF-8",
+    "unicode_normalization": "NFC"
+  },
+  "invariants": {
+    "no_page_break_markers": true,
+    "layout_preserved": true
+  },
+  "status": "LOCK_ON_FIRST_REAL_RUN"
+}

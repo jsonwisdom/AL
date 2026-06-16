@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Racial Disparities in Virginia Felony Court Cases, 2007-2015",
+  "description": "Research examining racial disparities in the court system has typically focused on only one of the discrete stages in the criminal process (the charging, conviction, or sentencing stages), with the majority of the literature focusing on the sentencing stage. The literature has thus largely ignored the key early decisions made by the prosecutor such as their decision to prosecute, the determination of preliminary charges, charge reductions, and plea negotiations. Further, the few studies that have examined whether racial disparities arise in prosecutorial charging decisions are rarely able to follow these cases all the way through the criminal court process. This project sought to expand the literature by using a dataset on felony cases filed in twelve Virginia counties between 2007 through 2015 whereby each criminal incident can be followed from the initial charge filing stage to the final disposition. Using each felony case as the unit of analysis, this data was used to evaluate whether African Americans and whites that are arrested for the same felony crimes have similar final case outcomes.",
+  "modified": "2022-01-27T10:40:53",
+  "accessLevel": "public",
+  "identifier": "4212",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "court cases",
+    "crime statistics",
+    "felony offenses",
+    "justice",
+    "race"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2022-01-27T10:40:53",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR38274.v1",
+      "title": "Racial Disparities in Virginia Felony Court Cases, 2007-2015"
+    }
+  ]
+}

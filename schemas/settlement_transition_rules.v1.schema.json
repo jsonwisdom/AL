@@ -1,0 +1,37 @@
+{
+  "schema": "settlement_transition_rules.v1",
+  "version": "1.0.0",
+  "lineage": "ALMS-001",
+  "binds_to": {
+    "settlement_state_schema_sha256": "121b740b54e1da025cb2eb7be010ef58cf594bc98682999784f147246927d67a",
+    "payment_evidence_schema_sha256": "2fbf0a22a8f04d697e6a791833f8127d2c10c9d64a83353b0529aa6bb51871e4"
+  },
+  "states": [
+    "PAYMENT_EVIDENCE_REQUIRED",
+    "PAYMENT_RECEIVED_PENDING_RECONCILIATION",
+    "SETTLEMENT_VERIFIED",
+    "DISPUTED",
+    "REVERSED"
+  ],
+  "transitions": {
+    "PAYMENT_EVIDENCE_REQUIRED": {
+      "on_valid_payment_evidence_v1": "PAYMENT_RECEIVED_PENDING_RECONCILIATION"
+    },
+    "PAYMENT_RECEIVED_PENDING_RECONCILIATION": {
+      "on_successful_reconciliation": "SETTLEMENT_VERIFIED",
+      "on_failed_reconciliation": "DISPUTED"
+    },
+    "SETTLEMENT_VERIFIED": {
+      "on_reversal_or_chargeback": "REVERSED"
+    }
+  },
+  "forbidden_transitions": [
+    "PAYMENT_EVIDENCE_REQUIRED -> SETTLEMENT_VERIFIED",
+    "PAYMENT_EVIDENCE_REQUIRED -> REVENUE_RECOGNIZED",
+    "PAYMENT_RECEIVED_PENDING_RECONCILIATION -> REVENUE_RECOGNIZED"
+  ],
+  "revenue_recognition": {
+    "allowed_only_after": "SETTLEMENT_VERIFIED",
+    "requires_separate_receipt": true
+  }
+}

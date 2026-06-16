@@ -1,0 +1,16 @@
+{
+  "schema_version": "payment_evidence.v1",
+  "evidence_id": "PENDING",
+  "artifact_ref": {
+    "artifact_id": "ARTIFACT_ALMS_001",
+    "git_commit": "abe09dfd95fc8af53f258d138a0e66e276cdbe66",
+    "eas_uid": "0x95f53567bbecb3c5583283f8bd8a941059ef650ca2205041f31b3b25424d57f4"
+  },
+  "economic_ref": {
+    "receivable_id": "REVENUE_ARTIFACT_002",
+    "currency": "USD",
+    "expected_amount": "49"
+  },
+  "status": "TEMPLATE_ONLY_NO_PAYMENT_EVIDENCE",
+  "note": "Do not use this file to recognize revenue. Real settlement data required."
+}

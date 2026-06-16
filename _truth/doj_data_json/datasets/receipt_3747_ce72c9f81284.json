@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Pretrial Home Detention with Electronic Monitoring:  An Evaluation in Marion County, Indiana, 1988-1989",
+  "description": "For this data collection a pretrial home detention program\r\nin Marion County, Indiana, that relied on electronic monitoring of\r\nclients was subjected to a nonexperimental evaluation. The data\r\naddress whether the pretrial electronic monitoring program was\r\neffective in ensuring that clients appeared at their court hearings,\r\nwhether the pretrial electronic monitoring program was effective in\r\nensuring public safety, and the extent to which field contact officers\r\nexperienced difficulties in attempting to contact clients. To gauge\r\nthe success of the program, investigators compared the number of\r\nsuccessful terminations (i.e., home detention followed by a court\r\nappearance) to the number of unsuccessful terminations (technical\r\nviolations and absconding). Each client in the pretrial program was\r\nfitted with a coded wristlet that matched a base unit receptacle. A\r\nsuccessful contact between the coded wristlet and the base unit\r\nverified the client's presence. Defendants on home detention were\r\nmonitored by a field contact officer. Variables in this collection\r\ninclude charged offense, prior criminal history, living arrangements,\r\nemployment status, number of telephone calls, summary of program\r\nviolations, reason for program termination, program entry and\r\ntermination dates, and disposition after program release. The unit of\r\nobservation is the individual program client.",
+  "modified": "1992-03-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3747",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "criminal histories",
+    "electronic monitoring",
+    "house arrest",
+    "pretrial detention",
+    "program evaluation"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1992-03-04T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09734.v1",
+      "title": "Pretrial Home Detention with Electronic Monitoring:  An Evaluation in Marion County, Indiana, 1988-1989"
+    }
+  ]
+}

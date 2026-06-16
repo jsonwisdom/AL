@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Corrections Reporting Program, 2009",
+  "description": "The National Corrections Reporting Program gathers data on prisoners entering and leaving the custody or supervision of state and federal authorities. The dataset is comprised of four types of data: prisoners who were admitted to prison (Part 1), released from prison (Part 2), released from parole (Part 3), or in prison at year end (Part 4).\r\nThe National Prison Statistics (NPS) program was established in 1926 by the Bureau of the Census in response to a congressional mandate to compile national information on the populations confined in correctional institutions. This program described the characteristics and counts of prison inmates during each calendar year. Since its initiation, responsibility for this program has shifted among several agencies -- in 1950 it was transferred to the Federal Bureau of Prisons and to the Law Enforcement Assistance Administration in 1971. Since 1972, the Bureau of Census, under agreement with the Department of Justice, has had responsibility for compiling the statistical data. Census staff negotiates directly with each state, assembles and edits the data, and prepares the data for analysis and publication.",
+  "modified": "2013-02-11T17:41:27",
+  "accessLevel": "restricted public",
+  "identifier": "1085",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "correctional facilities (juveniles)",
+    "correctional system",
+    "demographic characteristics",
+    "federal correctional facilities",
+    "jail inmates",
+    "juvenile offenders",
+    "national crime statistics (USA)",
+    "offenders",
+    "offenses",
+    "parole",
+    "prison inmates",
+    "probation",
+    "state correctional facilities"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2589",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2011-05-06T12:14:38",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR30799.v2",
+      "title": "National Corrections Reporting Program, 2009"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Annual Parole Survey, 2012",
+  "description": "The 2012 Annual Parole Survey provides a count of the\r\ntotal number of persons supervised in the community on January 1 and\r\nDecember 31, 2012, and a count of the number entering and leaving\r\nsupervision during the year. The survey also provides counts of the number of parolees by certain characteristics, such as gender, race and Hispanic or Latino origin, supervision status, and type of offense. This survey covers all 50 states, the District of Columbia, and the Federal System.",
+  "modified": "2014-10-29T09:46:53",
+  "accessLevel": "public",
+  "identifier": "2753",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "causes of death",
+    "criminal justice system",
+    "offenses",
+    "parole",
+    "parolees",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2631",
+  "dataQuality": false,
+  "issued": "2014-09-12T09:59:52",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR35257.v1",
+      "title": "Annual Parole Survey, 2012"
+    }
+  ]
+}

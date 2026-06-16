@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Case Tracking and Mapping System Developed for the United States Attorney's Office, Southern District of New York, 1997-1998",
+  "description": "This collection grew out of a prototype case tracking and\r\ncrime mapping application that was developed for the United States\r\nAttorney's Office (USAO), Southern District of New York (SDNY). The\r\npurpose of creating the application was to move from the traditionally\r\nepisodic way of handling cases to a comprehensive and strategic method\r\nof collecting case information and linking it to specific geographic\r\nlocations, and collecting information either not handled at all or not\r\nhandled with sufficient enough detail by SDNY's existing case\r\nmanagement system. The result was an end-user application designed to\r\nbe run largely by SDNY's nontechnical staff. It consisted of two\r\ncomponents, a database to capture case tracking information and a\r\nmapping component to link case and geographic data. The case tracking\r\ndata were contained in a Microsoft Access database and the client\r\napplication contained all of the forms, queries, reports, macros,\r\ntable links, and code necessary to enter, navigate through, and query\r\nthe data. The mapping application was developed using Environmental\r\nSystems Research Institute's (ESRI) ArcView 3.0a GIS. This collection\r\nshows how the user-interface of the database and the mapping component\r\nwere customized to allow the staff to perform spatial queries without\r\nhaving to be geographic information systems (GIS) experts. Part 1 of\r\nthis collection contains the Visual Basic script used to customize the\r\nuser-interface of the Microsoft Access database. Part 2 contains the\r\nAvenue script used to customize ArcView to link the data maintained in\r\nthe server databases, to automate the office's most common queries,\r\nand to run simple analyses.",
+  "modified": "2006-01-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3580",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "case management",
+    "case processing",
+    "crime mapping",
+    "databases",
+    "geographic information systems"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2000-09-11T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02929.v1",
+      "title": "Case Tracking and Mapping System Developed for the United States Attorney's Office, Southern District of New York, 1997-1998"
+    }
+  ]
+}

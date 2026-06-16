@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Criminal Careers and Crime Control in Massachusetts [The Glueck Study]:  A Matched-Sample Longitudinal Research Design, Phase I, 1939-1963",
+  "description": "The relationship between crime control policies and\r\nfundamental parameters of the criminal career, such as career length,\r\nparticipation in offenses, and frequency and seriousness of offenses\r\ncommitted, is examined in this data collection. The investigators\r\ncoded, recoded, and computerized parts of the raw data from Sheldon\r\nand Eleanor Glueck's three-wave, matched sample study of juvenile and\r\nadult criminal behavior, extracting the criminal histories of the 500\r\ndelinquents (officially defined) from the Glueck study. Data were\r\noriginally collected by the Gluecks in 1940 through psychiatric\r\ninterviews with subjects, parent and teacher reports, and official\r\nrecords obtained from police, court, and correctional files. The\r\nsubjects were subsequently interviewed again between 1949 and 1965 at\r\nor near the age of 25, and again at or near the age of 32. The data\r\ncoded by Laub and Sampson include only information collected from\r\nofficial records. The data address in part (1) what effects\r\nprobation, incarceration, and parole have on the length of criminal\r\ncareer and frequency of criminal incidents of an offender, (2) how\r\nthe effects of criminal control policies vary in relation to the\r\nlength of sentence, type of offense, and age of the offender, (3)\r\nwhich factors in criminal control policy correlate with criminal\r\ncareer termination, (4) how well age of first offense predicts the\r\nlength of criminal career, and (5) how age of offender relates to\r\ntype of offense committed. Every incident of arrest up to the age of\r\n32 for each respondent (ranging from 1 to 51 arrests) is recorded in\r\nthe data file. Variables include the dates of arrest, up to three\r\ncharges associated with the arrest, court disposition, and starting\r\nand ending dates of probation, incarceration, and parole associated\r\nwith the arrest.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3748",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "career criminals",
+    "crime control",
+    "crime control policies",
+    "criminal histories",
+    "criminality prediction",
+    "offenders",
+    "offenses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1992-03-04T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09735.v1",
+      "title": "Criminal Careers and Crime Control in Massachusetts [The Glueck Study]:  A Matched-Sample Longitudinal Research Design, Phase I, 1939-1963"
+    }
+  ]
+}

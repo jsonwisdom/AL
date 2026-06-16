@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Race of Prisoners Admitted to State and Federal Institutions in the United States, 1926-1986   ",
+  "description": "This data collection includes tabulations of annual adult\r\n admissions to federal and state correctional institutions by\r\n race. Data are provided for the years 1926 to 1986 and include\r\n tabulations for prisons in each of the 50 states and the District of\r\n Columbia, as well as federal prison totals and United States\r\n totals. The figures were derived from a voluntary reporting program in\r\n which each state, the District of Columbia, and the Federal Bureau of\r\n Prisons reported summary and detailed statistics as a part of the\r\n National Prisoner Statistics series. Individual state and United\r\n States population figures according to racial categories also are\r\nprovided.",
+  "modified": "1999-10-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "275",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "correctional facilities (adults)",
+    "federal correctional facilities",
+    "inmates",
+    "race",
+    "state correctional facilities"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1991-05-03T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09165.v1",
+      "title": "Race of Prisoners Admitted to State and Federal Institutions in the United States, 1926-1986   "
+    }
+  ]
+}

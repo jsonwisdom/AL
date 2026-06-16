@@ -1,0 +1,53 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Procedural Reform of Jury Murder Convictions in Georgia, 1970-1978",
+  "description": "The purpose of this data collection was to assess the impact \r\n of the 1973 reforms of the death penalty laws on the levels of \r\n arbitrariness and discrimination in capital sentencing in Georgia. The \r\n data cover two different periods corresponding to the periods before \r\n and after the reform: 1970-1972 and 1973-1978. Numerous measures of \r\n defendant blameworthiness were developed as a basis for assessing \r\n levels of arbitrariness and discrimination in Georgia's capital \r\n charging and sentencing system. Specific variables include race, sex, \r\n current offense, prior conviction and arrests, method of killing, and \r\nnumber of victims.",
+  "modified": "1992-02-17T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3509",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "capital punishment",
+    "discrimination",
+    "sentencing",
+    "sentencing reforms"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1989-12-15T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09265.v2",
+      "title": "Procedural Reform of Jury Murder Convictions in Georgia, 1970-1978"
+    }
+  ]
+}

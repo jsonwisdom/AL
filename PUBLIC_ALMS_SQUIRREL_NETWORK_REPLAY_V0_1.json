@@ -1,0 +1,66 @@
+{
+  "artifact": "PUBLIC_ALMS_SQUIRREL_NETWORK_REPLAY_V0_1",
+  "version": "0.1",
+  "repository": "jsonwisdom/AL",
+  "status": "PROPOSED_FOR_REVIEW",
+  "authority": false,
+  "promotion": false,
+  "scope": "AL_ONLY_PUBLIC_ALMS",
+  "purpose": "Root replay surface for Squirrel Network summer continuity using PUBLIC ALMS, JSON.tv, DESTINEE Replay Theaters, Meme Court challenge paths, and Base/Zora identity surfaces.",
+  "root_rule": "Gather, store, remember, share, replay. Care first. Receipts always. Authority false.",
+  "velocity_layer": {
+    "voice_to_intent_target": "<1s",
+    "intent_to_receipt_target": "<1s",
+    "receipt_to_json_movie_target": "<2s",
+    "json_to_markdown_to_github_target": "<3s",
+    "total_target": "Computer... Send it -> live in approximately 6 seconds",
+    "authority": false
+  },
+  "network_topology": [
+    "AL Core",
+    "PUBLIC ALMS",
+    "JSON.tv",
+    "DESTINEE Replay Theaters",
+    "Meme Court",
+    "Base / Zora"
+  ],
+  "three_six_nine_scale": {
+    "three": ["Care", "Continuity", "Claim"],
+    "six": ["Learn", "Explore", "Create", "Laugh", "Repair", "Remember"],
+    "nine": ["Story", "Photo", "Scene", "Receipt", "Replay", "Challenge", "Theater", "Memory", "Future"],
+    "authority": false
+  },
+  "full_send_pipeline": [
+    "VOICE_PROMPT",
+    "INTENT",
+    "CARE_BOUNDARY",
+    "RECEIPT",
+    "JSON_MOVIE",
+    "GITHUB_MD_SCRIPT",
+    "DESTINEE_THEATER_REPLAY",
+    "MEME_COURT_CHALLENGE_PATH",
+    "PUBLIC_ALMS_REGISTRY_SIGNAL"
+  ],
+  "boundaries": {
+    "private_meaning_remains_private": true,
+    "public_surfaces_are_redacted": true,
+    "people_are_not_records": true,
+    "no_private_family_exposure": true,
+    "no_legal_custody_schooling_medical_or_financial_claims": true,
+    "authority": false
+  },
+  "identity_surfaces": {
+    "wisdom": "jaywisdom.eth",
+    "base": "jaywisdom.base.eth",
+    "zora": "https://zora.co/@jaywisdom",
+    "authority": false
+  },
+  "next_replay_targets": [
+    "WISDOM_GIRLS_REPLAY_INDEX_V0_1",
+    "DESTINEE_REPLAY_THEATERS_POINTER_V0_1",
+    "JSON_MOVIE_SCHEMA_V0_1",
+    "SEND_IT_COMMAND_V0_1"
+  ],
+  "authority": false,
+  "promotion": false
+}

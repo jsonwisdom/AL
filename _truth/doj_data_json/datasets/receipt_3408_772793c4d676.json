@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Integrating Data to Reduce Violence, Milwaukee, WI, 2015-2016",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThe study investigated the feasibility of implementing the Cardiff Model. The Cardiff Model is a unique violence surveillance system and intervention that involves data sharing and violence prevention planning between law enforcement and the medical field. Anonymized data on assaults from emergency and police departments (EDs; PDs) are combined to detail assault incidents and \"hotspots.\" Data are discussed by a multidisciplinary consortium, which develops and implements a data-informed violence prevention action plan that includes behavioral, environmental, and policy changes to impact violence. Model actions led to decreases in injurious assaults and this model is now statutory in the United Kingdom.\r\nThe Cardiff Model has never been translated to the U.S. and would require an investigation within our health care system and in different geographical and population contexts. This study investigated the feasibility of essential Cardiff Model Components in order to refine study procedures and situate this community to request further funds for full model implementation.\r\nAs part of this study, researchers collected a number of feasibility measures from ED and study staff to evaluate the feasibility of translating included model components. Geospatial and statistical analyses investigated the added benefit of the combined ED, PD and Emergency Medical Services (EMS) data.\r\nThe study contains 1 SPSS data files (CHW Data_1.1.15 to 7.31.16.sav (n=748; 14 variables)), 1 STATA data file (nurse survey data.dta (n=43; 26 variables)), a text document (Nurse Survey_Qualitative data.txt), and 1 excel file (CHW Incidents_Block level data only.xlsx).",
+  "modified": "2018-03-16T17:02:54",
+  "accessLevel": "restricted public",
+  "identifier": "3408",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "assault",
+    "emergency departments",
+    "geographic information systems",
+    "pediatrics",
+    "police departments",
+    "violence"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-03-16T16:56:51",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36591.v1",
+      "title": "Integrating Data to Reduce Violence, Milwaukee, WI, 2015-2016"
+    }
+  ]
+}

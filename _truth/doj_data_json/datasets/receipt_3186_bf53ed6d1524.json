@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Survey of Gun Owners in the United States, 1996",
+  "description": "This study was undertaken to obtain information on the\r\n characteristics of gun ownership, gun-carrying practices, and\r\n weapons-related incidents in the United States -- specifically, gun\r\n use and other weapons used in self-defense against humans and animals.\r\n Data were gathered using a national random-digit-dial telephone\r\n survey. The respondents were comprised of 1,905 randomly-selected\r\n adults aged 18 and older living in the 50 United States. All\r\n interviews were completed between May 28 and July 2, 1996. The sample\r\n was designed to be a representative sample of households, not of\r\n individuals, so researchers did not interview more than one adult from\r\n each household. To start the interview, six qualifying questions were\r\n asked, dealing with (1) gun ownership, (2) gun-carrying practices, (3)\r\n gun display against the respondent, (4) gun use in self-defense\r\n against animals, (5) gun use in self-defense against people, and (6)\r\n other weapons used in self-defense. A \"yes\" response to a qualifying\r\n question led to a series of additional questions on the same topic as\r\n the qualifying question. Part 1, Survey Data, contains the coded data\r\n obtained during the interviews, and Part 2, Open-Ended-Verbatim\r\n Responses, consists of the answers to open-ended questions provided by\r\n the respondents. Information collected for Part 1 covers how many\r\n firearms were owned by household members, types of firearms owned\r\n (handguns, revolvers, pistols, fully automatic weapons, and assault\r\n weapons), whether the respondent personally owned a gun, reasons for\r\n owning a gun, type of gun carried, whether the gun was ever kept\r\n loaded, kept concealed, used for personal protection, or used for\r\n work, and whether the respondent had a permit to carry the\r\n gun. Additional questions focused on incidents in which a gun was\r\n displayed in a hostile manner against the respondent, including the\r\n number of times such an incident took place, the location of the event\r\n in which the gun was displayed against the respondent, whether the\r\n police were contacted, whether the individual displaying the gun was\r\n known to the respondent, whether the incident was a burglary, robbery,\r\n or other planned assault, and the number of shots fired during the\r\n incident. Variables concerning gun use by the respondent in\r\n self-defense against an animal include the number of times the\r\n respondent used a gun in this manner and whether the respondent was\r\n hunting at the time of the incident. Other variables in Part 1 deal\r\n with gun use in self-defense against people, such as the location of\r\n the event, if the other individual knew the respondent had a gun, the\r\n type of gun used, any injuries to the respondent or to the individual\r\n that required medical attention or hospitalization, whether the\r\n incident was reported to the police, whether there were any arrests,\r\n whether other weapons were used in self-defense, the type of other\r\n weapon used, location of the incident in which the other weapon was\r\n used, and whether the respondent was working as a police officer or\r\n security guard or was in the military at the time of the\r\n event. Demographic variables in Part 1 include the gender, race, age,\r\n household income, and type of community (city, suburb, or rural) in\r\n which the respondent lived. Open-ended questions asked during the\r\n interview comprise the variables in Part 2. Responses include\r\n descriptions of where the respondent was when he or she displayed a\r\n gun (in self-defense or otherwise), specific reasons why the\r\n respondent displayed a gun, how the other individual reacted when the\r\n respondent displayed the gun, how the individual knew the respondent\r\n had a gun, whether the police were contacted for specific self-defense\r\nevents, and if not, why not.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3186",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "firearms",
+    "gun ownership",
+    "gun registration",
+    "gun use",
+    "hunting",
+    "personal security",
+    "self defense",
+    "violent crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2000-12-04T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02750.v1",
+      "title": "Survey of Gun Owners in the United States, 1996"
+    }
+  ]
+}

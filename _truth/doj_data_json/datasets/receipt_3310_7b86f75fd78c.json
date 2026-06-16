@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Multilevel and Policy-Focused Analysis of Parole Violations and Revocations in California, 2003-2004",
+  "description": "The purpose of the study was to facilitate an understanding of the sanctioning of parolees in California.  The central databases used in the study were the Offender Based Information System (OBIS), the Revocation Scheduling and Tracking System (RSTS), and the Statewide Parolee Database (SPDB). These three central databases provided information for the outcome variables of the study as well as information about parolees' personal characteristics, aspects of their supervision, and criminal histories. For the Parole Violations Data (Part 1), these data were combined with data extracted from several California Department of Corrections and Rehabilitation (CDCR) data systems and connected to other pieces of data using administrative and geographic identifiers to construct measures of parole agent and community characteristics. Parole agent and parole policy measures were drawn from the California State Personnel Board Parole Agent Database (PACD) and California parole policies. Measures of community conditions were drawn from the 2000 United States Census, the United States Substance Abuse and Mental Health Services Administration (SAMHSA), the California Secretary of State, and the Religious Congregations and Membership Study, 2000.  A total of 13,070 parolees were observed for a maximum of 106 weeks during 2003-2004, yielding a total of 1,376,820 parolee-week observations for Part 1.  The Parole Revocations Data (Part 2) include every parole violation case that went through a county court or a parole board hearing in 2003 and 2004 -- a total of 151,586 cases. Individual, organizational, and community-level data were merged into the Part 2 dataset using administrative and geographic identifiers. Information about each parolee was extracted from several CDCR data systems. Similar to Part 1, the central databases used in Part 2 of the study were the OBIS and the RSTS. Organizational measures were drawn from CDCR Annual Population Reports, California Corrections Standards Authority Jail Profile Surveys, and Judicial Council of California Court Statistics Reports. Measures of community conditions were drawn from the 2000 United States Census, the SAMHSA, and the California Secretary of State.  The Parole Violations Data (Part 1) contain a total of 50 variables including past and present offense history variables, parolee characteristics, supervision characteristics, and community environment variables.  The Parole Revocations Data (Part 2) contain a total of 42 variables including case characteristics, individual characteristics, organizational factors, and community factors.",
+  "modified": "2010-03-30T16:05:47",
+  "accessLevel": "restricted public",
+  "identifier": "3310",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "communities",
+    "criminal histories",
+    "environment",
+    "offender profiles",
+    "offenders",
+    "parole",
+    "parole officers",
+    "parole violation",
+    "parolees",
+    "recidivism prediction",
+    "risk factors",
+    "sanctions"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2010-03-30T15:54:18",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR27161.v1",
+      "title": "Multilevel and Policy-Focused Analysis of Parole Violations and Revocations in California, 2003-2004"
+    }
+  ]
+}

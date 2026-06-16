@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Pennsylvania Sentencing Data, 1998",
+  "description": "The Pennsylvania Commission on Sentencing is a legislative\r\n agency of the Commonwealth of Pennsylvania that develops sentencing\r\n guidelines for judges to use when sentencing felony and misdemeanor\r\n offenses. The judges then report sentences to the Commission on a\r\n Guideline Sentence Form. This data collection reflects all felonies\r\n and misdemeanors reported to the Commission that were sentenced during\r\n calendar year 1998. The data are contained in four files reflecting\r\n three sets of sentencing guidelines. The 1991 sentencing guidelines\r\n pertain to all offenses committed on or after August 9, 1991, up until\r\n the time that the 1994 guidelines became effective. The 1994\r\n sentencing guidelines became effective for all offenses committed on\r\n or after August 12, 1994. The 1997 sentencing guidelines became\r\n effective for all offenses committed on or after June 13, 1997. In\r\n this data collection, the variable \"GLEPOCH\" denotes which set of\r\n guidelines pertained to the offense. Because the 1997 guidelines\r\n differ significantly from the 1991 and 1994 guidelines, sentences\r\n under the 1997 guidelines are reported in separate datasets. Parts 1\r\n and 2, Records Data, provide information on each offender, including\r\n rudimentary demographic characteristics and prior offense\r\n history. Parts 3 and 4, Offense Data, contain information on each\r\n offense, including the statutory citation for the offense, the Offense\r\n Gravity Score assigned by the Commission, the offender's Prior Record\r\n Score, and the sentence given the offender. Parts 1 and 3 contain data\r\n from cases sentenced under the 1991 and 1994 guidelines, while Parts 2\r\nand 4 contain data from cases sentenced under the 1997 guidelines.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "3592",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "criminal histories",
+    "demographic characteristics",
+    "felony offenses",
+    "misdemeanor offenses",
+    "sentencing guidelines"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2002-08-13T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03450.v1",
+      "title": "Pennsylvania Sentencing Data, 1998"
+    }
+  ]
+}

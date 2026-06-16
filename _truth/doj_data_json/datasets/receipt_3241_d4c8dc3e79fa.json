@@ -1,0 +1,53 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Assessing the Validity and Reliability of National Data on Citizen Complaints about Police Use of Force, 2003 and 2007",
+  "description": "These data are part of the NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed excepted as noted below. All direct identifiers have been removed and replaced with text enclosed in square brackets (e.g.[MASKED]). Due to the masking of select information, variables/content described in the data documentation may not actually be available as part of the collection. Users should consult the investigator(s) if further information is needed.\r\nThis collection is one part of the Department of Justice's response to 42 USC 14142, a law which requires the U.S. Attorney General to 1) \"acquire data about the use of excessive force by law enforcement officers\" and 2) \"publish an annual summary of the data.\" Researchers compared agency-level data reported in the 2003 (ICPSR 4411) and 2007 (ICPSR 31161) waves of the Law Enforcement Management and Administrative Statistics (LEMAS) surveys with available external sources including publicly available reports and direct contact with agency personnel. The purpose of this study was to assess validity and reliability of the available agency-level reported data on citizen complaints about police use of force. ",
+  "modified": "2017-06-30T16:29:34",
+  "accessLevel": "public",
+  "identifier": "3241",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "citizen crime reporting",
+    "police citizen interactions",
+    "police departments",
+    "police use of force"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2017-06-30T16:29:34",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36042.v1",
+      "title": "Assessing the Validity and Reliability of National Data on Citizen Complaints about Police Use of Force, 2003 and 2007"
+    }
+  ]
+}

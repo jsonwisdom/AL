@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.github.io/AL/schemas/audit_log_entry.schema.json",
+  "title": "Audit Log Entry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "entry_id",
+    "log_id",
+    "source_uri",
+    "normalized_uri",
+    "canonical_hash",
+    "event_type",
+    "actor",
+    "observed_at",
+    "from_state",
+    "to_state",
+    "hash_before",
+    "hash_after",
+    "replay_path",
+    "receipt_ref",
+    "prev_entry_hash",
+    "entry_hash",
+    "allegation_mode",
+    "review_required"
+  ],
+  "properties": {
+    "entry_id": { "type": "string", "minLength": 1 },
+    "log_id": { "type": "string", "minLength": 1 },
+    "source_uri": { "type": "string", "minLength": 1 },
+    "normalized_uri": { "type": "string", "minLength": 1 },
+    "canonical_hash": { "type": ["string", "null"] },
+    "event_type": {
+      "enum": [
+        "initial_observation",
+        "successful_replay",
+        "replay_decay",
+        "hash_drift",
+        "source_unavailable",
+        "sealed",
+        "destroyed_with_receipt",
+        "destroyed_without_receipt",
+        "human_review",
+        "new_verified_receipt",
+        "divergence_recorded"
+      ]
+    },
+    "actor": { "type": "string", "minLength": 1 },
+    "observed_at": { "type": "string", "minLength": 1 },
+    "from_state": { "type": ["string", "null"] },
+    "to_state": { "type": "string", "minLength": 1 },
+    "hash_before": { "type": ["string", "null"] },
+    "hash_after": { "type": ["string", "null"] },
+    "replay_path": { "type": ["string", "null"] },
+    "receipt_ref": { "type": ["string", "null"] },
+    "prev_entry_hash": { "type": ["string", "null"] },
+    "entry_hash": { "type": "string", "minLength": 1 },
+    "allegation_mode": { "const": "blocked" },
+    "review_required": { "type": "boolean" }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "OIP Summaries and Assessments of Agency Chief FOIA Officer Reports",
+  "description": "OIP’s assessment of agencies’ Chief FOIA Officer (CFO) Reports provides a broad overview of agency efforts in several key areas of FOIA administration.  The assessment covers those agencies that received more than 50 requests and distinguishes between high and medium volume agencies, using a five-step scoring system to denote agency success for each milestone. ",
+  "modified": "2013-01-01T00:00:00",
+  "accessLevel": "public",
+  "identifier": "4302",
+  "publisher": {
+    "name": "Justice Management Division",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Data Management US Department of Justice (USDOJ)",
+    "hasEmail": "mailto:DataManagement@usdoj.gov"
+  },
+  "keyword": [
+    "CFO Report Assessment"
+  ],
+  "bureauCode": [
+    "011:00"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2013-01-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "landingPage": "https://www.justice.gov/oip/reports-1#s2",
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.justice.gov/oip/reports-1#s2",
+      "title": "OIP Summaries and Assessments of Agency Chief FOIA Officer Reports"
+    }
+  ]
+}

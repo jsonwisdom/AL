@@ -1,0 +1,52 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Miami-Dade County Public Schools Campus Shield Evaluation, Miami, Florida, United States, 2014-2019",
+  "description": "In 2015, Miami-Dade County Public Schools (M-DCPS) received\r\na three-year Comprehensive School Safety Initiative grant from the National\r\nInstitute of Justice to implement, pilot test, and experimentally evaluate the\r\neffects of an innovative fusion center, Campus\r\nShield, for proactively identifying\r\nand addressing school safety threats and issues. Three additional\r\nresources were also proposed to supplement and enhance the Campus Shield fusion\r\ncenter: visitor management systems (information on entries and exits from the\r\nschool building to be recorded and fed into Campus Shield), surveillance\r\ncameras (which would also feed into Campus Shield), and the linkage of Campus\r\nShield to \"Mental Health Specialists\" to provide direct services and act as a\r\nliaison between school-based student services professionals and community-based\r\nproviders.",
+  "modified": "2020-06-30T11:09:57",
+  "accessLevel": "restricted public",
+  "identifier": "3637",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "mental health",
+    "school safety and security"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2020-06-30T11:02:07",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37332.v1",
+      "title": "Miami-Dade County Public Schools Campus Shield Evaluation, Miami, Florida, United States, 2014-2019"
+    }
+  ]
+}

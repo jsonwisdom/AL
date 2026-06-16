@@ -1,0 +1,26 @@
+{
+  "version": "WITNESS_GOVERNANCE_EPOCH_0001_MANIFEST",
+  "epoch": 1,
+  "status": "SEALED",
+  "objects": {
+    "economics_genesis": {
+      "name": "WITNESS_INCENTIVE_MODEL_V1_GENESIS",
+      "commit_sha": "e4b95a7456cbe1799e7c4705e4bde48cf0261bb6",
+      "path": "economics/WITNESS_INCENTIVE_MODEL_V1_GENESIS.json",
+      "sha256": "6033596f7f8397124d2ab3cc13a88941405079154428a4cfe414e8108207098c"
+    },
+    "governance_rules": {
+      "name": "WITNESS_GOVERNANCE_RULES_V1",
+      "commit_sha": "264b2759b997770dc86015e27df2b179054b1760",
+      "path": "governance/WITNESS_GOVERNANCE_RULES_V1.json",
+      "sha256": "e7b99e3eeacb0b49df9c9e81e5cae94b1be5206c62f0e5ccbef4e73bdf4685cd"
+    }
+  },
+  "invariants": [
+    "Epoch 1 is the replay-governed starting boundary.",
+    "All future governance epochs MUST reference this manifest as parent.",
+    "No object in this epoch may be rewritten or replaced.",
+    "Validity is determined solely by commit-pinned raw bytes and SHA-256.",
+    "Replay MUST reconstruct this epoch from public surfaces without trust."
+  ]
+}

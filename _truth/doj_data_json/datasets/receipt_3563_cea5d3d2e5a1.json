@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Developing a Common Metric for Evaluating Police Performance in Deadly Force Situations in the United States, 2009-2011",
+  "description": "This study developed interval-level measurement scales for evaluating police officer performance during real or simulated deadly force situations. Through a two-day concept mapping focus group, statements were identified to describe two sets of dynamics: the difficulty (D) of a deadly force situation and the performance (P) of a police officer in that situation. These statements were then operationalized into measurable Likert-scale items that were scored by 291 use of force instructors from more than 100 agencies across the United States using an online survey instrument. The dataset resulting from this process contains a total of 685 variables, comprised of 312 difficulty statement items, 278 performance statement items, and 94 variables that measure the demographic characteristics of the scorers.",
+  "modified": "2014-06-18T10:15:23",
+  "accessLevel": "restricted public",
+  "identifier": "3563",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "evaluation",
+    "handguns",
+    "police",
+    "police effectiveness",
+    "police performance",
+    "police safety",
+    "police training",
+    "police use of deadly force",
+    "policies and procedures"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2014-06-18T09:54:22",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR33141.v1",
+      "title": "Developing a Common Metric for Evaluating Police Performance in Deadly Force Situations in the United States, 2009-2011"
+    }
+  ]
+}

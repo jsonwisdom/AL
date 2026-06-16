@@ -1,0 +1,26 @@
+{
+  "ledger_version": "WEEKLY_DECAY_LEDGER_V1",
+  "epoch": "EAS-GENESIS",
+  "authority": false,
+  "entries": [
+    {
+      "week": "2026-W24",
+      "receipt_id": "FED-AI-2026-EAS-001",
+      "url_alive": true,
+      "hash_match": true,
+      "parent_resolves": true,
+      "new_revision": false,
+      "orphaned": false,
+      "replay_seconds": 0,
+      "severity": "GREEN",
+      "replay_status": "PASS",
+      "notes": "Genesis EAS control receipt baseline. Machine-proven by Verify EAS Control Receipt V1 gate. EAS is durability control group, not truth oracle."
+    }
+  ],
+  "rules": {
+    "no_time_travel": true,
+    "no_retroactive_promotion": true,
+    "late_artifacts_become_child_receipts": true,
+    "missing_artifacts_log_uncertainty": true
+  }
+}

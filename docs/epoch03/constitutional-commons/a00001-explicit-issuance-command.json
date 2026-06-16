@@ -1,0 +1,47 @@
+{
+  "artifact": "a00001-explicit-issuance-command.json",
+  "version": "1.0.0",
+  "epoch": "03",
+  "command_id": "A00001_ISSUANCE_COMMAND_V1",
+  "command_state": "PREPARED_NON_EXECUTING",
+  "constitutional_authority": "NONE",
+  "activation_effect": "NONE",
+  "issuance_effect": "NONE",
+  "issuance_status": "UNPERFORMED",
+  "operator_intent": "PREPARE_EXPLICIT_ISSUANCE_COMMAND_ONLY",
+  "operator_identity": "OPERATOR_JAYWISDOM_ROOT_V1",
+  "operator_alias": "jaywisdom.base.eth",
+  "wallet_binding": "0xA380552a27b0a5a2874Ea7AA52CAC09f542002E8",
+  "target_envelope": "docs/epoch03/constitutional-commons/a00001-issuance-envelope.json",
+  "target_attestation": "A00001",
+  "target_asset": "ABI_SOURCE_V1",
+  "canonical_digest": "sha256:658c71e4fa2eb804cff90e2a724a255391e0b723da07e43c79385713eac1ec84",
+  "canonical_substrate": "docs/abi/ABI_SOURCE_V1.json",
+  "required_prior_artifacts": {
+    "issuance_eligibility": "docs/epoch03/constitutional-commons/issuance-eligibility.json",
+    "issuance_requirements": "docs/epoch03/constitutional-commons/explicit-issuance-command-requirements.json",
+    "populated_envelope": "docs/epoch03/constitutional-commons/a00001-issuance-envelope.json",
+    "envelope_evaluation": "docs/epoch03/constitutional-commons/a00001-issuance-envelope-evaluation.json"
+  },
+  "single_use": true,
+  "revocation_surface": "SUPPORTED",
+  "forbidden_actions": [
+    "PERFORM_ISSUANCE",
+    "ASSERT_AUTHORITY",
+    "ASSERT_ACTIVATION",
+    "MUTATE_ENS",
+    "WRITE_EAS",
+    "GRANT_FUTURE_MINT_AUTHORITY",
+    "UNSEAL_CROWN"
+  ],
+  "claim_boundaries": {
+    "issuance_performed": false,
+    "activation_asserted": false,
+    "authority_asserted": false,
+    "ens_mutation_performed": false,
+    "eas_write_performed": false,
+    "crown_unsealed": false
+  },
+  "next_lawful_surface": "EVALUATE_EXPLICIT_A00001_ISSUANCE_COMMAND",
+  "notes": "This command artifact is prepared only. It does not execute issuance, assert authority, activate anything, mutate ENS, write EAS, or unseal the crown."
+}

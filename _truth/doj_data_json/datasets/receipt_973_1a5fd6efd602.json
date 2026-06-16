@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Federal Justice Statistics Program: Linking Data file, 1994 - 2005 [United States]",
+  "description": "The linking file relates the sequential record numbers (i.e. SEQ_NUM) included in the standard analysis files (SAFs) within an agency's SAFs over time and across different agencies' SAFs. The linking file includes sequential record numbers from the United States Marshals Service (arrests), Executive Office for United States Attorneys (matters and cases), Administrative Office of the United States Courts (cases), United States Sentencing Commission (sentencing events), and Bureau of Prisons (prisoners). By joining the sequential record numbers from the linking file with the sequential record numbers in the appropriate SAFs, it is possible to track the course of individual defendant-cases from arrest to prosecution, adjudication, sentencing, and corrections. Note: The Federal Justice Statistics Resource Center (FJSRC) only recently received data from the Bureau of Prisons (BOP) for fiscal years 2004 and 2005 and has not updated the linking file to include these newly acquired data. Consequently, the linking data file does not support linking records from other agencies to BOP records from those two fiscal years.",
+  "modified": "2011-03-08T12:05:32",
+  "accessLevel": "restricted public",
+  "identifier": "973",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "arrests",
+    "court cases",
+    "defendants",
+    "offenders"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2174",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2009-02-20T16:12:11",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR24821.v2",
+      "title": "Federal Justice Statistics Program: Linking Data file, 1994 - 2005 [United States]"
+    }
+  ]
+}

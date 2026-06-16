@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Police Performance and Case Attrition in Los Angeles County, 1980-1981",
+  "description": "The purpose of this data collection was to investigate the\r\neffects of crime rates, city characteristics, and police departments'\r\nfinancial resources on felony case attrition rates in 28 cities located\r\nin Los Angeles County, California. Demographic data for this collection\r\nwere obtained from the 1983 COUNTY AND CITY DATA BOOK. Arrest data were\r\ncollected directly from the 1980 and 1981 CALIFORNIA OFFENDER BASED\r\nTRANSACTION STATISTICS (OBTS) data files maintained by the California\r\nBureau of Criminal Statistics. City demographic variables include total\r\npopulation, minority population, population aged 65 years or older,\r\nnumber of female-headed families, number of index crimes, number of\r\nfamilies below the poverty level, city expenditures, and police\r\nexpenditures. City arrest data include information on number of arrests\r\ndisposed and number of males, females, blacks, and whites arrested.\r\nAlso included are data on the number of cases released by police,\r\ndenied by prosecutors, and acquitted, and data on the number of\r\nconvicted cases given prison terms.",
+  "modified": "2006-01-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3267",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "cities",
+    "crime rates",
+    "felony offenses",
+    "police departments",
+    "police performance",
+    "population characteristics"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1990-10-16T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09352.v1",
+      "title": "Police Performance and Case Attrition in Los Angeles County, 1980-1981"
+    }
+  ]
+}

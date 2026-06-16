@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Understanding the Causes of School Violence Using Open Source Data, United States, 1990-2016",
+  "description": "This study provides an evidence-based understanding on etiological issues related to school shootings and rampage shootings. It created a national, open-source database that includes all publicly known shootings that resulted in at least one injury that occurred on K-12 school grounds between 1990 and 2016.  The investigators sought to better understand the nature of the problem and clarify the types of shooting incidents occurring in schools,  provide information on the characteristics of school shooters, and compare fatal shooting incidents to events where only injuries resulted to identify intervention points that could be exploited to reduce the harm caused by shootings. To accomplish these objectives, the investigators used quantitative multivariate and qualitative case studies research methods to document where and when school violence occurs, and highlight key incident and perpetrator level characteristics to help law enforcement and school administrators differentiate between the kinds of school shootings that exist, to further policy responses that are appropriate for individuals and communities.",
+  "modified": "2021-09-30T12:08:06",
+  "accessLevel": "restricted public",
+  "identifier": "4249",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "firearms",
+    "gun use",
+    "juvenile crime",
+    "mass murders",
+    "school violence"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2021-09-30T11:58:03",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37935.v1",
+      "title": "Understanding the Causes of School Violence Using Open Source Data, United States, 1990-2016"
+    }
+  ]
+}

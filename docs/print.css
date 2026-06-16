@@ -1,0 +1,40 @@
+@page {
+  margin: 0.75in;
+}
+body {
+  background: white !important;
+  color: black !important;
+  font-size: 12pt;
+  line-height: 1.45;
+}
+.btns,
+nav,
+footer,
+.eyebrow {
+  display: none !important;
+}
+.doctrine {
+  position: static !important;
+  break-inside: avoid;
+  page-break-inside: avoid;
+  border: 2px solid #000;
+  background: #fff !important;
+  color: #000 !important;
+}
+.two-track-section,
+.two-track,
+.track,
+.card,
+.summary,
+.artifact {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+h1,h2,h3 {
+  break-after: avoid;
+  page-break-after: avoid;
+}
+a {
+  color: black !important;
+  text-decoration: none;
+}

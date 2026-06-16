@@ -1,0 +1,63 @@
+{
+  "artifact": "KINDERGARDEN_KONGRESS_KWEST_GAME_V0_1",
+  "system": "JOY / AL",
+  "component": "KAREN11 Investigative Journalism Replay Game Layer",
+  "origin": [
+    "Minnesota Math",
+    "KarenKonstitution",
+    "KAREN11 Runtime"
+  ],
+  "reporter": {
+    "ens": "jaywisdom.base.eth",
+    "location_scope": "MN",
+    "voice": "KAREN11 reporting LIVE from MN"
+  },
+  "aliases": [
+    "Kindergarden Kongress",
+    "Kindergarten Kongress",
+    "Kongress Kwest",
+    "Kindergarden Kongress Kwest Game"
+  ],
+  "evidence_state_machine": [
+    "UNKNOWN",
+    "OBSERVED",
+    "FETCHED",
+    "PRESERVED",
+    "VERIFIED",
+    "REPLAYABLE"
+  ],
+  "replay_privileges": {
+    "observe_mn_metadata": true,
+    "fetch_public_records": true,
+    "preserve_receipts": true,
+    "render_public_summaries": true,
+    "flag_missing_records": true,
+    "request_promotion_review": true,
+    "public_records_only": true,
+    "personal_targeting_allowed": false,
+    "unsupported_accusations_allowed": false,
+    "skip_evidence_states_allowed": false,
+    "authority_implied": false
+  },
+  "quest_001": {
+    "quest_id": "KKK-001",
+    "title": "Find Karen, Find Kindergarten Kongress",
+    "jurisdiction": "MN",
+    "reporter": "jaywisdom.base.eth",
+    "claim": "Kindergarten Kongress exists as a KAREN11 replay lane once committed as an explicit artifact.",
+    "source_repo": "jsonwisdom/AL",
+    "markdown_artifact": "docs/karen/KINDERGARDEN_KONGRESS_KWEST_GAME_V0_1.md",
+    "evidence_state": "PRESERVED",
+    "next_replay_action": "Bind against KAREN11 runtime spec and public MN scoreboard surfaces.",
+    "authority": false,
+    "green_implied": false
+  },
+  "controls": {
+    "authority": false,
+    "green_implied": false,
+    "no_fake_green": true,
+    "public_reporting_allowed": true,
+    "metadata_required": true,
+    "json_required": true
+  }
+}

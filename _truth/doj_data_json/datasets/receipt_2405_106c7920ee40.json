@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Sentencing Outcomes in 28 Felony Courts, 1985 [United States]",
+  "description": "The purposes of this study are to describe sentencing\r\n outcomes in felony courts for selected serious offenses--homicide,\r\n rape, robbery, aggravated assault, burglary, larceny, and drug\r\n trafficking--and to establish a statistical series on sentencing\r\n outcomes in felony courts throughout the United States. The\r\n jurisdictions consist of cities and counties with an average\r\n population of 1.1 million. Among the jurisdictions, the\r\n sentencing schemes available varied, with both determinate and\r\n indeterminate sentencing practices in operation. The study\r\n distinguishes between core informational items such as criminal\r\n charges, type of sentence imposed and terms of the prison\r\n sentence, and optional items such as characteristics of the\r\noffense and the defendant, and how the case was processed.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2405",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "aggravated assault",
+    "burglary",
+    "drug traffic",
+    "felony courts",
+    "larceny",
+    "rape",
+    "robbery",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1987-10-12T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08708.v1",
+      "title": "Sentencing Outcomes in 28 Felony Courts, 1985 [United States]"
+    }
+  ]
+}

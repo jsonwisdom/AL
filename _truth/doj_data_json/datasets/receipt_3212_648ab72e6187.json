@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Dangerous Sex Offenders:  Classifying, Predicting, and Evaluating Outcomes of Clinical Treatment in Bridgewater, Massachusetts, 1982-1985  ",
+  "description": "The purpose of this data collection was to validate two\r\n classification systems, one for rapists and one for child molesters,\r\n used in a Massachusetts treatment center for sexually aggressive\r\n offenders. Rapists and child molesters were classified as two types of\r\n sex offenders and then clinically classified into subtypes based on\r\n criteria for the two taxonomies being tested. Variables include type\r\n of traffic offenses, criminal offenses, and sex offenses charged. Data\r\n on disposition of cases are also provided, along with parole and\r\n discharge information. Offenders' post-release offenses were\r\n categorized into traffic offenses, nontraffic offenses, and sex\r\noffenses.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3212",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime prediction",
+    "offender profiles",
+    "program evaluation",
+    "sex offender profiles",
+    "sex offenders",
+    "sex offenses",
+    "treatment facilities",
+    "treatment outcomes"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1989-01-10T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08985.v2",
+      "title": "Dangerous Sex Offenders:  Classifying, Predicting, and Evaluating Outcomes of Clinical Treatment in Bridgewater, Massachusetts, 1982-1985  "
+    }
+  ]
+}

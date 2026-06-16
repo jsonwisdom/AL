@@ -1,0 +1,29 @@
+name: Replay Court Harness
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/alms_verify.py'
+      - 'tests/run_replay_cases.py'
+      - 'tests/fixtures/**'
+      - 'docs/specs/REPLAY_TRACE_CLOSURE_INVARIANT_V1.md'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  replay-court-harness:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run replay court cases
+        run: |
+          python3 tests/run_replay_cases.py

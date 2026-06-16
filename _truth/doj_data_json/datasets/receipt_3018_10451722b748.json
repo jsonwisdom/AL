@@ -1,0 +1,52 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Improving the Accuracy and Fairness of Pretrial Release Decisions: A Multi-Site Study of Risk Assessments Implemented in Four Counties, Indiana, 2015-2018",
+  "description": "This study was a multi-site, quasi-experimental investigation of risk assessment-informed pretrial release decisions relative to decisions made without risk assessments. The study objectives were to investigate whether use of pretrial risk assessments: 1) improved risk management decisions relative to practice as usual; 2) improved the fairness of pretrial release decisions for racial minorities relative to practice as usual; and 3) revealed judge-level variation in pretrial release decisions. Secondary, administrative data were gathered from four counties in Indiana. Apart from risk assessment information, all data represent public records: court, jail and prison. Variables gathered from the data sources fall into three main categories: defendant variables, pretrial release decisions, and pretrial misconduct outcomes. Examples of specific variables include: booking and release dates, bond amounts, number and type of charges, and demographic information (age, sex and race).",
+  "modified": "2021-02-25T09:44:44",
+  "accessLevel": "restricted public",
+  "identifier": "3018",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "pretrial release",
+    "risk assessment"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2021-02-25T09:38:02",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37829.v1",
+      "title": "Improving the Accuracy and Fairness of Pretrial Release Decisions: A Multi-Site Study of Risk Assessments Implemented in Four Counties, Indiana, 2015-2018"
+    }
+  ]
+}

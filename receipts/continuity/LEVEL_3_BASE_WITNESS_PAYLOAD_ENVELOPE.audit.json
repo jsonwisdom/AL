@@ -1,0 +1,33 @@
+{
+  "audit_id": "LEVEL_3_BASE_WITNESS_PAYLOAD_ENVELOPE_AUDIT_001",
+  "verdict": "HOLD_BEFORE_EIP_712",
+  "claimed_hash": "b5e9c0a3f81e97d2643a7b5d142c9e8f62a4d9c7e1b5f8a0d36c274b9f0e1a3d",
+  "reason": "Hash claim must be recomputed from exact committed canonical envelope bytes before signing.",
+  "required_before_signing": [
+    "COMMIT_EXACT_ENVELOPE_JSON",
+    "RECOMPUTE_SHA256_CANONICAL_JSON_FROM_REPO_BYTES",
+    "VERIFY_REQUIRED_KEYS",
+    "VERIFY_FORBIDDEN_KEYS_ABSENT"
+  ],
+  "required_fields": [
+    "schema",
+    "version",
+    "payload_id",
+    "witness_scope",
+    "semantic_authority",
+    "base_authority",
+    "merkle_root",
+    "receipt_tx",
+    "canonical_hash_policy"
+  ],
+  "forbidden_fields": [
+    "timestamp",
+    "latest",
+    "current_block",
+    "explorer_status",
+    "wallet_display_status"
+  ],
+  "gate_rule": "NO_EXACT_ENVELOPE_BYTES_NO_SIGNATURE",
+  "base_status": "NOT_INVOKED",
+  "semantic_authority": "LOCAL_REPLAY"
+}

@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Incident-Based Reporting System, 1998",
+  "description": "The National Incident-Based Reporting System (NIBRS) is a\r\npart of the Uniform Crime Reporting Program (UCR), administered by\r\nthe Federal Bureau of Investigation (FBI). In the late 1970s, the law\r\nenforcement community called for a thorough evaluative study of the\r\nUCR with the objective of recommending an expanded and enhanced UCR\r\nprogram to meet law enforcement needs into the 21st century. The FBI\r\nprovided its support, formulating a comprehensive redesign\r\neffort. Following a multiyear study and in consultation with local\r\nand state law enforcement executives, new guidelines for the Uniform\r\nCrime Reports were created. The National Incident-Based Reporting\r\nSystem (NIBRS) is being implemented to meet these guidelines. NIBRS\r\ndata are archived at ICPSR as 13 separate data files, which may be\r\nmerged by using linkage variables. The data focus on a variety of\r\naspects of a crime incident. The Batch Header Segment (Parts 1-3)\r\nseparates and identifies individual police agencies by Originating\r\nAgency Identifier (ORI). Batch Header information, which is contained\r\non three records for each ORI, includes agency name, geographic\r\nlocation, and population of the area. Part 4, Administrative Segment,\r\noffers data on the incident itself (date and time). Each crime\r\nincident is delineated by one administrative segment record. Also\r\nprovided are Part 5, Offense Segment (offense type, location, weapon\r\nuse, and bias motivation), Part 6, Property Segment (type of property\r\nloss, property description, property value, drug type and quantity),\r\nPart 7, Victim Segment (age, sex, race, ethnicity, and injuries),\r\nPart 8, Offender Segment (age, sex, and race), and Part 9, Arrestee\r\nSegment (arrest date, age, sex, race, and weapon use). Part 10, Group\r\nB Arrest Report Segment, includes arrestee data for Group B\r\ncrimes. Window Segments files (Parts 11-13) pertain to incidents for\r\nwhich the complete Group A Incident Report was not submitted to the\r\nFBI. In general, a Window Segment record will be generated if the\r\nincident occurred prior to January 1 of the previous year or if the\r\nincident occurred prior to when the agency started NIBRS\r\nreporting. As with UCR, participation in NIBRS is voluntary on the\r\npart of law enforcement agencies. The data are not a representative\r\nsample of crime in the United States. For 1998, 17 states, fully or\r\npartially participating in NIBRS, were included in the dataset.",
+  "modified": "2009-07-22T15:46:25",
+  "accessLevel": "public",
+  "identifier": "2183",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "arrests",
+    "crime",
+    "crime rates",
+    "crime reporting",
+    "law enforcement agencies",
+    "national crime statistics (USA)",
+    "offenders",
+    "offenses",
+    "property crime",
+    "victims",
+    "violent crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2433",
+  "dataQuality": false,
+  "issued": "2001-01-12T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03031.v3",
+      "title": "National Incident-Based Reporting System, 1998"
+    }
+  ]
+}

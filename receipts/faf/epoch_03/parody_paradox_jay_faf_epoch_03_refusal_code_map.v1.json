@@ -1,0 +1,122 @@
+{
+  "policy_type": "FAF_EPOCH_03_REFUSAL_CODE_MAP",
+  "version": "1.0.0",
+  "status": "DECLARED",
+  "operator": "jaywisdom.base.eth",
+  "capsule_path": "receipts/faf/epoch_03/parody_paradox_jay_faf_epoch_03_capsule.v1.json",
+  "merkle_layout_path": "receipts/faf/epoch_03/parody_paradox_jay_faf_epoch_03_merkle_layout.v1.json",
+  "doctrine": "Replay Over Agreement",
+  "refusal_policy": {
+    "principle": "runtime must halt rather than reinterpret",
+    "root_rule": "no Merkle root plus refusal receipt equals constitutional halt signature",
+    "refusal_receipts_in_merkle_tree": false,
+    "refusal_receipt_required_on_halt": true
+  },
+  "codes": [
+    {
+      "code": "ALMS-01",
+      "name": "INVARIANT_BREACH",
+      "phases": ["alpha", "beta", "epsilon", "zeta"],
+      "triggers": [
+        "mutation_of_nine_doctrinal_invariants",
+        "attempt_to_change_launch_rule",
+        "attempt_to_change_verification_policy",
+        "attempt_to_change_minimum_human_reproduction_receipts"
+      ],
+      "effect": {
+        "halt": true,
+        "replay_status": "REFUSED_ALMS_01",
+        "merkle_root_computed": false,
+        "anchor_permission": false
+      },
+      "human_intervention": {
+        "same_epoch_correction_allowed": false,
+        "requires_new_epoch": true,
+        "reason": "constitutional_invariants_touched"
+      }
+    },
+    {
+      "code": "ALMS-02",
+      "name": "ORACLE_LIMIT",
+      "phases": ["epsilon", "zeta"],
+      "triggers": [
+        "ci_result_used_as_sole_basis_for_acceptance",
+        "replay_parity_true_without_human_receipts_greater_than_or_equal_2"
+      ],
+      "effect": {
+        "halt": true,
+        "replay_status": "REFUSED_ALMS_02",
+        "halt_phase": "parity_check",
+        "ci_role": "witness_only",
+        "ci_elevated_to_authority": false,
+        "anchor_permission": false
+      },
+      "human_intervention": {
+        "same_epoch_correction_allowed": true,
+        "requires_new_epoch": false,
+        "correction": "add_required_human_receipts_and_rerun_replay"
+      }
+    },
+    {
+      "code": "ALMS-03",
+      "name": "STATE_DRIFT",
+      "phases": ["alpha", "beta"],
+      "triggers": [
+        "canonicalized_capsule_differs_from_committed_alpha_state",
+        "git_tree_differs_from_runtime_bytes",
+        "container_digest_differs_from_frozen_capsule_metadata",
+        "code_version_differs_from_frozen_capsule_metadata",
+        "fixtures_differ_from_frozen_capsule_metadata"
+      ],
+      "effect": {
+        "halt": true,
+        "replay_status": "REFUSED_ALMS_03",
+        "halt_before_leaf_construction": true,
+        "capsule_marked": "DRIFTED",
+        "merkle_root_computed": false,
+        "anchor_permission": false
+      },
+      "human_intervention": {
+        "same_epoch_correction_allowed": true,
+        "requires_new_epoch": false,
+        "correction": "correct_capsule_to_match_frozen_state_commit_and_rerun_replay"
+      }
+    },
+    {
+      "code": "ALMS-04",
+      "name": "UNAUTHORIZED_ANCHOR",
+      "phases": ["anchor"],
+      "triggers": [
+        "anchor_attempt_when_replay_parity_not_true",
+        "anchor_attempt_when_human_receipts_less_than_2",
+        "anchor_attempt_when_merkle_root_null"
+      ],
+      "effect": {
+        "halt": true,
+        "anchor_status": "REFUSED_ALMS_04",
+        "anchor_call_retried": false,
+        "replay_state_unchanged": true,
+        "governance_trail_tainted": true
+      },
+      "human_intervention": {
+        "same_epoch_correction_allowed": false,
+        "requires_new_epoch": true,
+        "reason": "anchor_logic_violation_taints_governance_trail"
+      }
+    }
+  ],
+  "refusal_receipt_schema": {
+    "type": "refusal",
+    "code": "ALMS-0X",
+    "phase": "alpha|beta|gamma|delta|epsilon|zeta|anchor",
+    "reason": "machine_readable_string",
+    "merkle_inclusion": false,
+    "receipt_hash": null
+  },
+  "halt_signature": {
+    "merkle_root": null,
+    "refusal_receipt_present": true,
+    "meaning": "constitutional_halt_not_failed_execution"
+  },
+  "receipt_hash": null
+}

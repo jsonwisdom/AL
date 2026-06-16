@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Determinants of Case Growth in Federal District Courts in the United States, 1904-2002",
+  "description": "This study analyzed the determinants of the explosion in\r\nthe caseload of the United States federal district courts that\r\ncommenced in 1960. First, the study sought to provide forecasts of\r\nfuture demands on the federal courts while reducing forecasting errors\r\nby taking account of the time series properties of the case data. The\r\nresearchers constructed a comprehensive dataset based on annual\r\naggregated civil and criminal case volumes of individual federal\r\ndistrict courts spanning the period 1904-1998, for a total of 95\r\nyearly observations. Secondly, the study specified and estimated\r\nmultivariate econometric models of the determinants of civil case\r\nfilings over time and across geographic space using panel data\r\ntechniques. These empirical models were run on three alternative\r\ndatasets consisting of observations on statewide, districtwide, and\r\ncircuitwide United States civil, private civil, and total civil cases\r\nper capita, over the period 1960 to 1998. The empirical models\r\nincluded standard socioeconomic variables, such as income, population\r\ndensity, and race, along with variables that controlled for fixed\r\neffects associated with the courts' geographic location. The study\r\nalso addressed the pressing issue of allocating judgeships across\r\ncircuits and districts. Variables include total civil and criminal\r\ncases, percentage of minority population, unemployment rate,\r\npercentage of drug and immigration cases, annual unweighted and\r\nweighted total case filings per judge, and annual civil and criminal\r\ncase filings per judge.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3366",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "caseloads",
+    "civil courts",
+    "criminal courts",
+    "district courts",
+    "federal courts",
+    "forecasting models"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2004-10-08T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03987.v1",
+      "title": "Determinants of Case Growth in Federal District Courts in the United States, 1904-2002"
+    }
+  ]
+}

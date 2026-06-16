@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Directory of Law Enforcement Agencies, 1992:  [United States]  ",
+  "description": "To ensure an accurate sampling frame for its Law\r\n Enforcement Management and Administrative Statistics (LEMAS) survey,\r\n the Bureau of Justice Statistics periodically sponsors a census of the\r\n nation's state and local law enforcement agencies. This census, known\r\n as the Directory Survey, gathers data on all police and sheriffs'\r\n departments that are publicly funded and employ at least one full-time\r\n or part-time sworn officer with general arrest powers. This data\r\n collection, compiled in July 1992, represents the second such census,\r\n with the first occurring in 1986 (DIRECTORY OF LAW ENFORCEMENT\r\n AGENCIES, 1986: [UNITED STATES] [ICPSR 8696]). Variables include\r\n personnel totals, type of agency, geographic location of agency, and\r\n whether the agency had the legal authority to hold a person beyond\r\narraignment for 48 or more hours.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "103",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "authority",
+    "full-time employment",
+    "law enforcement",
+    "law enforcement agencies",
+    "part-time employment",
+    "personnel",
+    "police departments",
+    "policies and procedures"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2436",
+  "dataQuality": false,
+  "issued": "1998-02-23T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02266.v1",
+      "title": "Directory of Law Enforcement Agencies, 1992:  [United States]  "
+    }
+  ]
+}

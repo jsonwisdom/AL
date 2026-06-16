@@ -1,0 +1,49 @@
+{
+  "version": "WITNESS_PARAMETER_UPDATE_0002_PROPOSAL",
+  "proposal_id": 2,
+  "proposal_type": "PARAMETER_UPDATE",
+  "status": "PROPOSED",
+  "parent_epoch": {
+    "name": "WITNESS_GOVERNANCE_EPOCH_0002_MANIFEST",
+    "epoch": 2,
+    "commit_sha": "125aa1b8aff0ce97e7f8edf14bd5ed97b3006234",
+    "sha256": "a44f0b18b8d9b2acc206bb7aca0b14d3041418f1b5bbd4e6a477f6fa36f927cb"
+  },
+  "governed_by": {
+    "name": "WITNESS_GOVERNANCE_RULES_V1",
+    "commit_sha": "264b2759b997770dc86015e27df2b179054b1760",
+    "sha256": "e7b99e3eeacb0b49df9c9e81e5cae94b1be5206c62f0e5ccbef4e73bdf4685cd"
+  },
+  "references": {
+    "conflict_ledger_0001_sha256": "8cf71270911bafacbaaccffe43fdb10fbe4cffa8cc1b34820e5343102df330b3",
+    "test_vectors_sha256": "734d57d93e770426acb0b43969842bce26d0ef7d0724d735a453cda37e9737b1",
+    "meme_court_attestation_sha256": "f1415f1c6bed0f3de60dd22286f22b29e74f46360317bbecbbe039bccb86c9e9"
+  },
+  "proposed_change": {
+    "field": "parameters.core.input_handling.grok_share_resolution",
+    "old_value": "sandbox_blackbox_denied",
+    "new_value": "operator_provided_payload_only"
+  },
+  "effective_epoch": 3,
+  "proposal_timestamp": "2026-05-06T23:30:00Z",
+  "rationale": "Enforce strict receive-only discipline on X Grok share IDs. Prevent inference, reconstruction, or external wire attempts. Require explicit paste or transcription for zero-drift operation.",
+  "governance_effect": "PROPOSED_MUTATION",
+  "validation": {
+    "requires_parent_epoch_match": true,
+    "requires_governance_rules_match": true,
+    "requires_bound_conflict_ledger_reference": true,
+    "requires_bound_test_vectors_reference": true,
+    "requires_bound_meme_court_attestation_reference": true,
+    "requires_diff_visibility": true,
+    "requires_effective_epoch_before_activation": true,
+    "requires_sha256_before_activation": true
+  },
+  "invariants": [
+    "References sealed Epoch 0002 as parent.",
+    "References sealed Conflict Ledger 0001.",
+    "References sealed Test Vectors V1.",
+    "References bound Meme Court Attestation Station V1.",
+    "Activation is blocked until proposed JSON SHA-256 is published.",
+    "Activation is blocked until effective_epoch is declared."
+  ]
+}

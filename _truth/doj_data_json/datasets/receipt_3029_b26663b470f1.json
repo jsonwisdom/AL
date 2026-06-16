@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Police Use of Force in Metro-Dade, Florida, and Eugene and Springfield, Oregon, 1993-1995",
+  "description": "This study gathered data on police use of force in\r\n Metro-Dade, Florida, and Eugene and Springfield, Oregon. The study\r\n differed from previous research in that it addressed the level of\r\n force used by the police relative to the suspect's level of\r\n resistance. The data for Metro-Dade (Part 1) were collected from\r\n official Metro-Dade Police Department Control of Persons Reports from\r\n the last quarter of 1993 and all of 1994 and 1995. The Eugene and\r\n Springfield dataset (Part 2) was created from items in the Police\r\n Officers' Essential Physical Work Report Form, which was completed by\r\n members of the Eugene and Springfield, Oregon, Police Departments\r\n during April 1995. The dataset includes all police-citizen contacts,\r\n rather than being limited to the use-of-force situations captured by\r\n the Metro-Dade data. In Part 1 (Metro-Dade Data), information on the\r\n subject includes impairment (i.e., alcohol and drugs), behavior\r\n (i.e., calm, visibly upset, erratic, or highly agitated), level of\r\n resistance used by the subject, types of injuries to the subject, and\r\n types of force used by the subject. Information on the officer\r\n includes level of force used, medical treatment, and injuries. Other\r\n variables include ethnic match between officer and the subject and\r\n relative measures of force. Demographic variables include age,\r\n gender, race, and ethnicity of both the subject and the officer. In\r\n Part 2 (Oregon Data), information is provided on whether the officer\r\n was alone, how work was initiated, elapsed time until arrival,\r\n reasons for performance, perceived mental state and physical\r\n abilities of the suspect, amount and type of resistance by the\r\n suspect, if another officer assisted, perceived extent of effort used\r\n by the suspect, type of resistance used by the suspect, if the\r\n officer was knocked or wrestled to the ground, if the officer\r\n received an injury, level of effort used to control the suspect,\r\n types of control tactics used on the suspect, whether the officer was\r\n wearing tactical gear, how restraint devices were applied to inmate,\r\n time taken to get to, control, resolve, and remove the problem, how\r\n stressful the lead-up time or the period following the incident was,\r\n if the officer worked with a partner, types of firearm used, and if\r\n force was used. Demographic variables include age, gender, weight,\r\n and height of both the suspect and officer, and the officer's duty\r\nposition.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3029",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrest procedures",
+    "arrests",
+    "assaults on police",
+    "police citizen interactions",
+    "police officers",
+    "police performance",
+    "police use of force"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2001-11-02T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03152.v1",
+      "title": "Police Use of Force in Metro-Dade, Florida, and Eugene and Springfield, Oregon, 1993-1995"
+    }
+  ]
+}

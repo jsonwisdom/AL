@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Convenience Store Crime in Georgia, Massachusetts, Maryland, Michigan, and South Carolina, 1991-1995",
+  "description": "For this study, convenience store robbery victims and\r\n offenders in five states (Georgia, Massachusetts, Maryland, Michigan,\r\n and South Carolina) were interviewed. Robbery victims were identified\r\n by canvassing convenience stores in high-crime areas, while a sample\r\n of unrelated offenders was obtained from state prison rolls. The aims\r\n of the survey were to address questions of injury, to examine store\r\n characteristics that might influence the rate of robbery and injury,\r\n to compare how both victims and offenders perceived the robbery event\r\n (including their assessment of what could be done to prevent\r\n convenience store robberies in the future), and to identify ways in\r\n which the number of convenience store robberies might be reduced.\r\n Variables unique to Part 1, the Victim Data file, provide information\r\n on how the victim was injured, whether hospitalization was required\r\n for the injury, if the victim used any type of self-protection, and\r\n whether the victim had been trained to handle a robbery. Part 2, the\r\n Offender Data file, presents variables describing offenders' history of\r\n prior convenience store robberies, whether there had been an\r\n accomplice, motive for robbing the store, and whether various factors\r\n mattered in choosing the store to rob (e.g., cashier location, exit\r\n locations, lighting conditions, parking lot size, the number of clerks\r\n working, weather conditions, the time of day, and the number of\r\n customers in the store). Found in both files are variables detailing\r\n whether a victim injury occurred, use of a weapon, how each\r\n participant behaved, perceptions of why the store was targeted, what\r\n could have been done to prevent the robbery, and ratings by the\r\n researchers on the completeness, honesty, and cooperativeness of each\r\n participant during the interview. Demographic variables found in both\r\n the victim and offender files include age, gender, race, and\r\nethnicity.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2925",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "armed robbery",
+    "commercial theft",
+    "criminal histories",
+    "offenders",
+    "robbery",
+    "victims",
+    "weapons offenses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2000-03-21T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02699.v1",
+      "title": "Convenience Store Crime in Georgia, Massachusetts, Maryland, Michigan, and South Carolina, 1991-1995"
+    }
+  ]
+}

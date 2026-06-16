@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Survey of State Court Criminal Appeals, 2010",
+  "description": "State appellate courts were created to detect and correct errors in trial\r\ncourt decisions and provide fair, consistent, and timely resolutions to all\r\nappeals.  The Survey of State Court Criminal Appeals, 2010 (SSCCA) data\r\nwere collected from a nationally representative sample of all criminal\r\nappeals disposed in all 143 state appellate courts in 2010.  The data\r\ninclude state court criminal appeals, resolution of appeals, and time to\r\nresolution.",
+  "modified": "2016-07-05T17:26:45",
+  "accessLevel": "restricted public",
+  "identifier": "2328",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "appellate courts",
+    "criminal courts",
+    "offenses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2179",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2016-07-05T17:21:44",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36465.v1",
+      "title": "Survey of State Court Criminal Appeals, 2010"
+    }
+  ]
+}

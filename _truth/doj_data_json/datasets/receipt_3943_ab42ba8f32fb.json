@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Study of Tribal and Alaska Native Juvenile Justice Systems in The United States, 1990",
+  "description": "This data collection focuses on juvenile justice systems\r\nadministered by federally recognized Indian tribes throughout the\r\nUnited States. Responses were received from 93 tribes who indicated\r\nthat they administered some form of juvenile justice system and from 57\r\ntribes who indicated that they did not. Variables in the data\r\ncollection include number of Indian juveniles aged 10-17 in the\r\njurisdiction, types of cases that the juvenile justice system exercised\r\njurisdiction over, type of court (tribal, state, federal), annual\r\nbudget and sources of funds for the court, number of court personnel,\r\ntypes of legal statutes covering court activities, kinds of\r\ndiversionary options available to the court, and the circumstances\r\nunder which juveniles were held with adults. A separate file on\r\njuvenile offense rates according to tribe is provided.",
+  "modified": "1992-10-31T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3943",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "Alaskan Natives",
+    "Native Americans",
+    "courts",
+    "criminal justice system",
+    "juvenile justice",
+    "juvenile offenders"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1992-10-31T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09772.v1",
+      "title": "Study of Tribal and Alaska Native Juvenile Justice Systems in The United States, 1990"
+    }
+  ]
+}

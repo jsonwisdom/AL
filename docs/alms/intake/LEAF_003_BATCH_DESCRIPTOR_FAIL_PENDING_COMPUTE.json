@@ -1,0 +1,13 @@
+{
+  "state": "BATCH_DESCRIPTOR_REJECTED",
+  "leaf_id": "003",
+  "asset_id": "ST_CLOUD_CITY_BUDGET_FY2026_REVENUE_GAP_DELTA",
+  "observed_precheck": "PASS",
+  "observed_descriptor_sha256": "da3f10a3c4718da1401614a1f5ecea8abed523d9ebd2402f458347303aa959f8",
+  "observed_descriptor_size_bytes": 138,
+  "rejection_reason": "merkle_root was literal PENDING_COMPUTE instead of locked leaf hash",
+  "correct_leaf_hash": "5e5fae9768ed29a262be4f274b8b39cdb01034fafa0ea4901ef1106cffe6c8a4",
+  "anchor_allowed": false,
+  "batch_id_allowed": false,
+  "next_gate": "REBUILD_BATCH_DESCRIPTOR_WITH_LEAF_HASH"
+}

@@ -1,0 +1,67 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Spatial Configuration of Places Related to Homicide Events in Washington, DC, 1990-2002",
+  "description": " The purpose of this research was to further understanding of why crime occurs where it does by exploring the spatial etiology of homicides that occurred in Washington, DC, during the 13-year period 1990-2002. \r\n The researchers accessed records from the case management system of the Metropolitan Police, District of Columbia (MPDC) Homicide Division to collect data regarding offenders and victims associated with the homicide cases. Using geographic information systems (GIS) software, the researchers geocoded the addresses of the incident location, the victim's residence, and offender's residence for each homicide case. They then calculated both Euclidean distance and shortest path distance along the streets between each address per case. Upon applying the concept of triad as developed by Block et al. (2004) in order to create a unit of analysis for studying the convergence of victims and offenders in space, the researchers categorized the triads according to the geometry of locations associated with each case. (Dots represented homicides in which the victim and offender both lived in the residence where the homicide occurred; lines represented homicides that occurred in the home of either the victim or the offender; and triangles represented three non-coincident locations: the separate residences of the victim and offender, as well as the location of the homicide incident.) The researchers then classified each triad according to two separate mobility triangle classification schemes: Traditional Mobility, based on shared or disparate social areas, and Distance Mobility, based on relative distance categories between locations. Finally, the researchers classified each triad by the neighborhood associated with the location of the homicide incident, the location of the victim's residence, and the location of the offender's residence. \r\n A total of 3 statistical datasets and 7 geographic information systems (GIS) shapefiles resulted from this study. Note: All datasets exclude open homicide cases. The statistical datasets consist of Offender Characteristics (Dataset 1) with 2,966 cases; Victim Characteristics (Dataset 2) with 2,311 cases; and Triads Data (Dataset 3) with 2,510 cases. The GIS shapefiles have been grouped into a zip file (Dataset 4). Included are point data for homicide locations, offender residences, triads, and victim residences; line data for streets in the District of Columbia, Maryland, and Virginia; and polygon data for neighborhood clusters in the District of Columbia. ",
+  "modified": "2015-07-29T14:36:33",
+  "accessLevel": "restricted public",
+  "identifier": "1134",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime mapping",
+    "domestic violence",
+    "drug related crimes",
+    "firearms",
+    "firearms deaths",
+    "geographic information systems",
+    "homicide",
+    "mapping",
+    "murder",
+    "neighborhoods",
+    "offenders",
+    "police records",
+    "robbery",
+    "urban crime",
+    "victims",
+    "violence",
+    "violent crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2015-07-29T14:30:28",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04544.v1",
+      "title": "Spatial Configuration of Places Related to Homicide Events in Washington, DC, 1990-2002"
+    }
+  ]
+}

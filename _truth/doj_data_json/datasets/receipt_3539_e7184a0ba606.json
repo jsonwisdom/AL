@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "White-Collar and Corporate Frauds:  Understanding and Measuring Public Policy Preferences, United States, 2015",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThis study contains data from an on-line national survey of 2,050 respondents aged 18+. The data were collected to provide new policy-relevant evidence on the public's attitude towards white-collar and corporate frauds by asking questions about the public's willingness to pay for reducing white-collar crimes when provided information about the estimate of financial losses, context and seriousness. Further, the study quantifies public perceptions of seriousness link to specific policy preferences.\r\nThis study includes one STATA data file: Formatted_WTP_Dataset_11-10-16.dta (138 variables, 2050 cases).",
+  "modified": "2018-05-16T14:02:04",
+  "accessLevel": "restricted public",
+  "identifier": "3539",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime control policies",
+    "crime impact",
+    "victim compensation",
+    "white collar crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-05-16T13:58:06",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36520.v1",
+      "title": "White-Collar and Corporate Frauds:  Understanding and Measuring Public Policy Preferences, United States, 2015"
+    }
+  ]
+}

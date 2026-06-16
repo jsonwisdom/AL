@@ -1,0 +1,19 @@
+{
+  "schema_name": "ALMS_REPLAY_PREIMAGE",
+  "schema_version": "0.1",
+  "status": "PREIMAGE_DISCLOSURE_CANDIDATE",
+  "result_commit_sha": "0a16480220fceb1b29a2e240ab569e15ebea5a39",
+  "expected_sha256_replay_hash": "0xf72d4c0460572c8cc3ac3f9cc7ac9d674d635d1f06b085fc2e2c8a31accbefa7",
+  "candidate_file_sha256": "0x28d7e096867d4d6091f452d06091e081e81f8b9823a80f7bec1b133349c4b448",
+  "ipfs_cid": "bafkreibi27qjnbt5jvqjd5cs2bqjdyeb5apyxgbdvahxx3a3cmzutrfuja",
+  "encoding": "UTF8_CANONICAL_JSON",
+  "canonicalization": "RFC_8785_TARGET",
+  "hash_domain": "SHA256_REPLAY_HASH",
+  "closure_warning": "This file is a disclosed preimage candidate. Branch 2 is not complete until Rust independently computes SHA256 over the exact committed preimage bytes or deterministic preimage-generation output and derives the expected replay hash without importing the expected hash as a constant.",
+  "non_equivalence_guard": {
+    "sha256_replay_hash": "0xf72d4c0460572c8cc3ac3f9cc7ac9d674d635d1f06b085fc2e2c8a31accbefa7",
+    "sha3_256_bridge_hash": "0x980edb5f9e5a03d77c595cd1d8f5d31eaecf9918cd562c222377cbe8608c9260",
+    "evm_keccak256": "0xcc7366b59096b95fb73bfa51764102deb7f889e9f00db0b31bebfd70c2c59b1f",
+    "domain_collapse_allowed": false
+  }
+}

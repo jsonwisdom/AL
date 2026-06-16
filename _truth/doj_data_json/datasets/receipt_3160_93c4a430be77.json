@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Indirect Impacts of Community Policing, Jersey City, NJ, 1997-1999",
+  "description": "This study attempted to measure spatial displacement or diffusion of crime to areas near the targeted sites of police intervention. Data were drawn from a controlled study of displacement and diffusion in Jersey City, New Jersey. Two sites with substantial street-level crime and disorder were targeted and carefully monitored during an experimental period. Two neighboring areas were selected as \"catchment areas\" from which to assess immediate spatial displacement or diffusion. Intensive police interventions were applied to each target site but not to the catchment areas. More than 6,000 20-minute social observations were conducted in the target and catchment areas. Physical observations of the areas were conducted before, during, and after the interventions as well. These data were supplemented by interviews with local residents and ethnographic field observations.",
+  "modified": "2014-10-08T10:00:07",
+  "accessLevel": "restricted public",
+  "identifier": "3160",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime patterns",
+    "crime prevention",
+    "drug related crimes",
+    "police intervention",
+    "prostitution",
+    "violent crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2014-09-25T12:58:22",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR29430.v1",
+      "title": "Indirect Impacts of Community Policing, Jersey City, NJ, 1997-1999"
+    }
+  ]
+}

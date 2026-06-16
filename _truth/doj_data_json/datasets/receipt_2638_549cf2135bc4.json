@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "United States Courts of Appeals Database Phase 1, 1925-1988",
+  "description": "The Appeals Court Database Project was designed to create\r\nan extensive dataset to facilitate the empirical analysis of the votes\r\nof judges and the decisions of the United States Courts of\r\nAppeals. The data in this collection comprise the first phase of this\r\nproject. A random sample of cases from each circuit for each year\r\nbetween 1925-1988 was coded for the nature of the issues presented,\r\nthe statutory, constitutional, and procedural bases of the decision,\r\nthe votes of the judges, and the nature of the litigants. The\r\nvariables are divided into four sections: basic case characteristics,\r\nparticipation, issues, and judges and votes. There is a separate data\r\nfile (Part 2) containing the number of cases with published decisions\r\nfor each circuit/year between 1925 and 1990. These data are necessary\r\nto weight the variables in the main data file (Part 1).",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2638",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "appellate courts",
+    "case processing",
+    "court cases",
+    "decision making",
+    "judges",
+    "judicial decisions"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1998-05-27T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02086.v1",
+      "title": "United States Courts of Appeals Database Phase 1, 1925-1988"
+    }
+  ]
+}

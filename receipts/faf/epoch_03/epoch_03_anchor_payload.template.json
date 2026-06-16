@@ -1,0 +1,58 @@
+{
+  "payload_type": "FAF_EPOCH_03_BOUNDED_ANCHOR_PAYLOAD",
+  "version": "1.0.0",
+  "status": "TEMPLATE_PENDING_FINAL_DOSSIER_HASH_AND_CID",
+  "operator": "jaywisdom.base.eth",
+  "ens_text_record": {
+    "name": "jaywisdom.base.eth",
+    "key": "alms:faf_epoch_03",
+    "value_json": {
+      "system": "ALMS",
+      "doctrine": "Parody Paradox Jay FAF",
+      "epoch": "Epoch_03",
+      "dossier_type": "epoch_convergence_summary",
+      "dossier_ipfs_cid": null,
+      "dossier_sha256": null,
+      "repo": "github.com/jsonwisdom/AL",
+      "capsule_path": "receipts/faf/epoch_03/parody_paradox_jay_faf_epoch_03_capsule.v1.json",
+      "convergence_summary_path": "receipts/faf/epoch_03/epoch_03_convergence_summary.v1.json",
+      "claims": {
+        "replay_parity": "LOCAL_ONLY",
+        "human_receipts": "AT_LEAST_2",
+        "ci_role": "WITNESS_ONLY"
+      },
+      "anchor_semantics": "This record attests only that a convergence dossier exists at the given CID and hash; it does not assert semantic truth of the underlying data."
+    }
+  },
+  "ipfs_dossier_object": {
+    "file": "epoch_03_convergence_summary.v1.json",
+    "source_path": "receipts/faf/epoch_03/epoch_03_convergence_summary.v1.json",
+    "sha256_command": "sha256sum epoch_03_convergence_summary.v1.json",
+    "ipfs_command": "ipfs add --cid-version=1 --hash=sha2-256 epoch_03_convergence_summary.v1.json",
+    "dossier_sha256": null,
+    "dossier_ipfs_cid": null
+  },
+  "eas_payload": {
+    "schema_fields": [
+      "bytes32 dossier_sha256",
+      "string ipfs_cid",
+      "string epoch",
+      "string doctrine"
+    ],
+    "schema_description": "This attestation records the existence and hash of an ALMS convergence dossier. It does not attest to the correctness of any underlying data or interpretation.",
+    "values": {
+      "dossier_sha256": null,
+      "ipfs_cid": null,
+      "epoch": "Epoch_03",
+      "doctrine": "Parody Paradox Jay FAF"
+    }
+  },
+  "anchor_rules": {
+    "chain_is_verifier": false,
+    "replay_is_verifier": true,
+    "anchor_content_must_be_pointer_only": true,
+    "semantic_truth_claims_forbidden": true,
+    "eligible_only_after_convergence_summary_status": "ELIGIBLE"
+  },
+  "receipt_hash": null
+}

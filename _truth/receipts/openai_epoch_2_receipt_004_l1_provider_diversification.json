@@ -1,0 +1,45 @@
+{
+  "artifact_type": "epoch_2_receipt",
+  "artifact": "openai_epoch_2_receipt_004_l1_provider_diversification.json",
+  "receipt_id": "OPENAI_EPOCH_2_RECEIPT_004",
+  "institution_id": "OPENAI",
+  "epoch": 2,
+  "receipt_class": "L1_structural_physics",
+  "gap_targets": [
+    "GAP_001",
+    "GAP_007",
+    "GAP_010"
+  ],
+  "event_type": "PROVIDER_DIVERSIFICATION_REPAIR_SURFACE",
+  "structural_surface": {
+    "claim_category": "compute_provider_diversification",
+    "structural_receipt_hash": null,
+    "evidence_uri": null,
+    "source_visibility": "PENDING_PUBLIC_URI_OR_ATTESTATION",
+    "timestamp_observed": null
+  },
+  "delta_inputs": {
+    "compute_provider_concentration_delta": null,
+    "infrastructure_dependency_delta": null,
+    "routing_topology_diversification_delta": null,
+    "exclusive_access_clause_delta": null,
+    "transparency_penalty_delta": null
+  },
+  "recompute_status": "PENDING_RECEIPT_COMPLETION",
+  "parent_transition_artifact": "institution_state_transition_openai_epoch_2_v2.json",
+  "previous_recompute_commit_sha": "46d193ca9866727de2ce38451b902af555638b60",
+  "previous_l1_receipt_commit_sha": "7619cc650c9f5a075bb5c4fda76aa38d3bcefd87",
+  "previous_verdict_hash": "sha256:0c50d561cc202ea2",
+  "receipt_set_hash_before": "sha256:e43902cf95da",
+  "receipt_set_hash_after": null,
+  "doctrine_version": "ALMS_DOCTRINE_V1.3",
+  "schema_version": "ALMS_GAP_SCHEMA_V2",
+  "timestamp_issued": "2026-05-14T20:20:00Z",
+  "mutation_policy": "APPEND_ONLY_RECEIPT_NO_PRIOR_EPOCH_MUTATION",
+  "next_allowed_action": "FILL_PROVIDER_DIVERSIFICATION_EVIDENCE_AND_RECOMPUTE_EPOCH_2_DELTA",
+  "forbidden_actions": [
+    "MUTATE_FROZEN_TAXONOMY",
+    "MUTATE_EPOCH_1_VERDICT",
+    "OVERWRITE_PRIOR_RECEIPTS"
+  ]
+}

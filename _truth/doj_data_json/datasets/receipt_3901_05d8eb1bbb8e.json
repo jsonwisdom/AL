@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Use of Computerized Crime Mapping by Law Enforcement in the United States, 1997-1998",
+  "description": "As a first step in understanding law enforcement agencies'\r\n use and knowledge of crime mapping, the Crime Mapping Research Center\r\n (CMRC) of the National Institute of Justice conducted a nationwide\r\n survey to determine which agencies were using geographic information\r\n systems (GIS), how they were using them, and, among agencies that were\r\n not using GIS, the reasons for that choice. Data were gathered using a\r\n survey instrument developed by National Institute of Justice staff,\r\n reviewed by practitioners and researchers with crime mapping\r\n knowledge, and approved by the Office of Management and Budget. The\r\n survey was mailed in March 1997 to a sample of law enforcement\r\n agencies in the United States. Surveys were accepted until May 1,\r\n 1998. Questions asked of all respondents included type of agency,\r\n population of community, number of personnel, types of crimes for\r\n which the agency kept incident-based records, types of crime analyses\r\n conducted, and whether the agency performed computerized crime\r\n mapping. Those agencies that reported using computerized crime mapping\r\n were asked which staff conducted the mapping, types of training their\r\n staff received in mapping, types of software and computers used,\r\n whether the agency used a global positioning system, types of data\r\n geocoded and mapped, types of spatial analyses performed and how\r\n often, use of hot spot analyses, how mapping results were used, how\r\n maps were maintained, whether the department kept an archive of\r\n geocoded data, what external data sources were used, whether the\r\n agency collaborated with other departments, what types of Department\r\n of Justice training would benefit the agency, what problems the agency\r\n had encountered in implementing mapping, and which external sources\r\n had funded crime mapping at the agency. Departments that reported no\r\n use of computerized crime mapping were asked why that was the case,\r\n whether they used electronic crime data, what types of software they\r\n used, and what types of Department of Justice training would benefit\r\ntheir agencies.",
+  "modified": "2008-04-18T08:18:44",
+  "accessLevel": "restricted public",
+  "identifier": "3901",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime mapping",
+    "geographic information systems",
+    "information use",
+    "law enforcement agencies"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2001-02-16T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02878.v3",
+      "title": "Use of Computerized Crime Mapping by Law Enforcement in the United States, 1997-1998"
+    }
+  ]
+}

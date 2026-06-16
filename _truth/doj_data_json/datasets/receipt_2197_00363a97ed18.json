@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Augmented Federal Probation, Sentencing, and Supervision Information System, 1985 ",
+  "description": "The United States Sentencing Commission, established by the \r\n 98th Congress, is an independent agency in the judicial branch of \r\n government. The Commission recommends guidelines prescribing the \r\n appropriate form and severity of punishment for offenders convicted of \r\n federal crimes. These data were collected to determine whether \r\n sentencing disparities existed and whether the guidelines were \r\n adequate. Basic information in the collection includes a description of \r\n the offense, characterization of the defendant's background and \r\n criminal record, method of disposition of the case, and sentence \r\n imposed. Felony and misdemeanor cases are included while petty offense \r\n cases are excluded. Three types of additional information were used to \r\n augment the existing data: (1) more detailed offense and offender \r\n characteristics identified by the United States Sentencing Commission \r\n but coded by federal probation officers, (2) actual time served in \r\n prison from the SENTRY data file of the United States Bureau of \r\n Prisons, and (3) information necessary to estimate prospective release \r\n dates from the hearing files of the United States Parole Commission. \r\nThe unit of analysis is the defendant.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2197",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "criminal histories",
+    "disposition (legal)",
+    "federal offenses",
+    "felony offenses",
+    "misdemeanor offenses",
+    "offenders",
+    "probation",
+    "sentencing",
+    "sentencing guidelines"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1992-01-10T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09664.v2",
+      "title": "Augmented Federal Probation, Sentencing, and Supervision Information System, 1985 "
+    }
+  ]
+}

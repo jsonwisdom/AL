@@ -1,0 +1,54 @@
+{
+  "$schema_id": "https://jsonwisdom.github.io/AL/schemas/semantic/evaluation-interface.v1.json",
+  "interface_version": "1.0.0",
+  "status": "SEMANTIC_INTERFACE_STAGED",
+  "promotion_status": "STUB_LOCKED",
+  "constraints": {
+    "execution_model": "CONSUME_ONLY",
+    "allow_side_effects": false
+  },
+  "inputs": [
+    {
+      "identifier": "byte_matrix",
+      "source_path": "checkpoints/guardrails/hash-observation.v1.json",
+      "source_commit": "ec1876c73baed53ecd3c98655798d18a9185d653",
+      "required_status": "REMOTE_VISIBLE",
+      "access_mode": "READ_ONLY"
+    },
+    {
+      "identifier": "hash_observation_script",
+      "source_path": "scripts/hash-guardrail-files.js",
+      "source_commit": "9950ddba4b940d1525a1532371768104d24befba",
+      "required_status": "REMOTE_VISIBLE",
+      "access_mode": "READ_ONLY"
+    }
+  ],
+  "outputs": [
+    {
+      "identifier": "semantic_stage_checkpoint",
+      "target_path": "checkpoints/semantic/evaluation.v1.json",
+      "schema_enforced": false,
+      "verdict_required": false
+    }
+  ],
+  "claims_allowed": [
+    "semantic_evaluation_staged"
+  ],
+  "claims_forbidden": [
+    "receipt_valid",
+    "verification_passed",
+    "external_attestation",
+    "ACTIVE_AUDIT",
+    "baseline_checkpoint_modified",
+    "hash_observation_rewritten"
+  ],
+  "immutability_guardrails": {
+    "allowed_write_boundary": "checkpoints/semantic/*",
+    "must_not_write": [
+      "scripts/hash-guardrail-files.js",
+      "checkpoints/guardrails/hash-observation.v1.json",
+      "specs/guardrails/source-requirements.v1.json"
+    ]
+  },
+  "structural_rule": "Semantic layer may consume hash observations and write only semantic checkpoints; it may not mutate source, guardrail, or hash checkpoints."
+}

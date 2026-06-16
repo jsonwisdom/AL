@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Uniform Crime Reporting Program Data: National Incident-Based Reporting System, 2015",
+  "description": "The National Incident-Based Reporting System (NIBRS) is a\r\npart of the Uniform Crime Reporting Program (UCR), administered by the\r\nFederal Bureau of Investigation (FBI). In the late 1970s, the law\r\nenforcement community called for a thorough evaluative study of the\r\nUCR with the objective of recommending an expanded and enhanced UCR\r\nprogram to meet law enforcement needs into the 21st century. The FBI\r\nfully concurred with the need for an updated program to meet\r\ncontemporary needs and provided its support, formulating a\r\ncomprehensive redesign effort. Following a multiyear study, a\r\n\"Blueprint for the Future of the Uniform Crime Reporting Program\" was\r\ndeveloped. Using the \"Blueprint,\" and in consultation with local and\r\nstate law enforcement executives, the FBI formulated new guidelines\r\nfor the Uniform Crime Reports. The National Incident-Based Reporting\r\nSystem (NIBRS) was implemented to meet these guidelines. NIBRS data\r\nare archived at ICPSR as 11 separate data files per year, which may be\r\nmerged by using linkage variables. Prior to 2013 the data were archived and distributed as 13 separate data files, including three separate batch header record files. Starting with the 2013 data, the FBI combined the three batch header files into one file. Consequently, ICPSR instituted new file numbering for the data. NIBRS data focus on a variety of\r\naspects of a crime incident. Part 2 (formerly Part 4), Administrative Segment, offers\r\ndata on the incident itself (date and time). Each crime incident is\r\ndelineated by one administrative segment record. Also provided are\r\nPart 3 (formerly Part 5), Offense Segment (offense type, location, weapon use, and bias\r\nmotivation), Part 4 (formerly Part 6), Property Segment (type of property loss, property\r\ndescription, property value, drug type and quantity), Part 5 (formerly Part 7), Victim\r\nSegment (age, sex, race, ethnicity, and injuries), Part 6 (formerly Part 8), Offender\r\nSegment (age, sex, and race), and Part 7 (formerly Part 9), Arrestee Segment (arrest\r\ndate, age, sex, race, and weapon use). The Batch Header Segment (Part 1, formerly Parts\r\n1-3) separates and identifies individual police agencies by\r\nOriginating Agency Identifier (ORI). Batch Header information, which\r\nis contained on three records for each ORI, includes agency name,\r\ngeographic location, and population of the area. Part 8 (formerly Part 10), Group B\r\nArrest Report Segment, includes arrestee data for Group B crimes.\r\nWindow Segments files (Parts 9-11, formerly Parts 11-13) pertain to incidents for which the\r\ncomplete Group A Incident Report was not submitted to the FBI. In\r\ngeneral, a Window Segment record will be generated if the incident\r\noccurred prior to January 1 of the previous year or if the incident\r\noccurred prior to when the agency started NIBRS reporting. As with the\r\nUCR, participation in NIBRS is voluntary on the part of law\r\nenforcement agencies. The data are not a representative sample of\r\ncrime in the United States.",
+  "modified": "2017-08-08T15:40:21",
+  "accessLevel": "public",
+  "identifier": "2621",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "arrests",
+    "crime",
+    "crime rates",
+    "crime reporting",
+    "law enforcement agencies",
+    "national crime statistics (USA)",
+    "offenders",
+    "offenses",
+    "victims",
+    "violent crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2433",
+  "dataQuality": false,
+  "issued": "2017-08-08T15:40:21",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36795.v1",
+      "title": "Uniform Crime Reporting Program Data: National Incident-Based Reporting System, 2015"
+    }
+  ]
+}

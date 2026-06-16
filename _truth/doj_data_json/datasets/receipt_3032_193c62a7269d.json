@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Project on Policing Neighborhoods in Indianapolis, Indiana, and St. Petersburg, Florida, 1996-1997",
+  "description": "The purpose of the Project on Policing Neighborhoods (POPN) was\r\nto provide an in-depth description of how the police and the community\r\ninteract with each other in a community policing (CP) environment. Research\r\nwas conducted in Indianapolis, Indiana, in 1996 and in St. Petersburg,\r\nFlorida, in 1997. Several research methods were employed: systematic\r\nobservation of patrol officers (Parts 1-4) and patrol supervisors (Parts\r\n5-14), in-person interviews with patrol officers (Part 15) and supervisors\r\n(Parts 16-17), and telephone surveys of residents in selected neighborhoods\r\n(Part 18). Field researchers accompanied their assigned patrol or\r\nsupervising officer during all activities and encounters with the public\r\nduring the shift. Field researchers noted when various activities and\r\nencounters with the public occurred during these \"ride-alongs,\" who was\r\ninvolved, and what happened. In the resulting data files coded observation\r\ndata are provided at the ride level, the activity level (actions that did\r\nnot involve interactions with citizens), the encounter level (events in\r\nwhich officers interacted with citizens), and the citizen level. In\r\naddition to encounters with citizens, supervisors also engaged in\r\nencounters with patrol officers. Patrol officers and patrol supervisors in\r\nboth Indianapolis and St. Petersburg were interviewed one-on-one in a\r\nprivate interviewing room during their regular work shifts. Citizens in the\r\nPOPN study beats were randomly selected for telephone surveys to determine\r\ntheir views about problems in their neighborhoods and other community\r\nissues. Administrative records were used to create site identification\r\ndata (Part 19) and data on staffing (Part 20). This data collection also\r\nincludes data compiled from census records, aggregated to the beat level\r\nfor each site (Part 21). Census data were also used to produce district\r\npopulations for both sites (Part 22). Citizen data were aggregated to the\r\nencounter level to produce counts of various citizen role categories and\r\ncharacteristics and characteristics of the encounter between the patrol\r\nofficer and citizens in the various encounters (Part 23). Ride-level data\r\n(Parts 1, 5, and 10) contain information about characteristics of the ride,\r\nincluding start and end times, officer identification, type of unit, and\r\nbeat assignment. Activity data (Parts 2, 6, and 11) include type of\r\nactivity, where and when the activity took place, who was present, and how\r\nthe officer was notified. Encounter data (Parts 3, 7, and 12) contain\r\ndescriptive information on encounters similar to the activity data (i.e.,\r\nlocation, initiation of encounter). Citizen data (Parts 4, 8, and 13)\r\nprovide citizen characteristics, citizen behavior, and police behavior\r\ntoward citizens. Similarly, officer data from the supervisor observations\r\n(Parts 9 and 14) include characteristics of the supervising officer and the\r\nnature of the interaction between the officers. Both the patrol officer and\r\nsupervisor interview data (Parts 15-17) include the officers' demographics,\r\ntraining and knowledge, experience, perceptions of their beats and\r\norganizational environment, and beliefs about the police role. The patrol\r\nofficer data also provide the officers' perceptions of their supervisors\r\nwhile the supervisor data describe supervisors' perceptions of their\r\nsubordinates, as well as their views about their roles, power, and\r\npriorities as supervisors. Data from surveyed citizens (Part 18) provide\r\ninformation about their neighborhoods, including years in the neighborhood,\r\ndistance to various places in the neighborhood, neighborhood problems and\r\neffectiveness of police response to those problems, citizen knowledge of,\r\nor interactions with, the police, satisfaction with police services, and\r\nfriends and relatives in the neighborhood. Citizen demographics and\r\ngeographic and weight variables are also included. Site identification\r\nvariables (Part 19) include ride and encounter numbers, site beat (site,\r\ndistrict, and beat or community policing areas [CPA]), and sector. Staffing\r\nvariables (Part 20) include district, shift, and staffing levels for\r\nvarious shifts. Census data (Part 21) include neighborhood, index of\r\nsocioeconomic distress, total population, and total white\r\npopulation. District population variables (Part 22) include district and\r\npopulation of district. The aggregated citizen data (Part 23) provide the\r\nride and encounter numbers, number of citizens in the encounter, counts of\r\ncitizens by their various roles, and by sex, age, race, wealth, if known by\r\nthe police, under the influence of alcohol or drugs, physically injured,\r\nhad a weapon, or assaulted the police, counts by type of encounter, and\r\ncounts of police and citizen actions during the encounter.",
+  "modified": "2007-06-01T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "3032",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "citizen attitudes",
+    "communities",
+    "community policing",
+    "fear of crime",
+    "neighborhood conditions",
+    "neighborhoods",
+    "police",
+    "police citizen interactions",
+    "police effectiveness",
+    "police patrol"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2002-12-09T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03160.v2",
+      "title": "Project on Policing Neighborhoods in Indianapolis, Indiana, and St. Petersburg, Florida, 1996-1997"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Evaluation of a Hot Spot Policing Field Experiment in St. Louis, 2012 - 2014",
+  "description": "These data are part of NACJDs Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThe two central objectives of this project were (1) to evaluate the effect on crime of a targeted patrol strategy mounted by the St. Louis Metropolitan Police Department (SLMPD) and (2) to evaluate the researcher-practitioner partnership that underlay the policing intervention.\r\nThe study addressed the following research questions:\r\n\r\nDo intensified police patrols and enforcement in crime hot spots result in larger reductions in firearm assaults and robberies than in similar areas subject to routine police activity?\r\nDo specific enforcement tactics decrease certain type of crime?\r\nWhich enforcement tactics are most effective?\r\nDoes video surveillance reduce crime?\r\nHow does the criminal justice system respond to firearm crime?\r\nDo notification meetings reduce recidivism?\r\nDoes community unrest increase crime?\r\nDid crime rates rise following the Ferguson Killing?\r\n\r\nTo answer these questions, researchers used a mixed methods data collection plan, including interviews with local law enforcement, surveillance camera footage, and conducting ride-alongs with officers.",
+  "modified": "2017-12-07T14:01:21",
+  "accessLevel": "restricted public",
+  "identifier": "3911",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrests",
+    "crime",
+    "crime control",
+    "law enforcement",
+    "police",
+    "surveillance",
+    "violent crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2017-12-07T11:47:06",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36129.v1",
+      "title": "Evaluation of a Hot Spot Policing Field Experiment in St. Louis, 2012 - 2014"
+    }
+  ]
+}

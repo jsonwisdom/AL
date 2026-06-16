@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Crime, Fear, and Control in Neighborhood Commercial Centers:  Minneapolis and St. Paul, 1970-1982",
+  "description": "The major objective of this study was to examine how\r\nphysical characteristics of commercial centers and demographic\r\ncharacteristics of residential areas\r\ncontribute to crime and how these characteristics\r\naffect reactions to crime in mixed commercial-residential settings.\r\nInformation on physical characteristics includes type of business,\r\nstore hours, arrangement of buildings, and defensive modifications in\r\nthe area. Demographic variables cover racial composition, average\r\nhousehold size and income, and percent change of occupancy. The crime\r\ndata describe six types of crime: robbery, burglary, assault, rape,\r\npersonal theft, and shoplifting.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3731",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "assault",
+    "burglary",
+    "crime",
+    "demographic characteristics",
+    "ethnicity",
+    "households",
+    "income",
+    "rape",
+    "robbery"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1987-01-12T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08167.v2",
+      "title": "Crime, Fear, and Control in Neighborhood Commercial Centers:  Minneapolis and St. Paul, 1970-1982"
+    }
+  ]
+}

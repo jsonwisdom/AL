@@ -1,0 +1,54 @@
+{
+  "schema_id": "AL_GUARDRAIL_SOURCE_REQUIREMENTS_V1",
+  "status": "SOURCE_CONTRACT_ONLY",
+  "promotion_status": "STUB_LOCKED",
+  "purpose": "Define the source materials required before guardrail verification scripts may move from STUB to ACTIVE.",
+  "required_sources": {
+    "canonicalization_algorithm_spec": {
+      "required": true,
+      "status": "PRESENT",
+      "source_path": "specs/guardrails/canonicalization-algorithm.v1.json",
+      "description": "Deterministic byte-level canonicalization rules for receipt artifacts."
+    },
+    "receipt_schema_target": {
+      "required": true,
+      "status": "PRESENT",
+      "source_path": "schemas/guardrails/receipt.v1.schema.json",
+      "description": "Committed schema file or schema identifier used to validate receipt shape."
+    },
+    "hash_algorithm_specification": {
+      "required": true,
+      "status": "PRESENT",
+      "source_path": "specs/guardrails/hash-algorithm.v1.json",
+      "description": "Explicit digest algorithm and encoding rules used for content identity."
+    },
+    "replay_input_specification": {
+      "required": true,
+      "status": "PRESENT",
+      "source_path": "specs/guardrails/replay-inputs.v1.json",
+      "description": "Declared input files and parameters required to reproduce replay checks."
+    },
+    "deterministic_execution_contract": {
+      "required": true,
+      "status": "PRESENT",
+      "source_path": "specs/guardrails/deterministic-execution.v1.json",
+      "description": "Rules that define deterministic execution, failure behavior, and environment assumptions."
+    },
+    "baseline_commit_anchor": {
+      "required": true,
+      "status": "PRESENT",
+      "source_path": "specs/guardrails/baseline-commit.v1.json",
+      "description": "Git commit hash used as the baseline for replay comparison."
+    }
+  },
+  "forbidden_claims": [
+    "verification_passed",
+    "replay_passed",
+    "external_witness_created",
+    "settlement_verified",
+    "attestation_verified",
+    "anchor_complete"
+  ],
+  "activation_rule": "Scripts may return ACTIVE only after every required source is committed, parseable, and checked by executable code.",
+  "ghost_anchor_risk": false
+}

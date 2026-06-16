@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Calls for Service to Police as a Means of Evaluating Crime Trends in Oklahoma City, 1986-1988",
+  "description": "In an effort to measure the effectiveness of crime\r\ndeterrents and to estimate crime rates, calls for assistance placed to\r\npolice in Oklahoma City over a two-year period were enumerated. This\r\ntype of call was studied in order to circumvent problems such as\r\n\"interviewer's effect\" and sampling errors that occur with other\r\nmethods. The telephone calls were stratified by police district,\r\nallowing for analysis on the neighborhood level to determine whether\r\ndeterrence operates ecologically--that is, by neighbors informing one\r\nanother about arrests which took place as a result of their calls to\r\nthe police. In measuring deterrence, only the calls that concerned\r\nrobbery were used. To estimate crime rates, calls were tallied on a\r\nmonthly basis for 18 types of offenses: aggravated assault, robbery,\r\nrape, burglary, grand larceny, motor vehicle theft, simple assault,\r\nfraud, child molestation, other sex offenses, domestic disturbance,\r\ndisorderly conduct, public drunkenness, vice and drugs, petty larceny,\r\nshoplifting, kidnapping/hostage taking, and suspicious activity.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3841",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrests",
+    "assault",
+    "auto theft",
+    "burglary",
+    "child abuse",
+    "civil disorders",
+    "crime patterns",
+    "crime prevention",
+    "crime rates",
+    "deterrence",
+    "kidnapping",
+    "larceny",
+    "neighborhoods",
+    "petty theft",
+    "rape",
+    "robbery",
+    "sex offenses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1992-01-10T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09669.v1",
+      "title": "Calls for Service to Police as a Means of Evaluating Crime Trends in Oklahoma City, 1986-1988"
+    }
+  ]
+}

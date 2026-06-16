@@ -1,0 +1,71 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Americans with Disabilities Act (ADA) Enforcement Activities",
+  "description": "This collection of documents includes Americans with Disabilities Act (ADA) Briefs, Complaints, Consent Decrees, Settlement Agreements,  and Letters of Findings",
+  "modified": "2017-04-19T00:00:00",
+  "accessLevel": "public",
+  "identifier": "300",
+  "publisher": {
+    "name": "Civil Rights Division",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Data Management US Department of Justice (USDOJ)",
+    "hasEmail": "mailto:DataManagement@usdoj.gov"
+  },
+  "keyword": [
+    "civil rights division",
+    "department of justice",
+    "doj",
+    "americans with disabilities",
+    "ada regulations",
+    "ada settlement agreements",
+    "title i",
+    "title ii",
+    "title iii"
+  ],
+  "bureauCode": [
+    "011:05"
+  ],
+  "programCode": [
+    "011:019"
+  ],
+  "spatial": "United States",
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2017-04-19T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "landingPage": "https://www.ada.gov/cases/",
+  "theme": [
+    "geospatial"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://archive.ada.gov/enforce_archive.htm",
+      "description": "Cases 1992 - 2005",
+      "title": "Americans with Disabilities Act (ADA) Enforcement Activities - 1992 - 2005"
+    },
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://archive.ada.gov/enforce_current.htm",
+      "description": "Cases 2006 - June 2022",
+      "title": "Americans with Disabilities Act (ADA) Enforcement Activities - 2006 - June 2022"
+    },
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.justice.gov/crt/disability-rights-cases",
+      "description": "Cases After 2021",
+      "mediaType": "text/html",
+      "title": "Americans with Disabilities Act (ADA) Enforcement Activities - Post 2021"
+    }
+  ]
+}

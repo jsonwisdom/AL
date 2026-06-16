@@ -1,30 +1,14 @@
-# Runtime observer state
-_truth/base/
-_truth/base_mesh/
-_truth/logs/
-_truth/cron.log
+node_modules/
+.env
+.env.*
+.DS_Store
+AL-witness-A/
+AL-witness-B/
+replay-membrane/
+replay-membrane-v0/
+constitutional-runtime/
+__pycache__/
+*.pyc
 
-# Exported dashboard runtime feeds
-site/*.json
-site/*.log
-site/feed.log
-
-# Keep source files trackable
-!site/nitro-dashboard.html
-!watchers/
-!watchers/base/
-!watchers/base_mesh/
-!scripts/
-_truth/detect/
-_truth/detect/
-_truth/detect/
-
-# Local verifier backups
-docs/verify.html.bak.*
-
-# ALMS volatile / generated
-_truth/
-_sources/
-studio/live-intel/
-_secrets/
-_quarantine/
+# Runtime streams: generated during ALMS runs, never commit huge JSONL alert ledgers.
+_truth/alerts/*.jsonl

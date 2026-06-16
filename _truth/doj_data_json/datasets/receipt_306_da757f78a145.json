@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Americans with Disabilities Act Project Civic Access",
+  "description": "This collection of documents includes Americans with Disabilities Act (ADA) settlement agreements with counties, cities, towns and villages",
+  "modified": "2017-04-19T00:00:00",
+  "accessLevel": "public",
+  "identifier": "306",
+  "publisher": {
+    "name": "Civil Rights Division",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Data Management US Department of Justice (USDOJ)",
+    "hasEmail": "mailto:DataManagement@usdoj.gov"
+  },
+  "keyword": [
+    "civil rights division",
+    "department of justice",
+    "doj",
+    "americans with disabilities",
+    "ada",
+    "project civic access",
+    "pca",
+    "program accessibility",
+    "ada coordinator",
+    "title ii"
+  ],
+  "bureauCode": [
+    "011:05"
+  ],
+  "programCode": [
+    "011:019"
+  ],
+  "spatial": "United States",
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2017-04-19T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "theme": [
+    "geospatial"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://archive.ada.gov/civicac.htm",
+      "conformsTo": "https://www.isotc211.org/2005/gmi/",
+      "mediaType": "text/html",
+      "title": "Americans with Disabilities Act Project Civic Access"
+    }
+  ]
+}

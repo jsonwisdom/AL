@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Examining Race and Gender Disparities in Restrictive Housing Placements, in a large U.S. State, 2010-2014",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.The data were obtained from one state prison system that was characterized by a diverse and rising prison population. This prison system housed more than 30,000 inmates across 15 institutions (14 men's facilities; 1 women's facility). The data contain information on inmates' placements into different housing units across all 15 state prison complexes, including designated maximum security, restrictive housing units. Inmates placed in restrictive housing were in lockdown the majority of the day, had limited work opportunities, and were closely monitored. These inmates were also escorted in full restraints within the institution. They experienced little recreational time, visitation and phone privileges, and few interactions with other inmates.\r\nThe data contain information on inmates' housing placements, institutional misconduct, risk factors, demographic characteristics, criminal history, and offense information. These data provide information on every housing placement for each inmate, including the time spent in each placement, and the reasons documented by correctional staff for placing inmates in each housing unit. Demographic information includes inmate sex, race/ethnicity, and age.\r\n\r\nThe collection contains 1 Stata data file \"Inmate-Housing-Placements-Data.dta\" with 16 variables and 124,942 cases.",
+  "modified": "2018-09-25T13:00:02",
+  "accessLevel": "restricted public",
+  "identifier": "3568",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "ethnic groups",
+    "housing",
+    "prison conditions",
+    "prison inmates",
+    "racial segregation",
+    "violent crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-09-25T12:43:43",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37092.v1",
+      "title": "Examining Race and Gender Disparities in Restrictive Housing Placements, in a large U.S. State, 2010-2014"
+    }
+  ]
+}

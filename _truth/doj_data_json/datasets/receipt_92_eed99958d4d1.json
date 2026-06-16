@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Census of State and Local Law Enforcement Agencies (CSLLEA), 2000: [United States]",
+  "description": "To ensure an accurate sampling frame for its Law\r\nEnforcement Management and Administrative Statistics (LEMAS) survey,\r\nthe Bureau of Justice Statistics periodically sponsors a census of the\r\nnation's state and local law enforcement agencies. This census, known\r\nas the Directory Survey, includes all state and local law enforcement\r\nagencies that are publicly funded and employ at least one full-time or\r\npart-time sworn officer with general arrest powers. As in previous\r\nyears, the 2000 Directory Survey collected data on the number of sworn\r\nand nonsworn personnel employed by each agency, including both\r\nfull-time and part-time employees. The pay period that included June\r\n30, 2000, was the reference date for all personnel data. A 97.4\r\npercent response rate was obtained from the 17,784 state and local law\r\nenforcement agencies operating in the United States. This data\r\ncollection contains June 2000 data from the fourth Directory Survey.\r\nPrevious directory censuses were conducted in 1986 (DIRECTORY OF LAW\r\nENFORCEMENT AGENCIES, 1986: [UNITED STATES] [ICPSR 8696]), 1992\r\n(DIRECTORY OF LAW ENFORCEMENT AGENCIES, 1992: [UNITED STATES] [ICPSR\r\n2266]), and 1996 (DIRECTORY OF LAW ENFORCEMENT AGENCIES, 1996: [UNITED\r\nSTATES] [ICPSR 2260]). Variables include personnel totals, type of\r\ngovernment, type of agency, and whether the agency had the legal\r\nauthority to hold a person beyond arraignment for 48 or more hours.",
+  "modified": "2009-07-08T18:05:17",
+  "accessLevel": "public",
+  "identifier": "92",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "law enforcement",
+    "police departments",
+    "police officers"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2436",
+  "dataQuality": false,
+  "issued": "2002-10-02T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03484.v4",
+      "title": "Census of State and Local Law Enforcement Agencies (CSLLEA), 2000: [United States]"
+    }
+  ]
+}

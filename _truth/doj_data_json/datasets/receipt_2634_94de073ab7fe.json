@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "State Court Processing Statistics, 1990-2009: Felony Defendants in Large Urban Counties",
+  "description": "Originally known as the National Pretrial Reporting\r\nProgram, the State Court Processing Statistics (SCPS) program tracks\r\nfelony cases filed in May of a given year until final disposition or\r\nuntil one year has elapsed from the date of filing. This collection\r\npresents data on felony cases filed in approximately 40 of the\r\nnation's 75 most populous counties in even numbered years from\r\n1990-2006 and 2009. These 75 counties account for more than a third of the\r\nUnited States population and approximately half of all reported\r\ncrimes. The cases from these 40 jurisdictions are weighted to\r\nrepresent all felony filings during the month of May in the 75 most\r\npopulous counties. Data were collected on arrest charges, demographic\r\ncharacteristics, criminal history, pretrial release and detention,\r\nadjudication, and sentencing.",
+  "modified": "2014-06-24T13:47:47",
+  "accessLevel": "restricted public",
+  "identifier": "2634",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "case processing",
+    "court cases",
+    "criminal histories",
+    "defendants",
+    "disposition (legal)",
+    "felons",
+    "felony courts",
+    "pretrial detention",
+    "pretrial release",
+    "sentencing",
+    "state courts",
+    "statistical data"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2178",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "1998-09-11T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02038.v5",
+      "title": "State Court Processing Statistics, 1990-2009: Felony Defendants in Large Urban Counties"
+    }
+  ]
+}

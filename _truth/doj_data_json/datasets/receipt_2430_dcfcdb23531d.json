@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Law Enforcement Management and Administrative Statistics (LEMAS) Series",
+  "description": "\r\nInvestigator(s): Bureau of Justice Statistics\r\nConducted periodically since 1987, LEMAS collects data from over 3,000 general purpose state and local law enforcement agencies, including all those that employ 100 or more sworn officers and a nationally representative sample of smaller agencies. Data obtained include agency responsibilities, operating expenditures, job functions of sworn and civilian employees, officer salaries and special pay, demographic characteristics of officers, weapons and armor policies, education and training requirements, computers and information systems, use of video technology, vehicles, special units, and community policing activities.Years Produced: Periodically since 1987\r\n\r\n",
+  "modified": "2020-08-20T09:49:27",
+  "accessLevel": "public",
+  "identifier": "2430",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "administration",
+    "budgets",
+    "law enforcement",
+    "law enforcement agencies",
+    "management",
+    "personnel",
+    "police departments",
+    "statistical data",
+    "wages and salaries",
+    "workers"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1989-12-15T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/92",
+      "title": "Law Enforcement Management and Administrative Statistics (LEMAS) Series"
+    }
+  ]
+}

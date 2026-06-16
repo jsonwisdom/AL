@@ -1,0 +1,43 @@
+name: ALMS Watcher v1
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/30 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: alms-watcher
+  cancel-in-progress: false
+
+jobs:
+  watcher:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Ensure dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq curl coreutils
+
+      - name: Run ALMS watcher
+        run: |
+          bash scripts/watch_infra_v04.sh
+
+      - name: Commit fresh receipts
+        run: |
+          git config user.name "alms-bot"
+          git config user.email "alms-bot@users.noreply.github.com"
+
+          if git diff --quiet _truth/; then
+            echo "NO_RECEIPT_DIFF"
+          else
+            git add _truth/
+            git commit -m "ALMS watcher receipt $(date -u +%Y%m%dT%H%M%SZ)"
+            git push
+          fi

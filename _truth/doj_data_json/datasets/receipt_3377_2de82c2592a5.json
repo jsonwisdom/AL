@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Alaska Plea Bargaining Study, 1974-1976",
+  "description": "This study examines the characteristics of criminal\r\noffenders as they affect the primary outcomes of their court cases,\r\nparticularly plea bargaining decisions. The study was conducted in\r\nAnchorage, Juneau, and Fairbanks, Alaska, over a two-year period from\r\nAugust 1974 to August 1976. The data were collected from police\r\nbooking sheets, public fingerprint files, and court dockets. The unit\r\nof observation is the felony case, i.e., a single felony charge\r\nagainst a single defendant. Each unit of data contains information\r\nabout both the defendant and the charge. The variables include\r\ndemographic and social\r\ncharacteristics of the offender, criminal history of the offender,\r\nnature of the offense, evidence, victim characteristics, and\r\nadministrative factors related to the disposition of the case.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3377",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "court cases",
+    "felons",
+    "felony offenses",
+    "offenders",
+    "plea negotiations"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-05-03T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR07714.v2",
+      "title": "Alaska Plea Bargaining Study, 1974-1976"
+    }
+  ]
+}

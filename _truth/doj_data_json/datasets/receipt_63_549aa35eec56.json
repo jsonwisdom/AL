@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Annual Survey of Jails:  Jurisdiction-Level Data, 1990",
+  "description": "This collection provides annual data on jail populations\r\n across the nation and examines the \"spillover\" effect on local jails\r\n resulting from the dramatic growth in federal and state prison\r\n populations. These data permit an assessment of the demands placed on\r\n correctional resources and provide a complete picture of the adult\r\n correctional system and the changes that occur in that system.\r\n Information is available on the number of inmates by sex, race, adult\r\n or juvenile status, reason being held, and cause of death. Facility\r\n characteristics were collected regarding capacity, court orders,\r\nconditions of confinement, and alternative programs.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "63",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "correctional system",
+    "demographic characteristics",
+    "jail inmates",
+    "jails",
+    "overcrowding effects",
+    "population characteristics",
+    "probation"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2586",
+  "dataQuality": false,
+  "issued": "1992-01-10T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09569.v1",
+      "title": "Annual Survey of Jails:  Jurisdiction-Level Data, 1990"
+    }
+  ]
+}

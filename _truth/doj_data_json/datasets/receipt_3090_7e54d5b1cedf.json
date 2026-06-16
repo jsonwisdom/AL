@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Supervised Pretrial Release Programs, 1979-1982:  Miami, Milwaukee, and Portland",
+  "description": "This data collection effort was designed to assess the\r\neffects of different types of supervised pretrial release (SPR). Four\r\nmajor types of effects were examined: (1) defendants' behaviors while\r\nawaiting trial (failure to appear and arrests for new offenses), (2)\r\nthe costs of SPR to victims and the criminal justice system, (3)\r\npretrial release practices, and (4) jail populations. This study\r\nprovides detailed information for a selected group of defendants\r\nawaiting trial on criminal histories and arrests while awaiting trial.\r\nData are also available on services provided between arrest and\r\ndisposition. The study produced four different data sets. The first,\r\nSupervised Release Information System (SRIS), contains intake\r\ninformation on current arrest, criminal record, socio-economic status,\r\nties with the community, contact with mental health and substance abuse\r\nfacilities, and pretrial release decisions. The release section of this\r\ndata base contains information on services provided, intensity of\r\nsupervision, termination from program, personal characteristics at\r\ntermination, criminal charges at disposition, and new charges resulting\r\nfrom arrests while under pretrial status. The Arrest Data Set includes\r\nvariables on type and number of crimes committed by SPR defendants,\r\nproperty costs to victims, personal injury costs, and court disposition\r\nfor each offense. The Retrospective Data Set supplies variables on\r\ncharges filed and method of release, personal characteristics, length\r\nof pretrial incarceration, bail, whether the defendant was rebooked\r\nduring the pretrial period, charge at disposition, sentence, total\r\ncourt appearances, and total failures to appear in court (FTAs). The\r\nJail Population Data Set contains monthly counts of jail population and\r\naverage daily population.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3090",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrests",
+    "court system",
+    "criminal justice system",
+    "demographic characteristics",
+    "drugs",
+    "mental health",
+    "sentencing",
+    "trials"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1988-10-25T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08919.v1",
+      "title": "Supervised Pretrial Release Programs, 1979-1982:  Miami, Milwaukee, and Portland"
+    }
+  ]
+}

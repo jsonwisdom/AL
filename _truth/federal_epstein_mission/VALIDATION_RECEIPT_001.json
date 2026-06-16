@@ -1,0 +1,102 @@
+{
+  "artifact": "VALIDATION_RECEIPT",
+  "receipt_id": "VALIDATION_RECEIPT_001",
+  "version": "1.0",
+  "authority": false,
+  "custody_gate": "CLOSED",
+  "scope": "REPLAY_AUDIT_ONLY",
+  "created_at": "2026-06-04T00:00:00Z",
+  "statement": "The existing membrane stack was replay-checked and boundary-checked.",
+  "stack_under_test": {
+    "scaffold": {
+      "pr": 261,
+      "status": "MERGED",
+      "merge_commit": "a6ea550cbe395565dccb30f9549e2ca0c8cb352d"
+    },
+    "hard_objects": {
+      "pr": 288,
+      "status": "OPEN_DRAFT",
+      "head_sha": "ec764c14e516711374b77d0ac7a500e34845e717",
+      "expected_files": [
+        "_truth/federal_epstein_mission/EPSTEIN_DELTA_LEDGER_001.json",
+        "_truth/federal_epstein_mission/EPSTEIN_DELTA_LEDGER_001.json.sha256",
+        "_truth/federal_epstein_mission/EPSTEIN_EXISTING_ARTIFACT_INDEX_001.json",
+        "_truth/federal_epstein_mission/EPSTEIN_EXISTING_ARTIFACT_INDEX_001.json.sha256",
+        "_truth/federal_epstein_mission/README.md",
+        "_truth/federal_epstein_mission/README.sha256"
+      ]
+    },
+    "provenance_graph": {
+      "pr": 289,
+      "status": "OPEN_DRAFT",
+      "head_sha": "355a1e8aff9e846834e213de64032972a96e96fb",
+      "expected_files": [
+        "_truth/federal_epstein_mission/ENTITY_GRAPH_002.json",
+        "_truth/federal_epstein_mission/ENTITY_GRAPH_002.json.sha256"
+      ],
+      "graph_checksum": "63618ab59a17f6f8068ff6221883737f97751c07b971e37ac93d8dec0726dcce"
+    }
+  },
+  "validates": [
+    "PR_261 scaffold merged",
+    "PR_288 hard objects open draft with 6 files",
+    "PR_289 provenance graph open draft with 2 files",
+    "SHA sidecars exist for all JSON/md artifacts",
+    "All JSON artifacts contain authority:false",
+    "All JSON artifacts preserve custody_gate:CLOSED where applicable",
+    "ENTITY_GRAPH_002 contains zero person nodes",
+    "ENTITY_GRAPH_002 contains zero forbidden edges",
+    "No semantic claims promoted in any artifact"
+  ],
+  "does_not_validate": [
+    "DOJ corpus completeness",
+    "Epstein file contents",
+    "Person allegations",
+    "Client-list claims",
+    "Suppression claims",
+    "Alteration claims",
+    "Any subject-matter assertions"
+  ],
+  "checks_performed": [
+    {
+      "check": "pr_261_merged",
+      "result": "PASS"
+    },
+    {
+      "check": "pr_288_open_with_expected_files",
+      "result": "PASS"
+    },
+    {
+      "check": "pr_289_open_with_expected_files",
+      "result": "PASS"
+    },
+    {
+      "check": "authority_false_all_artifacts",
+      "result": "PASS"
+    },
+    {
+      "check": "custody_gate_closed_all_artifacts",
+      "result": "PASS"
+    },
+    {
+      "check": "sha256_sidecars_present_and_valid",
+      "result": "PASS"
+    },
+    {
+      "check": "entity_graph_person_nodes_count",
+      "result": "PASS",
+      "value": 0
+    },
+    {
+      "check": "entity_graph_forbidden_edges_count",
+      "result": "PASS",
+      "value": 0
+    },
+    {
+      "check": "no_semantic_claims",
+      "result": "PASS"
+    }
+  ],
+  "outcome": "REPLAY_VERIFIED",
+  "notes": "Validation performed against repo state only. No new artifacts created. No mission expansion. No graph expansion until PR #288 and PR #289 resolve."
+}

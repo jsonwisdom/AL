@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Executions in the United States, 1608-2002:  The ESPY File ",
+  "description": "This collection furnishes data on executions performed under\r\ncivil authority in the United States between 1608 and 2002. The dataset\r\ndescribes each individual executed and the circumstances surrounding\r\nthe crime for which the person was convicted. Variables include age,\r\nrace, name, sex, and occupation of the offender, place, jurisdiction,\r\ndate, and method of execution, and the crime for which the offender was\r\nexecuted. Also recorded are data on whether the only evidence for the\r\nexecution was official records indicating that an individual\r\n(executioner or slave owner) was compensated for an execution.",
+  "modified": "2016-07-20T14:57:03",
+  "accessLevel": "public",
+  "identifier": "2134",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "capital punishment",
+    "crime",
+    "criminal justice system",
+    "executions",
+    "historical data",
+    "offenders",
+    "offenses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1988-01-06T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08451.v5",
+      "title": "Executions in the United States, 1608-2002:  The ESPY File "
+    }
+  ]
+}

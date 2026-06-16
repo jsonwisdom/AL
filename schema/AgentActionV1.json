@@ -1,0 +1,11 @@
+{
+  "name": "AgentActionV1",
+  "fields": [
+    { "name": "actionHash", "type": "bytes32" },
+    { "name": "signer", "type": "address" },
+    { "name": "signature", "type": "bytes" },
+    { "name": "timestamp", "type": "uint64" },
+    { "name": "payloadRef", "type": "string" }
+  ],
+  "schema": "bytes32 actionHash,address signer,bytes signature,uint64 timestamp,string payloadRef"
+}

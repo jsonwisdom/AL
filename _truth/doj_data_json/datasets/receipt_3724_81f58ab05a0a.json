@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Inmate Victimization in State Prisons in the United States, 1979",
+  "description": "This data collection was designed to determine the nature\r\nand extent of victimization in state prisons across the nation. In\r\nparticular, it examines topics such as prison living conditions,\r\nprison programs, prison safety, and inmates' participation in or\r\nvictimization by other inmates with respect to several types of\r\nproperty and bodily crimes. Also presented are a set of attitudinal\r\nmeasures dealing with inmates' thoughts and perceptions on a variety\r\nof subjects, including their reactions to general statements about\r\nprison life and to a series of hypothetical situations.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3724",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "assault",
+    "correctional facilities",
+    "crime",
+    "criminal justice system",
+    "inmates",
+    "parole",
+    "victimization",
+    "violence"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08087.v1",
+      "title": "Inmate Victimization in State Prisons in the United States, 1979"
+    }
+  ]
+}

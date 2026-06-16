@@ -1,0 +1,52 @@
+{
+  "track_id": "TRACK_001",
+  "schema_version": "TRACK_001_CEREMONY_V1",
+  "purpose": "Define lawful activation transitions for the mainnet ceremony. A ceremony transition is valid only when the required machine receipt exists and the prior state is satisfied.",
+  "initial_state": "HEARTBEAT_STABLE",
+  "terminal_state": "ACTIVATION_COMPLETE",
+  "states": [
+    "HEARTBEAT_STABLE",
+    "READY_FOR_CEREMONY",
+    "CEREMONY_IN_PROGRESS",
+    "CONSTITUTION_FROZEN",
+    "ACTIVATION_COMPLETE"
+  ],
+  "transitions": [
+    {
+      "from": "HEARTBEAT_STABLE",
+      "to": "READY_FOR_CEREMONY",
+      "condition": "N >= 3 consecutive GREEN heartbeat commits",
+      "verifier": "_truth/governance/heartbeat_court_green_log.json",
+      "receipt_required": true
+    },
+    {
+      "from": "READY_FOR_CEREMONY",
+      "to": "CEREMONY_IN_PROGRESS",
+      "condition": "governance tag declared and frozen",
+      "verifier": "_truth/governance/tag_freeze.json",
+      "receipt_required": true
+    },
+    {
+      "from": "CEREMONY_IN_PROGRESS",
+      "to": "CONSTITUTION_FROZEN",
+      "condition": "activation receipt signed and verified",
+      "verifier": "_truth/governance/activation_receipt.json",
+      "receipt_required": true
+    },
+    {
+      "from": "CONSTITUTION_FROZEN",
+      "to": "ACTIVATION_COMPLETE",
+      "condition": "mainnet transaction hash present and verified",
+      "verifier": "_truth/mainnet/activation_tx.json",
+      "receipt_required": true
+    }
+  ],
+  "forbidden_transitions": [
+    "skip HEARTBEAT_STABLE",
+    "manual override of any condition",
+    "transition without machine receipt",
+    "mainnet claim without tx receipt",
+    "uncited deployment claim"
+  ],
+  "activation_rule": "Only green machine receipts may advance ceremony state."
+}

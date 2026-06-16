@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Arrestee Drug Abuse Monitoring (ADAM) Program in the United States, 2003",
+  "description": "The goal of the Arrestee Drug Abuse Monitoring (ADAM) Program\r\nis to determine the extent and correlates of illicit drug use in the\r\npopulation of booked arrestees in local areas. Data were collected in\r\n2003 up to four separate times (quarterly) during the year in 39\r\nmetropolitan areas in the United States. The ADAM program adopted a new\r\ninstrument in 2000 in adult booking facilities for male (Part 1) and\r\nfemale (Part 2) arrestees. The ADAM program in 2003 also continued the\r\nuse of probability-based sampling for male arrestees in adult\r\nfacilities, which was initiated in 2000. Therefore, the male adult\r\nsample includes weights, generated through post-sampling stratification\r\nof the data. For the adult male and female files, variables fell into\r\none of eight categories: (1) demographic data on each arrestee, (2) ADAM\r\nfacesheet (records-based) data, (3) data on disposition of the case,\r\nincluding accession to a verbal consent script, (4) calendar of\r\nadmissions to substance abuse and mental health treatment programs, (5)\r\ndata on alcohol and drug use, abuse, and dependence, (6) drug\r\nacquisition data covering the five most commonly used illicit drugs, (7)\r\nurine test results, and (8) for males, weights.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "2866",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "ADAM/DUF Program",
+    "alcohol abuse",
+    "arrests",
+    "crime patterns",
+    "demographic characteristics",
+    "drug dependence",
+    "drug offenders",
+    "drug related crimes",
+    "drug testing",
+    "drug treatment",
+    "drug use",
+    "drugs",
+    "substance abuse",
+    "trends",
+    "urinalysis"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "3023",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2004-09-02T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04020.v1",
+      "title": "Arrestee Drug Abuse Monitoring (ADAM) Program in the United States, 2003"
+    }
+  ]
+}

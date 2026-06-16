@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Survey of Jail and Prison Inmates, 1978:  California, Michigan, Texas",
+  "description": "This survey was was conducted as part of the Rand \r\n Corporation's research program on career criminals. Rand's Second \r\n Inmate Survey was administered in late 1978 and early 1979 to convicted \r\n male inmates at 12 prisons and 14 county jails in California, Michigan, \r\n and Texas. The purpose of the survey was to provide detailed \r\n information about the criminal behavior of offenders and their \r\n associated characteristics. Emphasis was also placed on investigating \r\n other major areas of interest such as the quality of prisoner \r\n self-reports, varieties of criminal behavior, selective incapacitation, \r\nand prison treatment programs.",
+  "modified": "1992-02-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3732",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "crime",
+    "criminal justice system",
+    "inmates",
+    "social attitudes and behavior"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-07-16T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08169.v2",
+      "title": "Survey of Jail and Prison Inmates, 1978:  California, Michigan, Texas"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "receipt": "SIGNER_RECOVERY_VERIFIED_PENDING",
+  "state": "HOLD_BEFORE_BROADCAST",
+  "required_tuple": {
+    "recoveredAddress": "HEX_STRING",
+    "ensResolvedAddress": "HEX_STRING",
+    "integrityCheck": "BOOLEAN_TRUE_REQUIRED"
+  },
+  "transition_rule": "SIGNER_RECOVERY_CONFIRMED_TO_LEVEL_4_BROADCAST_ELIGIBLE",
+  "hard_rule": "NO_RECOVERED_SIGNER_NO_BROADCAST",
+  "semantic_authority": "LOCAL_REPLAY",
+  "base_status": "NOT_INVOKED",
+  "forbidden_substitutes": [
+    "PLACEHOLDER_SIGNATURE",
+    "TEXT_ONLY_SIGNATURE_CLAIM",
+    "UNRECOVERED_SIGNER",
+    "ENS_UNVERIFIED_BINDING",
+    "EXPLORER_STATUS_AS_AUTHORITY"
+  ],
+  "doctrine": "Proof may travel. Meaning stays replayable."
+}

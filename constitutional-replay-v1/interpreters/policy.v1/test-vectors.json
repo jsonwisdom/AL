@@ -1,0 +1,86 @@
+{
+  "version": "policy.v1.test-vectors",
+  "policy": {
+    "version": "policy.v1",
+    "policy_id": "treasury-basic-v1",
+    "required_inputs": [
+      "action",
+      "amount",
+      "recipient"
+    ],
+    "allowed_actions": [
+      "transfer_usdc",
+      "quote"
+    ],
+    "blocked_actions": [
+      "deploy_contract"
+    ],
+    "limits": {
+      "transfer_usdc_day": "500"
+    },
+    "refusal_codes": [
+      "SPEND_LIMIT_EXCEEDED",
+      "ACTION_NOT_ALLOWED",
+      "CONTRACT_NOT_ALLOWED",
+      "DELEGATION_EXPIRED",
+      "RATE_LIMIT_EXCEEDED",
+      "SIGNATURE_INVALID",
+      "POLICY_UNAVAILABLE",
+      "ESCALATION_REQUIRED",
+      "UNKNOWN_REFUSAL"
+    ]
+  },
+  "vectors": [
+    {
+      "vector_id": "approve-transfer-001",
+      "description": "approved treasury transfer within policy limit",
+      "input": {
+        "action": "transfer_usdc",
+        "amount": "50",
+        "recipient": "0x1111111111111111111111111111111111111111"
+      },
+      "expected": {
+        "result": "SUCCESS",
+        "refusal_code": null
+      }
+    },
+    {
+      "vector_id": "refuse-limit-001",
+      "description": "refuse transfer exceeding treasury limit",
+      "input": {
+        "action": "transfer_usdc",
+        "amount": "50000",
+        "recipient": "0x2222222222222222222222222222222222222222"
+      },
+      "expected": {
+        "result": "REFUSAL",
+        "refusal_code": "SPEND_LIMIT_EXCEEDED"
+      }
+    },
+    {
+      "vector_id": "refuse-action-001",
+      "description": "refuse blocked deployment action",
+      "input": {
+        "action": "deploy_contract",
+        "amount": "0",
+        "recipient": "0x3333333333333333333333333333333333333333"
+      },
+      "expected": {
+        "result": "REFUSAL",
+        "refusal_code": "ACTION_NOT_ALLOWED"
+      }
+    },
+    {
+      "vector_id": "refuse-missing-input-001",
+      "description": "refuse malformed request missing recipient",
+      "input": {
+        "action": "transfer_usdc",
+        "amount": "25"
+      },
+      "expected": {
+        "result": "REFUSAL",
+        "refusal_code": "UNKNOWN_REFUSAL"
+      }
+    }
+  ]
+}

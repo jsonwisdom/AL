@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Police and Child Abuse:  Policies and Practices in the United States, 1987-1988",
+  "description": "This study was conducted by the Police Foundation and the\r\n American Enterprise Institute to document municipal and county law\r\n enforcement agencies' policies for dealing with child abuse, neglect,\r\n and sexual assault and exploitation, and to identify emerging police\r\n practices. The researchers investigated promising approaches for\r\n dealing with child abuse and also probed for areas of weakness that\r\n are in need of improvement. Data were collected from 122 law\r\n enforcement agencies on topics including interagency reporting and\r\n case screening procedures, the existence and organizational location\r\n of specialized units for conducting child abuse investigations, actual\r\n procedures for investigating various types of child abuse cases,\r\n factors that affect the decision to arrest in physical and sexual\r\n abuse cases, the scope and nature of interagency cooperative\r\n agreements practices and relations, the amount of training received by\r\n agency personnel, and ways to improve agency responses to child abuse\r\nand neglect cases.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3499",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrest procedures",
+    "case processing",
+    "child abuse",
+    "child neglect",
+    "law enforcement agencies",
+    "police response",
+    "policies and procedures"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1996-10-08T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06338.v1",
+      "title": "Police and Child Abuse:  Policies and Practices in the United States, 1987-1988"
+    }
+  ]
+}

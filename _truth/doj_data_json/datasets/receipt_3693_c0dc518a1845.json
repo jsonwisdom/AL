@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Impact of Incarceration on Families, 2016, South Carolina",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\n\r\nThis project utilized three strategies to investigate the impact of incarceration on families. First, a statewide integrated data system was used to examine impacts of incarceration in a novel way, using administrative data from corrections, juvenile justice, mental health, social services, substance use services, healthcare, and education. Second, researchers linked multi-agency data to address specific research questions regarding impact of incarceration on families, including impact of incarceration on family physical and mental health, children's involvement with the child welfare and juvenile justice systems, family economic status, and school performance. Third, researchers conducted focus groups and family interviews with 77 inmates and 21 inmate family members sampled from three correctional facilities. Researchers identified qualitative themes regarding impact of incarceration in the lives of inmates and their families.Only data from the focus groups is included in this collection.  The collection includes two SPSS data files: \"Inmate_Demographic_Data.sav\" with 15 variables and 77 cases and \"Family_Demographic_Data.sav\" with 19 variables and 21 cases.  The actual focus group interviews with inmates and their family members are not available as part of this collection at this time. Administrative data from the South Carolina Revenue and Fiscal Affairs Office was not made available for archiving.  Users interested in obtaining these data should consult the accompanying documentation.",
+  "modified": "2018-04-04T14:12:03",
+  "accessLevel": "restricted public",
+  "identifier": "3693",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "child welfare",
+    "children",
+    "family relationships",
+    "health",
+    "inmates",
+    "juvenile justice",
+    "mental health",
+    "parents",
+    "prison inmates",
+    "school age children"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-04-04T14:08:27",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36616.v1",
+      "title": "Impact of Incarceration on Families, 2016, South Carolina"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Police-Public Contact Survey, 2002 [United States]",
+  "description": "The Police-Public Contact Survey (PPCS), was designed by\r\n the Bureau of Justice Statistics (BJS) to document contacts between\r\n police and the public that culminated in police using force. The 2002\r\n survey was conducted as a supplement to the National Crime\r\n Victimization Survey (NCVS). To date, the PPCS has been conducted\r\n three times by BJS. The first survey -- described in the BJS\r\n publication, \"Police Use of Force: Collection of National Data\" (NCJ\r\n 165040) -- documented levels of contacts with police during 1996. The\r\n second survey -- described in \"Contacts Between Police and the Public:\r\n Findings from the 1999 National Survey\" (NCJ 184957) -- recorded\r\n police-citizen contacts in 1999. These data are archived in\r\n POLICE-PUBLIC CONTACT SURVEY, 1999: [UNITED STATES] (ICPSR 3151). The\r\n third survey -- described here under the title \"Contacts Between\r\n Police and the Public: Findings From the 2002 National Survey\" (NCJ\r\n 207845) -- covered interactions between police and the public in 2002.\r\nThe results of this survey are contained in this data collection.",
+  "modified": "2005-08-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "269",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "police citizen interactions",
+    "police community relations",
+    "police officers",
+    "police use of force",
+    "public interest",
+    "public opinion"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2432",
+  "dataQuality": false,
+  "issued": "2005-07-14T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04273.v1",
+      "title": "Police-Public Contact Survey, 2002 [United States]"
+    }
+  ]
+}

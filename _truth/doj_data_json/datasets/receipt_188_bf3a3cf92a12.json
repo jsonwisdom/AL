@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Crime Surveys: Reverse Record Check Studies: Washington, DC, San Jose, and Baltimore, 1970-1971",
+  "description": "These surveys were part of a series of pretests conducted\r\nduring the early 1970s to reveal problems associated with doing a\r\nnationwide study on victimization. They were done to determine the most\r\neffective reference period to use when questioning respondents in order\r\nto gain the fullest and most reliable information, to measure the\r\ndegree to which respondents move incidents occurring outside the\r\nreference period into that period when questioned, and to explore the\r\npossibility of identifying incidents by a few broad general questions\r\nas opposed to a series of more specific probing questions.",
+  "modified": "2006-01-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "188",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "assault",
+    "crime",
+    "demographic characteristics",
+    "households",
+    "justice",
+    "robbery",
+    "victimization"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1987-10-12T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08693.v1",
+      "title": "National Crime Surveys: Reverse Record Check Studies: Washington, DC, San Jose, and Baltimore, 1970-1971"
+    }
+  ]
+}

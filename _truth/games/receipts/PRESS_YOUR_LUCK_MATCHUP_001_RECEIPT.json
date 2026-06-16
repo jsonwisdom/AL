@@ -1,0 +1,26 @@
+{
+  "receipt_type": "PRESS_YOUR_LUCK_MATCHUP_001_RECEIPT",
+  "repo": "jsonwisdom/AL",
+  "anchor_state": "YELLOW_READY",
+  "no_fake_green": true,
+  "game_file": "_truth/games/PRESS_YOUR_LUCK_GITHUB_MATCHUPS_V0_1.md",
+  "game_commit": "9697d7ac832f98fa6cbcbbc0853e26632f185114",
+  "matchup_001": {
+    "status": "SCAFFOLD_READY",
+    "artifact_a": null,
+    "artifact_b": null,
+    "shared_claim": null,
+    "scoring_rule_version": "PRESS_YOUR_LUCK_SCORE_V0_1",
+    "readback_window": null,
+    "computed_score_json": null,
+    "final_ruling": "PENDING_EVIDENCE"
+  },
+  "green_gates": {
+    "two_artifacts_present": false,
+    "shared_claim_present": false,
+    "score_computed": false,
+    "sha256sums_present": false,
+    "final_ruling_committed": false
+  },
+  "ruling": "Matchup 001 scaffold created. GREEN blocked until real artifacts and replayable scoring are committed."
+}

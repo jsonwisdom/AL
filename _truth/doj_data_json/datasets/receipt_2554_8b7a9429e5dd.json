@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Criminal Victimization of District of Columbia Residents and Capitol Hill Employees, 1982-1983",
+  "description": "This data collection contains information about the\r\n victimization of District of Columbia residents. The primary objective\r\n was to measure the extent of crime in the District of Columbia and the\r\n impact of crime on the quality of life in the District. Researchers\r\n also studied the degree to which congressional employees working in\r\n the Capitol Hill area were subject to victimization and the extent to\r\n which fear of crime affected their productivity. However, to protect\r\n the confidentiality of the respondents, the data on Capitol Hill\r\n employees are not present in these files. The Capitol Hill employees\r\n data are archived at the Research Triangle Institute and, as of\r\n December 1984, a public-use data file did not exist. The three data\r\n files archived at the ICPSR contain information about District of\r\n Columbia residents only. The first data file includes person-level\r\n data including residential mobility, crime prevention measures, and\r\n sociodemographic characteristics such as race, age, income, and\r\n location and duration of current residence. Each record in Part 2, In\r\n Scope Crimes File, represents a reported criminal victimization. The\r\n third data file, Out of Scope File, contains data on crimes that were\r\n either outside the analysis time period of May 1, 1982, to April 30,\r\n1983, or not crimes of interest for this study.",
+  "modified": "2006-01-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2554",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "crime",
+    "crime prevention",
+    "fear of crime",
+    "quality of life",
+    "reactions to crime",
+    "victimization"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1985-12-20T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08228.v1",
+      "title": "Criminal Victimization of District of Columbia Residents and Capitol Hill Employees, 1982-1983"
+    }
+  ]
+}

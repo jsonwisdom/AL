@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Problem Solving Approaches to Issues of Inmate Reentry in Indianapolis, Indiana, 2000-2003",
+  "description": "This study involved an evaluation of the reentry component of the Indianapolis Violence Reduction Partnership (IVRP). The IVRP included a problem solving approach to the issue of inmate reentry. On the basis of a problem analysis, the IVRP officials decided to implement a pilot project that involved having recently released inmates attend a neighborhood-based group meeting convened by criminal justice officials and including community representatives and service providers. The meetings were based on the notion of combining deterrence and social support (linkage to services). The pilot project was evaluated using a quasi-experimental design. The treatment group consisted of 82 former inmates who attended one of five meetings. The comparison group consisted of 103 former inmates released at the same time period as the treatment group but in a different neighborhood. Reentry lever-pulling meeting participants and comparison group members were tracked for a period of up to 24 months to determine whether they had been re-arrested during the study period.",
+  "modified": "2012-10-08T14:26:54",
+  "accessLevel": "restricted public",
+  "identifier": "3168",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrest records",
+    "arrests",
+    "conviction records",
+    "convictions (law)",
+    "criminal justice programs",
+    "felony offenses",
+    "inmate programs",
+    "inmate release plans",
+    "inmates",
+    "misdemeanor offenses",
+    "parole",
+    "parole services",
+    "parole violation",
+    "parolees",
+    "postrelease programs",
+    "pr"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2012-10-08T14:23:33",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR30281.v1",
+      "title": "Problem Solving Approaches to Issues of Inmate Reentry in Indianapolis, Indiana, 2000-2003"
+    }
+  ]
+}

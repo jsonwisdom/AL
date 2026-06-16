@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Corrections Reporting Program, 2000-2011",
+  "description": "The National Corrections Reporting Program (NCRP) compiles offender-level data on admissions and releases from state and federal prisons and post-confinement community supervision. The data are used to monitor the nation's correctional population and address specific policy questions related to recidivism, prisoner reentry, and trends in demographic characteristics of the incarcerated and community supervision populations. The Bureau of Justice Statistics (BJS) has administered the NCRP since 1983. The United States Bureau of the Census served as data collection agent for BJS until October 2010, when Abt Associates assumed this position.\r\nFrom 2000 to 2009, NCRP data were archived each year in four, year-specific files that corresponded to the four files that states were asked to submit to the Census Bureau. The four files are: Prison Admissions (Part A), Prison Releases (Part B), Parole Exits (Part C), and Prison Custody (Part D). For example, the 2009 NCRP archive consists of prison admissions occurring in 2009, prison releases occurring in 2009, parole exits occurring in 2009, and prisoners in custody on December 31, 2009.\r\nStarting in 2011, NCRP data will be archived in a single, multi-year Term Record file. A Term Record represents a single period of incarceration for an individual offender. Each year, the archived Term Record file will be replaced by a new Term Record file that incorporates new NCRP data collected and processed during the previous year, as well as updates to previously collected data. The Term Records were created from the Prison Admissions (Part A), Prison Releases (Part B), and Prison Custody (Part D) records submitted by states since 2000. With a few lines of computing code (included with the archive), an analyst can create a prison admission, release, or custody file from the Term Record file.\r\nIn addition to the Term Record file, two additional files are being archived: (1) Prison Admissions (Part A), Prison Releases (Part B), and Prison Custody (Part D) records that were not used in building the Term Record file and (2) Part C (Parole Exit) records collected from January 1, 2011 to October 31, 2012.",
+  "modified": "2013-09-23T11:52:04",
+  "accessLevel": "restricted public",
+  "identifier": "1076",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "correctional facilities (juveniles)",
+    "correctional system",
+    "demographic characteristics",
+    "federal correctional facilities",
+    "jail inmates",
+    "juvenile offenders",
+    "national crime statistics (USA)",
+    "offenders",
+    "offenses",
+    "parole",
+    "prison inmates",
+    "probation",
+    "state correctional facilities"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2589",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2013-09-23T10:36:19",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR34555.v1",
+      "title": "National Corrections Reporting Program, 2000-2011"
+    }
+  ]
+}

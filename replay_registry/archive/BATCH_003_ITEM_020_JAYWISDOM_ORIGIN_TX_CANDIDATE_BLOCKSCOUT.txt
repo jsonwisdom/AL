@@ -1,0 +1,53 @@
+BATCH_003 ITEM_020
+status: ORIGIN_TX_CANDIDATE_BLOCKSCOUT
+network: base
+explorer: base.blockscout.com
+contract: 0x694cE46C64D9D1a5e9376A9feBcF85Ec05D72e9F
+token_name: jaywisdom
+origin_tx_candidate: 0x49c29d9b305a297c6a754f068fbf8ec4921e5e038b3c037757d99635da477a10
+status_and_method: Success / handleOps
+block: 31825577
+timestamp_visible: Jun 20 2025 12:28:21 (-05:00 UTC)
+from: Pimlico ERC-4337 Bundler 56
+interacted_with: Entry Point 0.6.0
+user_operations_count: 2
+value_eth: 0
+
+visible_token_movements:
+- minted: Null 0x000...000 to CreatorCoin for 1000000000 jaywisdom
+- transferred: CreatorCoinHook to Uniswap V4 Pool Manager for 500000000 jaywisdom
+- transferred: Uniswap V4 Pool Manager to CoinbaseSmartWallet for 499999999.999999999999999999 jaywisdom
+
+secondary_coin_visible:
+- minted: Null 0x000...000 to Brielle's beauty ritual for 1000000000 token 15
+- transferred: ContentCoinHook to Uniswap V4 Pool Manager for 990000000 token 15
+- transferred: Uniswap V4 Pool Manager to CoinbaseSmartWallet for 989999999.999999999999999995 token 15
+
+prior_csv_analysis_commit: 49ff5e0fd37ff1ba70ed87bdf79b42fe419037ad
+prior_contract_metadata_commit: dea3a23c3327a5a31af07df31dba7a870a54d366
+
+proof_007_relevance:
+- identifies likely origin transaction candidate for JAYWISDOM token movement
+- confirms mint-from-null for 1000000000 jaywisdom on visible Blockscout transaction details
+- confirms bundle included 2 user operations
+- creator/deployer role not yet extracted
+- first minter/buyer role not yet extracted as role
+
+required_next_decode:
+- inspect the 2 user operations in this origin tx
+- inspect logs for CreatorCoinCreated or equivalent creation event
+- extract creator/deployer address
+- extract first mint/buy recipient or buyer address
+- compare creator/deployer against first minter/buyer
+
+claim_allowed:
+- JAYWISDOM origin transaction candidate recorded.
+- Visible Blockscout details show mint-from-null for 1,000,000,000 jaywisdom in the candidate tx.
+
+claim_not_allowed:
+- creator/deployer verified
+- first minter/buyer verified as role
+- deployer versus first minter comparison completed
+- Proof-007 passed
+
+boundary: origin transaction candidate and visible token movement evidence only; no role comparison; no Proof-007 result claimed

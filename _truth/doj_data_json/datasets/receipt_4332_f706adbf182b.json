@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Searchable Map of Awards Since FY 21",
+  "description": "An interactive map of the funding from Office of Justice Programs from 2021 to present day. ",
+  "modified": "2024-07-29T00:00:00",
+  "accessLevel": "public",
+  "identifier": "4332",
+  "publisher": {
+    "name": "Office of Justice Programs",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "FangFang Xu",
+    "hasEmail": "mailto:fangfang.xu@usdoj.gov"
+  },
+  "keyword": [
+    "Funding",
+    "Grants"
+  ],
+  "bureauCode": [
+    "011:00"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "temporal": "2021-01-01T00:00:00.0000000/2024-07-30T00:00:00.0000000",
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "public",
+  "systemOfRecords": "OJP:016",
+  "accrualPeriodicity": "R/P1D",
+  "dataQuality": false,
+  "issued": "2022-01-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "landingPage": "https://charts.ojp.usdoj.gov/t/public/views/OJPAwardsDashboardallFiscalYears/AwardsByState?%3Aembed=y&%3Aiid=2&%3AisGuestRedirectFromVizportal=y",
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "description": "Full list of awards made by the Office of Justice Programs since 2021. ",
+      "downloadURL": "https://charts.ojp.usdoj.gov/t/public/views/OJPAwardsDashboardallFiscalYears/AwardsByStateAndCity?%3Aembed=y&%3Aiid=2&%3AisGuestRedirectFromVizportal=y",
+      "mediaType": "text/csv",
+      "title": "OJP Awards since 2021 by State and City"
+    },
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://charts.ojp.usdoj.gov/t/public/views/OJPAwardsDashboardallFiscalYears/AwardsByState?%3Aembed=y&%3Aiid=2&%3AisGuestRedirectFromVizportal=y",
+      "description": "Interactive map of funding from Office of Justice Programs since 2021. ",
+      "title": "Searchable Map of Awards Since FY 21"
+    }
+  ]
+}

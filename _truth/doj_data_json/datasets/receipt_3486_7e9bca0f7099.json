@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Survey of Adolescents in the United States, 1995",
+  "description": "The goal of this study was to test specific hypotheses\r\n illustrating the relationships among serious victimization\r\n experiences, the mental health effects of victimization, substance\r\n abuse/use, and delinquent behavior in adolescents. The study assessed\r\n familial and nonfamilial types of violence. It was designed as a\r\n telephone survey of American youth aged 12-17 living in United States\r\n households and residing with a parent or guardian. One parent or\r\n guardian in each household was interviewed briefly to establish\r\n rapport, secure permission to interview the targeted adolescent, and\r\n to ensure the collection of comparative data to examine potential\r\n nonresponse bias from households without adolescent participation.\r\n All interviews with both parents and adolescents were conducted using\r\n Computer-Assisted Telephone Interviewing (CATI) technology. From the\r\n surveys of parents and adolescents, the principal investigators\r\n created one data file by attaching the data from the parents to the\r\n records of their respective adolescents. Adolescents were asked\r\n whether violence and drug abuse were problems in their schools and\r\n communities and what types of violence they had personally\r\n witnessed. They were also asked about other stressful events in their\r\n lives, such as the loss of a family member, divorce, unemployment,\r\n moving to a new home or school, serious illness or injury, and natural\r\n disaster. Questions regarding history of sexual assault, physical\r\n assault, and harsh physical discipline elicited a description of the\r\n event and perpetrator, extent of injuries, age at abuse, whether\r\n alcohol or drugs were involved, and who was informed of the\r\n incident. Information was also gathered on the delinquent behavior of\r\n respondents and their friends, including destruction of property,\r\n assault, theft, sexual assault, and gang activity. Other questions\r\n covered history of personal and family substance use and mental health\r\n indicators, such as major depression, post-traumatic stress disorders,\r\n weight changes, sleeping disorders, and problems\r\n concentrating. Demographic information was gathered from the\r\n adolescents on age, race, gender, number of people living in\r\n household, and grade in school. Parents were asked whether they were\r\n concerned about violent crime, affordable child care, drug abuse,\r\n educational quality, gangs, and the safety of their children at\r\n school. In addition, they were questioned about their own\r\n victimization experiences and whether they discussed personal safety\r\n issues with their children. Parents also supplied demographic\r\n information on gender, marital status, number of children, employment\r\nstatus, education, race, and income.",
+  "modified": "2000-06-05T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3486",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "adolescents",
+    "child care",
+    "delinquent behavior",
+    "demographic characteristics",
+    "family violence",
+    "life events",
+    "mental health",
+    "school violence",
+    "substance abuse",
+    "victimization"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2000-06-05T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02833.v1",
+      "title": "National Survey of Adolescents in the United States, 1995"
+    }
+  ]
+}

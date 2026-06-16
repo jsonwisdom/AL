@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Effectiveness of Police Response: Denver, 1982",
+  "description": "This data collection investigates the nature of law\r\n enforcement by recording police behavior in problematic situations,\r\n primarily disturbances and traffic stops. The data collection contains\r\n two files. The first consists of information on disturbance\r\n encounters. Disturbance variables include type of disturbance, manner\r\n of investigation, designation of police response, several situational\r\n variables such as type of setting, number of victims, bystanders,\r\n suspects, and witnesses, demeanor of participants toward the police,\r\n type of police response, and demeanor of police toward\r\n participants. The second file contains data on traffic offenses. The\r\n variables include manner of investigation, incident code, officers'\r\n description of the incident, condition of the vehicle stopped, police\r\n contact with the passengers of the vehicle, demeanor of passengers\r\n toward the police, demeanor of police toward the passengers, and\r\n resolution of the situation. The data were collected based on field\r\nobservation, using an instrument for recording observations.",
+  "modified": "2006-01-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2802",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime control",
+    "crime prevention",
+    "law enforcement",
+    "police community relations",
+    "police effectiveness",
+    "police response",
+    "traffic offenses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1985-01-11T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08217.v1",
+      "title": "Effectiveness of Police Response: Denver, 1982"
+    }
+  ]
+}

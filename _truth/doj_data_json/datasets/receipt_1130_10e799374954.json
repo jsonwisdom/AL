@@ -1,0 +1,39 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Violent Crime Apprehension Program Web",
+  "description": "The Violent Criminal Apprehension Program (ViCAP) serves as the national information center that collects, collates and analyzes crimes of violence.  The system contains solved and unsolved cases involving homicide or attempted homicide, sexual assaults,",
+  "modified": "2017-02-27T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "1130",
+  "publisher": {
+    "name": "Federal Bureau of Investigation",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Criminal Justice Information Services Division Federal Bureau of Investigation (USDOJ)",
+    "hasEmail": "mailto:CRIMESTATSINFO@fbi.gov"
+  },
+  "keyword": [
+    "violent crime",
+    "cases",
+    "homicide",
+    "sexual assault",
+    "missing person",
+    "unidentified human remains"
+  ],
+  "bureauCode": [
+    "011:10"
+  ],
+  "programCode": [
+    "011:044"
+  ],
+  "dataQuality": false,
+  "issued": "2017-02-27T00:00:00",
+  "distribution": []
+}

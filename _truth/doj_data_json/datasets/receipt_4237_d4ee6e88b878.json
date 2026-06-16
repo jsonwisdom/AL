@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Projecting Violent Re-Offending in a Parole Population: Developing a Real-Time Forecasting Procedure to Inform Parole Decision-Making, Pennsylvania, 2012-2014",
+  "description": "The University of Pennsylvania, in collaboration with the Pennsylvania Board of Probation and Parole (PBPP), began developing a violent forecast model utilizing the machine learning procedure random forest. By the spring of 2013, the forecasts were provided to decision makers prior to parole interviews. The violent forecast model (VFM) measures the extent to which offenders are likely to reoffend as indicated by future arrest. The VFM is a violence classification forecast and not an individual case prediction regarding offender behavior. Purpose The purpose of this research was to evaluate the impact of introducing forecasts of \"future dangerousness\" into PBPP's decision making process during parole interviews. The researcher anticipated that having available a sufficiently reliable forecast, particularly within the violent category, would reduce the likelihood of a parole release. The null hypothesis tested was that there would be no difference in parole release decisions when comparing two similar groups of offenders where during one group of parole interviews the decision maker had a forecast available and the other group of interviews there was not a forecast available.",
+  "modified": "2022-02-10T09:08:10",
+  "accessLevel": "restricted public",
+  "identifier": "4237",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "machine learning",
+    "offenders",
+    "parole",
+    "recidivism",
+    "violence"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2022-02-10T08:59:47",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36432.v1",
+      "title": "Projecting Violent Re-Offending in a Parole Population: Developing a Real-Time Forecasting Procedure to Inform Parole Decision-Making, Pennsylvania, 2012-2014"
+    }
+  ]
+}

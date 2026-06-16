@@ -1,0 +1,54 @@
+{
+  "artifact": "COMPACT_SCHEMA_V1",
+  "layer": "FEDERATION",
+  "purpose": "Canonical schema for replay-verifiable cross-state compacts bound to attested governance epochs.",
+  "last_verified": "2026-05-06",
+  "verifier": "jsonwisdom",
+  "compact_shape": {
+    "compact_id": "compact_identifier",
+    "participants": [
+      {
+        "state": "state_abbreviation",
+        "epoch_id": "attested_epoch_identifier",
+        "epoch_root_sha256": "attested_epoch_root"
+      }
+    ],
+    "subject_matter": "compact_subject_domain",
+    "constraints": {
+      "baseline_mutation": "forbidden",
+      "state_sovereignty": "preserved",
+      "federal_preemption": "explicitly_scoped"
+    },
+    "obligations": {
+      "state_key": {
+        "obligation_key": "obligation_value"
+      }
+    },
+    "hashes": {
+      "compact_sha256": "sha256_of_canonical_compact"
+    }
+  },
+  "federation_rules": {
+    "compact_operates_over": "attested_epoch_roots_only",
+    "cross_state_baseline_mutation": "forbidden",
+    "direct_state_overlay_mutation": "forbidden",
+    "cross_state_runtime_inference": "forbidden"
+  },
+  "replay_requirements": {
+    "all_participant_epoch_roots_must_verify": true,
+    "compact_application_must_be_deterministic": true,
+    "cross_state_decision_ledgers_must_be_replayable": true
+  },
+  "failure_modes": [
+    "COMPACT_REFERENCES_UNVERIFIED_EPOCH",
+    "COMPACT_MUTATES_STATE_BASELINE",
+    "COMPACT_REPLAY_DIVERGENCE",
+    "COMPACT_LEDGER_MISMATCH"
+  ],
+  "invariants": [
+    "Compacts bind to attested epoch roots, not mutable current state.",
+    "Compacts may not rewrite state sovereignty models.",
+    "Federation is a proof layer, not a centralized governance baseline.",
+    "All compact-derived decisions must be replay-verifiable."
+  ]
+}

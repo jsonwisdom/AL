@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Drug Offending in Cleveland, Ohio Neighborhoods, 1990-1997 and 1999-2001",
+  "description": "This study investigated changes in the geographic\r\nconcentration of drug crimes in Cleveland from 1990 to 2001. The study\r\nlooked at both the locations of drug incidents and where drug\r\noffenders lived in order to explore factors that bring residents from\r\none neighborhood into other neighborhoods to engage in drug-related\r\nactivities. This study was based on data collected for the 224 census\r\ntracts in Cleveland, Ohio, in the 1990 decennial Census for the years\r\n1990 to 1997 and 1999 to 2001. Data on drug crimes for 1990 to 1997\r\nand 1999 to 2001 were obtained from Cleveland Police Department (CPD)\r\narrest records and used to produce counts of the number of drug\r\noffenses that occurred in each tract in each year and the number of\r\narrestees for drug offenses who lived in each tract. Other variables\r\ninclude counts and rates of other crimes committed in each census\r\ntract in each year, the social characteristics and housing conditions\r\nof each census tract, and net migration for each census tract.",
+  "modified": "2004-06-17T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3359",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrest records",
+    "arrests",
+    "drug law offenses",
+    "drug possession",
+    "drug related crimes",
+    "drug traffic",
+    "geographic distribution",
+    "neighborhood change",
+    "neighborhood characteristics"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2004-06-17T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03929.v1",
+      "title": "Drug Offending in Cleveland, Ohio Neighborhoods, 1990-1997 and 1999-2001"
+    }
+  ]
+}

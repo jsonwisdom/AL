@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Crime Control Effects of Prosecuting Intimate Partner Violence in Hamilton County, Ohio, 1993-1998",
+  "description": "The purpose of this research was to improve understanding of the conditions under which criminal sanctions do and do not reduce repeat violence between intimate partners.\r\nThis study involved repeated reading and close inspection of four documents in order to compare and contrast the multivariate analyses reported by John Wooldredge and Amy Thistlethwaite (RECONSIDERING DOMESTIC VIOLENCE RECIDIVISM: INDIVIDUAL AND CONTEXTUAL EFFECTS OF COURT DISPOSITIONS AND STAKE IN CONFORMITY IN HAMILTON COUNTY, OHIO, 1993-1998 [ICPSR 3013]).\r\nThe first part of this study's design involved the detailed literature review of four Wooldredge and Thistlethwaite publications between the years 1999 and 2005.\r\nThe second element of the study's design required researchers to gain a detailed understanding of the archived data using the documentation provided by Wooldredge. The third element of the study's secondary analysis research design involved using the identified variables to reproduce the multivariate empirical findings about the effects of sanctions, stakes, and social context on repeat offending. These findings were presented in a series of tables in the four Wooldredge and Thistlethwaite publications.\r\nAfter numerous iterations of reading reports and documentation and exploring alternative measures and methods, researchers produced a report detailing their ability to reproduce Wooldredge and Thistlethwaite's descriptive measures.\r\nThis study's design called for using explicit criteria for determining the extent to which Wooldredge and Thistlethwaite's findings could be reproduced. Researchers developed and applied three criteria for making that determination. The first was a simple comparison of the regression coefficients and standard errors. The second criterion was a determination of whether the reproduced results conformed to the direction and statistical significance levels of the original analyses. The third criterion was to apply a statistical test to assess the significance of any differences in the sizes of the original and the reproduced coefficients.\r\nThe data archived by Wooldredge provided seven dichotomous measures of criminal sanctions (no charges filed, dismissed, acquitted, a treatment program, probation only, jail only, and a combination of probation and jail). Part of the design of this study was to go beyond reproducing Wooldredge and Thistlethwaite's approaches and to reformulate the available measures of criminal sanctions to more directly test the prosecution, conviction, and sentence severity hypotheses. The researchers produced these tests by constructing three new measures of criminal sanctions (prosecution, conviction, and sanction severity) and testing each of them in separate multivariate models.\r\nThe Part 1 (Hamilton County, Ohio, Census Tract Data) data file contains 206 cases and 35 variables. The Part 2 (Neighborhood Data) data file contains 47 cases and 12 variables.\r\nThe variables in Part 1 (Hamilton County, Ohio, Census Tract Data) include a census tract indicator, median household income of tract, several proportions such as number of college graduates in the tract and corresponding Z-scores, a regression factor score for analysis 1, a socio-economic factor, a census tract number for the city of Cincinnati, Ohio, and a Cincinnati neighborhoods indicator.\r\nVariables in Part 2 (Neighborhood Data) include a neighborhood indicator, average age in the neighborhood, demographic proportions such as proportion male in the neighborhood and proportion of college graduates in the neighborhood, and a social class factor.",
+  "modified": "2011-06-27T14:22:08",
+  "accessLevel": "restricted public",
+  "identifier": "2896",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrest records",
+    "communities",
+    "criminal histories",
+    "disposition (legal)",
+    "domestic violence",
+    "intimate partner violence",
+    "offenders",
+    "recidivism"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2011-06-27T14:15:35",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR25929.v1",
+      "title": "Crime Control Effects of Prosecuting Intimate Partner Violence in Hamilton County, Ohio, 1993-1998"
+    }
+  ]
+}

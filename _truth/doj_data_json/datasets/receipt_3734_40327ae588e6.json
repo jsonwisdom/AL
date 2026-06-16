@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Calling the Police:  Citizen Reporting of Serious Crime, 1979",
+  "description": "This dataset replicates the citizen reporting component of\r\nPOLICE RESPONSE TIME ANALYSIS, 1975 (ICPSR 7760). Information is\r\nincluded on 4,095 reported incidents of aggravated assault, auto\r\ntheft, burglary, larceny/theft offenses, forcible rape, and\r\nrobbery. The data cover citizen calls to police between April 21 and\r\nDecember 7, 1979. There are four files in this collection, one each\r\nfor Jacksonville, Florida, Peoria, Illinois, Rochester, New York, and\r\nSan Diego, California. The data are taken from police dispatch records\r\nand police interviews of citizens who requested police assistance.\r\nVariables taken from the dispatch records include the dispatch time,\r\ncall priority, police travel time, age, sex, and race of the caller,\r\nresponse code, number of suspects, and area of the city in which the\r\ncall originated. Variables taken from the citizen interviews include\r\nrespondent's role in the incident (victim, caller, victim-caller,\r\nwitness-caller), incident location, relationship of caller to victim,\r\nnumber of victims, identification of suspect, and interaction with\r\npolice.",
+  "modified": "2006-01-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3734",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "assault",
+    "auto theft",
+    "burglary",
+    "citizen crime reporting",
+    "larceny",
+    "offenses",
+    "police citizen interactions",
+    "police protection",
+    "police reports",
+    "rape",
+    "robbery",
+    "victims",
+    "witnesses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1985-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08185.v1",
+      "title": "Calling the Police:  Citizen Reporting of Serious Crime, 1979"
+    }
+  ]
+}

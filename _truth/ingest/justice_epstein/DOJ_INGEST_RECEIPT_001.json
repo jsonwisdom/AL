@@ -1,0 +1,15 @@
+{
+  "artifact": "DOJ_INGEST_RECEIPT",
+  "receipt_id": "DOJ_INGEST_RECEIPT_001",
+  "source_id": "justice_epstein",
+  "source_url": "https://www.justice.gov/epstein",
+  "stage": "INGEST_ONLY_QUARANTINED",
+  "promotion_status": "NOT_PROMOTED",
+  "size_bytes": 2578,
+  "sha256": "f8597472a5b9dd6c350189862c02f10673f5efa5c452b32d095915d84507226d",
+  "starter_merkle_root": "ed27264cb33ad6153d4b2a0a99e760350e5bb76f10bedf968239c7af8ca900f7",
+  "write_run_0002": "UNCHANGED",
+  "gate_status": "CLOSED",
+  "next_gate": "VALIDATE_INGEST_ARTIFACT_AND_META_BEFORE_PROMOTE_DECISION",
+  "custody_note": "This receipt records a quarantined ingest fingerprint only. It does not create DOJ_RELEASE.json, HASH_INDEX.json, or WRITE_RUN_0002_packet.json."
+}

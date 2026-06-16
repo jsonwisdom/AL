@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Sequencing Terrorists' Precursor Behaviors: A Crime Specific Analysis, United States, 1980-2012",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThis study identified the temporal dimensions of terrorists' precursor conduct to determine if these behaviors occurred in a logically sequenced pattern, with a particular focus on the identification of sequenced patterns that varied by group type, group size, and incident type. The study specifically focused on how these pre-incident activities were associated with the successful completion or prevention of terrorist incidents and how they differed between categories of terrorism. Data utilized for this study came from the American Terrorism Study (ATS), a database that includes \"officially designated\" federal terrorism cases from 1980-October 1, 2016, collected for the National Institute of Justice.\r\nThe project focused on three major issues related to terrorists' precursor behaviors:\r\n\r\nA subgroup analysis of temporal, crime-specific patterns by group type,\r\nThe nature of the planning process, and\r\nFactors associated with the outcomes of terrorist incidents (success or failure). \r\nThe collection contains 2 SPSS data files, Final_Hypothesis_Data_Set.sav (n=550; 16 variables) and Final_Sequencing_Antecedent_Temporal.sav (n=2354; 16 variables), and 1 plain text file, Recode_Syntax.txt.",
+  "modified": "2018-04-23T16:06:34",
+  "accessLevel": "restricted public",
+  "identifier": "3696",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "al Qaeda",
+    "assassinations",
+    "assault",
+    "behavior problems",
+    "extremism",
+    "nationalism",
+    "radicalism",
+    "security",
+    "terrorism",
+    "terrorist attacks",
+    "terrorist profiles",
+    "terrorists",
+    "violence",
+    "weapons",
+    "weapons offenses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-04-23T16:04:50",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36676.v1",
+      "title": "Sequencing Terrorists' Precursor Behaviors: A Crime Specific Analysis, United States, 1980-2012"
+    }
+  ]
+}

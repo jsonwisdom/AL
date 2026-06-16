@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Deterrent Effects of the New York Juvenile Offender Law, 1974-1984",
+  "description": "This data collection was designed to assess the effects of \r\n the New York Juvenile Offender Law on the rate of violent crime \r\n committed by juveniles. The data were collected to estimate the \r\n deterrent effects of the law and to permit the use of an interrupted \r\n time-series model to gauge the effects of intervention. The deterrent \r\n effects of the law are assessed on five types of violent offenses over \r\n a post-intervention period of 75 months using two comparison time \r\n series to control for temporal and geographical characteristics. One \r\n time series pertains to the monthly juvenile arrests of 16- to \r\n 19-year-olds in New York City, and the other covers monthly arrests of \r\n juveniles aged 13 to 15 years in Philadelphia, Pennsylvania, the \r\n control jurisdiction. Included in the collection are variables \r\n concerning the monthly rates of violent juvenile arrests for homicide, \r\n rape, assault, arson, and robbery for the two juvenile cohorts. These \r\n time series data were compiled from records of individual police \r\n jurisdictions that reported monthly arrests to the Uniform Crime \r\nReporting Division of the Federal Bureau of Investigation.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3255",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arson",
+    "assault",
+    "crime rates",
+    "deterrence",
+    "homicide",
+    "intervention",
+    "juvenile crime",
+    "juvenile offenders",
+    "rape",
+    "robbery",
+    "violent crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1990-05-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09324.v1",
+      "title": "Deterrent Effects of the New York Juvenile Offender Law, 1974-1984"
+    }
+  ]
+}

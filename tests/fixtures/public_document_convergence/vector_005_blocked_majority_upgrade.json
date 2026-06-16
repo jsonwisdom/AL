@@ -1,0 +1,62 @@
+{
+  "test_id": "PUBLIC_DOCUMENT_CONVERGENCE_VECTOR_005_BLOCKED_MAJORITY_UPGRADE",
+  "purpose": "Prove quorum pressure cannot upgrade trust when one Marshal observes contradictory hash drift evidence.",
+  "source_uri": "REPLACE_WITH_PUBLIC_DOCUMENT_URI",
+  "window": {
+    "window_id": "REPLACE_WITH_WINDOW_ID",
+    "max_clock_skew_seconds": 300
+  },
+  "marshal_observations": [
+    {
+      "marshal_id": "marshal_a",
+      "observed_state": "verified",
+      "hash_after": "sha256:abc123",
+      "replay_path": "download -> sha256 -> compare abc123",
+      "observed_at": "REPLACE_WITH_TIMESTAMP_A"
+    },
+    {
+      "marshal_id": "marshal_b",
+      "observed_state": "verified",
+      "hash_after": "sha256:abc123",
+      "replay_path": "download -> sha256 -> compare abc123",
+      "observed_at": "REPLACE_WITH_TIMESTAMP_B"
+    },
+    {
+      "marshal_id": "marshal_c",
+      "observed_state": "hash_mismatch",
+      "hash_before": "sha256:abc123",
+      "hash_after": "sha256:def456",
+      "replay_path": "download -> sha256 -> observed def456 != previous abc123",
+      "observed_at": "REPLACE_WITH_TIMESTAMP_C"
+    }
+  ],
+  "expected_resolution": {
+    "final_recorded_state": "divergent",
+    "upgrade_allowed": false,
+    "winner_declared": false,
+    "review_required": true,
+    "reason": "A single contradictory drift observation blocks majority upgrade. Trust may degrade automatically; trust may not upgrade by quorum without fresh replayable evidence."
+  },
+  "disagreement_vector": [
+    {
+      "claim": "verified",
+      "marshals": ["marshal_a", "marshal_b"],
+      "hash_after": "sha256:abc123",
+      "replay_paths": [
+        "download -> sha256 -> compare abc123",
+        "download -> sha256 -> compare abc123"
+      ]
+    },
+    {
+      "claim": "hash_mismatch",
+      "marshals": ["marshal_c"],
+      "hash_before": "sha256:abc123",
+      "hash_after": "sha256:def456",
+      "replay_paths": [
+        "download -> sha256 -> observed def456 != previous abc123"
+      ]
+    }
+  ],
+  "allegation_mode": "blocked",
+  "teaching_rule": "Majority agreement cannot erase minority evidence of drift. Divergence is recorded; no verified winner is declared."
+}

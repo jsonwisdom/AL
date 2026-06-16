@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Compendium of State Privacy and Security Legislation, United States, 2002-2015",
+  "description": "The Bureau of Justice Statistics (BJS) Compendium of State Privacy and Security Legislation database consists of state laws, executive orders, and administrative regulations relating to the privacy and security of criminal history record information (CHRI). The Compendium database documents how the states and territories regulate the disclosure and security of CHRI. SEARCH (the National Consortium for Justice Information and Statistics) completed the previous version of the Compendium database for BJS in 2002. During 2014 and 2015, the Federal Research Division (FRD) of the Library of Congress updated the Compendium database for BJS.",
+  "modified": "2021-06-21T09:47:08",
+  "accessLevel": "public",
+  "identifier": "4194",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "criminal histories",
+    "law",
+    "legislation",
+    "privacy",
+    "regulation",
+    "security"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2021-06-21T09:47:08",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37826.v1",
+      "title": "Compendium of State Privacy and Security Legislation, United States, 2002-2015"
+    }
+  ]
+}

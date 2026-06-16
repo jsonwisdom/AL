@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Robbery of Financial Institutions in Indiana, 1982-1984",
+  "description": "The goals of this data collection were to provide\r\ninformation on robbery-related security measures employed by financial\r\ninstitutions, to identify factors that contribute to robbery, and to\r\nstudy the correlates of case disposition and sentence length of\r\nconvicted robbers. The collection compares banking institutions that\r\nhave been robbed with those bank offices that have not been robbed to\r\nprovide information on factors that contribute to these robberies. The\r\noffice-based file includes variables designed to measure general office\r\ncharacteristics, staff preparation and training, security measures,\r\ncharacteristics of the area in which the banking institution is\r\nlocated, and the robbery history of each institution. The\r\nincident-based file includes variables such as the robber's method of\r\noperation and behavior, the employee's reaction, the characteristics of\r\nthe office at the time of the robbery, and the apprehension of the\r\noffender. Also included is information on the status of the\r\ninvestigation, reasons involved in solving the robbery, status of\r\nprosecution, ultimate prosecution, and sentence in length.",
+  "modified": "2010-02-01T13:20:06",
+  "accessLevel": "public",
+  "identifier": "2990",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "banks",
+    "disposition (legal)",
+    "financial institutions",
+    "offenders",
+    "reactions to crime",
+    "robbery",
+    "security",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1990-05-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09310.v2",
+      "title": "Robbery of Financial Institutions in Indiana, 1982-1984"
+    }
+  ]
+}

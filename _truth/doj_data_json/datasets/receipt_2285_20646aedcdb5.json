@@ -1,0 +1,76 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Uniform Crime Reporting Program Data [United States]: County-Level Detailed Arrest and Offense Data, 2006",
+  "description": "This data collection contains county-level counts of\r\narrests and offenses for Part I offenses (murder, rape, robbery,\r\naggravated assault, burglary, larceny, auto theft, and arson) and\r\ncounts of arrests for Part II offenses (forgery, fraud, embezzlement,\r\nvandalism, weapons violations, sex offenses, drug and alcohol abuse\r\nviolations, gambling, vagrancy, curfew violations, and runaways).",
+  "modified": "2008-12-12T10:19:24",
+  "accessLevel": "public",
+  "identifier": "2285",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "aggravated assault",
+    "alcohol",
+    "arrests",
+    "arson",
+    "assault",
+    "auto theft",
+    "burglary",
+    "counties",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "drug abuse",
+    "embezzlement",
+    "fraud",
+    "illegal gambling",
+    "larceny",
+    "law enforcement",
+    "murder",
+    "offenses",
+    "rape",
+    "robbery",
+    "sex offenses",
+    "vagrancy",
+    "vandalism",
+    "weapons offenses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2167",
+  "dataQuality": false,
+  "issued": "2008-12-12T10:19:24",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR23780.v1",
+      "title": "Uniform Crime Reporting Program Data [United States]: County-Level Detailed Arrest and Offense Data, 2006"
+    }
+  ]
+}

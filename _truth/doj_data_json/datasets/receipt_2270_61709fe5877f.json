@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Police Departments, Arrests and Crime in the United States, 1860-1920",
+  "description": "These data on 19th- and early 20th-century police department\r\nand arrest behavior were collected between 1975 and 1978 for a study of\r\npolice and crime in the United States. Raw and aggregated time-series\r\ndata are presented in Parts 1 and 3 on 23 American cities for most\r\nyears during the period 1860-1920. The data were drawn from annual\r\nreports of police departments found in the Library of Congress or in\r\nnewspapers and legislative reports located elsewhere. Variables in Part\r\n1, for which the city is the unit of analysis, include arrests for\r\ndrunkenness, conditional offenses and homicides, persons dismissed or\r\nheld, police personnel, and population. Part 3 aggregates the data by\r\nyear and reports some of these variables on a per capita basis, using a\r\nlinear interpolation from the last decennial census to estimate\r\npopulation. Part 2 contains data for 267 United States cities for the\r\nperiod 1880-1890 and was generated from the 1880 federal census volume,\r\nREPORT ON THE DEFECTIVE, DEPENDENT, AND DELINQUENT CLASSES, published\r\nin 1888, and from the 1890 federal census volume, SOCIAL STATISTICS OF\r\nCITIES. Information includes police personnel and expenditures,\r\narrests, persons held overnight, trains entering town, and population.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2270",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "United States",
+    "arrests",
+    "census data",
+    "crime",
+    "criminal justice system",
+    "police activity",
+    "police chiefs"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR07708.v2",
+      "title": "Police Departments, Arrests and Crime in the United States, 1860-1920"
+    }
+  ]
+}

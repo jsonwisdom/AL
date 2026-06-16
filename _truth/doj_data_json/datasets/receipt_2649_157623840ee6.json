@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Crime Surveys Longitudinal File, 1988-1989:  [Selected Variables]",
+  "description": "This longitudinal file for the National Crime Surveys (NCS) \r\n contains selected variables related to whether a crime was reported to \r\n the police for households that responded to the NCS on three \r\n consecutive interviews between July 1988 and December 1989 and had \r\n experienced at least one criminal victimization during that time \r\n period. Variable names, for the most part, are identical to those used \r\n in the hierarchical files currently available for the National Crime \r\n Surveys (see NATIONAL CRIME SURVEYS: NATIONAL SAMPLE, 1986-1991 \r\n [NEAR-TERM DATA] [ICPSR 8864]). Three new variables were created, and \r\n one existing variable was altered. The TIME variable describes whether \r\n the interview was the first, second, or third for the household in the \r\n period between July 1988 and December 1989. V4410 was recoded to give \r\n the most important reason the crime was not reported to the police for \r\n all households that responded to questions V4390-V4410. RELNOFF was \r\n created from variables V4209-V4267 to reflect the closest relation any \r\n offender had to the victim, and INJURE was created from variables \r\n V4100-V4107 to indicate minor injury, serious injury, or none at all. \r\nThe file is sorted by households.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2649",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "crime reporting",
+    "households",
+    "offenders",
+    "police records",
+    "victimization",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1993-10-11T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06063.v1",
+      "title": "National Crime Surveys Longitudinal File, 1988-1989:  [Selected Variables]"
+    }
+  ]
+}

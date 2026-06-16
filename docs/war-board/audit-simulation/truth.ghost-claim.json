@@ -1,0 +1,25 @@
+{
+  "truth_boundary": {
+    "public_facing": true,
+    "repo_canonical": true,
+    "dedicated_war_board_schema_registered": true,
+    "dedicated_war_board_schema_verified": true
+  },
+  "schema_uid": null,
+  "lineage_tree": {
+    "parent": {
+      "label": "Upper-Level Parent EAS Reference",
+      "status": "PARENT_REFERENCED"
+    },
+    "family_node": {
+      "label": "Family Node Attestation Tree v1",
+      "status": "PARENT_REFERENCED"
+    },
+    "children": [
+      {
+        "label": "War Board Spec",
+        "status": "DEDICATED_ONCHAIN_VERIFIED"
+      }
+    ]
+  }
+}

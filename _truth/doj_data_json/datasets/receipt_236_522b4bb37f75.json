@@ -1,0 +1,68 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Crime Victimization Survey: Unbounded Data, 1999",
+  "description": "The National Crime Victimization Survey: Unbounded Data\r\n (also referred to as the All Rotations Data) are now being made\r\n available to the public for analytic use. These data differ from the\r\n \"regular\" National Crime Victimization Survey (NCVS) data in that they\r\n contain the first interview with respondents. The National Crime\r\n Victimization Survey Series, previously called the National Crime\r\n Surveys (NCS), has been collecting data on personal and household\r\n victimization through an ongoing survey of a nationally-representative\r\n sample of residential addresses since 1973. The NCVS was designed with\r\n four primary objectives: (1) to develop detailed information about the\r\n victims and consequences of crime, (2) to estimate the number and\r\n types of crimes not reported to the police, (3) to provide uniform\r\n measures of selected types of crimes, and (4) to permit comparisons\r\n over time and types of areas. The survey categorizes crimes as\r\n \"personal\" or \"property.\" Personal crimes include rape and sexual\r\n attack, robbery, aggravated and simple assault, and\r\n purse-snatching/pocket-picking, while property crimes include\r\n burglary, theft, motor vehicle theft, and vandalism. Each respondent\r\n is asked a series of screen questions designed to determine whether\r\n she or he was victimized during the six-month period preceding the\r\n first day of the month of the interview. A \"household respondent\" is\r\n also asked to report on crimes against the household as a whole (e.g.,\r\n burglary, motor vehicle theft). The data include type of crime, month,\r\n time, and location of the crime, relationship between victim and\r\n offender, characteristics of the offender, self-protective actions\r\n taken by the victim during the incident and results of those actions,\r\n consequences of the victimization, type of property lost, whether the\r\n crime was reported to police and reasons for reporting or not\r\n reporting, and offender use of weapons, drugs, and alcohol. Basic\r\n demographic information such as age, race, gender, and income is also\r\ncollected to enable analysis of crime by various subpopulations.",
+  "modified": "2006-06-23T00:00:00",
+  "accessLevel": "public",
+  "identifier": "236",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "assault",
+    "auto theft",
+    "burglary",
+    "crime",
+    "crime costs",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "offenders",
+    "offenses",
+    "property crimes",
+    "rape",
+    "reactions to crime",
+    "robbery",
+    "sexual offenses",
+    "vandalism",
+    "victimization",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2432",
+  "dataQuality": false,
+  "issued": "2006-06-23T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04444.v1",
+      "title": "National Crime Victimization Survey: Unbounded Data, 1999"
+    }
+  ]
+}

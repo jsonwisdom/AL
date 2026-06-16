@@ -1,0 +1,68 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Crime Victimization Survey, 1992-2005: Concatenated Incident-Level Files",
+  "description": "This data collection is an extract created from the\r\nindividual years of the National Crime Victimization Survey. Each\r\nrecord contains information on a crime incident occurring in the given\r\ncalendar year. Part 1 contains all crime incidents, and data Part\r\n2 contains the crimes of rape and attempted rape only. The National\r\nCrime Victimization Survey (NCVS), previously called the\r\nNational Crime Surveys (NCS), has been collecting data on personal and\r\nhousehold victimization through an ongoing survey of a\r\nnationally-representative sample of residential addresses since\r\n1973. The NCVS was designed with four primary objectives: (1) to\r\ndevelop detailed information about the victims and consequences of\r\ncrime, (2) to estimate the number and types of crimes not reported to\r\nthe police, (3) to provide uniform measures of selected types of\r\ncrimes, and (4) to permit comparisons over time and types of\r\nareas. The survey categorizes crimes as \"personal\" or \"property.\"\r\nPersonal crimes include rape and sexual attack, robbery, aggravated\r\nand simple assault, and purse-snatching/pocket-picking, while property\r\ncrimes include burglary, theft, motor vehicle theft, and\r\nvandalism. Each respondent is asked a series of screen questions\r\ndesigned to determine whether she or he was victimized during the\r\nsix-month period preceding the first day of the month of the\r\ninterview. A \"household respondent\" is also asked to report on crimes\r\nagainst the household as a whole (e.g., burglary, motor vehicle\r\ntheft). The data include type of crime, month, time, and location of\r\nthe crime, relationship between victim and offender, characteristics\r\nof the offender, self-protective actions taken by the victim during\r\nthe incident and results of those actions, consequences of the\r\nvictimization, type of property lost, whether the crime was reported\r\nto police and reasons for reporting or not reporting, and offender use\r\nof weapons, drugs, and alcohol. Basic demographic information such as\r\nage, race, gender, and income is also collected, to enable analysis of\r\ncrime by various subpopulations.",
+  "modified": "2008-12-16T13:56:19",
+  "accessLevel": "public",
+  "identifier": "199",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "assault",
+    "auto theft",
+    "burglary",
+    "crime",
+    "crime costs",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "offenders",
+    "offenses",
+    "property crimes",
+    "rape",
+    "reactions to crime",
+    "robbery",
+    "sexual offenses",
+    "vandalism",
+    "victimization",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2432",
+  "dataQuality": false,
+  "issued": "2007-05-02T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04699.v3",
+      "title": "National Crime Victimization Survey, 1992-2005: Concatenated Incident-Level Files"
+    }
+  ]
+}

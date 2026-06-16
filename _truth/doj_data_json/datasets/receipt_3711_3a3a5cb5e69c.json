@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Soviet Emigre Organized Crime Networks in the United States, 1992-1995",
+  "description": "The goal of this study was to assess the nature and scope\r\nof Soviet emigre crime in the United States, with a special focus on\r\nthe question of whether and how well this crime was organized. The\r\nresearch project was designed to overcome the lack of reliable and\r\nvalid knowledge on Soviet emigre crime networks through the systematic\r\ncollection, evaluation, and analysis of information. In Part 1, the\r\nresearchers conducted a national survey of 750 law enforcement\r\nspecialists and prosecutors to get a general overview of Soviet emigre\r\ncrime in the United States. For Parts 2-14, the researchers wanted to\r\nlook particularly at the character, operations, and structure, as well\r\nas the criminal ventures and enterprises, of Soviet emigre crime\r\nnetworks in the New York-New Jersey-Pennsylvania region. They were\r\nalso interested in any international criminal connections to these\r\nnetworks, especially with the former Soviet Union. The investigators\r\nfocused particularly on identifying whether these particular networks\r\nmet the following criteria commonly used to define organized crime:\r\n(1) some degree of hierarchical structure within the network, (2)\r\ncontinuity of that structure over time, (3) use of corruption and\r\nviolence to facilitate and protect criminal activities, (4) internal\r\ndiscipline within the network structure, (5) involvement in multiple\r\ncriminal enterprises that are carried out with a degree of criminal\r\nsophistication, (6) involvement in legitimate businesses, and (7)\r\nbonding among participants based upon shared ethnicity. Data for Parts\r\n2-14 were collected from a collaborative effort with the Tri-State\r\nJoint Project on Soviet Emigre Organized Crime. From 1992 through 1995\r\nevery investigative report or other document produced by the project\r\nwas entered into a computer file that became the database for the\r\nnetwork analysis. Documents included undercover observation and\r\nsurveillance reports, informant interviews, newspaper articles,\r\ntelephone records, intelligence files from other law enforcement\r\nagencies, indictments, and various materials from the former Soviet\r\nUnion. Every individual, organization, and other entity mentioned in a\r\ndocument was considered an actor, given a code number, and entered\r\ninto the database. The investigators then used network analysis to\r\nmeasure ties among individuals and organizations and to examine the\r\nstructure of the relationships among the entries in the database. In\r\nPart 1, National Survey of Law Enforcement and Prosecutors Data, law\r\nenforcement officials and prosecutors were asked if their agency had\r\nany contact with criminals from the former Soviet Union, the types of\r\ncriminal activity these people were involved in, whether they thought\r\nthese suspects were part of a criminal organization, whether this type\r\nof crime was a problem for the agency, whether the agency had any\r\ncontact with governmental agencies in the former Soviet Union, and\r\nwhether anyone on the staff spoke Russian. Part 2, Actor\r\nIdentification Data, contains the network identification of each actor\r\ncoded from the documents in Part 3 and identified in the network data\r\nin Parts 4-14. An actor could be an individual, organization, concept,\r\nor location. Information in Part 2 includes the unique actor\r\nidentification number, the type of actor, and whether the actor was a\r\n\"big player.\" Part 3, Sources of Data, contains data on the documents\r\nthat were the sources of the network data in Parts 4-14. Variables\r\ninclude the title and date of document, the type of document, and\r\nwhether the following dimensions of organized crime were mentioned:\r\nsources of capital, locational decisions, advertising, price setting,\r\nfinancial arrangements, recruitment, internal structure, corruption,\r\nor overlapping partnerships. Parts 4-14 contain the coding of the ties\r\namong actors in particular types of documents, and are named for them:\r\nindictments, tips, investigative reports, incident reports, search\r\nreports, interview reports, arrest reports, intelligence reports,\r\ncriminal acts reports, confidential informant reports, newspaper\r\nreports, social surveillance reports, other surveillance reports, and\r\ncompany reports.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "3711",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "career criminals",
+    "emigrants",
+    "ethnicity",
+    "law enforcement agencies",
+    "organized crime",
+    "violence"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2001-03-26T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02594.v1",
+      "title": "Soviet Emigre Organized Crime Networks in the United States, 1992-1995"
+    }
+  ]
+}

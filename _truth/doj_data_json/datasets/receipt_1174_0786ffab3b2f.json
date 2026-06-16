@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "The Detroit Sexual Assault Kit Action Research Project: 1980-2009",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThe four primary goals of The Detroit Sexual Assault Kit Action Research Project (DSAK-ARP) were:\r\nTo assess the scope of the problem by conducting a complete census of all sexual assault kits (SAKs) in police property.\r\nTo identify the underlying factors that contributed to why Detroit had so many un-submitted SAKs.\r\nTo develop a plan for testing SAKs and to evaluate the efficacy of that plan.\r\nTo create a victim notification protocol and evaluate the efficacy of that protocol.\r\n To conduct the census and investigate factors that contributed to untested SAKs, The study investigated police and other public records, interviewed public officials and employees and manually cataloged untested SAKs to conduct the census and gather information as to the decision making processes as to why the SAKs remained untested. \r\nA random sample of 1,595 SAKs were tested as part of developing a SAK testing plan. Kits were divided into four testing groups to examine the utility of testing SAKs for stranger perpetrated sexual assaults, non-stranger perpetrated sexual assaults and sexual assaults believed to be beyond the statute of limitations. The final testing group split SAKs randomly into two addition sample sets as part of an experimental design  to examine whether the testing method of selective degradation was a quicker and more cost efficient approach that offered satisfactory levels of accuracy when compared to standard DNA testing methods. \r\nA two stage protocol was created to inform sexual assault victims that their SAKs  had been tested, discuss options for participating with the investigation and prosecution process and connect the victim with community services.",
+  "modified": "2016-07-12T12:48:59",
+  "accessLevel": "restricted public",
+  "identifier": "1174",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "forensic medicine",
+    "law enforcement",
+    "rape",
+    "rapists",
+    "sex offenses",
+    "sexual assault",
+    "victimization",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2016-07-12T12:47:02",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR35632.v1",
+      "title": "The Detroit Sexual Assault Kit Action Research Project: 1980-2009"
+    }
+  ]
+}

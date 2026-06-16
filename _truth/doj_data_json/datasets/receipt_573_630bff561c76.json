@@ -1,0 +1,50 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Easy Access to the Census of Juveniles in Residential Placement",
+  "description": "The Census of Juveniles in Residential Placement is administered by the U.S. Bureau of the Census for the Office of Juvenile Justice and Delinquency Prevention. This data collection provides the nation with the most detailed picture of juveniles in custod",
+  "modified": "2013-10-01T00:00:00",
+  "accessLevel": "public",
+  "identifier": "573",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "juveniles in placement",
+    "juveniles in detention",
+    "residential placement"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2013-10-01T00:00:00",
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "http://ojjdp.gov/ojstatbb/ezacjrp/",
+      "mediaType": "text/html",
+      "title": "Easy Access to the Census of Juveniles in Residential Placement"
+    }
+  ]
+}

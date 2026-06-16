@@ -1,0 +1,69 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Uniform Crime Reports: Monthly Weapon-Specific Crime and Arrest Time Series, 1975-1993 [National, State, and 12-City Data]",
+  "description": "These data were prepared in conjunction with a project\r\n using Bureau of Labor Statistics data (not provided with this\r\n collection) and the Federal Bureau of Investigation's Uniform Crime\r\n Reporting (UCR) Program data to examine the relationship between\r\n unemployment and violent crime. Three separate time-series data files\r\n were created as part of this project: a national time series (Part 1),\r\n a state time series (Part 2), and a time series of data for 12\r\n selected cities: Baltimore, Buffalo, Chicago, Columbus, Detroit,\r\n Houston, Los Angeles, Newark, New York City, Paterson (New Jersey),\r\n and Philadelphia (Part 3). Each data file was constructed to include\r\n 82 monthly time series: 26 series containing the number of Part I\r\n (crime index) offenses known to police (excluding arson) by weapon\r\n used, 26 series of the number of offenses cleared by arrest or other\r\n exceptional means by weapon used in the offense, 26 series of the\r\n number of offenses cleared by arrest or other exceptional means for\r\n persons under 18 years of age by weapon used in the offense, a\r\n population estimate series, and three date indicator series. For the\r\n national and state data, agencies from the 50 states and\r\n Washington, DC, were included in the aggregated data file if they\r\n reported at least one month of information during the year. In\r\n addition, agencies that did not report their own data (and thus had no\r\n monthly observations on crime or arrests) were included to make the\r\n aggregated population estimate as close to Census estimates as\r\n possible. For the city time series, law enforcement agencies with\r\n jurisdiction over the 12 central cities were identified and the\r\n monthly data were extracted from each UCR annual file for each of the\r\n 12 agencies. The national time-series file contains 82 time series,\r\n the state file contains 4,083 time series, and the city file contains\r\n 963 time series, each with 228 monthly observations per time\r\n series. The unit of analysis is the month of observation. Monthly\r\n crime and clearance totals are provided for homicide, negligent\r\n manslaughter, total rape, forcible rape, attempted forcible rape,\r\n total robbery, firearm robbery, knife/cutting instrument robbery,\r\n other dangerous weapon robbery, strong-arm robbery, total assault,\r\n firearm assault, knife/cutting instrument assault, other dangerous\r\n weapon assault, simple nonaggravated assault, assaults with\r\n hands/fists/feet, total burglary, burglary with forcible entry,\r\n unlawful entry-no force, attempted forcible entry, larceny-theft,\r\n motor vehicle theft, auto theft, truck and bus theft, other vehicle\r\ntheft, and grand total of all actual offenses.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3884",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "arrests",
+    "assault",
+    "auto theft",
+    "burglary",
+    "clearance rates",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "homicide",
+    "larceny",
+    "law enforcement",
+    "offenders",
+    "offenses",
+    "rape",
+    "robbery",
+    "violent crime",
+    "violent crime statistics",
+    "weapons offenses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2167",
+  "dataQuality": false,
+  "issued": "1998-12-07T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06792.v1",
+      "title": "Uniform Crime Reports: Monthly Weapon-Specific Crime and Arrest Time Series, 1975-1993 [National, State, and 12-City Data]"
+    }
+  ]
+}

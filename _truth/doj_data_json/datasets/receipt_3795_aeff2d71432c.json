@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Longitudinal Post-Coital DNA Recovery 2010-2014 [UNITED STATES]",
+  "description": "\r\nThese data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\n\r\n\r\nThis study sought to apply current and advanced Y-STR DNA technology in forensic laboratories to a large in vivo population of proxy-couples, to\r\nprovide groundwork for future inquiry about the conditions affecting DNA recovery in the living\r\npatient, to determine timing for evidence collection, and to attempt to identify variables\r\ninfluencing DNA recovery.  The objective of this research was to create the evidence base supporting or limiting the expansion of the 72-hour period\r\nfor evidence collection. Another objective was to identify conditions that might influence the\r\nrecovery of DNA, and therefore influence policies related to sample collection from the complex\r\npost-coital environment.\r\n\r\n\r\nThe collection includes 6 SPSS data files:\r\n\r\nAlleleRecovery Jun 2014 Allrec.sav (n=70; 34 variables)\r\nAlleleRecovery Jun 2014 Used for descriptve analysis.sav (n=66; 58 variables)\r\nCondom_collections-baseline-d9-Jun2014 Allrec without open-ended-ICPSR.sav (n=70; 66 variables)\r\nDNADemogFemalesJun2014- without open-ended AllRec-ICPSR.sav (n=73; 67 variables)\r\nDNADemogFemalesJun2014- without open-ended -For analysis with group variables-ICPSR.sav (n=66; 73 variables)\r\nDNADemogMalesJun2014- without open-ended AllRec-ICPSR.sav (n=73; 46 variables)\r\n\r\nand 1 SAS data file (dnalong.sas7bdat (n=264; 7 variables)).\r\n\r\n\r\nData from a focus group of subject matter experts which convened to identify themes from their practice are not included with this collection.\r\n",
+  "modified": "2017-06-29T15:08:59",
+  "accessLevel": "restricted public",
+  "identifier": "3795",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "DNA evidence",
+    "birth control",
+    "sexual behavior",
+    "sexually transmitted disease"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2017-06-29T15:01:48",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR35254.v1",
+      "title": "Longitudinal Post-Coital DNA Recovery 2010-2014 [UNITED STATES]"
+    }
+  ]
+}

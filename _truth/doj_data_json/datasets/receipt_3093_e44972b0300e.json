@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Longitudinal Study of Biosocial Factors Related to Crime and Delinquency, 1959-1962: [Pennsylvania]",
+  "description": "This study was designed to measure the effects of family\r\nbackground and developmental characteristics on school achievement and\r\ndelinquency within a \"high risk\" sample of Black youths. The study\r\nincludes variables describing the mother and the child. Mother-related\r\nvariables assess prenatal health, pregnancy and delivery\r\ncomplications, and socioeconomic status. Child-related variables focus\r\non the child at age 7 and include place in birth order, physical\r\ndevelopment, family constellation, socioeconomic status, verbal and\r\nspatial intelligence, and number of offenses.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3093",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "African Americans",
+    "academic achievement",
+    "child development",
+    "crime",
+    "delinquent behavior",
+    "family background",
+    "mothers"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1988-10-25T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08928.v2",
+      "title": "Longitudinal Study of Biosocial Factors Related to Crime and Delinquency, 1959-1962: [Pennsylvania]"
+    }
+  ]
+}

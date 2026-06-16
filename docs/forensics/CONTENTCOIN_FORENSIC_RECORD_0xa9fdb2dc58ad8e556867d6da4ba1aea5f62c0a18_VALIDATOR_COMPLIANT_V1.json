@@ -1,0 +1,29 @@
+{
+  "version": "CONTENTCOIN_FORENSIC_RECORD_V1",
+  "chain": "base",
+  "contract_address": "0xa9fdb2dc58ad8e556867d6da4ba1aea5f62c0a18",
+  "classification": "LOW_CONTEXT_CONTENTCOIN",
+  "narrative_binding": "WEAK",
+  "identity_binding": "UNVERIFIED",
+  "replay_meaningfulness": "LOW",
+  "metadata_density": "SPARSE",
+  "lineage_confidence": "UNCONFIRMED_FACTORY_PATTERN",
+  "forensic_status": "INSUFFICIENT_EVIDENCE",
+  "claim_boundary_evaluation": {
+    "supported_claims_documented": true,
+    "unsupported_claims_enumerated": true,
+    "supported_unsupported_split_complete": true,
+    "reason_for_insufficient_evidence": "Evidence surface does not support promotion of higher-order attribution beyond LOW_CONTEXT classification."
+  },
+  "unsupported_claims_promoted_into_attribution": "NO",
+  "attribution_promotion": "REFUSED",
+  "unsupported_higher_order_claims": [
+    "coordination_attribution",
+    "cluster_attribution",
+    "intent_attribution",
+    "deployment_motive_attribution",
+    "shared_authority_attribution",
+    "economic_pattern_attribution",
+    "origin_quality_attribution"
+  ]
+}

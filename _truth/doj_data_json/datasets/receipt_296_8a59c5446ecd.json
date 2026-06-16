@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "RECA Awards by Place of Residence (State/Country) as of [date]",
+  "description": "The report titled RECA Awards by Place of Residence (State/Country) as of [current date], reflects the number of claims filed, pending, denied, approved, and compensation awarded, based on the state and in certain cases, the country of the individual claimant. It is important to note that the data (state and country) reflects the residency of the claimant receiving the compensation awards; it does not reflect the location where the individual was exposed. For example, many claimants were exposed to radiation while present in the Southwestern United States. However, the report reflects that compensation awards were sent to residents of many states and countries. Moreover, in cases involving multiple beneficiaries, the data reflects the residency of the lead beneficiary, i.e., the individual who completed the claim form.",
+  "modified": "2017-03-14T00:00:00",
+  "accessLevel": "public",
+  "identifier": "296",
+  "publisher": {
+    "name": "Civil Division",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Civil Division (USDOJ)",
+    "hasEmail": "mailto:opendata@civ.gov"
+  },
+  "keyword": [
+    "civil division",
+    "civil",
+    "department of justice",
+    "doj",
+    "radiation exposure compensation program",
+    "reca",
+    "claims",
+    "awards",
+    "awarded",
+    "log",
+    "outreach"
+  ],
+  "bureauCode": [
+    "011:06"
+  ],
+  "programCode": [
+    "011:015"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2017-03-14T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "downloadURL": "https://www.justice.gov/civil/omp/omi/Tre_ClaimsByState.xls",
+      "mediaType": "application/vnd.ms-excel",
+      "title": "RECA Awards by Place of Residence (State/Country) as of [date]"
+    }
+  ]
+}

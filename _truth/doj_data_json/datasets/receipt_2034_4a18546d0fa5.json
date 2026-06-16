@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "State Court Organization, 1998: [United States]",
+  "description": "This data collection provides detailed comparative\r\ninformation about the structure, policies, and procedures of statewide\r\ntrial and appellate court systems for the 50 states, the District of\r\nColumbia, and Puerto Rico as of July 1, 1998. Information gathered\r\nincludes the number of courts and judges, judicial selection,\r\ngovernance of court systems, including judicial funding,\r\nadministration, staffing, and procedures, jury qualifications and\r\nverdict rules, and processing and sentencing procedures of criminal\r\ncases.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2034",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "appellate courts",
+    "court system",
+    "judge selection",
+    "judges",
+    "juries",
+    "policies and procedures",
+    "state courts",
+    "trial courts",
+    "verdicts"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2001-06-05T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02854.v1",
+      "title": "State Court Organization, 1998: [United States]"
+    }
+  ]
+}

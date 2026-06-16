@@ -1,0 +1,38 @@
+BATCH_003 ITEM_012
+status: USER_OP_001_DETAILS_RECORDED
+network: base
+explorer: base.blockscout.com
+parent_tx: 0x0d96232a39eb4842ec7cbe72f78350769b630016b9692f6340e98e0085b673dc
+block: 46454006
+user_op_hash: 0xf82e6095ccd6eafe701141844cfd67652026a62aada096c066d64e02793f7bce
+sender_label: CoinbaseSmartWallet
+status: Success
+timestamp_visible: May 25 2026 03:22:39 (-05:00 UTC)
+fee_eth: 0.000001118975
+gas_limit: 216542
+gas_used: 172150
+gas_used_percent: 79.5
+entry_point: EntryPoint
+previous_user_ops_partial: e80fded326b1c8339bd9de6332485e573820d9cb
+
+remaining_evidence_needed:
+- full sender address behind CoinbaseSmartWallet label
+- target or call destination
+- calldata or decoded action
+- logs/events for this user operation
+- whether operation touches 0x694ce46c64d9d1a5e9376a9febcf85ec05d72e9f
+- classification as creation, mint, buy, transfer, or other
+
+claim_allowed:
+- User operation 001 full hash and visible execution details recorded.
+- User operation 001 succeeded inside parent handleOps transaction.
+
+claim_not_allowed:
+- target identified
+- calldata decoded
+- JAYWISDOM contract touched
+- creator/deployer verified
+- first minter/buyer verified
+- Proof-007 passed
+
+boundary: visible user operation details only; no target/calldata/log decode; no proof result claimed

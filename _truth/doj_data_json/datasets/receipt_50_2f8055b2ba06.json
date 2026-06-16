@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Annual Survey of Jails in Indian Country, 2011",
+  "description": "The purpose of the Survey of Jails in Indian Country is  an enumeration of all known adult and juvenile facilities -- jails, confinement facilities, detention centers, and other correctional facilities operated by tribal authorities or by the Bureau of Indian Affairs (BIA) in the United States Department of the Interior. For the purpose of this collection, Indian country includes reservations, pueblos, rancherias, and other Native American and Alaska Native communities throughout the United States.\r\nThe survey collects data on the number of adults and juveniles held on the last weekday in June 2011, type of offense, average daily population in June, most crowded day in June, admissions and releases in June, number of inmate deaths and suicide attempts, rated capacity, and jail staffing.",
+  "modified": "2021-11-22T17:57:04",
+  "accessLevel": "restricted public",
+  "identifier": "50",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Native Americans",
+    "correctional facilities",
+    "correctional system",
+    "corrections management",
+    "jail inmates",
+    "jails",
+    "population characteristics"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2435",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2012-09-24T08:59:14",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR34354.v2",
+      "title": "Annual Survey of Jails in Indian Country, 2011"
+    }
+  ]
+}

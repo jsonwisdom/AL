@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Evaluation of a Repeat Offender Unit in Phoenix, Arizona, 1987-1989",
+  "description": "The purpose of this study was to evaluate the impact of a\r\nRepeat Offender Unit in Phoenix. Repeat Offender Programs are\r\npolice-initiated procedures for patrolling and apprehending likely\r\noffenders in communities. These units typically rely on the cooperation\r\nof police and prosecutors who work together to identify, convict, and\r\nincarcerate individuals who are judged likely to commit crimes,\r\nespecially serious crimes, at high rates. For this study, previous\r\noffenders were assigned either to a control or an experimental group.\r\nIf an individual assigned to the experimental group was later arrested,\r\nthe case received special attention by the Repeat Offender Program.\r\nStaff of the Repeat Offender Program worked closely with the county\r\nattorney's office to thoroughly document the case and to obtain victim\r\nand witness cooperation. If the individual was in the control group and\r\nwas later arrested, no additional action was taken by the Program\r\nstaff. Variables include assignment to the experimental or control\r\ngroup, jail status, probation and parole status, custody status, number\r\nof felony arrests, type of case, bond amount, number of counts against\r\nthe individual, type of counts against the individual, number of prior\r\nconvictions, arresting agency, case outcome, type of incarceration\r\nimposed, and length of incarceration imposed.",
+  "modified": "1992-10-31T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2822",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "criminal justice programs",
+    "criminality prediction",
+    "police",
+    "program evaluation",
+    "prosecuting attorneys",
+    "recidivists"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1992-10-31T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09793.v1",
+      "title": "Evaluation of a Repeat Offender Unit in Phoenix, Arizona, 1987-1989"
+    }
+  ]
+}

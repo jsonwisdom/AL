@@ -1,0 +1,45 @@
+{
+  "protocol": "PUBLIC_RECORD_OF_TRUTH_BY_JAY",
+  "receipt_id": "WAR_BOARD_UPPER_LEVEL_PARENT_RECEIPT_V0_2",
+  "identity": "jaywisdom.base.eth",
+  "project": "MEME_METAVERSE_WAR_BOARD",
+  "war_board_id": "JAYS_WISDOM_WAR_BOARD_V0_2",
+  "mode": "GITHUB_DIRECT_PARENT_RECEIPT",
+  "created_at": "2026-05-09T00:00:00Z",
+  "parent_anchor": {
+    "type": "EXISTING_BASE_EAS_ATTESTATION_REFERENCE",
+    "status": "OPERATOR_SUPPLIED_PENDING_OBSERVER_A_RECHECK",
+    "uid": "0x3ed74bd760457f0d8b8c5462924719fa77f134e9f927577d0745459c024fb0dd",
+    "tx_hash": "0x623e049b507f01ae8eb0e66ac91a4ff4c710c0dde4709700b2ab719b4d15ce3e",
+    "schema_uid": "0xfa94377476d86a25585e7da7889adf60f5a34fe09e1744f98626ad66bb686baa",
+    "chain": "base-mainnet",
+    "chain_id": 8453,
+    "revocable": true,
+    "revoked": false
+  },
+  "child_surface": {
+    "repo": "https://github.com/jsonwisdom/AL",
+    "war_board_spec_path": "docs/specs/JAYS_WISDOM_WAR_BOARD_V0_2.md",
+    "war_board_schema_spec_path": "docs/specs/JAYS_WISDOM_WAR_BOARD_EAS_SCHEMA_V0_2.md",
+    "dashboard_path": "docs/war-board/index.html",
+    "truth_config_path": "docs/war-board/truth.json",
+    "current_commit": "b3886fb9863a2aa78c8b202083ff7f7dc196c164"
+  },
+  "truth_boundary": {
+    "public_facing": true,
+    "repo_canonical": true,
+    "upper_level_parent_reference": true,
+    "dedicated_war_board_schema_registered": false,
+    "dedicated_war_board_attestation": false,
+    "resolver_contract_deployed": false,
+    "meta_certified": false
+  },
+  "doctrine": "The joke can fly. The receipt must land.",
+  "status": "PUBLIC_REPO_CANON_LINKED_TO_EXISTING_PARENT_ATTESTATION_REFERENCE",
+  "non_claims": [
+    "This receipt does not claim a dedicated War Board schema is registered.",
+    "This receipt does not claim a resolver contract is deployed.",
+    "This receipt does not claim Meta certification.",
+    "The parent EAS reference must remain subject to Observer A verification and revocation-state checks."
+  ]
+}

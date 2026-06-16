@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Prisoner Statistics, 1978-2015",
+  "description": "The National Prisoner Statistics (NPS) data collection began in 1926 in response to a congressional mandate to gather information on persons incarcerated in state and federal prisons. Originally under the auspices of the United States Census Bureau, the collection moved to the Bureau of Prisons in 1950, and then in 1971 to the National Criminal Justice Information and Statistics Service, the precursor to the Bureau of Justice Statistics (BJS) which was established in 1979. Since 1979, the Census Bureau has been the NPS data collection agent. The NPS is administered to 51 respondents. Before 2001, the District of Columbia was also a respondent, but responsibility for housing the District of Columbia's sentenced prisoners was transferred to the federal Bureau of Prisons, and by yearend 2001 the District of Columbia no longer operated a prison system. The NPS provides an enumeration of persons in state and federal prisons and collects data on key characteristics of the nation's prison population. NPS has been adapted over time to keep pace with the changing information needs of the public, researchers, and federal, state, and local governments.",
+  "modified": "2017-01-05T08:30:52",
+  "accessLevel": "public",
+  "identifier": "2580",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "HIV",
+    "correctional system",
+    "demographic characteristics",
+    "offenders",
+    "parole",
+    "prison inmates",
+    "state correctional facilities"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2633",
+  "dataQuality": false,
+  "issued": "2017-01-05T08:30:52",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36657.v1",
+      "title": "National Prisoner Statistics, 1978-2015"
+    }
+  ]
+}

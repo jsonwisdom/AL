@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "State Court Processing Statistics, 2002: Felony and Domestic Violence Defendants in Large Urban Counties",
+  "description": "This study provides incident-based, case processing, and criminal history data on defendants charged in state courts during May 2002. The State Court Processing Statistics Program tracked the processing of about 15,000 felony defendants charged in 40 of the 75 largest counties during May 2002. The BJS study entitled Processing of Domestic Violence Cases in State Courts collected additional incident-based and case processing data on more than 5,000 felony and misdemeanor domestic violence defendants in 16 of the 40 counties.",
+  "modified": "2019-03-28T09:36:18",
+  "accessLevel": "restricted public",
+  "identifier": "1057",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "arrest records",
+    "case processing",
+    "court cases",
+    "criminal histories",
+    "defendants",
+    "disposition (legal)",
+    "domestic violence",
+    "felons",
+    "felony courts",
+    "pretrial detention",
+    "pretrial release",
+    "sentencing",
+    "state courts",
+    "statistical data"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2178",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2013-12-11T13:20:22",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR34892.v3",
+      "title": "State Court Processing Statistics, 2002: Felony and Domestic Violence Defendants in Large Urban Counties"
+    }
+  ]
+}

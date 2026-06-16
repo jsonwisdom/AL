@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Crime Surveys:  Redesign Data, 1975-1979",
+  "description": "These data are a product of the National Crime Surveys\r\nRedesign Project. The purpose of the data collection was to create\r\nseveral different data files from existing public-use National Crime\r\nSurveys files. For each crime, information is gathered on the victim's\r\nhousing unit and household and the incident itself. A personal history\r\nand interview are also included. Several data files contain National\r\nCrime Survey and Uniform Crime Report data on the following index\r\ncrimes: robbery, larceny-theft, burglary, motor vehicle theft, rape,\r\nand aggravated assault.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "187",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "assault",
+    "auto theft",
+    "burglary",
+    "census data",
+    "crime",
+    "criminal justice system",
+    "demographic characteristics",
+    "households",
+    "larceny",
+    "neighborhoods",
+    "rape",
+    "robbery",
+    "victimization"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1987-02-26T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08484.v1",
+      "title": "National Crime Surveys:  Redesign Data, 1975-1979"
+    }
+  ]
+}

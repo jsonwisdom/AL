@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Evaluating Network Sampling in Victimization Surveys in Peoria, Illinois, 1986",
+  "description": "This data collection evaluates the advantages of network \r\n sampling over traditional methods in conducting crime and victimization \r\n surveys. Network sampling links population households in specified \r\n ways, for reporting purposes, in order to increase the likelihood of \r\n locating households with particular characteristics. The investigators \r\n conducted a reverse record check survey of victims and a network survey \r\n with a random sample of the victims' relatives and close friends. The \r\n researchers compared the extent to which crime victims reported their \r\n victimization experiences in a general crime and victimization \r\n interview and the extent to which a randomly selected relative or close \r\n friend of each victim reported the same victimization in the same type \r\n of interview. In addition, they examined whether significant reporting \r\n differences were evident by type of crime and by various demographic \r\nvariables.",
+  "modified": "1993-05-13T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3447",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime reporting",
+    "households",
+    "population characteristics",
+    "program evaluation",
+    "victimization",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1993-05-13T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09968.v1",
+      "title": "Evaluating Network Sampling in Victimization Surveys in Peoria, Illinois, 1986"
+    }
+  ]
+}

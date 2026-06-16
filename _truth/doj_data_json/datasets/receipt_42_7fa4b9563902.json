@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Annual Survey of Jails in Indian Country, 1999:  [United States]  ",
+  "description": "The objective of the Survey of Jails in Indian Country is\r\n to gather data on all adult and juvenile jail facilities and detention\r\n centers in Indian country, which is defined for purposes of this\r\n collection as reservations, pueblos, rancherias, and other Native\r\n American and Alaska Native communities throughout the United States.\r\n The survey, a complete enumeration of all 69 confinement facilities\r\n operated by tribal authorities or the Bureau of Indian Affairs (BIA),\r\n provides data on number of inmates, staffing, and facility\r\n characteristics and needs. Variables describe each facility, including\r\n who operated it, facility age, facility function, rated capacity,\r\n authority to house juveniles, number of juveniles held, number of\r\n admission and discharges in last 30 days, number of inmate deaths, the\r\n peak population during June, number of inmates held by sex and\r\n conviction status on June 30, number of facility staff by sex and\r\n function, facility crowding, renovation and building plans, types of\r\n programs available to inmates, and overview of facility and staffing\r\nneeds.",
+  "modified": "2021-11-22T19:13:28",
+  "accessLevel": "restricted public",
+  "identifier": "42",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Native Americans",
+    "correctional facilities",
+    "correctional system",
+    "corrections management",
+    "jail inmates",
+    "jails",
+    "population characteristics"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2435",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2001-10-31T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02980.v2",
+      "title": "Annual Survey of Jails in Indian Country, 1999:  [United States]  "
+    }
+  ]
+}

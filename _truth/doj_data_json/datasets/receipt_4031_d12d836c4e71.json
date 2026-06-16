@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Survey of Residential Group Care Facilities for Children and Youth, 1981",
+  "description": "This survey covers facilities for children and youth who are \r\n considered to be dependent and neglected, delinquent, emotionally \r\n disturbed, mentally ill, in detention or under supervision (status \r\n offenders), and/or in need of temporary shelter or emergency care, or \r\n in need of services due to pregnancy or use of an illegal substance. \r\n The survey was designed to gather information about programs and \r\n services that most types of residential care facilities provide, \r\n regardless of function, rather than about those specific to a single \r\n type of residential care. Information provided about each facility \r\n includes the problems, conditions, and patterns of behavior of their \r\n residents, the treatment programs for them, and the extent of their \r\n participation in community activities. Questionnaires were sent to the \r\n directors of all qualifying facilities. Telephone interviews were \r\n conducted with those directors who did not respond to the \r\nquestionnaire.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "4031",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "child welfare",
+    "children",
+    "community involvement",
+    "group homes",
+    "residential programs",
+    "social services",
+    "treatment programs",
+    "youths"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1995-10-12T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06229.v1",
+      "title": "National Survey of Residential Group Care Facilities for Children and Youth, 1981"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "leaf_id": "007",
+  "state": "INTAKE_OPEN",
+  "pattern_source": "_truth/anchors/leaf006/ANCHORS.json",
+  "required_inputs": {
+    "payload_or_text": "PENDING",
+    "leaf_designation": "PENDING",
+    "description": "PENDING"
+  },
+  "proven_flow": [
+    "source_bytes",
+    "base64_transport_if_binary",
+    "sha256_payload",
+    "wc_c_payload",
+    "repo_verifier_script",
+    "terminal_output",
+    "ANCHORS.json",
+    "EAS_attestation_using_schema_1464"
+  ],
+  "schema_reuse": {
+    "schema_number": 1464,
+    "schema_uid": "0x53a4a43dfb91a23d683202e22aa9e59be86ad67fd650aff11be6929b5654bf95",
+    "rule": "reuse unless fields change"
+  },
+  "anchor_allowed": false,
+  "doctrine": "No payload, no hash. No hash, no attestation. No ghost green."
+}

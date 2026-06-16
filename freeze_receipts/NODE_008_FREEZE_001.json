@@ -1,0 +1,29 @@
+{
+  "freeze_id": "NODE_008_FREEZE_001",
+  "freeze_date": "2026-05-22",
+  "repo": "jsonwisdom/AL",
+  "commits": {
+    "registry_json": "f4729cd014be61295d07f7969a0b062593d54e73",
+    "registry_md": "29016dfbc2760e0fefe84597db832292f039e744",
+    "node_008_json": "7265f2ece87b1b16db04108cba3ad31755b64035",
+    "node_008_md": "2be31fb03867d792f80737786914719c8ab1bc2f"
+  },
+  "files": [
+    "registry.json",
+    "registry.md",
+    "nodes/NODE_008.json",
+    "nodes/NODE_008.md"
+  ],
+  "hashes": {
+    "registry_json": null,
+    "registry_md": null,
+    "node_008_json": null,
+    "node_008_md": null
+  },
+  "hash_status": "PENDING_LOCAL_SHA256",
+  "status": "FROZEN_PENDING_LOCAL_SHA256",
+  "blocked_transition": "NODE_009",
+  "unblock_condition": "operator says unblock NODE_009",
+  "membrane_status": "INTACT",
+  "note": "GitHub lineage is frozen. Local SHA256 hashes remain pending until produced by operator or verified execution environment."
+}

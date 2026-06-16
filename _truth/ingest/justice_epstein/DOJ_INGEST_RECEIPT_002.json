@@ -1,0 +1,21 @@
+{
+  "artifact": "DOJ_INGEST_RECEIPT",
+  "receipt_id": "DOJ_INGEST_RECEIPT_002",
+  "source_id": "justice_epstein",
+  "source_url": "https://www.justice.gov/epstein",
+  "stage": "INGEST_ONLY_QUARANTINED",
+  "promotion_status": "NOT_PROMOTED",
+  "snapshot_index": 2,
+  "file": "_truth/ingest/justice_epstein/2026-05-05T10-39-39Z.html",
+  "http_status": "200",
+  "sha256": "881b2b2244164cf339e053bdfc55dcf758b531da9c8eb87e31e664851e4f5e76",
+  "previous_snapshot": {
+    "snapshot_index": 1,
+    "sha256": "f8597472a5b9dd6c350189862c02f10673f5efa5c452b32d095915d84507226d"
+  },
+  "comparison_result": "PAGE_CHANGED",
+  "write_run_0002": "UNCHANGED",
+  "gate_status": "CLOSED",
+  "next_required_action": "RESOLVE_LOCAL_SYNC_THEN_BUILD_DELTA_SET_002",
+  "custody_note": "Second quarantined ingest receipt only. Page changed between snapshots. No promotion, no HASH_INDEX update, no WRITE_RUN_0002_packet.json."
+}

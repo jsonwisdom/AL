@@ -1,0 +1,30 @@
+{
+  "receipt_type": "AGENT_DELEGATION_RECEIPT_V0",
+  "receipt_version": "0.0.1",
+  "delegator": {
+    "github_user": "alice",
+    "signing_key": "did:key:zMockDelegator"
+  },
+  "agent": {
+    "agent_id": "copilot-agent-123",
+    "runtime": "github-copilot-agent"
+  },
+  "scope": {
+    "repo": "jsonwisdom/AL",
+    "issue": 291,
+    "allowed_actions": ["read", "branch", "commit", "open_pr"],
+    "forbidden_actions": ["merge", "delete_secret", "change_permissions"],
+    "expires_at": "2099-01-01T00:00:00Z"
+  },
+  "authorization": {
+    "intent": "Update ADR documentation without changing auth logic",
+    "policy_file": "testdata/v0/valid/policy-valid.json",
+    "policy_hash": "sha256:mock-policy-valid"
+  },
+  "proof": {
+    "canonicalization": "RFC8785-JCS",
+    "digest": "sha256:mock-receipt-valid",
+    "signature_alg": "Ed25519",
+    "signature": "ed25519:e8600d257ded224ee76f94b3e474e864d67285f7a8c43d7bbba72d8b5db6c41d634c3856c46e7428a0bde6ef319d523d911b97340fad65ec52e77c5025590104"
+  }
+}

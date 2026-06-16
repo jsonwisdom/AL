@@ -76,16 +76,17 @@ rm -f "$PRE_SNAP" "$POST_SNAP"
 
 # === COMMIT IF CHANGE ===
 if [ "$CHANGE_TYPE" != "NO_CHANGE" ]; then
+  # Never commit runtime alert streams. GitHub rejects files over 100MB, and alerts.jsonl is generated output.
   git add \
     _truth/root/alms_root.json \
     _truth/logs/root_events.jsonl \
-    _truth/alerts/alerts.jsonl 2>/dev/null || true
+    _truth/alerts/alerts_summary.json 2>/dev/null || true
 
   if [ -f "_truth/timeline/timeline.json" ]; then
     git add _truth/timeline/timeline.json
   fi
 
-  git commit -m "Auto-run: root + alerts + timeline"
+  git commit -m "Auto-run: root + alert summary + timeline"
   git pull --rebase origin master
   git push
 fi
@@ -105,4 +106,3 @@ echo "STATUS_UPDATED"
 
 # --- ROOT HISTORY ---
 ./scripts/append_root_history.sh
-

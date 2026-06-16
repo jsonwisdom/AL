@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Official Crime Rates of Participants in Trials of the Nurse-Family Partnership, Denver, Elmira, New York, and Memphis, 1977-2005",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThis study examined maternal and youth self-reports of arrests and convictions with official records of crime among participants in three randomized controlled trials of the Nurse-Family Partnership (NFP) in Denver, Colorado, Elmira, New York, and Memphis, Tennessee.\r\nOfficial records were obtained from third-party sources as well as directly from New York State Division of Criminal Justice Services.\r\nThe collection contains 10 SAS data files:\r\ndmom_all.sas7bdat (n=735; 3 variables)\r\ndmom_control.sas7bdat (n=247; 26 variables)\r\nechild_all.sas7bdat (n=374; 4 variables)\r\nechild_control.sas7bdat (n=173; 22 variables)\r\nemom_all.sas7bdat (n=399; 4 variables)\r\nemom_control.sas7bdat (n=184; 17 variables)\r\nmchild_all.sas7bdat (n=708; 5 variables)\r\nmchild_control.sas7bdat (n=482; 46 variables)\r\nmmom_all.sas7bdat (n=742; 5 variables)\r\nmmom_control.sas7bdat (n=514; 25 variables)\r\nDemographic variables include race, ethnicity, highest grade completed, household income, marital status, housing density, maternal age, maternal education, husband/boyfriend education, and head of household employment status.",
+  "modified": "2020-05-14T14:08:22",
+  "accessLevel": "restricted public",
+  "identifier": "3406",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "alcohol consumption",
+    "child abuse",
+    "conviction records",
+    "criminal histories",
+    "domestic violence",
+    "drug use",
+    "education",
+    "family conflict",
+    "gang members",
+    "household income",
+    "intervention",
+    "low income groups",
+    "marital status",
+    "mothers",
+    "offenders"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-12-19T09:13:52",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36580.v2",
+      "title": "Official Crime Rates of Participants in Trials of the Nurse-Family Partnership, Denver, Elmira, New York, and Memphis, 1977-2005"
+    }
+  ]
+}

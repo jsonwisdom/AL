@@ -1,0 +1,74 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "United Nations World Crime Surveys: Fifth Survey, 1990-1994",
+  "description": "The Fifth United Nations Survey, covering the years\r\n1990-1994, was designed to collect data on the incidence of reported\r\ncrime and the operation of criminal justice systems with a view to\r\nimproving the dissemination of that information globally. To that end,\r\nthe survey facilitates an overview of trends and interrelationships\r\namong various parts of the criminal justice system to promote informed\r\ndecision-making in its administration, nationally and\r\ncrossnationally. Variables describe combined police and prosecution\r\nexpenditure by year and by country, number of police personnel by\r\ngender, total number of homicides by country and by city, number of\r\nassaults, rapes, robberies, thefts, burglaries, frauds, and\r\nembezzlements, amount of drug crime, number of people formally charged\r\nwith crime, age of suspects, number and gender of prosecutors, number\r\nof individuals prosecuted and the types of crimes prosecuted, gender\r\nand age of individuals prosecuted, types of courts, number of\r\nindividuals convicted and acquitted, numbers sentenced to capital\r\npunishment and various other punishments, number of convictions on\r\nvarious charges, number of individuals sentenced and in detention,\r\nnumber of prisoners, sentence lengths, and prison demographics.",
+  "modified": "2006-01-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2728",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "assault",
+    "burglary",
+    "capital punishment",
+    "convictions (law)",
+    "crime",
+    "crime patterns",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "criminal justice system",
+    "drug related crimes",
+    "embezzlement",
+    "fraud",
+    "homicide",
+    "international crime statistics",
+    "larceny",
+    "law enforcement",
+    "police",
+    "prosecuting attorneys",
+    "prosecution",
+    "rape",
+    "rape statistics",
+    "robbery",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2437",
+  "dataQuality": false,
+  "issued": "2003-04-25T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03686.v1",
+      "title": "United Nations World Crime Surveys: Fifth Survey, 1990-1994"
+    }
+  ]
+}

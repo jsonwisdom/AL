@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.github.io/AL/schemas/public_document_audit_log.schema.json",
+  "title": "Public Document Audit Log",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "type",
+    "log_id",
+    "subject",
+    "source_uri",
+    "allegation_mode",
+    "append_only",
+    "events"
+  ],
+  "properties": {
+    "type": { "const": "PUBLIC_DOCUMENT_AUDIT_LOG" },
+    "log_id": { "type": "string", "minLength": 1 },
+    "subject": { "type": "string", "minLength": 1 },
+    "source_uri": { "type": "string", "minLength": 1 },
+    "allegation_mode": { "const": "blocked" },
+    "append_only": { "const": true },
+    "events": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "event_id",
+          "event_type",
+          "actor",
+          "observed_at",
+          "from_state",
+          "to_state",
+          "hash_before",
+          "hash_after",
+          "replay_path",
+          "receipt_ref",
+          "review_required"
+        ],
+        "properties": {
+          "event_id": { "type": "string", "minLength": 1 },
+          "event_type": {
+            "enum": [
+              "initial_observation",
+              "successful_replay",
+              "replay_decay",
+              "hash_drift",
+              "source_unavailable",
+              "sealed",
+              "destroyed_with_receipt",
+              "destroyed_without_receipt",
+              "human_review",
+              "new_verified_receipt"
+            ]
+          },
+          "actor": { "type": "string", "minLength": 1 },
+          "observed_at": { "type": "string", "minLength": 1 },
+          "from_state": { "type": ["string", "null"] },
+          "to_state": { "type": "string", "minLength": 1 },
+          "hash_before": { "type": ["string", "null"] },
+          "hash_after": { "type": ["string", "null"] },
+          "replay_path": { "type": ["string", "null"] },
+          "receipt_ref": { "type": ["string", "null"] },
+          "review_required": { "type": "boolean" }
+        }
+      }
+    }
+  }
+}

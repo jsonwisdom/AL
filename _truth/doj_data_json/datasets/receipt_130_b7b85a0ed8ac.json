@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Expenditure and Employment Data for the Criminal Justice System: CJEE Longitudinal File, 1971-1979, 1985, 1988   ",
+  "description": "This survey provides criminal justice expenditure and\r\n employment (CJEE) data for all states and counties in the United\r\n States, certain municipal governments, and Puerto Rico. Specific\r\n variables include full- and part-time employees and payroll,\r\n expenditures for current operations, capital outlay, equipment,\r\n construction, land, and contributions to employee benefits, and\r\n intergovernmental expenditures paid to state and local\r\n governments. Sectors represented in this survey include police\r\n protection, judicial, legal services and prosecution, public defense,\r\ncorrections, and other criminal justice services.",
+  "modified": "1996-11-21T00:00:00",
+  "accessLevel": "public",
+  "identifier": "130",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional system",
+    "criminal justice system",
+    "employment",
+    "federal government",
+    "full-time employment",
+    "government expenditures",
+    "law enforcement",
+    "local government",
+    "part-time employment",
+    "state government",
+    "wages and salaries"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2429",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR07636.v6",
+      "title": "Expenditure and Employment Data for the Criminal Justice System: CJEE Longitudinal File, 1971-1979, 1985, 1988   "
+    }
+  ]
+}

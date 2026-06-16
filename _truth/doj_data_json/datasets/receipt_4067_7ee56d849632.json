@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Uniform Crime Reports [United States]:  Supplementary Homicide Reports, 1976-1992",
+  "description": "These data provide incident-level information on criminal \r\n homicides including date, location, circumstances, and method of \r\n offense, as well as demographic characteristics of victims and \r\n perpetrators and the relationship between the two. For this dataset, \r\n the original Uniform Crime Reports data were completely restructured \r\n into a nested, or hierarchical, form with repeating records. \r\n Specifically, the file contains one record for each agency per year \r\n (record type \"A\"), nested within which is one record per incident \r\n (record type \"I\"). Victim records (record type \"V\") are in turn \r\n nested within incident records, and offender data are repeated for all \r\n offenders on each victim record. Part 3, ORI List, contains Originating \r\n Agency Identifier (ORI) codes used by the FBI and the corresponding \r\nagency name.",
+  "modified": "1995-03-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "4067",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "arrests",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "homicide",
+    "law enforcement",
+    "offenders",
+    "offenses",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2167",
+  "dataQuality": false,
+  "issued": "1995-03-16T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06387.v1",
+      "title": "Uniform Crime Reports [United States]:  Supplementary Homicide Reports, 1976-1992"
+    }
+  ]
+}

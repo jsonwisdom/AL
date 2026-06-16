@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Due Process at Machine Speed</title>
+  <meta name="description" content="A constitutional framework for machine-speed government decisions: replayable administrative records, meaningful review, and public-facing due process materials." />
+  <style>
+    :root {
+      --ink:#111827;
+      --muted:#4b5563;
+      --line:#d1d5db;
+      --bg:#fafafa;
+      --paper:#ffffff;
+      --accent:#111827;
+      --soft:#f3f4f6;
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family: Georgia, 'Times New Roman', serif; line-height:1.55; }
+    a { color:var(--ink); text-decoration-thickness:1px; text-underline-offset:3px; }
+    .wrap { max-width:1120px; margin:0 auto; padding:0 24px; }
+    header { background:var(--paper); border-bottom:1px solid var(--line); padding:48px 0 36px; }
+    .eyebrow { font-family: system-ui, sans-serif; text-transform:uppercase; letter-spacing:.12em; font-size:12px; font-weight:700; color:var(--muted); margin-bottom:16px; }
+    h1 { font-size:clamp(40px, 7vw, 76px); line-height:.94; letter-spacing:-.055em; margin:0 0 18px; max-width:980px; }
+    .lead { font-size:clamp(20px, 2.5vw, 28px); line-height:1.25; max-width:960px; margin:0 0 22px; }
+    .clarity { border-left:5px solid var(--ink); padding:16px 20px; background:var(--soft); max-width:940px; font-size:19px; }
+    main { padding:34px 0 60px; }
+    section { margin:0 0 34px; }
+    h2 { font-size:34px; line-height:1.05; letter-spacing:-.035em; margin:0 0 14px; }
+    h3 { font-size:22px; margin:0 0 8px; }
+    .grid3 { display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; }
+    .grid2 { display:grid; grid-template-columns:1.15fr .85fr; gap:18px; align-items:start; }
+    .card, .doctrine, .artifact, .summary { background:var(--paper); border:1px solid var(--line); padding:22px; border-radius:6px; }
+    .card p, .artifact p { margin:0 0 14px; color:var(--muted); }
+    .card ul { margin:0; padding-left:20px; color:var(--muted); }
+    .btns { display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; }
+    .btn { display:inline-block; border:1px solid var(--ink); padding:10px 12px; border-radius:4px; font-family:system-ui, sans-serif; font-weight:700; text-decoration:none; font-size:14px; background:var(--ink); color:white; }
+    .btn.secondary { background:white; color:var(--ink); }
+    .doctrine { font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:18px; line-height:1.65; background:#111827; color:white; position:sticky; top:18px; }
+    .doctrine small { display:block; color:#d1d5db; font-family:system-ui, sans-serif; text-transform:uppercase; letter-spacing:.08em; margin-bottom:10px; }
+    .audience { margin-top:18px; }
+    .artifact { display:grid; grid-template-columns:1fr auto; gap:16px; align-items:center; margin-bottom:10px; }
+    .artifact strong { display:block; font-size:18px; }
+    .artifact code { display:block; font-size:12px; color:var(--muted); margin-top:4px; white-space:normal; }
+    .tag { display:inline-block; font-family:system-ui, sans-serif; font-size:12px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.08em; margin-bottom:8px; }
+    .two-track { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .track { border-top:4px solid var(--ink); }
+    footer { border-top:1px solid var(--line); background:var(--paper); padding:28px 0; color:var(--muted); font-family:system-ui, sans-serif; font-size:14px; }
+    @media (max-width:850px) { .grid3, .grid2, .two-track, .artifact { grid-template-columns:1fr; } .doctrine { position:static; } }
+    @media print { .btns, nav, footer { display:none; } body { background:white; } .card, .artifact, .summary { break-inside:avoid; } }
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Public resource · constitutional procedure · machine-speed government</div>
+    <h1>Due Process at Machine Speed</h1>
+    <p class="lead">This is a constitutional framework for machine-speed government decisions.</p>
+    <div class="clarity"><strong>It is not AI ethics. It is not a technology proposal.</strong> It is procedural due process applied to automated public power: when the government uses machines to affect rights, benefits, or eligibility, the decision must be reviewable.</div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="grid2">
+    <div>
+      <section class="audience">
+        <h2>Choose your path</h2>
+        <div class="grid3">
+          <div class="card">
+            <span class="tag">Judges · clerks · scholars</span>
+            <h3>The Legal Framework</h3>
+            <p>Law review article, model judicial opinion, and litigation package grounded in Mathews, Goldberg, Overton Park, State Farm, and the APA.</p>
+            <div class="btns"><a class="btn" href="#legal">Open legal materials</a></div>
+          </div>
+          <div class="card">
+            <span class="tag">Advocates · clinics · organizers</span>
+            <h3>If the Computer Said No</h3>
+            <p>Plain-language steps for people who received a computer-generated denial and need to know what to ask for next.</p>
+            <div class="btns"><a class="btn" href="#advocates">Open handout</a></div>
+          </div>
+          <div class="card">
+            <span class="tag">Journalists · policy staff</span>
+            <h3>What This Means</h3>
+            <p>A clear summary of the doctrine, the two-track framework, and what the framework does and does not claim.</p>
+            <div class="btns"><a class="btn" href="#press">Open summary</a></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="press">
+        <h2>What this means</h2>
+        <div class="summary">
+          <p><strong>Core claim:</strong> When an agency uses an automated or semi-automated system to make a materially consequential decision, the administrative record must include the computational basis of the decision, not merely the inputs and output.</p>
+          <p><strong>What this is:</strong> A due-process framework for notice, hearing, administrative record, and meaningful review in machine-mediated government decisions.</p>
+          <p><strong>What this is not:</strong> A ban on automation, a demand for public source-code disclosure, or an AI ethics pledge.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>The two-track framework</h2>
+        <div class="two-track">
+          <div class="card track">
+            <h3>Track 1: Execution fidelity</h3>
+            <p>Did the system do what the record says it did?</p>
+            <ul><li>Was the right policy version used?</li><li>Were the correct inputs used?</li><li>Can the decision path be checked?</li></ul>
+          </div>
+          <div class="card track">
+            <h3>Track 2: Substantive legitimacy</h3>
+            <p>Was the system allowed to do that at all?</p>
+            <ul><li>Was the rule lawful?</li><li>Was the threshold fair?</li><li>Can the person understand and challenge the explanation?</li></ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="legal">
+        <h2>The Legal Framework</h2>
+        <div class="artifact"><div><strong>Law Review Article</strong><p>Due Process at Machine Speed: The Constitutional Requirement for Replayable Administrative Records.</p><code>docs/legal/DUE_PROCESS_AT_MACHINE_SPEED.md</code></div><div class="btns"><a class="btn" href="../legal/DUE_PROCESS_AT_MACHINE_SPEED.md">Markdown</a><a class="btn secondary" href="../dist/DUE_PROCESS_AT_MACHINE_SPEED.pdf">PDF</a></div></div>
+        <div class="artifact"><div><strong>Model Judicial Opinion</strong><p>District court memorandum and order granting summary judgment in an automated benefits denial case.</p><code>docs/legal/MODEL_JUDICIAL_OPINION.md</code></div><div class="btns"><a class="btn" href="../legal/MODEL_JUDICIAL_OPINION.md">Markdown</a><a class="btn secondary" href="../dist/MODEL_JUDICIAL_OPINION.pdf">PDF</a></div></div>
+        <div class="artifact"><div><strong>Litigation Package</strong><p>Model brief, agency opposition, reply brief, and unified doctrine.</p><code>docs/dist/LITIGATION_PACKAGE.pdf</code></div><div class="btns"><a class="btn secondary" href="../dist/LITIGATION_PACKAGE.pdf">PDF</a></div></div>
+        <div class="artifact"><div><strong>Unified Doctrine</strong><p>Definitions, citizen challenge flow, agency obligations, and two-track doctrine.</p><code>docs/policy/CONSTITUTIONAL_OPERATING_DOCTRINE.md</code></div><div class="btns"><a class="btn" href="../policy/CONSTITUTIONAL_OPERATING_DOCTRINE.md">Markdown</a><a class="btn secondary" href="../dist/CONSTITUTIONAL_OPERATING_DOCTRINE.pdf">PDF</a></div></div>
+      </section>
+
+      <section id="advocates">
+        <h2>If the Computer Said No</h2>
+        <div class="artifact"><div><strong>Plain-Language Public Explainer</strong><p>One-page resource for people who received a computer-generated denial.</p><code>docs/public/THE_COMPUTER_SAID_NO.md</code></div><div class="btns"><a class="btn" href="THE_COMPUTER_SAID_NO.html">Printable HTML</a><a class="btn secondary" href="../dist/THE_COMPUTER_SAID_NO.pdf">PDF</a><a class="btn secondary" href="THE_COMPUTER_SAID_NO.md">Markdown</a></div></div>
+        <div class="summary"><p><strong>Plain-language core:</strong> Ask two questions: did the computer follow its own rules, and were the rules themselves fair?</p></div>
+      </section>
+    </div>
+
+    <aside>
+      <div class="doctrine">
+        <small>Core doctrine</small>
+        NO MANIFEST,<br />NO AUTHORITY.<br /><br />
+        NO REPLAY,<br />NO AUTOMATED POWER.<br /><br />
+        NO PLAIN-LANGUAGE EXPLANATION,<br />NO AUTOMATED AUTHORITY.<br /><br />
+        A DELAY THAT FUNCTIONS AS A DENIAL<br />IS A DECISION.
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">Source of truth: <a href="https://github.com/jsonwisdom/AL">jsonwisdom/AL</a>. This site is a public distribution surface for constitutional due process materials on machine-mediated government decisions.</div>
+</footer>
+</body>
+</html>

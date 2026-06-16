@@ -1,0 +1,157 @@
+{
+  "state": "Iowa",
+  "artifact": "ia-authorities-step2",
+  "kernel_phase": "STATE_ONBOARDING_V1_STEP_2",
+  "runtime_state": "CONSTRAINT_FORMATION",
+  "last_verified": "2026-05-06",
+  "verifier": "jsonwisdom",
+  "doctrine": {
+    "authority_surface_first": true,
+    "facts_before_guidance": true,
+    "workflows_inferred": false,
+    "unresolved_questions_are_active_constraints": true
+  },
+  "kernel_primitives": {
+    "OPEN_GOVERNMENT_MODEL": {
+      "status": "UNRESOLVED_PENDING_VERIFICATION",
+      "known_risk": "Iowa Public Information Board may create hybrid enforcement and mediation topology distinct from Minnesota and Wisconsin",
+      "portability_risk_level": "HIGH"
+    },
+    "SYSTEM_MODERNIZATION_DATE": {
+      "domain": "UNEMPLOYMENT_INSURANCE",
+      "date": "2025-06-03",
+      "status": "TRACKED",
+      "known_risk": "Platform modernization may alter workflow behavior without statutory amendment",
+      "portability_risk_level": "HIGH"
+    },
+    "UTILITY_TYPE": {
+      "status": "UNRESOLVED_PENDING_PROVIDER_SCOPE_VERIFICATION",
+      "known_risk": "Municipal and cooperative utility complaint routing may diverge from Minnesota and Wisconsin",
+      "portability_risk_level": "HIGH"
+    }
+  },
+  "authorities": [
+    {
+      "name": "Iowa Utilities Commission",
+      "jurisdiction_type": "state_agency",
+      "source_url": "https://iuc.iowa.gov",
+      "verified_scope": [
+        "utility regulation",
+        "utility consumer information"
+      ],
+      "workflow_inferred": false,
+      "unresolved_questions": [
+        "Does Iowa regulate municipal utilities differently from Wisconsin PSC model?",
+        "Are cooperative utility complaint paths split by service type?"
+      ],
+      "known_divergences": [],
+      "portability_risk_level": "HIGH",
+      "last_verified": "2026-05-06",
+      "verifier": "jsonwisdom"
+    },
+    {
+      "name": "Iowa Department of Health and Human Services",
+      "jurisdiction_type": "state_agency",
+      "source_url": "https://hhs.iowa.gov",
+      "verified_scope": [
+        "health coverage",
+        "human services",
+        "public assistance"
+      ],
+      "workflow_inferred": false,
+      "unresolved_questions": [
+        "Are county intake systems centralized differently for HHS benefits?"
+      ],
+      "known_divergences": [],
+      "portability_risk_level": "MEDIUM",
+      "last_verified": "2026-05-06",
+      "verifier": "jsonwisdom"
+    },
+    {
+      "name": "Iowa Workforce Development",
+      "jurisdiction_type": "state_agency",
+      "source_url": "https://workforce.iowa.gov",
+      "verified_scope": [
+        "unemployment insurance",
+        "reemployment services"
+      ],
+      "workflow_inferred": false,
+      "system_modernization_date": "2025-06-03",
+      "unresolved_questions": [
+        "Does UI appeal timing diverge sharply after modernization?",
+        "Did portal modernization alter notice delivery, authentication, appeal intake, or identity verification behavior?"
+      ],
+      "known_divergences": [
+        "Post-modernization runtime requires independent workflow verification"
+      ],
+      "portability_risk_level": "HIGH",
+      "last_verified": "2026-05-06",
+      "verifier": "jsonwisdom"
+    },
+    {
+      "name": "Iowa Secretary of State",
+      "jurisdiction_type": "state_agency",
+      "source_url": "https://sos.iowa.gov",
+      "verified_scope": [
+        "elections",
+        "business services"
+      ],
+      "workflow_inferred": false,
+      "unresolved_questions": [
+        "Which election transparency functions route through Secretary of State versus county auditors?"
+      ],
+      "known_divergences": [],
+      "portability_risk_level": "MEDIUM",
+      "last_verified": "2026-05-06",
+      "verifier": "jsonwisdom"
+    },
+    {
+      "name": "Iowa Judicial Branch",
+      "jurisdiction_type": "judicial_branch",
+      "source_url": "https://www.iowacourts.gov",
+      "verified_scope": [
+        "courts",
+        "court forms",
+        "case process information"
+      ],
+      "workflow_inferred": false,
+      "unresolved_questions": [
+        "Which civic escalation paths require court review after administrative process?"
+      ],
+      "known_divergences": [],
+      "portability_risk_level": "MEDIUM",
+      "last_verified": "2026-05-06",
+      "verifier": "jsonwisdom"
+    },
+    {
+      "name": "Iowa Public Information Board",
+      "jurisdiction_type": "state_board",
+      "source_url": "https://ipib.iowa.gov",
+      "verified_scope": [
+        "open records guidance",
+        "open meetings guidance",
+        "public information complaints"
+      ],
+      "workflow_inferred": false,
+      "open_government_model": "UNRESOLVED_PENDING_VERIFICATION",
+      "unresolved_questions": [
+        "Is open-records enforcement agency-centered, board-mediated, or court-centered?",
+        "Does IPIB issue binding orders, mediate complaints, refer enforcement, or require court escalation?",
+        "What is the scope of IPIB authority over vendor-held or contractor-held records?"
+      ],
+      "known_divergences": [
+        "Potential divergence from Minnesota classification-heavy model",
+        "Potential divergence from Wisconsin DOJ-guidance model"
+      ],
+      "portability_risk_level": "HIGH",
+      "last_verified": "2026-05-06",
+      "verifier": "jsonwisdom"
+    }
+  ],
+  "next_verification_targets": [
+    "IUC municipal and cooperative utility scope",
+    "IPIB enforcement topology",
+    "Iowa UI modernization behavioral changes",
+    "HHS county intake centralization"
+  ]
+}

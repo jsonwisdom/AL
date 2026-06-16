@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Sentencing Practices and Time Served in the District of Columbia Prior to Truth in Sentencing, 1993-1998",
+  "description": "This study collected data on felony sentencing practices in\r\n the District of Columbia during the period 1993 to 1998. Data are\r\n provided on (1) the characteristics of felons sentenced by the\r\n District of Columbia Superior Court (DCSC), (2) the types, lengths,\r\n and variations of sentences imposed, (3) the length of time served in\r\n prison by those committed into the DC Department of Corrections\r\n (DCDOC), and (4) parole release decisions. And the study also\r\n attempted to assess the potential effects of new sentencing practices\r\n implemented in response to the National Capital Revitalization and\r\n Self-Government Improvement Act of 1997 and the Truth in Sentencing\r\n Amendment Act of 1998. Data were obtained from several DC criminal\r\n justice agencies, including DC Superior Court, the Pretrial Services\r\n Agency, the DC Department of Corrections, and the DC Parole\r\n Commission. The records of individual defendants were linked across\r\n these databases to the extent possible, and an integrated database on\r\n felony case processing in the District was created in order to use the\r\n unique information from each system to create defendant-level or\r\n person-level records that contained more information about cases than\r\n could be obtained from any one system. The process also involved\r\n linking records within an agency's data system for the purposes of\r\n obtaining the history of contacts with an agency or for the purpose of\r\n aggregating charge-level information into summary data for a docket or\r\n commitment. The final database consists of three files. Part 1 (Felony\r\n Docket Data) includes sentencing information on all felony dockets\r\n sentenced in DCSC between January 1993 and December 1998. Part 2\r\n (Commitments Data) includes sentencing and time served information on\r\n all offenders who were committed to the DCDOC between January 1990 and\r\n December 1998. Part 3 (Decisions Data) includes all decisions made by\r\n the parole board on all types of considerations between January 1993\r\n and December 1998. Part 1 variables provide defendant demographic\r\n characteristics (including age, race, and sex), offense type codes\r\n (for the defendant's most serious offense), type of sentence (prison\r\n only, probation only, split, or fine) and the sentence imposed\r\n (including whether the defendant was sentenced to life). During the\r\n period under study, the District of Columbia followed an indeterminate\r\n sentencing system, and so the data file includes minimum and maximum\r\n periods where applicable (for example, confinement). The data include\r\n information pertaining to the most serious offense at conviction as\r\n well as aggregated sentence information on all felony charges on a\r\n docket (in case there were multiple charges). Part 2 variables include\r\n dates (of disposition, charging, and release), type of release from\r\n the DCDOC within that time period (including transfer to the Federal\r\n Bureau of Prisons facilities, release on parole, release upon\r\n completion of imposed term, transfer to escape status, and whether the\r\n offender had not yet been released by December 1998), in-prison parole\r\n hearing/decision information (including number of initial hearings,\r\n number of decisions, number of grants, and whether a parole release\r\n decision was granted at the initial hearing while on this commitment),\r\n prior criminal history (including number of prior prison sentences and\r\n the number of prior drug, violent, weapon, and property convictions in\r\n the last 15 years), current commitment sentencing information\r\n (including number of felony, misdemeanor, or split charges, most\r\n serious charge of conviction, and the sentence imposed on the most\r\n serious charge as well as the aggregate sentencing imposed on all\r\n charges of conviction), and the time served by the offender prior to\r\n release (with and without the amount of credit given for jail time\r\n prior to conviction). This file also identifies several problem flags\r\n that need to be taken into account before analyzing the data in order\r\n to select out problem cases (with data entry or computation\r\n errors). Part 3 variables include the date (year, month) of the\r\n hearing, up to four considerations being decided on, up to six\r\n decisions that were made for these considerations, six flags\r\n indicating the types of considerations that were included in the\r\n hearing, and two flags indicating the types of decisions that were\r\nincluded in the current hearing.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3249",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "case processing",
+    "felony offenses",
+    "offenders",
+    "parole",
+    "parole services",
+    "pretrial procedures",
+    "sentencing",
+    "sentencing guidelines",
+    "sentencing reform"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2002-06-19T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03403.v1",
+      "title": "Sentencing Practices and Time Served in the District of Columbia Prior to Truth in Sentencing, 1993-1998"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "LAPD's TEAMS II: The Impact of a Police Integrity Early Intervention System, Los Angeles, California, 2000-2015",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThis research was an evaluation of the Los Angeles Police Department's (LAPD) Training Evaluation and Management System II (TEAMS II) Early Intervention System conducted by Justice and Security Strategies, Inc. TEAMS II was designed to identify officers at-risk for engaging in future problematic behavior. This system was mandated as part of the Consent Decree (Section II) that was formally entered into on June 15, 2001 between the U.S. Department of Justice and the LAPD. Justice and Security Strategies, Inc. research staff worked with the Information Technology Bureau to obtain and analyze TEAMS II data, conducted informal interviews with officers, sergeants, civilians, command staff, and technologists involved with TEAMS II, and worked with the TEAMS II contractors to examine and provide recommendations.\r\nThe data collection includes 3 Stata data files. The concentration analysis dataset (TEAMS-Concentration-Analysis-FINAL-v2.dta) with 143 variables for 15,710 cases, the regression-discontinuity dataset (TEAMS-Regression-Discontinuity-FINAL.dta) with 98 variables for 297,779 cases, and the time series dataset (TEAMS-Time-Series-FINAL.dta) with 43 variables for 192 cases. Demographic variables included as part of this data collection include officer age, gender, ethnicity, education level, and total number of officers employed by demographics.",
+  "modified": "2018-09-17T17:27:22",
+  "accessLevel": "restricted public",
+  "identifier": "3404",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrest rates",
+    "citizen grievances",
+    "intervention",
+    "intervention strategies",
+    "lawsuits",
+    "police",
+    "police citizen interactions",
+    "police departments",
+    "police effectiveness",
+    "police intervention",
+    "police performance",
+    "police records",
+    "police use of force",
+    "risk factors",
+    "t"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-09-17T17:24:07",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36574.v1",
+      "title": "LAPD's TEAMS II: The Impact of a Police Integrity Early Intervention System, Los Angeles, California, 2000-2015"
+    }
+  ]
+}

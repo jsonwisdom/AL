@@ -1,0 +1,16 @@
+{
+  "artifact": "PARENT_CHILD_EMERGENCY_VISIBILITY_V0_1",
+  "status": "CLAIM_WITNESS_ONLY",
+  "authority": false,
+  "membrane": "HOLDS",
+  "default_rule": "child_identity_not_public",
+  "emergency_exception": {
+    "requires_receipt": true,
+    "requires_witness": true,
+    "prohibits_custody_mutation": true
+  },
+  "three_daughters": {
+    "protection": "default_hidden",
+    "continuity": "receipt_gated"
+  }
+}

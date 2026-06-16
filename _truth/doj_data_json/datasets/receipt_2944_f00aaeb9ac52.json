@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Assessing Police Performance in Citizen Encounters, Schenectady and Syracuse, NY, 2011-2014",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThis study examined how police managers would use information about their officers' performance in procedural justice terms. The project provided for the injection of citizen assessment of service quality into systems of police performance measurement and accountability. Information on the quality of police-citizen encounters was drawn from surveys of citizens who had contact with the police in each of two cities, Schenectady and Syracuse, New York. Following the accumulation of survey data to form a baseline, survey results on citizens' satisfaction and judgments about procedural justice in their police contacts were summarized and reported to command staffs on a monthly basis\r\nthrough the departments' respective Compstat meetings. In this way the project\r\nprovided for measures of police performance with respect to procedural justice with sufficient periodicity that the information was potentially useful in managing performance.\r\nThe study addressed four specific questions:\r\nDoes performance on these outcomes - procedural justice and citizen satisfaction - improve when information on these outcomes is incorporated into departments' systems of performance measurement and accountability?What do police managers do with this information, and how (if at all) are field supervisors and patrol officers affected by it?Are survey-based measures of citizens' subjective experiences valid measures of police performance, that is, do they reflect the procedural justice with which police act?Can survey based measures be deployed economically (e.g., through targeted sampling), and can other, less expensive measures of the quality of police-citizen encounters be substituted for survey-based measures?\r\nTo answer these questions, researches used a mixed methods data collection plan. In both Schenectady and Syracuse, a survey was administered to people who had recent contact with the police. Semi-monthly samples were randomly drawn from police records of calls for service, stops, and arrests from mid-July, 2011, through mid-January, 2013. Across the 18 months of surveying, 3,603 interviews were completed. Also carried out, was a survey of key informants in each city - neighborhood association leaders - in order to extend the assessment of public perceptions of the local police beyond those who have direct contact with police to the larger community. Interviews with patrol officers and supervisors were also conducted in both sites, once at about the mid-point of the 18-month police services survey and again at the conclusion of the surveying. Interviews were conducted with the commanders shortly after the project was introduced to them in October of 2011. Finally, in Schenectady, \"armchair\" observation of a subset of the 1,800 encounters about which the citizen had already been interviewed was conducted.\r\nThe collection contains 7 SPSS data files and 6 Syntax files:archive_Census_beat.sav (n=30; 28 variables)archive_keyinformant_analysis.spsarchive_keyinformant_survey.sav (n=90; 28 variables)archive_obs_byenc.sav (n=476; 79 variables)archive_obs_byobserver.sav (n=1,078; 476 variables)archive_obs_enc_analysis.spsarchive_obs_enc_var_construction.spsarchive_police_data.sav (n=3,603; 9 variables)archive_policeservices_survey_analysis.spsarchive_policeservices_survey_closed.sav (n=3,603; 148 variables)archive_policeservices_survey_open.sav (n=1,218; 23 variables)archive_policeservices_survey_var_construction.spsSyntax to replicate results - list by table.pdf\r\nFor confidentiality reasons, the qualitative interviews with citizens, police sergeants, patrol officers, and commanders regarding their experiences are not available as part of this collection.",
+  "modified": "2017-12-14T12:56:15",
+  "accessLevel": "restricted public",
+  "identifier": "2944",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "citizen attitudes",
+    "police citizen interactions",
+    "police community relations",
+    "police performance",
+    "procedural justice"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2017-12-14T12:52:59",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR35467.v1",
+      "title": "Assessing Police Performance in Citizen Encounters, Schenectady and Syracuse, NY, 2011-2014"
+    }
+  ]
+}

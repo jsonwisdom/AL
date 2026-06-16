@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "A Cluster Randomized Controlled Trial of the Safe Public Spaces in Schools Program, New York City, 2016-2018",
+  "description": "This study tests the efficacy of an intervention--Safe Public Spaces (SPS) -- focused on improving the safety of public spaces in schools, such as hallways, cafeterias, and stairwells. Twenty-four schools with middle grades in a large urban area were recruited for participation and were pair-matched and then assigned to either treatment or control. The study comprises four components: an implementation evaluation, a cost study, an impact study, and a community crime study.\r\nCommunity-crime-study: The community crime study used the arrest of juveniles from the NYPD (New York Police Department) data. The data can be found at (https://data.cityofnewyork.us/Public-Safety/NYPD-Arrests-Data-Historic-/8h9b-rp9u). Data include all arrest for the juvenile crime during the life of the intervention. The 12 matched schools were identified and geo-mapped using Quantum GIS (QGIS) 3.8 software.  Block groups in the 2010 US Census in which the schools reside and neighboring block groups were mapped into micro-areas. This resulted in twelve experimental school blocks and 11 control blocks which the schools reside (two of the control schools existed in the same census block group). Additionally, neighboring blocks using were geo-mapped into 70 experimental and 77 control adjacent block groups (see map).  Finally, juvenile arrests were mapped into experimental and control areas. Using the ARIMA time-series method in Stata 15 statistical software package, arrest data were analyzed to compare the change in juvenile arrests in the experimental and control sites.\r\nCost-study: For the cost study, information from the implementing organization (Engaging Schools) was combined with data from phone conversations and follow-up communications with staff in school sites to populate a Resource Cost Model. The Resource Cost Model Excel file will be provided for archiving. This file contains details on the staff time and materials allocated to the intervention, as well as the NYC prices in 2018 US dollars associated with each element. Prices were gathered from multiple sources, including actual NYC DOE data on salaries for position types for which these data were available and district salary schedules for the other staff types.  Census data were used to calculate benefits.\r\nImpact-evaluation: The impact evaluation was conducted using data from the Research Alliance for New York City Schools. Among the core functions of the Research Alliance is maintaining a unique archive of longitudinal data on NYC schools to support ongoing research. The Research Alliance builds and maintains an archive of longitudinal data about NYC schools. Their agreement with the New York City Department of Education (NYC DOE) outlines the data they receive, the process they use to obtain it, and the security measures to keep it safe.\r\nImplementation-study: The implementation study comprises the baseline survey and observation data. Interview transcripts are not archived.",
+  "modified": "2021-04-28T11:03:44",
+  "accessLevel": "restricted public",
+  "identifier": "4206",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "community crime",
+    "cost study",
+    "crime",
+    "school environment",
+    "school readiness",
+    "school safety",
+    "school security",
+    "schools"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2021-04-28T10:58:47",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37476.v1",
+      "title": "A Cluster Randomized Controlled Trial of the Safe Public Spaces in Schools Program, New York City, 2016-2018"
+    }
+  ]
+}

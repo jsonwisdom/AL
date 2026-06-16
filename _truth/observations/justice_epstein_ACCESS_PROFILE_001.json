@@ -1,0 +1,54 @@
+{
+  "artifact": "ACCESS_PROFILE",
+  "profile_id": "justice_epstein_ACCESS_PROFILE_001",
+  "source_id": "justice_epstein",
+  "source_url": "https://www.justice.gov/epstein",
+  "fetch_method": "PLAYWRIGHT_RENDERED",
+  "mode": "OBSERVATION",
+  "capture_attempts": 4,
+  "successful_captures": 2,
+  "blocked_captures": 2,
+  "success_rate": "50%",
+  "access_truth": "STRUCTURALLY_INTERMITTENT",
+  "content_truth": "PROVEN_FOR_SUCCESSFUL_RENDERED_SNAPSHOT",
+  "attempts": [
+    {
+      "index": 1,
+      "timestamp_utc": "2026-05-05T10-45-00Z",
+      "barrier_likely": false,
+      "html_size_bytes": 76669,
+      "sha256": "8601485862b2e914eeb2b5ae5fe7f33a3df292946c8f5ccbecbc91dbb207ca89",
+      "classification": "REAL_CONTENT"
+    },
+    {
+      "index": 2,
+      "timestamp_utc": "2026-05-05T10-47-23Z",
+      "barrier_likely": false,
+      "html_size_bytes": 76669,
+      "sha256": "8601485862b2e914eeb2b5ae5fe7f33a3df292946c8f5ccbecbc91dbb207ca89",
+      "classification": "REAL_CONTENT_STABLE"
+    },
+    {
+      "index": 3,
+      "timestamp_utc": "2026-05-05T10-55-00Z",
+      "barrier_likely": true,
+      "html_size_bytes": 76669,
+      "sha256": "81b16c09f8b88043031b88d337620a4b72e030972753e6ca9f701fdc8e98fec3",
+      "classification": "BARRIER_CONTENT"
+    },
+    {
+      "index": 4,
+      "timestamp_utc": "2026-05-05T10-57-00Z",
+      "barrier_likely": true,
+      "text_size_bytes": 2700,
+      "sha256": "6e6b6894bcbc47306590822b0cb88d56456cfab47ca018c7a0b5b7d6b87d8afa",
+      "classification": "BARRIER_CONTENT"
+    }
+  ],
+  "promotion_status": "BLOCKED",
+  "promotion_block_reason": "ACCESS_NOT_STABLE_ENOUGH_FOR_RELEASE_PROMOTION",
+  "recommended_next_action": "WAIT_30_TO_60_MINUTES_THEN_CAPTURE_NEXT_RENDERED_SNAPSHOT",
+  "write_run_0002": "UNCHANGED",
+  "gate_status": "CLOSED",
+  "custody_note": "Observation profile only. Do not rotate fingerprints or engineer around detection. Measure access stability before any promotion discussion."
+}

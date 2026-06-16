@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "RECA Program Outreach Log",
+  "description": "This report is an excel spreadsheet that reflects the Program's outreach since FY 2006. Each outreach event is briefly described; the staff and number of hours are detailed as well.",
+  "modified": "2017-03-14T00:00:00",
+  "accessLevel": "public",
+  "identifier": "298",
+  "publisher": {
+    "name": "Civil Division",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Civil Division (USDOJ)",
+    "hasEmail": "mailto:opendata@civ.gov"
+  },
+  "keyword": [
+    "civil division",
+    "civil",
+    "department of justice",
+    "doj",
+    "radiation exposure compensation program",
+    "reca",
+    "claims",
+    "awards",
+    "awarded",
+    "log",
+    "outreach"
+  ],
+  "bureauCode": [
+    "011:06"
+  ],
+  "programCode": [
+    "011:015"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2017-03-14T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "downloadURL": "https://www.justice.gov/civil/omp/omi/Final_RECA_Outreach_log_10.xls",
+      "mediaType": "application/vnd.ms-excel",
+      "title": "RECA Program Outreach Log"
+    }
+  ]
+}

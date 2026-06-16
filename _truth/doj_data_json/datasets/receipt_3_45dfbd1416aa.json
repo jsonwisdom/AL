@@ -1,0 +1,77 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Antitrust Division Sherman Act Violations Yielding a Corporate Fine of $10 Million or More",
+  "description": "This dataset contains five elements for Sherman Act violations yielding a corporate fine of $10 million or more - Defendant name (Federal Government Fiscal Year) - Product - Fine ($ in millions) - Geographic scope (domestic or international) - Country",
+  "modified": "2023-09-13T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3",
+  "publisher": {
+    "name": "Antitrust Division",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Richard Hess",
+    "hasEmail": "mailto:richard.hess2@usdoj.gov"
+  },
+  "keyword": [
+    "Sherman Act Violations",
+    "Corporate Fine",
+    "Department of Justice",
+    "Antitrust Division",
+    "Defendant",
+    "country",
+    "company",
+    "enforcement",
+    "monopoly",
+    "monopolization",
+    "corporation",
+    "anticompetitive",
+    "protection of competition",
+    "product",
+    "bid-rigging",
+    "price fixing"
+  ],
+  "bureauCode": [
+    "011:00"
+  ],
+  "programCode": [
+    "011:022"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2017-01-25T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "conformsTo": "https://www.isotc211.org/2005/gmi/",
+      "downloadURL": "https://www.justice.gov/atr/file/790681/dl?inline",
+      "format": "MS Excel",
+      "mediaType": "application/vnd.ms-excel",
+      "title": "Antitrust Division Sherman Act Violations Yielding a Corporate Fine of $10 Million or More (Download - Excel)"
+    },
+    {
+      "@type": "dcat:Distribution",
+      "conformsTo": "https://www.isotc211.org/2005/gmi/",
+      "downloadURL": "https://www.justice.gov/atr/page/file/991706/dl?inline",
+      "format": "PDF",
+      "mediaType": "application/pdf",
+      "title": "Antitrust Division Sherman Act Violations Yielding a Corporate Fine of $10 Million or More (Download - PDF)"
+    },
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.justice.gov/atr/sherman-act-violations-yielding-corporate-fine-10-million-or-more",
+      "conformsTo": "https://www.isotc211.org/2005/gmi/",
+      "mediaType": "text/html",
+      "title": "Antitrust Division Sherman Act Violations Yielding a Corporate Fine of $10 Million or More (Webpage)"
+    }
+  ]
+}

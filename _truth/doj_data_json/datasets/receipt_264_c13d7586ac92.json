@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Survey of Indigent Defense Systems (NSIDS), 1999",
+  "description": "This survey collected nationwide data in order to: (1)\r\nidentify the number and characteristics of publicly financed indigent\r\ndefense systems and agencies in the United States, (2) measure how\r\nlegal services were provided to indigent criminal defendants in terms\r\nof caseloads, workloads, policies, and practices, and (3) describe the\r\ntypes of offenses handled by indigent defense system organizations.\r\nThe study was initially designed to permit measurable statistical\r\nestimates at the national level for each region of the United States,\r\nfor individual states, and for the 100 most populous counties,\r\nincluding the District of Columbia. However, due to resource and\r\nfinancial constraints, the study was scaled back to collect indigent\r\ncriminal defense data at the trial level for (1) the 100 most populous\r\ncounties, (2) 197 counties outside the 100 most populous counties, and\r\n(3) states that entirely funded indigent criminal defense services.",
+  "modified": "2006-01-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "264",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "court cases",
+    "defendants",
+    "defense (law)",
+    "defense counsel",
+    "legal representation",
+    "legal systems",
+    "policies and procedures",
+    "public defenders"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2001-10-31T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03081.v1",
+      "title": "National Survey of Indigent Defense Systems (NSIDS), 1999"
+    }
+  ]
+}

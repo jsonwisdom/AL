@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Forensic Evidence and the Police, 1976-1980",
+  "description": "This data collection focuses on adult cases of serious\r\ncrime such as homicide (and related death investigations), rape,\r\nrobbery, aggravated assault/battery, burglary, and arson. Data are\r\nincluded for Peoria, Illinois, Chicago, Illinois, Kansas City,\r\nMissouri, and Oakland, California. The data consist of police, court,\r\nand laboratory records from reports submitted by police personnel\r\nduring investigations of suspected criminal offenses. The primary\r\nsource of information was police case files. Prosecutor and court\r\nfiles were reviewed for information regarding the disposition of\r\nsuspects who were arrested and formally charged. Crime laboratory\r\nreports include information concerning the evidence submitted and the\r\nexaminer's worksheets, notes, and final results. There are eight\r\nfiles in this dataset. Each of the four cities has one file for cases\r\nwith physical evidence and one file for cases in which physical\r\nevidence was not collected or examined.",
+  "modified": "2006-01-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3735",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrests",
+    "assault",
+    "burglary",
+    "convictions (law)",
+    "crime",
+    "crime laboratories",
+    "crime prevention",
+    "criminal investigations",
+    "disposition (legal)",
+    "evidence",
+    "forensic sciences",
+    "murder",
+    "police records",
+    "rape",
+    "robbery",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1985-05-24T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08186.v1",
+      "title": "Forensic Evidence and the Police, 1976-1980"
+    }
+  ]
+}

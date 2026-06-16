@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Jail Census, 1999",
+  "description": "The 1999 Census of Jails is the seventh in a series of data\r\ncollection efforts aimed at studying the nation's locally administered\r\njails. Previous censuses were conducted in 1970, 1972, 1978, 1983,\r\n1988, and 1993. The 1999 census enumerated 3,365 locally administered\r\nconfinement facilities that held inmates beyond arraignment and were\r\nstaffed by municipal or county employees. Among these were 47\r\nprivately operated jails under contract for local governments and 42\r\nregional jails that were operated for two or more jail authorities. In\r\naddition, the census identified 11 facilities maintained by the\r\nFederal Bureau of Prisons that functioned as jails. The nationwide\r\ntotal of the number of jails in operation on June 30, 1999, was 3,376.\r\nFor purposes of this data collection, a local jail was defined as a\r\nlocally operated adult detention facility that receives individuals\r\npending arraignment and holds them awaiting trial, conviction, or\r\nsentencing, readmits probation, parole, and bail-bond violators and\r\nabsconders, temporarily detains juveniles pending transfer to juvenile\r\nauthorities, holds mentally ill persons pending their movement to\r\nappropriate health facilities, holds individuals for the military, for\r\nprotective custody, for contempt, and for the courts as witnesses,\r\nreleases convicted inmates to the community upon completion of\r\nsentence, transfers inmates to federal, state, or other authorities,\r\nhouses inmates for federal, state, or other authorities because of\r\ncrowding of their facilities, relinquishes custody of temporary\r\ndetainees to juvenile and medical authorities, operates\r\ncommunity-based programs with day-reporting, home detention,\r\nelectronic monitoring, or other types of supervision, and holds\r\ninmates sentenced to short terms. Variables include information on\r\njail population by legal status, age and sex of prisoners, maximum\r\nsentence, admissions and releases, available services and programs,\r\nstructure and capacity, facility age and use of space, expenditure,\r\nemployment, staff information, and health issues, which include\r\nstatistics on drugs, AIDS, and tuberculosis.",
+  "modified": "2009-07-09T10:27:21",
+  "accessLevel": "restricted public",
+  "identifier": "1089",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "correctional facilities",
+    "correctional system",
+    "corrections management",
+    "demographic characteristics",
+    "inmate populations",
+    "inmate programs",
+    "inmates",
+    "jail inmates",
+    "jails"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2169",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2002-06-07T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03318.v3",
+      "title": "National Jail Census, 1999"
+    }
+  ]
+}

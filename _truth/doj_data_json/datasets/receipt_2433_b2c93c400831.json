@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Incident-Based Reporting System (NIBRS) Series",
+  "description": "Investigator(s): United States Department of Justice. Federal Bureau of Investigation\r\nThe National Incident-Based Reporting System (NIBRS) series is a component part of the Uniform Crime Reporting Program (UCR), a nationwide view of crime administered by the Federal Bureau of Investigation (FBI), based on the submission of crime information by participating law enforcement agencies. The NIBRS was implemented to meet the new guidelines formulated for the UCR to provide new ways of looking at crime for the 21st century. NIBRS is an expanded and enhanced UCR Program, designed to capture incident-level data and data focused on various aspects of a crime incident. The NIBRS was aimed at offering law enforcement and the academic community more comprehensive data than ever before available for management, training, planning, research, and other uses. NIBRS collects data on each single incident and arrest within 22 offense categories made up of 46 specific crimes called Group A offenses. In addition, there are 11 Group B offense categories for which only arrest data are reported. NIBRS data on different aspects of crime incidents such as offenses, victims, offenders, arrestees, etc., can be examined as different units of analysis. The data are archived at ICPSR as 13 separate data files, which may be merged by using linkage variables.\r\nNACJD has prepared a resource guide on NIBRS.",
+  "modified": "2021-07-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2433",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "arrests",
+    "crime",
+    "crime rates",
+    "crime reporting",
+    "law enforcement agencies",
+    "national crime statistics (USA)",
+    "offenders",
+    "offenses",
+    "victims",
+    "violent crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2000-10-05T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/128",
+      "title": "National Incident-Based Reporting System (NIBRS) Series"
+    }
+  ]
+}

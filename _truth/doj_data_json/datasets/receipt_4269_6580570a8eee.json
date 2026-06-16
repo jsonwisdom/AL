@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Dynamic, Graph-Based Risk Assessments for the Detection of Violent Extremist Radicalization Trajectories Using Large Scale Social and Behavioral Data, United States, Canada, United Kingdom, Germany, 1994-2020",
+  "description": "This project examines the trajectory of radicalization of jihadists and Incels with two broad objectives in mind. First, to develop new integrated computational technology that can mine, monitor, and screen for the occurrence of behaviors associated with dangerously escalating extremism in large heterogenous databases and provide early warnings of individuals or groups on behavioral trajectories toward extremist violence. Second, to harness data science methodologies to enable rapid, semi-automated support for law enforcement analysts and social science researchers to produce structured behavioral indicator profiles from text sources.\r\nThe study operated from the premise that being that violent extremists are a rare, complex phenomenon, it is futile to search for a profile of extremism. Rather, it is better to focus on explaining how people come to embrace violent extremism. This path, referred to here as a radicalization trajectory, implies that an arc exists leading the perpetrator from entertaining extremist ideas to action, and that there is a somewhat predictable pathway from a normal, if perhaps angry state, to the perpetration of a violent attack in the name of the ideology. Two teams were combined to analyze radicalization trajectories: data collection and analysis led by Brandeis University and technology development led by Colorado State University (CSU).\r\nThe questions revolving around the technological development were as follows: Can tools that rigorously examine and account for the activities of close associates better predict the likelihood that an individual would engage in violent extremism? Which risk assessment indicators for violent extremism in the extant literature are detectable via automated or semi-automated technologies, and what databases and datasets must be integrated to facilitate this detection? Can computationally efficient tools be used to mine these databases for the specific purposes of monitoring and screening for individuals and small groups posing a significant risk for violence?\r\nUsers should refer to the data collection notes field below for additional information about study citation.",
+  "modified": "2022-01-13T11:01:33",
+  "accessLevel": "restricted public",
+  "identifier": "4269",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "feminism",
+    "incels",
+    "radicalism",
+    "terrorism",
+    "violence"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2022-01-13T10:53:49",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR38135.v1",
+      "title": "Dynamic, Graph-Based Risk Assessments for the Detection of Violent Extremist Radicalization Trajectories Using Large Scale Social and Behavioral Data, United States, Canada, United Kingdom, Germany, 1994-2020"
+    }
+  ]
+}

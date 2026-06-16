@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Juror Discussions About Evidence, 1997-1998: [Arizona]",
+  "description": "These data were collected in conjunction with an evaluation\r\n of the Arizona court reform effective December 1, 1995, to permit\r\n jurors in civil cases to discuss the evidence prior to\r\n deliberations. The datasets consist of survey responses by judges,\r\n jurors, attorneys, and litigants in all civil cases conducted in\r\n Maricopa, Pima, Mohave, and Yavapai counties in Arizona between June\r\n 15, 1997, and January 31, 1998. Civil cases in the participating\r\n courts were randomly assigned to one of two experimental conditions:\r\n (1) jurors were told they could discuss the evidence prior to\r\n deliberation according to Rule 39(f) of the Arizona Rules of Civil\r\n Procedure, or (2) jurors were told they could not discuss the evidence\r\n per the previous admonition. The datasets contain survey responses\r\n under both conditions. Part 1, Case Characteristics Data, contains\r\n information from two questionnaires completed by judges about the\r\n lawsuit, the parties, the trial procedures, and the case outcome. The\r\n data in Part 2, Juror Questionnaire Data, cover jurors' views\r\n regarding the complexity of the case, the importance of witnesses and\r\n testimonies, and attorneys' performances. The variables in Part 3,\r\n Attorney Questionnaire Data, offer information on attorneys' opinions\r\n of the jurors, the opposing counsel, and the verdict. Part 4, Litigant\r\n Questionniare Data, consists of litigants' views regarding the jurors\r\n and the verdict. Demographic data include respondents' gender, age,\r\nrace, income, and job status.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2032",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "attorneys",
+    "case processing",
+    "court cases",
+    "courts",
+    "judges",
+    "judicial decisions",
+    "judicial process",
+    "juries",
+    "jury deliberations",
+    "jury instructions",
+    "trial procedures"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1999-06-02T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02687.v1",
+      "title": "Juror Discussions About Evidence, 1997-1998: [Arizona]"
+    }
+  ]
+}

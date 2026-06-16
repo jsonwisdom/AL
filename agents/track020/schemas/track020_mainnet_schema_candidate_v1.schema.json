@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.github.io/AL/agents/track020/schemas/track020_mainnet_schema_candidate_v1.schema.json",
+  "title": "TRACK_020_MAINNET_SCHEMA_CANDIDATE_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "artifact",
+    "version",
+    "track",
+    "chain_profile",
+    "schema_name",
+    "schema",
+    "resolver",
+    "revocable",
+    "registration_state",
+    "registration_intent",
+    "operator_signature_required",
+    "no_ghost_anchor"
+  ],
+  "properties": {
+    "artifact": { "const": "TRACK_020_MAINNET_SCHEMA_CANDIDATE" },
+    "version": { "const": "1.0" },
+    "track": { "const": "TRACK_020" },
+    "chain_profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["network", "eas", "schemaRegistry", "source", "operator_signature_required"],
+      "properties": {
+        "network": { "const": "base-mainnet" },
+        "eas": { "type": "string", "pattern": "^0x[a-fA-F0-9]{40}$" },
+        "schemaRegistry": { "type": "string", "pattern": "^0x[a-fA-F0-9]{40}$" },
+        "source": { "const": "OP_STACK_PREDEPLOY" },
+        "operator_signature_required": { "const": true }
+      }
+    },
+    "schema_name": { "const": "AGW_FederatedRecovery_v1" },
+    "schema": {
+      "const": "string trackId,string epochId,string courtId,bytes32 regenerationManifestHash,bytes32 recoveryReceiptHash,bytes32 federationReadinessHash,string state"
+    },
+    "resolver": { "type": "string", "pattern": "^0x[a-fA-F0-9]{40}$" },
+    "revocable": { "const": true },
+    "registration_state": { "const": "CANDIDATE_NOT_REGISTERED" },
+    "registration_intent": { "const": "REQUIRES_OPERATOR_SIGNATURE" },
+    "operator_signature_required": { "const": true },
+    "no_ghost_anchor": { "const": true }
+  }
+}

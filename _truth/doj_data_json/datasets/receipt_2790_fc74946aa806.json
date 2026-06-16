@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "North Carolina Highway Traffic Study, 2000-2001",
+  "description": "This study investigated whether the North Carolina State\r\nHighway Patrol (NCSHP) practiced racial profiling. The NCSHP provided\r\ndata on all vehicular stops (Parts 1 and 2), written warnings (Part\r\n3), and citations (Part 4) its officers issued in 2000. This included\r\ndata on what the stops or tickets were for, the race, sex, and age of\r\nthe driver, and the make, model, and year of the car being driven.\r\nData on accidents in 2000 (Part 5), also obtained from the NCSHP, were\r\nused to examine whether there were racial disparities in unsafe\r\ndriving practices. These data included information about what caused\r\nthe accident and the race, sex, and age of the driver. The NCSHP also\r\nsupplied data on all officers who worked for the NCSHP in 2000 (Part\r\n6), including their race, age, and rank. The data in Part 6 can be\r\nlinked to the data in Parts 3 and 4. In addition, two surveys of North\r\nCarolina drivers were conducted to gather information on reported\r\ntypical driving behaviors that may influence the probability of being\r\nstopped, and to gather information about stops conducted by law\r\nenforcement agencies across the state. One was conducted using a\r\nsample of North Carolina drivers who had recently renewed their\r\nlicenses (Part 7), and the other used a sample of North Carolina\r\ndrivers who were ticketed for speeding between June 1, 1999, and June\r\n1, 2000 (Part 8).",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "2790",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "driving habits",
+    "highways",
+    "police",
+    "racial discrimination",
+    "traffic accidents",
+    "traffic offenses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2005-04-07T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04078.v1",
+      "title": "North Carolina Highway Traffic Study, 2000-2001"
+    }
+  ]
+}

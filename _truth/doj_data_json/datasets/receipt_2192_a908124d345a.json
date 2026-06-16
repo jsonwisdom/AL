@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "United Nations World Crime Surveys:  First Survey, 1970-1975 and Second Survey, 1975-1980",
+  "description": "The United Nations began its World Crime Surveys in 1978. \r\n The first survey collected statistics on a small range of offenses and \r\n on the criminal justice process for the years 1970-1975. The second \r\n survey collected data on a wide range of offenses, offenders, and \r\n criminal justice process data for the years 1975-1980. Several factors \r\n make these two collections difficult to use in combination. Some 25 \r\n percent of those countries responding to the first survey did not \r\n respond to the second and, similarly, some 30 percent of those \r\n responding to the second survey did not respond to the first. In \r\n addition, many questions asked in the second survey were not asked in \r\n the first survey. This data collection represents the efforts of the \r\n investigators to combine, revise, and recheck the data of the first two \r\n surveys. The data are divided into two parts. Part 1 comprises all data \r\n on offenses and on some criminal justice personnel. Crime data are \r\n entered for 1970 through 1980. In most cases 1975 is entered twice, \r\n since both surveys collected data for this year. Part 2 includes data \r\n on offenders, prosecutions, convictions, and prisons. Data are entered \r\nfor 1970 through 1980, for every even year.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2192",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "United Nations",
+    "convictions (law)",
+    "correctional facilities",
+    "crime",
+    "crime patterns",
+    "crime prevention",
+    "crime reporting",
+    "criminal justice policy",
+    "criminal justice system",
+    "international crime statistics",
+    "nations",
+    "offenders",
+    "offenses",
+    "persecution",
+    "trends"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2437",
+  "dataQuality": false,
+  "issued": "1991-10-23T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09571.v1",
+      "title": "United Nations World Crime Surveys:  First Survey, 1970-1975 and Second Survey, 1975-1980"
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "graph_version": "FED_EPOCH_GRAPH_V1",
+  "layer": "FEDERATION",
+  "purpose": "Define a replay-safe DAG of attested governance states and compact epochs without creating a federal super-runtime.",
+  "last_verified": "2026-05-06",
+  "verifier": "jsonwisdom",
+  "graph_type": "DIRECTED_ACYCLIC_GRAPH",
+  "hash_addressed": true,
+  "node_types": {
+    "STATE_EPOCH_NODE": {
+      "node_type": "STATE_EPOCH",
+      "meaning": "A single replay-verified state governance epoch.",
+      "required_fields": [
+        "node_id",
+        "node_type",
+        "state",
+        "epoch_id",
+        "epoch_root_sha256",
+        "artifacts",
+        "hashes",
+        "replay_verifier"
+      ]
+    },
+    "COMPACT_EPOCH_NODE": {
+      "node_type": "COMPACT_EPOCH",
+      "meaning": "A replay-verified cross-state compact bound to participant state epochs.",
+      "required_fields": [
+        "node_id",
+        "node_type",
+        "compact_id",
+        "participants",
+        "compact_root_sha256",
+        "artifacts",
+        "hashes",
+        "replay_verifier"
+      ]
+    },
+    "FEDERATION_EPOCH_NODE": {
+      "node_type": "FEDERATION_EPOCH",
+      "meaning": "A replay-verified federated snapshot over included state and compact epoch nodes.",
+      "required_fields": [
+        "node_id",
+        "node_type",
+        "included_nodes",
+        "federation_root_sha256",
+        "hashes",
+        "replay_verifier"
+      ]
+    }
+  },
+  "edge_types": {
+    "depends_on": {
+      "meaning": "Dependency relationship only; never mutation, rewrite, invalidation, or supersession.",
+      "allowed_from_to": [
+        "COMPACT_EPOCH->STATE_EPOCH",
+        "FEDERATION_EPOCH->STATE_EPOCH",
+        "FEDERATION_EPOCH->COMPACT_EPOCH"
+      ]
+    }
+  },
+  "forbidden_edge_types": [
+    "invalidate",
+    "mutate",
+    "rebase",
+    "rewrite",
+    "supersede"
+  ],
+  "acyclicity_rules": [
+    "STATE_EPOCH nodes may not depend on COMPACT_EPOCH nodes.",
+    "COMPACT_EPOCH nodes may depend only on STATE_EPOCH nodes.",
+    "FEDERATION_EPOCH nodes may depend only on STATE_EPOCH or COMPACT_EPOCH nodes.",
+    "No node may depend on itself directly or indirectly."
+  ],
+  "baseline_firewall": {
+    "ancestor_baseline_rewrite": "forbidden",
+    "federation_super_admin": "forbidden",
+    "state_baseline_access": "forbidden",
+    "compact_baseline_mutation": "forbidden"
+  },
+  "graph_shape": {
+    "nodes": [],
+    "edges": [],
+    "hashes": {
+      "graph_sha256": "PENDING_GRAPH_HASH",
+      "nodes_merkle_root": "PENDING_NODES_ROOT",
+      "edges_merkle_root": "PENDING_EDGES_ROOT"
+    }
+  },
+  "verification_requirements": [
+    "Every node replay verifier must pass before graph admission.",
+    "Every edge dependency target must exist in nodes.",
+    "Graph must be acyclic.",
+    "No node or edge may imply cross-state baseline mutation.",
+    "Graph hashes must be recomputable from canonical nodes and edges."
+  ],
+  "failure_modes": [
+    "FED_GRAPH_CYCLE_DETECTED",
+    "FED_GRAPH_EDGE_TARGET_MISSING",
+    "FED_GRAPH_FORBIDDEN_EDGE_TYPE",
+    "FED_GRAPH_NODE_REPLAY_FAILED",
+    "FED_GRAPH_BASELINE_MUTATION_DETECTED",
+    "FED_GRAPH_HASH_MISMATCH"
+  ],
+  "invariants": [
+    "Nodes are replay-verified governance states.",
+    "Edges are dependency relations only.",
+    "No edge can rewrite an ancestor baseline.",
+    "Federation is a proof DAG, not a control plane.",
+    "No super-admin node exists in V1."
+  ]
+}

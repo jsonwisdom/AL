@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Rural and Urban Trends in Family and Intimate Partner Homicide in the United States, 1980-1999  ",
+  "description": "This research project examined rural and urban trends in\r\nfamily and intimate partner homicide for the 20-year period from 1980\r\nthrough 1999. The construct of place served as a backdrop against\r\nwhich changes in trends in family/partner homicide were tracked, and\r\nagainst which various independent measures that purportedly explain\r\nvariation in the rates were tested. The project merged data from\r\nseveral sources. The offender data file from the Federal Bureau of\r\nInvestigation's (FBI) Supplementary Homicide Report (SHR) series for\r\n1980 through 1999 was the primary data source. Data for arrests for\r\nviolent crime, drug, and alcohol-related offenses were obtained from\r\nthe FBI Report A Arrest File. Population, population density, and race\r\n(and racial segregation) data from the decennial U.S. Census for 1980,\r\n1990, and 2000 were also obtained. Data on hospitals, educational\r\nattainment, unemployment, and per capita income were obtained from the\r\n2002 Area Resource File (ARF). The total number of proprietors (farm\r\nand non-farm) in the United States by state and county for each year\r\nwere provided by the Regional Economic Profiles data. The project's\r\npopulation and proximity indicator used four categories: metropolitan,\r\nnonmetropolitan populations adjacent to a metropolitan area,\r\nnonmetropolitan populations not adjacent to a metropolitan area, and\r\nrural. Data include homicide rates for 1980 through 1999 for intimate\r\npartner homicide, family homicide, all other homicide, and all\r\nhomicide. Additional variables are included as measures of community\r\nsocioeconomic distress, such as residential overcrowding, isolation,\r\ntraditionalist views of women and family, lack of access to health\r\ncare, and substance abuse. Five-year averages are included for each of\r\nthe rates and measures listed above.",
+  "modified": "2005-04-07T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2796",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime patterns",
+    "family violence",
+    "intimate partner violence",
+    "murder",
+    "population characteristics",
+    "population trends",
+    "rural crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2005-04-07T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04115.v1",
+      "title": "Rural and Urban Trends in Family and Intimate Partner Homicide in the United States, 1980-1999  "
+    }
+  ]
+}

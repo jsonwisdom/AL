@@ -1,0 +1,70 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Prosecutors Survey [Census], 2007",
+  "description": "The 2007 Census of State Court Prosecutors marked\r\nthe second BJS survey of all prosecutors' offices in the\r\nUnited States. The first census, conducted in 2001,\r\nincluded the 2,341 offices in operation at that time.\r\nThe second census included the 2,330 state court\r\nprosecutors' offices operating in 2007. Neither census\r\nincluded offices of municipal attorneys or county\r\nattorneys, who primarily operate in courts of limited\r\njurisdiction.\r\nState court prosecutors serve in the executive\r\nbranch of state governments and handle felony\r\ncases in state courts of general jurisdiction. By law,\r\nthese prosecutors are afforded broad discretion in\r\ndetermining who is charged with an offense and\r\nwhether a case goes to trial. The chief prosecutor, also\r\nreferred to as the district attorney, county attorney,\r\ncommonwealth attorney, or state's attorney, represents\r\nthe state in criminal cases and is answerable to the\r\npublic as an elected or appointed public official.\r\nThe Office of the United States Attorney for the\r\nDistrict of Columbia is the only federal prosecutor\r\nincluded in the census. This unique office is\r\nresponsible for prosecution of serious local crimes\r\ncommitted in the District and also for prosecution of\r\nfederal cases, whether criminal or civil.",
+  "modified": "2012-05-14T09:19:59",
+  "accessLevel": "public",
+  "identifier": "259",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "DNA fingerprinting",
+    "attorneys",
+    "case processing",
+    "criminal investigations",
+    "district attorneys",
+    "evidence",
+    "felony courts",
+    "felony offenses",
+    "juvenile courts",
+    "personnel",
+    "plea negotiations",
+    "policies and procedures",
+    "prosecuting attorneys",
+    "prosecution",
+    "sentencing",
+    "state courts",
+    "training",
+    "treatment programs",
+    "trial procedures",
+    "victim services"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2181",
+  "dataQuality": false,
+  "issued": "2012-05-14T09:19:59",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR33202.v1",
+      "title": "National Prosecutors Survey [Census], 2007"
+    }
+  ]
+}

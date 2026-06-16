@@ -1,0 +1,53 @@
+name: C0001 Isolated Replay Proof
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: c0001-isolated-replay-proof
+  cancel-in-progress: true
+
+jobs:
+  c0001_isolated_replay:
+    name: C0001 — Isolated Replay Proof
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          fi
+
+      - name: Run C0001 deterministic replay corpus
+        run: python ci/replay_corpus_runner.py
+
+      - name: Show corpus report in log
+        if: always()
+        run: |
+          echo '--- ci/corpus_report.json ---'
+          if [ -f ci/corpus_report.json ]; then
+            cat ci/corpus_report.json
+          else
+            echo '{"verdict":"INDETERMINATE","reason":"missing_corpus_report"}'
+          fi
+
+      - name: Upload corpus report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: c0001_corpus_report
+          path: ci/corpus_report.json

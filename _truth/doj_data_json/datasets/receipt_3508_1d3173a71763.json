@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Impact of Casino Gambling on Crime in the Atlantic City Region, 1970-1984",
+  "description": "The aim of this data collection was to gauge the impact of \r\n legalized casino gambling on the level and spatial distribution of \r\n crime in the Atlantic City region by comparing crime rates before and \r\n after the introduction of this type of gambling in the area. Data for \r\n the years 1972 through 1984 were collected from various New Jersey \r\n state publications for 64 localities and include information on \r\n population size and density, population characteristics of race, age, \r\n per capita income, education and home ownership, real estate values, \r\n number of police employees and police expenditures, total city \r\n expenditure, and number of burglaries, larcenies, robberies and vehicle \r\n thefts. Spatial variables include population attributes standardized by \r\n land area in square miles, and measures of accessibility, location, and \r\n distance from Atlantic City. For the 1970/1980 data file, additional \r\n variables pertaining to population characteristics were created from \r\n census data to match economic and crime attributes found in the \r\n 1972-1984 data. Data on eight additional locations are available in the \r\n1970/1980 file.",
+  "modified": "2006-01-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3508",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "burglary",
+    "casinos",
+    "crime patterns",
+    "crime rates",
+    "gambling",
+    "police",
+    "population characteristics",
+    "population size",
+    "robbery"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1989-09-26T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09237.v1",
+      "title": "Impact of Casino Gambling on Crime in the Atlantic City Region, 1970-1984"
+    }
+  ]
+}

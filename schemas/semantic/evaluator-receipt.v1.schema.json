@@ -1,0 +1,151 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Evaluator Receipt v1",
+  "description": "Immutable lineage receipt linking a semantic evaluator to a locked substrate checkpoint. Semantic verdicts are contestable. Replay status is mechanically verifiable. STUB_LOCKED invariant preserved.",
+  "type": "object",
+  "required": [
+    "receipt_id",
+    "version",
+    "evaluator_id",
+    "substrate_checkpoint",
+    "input_hash_matrix",
+    "methodology_ref",
+    "claim",
+    "semantic_verdict",
+    "replay_status",
+    "output_hash",
+    "timestamp",
+    "receipt_hash"
+  ],
+  "properties": {
+    "receipt_id": {
+      "type": "string",
+      "description": "Unique identifier for this receipt."
+    },
+    "version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "evaluator_id": {
+      "type": "string",
+      "description": "Stable identifier for the evaluator."
+    },
+    "substrate_checkpoint": {
+      "type": "string",
+      "description": "SHA-256 hash of the exact immutable substrate state this receipt evaluates.",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "input_hash_matrix": {
+      "type": "object",
+      "required": [
+        "root",
+        "paths"
+      ],
+      "properties": {
+        "root": {
+          "type": "string",
+          "description": "Merkle root or aggregated hash of all consumed substrate paths.",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "paths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "omitted_paths_hash": {
+          "type": "string",
+          "description": "Optional hash proving what was deliberately excluded.",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "methodology_ref": {
+      "type": "object",
+      "required": [
+        "method_id",
+        "method_hash"
+      ],
+      "properties": {
+        "method_id": {
+          "type": "string"
+        },
+        "method_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "parameters": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": false
+    },
+    "claim": {
+      "type": "string"
+    },
+    "semantic_verdict": {
+      "type": "string",
+      "enum": [
+        "APPROVED",
+        "REJECTED",
+        "AMBIGUOUS",
+        "UNDECIDED"
+      ],
+      "description": "Contestable semantic interpretation."
+    },
+    "replay_status": {
+      "type": "string",
+      "enum": [
+        "UNTESTED",
+        "REPRODUCIBLE",
+        "NON_REPRODUCIBLE",
+        "NEEDS_SOURCE"
+      ],
+      "description": "Mechanically testable replay outcome."
+    },
+    "output_hash": {
+      "type": "string",
+      "description": "SHA-256 of the full interpretation output, evidence bundle, and reasoning.",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "signature": {
+      "type": "string",
+      "description": "Optional cryptographic signature over the canonical receipt with receipt_hash omitted."
+    },
+    "receipt_hash": {
+      "type": "object",
+      "description": "Hash of the canonical receipt with this field omitted.",
+      "required": [
+        "algorithm",
+        "input_rule",
+        "encoding",
+        "value"
+      ],
+      "properties": {
+        "algorithm": {
+          "type": "string",
+          "const": "SHA-256"
+        },
+        "input_rule": {
+          "type": "string",
+          "const": "canonical receipt JSON with receipt_hash omitted"
+        },
+        "encoding": {
+          "type": "string",
+          "const": "lowercase_hex"
+        },
+        "value": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

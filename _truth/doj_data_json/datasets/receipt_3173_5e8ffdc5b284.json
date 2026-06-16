@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Efficiency in Processing Sexual Assault Kits in Crime Laboratories and Law Enforcement Agencies, United States, 2013-2014 ",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they there received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except of the removal of direct identifiers. Users should refer to the accompany readme file for a brief description of the files available with this collections and consult the investigator(s) if further information is needed.This study presents a research-informed approach to identify the most efficient practices for addressing un-submitted sexual assault kits (SAKs) that accrue in U.S. law enforcement agencies (LEAs) as well as untested SAKs pending analysis in crime laboratories. The study examined intra- and interagency dynamics associated with SAK processing efficiency in a linked sample of crime laboratories. SAK outputs and inputs were assessed for laboratories that conduct biological forensic analysis and LEAs that submit SAK evidence to these laboratories. Production functions were estimated to examine effects of labor and capital inputs, in addition to policies, management systems, and cross-agency coordination on efficiency. Six jurisdictions were recruited for site visits, and qualitative methods were used to understand how LEAs, laboratories, and prosecutors implement practices that affect efficiency.This study contains 7 data files including:Crime Lab_Raw.dta (n=147; variables =242)Crosswalk File.dta (n=2337; variables=2)lab_analysis_sample_2017-04-06.dta (n=132; variables=92)LEA Communication LCAs.dta (n=321; variables=15merged_analysis_file_JH2017-04-30.dta (n=273; variables=117)policy Class probabilities_LABS.dta (n=139; variables=19)SAK LAB COMMUNICATION LCA.dta (n=134; variables=15)",
+  "modified": "2018-11-29T12:51:40",
+  "accessLevel": "restricted public",
+  "identifier": "3173",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "assault",
+    "evidence",
+    "rape",
+    "sexual abuse",
+    "sexual assault"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-11-29T12:46:25",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36747.v1",
+      "title": "Efficiency in Processing Sexual Assault Kits in Crime Laboratories and Law Enforcement Agencies, United States, 2013-2014 "
+    }
+  ]
+}

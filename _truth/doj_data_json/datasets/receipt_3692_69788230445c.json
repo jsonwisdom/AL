@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Non-Medical use of Prescription Drugs: Policy Change, Law Enforcement Activity, and Diversion Tactics, Florida, 2010-2014",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThis study contains Uniform Crime Report geocoded data obtained from St. Petersburg Police Department, Orlando Police Department, and Miami-Dade Police Department for the years between 2010 and 2014. The three primary goals of this study were:\r\n\r\nto determine whether Florida law HB 7095 (signed into law on June 3, 2011) and related legislation reduced the number of pain clinics abusively dispensing opioid prescriptions in the State\r\nto examine the spatial overlap between pain clinic locations and crime incidents\r\n to assess the logistics of administering the law\r\n\r\nThe study includes:\r\n\r\n3 Excel files: MDPD_Data.xlsx (336,672 cases; 6 variables), OPD_Data.xlsx (160,947 cases; 11 variables), SPPD_Data.xlsx (211,544 cases; 14 variables)\r\n15 GIS Shape files (95 files total)\r\n\r\nData related to respondents' qualitative interviews and the Florida Department of Health are not available as part of this collection. For access to data from the Florida Department of Health, interested researchers should apply directory to the FDOH.",
+  "modified": "2018-03-21T15:29:37",
+  "accessLevel": "restricted public",
+  "identifier": "3692",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime control programs",
+    "crime prevention",
+    "drug dispensing",
+    "drug laws",
+    "law enforcement",
+    "prescription drugs",
+    "state regulations"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-03-21T15:24:02",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36609.v1",
+      "title": "Non-Medical use of Prescription Drugs: Policy Change, Law Enforcement Activity, and Diversion Tactics, Florida, 2010-2014"
+    }
+  ]
+}

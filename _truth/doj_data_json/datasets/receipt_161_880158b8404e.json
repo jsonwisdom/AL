@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Gender of Prisoners Admitted to State and Federal Institutions in the United States, 1926-1987",
+  "description": "This data collection includes tabulations of annual adult\r\n admissions to federal and state correctional institutions by gender\r\n for the years 1926 through 1987. The two data files have identical\r\n structures: Part 1 includes information on male admissions, and Part 2\r\n includes information on female admissions. The 3,348 cases in each\r\n part include one case for each of the 62 years of the collection for\r\n each of the following 54 categories: the 50 states, the District of\r\n Columbia, federal institutional totals, state cumulative totals, and\r\n United States totals (the sum of the federal and state cumulative\r\n totals). The figures were drawn from a voluntary reporting program in\r\n which each state, the District of Columbia, and the Federal Bureau of\r\n Prisons reported summary and detailed statistics, as part of the\r\n National Prisoner Statistics reporting series. Each file also includes\r\nindividual state and United States general population figures.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "161",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "federal correctional facilities",
+    "female inmates",
+    "gender",
+    "inmates",
+    "male inmates",
+    "state"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1991-10-23T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09517.v1",
+      "title": "Gender of Prisoners Admitted to State and Federal Institutions in the United States, 1926-1987"
+    }
+  ]
+}

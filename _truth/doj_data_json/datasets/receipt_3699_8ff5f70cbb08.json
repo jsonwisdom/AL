@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Impact of Forensic Evidence on Arrest and Prosecution (IFEAP) in Connecticut, United States, 2006-2009",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\n This research was conducted in two phases. Phase one analyzed a random sample of approximately 2,000 case files from 2006 through 2009 that contain forensic analyses from the Connecticut State Forensic Science Laboratory, along with corresponding police and court case file data. As with Peterson, et al. (2010), this research had four objectives: 1) estimate the percentage of cases in which crime scene evidence is collected; 2) discover what kinds of forensic are being collected; 3)track such evidence through the criminal justice system; and 4)identify which forms of forensic evidence are most efficacious given the crime investigated.\r\nPhase two consisted of a survey administered to detectives within the State of Connecticut regarding their comparative assessments of the utility of forensic evidence. These surveys further advance our understanding of how the success of forensic evidence in achieving arrests and convictions matches with detective opinion.",
+  "modified": "2018-04-10T09:33:46",
+  "accessLevel": "restricted public",
+  "identifier": "3699",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "assault",
+    "burglary",
+    "convictions (law)",
+    "crime",
+    "evidence",
+    "forensic sciences",
+    "homicide",
+    "law enforcement",
+    "police",
+    "rape"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-04-09T13:19:29",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36695.v1",
+      "title": "Impact of Forensic Evidence on Arrest and Prosecution (IFEAP) in Connecticut, United States, 2006-2009"
+    }
+  ]
+}

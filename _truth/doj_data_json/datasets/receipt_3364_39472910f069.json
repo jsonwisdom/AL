@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Supporting Police Integrity in the Philadelphia [Pennsylvania] Police Department, 1991-1998 and 2000",
+  "description": "This study investigated police integrity in the\r\n \r\n Philadelphia Police Department (PPD). Its primary goal was to identify\r\n \r\n risk factors for negative police behaviors and outcomes using\r\n \r\n information readily available to the department. Part 1, Academy and\r\n \r\n Background Data, contains background information and academy records\r\n \r\n data for 1,949 PPD officers from 17 academy classes for the years 1991\r\n \r\n to 1998. Part 2, Survey Data, contains data collected in 2000 on the\r\n \r\n attitudes of a sample of 499 PPD officers. Variables in Part 1 cover\r\n \r\n background information, including history of misconduct and\r\n \r\n disciplinary actions. Variables in Part 2 include measurements of\r\n \r\nofficer cynicism and attitudes toward ethical issues.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "3364",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "police departments",
+    "police misconduct",
+    "police officers",
+    "police recruits",
+    "police training"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2004-06-10T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03977.v1",
+      "title": "Supporting Police Integrity in the Philadelphia [Pennsylvania] Police Department, 1991-1998 and 2000"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Spatial Analysis of Rare Crimes:  Homicides in Chicago, Illinois, 1989-1991",
+  "description": "This project's main goal was to develop an analytical\r\n framework that could be used for analysis of rare crimes observed at\r\n local (intra-city) levels of geographic aggregation. To demonstrate the\r\n application of this framework to a real-world issue, this project\r\n analyzed the occurrence of different types of homicide at both the\r\n census tract and neighborhood cluster level in Chicago. Homicide counts\r\n for Chicago's 865 census tracts for 1989-1991 were obtained from\r\n HOMICIDES IN CHICAGO, 1965-1995 (ICPSR 6399), Part 1: Victim Level Data.\r\n The types of homicide examined were gang-related, instrumental,\r\n family-related expressive, known person expressive, stranger expressive,\r\n and other. Demographic and socioeconomic data at the census tract level\r\n for the year 1990 were obtained from the Neighborhood Change Database\r\n (NCDB) at the Urban Institute. Part 1 contains these data, as initially\r\n obtained, at the census tract level. Part 2 contains an aggregated\r\n version of the same data for Chicago's 343 neighborhood clusters as\r\ndefined by the Project on Human Development in Chicago's Neighborhoods.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "2791",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "census tract level",
+    "crime patterns",
+    "homicide",
+    "neighborhoods"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2004-10-08T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04079.v1",
+      "title": "Spatial Analysis of Rare Crimes:  Homicides in Chicago, Illinois, 1989-1991"
+    }
+  ]
+}

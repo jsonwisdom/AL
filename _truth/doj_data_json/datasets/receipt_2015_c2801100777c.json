@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Organizations Convicted in Federal Criminal Courts, 2016 ",
+  "description": "These data, collected to assist in the development of sentencing guidelines, describe offense and sentencing characteristics for organizations sentenced in federal district courts in 2016. The United States Sentencing Commission's primary function is to inform federal courts of sentencing policies and practices that include guidelines prescribing the appropriate form and severity of punishment for offenders convicted of federal crimes. Court-related variables include primary offense type, pecuniary offense loss and gain, dates of disposition and sentencing, method of determination of guilt, number of counts pled and charged, and dates and types of sentencing and restitution. Defendant organization variables include ownership structure, number of owners and employees, highest level of corporate knowledge of the criminal offense, highest level of corporate indictment and conviction for participation in the criminal offense, annual revenue, equity and financial status, whether it was a criminal organization, duration of criminal activity, and risk to national security. Organizational defendants data, 2016, covers fiscal year October 1, 2015, through September 30, 2016.",
+  "modified": "2018-06-06T08:43:26",
+  "accessLevel": "public",
+  "identifier": "2015",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "convictions (law)",
+    "corporate crime",
+    "corporate sentencing",
+    "defendants",
+    "disposition (legal)",
+    "federal courts",
+    "federal offenses",
+    "fines",
+    "organizational structure",
+    "organizations",
+    "restitution programs",
+    "sentencing",
+    "sentencing guidelines"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2427",
+  "dataQuality": false,
+  "issued": "2018-06-06T08:43:26",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36980.v1",
+      "title": "Organizations Convicted in Federal Criminal Courts, 2016 "
+    }
+  ]
+}

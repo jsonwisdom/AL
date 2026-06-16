@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Survey of DNA Crime Laboratories, 1998  ",
+  "description": "This study reports findings from a survey of publicly\r\n operated forensic crime labs that perform deoxyribonucleic acid (DNA)\r\n testing. The survey includes questions about each lab's budget,\r\n personnel, workload, and operating policies and procedures. Data were\r\n obtained from 108 out of 120 estimated known labs, including all\r\nstatewide labs.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "262",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "DNA fingerprinting",
+    "crime laboratories",
+    "forensic sciences",
+    "personnel",
+    "policies and procedures"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2000-11-02T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02879.v1",
+      "title": "National Survey of DNA Crime Laboratories, 1998  "
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Census of Medical Examiner and Coroner Offices, 2018",
+  "description": "The 2018 Census of Medical Examiner and Coroner Offices (CMEC) collects information from every publicly funded medical examiner and coroner office in the United States. Data are collected on administration, staffing, budget, workload, policies, and practices of these offices.",
+  "modified": "2021-12-16T10:12:52",
+  "accessLevel": "public",
+  "identifier": "4141",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "autopsy",
+    "coroners",
+    "death records",
+    "forensic medicine",
+    "victim identification"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2440",
+  "dataQuality": false,
+  "issued": "2021-12-16T10:12:52",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR38251.v1",
+      "title": "Census of Medical Examiner and Coroner Offices, 2018"
+    }
+  ]
+}

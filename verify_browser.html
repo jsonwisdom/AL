@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AL Browser Verifier — Historical Only</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 960px; margin: 2rem auto; padding: 0 1rem; line-height: 1.5; }
+    textarea, input { width: 100%; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    textarea { min-height: 260px; }
+    pre { background: #111; color: #eee; padding: 1rem; overflow: auto; }
+    .warning { border-left: 4px solid #b45309; padding-left: 1rem; }
+    button { padding: 0.7rem 1rem; margin: 0.5rem 0; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>AL Historical Receipt Inspector</h1>
+
+  <div class="warning">
+    <p><strong>Boundary:</strong> This page does not execute Level 1 or Level 2.</p>
+    <p><strong>FULL_REPLAY_STATUS: UNOBSERVED</strong></p>
+    <p>It performs browser-only historical inspection of an existing receipt JSON.</p>
+  </div>
+
+  <h2>Receipt JSON</h2>
+  <textarea id="receipt" placeholder="Paste receipt JSON here"></textarea>
+
+  <h2>Expected SHA-256 Hash (optional)</h2>
+  <input id="expectedHash" placeholder="sha256:<expected receipt hash>" />
+
+  <button onclick="verifyReceipt()">Verify Browser Hash & Structure</button>
+
+  <h2>Output</h2>
+  <pre id="output">VERIFIER_MODE: BROWSER_STATIC_ONLY
+FULL_REPLAY_STATUS: UNOBSERVED</pre>
+
+  <script>
+    function utf8Bytes(text) {
+      return new TextEncoder().encode(text.normalize('NFC').replace(/\r\n/g, '\n'));
+    }
+
+    function toHex(buffer) {
+      return Array.from(new Uint8Array(buffer)).map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    function structuralCheck(receipt) {
+      const required = ['receipt_id', 'version', 'timestamp', 'operation', 'checks', 'outcome'];
+      const missing = required.filter(k => !(k in receipt));
+      if (missing.length) return { ok: false, reason: 'missing fields: ' + missing.join(', ') };
+      if (!receipt.operation || receipt.operation.type !== 'root_continuity_checkpoint') {
+        return { ok: false, reason: 'unsupported operation.type' };
+      }
+      return { ok: true, reason: 'required fields present' };
+    }
+
+    async function verifyReceipt() {
+      const output = document.getElementById('output');
+      const raw = document.getElementById('receipt').value;
+      const expected = document.getElementById('expectedHash').value.trim();
+      const lines = [];
+
+      lines.push('VERIFIER_MODE: BROWSER_STATIC_ONLY');
+      lines.push('FULL_REPLAY_STATUS: UNOBSERVED');
+
+      let parsed;
+      try {
+        parsed = JSON.parse(raw);
+        lines.push('SCHEMA_VALID: STRUCTURAL_ONLY');
+      } catch (err) {
+        lines.push('SCHEMA_INVALID: ' + err.message);
+        lines.push('HISTORICAL_HASH_STATUS: UNOBSERVED');
+        output.textContent = lines.join('\n');
+        return;
+      }
+
+      const structure = structuralCheck(parsed);
+      if (!structure.ok) {
+        lines.push('STRUCTURE_INVALID: ' + structure.reason);
+      } else {
+        lines.push('STRUCTURE_VALID: ' + structure.reason);
+      }
+
+      const hash = 'sha256:' + toHex(await crypto.subtle.digest('SHA-256', utf8Bytes(raw)));
+      lines.push('RECEIPT_HASH: ' + hash);
+
+      if (expected) {
+        lines.push(expected === hash ? 'HISTORICAL_HASH_MATCH' : 'HISTORICAL_HASH_MISMATCH');
+      } else {
+        lines.push('HISTORICAL_HASH_STATUS: NO_EXPECTED_HASH_PROVIDED');
+      }
+
+      lines.push('RECEIPT_ID: ' + (parsed.receipt_id || 'missing'));
+      lines.push('OPERATION: ' + ((parsed.operation && parsed.operation.type) || 'missing'));
+      lines.push('OUTCOME_STATUS: ' + ((parsed.outcome && parsed.outcome.status) || 'missing'));
+      lines.push('DOCTRINE: browser inspection is not full replay');
+
+      output.textContent = lines.join('\n');
+    }
+  </script>
+</body>
+</html>

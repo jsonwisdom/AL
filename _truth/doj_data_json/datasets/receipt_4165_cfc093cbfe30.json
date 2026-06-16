@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Annual Survey of Jails, 2020",
+  "description": "The Annual Survey of Jails (ASJ) is the only data collection effort that provides an annual source of data on local jails and jail inmates. Data on the size of the jail population and selected inmate characteristics are obtained every five to six years from the Census of Jails. In each of the years between the complete censuses, a sample survey of jails is conducted to estimate\r\nbaseline characteristics of the nation's jails and inmates housed in these jails. The 2020 Annual Survey of Jails is the 32nd such survey in a series begun in 1982. The ASJ supplies data on characteristics of jails such as admissions and releases, growth in the number of jail facilities, changes in their rated capacities and level of occupancy, growth in the population supervised in the community, changes in methods of community supervision, and crowding issues. The ASJ also provides information on changes in the demographics of the jail population, supervision status of persons held, and a count of non-U.S. citizens in custody. The data presented in this study were collected in the Annual Survey of Jails, 2020. These data are used to track growth in the number of jails and the capacities nationally, changes in the demographics of the jail population and supervision status of persons held, the prevalence of crowding issues, and a count of non-U.S. citizens within the jail population. The data are intended for a variety of users, including Federal and State agencies, local officials in conjunction with jail administrators, researchers, planners, and the public. The reference date for the survey is June 30, 2020.\r\nThe 2020 ASJ included a special module to collect data on the impact of the COVID-19 pandemic on local jails from March 1, 2020, to June 30, 2020. Items included:\r\n\r\nnumber of jail inmates at the end of each month from January 2020 to May 2020\r\nnumber of expedited releases from jail due to the pandemic\r\nnumber of COVID-19 tests conducted on confined inmates\r\nnumber of positive tests\r\nnumber of jail staff that tested positive\r\nnumber of jail inmates and staff that died from COVID-19\r\n\r\nThe data on COVID-19 tests and deaths are in the restricted-use version of the 2020 ASJ data file only",
+  "modified": "2022-06-29T14:50:00",
+  "accessLevel": "restricted public",
+  "identifier": "4165",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "correctional system",
+    "demographic characteristics",
+    "jail inmates",
+    "jails",
+    "population characteristics",
+    "probation"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2586",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2022-06-29T14:46:32",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR38408.v1",
+      "title": "Annual Survey of Jails, 2020"
+    }
+  ]
+}

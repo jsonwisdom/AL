@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Assessment of Gangs in Correctional Facilities, 1992",
+  "description": "This study sought to identify and examine current policies\r\n and strategies for controlling prison gangs and to determine the ways\r\n in which correctional facilities were dealing with gangs in their\r\n institutions. Respondents to the mail survey included 55 local jail\r\n systems and 52 state prison systems (the 50 state Departments of\r\n Corrections, the District of Columbia, and the Federal Bureau of\r\n Prisons). The survey question text used the term\r\n \"security threat group\" (STG), which was defined as \"two or more\r\n inmates, acting together, who pose a threat to the security or safety\r\n of staff/inmates and/or are disruptive to programs and/or to the orderly\r\n management of the facility/system,\" rather than the generic term \"gang.\"\r\n Data contain information on total\r\n inmate population, number of STGs, number of inmates identified as\r\n confirmed, suspected, associate, and drop-out members of STGs, total\r\n incidents of violence, number of violent incidents by STG members,\r\n management strategies to deal with gangs, and names of STGs known to be\r\npresent within the system.",
+  "modified": "1997-04-14T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3200",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "gang members",
+    "gangs",
+    "inmates",
+    "policies and procedures",
+    "security"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1997-04-14T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06147.v1",
+      "title": "National Assessment of Gangs in Correctional Facilities, 1992"
+    }
+  ]
+}

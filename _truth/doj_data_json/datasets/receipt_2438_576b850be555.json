@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Electronic Injury Surveillance System (NEISS) Series",
+  "description": "\r\n\r\nIn 1992, the National Center for Injury Prevention\r\nand Control (NCIPC), a unit of the Centers for Disease Control and\r\nPrevention (CDC), established an interagency agreement with the\r\nU.S. Consumer Product Safety Commission (CPSC)to begin collecting data\r\non nonfatal firearm-related injuries by using the National Electronic\r\nInjury Surveillance System (NEISS), the primary data system of CPSC.\r\nThis ongoing special study is commonly called the \"CDC Firearm Injury\r\nSurveillance Study\".  These data provide the basis for national\r\nestimates of nonfatal firearm-related injuries and nonfatal BB/pellet\r\ngun-related injuries treated in hospital emergency departments in the\r\nUnited States.  Beginning in July 2000, NCIPC, in collaboration with\r\nCPSC, expanded NEISS to collect data on all types and causes of\r\ninjuries treated in a representative sample of hospitals.  This system\r\nis called the \"NEISS All Injury Program (NEISS AIP)\".  These data\r\nprovide the basis for national estimates of all types of nonfatal\r\ninjuries treated in hospital emergency departments in the United\r\nStates.\r\n",
+  "modified": "2021-12-15T11:40:37",
+  "accessLevel": "public",
+  "identifier": "2438",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "accidents",
+    "medical care",
+    "nonfatal injuries",
+    "poisoning",
+    "product safety",
+    "public health",
+    "public safety"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2000-09-11T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/198",
+      "title": "National Electronic Injury Surveillance System (NEISS) Series"
+    }
+  ]
+}

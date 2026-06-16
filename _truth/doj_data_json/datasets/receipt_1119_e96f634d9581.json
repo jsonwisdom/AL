@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Supplemental Survey of Civil Appeals, 2001",
+  "description": "The 2001 Supplemental Survey of Civil Appeals is a\r\nfollow-up to the CIVIL JUSTICE SURVEY OF STATE COURTS, 2001 (ICPSR 3957) which examined 8,311 general civil cases (e.g.,\r\ntort, contract, and real property) concluded by bench or jury trial in\r\na sample of 46 of the nation's 75 most populous counties in 2001.\r\nThese cases were then weighted to represent the 11,908 general civil\r\ntrials concluded in the nation's 75 most populous counties. Data from\r\nthe 2001 Civil Trial Survey were used to produce several Bureau of\r\nJustice Statistics (BJS) reports describing the characteristics of\r\ncivil litigation in state courts. The 2001 Supplemental Survey of\r\nCivil Appeals tracks every general civil case concluded by bench or\r\njury trial in 2001 in the 46 surveyed counties that were subsequently\r\nappealed to an intermediate appellate court or court of last resort.\r\nIn the 2001 Civil Justice Survey of State Courts information was\r\ncollected for every general civil trial concluded in 43 of the 46\r\nselected counties. In these counties, the 2001 Supplemental Survey of\r\nCivil Appeals collected information on all general trials that\r\nproduced an appeal. In the three remaining counties, (Cook County,\r\nPhiladelphia County, and Bergen County), the appeals survey obtained\r\ninformation for both those general civil trials concluded in 2001 that\r\nwere subsequently appealed and, in addition, collected information for\r\nthose general civil appeals that were not captured at the trial court\r\nlevel. The 2001 Supplemental Survey of Civil Appeals tracks data on\r\ngeneral civil appeals that originated from 46 of the nation's 75 most\r\npopulous counties. Unlike the 2001 Civil Justice Survey of State\r\nCourts, cases were not weighted to represent appeals in the nation's\r\n75 most populous counties. The appeals were followed until they were\r\nwithdrawn, dismissed, or decided on the merits in the appellate\r\ncourts. All appeals were tracked until April 30, 2005. Appeals not\r\ndisposed on that date are identified as pending. Overall four\r\nappellate datasets were produced from this survey.",
+  "modified": "2011-11-02T16:21:19",
+  "accessLevel": "restricted public",
+  "identifier": "1119",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "case processing",
+    "civil courts",
+    "civil law",
+    "court cases",
+    "court system",
+    "disposition (legal)",
+    "lawsuits",
+    "state courts"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2172",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2006-08-21T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04539.v2",
+      "title": "Supplemental Survey of Civil Appeals, 2001"
+    }
+  ]
+}

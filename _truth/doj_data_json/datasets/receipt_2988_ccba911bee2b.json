@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Intensive Supervision Program in New Jersey, 1983-1986",
+  "description": "These data evaluate the New Jersey Intensive Supervision \r\n Program (ISP), a program implemented by the New Jersey Department of \r\n Corrections in 1983-1986. The central premise of ISP is that certain \r\n felony offenders sentenced to prison can be resentenced to a program of \r\n intensive supervision in which they are successfully supervised in the \r\n community. The data collection evaluates the impact of ISP on \r\n recidivism rates, prison space availability, and cost effectiveness and \r\n also assesses the opinions of criminal justice professionals toward the \r\n program. In the first file data collected on four types of sentenced \r\n felons include education, psychological condition, financial status, \r\n substance abuse, prior and follow-up criminal records, earning and \r\n payment records, sentence and correctional histories, and case \r\n characteristics including sentences, offenses, and other dispositions. \r\n The second file presents data on type of criminal justice professional \r\n interviewed, opinion scale scores on aspects of ISP, and suggestions \r\nfor ISP.",
+  "modified": "2006-01-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2988",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "alternatives to institutionalization",
+    "community service programs",
+    "correctional facilities",
+    "felons",
+    "offender profiles",
+    "program evaluation",
+    "recidivism rates",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1990-03-02T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09291.v1",
+      "title": "Intensive Supervision Program in New Jersey, 1983-1986"
+    }
+  ]
+}

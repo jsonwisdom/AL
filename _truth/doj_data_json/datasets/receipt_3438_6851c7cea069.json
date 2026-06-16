@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Reporting of Drug-Related Crimes:  Resident and Police Perspectives in the United States, 1988-1990",
+  "description": "This data collection investigates the ways in which police\r\nuse reports of drug-related crimes provided by residents of high\r\ndrug/crime areas and how willing residents of these areas are to\r\nreport such crimes to the police. Structured interviews were\r\nconducted by telephone with police representatives in most of the\r\nnation's 50 largest cities and in person with residents and police\r\nofficers in high drug/crime districts in each of four major cities:\r\nNewark, Chicago, El Paso, and Philadelphia. Police department\r\nrepresentatives were queried about the usefulness of citizen reports,\r\nreasons for citizens' reluctance to make reports, how the rate of\r\ncitizen reports could be improved, and how citizen reports worked with\r\nother community crime prevention strategies. Residents were asked\r\nabout their tenure in the neighborhood, attitudes toward the quality\r\nof life in the neighborhood, major social problems facing the\r\nneighborhood, and quality of city services such as police and fire\r\nprotection, garbage collection, and public health services. Additional\r\nquestions were asked about the amount of crime in the neighborhood,\r\nthe amount of drug use and drug-related crime, and the fear of\r\ncrime. Basic demographic information such as sex, race, and language\r\nin which the interview was conducted is also provided.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3438",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "citizen crime reporting",
+    "community involvement",
+    "crime prevention",
+    "crime reporting",
+    "drug related crimes",
+    "fear of crime",
+    "fire protection",
+    "municipal services",
+    "neighborhood conditions",
+    "neighborhoods",
+    "police officers",
+    "police protection"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1993-10-02T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09925.v1",
+      "title": "Reporting of Drug-Related Crimes:  Resident and Police Perspectives in the United States, 1988-1990"
+    }
+  ]
+}

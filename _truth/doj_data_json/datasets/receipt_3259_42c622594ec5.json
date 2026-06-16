@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Repeat Offender Laws in the United States:  Forms, Uses, and Perceived Value, 1983",
+  "description": "This survey of prosecutors, defense attorneys, and judges in\r\njurisdictions with sentence enhancement statutes for repeat offenders\r\ncollected information about the characteristics of the laws and\r\ncriminal justice professionals regarding the fairness, effectiveness,\r\nand practice of the laws. The jurisdiction file includes variables such\r\nas jurisdiction size, number of provisions in the law, number of felony\r\ncases handled under the law per year, number of defendants sentenced as\r\nrepeat offenders, frequency of charging and sentencing under the law,\r\nand minimum and maximum sentences specified in the statutes. The\r\nvariables in the three surveys of practitioners contain data related to\r\ntheir familiarity with the laws, descriptions of recent cases, and\r\nsatisfaction with the new statutes.",
+  "modified": "2006-01-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3259",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "attorneys",
+    "criminal justice system",
+    "felony offenses",
+    "judges",
+    "jurisdiction",
+    "prosecuting attorneys",
+    "recidivists",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1990-05-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09328.v1",
+      "title": "Repeat Offender Laws in the United States:  Forms, Uses, and Perceived Value, 1983"
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ReplayReputationV1",
+  "type": "object",
+  "required": [
+    "evaluator_id",
+    "version",
+    "derivation_status",
+    "semantic_agreement_excluded",
+    "observation_window",
+    "lineage_metrics",
+    "replay_coherence",
+    "last_updated"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "evaluator_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string",
+      "enum": [
+        "1.0"
+      ]
+    },
+    "derivation_status": {
+      "type": "string",
+      "enum": [
+        "DERIVED_ONLY"
+      ]
+    },
+    "semantic_agreement_excluded": {
+      "type": "boolean",
+      "const": true
+    },
+    "observation_window": {
+      "type": "object",
+      "required": [
+        "start_time",
+        "end_time",
+        "total_receipts_observed"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "start_time": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+        },
+        "end_time": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+        },
+        "total_receipts_observed": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "lineage_metrics": {
+      "type": "object",
+      "required": [
+        "hash_match_failures",
+        "malformed_structures",
+        "identity_drift_count"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "hash_match_failures": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "malformed_structures": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "identity_drift_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "replay_coherence": {
+      "type": "object",
+      "required": [
+        "reproducible_count",
+        "non_reproducible_count",
+        "untested_backlog"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "reproducible_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "non_reproducible_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "untested_backlog": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "last_updated": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+    }
+  }
+}

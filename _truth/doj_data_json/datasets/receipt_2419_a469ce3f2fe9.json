@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Census of Problem-Solving Courts, 2012",
+  "description": "With the creation of the first drug court in Miami-Dade County, Florida in 1989, problem-solving courts emerged as an innovative effort to close the revolving door of recidivism. Designed to target the social and psychological problems underlying certain types of criminal behavior, the problem-solving model boasts a community-based, therapeutic approach. As a result of the anecdotal successes of early drug courts, states expanded the problem-solving court model by developing specialized courts or court dockets to address a number of social problems. Although the number and types of problem-solving courts has been expanding, the formal research and statistical information regarding the operations and models of these programs has not grown at the same rate. Multiple organizations have started mapping the variety of problem-solving courts in the county; however, a national catalogue of problem-solving court infrastructure is lacking. As evidence of this, different counts of problem-solving courts have been offered by different groups, and a likely part of the discrepancy lies in disagreements about how to define and identify a problem-solving court. What is known about problem-solving courts is therefore limited to evaluation or outcome analyses of specific court programs.\r\nIn 2010, the Bureau of Justice Statistics awarded the National Center for State Courts a grant to develop accurate and reliable national statistics regarding problem-solving court operations, staffing, and participant characteristics. The NCSC, with assistance from the National Drug Court Institute (NDCI), produced the resulting Census of Problem-Solving Courts which captures information on over 3,000 problem-solving courts that were operational in 2012.",
+  "modified": "2017-04-06T15:00:08",
+  "accessLevel": "public",
+  "identifier": "2419",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "communities",
+    "courts",
+    "domestic violence",
+    "drug courts",
+    "drugs",
+    "homelessness",
+    "justice",
+    "mental health",
+    "personnel",
+    "prostitution",
+    "recidivism"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2017-04-06T15:00:08",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36717.v1",
+      "title": "Census of Problem-Solving Courts, 2012"
+    }
+  ]
+}

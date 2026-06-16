@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Crime Surveys: Cities Attitude Sub-Sample, 1972-1975",
+  "description": "This subsample of the national crime surveys consists of\r\ndata on personal and household victimization for persons aged 12 and\r\nolder in 26 major United States cities in the period 1972-1975. The\r\nNational Crime Surveys were designed by the Bureau of Justice\r\nStatistics to meet three primary objectives: (1) to develop\r\ndetailed information about the victims and consequences of crime,\r\n(2) to estimate the numbers and types of crimes not reported to\r\npolice, and (3) to provide uniform measures of selected types of\r\ncrimes in order to permit reliable comparisons over time and between\r\nareas. The surveys provide measures of victimization on the basis\r\nof six crimes (including attempts): rape, robbery, assault, burglary,\r\nlarceny, and motor vehicle theft. The total National Crime Survey\r\nemployed two distinct samples: a National Sample, and a Cities Sample.\r\nThe cities sample consists of information about victimization in 26\r\nmajor United States cities. The data collection was conducted by the\r\nUnited States Census Bureau, initial processing of the data and\r\ndocumentation was performed by the Data Use and Access Laboratories\r\n(DUALabs), and subsequent processing was performed by the ICPSR under\r\ngrants from the Bureau of Justice Statistics (BJS). This Cities\r\nAttitude Sub-Sample study also includes information on personal attitudes\r\nand perceptions of crime and the police, the fear of crime, and the\r\neffect of this fear on behavioral patterns such as choice of shopping\r\nareas and places of entertainment. Data are provided on reasons for\r\nrespondents' choice of neighborhood, and feelings about neighborhood,\r\ncrime, personal safety, and the local police. Also specified are date,\r\ntype, place, and nature of the incidents, injuries suffered, hospital\r\ntreatment and medical expenses incurred, offender's personal profile,\r\nrelationship of offender to victim, property stolen and value, items\r\nrecovered and value, insurance coverage, and police report and reasons\r\nif incident was not reported to the police. Demographic items cover\r\nage, sex, marital status, race, ethnicity, education, employment, family\r\nincome, and previous residence and reasons for migrating. This subsample\r\nis a one-half random sample of the Complete Sample, NATIONAL CRIME\r\nSURVEYS: CITIES, 1972-1975 (ICPSR 7658), in which an attitude\r\nquestionnaire was administered. The subsample contains data from the\r\nsame 26 cities that were used in the Complete Sample.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "180",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "assault",
+    "auto theft",
+    "burglary",
+    "census data",
+    "cities",
+    "crime",
+    "criminal justice system",
+    "larceny",
+    "police protection",
+    "rape",
+    "robbery",
+    "victimization"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR07663.v2",
+      "title": "National Crime Surveys: Cities Attitude Sub-Sample, 1972-1975"
+    }
+  ]
+}

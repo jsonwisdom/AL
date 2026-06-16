@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Drug Abuse as a Predictor of Rearrest or Failure to Appear in Court in New York City, 1984  ",
+  "description": "This data collection was undertaken to estimate the\r\nprevalence of drug use/drug use trends among booked arrestees in New\r\nYork City and to analyze the relationship between drug use and crime.\r\nThe data, which were collected over a six-month period, were generated\r\nfrom volunteer interviews with male arrestees, the analyses of their\r\nurine specimens, police and court records of prior criminal behavior\r\nand experience with the criminal justice system, and records of each\r\narrestee's current case, including court warrants, rearrests, failures\r\nto appear, and court dispositions. Demographic variables include age,\r\neducation, vocational training, marital status, residence, and\r\nemployment. Items relating to prior and current drug use and drug\r\ndependency are provided, along with results from urinalysis tests for\r\nopiates, cocaine, PCP, and methadone. The collection also contains\r\narrest data for index crimes and subsequent court records pertaining\r\nto those arrests (number of court warrants issued, number of pretrial\r\nrearrests, types of rearrests, failure to appear in court, and court\r\ndispositions), and prior criminal records (number of times arrested\r\nand convicted for certain offenses).",
+  "modified": "2000-04-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2842",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrest records",
+    "court cases",
+    "criminal histories",
+    "disposition (legal)",
+    "drug abuse",
+    "drug related crimes",
+    "drug testing",
+    "drug use",
+    "police records",
+    "recidivism prediction",
+    "urinalysis"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1993-05-13T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09979.v1",
+      "title": "Drug Abuse as a Predictor of Rearrest or Failure to Appear in Court in New York City, 1984  "
+    }
+  ]
+}

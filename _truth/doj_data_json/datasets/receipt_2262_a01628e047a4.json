@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Federal Court Cases: Integrated Data Base Bankruptcy Petitions, 1998",
+  "description": "The purpose of this data collection is to provide an\r\nofficial public record of the business of the federal bankruptcy\r\ncourts. The data includes all petitions filed under the Bankruptcy\r\nCode in the U.S. Bankruptcy Courts on or after October 1, 1993, and any\r\npetitions filed before October 1, 1993, that were still pending on that\r\ndate. The records are organized according to the fiscal year of\r\ntermination with cases still pending at the end included in a separate\r\npending data set. For the bankruptcy data, the unit of analysis is a\r\nsingle case.",
+  "modified": "2011-04-12T10:14:00",
+  "accessLevel": "restricted public",
+  "identifier": "2262",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "administration",
+    "appellate courts",
+    "case dismissal",
+    "case processing",
+    "civil law",
+    "court cases",
+    "defendants",
+    "disposition (legal)",
+    "federal courts",
+    "judicial decisions",
+    "legal systems",
+    "pretrial procedures",
+    "records",
+    "trial courts",
+    "trial procedures"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2173",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2004-11-17T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04086.v1",
+      "title": "Federal Court Cases: Integrated Data Base Bankruptcy Petitions, 1998"
+    }
+  ]
+}

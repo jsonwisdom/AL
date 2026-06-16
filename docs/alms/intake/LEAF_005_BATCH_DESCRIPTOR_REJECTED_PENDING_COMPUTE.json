@@ -1,0 +1,11 @@
+{
+  "leaf_id": "005",
+  "state": "BATCH_DESCRIPTOR_REJECTED",
+  "observed_precheck": "PASS",
+  "observed_descriptor_sha256": "16847f5e4052b48c21394b815f484f38096ebbf3b27e7ba4c7339a574fb68979",
+  "observed_descriptor_size_bytes": 128,
+  "rejection_reason": "merkle_root was literal PENDING_COMPUTE instead of locked envelope hash",
+  "correct_merkle_root": "4a2eb7054e1f2a4fdf1f2059957f7644cb5a40da1b899512ae2624776c5bc759",
+  "anchor_allowed": false,
+  "next_gate": "REBUILD_BATCH_DESCRIPTOR_WITH_LOCKED_LEAF_HASH"
+}

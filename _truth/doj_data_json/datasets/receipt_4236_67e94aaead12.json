@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "The Effect of Prior Police Contact on Victimization Reporting: Results From the Police-Public Contact and National Crime Victimization Surveys, United States, 2002-2011",
+  "description": "This study examines whether or not prior experiences with the police, both directly and indirectly through the experiences of others, can influence one's decision to report a crime. Data from the National Crime Victimization Survey (NCVS) was linked with the Police-Public Contact Survey (PPCS) to construct a dataset of the police-related experiences of crime victims and non-victims. Variables include information on the prevalence, frequency, and the nature of respondents' encounters with the police in the prior year, as well as respondents' personal and household victimization experiences that occurred after the administration of the PPCS, including whether the crime was reported to the police. Demographic variables include age, race, gender, education, and socioeconomic status.\r\nThe ICPSR's holdings for both the NCVS and the PPCS are available in the NCVS series.",
+  "modified": "2021-11-30T09:46:03",
+  "accessLevel": "public",
+  "identifier": "4236",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime",
+    "crime reporting",
+    "police citizen interactions",
+    "police community relations",
+    "victimization"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2021-11-30T09:46:03",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36370.v1",
+      "title": "The Effect of Prior Police Contact on Victimization Reporting: Results From the Police-Public Contact and National Crime Victimization Surveys, United States, 2002-2011"
+    }
+  ]
+}

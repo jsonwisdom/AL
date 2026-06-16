@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Federal Justice Statistics Program: Offenders Released From Prison, 1994 [United States]",
+  "description": "The data contain records of sentenced offenders released from the custody of the Bureau of Prisons (BOP) during fiscal year 1994. The data include commitments of United States District Court, violators of conditions of release (e.g., parole, probation, or supervised release violators), offenders convicted in other courts (e.g., military or District of Columbia courts), and persons admitted to prison as material witnesses or for purposes of treatment, examination, or transfer to another authority. Records of offenders who exit federal prison temporarily, such as for transit to another location, to serve a weekend sentence, or for health care, are not included in the exiting cohort. These data include variables that describe the offender, such as age, race, citizenship, as well as variables that describe the sentences and expected prison terms. The data file contains original variables from the Bureau of Prisons' SENTRY database, as well as \"SAF\" variables that denote subsets of the data. These SAF variables are related to statistics reported in the Compendium of Federal Justice Statistics, Tables 7.9-7.16. Variables containing identifying information (e.g., name, Social Security Number) were replaced with blanks, and the day portions of date fields were also sanitized in order to protect the identities of individuals. These data are part of a series designed by the Urban Institute (Washington, DC) and the Bureau of Justice Statistics. Data and documentation were prepared by the Urban Institute.",
+  "modified": "2011-03-08T09:51:35",
+  "accessLevel": "restricted public",
+  "identifier": "1006",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional system",
+    "offenders",
+    "prisons"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2174",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2009-02-05T11:21:55",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR23766.v2",
+      "title": "Federal Justice Statistics Program: Offenders Released From Prison, 1994 [United States]"
+    }
+  ]
+}

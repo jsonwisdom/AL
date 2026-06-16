@@ -1,0 +1,14 @@
+{
+  "schema": "zk_sensor_observation_v1",
+  "kind": "KIND_1_SUBSTRATE",
+  "fields": {
+    "sensor_id": "string",
+    "measurement_type": "string",
+    "value": "number",
+    "units": "string",
+    "attestation_hash": "hex",
+    "timestamp_unix_ms": "integer"
+  },
+  "reaction_refs_allowed": false,
+  "forbidden_fields_inherited_from": "oracles/kinds/SUBSTRATE_REACTION_KIND_V1.json"
+}

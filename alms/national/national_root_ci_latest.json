@@ -1,0 +1,82 @@
+{
+  "artifact": "CI_NATIONAL_ROOT_RECOMPUTE",
+  "version": "US_SNAPSHOT_2026-05-03",
+  "status": "INDETERMINATE",
+  "national_root": "sha256:2c8bb5b8841615f5b2f9c06b299d9bf7661a597d8a7367cf4522228fe2c6dd76",
+  "generated_utc": "2026-05-22T05:18:46Z",
+  "states": [
+    {
+      "state": "MN",
+      "version": "MN_SNAPSHOT_2026-05-03",
+      "status": "PASS",
+      "state_root": "sha256:e399a3b20584b8537a6db68d83720a589032c90468d90a9f906df5b1a3da04a7",
+      "claim_count": 2,
+      "matched_count": 2,
+      "claims": [
+        {
+          "id": "MN-BUDGET-2026-01",
+          "claim_path": "fixtures/mn/mn_budget_2026_claim.json",
+          "source_path": "fixtures/mn/sources/mmb_budget_snapshot_2026-05-03.txt",
+          "expected_hash": "sha256:01dddb1843f4b3ae0b22e8d661f54525d463457401aec042073249a65d7f5f3d",
+          "computed_hash": "sha256:01dddb1843f4b3ae0b22e8d661f54525d463457401aec042073249a65d7f5f3d",
+          "hash_match": true
+        },
+        {
+          "id": "MN-BUDGET-RESERVE-2026-01",
+          "claim_path": "fixtures/mn/mn_budget_reserve_2026_claim.json",
+          "source_path": "fixtures/mn/sources/mmb_budget_reserve_snapshot_2026-05-03.txt",
+          "expected_hash": "sha256:3537811e3afd3e1baa5910e530c05c3f82b2d3322e27644d2f6a2847159f1a2c",
+          "computed_hash": "sha256:3537811e3afd3e1baa5910e530c05c3f82b2d3322e27644d2f6a2847159f1a2c",
+          "hash_match": true
+        }
+      ],
+      "blockers": []
+    },
+    {
+      "state": "AL",
+      "version": "AL_ACT_2025_251",
+      "status": "PASS",
+      "state_root": "sha256:ecf65398c0a34307065aa78d0eafbfbfe4641405cc4a1a14d796058522a78206",
+      "claim_count": 1,
+      "matched_count": 1,
+      "claims": [
+        {
+          "id": "AL-BUDGET-2026-01",
+          "claim_path": "fixtures/al/al_budget_2026_claim.json",
+          "source_path": "fixtures/al/sources/al_budget_act_2025_251.pdf",
+          "expected_hash": "sha256:ecf65398c0a34307065aa78d0eafbfbfe4641405cc4a1a14d796058522a78206",
+          "computed_hash": "sha256:ecf65398c0a34307065aa78d0eafbfbfe4641405cc4a1a14d796058522a78206",
+          "hash_match": true
+        }
+      ],
+      "blockers": []
+    },
+    {
+      "state": "TX",
+      "version": "TX_GAA_2026_2027",
+      "status": "INDETERMINATE",
+      "state_root": null,
+      "claim_count": 1,
+      "matched_count": 0,
+      "claims": [
+        {
+          "id": "TX-BUDGET-2026-01",
+          "hash_match": false,
+          "error": "[Errno 2] No such file or directory: '/home/runner/work/AL/AL/fixtures/tx/sources/tx_general_appropriations_act_2026_2027.pdf'"
+        }
+      ],
+      "blockers": [
+        {
+          "id": "TX-BUDGET-2026-01",
+          "reason": "[Errno 2] No such file or directory: '/home/runner/work/AL/AL/fixtures/tx/sources/tx_general_appropriations_act_2026_2027.pdf'"
+        }
+      ]
+    }
+  ],
+  "leaf_hashes": [
+    "sha256:711c8674642e6761a99c2eb0ac2151861de4000d61208d129f1b2ae58a0d00ad",
+    "sha256:792ba165a7557a923cc072ad98e19ca3d106da76735a4dc10827ae0811772174",
+    "sha256:84c92026ebdbb82cd8f8bb2b6b6bdddcfa06cdd24273d2525c602505501fe86b"
+  ],
+  "boundary": "GitHub CI recompute only. Not Base/EAS anchored. National PASS requires every state PASS."
+}

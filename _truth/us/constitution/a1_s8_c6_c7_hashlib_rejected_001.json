@@ -1,0 +1,32 @@
+{
+  "artifact": "USC_A1_S8_C6_C7_HASHLIB_REJECTED_001",
+  "status": "REJECTED_UNTRUSTED_HASH_OUTPUT",
+  "scope": ["USC-A1-S8-C6", "USC-A1-S8-C7"],
+  "reported": {
+    "USC-A1-S8-C6": {
+      "bytes": 96,
+      "sha256": "106f3630f71939634e351815667e2343c5b8e964101e164789528f9d0c6412ab"
+    },
+    "USC-A1-S8-C7": {
+      "bytes": 42,
+      "sha256": "d881d587000c25a072979268305c48f8388c42a5f5779774640d21a224749f9d"
+    }
+  },
+  "failure_reasons": [
+    "Reported C6 digest contains long suffix identical to previously verified S7-style hash material and is not accepted as independent evidence.",
+    "Reported C7 digest matches a prior contaminated / rejected output and is not accepted as independent evidence.",
+    "Wave 1 cannot be closed from chat-reported hashes until independent recomputation is performed in a clean execution path."
+  ],
+  "current_state": {
+    "USC-A1-S8-C1": "LOCKED",
+    "USC-A1-S8-C2": "LOCKED",
+    "USC-A1-S8-C3": "LOCKED",
+    "USC-A1-S8-C4": "FORMAT_VALID_PENDING_STRICT_LOCK",
+    "USC-A1-S8-C5": "LOCKED",
+    "USC-A1-S8-C6": "BLOCKED",
+    "USC-A1-S8-C7": "BLOCKED",
+    "WAVE_1": "OPEN",
+    "WAVE_2": "BLOCKED"
+  },
+  "required_recovery": "Use an independent clean computation path and do not rely on chat-reported hashes showing prior-fragment reuse."
+}

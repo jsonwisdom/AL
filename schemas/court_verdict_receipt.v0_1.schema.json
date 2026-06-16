@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "schemas/court_verdict_receipt.v0_1.schema.json",
+  "title": "Court Verdict Receipt v0.1",
+  "description": "Schema for binding a Meme Court verdict classification to a specific target hash. Analysis and classification only; authority is false.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "receipt_type",
+    "target_hash",
+    "verdict",
+    "court_timestamp",
+    "operator_sig",
+    "verdict_rationale",
+    "authority"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "v0.1"
+    },
+    "receipt_type": {
+      "type": "string",
+      "const": "COURT_VERDICT_BINDING"
+    },
+    "target_hash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "ADMISSIBLE",
+        "INADMISSIBLE",
+        "NEEDS_RECEIPT",
+        "GOBLIN_OBJECTION",
+        "TIMESTAMP_GOBLIN_RISK",
+        "GHOST_PROMOTION_BLOCKED"
+      ]
+    },
+    "court_timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "operator_sig": {
+      "type": "string",
+      "minLength": 1
+    },
+    "verdict_rationale": {
+      "type": "string",
+      "minLength": 1
+    },
+    "authority": {
+      "type": "boolean",
+      "const": false
+    }
+  }
+}

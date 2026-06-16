@@ -1,0 +1,20 @@
+{
+  "artifact": "USC_A1_S8_C12_VERIFIED_RECEIPT",
+  "status": "VERIFIED_CANONICAL_OPERATOR_REPORTED_PENDING_EXTERNAL_REPLAY",
+  "id": "USC-A1-S8-C12",
+  "parent": {
+    "id": "USC-A1-S8",
+    "content_hash_sha256": "689531558999a4c062828b12204683a483a92540026e632943183563914a2754"
+  },
+  "role": "Raise and Support Armies Power with Two-Year Appropriation Limit",
+  "normalization_rule": "NORMALIZED_TEXT_SPAN_V0_2",
+  "verification_method": "EXACT_CHARACTER_AUDIT_OPERATOR_REPORTED",
+  "span": "To raise and support Armies, but no Appropriation of Money to that Use shall be for a longer Term than two Years;",
+  "byte_count_utf8_reported": 114,
+  "content_hash_sha256_reported": "494541306354f3b6088e578c7b80544f8e592762e879a667104868f76377309f",
+  "gate_resolution": "ACCEPTED_AS_OPERATOR_REPORTED_CANONICAL_RECEIPT",
+  "next_gate": {
+    "USC-A1-S8-C13": "READY_FOR_EXACT_BYTE_AUDIT",
+    "USC-A1-S8-C14_C16": "BLOCKED_UNTIL_C13_VERIFIED"
+  }
+}

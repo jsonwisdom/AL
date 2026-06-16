@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Intimate Partner Homicide in California, 1987-2000",
+  "description": "Since 1976, the United States has witnessed a steady and\r\nprecipitous decline in intimate partner homicides. This study builds\r\non the work of Dugan et al. (1999, 2000) and Browne and Williams\r\n(1989) by examining, in greater detail, the relationship between\r\nintimate partner homicide and gender, race, criminal justice system\r\nresponse, and domestic violence services. Specifically, the study\r\nexamines the net effect of criminal justice system response and\r\nfederally-funded domestic violence shelters on victimization of white,\r\nAfrican American, and Hispanic males and females. This study used\r\naggregated data from the 58 counties in California from 1987 to\r\n2000. Homicide data were gathered by the State of California\r\nDepartment of Justice, Criminal Justice Statistics Center. Data on\r\ndomestic violence resources were obtained from the Governor's Office\r\nof Criminal Justice Planning, Domestic Violence Branch, in the form of\r\ndetailed reports from domestic violence shelters in the state. Based\r\non these records, the researchers computed the number of\r\nfederally-funded shelter-based organizations in a given county over\r\ntime. Data on criminal justice responses at the county level were\r\ngathered from the State of California Department of Justice, Criminal\r\nJustice Statistics Center. These data included domestic violence\r\narrests and any convictions and incarceration that followed those\r\narrests. The researchers disaggregated these criminal justice system\r\nmeasures by race and gender. In order to account for population\r\ndifferences and changes over time, rates were computed per 100,000\r\nadults (age 18 and older).",
+  "modified": "2003-06-19T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3829",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "African Americans",
+    "Hispanic or Latino Americans",
+    "White Americans",
+    "arrest rates",
+    "battered women",
+    "criminal justice system",
+    "domestic violence",
+    "ethnicity",
+    "gender",
+    "homicide",
+    "victimization",
+    "womens shelters"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2003-06-19T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03501.v1",
+      "title": "Intimate Partner Homicide in California, 1987-2000"
+    }
+  ]
+}

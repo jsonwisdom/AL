@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Foreclosure and Crime data for the District of Columbia and Miami-Dade County, Florida, 2003-2011",
+  "description": "\r\nThese data are part of NACJD's Fast Track Release and are distributed as they there received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except of the removal of direct identifiers. Users should refer to the accompany readme file for a brief description of the files available with this collections and consult the investigator(s) if further information is needed.\r\n\r\n\r\nThis study was a systematic assessment of the impacts of foreclosures and crime levels on each other, using sophisticated spatial analysis methods, informed by qualitative research on the topic. Using data on foreclosures and crime in District of Columbia and Miami-Dade County, Florida from 2003 to 2011, this study considered the effects of the two phenomena on each other through a dynamic systems approach.\r\n",
+  "modified": "2017-06-26T14:42:51",
+  "accessLevel": "restricted public",
+  "identifier": "2941",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime",
+    "crime impact",
+    "crime mapping",
+    "crime patterns",
+    "foreclosure",
+    "maps",
+    "real estate"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2017-06-26T14:39:30",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR35349.v1",
+      "title": "Foreclosure and Crime data for the District of Columbia and Miami-Dade County, Florida, 2003-2011"
+    }
+  ]
+}

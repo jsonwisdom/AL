@@ -1,0 +1,17 @@
+{
+  "artifact": "DELTA_SET",
+  "delta_set_id": "DELTA_SET_003",
+  "lineage": "RENDERED_ONLY",
+  "source_id": "justice_epstein",
+  "delta_type": "RENDERED_STABILITY_CHECK",
+  "snapshot_1_sha256": "8601485862b2e914eeb2b5ae5fe7f33a3df292946c8f5ccbecbc91dbb207ca89",
+  "snapshot_2_sha256": "8601485862b2e914eeb2b5ae5fe7f33a3df292946c8f5ccbecbc91dbb207ca89",
+  "change_detected": false,
+  "status": "CANDIDATE",
+  "promoted": false,
+  "opens_custody_gate": false,
+  "write_run_0002": "UNCHANGED",
+  "gate_status": "CLOSED",
+  "delta_manifest_sha256": null,
+  "custody_note": "Rendered snapshots are byte-identical. Page is stable over sample window."
+}

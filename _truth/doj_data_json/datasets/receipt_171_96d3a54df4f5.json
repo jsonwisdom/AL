@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Law Enforcement Management and Administrative Statistics (LEMAS), 1987",
+  "description": "This survey, the first in the Bureau of Justice Statistics' program on Law Enforcement Management and Administrative Statistics (LEMAS), presents information on three types of general purpose law enforcement agencies: state police, local police, and sheriffs' departments. Data from the primary state police agency in each of 49 states (Hawaii does not have a state police agency) are also presented. Variables include size of the populations served by the typical police or sheriffs' department, levels of employment and spending, various functions of the department, average salary levels for uniformed officers, and other matters relating to management and personnel.",
+  "modified": "2012-08-01T17:08:19",
+  "accessLevel": "public",
+  "identifier": "171",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "administration",
+    "budgets",
+    "law enforcement",
+    "law enforcement agencies",
+    "management",
+    "personnel",
+    "police departments",
+    "statistical data",
+    "wages and salaries",
+    "workers"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2430",
+  "dataQuality": false,
+  "issued": "1989-12-15T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09222.v3",
+      "title": "Law Enforcement Management and Administrative Statistics (LEMAS), 1987"
+    }
+  ]
+}

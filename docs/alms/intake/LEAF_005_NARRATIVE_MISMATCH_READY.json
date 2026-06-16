@@ -1,0 +1,19 @@
+{
+  "leaf_id": "005",
+  "target": "NARRATIVE_VS_POLICY_BYTES",
+  "state": "INTAKE_READY",
+  "depends_on_leaf": "004",
+  "leaf_004_commit": "f605964a39082e335bb39ee511fd8e6f35d8f941",
+  "leaf_004_policy_result": {
+    "actual_percent": 38.13,
+    "within_policy": true,
+    "meets_preferred": false
+  },
+  "mode": "EXTRACTION_ONLY",
+  "anchor_allowed": false,
+  "required_next_terminal_commands": [
+    "grep -n -iE \"strong|robust|healthy|stable|reserves\" out.txt > leaf005_hits.txt",
+    "sed -n '1,120p' leaf005_hits.txt"
+  ],
+  "doctrine": "NO_PARAPHRASE_NO_SUMMARY_EXACT_SENTENCE_BYTES_ONLY"
+}

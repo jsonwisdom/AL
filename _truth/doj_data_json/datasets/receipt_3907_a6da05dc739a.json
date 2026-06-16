@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Longitudinal Study of a Cohort of Batterers Arraigned in a Massachusetts District Court, 1995-2004",
+  "description": "This longitudinal study, a follow-up to RESPONSE TO\r\n DOMESTIC VIOLENCE IN THE QUINCY, MASSACHUSETTS DISTRICT COURT,\r\n 1995-1997 (ICPSR 3076), examined the relationship between the actions\r\n of a district court in eastern Massachusetts and a cohort of men\r\n arrested for domestic abuse between February 1995 and March\r\n 1996. Using criminal history records, this study followed the criminal\r\n behavior of 342 men until December 2004. Some of the variables in Part\r\n 1, Arrest Data, include the dates of arrests, dispositions, and\r\n restraining orders issued, the arrest charge, disposition of the case,\r\n and the relationship between the offender and the victim. In Part 2,\r\n Recidivism Data, variables include the age at first arrest, date of\r\n arrest and time to subsequent arrests, arrest charge, length of\r\ncriminal career, and whether the offender is a recidivist.",
+  "modified": "2007-02-23T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "3907",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "criminal histories",
+    "domestic violence",
+    "recidivism",
+    "recidivists",
+    "violence against women"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2007-02-23T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04543.v1",
+      "title": "Longitudinal Study of a Cohort of Batterers Arraigned in a Massachusetts District Court, 1995-2004"
+    }
+  ]
+}

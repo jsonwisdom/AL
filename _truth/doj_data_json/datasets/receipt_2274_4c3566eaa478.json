@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Federal Court Cases: Integrated Data Base Bankruptcy Petitions, 2007",
+  "description": "The purpose of this data collection is to provide an official public record\r\nof the business of the federal bankruptcy courts. The data include all\r\npetitions filed under the Bankruptcy Code in the United States Bankruptcy\r\nCourts on or after October 1, 2006, and any petitions filed before October 1, 2006, that were still pending on that date. The records are organized according to the fiscal year of termination with cases still pending at the end included in a separate pending dataset. The records in Part 1, Terminations Data, 2007, include cases that terminated in the year 2007. The records in Part 2, Pending Data, 2007, include cases that were still pending as of October 1, 2007. For the bankruptcy data, the unit of analysis is a single case.",
+  "modified": "2011-03-08T09:44:33",
+  "accessLevel": "restricted public",
+  "identifier": "2274",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "administration",
+    "appellate courts",
+    "bankruptcy",
+    "case dismissal",
+    "case processing",
+    "civil law",
+    "court cases",
+    "disposition (legal)",
+    "federal courts",
+    "judicial decisions",
+    "legal systems",
+    "pretrial procedures",
+    "records",
+    "trial courts",
+    "trial procedures"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2173",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2008-12-17T14:58:27",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR23082.v2",
+      "title": "Federal Court Cases: Integrated Data Base Bankruptcy Petitions, 2007"
+    }
+  ]
+}

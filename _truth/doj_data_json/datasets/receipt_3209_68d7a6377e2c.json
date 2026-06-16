@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Robberies in Chicago, 1982-1983",
+  "description": "This study investigates the factors and conditions in\r\nrobbery events that cause victim injury or death. The investigators\r\ncompare three robbery events: those that resulted in death, those that\r\ncause injury, and nonfatal robberies of all types. The events were\r\ncompared on a variety of demographic variables. The data address the\r\nfollowing questions: (1) To what extent are homicides resulting from\r\nrobbery misclassified as homicides for which motives are undetermined?\r\n(2) How often do homicides resulting from robbery involve individuals\r\nwho do not know each other? (3) Are robberies that involve illicit\r\ndrugs more likely to result in the death of the victim? (4) To what\r\nextent does a weapon used in a robbery affect the probability that a\r\nvictim will die? (5) To what extent does victim resistance affect the\r\nlikelihood of victim death? (6) To what extent does robbery lead to\r\nphysical injury? (7) Do individuals of different races suffer\r\ndisproportionately from injuries resulting from robbery? (8) Are\r\ninjuries and homicides resulting from robbery more likely to occur in a\r\nresidence, commercial establishment, or on the street? (9) Are women or\r\nmen more likely to be victims of homicide or injury resulting from\r\nrobbery? (10) To what extent does robbery (with or without a homicide)\r\noccur between or within races? (12) How long does it take to solve\r\nrobbery-related crimes? Major variables characterizing the unit of\r\nobservation, the robbery event, include: location of the robbery\r\nincident, numbers of offenders and victims involved in the incident,\r\nvictim's and offender's prior arrest and conviction histories, the\r\nextent of injury, whether or not drugs were involved in any way, type\r\nof weapon used, victim/offender relationship, and the extent of victim\r\nresistance.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3209",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "aggravated assault",
+    "assault",
+    "homicide",
+    "murder",
+    "robbery",
+    "victimization",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1989-05-04T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08951.v1",
+      "title": "Robberies in Chicago, 1982-1983"
+    }
+  ]
+}

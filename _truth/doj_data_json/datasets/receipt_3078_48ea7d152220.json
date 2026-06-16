@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Criminality Among Narcotic Addicts in Baltimore:  The Role of Nonnarcotic Drugs, 1973-1978",
+  "description": "This study investigated the frequency with which various\r\nnonnarcotic substances were used by male narcotic addicts and the\r\nrelation of these substances to different types of criminal activity\r\nduring periods of active addiction and periods of non- addiction. The\r\nvariables were designed to facilitate an analysis of narcotic addicts\r\nas crime risks, patterns of nonnarcotic drug use, and the percentage of\r\nillegal income addicts obtained during periods of addiction compared\r\nwith periods of nonaddiction. Information is included concerning types\r\nof narcotic drug use, crime patterns, and use of marijuana, cocaine,\r\nbarbiturates, amphetamines, and Librium.",
+  "modified": "2006-01-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3078",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime",
+    "criminal justice system",
+    "drug use",
+    "drugs",
+    "marijuana"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1987-01-12T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08604.v1",
+      "title": "Criminality Among Narcotic Addicts in Baltimore:  The Role of Nonnarcotic Drugs, 1973-1978"
+    }
+  ]
+}

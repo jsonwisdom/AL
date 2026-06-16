@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "A New Role for Technology? The Implementation and Impact of Video Visits in State Prisons, Washington, 2012-2015",
+  "description": "Research shows that prison visitation is integral to the success of incarcerated people, reducing recidivism, facilitating reentry into the community, and promoting positive parent-child relationships. However, people are often incarcerated long distances from their home communities in areas that are difficult to reach by public transport, creating significant barriers to in-person visitation. Departments of corrections are exploring the use of computer-based video visits as a means to address some of the visitation needs of those in custody in a cost-effective way while continuing to encourage in-person visits. To learn more about this practice, the study team conducted the following research activities:\r\nA survey of incarcerated people: The study team surveyed 211 people incarcerated in Washington State prisons about their use of video visits, their perceptions of the service, and their experiences of in-person visits more generally. This was a self-administered, pen-and-paper survey.\r\nAn impact evaluation of video visits: The study team analyzed individual-level administrative data from the Washington Department of Corrections (WADOC) and the private video visit vendor (JPay) to understand whether use of the service affected four outcomes: 1) the number of in-person visits people received, 2) the number of rule violations (of any severity) people committed in prison, 3) the number of general (ie. non-serious) rule violations they committed, and 4) the number of serious (as defined by WADOC) rule violations that were committed. The researchers used two analytic techniques: 1) a difference-in-difference test, using inverse probability of treatment weighting, and 2) Bayesian additive regression trees.\r\nAn analysis of in-person visit rates: The study team analyzed administrative data relating to all people who were incarcerated for the 12 month period ending November 2015 (n=11,524). The study team produced descriptive statistics and conducted negative binomial regressions to understand the rates of in-person visits and how these related to the characteristics of the incarcerated people.",
+  "modified": "2020-02-27T09:58:59",
+  "accessLevel": "restricted public",
+  "identifier": "3466",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "communication",
+    "corrections",
+    "prison inmates",
+    "social interaction",
+    "technology"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2020-02-27T09:54:51",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36843.v1",
+      "title": "A New Role for Technology? The Implementation and Impact of Video Visits in State Prisons, Washington, 2012-2015"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "receipt_id": "550e8400-e29b-41d4-a716-446655440000",
+  "timestamp": "2026-05-27T14:30:00Z",
+  "agent_identity": "base_mcp_agent/session-abc123",
+  "action": "transfer",
+  "resource": "wallet/usdc",
+  "params": {
+    "amount_usd": 50,
+    "destination": "0xTrustedVendor_987654321",
+    "token": "USDC",
+    "chain": "ethereum",
+    "memo": "Invoice #INV-2026-05-27-001"
+  },
+  "policy_id_evaluated": "policy-2026-05-27-base-mcp-v1",
+  "policy_version": "1.0.0",
+  "authority_granted": true,
+  "requires_human_approval": true,
+  "human_approval_received": false,
+  "execution_status": "pending",
+  "execution_result": {},
+  "signatures": [
+    {
+      "signed_by": "base_mcp_agent/session-abc123",
+      "signature": "sig_agent_0x3f2a1b...",
+      "signed_at": "2026-05-27T14:30:00Z"
+    }
+  ],
+  "parent_receipt_id": null
+}

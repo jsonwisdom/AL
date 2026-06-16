@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Law Enforcement Agency Identifiers Crosswalk Series",
+  "description": "Researchers have long been able to analyze crime and law enforcement data at the individual agency level and at the county level using data from the Federal Bureau of Investigation's Uniform Crime Reporting (UCR) Program data series. However, analyzing crime data at the intermediate level, the city or place, has been difficult, as has merging disparate data sources that have no common match keys. To facilitate the creation and analysis of place-level data and linking reported crime data with data from other sources, the Bureau of Justice Statistics (BJS) and the National Archive of Criminal Justice Data (NACJD) created the Law Enforcement Agency Identifiers Crosswalk (LEAIC).\r\nThe crosswalk file was designed to provide geographic and other identification information for each record included in the FBI's UCR files and Bureau of Justice Statistics' Census of State and Local Law Enforcement Agencies (CSLLEA). The LEAIC records contain common match keys for merging reported crime data and Census Bureau data. These linkage variables include the Originating Agency Identifier (ORI) code, Federal Information Processing Standards (FIPS) state, county and place codes, and Governments Integrated Directory government identifier codes. These variables make it possible for researchers to take police agency-level data, combine them with Bureau of the Census and BJS data, and perform place-level, jurisdiction-level, and government-level analyses.",
+  "modified": "2018-09-18T11:41:59",
+  "accessLevel": "public",
+  "identifier": "2632",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "crime mapping",
+    "crime patterns",
+    "databases",
+    "information systems",
+    "law enforcement agencies"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2000-03-15T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/366",
+      "title": "Law Enforcement Agency Identifiers Crosswalk Series"
+    }
+  ]
+}

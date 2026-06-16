@@ -1,0 +1,18 @@
+BATCH_002 VALIDATION DRY RUN 001
+
+record_commit: 08161ebd51b810ca98e739d2d951ae70d9181718
+schema_commit: 3826d9df225f616ac5d70e6a9b3cc176e18b542b
+validator_commit: 2dab03c953a3ac2d36a645d0d23e90352d39c9ac
+batch: BATCH_002
+status: FAILED_PENDING_VALIDATOR_PATCH
+
+finding:
+- canonical record uses github_commit timestamps for batch-level timestamps
+- validator v1 permits github_commit timestamps for item timestamps but not for OPEN batch timestamp
+- this is a validator policy mismatch, not a receipt failure
+
+required_patch:
+- allow OPEN batch timestamp to be RFC3339 UTC, block:number, or github_commit:sha
+- keep SEALED and FROZEN_EMPTY stricter unless explicitly revised
+
+boundary: dry run only; no final validation claimed; no EAS attestation claimed; no wallet signature claimed

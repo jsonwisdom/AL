@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Chicago Women's Health Risk Study, 1995-1998",
+  "description": "The goal of the Chicago Women's Health Risk Study (CWHRS) was to develop a reliable and validated profile of risk factors directly related to lethal or life-threatening outcomes in intimate\r\npartner violence, for use in agencies and organizations working to help women in abusive relationships.\r\n\r\nData were collected to draw comparisons between abused women in situations resulting in fatal outcomes and those without fatal outcomes, as well as a baseline comparison of abused women and non-abused women, taking into account the interaction of events, circumstances, and interventions occurring over the course of a year or two. The CWHRS used a quasi-experimental design to gather survey data on 705 women at the point of service for any kind of treatment (related to abuse or not) sought at one of four medical sites serving populations in areas with high rates of intimate partner homicide (Chicago Women's Health Center, Cook County Hospital, Erie Family Health Center, and Roseland Public Health Center). \r\n\r\nPart 1 includes demographic variables describing each respondent, such as age, race and ethnicity, level of education, employment status, screening status (AW or NAW), birthplace, and marital status. \r\n\r\nPart 2 includes details about the woman's household, such as whether she was homeless, the number of people living in the household and details about each person, the number of her children or other children in the household, details of any of her children not living in her household, and any changes in the household structure over the past year. \r\n\r\nPart 3 includes variables that deal with the woman's physical and mental health, including pregnancy, and with her social support network and material resources. \r\n\r\nPart 4 variables provide information on the number and type of firearms in the household, whether the woman had experienced power, control, stalking, or harassment at the hands of an intimate partner in the past year, whether she had experienced specific types of violence or violent threats at the hands of an intimate partner in the past year, and whether she had experienced symptoms of Post-Traumatic Stress Disorder related to the incidents in the past month. \r\n\r\nPart 5 variables specify the partner or partners who were responsible for the incidents in the past year, record the type and length of the woman's relationship with each of these partners, and provide detailed information on the one partner she chose to talk about (called \"Name\"). \r\n\r\nPart 6 variables probe the woman's help-seeking and interventions in the past year. \r\n\r\nPart 7 variables include questions comprising the Campbell Danger Assessment (Campbell, 1993). \r\n\r\nPart 8 assembles variables pertaining to the chosen abusive partner (Name). \r\n\r\nPart 9, an event-level file, includes the type and the date of each event the woman discussed in a 12-month retrospective calendar history. \r\n\r\nPart 10, an incident-level file, includes variables describing each violent incident or threat of violence. There is a unique identifier linking each woman to her set of events or incidents. \r\n\r\nPart 11 is a person-level file in which the incidents in Part 10 have been aggregated into totals for each woman. Variables in Part 11 include, for example, the total number of incidents during the year, the number of days before the interview that the most recent incident had occurred, and the severity of the most severe incident in the past year. \r\n\r\nPart 12 is a person-level file that summarizes incident information from the follow-up interviews, including the number of abuse incidents from the initial interview to the last follow-up, the number of days between the initial interview and the last follow-up, and the maximum severity of any follow-up incident. \r\n\r\nParts 1-12 contain a unique identifier variable that allows users to link each respondent across files. \r\n\r\nParts 13-15 contain data from official records sources and information supplied by proxies for victims of intimate partner homicides in 1995 and 1996 in Chicago. \r\n\r\nPart 13 contains information about the homicide incidents from the \"lethal sample,\" along with outcomes of the court cases (if any) from the Administrative Office of the Illinois Courts. Variables for Part 13 include the number of victims killed in the incident, the month and year of the incident, the gender, race, and age of both the victim and offender, who initiated the violence, the severity of any other violence immediately preceding the death, if leaving the relationship triggered the final incident, whether either partner was invading the other's home at the time of the incident, whether jealousy or infidelity was an issue in the final incident, whether there was drug or alcohol use noted by witnesses, the predominant motive of the homicide, location of the homicide, relationship of victim to offender, type of weapon used, whether the offender committed suicide after the homicide, whether any criminal charges were filed, and the type of disposition and length of sentence for that charge. \r\n\r\nParts 14 and 15 contain data collected using the proxy interview questionnaire (or the interview of the woman offender, if applicable). Parts 14 and 15 can be linked by ID number. \r\n",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3815",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "battered women",
+    "domestic violence",
+    "family violence",
+    "fatalities",
+    "intervention",
+    "relationships",
+    "risk assessment",
+    "risk factors",
+    "treatment programs",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2000-10-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03002.v1",
+      "title": "Chicago Women's Health Risk Study, 1995-1998"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Expenditure and Employment Data for the Criminal Justice System [United States]:  CJEE Extracts File, 1983  ",
+  "description": "These criminal justice expenditure and employment (CJEE)\r\n data are taken from a special compilation of sources available from\r\n the Census Bureau's Annual Surveys of Governments, Finance Statistics\r\n and Employment Statistics. Levels of government covered are federal,\r\n state, county, municipal, and towns and townships. Information is\r\n included on total employment, total police protection, police\r\n protection with arrest powers, other police protection, judicial-legal\r\n employment, corrections employment, total expenditures, police\r\n protection expenditures, judicial-legal expenditures, and corrections\r\n expenditures. Types of expenditures include direct current, capital\r\n outlay, equipment, and intergovernmental. Types of employment include\r\ntotal, full-time, part-time, and full-time equivalent.",
+  "modified": "1997-04-14T00:00:00",
+  "accessLevel": "public",
+  "identifier": "106",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional system",
+    "criminal justice system",
+    "employment",
+    "federal government",
+    "full-time employment",
+    "government expenditures",
+    "law enforcement",
+    "local government",
+    "part-time employment",
+    "state government",
+    "wages and salaries"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2429",
+  "dataQuality": false,
+  "issued": "1986-11-07T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08455.v1",
+      "title": "Expenditure and Employment Data for the Criminal Justice System [United States]:  CJEE Extracts File, 1983  "
+    }
+  ]
+}

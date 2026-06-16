@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "State Firearm Law Database: State Firearm Laws, 1991-2019",
+  "description": "The State Firearm Database catalogs the presence or absence of 134 firearm safety laws in 14 categories covering the 26-year period from 1991 to 2019. The classification system categorizes state firearm provisions using a methodology that both captures differences and maintains a level of comparability between states. Because of this, the database is not the most detailed nor the most comprehensive record of all state firearm policies. Other resources may provide users with a deeper understanding of individual provisions, while this database serves as an efficient way to compare the broad scope of state firearm laws across the country. These provisions covered 14 aspects of state policies, including regulation of the process by which firearm transfers take place, ammunition, firearm possession, firearm storage, firearm trafficking, and liability of firearm manufacturers. In addition, descriptions of the criteria used to code each provision have been provided so that there is transparency in how various law exemptions, exceptions, and other nuances were addressed.",
+  "modified": "2020-02-26T12:19:17",
+  "accessLevel": "public",
+  "identifier": "3640",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "firearms",
+    "gun control",
+    "gun control legislation",
+    "gun legislation",
+    "gun regulation",
+    "public policy",
+    "state regulations"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2020-02-26T12:19:17",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37363.v1",
+      "title": "State Firearm Law Database: State Firearm Laws, 1991-2019"
+    }
+  ]
+}

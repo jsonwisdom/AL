@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Pilot Study of State and Federal Digital Evidence Laboratories, [United States], 2014",
+  "description": "The Pilot Study of State and Federal Digital Evidence Laboratories data collection contains data collected in 2015 as part of the Census of Publicly Funded Forensic Crime Laboratories (CPFFCL). The CPFFCL examined the forensic services provided by publicly funded crime labs across the nation and the resources devoted to completing the work.To capture more information about an emerging forensic science discipline known as digital evidence, the Bureau of Justice Statistics (BJS) expanded the scope of the 2014 CPFFCL from previous data collections to include a separate pilot study of state and federal agencies that solely analyzed digital evidence in support of criminal investigations and prosecutions. These agencies obtained digital and multimedia evidence in various formats, including audio, video, and graphical images from computers, cell phones, cameras, and other electronic devices. The traditional CPFFCL definition of a crime lab limited the information collected about digital evidence since some agencies only handle this type of evidence and employ forensic experts with training in computer science or information technology as opposed to natural sciences such as chemistry and biology.The census collected detailed information on laboratory staff, budgets, workloads, and backlogs in requests for forensic services. The census also provides data on lab accreditations, proficiency tests, and other quality assurances.",
+  "modified": "2018-10-18T12:21:02",
+  "accessLevel": "public",
+  "identifier": "2659",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "DNA fingerprinting",
+    "budgets",
+    "computer related crimes",
+    "crime laboratories",
+    "criminal investigations",
+    "evidence",
+    "forensic sciences",
+    "personnel",
+    "policies and procedures"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2443",
+  "dataQuality": false,
+  "issued": "2018-10-18T12:21:02",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37055.v1",
+      "title": "Pilot Study of State and Federal Digital Evidence Laboratories, [United States], 2014"
+    }
+  ]
+}

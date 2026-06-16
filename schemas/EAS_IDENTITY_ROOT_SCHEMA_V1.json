@@ -1,0 +1,22 @@
+{
+  "schema_id": "EAS_IDENTITY_ROOT_SCHEMA_V1",
+  "operator": "jaywisdom.base.eth",
+  "purpose": "Attest that a local Git/SHA/IPFS receipt is the public identity-root receipt for jaywisdom.base.eth.",
+  "network": "base",
+  "fields": [
+    { "name": "receipt_id", "type": "string", "required": true },
+    { "name": "operator", "type": "string", "required": true },
+    { "name": "claim", "type": "string", "required": true },
+    { "name": "git_commit", "type": "string", "required": true },
+    { "name": "sha256", "type": "bytes32_hex", "required": true },
+    { "name": "ipfs_cid", "type": "string", "required": true }
+  ],
+  "attestation_rule": "EAS payload must bind receipt_id + operator + claim + git_commit + sha256 + ipfs_cid.",
+  "invalid_if": [
+    "sha256 is PENDING",
+    "ipfs_cid is PENDING",
+    "git_commit is PENDING",
+    "operator is not jaywisdom.base.eth",
+    "receipt_id is not IDENTITY_ROOT_RECEIPT_001"
+  ]
+}

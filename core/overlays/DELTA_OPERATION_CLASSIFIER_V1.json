@@ -1,0 +1,62 @@
+{
+  "artifact": "DELTA_OPERATION_CLASSIFIER_V1",
+  "layer": "CORE-OVERLAY",
+  "purpose": "Define deterministic graph-operation classes for topology delta overlays.",
+  "last_verified": "2026-05-06",
+  "verifier": "jsonwisdom",
+  "domain": {
+    "baseline_graph": "B",
+    "overlay_declaration": "O",
+    "effective_overlay_view": "E",
+    "primitive_change_scope": "node_or_edge_level_difference"
+  },
+  "operation_classes": {
+    "add": {
+      "definition": "New Cook-scoped node or edge absent from baseline that does not alter existing baseline nodes or edges.",
+      "allowed_for_cook_delta_a": true
+    },
+    "shadow": {
+      "definition": "Cook-local view override of an existing baseline node or route without mutating the baseline record.",
+      "allowed_for_cook_delta_a": true
+    },
+    "rewrite": {
+      "definition": "Global mutation of a baseline node canonical definition or baseline-owned edge.",
+      "allowed_for_cook_delta_a": false,
+      "reject_code": "FORBIDDEN_OPERATION_REWRITE"
+    },
+    "rebase": {
+      "definition": "Movement of a baseline node or subgraph to a different structural anchor or global order position.",
+      "allowed_for_cook_delta_a": false,
+      "reject_code": "FORBIDDEN_OPERATION_REBASE"
+    },
+    "delete": {
+      "definition": "Removal of a baseline node or edge from the effective graph outside a purely local view filter.",
+      "allowed_for_cook_delta_a": false,
+      "reject_code": "FORBIDDEN_OPERATION_DELETE"
+    }
+  },
+  "cook_scope_rule": {
+    "cook_scoped_if": [
+      "node_is_cook_county",
+      "node_is_descendant_of_cook"
+    ],
+    "shadowing_scope": "delta_scoped_only",
+    "cross_jurisdiction_shadowing": "forbidden"
+  },
+  "classifier_algorithm": [
+    "Build effective overlay view E from baseline B plus overlay declarations O without mutating B.",
+    "If node or edge exists in E but not B and is Cook-scoped, classify as add.",
+    "If baseline-owned node has Cook-local override without baseline mutation, classify as shadow.",
+    "If baseline-owned canonical attributes mutate globally, classify as rewrite.",
+    "If baseline-owned parent or global order changes, classify as rebase.",
+    "If baseline-owned node or edge disappears from global effective view, classify as delete.",
+    "Reject every discovered operation outside add or shadow."
+  ],
+  "invariants": [
+    "Every primitive change must classify as exactly one operation.",
+    "Cook may add only inside Cook scope.",
+    "Cook may shadow only inside Cook scope.",
+    "Cook may not rewrite, rebase, or delete baseline nodes or edges.",
+    "Baseline graph B must remain byte-preserved during overlay evaluation."
+  ]
+}

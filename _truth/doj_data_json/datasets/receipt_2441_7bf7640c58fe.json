@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Mortality in Correctional Institutions (MCI) Series (Formerly Deaths In Custody Reporting Program (DCRP))",
+  "description": "\r\n\r\nThe Mortality In Correctional Institutions (MCI) data collection (formerly Deaths in\r\nCustody Reporting Program (DCRP)), collects quarterly inmate death\r\nrecords from each of the nation's 50 state prison systems, 50 state\r\njuvenile correctional authorities, and 3,095 local jails. In addition,\r\nthe program collects quarterly records of all deaths during the\r\nprocess of arrest by each of the nation's 17,784 state and local law\r\nenforcement agencies. These death records include information on the\r\ndeceased's personal characteristics (age, gender and race/ethnicity),\r\ntheir criminal background (legal status, offense types, length of stay\r\nin custody), and details of the death itself (the date, time,\r\nlocation and cause of each death, as well as information on autopsies\r\nand medical treatment provided for illnesses/diseases).\r\n\r\n",
+  "modified": "2021-12-16T11:16:49",
+  "accessLevel": "public",
+  "identifier": "2441",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "corrections",
+    "death",
+    "homicide",
+    "suicide"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2013-07-31T14:54:37",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/250",
+      "title": "Mortality in Correctional Institutions (MCI) Series (Formerly Deaths In Custody Reporting Program (DCRP))"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "schema_id": "AL_DETERMINISTIC_EXECUTION_CONTRACT_V1",
+  "status": "PRESENT",
+  "purpose": "Define deterministic execution rules for guardrail replay checks.",
+  "runtime": {
+    "node_engine": ">=20 <23",
+    "module_system": "ESM",
+    "external_io": "DISALLOWED",
+    "environment_reads": "DISALLOWED",
+    "filesystem_scope": "COMMITTED_REPO_FILES_ONLY",
+    "clock_reads": "DISALLOWED",
+    "randomness": "DISALLOWED"
+  },
+  "failure_behavior": {
+    "missing_required_source": "NEEDS_SOURCE",
+    "invalid_json": "UNSUPPORTED",
+    "parse_error": "UNSUPPORTED",
+    "forbidden_input_detected": "UNSUPPORTED"
+  },
+  "output_contract": {
+    "format": "JSON_ONLY",
+    "required_fields": [
+      "verdict",
+      "script",
+      "checked",
+      "missing_sources",
+      "promotion_status",
+      "ghost_anchor_risk"
+    ]
+  },
+  "promotion_effect": "Satisfies deterministic_execution_contract only."
+}

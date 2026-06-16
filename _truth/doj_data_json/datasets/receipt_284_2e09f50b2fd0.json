@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Survey of Inmates in Local Jails, 1983:  [United States]",
+  "description": "This survey provides data on inmates' socioeconomic and\r\n demographic characteristics, previous military service, prior criminal\r\n history, jail activities, drug and alcohol use, health care, and\r\ncurrent offenses.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "284",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "criminal histories",
+    "demographic characteristics",
+    "drug use",
+    "inmate programs",
+    "inmates",
+    "jail inmates",
+    "jails",
+    "offenses",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2170",
+  "dataQuality": false,
+  "issued": "1985-10-09T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08274.v1",
+      "title": "Survey of Inmates in Local Jails, 1983:  [United States]"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Mortality in Correctional Institutions: Jail Population Distributions, 2000-2017",
+  "description": "The Mortality in Correctional Institutions series (MCI), formerly Deaths in Custody Reporting Program (DCRP), is an annual data collection conducted by the Bureau of Justice Statistics (BJS). The DCRP began in 2000 under the Death in Custody Reporting Act of 2000 (P.L. 106-297). It is the only national statistical collection that obtains detailed information about deaths in adult correctional facilities. The MCI collects data on persons dying in state prisons, local jails and in the process of arrest. Each collection is a separate subcollection, but each is under the umbrella of the MCI collection. This deals with the local jails subcollection, which includes a jail populations file.\r\nThe jails portion of the Mortality in Correctional Institutions began in 2000 after the passage of the Deaths in Custody Reporting Act of 2000 in October of 2000. The original law lapsed at year-end 2006, but BJS continued to collect the data on a voluntary basis until the reauthorization of the Deaths in Custody Reporting Act in December of 2014. The jails component of the MCI collects data on deaths of inmates occurring in local jail facilities while inmates are in the physical custody of jail facility officials, even if they are being held for other jurisdictions.\r\nThis longitudinal dataset includes year-end estimates of the demographic characteristics of all jail populations at the national level. It does not include death data. Users interested in that data should refer to Mortality in Correctional Institutions: Local Jails, 2000-2017 (ICPSR 37878).",
+  "modified": "2021-04-27T10:21:45",
+  "accessLevel": "public",
+  "identifier": "4198",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "corrections",
+    "demographic characteristics",
+    "jails",
+    "population characteristics",
+    "population decrease",
+    "population growth",
+    "population size",
+    "population trends"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2441",
+  "dataQuality": false,
+  "issued": "2021-04-27T10:21:45",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37926.v1",
+      "title": "Mortality in Correctional Institutions: Jail Population Distributions, 2000-2017"
+    }
+  ]
+}

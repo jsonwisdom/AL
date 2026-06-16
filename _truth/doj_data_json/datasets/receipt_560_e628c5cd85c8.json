@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Evaluation of GPS Monitoring Technologies and Domestic Violence in the United States, 2001-2009",
+  "description": "This study examines the implementation and effectiveness of Global Positioning System (GPS) monitoring technology to enforce court mandated \"no contact\" orders in domestic violence (DV) cases, particularly those involving intimate partner violence (IPV). The project has two components: First, a national web-based survey of agencies providing pretrial supervision examined patterns of GPS usage among electronic monitoring (EM) programs for DV cases. Second, a quasi-experimental design study of three sites across the U.S. - referred to as Midwest, West, and South - examined the impact of GPS technology on DV defendants' program violations and rearrests during the pre-adjudication period (referred to as the \"short term\"), and during a one-year follow-up period after case disposition (referred to as the \"long term\").",
+  "modified": "2015-06-30T21:30:08",
+  "accessLevel": "restricted public",
+  "identifier": "560",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "domestic assault",
+    "domestic violence",
+    "electronic monitoring",
+    "electronic surveillance",
+    "pretrial procedures",
+    "pretrial release",
+    "restraining orders",
+    "victim safety"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2015-06-30T21:21:16",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR33723.v1",
+      "title": "Evaluation of GPS Monitoring Technologies and Domestic Violence in the United States, 2001-2009"
+    }
+  ]
+}

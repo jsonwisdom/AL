@@ -1,0 +1,72 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Uniform Crime Reports:  Arrest Data for the 75 Most Populous Counties in the United States, 1986",
+  "description": "The files in this collection contain counts of arrests and\r\n offenses for Part I, Index Offenses, and Part II, Other Offenses:\r\n murder, rape, robbery, assault, burglary, larceny, auto theft, arson,\r\n forgery, fraud, embezzlement, vandalism, weapons violations, sex\r\n offenses, drug and alcohol abuse violations, gambling, vagrancy,\r\ncurfew, and runaways. County populations are also reported.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2601",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "arrests",
+    "arson",
+    "assault",
+    "auto theft",
+    "burglary",
+    "counties",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "drug abuse",
+    "fraud",
+    "illegal gambling",
+    "larceny",
+    "law enforcement",
+    "murder",
+    "offenses",
+    "rape",
+    "robbery",
+    "sex offenses",
+    "vandalism",
+    "weapons offenses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2167",
+  "dataQuality": false,
+  "issued": "1989-05-04T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09163.v2",
+      "title": "Uniform Crime Reports:  Arrest Data for the 75 Most Populous Counties in the United States, 1986"
+    }
+  ]
+}

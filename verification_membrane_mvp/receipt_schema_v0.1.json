@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "VerificationReceipt",
+  "type": "object",
+  "properties": {
+    "timestamp": { "type": "string", "format": "date-time" },
+    "event_id": { "type": "string" },
+    "actor": { "type": "string" },
+    "action": { "type": "string" },
+    "payload_hash": { "type": "string" },
+    "signature": { "type": "string" }
+  },
+  "required": ["timestamp", "event_id", "actor", "action", "payload_hash", "signature"]
+}

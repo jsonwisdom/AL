@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Crime Surveys:  National Sample of Rape Victims, 1973-1982",
+  "description": "The purpose of this study was to provide an in-depth look\r\nat rapes and attempted rapes in the United States. Part 1 of the\r\ncollection offers data on rape victims and contains variables\r\nregarding the characteristics of the crime, such as the setting, the\r\nrelationship between the victim and offender, the likelihood of\r\ninjury, and the reasons why rape is not reported to police. Part 2\r\ncontains data on a control group of females who were victims of no\r\ncrime or of crimes other than rape. The information contained is\r\nsimilar to that found in Part 1.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "183",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "crime",
+    "criminal justice system",
+    "demographic characteristics",
+    "households",
+    "neighborhoods",
+    "physical violence",
+    "rape",
+    "residential environment",
+    "victimization"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1987-01-12T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08625.v3",
+      "title": "National Crime Surveys:  National Sample of Rape Victims, 1973-1982"
+    }
+  ]
+}

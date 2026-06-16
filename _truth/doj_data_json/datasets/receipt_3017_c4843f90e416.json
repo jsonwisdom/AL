@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Enhancing the Research Partnership Between the Albany Police Department and the Finn Institute, 2005-2016",
+  "description": "The Finn Institute is an independent, not-for-profit corporation that conducts research on matters of public safety and security. The project provided for steps that would strengthen and enhance an existing police-researcher partnership, focused around analyses of proactive policing. As part of a research partnership with the Albany Police Department (APD) and the Finn Institute, this study was oriented around a basic research question: can proactive policing be conducted more efficiently, in the sense that a better ratio of high-value to lower-value stops is achieved, such that the trade-off between crime reduction and police community relations is mitigated.\r\nAlbany Resident Survey Dataset (DS1) unit of analysis was individuals. Variables include neighborhood crime and disorder, legitimacy and satisfaction with police service, and direct and vicarious experience with stop and perceptions of stops as a problem. Demographic variables include age, race, education, employment, marital status, and household count.\r\nManagement of \"Smart Stops\" Dataset (DS2) unit of analysis was investigatory stops; variables include records of individual stops, the month and year of the stop, whether the location of the stop was a high-crime location, whether the person stopped (or any of the persons stopped, if multiple people were stopped at one time) were high-risk, and whether the stop resulted in an arrest.\r\nTrends in Proactive Policing Dataset (DS3) unit of analysis was APD officers. Variables include number of stops per quarter; variables include demographics such as officer characteristics such as their assignments, length of service, and gender.",
+  "modified": "2020-12-16T12:36:30",
+  "accessLevel": "restricted public",
+  "identifier": "3017",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime control",
+    "crime reduction",
+    "police community relations",
+    "police effectiveness",
+    "police patrol",
+    "police reports",
+    "police training"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2020-12-16T12:30:04",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37820.v1",
+      "title": "Enhancing the Research Partnership Between the Albany Police Department and the Finn Institute, 2005-2016"
+    }
+  ]
+}

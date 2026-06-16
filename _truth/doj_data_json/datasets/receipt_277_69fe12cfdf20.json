@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Recidivism in the National Longitudinal Survey of Youth 1997 - Standalone Data (Rounds 1 to 13)",
+  "description": "The NLSY97 standalone data files are intended to be used by crime researchers for analyses without requiring supplementation from the main NLSY97 data set. The data contain age-based calendar year variables on arrests and incarcerations, self-reported criminal activity, substance use, demographic variables and relevant variables from other domains which are created using the NLSY97 data. The main NLSY97 data are available for public use and can be accessed online at the NLS Investigator Web site and at the NACJD Web site (as ICPSR 3959). Questionnaires, user guides and other documentation are available at the same links. The National Longitudinal Survey of Youth 1997 (NLSY97) was designed by the United States Department of Labor, comprising the National Longitudinal Survey (NLS) Series. Created to be representative of United States residents in 1997 who were born between the years of 1980 and 1984, the NLSY97 documents the\r\ntransition from school to work experienced by today's youths through\r\ndata collection from 1997. The majority of the oldest cohort members (age 16 as of December 31, 1996) were still in school during the first survey round and the\r\nyoungest respondents (age 12) had not yet entered the labor market.",
+  "modified": "2014-02-06T11:26:28",
+  "accessLevel": "public",
+  "identifier": "277",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "alcohol",
+    "arrests",
+    "crime",
+    "demographic characteristics",
+    "educational background",
+    "health",
+    "income",
+    "substance abuse",
+    "tobacco use",
+    "young adults",
+    "youths"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2014-02-06T11:26:28",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR34562.v1",
+      "title": "Recidivism in the National Longitudinal Survey of Youth 1997 - Standalone Data (Rounds 1 to 13)"
+    }
+  ]
+}

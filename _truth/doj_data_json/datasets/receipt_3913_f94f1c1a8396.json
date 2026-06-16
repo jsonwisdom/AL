@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Early Intervention by Counsel: A Multi-Site Evaluation of the Presence of Counsel at Defendants' First Appearance (CAFA) in Court, 6 New York State counties, 2012-2016",
+  "description": "This study sought to assess the impact of local programs that ensure\r\nthat legal counsel is provided at first appearance (usually arraignment) in\r\ncourt on court decisions (such as bail or pretrial release, and consequences\r\nsuch as pretrial detention and booking at a local detention facility), as well\r\nas on subsequent consequences for charge reduction, disposition, and\r\nsentencing.  The project collected original data from six upstate New York counties (under pseudonyms). The data were collected from indigent defense programs' case files, supplemented by data from county detention facilities on booking and\r\nrelease.\r\nDemographic variables in this collection include defendant age, race, gender, and residency.",
+  "modified": "2020-11-30T09:41:48",
+  "accessLevel": "restricted public",
+  "identifier": "3913",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "bail",
+    "defense counsel",
+    "pretrial procedures",
+    "public defenders",
+    "trial procedures"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2020-11-30T08:49:49",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37370.v1",
+      "title": "Early Intervention by Counsel: A Multi-Site Evaluation of the Presence of Counsel at Defendants' First Appearance (CAFA) in Court, 6 New York State counties, 2012-2016"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "$schema_id": "https://jsonwisdom.github.io/AL/schemas/semantic/evaluation.v1.json",
+  "meta": {
+    "generated_at": "2026-05-22T04:05:00Z",
+    "status": "SEMANTIC_STAGED",
+    "promotion_status_invariant": "STUB_LOCKED"
+  },
+  "dependencies": {
+    "hash_observation_script_commit": "9950ddba4b940d1525a1532371768104d24befba",
+    "hash_observation_checkpoint_commit": "ec1876c73baed53ecd3c98655798d18a9185d653",
+    "input_source": {
+      "path": "checkpoints/guardrails/hash-observation.v1.json",
+      "access_mode": "READ_ONLY"
+    }
+  },
+  "claims_scope": {
+    "allowed_claims": [
+      "semantic_evaluation_staged"
+    ],
+    "claims_forbidden": [
+      "receipt_valid",
+      "verification_passed",
+      "external_attestation",
+      "ACTIVE_AUDIT"
+    ]
+  },
+  "immutability_guardrails": {
+    "allowed_write_boundary": "checkpoints/semantic/*",
+    "must_not_write": [
+      "scripts/hash-guardrail-files.js",
+      "checkpoints/guardrails/hash-observation.v1.json"
+    ]
+  },
+  "evaluation": {
+    "verdict": null,
+    "rationale": "Semantic evaluation engine uninitialized; baseline structural anchors preserved."
+  },
+  "ghost_anchor_risk": false
+}

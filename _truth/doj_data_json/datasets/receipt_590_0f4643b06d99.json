@@ -1,0 +1,48 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "U.S. Marshals Service Fact Sheets",
+  "description": "The US Marshals Service web site.",
+  "modified": "2017-02-26T00:00:00",
+  "accessLevel": "public",
+  "identifier": "590",
+  "publisher": {
+    "name": "United States Marshals Service",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data US Marshals Service (USDOJ)",
+    "hasEmail": "mailto:opendata@usms.gov"
+  },
+  "keyword": [
+    "USMS",
+    "Fact Sheets"
+  ],
+  "bureauCode": [
+    "011:05"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2017-02-26T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "landingPage": "https://www.usmarshals.gov/resources/",
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.usmarshals.gov/resources/fact-sheets",
+      "format": "html",
+      "mediaType": "text/html",
+      "title": "www.usmarshals.gov"
+    }
+  ]
+}

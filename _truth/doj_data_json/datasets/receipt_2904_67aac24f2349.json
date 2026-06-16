@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Assessment of Defense and Prosecutorial Strategies in Terrorism Trials in the United States, 1980-2004",
+  "description": "This study created a flat-file database of information regarding defendants who were referred to United States Attorneys by the Federal Bureau of Investigation (FBI) following official terrorism investigations between 1980 and 2004.  Its ultimate goal was to provide state and federal prosecutors with empirical information that could assist federal and state prosecutors with more effective strategies for prosecution of terrorism cases.  The results of this study enhanced the existing 78 variables in the AMERICAN TERRORISM STUDY, 1980-2002 (ICPSR 4639) database by adding the 162 variables from the Prosecution and Defense Strategies (PADS) database. The variables in the PADS database track information regarding important pleadings, motions, and other key events that occur in federal terrorism trials; the PADS variables measure the strategies used by legal counsel as well as other legal nuances.",
+  "modified": "2014-11-11T15:42:51",
+  "accessLevel": "restricted public",
+  "identifier": "2904",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "FBI",
+    "case processing",
+    "court cases",
+    "courtroom proceedings",
+    "crime prevention",
+    "defense (law)",
+    "defense counsel",
+    "district courts",
+    "federal prisoners",
+    "indictments",
+    "national security",
+    "prosecuting attorneys",
+    "sentencing",
+    "terrorism",
+    "terrorist attacks",
+    "terrorist pros"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2014-11-11T15:39:51",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR26241.v1",
+      "title": "Assessment of Defense and Prosecutorial Strategies in Terrorism Trials in the United States, 1980-2004"
+    }
+  ]
+}

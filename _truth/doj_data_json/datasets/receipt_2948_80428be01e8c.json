@@ -1,0 +1,69 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Uniform Crime Reports: National Time-Series Community-Level Database, 1967-1980",
+  "description": "The Uniform Crime Reports National Time-Series Data,\r\n 1967-1980, include detailed criminal offense and clearance information\r\n submitted monthly by over 3,000 consistently reporting law enforcement\r\n agencies in the United States. These data, provided in annually pooled\r\n cross-sections, were processed at the Center for Applied Social\r\n Research, Northeastern University, Boston, Massachusetts to produce\r\n easily accessible and highly reliable time-series data on officially\r\n reported crime. Originally provided by the Federal Bureau of\r\n Investigation (FBI), these data exclude Uniform Crime Report (UCR)\r\n data from infrequently reporting law enforcement agencies. In general,\r\n only those agencies that submitted ten or more monthly reports in\r\n every year during 1967 through 1980 are included in this collection.\r\n The data include detailed breakdowns of offenses and clearances taken\r\n from disaggregated UCR Return A tapes. Of particular interest are\r\n weapon-specific robbery and assault variables, types of rape,\r\n burglary, larceny, and motor vehicle theft, and clearances by arrest\r\n (or other exceptional means) of adults and juveniles for each offense\r\n sub-type. Both monthly and annual counts of these are available.\r\n Finally, as an aid to the user, each agency is identified by its FBI\r\n \"ORI Code\" as well as a sequential case number produced and documented\r\n by ICPSR in the codebook's appendix. Cases also may be identified by\r\n geographic region, state, SMSA, county, population size and group, and\r\nfrequency of reporting.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2948",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "arrests",
+    "assault",
+    "auto theft",
+    "burglary",
+    "clearance rates",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "disposition (legal)",
+    "juvenile crime",
+    "larceny",
+    "law enforcement",
+    "manslaughter",
+    "murder",
+    "offenses",
+    "rape",
+    "robbery",
+    "weapons offenses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2167",
+  "dataQuality": false,
+  "issued": "1984-07-13T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08214.v1",
+      "title": "Uniform Crime Reports: National Time-Series Community-Level Database, 1967-1980"
+    }
+  ]
+}

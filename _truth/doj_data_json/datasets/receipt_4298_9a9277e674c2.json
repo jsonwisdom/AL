@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Law Enforcement Agency Reported Crime Analysis Tool (LEARCAT)",
+  "description": "The Law Enforcement Agency Reported Crime Analysis Tool (LEARCAT) dashboard enables users to examine crime information (incident-based data ) reported by participating law enforcement agencies to the FBI’s National Incident-Based Reporting System (NIBRS).\r\n\r\nThe FBI’s Uniform Crime Reporting Program (UCR) defines an incident as one or more offenses committed by the same offender, or group of offenders, acting in concert at the same time and place. A single incident can contain multiple victims, victim types, crimes, and arrests.\r\n\r\nThe NIBRS data are not nationally representative and law enforcement participation varies by state. \r\n",
+  "modified": "2022-10-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "4298",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "National Incident-Based Reporting System (NIBRS)",
+    "crime statistics",
+    "national Crime statistics",
+    "property Crime statistics",
+    "violent crime statistics",
+    "data analysis tools"
+  ],
+  "bureauCode": [
+    "011:00"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2433",
+  "accrualPeriodicity": "R/P1Y",
+  "dataQuality": false,
+  "issued": "2022-10-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://learcat.bjs.ojp.gov/",
+      "title": "Law Enforcement Agency Reported Crime Analysis Tool (LEARCAT)"
+    }
+  ]
+}

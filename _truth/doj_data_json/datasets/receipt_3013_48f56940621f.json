@@ -1,0 +1,53 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Lone Offender Terrorists and Mass Murderers in the United States between 1990 and 2013",
+  "description": "The study examines the behavioral underpinnings of three types of United States-based offenders: solo terrorists, lone-actor terrorists, and individuals who engage in mass casualty violence but lack an ideological motivation (aka mass murderers). In particular, the researchers compare the developmental, antecedent behavioral, and ideological factors that crystallize within the offender and are later expressed behaviorally via an attack.\r\nThe data address the following research questions: What are the similarities and differences between lone actor terrorists and solo mass murderers, in terms of sociodemographic characteristics and behavioral traits prior to, during, and after their attack? Can risk factors associated with delinquency and criminal offenses also help predict low-likelihood, high impact events such as lone actor terrorist attacks and mass murders? Do these factors remain the same over time?\r\nTo complete the research objectives, the researchers used an open source methodological design, relying solely on text materials available within the public domain. Data were coded and then statistically analyzed using bivariate and multivariate tests. The sample (n = 186) was limited to United States-based offenders who operated between 1990 and 2013 and were identifiable through publicly available materials.",
+  "modified": "2020-09-29T09:26:13",
+  "accessLevel": "public",
+  "identifier": "3013",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "lone actor terrorists",
+    "mass murders",
+    "radicalism",
+    "terrorism"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2020-09-29T09:26:13",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36314.v1",
+      "title": "Lone Offender Terrorists and Mass Murderers in the United States between 1990 and 2013"
+    }
+  ]
+}

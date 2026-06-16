@@ -1,0 +1,68 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "County Characteristics, 2000-2007 [United States]",
+  "description": "This file contains an array of county characteristics by\r\nwhich researchers can investigate contextual influences at the county\r\nlevel. Included are population size and the components of population\r\nchange during 2000-2005 and a wide range of characteristics on or\r\nabout 2005: (1) population by age, sex, race, and Hispanic origin, (2)\r\nlabor force size and unemployment, (3) personal income, (4) earnings\r\nand employment by industry, (5) land surface form topography, (6)\r\nclimate, (7) government revenue and expenditures, (8) crimes reported\r\nto police, (9) presidential election results (10) housing authorized\r\nby building permits, (11) Medicare enrollment, and (12) health\r\nprofession shortage areas.",
+  "modified": "2008-01-24T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3864",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Jennifer Scherer",
+    "hasEmail": "mailto:Jennifer.Scherer@usdoj.gov"
+  },
+  "keyword": [
+    "Hispanic or Latino origins",
+    "Medicare",
+    "age",
+    "arson",
+    "assault",
+    "auto theft",
+    "birth rates",
+    "burglary",
+    "climate",
+    "counties",
+    "crime",
+    "demographic characteristics",
+    "disabled persons",
+    "economic conditions",
+    "election returns",
+    "employee benefits",
+    "employment",
+    "gender",
+    "geography"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2007-10-24T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR20660.v2",
+      "title": "County Characteristics, 2000-2007 [United States]"
+    }
+  ]
+}

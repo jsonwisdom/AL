@@ -1,0 +1,30 @@
+{
+  "version": "policy.v1",
+  "policy_id": "treasury-basic-v1",
+  "required_inputs": [
+    "action",
+    "amount",
+    "recipient"
+  ],
+  "allowed_actions": [
+    "transfer_usdc",
+    "quote"
+  ],
+  "blocked_actions": [
+    "deploy_contract"
+  ],
+  "limits": {
+    "transfer_usdc_day": "500"
+  },
+  "refusal_codes": [
+    "SPEND_LIMIT_EXCEEDED",
+    "ACTION_NOT_ALLOWED",
+    "CONTRACT_NOT_ALLOWED",
+    "DELEGATION_EXPIRED",
+    "RATE_LIMIT_EXCEEDED",
+    "SIGNATURE_INVALID",
+    "POLICY_UNAVAILABLE",
+    "ESCALATION_REQUIRED",
+    "UNKNOWN_REFUSAL"
+  ]
+}

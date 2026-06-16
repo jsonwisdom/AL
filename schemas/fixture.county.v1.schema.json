@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.github.io/AL/schemas/fixture.county.v1.schema.json",
+  "title": "Computer Wisdom County Fixture v1",
+  "type": "object",
+  "required": ["schema", "fixture_id", "jurisdiction", "state", "county", "fips", "source", "artifact", "hashes", "status"],
+  "properties": {
+    "schema": { "const": "fixture.county.v1" },
+    "fixture_id": { "type": "string" },
+    "jurisdiction": { "type": "string", "pattern": "^US-[A-Z]{2}$" },
+    "state": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "county": { "type": "string" },
+    "fips": { "type": "string" },
+    "source": {
+      "type": "object",
+      "required": ["name", "uri"],
+      "properties": {
+        "name": { "type": "string" },
+        "uri": { "type": "string" },
+        "retrieved_at": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "artifact": {
+      "type": "object",
+      "required": ["type", "path"],
+      "properties": {
+        "type": { "type": "string" },
+        "path": { "type": "string" },
+        "description": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "hashes": {
+      "type": "object",
+      "required": ["sha256"],
+      "properties": {
+        "sha256": { "type": "string" },
+        "content_hash": { "type": "string" },
+        "receipt_hash": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "status": { "enum": ["DRAFT", "VERIFIED", "SEALED", "DEPRECATED"] }
+  },
+  "additionalProperties": false
+}

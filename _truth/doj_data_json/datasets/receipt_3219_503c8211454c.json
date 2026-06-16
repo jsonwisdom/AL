@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Deterrent Effects of Antitrust Enforcement [United States]: the Ready-Mix Concrete Industry, 1970-1980",
+  "description": "These data were collected to explore the relationship\r\nbetween profit levels in the concrete industry and the antitrust\r\nenforcement activities undertaken by the United States Department of\r\nJustice in 19 cities over an 11-year period. The data collection is\r\ncomposed mainly of published aggregate data on ready-mix concrete\r\ncosts and prices. Profits and estimates of collusive markups in this\r\nindustry can be calculated and related to antitrust enforcement\r\nefforts. Variables include measures of wages and materials costs,\r\nprices of concrete products, number of building permits issued,\r\ngasoline prices, the consumer price index, number of laborers\r\nemployed, unemployment rates, measures of change in the Department of\r\nJustice's Antitrust Division budget, change in number of DOJ permanent\r\nenforcement personnel, and number of antitrust criminal actions\r\ninitiated by DOJ against ready-mix concrete users, producers of\r\nrelated products, producers of substitutes for ready-mix products, and\r\nready-mix producers.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3219",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "business conditions",
+    "construction industry",
+    "corruption",
+    "crime",
+    "expenditures",
+    "unemployment"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1988-10-25T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09040.v1",
+      "title": "Deterrent Effects of Antitrust Enforcement [United States]: the Ready-Mix Concrete Industry, 1970-1980"
+    }
+  ]
+}

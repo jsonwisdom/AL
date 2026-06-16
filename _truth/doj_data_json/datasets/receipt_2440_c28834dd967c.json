@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Census of Medical Examiners' and Coroners' Offices (MECO) Series",
+  "description": "\r\nThe Census\r\nof medical Examiners' and Coroners' Offices (MECO) is a compilation of\r\ndata on the practices of these offices, which are responsible for\r\nmedical-legal death investigations. The data cover information such as\r\nthe prevalence of unidentified human remains on record in medical\r\nexaminers' and coroners' offices across the country, record-keeping\r\npractices, and final disposition practices such as burial, cremation,\r\nor other means. In addition, data are included regarding FTE\r\nemployees, contractors, and annual\r\nbudgets.\r\n",
+  "modified": "2021-12-16T10:12:52",
+  "accessLevel": "public",
+  "identifier": "2440",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "autopsy",
+    "coroners",
+    "death records",
+    "forensic medicine",
+    "victim identification"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2007-07-26T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/218",
+      "title": "Census of Medical Examiners' and Coroners' Offices (MECO) Series"
+    }
+  ]
+}

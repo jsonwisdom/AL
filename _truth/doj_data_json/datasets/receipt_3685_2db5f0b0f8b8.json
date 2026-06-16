@@ -1,0 +1,53 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Age and Sex Estimation from the Human Clavicle in the American Population, 1912-1938 and 1986-1998",
+  "description": "This study investigated skeletal maturation and gender dimorphism in the human clavicle in the American population. Biological data were collected on two skeletal collections: the William F. McCormick Clavicle Collection and the Hamann-Todd Osteological Collection. Size and shape data were collected from computed tomography (CT) scans of the McCormick clavicles. Several automated measurements were taken on 1,413 McCormick clavicles, including three traditional and six non-traditional measurements (Dataset 1). A total of 593 individuals from the William F. McCormick Clavicle Collection (Dataset 2) and 354 individuals from the Hamann-Todd Osteological Collection (Dataset 3) were scored for medial clavicular epiphyseal fusion using McKern and Stewart's (1957) five-phase rating system.",
+  "modified": "2014-06-19T15:53:02",
+  "accessLevel": "public",
+  "identifier": "3685",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "demographic characteristics",
+    "forensic sciences",
+    "gender",
+    "physical characteristics"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2014-06-19T15:53:02",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR25901.v1",
+      "title": "Age and Sex Estimation from the Human Clavicle in the American Population, 1912-1938 and 1986-1998"
+    }
+  ]
+}

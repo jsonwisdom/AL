@@ -1,0 +1,53 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Evaluation of the Bureau of Justice Assistance Mental Health Court Initiative at Seven Sites in the United States, 2003-2004",
+  "description": "This study evaluated seven mental health courts that were\r\npartially funded by the Bureau of Justice Assistance. Data were\r\ncollected on 285 formal referrals to the seven courts between November\r\n1, 2003, and January 31, 2004. For every referral, court staff completed\r\na one-page questionnaire that covered (1) identification of the\r\nreferring agent, (2) characteristics of the referred person, including\r\nage, gender, race, criminal charges, and type of mental disorder, and\r\n(3) the disposition decision.",
+  "modified": "2005-03-15T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "2795",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "courts",
+    "mental disorders",
+    "mental health"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2005-03-15T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04114.v1",
+      "title": "Evaluation of the Bureau of Justice Assistance Mental Health Court Initiative at Seven Sites in the United States, 2003-2004"
+    }
+  ]
+}

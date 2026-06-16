@@ -1,0 +1,50 @@
+{
+  "artifact_type": "institution_state_transition_update",
+  "artifact": "institution_state_transition_openai_epoch_3_v4.json",
+  "status": "REPLAY_ACCEPTED",
+  "institution_id": "OPENAI",
+  "epoch": 3,
+  "previous_epoch_frozen_state": "GREEN_STATE",
+  "baseline_divergence_inherited": 0.291,
+  "receipts_ingested": [
+    "openai_epoch_3_receipt_001_l2_governance_independence.json",
+    "openai_epoch_3_receipt_002_l3_transparency_alignment.json",
+    "openai_epoch_3_receipt_003_l2_authority_rebalancing.json",
+    "openai_epoch_3_receipt_004_l2_authority_rebalancing.json"
+  ],
+  "layer_scores": {
+    "L1_structural_physics": 0.00,
+    "L2_governance_integrity": 0.38,
+    "L3_epistemic_coherence": 0.56
+  },
+  "delta_layer_scores": {
+    "L1_structural_physics": 0.00,
+    "L2_governance_integrity": -0.14,
+    "L3_epistemic_coherence": -0.07
+  },
+  "transparency_penalty": 0.010,
+  "new_weighted_divergence": 0.217,
+  "final_divergence_with_penalty": 0.227,
+  "constitutional_state": "GREEN_STATE",
+  "uncertainty_band": "VERIFIED_DIVERGENCE_WITH_PRIVATE_ATTESTATIONS",
+  "replay_continuity": "PRESERVED",
+  "doctrine_version": "ALMS_DOCTRINE_V1.3",
+  "schema_version": "ALMS_GAP_SCHEMA_V2",
+  "latest_receipt_commit_sha": "64aa30aefde699ccc91eb64b061b75ec5bde9bc3",
+  "previous_epoch3_recompute_commit_sha": "d8e717e8d2c4d20d3255bb31273b3b1786b1aab3",
+  "previous_epoch_freeze_commit_sha": "800e1ab64268ebe66469c14b86ff80329bc603cc",
+  "epoch_3_open_commit_sha": "1d30f981710a41df48582871650f4d2ee8fe583a",
+  "mutation_policy": "APPEND_ONLY_NO_MUTATION_OF_FROZEN_EPOCHS",
+  "next_lawful_actions": [
+    "APPEND_L2_CAPITAL_ASYMMETRY_FIREWALL_RECEIPT",
+    "APPEND_L3_EPISTEMIC_COHERENCE_RECEIPT",
+    "CONTINUE_DURABILITY_REPLAY",
+    "FREEZE_EPOCH_3"
+  ],
+  "forbidden_actions": [
+    "APPEND_EPOCH_2_RECEIPTS_AFTER_FREEZE",
+    "MUTATE_EPOCH_2_FREEZE",
+    "MUTATE_FROZEN_TAXONOMY",
+    "OVERWRITE_PRIOR_RECEIPTS"
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "artifact": "TRACK_001_DRY_RUN_TRANSCRIPT_BLANK_V1",
+  "track_id": "TRACK_001_DOJ_EPSTEIN",
+  "environment": "dry-run",
+  "network": "local-no-network",
+  "status": "BLANK_TRANSCRIPT_LOCKED_PENDING_RUNTIME_VALUES",
+  "constitutional_chain": {
+    "reputation_spec_v1": {
+      "commit": "9d56e6732cb163fd7a6b351fa72df7a4f8ec6a49",
+      "sha256": "<FILL_AT_BUILD_TIME>"
+    },
+    "operator_implementation_guide_v1": {
+      "commit": "f722df0e4f624fed6f1725cd9c41b8008951a9f1",
+      "sha256": "<FILL_AT_BUILD_TIME>"
+    },
+    "mainnet_ceremony_checklist_v1": {
+      "commit": "375e5e03e5ea1b994e6a0f519746afdc861a0a61",
+      "sha256": "<FILL_AT_BUILD_TIME>"
+    },
+    "dry_run_plan_v1": {
+      "commit": "807d27df990b59f32a2586dcd6bb07a76ee9f292",
+      "sha256": "<FILL_AT_BUILD_TIME>"
+    }
+  },
+  "operator": {
+    "primary_identity": "jaywisdom.eth",
+    "primary_identity_base": "jaywisdom.base.eth",
+    "operator_wallet": "0x992d94aA31dcD8fDb7d8E6885370ef8202AED399"
+  },
+  "boot_sequence": [
+    {"step": "preflight", "status": "PENDING", "hash": "<FILL_AT_RUNTIME>"},
+    {"step": "schema_binding", "status": "PENDING", "hash": "<FILL_AT_RUNTIME>"},
+    {"step": "attestation", "status": "PENDING", "hash": "<FILL_AT_RUNTIME>"},
+    {"step": "receipt_binding", "status": "PENDING", "hash": "<FILL_AT_RUNTIME>"},
+    {"step": "ens_update", "status": "PENDING", "hash": "<FILL_AT_RUNTIME>"},
+    {"step": "verification", "status": "PENDING", "verifier_exit_code": "<FILL_AT_RUNTIME>"},
+    {"step": "transcript_publication", "status": "PENDING", "hash": "<FILL_AT_RUNTIME>"}
+  ],
+  "negative_tests": {
+    "undeclared_transform": {"expected": "REFUSE", "expected_code": "SCHEMA_VIOLATION", "actual": "<FILL_AT_RUNTIME>"},
+    "missing_ancestor": {"expected": "REFUSE", "expected_code": "MISSING_ANCESTOR", "actual": "<FILL_AT_RUNTIME>"},
+    "network_call_during_replay": {"expected": "REFUSE", "expected_code": "ENVIRONMENT_VIOLATION", "actual": "<FILL_AT_RUNTIME>"},
+    "byte_divergence": {"expected": "FAIL", "expected_code": "BYTE_DIVERGENCE", "actual": "<FILL_AT_RUNTIME>"}
+  },
+  "environment_manifest": {
+    "runtime": "<FILL_AT_RUNTIME>",
+    "os": "<FILL_AT_RUNTIME>",
+    "arch": "<FILL_AT_RUNTIME>",
+    "network_access": "DISABLED"
+  },
+  "transform_manifest": {
+    "sha256": "<FILL_AT_RUNTIME>",
+    "declared_transforms": []
+  },
+  "replay_metadata": {
+    "all_exit_codes_zero": false,
+    "independent_replays": []
+  },
+  "verdict": {
+    "admissible": false,
+    "governance": "PENDING_DRY_RUN",
+    "public": "PENDING"
+  }
+}

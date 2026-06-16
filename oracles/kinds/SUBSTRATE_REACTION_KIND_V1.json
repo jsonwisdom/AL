@@ -1,0 +1,65 @@
+{
+  "spec_version": "v1",
+  "artifact": "SUBSTRATE_REACTION_KIND_V1",
+  "purpose": "Type-level separation between substrate observations, reaction observations, references, commits, and reveals.",
+  "last_verified": "2026-05-06",
+  "verifier": "jsonwisdom",
+  "kinds": {
+    "KIND_1_SUBSTRATE": {
+      "meaning": "Direct observation of a substrate state; must not contain reaction fields or interpretation labels.",
+      "global_forbidden_reaction_fields": [
+        "diversity_debt",
+        "fee_multiplier",
+        "market_sentiment",
+        "liquidity_state",
+        "divergence_score",
+        "fallback_reputation",
+        "reaction_refs"
+      ],
+      "violated_invariant": "KIND-1",
+      "reject_code": "REACTION_SMUGGLED_AS_SUBSTRATE"
+    },
+    "KIND_2_REACTION": {
+      "meaning": "Derived interpretation or market/social reaction computed from substrate source_ids.",
+      "required_fields": [
+        "source_ids",
+        "derivation_type",
+        "computed_fields"
+      ],
+      "violated_invariant": "KIND-2",
+      "reject_code": "REACTION_MISSING_PROVENANCE"
+    },
+    "KIND_3_REFERENCE": {
+      "meaning": "Reference pointer to prior records; cannot be treated as substrate unless schema registry says substrate.",
+      "validator_rule": "schema_type_of(record_id) comes from registry, not payload",
+      "violated_invariant": "KIND-3",
+      "reject_code": "REFERENCE_KIND_MISMATCH"
+    },
+    "KIND_4_KIND_SAFE_FUNCTION": {
+      "meaning": "Functions must declare accepted input kinds and reject mismatches before business logic.",
+      "violated_invariant": "KIND-4",
+      "reject_code": "KIND_UNSAFE_FUNCTION_CALL"
+    },
+    "KIND_5_COMMIT_REVEAL_BINDING": {
+      "meaning": "Reveal must bind to exactly one prior commit by same observer author.",
+      "requirements": {
+        "reveal_body_source_ids_exactly_one_commit": true,
+        "commit_author_equals_reveal_author": true
+      },
+      "violated_invariant": "KIND-5",
+      "reject_code": "COMMIT_REVEAL_BINDING_FAIL"
+    }
+  },
+  "registry_rule": {
+    "schema_type_of_deterministic": true,
+    "field_types_stored_in_registry_not_payload": true,
+    "global_forbidden_reaction_fields_versioned_with_kind_spec": true
+  },
+  "invariants": [
+    "Substrate purity must be checked before business logic.",
+    "Reaction provenance must be explicit and replayable.",
+    "Record kind must be registry-derived, not payload-claimed.",
+    "Kind mismatch is a write rejection, not a reader warning.",
+    "Commit-reveal binding protects observer provenance."
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Monitoring of Federal Criminal Sentences Series",
+  "description": "\r\nInvestigator(s): U.S. Sentencing Commission\r\nThis collection contains information on federal criminal \r\ncases sentenced under the Sentencing Guidelines and Policy Statements of the \r\nSentencing Reform Act of 1984. The data files include all cases received by \r\nthe United States Sentencing Commission that had sentencing dates between \r\nNovember 1, 1987, and September 30, 1995, and were assessed as constitutional. \r\nConstitutionality compares each case's sentencing date, circuit, district, \r\nand judge to provide uniformity in reporting the cases. The cases are \r\ncategorized either as New Law, with all offenses occurring after the November \r\n1, 1987, guidelines, or as Mixed Law, with at least one count occurring after \r\nthe guideline effectiveness date and other counts prior to the \r\nguidelines.Years Produced: Updated annually\r\n",
+  "modified": "2022-03-29T14:41:35",
+  "accessLevel": "public",
+  "identifier": "2180",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "convictions (law)",
+    "criminal histories",
+    "defendants",
+    "federal courts",
+    "judicial decisions",
+    "offenses",
+    "sentencing",
+    "sentencing guidelines"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1990-05-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/83",
+      "title": "Monitoring of Federal Criminal Sentences Series"
+    }
+  ]
+}

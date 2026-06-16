@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Pretrial Reporting Program Series",
+  "description": "\r\nInvestigator(s): Pretrial Services Resource Center\r\nThe National Pretrial Reporting Program project \r\nwas initiated in 1983 by the Pretrial Services Resource Center \r\nwith funding from the Bureau of Justice Statistics (BJS) to determine \r\nthe feasibility of a national pretrial database. Specifically, the project \r\nsought to determine whether accurate and comprehensive pretrial data \r\ncan be collected at the local level and subsequently aggregated at the \r\nstate and federal levels. Before this project began, there was no \r\nnational system for regularly tracking information on persons and \r\ncases from the point they entered the local court system until they \r\nwere adjudicated and sentenced, nor was it clear that such a system \r\ncould be established. The project was developed in three phases and \r\neach phase has taken the program closer to its goal of providing BJS \r\nwith reliable and valid data on the movement of defendants through the \r\ncriminal court system. Phase 1 of the project, though limited to three \r\njurisdictions, demonstrated that baseline data could be collected to \r\ndescribe how criminal defendants are processed through the courts. \r\nPhase II of the project not only focused on the collection and \r\nanalyses of the data, but was also concerned with the procedural \r\nmethods necessary to devise a national baseline data collection project. \r\nAlthough there were problems encountered and lessons learned in Phase II, \r\nthe findings confirmed that a national effort could be undertaken. In \r\nthe summer of 1987, Phase III of the program was developed. Changes \r\nincorporated in Phase III were a direct result of the lessons learned \r\nfrom Phase II, with the goal of achieving a more accurate and \r\nrepresentative database. To accomplish this, significant changes were \r\nmade, particularly in four areas: site selection, defendant sampling, \r\nsite personnel training, and targeted charge. A more ambitious project \r\nwas envisioned as well, with the project targeting 40 jurisdictions for \r\ndata collection. Another major change in Phase III concerned the \r\ndecision to target felony defendants only, since many of the ongoing \r\nBJS projects were limited to felony defendants. The data collected in \r\nthe period 1988-1993 provide a picture of felony defendants' \r\nmovements through the criminal courts and what happens during the course \r\nof their journey.\r\n",
+  "modified": "2013-06-12T16:38:47",
+  "accessLevel": "restricted public",
+  "identifier": "2434",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "case processing",
+    "courts",
+    "criminal histories",
+    "criminal justice system",
+    "defendants",
+    "disposition (legal)",
+    "felons",
+    "felony courts",
+    "offenses",
+    "pretrial detentions",
+    "pretrial hearings",
+    "pretrial procedures",
+    "pretrial release",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1991-05-03T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/130",
+      "title": "National Pretrial Reporting Program Series"
+    }
+  ]
+}

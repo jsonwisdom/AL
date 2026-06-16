@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Organizations Convicted in Federal Criminal Courts, 2002",
+  "description": "These data, collected to assist in the development of\r\n sentencing guidelines, describe offense and sentencing characteristics\r\n for organizations sentenced in federal district courts in 2002. The\r\n United States Sentencing Commission's primary function is to inform\r\n federal courts of sentencing policies and practices that include\r\n guidelines prescribing the appropriate form and severity of punishment\r\n for offenders convicted of federal crimes. Court-related variables\r\n include primary offense type, pecuniary offense loss and gain, dates\r\n of disposition and sentencing, method of determination of guilt,\r\n number of counts pled and charged, and dates and types of sentencing\r\n and restitution. Defendant organization variables include ownership\r\n structure, number of owners and employees, highest level of corporate\r\n knowledge of the criminal offense, highest level of corporate\r\n indictment and conviction for participation in the criminal offense,\r\n annual revenue, equity and financial status, whether it was a criminal\r\n organization, duration of criminal activity, and risk to national\r\n security. Organizational Defendants Data, 2002, covers fiscal year\r\nOctober 1, 2001, through September 30, 2002.",
+  "modified": "2014-06-27T14:36:33",
+  "accessLevel": "public",
+  "identifier": "2265",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "convictions (law)",
+    "corporate crime",
+    "corporate sentencing",
+    "defendants",
+    "disposition (legal)",
+    "federal courts",
+    "federal offenses",
+    "fines",
+    "organizational structure",
+    "organizations",
+    "restitution programs",
+    "sentencing",
+    "sentencing guidelines"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2427",
+  "dataQuality": false,
+  "issued": "2004-12-08T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04109.v1",
+      "title": "Organizations Convicted in Federal Criminal Courts, 2002"
+    }
+  ]
+}

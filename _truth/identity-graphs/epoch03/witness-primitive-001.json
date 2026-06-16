@@ -1,0 +1,91 @@
+{
+  "graph_id": "EPOCH03_IDENTITY_GRAPH_WITNESS_PRIMITIVE_001",
+  "status": "READY_TO_RENDER",
+  "root": "jaywisdom.base.eth",
+  "doctrine": [
+    "no ghost anchors",
+    "replay first",
+    "scale later"
+  ],
+  "header": "Identity discovers. Receipts prove. Hashes anchor. Attestations challenge. Runtimes execute and disappear.",
+  "nodes": [
+    {
+      "id": "jaywisdom.base.eth",
+      "type": "identity_root",
+      "authority": "discovery_only"
+    },
+    {
+      "id": "_truth/canonical-items/index.json",
+      "type": "canonical_registry",
+      "authority": "discovery_surface"
+    },
+    {
+      "id": "WITNESS_AGENT_PILOT_001",
+      "type": "witness_primitive",
+      "state": "CONSTITUTIONALLY_ANCHORED_ONCHAIN"
+    },
+    {
+      "id": "independent_replay_receipt_001",
+      "type": "github_receipt",
+      "authority": "replay_surface"
+    },
+    {
+      "id": "0x83620a9b85b76b0439547898687e294607a50f09e5d83e27871b2ecc8c0112b4",
+      "type": "receipt_hash",
+      "authority": "truth_primitive"
+    },
+    {
+      "id": "0x69ac3aa79adfadce4e0861ee7405474cade13f1d804ba426281c1e92c5db7981",
+      "type": "eas_attestation",
+      "network": "base-sepolia",
+      "authority": "challenge_surface"
+    },
+    {
+      "id": "runtime",
+      "type": "execution_environment",
+      "authority": "none",
+      "canonical": false
+    }
+  ],
+  "edges": [
+    [
+      "jaywisdom.base.eth",
+      "points_to",
+      "_truth/canonical-items/index.json"
+    ],
+    [
+      "_truth/canonical-items/index.json",
+      "indexes",
+      "WITNESS_AGENT_PILOT_001"
+    ],
+    [
+      "WITNESS_AGENT_PILOT_001",
+      "has_replay_receipt",
+      "independent_replay_receipt_001"
+    ],
+    [
+      "independent_replay_receipt_001",
+      "hashes_to",
+      "0x83620a9b85b76b0439547898687e294607a50f09e5d83e27871b2ecc8c0112b4"
+    ],
+    [
+      "0x83620a9b85b76b0439547898687e294607a50f09e5d83e27871b2ecc8c0112b4",
+      "attested_by",
+      "0x69ac3aa79adfadce4e0861ee7405474cade13f1d804ba426281c1e92c5db7981"
+    ],
+    [
+      "WITNESS_AGENT_PILOT_001",
+      "executed_on_disposable",
+      "runtime"
+    ]
+  ],
+  "invariants": [
+    "runtime != identity",
+    "runtime != anchor",
+    "runtime != truth",
+    "identity discovers",
+    "receipts prove",
+    "hashes anchor",
+    "attestations challenge"
+  ]
+}

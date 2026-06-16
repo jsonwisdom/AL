@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Prejudice and Violence in the American Workplace, 1988-1991: Survey of an Eastern Corporation",
+  "description": "This study was conducted to examine the nature and extent\r\nof prejudice-based mistreatment of employees in the workplace. The\r\nresearchers investigated the effects of mistreatment on employees'\r\npsychological well-being, interpersonal relationships, and perceptions\r\nof the work environment. Personal interviews were conducted with 327\r\nfirst-line workers at an American corporation in the middle Atlantic\r\nstates to determine workers' experiences of violence, discrimination,\r\nand prejudice and their responses to such victimization. Three\r\ndimensions of victimization were explored: personal victimization,\r\nprejudiced victimization, and co-victimization. Self-reported symptoms\r\nof post-traumatic stress were identified. Data were also collected to\r\nascertain job satisfaction and job autonomy and to determine if these\r\nfactors mitigate the effects of mistreatment. Demographic information\r\nincludes age, race, sex, income, education, marital status, ethnicity,\r\nreligion, handicap, and sexual orientation. The company involved in\r\nthe research has been kept anonymous.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3199",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "discrimination",
+    "interpersonal relations",
+    "perceptions",
+    "post-traumatic stress disorder",
+    "prejudice",
+    "psychological wellbeing",
+    "victimization",
+    "work environment",
+    "workers",
+    "workplace violence"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1994-03-10T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06135.v1",
+      "title": "Prejudice and Violence in the American Workplace, 1988-1991: Survey of an Eastern Corporation"
+    }
+  ]
+}

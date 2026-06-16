@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Inmate Survey (NIS) - Jails: Alternative Survey Respondents Only, [United States], 2007-2009 ",
+  "description": "The National Inmate Survey (NIS) is part of the Bureau of Justice Statistics' (BJS) National Prison Rape Statistics Program, which gathers mandated data on the incidence and prevalence of sexual assault in correctional facilities under the Prison Rape Elimination Act of 2003 (PREA; P.L. 108- 79). Inmates are randomly assigned to receive either a survey of sexual victimization or a survey of mental and physical health, past drug and alcohol use, and treatment for substance abuse. The data in this study focuses solely upon substance use and treatment from the \"alternative\" version of the survey.\r\nThese 6,577 respondents contained in this file who completed the \"alternative\" survey are the same 6,577 alternative respondents from the study National Inmate Survey (NIS) - Jails: Full Survey Respondents, [United States], 2007-2009 (ICPSR 37011).",
+  "modified": "2019-12-19T12:11:15",
+  "accessLevel": "restricted public",
+  "identifier": "2023",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "alcohol abuse",
+    "correctional facilities",
+    "counseling services",
+    "demographic characteristics",
+    "drug dependence",
+    "drug testing",
+    "drug use",
+    "inmates",
+    "jails",
+    "sexual preference",
+    "substance abuse treatment"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2442",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2019-12-19T12:06:56",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37010.v1",
+      "title": "National Inmate Survey (NIS) - Jails: Alternative Survey Respondents Only, [United States], 2007-2009 "
+    }
+  ]
+}

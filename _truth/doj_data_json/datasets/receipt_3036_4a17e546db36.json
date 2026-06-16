@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Delinquency in a Birth Cohort in Wuchang District, Wuhan, China, 1973-2000",
+  "description": "This study was designed by American criminologist Marvin\r\nWolfgang as a replication of his DELINQUENCY IN A BIRTH COHORT studies\r\nconducted in Philadelphia, Pennsylvania (ICPSR 7729 and ICPSR 9293).\r\nThe focus of the study is a cohort of all persons born in 1973 in the\r\nWuchang District of the city of Wuhan. This district was selected\r\nbecause it was a populous commercial and residential area. The cohort\r\nbirth year was chosen to reflect the impact of major economic and\r\nsocial changes in China. Data include interviews with all known\r\ncriminal offenders as of 1990 and with a matched comparison\r\nsample. Additional residential, demographic, and updated criminal\r\nhistory data as of 2000 were collected on all persons born in the\r\n1973 Wuchang District cohort.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "3036",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime",
+    "delinquent behavior",
+    "economic change",
+    "offenders",
+    "social change"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2004-01-07T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03751.v1",
+      "title": "Delinquency in a Birth Cohort in Wuchang District, Wuhan, China, 1973-2000"
+    }
+  ]
+}

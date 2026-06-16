@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Classifying Inmates for Strategic Programming in the New York Department of Corrections, 1997-1998",
+  "description": "The main goal of this study was to construct and test a\r\n statistically based system of classifying inmates for one or more\r\n types of Substance Abuse Intervention Division (SAID) sponsored\r\n treatment programs within the New York Department of Corrections (DOC)\r\n system. The sample used for the prediction models was a sample of\r\n recent jail inmates identified as eligible for admission to SAID. DOC\r\n provided data from its Inmate Information System (IIS) database on\r\n each of the cases. Researchers collected two sets of data: one that\r\n employed only DOC data (Part 1) and another that included\r\n supplementary data from the Division of Criminal Justice Services\r\n (DCJS) and the New York City Criminal Justice Agency (CJA) (Part 2).\r\n The DOC data (Part 1) fall into four main categories: demographic\r\n characteristics, information on the current case, prior criminal\r\n record information, and SAID eligibility information. Part 2, DOC and\r\n Supplementary Data, includes all the DOC items from Part 1 along with\r\nother data collected from DCJS and the New York City CJA.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3350",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "inmate classification",
+    "inmate programs",
+    "jail inmates",
+    "prison inmates",
+    "substance abuse treatment"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2003-06-13T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03205.v1",
+      "title": "Classifying Inmates for Strategic Programming in the New York Department of Corrections, 1997-1998"
+    }
+  ]
+}

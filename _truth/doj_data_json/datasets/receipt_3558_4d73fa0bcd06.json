@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Michigan Study of Life After Prison, Administrative Data on 2003 Cohort of Michigan Parolees",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of files available with this collection and consult the investigator(s) if further information is needed.\r\nThe Michigan Study of Life After Prison examined the association between neighborhood context and outcomes related to employment and recidivism among the cohort of former prisoners released on parole from Michigan state prisons in one calendar year (2003), controlling for pre-incarceration neighborhood context, local labor market conditions, and a large set of individual characteristics. The primary goals of this study were to answer two questions: (1) \"Are ex-offenders who are released to more disadvantaged neighborhoods (those with greater poverty, unemployment, residential turnover, etc.) more likely to recidivate?\" (2) \"Are ex-offenders who are released to more disadvantaged neighborhoods less likely to gain stable employment?\" This research sought to supplement available literature on prisoner reentry and criminal desistance, which the researchers posit existing literature has largely ignored the role that neighborhoods play in shaping the recidivism and employment of returning prisoners.\r\nThe 31 data files included as part of this collection are as follows:\r\nCleaned Data Files:\r\n\r\ncasenotearrestsreps1-4_ICPSR-EDITED.dta: 4,932 Cases, 12 Variables\r\ncasenotearrestsreps5-8_ICPSR-EDITED.dta: 5,302 Cases, 13 Variables\r\ncasenotearrestsrep9_ICPSR-EDITED.dta: 2,321 Cases, 13 Variables\r\ncasenoteemploymentreps1-4_ICPSR-EDITED.dta: 4,871 Cases, 28 Variables\r\ncasenoteemploymentreps5-8_ICPSR-EDITED.dta: 4,754 Cases, 23 Variables\r\ncasenoteemploymentrep9_ICPSR-EDITED.dta: 2,610 Cases, 23 Variables\r\ncleanedcasenoteaddressesreps1-8_ICPSR-EDITED.dta: 50,207 Cases, 72 Variables\r\ncleanedcasenoteaddressesrep9_ICPSR-EDITED.dta: 10,309 Cases, 69 Variables\r\npreprisonaddress_all_ICPSR-EDITED.dta: 5,183 Cases, 30 Variables\r\npreprisonaddress_all_rep9_ICPSR-EDITED.dta: 1,017 Cases, 63 Variables\r\npostprisads_ICPSR-EDITED.dta: 11,064 Cases, 41 Variables\r\ncleaned-demographics-population_ICPSR-EDITED.dta: 11,064 Cases, 57 Variables\r\nsimplecrimhistory.dta: 11,064 Cases, 4 Variables\r\npopSAhistory.dta: 11,064 Cases, 8 Variables\r\ndeathdates_ICPSR-EDITED.dta: 308 Cases, 3 Variables\r\npopprisonenterdates.dta: 11,064 Cases, 7 Variables\r\ndischarge dates.dta: 7,369 Cases, 5 Variables\r\nparole and release dates for pop.dta: 11,064 cases, 3 Variables\r\nmdoc_recidivism_measures.dta: 11,064 Cases, 6 Variables\r\nrecidivism dates from transits.dta: 11,064 Cases, 8 Variables\r\nrecidivism from bir.dta: 11,064 Cases, 3 Variables\r\nsample marker.dta: 3,689 Cases, 2 Variables\r\nsamplereps.dta: 3,689 Cases, 2 Variables\r\ntta_rsid_rep.dta: 1,363 Cases, 2 Variables\r\nContextual Data Files:\r\n\r\nComplete.data.file.dta: 2,757 Cases, 1,055 Variables\r\ncountyemployment.dta: 10,956 Cases, 6 Variables\r\nplaces.dta: 5,004 Cases, 5 Variables\r\nTractDataInterpolated-long.dta: 57,036 Cases, 50 Variables\r\nTractDataInterpolated-wide.dta: 2,716 Cases, 1,009 Variables\r\ntractscales2000.dta: 2,716 Cases, 49 Variables\r\nurbanicity + density.dta: 2,716 Cases, 9 Variables\r\nDemographic variables included: gender, race, educational attainment, age, employment, and marital status.",
+  "modified": "2019-03-28T07:06:37",
+  "accessLevel": "restricted public",
+  "identifier": "3558",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "convictions (law)",
+    "employment",
+    "labor markets",
+    "neighborhood characteristics",
+    "offenders sentencing",
+    "parole violation",
+    "parolees",
+    "prisoner reentry",
+    "recidivism",
+    "recidivism prediction"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2019-03-28T07:05:13",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR32681.v1",
+      "title": "Michigan Study of Life After Prison, Administrative Data on 2003 Cohort of Michigan Parolees"
+    }
+  ]
+}

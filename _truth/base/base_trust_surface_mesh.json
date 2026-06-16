@@ -1,0 +1,94 @@
+{
+  "mesh": "base_trust_surface",
+  "generated_at": "2026-04-25T05:46:19Z",
+  "spine": [
+    "L1 SystemConfig",
+    "L1 OptimismPortal",
+    "L2 NitroEnclaveVerifier"
+  ],
+  "layers": {
+    "l1_config": {
+      "observer": "base_systemconfig",
+      "status": "L1_TARGET_CONFIRMED",
+      "reason": "SystemConfig is deployed on Ethereum L1, not Base L2. Ethereum RPC returned non-empty bytecode for both mainnet and Sepolia addresses.",
+      "l1_address_mainnet": "0x73a79Fab69143498Ed3712e519A88a918e1f4072",
+      "l1_address_sepolia": "0xf272670eb55e895584501d564AfEB048bEd26194",
+      "next_step": "build L1 SystemConfig watcher with Ethereum RPC separation"
+    },
+    "l1_portal": {
+      "observer": "base_optimismportal",
+      "generated_at": "2026-04-25T05:42:47Z",
+      "layer": "ethereum_l1",
+      "contract": {
+        "address": "0x49048044D57e1C92A77f79988d21Fa8fAF74E97e",
+        "codehash_proxy": "1a516a443a88ef417e823a8ca1734c63959311f748bae3f27ef04f87b98858c0"
+      },
+      "activity": {
+        "last_5000_blocks": {
+          "deposits": 308,
+          "withdrawals": 47
+        }
+      },
+      "status": {
+        "visibility": "GREEN",
+        "reason": "event layer active; real flow observed"
+      }
+    },
+    "l2_verifier": {
+      "observer": "base_nitro_enclave_verifier",
+      "generated_at": "2026-04-25T05:29:05Z",
+      "contract": "0x08e49F31Ab11b17f3a5BaA36e6744E9B532bC87B",
+      "networks": {
+        "base_mainnet": {
+          "revoker_event_state": {
+            "chain": "base-mainnet",
+            "contract": "0x08e49F31Ab11b17f3a5BaA36e6744E9B532bC87B",
+            "last_checked_at": "2026-04-25T03:57:38Z",
+            "last_block": 45150055,
+            "last_revoker": "UNKNOWN"
+          },
+          "revoker_live": "READ_ERROR",
+          "revoke_call_state": {
+            "chain": "base-mainnet",
+            "contract": "0x08e49F31Ab11b17f3a5BaA36e6744E9B532bC87B",
+            "last_checked_at": "2026-04-25T03:57:39Z",
+            "last_block": 45150056,
+            "total_revoke_calls": 0
+          }
+        },
+        "base_sepolia": {
+          "revoker_event_state": {
+            "chain": "base-sepolia",
+            "contract": "0x08e49F31Ab11b17f3a5BaA36e6744E9B532bC87B",
+            "last_checked_at": "2026-04-25T03:57:38Z",
+            "last_block": 40660585,
+            "last_revoker": "UNKNOWN"
+          },
+          "revoker_live": "READ_ERROR",
+          "revoke_call_state": {
+            "chain": "base-sepolia",
+            "contract": "0x08e49F31Ab11b17f3a5BaA36e6744E9B532bC87B",
+            "last_checked_at": "2026-04-25T03:57:39Z",
+            "last_block": 40660585,
+            "total_revoke_calls": 0
+          }
+        }
+      },
+      "status": {
+        "role_visibility": true,
+        "live_revoker_visibility": true,
+        "action_visibility": true,
+        "alerting": true
+      }
+    }
+  },
+  "layer_visibility": {
+    "systemconfig": "L1_TARGET_CONFIRMED",
+    "portal": "GREEN",
+    "nitro": "UNKNOWN"
+  },
+  "global_status": {
+    "visibility": "YELLOW",
+    "reason": "degraded_or_missing_visibility"
+  }
+}

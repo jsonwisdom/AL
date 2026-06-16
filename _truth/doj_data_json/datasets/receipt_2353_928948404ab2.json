@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Annual Parole Survey, 2016",
+  "description": "The 2016 Annual Parole Survey provides a count of the total number of persons supervised in the community on January 1 and December 31, 2016, and a count of the number entering and leaving supervision during the year. The survey also provides counts of the number of parolees by certain characteristics, such as gender, race and Hispanic or Latino origin, supervision status, and type of offense. This survey covers all 50 states, the District of Columbia, and the Federal System.",
+  "modified": "2020-04-30T14:40:25",
+  "accessLevel": "public",
+  "identifier": "2353",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "criminal justice system",
+    "offenses",
+    "parole",
+    "parolees",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2631",
+  "dataQuality": false,
+  "issued": "2020-04-30T14:40:25",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37441.v1",
+      "title": "Annual Parole Survey, 2016"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Uniform Crime Reporting Program Data Series",
+  "description": "Investigator(s): Federal Bureau of Investigation\r\nSince 1930, the Federal Bureau of Investigation (FBI) has compiled the Uniform Crime Reports (UCR) to serve as periodic nationwide assessments of reported crimes not available elsewhere in the criminal justice system. With the 1977 data, the title was expanded to Uniform Crime Reporting Program Data. Each year, participating law enforcement agencies contribute reports to the FBI either directly or through their state reporting programs. ICPSR archives the UCR data as five separate components: (1) summary data, (2) county-level data, (3) incident-level data (National Incident-Based Reporting System [NIBRS]), (4) hate crime data, and (5) various, mostly nonrecurring, data collections. Summary data are reported in four types of files: (a) Offenses Known and Clearances by Arrest, (b) Property Stolen and Recovered, (c) Supplementary Homicide Reports (SHR), and (d) Police Employee (LEOKA) Data (Law Enforcement Officers Killed or Assaulted). The county-level data provide counts of arrests and offenses aggregated to the county level. County populations are also reported. In the late 1970s, new ways to look at crime were studied. The UCR program was subsequently expanded to capture incident-level data with the implementation of the National Incident-Based Reporting System. The NIBRS data focus on various aspects of a crime incident. The gathering of hate crime data by the UCR program was begun in 1990. Hate crimes are defined as crimes that manifest evidence of prejudice based on race, religion, sexual orientation, or ethnicity. In September 1994, disabilities, both physical and mental, were added to the list. The fifth component of ICPSR's UCR holdings is comprised of various collections, many of which are nonrecurring and prepared by individual researchers. These collections go beyond the scope of the standard UCR collections provided by the FBI, either by including data for a range of years or by focusing on other aspects of analysis.\r\nNACJD has produced resource guides on UCR and on NIBRS data.\r\n\r\n ",
+  "modified": "2019-01-17T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2167",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "arrests",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "law enforcement",
+    "offenses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/57",
+      "title": "Uniform Crime Reporting Program Data Series"
+    }
+  ]
+}

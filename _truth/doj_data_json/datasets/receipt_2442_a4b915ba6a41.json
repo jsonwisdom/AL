@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Prison Rape Elimination Act Data Series",
+  "description": "\r\n\r\nThe Bureau of\r\nJustice Statistics (BJS) collects and analyzes data on the incidence\r\nand effects of sexual violence in prisons and jails. The data, in\r\nvarious datasets, are collected from individuals currently and\r\nformerly in federal, state, county, and municipal facilities.  The\r\ndata are collected using a multiple-measure, multiple-mode data\r\ncollection strategy. Data sets in this series include surveys and\r\nother statistical studies, including the National Inmate Survey (NIS),\r\nthe Former Prisoner Survey (FPS), and the National Survey of Youth in\r\nCustody\r\n(NSYC).\r\n",
+  "modified": "2021-09-27T08:18:09",
+  "accessLevel": "restricted public",
+  "identifier": "2442",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "correctional guards",
+    "criminal histories",
+    "inmates",
+    "prison conditions",
+    "prison violence",
+    "rape",
+    "sex offenders",
+    "sex offenses",
+    "sexual abuse",
+    "sexual assault",
+    "sexual behavior"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2011-11-11T14:34:54",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/256",
+      "title": "Prison Rape Elimination Act Data Series"
+    }
+  ]
+}

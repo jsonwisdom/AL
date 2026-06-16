@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Conditions of Confinement in Juvenile Detention and Correctional Facilities: [United States], 1991",
+  "description": "This study was conducted for the Office of Juvenile Justice\r\nand Delinquency Prevention (OJJDP) to (1) collect and analyze data on\r\nconditions of confinement in public and private juvenile facilities, (2)\r\ndetermine the extent to which conditions were consistent with those\r\nrequired by nationally recognized standards for juvenile confinement\r\nfacilities, (3) suggest explanations for variations in conformance to\r\nstandards among facilities, and (4) assist OJJDP in formulating\r\nrecommendations for improving conditions of confinement. In challenging\r\nthe premise that high levels of conformance to nationally recognized\r\nstandards result in improved conditions of confinement, this study\r\nexamined client outcomes. Areas of concern for juvenile facilities\r\nusually center on living space, health care, security, and control of\r\nsuicidal behavior. Key incident measures provided in this data\r\ncollection include injuries, escapes, acts of suicidal behavior,\r\nincidents requiring emergency health care, and isolation incidents. Part\r\n1, Mail Survey Data, collected information from facility administrators.\r\nPart 2, Site Visit Data, consists of questions answered by the juvenile\r\ninmates as well as by the independent observers who administered the\r\non-site surveys. Additional variables in Part 2 that are not present in\r\nPart 1 include subjective measures such as the quality of the food,\r\nmedical care, and recreation facilities, and whether various facility\r\nprograms were effective. The study covered all 984 public and private\r\njuvenile detention centers, reception centers, training schools, and\r\nranches, camps, and farms in the United States. Three types of\r\nfacilities were excluded: (1) youth halfway houses, shelters, and group\r\nhomes, (2) police lockups, adult jails, and prisons that held juveniles\r\ntried and convicted as adults, and (3) psychiatric and drug treatment\r\nprograms.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "4030",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities (juveniles)",
+    "juvenile inmates",
+    "prison adjustment",
+    "prison conditions",
+    "prison security"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1996-10-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06216.v1",
+      "title": "Conditions of Confinement in Juvenile Detention and Correctional Facilities: [United States], 1991"
+    }
+  ]
+}

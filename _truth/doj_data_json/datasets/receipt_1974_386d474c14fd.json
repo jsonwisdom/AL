@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Use-of-Force Data Collection",
+  "description": "This collection provides data on law enforcement uses of force that result in the death of a person, serious bodily injury of a person, or when law enforcement discharges a firearm at or in the direction of a person.  In addition, law enforcement agencies can indicate months where no incidents meeting the above criteria occurred.",
+  "modified": "2025-08-15T00:00:00",
+  "accessLevel": "public",
+  "identifier": "1974",
+  "publisher": {
+    "name": "Federal Bureau of Investigation",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Criminal Justice Information Services Division Federal Bureau of Investigation (USDOJ)",
+    "hasEmail": "mailto:CRIMESTATSINFO@fbi.gov"
+  },
+  "keyword": [
+    "use of force",
+    "law enforcement",
+    "police",
+    "officer-involved shootings",
+    "Uniform Crime Reporting Program",
+    "UCR Program"
+  ],
+  "bureauCode": [
+    "011:10"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "spatial": "United States",
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "accrualPeriodicity": "R/P3M",
+  "dataQuality": true,
+  "issued": "2020-07-27T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "landingPage": "https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/home",
+  "theme": [
+    "geospatial"
+  ],
+  "references": [
+    "https://ucr.fbi.gov/"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/le/uof",
+      "description": "The Crime Data Explorer (CDE) is an online interactive data tool to access, view, and understand the massive amounts of Uniform Crime Reporting (UCR) data. The CDE displays national Use-of-Force data for years 2019 to present.",
+      "format": "CSV downloads",
+      "mediaType": "text/html",
+      "title": "2019 to Present: Crime Data Explorer Visualizations"
+    }
+  ]
+}

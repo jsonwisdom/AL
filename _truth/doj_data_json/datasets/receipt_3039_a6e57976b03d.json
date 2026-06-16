@@ -1,0 +1,53 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Use of Force by the Montgomery County, Maryland Police Department, 1993-1999",
+  "description": "This study was designed to describe the types and amount of\r\nforce used by and against the police in Montgomery County, Maryland,\r\nfor the seven years between January 1993 and December 1999. The\r\nresearchers collected data from the Montgomery County Police\r\nDepartment's Use of Force Reports and arrest records for this time\r\nperiod. Part 1 contains data obtained from the Use of Force Reports,\r\nincluding information about the characteristics of the force used,\r\ninjuries and medical treatment, characteristics of the officer and\r\ncitizen involved, and the time and date of the incident. Part 2\r\ncontains data from the arrest records, including variables for\r\nlocation, time, and date of the arrest, the most serious charge, and\r\ndemographic characteristics of the officer and arrestee. Part 3\r\ncontains aggregate data, including rate of force by different arrest\r\ncharacteristics, that were derived from the data in Parts 1 and 2.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "3039",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrests",
+    "police reports",
+    "police use of force"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2004-10-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03793.v1",
+      "title": "Use of Force by the Montgomery County, Maryland Police Department, 1993-1999"
+    }
+  ]
+}

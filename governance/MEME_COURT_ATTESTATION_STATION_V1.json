@@ -1,0 +1,44 @@
+{
+  "object": "MEME_COURT_ATTESTATION_STATION_V1",
+  "type": "attestation_station_package",
+  "operator": "Jay Wisdom",
+  "ens_roots": {
+    "ethereum": "jaywisdom.eth",
+    "base": "jaywisdom.base.eth"
+  },
+  "parents": {
+    "epoch_0002": {
+      "commit_sha": "125aa1b8aff0ce97e7f8edf14bd5ed97b3006234",
+      "sha256": "a44f0b18b8d9b2acc206bb7aca0b14d3041418f1b5bbd4e6a477f6fa36f927cb"
+    },
+    "conflict_ledger_0001": {
+      "commit_sha": "af24775f13aeb6c96c18ba301e9caf5e6179f597",
+      "sha256": "8cf71270911bafacbaaccffe43fdb10fbe4cffa8cc1b34820e5343102df330b3"
+    },
+    "test_vectors_v1": {
+      "commit_sha": "09ad893361066187fb764d516131141d24d7e93a",
+      "sha256": "734d57d93e770426acb0b43969842bce26d0ef7d0724d735a453cda37e9737b1"
+    }
+  },
+  "schema": {
+    "name": "meme_court.attestation_station.v1",
+    "fields": [
+      "string operator",
+      "string ens_root",
+      "string base_ens_root",
+      "string parent_epoch_sha256",
+      "string fixture_schema",
+      "string fixture_positive_sha256",
+      "string fixture_negative_sha256",
+      "string governance_effect"
+    ]
+  },
+  "fixtures": {
+    "positive": "anchors/matrix_fixtures/signature_fixture_v1.json",
+    "negative": "anchors/matrix_fixtures/signature_fixture_v1_negative.json",
+    "fixture_schema": "alms.signature_fixture.v1"
+  },
+  "source_note": "User supplied an external CDN copy, but canonical repo artifact is minted here as GitHub commit-pinned raw bytes.",
+  "governance_effect": "NONE",
+  "global_state": "NO_DRIFT"
+}

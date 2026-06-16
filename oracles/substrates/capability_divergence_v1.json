@@ -1,0 +1,31 @@
+{
+  "schema": "capability_divergence_v1",
+  "kind": "KIND_1_SUBSTRATE",
+  "purpose": "Record validator capability divergence as a substrate observation for the Geological Clock.",
+  "fields": {
+    "observer_id": "string",
+    "validator_a_id": "string",
+    "validator_b_id": "string",
+    "registry_epoch_id": "string",
+    "test_vector_epoch_id": "string",
+    "validator_a_verdict_hash": "hex",
+    "validator_b_verdict_hash": "hex",
+    "divergence_code": "string",
+    "observed_at_unix_ms": "integer"
+  },
+  "allowed_divergence_codes": [
+    "REGISTRY_EPOCH_INCOMPATIBLE",
+    "TEST_VECTOR_EPOCH_INCOMPATIBLE",
+    "VERDICT_HASH_MISMATCH",
+    "VALIDATOR_DIVERGENCE"
+  ],
+  "reaction_refs_allowed": false,
+  "forbidden_fields_inherited_from": "oracles/kinds/SUBSTRATE_REACTION_KIND_V1.json",
+  "geological_clock_track": "substrate",
+  "invariants": [
+    "Validator capability divergence is observed as substrate, not interpreted as punishment.",
+    "The Geological Clock may record capability fracture but may not decide slashing or fork status.",
+    "Reaction systems may derive alerts or market signals from this record by source_id reference only.",
+    "Divergence observation must include both verdict hashes and pinned registry/test vector epochs."
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Developing a Comprehensive Empirical Model of Policing in the United States, 1996-1999",
+  "description": "The aim of this study was to provide a systematic empirical\r\nassessment of three basic organizational premises of\r\nCommunity-Oriented Policing (COP). This study constructed a\r\ncomprehensive data set by synthesizing data available in separate\r\nnational data sets on police agencies and communities. The base data\r\nsource used was the 1999 Law Enforcement Management and Administrative\r\nStatistics (LEMAS) survey [LAW ENFORCEMENT MANAGEMENT AND\r\nADMINISTRATIVE STATISTICS (LEMAS), 1999 (ICPSR 3079)], which contained\r\ndata on police organizational characteristics and on adoption of\r\ncommunity-oriented policing procedures. The 1999 survey was\r\nsupplemented with additional organizational variables from the 1997\r\nLEMAS survey [LAW ENFORCEMENT MANAGEMENT AND ADMINISTRATIVE STATISTICS\r\n(LEMAS), 1997 (ICPSR 2700)] and from the 1996 Directory of Law\r\nEnforcement Agencies [DIRECTORY OF LAW ENFORCEMENT AGENCIES, 1996:\r\n[UNITED STATES] (ICPSR 2260)]. Data on community characteristics were\r\nextracted from the 1994 County and City Data Book, from the 1996 to\r\n1999 Uniform Crime Reports [UNIFORM CRIME REPORTING PROGRAM\r\nDATA. [UNITED STATES]: OFFENSES KNOWN AND CLEARANCES BY ARREST\r\n(1996-1997: ICPSR 9028, 1998: ICPSR 2904, 1999: ICPSR 3158)], from the\r\n1990 and 2000 Census Gazetteer files, and from Rural-Urban Community\r\nclassifications. The merging of the separate data sources was\r\naccomplished by using the Law Enforcement Agency Identifiers Crosswalk\r\nfile [LAW ENFORCEMENT AGENCY IDENTIFIERS CROSSWALK [UNITED STATES],\r\n1996 (ICPSR 2876)]. In all, 23 data files from eight separate sources\r\ncollected by four different governmental agencies were used to create\r\nthe merged data set. The entire merging process resulted in a combined\r\nfinal sample of 3,005 local general jurisdiction policing agencies.\r\nVariables for this study provide information regarding police\r\norganizational structure include type of government, type of agency,\r\nand number and various types of employees. Several indices from the\r\nLEMAS surveys are also provided. Community-oriented policing variables\r\nare the percent of full-time sworn employees assigned to COP\r\npositions, if the agency had a COP plan, and several indices from the\r\n1999 LEMAS survey. Community context variables include various Census\r\npopulation categories, rural-urban continuum (Beale) codes, urban\r\ninfluence codes, and total serious crime rate for different year\r\nranges. Geographic variables include FIPS State, county, and place\r\ncodes, and region.",
+  "modified": "2006-09-06T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3146",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "community policing",
+    "organizational structure",
+    "police departments",
+    "workers"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2006-09-06T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04338.v1",
+      "title": "Developing a Comprehensive Empirical Model of Policing in the United States, 1996-1999"
+    }
+  ]
+}

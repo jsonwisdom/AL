@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Corrections Reporting Program, 2000:  [United States]",
+  "description": "The purpose of this study was to gather data on prisoners\r\nentering and leaving the custody or supervision of state and federal\r\nauthorities. Data refer to prisoners who were admitted to prison (Part\r\n1), released from prison (Part 2), or released from parole (Part 3) in\r\n2000. Variables include incarceration history, current offenses, and\r\ntotal time served. Background information on individuals includes year\r\nof birth, sex, age, race, Hispanic origin, and educational\r\nattainment.",
+  "modified": "2010-04-26T07:44:41",
+  "accessLevel": "restricted public",
+  "identifier": "1075",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "correctional facilities (juveniles)",
+    "correctional system",
+    "demographic characteristics",
+    "federal correctional facilities",
+    "jail inmates",
+    "juvenile offenders",
+    "national crime statistics (USA)",
+    "offenders",
+    "offenses",
+    "parole",
+    "prison inmates",
+    "probation",
+    "state correctional facilities"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2589",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2003-07-30T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03761.v1",
+      "title": "National Corrections Reporting Program, 2000:  [United States]"
+    }
+  ]
+}

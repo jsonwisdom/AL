@@ -1,0 +1,67 @@
+name: Verify Receipts (Ed25519 V0)
+
+on:
+  push:
+    branches: [ master, main, feat/*, fix/* ]
+  pull_request:
+    branches: [ master, main ]
+
+jobs:
+  verify-fixtures:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Python dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run Python verifier (valid fixture)
+        run: |
+          echo "=== Python Valid Fixture ==="
+          python tools/verify_fixture.py \
+            testdata/v0/valid/receipt-valid.json \
+            testdata/v0/valid/binding.json \
+            testdata/v0/valid/policy.json
+
+      - name: Run Python verifier (tampered fixture)
+        run: |
+          echo "=== Python Tampered Fixture ==="
+          set +e
+          output=$(python tools/verify_fixture.py \
+            testdata/v0/invalid/receipt-tampered-signature.json \
+            testdata/v0/valid/binding.json \
+            testdata/v0/valid/policy.json 2>&1)
+          status=$?
+          echo "$output"
+          test $status -eq 0
+          echo "$output" | grep -q "FAIL: signature mismatch"
+
+      - name: Run Node verifier (valid fixture)
+        run: |
+          echo "=== Node Valid Fixture ==="
+          node tools/verify_fixture.js \
+            testdata/v0/valid/receipt-valid.json \
+            testdata/v0/valid/binding.json \
+            testdata/v0/valid/policy.json
+
+      - name: Run Node verifier (tampered fixture)
+        run: |
+          echo "=== Node Tampered Fixture ==="
+          set +e
+          output=$(node tools/verify_fixture.js \
+            testdata/v0/invalid/receipt-tampered-signature.json \
+            testdata/v0/valid/binding.json \
+            testdata/v0/valid/policy.json 2>&1)
+          status=$?
+          echo "$output"
+          test $status -eq 0
+          echo "$output" | grep -q "FAIL: signature mismatch"

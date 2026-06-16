@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Improving Hot Spot Policing through Behavioral Interventions, New York City, 2012-2018",
+  "description": "This project aimed to develop new insights into offender decision-making in hot spots in New York City, and to test whether these insights could inform interventions to reduce crime in hot spots. There were two phases to the project. In the first phase a set of hypotheses were developed about offender decision-making based on semi-structured interviews with individuals who were currently incarcerated, formerly incarcerated individuals, individuals currently on probation, and community members of high crime areas with no justice-involvement. These interviews suggested several factors worthy of further testing. For instance, offenders believed they were less likely to get away with a crime if they knew more about the officers in their community. That is, when police officers were less anonymous, offenders were less likely to go forward with a crime.\r\nIn the second phase a field intervention was developed and conducted to test whether reducing officer anonymity might deter crime. Through a randomized controlled trial (RCT) while working with NYPD neighborhood coordination officers, who work in New York City Housing Authority (NYCHA) developments, it was tested whether sending information about officers to residents in housing developments would deter crime in those developments.",
+  "modified": "2020-06-29T13:54:40",
+  "accessLevel": "restricted public",
+  "identifier": "3628",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "community policing",
+    "offenders",
+    "police citizen interactions",
+    "police community relations",
+    "police officers",
+    "public housing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2020-06-29T13:51:16",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37284.v1",
+      "title": "Improving Hot Spot Policing through Behavioral Interventions, New York City, 2012-2018"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Survey of Inmates of State Correctional Facilities, 1986: [United States]",
+  "description": "This data collection provides information about topics and \r\n issues of concern in research and policy within the field of \r\n corrections. Chief among these are the characteristics of persons \r\n confined to state prisons, their current and past offenses, and the \r\n circumstances or conditions of their confinement. Also included is \r\n extensive information on inmates' drug and alcohol use, program \r\n participation, and the victims of the inmates' most recent offenses. \r\n This information, which is not available on a national basis from any \r\n other source, is intended to assist the criminal justice community and \r\nother researchers in analysis and evaluation of correctional issues.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "289",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "correctional facilities (adults)",
+    "corrections",
+    "criminal histories",
+    "drug abuse",
+    "inmate classification",
+    "inmate deaths",
+    "inmate populations",
+    "inmate programs",
+    "inmates",
+    "offenses",
+    "prison conditions",
+    "substance abuse",
+    "treatment programs"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2171",
+  "dataQuality": false,
+  "issued": "1988-10-25T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08711.v2",
+      "title": "Survey of Inmates of State Correctional Facilities, 1986: [United States]"
+    }
+  ]
+}

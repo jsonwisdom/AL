@@ -1,0 +1,94 @@
+name: Replay Harness - Calibration Gate
+
+on:
+  push:
+    branches: [ main, master ]
+    paths:
+      - 'src/**'
+      - 'config/**'
+      - 'calibration/**'
+      - 'canaries.json'
+      - 'package.json'
+  pull_request:
+    branches: [ main, master ]
+    paths:
+      - 'src/**'
+      - 'config/**'
+      - 'calibration/**'
+      - 'canaries.json'
+      - 'package.json'
+  workflow_dispatch:
+
+jobs:
+  calibration-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Calibration (Must Pass)
+        run: npm run calibrate
+        env:
+          CALIBRATION: "true"
+          CI: "true"
+
+      - name: Capture Control Surface
+        run: npm run capture -- --surface=control.local
+        env:
+          CALIBRATION: "true"
+
+      - name: Aggregate Results
+        run: npm run aggregate
+
+      - name: Verify Zero High-Tier Findings
+        run: |
+          echo "=== Calibration Gate Check ==="
+          if [ -f reports/tier_matrix.json ]; then
+            MAX_TIER=$(jq -r '.[0].max_tier // 0' reports/tier_matrix.json)
+            echo "Maximum tier observed: $MAX_TIER"
+
+            if [ "$MAX_TIER" -ge 3 ]; then
+              echo "❌ Calibration FAILED: Tier $MAX_TIER detected on control surface"
+              exit 1
+            else
+              echo "✅ Calibration PASSED: Tier $MAX_TIER (acceptable)"
+            fi
+          else
+            echo "❌ No tier_matrix.json found"
+            exit 1
+          fi
+
+      - name: Archive Calibration Artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: calibration-results
+          path: |
+            reports/calibration_receipt.json
+            reports/tier_matrix.json
+            reports/tier_matrix.md
+          retention-days: 7
+
+  full-pipeline:
+    needs: calibration-gate
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run full-pipeline

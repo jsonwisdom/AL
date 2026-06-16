@@ -1,0 +1,24 @@
+{
+  "status": "ATTESTATION_PACKET_STAGED_NOT_SUBMITTED",
+  "schema_uid": "0x70e30c2294cc91f178886ef547db67bd3b3a6575af971328d42a8d5e2ad1fb88",
+  "schema_tx": "0x2f02d4a4a3fd1687a9dcf5ee6999f6a01e802842378d64b466c1733160bde628",
+  "docket_id": "FEDERAL_AI_TESTING_ROOT_LANE_V1",
+  "docket_sha256": "0xd15496d9f06073d76f449639038b51c93bb57a56ce0469bbf3738bb29b60d449",
+  "verifier_version": "verify_federal_ai_root_lane.py:v1",
+  "verifier_sha256": "PENDING_LOCAL_SHA256_RUN",
+  "receipt_sha256": "PENDING_LOCAL_RECEIPT_RUN",
+  "receipt_uri": "PENDING_RECEIPT_COMMIT_OR_PIN",
+  "verified_at": 1781475156,
+  "truth_state": "YELLOW_READY",
+  "no_fake_green": true,
+  "attestation_uid": null,
+  "anchor_state": "YELLOW_READY",
+  "hard_gate": "NO_GREEN_UNTIL_ATTESTATION_UID_EXISTS",
+  "resume_steps": [
+    "Run python3 scripts/verify_federal_ai_root_lane.py > receipts/fed_ai_root_receipt_1781475156.json from repo root.",
+    "Run sha256sum scripts/verify_federal_ai_root_lane.py receipts/fed_ai_root_receipt_1781475156.json.",
+    "Replace verifier_sha256, receipt_sha256, and receipt_uri with committed or pinned values.",
+    "Submit EAS attestation using schema_uid.",
+    "Only after attestation_uid exists may anchor_state become GREEN_ANCHORED."
+  ]
+}

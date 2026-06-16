@@ -1,0 +1,59 @@
+{
+  "spec_version": "v1",
+  "artifact": "DIVERGENCE_MARKET_META_V1",
+  "purpose": "Define substrate-agnostic divergence market grammar for oracle, sensor, and sovereign history disputes under uncertainty.",
+  "last_verified": "2026-05-06",
+  "verifier": "jsonwisdom",
+  "meta_invariant": "No actor may choose the authority that judges its own divergence.",
+  "anti_emergency_powers_clause": "Fallbacks may narrow truth claims, but may never expand authority claims.",
+  "canonical_state_machine": [
+    "INITIAL",
+    "ACTIVE",
+    "CHALLENGED",
+    "RESOLVING_REFERENCE_SET",
+    "DIVERSITY_FALLBACK",
+    "RESOLVED_DIVERGENT_OR_SLASHED",
+    "RESOLVED_UPHELD",
+    "APPEAL"
+  ],
+  "required_components": {
+    "claim_type": "typed claim class",
+    "oracle_definition": "claim producer and bond or risk equivalent",
+    "reference_set": "unpredictable peer set chosen after challenge freeze",
+    "diversity_requirement": "minimum non-collocated basis for peer judgment",
+    "fallback": "semantic narrowing path when diversity fails",
+    "divergence_condition": "bounded metric and threshold",
+    "economic_consequence": "slash, abandonment, discount, or other local market consequence"
+  },
+  "substrate_mappings": {
+    "ZK_SENSOR_DIVERGENCE_MARKET_V1": {
+      "diversity_basis": "TEE_or_vendor_diversity",
+      "fallback": "historical_self_consistency",
+      "consequence": "bond_slashing"
+    },
+    "FORK_DIVERGENCE_MARKET_V1": {
+      "diversity_basis": "jurisdiction_legal_basis_diversity",
+      "fallback": "canonical_federation_history_ordering_only",
+      "consequence": "liquidity_abandonment"
+    },
+    "PRICE_DIVERGENCE_MARKET_V1": {
+      "diversity_basis": "staking_pool_and_collocation_zone_diversity",
+      "fallback": "time_shifted_self_median_with_wider_epsilon",
+      "consequence": "bond_slashing_and_liquidity_discount"
+    }
+  },
+  "forbidden_fallback_behaviors": [
+    "semantic_truth_expansion",
+    "authority_expansion",
+    "trusted_committee_override",
+    "reputation_weighted_reference_capture",
+    "mid_challenge_parameter_mutation"
+  ],
+  "invariants": [
+    "Reference selection occurs after challenge freeze.",
+    "Diversity failure is a degradation state, not permission to trust.",
+    "Fallbacks reduce semantic scope instead of increasing authority.",
+    "Global parameters may not change mid-challenge.",
+    "No divergence market may install a local priest as reference judge."
+  ]
+}

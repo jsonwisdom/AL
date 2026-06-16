@@ -1,0 +1,26 @@
+{
+  "schema_version": "alms.repo_hygiene_receipt.v1",
+  "artifact": "readme_proof_surface_clarification_2026-05-14.json",
+  "classification": "REPO_HYGIENE_RECEIPT",
+  "status": "SAFE_TO_ATTEST",
+  "scope": "README proof-surface clarification",
+  "statements": {
+    "canonical_truth_source": "_truth/receipts/index.json",
+    "public_files_non_canonical": true,
+    "epoch_artifacts_experimental": true,
+    "readme_declares_proof_surface": true,
+    "no_legitimacy_claims": true
+  },
+  "not_scope": [
+    "OpenAI legitimacy",
+    "epoch-chain factual claims",
+    "RED_TO_GREEN narrative elevation"
+  ],
+  "recommended_posture": {
+    "epoch_4": "HOLD_OPEN_REPLAY",
+    "canon_expansion": "DEFERRED_UNTIL_REPO_HYGIENE_COMPLETE",
+    "freeze_policy": "NO_FREEZE_UNTIL_READY_FOR_PUBLIC_CANON"
+  },
+  "operator": "Jay Wisdom",
+  "timestamp_issued": "2026-05-14T20:20:00Z"
+}

@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Police Services Study, Phase II, 1977:  Rochester, St. Louis, and St. Petersburg",
+  "description": "The data for this study were collected in order to examine\r\nthe delivery of police services in selected\r\nneighborhoods. Performances of police agencies organized in different\r\nways were compared as they delivered services to different sets of\r\ncomparable neighborhoods. For Part 1, Citizen Debriefing Data, data\r\nwere drawn from telephone interviews conducted with citizens who were\r\ninvolved in police-citizen encounters or who requested police services\r\nduring the observed shifts. The file contains data on the citizens\r\ninvolved in observed encounters, their satisfaction with the delivered\r\nservices, and neighborhood characteristics. This file includes\r\nvariables such as the type of incident, estimated property loss,\r\npolice response time, type of action taken by police, citizen\r\nsatisfaction with the handling of the problem by police, reasons for\r\ndissatisfaction, the emotional state of the citizen during the\r\nencounter, whom the officers referred the citizen to for help, the\r\ncitizen's prior contacts with police, and the citizen's education,\r\nage, sex, and total family income. Part 2, General Shift Information,\r\ncontains data describing the shift (i.e., the eight-hour tour of duty\r\nto which the officers were assigned), the officers, and the events\r\noccurring during an observed shift. This file includes such variables\r\nas the total number of encounters, a breakdown of dispatched runs by\r\ntype, the number of contacts with other officers, the number of\r\ncontacts with non-police support units, officer discretion in taking\r\nlegal action, and officer attitudes on patrol styles and\r\nactivities. Part 3, Police Encounters Data, describes police\r\nencounters observed by the research team during selected shifts. It\r\nconsists of information describing the officers' role in encounters\r\nwith citizens observed during a shift and their demeanor toward the\r\ncitizens involved. The file includes variables such as the type of\r\nencounter, how the encounter began, whether the citizens involved\r\npossessed a weapon, the encounter location, what other agencies were\r\npresent during the encounter and when they arrived, police actions\r\nduring the encounter, the role of citizens involved in the encounter,\r\nthe demeanor of the officer toward the citizens during the encounter,\r\nactions taken by the citizens, which services were requested by the\r\ncitizens, and how the observer affected the encounter. Part 4,\r\nVictimization Survey Data, examined citizen attitudes about the police and\r\ncrime in their neighborhoods. The data were obtained through telephone\r\ninterviews conducted by trained interviewers. These interviews\r\nfollowed a standard questionnaire designed by the project\r\nleaders. Variables include perceived risk of victimization,\r\nevaluations of the delivery of police services, household\r\nvictimization occurring in the previous year, actions taken by\r\ncitizens in response to crime, and demographic characteristics of the\r\nneighborhood.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3079",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "Missouri",
+    "St. Louis",
+    "United States",
+    "crime",
+    "police activity",
+    "police protection",
+    "victimization"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1987-01-12T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08605.v3",
+      "title": "Police Services Study, Phase II, 1977:  Rochester, St. Louis, and St. Petersburg"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Cost of Mental Health Care for Victims of Crime in the United States, 1991",
+  "description": "The main objective of this survey was to determine the\r\n number of crime victims receiving mental health counseling, by type of\r\n crime, and the annual cost of treatment for each type of crime\r\n victim. Multiplying these two figures would yield an estimate of the\r\n annual financial cost of mental health care for crime victims. For\r\n this survey, mental health professionals were sampled from eight\r\n professional organizations and were asked questions about their\r\n clients during 1991. Respondents were instructed to count only those\r\n clients whose primary reason for being treated was because they were\r\n previously crime victims, regardless of whether the criminal\r\n victimization was the presenting issue at the time the client was\r\n first treated. Interviews were structured to first elicit information\r\n about the number of victims served for each type of crime. Respondents\r\n were then asked for details about the type and length of treatment for\r\n the crime type most frequently encountered by the respondent. Similar\r\n information was obtained for each additional crime type mentioned by\r\n the respondent, in descending order of frequency. Variables include\r\nthe number of adults, youths, and children served",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2877",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "counseling services",
+    "crime",
+    "health care costs",
+    "mental health services",
+    "treatment programs",
+    "victim services",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1996-10-08T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06581.v1",
+      "title": "Cost of Mental Health Care for Victims of Crime in the United States, 1991"
+    }
+  ]
+}

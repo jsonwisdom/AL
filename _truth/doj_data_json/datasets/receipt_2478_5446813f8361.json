@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "School Survey on Crime and Safety (SSOCS), 2004",
+  "description": "The School Survey on Crime and Safety (SSOCS) is managed by the National Center for Education Statistics (NCES) on behalf of the United States Department of Education (ED). SSOCS collects extensive crime and safety data from principals and school administrators of public schools in America. Data from this collection can be used to correlate school characteristics with violent and serious violent crimes in American schools. Furthermore, data from SSOCS can be used to assess what school programs, practices, and policies are used by\r\nschools in their efforts to prevent crime. SSOCS has been conducted three times, in school years 1999-2000, 2003-2004, and 2005-2006.\r\nThe 2003-2004 School Survey on Crime and Safety (SSOCS:2004) was developed by the National Center for Education Statistics (NCES) and conducted by Abt Associates Inc. Questionnaire packets were mailed to 3,743 public primary, middle, high, and combined schools. A total of 2,772 public schools submitted usable questionnaires for a weighted response rate of 77.2 percent. Data were collected from March 1, 2004, to June 4, 2004.",
+  "modified": "2010-03-04T08:36:03",
+  "accessLevel": "public",
+  "identifier": "2478",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "crime",
+    "crime in schools",
+    "crime reporting",
+    "crime statistics",
+    "educational environment",
+    "juvenile crime",
+    "offenses",
+    "school security",
+    "school violence",
+    "student behavior"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2010-03-04T08:36:03",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR25681.v1",
+      "title": "School Survey on Crime and Safety (SSOCS), 2004"
+    }
+  ]
+}

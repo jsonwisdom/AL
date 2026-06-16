@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.github.io/AL/schemas/root.state.v1.schema.json",
+  "title": "Computer Wisdom Root State v1",
+  "type": "object",
+  "required": [
+    "schema",
+    "operator",
+    "identity",
+    "latest_pointer",
+    "fixtures",
+    "status"
+  ],
+  "properties": {
+    "schema": { "const": "root.state.v1" },
+    "operator": { "type": "string" },
+    "identity": {
+      "type": "object",
+      "required": ["ens", "alias"],
+      "properties": {
+        "ens": { "type": "string" },
+        "alias": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "latest_pointer": { "type": "string" },
+    "fixtures": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "status": { "enum": ["ROOT_LAYERING_ACTIVE", "DEPRECATED"] }
+  },
+  "additionalProperties": false
+}

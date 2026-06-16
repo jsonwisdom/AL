@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Work Release in the State of Washington, 1990-1993",
+  "description": "Work release programs allow selected prisoners nearing the\r\n end of their terms to work in the community, returning to correctional\r\n facilities or community residential facilities in nonworking\r\n hours. This project was designed as both a randomized and\r\n quasi-experimental field study to assess the effectiveness of work\r\n release in the Seattle area. It evaluated the impact of work release\r\n sentencing on recidivism and on corrections costs by comparing a\r\n sample of inmates who participated in work release with a comparable\r\n sample of inmates who completed their sentences in prison. The study\r\n was designed to answer the following questions: (1) What are the\r\n background and offense characteristics of offenders assigned to work\r\n release in the Seattle area? (2) What types of services are received\r\n by offenders in work release? and (3) How does the community\r\n experience of work release participants compare to that of similar\r\n offenders discharged directly into the Seattle community without\r\n having gone through work release? For each offender, detailed\r\n information was collected on measures relating to work release\r\n participation and recidivism outcomes. Information was gathered from\r\n Department of Corrections institutional files, work release program\r\n records, computerized payment information for legal and financial\r\n obligations, and statewide criminal history records. For each\r\n offender, background and six- and twelve-month reviews were completed.\r\n Part 1, Background Data, supplies variables that cover inmate\r\n demographics, employment history, drug use, current offense, prior\r\n criminal history, and risk/needs items. Part 2, Drug Testing Data,\r\n lists the types of drugs tested for, types of drugs for which there\r\n were positive results, and sanctions for drug use. Part 3, Offender\r\n Status Data, provides information on inmates' supervision status and\r\n the types of programs they participated in. Part 4, Prison Data,\r\n includes the number of days spent at different institutions and\r\n prerelease centers, work assignment, and prison infractions. Part 5,\r\n Work Release Data, contains information on the number of days spent at\r\n different work release facilities and any time spent in jail or on\r\n escape status while in work release. Data in this file also cover\r\n contacts and services received during work release, including personal\r\n and phone contacts between the work release participant and community\r\n corrections officer at the job and other sites, monitoring checks\r\n (employment verification, criminal records checks), sessions in\r\n outpatient counseling (drug, alcohol, family, other), employment\r\n (number of attempted and completed job interviews, primary job\r\n classification, length of employment, wages, and reason left), drug\r\n testing (date and type of test, type of positives, sanction imposed),\r\n infractions during work release and their sanctions, and arrests and\r\n their sanctions. Part 6, Community Placement Data, provides variables\r\n on the number of days each month that the offender was on the street,\r\n in work release, in pretrial detention, or in other custody, while\r\n Part 7, Post-Release Data, focuses on the number of days each month\r\n that the offender was on the street, in pretrial detention, or in\r\n prison or jail after being released from the work release\r\n program. Variables in Part 8, Infractions Data, pertain to the number\r\n and types of infractions and associated sanctions. Part 9, Recidivism\r\n Data, provides information on each offense after discharge from the\r\n program, including the date of the offense, nature of arrest,\r\ndisposition, and sentence.",
+  "modified": "2006-03-29T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2776",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "criminal histories",
+    "inmate programs",
+    "prerelease programs",
+    "prison inmates",
+    "program evaluation",
+    "recidivism",
+    "work release"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2000-04-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02021.v1",
+      "title": "Work Release in the State of Washington, 1990-1993"
+    }
+  ]
+}

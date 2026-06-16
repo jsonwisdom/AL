@@ -1,0 +1,67 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Gender, Mental Illness, and Crime in the United States, 2004",
+  "description": "The purpose of the study was to examine the gendered effects of depression, drug use, and treatment on crime and the effects of interaction with the criminal justice system on subsequent depression and drug use. The data for the study are from the NATIONAL HOUSEHOLD SURVEY ON DRUG USE AND HEALTH (NSDUH), 2004 [ICPSR 4373]. In addition to the 2004 NSDUH data, the study utilized new variables that were derived from the original dataset by the principal investigator, namely recoded variables, interaction variables, and computed indices. Information was provided on the use of illicit drugs, alcohol, and tobacco among members of United States households aged 12 years and older. Respondents also provided detailed information regarding criminal activity, depression, and other factors. A total of 55,602 respondents participated in the study. The dataset contains a total of 3,011 variables. The first 2,690 variables are drawn from the 2004 NSDUH dataset and the remaining 321 variables were created by the principal investigator.  Variables created by the principal investigator are manipulations of the first 2,690 variables. Specifically, these variables include depression indices, drug dependence indicators, interactions with gender and other demographic variables, and dichotomous recoded variables relating to types of drug abuse and criminal behavior.",
+  "modified": "2011-02-10T13:25:15",
+  "accessLevel": "public",
+  "identifier": "3312",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "addiction",
+    "alcohol",
+    "alcohol abuse",
+    "alcohol consumption",
+    "amphetamines",
+    "barbiturates",
+    "cocaine",
+    "controlled drugs",
+    "crack cocaine",
+    "crime",
+    "demographic characteristics",
+    "depression (psychology)",
+    "drinking behavior",
+    "drug abuse",
+    "drug treatment",
+    "drug use",
+    "drugs",
+    "gend"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2011-02-10T13:25:15",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR27521.v1",
+      "title": "Gender, Mental Illness, and Crime in the United States, 2004"
+    }
+  ]
+}

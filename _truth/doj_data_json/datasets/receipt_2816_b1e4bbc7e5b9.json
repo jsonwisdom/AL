@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Adult Criminal Careers, Michigan:  1974-1977 ",
+  "description": "These data, taken from the computerized criminal history \r\n files of the Federal Bureau of Investigation, were collected to develop \r\n estimates of the extent and variation of individual offending. Included \r\n are the adult criminal records of individuals 17 years of age and older \r\n arrested in Michigan from 1974 to 1977. The primary criterion for \r\n inclusion in the sample was at least one arrest in Michigan for murder, \r\n rape, robbery, aggravated assault, burglary, or auto theft. Once \r\n sampled, the arrest history includes data on all recorded arrests \r\n through 1977, regardless of offense type. The full dataset includes \r\n records for 41,191 individuals for a total of 200,007 arrests. The \r\n dataset is organized by individual and includes demographic \r\n characteristics of the individual (birth date, state of birth, sex, and \r\n race) followed by information from the individual's arrest record in \r\n chronological order. The arrest records include the date of arrest, the \r\n offenses charged, the disposition (convicted, dismissed, or acquitted), \r\n and the sentence. Because the data are organized by individual, they \r\n are suitable for longitudinal analyses of individual offending patterns \r\nover time.",
+  "modified": "1995-03-31T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2816",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrests",
+    "assault",
+    "auto theft",
+    "burglary",
+    "convictions (law)",
+    "crime",
+    "defendants",
+    "demographic characteristics",
+    "murder",
+    "rape",
+    "robbery"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-11-14T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08279.v1",
+      "title": "Adult Criminal Careers, Michigan:  1974-1977 "
+    }
+  ]
+}

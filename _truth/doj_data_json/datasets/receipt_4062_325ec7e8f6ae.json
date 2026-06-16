@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Youth Survey [United States]: Wave V, 1980",
+  "description": "Youth data for the fifth wave of the National Youth Survey\r\nare contained in this collection. The first wave of this survey was\r\nconducted in 1976 (ICPSR 8375), the second wave in 1977 (ICPSR 8424),\r\nthe third wave in 1978 (ICPSR 8506), and the fourth wave in 1979 (ICPSR\r\n8917). For this wave, youths in the United States were interviewed in\r\nearly 1981 about events and behavior occurring in calendar year 1980.\r\nData are available on the demographic and socioeconomic status of\r\nrespondents, disruptive events in the home, neighborhood problems,\r\nyouth aspirations and current successes, normlessness, labeling by\r\nparents, friends, and co-workers, perceived disapproval, attitudes\r\ntoward deviance, exposure and commitment to delinquent peers, sex\r\nroles, interpersonal violence, attitudes toward sexual violence,\r\npressure for substance abuse by peers, drug and alcohol use, and\r\nvictimization.",
+  "modified": "2008-09-10T11:55:16",
+  "accessLevel": "public",
+  "identifier": "4062",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "aspirations",
+    "behavior problems",
+    "career goals",
+    "community involvement",
+    "delinquent behavior",
+    "depression (psychology)",
+    "deviance",
+    "drugs",
+    "expectations",
+    "family conflict",
+    "family relations",
+    "health services utilization",
+    "life events",
+    "neighborhood conditions",
+    "parenta"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "3996",
+  "dataQuality": false,
+  "issued": "1989-05-04T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09112.v2",
+      "title": "National Youth Survey [United States]: Wave V, 1980"
+    }
+  ]
+}

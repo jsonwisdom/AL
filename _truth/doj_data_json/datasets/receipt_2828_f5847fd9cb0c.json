@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Deterring Drug Use With Intensive Probation in New Jersey, 1989-1990",
+  "description": "These data were collected to measure the degree to which\r\n subjective deterrence and rational choice are effective in reducing\r\n drug-use recidivism rates. Baseline interviews were conducted with\r\n participants upon entering a drug rehabilitation program in New\r\n Jersey. Under the terms of this program, which was an alternative to\r\n prison, any incident of drug use occurring during the rehabilitation\r\n period would result in the participant's returning to\r\n prison. Follow-up interviews were conducted when the participant\r\n either had a drug/alcohol use relapse or successfully completed a year\r\n in the program without a drug-use incident. Baseline interviews\r\n included questions about criminal and drug-use history, as well as\r\n initial reactions to the drug rehabilitation program. Follow-up\r\n interviews probed for participants' feelings about the drug\r\n rehabilitation program experience. Further questions concerned\r\n participants' failure or success at staying away from drugs or\r\nalcohol.",
+  "modified": "2002-06-27T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2828",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "alternatives to institutionalization",
+    "criminal histories",
+    "deterrence",
+    "drug treatment",
+    "probation",
+    "recidivism",
+    "substance abuse",
+    "treatment programs"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1993-10-02T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09919.v1",
+      "title": "Deterring Drug Use With Intensive Probation in New Jersey, 1989-1990"
+    }
+  ]
+}

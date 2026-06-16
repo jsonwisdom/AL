@@ -1,0 +1,49 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Easy Access to NIBRS: Victims of Domestic Violence",
+  "description": "This OJJDP supported data analysis tool allows users to analyze state-level data on victims of domestic violence based on information collected by the FBI's National Incident-Based Reporting System (NIBRS). The underlying data file for this application is",
+  "modified": "2005-07-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "571",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "victims",
+    "victims of domestic violence"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2005-07-04T00:00:00",
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "http://ojjdp.gov/ojstatbb/ezanibrsdv/",
+      "mediaType": "application/pdf",
+      "title": "Easy Access to NIBRS: Victims of Domestic Violence"
+    }
+  ]
+}

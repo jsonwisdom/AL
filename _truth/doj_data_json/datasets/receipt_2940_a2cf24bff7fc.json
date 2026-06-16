@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Forecasting Municipality Crime Counts in the Philadelphia [Pennsylvania] Metropolitan Area, 2000-2008",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they there received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except of the removal of direct identifiers. Users should refer to the accompany readme file for a brief description of the files available with this collections and consult the investigator(s) if further information is needed.\r\nThis study examines municipal crime levels and changes over a nine year time frame, from 2000-2008, in the fifth largest primary Metropolitan Statistical Area (MSA) in the United States, the Philadelphia metropolitan region. Crime levels and crime changes are linked to demographic features of jurisdictions, policing arrangements and coverage levels, and street and public transit network features.",
+  "modified": "2017-06-26T14:26:22",
+  "accessLevel": "restricted public",
+  "identifier": "2940",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime control policies",
+    "crime control programs",
+    "crime mapping",
+    "crime rates",
+    "ecology of crime",
+    "metropolitan",
+    "metropolitan statistical areas"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2017-06-26T14:24:32",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR35319.v1",
+      "title": "Forecasting Municipality Crime Counts in the Philadelphia [Pennsylvania] Metropolitan Area, 2000-2008"
+    }
+  ]
+}

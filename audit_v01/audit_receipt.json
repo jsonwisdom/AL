@@ -1,0 +1,38 @@
+{
+  "schema_id": "ALMS_REPLAYABLE_RESILIENCE_AUDIT_RECEIPT_V1",
+  "audit_id": "replayable_resilience_audit_v01",
+  "status": "GITHUB_ANCHORED_NEEDS_CHAIN_WITNESS",
+  "repo": "jsonwisdom/AL",
+  "artifact_path": "audit_v01/",
+  "created_at_utc": "2026-05-20T18:10:00Z",
+  "membrane_rule_commit": "d1a13a3b87fe38a92d709b6c800962262bf37931",
+  "system_manifest_commit": "adfd9f978b4629e20e825f2ef58d9dc609a0b667",
+  "included_artifacts": [
+    "audit_v01/assumption_map.md",
+    "audit_v01/failure_mode_graph.json",
+    "audit_v01/kill_order_report.md"
+  ],
+  "content_sha256": "PENDING_RECOMPUTE_AFTER_FREEZE",
+  "proofs_present": {
+    "github_commit": "434e4c93341fa0b73d18b3a80ff9d4d214f23341",
+    "ens_text_record": null,
+    "base_tx": null,
+    "eas_uid": null
+  },
+  "verification_status": {
+    "verdict": "NEEDS_CHAIN_WITNESS",
+    "reason": "Artifacts are publicly committed but no ENS, Base, or EAS witness has been attached yet."
+  },
+  "replay_requirements": {
+    "required_for_verified": [
+      "recompute_content_hash",
+      "resolve_public_witness",
+      "match_commit_to_receipt",
+      "successful_third_party_replay"
+    ]
+  },
+  "constitutional_observation": {
+    "claim": "The strongest proof of the membrane was the downgrade event.",
+    "evidence": "The system reduced its own authority claim from anchored infrastructure to NEEDS_RECEIPTS before commercialization."
+  }
+}

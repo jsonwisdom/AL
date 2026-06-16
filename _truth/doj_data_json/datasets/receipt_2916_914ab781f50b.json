@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Examining the Structure, Organization, and Processes of the International Market for Stolen Data, 2007-2012",
+  "description": "\r\nThese data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\n\r\n\r\nThis study was designed to understand the economic and social structure of the market for stolen data on-line. This data provides information on the costs of various forms of personal information and cybercrime services, the payment systems used, social organization and structure of the market, and interactions between buyers, sellers, and forum operators. The PIs used this data to assess the economy of stolen data markets, the social organization of participants, and the payment methods and services used.\r\n\r\n\r\nThe study utilized a sample of approximately 1,900 threads generated from 13 web forums, 10 of which used Russian as their primary language and three which used English. These forums were hosted around the world, and acted as online advertising spaces for individuals to sell and buy a range of products. The content of these forums were downloaded and translated from Russian to English to create a purposive, yet convenient sample of threads from each forum.\r\n\r\n\r\nThe collection contains 1 SPSS data file (ICPSR Submission Economic File SPSS.sav) with 39 variables and 13,735 cases and 1 Access data file (Social Network Analysis File Revised 04-11-14.mdb) with a total of 16 data tables and 199 variables.\r\n\r\n\r\nQualitative data used to examine the associations and working relationships present between participants at the micro and macro-level are not available at this time.\r\n",
+  "modified": "2017-06-15T12:14:41",
+  "accessLevel": "restricted public",
+  "identifier": "2916",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "Internet",
+    "computer use",
+    "cyber crime",
+    "electronic commerce",
+    "fraud",
+    "identity theft",
+    "stolen property"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2017-06-15T11:55:02",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR35002.v1",
+      "title": "Examining the Structure, Organization, and Processes of the International Market for Stolen Data, 2007-2012"
+    }
+  ]
+}

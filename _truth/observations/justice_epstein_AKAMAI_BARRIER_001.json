@@ -1,0 +1,30 @@
+{
+  "artifact": "ACCESS_BARRIER_OBSERVATION",
+  "observation_id": "justice_epstein_AKAMAI_BARRIER_001",
+  "source_id": "justice_epstein",
+  "source_url": "https://www.justice.gov/epstein",
+  "snapshots_compared": [
+    {
+      "file": "_truth/ingest/justice_epstein/2026-05-05T10-15-35Z.html",
+      "sha256": "f8597472a5b9dd6c350189862c02f10673f5efa5c452b32d095915d84507226d"
+    },
+    {
+      "file": "_truth/ingest/justice_epstein/2026-05-05T10-39-39Z.html",
+      "sha256": "881b2b2244164cf339e053bdfc55dcf758b531da9c8eb87e31e664851e4f5e76"
+    }
+  ],
+  "comparison_result": "PAGE_CHANGED_CHALLENGE_TOKENS_ONLY",
+  "actual_content_status": "NOT_CAPTURED",
+  "barrier": "AKAMAI_BOT_PROTECTION",
+  "observed_variance": [
+    "bm-verify challenge token changed",
+    "timestamp variable changed",
+    "proof-of-work calculation changed"
+  ],
+  "promotion_status": "BLOCKED",
+  "opens_custody_gate": false,
+  "write_run_0002": "UNCHANGED",
+  "gate_status": "CLOSED",
+  "required_next_action": "USE_BROWSER_SESSION_OR_ALTERNATIVE_OFFICIAL_ENDPOINT_BEFORE_PROMOTION",
+  "custody_note": "Snapshots captured access challenge pages, not verified DOJ content. Do not promote challenge bytes as DOJ content."
+}

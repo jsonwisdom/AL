@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Census of Law Enforcement Gang Units, 2007",
+  "description": "The 2007 Census of Law Enforcement Gang Units (CLEGU) collected data from all state and local law enforcement agencies with 100 or more sworn officers and at least one officer dedicated solely to addressing gangs and gang activities. Law enforcement agencies are often the first line of response to the gang problems experienced across the country and are a critical component of most anti-gang initiatives. One way for law enforcement agencies to address gang-related problems is to form specialized gang units. The consolidation of an agency's gang enforcement activities and resources into a single unit can allow gang unit officers to develop specific expertise and technical skills related to local gang characteristics and behaviors and gang prevention and suppression.\r\nNo prior studies have collected data regarding the organization and operations of law enforcement gang units nationwide, the types of gang prevention tactics employed, or the characteristics and training of gang unit officers.\r\nThis CLEGU collected data on the operations, workload, policies, and procedures of gang units in large state and local law enforcement agencies in order to expand knowledge of gang prevention and enforcement tactics.  The CLEGU also collected summary measures of gang activity in the agencies' jurisdictions to allow for comparison across jurisdictions with similar gang problems.",
+  "modified": "2011-03-22T16:21:43",
+  "accessLevel": "public",
+  "identifier": "79",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "gangs",
+    "law enforcement agencies",
+    "personnel",
+    "police departments",
+    "policies and procedures"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2011-03-22T16:21:43",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR29503.v1",
+      "title": "Census of Law Enforcement Gang Units, 2007"
+    }
+  ]
+}

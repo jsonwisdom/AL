@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Cross-Validation of the Iowa Offender Risk Assessment Model in Michigan, 1980-1982",
+  "description": "These data were collected in an attempt to cross-validate \r\n the 1984 and 1985 versions of the Iowa model for assessing risk of \r\n offending while on parole by applying the model to a Michigan sample of \r\n male parolees over a follow-up period of two and one-half years. \r\n Different measures of predictors such as prior criminal history, \r\n current offense, substance abuse history, age, and recidivism on parole \r\n are available. The first file contains information on parolees such as \r\n demographic characteristics, drug use history, prior criminal history, \r\n risk scores, and parole history. The second file includes parolees' \r\n detailed criminal histories including the total number of violent and \r\n nonviolent felony arrests and dates, and charges and dispositions of \r\neach arrest with a maximum of eight arrests.",
+  "modified": "2006-01-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3507",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "age",
+    "crime prediction",
+    "criminal histories",
+    "offenses",
+    "parole",
+    "parolees",
+    "recidivism",
+    "risk assessment",
+    "substance abuse"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1989-09-26T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09236.v1",
+      "title": "Cross-Validation of the Iowa Offender Risk Assessment Model in Michigan, 1980-1982"
+    }
+  ]
+}

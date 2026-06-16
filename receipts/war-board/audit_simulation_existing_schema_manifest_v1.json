@@ -1,0 +1,29 @@
+{
+  "protocol": "PUBLIC_RECORD_OF_TRUTH_BY_JAY",
+  "manifest_id": "WAR_BOARD_AUDIT_SIMULATION_EXISTING_SCHEMA_MANIFEST_V1",
+  "identity": "jaywisdom.base.eth",
+  "target": "WAR_BOARD_RENDERER_AUDIT_SIMULATION_V1",
+  "repo": "https://github.com/jsonwisdom/AL",
+  "commit": "2360678c5501b851c532d546cae57756202ef6cd",
+  "path": "docs/war-board/audit-simulation/README.md",
+  "candidate_receipt_path": "receipts/war-board/audit_simulation_attestation_candidate_v1.json",
+  "constitutional_stack": "closed_loop",
+  "renderer_constrained": true,
+  "ghost_claims": "PROHIBITED",
+  "war_board_onchain_certified": false,
+  "parent_ref_uid": "0x3ed74bd760457f0d8b8c5462924719fa77f134e9f927577d0745459c024fb0dd",
+  "existing_schema_uid": "0xfa94377476d86a25585e7da7889adf60f5a34fe09e1744f98626ad66bb686baa",
+  "existing_schema": "string identity,bytes32 root,string cid,string commit,bytes32 archiveSha256",
+  "eas_payload": {
+    "identity": "jaywisdom.base.eth",
+    "root": "COMPUTE_SHA256_CANONICAL_MANIFEST_BYTES",
+    "cid": "github:jsonwisdom/AL/docs/war-board/audit-simulation",
+    "commit": "2360678c5501b851c532d546cae57756202ef6cd",
+    "archiveSha256": "COMPUTE_SHA256_CANONICAL_MANIFEST_BYTES"
+  },
+  "non_claims": [
+    "This manifest is a candidate until its hash is computed and attested.",
+    "This manifest does not claim dedicated War Board certification.",
+    "This manifest reuses the existing verified Base EAS schema."
+  ]
+}

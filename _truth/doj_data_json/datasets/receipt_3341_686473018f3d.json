@@ -1,0 +1,53 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Translational Criminology in Florida's Adult and Juvenile Corrections 2015-2016",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThis study contains data from a web-based survey focusing on the impact of various factors on knowledge translation, barriers to knowledge translation, and facilitators of knowledge translation. The respondents comprised of critical state agency and legislative practitioners and policymakers and academic researchers in adult and juvenile corrections. Respondents were asked to estimate the extent to which adult and juvenile correctional policy and practice were influenced by research, and to identify the common pathways where research impacts policy.\r\nThe study includes one Stata data file: survey_nij_submission.dta (19 cases; 51 variables).\r\nData related to respondents' qualitative interviews are not available as part of this collection.",
+  "modified": "2018-03-19T09:01:35",
+  "accessLevel": "restricted public",
+  "identifier": "3341",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "corrections",
+    "criminal justice policy",
+    "juvenile justice"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-03-19T08:59:13",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36425.v1",
+      "title": "Translational Criminology in Florida's Adult and Juvenile Corrections 2015-2016"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "module_id": "CIS_IPIB_ENFORCEMENT_V1",
+  "version": "1.0.0",
+  "domain": "IOWA_OPEN_GOVERNMENT",
+  "trigger_signals": [
+    "ipib_complaint_submission",
+    "ipib_dismissal_notice",
+    "mediation_notice",
+    "open_records_dispute"
+  ],
+  "panic_failure_modes": [
+    "expectation_collapse",
+    "procedural_abandonment",
+    "referral_confusion",
+    "topology_misclassification"
+  ],
+  "stabilizer": {
+    "statement": "An IPIB complaint is not automatic enforcement.",
+    "semantic_class": "status_clarification",
+    "interrupt_type": "expectation_stabilizer"
+  },
+  "preserved_properties": {
+    "cognitive": [
+      "escalation_awareness",
+      "procedural_continuity",
+      "topology_awareness"
+    ],
+    "procedural": [
+      "complaint_tracking",
+      "evidence_preservation",
+      "mediation_awareness"
+    ]
+  },
+  "required_operator_actions": [
+    "preserve_submission_records",
+    "read_board_responses",
+    "track_dates",
+    "verify_next_stage"
+  ],
+  "topology_dependencies": [
+    "HYBRID_BOARD_MEDIATION_ENFORCEMENT"
+  ],
+  "runtime_destabilizers": [
+    "facial_review_dismissal",
+    "mediation_delay",
+    "portal_submission_confusion",
+    "referral_separation_fatigue"
+  ],
+  "non_claims": [
+    "does_not_guarantee_record_release",
+    "does_not_guarantee_board_action",
+    "does_not_predict_court_outcome",
+    "does_not_replace_legal_advice"
+  ],
+  "source_requirements": [
+    "official_ipib_source",
+    "official_iowa_open_government_source",
+    "official_iowa_court_source"
+  ],
+  "last_verified": "2026-05-06"
+}

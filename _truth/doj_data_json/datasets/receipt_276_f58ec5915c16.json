@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Recidivism Among Young Parolees: a Study of Inmates Released from Prison in 22 States, 1978",
+  "description": "This study examines the criminal activities of a group of\r\nyoung offenders after their release from prison to parole supervision.\r\nPrevious studies have examined recidivism using arrests as the\r\nprincipal measure, whereas this study examines a variety of factors,\r\nincluding length of incarceration, age, sex, race, prior arrest\r\nrecord, prosecutions, length of time between parole and rearrest,\r\nparolees not prosecuted for new offenses but having their parole\r\nrevoked, rearrests in states other than the paroling states, and the\r\nnature and location of rearrest charges. Parolees in the 22 states\r\ncovered in this study account for 50 percent of all state prisoners\r\nparoled in the United States in 1978.",
+  "modified": "1997-05-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "276",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "arrests",
+    "crime",
+    "criminal justice system",
+    "demographic characteristics",
+    "parole systems"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1988-01-06T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08673.v2",
+      "title": "Recidivism Among Young Parolees: a Study of Inmates Released from Prison in 22 States, 1978"
+    }
+  ]
+}

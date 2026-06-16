@@ -1,0 +1,196 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1920" height="1080"
+     viewBox="0 0 1920 1080">
+
+  <!-- Background -->
+  <rect x="0" y="0" width="1920" height="1080" fill="#0b0d12"/>
+
+  <!-- Header -->
+  <g id="header" transform="translate(80,80)">
+    <text x="0" y="0" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif"
+          font-size="28" font-weight="600">
+      Epoch03 Identity Graph — Witness Primitive 001
+    </text>
+    <text x="0" y="40" fill="#d0d4e0" font-family="system-ui, -apple-system, sans-serif"
+          font-size="18">
+      Identity discovers. Receipts prove. Hashes anchor. Attestations challenge. Runtimes execute and disappear.
+    </text>
+  </g>
+
+  <!-- Doctrine block -->
+  <g id="doctrine" transform="translate(80,140)">
+    <text x="0" y="0" fill="#9fa6c0" font-family="system-ui, -apple-system, sans-serif"
+          font-size="16">
+      • no ghost anchors
+    </text>
+    <text x="0" y="22" fill="#9fa6c0" font-family="system-ui, -apple-system, sans-serif"
+          font-size="16">
+      • replay first
+    </text>
+    <text x="0" y="44" fill="#9fa6c0" font-family="system-ui, -apple-system, sans-serif"
+          font-size="16">
+      • scale later
+    </text>
+  </g>
+
+  <!-- Layer separators -->
+  <g id="layer-separators" stroke="#2a3140" stroke-width="1">
+    <line x1="80" y1="220" x2="1840" y2="220"/>
+    <line x1="80" y1="420" x2="1840" y2="420"/>
+    <line x1="80" y1="640" x2="1840" y2="640"/>
+  </g>
+
+  <!-- Layer labels -->
+  <g id="layer-labels" fill="#7f869c" font-family="system-ui, -apple-system, sans-serif"
+     font-size="14">
+    <text x="80" y="210">DISCOVERY LAYER</text>
+    <text x="80" y="410">WITNESS LAYER</text>
+    <text x="80" y="630">EVIDENCE LAYER</text>
+    <text x="80" y="850">RUNTIME LAYER (NON-CANONICAL)</text>
+  </g>
+
+  <!-- DISCOVERY LAYER NODES -->
+  <g id="discovery-layer-nodes" font-family="system-ui, -apple-system, sans-serif">
+    <!-- ens_root: jaywisdom.base.eth -->
+    <g id="node-ens-root" transform="translate(260,260)">
+      <rect x="-140" y="-30" width="280" height="60" rx="8"
+            fill="#1b3a5c" stroke="#4fa3ff" stroke-width="2"/>
+      <text x="0" y="-4" text-anchor="middle" fill="#ffffff" font-size="18" font-weight="600">
+        jaywisdom.base.eth
+      </text>
+      <text x="0" y="16" text-anchor="middle" fill="#b7c4dd" font-size="12">
+        identity_root · discovery_only
+      </text>
+    </g>
+
+    <!-- canonical_registry: _truth/canonical-items/index.json -->
+    <g id="node-canonical-registry" transform="translate(960,260)">
+      <rect x="-210" y="-30" width="420" height="60" rx="6"
+            fill="#152235" stroke="#6ea8ff" stroke-width="1.5"/>
+      <text x="0" y="-4" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="500">
+        _truth/canonical-items/index.json
+      </text>
+      <text x="0" y="16" text-anchor="middle" fill="#b7c4dd" font-size="12">
+        canonical_registry · discovery_surface
+      </text>
+    </g>
+  </g>
+
+  <!-- WITNESS LAYER NODE -->
+  <g id="witness-layer-nodes" font-family="system-ui, -apple-system, sans-serif">
+    <g id="node-witness-primitive" transform="translate(960,480)">
+      <rect x="-190" y="-30" width="380" height="60" rx="10"
+            fill="#3b2b08" stroke="#f6c453" stroke-width="2.2"/>
+      <text x="0" y="-4" text-anchor="middle" fill="#ffe9b0" font-size="18" font-weight="600">
+        WITNESS_AGENT_PILOT_001
+      </text>
+      <text x="0" y="16" text-anchor="middle" fill="#f6dca0" font-size="12">
+        witness_primitive · constitutionally_anchored_onchain
+      </text>
+    </g>
+  </g>
+
+  <!-- EVIDENCE LAYER NODES -->
+  <g id="evidence-layer-nodes" font-family="system-ui, -apple-system, sans-serif">
+    <!-- GitHub receipt -->
+    <g id="node-github-receipt" transform="translate(520,700)">
+      <rect x="-170" y="-30" width="340" height="60" rx="6"
+            fill="#22252e" stroke="#9ca3af" stroke-width="1.5"/>
+      <text x="0" y="-4" text-anchor="middle" fill="#e5e7eb" font-size="16" font-weight="500">
+        independent_replay_receipt_001.txt
+      </text>
+      <text x="0" y="16" text-anchor="middle" fill="#9ca3af" font-size="12">
+        github_receipt · replay_surface
+      </text>
+    </g>
+
+    <!-- Receipt hash -->
+    <g id="node-receipt-hash" transform="translate(960,700)">
+      <polygon points="-80,0 -40,-40 40,-40 80,0 40,40 -40,40"
+               fill="#000000" stroke="#f9fafb" stroke-width="1.5"/>
+      <text x="0" y="-52" text-anchor="middle" fill="#e5e7eb" font-size="12">
+        receipt_hash · truth_primitive
+      </text>
+      <text x="0" y="4" text-anchor="middle" fill="#f9fafb" font-size="11">
+        0x8362…12b4
+      </text>
+    </g>
+
+    <!-- EAS attestation -->
+    <g id="node-eas-attestation" transform="translate(1400,700)">
+      <rect x="-190" y="-30" width="380" height="60" rx="6"
+            fill="#3b0b0b" stroke="#f97373" stroke-width="2"/>
+      <text x="0" y="-4" text-anchor="middle" fill="#fee2e2" font-size="16" font-weight="600">
+        Base Sepolia EAS Attestation
+      </text>
+      <text x="0" y="16" text-anchor="middle" fill="#fecaca" font-size="11">
+        uid: 0x20b7…22b3 · challenge_surface
+      </text>
+    </g>
+  </g>
+
+  <!-- RUNTIME LAYER NODE (SUBORDINATE) -->
+  <g id="runtime-layer-node" font-family="system-ui, -apple-system, sans-serif">
+    <g id="node-runtime" transform="translate(960,900)">
+      <rect x="-190" y="-30" width="380" height="60" rx="10"
+            fill="none" stroke="#6b7280" stroke-width="2"
+            stroke-dasharray="8 6"/>
+      <text x="0" y="-4" text-anchor="middle" fill="#9ca3af" font-size="16" font-weight="500">
+        runtime (disposable, non-canonical)
+      </text>
+      <text x="0" y="16" text-anchor="middle" fill="#6b7280" font-size="12">
+        execution_environment · non-authoritative
+      </text>
+    </g>
+  </g>
+
+  <!-- EDGES (orthogonal, directional) -->
+  <g id="edges" fill="none" stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- ens_root → canonical_registry -->
+    <g id="edge-ens-to-registry" stroke="#6ea8ff" stroke-width="2">
+      <path d="M400,260 L520,260 L520,260 L750,260" />
+      <polygon points="750,260 742,255 742,265" fill="#6ea8ff"/>
+    </g>
+
+    <!-- canonical_registry → witness_primitive -->
+    <g id="edge-registry-to-witness" stroke="#f6c453" stroke-width="2">
+      <path d="M960,290 L960,340 L960,450" />
+      <polygon points="960,450 955,442 965,442" fill="#f6c453"/>
+    </g>
+
+    <!-- witness_primitive → github_receipt -->
+    <g id="edge-witness-to-receipt" stroke="#9ca3af" stroke-width="2">
+      <path d="M960,510 L960,560 L520,560 L520,670" />
+      <polygon points="520,670 515,662 525,662" fill="#9ca3af"/>
+    </g>
+
+    <!-- github_receipt → receipt_hash -->
+    <g id="edge-receipt-to-hash" stroke="#f9fafb" stroke-width="3">
+      <path d="M690,700 L800,700 L880,700" />
+      <polygon points="880,700 872,695 872,705" fill="#f9fafb"/>
+    </g>
+
+    <!-- receipt_hash → eas_attestation -->
+    <g id="edge-hash-to-attestation" stroke="#f97373" stroke-width="2.5">
+      <path d="M1040,700 L1160,700 L1210,700" />
+      <polygon points="1210,700 1202,695 1202,705" fill="#f97373"/>
+    </g>
+
+    <!-- witness_primitive → runtime (disposable) -->
+    <g id="edge-witness-to-runtime" stroke="#6b7280" stroke-width="2"
+       stroke-dasharray="6 6">
+      <path d="M960,510 L960,560 L960,870" />
+      <polygon points="960,870 955,862 965,862" fill="#6b7280"/>
+    </g>
+  </g>
+
+  <!-- Footer invariants -->
+  <g id="footer" transform="translate(80,1040)"
+     font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#6b7280">
+    <text x="0" y="0">
+      diagram_is_not_authority · diagram_renders_receipt_bound_graph_only · runtime != identity · runtime != anchor · runtime != truth
+    </text>
+  </g>
+
+</svg>

@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ALMS Merkle Proof Verifier</title>
+<style>
+body{background:#050807;color:#d7ffe2;font-family:monospace;max-width:900px;margin:40px auto;padding:20px}
+textarea,input{width:100%;background:#07140d;color:#d7ffe2;border:1px solid #29ff88;padding:10px;margin:8px 0}
+button{background:#29ff88;color:#001b0b;border:0;padding:12px 18px;font-weight:bold;cursor:pointer}
+pre{background:#07140d;border:1px solid #1a8f55;padding:16px;white-space:pre-wrap}
+h1{color:#29ff88}
+</style>
+</head>
+<body>
+<h1>ALMS Merkle Proof Verifier</h1>
+<p>Paste a leaf hash, proof JSON, and root. The verifier recomputes SHA-256 over bytes.</p>
+
+<label>Leaf Hash</label>
+<input id="leaf" placeholder="hex leaf hash">
+
+<label>Proof JSON</label>
+<textarea id="proof" rows="8" placeholder='[{"direction":"left","sibling":"hex"}]'></textarea>
+
+<label>Expected Root</label>
+<input id="root" placeholder="hex merkle root">
+
+<button onclick="verify()">Verify</button>
+
+<pre id="out">Waiting for proof...</pre>
+
+<script>
+function clean(x){return x.toLowerCase().replace(/^0x/,'').trim();}
+function hexToBytes(hex){
+  hex=clean(hex);
+  if(hex.length%2) throw new Error("Odd hex length");
+  const out=new Uint8Array(hex.length/2);
+  for(let i=0;i<out.length;i++) out[i]=parseInt(hex.slice(i*2,i*2+2),16);
+  return out;
+}
+function concat(a,b){
+  const out=new Uint8Array(a.length+b.length);
+  out.set(a,0); out.set(b,a.length);
+  return out;
+}
+function bytesToHex(buf){
+  return [...new Uint8Array(buf)].map(b=>b.toString(16).padStart(2,'0')).join('');
+}
+async function sha256(bytes){
+  return bytesToHex(await crypto.subtle.digest("SHA-256", bytes));
+}
+async function verify(){
+  const out=document.getElementById("out");
+  try{
+    let cur=clean(document.getElementById("leaf").value);
+    const root=clean(document.getElementById("root").value);
+    const proof=JSON.parse(document.getElementById("proof").value);
+
+    for(const step of proof){
+      const sibling=clean(step.sibling);
+      if(step.direction==="left"){
+        cur=await sha256(concat(hexToBytes(sibling), hexToBytes(cur)));
+      } else if(step.direction==="right"){
+        cur=await sha256(concat(hexToBytes(cur), hexToBytes(sibling)));
+      } else {
+        throw new Error("Bad direction: "+step.direction);
+      }
+    }
+
+    out.textContent =
+      "computed_root=" + cur + "\n" +
+      "expected_root=" + root + "\n\n" +
+      (cur===root ? "✅ MERKLE_PROOF_VALID" : "❌ MERKLE_PROOF_INVALID");
+  }catch(e){
+    out.textContent="ERROR: "+e.message;
+  }
+}
+</script>
+</body>
+</html>

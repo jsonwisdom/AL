@@ -1,0 +1,56 @@
+name: ALMS Core v0.1 Artifact
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: write
+
+jobs:
+  build-artifact:
+    name: Build reproducibility handoff ZIP
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify source tree exists
+        run: |
+          set -euo pipefail
+          test -d alms-core-v0.1-repro-handoff || test -d alms-core || {
+            echo "FAIL_SOURCE_TREE_MISSING"
+            echo "Expected alms-core-v0.1-repro-handoff/ or alms-core/ in repo root."
+            exit 1
+          }
+
+      - name: Prepare handoff directory
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/alms-core-v0.1-repro-handoff
+          if [ -d alms-core-v0.1-repro-handoff ]; then
+            cp -a alms-core-v0.1-repro-handoff /tmp/alms-core-v0.1-repro-handoff
+          else
+            mkdir -p /tmp/alms-core-v0.1-repro-handoff
+            cp -a alms-core/. /tmp/alms-core-v0.1-repro-handoff/
+          fi
+
+      - name: Build deterministic ZIP
+        run: |
+          set -euo pipefail
+          cd /tmp
+          find alms-core-v0.1-repro-handoff -exec touch -t 202605080000.00 {} +
+          LC_ALL=C find alms-core-v0.1-repro-handoff -type f | sort > /tmp/filelist.txt
+          zip -X -q -@ "$GITHUB_WORKSPACE/alms-core-v0.1-repro-handoff.zip" < /tmp/filelist.txt
+          cd "$GITHUB_WORKSPACE"
+          sha256sum alms-core-v0.1-repro-handoff.zip | tee alms-core-v0.1-repro-handoff.zip.sha256
+
+      - name: Upload ZIP artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: alms-core-v0.1-repro-handoff
+          path: |
+            alms-core-v0.1-repro-handoff.zip
+            alms-core-v0.1-repro-handoff.zip.sha256
+          if-no-files-found: error
+          retention-days: 90

@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "A Randomized Impact Evaluation of the No Bully System, California, 2015-2017",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nBullying affects large numbers of U.S. students in elementary schools and is associated with short and\r\nlong-term harms for both victims and bullies. Although prevention is critical, schools also need\r\neffective interventions for dealing with bullying once it occurs. Funded by the National Institute of\r\nJustice, and in collaboration with the Oakland Unified School District and No Bully, WestEd conducted\r\na two-year study of the impacts of the No Bully System (NBS) - a set of interventions\r\ndesigned to activate adult and peer support systems within the school for the targets of bullying. No\r\nBully trains staff to prevent and interrupt student harassment and bullying and ensure school-wide antibullying policies are in place. The core component of NBS is the Solution Team where a trained adult\r\nfacilitator (Solution Coach) brings together a group of 6-8 students (Solution Team) that includes the\r\nbully or bullies, bystanders and pro-social peers, and leads the team through a series of three brief\r\nmeetings to end the bullying of one of their peers by cultivating empathy and developing peer-driven\r\nsolutions. The target is not included in the initial meetings though s/he is invited to attend the final\r\nsession.\r\nThe collection contains 2 SPSS data files: NoBully_ST-Log-Data_final_archive.sav (n=94; 47 variables) and No-Bully_Survey-Data_final.sav (n=6410; 204 variables).",
+  "modified": "2019-05-28T10:24:25",
+  "accessLevel": "restricted public",
+  "identifier": "2965",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "bullying",
+    "harassment",
+    "intervention",
+    "intervention strategies",
+    "program evaluation",
+    "school age children",
+    "school violence",
+    "victimization"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2019-05-28T10:20:58",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37268.v1",
+      "title": "A Randomized Impact Evaluation of the No Bully System, California, 2015-2017"
+    }
+  ]
+}

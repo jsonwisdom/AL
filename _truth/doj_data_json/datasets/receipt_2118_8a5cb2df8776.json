@@ -1,0 +1,69 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Judicial District Data Book, 1983:  [United States]",
+  "description": "The Federal Judicial Center contracted with Claritas\r\n Corporation to produce the three data files in this collection from\r\n the Census Bureau's 1983 County and City Data Book. The data, which\r\n are summarized by judicial units, were compiled from a county-level\r\n file and include information on area and population, households, vital\r\n statistics, health, income, crime rates, housing, education, labor\r\n force, government finances, manufacturers, wholesale and retail trade,\r\nservice industries, and agriculture.",
+  "modified": "2006-01-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2118",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "United States",
+    "agriculture",
+    "census data",
+    "counties",
+    "crime",
+    "criminal justice system",
+    "demographic characteristics",
+    "education",
+    "government expenditures",
+    "health",
+    "households",
+    "housing",
+    "income",
+    "industry",
+    "labor force",
+    "manufacturing industry",
+    "population",
+    "service industry",
+    "trade",
+    "vital statistics"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1985-12-20T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08439.v1",
+      "title": "Judicial District Data Book, 1983:  [United States]"
+    }
+  ]
+}

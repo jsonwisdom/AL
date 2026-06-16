@@ -1,0 +1,14 @@
+{
+  "leaf_id": "004",
+  "state": "GIT_DIRECT_POINTER_ONLY",
+  "payload_file": "stcloud_leaf004_replay_bundle.tar",
+  "payload_sha256": "cf9a8933e3be7ed90a7eb3308f65a29a3405b5b6e644bfb8b86fc5ac36138a03b",
+  "payload_size_bytes": 10240,
+  "transport_note": "GitHub Direct can commit text receipts and pointers. It cannot upload the local TAR from Cloud Shell unless the TAR bytes are provided or committed from terminal.",
+  "next_options": {
+    "terminal_commit": "commit the TAR from Cloud Shell using git add/commit/push",
+    "pinata": "download TAR from Cloud Shell and upload to Pinata, then verify CID",
+    "chat_upload": "upload TAR here if supported, then GitHub Direct can create a base64/binary path only if connector supports it"
+  },
+  "anchor_allowed": false
+}

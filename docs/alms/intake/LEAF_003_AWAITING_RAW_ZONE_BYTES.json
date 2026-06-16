@@ -1,0 +1,18 @@
+{
+  "state": "AWAITING_RAW_ZONE_BYTES",
+  "leaf_id": "003",
+  "asset_id": "ST_CLOUD_CITY_BUDGET_FY2026_REVENUE_GAP_DELTA",
+  "current_claim": "Expenditure zone hash and size were provided, but raw zone bytes were not pasted into the conversation.",
+  "accepted_terminal_evidence_pending_raw_bytes": {
+    "zone_sha256": "2b8e3f9467727c95781a7947190040375a006c6f7881c9675662a5f67b07e77a",
+    "zone_size_bytes": 842,
+    "source_line": 1412
+  },
+  "missing_required_input": [
+    "exact_contents_of_stcloud_leaf003_zone_txt"
+  ],
+  "anchor_allowed": false,
+  "batch_id_allowed": false,
+  "invariant_declaration_allowed": false,
+  "next_gate": "PASTE_RAW_ZONE_BYTES"
+}

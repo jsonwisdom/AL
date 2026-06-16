@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Assessment Program Survey of Criminal Justice Agencies in the United States, 1992-1994",
+  "description": "The National Assessment Program (NAP) Survey was conducted\r\n to determine the needs and problems of state and local criminal\r\n justice agencies. At the local level in each sampled county, survey\r\n questionnaires were distributed to police chiefs of the largest city,\r\n sheriffs, jail administrators, prosecutors, public defenders, chief\r\n trial court judges, trial court administrators (where applicable), and\r\n probation and parole agency heads. Data were collected at the state\r\n level through surveys sent to attorneys general, commissioners of\r\n corrections, prison wardens, state court administrators, and directors\r\n of probation and parole. For the 1992-1994 survey, 13 separate\r\n questionnaires were used. Police chiefs and sheriffs received the same\r\n survey instruments, with a screening procedure employed to identify\r\n sheriffs who handled law enforcement responsibilities. Of the 411\r\n counties selected, 264 counties also employed trial court\r\n administrators. Judges and trial court administrators received\r\n identical survey instruments. A total of 546 surveys were mailed to\r\n probation and parole agencies, with the same questions asked of state\r\n and local officers. Counties that had separate agencies for probation\r\n and parole were sent two surveys. All survey instruments were divided\r\n into sections on workload (except that the wardens, jail\r\n administrators, and corrections commissioners were sent a section on\r\n jail use and crowding instead), staffing, operations and procedures,\r\n and background. The staffing section of each survey queried\r\n respondents on recruitment, retention, training, and number of\r\n staff. The other sections varied from instrument to instrument, with\r\n questions tailored to the responsibilities of the particular\r\n agency. Most of the questionnaires asked about use of automated\r\n information systems, programs, policies, or aspects of the facility or\r\n security needing improvement, agency responsibilities and\r\n jurisdictions, factors contributing to workload increases, budget,\r\n number of fulltime employees and other staff, and contracted\r\n services. Questions specific to police chiefs and sheriffs included\r\n activities aimed at drug problems and whether they anticipated\r\n increases in authorized strength in officers. Jail administrators,\r\n corrections commissioners, and wardens were asked about factors\r\n contributing to jail crowding, alternatives to jail, medical services\r\n offered, drug testing and drug-related admissions, and inmate\r\n classification. Topics covered by the surveys for prosecutors, public\r\n defenders, judges, and state and trial court administrators included\r\n types of cases handled, case timeliness, diversion and sentencing\r\n alternatives, and court and jury management. State and local probation\r\n and parole agency directors were asked about diagnostic tools,\r\n contracted services, and drug testing. Attorneys general were queried\r\n about operational issues, statutory authority, and legal services and\r\nsupport provided to state and local criminal justice agencies.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3659",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "case processing",
+    "corrections management",
+    "courts",
+    "criminal justice system",
+    "information systems",
+    "law enforcement agencies",
+    "needs assessment",
+    "police recruits",
+    "police training",
+    "policies and procedures",
+    "prisons",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1997-03-07T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06481.v1",
+      "title": "National Assessment Program Survey of Criminal Justice Agencies in the United States, 1992-1994"
+    }
+  ]
+}

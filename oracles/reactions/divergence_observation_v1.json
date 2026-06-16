@@ -1,0 +1,11 @@
+{
+  "schema": "divergence_observation_v1",
+  "kind": "KIND_2_REACTION",
+  "derivation_type": "divergence",
+  "required_fields": {
+    "source_ids": "array",
+    "computed_fields": {
+      "divergence_score": "number"
+    }
+  }
+}

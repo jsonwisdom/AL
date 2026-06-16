@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "The Prevalence and Nature of Intra-and Inter-group Violence in an Era of Social and Demographic Change, 2000-2014 [UNITED STATES]",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThis study used the National Incident-Based Reporting System (NIBRS) to explore whether changes in the 2000-2010 decade were associated with changes in the prevalence and nature of violence between and among Whites, Blacks, and Hispanics. This study also aimed to construct more accessible NIBRS cross-sectional and longitudinal databases containing race/ethnic-specific measures of violent victimization, offending, and arrest. Researchers used NIBRS extract files to examine the influence of recent social changes on violence for Whites, Blacks, and Hispanics, and used advanced imputation techniques to account for missing values on race/ethnic variables. Data for this study was also drawn from the National Historical Geographic Information System, the Census Gazetteer, and Law Enforcement Officers Killed or Assaulted (LEOKA).\r\nThe collection includes 1 Stata data file with 614 cases and 159 variables and 2 Stata syntax files.",
+  "modified": "2017-12-08T11:40:34",
+  "accessLevel": "restricted public",
+  "identifier": "3697",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "aggravated assault",
+    "arrest rates",
+    "crime rates",
+    "ethnicity",
+    "homicide",
+    "offenses",
+    "race",
+    "rape statistics",
+    "robbery",
+    "victimization",
+    "violent crime statistics"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2017-12-08T11:37:23",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36677.v1",
+      "title": "The Prevalence and Nature of Intra-and Inter-group Violence in an Era of Social and Demographic Change, 2000-2014 [UNITED STATES]"
+    }
+  ]
+}

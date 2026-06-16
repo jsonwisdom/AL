@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Techniques for Assessing the Accuracy of Recidivism Prediction Scales, 1960-1980: [Miami, Albuquerque, New York City, Alameda and Los Angeles Counties, and the State of California]",
+  "description": "The purpose of this data collection was to measure the\r\n validity or accuracy of four recidivism prediction instruments: the\r\n INSLAW, RAND, SFS81, and CGR scales. These scales estimate the\r\n probability that criminals will commit subsequent crimes quickly, that\r\n individuals will commit crime frequently, that inmates who are\r\n eligible for release on parole will commit subsequent crimes, and that\r\n defendants awaiting trial will commit crimes while on pretrial arrest\r\n or detention. The investigators used longitudinal data from five\r\n existing independent studies to assess the validity of the four\r\n predictive measures in question. The first data file was originally\r\n collected by the Vera Institute of Justice in New York City and was\r\n derived from an experimental evaluation of a jobs training program\r\n called the Alternative Youth Employment Strategies Project implemented\r\n in Albuquerque, New Mexico, Miami, Florida, and New York City, New\r\n York. The second file contains data from a RAND Corporation study,\r\n EFFECTS OF PRISON VERSUS PROBATION IN CALIFORNIA, 1980-1982 (ICPSR\r\n 8700), from offenders in Alameda and Los Angeles counties,\r\n California. Parts 3 through 5 pertain to serious juvenile offenders\r\n who were incarcerated during the 1960s and 1970s in three institutions\r\n of the California Youth Authority. A portion of the original data for\r\n these parts was taken from EARLY IDENTIFICATION OF THE CHRONIC\r\n OFFENDER, [1978-1980: CALIFORNIA] (ICPSR 8226). All files present\r\n demographic and socioeconomic variables such as birth information,\r\n race and ethnicity, education background, work and military\r\n experience, and criminal history, including involvement in criminal\r\n activities, drug addiction, and incarceration episodes. From the\r\n variables in each data file, standard variables across all data files\r\n were constructed. Constructed variables included those on background\r\n (such as drug use, arrest, conviction, employment, and education\r\n history), which were used to construct the four predictive scales, and\r\n follow-up variables concerning arrest and incarceration\r\nhistory. Scores on the four predictive scales were estimated.",
+  "modified": "2006-01-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3511",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "criminal histories",
+    "criminality prediction",
+    "imprisonment",
+    "juvenile offenders",
+    "probation",
+    "recidivism prediction",
+    "recidivists"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1993-10-02T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09988.v1",
+      "title": "Techniques for Assessing the Accuracy of Recidivism Prediction Scales, 1960-1980: [Miami, Albuquerque, New York City, Alameda and Los Angeles Counties, and the State of California]"
+    }
+  ]
+}

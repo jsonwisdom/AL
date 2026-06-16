@@ -1,0 +1,28 @@
+{
+  "schema_id": "JSONWISDOM_COMMERCE_PRODUCT_V1",
+  "product_id": "girl_math_artifact_v0",
+  "title": "Girl Math: Receipts Over Narrative Digital Artifact",
+  "category": "tier_0_digital_artifact",
+  "price_usd": 5,
+  "constitution_v0": "e3a1fbffab785dd6ffa69cbcc17a19fec68130b9",
+  "commerce_thesis": "Girl Math is reframed as economic verification: if the receipt exists, the story no longer has to persuade.",
+  "buyer_gets": [
+    "downloadable digital artifact",
+    "receipt-themed visual or text asset",
+    "commerce receipt metadata template"
+  ],
+  "promotion_event_type": "COMMERCE_MICRO_RECEIPT",
+  "alms_requirements": {
+    "must_emit_receipt": true,
+    "must_include_constitution_v0": true,
+    "must_record_payment_reference": true,
+    "must_record_fulfillment_reference": true
+  },
+  "forbidden_claims": [
+    "financial_advice",
+    "guaranteed_profit",
+    "verified_sale_without_payment_receipt",
+    "onchain_witness_without_tx"
+  ],
+  "status": "PRODUCT_DEFINITION_DRAFT"
+}

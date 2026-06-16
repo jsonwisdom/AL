@@ -1,0 +1,46 @@
+{
+  "version": "WITNESS_PARAMETER_UPDATE_0001_PROPOSAL",
+  "proposal_id": 1,
+  "proposal_type": "PARAMETER_UPDATE",
+  "status": "PROPOSED",
+  "parent_epoch": {
+    "name": "WITNESS_GOVERNANCE_EPOCH_0001_MANIFEST",
+    "epoch": 1,
+    "commit_sha": "e83b7c5ee5002fac020636cdb78bd9719e4d7fcb",
+    "sha256": "7bc1fe6cf6683c3144c2d79313e78cfb8c4015c681c5cb28c4c695950ed7805f"
+  },
+  "governed_by": {
+    "name": "WITNESS_GOVERNANCE_RULES_V1",
+    "commit_sha": "264b2759b997770dc86015e27df2b179054b1760",
+    "sha256": "e7b99e3eeacb0b49df9c9e81e5cae94b1be5206c62f0e5ccbef4e73bdf4685cd"
+  },
+  "genesis_reference": {
+    "name": "WITNESS_INCENTIVE_MODEL_V1_GENESIS",
+    "commit_sha": "e4b95a7456cbe1799e7c4705e4bde48cf0261bb6",
+    "sha256": "6033596f7f8397124d2ab3cc13a88941405079154428a4cfe414e8108207098c",
+    "immutable": true
+  },
+  "proposed_change": {
+    "field": "parameters.time_in_state_pricing.chronic_multiplier",
+    "old_value": 1.5,
+    "new_value": 1.25
+  },
+  "effective_epoch": 2,
+  "proposal_timestamp": "2026-05-06T22:51:00Z",
+  "rationale": "Adjustment to chronic_multiplier parameter only. No other fields modified.",
+  "validation": {
+    "requires_parent_epoch_match": true,
+    "requires_governance_rules_match": true,
+    "requires_genesis_immutability": true,
+    "requires_diff_visibility": true,
+    "requires_effective_epoch_before_activation": true,
+    "requires_sha256_before_activation": true
+  },
+  "invariants": [
+    "Does not rewrite GENESIS.",
+    "References Epoch 0001 as parent.",
+    "Governed by WITNESS_GOVERNANCE_RULES_V1.",
+    "Activation is blocked until proposed JSON SHA-256 is published.",
+    "Activation is blocked until effective_epoch is declared."
+  ]
+}

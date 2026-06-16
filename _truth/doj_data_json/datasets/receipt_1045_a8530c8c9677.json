@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Federal Justice Statistics Program: Suspects in Federal Criminal Matters, 1999 [United States]",
+  "description": "The data contain records of suspects in federal criminal matters received by United States attorneys or filed before the United States magistrates during fiscal year 1999. The data were constructed from the Executive Office for United States Attorneys (EOUSA) Central System file. Records include suspects in criminal matters, and are limited to suspects whose matters were not declined immediately by the United States attorneys. According to the EOUSA, the United States attorneys conduct approximately 95 percent of the prosecutions handled by the Department of Justice. The Central System data contain variables from the original EOUSA files as well as additional analysis variables, or \"SAF\" variables, that denote subsets of the data. These SAF variables are related to statistics reported in the Compendium of Federal Justice Statistics, Table 1.1. Variables containing identifying information (e.g., name, Social Security Number) were replaced with blanks, and the day portions of date fields were also sanitized in order to protect the identities of individuals. These data are part of a series designed by the Urban Institute (Washington, DC) and the Bureau of Justice Statistics. Data and documentation were prepared by the Urban Institute.",
+  "modified": "2011-03-08T10:38:59",
+  "accessLevel": "restricted public",
+  "identifier": "1045",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "federal courts",
+    "offenders",
+    "offenses",
+    "prosecution"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2174",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2009-02-12T14:07:05",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR24081.v2",
+      "title": "Federal Justice Statistics Program: Suspects in Federal Criminal Matters, 1999 [United States]"
+    }
+  ]
+}

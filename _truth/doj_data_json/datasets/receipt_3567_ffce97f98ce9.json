@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "An Innovative Response to an Intractable Problem: Using Village Public Safety Officers to Enhance the Criminal Justice Response to Violence Committed Against Alaska Native Women and American Indian Women in Alaska's Tribal Communities, 2008-2011",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThis project set out to understand the specific contributions Alaska's village public safety officers (VPSOs) make to the criminal justice responses to violence committed against Alaska Native and American Indian women in Alaska's tribal communities. More specifically, the goal of this study was to empirically document and assess the impact Alaska's VPSO program has on the investigation and prosecution of those who commit acts of sexual and domestic violence against Alaska Native and American Indian women in Alaska's tribal communities.\r\nThe data collected for this study were compiled from detailed case record reviews of a random sample of sexual assault, sexual abuse of a minor, and domestic violence incidents investigated by the Alaska State Troopers (AST) and closed between January 1, 2008 and December 31, 2011. Data pertaining to case-level (e.g., year and month of incident report and case closure, time to report) and incident-level (e.g., assault location, weapon use, assaultive behaviors) characteristics were collected, as were demographic data describing suspects, victims, and witnesses/third parties. The study also collected data detailing suspect and victim alcohol/drug use and intoxication, injuries sustained by victims, victim resistance strategies and behaviors, and victim disclosures, among other measures. Additional charging and case resolution (referral, prosecution, conviction) data were also compiled. Finally, the study collected detailed data on the activities and roles played by VPSOs in investigations, as well as additional follow-up activities and services provided to victims.\r\nIn total, 683 sexual assault (SA) and sexual abuse of a minor (SAM) and 982 domestic violence (DV) case records were coded and analyzed.\r\nThe study collections includes 6 Stata (.dta) files. The zip file includes 2013-VW-CX-0001_DV_CASE.dta (n=982; 127 variables), 2013-VW-CX-0001_DV_CHARGE.dta (n=3711; 23 variables), 2013-VW-CX-0001_DV_INDIV.dta (n=3747; 105 variables), 2013-VW-CX-0001_SA_CASE.dta (n=683; 133 variables), 2013-VW-CX-0001_SA_CHARGE.dta (n=1060; 24 variables), 2013-VW-CX-0001_SA_INDIV.dta (n=3140; 112 variables).",
+  "modified": "2019-03-28T08:55:56",
+  "accessLevel": "restricted public",
+  "identifier": "3567",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "Alaskan Natives",
+    "case processing",
+    "criminal justice policy",
+    "criminal justice programs",
+    "domestic violence",
+    "drug use",
+    "public safety",
+    "sexual assault",
+    "victims",
+    "women"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2019-03-28T08:52:38",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37082.v1",
+      "title": "An Innovative Response to an Intractable Problem: Using Village Public Safety Officers to Enhance the Criminal Justice Response to Violence Committed Against Alaska Native Women and American Indian Women in Alaska's Tribal Communities, 2008-2011"
+    }
+  ]
+}

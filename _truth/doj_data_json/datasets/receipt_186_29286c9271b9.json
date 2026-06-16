@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Crime Surveys:  National Sample, 1986-1992 [Near-Term Data]  ",
+  "description": "The objective of the National Crime Surveys is to provide\r\n data on the level of crime victimization in the United States and to\r\n collect information on the characteristics of crime incidents and\r\n victims. Each respondent was asked a series of screen questions to\r\n determine if he or she was victimized during the six-month period\r\n preceding the first day of the month of the interview. Screen\r\n questions cover the following types of crimes, including attempts:\r\n rape, robbery, assault, burglary, larceny, and motor vehicle\r\n theft. The data include type of crime, description of the offender,\r\n severity of the crime, injuries or losses, and demographic information\r\n on household members such as age, sex, race, education, employment,\r\nmedian family income, marital status, and military history.",
+  "modified": "2000-09-11T00:00:00",
+  "accessLevel": "public",
+  "identifier": "186",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "assault",
+    "auto theft",
+    "burglary",
+    "crime",
+    "crime rates",
+    "larceny",
+    "offenders",
+    "rape",
+    "robbery",
+    "victimization",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1990-05-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08864.v7",
+      "title": "National Crime Surveys:  National Sample, 1986-1992 [Near-Term Data]  "
+    }
+  ]
+}

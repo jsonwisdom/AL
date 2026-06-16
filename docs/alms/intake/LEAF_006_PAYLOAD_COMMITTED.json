@@ -1,0 +1,12 @@
+{
+  "leaf_id": "006",
+  "state": "PAYLOAD_COMMITTED",
+  "terminal_commit": "e2baa33",
+  "terminal_push_status": "SUCCESS",
+  "payload_path": "payload.b64",
+  "payload_issue": "operator command used wildcard *.tar and captured stcloud_leaf006_replay_bundle_B.tar rather than named canonical tar; hash verification against canonical payload still required",
+  "expected_payload_sha256": "21829f0be11cd04a64f379ad90003fc39338d91b2242720cd6c0497aed067d8b",
+  "expected_payload_size_bytes": 10240,
+  "anchor_allowed": false,
+  "next_gate": "VERIFY_COMMITTED_BASE64_DECODES_TO_EXPECTED_TAR"
+}

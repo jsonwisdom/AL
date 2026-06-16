@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Incident-Based Reporting System, 1999: Extract Files",
+  "description": "The National Incident-Based Reporting System (NIBRS) is a\r\npart of the Uniform Crime Reporting Program (UCR), administered by the\r\nFederal Bureau of Investigation (FBI). The extract files version of\r\nNIBRS was created to simplify working with NIBRS data. Data management\r\nissues with NIBRS are significant, especially when two or more segment\r\nlevels are being merged. These issues require skills separate from\r\ndata analysis. NIBRS data as formatted by the FBI are stored in a\r\nsingle file. These data are organized by various segment levels\r\n(record types). There are six main segment levels: administrative,\r\noffense, property, victim, offender, and arrestee. Each segment level\r\nhas a different length and layout. There are other segment levels that\r\noccur with less frequency than the six main levels. Significant\r\ncomputing resources are necessary to work with the data in its\r\nsingle-file format. In addition, the user must be sophisticated in\r\nworking with data in complex file types. For these reasons and the\r\ndesire to facilitate the use of NIBRS data, ICPSR created the extract\r\nfiles. The data are not a representative sample of crime in the United\r\nStates.",
+  "modified": "2009-09-14T09:41:16",
+  "accessLevel": "public",
+  "identifier": "2082",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "arrests",
+    "crime",
+    "crime rates",
+    "crime reporting",
+    "law enforcement agencies",
+    "national crime statistics (USA)",
+    "offenders",
+    "offenses",
+    "property crime",
+    "victims",
+    "violent crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2433",
+  "dataQuality": false,
+  "issued": "2008-09-10T09:03:59",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR22884.v2",
+      "title": "National Incident-Based Reporting System, 1999: Extract Files"
+    }
+  ]
+}

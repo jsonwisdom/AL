@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Uniform Crime Reports (UCR) and Federal Information Processing Standards (FIPS) State and County Geographic Codes, 1990: United States",
+  "description": "This dataset was created to facilitate the conversion of\r\n Uniform Crime Reporting (UCR) Program state and county codes to\r\n Federal Information Processing Standards (FIPS) state and county\r\n codes. The four UCR agency-level data files archived at ICPSR in\r\n Uniform Crime Reporting Program Data: [United States] (ICPSR 9028)\r\n contain UCR state and county codes as geographic\r\n identifiers. Researchers who wish to use these data with other\r\n sources, such as Census data, may want to convert these UCR codes to\r\n FIPS codes in order to link the different data sources. This file was\r\n created to facilitate this linkage. It contains state abbreviations,\r\n UCR state and county codes, FIPS state and county codes, and county\r\n names for all counties present in the UCR data files since 1990. These\r\n same FIPS codes were used to create the UCR County-Level Detailed\r\nArrest and Offense files from 1990-1996.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2643",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "FIPS codes",
+    "Uniform Crime Reports",
+    "counties",
+    "crime statistics",
+    "states (USA)"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2167",
+  "dataQuality": false,
+  "issued": "1999-04-26T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02565.v1",
+      "title": "Uniform Crime Reports (UCR) and Federal Information Processing Standards (FIPS) State and County Geographic Codes, 1990: United States"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Sexual Assault Kit Backlog Study, Los Angeles, California, 1982-2010",
+  "description": "The study addressed the growing problem of untested sexual assault kits that have been collected and stored in law enforcement agencies' storage facilities and forensic laboratories throughout the nation. Project researchers randomly collected a 20 percent sample of the 10,895 backlogged sexual assault cases (cases with untested sexual assault kits) at the Los Angeles Police Department (LAPD) and Los Angeles Sherriff's Department (LASD) to be tested and to evaluate the scientific results achieved by private testing laboratories. After sorting through files and eliminating many due to time constraints, case count fluctuations throughout the course of the data collection, the inability to locate every case file, and removing cases due to the suspects' age, the researchers collected and coded sexual assault case information on 1,948 backlogged cases from 1982 to 2009. Data were also collected on 371 non-backlogged sexual assault cases with sexual assault kits that were tested between January 1, 2009 and August 1, 2010. Data collection focused on the respective agencies' crime laboratory files and the DNA reports submitted by outside private testing laboratories. Data collection tools for this project focused on key descriptive, investigative, critical event times/dates, physical evidence, and analytical tests performed on the evidence. Records yielded information on DNA profiles and related Combined DNA Index System (CODIS) submission activity. Criminal justice case disposition information was also collected on a total of 742 cases including a sample of 371 backlogged cases and the 371 non-backlogged cases to examine the impact of evidence contained in sexual assault kits on criminal justice disposition outcomes. The resulting 2,319 case dataset, which is comprised of 1,948 backlogged cases and 371 non-backlogged cases, contains 377 variables relating to victim, suspect, and crime characteristics, laboratory information and testing results, CODIS information, and criminal justice dispositions.",
+  "modified": "2013-11-20T16:19:17",
+  "accessLevel": "restricted public",
+  "identifier": "3555",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "assault",
+    "crime laboratories",
+    "criminal investigations",
+    "disposition (legal)",
+    "evidence",
+    "forensic medicine",
+    "forensic sciences",
+    "rape",
+    "sex offenses",
+    "sexual abuse",
+    "sexual assault"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2013-11-13T16:34:36",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR33841.v1",
+      "title": "Sexual Assault Kit Backlog Study, Los Angeles, California, 1982-2010"
+    }
+  ]
+}

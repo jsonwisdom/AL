@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Trafficking of Migrant Laborers in San Diego, California, 2010-2011",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they there received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except of the removal of direct identifiers. Users should refer to the accompany readme file for a brief description of the files available with this collections and consult the investigator(s) if further information is needed.The purpose of the study was to provide statistically sound estimates on the prevalence of trafficking victimization and investigate the type of trafficking victimization among unauthorized migrant laborers in San Diego. Data were collected through face to face interviews using respondent driven sampling (Labor Trafficking Main Data, n=826 and Specific Trafficking Incident Data, n=826). There were sixteen interview sites spread across San Diego county. All interviews were conducted with at least two interviewers present. The study used a total of seven bilingual interviewers who conducted 826 valid interviews. Each subject was paid thirty dollars for participating in the interview, and given three referral coupons worth ten dollars each. The Respondent Driven Sampling (RDS) began with an initial set of \"seeds\" recruited from the target population through a combination of recruiting strangers at day labor sites and existing community contacts within the social networks of Center for Social Advocacy (CSA) outreach workers. To be eligible for participation in the study, one had to be unauthorized in the United States and be working (or have worked within) the past 3 months. Other than the seeds, all subsequent referrals had to call the project phone number to schedule interviews with their coupon numbers.",
+  "modified": "2016-09-30T14:28:11",
+  "accessLevel": "restricted public",
+  "identifier": "1191",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "human trafficking",
+    "illegal immigrants",
+    "migrant labor",
+    "migrant workers",
+    "victimization"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2016-09-30T14:24:52",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR34713.v1",
+      "title": "Trafficking of Migrant Laborers in San Diego, California, 2010-2011"
+    }
+  ]
+}

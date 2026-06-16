@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Crime Surveys:  Crime School Supplement, 1989",
+  "description": "This supplement to the National Crime Surveys was designed\r\nto collect data on crime victimization in schools in the United States.\r\nStudent respondents were asked a series of questions to determine their\r\nschool attendance in the last six months. Other questions concerning\r\nschools were posed, including type of school, distance from home, and\r\ngeneral attendance and monitoring policies. The data present\r\ninformation on the response of the school to student violation of\r\nrules, accessibility of drugs, and violence in school, including types\r\nof violence and student reaction. Other variables cover general violent\r\ncrimes, personal larceny crimes, and household crimes and offer\r\ninformation on date, time, and place of crime. Demographic\r\ncharacteristics of household members such as age, sex, race, education,\r\nemployment, median family income, and marital status are provided.",
+  "modified": "1995-03-31T00:00:00",
+  "accessLevel": "public",
+  "identifier": "182",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "crime in schools",
+    "national crime surveys",
+    "school attendance",
+    "school security",
+    "school violence",
+    "student behavior"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1990-08-15T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09394.v2",
+      "title": "National Crime Surveys:  Crime School Supplement, 1989"
+    }
+  ]
+}

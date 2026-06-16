@@ -1,0 +1,52 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "New York Police Department (NYPD) Stop, Question, and Frisk Database, 2006",
+  "description": "These data were originally collected by New York Police Department officers and record information gathered as a result of stop question and frisk (SQF) encounters during 2006. These data were used in a study carried out, under contract to the New York City Police Foundation, by the Rand Corporation's Center on Quality Policing. The release of the study, \"Analysis of Racial Disparities in the New York Police Department's Stop, Question, and Frisk Practices\" (Rand Document TR-534-NYCPF, 2007) generated interest in making the data available for secondary analysis. This data collection contains information on the officer's reasons for initiating a stop, whether the stop led to a summons or arrest, demographic information for the person stopped, and the suspected criminal behavior.",
+  "modified": "2008-06-09T10:59:20",
+  "accessLevel": "public",
+  "identifier": "2690",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "police",
+    "police citizen interactions",
+    "search and seizure"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2008-06-09T09:57:55",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR21660.v1",
+      "title": "New York Police Department (NYPD) Stop, Question, and Frisk Database, 2006"
+    }
+  ]
+}

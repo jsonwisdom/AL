@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "constraint_id": "HALT-001",
+    "expect": "PASS"
+  },
+  "proof": {
+    "proof_type": "HALT",
+    "pre_capabilities": [
+      "treasury.execute",
+      "authority.rotate",
+      "policy.mutate"
+    ],
+    "post_capabilities": [],
+    "added_capabilities": []
+  }
+}

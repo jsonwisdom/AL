@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Federal Justice Statistics Program Data Series",
+  "description": "\r\nInvestigator(s): Bureau of Justice Statistics\r\nData in this collection examine the processing of federal \r\noffenders. The Cases Terminated files (Parts 1-3 and 25-28) contain \r\ninformation about defendants in criminal cases filed in the United States \r\nFederal District Court and terminated in the calendar year indicated. \r\nDefendants in criminal cases may either be individuals or corporations, and \r\nthere is one record for each defendant in each case terminated. Information \r\non court proceedings, date the case was filed, date the case was terminated, \r\nmost serious charge, and reason for termination are included. The Docket and \r\nReporting System files (Parts 4-7 and 31-34) include information on suspects \r\nin investigative matters that took an hour or more of a United States \r\nAttorney's time with one of the following outcomes: (1) the United States \r\nAttorney declined to prosecute, (2) the case was filed in Federal District \r\nCourt, or (3) the matter was disposed by a United States magistrate. Codes \r\nfor each disposition and change of status are also provided.The \r\nPretrial Services data (Parts 8 and 22) present variables on the circuit, \r\ndistrict, and office where the defendant was charged, type of action, year of \r\nbirth and sex of the defendant, major offense charge, and results of initial \r\nand detention hearings. The Parole Decisions data (Part 9) contain information\r\nfrom various parole hearings such as court date, appeal action, reopening \r\ndecision, sentence, severity, offense, and race and ethnicity of the defendant.\r\nThe Offenders Under Supervision files (Parts 15-16 and 37-40) focus on \r\nconvicted offenders sentenced to probation supervision and federal prisoners \r\nreleased to parole supervision. The Federal Prisoner files (Parts 18 and 20) \r\nsupply data on when an offender entered and was released from confinement, as \r\nwell as the amount of time served for any given offense.Years \r\nProduced: Annually.NACJD has prepared a resource guide for the Federal Justice Statistics Program.\r\n",
+  "modified": "2022-06-23T16:31:34",
+  "accessLevel": "restricted public",
+  "identifier": "2174",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "administration",
+    "court cases",
+    "criminal law",
+    "defendants",
+    "federal courts",
+    "judicial decisions",
+    "legal systems",
+    "sentencing guidelines",
+    "trial courts"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2009-01-29T10:00:54",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/73",
+      "title": "Federal Justice Statistics Program Data Series"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Judicial Reporting Program, 1986",
+  "description": "This data collection tabulates the number of persons\r\nconvicted of felonies in state courts and describes the sentences\r\nthese individuals received. Data were collected from state courts and\r\nstate prosecutors in 100 counties of the United States.\r\nSociodemographic information includes age, race, and sex of\r\nfelon. Types of offenses committed include homicide, rape, and\r\nrobbery. Adjudication variables referring to the process between\r\narrest and sentencing are also a part of this dataset. Data can be\r\nanalyzed on a national level or by the individual counties.",
+  "modified": "2011-03-08T09:36:58",
+  "accessLevel": "restricted public",
+  "identifier": "1090",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "arrests",
+    "assault",
+    "auto theft",
+    "burglary",
+    "case processing",
+    "convictions (law)",
+    "counties",
+    "demographic characteristics",
+    "drug law offenses",
+    "felony courts",
+    "felony offenses",
+    "homicide",
+    "larceny",
+    "manslaughter",
+    "murder",
+    "rape",
+    "robbery",
+    "sentencing",
+    "state courts"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2176",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "1989-08-02T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09073.v2",
+      "title": "National Judicial Reporting Program, 1986"
+    }
+  ]
+}

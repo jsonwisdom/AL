@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Deaths in Custody Reporting Program: State Prisons 2001 - 2009",
+  "description": "The Deaths in Custody Reporting Program (DCRP) is an annual data collection\r\nconducted by the Bureau of Justice Statistics (BJS). The DCRP began in 2000\r\nunder the Death in Custody Reporting Act of 2000 (P.L. 106-297). It is the\r\nonly national statistical collection that obtains detailed information\r\nabout deaths in adult correctional facilities. The DCRP collects data on\r\npersons dying in state prisons, local jails and in the process of\r\narrest. Each collection is a separate subcollection, but each is under the\r\numbrella of the DCRP collection. This deals with the prison subcollection,\r\nwhich has a prison death file.\r\nThe prison portion of the Deaths in Custody Reporting Program began in 2001\r\nafter the passage of the Deaths in Custody Reporting Act of 2000 in October\r\nof 2000. The prison component of the DCRP collects data on inmate deaths\r\noccurring in the 50 state departments of corrections while inmates are in\r\nthe physical custody of prison officials.",
+  "modified": "2013-07-31T15:33:46",
+  "accessLevel": "restricted public",
+  "identifier": "779",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "corrections",
+    "death",
+    "homicide",
+    "suicide"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2441",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2013-07-31T14:54:37",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR34277.v1",
+      "title": "Deaths in Custody Reporting Program: State Prisons 2001 - 2009"
+    }
+  ]
+}

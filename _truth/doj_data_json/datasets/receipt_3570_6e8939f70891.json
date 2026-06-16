@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Offender Decision-Making: Decision Trees and Displacement, Texas, 2014-2017",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThis research expanded on offenders' decisions whether or not to offend by having explored a range of alternatives within the \"not offending\" category, using a framework derived from the concept of crime displacement. Decision trees were employed to analyze the multi-staged decision-making processes of criminals who are blocked from offending due to a situational crime control or prevention measure. The researchers were interested in determining how offenders evaluated displacement options as available alternatives. The data were collected through face-to-face interviews with 200 adult offenders, either in jail or on probation under the authority of the Texas Department of Criminal Justice, from 14 counties. Qualitative data collected as part of this study's methodology are not included as part of the data collection at this time.\r\nThree datasets are included as part of this collection:\r\n\r\nNIJ-2013-3454__Part1_Participants.sav (200 cases, 9 variables)\r\nNIJ-2013-3454__Part2_MeasuresSurvey.sav (2415 cases, 6 variables) NIJ-2013-3454__Part3_Vignettes.sav (1248 cases, 10 variables)\r\nDemographic variables included: age, gender, race, and ethnicity.",
+  "modified": "2021-01-04T16:15:46",
+  "accessLevel": "restricted public",
+  "identifier": "3570",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "auto theft",
+    "burglary",
+    "crime control",
+    "crime prevention",
+    "crime reduction",
+    "criminal justice system",
+    "criminality prediction",
+    "decision making",
+    "offender profiles",
+    "offenders",
+    "offenses",
+    "robbery",
+    "shoplifting"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-12-20T11:22:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37116.v2",
+      "title": "Offender Decision-Making: Decision Trees and Displacement, Texas, 2014-2017"
+    }
+  ]
+}

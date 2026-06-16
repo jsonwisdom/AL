@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Annual Survey of Jails, 2018",
+  "description": "The Annual Survey of Jails (ASJ) is the only data collection effort that provides an annual source of data on local jails and jail inmates. Data on the size of the jail population and selected inmate characteristics are obtained every five to six years from the Census of Jails. In each of the years between the complete censuses, a sample survey of jails is conducted to estimate\r\nbaseline characteristics of the nation's jails and inmates housed in these jails. The 2018 Annual Survey of Jails is the 31st such survey in a series begun in 1982. The ASJ supplies data on characteristics of jails such as admissions and releases, growth in the number of jail facilities, changes in their rated capacities and level of occupancy, growth in the population supervised in the community, changes in methods of community supervision, and crowding issues. The ASJ also provides information on changes in the demographics of the jail population, supervision status of persons held, and a count of non-U.S. citizens in custody. The data presented in this study were collected in the Annual Survey of Jails, 2018. These data are used to track growth in the number of jails and the capacities nationally, changes in the demographics of the jail population and supervision status of persons held, the prevalence of crowding issues, and a count of non-U.S. citizens within the jail population. The data are intended for a variety of users, including Federal and State agencies, local officials in conjunction with jail administrators, researchers, planners, and the public. The reference date for the survey is June 29, 2018.",
+  "modified": "2020-04-23T09:19:18",
+  "accessLevel": "public",
+  "identifier": "2338",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "correctional system",
+    "demographic characteristics",
+    "jail inmates",
+    "jails",
+    "population characteristics",
+    "probation"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2586",
+  "dataQuality": false,
+  "issued": "2020-04-23T09:19:18",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37392.v1",
+      "title": "Annual Survey of Jails, 2018"
+    }
+  ]
+}

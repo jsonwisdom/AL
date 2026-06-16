@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Federal Justice Statistics Program: Criminal Appeals Cases in Courts of Appeals, 2008",
+  "description": "The data contain records of criminal appeals cases filed in United States Courts of Appeals during fiscal year 2008. The data were constructed from the Administrative Office of the United States Courts' (AOUSC) Court of Appeals file. These contain variables on the nature of the criminal appeal, the underlying offense, and the disposition of the appeal. An appeal can be filed by the government or the offender, and the appellant can appeal the sentence, the verdict, or both sentence and verdict. The data file contains variables from the original AOUSC files as well as additional analysis variables, or \"SAF\" variables, that denote subsets of the data. These SAF variables are related to statistics reported in the Compendium of Federal Justice Statistics, Tables 6.1-6.5. Variables containing information (e.g., name, Social Security number) were replaced with blanks, and the day portions of date fields were also sanitized in order to protect the identities of individuals. These data are part of a series designed by the Urban Institute (Washington, DC) and the Bureau of Justice Statistics. Data and documentation were prepared by the Urban Institute.",
+  "modified": "2011-07-29T16:06:17",
+  "accessLevel": "restricted public",
+  "identifier": "860",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "administration",
+    "appellate courts",
+    "court cases",
+    "criminal law",
+    "defendants",
+    "federal courts",
+    "judicial decisions",
+    "legal systems"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2174",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2011-07-29T16:05:13",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR26201.v1",
+      "title": "Federal Justice Statistics Program: Criminal Appeals Cases in Courts of Appeals, 2008"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Crime Victimization Survey: Stalking Victimization Supplement, 2006",
+  "description": "The Supplemental Victimization Survey (SVS) was designed to measure\r\nthe prevalence, characteristics, and consequences of nonfatal stalking\r\nso that policymakers, academic researchers, practitioners at the\r\nfederal, state and local levels, and advocates could make informed\r\ndecisions concerning policies and programs. The SVS asks questions\r\nrelated to victims' experiences of unwanted contact or harassing\r\nbehavior on two or more occasions during the previous 12 months. The\r\nsurvey provides information about the following dimensions of stalking\r\nbehavior: relationship of the perpetrator to victim; onset, duration,\r\nand desistance; other crimes and injuries committed against the victim\r\nin conjunction with stalking; victim response; criminal justice\r\nresponse; and cost to victim.  These responses are linked to the National\r\nCrime Victimization Survey (NCVS)\r\nsurvey instrument responses for a more complete understanding of the\r\nstalking victim's circumstances.\r\nThe 2006 SVS was a one-time\r\nsupplement to the annual NCVS to obtain specific information about\r\nstalking victimization on a national level.  This supplement was\r\nsponsored by the Office of Violence Against Women (OVW) in the\r\nUnited States Department of Justice.  Since the SVS is a supplement to the\r\nNCVS, it is conducted under the authority of Title 42, United States\r\nCode, Section 3732. Only Census employees sworn to preserve\r\nconfidentiality may see the completed questionnaires.",
+  "modified": "2009-01-16T11:21:20",
+  "accessLevel": "public",
+  "identifier": "235",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "crime",
+    "crime rates",
+    "crime reporting",
+    "harassment",
+    "stalking",
+    "victimization",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2432",
+  "dataQuality": false,
+  "issued": "2009-01-15T17:23:29",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR20080.v1",
+      "title": "National Crime Victimization Survey: Stalking Victimization Supplement, 2006"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "schema": "settlement_state.v1",
+  "artifact_ref": "5917a2585186b084b281782f444c5bb6416d19ec",
+  "settlement_status": "PENDING",
+  "payment_proof": null,
+  "invariants_checked": false,
+  "economic_truth": "ARTIFACT_ANCHORED_PENDING_PAYMENT",
+  "settlement_truth": "PAYMENT_EVIDENCE_REQUIRED",
+  "revenue_recognition": "PROHIBITED",
+  "next_allowed_transition": "PAYMENT_RECEIVED_PENDING_RECONCILIATION"
+}

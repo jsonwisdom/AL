@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Survey of Indigent Defense Systems (NSIDS) State-Administered Data, 2013",
+  "description": "The National Survey of Indigent Defense Systems (NSIDS) collected nationwide data in order to: (1) identify the number and characteristics of publicly financed indigent defense systems and agencies in the United States, (2) measure how legal services were provided to indigent criminal defendants in terms of caseloads, workloads, policies, and practices, and (3) describe the types of offenses handled by indigent defense system organizations. The study was initially designed to permit measurable statistical estimates at the national level for each region of the United States, for individual states, and for the 100 most populous counties, including the District of Columbia. However, due to resource and financial constraints, the 1999 Survey of Indigent Defense Systems (ICPSR 3081) was scaled back to collect indigent criminal defense data at the trial level for (1) the 100 most populous counties, (2) 197 counties outside the 100 most populous counties, and (3) states that entirely funded indigent criminal defense services.\r\nThe 2013 NSIDS was the first census of all state- and county-administered indigent defense systems. It was also the first collection of data focusing on criminal defense and civil, juvenile, and appellate representation. The NSIDS furthers the work of the 2007 Census of Public Defender Offices (CPDO) and the 1999 Survey of Indigent Defense Systems.",
+  "modified": "2017-10-02T14:57:47",
+  "accessLevel": "public",
+  "identifier": "2624",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "court cases",
+    "defendants",
+    "defense (law)",
+    "defense counsel",
+    "legal representation",
+    "legal systems",
+    "policies and procedures",
+    "public defenders"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2017-10-02T14:57:47",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36831.v1",
+      "title": "National Survey of Indigent Defense Systems (NSIDS) State-Administered Data, 2013"
+    }
+  ]
+}

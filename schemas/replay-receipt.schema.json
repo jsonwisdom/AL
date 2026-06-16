@@ -1,0 +1,1 @@
+{"type":"object","required":["verdict","timestamp","commit_sha"],"properties":{"verdict":{"enum":["REPLAY_CONFIRMED","REPLAY_DIVERGED"]},"timestamp":{"type":"string"},"commit_sha":{"type":"string"}}}

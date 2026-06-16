@@ -1,0 +1,107 @@
+{
+  "registry_id": "WISDOM_FAMILY_LEGACY_REGISTRY",
+  "registry_version": "1.0.0",
+  "operator": "Jay Wisdom",
+  "primary_identity": "jaywisdom.base",
+  "ens_identity": "jaywisdom.eth",
+  "family_identity": "Wisdom Family",
+  "status": "DRAFT_CANON",
+  "records": [
+    {
+      "legacy_id": "WFL-0001",
+      "title": "ALMS Versioning System",
+      "creator": "Jay Wisdom",
+      "identity": "jaywisdom.base",
+      "category": "spec",
+      "artifact_path": "docs/specs/ALMS_VERSIONING_SYSTEM.md",
+      "hash": "UNSET",
+      "state": "DRAFT",
+      "rights": {
+        "authorship": "Jay Wisdom / Wisdom Family",
+        "public_use": "allowed with attribution and receipts",
+        "false_verification": "forbidden"
+      },
+      "depends_on": []
+    },
+    {
+      "legacy_id": "WFL-0002",
+      "title": "Based America 3.0",
+      "creator": "Jay Wisdom",
+      "identity": "jaywisdom.base",
+      "category": "spec",
+      "artifact_path": "docs/specs/BASED_AMERICA_3_0.md",
+      "hash": "UNSET",
+      "state": "DRAFT",
+      "rights": {
+        "authorship": "Jay Wisdom / Wisdom Family",
+        "public_use": "allowed with attribution and receipts",
+        "false_verification": "forbidden"
+      },
+      "depends_on": ["WFL-0001"]
+    },
+    {
+      "legacy_id": "WFL-0003",
+      "title": "America Computer Wisdom 4.0",
+      "creator": "Jay Wisdom",
+      "identity": "jaywisdom.base",
+      "category": "spec",
+      "artifact_path": "docs/specs/AMERICA_COMPUTER_WISDOM_4_0.md",
+      "hash": "UNSET",
+      "state": "DRAFT",
+      "rights": {
+        "authorship": "Jay Wisdom / Wisdom Family",
+        "public_use": "allowed with attribution and receipts",
+        "false_verification": "forbidden"
+      },
+      "depends_on": ["WFL-0001", "WFL-0002"]
+    },
+    {
+      "legacy_id": "WFL-0004",
+      "title": "Taxed by Prompt Zora Flywheel",
+      "creator": "Jay Wisdom",
+      "identity": "jaywisdom.base",
+      "category": "spec",
+      "artifact_path": "docs/prompts/TAXED_BY_PROMPT_ZORA_FLYWHEEL.md",
+      "hash": "UNSET",
+      "state": "DRAFT",
+      "rights": {
+        "authorship": "Jay Wisdom / Wisdom Family",
+        "public_use": "allowed with attribution and receipts",
+        "false_verification": "forbidden"
+      },
+      "depends_on": ["WFL-0001"]
+    },
+    {
+      "legacy_id": "WFL-0005",
+      "title": "67ACTNOW American Local Firewalling",
+      "creator": "Jay Wisdom",
+      "identity": "jaywisdom.base",
+      "category": "spec",
+      "artifact_path": "docs/specs/AMERICAN_LOCAL_FIREWALLING_67ACTNOW.md",
+      "hash": "UNSET",
+      "state": "DRAFT",
+      "rights": {
+        "authorship": "Jay Wisdom / Wisdom Family",
+        "public_use": "allowed with attribution and receipts",
+        "false_verification": "forbidden"
+      },
+      "depends_on": ["WFL-0001", "WFL-0004"]
+    },
+    {
+      "legacy_id": "WFL-0006",
+      "title": "Wisdom Family Legacy 5.0",
+      "creator": "Jay Wisdom",
+      "identity": "jaywisdom.base",
+      "category": "spec",
+      "artifact_path": "docs/specs/WISDOM_FAMILY_LEGACY_5_0.md",
+      "hash": "UNSET",
+      "state": "DRAFT",
+      "rights": {
+        "authorship": "Jay Wisdom / Wisdom Family",
+        "public_use": "allowed with attribution and receipts",
+        "false_verification": "forbidden"
+      },
+      "depends_on": ["WFL-0001", "WFL-0002", "WFL-0003"]
+    }
+  ]
+}

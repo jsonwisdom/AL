@@ -1,0 +1,42 @@
+{
+  "artifact": "FEDERATED_EPOCH_INDEX_V1",
+  "layer": "FEDERATION",
+  "purpose": "Define a federation index over state governance epoch roots without sharing or mutating state baselines.",
+  "last_verified": "2026-05-06",
+  "verifier": "jsonwisdom",
+  "federation_rule": {
+    "state_baseline_access": "forbidden",
+    "federation_operates_over": "epoch_roots_only",
+    "state_sovereignty_preserved": true,
+    "shared_federal_baseline_allowed": false
+  },
+  "state_epoch_record_shape": {
+    "state": "state_abbreviation",
+    "epoch_id": "state_epoch_identifier",
+    "epoch_root_sha256": "sha256_merkle_root",
+    "epoch_manifest_path": "repo_path_or_external_uri",
+    "attestation_metadata": {
+      "timestamp": "optional_timestamp",
+      "signer": "optional_signer",
+      "external_anchor": "optional_anchor"
+    }
+  },
+  "allowed_federation_inputs": [
+    "epoch_id",
+    "epoch_root_sha256",
+    "epoch_manifest_path",
+    "attestation_metadata"
+  ],
+  "forbidden_federation_inputs": [
+    "state_baseline_graph",
+    "state_internal_overlay_graph",
+    "mutable_current_state",
+    "unverified_state_runtime"
+  ],
+  "invariants": [
+    "Federation may index state epoch roots only.",
+    "Federation may not rewrite state baselines.",
+    "Federation may not infer current state from prior epochs.",
+    "Cross-state compacts bind to specific epoch roots, not mutable state names."
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "schema": "debt_curve_v1",
+  "kind": "KIND_2_REACTION",
+  "derivation_type": "debt_curve",
+  "required_fields": {
+    "source_ids": "array",
+    "computed_fields": {
+      "diversity_debt": "number",
+      "fee_multiplier": "number"
+    }
+  }
+}

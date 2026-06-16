@@ -1,0 +1,57 @@
+{
+  "schema": "payment_evidence.v1",
+  "version": "1.0.0",
+  "meta": {
+    "purpose": "Formal intake for settlement proof",
+    "lineage": "ALMS-001",
+    "prior_state": "PAYMENT_EVIDENCE_REQUIRED",
+    "required_invariants": [
+      "cryptographic_integrity",
+      "currency_match",
+      "amount_sufficiency",
+      "origin_verification",
+      "recipient_match",
+      "artifact_binding"
+    ]
+  },
+  "fields": {
+    "artifact_id": {
+      "type": "string",
+      "required": true,
+      "must_equal": "ALMS-001"
+    },
+    "artifact_ref": {
+      "type": "string",
+      "format": "SHA256",
+      "required": true,
+      "must_equal": "5917a2585186b084b281782f444c5bb6416d19ec"
+    },
+    "proof_data": {
+      "type": "object",
+      "required": true,
+      "properties": {
+        "tx_id": { "type": "string", "required": true },
+        "sender_address": { "type": "string", "required": true },
+        "recipient_address": { "type": "string", "required": true },
+        "block_height": { "type": "integer", "required": true },
+        "amount": { "type": "string", "required": true },
+        "currency": { "type": "string", "required": true },
+        "network": { "type": "string", "required": true },
+        "timestamp": { "type": "string", "format": "iso8601", "required": true }
+      }
+    },
+    "signature": {
+      "type": "string",
+      "required": false,
+      "description": "Optional authority signature; transaction proof remains mandatory."
+    }
+  },
+  "enforcement": {
+    "action": "HALT_ON_FAILURE",
+    "on_success": "TRANSITION_TO_PAYMENT_RECEIVED_PENDING_RECONCILIATION",
+    "forbidden_on_schema_only": [
+      "SETTLEMENT_VERIFIED",
+      "REVENUE_RECOGNIZED"
+    ]
+  }
+}

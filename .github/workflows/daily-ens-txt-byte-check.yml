@@ -1,0 +1,50 @@
+name: Daily ENS TXT Byte Checker
+
+on:
+  schedule:
+    # Daily witness-layer hygiene check.
+    - cron: '13 11 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  ENS_TXT_BASELINE: projects/zora-jay-agent/config/ens_txt_byte_baseline_v0_1.json
+  ENS_TXT_REPORT: artifacts/ens_txt_byte_check_report.json
+
+jobs:
+  ens-txt-byte-check:
+    name: ENS TXT byte-for-byte resolver read-back
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install resolver dependency
+        run: npm install ethers@6
+
+      - name: Run ENS TXT byte checker
+        run: node scripts/ens_txt_byte_checker.mjs
+        env:
+          ETH_RPC_URL: ${{ secrets.ETH_RPC_URL }}
+          BASE_RPC_URL: ${{ secrets.BASE_RPC_URL }}
+          ENS_TXT_BASELINE: ${{ env.ENS_TXT_BASELINE }}
+          ENS_TXT_REPORT: ${{ env.ENS_TXT_REPORT }}
+
+      - name: Upload byte-check report and baseline
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ens-txt-byte-check-report
+          path: |
+            artifacts/ens_txt_byte_check_report.json
+            projects/zora-jay-agent/config/ens_txt_byte_baseline_v0_1.json
+          if-no-files-found: warn

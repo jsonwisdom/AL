@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Law Enforcement Online",
+  "description": "Law Enforcement Online (LEO) is an information sharing network that provides secure communications, distance learning, broad and immediate dissemination of information, and related services to the local, state, and Federal law enforcement, criminal justic",
+  "modified": "2017-02-27T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "1128",
+  "publisher": {
+    "name": "Federal Bureau of Investigation",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Federal Bureau of Investigation (USDOJ)",
+    "hasEmail": "mailto:opendata@fbi.gov"
+  },
+  "keyword": [
+    "information sharing",
+    "collaboration",
+    "Virtual Command Center",
+    "crisis management",
+    "alerts",
+    "Special Interest Group (SIG) content",
+    "access",
+    "email services",
+    "National Alert System",
+    "distance learning",
+    "education",
+    "training",
+    "multimedia library",
+    "documents",
+    "studies",
+    "res"
+  ],
+  "bureauCode": [
+    "011:10"
+  ],
+  "programCode": [
+    "011:044"
+  ],
+  "dataQuality": false,
+  "issued": "2017-02-27T00:00:00",
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "http://www.leo.gov",
+      "mediaType": "text/html",
+      "title": "Law Enforcement Online"
+    }
+  ]
+}

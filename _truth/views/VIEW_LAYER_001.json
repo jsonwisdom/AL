@@ -1,0 +1,33 @@
+{
+  "artifact": "VIEW_LAYER",
+  "view_id": "VIEW_LAYER_001",
+  "source": "justice_epstein",
+  "claim_ledger_ref": "CLAIM_LEDGER_001",
+  "release_manifest_sha256": "44a74a00019faed75ae5166f4787fa7b7c0c4a7a10084387670c67614946a41c",
+  "renderings": [
+    {
+      "view_type": "PROVENANCE_SUMMARY",
+      "content": "The document was retrieved from justice.gov/epstein on 2026-05-05T10-15-35Z. [CLAIM_001]",
+      "citations": ["CLAIM_001"]
+    },
+    {
+      "view_type": "DOMAIN_VERIFICATION",
+      "content": "The page fetch target was the official DOJ justice.gov domain. [CLAIM_002]",
+      "citations": ["CLAIM_002"]
+    },
+    {
+      "view_type": "BOUNDARY_STATEMENT",
+      "content": "This view expresses no analytic interpretation beyond direct provenance. Further conclusions require independent verification. [CLAIM_003]",
+      "citations": ["CLAIM_003"]
+    }
+  ],
+  "rendering_count": 3,
+  "status": "NON_CANONICAL_VIEW",
+  "promoted": false,
+  "opens_custody_gate": false,
+  "writes_to_canonical": false,
+  "WRITE_RUN_0002": "UNCHANGED",
+  "gate_status": "CLOSED",
+  "view_manifest_sha256": null,
+  "custody_note": "Non-canonical view only. Every sentence cites CLAIM_LEDGER_001. Does not write upstream, does not promote, and does not create WRITE_RUN_0002_packet.json."
+}

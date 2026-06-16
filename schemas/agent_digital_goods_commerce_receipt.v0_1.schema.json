@@ -1,0 +1,239 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "schemas/agent_digital_goods_commerce_receipt.v0_1.schema.json",
+  "title": "Agent Digital Goods Commerce Receipt v0.1",
+  "description": "Replayable receipt binding agent digital-goods payment to delivery, license, resale rights, and challenge surface. No inference allowed.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "receipt_id",
+    "timestamp",
+    "buyer",
+    "seller",
+    "asset",
+    "payment",
+    "delivery",
+    "license",
+    "resale",
+    "challenge_window",
+    "verdict",
+    "authority"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "v0.1"
+    },
+    "receipt_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "buyer": {
+      "type": "object",
+      "required": ["wallet"],
+      "additionalProperties": false,
+      "properties": {
+        "wallet": {
+          "type": "string",
+          "minLength": 1
+        },
+        "agent_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "seller": {
+      "type": "object",
+      "required": ["wallet"],
+      "additionalProperties": false,
+      "properties": {
+        "wallet": {
+          "type": "string",
+          "minLength": 1
+        },
+        "endpoint": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "asset": {
+      "type": "object",
+      "required": ["identifier", "type"],
+      "additionalProperties": false,
+      "properties": {
+        "identifier": {
+          "type": "string",
+          "minLength": 1,
+          "description": "CID, URI, content hash, token id, registry id, or other declared asset identifier."
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "model",
+            "dataset",
+            "prompt",
+            "workflow",
+            "art",
+            "code",
+            "research",
+            "other"
+          ]
+        },
+        "manifest_hash": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "payment": {
+      "type": "object",
+      "required": ["observed"],
+      "additionalProperties": false,
+      "properties": {
+        "observed": {
+          "type": "boolean"
+        },
+        "tx_hash": {
+          "type": "string",
+          "minLength": 1
+        },
+        "amount": {
+          "type": "string",
+          "minLength": 1
+        },
+        "currency": {
+          "type": "string",
+          "default": "USDC"
+        },
+        "x402_reference": {
+          "type": "string",
+          "minLength": 1
+        },
+        "authorization_hash": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "delivery": {
+      "type": "object",
+      "required": ["observed"],
+      "additionalProperties": false,
+      "properties": {
+        "observed": {
+          "type": "boolean"
+        },
+        "proof": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Merkle proof, IPFS pin receipt, download receipt hash, signed response hash, or declared delivery evidence."
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "license": {
+      "type": "object",
+      "required": ["observed"],
+      "additionalProperties": false,
+      "properties": {
+        "observed": {
+          "type": "boolean"
+        },
+        "terms_hash": {
+          "type": "string",
+          "minLength": 1
+        },
+        "terms_reference": {
+          "type": "string",
+          "minLength": 1
+        },
+        "permissions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "use",
+              "modify",
+              "copy",
+              "display",
+              "execute",
+              "train",
+              "commercial_use",
+              "resell"
+            ]
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "resale": {
+      "type": "object",
+      "required": ["permission_observed"],
+      "additionalProperties": false,
+      "properties": {
+        "permission_observed": {
+          "type": "boolean"
+        },
+        "permitted": {
+          "type": "boolean"
+        },
+        "acl": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "challenge_window": {
+      "type": "object",
+      "required": ["observed"],
+      "additionalProperties": false,
+      "properties": {
+        "observed": {
+          "type": "boolean"
+        },
+        "opened_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "dispute_endpoint": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "COMMERCE_COMPLETE",
+        "DISPUTABLE",
+        "DELIVERY_FAILURE",
+        "LICENSE_MISMATCH",
+        "RESALE_BLOCKED",
+        "REMEDY_REQUIRED",
+        "UNOBSERVED"
+      ]
+    },
+    "authority": {
+      "type": "boolean",
+      "const": false
+    }
+  },
+  "additionalProperties": false
+}

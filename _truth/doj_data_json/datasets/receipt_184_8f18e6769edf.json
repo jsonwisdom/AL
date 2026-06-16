@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Crime Surveys:  National Sample, 1973-1983   ",
+  "description": "The National Crime Survey (NCS), a study of personal and\r\nhousehold victimization, measures victimization for six selected\r\ncrimes, including attempts. The NCS was designed to achieve three\r\nprimary objectives: to develop detailed information about the victims\r\nand consequences of crime, to estimate the number and types of crimes\r\nnot reported to police, and to provide uniform measures of selected\r\ntypes of crime. The surveys cover the following types of crimes,\r\nincluding attempts: rape, robbery, assault, burglary, larceny, and\r\nauto or motor vehicle theft. Crimes such as murder, kidnapping,\r\nshoplifting, and gambling are not covered. Questions designed to\r\nobtain data on the characteristics and circumstances of the\r\nvictimization were asked in each incident report. Items such as time\r\nand place of occurrence, injuries suffered, medical expenses incurred,\r\nnumber, age, race, and sex of offender(s), relationship of offender(s)\r\nto victim (stranger, casual acquaintance, relative, etc.), and other\r\ndetailed data relevant to a complete description of the incident were\r\nincluded. Legal and technical terms, such as assault and larceny, were\r\navoided during the interviews. Incidents were later classified in more\r\ntechnical terms based upon the presence or absence of certain\r\nelements. In addition, data were collected in the study to obtain\r\ninformation on the victims' education, migration, labor force status,\r\noccupation, and income. Full data for each year are contained in Parts\r\n101-110. Incident-level extract files (Parts 1-10, 41) are available\r\nto provide users with files that are easy to manipulate. The\r\nincident-level datasets contain each incident record that appears in\r\nthe full sample file, the victim's person record, and the victim's\r\nhousehold information. These data include person and household\r\ninformation for incidents only. Subsetted person-level files also are\r\navailable as Parts 50-79. All of the variables for victims are\r\nrepeated for a maximum of four incidents per victim. There is one\r\nperson-level subset file for each interview quarter of the complete\r\nnational sample from 1973 through the second interview quarter in\r\n1980.",
+  "modified": "1998-10-05T00:00:00",
+  "accessLevel": "public",
+  "identifier": "184",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "crime",
+    "criminal justice system",
+    "demographic characteristics",
+    "households",
+    "neighborhoods",
+    "residential environment",
+    "victimization"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR07635.v6",
+      "title": "National Crime Surveys:  National Sample, 1973-1983   "
+    }
+  ]
+}

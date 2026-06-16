@@ -1,0 +1,22 @@
+{
+  "status_receipt_id": "CIS_L5_REP_001_STATUS_V1",
+  "rep_id": "CIS_L5_REP_001",
+  "policy_artifact": "receipts/cis_l5_bounded_authority_v0_1.authorization.json",
+  "policy_commit": "7197869fb7849c7782c8fb52575e2dca50bde85d",
+  "policy_sha256": "8a13ff5bc06b319fe1a34b5ba801489f7420a07491ad0c512c69b4a97522d755",
+  "current_status": "STAGED_WITH_VISIBLE_RECEIPT_AND_VERIFIED_HASH",
+  "active_enforcement": "NOT_CLAIMED",
+  "remaining_upgrade_gates": [
+    "GPG_signing",
+    "Base_EAS_attestation",
+    "ENS_text_record_pointer",
+    "runtime_policy_validator_hooked_to_agent_execution_paths"
+  ],
+  "rules": [
+    "No ghost anchor",
+    "No active enforcement without visible signed artifact",
+    "Policy staged, not deployed"
+  ],
+  "timestamp": "2026-05-17T00:00:00Z",
+  "status": "RECORDED"
+}

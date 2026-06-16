@@ -1,0 +1,44 @@
+{
+  "version": "WITNESS_PARAMETER_UPDATE_0002_ACTIVATION",
+  "activation_id": 2,
+  "activation_type": "PARAMETER_UPDATE_ACTIVATION",
+  "status": "ACTIVATED",
+  "proposal": {
+    "name": "WITNESS_PARAMETER_UPDATE_0002_PROPOSAL",
+    "commit_sha": "fcab4722d36e9b62c0ba34530fb790e42c9b1d8d",
+    "url": "https://raw.githubusercontent.com/jsonwisdom/AL/fcab4722d36e9b62c0ba34530fb790e42c9b1d8d/governance/WITNESS_PARAMETER_UPDATE_0002_PROPOSAL.json",
+    "sha256": "8f7e643830659cfbef2f02062b7bb31ce4e58e6c1dce00400e0cd7ac3beb2228",
+    "status": "VERIFIED"
+  },
+  "parent_epoch": {
+    "name": "WITNESS_GOVERNANCE_EPOCH_0002_MANIFEST",
+    "epoch": 2,
+    "commit_sha": "125aa1b8aff0ce97e7f8edf14bd5ed97b3006234",
+    "sha256": "a44f0b18b8d9b2acc206bb7aca0b14d3041418f1b5bbd4e6a477f6fa36f927cb"
+  },
+  "governed_by": {
+    "name": "WITNESS_GOVERNANCE_RULES_V1",
+    "commit_sha": "264b2759b997770dc86015e27df2b179054b1760",
+    "sha256": "e7b99e3eeacb0b49df9c9e81e5cae94b1be5206c62f0e5ccbef4e73bdf4685cd"
+  },
+  "references": {
+    "conflict_ledger_0001_sha256": "8cf71270911bafacbaaccffe43fdb10fbe4cffa8cc1b34820e5343102df330b3",
+    "test_vectors_sha256": "734d57d93e770426acb0b43969842bce26d0ef7d0724d735a453cda37e9737b1",
+    "meme_court_attestation_sha256": "f1415f1c6bed0f3de60dd22286f22b29e74f46360317bbecbbe039bccb86c9e9"
+  },
+  "activation_epoch": 3,
+  "activation_timestamp": "2026-05-06T23:45:00Z",
+  "proposal_timestamp": "2026-05-06T23:30:00Z",
+  "activated_change": {
+    "field": "parameters.core.input_handling.grok_share_resolution",
+    "old_value": "sandbox_blackbox_denied",
+    "new_value": "operator_provided_payload_only"
+  },
+  "invariants": [
+    "Activation references verified proposal SHA-256.",
+    "Activation references sealed Epoch 0002 as parent.",
+    "Activation is governed by WITNESS_GOVERNANCE_RULES_V1.",
+    "Activation timestamp is later than proposal timestamp.",
+    "Activation enforces operator-provided payload only for inaccessible Grok share artifacts."
+  ]
+}

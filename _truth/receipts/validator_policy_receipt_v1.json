@@ -1,0 +1,67 @@
+{
+  "schema_version": "alms.validator_policy.v1",
+  "artifact": "validator_policy_receipt_v1.json",
+  "classification": "VALIDATOR_POLICY_DRAFT",
+  "status": "APPENDED_NOT_INDEXED_ZERO_AUTHORITY",
+  "scope": "codifies canonical validator rejection logic for AL membrane enforcement",
+  "references": {
+    "epoch_0_keyset_publication_v1_1": {
+      "path": "_truth/receipts/epoch_0_keyset_publication_v1_1.json",
+      "hash": "sha256:7e21d446e26c5cb9ad4cfea4b7247aa11f5e226e86ac3b32dfd69b62c7349124"
+    },
+    "public_canon_genesis_notice_v1_0_1": {
+      "path": "_truth/receipts/public_canon_genesis_notice_2026-05-14_v1_0_1.json",
+      "hash": "sha256:e5ced04e77faa03be05e3c4eddc1de64491581ae932e1207a4c4190a9fd4987f"
+    }
+  },
+  "rules": [
+    {
+      "id": "R1_INDEX_ONLY_AUTHORITY",
+      "rule": "A receipt has zero canonical authority unless its hash appears in _truth/receipts/index.json with valid signatures. Public visibility, repository presence, or social proof must not be treated as authority."
+    },
+    {
+      "id": "R2_SIGNATURE_VERIFICATION",
+      "rule": "Verify signatures against the epoch-0 keyset active at issued_at, using ed25519 and sha256."
+    },
+    {
+      "id": "R3_SCOPE_RESTRICTIONS",
+      "rule": "When promotion threshold is 1_of_1_bootstrap, allow only boundary_receipts, keyset_publication, validator_policy_receipts, and repo_hygiene_receipts."
+    },
+    {
+      "id": "R4_BOOTSTRAP_FORBIDDEN_SCOPE",
+      "rule": "Reject any promotion matching forbidden_scope, including Epoch 4 experimental claim promotion, OpenAI legitimacy claims, RED_TO_GREEN narrative elevation, visual art as truth, or universal canonical supremacy."
+    },
+    {
+      "id": "R5_CLAIMDRAFT_REJECTION",
+      "rule": "Objects with ClaimDraft schema or WK keys are syntactically invalid for index.json."
+    },
+    {
+      "id": "R6_NON_INDEXED_ZERO_AUTHORITY",
+      "rule": "Drafts not indexed, including this policy until indexed, have zero canonical effect."
+    },
+    {
+      "id": "R7_UPGRADE_GATE",
+      "rule": "Experimental promotion stays blocked until a keyset rotation to m_of_n is indexed."
+    }
+  ],
+  "validator_outcomes": {
+    "accept": "indexed_receipt_with_valid_signature_and_allowed_scope",
+    "reject": [
+      "non_indexed_receipt",
+      "invalid_signature",
+      "forbidden_scope",
+      "claimdraft_in_index",
+      "wk_key_for_canonical_promotion",
+      "experimental_claim_before_m_of_n_rotation"
+    ]
+  },
+  "not_scope": [
+    "content truth validation",
+    "OpenAI legitimacy",
+    "epoch-chain factual claims",
+    "visual art as truth",
+    "universal canonical supremacy"
+  ],
+  "operator": "Jay Wisdom",
+  "timestamp_issued": "2026-05-14T20:20:00Z"
+}

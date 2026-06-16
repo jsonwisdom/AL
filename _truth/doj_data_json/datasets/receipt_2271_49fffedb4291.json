@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Uniform Crime Reports, 1958-1969, and County and City Data Books, 1962, 1967, 1972:  Merged Data",
+  "description": "This dataset includes selected variables and cases from the\r\n Federal Bureau of Investigation's Uniform Crime Reports, 1958-1969,\r\n and the County and City Data Books for 1962, 1967, and 1972. Data are\r\n reported for all United States cities with a population of 75,000 or\r\n more in 1960. Data from the Uniform Crime Reports include for each year\r\n the number of homicides, forcible rapes, robberies, aggravated assaults,\r\n burglaries, larcenies over 50 dollars, and auto thefts. Also included is the\r\n Total Crime Index, which is the simple sum of all the crimes listed\r\n above. Selected variables describing population characteristics and\r\n city finances were taken from the 1962, 1967, and 1972 County and\r\nCity Data Books.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2271",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "arrests",
+    "assault",
+    "auto theft",
+    "burglary",
+    "counties",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "homicide",
+    "larceny",
+    "law enforcement",
+    "offenses",
+    "rape",
+    "robbery",
+    "weapons offenses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2167",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR07715.v1",
+      "title": "Uniform Crime Reports, 1958-1969, and County and City Data Books, 1962, 1967, 1972:  Merged Data"
+    }
+  ]
+}

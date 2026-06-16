@@ -1,0 +1,53 @@
+{
+  "expected_verdict": "FAIL",
+  "expected_violations": [
+    "AMENDMENT_CLASS_UNDECLARED",
+    "CONTRADICTION_REF_MISSING"
+  ],
+  "precedent_id": "233-FAIL",
+  "protected_core_modified": true,
+  "receipt": {
+    "amendment_class": "StructuralRequiredUndeclared",
+    "current_witness_root": "sha256:606eef5b88fba12269eff8a93f0bfb0336c634f09f2095faa693c20b1feb78d2",
+    "genesis_commit": "caa8e8f6cc5d085b101b1f3f83ef17768966119b",
+    "genesis_witness_root": "sha256:ea943c9c5a0515dc09c43f52543bfbb8d40c3a7c2d86a04cabacd1e9696c67d7",
+    "guardrails": {
+      "authorizes_payment": false,
+      "creates_truth": false,
+      "erases_history": false,
+      "links_settlement": false,
+      "replaces_replay": false
+    },
+    "inputs_observed": [
+      "current_witness_root",
+      "protected_core_change_detected"
+    ],
+    "inputs_unobserved": [],
+    "proposal_id": "233",
+    "proposer": "jsonwisdom",
+    "protected_core_changed_files": [
+      "replay-court/AUTHORITY-BOUNDS.md"
+    ],
+    "protected_core_modified": true,
+    "schema_version": "0.1.0",
+    "validator": "replay_court_authority_bounds_validator",
+    "verdict": "FAIL",
+    "violations": [
+      {
+        "evidence": "protected files changed: ['replay-court/AUTHORITY-BOUNDS.md']",
+        "type": "AMENDMENT_CLASS_UNDECLARED"
+      },
+      {
+        "evidence": "Operational/Structural amendments require `Contradiction: <hash> - <summary>`",
+        "type": "CONTRADICTION_REF_MISSING"
+      }
+    ],
+    "warnings": [
+      {
+        "evidence": "protected core change recomputes current root; Genesis remains baseline",
+        "type": "WITNESS_ROOT_CHANGED_EXPECTED"
+      }
+    ]
+  },
+  "source_pr": 233
+}

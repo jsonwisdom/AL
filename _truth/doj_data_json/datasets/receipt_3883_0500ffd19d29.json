@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Survey of  Eyewitness Identification Procedure in Law Enforcement Agencies, 1994-2012",
+  "description": "The data results from a study conducted by the Police Executive Research Forum (PERF) designed to obtain the first nationwide assessment of the state of the criminal justice field regarding eyewitness identification procedures used by law enforcement agencies. PERF designed and conducted a survey of 619 police departments across the United States. The study focused on the departments training and policy when conducting eyewitness identification; particularly the study examined the use of \"blind\" administrators and the use of simultaneous or sequential presentation to the witness. The number of lineup members, witness instructions, police training, number of witness viewings and recording of the witness statements were also examined. A pilot test of the survey was conducted prior to the study.",
+  "modified": "2014-03-07T12:57:20",
+  "accessLevel": "restricted public",
+  "identifier": "3883",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "case processing",
+    "evaluation",
+    "evidence",
+    "eyewitness memory",
+    "police departments",
+    "policy analysis",
+    "suspect identification",
+    "testimony",
+    "training",
+    "witnesses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2014-03-07T12:53:44",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR34274.v1",
+      "title": "National Survey of  Eyewitness Identification Procedure in Law Enforcement Agencies, 1994-2012"
+    }
+  ]
+}

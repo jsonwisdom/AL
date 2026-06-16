@@ -1,0 +1,53 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Violence Against Police:  Baltimore County, Maryland, 1984-1986",
+  "description": "This data collection examines individual and situational\r\n characteristics of nonfatal assaults on police officers in the\r\n Baltimore County Police Department. In the assault data, variables\r\n include: (1) information on the officer such as age, race, sex, height,\r\n weight, education, rank, assignment, years of experience, weapon, and\r\n injury sustained, (2) information on the offender(s) such as age, race,\r\n sex, height, weight, weapon, injury sustained, and arrest status, and\r\n (3) information on the actual situation and incident itself, such as\r\n type of call anticipated, type of call encountered, type of location,\r\n numbers of persons present (by role, e.g., assaulter, nonassaulter,\r\n complainant, etc.), type of initial officer action, actions of suspect\r\n before assault, sobriety/drug use by suspects, and final disposition.\r\n The calls for service data were collected to provide an indication of\r\n the frequency of various types of calls. In these data, variables\r\n include time of call, initial call category, disposition code, and\r\nsheet ID.",
+  "modified": "1997-09-11T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3262",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "assaults on police",
+    "offenders",
+    "police officers",
+    "police response"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1990-05-16T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09347.v1",
+      "title": "Violence Against Police:  Baltimore County, Maryland, 1984-1986"
+    }
+  ]
+}

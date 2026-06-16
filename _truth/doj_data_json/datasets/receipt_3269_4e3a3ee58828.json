@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Gang Involvement in \"Rock\" Cocaine Trafficking in Los Angeles, 1984-1985",
+  "description": "The purpose of this data collection was to investigate the\r\npossible increase in gang involvement within cocaine and \"rock\"\r\ncocaine trafficking. Investigators also examined the relationships\r\namong gangs, cocaine trafficking, and increasing levels of violence.\r\nThey attempted to determine the effects of increased gang involvement\r\nin cocaine distribution in terms of the location of an incident, the\r\ndemographic profiles of suspects, and the level of firearm use. They\r\nalso looked at issues such as whether the connection between gangs and\r\ncocaine trafficking yielded more drug-related violence, how the\r\nconnection between gangs and cocaine trafficking affected police\r\ninvestigative processes such as intra-organizational communication and\r\nthe use of special enforcement technologies, what kinds of working\r\nrelationships were established between narcotics units and gang\r\ncontrol units, and what the characteristics were of the rock\r\ntrafficking and rock house technologies of the dealers. Part 1 (Sales\r\nArrest Incident Data File) contains data for the cocaine sales arrest\r\nincidents. Part 2 (Single Incident Participant Data File) contains\r\ndata for participants of the cocaine sales arrest incidents. Part 3\r\n(Single Incident Participant Prior Arrest Data File) contains data for\r\nthe prior arrests of the participants in the cocaine arrest\r\nincidents. Part 4 (Multiple Event Incident Data File) contains data\r\nfor multiple event incidents. Part 5 (Multiple Event Arrest Incident\r\nData File) contains data for arrest events in the multiple event\r\nincidents. Part 6 (Multiple Event Incident Participant Data File)\r\ncontains data for the participants of the arrest events. Part 7\r\n(Multiple Event Incident Prior Arrest Data File) contains data for the\r\nprior arrest history of the multiple event participants. Part 8\r\n(Homicide Incident Data File) contains data for homicide\r\nincidents. Part 9 (Homicide Incident Suspect/Victim Data File)\r\ncontains data for the suspects and victims of the homicide\r\nincidents. Major variables characterizing the various units of\r\nobservation include evidence of gang involvement, presence of drugs,\r\npresence of a rock house, presence of firearms or other weapons,\r\npresence of violence, amount of cash taken as evidence, prior arrests,\r\nand law enforcement techniques.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3269",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "cocaine",
+    "criminal investigations",
+    "drug related crimes",
+    "drug traffic",
+    "gangs",
+    "law enforcement",
+    "police departments",
+    "violence"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1991-10-23T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09398.v1",
+      "title": "Gang Involvement in \"Rock\" Cocaine Trafficking in Los Angeles, 1984-1985"
+    }
+  ]
+}

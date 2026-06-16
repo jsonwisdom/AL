@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Valuation of Specific Crime Rates in the United States, 1980 and 1990",
+  "description": "This project was designed to isolate the effects that\r\nindividual crimes have on wage rates and housing prices, as gauged by\r\nindividuals' and households' decisionmaking preferences changing over\r\ntime. Additionally, this project sought to compute a dollar value\r\nthat individuals would bear in their wages and housing costs to reduce\r\nthe rates of specific crimes. The study used multiple decades of\r\ninformation obtained from counties across the United States to create\r\na panel dataset. This approach was designed to compensate for the\r\nproblem of collinearity by tracking how housing and occupation choices\r\nwithin particular locations changed over the decade considering\r\nall amenities or disamenities, including specific crime rates. Census\r\ndata were obtained for this project from the Integrated Public Use\r\nMicrodata Series (IPUMS) constructed by Ruggles and Sobek\r\n(1997). Crime data were obtained from the Federal Bureau of\r\nInvestigation's Uniform Crime Reports (UCR). Other data were collected\r\nfrom the American Chamber of Commerce Researchers Association, County\r\nand City Data Book, National Oceanic and Atmospheric Administration,\r\nand Environmental Protection Agency. Independent variables for the\r\nWages Data (Part 1) include years of education, school enrollment,\r\nsex, ability to speak English well, race, veteran status, employment\r\nstatus, and occupation and industry. Independent variables for the\r\nHousing Data (Part 2) include number of bedrooms, number of other\r\nrooms, building age, whether unit was a condominium or detached\r\nsingle-family house, acreage, and whether the unit had a kitchen,\r\nplumbing, public sewers, and water service. Both files include the\r\nfollowing variables as separating factors: census geographic division,\r\ncost-of-living index, percentage unemployed, percentage vacant\r\nhousing, labor force employed in manufacturing, living near a\r\ncoastline, living or working in the central city, per capita local\r\ntaxes, per capita intergovernmental revenue, per capita property\r\ntaxes, population density, and commute time to work. Lastly, the\r\nfollowing variables measured amenities or disamenities: average\r\nprecipitation, temperature, windspeed, sunshine, humidity,\r\nteacher-pupil ratio, number of Superfund sites, total suspended\r\nparticulate in air, and rates of murder, rape, robbery, aggravated\r\nassault, burglary, larceny, auto theft, violent crimes, and property\r\ncrimes.",
+  "modified": "2006-01-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3345",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "crime rates",
+    "crime reduction",
+    "decision making",
+    "households",
+    "housing costs",
+    "occupations",
+    "wages and salaries"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2001-10-09T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03161.v1",
+      "title": "Valuation of Specific Crime Rates in the United States, 1980 and 1990"
+    }
+  ]
+}

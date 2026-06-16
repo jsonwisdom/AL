@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Re-examination of the Criminal Deterrent Effects of Capital Punishment in the United States, 1978-1998",
+  "description": "The purpose of this study was to estimate the deterrent\r\n effect of capital punishment by employing a methodology that accounted\r\n for model uncertainty by integrating various studies into a single\r\n coherent analysis. First, this study replicated the results from two\r\n previous studies, Dezhbakhsh, Rubin and Shepherd (2003) and Donohue\r\n and Wolfers (2005), that draw on the same data. Second, the\r\n researchers implemented model averaging methods using standard\r\n frequentist estimators to take a weighted average of the findings\r\n across all possible models that could explain the effect of the\r\n difference in crime rates under alternate laws. Each model's effect\r\n was weighted based on its ability to explain the data. Variables used\r\n in this study included deterrence variables as well as various\r\ndemographic and economic control variables.",
+  "modified": "2008-01-31T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3772",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "capital punishment",
+    "crime prevention",
+    "deterrence",
+    "homicide",
+    "murder",
+    "policy analysis"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2008-01-31T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR20040.v1",
+      "title": "Re-examination of the Criminal Deterrent Effects of Capital Punishment in the United States, 1978-1998"
+    }
+  ]
+}

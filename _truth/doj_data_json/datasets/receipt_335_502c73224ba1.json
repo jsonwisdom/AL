@@ -1,0 +1,51 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Section 508 Tools, Resources, Surveys, and Reports",
+  "description": "This collection of documents includes Section 508 Surveys and Reports, technical assistance information including the law and regulations, Section 508 Standards, and technical guides.",
+  "modified": "2017-04-19T00:00:00",
+  "accessLevel": "public",
+  "identifier": "335",
+  "publisher": {
+    "name": "Civil Rights Division",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Data Management US Department of Justice (USDOJ)",
+    "hasEmail": "mailto:DataManagement@usdoj.gov"
+  },
+  "keyword": [
+    "civil rights division",
+    "department of justice",
+    "doj",
+    "section 508",
+    "access board",
+    "section508.gov"
+  ],
+  "bureauCode": [
+    "011:05"
+  ],
+  "programCode": [
+    "011:019"
+  ],
+  "spatial": "United States",
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2017-04-19T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.justice.gov/crt/section-508-home-page-0",
+      "mediaType": "text/html",
+      "title": "Section 508 Tools, Resources, Surveys, and Reports"
+    }
+  ]
+}

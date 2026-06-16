@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jaywisdom.eth/schemas/constitutional/invariants.v0.1.schema.json",
+  "title": "ConstitutionalInvariants",
+  "type": "object",
+  "required": [
+    "constitutional_invariants"
+  ],
+  "properties": {
+    "constitutional_invariants": {
+      "type": "object",
+      "required": [
+        "version",
+        "compatibility_rule",
+        "rules"
+      ],
+      "properties": {
+        "version": {
+          "type": "string",
+          "enum": [
+            "v0.1.0"
+          ]
+        },
+        "compatibility_rule": {
+          "type": "string",
+          "enum": [
+            "ALL_REQUIRED"
+          ]
+        },
+        "rules": {
+          "type": "object",
+          "required": [
+            "family_before_economy",
+            "kids_mode_compatible",
+            "semantic_authority",
+            "global_finality"
+          ],
+          "properties": {
+            "family_before_economy": {
+              "type": "boolean",
+              "const": true
+            },
+            "kids_mode_compatible": {
+              "type": "boolean",
+              "const": true
+            },
+            "semantic_authority": {
+              "type": "boolean",
+              "const": false
+            },
+            "global_finality": {
+              "type": "boolean",
+              "const": false
+            }
+          }
+        }
+      }
+    }
+  }
+}

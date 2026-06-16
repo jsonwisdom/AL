@@ -1,0 +1,30 @@
+name: Runtime Green Receipt Verify
+
+on:
+  push:
+    branches: [ "master" ]
+    paths:
+      - '_truth/security/runtime_green_receipt.json'
+      - '_truth/security/runtime_green_receipt.sha256'
+      - 'scripts/verify_runtime_green_receipt.py'
+      - '.github/workflows/runtime-green-receipt-verify.yml'
+  pull_request:
+    paths:
+      - '_truth/security/runtime_green_receipt.json'
+      - '_truth/security/runtime_green_receipt.sha256'
+      - 'scripts/verify_runtime_green_receipt.py'
+      - '.github/workflows/runtime-green-receipt-verify.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-runtime-green-receipt:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run runtime green receipt verifier
+        run: python3 scripts/verify_runtime_green_receipt.py

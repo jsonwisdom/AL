@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Monitoring of Federal Criminal Sentences, [United States], 2017-2018",
+  "description": "This collection contains information on federal criminal cases sentenced under the Sentencing Guidelines and Policy Statements of the Sentencing Reform Act of 1984. The data files include all cases received by the United States Sentencing Commission that had sentencing dates between October 1, 2017, and September 30, 2018, and were assessed as constitutional. Constitutionality compares each case's sentencing date, circuit, district, and judge to provide uniformity in reporting the cases. In 1999, the United States Sentencing Commission added more variables from its databases to this collection, so the data are now provided in two files. Several variables iterate to include multiple occurrences of the same event. Part 1, Main Data, includes all noniterating variables plus the highest occurrences of each iterating variable. Part 2, Supplementary Data, includes the remaining iterations.",
+  "modified": "2022-03-29T14:22:34",
+  "accessLevel": "public",
+  "identifier": "4170",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "convictions (law)",
+    "criminal histories",
+    "defendants",
+    "federal courts",
+    "judicial decisions",
+    "offenses",
+    "sentencing",
+    "sentencing guidelines"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2180",
+  "dataQuality": false,
+  "issued": "2022-03-29T14:22:34",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37987.v1",
+      "title": "Monitoring of Federal Criminal Sentences, [United States], 2017-2018"
+    }
+  ]
+}

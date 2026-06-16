@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "PSRAC Experts",
+  "description": "PSRAC Experts",
+  "modified": "2022-07-29T00:00:00",
+  "accessLevel": "public",
+  "identifier": "4098",
+  "publisher": {
+    "name": "Office of Justice Programs",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "Public",
+    "safety",
+    "risk",
+    "assessment",
+    "clearinghouse"
+  ],
+  "bureauCode": [
+    "011:00"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "Public ",
+  "dataQuality": false,
+  "issued": "2020-07-23T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "landingPage": "https://bja.ojp.gov/program/psrac/resources/find-expert",
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://bja.ojp.gov/program/psrac/resources/find-expert",
+      "mediaType": "text/html",
+      "title": "PSRAC Experts"
+    },
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://api.ojp.gov/ojpdataset/v1/esbe-p7rh.json",
+      "format": "Api",
+      "mediaType": "application/json",
+      "title": "PSRAC Experts - Api"
+    }
+  ]
+}

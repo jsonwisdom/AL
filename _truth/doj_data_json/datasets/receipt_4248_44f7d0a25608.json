@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Anti-LGBTQ Hate Crimes in Miami-Dade County, Florida, 2005-2019",
+  "description": "The goal of this study is to enhance public safety and community well-being through effective identification, investigation, and prosecution of anti-LGBTQ hate crimes in Miami. The investigators examined victimization experiences, victim and offender characteristics, crime reporting outcomes, victimization consequences, case processing, as well as the criminal justice system's challenges and opportunities for reform. The project focuses on the hate crime victimization within Miami's Latine community.",
+  "modified": "2022-02-28T12:47:51",
+  "accessLevel": "restricted public",
+  "identifier": "4248",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime impact",
+    "gays and lesbians",
+    "hate crimes",
+    "prosecution",
+    "transgender",
+    "victimization"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2022-02-28T12:43:41",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37933.v1",
+      "title": "Anti-LGBTQ Hate Crimes in Miami-Dade County, Florida, 2005-2019"
+    }
+  ]
+}

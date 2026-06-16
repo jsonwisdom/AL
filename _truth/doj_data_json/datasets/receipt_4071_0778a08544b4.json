@@ -1,0 +1,98 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Operational Reports",
+  "description": "Operational Reports",
+  "modified": "2019-10-23T00:00:00",
+  "accessLevel": "public",
+  "identifier": "4071",
+  "publisher": {
+    "name": "Executive Office for Immigration Review",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Office of Policy, Communications and Legislative Affairs Division Executive Office for Immigration Review (USDOJ)",
+    "hasEmail": "mailto:PAO.EOIR@usdoj.gov"
+  },
+  "keyword": [
+    "credible fear",
+    "cohorts"
+  ],
+  "bureauCode": [
+    "011:00"
+  ],
+  "programCode": [
+    "011:008"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "systemOfRecords": "EOIR:001",
+  "dataQuality": false,
+  "issued": "2019-10-23T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "landingPage": "https://www.justice.gov/eoir/statistics-and-reports",
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "description": "Credible Fear and Asylum, FY 08 to FY 19 Q4 ",
+      "downloadURL": "https://www.justice.gov/eoir/file/1216991/download",
+      "mediaType": "application/pdf",
+      "title": "Credible Fear and Asylum, FY 08 to FY 19 Q4 "
+    },
+    {
+      "@type": "dcat:Distribution",
+      "description": "Credible Fear and Asylum, FY 19 (El Salvador)",
+      "downloadURL": "https://www.justice.gov/eoir/page/file/1218196/download",
+      "mediaType": "application/pdf",
+      "title": "Credible Fear and Asylum, FY 19 (El Salvador)"
+    },
+    {
+      "@type": "dcat:Distribution",
+      "description": "Credible Fear and Asylum, FY 19 (Guatemala)",
+      "downloadURL": "https://www.justice.gov/eoir/page/file/1218201/download",
+      "mediaType": "application/pdf",
+      "title": "Credible Fear and Asylum, FY 19 (Guatemala)"
+    },
+    {
+      "@type": "dcat:Distribution",
+      "description": "Credible Fear and Asylum, FY 19 (Honduras)",
+      "downloadURL": "https://www.justice.gov/eoir/page/file/1218206/download",
+      "mediaType": "application/pdf",
+      "title": "Credible Fear and Asylum, FY 19 (Honduras)"
+    },
+    {
+      "@type": "dcat:Distribution",
+      "description": "Credible Fear and Asylum, FY 19 Q4",
+      "downloadURL": "https://www.justice.gov/eoir/file/1217001/download",
+      "mediaType": "application/pdf",
+      "title": "Credible Fear and Asylum, FY 19 Q4"
+    },
+    {
+      "@type": "dcat:Distribution",
+      "description": "LOP Cohort Analysis (Phase I) -In this analysis, EOIR considered completed and pending cases for detained or released respondents with a proceeding at EOIR between FY 2013 and FY 2017.",
+      "downloadURL": "https://www.justice.gov/eoir/file/1091801/download",
+      "mediaType": "application/pdf",
+      "title": "LOP Cohort Analysis (Phase I)"
+    },
+    {
+      "@type": "dcat:Distribution",
+      "description": "LOP Cohort Analysis (Phase II) - This supplemental document summarizes the methodology taken in conducting Phase II of this analysis.",
+      "downloadURL": "https://www.justice.gov/eoir/file/1125621/download",
+      "mediaType": "application/pdf",
+      "title": "LOP Cohort Analysis (Phase II) "
+    },
+    {
+      "@type": "dcat:Distribution",
+      "description": "LOP Cohort Analysis Addendum (Phase I) - added Detention Length with DHS Data  ",
+      "downloadURL": "https://www.justice.gov/eoir/file/1125596/download",
+      "mediaType": "application/pdf",
+      "title": "LOP Cohort Analysis Addendum (Phase I)"
+    }
+  ]
+}

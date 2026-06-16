@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Youth Gang Survey, [United States], 2002-2012",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThe National Youth Gang Survey (NYGS) 2002-2012 is a continuation of data collected annually from a representative sample of all law enforcement agencies in the United States that began in 1996. In 2002, the NYGS resampled law enforcement agencies based on updated data from the United States Census Bureau and the Federal Bureau of Investigation (FBI), and the NYGS continued to collect law enforcement data through 2012. This longitudinal study allows for examination of the trends in scope and magnitude of youth gangs nationally by measuring the presence, characteristics, and behaviors of local gangs in jurisdictions throughout the United States.\r\nThis collection includes 1 SPSS data file with 2,388 cases and 606 variables.",
+  "modified": "2018-04-13T16:07:08",
+  "accessLevel": "restricted public",
+  "identifier": "3956",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime reporting",
+    "delinquent behavior",
+    "gang members",
+    "gang migration",
+    "gang violence",
+    "gangs",
+    "law enforcement",
+    "youths"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-04-13T16:00:16",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36787.v1",
+      "title": "National Youth Gang Survey, [United States], 2002-2012"
+    }
+  ]
+}

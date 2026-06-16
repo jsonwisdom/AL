@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Effects of Prior Record in Sentencing Research in a Large Northeastern City, 1968-1979:  [United States]",
+  "description": "This data collection examines the impact of defendants' \r\n prior criminal records on the sentencing of male and female defendants \r\n committing violent and non-violent crimes. The collection also provides \r\n data on which types of prior records most influenced the sentencing \r\n judges. Variables deal specifically with the defendant, the judge and \r\n the characteristics of the current case. Only cases that fell into one \r\n of 14 categories of common offenses were included. These offenses were \r\n murder, manslaughter, rape, robbery, assault, minor assault, burglary, \r\n auto theft, embezzlement, receiving stolen property, forgery, sex \r\n offenses other than rape, drug possession, and driving while \r\nintoxicated.",
+  "modified": "1992-02-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3094",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrests",
+    "assault",
+    "auto theft",
+    "burglary",
+    "court system",
+    "crime",
+    "criminal justice system",
+    "defendants",
+    "drug law offenses",
+    "judges",
+    "murder",
+    "rape",
+    "robbery",
+    "sentencing",
+    "violence"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1988-10-25T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08929.v1",
+      "title": "Effects of Prior Record in Sentencing Research in a Large Northeastern City, 1968-1979:  [United States]"
+    }
+  ]
+}

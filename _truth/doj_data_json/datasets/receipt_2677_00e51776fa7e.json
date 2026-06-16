@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Executions in the United States, 1608-1991: The Espy File [Instructional Materials]",
+  "description": "These instructional materials were prepared for use with\r\nEXECUTIONS IN THE UNITED STATES, 1608-1991: THE ESPY FILE (ICPSR\r\n8451), compiled by M. Watt Espy and John Ortiz Smykla. The data file\r\n(an SPSS portable file) and accompanying documentation are provided to\r\nassist educators in instructing students about the history of capital\r\npunishment in the United States. An instructor's handout is also\r\nincluded. This handout contains the following sections, among others:\r\n(1) general goals for student analysis of quantitative datasets, (2)\r\nspecific goals in studying this dataset, (3) suggested appropriate\r\ncourses for use of the dataset, (4) tips for using the dataset, and\r\n(5) related secondary source readings. This dataset furnishes data on\r\nexecutions performed under civil authority in the United States\r\nbetween 1608 and April 24, 1991, and describes each individual executed\r\nand the circumstances surrounding the crime for which the person was\r\nconvicted. Variables include age, race, name, sex, and occupation of\r\nthe offender, place, jurisdiction, date, and method of execution, and\r\nthe crime for which the offender was executed. Also recorded are data\r\non whether the only evidence for the execution was official records\r\nindicating that an individual (executioner or slave owner) was\r\ncompensated for an execution.",
+  "modified": "2003-01-02T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2677",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "capital punishment",
+    "civil rights",
+    "crime",
+    "criminal justice system",
+    "executions",
+    "instructional materials",
+    "offenders",
+    "offenses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2003-01-02T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03465.v1",
+      "title": "Executions in the United States, 1608-1991: The Espy File [Instructional Materials]"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "artifact": "USC_A1_S8_C13_VERIFIED_CORRECTION_RECEIPT",
+  "status": "VERIFIED_CANONICAL_CORRECTED",
+  "id": "USC-A1-S8-C13",
+  "parent": {
+    "id": "USC-A1-S8",
+    "content_hash_sha256": "689531558999a4c062828b12204683a483a92540026e632943183563914a2754"
+  },
+  "role": "Provide and Maintain a Navy Power",
+  "normalization_rule": "NORMALIZED_TEXT_SPAN_V0_2",
+  "verification_method": "EXACT_LITERAL_REHASH_MATCHED_INDEPENDENT_EXPECTED_VALUE",
+  "span": "To provide and maintain a Navy;",
+  "byte_count_utf8": 31,
+  "content_hash_sha256": "c25e6a8b3b557f93584e7f30d847dae0b94e43817a0ba1424a34883186fa387a",
+  "correction_note": "Supersedes prior contaminated C13 hash output. Only this corrected receipt should be used for canonical C13 verification.",
+  "gate_resolution": "MATCHED_EXPECTED_VALUE",
+  "next_gate": {
+    "USC-A1-S8-C14": "READY_FOR_EXACT_BYTE_AUDIT",
+    "USC-A1-S8-C15_C16": "BLOCKED_UNTIL_C14_VERIFIED"
+  }
+}

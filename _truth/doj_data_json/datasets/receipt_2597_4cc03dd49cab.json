@@ -1,0 +1,67 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Federal Court Cases: Integrated Data Base, 2005",
+  "description": "The purpose of this data collection is to provide an\r\nofficial public record of the business of the federal courts. The data\r\noriginate from district and appellate court offices throughout the\r\nUnited States. Information was obtained at two points in the life of a\r\ncase: filing and termination. The termination data contain information\r\non both filing and terminations, while the pending data contain only\r\nfiling information.",
+  "modified": "2015-09-01T11:22:21",
+  "accessLevel": "restricted public",
+  "identifier": "2597",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "administration",
+    "appellate courts",
+    "case dismissal",
+    "case processing",
+    "civil law",
+    "court cases",
+    "criminal law",
+    "defendants",
+    "disposition (legal)",
+    "federal courts",
+    "judicial decisions",
+    "legal systems",
+    "pretrial procedures",
+    "records",
+    "trial courts",
+    "trial procedures"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2173",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2006-03-17T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04382.v3",
+      "title": "Federal Court Cases: Integrated Data Base, 2005"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "artifact": "DIFF_ENGINE_TEST_MATRIX",
+  "run_id": "WRITE_RUN_0004_1",
+  "engine": "DIFF_ENGINE_V1",
+  "scope": "MANIFEST_PAIR_ONLY",
+  "claim_scope": "SNAPSHOT_DIFF_ONLY",
+  "promotion": false,
+  "write_run_0004": "UNCHANGED",
+  "gate_status": "CLOSED",
+  "test_cases": [
+    {
+      "case_id": "DIFF_001_SAME_MANIFEST",
+      "description": "Run the same manifest against itself.",
+      "expected_added_count": 0,
+      "expected_removed_count": 0,
+      "expected_changed_count": 0,
+      "expected_result": "EMPTY_DIFF"
+    },
+    {
+      "case_id": "DIFF_002_HETEROGENEOUS_MANIFESTS",
+      "description": "Run two different source manifests, such as Estate vs JPMorgan.",
+      "expected_behavior": "added_removed_only_or_empty_overlap",
+      "forbidden_behavior": "false_changed_on_unmatched_ids",
+      "expected_result": "NO_FALSE_CHANGED"
+    },
+    {
+      "case_id": "DIFF_003_CORRUPT_JSON",
+      "description": "Run against a syntactically invalid JSON manifest.",
+      "expected_result": "FAIL_FAST_NONZERO_EXIT"
+    },
+    {
+      "case_id": "DIFF_004_TRUNCATED_SHA",
+      "description": "Run against a manifest with malformed or truncated SHA fields.",
+      "expected_result": "SCHEMA_WARNING_OR_VALIDATION_FAIL_REQUIRED_BEFORE_TRUST"
+    }
+  ],
+  "custody_note": "This matrix tests the diff engine only. It does not fetch content, promote artifacts, or create WRITE_RUN_0002_packet.json."
+}

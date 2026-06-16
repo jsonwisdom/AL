@@ -1,0 +1,21 @@
+{
+  "receipt": "AWAITING_RECOVERY_TUPLE_STATUS",
+  "state": "ZERO_TRUST_LOCKDOWN",
+  "audit_gate": "SIGNER_RECOVERY_VERIFIED",
+  "broadcast": "BLOCKED",
+  "lineage": {
+    "mode": "DESCRIPTIVE",
+    "executable_state": false
+  },
+  "required_recovery_tuple": {
+    "recovered_address": "0x...",
+    "ens_address": "0x...",
+    "verification_success": true
+  },
+  "unlock_condition": "recovered_address == ens_address AND verification_success == true",
+  "transition_on_success": "SIGNER_RECOVERY_CONFIRMED_TO_LEVEL_4_BROADCAST_ELIGIBLE",
+  "hard_rule": "NO_VERIFIED_SIGNER_NO_BROADCAST",
+  "semantic_authority": "LOCAL_REPLAY",
+  "base_status": "NOT_INVOKED",
+  "doctrine": "Proof may travel. Meaning stays replayable."
+}

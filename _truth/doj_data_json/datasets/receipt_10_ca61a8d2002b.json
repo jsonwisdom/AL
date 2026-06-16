@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Antitrust Division Appropriation Figures Since Fiscal Year 1903",
+  "description": "This dataset contains five elements for Antitrust Division Appropriation Figures since Fiscal Year 1903: Fiscal year; Direct Appropriation Amount Included in Appropriations Bill; Filing Fee Revenue Amount; Total Funding Appropriated; and Notes. (Amounts are reported as $ in thousands).",
+  "modified": "2025-04-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "10",
+  "publisher": {
+    "name": "Antitrust Division",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Richard Hess",
+    "hasEmail": "mailto:richard.hess2@usdoj.gov"
+  },
+  "keyword": [
+    "Appropriation Figures",
+    "Appropriation",
+    "Appropriations",
+    "Department of Justice",
+    "Antitrust Division",
+    "Funding",
+    "Direct Appropriation Amount",
+    "Filing Fee Revenue Amount",
+    "Total Funding Appropriated",
+    "Appropriations Bill",
+    "Notes",
+    "President's Budget Request"
+  ],
+  "bureauCode": [
+    "011:00"
+  ],
+  "programCode": [
+    "011:022"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "accrualPeriodicity": "R/P1Y",
+  "dataQuality": false,
+  "issued": "2015-10-27T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "downloadURL": "https://www.justice.gov/media/1122916/dl?inline",
+      "mediaType": "application/vnd.ms-excel",
+      "title": "Antitrust Division Appropriation Figures Since Fiscal Year 1903"
+    },
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.justice.gov/atr/appropriation-figures-antitrust-division",
+      "mediaType": "text/html",
+      "title": "Antitrust Division Appropriation Figures Since Fiscal Year 1903 (Webpage)"
+    }
+  ]
+}

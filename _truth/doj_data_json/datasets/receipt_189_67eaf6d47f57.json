@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Crime Surveys: Victim Risk Supplement, 1983  ",
+  "description": "This special one-time survey was designed to collect data\r\non persons aged 12 and over reporting household victimizations. The\r\nsupplement, administered over a one-month period as part of the\r\nNational Crime Survey, gathered data on people's lifestyles in order\r\nto determine whether certain lifestyles were related to crime\r\nvictimization. Five questionnaires used by the Census Bureau for data\r\ncollection served as the data collection model for this\r\nsupplement. The first and second questionnaires, VRS-1 and VRS-2,\r\ncontained basic screen questions and an incident report,\r\nrespectively. VRS-3, the third questionnaire, was completed for every\r\nhousehold member aged 16 or older, and included items specifically\r\ndesigned to determine whether a person's lifestyle at work, home, or\r\nduring leisure time affected the risk of crime victimization. The\r\ninterviewers completed the fourth and fifth questionnaires, VRS-4 and\r\nVRS-5. They were instructed to answer questions about the respondents'\r\nneighborhoods and behavior during the interview.",
+  "modified": "1999-02-25T00:00:00",
+  "accessLevel": "public",
+  "identifier": "189",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "crime",
+    "criminal justice system",
+    "demographic characteristics",
+    "households",
+    "leisure",
+    "living conditions",
+    "neighborhoods",
+    "quality of life",
+    "residential environment",
+    "victimization",
+    "work environment"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1985-12-20T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08316.v2",
+      "title": "National Crime Surveys: Victim Risk Supplement, 1983  "
+    }
+  ]
+}

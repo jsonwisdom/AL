@@ -1,0 +1,52 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Downtown Safety, Security, and Development in New York City, 1984",
+  "description": "This data collection was designed to address problems of \r\n crime as a barrier to the economic health of three outlying commercial \r\n centers of New York City: Brooklyn, Fordham Road in the Bronx, and \r\n Jamaica Center in Queens. Included in the survey are variables \r\n concerning the respondent's age, race, gender, family income, length of \r\n residence, and personal victimization experience. Also included are \r\n variables pertaining to perceptions of safety, physical disorder in the \r\narea, and source of information about crime in the commercial center.",
+  "modified": "1992-02-17T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3257",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "commercial districts",
+    "crime",
+    "economic conditions"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1990-05-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09326.v1",
+      "title": "Downtown Safety, Security, and Development in New York City, 1984"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Improving Evidence Collection Through Police-Prosecutor Coordination in Baltimore, 1984-1985",
+  "description": "The purpose of this data collection was to investigate the \r\n effects of changes in police evidence procedures and the effects of \r\n providing feedback to officers on felony case charge reductions or \r\n dismissals due to evidentiary problems. The data were designed to \r\n permit an experimental assessment of the effectiveness of two police \r\n evidence collection programs implemented on April 1, 1985. One of these \r\n was an investigative and post-arrest procedural guide. The other was an \r\n individualized feedback report prepared by prosecutors for police \r\n officers. The officer file includes information on each officer's sex \r\n and race, length of police service, and assignment changes during the \r\n study period. Data on the offender and the case files include time of \r\n arrest, information on arresting officer, original investigating \r\n officer and principal investigating officer, offense and victim \r\n characteristics, arrestee characteristics, available evidence, case \r\nprocessing information, and arrestee's criminal history.",
+  "modified": "2006-01-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3510",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrest procedures",
+    "evidence",
+    "felony offenses",
+    "police",
+    "prosecution"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1990-03-02T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09290.v1",
+      "title": "Improving Evidence Collection Through Police-Prosecutor Coordination in Baltimore, 1984-1985"
+    }
+  ]
+}

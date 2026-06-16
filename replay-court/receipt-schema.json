@@ -1,0 +1,152 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "replay-court/receipt-schema.json",
+  "title": "Replay Court Receipt Schema v0.1.0",
+  "description": "Machine-readable receipts for Replay Court constitutional telemetry. Receipts record observations; they do not create truth, authorize payment, erase history, or replace replay.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "receipt_id",
+    "receipt_type",
+    "created_at",
+    "process_ref",
+    "source_refs",
+    "observed_artifacts",
+    "unobserved_artifacts",
+    "guardrails",
+    "payload",
+    "payload_hash"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "receipt_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "receipt_type": {
+      "type": "string",
+      "enum": [
+        "replay_court_intake",
+        "evidence_inventory",
+        "replay_court_report",
+        "drift_receipt",
+        "self_audit_receipt",
+        "score_receipt",
+        "repair_receipt",
+        "contradiction_receipt",
+        "validator_receipt",
+        "witness_anchor_receipt"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "process_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["process_doc", "process_version_ref"],
+      "properties": {
+        "process_doc": { "type": "string" },
+        "process_version_ref": { "type": "string" },
+        "mechanics_ref": { "type": "string" },
+        "validator_ref": { "type": "string" },
+        "authority_bounds_ref": { "type": "string" }
+      }
+    },
+    "source_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "submission_id": { "type": "string" },
+        "report_id": { "type": "string" },
+        "score_id": { "type": "string" },
+        "drift_id": { "type": "string" },
+        "repair_id": { "type": "string" },
+        "contradiction_id": { "type": "string" },
+        "validator_result_id": { "type": "string" },
+        "issue_ref": { "type": "string" },
+        "commit_ref": { "type": "string" }
+      }
+    },
+    "observed_artifacts": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/artifact_ref" }
+    },
+    "unobserved_artifacts": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/artifact_ref" }
+    },
+    "linked_receipts": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": []
+    },
+    "linked_contradictions": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": []
+    },
+    "linked_repairs": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": []
+    },
+    "guardrails": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "creates_truth",
+        "authorizes_payment",
+        "links_settlement",
+        "erases_history",
+        "replaces_replay"
+      ],
+      "properties": {
+        "creates_truth": { "type": "boolean", "const": false },
+        "authorizes_payment": { "type": "boolean", "const": false },
+        "links_settlement": { "type": "boolean", "const": false },
+        "erases_history": { "type": "boolean", "const": false },
+        "replaces_replay": { "type": "boolean", "const": false }
+      }
+    },
+    "payload": {
+      "type": "object"
+    },
+    "payload_hash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "previous_receipt_hash": {
+      "type": "string",
+      "pattern": "^(GENESIS|sha256:[a-f0-9]{64})$"
+    },
+    "receipt_hash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    }
+  },
+  "definitions": {
+    "artifact_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ref", "status"],
+      "properties": {
+        "ref": { "type": "string" },
+        "status": {
+          "type": "string",
+          "enum": ["observed", "unobserved"]
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        },
+        "note": { "type": "string" }
+      }
+    }
+  }
+}

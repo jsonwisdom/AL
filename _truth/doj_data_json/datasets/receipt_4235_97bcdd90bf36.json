@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Interpersonal Violence and Misconduct in Jails: An Empirical Investigation of Adverse Outcomes in the Los Angeles County Jail System, California, 2000-2018",
+  "description": " The Interpersonal Violence and Institutional Misconduct in Jails Study is a longitudinal evaluation of administrative data collected from the Los Angeles County Jail System. This study includes aggregate monthly information on the number and rate of incidents of interpersonal violence and serious institutional misconduct in the Los Angeles County Jail System over an eight-year time period (January 2010 to December 2017). This investigation also includes information on the development and validation of two separate risk assessment tools--the Inmate Risk Assessment for Perpetration (IRAP) and the Inmate Risk Assessment for Victimization (IRAV)--that were designed to help authorities proactively identify the perpetrators and victims of interpersonal violence in jail, respectively. The subjects used to construct and test these instruments were an admission cohort of all adjudicated inmates entering the Los Angeles County jail system in 2016 (N = 104,919). This population of inmates was randomly assigned into one of four groups. The first was the construction sample (n = 26,404), which was used to create the two risk assessment scales, and the other three served as cross-validation samples, which each served to evaluate the predictive accuracy and reliability of these instruments. These data include individual-level information on inmate demographics, criminal history, and other measures of institutional behavior. ",
+  "modified": "2021-07-29T10:31:02",
+  "accessLevel": "restricted public",
+  "identifier": "4235",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "institutional misconduct",
+    "interpersonal conflict",
+    "jail inmates",
+    "risk assessment",
+    "violence"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2021-07-29T10:27:29",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37822.v1",
+      "title": "Interpersonal Violence and Misconduct in Jails: An Empirical Investigation of Adverse Outcomes in the Los Angeles County Jail System, California, 2000-2018"
+    }
+  ]
+}

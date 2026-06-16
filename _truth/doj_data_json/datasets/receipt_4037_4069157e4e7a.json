@@ -1,0 +1,53 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Arkansas Juvenile Court Records, 1991-1993",
+  "description": "This data collection describes in quantitative terms the\r\nvolume of juvenile cases disposed by courts having jurisdiction over\r\njuvenile matters (delinquency, status offense, and dependency cases).\r\nInaugurated in 1983, the Arkansas Administrative Office of the Courts\r\nbegan to collect data from intake and probation departments on each\r\ncase disposed during the previous calendar year. The data include a\r\nrecord of each case processed formally with petition for each\r\ndelinquency, dependent/neglect, or family in need of services case\r\ndisposed. Information is provided on county, case type, date of\r\nfiling, reason for referral to the courts, and the court action.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "4037",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "case processing",
+    "court cases",
+    "juvenile courts",
+    "juvenile crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1998-01-16T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06808.v1",
+      "title": "Arkansas Juvenile Court Records, 1991-1993"
+    }
+  ]
+}

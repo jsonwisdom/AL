@@ -1,0 +1,48 @@
+name: Replay Court Validator
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - edited
+      - ready_for_review
+
+permissions:
+  contents: read
+  pull-requests: read
+  actions: read
+
+jobs:
+  authority-bounds:
+    name: Authority Bounds Validator
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout full history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch base branch
+        run: git fetch origin "${{ github.base_ref }}" --depth=200
+
+      - name: Run Replay Court authority validator
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PROPOSAL_CREATED_AT: ${{ github.event.pull_request.created_at }}
+          PROPOSAL_UPDATED_AT: ${{ github.event.pull_request.updated_at }}
+          GITHUB_ACTOR: ${{ github.actor }}
+        run: |
+          python3 scripts/validate_authority_bounds.py
+
+      - name: Upload validation receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: replay-court-validation-receipt
+          path: validation-receipts/*.json
+          if-no-files-found: warn
+          retention-days: 90

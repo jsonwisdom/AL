@@ -1,0 +1,22 @@
+{
+  "artifact": "USC_A1_S8_C17_VERIFIED_RECEIPT",
+  "status": "VERIFIED_CANONICAL",
+  "id": "USC-A1-S8-C17",
+  "parent": {
+    "id": "USC-A1-S8",
+    "content_hash_sha256": "689531558999a4c062828b12204683a483a92540026e632943183563914a2754"
+  },
+  "role": "Seat of Government and federal places exclusive legislation power",
+  "normalization_rule": "NORMALIZED_TEXT_SPAN_V0_2",
+  "verification_method": "REPO_COMMITTED_SPAN_PLUS_REPO_DERIVED_HASH",
+  "span_path": "_truth/us/constitution/a1_s8_c17_span.txt",
+  "span": "To exercise exclusive Legislation in all Cases whatsoever, over such District (not exceeding ten Miles square) as may, by Cession of particular States, and the Acceptance of Congress, become the Seat of the Government of the United States, and to exercise like Authority over all Places purchased by the Consent of the Legislature of the State in which the Same shall be, for the Erection of Forts, Magazines, Arsenals, dock-Yards, and other needful Buildings;—And",
+  "byte_count_utf8": 466,
+  "content_hash_sha256": "2733221cb2ec06bb279ddd591437df404b3c1187dcf95bf465795e7a4d1e71a9",
+  "repo_span_sha_git_blob": "467d2240d83b2c92a2b92803f0cb743c731ae324",
+  "gate_resolution": "MATCHED_REPO_DERIVED_EXPECTED_VALUE",
+  "next_gate": {
+    "USC-A1-S8-C18": "READY_FOR_REPO_FIRST_COMMIT_PROTOCOL",
+    "USC-A1-S8": "FINAL_KEYSTONE_PENDING"
+  }
+}

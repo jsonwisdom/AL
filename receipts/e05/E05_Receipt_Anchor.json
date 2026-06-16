@@ -1,0 +1,36 @@
+{
+  "epoch": "E05",
+  "status": "FINALIZED",
+  "timestamp": "2026-05-23T02:13:48Z",
+  "actor": "Zero Cool",
+  "artifacts": {
+    "primary": {
+      "name": "IMG_9629.png",
+      "path": "artifacts/epoch03/IMG_9629.png",
+      "sha256": "36f3a099fe616ebd73f642b90d30b1dc9d05a4d65d8ad9e56070b36b55515b7e"
+    }
+  },
+  "chain_of_custody": {
+    "ens_pointer": "E05|FINALIZED|cid=bafkreieybfrnhy4qwkmgnjumt7xzmai5ms5u2cmm7kfhjmw5x4744qvpou|commit=5b69b24f9010d1f0817be3bd81479e24b58f0fa8|root=60e117e759cf1f19375233dd59a5eac6076b1f4b0d7fe5d07dc0352dd778141c",
+    "github_commit": "5b69b24f9010d1f0817be3bd81479e24b58f0fa8",
+    "root_hash": "60e117e759cf1f19375233dd59a5eac6076b1f4b0d7fe5d07dc0352dd778141c",
+    "ens_pointer_commit": "d9b8b2f82aa8aa89bbafe80d914314fd1514b44a"
+  },
+  "verification_protocol": "REPLAY_BEFORE_AUTHORITY",
+  "certificate_layout": {
+    "header": "E05 FINALIZED: VERIFICATION CERTIFICATE",
+    "footer": "Digital ABI Domain | PROTECT OUR ASSETS | AUTH: ZERO COOL",
+    "verification_instructions": [
+      "Resolve jaywisdom.eth or jaywisdom.base.eth TXT record for E05 pointer.",
+      "Clone jsonwisdom/AL at commit 5b69b24f9010d1f0817be3bd81479e24b58f0fa8.",
+      "Compute SHA-256 of artifacts/epoch03/IMG_9629.png.",
+      "Compare artifact hash and discovery bundle root against this certificate."
+    ]
+  },
+  "constitutional_boundary": {
+    "identity": "DISCOVERY_ONLY",
+    "authority": "COMMIT_PLUS_BYTES_PLUS_HASH_PLUS_REPLAY_ONLY",
+    "placeholder_promotion": "FORBIDDEN"
+  },
+  "seal": "E05_CERTIFICATE_SPEC_ANCHORED"
+}

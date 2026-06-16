@@ -1,0 +1,20 @@
+schema_version: "EVAL_RECEIPT_ADAPTER_CONFIG_V1"
+
+fixture:
+  path: "examples/fixtures/fixture_002.json"
+
+canonicalization:
+  regime: "JCS_V1"
+  unicode_normalization: "NFC"
+  hash_algorithm: "sha256"
+
+classification:
+  mode: "STATIC"
+  value: "CONVERGED"
+
+output:
+  directory: "examples/output"
+  receipt_prefix: "L0_ADV_"
+
+runtime:
+  observer_id: "python_3.x"

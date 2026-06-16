@@ -1,0 +1,34 @@
+{
+  "receipt_type": "drift_check",
+  "receipt_class": "constitutional",
+  "lane": "drift",
+  "parent_event_id": "drift_monitor_established_v1",
+  "probe_type": "baseline_replay_check",
+  "artifact": "GitHub Run #10",
+  "baseline_commit": "b483cb5285174126a1ddb6cb910082f6d5011520",
+  "candidate_run": 10,
+  "mirror_cid": "bafkreielqdplstwbnsxrgpmr2uq4ahbkl63rzewose5fdu2vasewtxa3ey",
+  "result": "MATCH",
+  "drift_detected": false,
+  "comparison_policy_applied": true,
+  "ignored_fields": [
+    "timestamps",
+    "durations",
+    "run_ids",
+    "run_numbers"
+  ],
+  "matched_fields": [
+    "exit_code",
+    "gate_results",
+    "schema_output",
+    "business_logic_output"
+  ],
+  "attestations": [
+    "replay_verified",
+    "mirror_synced",
+    "no_code_drift"
+  ],
+  "status": "NO_DRIFT_OBSERVED",
+  "triggered_by": "COMPRESSION_AUTOMATION_V1",
+  "authority": false
+}

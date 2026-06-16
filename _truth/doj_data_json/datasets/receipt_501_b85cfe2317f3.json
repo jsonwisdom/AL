@@ -1,0 +1,45 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Annual Statistical Reports",
+  "description": "The annual statistical reports for the Offices of the United States Attorneys contains statistical tables displaying both national and district caseload data, covering the many priorities of the United States Attorneys in both criminal prosecution and civ",
+  "modified": "2012-09-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "501",
+  "publisher": {
+    "name": "Executive Office for United States Attorneys",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Data Management US Department of Justice (USDOJ)",
+    "hasEmail": "mailto:DataManagement@usdoj.gov"
+  },
+  "keyword": [
+    "caseload data",
+    "criminal prosecution",
+    "civil litigation",
+    "US Attorneys"
+  ],
+  "bureauCode": [
+    "011:00"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2012-09-30T00:00:00",
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.justice.gov/usao/resources/annual-statistical-reports",
+      "mediaType": "application/pdf",
+      "title": "Annual Statistical Reports"
+    }
+  ]
+}

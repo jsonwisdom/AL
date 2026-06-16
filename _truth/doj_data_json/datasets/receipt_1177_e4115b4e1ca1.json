@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Survey of Children's Exposure to Violence II, 1993-2012 [United States]",
+  "description": "The National Survey of Children's Exposure to Violence (NatSCEV) series involved three rounds of data collection, NatSCEV I (baseline), this study NatSCEV II, and NatSCEV III. For more information on other parts to the series, please use the following links:\r\nNatSCEV I (ICPSR 35203) - http://doi.org/10.3886/ICPSR35203.v1\r\nNatSCEV III (ICPSR 36523) - http://doi.org/10.3886/ICPSR36523.v1\r\nThe National Survey of Children's Exposure to Violence II was designed to obtain lifetime and one-year incidence estimates of a comprehensive range of childhood victimizations across gender, race, and developmental stage. Conducted between March, 2011 and January, 2012, it assessed the experiences of a nationally representative sample of 4,503 children aged 1 month to 18 years living in the contiguous United States (excluding New Hampshire). \r\nA nationwide sample which excluded any phone numbers with area codes assigned within the state of New Hampshire was constructed using four frames: (1) 801,317 landline telephone numbers from which telephone households could be drawn by random digit dialing (RDD); (2) 5,000 cell-phone telephone numbers from which a sample of cell phone users could be drawn by RDD; (3) an address-based sample (ABS) of 70,924 cell phone and residential numbers; and (4) a pre-screened sample of 3,573 telephone numbers of households with children from a recent national RDD survey. The compiled frame yielded 3,259 residential RDD interviews, 31 cell phone RDD interviews, 750 ABS interviews, and 463 pre-screened sample interviews for a total of 4,503 interviews.\r\nA short interview was conducted with an adult caregiver (usually a parent) to obtain family demographic information. One child was randomly selected from all eligible children in a household by selecting the child with the most recent birthday. If the selected child was 1 month to 9 years old, the main interview was conducted with the caregiver. If the selected child was 10-17 years old, the main interview was conducted with the child.\r\nThe survey used an enhanced version of the Juvenile Victimization Questionnaire (JVQ), an inventory of childhood victimization. This version of the JVQ obtains reports on 53 forms of offenses against youth that cover six general areas of concern including: conventional crime, child maltreatment, peer and sibling victimization, sexual victimization, witnessing and indirect victimization, and internet victimization. Follow-up questions for each victimization item gathered additional information about the victimization incident.",
+  "modified": "2016-10-11T08:14:52",
+  "accessLevel": "restricted public",
+  "identifier": "1177",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "alcohol consumption",
+    "child abuse",
+    "children",
+    "delinquent behavior",
+    "juvenile victims",
+    "mental health",
+    "self concept",
+    "sexual assault",
+    "victimization",
+    "youths"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "4000",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2016-08-23T11:17:09",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36177.v1",
+      "title": "National Survey of Children's Exposure to Violence II, 1993-2012 [United States]"
+    }
+  ]
+}

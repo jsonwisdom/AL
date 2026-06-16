@@ -1,0 +1,46 @@
+BATCH_003 ITEM_020
+status: PROOF_007_ORIGIN_HUNT_ORDER
+network: base
+contract_under_test: 0x694ce46c64d9d1a5e9376a9febcf85ec05d72e9f
+contract_label: JAYWISDOM
+proof_target: PROOF_007_ZORA_CREATOR_COIN_DEPLOYER_VS_FIRST_MINTER
+prior_bundle_branch_killed: d9680328d47c6653d69169718ce6ff290cc55258
+
+origin_hunt_goal:
+Locate the contract creation transaction and earliest mint/buy or zero-address transfer event for the JAYWISDOM CreatorCoin contract.
+
+required_browser_sources:
+- https://base.blockscout.com/address/0x694ce46c64d9d1a5e9376a9febcf85ec05d72e9f
+- contract Transactions tab
+- Token Transfers tab
+- Logs tab
+- earliest transaction page for the contract
+
+required_fields:
+- contract_creator
+- creation_tx
+- created_at_block
+- created_at_timestamp
+- earliest_transfer_or_mint_tx
+- earliest_event_name
+- earliest_transfer_from
+- earliest_transfer_to
+- first_minter_or_buyer_candidate
+
+proof_rule:
+Proof-007 can pass only if creation evidence identifies a creator/deployer address and earliest mint/buy evidence identifies a first minter/buyer address, and those two addresses are different.
+
+fallback_result:
+If creation tx or earliest mint/buy cannot be located, classify as INSUFFICIENT_ORIGIN_EVIDENCE.
+
+claim_allowed:
+- Proof-007 origin hunt order committed to BATCH_003.
+- Prior bundled transaction branch is closed and no longer the active evidence path.
+
+claim_not_allowed:
+- contract creator identified
+- creation transaction located
+- first minter/buyer identified
+- Proof-007 passed
+
+boundary: origin hunt order only; no new onchain decode; no proof result claimed

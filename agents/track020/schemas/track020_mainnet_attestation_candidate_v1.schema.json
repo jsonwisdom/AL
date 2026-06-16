@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.github.io/AL/agents/track020/schemas/track020_mainnet_attestation_candidate_v1.schema.json",
+  "title": "TRACK_020_MAINNET_ATTESTATION_CANDIDATE_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "artifact",
+    "version",
+    "track",
+    "chain_profile",
+    "eas_schema_ref",
+    "runtime_dependency",
+    "onchain_state",
+    "attestation_payload",
+    "operator_signature_required",
+    "no_ghost_anchor"
+  ],
+  "properties": {
+    "artifact": { "const": "TRACK_020_MAINNET_ATTESTATION_CANDIDATE" },
+    "version": { "const": "1.0" },
+    "track": { "const": "TRACK_020" },
+    "chain_profile": { "const": "base-mainnet" },
+    "eas_schema_ref": { "const": "AGW_FederatedRecovery_v1" },
+    "runtime_dependency": { "const": "TRACK_019_TESTNET_PROOF" },
+    "onchain_state": { "const": "NOT_SUBMITTED" },
+    "operator_signature_required": { "const": true },
+    "no_ghost_anchor": { "const": true },
+    "attestation_payload": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "trackId",
+        "epochId",
+        "courtId",
+        "regenerationManifestHash",
+        "recoveryReceiptHash",
+        "federationReadinessHash",
+        "state"
+      ],
+      "properties": {
+        "trackId": { "const": "TRACK_020" },
+        "epochId": { "const": "PENDING" },
+        "courtId": { "type": "string" },
+        "regenerationManifestHash": { "const": "PENDING_TRACK_019_TESTNET_PROOF" },
+        "recoveryReceiptHash": { "const": "PENDING_TRACK_019_TESTNET_PROOF" },
+        "federationReadinessHash": { "const": "PENDING_TRACK_019_TESTNET_PROOF" },
+        "state": { "const": "BLOCKED_PENDING_TRACK_019_RUNTIME_PROOF" }
+      }
+    }
+  }
+}

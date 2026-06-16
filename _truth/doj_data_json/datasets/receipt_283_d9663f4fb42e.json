@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Survey of Campus Law Enforcement Agencies, 2004-2005:  [United States]",
+  "description": "This survey covered the 2004-2005 academic year and collected data from law enforcement agencies using sworn police officers and those using only non-sworn security officers. Agencies serving 4-year United States universities and colleges with a fall 2004 enrollment of 2,500 or more, and\r\nthose serving 2-year public colleges with a fall 2004\r\nenrollment of 10,000 or more were surveyed. United States military\r\nacademies and for-profit institutions were excluded. Data were collected in conjunction with the 2004 BJS Census of State and Local Law Enforcement Agencies. The survey instrument was patterned after the BJS Law\r\nEnforcement Management and Administrative Statistics\r\nsurvey. Data were collected describing campus law\r\nenforcement agencies, including personnel, expenditures\r\nand pay, operations, equipment, computers and information\r\nsystems, policies, and special programs. BJS conducted an earlier survey of campus law enforcement agencies, covering the 1994-1995 school year. Users can access the data collection from the ICPSR Web site (ICPSR 6846).",
+  "modified": "2010-03-09T16:06:17",
+  "accessLevel": "public",
+  "identifier": "283",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "administration",
+    "budgets",
+    "colleges",
+    "law enforcement",
+    "law enforcement agencies",
+    "management",
+    "personnel",
+    "universities",
+    "wages and salaries",
+    "workers"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2431",
+  "dataQuality": false,
+  "issued": "2010-03-09T16:06:17",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR27261.v1",
+      "title": "Survey of Campus Law Enforcement Agencies, 2004-2005:  [United States]"
+    }
+  ]
+}

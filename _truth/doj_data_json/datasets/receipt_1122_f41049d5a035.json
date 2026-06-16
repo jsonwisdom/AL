@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Survey of Inmates in State and Federal Correctional Facilities, [United States], 2004",
+  "description": "This survey provides nationally representative data on inmates\r\nheld in state prisons and federally-owned and operated prisons.\r\nThrough personal interviews conducted from October 2003 through May\r\n2004, inmates in both state and federal prisons provided information\r\nabout their current offense and sentence, criminal history, family\r\nbackground and personal characteristics, prior drug and alcohol use\r\nand treatment programs, gun possession and use, and prison activities,\r\nprograms, and services. Prior surveys of State prison inmates were\r\nconducted in 1974, 1979, 1986, 1991, and 1997. Sentenced federal\r\nprison inmates were interviewed in the 1991 and 1997 surveys.",
+  "modified": "2019-12-12T08:49:49",
+  "accessLevel": "restricted public",
+  "identifier": "1122",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "HIV",
+    "correctional facilities",
+    "correctional facilities (adults)",
+    "corrections",
+    "criminal histories",
+    "drug abuse",
+    "inmate classification",
+    "inmate deaths",
+    "inmate populations",
+    "inmate programs",
+    "inmates",
+    "offenses",
+    "prison conditions",
+    "substance abuse",
+    "treatment programs"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2171",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2007-02-28T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04572.v6",
+      "title": "Survey of Inmates in State and Federal Correctional Facilities, [United States], 2004"
+    }
+  ]
+}

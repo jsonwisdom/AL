@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Prosecutors Survey [Census], 2001",
+  "description": "The National Survey of Prosecutors is a survey of chief\r\nprosecutors in state court systems. It was previously conducted in\r\n1990, 1992, 1994, and 1996 (ICPSR 9579, 6273, 6785, 2433\r\nrespectively). For 2001, instead of a survey of chief prosecutors, a\r\ncensus of all 2,341 chief prosecutors who handled felony cases in state\r\ncourts of general jurisdiction was conducted. A chief prosecutor is an\r\nofficial, usually locally elected and typically with the title of\r\ndistrict attorney or county attorney, who is in charge of a\r\nprosecutorial district made up of one or more counties, and who\r\nconducts or supervises the prosecution of felony cases in a state\r\ncourt system. Prosecutors in courts of limited jurisdiction, such as\r\nmunicipal prosecutors, were not included in the survey. The census'\r\npurpose was to obtain detailed descriptive information on prosecutors'\r\noffices, as well as information on their policies and\r\npractices. Variables cover staffing, funding, special categories of\r\nfelony prosecutions, caseload, juvenile matters, work-related threats\r\nor assaults, the use of DNA evidence, and community-related\r\nactivities, such as involvement in neighborhood associations. The unit\r\nof analysis is the district office.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "258",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "attorneys",
+    "case processing",
+    "district attorneys",
+    "evidence",
+    "felony courts",
+    "felony offenses",
+    "plea negotiations",
+    "policies and procedures",
+    "prosecuting attorneys",
+    "prosecution",
+    "sentencing",
+    "state courts",
+    "trial procedures"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2181",
+  "dataQuality": false,
+  "issued": "2002-07-03T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03418.v1",
+      "title": "National Prosecutors Survey [Census], 2001"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Justice Agency List, 1980",
+  "description": "The National Justice Agency List is a master name and\r\naddress file created and maintained by the United States Bureau of the\r\nCensus for the Bureau of Justice Statistics. The file was first\r\ncreated in 1970, and the Census Bureau has continued to maintain and\r\nexpand the file. The master file contains information for ten separate\r\nsectors: prosecution and civil attorneys, public defenders, law\r\nenforcement, courts, probation and parole, juvenile corrections, local\r\nadult corrections, state adult corrections, other justice agencies,\r\nand federal and Indian tribal agencies. ICPSR has separated the master\r\nfile into ten subfiles, corresponding to the ten sectors in the master\r\nfile. Each file has variables containing the names and addresses of\r\nagencies in that sector and information relevant only to the agencies\r\nwithin the sector. Court (Part 1) variables include court structure,\r\ntype of jurisdiction, and the location of court records. State Adult\r\nCorrectional Facilities (Part 2) variables include type of\r\ninstitution, agency employment size, sex of inmates, and funding\r\ncode. Public Defender Agencies (Part 3) variables include type of\r\nagency, type of cases handled, agency employment size, and funding\r\ncode. Probation and Parole Agencies (Part 4) variables include type of\r\nsystem, agency client caseload, agency employment size, and funding\r\ncode. \"Other\" Agencies (Part 5) variables include type of services\r\nand agency employment size. Local Jails (Part 6) variables include sex\r\nof inmates, number of female inmates, inmate population, and funding\r\ncode. Prosecution and Civil Attorney Agencies (Part 7) variables\r\ninclude type of agency, types of cases prosecuted, agency employment\r\nsize, number of attorneys, and funding code. Federal and Indian Tribal\r\nAgencies (Part 8) variables include type of justice sector, employment\r\nsize, and funding code. Law Enforcement Agencies (Part 9) variables\r\ninclude type of agency, employment size, and number of sworn police.\r\nJuvenile Detention and Correctional Facilities (Part 10) variables\r\ninclude type of facility, sex of residents, resident population, and\r\nemployment size.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "251",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "correctional facilities (adults)",
+    "correctional facilities (juveniles)",
+    "courts",
+    "government agencies",
+    "jails",
+    "law enforcement agencies",
+    "local government",
+    "parole",
+    "probation",
+    "prosecuting attorneys",
+    "public defenders",
+    "state correctional facilities",
+    "state government"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2166",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR07858.v2",
+      "title": "National Justice Agency List, 1980"
+    }
+  ]
+}

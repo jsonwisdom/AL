@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jsonwisdom/AL/receipts/faf/epoch_03/alpha_state_verification_schema.v1.json",
+  "title": "FAF Epoch 03 Alpha State Verification Receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "type",
+    "version",
+    "commit_sha",
+    "capsule_path",
+    "capsule_blob_sha_at_commit",
+    "capsule_blob_sha_at_head",
+    "capsule_alpha_hash",
+    "runtime_environment_check",
+    "verdict",
+    "refusal_code",
+    "receipt_hash"
+  ],
+  "properties": {
+    "type": {"const": "alpha_state_verification"},
+    "version": {"const": "1.0.0"},
+    "commit_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "head_ref": {"type": "string"},
+    "capsule_path": {"type": "string"},
+    "capsule_blob_sha_at_commit": {"type": "string"},
+    "capsule_blob_sha_at_head": {"type": "string"},
+    "capsule_alpha_hash": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+    "runtime_environment_check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "container_digest", "code_version", "fixtures"],
+      "properties": {
+        "status": {"enum": ["MATCH", "MISSING_METADATA", "MISMATCH", "NOT_CHECKED"]},
+        "container_digest": {"type": ["string", "null"]},
+        "code_version": {"type": ["string", "null"]},
+        "fixtures": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "verdict": {"enum": ["ALPHA_MATCH", "DRIFT_DETECTED", "ALPHA_INCOMPLETE"]},
+    "refusal_code": {"type": ["string", "null"], "enum": ["ALMS-03", null]},
+    "receipt_hash": {"type": ["string", "null"]}
+  }
+}

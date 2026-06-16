@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Crime Victimization Survey: Workplace Risk Supplement, 2002",
+  "description": "The primary purpose of the Workplace Risk Supplement (WRS) is to obtain accurate information regarding the incidence of violence in the workplace so that legislators and policymakers, as well as academic researchers, practitioners at the Federal, state and local levels, and special interest groups who are\r\nconcerned with workplace violence, can obtain a better understanding of the risk factors associated with workplace violence.",
+  "modified": "2014-04-16T15:22:00",
+  "accessLevel": "public",
+  "identifier": "2383",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "crime",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "offenses",
+    "reactions to crime",
+    "risk factors",
+    "victimization",
+    "victims",
+    "work environment",
+    "workplace violence"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2432",
+  "dataQuality": false,
+  "issued": "2014-04-16T15:22:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR30581.v1",
+      "title": "National Crime Victimization Survey: Workplace Risk Supplement, 2002"
+    }
+  ]
+}

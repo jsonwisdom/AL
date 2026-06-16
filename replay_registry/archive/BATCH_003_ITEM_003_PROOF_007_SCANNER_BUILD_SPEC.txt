@@ -1,0 +1,49 @@
+BATCH_003_ITEM_003_PROOF_007_SCANNER_BUILD_SPEC
+
+status: BUILD_SPEC_COMMITTED
+batch: BATCH_003
+item: ITEM_003
+mode: BUILD_AND_PLAY
+surface: GITHUB_DIRECT
+repository: jsonwisdom/AL
+identity: jaywisdom.eth
+identity_address: 0xa380552a27b0a5a2874ea7aa52cac09f542002e8
+
+parent_seed_commit: 94505e748127d8630279ae2e808478697d3e6785
+parent_seed_file: receipts/replay/BATCH_003_ITEM_002_PROOF_007_ZORA_CREATOR_COIN_SCAN_SEED.txt
+
+build_spec:
+Create a small scanner workflow for Proof-007 that can accept a Zora/Base coin address or event source, extract creation/deployer evidence, locate first mint or first buy evidence, and compare the two addresses.
+
+required_inputs:
+- coin_or_contract_address
+- source_surface
+- creation_tx_hash_or_event_reference
+- first_mint_or_buy_tx_hash_or_event_reference
+
+required_outputs:
+- creator_or_deployer_address
+- first_minter_or_buyer_address
+- comparison_result: SAME_ADDRESS | DIFFERENT_ADDRESS | INSUFFICIENT_EVIDENCE
+- evidence_links_or_hashes
+- neutral_summary
+
+validation_rules:
+- do not infer creator from token branding alone
+- do not infer first minter from holder list alone
+- event or transaction evidence is required
+- mismatch claim requires both addresses from independently inspectable evidence
+- if either side is missing, result must be INSUFFICIENT_EVIDENCE
+
+claim_allowed:
+- Proof-007 scanner build spec committed to BATCH_003.
+- The Idea Factory now has a build spec for deployer-versus-first-minter comparison.
+
+claim_not_allowed:
+- scanner implemented
+- Proof-007 passed
+- mismatch found
+- Zora data independently verified
+- EAS attestation or wallet signature
+
+boundary: GitHub direct build spec only; no live chain data claimed; no proof result; no EAS attestation; no wallet signature.

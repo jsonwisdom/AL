@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Mortality in Correctional Institutions: Local Jails, 2000-2017",
+  "description": "The Mortality in Correctional Institutions series (MCI), formerly Deaths in Custody Reporting Program (DCRP), is an annual data collection conducted by the Bureau of Justice Statistics (BJS). The MCI began in 2000 under the Death in Custody Reporting Act of 2000 (P.L. 106-297). It is the only national statistical collection that obtains detailed information about deaths in adult correctional facilities. The local jail portion began in 2000 after the passage of the Deaths in Custody Reporting Act of 2000 in October of 2000. The jails component of MCI collects data on inmate deaths occurring in local jail facilities while inmates are in the physical custody of jail facility officials. ",
+  "modified": "2021-04-27T11:32:55",
+  "accessLevel": "restricted public",
+  "identifier": "4197",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "corrections",
+    "death",
+    "homicide",
+    "suicide"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2441",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2021-04-27T11:30:52",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37878.v1",
+      "title": "Mortality in Correctional Institutions: Local Jails, 2000-2017"
+    }
+  ]
+}

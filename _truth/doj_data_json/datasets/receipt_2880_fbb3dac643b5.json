@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Drug Offender Treatment in Local Corrections in California and New York, 1991-1993",
+  "description": "The purpose of this multisite program evaluation project\r\nwas to provide detailed and systematic descriptions of participants\r\nand treatment program components for a sample of five drug treatment\r\nprograms in local jails. Three of the programs were located in\r\nCalifornia: Jail Education and Treatment (JET), Deciding, Educating,\r\nUnderstanding, Counseling, and Evaluation (DEUCE), and Rebuilding,\r\nEducating, Awareness, Counseling, and Hope (REACH). Two programs were\r\nin New York State: Substance Abuse Intervention Division (SAID) and\r\nNew Beginnings. The project was aimed at assessing program completion\r\nrates as well as 12-month post-release recidivism for program\r\nparticipants versus matched controls. Background information obtained\r\nabout the participating offenders includes sex, race, age, education,\r\nmarital status, and employment status, as well as history of drug use,\r\nprevious drug treatment, mental illness, inpatient/outpatient\r\nepisodes, and offenses and sentencing. Additional data cover program\r\nlocation, dates of release from the program and from jail, type of\r\nprogram termination, type of residence upon release, and anticipated\r\npost-custody treatment. Information on each conviction/disposition was\r\nobtained through state criminal information systems, and state-level\r\ncriminal history data (rap sheets) were collected for both the\r\ntreatment and comparison groups. The unit of analysis is arrest\r\nevents.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2880",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "drug abuse",
+    "drug offenders",
+    "program evaluation",
+    "recidivism",
+    "treatment compliance",
+    "treatment outcome",
+    "treatment programs"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1998-05-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06628.v1",
+      "title": "Drug Offender Treatment in Local Corrections in California and New York, 1991-1993"
+    }
+  ]
+}

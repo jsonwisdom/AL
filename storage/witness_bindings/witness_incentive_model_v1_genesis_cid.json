@@ -1,0 +1,25 @@
+{
+  "binding_id": "witness_incentive_model_v1_genesis_cid",
+  "object_id": "WITNESS_INCENTIVE_MODEL_V1_GENESIS",
+  "object_path": "economics/WITNESS_INCENTIVE_MODEL_V1_GENESIS.json",
+  "canonical_source": {
+    "type": "github",
+    "repo": "jsonwisdom/AL",
+    "branch": "master",
+    "path": "economics/WITNESS_INCENTIVE_MODEL_V1_GENESIS.json",
+    "github_blob_sha": "72b13b71342376a5be6e3ea89891c6699422e624"
+  },
+  "content_addressed_witness": {
+    "type": "ipfs_or_content_addressed_storage",
+    "cid": "bafkreia3lgzbtcrzxy4eouy7g56krzft5a6kg3tb3o2xm6uj5jmp4c5uyi"
+  },
+  "operator_reported_sha256": "6033596f7f8397124d2ab3cc13a88941405079154428a4cfe414e8108207098c",
+  "status": "CID_RETURNED_OPERATOR_BOUND",
+  "authority_rule": "GitHub blob and repo lineage remain canonical; CID is an availability witness until independently hash-verified against canonical bytes.",
+  "next_required_check": "fetch CID bytes and compute sha256; require match against operator_reported_sha256 or record mismatch as FAULTY_WITNESS",
+  "invariants": [
+    "Replicas preserve availability; they do not create authority.",
+    "CID witness may serve bytes but cannot redefine genesis incentive model.",
+    "Hash mismatch marks witness faulty, not forked."
+  ]
+}

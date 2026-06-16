@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Evidence-based Enhancement of the Detection, Prevention, and Treatment of Mental Illness in the Connecticut Correction Systems, 2003",
+  "description": "The study developed and tested the Brief Mental Health Screening Tool to enhance the identification of psychiatric disorders among adult detainees. Participants were randomly recruited within 24 to 72 hours of entering State-run jails in Connecticut. In the first phase, participants completed a 25-minute screening interview, after which 20 percent of the participants were asked to complete a longer interview 1 week later to establish a more detailed account of Axis I and Axis II psychiatric disorders and psychosocial functioning. In a second phase, the new Brief Mental Health Screening Tool was tested and validated on a new sample of participants.",
+  "modified": "2016-04-21T12:49:51",
+  "accessLevel": "restricted public",
+  "identifier": "1149",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "inmate populations",
+    "inmates",
+    "jail inmates",
+    "jails",
+    "mental disorders",
+    "mental health",
+    "offenders",
+    "psychological evaluation"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2015-12-22T15:35:09",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR26861.v1",
+      "title": "Evidence-based Enhancement of the Detection, Prevention, and Treatment of Mental Illness in the Connecticut Correction Systems, 2003"
+    }
+  ]
+}

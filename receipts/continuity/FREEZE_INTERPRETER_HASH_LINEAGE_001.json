@@ -1,0 +1,27 @@
+{
+  "event": "FREEZE_INTERPRETER_HASH_LINEAGE_001",
+  "anchors": {
+    "interpreter_hash": "sha256:b699acaf26a9ba0996228d8a4fd4411516c267fdf847df3ccdb265b0b6750e68",
+    "merkle_root": "sha256:9de1c6069dc84a3730f478ba1301c86536f7702203f314e271199ac5fbe42ae5"
+  },
+  "lineage_context": {
+    "evidence_class": "INDEPENDENT_REPRODUCTION_OBSERVATION",
+    "continuity_receipt_ref": "CI_VERIFIED_PASS_RECEIPT_001",
+    "commit_hash": "cb2e828f0bee12c2d96cc27fef68c31b772b2338"
+  },
+  "boundary_enforcement": {
+    "semantic_authority": "LOCAL_REPLAY",
+    "reproduction_witness": "CI",
+    "base_witness_status": "NOT_CHECKED",
+    "authority_inflation_prevention": "ACTIVE"
+  },
+  "state_provenance": {
+    "production_readiness": "NOT_CLAIMED",
+    "immutable_anchor_status": "FROZEN",
+    "lineage_divergence": false
+  },
+  "metadata": {
+    "timestamp": "2026-05-24T02:05:00Z",
+    "generated_by": "constitutional-replay-v1"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Survey of AIDS in Correctional Facilities, 1985-1990, 1992",
+  "description": "In late 1985, the National Institute of Justice (NIJ) began\r\nits first study of Acquired Immune Deficiency Syndrome (AIDS) in\r\ncorrectional facilities. The objective of the study was to report on\r\nthe incidence and institutional management of AIDS within the federal\r\nand state prison systems, as well as in the nation's largest\r\njails. The study was conducted annually from 1985-1990 and biannually\r\nthereafter. This collection contains data collected in 1985-1990 and\r\n1992 via a mail questionnaire. Questionnaires were sent each year to\r\nthe correctional departments of all 50 states, the federal prison\r\nsystem, and 33 to 37 large city and county jail systems. In addition,\r\nin 1987-1990, Canadian prison systems were surveyed. A different\r\nquestionnaire was used in each of the seven years of data collection.\r\nHowever, each questionnaire addressed the same major topics: inmate\r\npopulation, numbers of inmate cases of AIDS and AIDS-Related Complex\r\n(ARC), aggregate results of Human Immunodeficiency Virus (HIV)\r\nantibody testing programs, and major policies regarding AIDS (training\r\nand education, testing, medical and psycho-social services, housing,\r\nprecautionary measures, confidentiality), as well as associated legal\r\nand cost issues. The 1992 questionnaire collected additional\r\ninformation on the prevalence of and policies toward inmates with\r\ntuberculosis.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3657",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "AIDS",
+    "correctional facilities",
+    "corrections management",
+    "inmate populations",
+    "policies and procedures"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1995-08-16T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06437.v1",
+      "title": "National Survey of AIDS in Correctional Facilities, 1985-1990, 1992"
+    }
+  ]
+}

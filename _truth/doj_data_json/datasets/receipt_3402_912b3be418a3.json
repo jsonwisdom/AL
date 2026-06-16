@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Determinants of Chicago Neighborhood Homicide Trends, 1980-2000",
+  "description": "The purpose of the study was to examine homicide trends in Chicago neighborhoods from 1980-2000 using HOMICIDES IN CHICAGO, 1965-1995 (ICPSR 6399), 1980-2000 Census data, and PROJECT ON HUMAN DEVELOPMENT IN CHICAGO NEIGHBORHOODS: COMMUNITY SURVEY, 1994-1995 (ICPSR 2766). Drawing on the social disorganization and concentrated disadvantage literature, this study used growth-curve modeling and semi-parametric group-based trajectory modeling to: (1) assess neighborhood variation in homicide trends; (2) identify the particular types of homicide trajectory that Chicago neighborhoods follow; (3) assess whether structural characteristics of neighborhoods influence homicide trends and trajectories; and (4) determine the extent to which the influence of structural characteristics is mediated by neighborhood levels of collective efficacy. This project extended prior research by not only describing the homicide trends and trajectories of Chicago neighborhoods, but also identifying the neighborhood characteristics that directly and indirectly influence those trends.",
+  "modified": "2013-03-22T09:58:49",
+  "accessLevel": "public",
+  "identifier": "3402",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime patterns",
+    "homicide",
+    "neighborhood change",
+    "neighborhood characteristics",
+    "neighborhood conditions"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2013-03-22T09:58:49",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR34182.v1",
+      "title": "Determinants of Chicago Neighborhood Homicide Trends, 1980-2000"
+    }
+  ]
+}

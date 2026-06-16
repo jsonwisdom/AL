@@ -1,0 +1,43 @@
+{
+  "schema_version": "alms.repo_hygiene_receipt.v1",
+  "artifact": "root_authority_gap_audit_2026-05-14.json",
+  "classification": "REPO_HYGIENE_RECEIPT",
+  "status": "SAFE_TO_ATTEST",
+  "scope": "AL root authority and canon-boundary audit",
+  "not_scope": [
+    "OpenAI factual merits",
+    "full epoch-chain canon",
+    "claims that OpenAI recovered legitimacy",
+    "claims that Epoch 4 is canonical"
+  ],
+  "repo": "jsonwisdom/AL",
+  "findings": [
+    {
+      "id": "FINDING_001",
+      "claim": "The AL repository root authority is _truth/receipts/index.json."
+    },
+    {
+      "id": "FINDING_002",
+      "claim": "The README declares the public proof surface and receipt viewer."
+    },
+    {
+      "id": "FINDING_003",
+      "claim": "A claim is public only when the receipt is present, indexed, and replay-linked."
+    },
+    {
+      "id": "FINDING_004",
+      "claim": "Committed GitHub files are public artifacts, but they are not canonical AL receipts unless indexed and replay-linked through _truth/receipts/index.json."
+    },
+    {
+      "id": "FINDING_005",
+      "claim": "OpenAI epoch-chain artifacts remain experimental public files until explicitly indexed and replay-linked by AL root authority."
+    }
+  ],
+  "recommended_posture": {
+    "epoch_4": "HOLD_OPEN_REPLAY",
+    "canon_expansion": "DEFERRED_UNTIL_REPO_HYGIENE_COMPLETE",
+    "freeze_policy": "NO_FREEZE_UNTIL_READY_FOR_PUBLIC_CANON"
+  },
+  "operator": "Jay Wisdom",
+  "timestamp_issued": "2026-05-14T20:20:00Z"
+}

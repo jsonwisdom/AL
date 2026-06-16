@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Validating Prison Security Classification Instruments in Hawaii, 1984-1985",
+  "description": "The purpose of this study was to develop and validate a\r\n reliable and accurate method for measuring the effectiveness of\r\n offender classification systems to improve the management of\r\n correctional facilities. In the early 1980s, the state of Hawaii began\r\n classifying its prisoners with a newly developed Federal Bureau of\r\n Prisons classification instrument. This study was designed to develop\r\n a method to evaluate this form. Two prediction models were used. The\r\n first, initial classification, used the sum of four variables to\r\n arrive at a security score, which was taken to be predictive of\r\n violence. The second, reclassification, used the sum of seven\r\n different variables to obtain a custody total, which was then used as\r\n a major determinant of reclassification. Two groups of inmates were\r\n used: inmates who had committed infractions and inmates with no\r\n reported infractions. Research variables include (a) initial\r\n classification: offense (severity), expected length of incarceration\r\n (sentence), type of prior commitments, and history of violence, and\r\n (b) reclassification: percentage of time served, involvement with\r\n drugs/alcohol, mental/psychological stability, most serious\r\n disciplinary report, frequency of disciplinary reports, responsibility\r\n that the inmate demonstrated, and family/community ties. In addition,\r\n the collection supplies information on race and sex of inmates,\r\n sentence limitation, history of escapes or attempts, previous\r\n infractions, entry, reclassification, and termination dates (month and\r\n year), and custody level. There are demographic variables for sex and\r\nrace. The unit of observation is the inmate.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2830",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "corrections management",
+    "criminal histories",
+    "criminality prediction",
+    "imprisonment",
+    "inmate classification",
+    "prison inmates",
+    "prison security",
+    "program evaluation"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1993-10-02T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09921.v1",
+      "title": "Validating Prison Security Classification Instruments in Hawaii, 1984-1985"
+    }
+  ]
+}

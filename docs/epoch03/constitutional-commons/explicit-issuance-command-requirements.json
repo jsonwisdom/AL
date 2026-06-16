@@ -1,0 +1,41 @@
+{
+  "artifact": "explicit-issuance-command-requirements.json",
+  "version": "1.0.0",
+  "epoch": "03",
+  "status": "REQUIREMENTS_FROZEN",
+  "constitutional_authority": "NONE",
+  "activation_effect": "NONE",
+  "issuance_effect": "NONE",
+  "entry_posture_required": {
+    "execution_state": "FINALIZED",
+    "continuity_status": "PASS",
+    "issuance_eligibility": "ELIGIBLE_FOR_EXPLICIT_ISSUANCE",
+    "issuance_status": "UNPERFORMED",
+    "activation_status": "DISABLED",
+    "authority_status": "UNASSERTED"
+  },
+  "explicit_command_requirements": {
+    "operator_intent_required": true,
+    "operator_identity_required": true,
+    "issuance_scope_required": true,
+    "issuance_target_required": true,
+    "revocation_semantics_required": true,
+    "replay_binding_required": true,
+    "eligibility_receipt_required": true,
+    "no_bundled_ens_mutation": true,
+    "no_bundled_eas_write": true,
+    "no_implicit_activation": true
+  },
+  "forbidden_surfaces": [
+    "IMPLICIT_ISSUANCE",
+    "IMPLICIT_AUTHORITY",
+    "IMPLICIT_ACTIVATION",
+    "FUTURE_MINT_AUTHORITY",
+    "ENS_MUTATION_BUNDLED",
+    "EAS_WRITE_BUNDLED",
+    "AUTHORITY_FROM_REPLAY_ONLY",
+    "CROWN_UNSEALING_BY_ELIGIBILITY"
+  ],
+  "admissible_next_surface": "PREPARE_A00001_ISSUANCE_ENVELOPE",
+  "notes": "This artifact freezes the requirements for evaluating an explicit issuance command. It does not instantiate issuance, authority, activation, ENS mutation, or EAS write semantics."
+}

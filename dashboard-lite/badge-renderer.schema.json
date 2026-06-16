@@ -1,0 +1,72 @@
+{
+  "schema_id": "MEMBRANE_BADGE_RENDERER_SCHEMA_001",
+  "version": "1.0.0",
+  "purpose": "Define deterministic, non-interactive UI badge rendering for membrane-respecting artifact display.",
+  "required_inputs": [
+    "evidence_class",
+    "witness_scope",
+    "authority_level",
+    "replay_status"
+  ],
+  "allowed_values": {
+    "evidence_class": [
+      "LOCAL_REPLAY",
+      "CI_REPRODUCTION",
+      "BASE_EXISTENCE",
+      "UNVERIFIED"
+    ],
+    "witness_scope": [
+      "SEMANTIC_AUTHORITY",
+      "REPRODUCTION_ONLY",
+      "EXISTENCE_ONLY",
+      "UNKNOWN"
+    ],
+    "authority_level": [
+      "AUTHORITY",
+      "WITNESS",
+      "NONE",
+      "UNKNOWN"
+    ],
+    "replay_status": [
+      "REPLAYED",
+      "REPRODUCED",
+      "WITNESSED",
+      "UNVERIFIED"
+    ]
+  },
+  "mapping": {
+    "LOCAL_REPLAY": {
+      "label": "AUTHORITY: SEMANTIC",
+      "style": "gold-brass-sharp",
+      "role": "Arbiter of Logic"
+    },
+    "CI_REPRODUCTION": {
+      "label": "WITNESS: REPRODUCTION",
+      "style": "silver-steel-functional",
+      "role": "Proof of Build"
+    },
+    "BASE_EXISTENCE": {
+      "label": "WITNESS: EXISTENCE",
+      "style": "gray-stone-muted",
+      "role": "Muzzle Zone"
+    },
+    "UNVERIFIED": {
+      "label": "UNVERIFIED",
+      "style": "muted-fog-disabled",
+      "role": "No Authority"
+    }
+  },
+  "constraints": {
+    "interaction_locked": true,
+    "no_hover_effects_on_authority_markers": true,
+    "default_to_unverified": true,
+    "forbidden_ui_verbs": [
+      "Verify",
+      "Approve",
+      "Validate",
+      "Certify",
+      "Confirm correctness"
+    ]
+  },
+  "doctrine": "Proof may travel. Meaning stays replayable."
+}

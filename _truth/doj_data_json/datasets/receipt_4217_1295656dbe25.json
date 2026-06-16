@@ -1,0 +1,53 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "School Emergency Preparedness Study, United States, 2018",
+  "description": "The School Emergency Preparedness Study, United States, 2018, was conducted to\r\nbetter understand the state of knowledge concerning violent emergency preparedness in schools and the interrelationship between federal, state, district, and school\r\nperspectives on safety planning. RTI International conducted a two-year study\r\nin four phases. In Phase I, the project team reviewed federal and state\r\nguidelines and mandates for school safety planning. In Phases II and III, a survey was administered to district safety and security directors and superintendents, then the team reviewed guidelines and mandates for a subset of districts. In Phase IV, interviews were conducted with administrators from 37 schools and results were analyzed from all four phases.",
+  "modified": "2022-01-13T08:13:24",
+  "accessLevel": "public",
+  "identifier": "4217",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "emergency preparedness",
+    "school readiness",
+    "school violence",
+    "schools"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2022-01-13T08:13:24",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37222.v1",
+      "title": "School Emergency Preparedness Study, United States, 2018"
+    }
+  ]
+}

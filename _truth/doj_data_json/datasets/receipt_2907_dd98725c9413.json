@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Data-Driven Supervision Protocols for Positive Parole Outcomes in Georgia, 2007-2008",
+  "description": "The goal of this study was to identify and evaluate case management and supervision strategies most effective in achieving successful parole outcomes.  As part of an evaluation of 3 new supervision practice protocols on a cohort of parolees, a total of 1,964 parolees who began supervision in Georgia between March 1, 2007, and December 31, 2007, were assigned to experimental and control groups.  Parolees in the experimental group were subjected to the new practice protocols: positive drug test resulting in a referral to treatment, job loss followed by referral to an employment program and increased contact, and chronic technical violations responded to with an administrative hearing and enrollment in a cognitive skills program. In the control sites, the parole officer's response to a parolee's violation or success was still defined by the Board's Behavior Response and Adjustment Guide (BRAG). Each parolee was tracked for a 12-month follow-up period. The research team collected data on the parolees using two Georgia Department of Corrections and Board of Pardons and Paroles agency databases: the Offender Tracking Information System (OTIS) and the Parole Field Log of Interaction Data (FLOID) database. Outcomes during a 12-month follow-up period were defined as employment, general violations of the conditions of supervision, positive drug tests, arrests for technical violations, misdemeanor and felony arrests, and revocation of parole. The dataset includes a total of 218 variables including supervision protocol variables, demographic and other parolee characteristics variables, offense and parole supervision variables, drug test results, employment activity, as well as arrests, violations, sanctions, programs, and referrals information.",
+  "modified": "2010-04-08T13:58:54",
+  "accessLevel": "restricted public",
+  "identifier": "2907",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "case management",
+    "inmate release plans",
+    "outcome evaluation",
+    "parole",
+    "parole violation",
+    "parolees",
+    "sanctions"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2010-04-08T13:56:33",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR26441.v1",
+      "title": "Data-Driven Supervision Protocols for Positive Parole Outcomes in Georgia, 2007-2008"
+    }
+  ]
+}

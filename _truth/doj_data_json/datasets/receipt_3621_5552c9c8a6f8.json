@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Impact of Legal Advocacy on Intimate Partner Homicide in the United States, 1976-1997",
+  "description": "This study examined the impacts of jurisdictions' domestic violence policies on violent behavior of family members and intimate partners, on the likelihood that the police discovered an incident, and on the likelihood that the police made an arrest. The research combined two datasets. Part 1 contains information on police, prosecution policies, and local victim services. Informants within the local agencies of the 50 largest cities in the United States were contacted and asked to complete a survey inventorying policies and activities by type and year of implementation. Data from completed surveys covered 48 cities from 1976 to 1996. Part 2 contains data on domestic violence laws. Data on state statutes from 1976 to 1997 that related to protection orders were collected by a legal expert for all 50 states and the District of Columbia.",
+  "modified": "2009-07-10T09:57:50",
+  "accessLevel": "public",
+  "identifier": "3621",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrests",
+    "crime reporting",
+    "domestic violence",
+    "intimate partner violence",
+    "police reports",
+    "policy analysis",
+    "state legislatures",
+    "victim services"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2009-07-10T09:57:50",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR25621.v1",
+      "title": "Impact of Legal Advocacy on Intimate Partner Homicide in the United States, 1976-1997"
+    }
+  ]
+}

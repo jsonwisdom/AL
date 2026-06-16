@@ -1,0 +1,68 @@
+name: GOBLIN_RECEIPT_CLERK_CHECK
+
+on:
+  pull_request:
+    paths:
+      - 'docs/goblin/reaction-windows/**/*.md'
+      - 'docs/goblin/reaction-windows/*.md'
+      - '.github/actions/alms-validator/action.yml'
+      - '.github/workflows/goblin-receipt-clerk-check.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  detect-reaction-window-receipts:
+    runs-on: ubuntu-latest
+    outputs:
+      has_files: ${{ steps.detect.outputs.has_files }}
+      files_json: ${{ steps.detect.outputs.files_json }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Detect changed reaction-window receipts
+        id: detect
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          BASE_REF="${{ github.base_ref }}"
+          git fetch origin "$BASE_REF" --depth=1 || true
+
+          mapfile -t FILES < <(
+            git diff --name-only "origin/${BASE_REF}...HEAD" \
+              | grep -E '^docs/goblin/reaction-windows/.*\.md$' \
+              || true
+          )
+
+          if [ "${#FILES[@]}" -eq 0 ]; then
+            echo 'has_files=false' >> "$GITHUB_OUTPUT"
+            echo 'files_json=[]' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          printf '%s\n' "${FILES[@]}" > /tmp/alms_receipt_files.txt
+          FILES_JSON=$(jq -R -s -c 'split("\n")[:-1]' < /tmp/alms_receipt_files.txt)
+
+          echo 'has_files=true' >> "$GITHUB_OUTPUT"
+          echo "files_json=${FILES_JSON}" >> "$GITHUB_OUTPUT"
+
+  validate-reaction-window-receipts:
+    needs: detect-reaction-window-receipts
+    if: needs.detect-reaction-window-receipts.outputs.has_files == 'true'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        target_path: ${{ fromJson(needs.detect-reaction-window-receipts.outputs.files_json) }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run ALMS Validator
+        uses: ./.github/actions/alms-validator
+        with:
+          target_path: ${{ matrix.target_path }}

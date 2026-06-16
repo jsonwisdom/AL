@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Effects of a Middle School Social-Emotional Learning Program on Bullying, Teen Dating Violence, Sexual Violence, and Substance Use in High School, Illinois, 2010-2016",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThe purpose of this was to leverage an existing randomized controlled trial of The Second Step anti-bullying program, which was implemented when the sample of students was in middle school, by measuring related aggressive behaviors (e.g. bullying, cyberbullying, sexual violence) during the high school years. The objectives of this study were to determine treatment effects of the Second Step middle school program on reductions in youth aggression (including bullying), sexual violence, substance use, and teen dating violence when in high school, as well as to assess middle school belonging as a mediator of these treatment effects on targeted problem behaviors in high school.\r\nDemographic variables included as part of this collection are students' age, gender, race, and household characteristics. The collection contains 3 SPSS data files:\r\n\r\nanalysis4_de-identified_2.sav (n=2143; 304 variables)\r\nRCT-WAVE-1-4-ITEMS_RECODED_de-identified_2.sav (n=4718; 741 variables)\r\nRCT---WAVE-5-7-ITEMS_RECODED_de-identified_2.sav (n=3064; 887 variables)\r\n",
+  "modified": "2018-09-17T08:15:07",
+  "accessLevel": "restricted public",
+  "identifier": "3700",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "aggression",
+    "bullying",
+    "dating (social)",
+    "drug use",
+    "high school students",
+    "homophobia",
+    "intervention",
+    "juveniles",
+    "middle schools",
+    "sexual abuse",
+    "sexual harassment",
+    "substance abuse",
+    "victimization",
+    "youths"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-09-17T08:12:35",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36726.v1",
+      "title": "Effects of a Middle School Social-Emotional Learning Program on Bullying, Teen Dating Violence, Sexual Violence, and Substance Use in High School, Illinois, 2010-2016"
+    }
+  ]
+}

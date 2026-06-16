@@ -1,0 +1,48 @@
+{
+  "attack_profile": {
+    "vector_id": "cft-dilution-04",
+    "class": "CORPORATE_FINE_TUNING_OVERWRITE",
+    "mechanism": "Creeping Approximation / Semantic Optimization Drift",
+    "target": "schemas/constitutional/invariants.v0.1.schema.json"
+  },
+  "payload": {
+    "malicious_manifest": {
+      "probe_id": "brp-cft-exploit-004",
+      "detected_anomaly": {
+        "expected_floor": 1.50
+      },
+      "cross_biome_verification": {
+        "required_independent_validators": [
+          "did:key:z6MkpTHR8VNsBxRkW7N43sQWJ5X"
+        ],
+        "anti_collusion_entropy_seed": "0x5f3e1a"
+      },
+      "cryptographic_escrow": {
+        "challenge_stake_amount": "10000.00",
+        "denomination": "SIMULATED_ETH_ESCROW"
+      }
+    },
+    "malicious_trace_signals": {
+      "internal_friction": {
+        "hidden_compression_signals": {
+          "entropy_drop": 0.05,
+          "replay_cost_surface": {
+            "estimated_unexplored_branches": 20
+          }
+        }
+      }
+    },
+    "attempted_spine_override": {
+      "constitutional_invariants": {
+        "version": "v0.1.0",
+        "compatibility_rule": "ALL_REQUIRED",
+        "rules": {
+          "family_before_economy": true,
+          "kids_mode_compatible": true,
+          "semantic_authority": "APPROXIMATED_DYNAMIC",
+          "global_finality": false
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Specific Deterrent Effects of Arrest for Domestic Assault: Minneapolis, 1981-1982",
+  "description": "This data collection contains information on 330 incidents\r\nof domestic violence in Minneapolis. Part 1, Police Data, contains data\r\nfrom the initial police reports filled out after each incident. Parts\r\n2-5 are based on interviews that were conducted with all parties to the\r\ndomestic assaults. Information for Part 2, Initial Data, was gathered\r\nfrom the victims after the incidents. Part 3, Follow-Up Data, consists\r\nof data from follow-up interviews with the victims and with relatives\r\nand acquaintances of both victims and suspects. There could be up to 12\r\ncontacts per case. Suspect interviews are the source for Part 4,\r\nSuspect Data. An experimental section, Part 5, Repeat Data, contains\r\ninformation on repeat incidents of domestic assault from interviews\r\nwith victims. Parts 2-5 include items such as socioeconomic and\r\ndemographic data describing the suspect and the victim, relationship\r\n(husband, wife, boyfriend, girlfriend, lover, divorced, separated),\r\nnature of the argument that spurred the assault, presence or absence of\r\nphysical violence, and the nature and extent of police contact in the\r\nincident. The collection also includes police records, which are the\r\nbasis for Parts 6-9. These files record the date of the crime,\r\nethnicity of the participants, presence or absence of alcohol or drugs\r\nand weapons, and whether a police assault occurred.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2806",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrests",
+    "assault",
+    "crime",
+    "crime prevention",
+    "demographic characteristics",
+    "drug law offenses",
+    "ethnicity",
+    "violence"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-11-14T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08250.v2",
+      "title": "Specific Deterrent Effects of Arrest for Domestic Assault: Minneapolis, 1981-1982"
+    }
+  ]
+}

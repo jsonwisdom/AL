@@ -1,172 +1,225 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AL Public Verifier</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ALMS V2 Public Verifier</title>
   <style>
-    :root { color-scheme: dark; }
-    body { margin: 0; background: #070b09; color: #e8fff4; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; line-height: 1.55; }
-    main { max-width: 980px; margin: 36px auto; padding: 0 18px; }
-    h1 { color: #00ff9d; border-bottom: 1px solid #1d3a2f; padding-bottom: 12px; }
-    .card { background: #101815; border: 1px solid #1d3a2f; border-radius: 14px; padding: 20px; margin: 18px 0; }
-    .grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 14px; }
-    .muted { color: #91aa9d; }
-    .ok { color: #00ff9d; font-weight: 800; }
-    .fail { color: #ff5c7a; font-weight: 800; }
-    code, pre, textarea, input { background: #19221f; color: #ffd166; border: 1px solid #263b34; border-radius: 8px; }
-    code { padding: 2px 6px; }
-    pre { overflow-x: auto; padding: 14px; }
-    textarea { width: 100%; min-height: 180px; padding: 12px; box-sizing: border-box; font-family: inherit; }
-    input { width: 100%; padding: 10px; box-sizing: border-box; font-family: inherit; }
-    button { background: #00ff9d; color: #03100b; border: 0; border-radius: 10px; padding: 12px 16px; font-weight: 900; cursor: pointer; margin-top: 10px; }
-    button.secondary { background: #263b34; color: #e8fff4; }
-    a { color: #75d7ff; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-/* AL_SHARE_LAYER_V1 */
-.sharebox{margin-top:22px;padding:16px;border:1px solid #333;border-radius:8px;background:#111;}
-.sharebox input{width:100%;box-sizing:border-box;background:#000;color:#8cffb0;border:1px solid #444;padding:10px;font-family:monospace;}
-.sharebox button{margin-top:10px;padding:10px 14px;background:#222;color:#eee;border:1px solid #555;border-radius:6px;cursor:pointer;font-family:monospace;}
-.sharebox button:hover{background:#333;}
-#shareQr{margin-top:14px;background:#fff;padding:8px;border-radius:6px;max-width:180px;}
+    :root { color-scheme: dark; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    body { margin: 0; background: #070b10; color: #e8eef7; }
+    main { max-width: 1180px; margin: 0 auto; padding: 32px 18px 72px; }
+    h1 { margin: 0 0 8px; color: #7cffb2; }
+    p { line-height: 1.55; color: #b8c7d9; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 20px 0; }
+    .card { background: #0e1623; border: 1px solid #26344a; border-radius: 14px; padding: 14px; }
+    label { display: block; margin-bottom: 8px; font-weight: 800; color: #dbe8ff; }
+    textarea { width: 100%; min-height: 220px; resize: vertical; background: #05080d; color: #e8eef7; border: 1px solid #26344a; border-radius: 10px; padding: 10px; box-sizing: border-box; }
+    input[type=file] { width: 100%; }
+    button { cursor: pointer; background: #1e6fff; color: white; border: 0; border-radius: 12px; padding: 12px 18px; font-weight: 900; }
+    button.secondary { background: #26344a; }
+    .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+    #result { white-space: pre-wrap; border-radius: 14px; padding: 16px; margin-top: 18px; background: #111827; border: 1px solid #26344a; }
+    .ok { color: #72f59a; }
+    .fail { color: #ff7b7b; }
+    code { color: #f7d774; }
+    @media (max-width: 920px) { .grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
 <main>
-  <h1>AL Public Verifier</h1>
-  <p class="muted">Paste a canonical claim JSON or verify the public manifest against Anchor #1.</p>
+  <h1>ALMS V2 Public Verifier</h1>
+  <p>Zero-dependency browser replay for pre-attestation candidates. Upload or paste the candidate JSON, claims ledger JSON, and subject artifact. No network calls. No external dependencies.</p>
+  <p><strong>Checks:</strong> schema shape, canonical candidate hash, canonical ledger hash, claim bounding, fingerprint conflicts, numeric contradictions, subject hash, and closed pre-attestation gate state.</p>
 
-  <section class="card">
-    <h2>Anchor #1</h2>
-    <div class="grid">
-      <div class="muted">ENS</div><div><code>jaywisdom.eth</code></div>
-      <div class="muted">Key</div><div><code>al.verified_claims</code></div>
-      <div class="muted">Root</div><div><code id="expectedRoot">sha256:2296352053488d28c6517523e0392080d3cef10724db0e2142779572c6179d7a</code></div>
-      <div class="muted">Manifest</div><div><a id="manifestLink" href="verified-claims.json">verified-claims.json</a></div>
-    </div>
-    <button onclick="verifyManifest()">Verify Public Manifest</button>
-    <button class="secondary" onclick="loadManifest()">Load Claims</button>
-    <pre id="manifestResult">Waiting.</pre>
-  </section>
+  <div class="grid">
+    <section class="card">
+      <label>1. Candidate JSON</label>
+      <input id="candidateFile" type="file" accept="application/json,.json" />
+      <p>Must match <code>ATTESTATION_CANDIDATE.v1</code>.</p>
+      <textarea id="candidateText" placeholder="Paste candidate JSON here..."></textarea>
+    </section>
+    <section class="card">
+      <label>2. Claims Ledger JSON</label>
+      <input id="ledgerFile" type="file" accept="application/json,.json" />
+      <p>Must pass ledger-level semantic bounding.</p>
+      <textarea id="ledgerText" placeholder="Paste claims ledger JSON here..."></textarea>
+    </section>
+    <section class="card">
+      <label>3. Subject Artifact</label>
+      <input id="subjectFile" type="file" />
+      <p>Subject bytes are hashed exactly as supplied.</p>
+      <textarea id="subjectText" placeholder="Paste subject artifact text here..."></textarea>
+    </section>
+  </div>
 
-  <section class="card">
-    <h2>Verify A Canonical Claim</h2>
-    <p class="muted">Paste one canonical claim JSON. The verifier checks whether its <code>claim_id</code> and <code>text_hash</code> exist in the public manifest.</p>
-    <textarea id="claimInput" placeholder='{"claim_id":"...","artifacts":{"text_hash":"sha256:..."}}'></textarea>
-    <button onclick="verifyClaim()">Verify Claim</button>
-    <pre id="claimResult">Waiting.</pre>
-  </section>
+  <div class="row">
+    <button id="verifyBtn">Verify Graph</button>
+    <button id="clearBtn" class="secondary">Clear</button>
+  </div>
 
-  <section class="card">
-    <h2>Claims</h2>
-    <div id="claimsList" class="muted">Not loaded yet.</div>
-  </section>
+  <div id="result">Waiting for input.</div>
 </main>
 
 <script>
-const EXPECTED_ROOT = 'sha256:2296352053488d28c6517523e0392080d3cef10724db0e2142779572c6179d7a';
-const MANIFEST_URL = 'verified-claims.json';
+const REQUIRED = ['schema_version','artifact','candidate_id','candidate_manifest_sha256','claims_ledger_path','claims_ledger_sha256','subject_artifact','subject_sha256','commit','onchain_status','eas_uid','tx_hash','promotion','gate_status','claim'];
+const OPTIONAL = ['created_at_utc','repo','branch','stack_state','write_run_0002','custody_note'];
+const TEMPORAL_LEAKS = ['as of today','currently','still','now','at present'];
 
-async function sha256Hex(text) {
-  const bytes = new TextEncoder().encode(text);
-  const hash = await crypto.subtle.digest('SHA-256', bytes);
-  return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
+function fail(msg){ throw new Error(msg); }
+function assert(cond,msg){ if(!cond) fail(msg); }
+function isSha256(v){ return typeof v === 'string' && /^[0-9a-f]{64}$/.test(v); }
+function isGitSha(v){ return typeof v === 'string' && /^[0-9a-f]{40}$/.test(v); }
+
+async function readInput(fileId, textId){
+  const f = document.getElementById(fileId).files[0];
+  if(f) return await f.text();
+  return document.getElementById(textId).value;
 }
 
-function rootLines(manifest) {
-  return manifest.claims
-    .map(c => [c.claim_id, c.text_hash, c.canonical_json].join('\t'))
-    .sort()
-    .join('\n') + '\n';
+function canonicalStringify(v){
+  if(v === null || typeof v !== 'object') return JSON.stringify(v);
+  if(Array.isArray(v)) return '[' + v.map(canonicalStringify).join(',') + ']';
+  return '{' + Object.keys(v).sort().map(k => JSON.stringify(k)+':'+canonicalStringify(v[k])).join(',') + '}';
 }
 
-async function fetchManifest() {
-  const res = await fetch(MANIFEST_URL, { cache: 'no-store' });
-  if (!res.ok) throw new Error(`manifest fetch failed: ${res.status}`);
-  return await res.json();
+async function sha256Hex(input){
+  const bytes = typeof input === 'string' ? new TextEncoder().encode(input) : input;
+  const digest = await crypto.subtle.digest('SHA-256', bytes);
+  return [...new Uint8Array(digest)].map(b => b.toString(16).padStart(2,'0')).join('');
 }
 
-async function verifyManifest() {
-  const out = document.getElementById('manifestResult');
-  try {
-    const manifest = await fetchManifest();
-    const computed = 'sha256:' + await sha256Hex(rootLines(manifest));
-    const ok = computed === EXPECTED_ROOT;
-    out.innerHTML = `${ok ? 'PASS' : 'FAIL'}\nexpected: ${EXPECTED_ROOT}\ncomputed: ${computed}\nclaims: ${manifest.claims.length}`;
-    out.className = ok ? 'ok' : 'fail';
-  } catch (e) {
-    out.textContent = `FAIL\n${e.message}`;
-    out.className = 'fail';
+function parseJson(label, raw){
+  try { return JSON.parse(raw); }
+  catch(e){ fail(`${label} is not valid JSON: ${e.message}`); }
+}
+
+function validateCandidateSchema(c){
+  assert(c && typeof c === 'object' && !Array.isArray(c), 'Candidate must be an object');
+  const allowed = new Set([...REQUIRED, ...OPTIONAL]);
+  for(const k of REQUIRED) assert(Object.prototype.hasOwnProperty.call(c,k), `Candidate missing required field: ${k}`);
+  for(const k of Object.keys(c)) assert(allowed.has(k), `Candidate has extra field: ${k}`);
+  assert(c.schema_version === '1.0.0', 'schema_version must be 1.0.0');
+  assert(c.artifact === 'ALMS_ATTESTATION_CANDIDATE', 'artifact must be ALMS_ATTESTATION_CANDIDATE');
+  assert(/^[A-Za-z0-9._-]+$/.test(c.candidate_id), 'candidate_id pattern failed');
+  assert(c.candidate_manifest_sha256 === null || isSha256(c.candidate_manifest_sha256), 'candidate_manifest_sha256 invalid');
+  assert(typeof c.claims_ledger_path === 'string' && c.claims_ledger_path.length > 0, 'claims_ledger_path invalid');
+  assert(isSha256(c.claims_ledger_sha256), 'claims_ledger_sha256 invalid');
+  assert(typeof c.subject_artifact === 'string' && c.subject_artifact.length > 0, 'subject_artifact invalid');
+  assert(isSha256(c.subject_sha256), 'subject_sha256 invalid');
+  assert(isGitSha(c.commit), 'commit invalid');
+  assert(['NOT_ATTESTED','PENDING','ATTESTED','FAILED'].includes(c.onchain_status), 'onchain_status invalid');
+  assert(typeof c.promotion === 'boolean', 'promotion must be boolean');
+  assert(['OPEN','CLOSED'].includes(c.gate_status), 'gate_status invalid');
+  assert(typeof c.claim === 'string' && c.claim.length > 0, 'claim must be non-empty');
+}
+
+function groundingFingerprint(claim){
+  return (claim.grounding || []).map(g => [g.node_ref || '', g.evidence_path || '', g.evidence_sha256 || ''].join('|')).sort().join('||');
+}
+function claimFingerprint(claim){ return [claim.type, claim.statement, groundingFingerprint(claim)].join('###'); }
+
+function extractNumericBound(statement){
+  const s = String(statement || '').toLowerCase().replaceAll(',','');
+  const m = s.match(/\b(over|more than|greater than|less than|fewer than|under|exactly)\s+([0-9]+(?:\.[0-9]+)?)\s*(million|billion|thousand)?/);
+  if(!m) return null;
+  let value = parseFloat(m[2]);
+  if(m[3] === 'thousand') value *= 1000;
+  if(m[3] === 'million') value *= 1000000;
+  if(m[3] === 'billion') value *= 1000000000;
+  return {kind:m[1], value};
+}
+function numericBoundsConflict(a,b){
+  if(!a || !b) return false;
+  const lower = new Set(['over','more than','greater than']);
+  const upper = new Set(['less than','fewer than','under']);
+  if(lower.has(a.kind) && upper.has(b.kind) && a.value >= b.value) return true;
+  if(lower.has(b.kind) && upper.has(a.kind) && b.value >= a.value) return true;
+  if(a.kind === 'exactly' && b.kind === 'exactly' && a.value !== b.value) return true;
+  if(a.kind === 'exactly' && lower.has(b.kind) && !(a.value > b.value)) return true;
+  if(b.kind === 'exactly' && lower.has(a.kind) && !(b.value > a.value)) return true;
+  if(a.kind === 'exactly' && upper.has(b.kind) && !(a.value < b.value)) return true;
+  if(b.kind === 'exactly' && upper.has(a.kind) && !(b.value < a.value)) return true;
+  return false;
+}
+
+function validateClaimLedger(ledger){
+  assert(ledger && typeof ledger === 'object' && Array.isArray(ledger.claims), 'Ledger missing claims[]');
+  const ids = new Set();
+  const fps = new Map();
+  const verifiedExistence = [];
+  for(const claim of ledger.claims){
+    const cid = claim.claim_id || '<missing>';
+    assert(claim.claim_id, 'claim missing claim_id');
+    assert(!ids.has(claim.claim_id), `duplicate claim_id: ${claim.claim_id}`);
+    ids.add(claim.claim_id);
+    assert(['EXISTENCE','FACTUAL','INTERPRETATION'].includes(claim.type), `${cid}: invalid type`);
+    assert(['VERIFIED','UNVERIFIED','REJECTED'].includes(claim.status), `${cid}: invalid status`);
+    assert(Array.isArray(claim.grounding) && claim.grounding.length > 0, `${cid}: grounding required`);
+    for(const g of claim.grounding) assert(g.node_ref || g.evidence_path, `${cid}: grounding must contain node_ref or evidence_path`);
+    const lower = String(claim.statement || '').toLowerCase();
+    if(claim.type === 'INTERPRETATION' && claim.status === 'VERIFIED') fail(`${cid}: INTERPRETATION claims cannot be VERIFIED`);
+    if(claim.type === 'FACTUAL' && claim.status === 'VERIFIED') fail(`${cid}: FACTUAL claims cannot be VERIFIED from artifact text alone`);
+    if(TEMPORAL_LEAKS.some(t => lower.includes(t)) && claim.status === 'VERIFIED') fail(`${cid}: temporal/external-world leak cannot be VERIFIED`);
+    const fp = claimFingerprint(claim);
+    if(fps.has(fp) && fps.get(fp) !== claim.status) fail(`inconsistent status for duplicate claim fingerprint: ${cid}`);
+    fps.set(fp, claim.status);
+    if(claim.type === 'EXISTENCE' && claim.status === 'VERIFIED') verifiedExistence.push(claim);
   }
-}
-
-async function loadManifest() {
-  const list = document.getElementById('claimsList');
-  try {
-    const manifest = await fetchManifest();
-    list.innerHTML = manifest.claims.map(c => `
-      <div class="card">
-        <strong>${c.claim_number}. ${c.claim_text}</strong><br>
-        <span class="muted">line ${c.line_hint} · ${c.claim_id}</span><br>
-        <code>${c.text_hash}</code><br>
-        <a href="${c.canonical_json.replace('../','../')}">canonical JSON</a>
-      </div>
-    `).join('');
-  } catch (e) {
-    list.textContent = `Failed to load: ${e.message}`;
-  }
-}
-
-async function verifyClaim() {
-  const out = document.getElementById('claimResult');
-  try {
-    const claim = JSON.parse(document.getElementById('claimInput').value);
-    const manifest = await fetchManifest();
-    const claimId = claim.claim_id;
-    const textHash = claim.artifacts && claim.artifacts.text_hash;
-    const match = manifest.claims.find(c => c.claim_id === claimId && c.text_hash === textHash);
-    if (match) {
-      out.textContent = `PASS\nclaim_id: ${claimId}\ntext_hash: ${textHash}\nmanifest_claim_number: ${match.claim_number}`;
-      out.className = 'ok';
-    } else {
-      out.textContent = `FAIL\nNo manifest entry matched claim_id + text_hash.\nclaim_id: ${claimId}\ntext_hash: ${textHash}`;
-      out.className = 'fail';
+  for(let i=0;i<verifiedExistence.length;i++){
+    for(let j=i+1;j<verifiedExistence.length;j++){
+      const a = verifiedExistence[i], b = verifiedExistence[j];
+      if(groundingFingerprint(a) !== groundingFingerprint(b)) continue;
+      if(numericBoundsConflict(extractNumericBound(a.statement), extractNumericBound(b.statement))) fail(`numeric contradiction between ${a.claim_id} and ${b.claim_id}`);
     }
-  } catch (e) {
-    out.textContent = `FAIL\n${e.message}`;
-    out.className = 'fail';
   }
 }
 
-verifyManifest();
-loadManifest();
+async function verify(){
+  const candidateRaw = await readInput('candidateFile','candidateText');
+  const ledgerRaw = await readInput('ledgerFile','ledgerText');
+  const subjectRaw = await readInput('subjectFile','subjectText');
+  assert(candidateRaw.trim(), 'Candidate input missing');
+  assert(ledgerRaw.trim(), 'Claims ledger input missing');
+  assert(subjectRaw.length > 0, 'Subject artifact input missing');
+  const candidate = parseJson('Candidate', candidateRaw);
+  const ledger = parseJson('Claims ledger', ledgerRaw);
+  validateCandidateSchema(candidate);
+  const candidateForHash = JSON.parse(JSON.stringify(candidate));
+  candidateForHash.candidate_manifest_sha256 = null;
+  const candidateHash = await sha256Hex(canonicalStringify(candidateForHash));
+  assert(candidate.candidate_manifest_sha256 === candidateHash, `[FAIL] CANDIDATE_SHA256 mismatch\n  expected=${candidate.candidate_manifest_sha256}\n  actual  =${candidateHash}`);
+  const ledgerForHash = JSON.parse(JSON.stringify(ledger));
+  ledgerForHash.ledger_manifest_sha256 = null;
+  const ledgerHash = await sha256Hex(canonicalStringify(ledgerForHash));
+  assert(candidate.claims_ledger_sha256 === ledgerHash, `[FAIL] CLAIMS_LEDGER_SHA256 mismatch\n  expected=${candidate.claims_ledger_sha256}\n  actual  =${ledgerHash}`);
+  try { validateClaimLedger(ledger); }
+  catch(e){ fail(`[FAIL] Ledger invalid: ${e.message}`); }
+  const subjectHash = await sha256Hex(subjectRaw);
+  assert(candidate.subject_sha256 === subjectHash, `[FAIL] SUBJECT_SHA256 mismatch\n  expected=${candidate.subject_sha256}\n  actual  =${subjectHash}`);
+  assert(candidate.onchain_status === 'NOT_ATTESTED', '[FAIL] Candidate is not pre-attestation: onchain_status != NOT_ATTESTED');
+  assert(candidate.eas_uid === null, '[FAIL] Candidate contains EAS UID; use post-attestation verifier');
+  assert(candidate.tx_hash === null, '[FAIL] Candidate contains tx hash; use post-attestation verifier');
+  assert(candidate.promotion === false || candidate.gate_status === 'CLOSED', '[FAIL] Candidate promotion/gate state is not closed');
+  return {candidateHash, ledgerHash, subjectHash, commit: candidate.commit};
+}
+
+function setResult(ok,msg){ const el=document.getElementById('result'); el.className = ok ? 'ok' : 'fail'; el.textContent = msg; }
+
+document.getElementById('verifyBtn').addEventListener('click', async () => {
+  try {
+    const r = await verify();
+    setResult(true, `[OK] Attestation graph is internally consistent and bounded\n  CANDIDATE_SHA256     = ${r.candidateHash}\n  CLAIMS_LEDGER_SHA256 = ${r.ledgerHash}\n  SUBJECT_SHA256       = ${r.subjectHash}\n  COMMIT               = ${r.commit}\n  ONCHAIN_STATUS       = NOT_ATTESTED`);
+  } catch(e) {
+    setResult(false, String(e.message || e));
+  }
+});
+
+document.getElementById('clearBtn').addEventListener('click', () => {
+  for(const id of ['candidateText','ledgerText','subjectText']) document.getElementById(id).value='';
+  for(const id of ['candidateFile','ledgerFile','subjectFile']) document.getElementById(id).value='';
+  setResult(false, 'Waiting for input.');
+  document.getElementById('result').className='';
+});
 </script>
-<script>
-(function(){
-  const cleanUrl = location.href.split("#")[0].split("?")[0];
-  const shareUrl = document.getElementById("shareUrl");
-  const copyBtn = document.getElementById("copyShare");
-  const qr = document.getElementById("shareQr");
-
-  if (shareUrl) shareUrl.value = cleanUrl;
-  if (qr) qr.src = "https://quickchart.io/qr?size=180&text=" + encodeURIComponent(cleanUrl);
-
-  if (copyBtn) copyBtn.addEventListener("click", async () => {
-    await navigator.clipboard.writeText(cleanUrl);
-    copyBtn.textContent = "Copied ✅";
-    setTimeout(() => copyBtn.textContent = "Copy verifier link", 1200);
-  });
-})();
-</script>
-
-<div class="sharebox" id="shareBox">
-  <strong>Share Verifier</strong>
-  <p class="small">QR points to this verifier page only. Receipt bytes are not embedded.</p>
-  <input id="shareUrl" readonly>
-  <button id="copyShare" type="button">Copy verifier link</button>
-  <br>
-  <img id="shareQr" alt="Verifier QR code">
-</div>
-
 </body>
 </html>

@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "The National Survey of Teen Relationships and Intimate Violence (STRiV), [United States], 2013-2017",
+  "description": "\r\nThe National Survey of Teen Relationships and Intimate Violence (STRiV) examines the changing nature of adolescent dating relationships, particularly those marked by adolescent relationship abuse (ARA). More specifically, this study was designed to produce nationally representative estimates of the prevalence of multiple forms of ARA among youth (ages 10-18), to document the characteristics of abusive relationships during adolescence, to assess ARA risk factors, and to situate these estimates within the environment of adolescents' key social relationships and communications.\r\n\r\n\r\nSTRiV includes individual data from a nationally representative sample of households with at least one resident youth. Baseline and follow-up surveys were completed using a secure web survey with toll-free telephone and online help available.\r\n",
+  "modified": "2021-10-18T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "3537",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Jennifer Scherer",
+    "hasEmail": "mailto:Jennifer.Scherer@usdoj.gov"
+  },
+  "keyword": [
+    "adolescents",
+    "children",
+    "dating (social)",
+    "domestic violence",
+    "family relationships",
+    "friendships",
+    "households",
+    "intimate partner violence",
+    "intimate partners",
+    "parent child relationship",
+    "parental attitudes",
+    "sexual assault",
+    "sexual behavior",
+    "violence against women"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2017-06-30T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36499.v3",
+      "title": "The National Survey of Teen Relationships and Intimate Violence (STRiV), [United States], 2013-2017"
+    }
+  ]
+}

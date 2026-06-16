@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Gangs in Rural America, 1996-1998       ",
+  "description": "This study was undertaken to enable cross-community\r\n analysis of gang trends in all areas of the United States. It was also\r\n designed to provide a comparative analysis of social, economic, and\r\n demographic differences among non-metropolitan jurisdictions in which\r\n gangs were reported to have been persistent problems, those in which\r\n gangs had been more transitory, and those that reported no gang\r\n problems. Data were collected from four separate sources and then\r\n merged into a single dataset using the county Federal Information\r\n Processing Standards (FIPS) code as the attribute of common\r\n identification. The data sources included: (1) local police agency\r\n responses to three waves (1996, 1997, and 1998) of the National Youth\r\n Gang Survey (NYGS), (2) rural-urban classification and county-level\r\n measures of primary economic activity from the Economic Research\r\n Service (ERS) of the United States Department of Agriculture, (3)\r\n county-level economic and demographic data from the County and City\r\n Data Book, 1994, and from USA Counties, 1998, produced by the United\r\n States Department of Commerce, and (4) county-level data on access to\r\n interstate highways provided by Tom Ricketts and Randy Randolph of the\r\n University of North Carolina at Chapel Hill. Variables include the\r\n FIPS codes for state, county, county subdivision, and sub-county,\r\n population in the agency jurisdiction, type of jurisdiction, and\r\n whether the county was dependent on farming, mining, manufacturing, or\r\n government. Other variables categorizing counties include retirement\r\n destination, federal lands, commuting, persistent poverty, and\r\n transfer payments. The year gang problems began in that jurisdiction,\r\n number of youth groups, number of active gangs, number of active gang\r\n members, percent of gang members who migrated, and the number of gangs\r\n in 1996, 1997, and 1998 are also available. Rounding out the variables\r\n are unemployment rates, median household income, percent of persons in\r\n county below poverty level, percent of family households that were\r\n one-parent households, percent of housing units in the county that\r\n were vacant, had no telephone, or were renter-occupied, resident\r\n population of the county in 1990 and 1997, change in unemployment\r\n rates, land area of county, percent of persons in the county speaking\r\n Spanish at home, and whether an interstate highway intersected the\r\ncounty.",
+  "modified": "2002-07-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2860",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "demographic characteristics",
+    "economic indicators",
+    "gang members",
+    "gangs",
+    "police response",
+    "rural areas",
+    "rural crime",
+    "social indicators"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2002-06-19T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03398.v1",
+      "title": "Gangs in Rural America, 1996-1998       "
+    }
+  ]
+}

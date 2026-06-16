@@ -1,0 +1,12 @@
+system:
+  operator: "sandbox-operator.eth"
+  environment: "local-dev"
+  version: "0.1.0"
+
+pipeline_targets:
+  dataset_source: "./examples/stub_dataset.json"
+  prompt_template: "./examples/stub_prompt.txt"
+  model_output: "./examples/stub_output.json"
+
+storage:
+  l0_local_vault: "./receipts"

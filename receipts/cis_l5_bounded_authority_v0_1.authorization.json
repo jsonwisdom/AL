@@ -1,0 +1,24 @@
+{
+  "authorization": "AUTHORIZE_BIND",
+  "schema": "CIS_L5_BOUNDED_AUTHORITY_V0_1",
+  "rep_id": "CIS_L5_REP_001",
+  "driver": "VERIFIED_AGENT_DRIVER_V0.1",
+  "principal": "jaywisdom.base.eth",
+  "authority_rule": "An agent is bounded only if its authority can be inspected before execution and replayed after execution.",
+  "max_spend_usd": 0,
+  "hard_blocks": [
+    "SEND_FUNDS",
+    "SIGN_TRANSACTION",
+    "DELETE_RECORD",
+    "PUBLISH_PUBLIC_CLAIM_WITHOUT_RECEIPT"
+  ],
+  "human_review_required_when": [
+    "money_moves",
+    "public_claim_made",
+    "legal_or_medical_or_financial_advice",
+    "identity_or_reputation_impact",
+    "irreversible_action"
+  ],
+  "status": "AUTHORIZED_BY_TEXT_PENDING_SIGNATURE",
+  "timestamp": "2026-05-17T00:00:00Z"
+}

@@ -1,0 +1,68 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Crime Victimization Survey Longitudinal File, 1995-1999",
+  "description": "The National Crime Victimization Survey (NCVS) Series,\r\n previously called the National Crime Surveys (NCS), has been\r\n collecting data on personal and household victimization through an\r\n ongoing survey of a nationally-representative sample of residential\r\n addresses since 1973. Occasionally there have been extract or\r\n supplement files created from the NCVS data series. This extract, the\r\n National Crime Victimization Survey Longitudinal File, 1995-1999,\r\n contains records from sample J19, rotations 2, 3, and 4. The Rotation\r\n 2 sample was introduced in Quarter 3, 1995, and expired in Quarter 4,\r\n 1998. The Rotation 3 sample was introduced in Quarter 1, 1996, and\r\n expired in Quarter 1, 1999. The Rotation 4 sample was introduced in\r\n Quarter 3, 1996, and expired in Quarter 4, 1999. The NCVS was designed\r\n with four primary objectives: (1) to develop detailed information\r\n about the victims and consequences of crime, (2) to estimate the\r\n number and types of crimes not reported to the police, (3) to provide\r\n uniform measures of selected types of crimes, and (4) to permit\r\n comparisons over time and types of areas. The survey categorized\r\n crimes as \"personal\" or \"property.\" Personal crimes include rape and\r\n sexual attack, robbery, aggravated and simple assault, and\r\n purse-snatching/pocket-picking, while property crimes include\r\n burglary, theft, motor vehicle theft, and vandalism. Each respondent\r\n was asked a series of screen questions designed to determine whether\r\n she or he was victimized during the six-month period preceding the\r\n first day of the month of the interview. A \"household respondent\" was\r\n also asked to report on crimes against the household as a whole (e.g.,\r\n burglary, motor vehicle theft). The data include type of crime, month,\r\n time, and location of the crime, relationship between victim and\r\n offender, characteristics of the offender, self-protective actions\r\n taken by the victim during the incident and results of those actions,\r\n consequences of the victimization, type of property lost, whether the\r\n crime was reported to police and reasons for reporting or not\r\n reporting, and offender use of weapons, drugs, and alcohol. Basic\r\n demographic information such as age, race, gender, and income was also\r\ncollected to enable analysis of crime by various subpopulations.",
+  "modified": "2007-03-14T00:00:00",
+  "accessLevel": "public",
+  "identifier": "192",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "assault",
+    "auto theft",
+    "burglary",
+    "crime",
+    "crime costs",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "offenders",
+    "offenses",
+    "property crimes",
+    "rape",
+    "reactions to crime",
+    "robbery",
+    "sexual offenses",
+    "vandalism",
+    "victimization",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2432",
+  "dataQuality": false,
+  "issued": "2007-03-14T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04414.v1",
+      "title": "National Crime Victimization Survey Longitudinal File, 1995-1999"
+    }
+  ]
+}

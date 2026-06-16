@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Effects of Local Sanctions on Serious Criminal Offending in Cities with Populations Over 100,000, 1978-1983:  [United States]  ",
+  "description": "These data assess the effects of the risk of local jail\r\n incarceration and of police aggressiveness in patrol style on rates of\r\n violent offending. The collection includes arrest rates for public\r\n order offenses, size of county jail populations, and numbers of new\r\n prison admissions as they relate to arrest rates for index (serious)\r\n crimes. Data were collected from seven sources for each city. CENSUS\r\n OF POPULATION AND HOUSING, 1980 [UNITED STATES]: SUMMARY TAPE FILE 1A\r\n (ICPSR 7941), provided county-level data on number of persons by race,\r\n age, and age by race, number of persons in households, and types of\r\n households within each county. CENSUS OF POPULATION AND HOUSING, 1980\r\n [UNITED STATES]: SUMMARY TAPE FILE 3A (ICPSR 8071), measured at the\r\n city level, provided data on total population, race, age, marital\r\n status by sex, persons in household, number of households, housing,\r\n children, and families above and below the poverty level by race,\r\n employment by race, and income by race within each city. The Federal\r\n Bureau of Investigation (FBI) 1980 data provided variables on total\r\n offenses and offense rates per 100,000 persons for homicides, rapes,\r\n robbery, aggravated assault, burglary, larceny, motor vehicle\r\n offenses, and arson. Data from the FBI for 1980-1982, averaged per\r\n 100,000, provided variables for the above offenses by sex, age, and\r\n race, and the Uniform Crime Report arrest rates for index crimes\r\n within each city. The NATIONAL JAIL CENSUS for 1978 and 1983 (ICPSR\r\n 7737 and ICPSR 8203), aggregated to the county level, provided\r\n variables on jail capacity, number of inmates being held by sex, race,\r\n and status of inmate's case (awaiting trial, awaiting sentence,\r\n serving sentence, and technical violations), average daily jail\r\n populations, number of staff by full-time and part-time, number of\r\n volunteers, and number of correctional officers. The JUVENILE\r\n DETENTION AND CORRECTIONAL FACILITY CENSUS for 1979 and 1982-1983\r\n (ICPSR 7846 and 8205), aggregated to the county level, provided data\r\n on the number of individuals being held by type of crime and sex, as\r\n well as age of juvenile offenders by sex, average daily prison\r\npopulation, and payroll and other expenditures for the institutions.",
+  "modified": "1998-02-23T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3836",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "aggravated assault",
+    "arrest rates",
+    "arson",
+    "auto theft",
+    "burglary",
+    "cities",
+    "demographic characteristics",
+    "homicide",
+    "inmate populations",
+    "jail inmates",
+    "jails",
+    "larceny",
+    "rape"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1991-10-23T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09590.v2",
+      "title": "Effects of Local Sanctions on Serious Criminal Offending in Cities with Populations Over 100,000, 1978-1983:  [United States]  "
+    }
+  ]
+}

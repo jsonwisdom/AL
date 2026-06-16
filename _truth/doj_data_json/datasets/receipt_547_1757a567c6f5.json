@@ -1,0 +1,89 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Uniform Crime Reporting (UCR) Program",
+  "description": "Federal Bureau of Investigation, Department of Justice - Extraction of crime related data from the FBI's Uniform Crime Reporting (UCR) Program",
+  "modified": "2017-02-27T00:00:00",
+  "accessLevel": "public",
+  "identifier": "547",
+  "publisher": {
+    "name": "Federal Bureau of Investigation",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Criminal Justice Information Services Division Federal Bureau of Investigation (USDOJ)",
+    "hasEmail": "mailto:CRIMESTATSINFO@fbi.gov"
+  },
+  "keyword": [
+    "crime statistics",
+    "crime report",
+    "nationwide crime",
+    "Crime in the United States",
+    "hate crime",
+    "Law Enforcement Officers Killed and Assaulted",
+    "LEOKA",
+    "arrested person",
+    "homicide",
+    "police employees",
+    "arson",
+    "NIBRS"
+  ],
+  "bureauCode": [
+    "011:10"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "spatial": "United States",
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "accrualPeriodicity": "R/P1Y",
+  "dataQuality": true,
+  "issued": "2017-02-27T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "landingPage": "https://ucr.fbi.gov/",
+  "theme": [
+    "geospatial"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://forms.fbi.gov/assistance-with-uniform-crime-statistics-information",
+      "description": "Web form to submit requests for earlier Uniform Crime Reporting (UCR) data that is not available in the FBI Crime Data Explorer (CDE) or FBI.gov archive.",
+      "title": "By Request"
+    },
+    {
+      "@type": "dcat:Distribution",
+      "description": "The Crime Data Explorer (CDE) offers downloadable Uniform Crime Reporting (UCR) data files.",
+      "downloadURL": "https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/downloads",
+      "mediaType": "application/zip",
+      "title": "Crime Data Explorer"
+    },
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/home",
+      "description": "The Crime Data Explorer (CDE) is an online interactive data tool to access, view, and understand the massive amounts of Uniform Crime Reporting (UCR) data.",
+      "title": "Crime Data Explorer Interactive"
+    },
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/docApi",
+      "description": "The FBI Crime Data API is a read-only web service that returns Uniform Crime Reporting (UCR) data as JSON or CSV.",
+      "format": "Api",
+      "title": "FBI Crime Data API"
+    },
+    {
+      "@type": "dcat:Distribution",
+      "description": "Historical Uniform Crime Reporting (UCR) publications are maintained in an archive on FBI.gov.",
+      "downloadURL": "https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/ucr/publications",
+      "mediaType": "application/zip",
+      "title": "FBI.gov archive"
+    }
+  ]
+}

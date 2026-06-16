@@ -1,0 +1,67 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Monitoring Drug Markets in Manhattan [New York City], With the Arrestee Drug Abuse Monitoring (ADAM) Program, 1998-2002",
+  "description": "The purpose of the study was to determine how much Manhattan (New York City) arrestees surveyed by the Arrestee Drug Abuse Monitoring (ADAM) program spend on drug expenses.  The program obtained both self-report and urinalysis data from a total of 5,210 Manhattan arrestees surveyed by the ADAM program from 1998 to 2002.  The principal investigators developed a formula for an episodic estimator of a respondent's drug expense for cash, noncash, and cash-combination transactions.  The dataset contains a total of 267 variables relating to Manhattan arrestees' demographics, interview information, criminal history, urinalysis test results, drug use, drug market transactions, and drug expenses.",
+  "modified": "2009-06-03T10:31:58",
+  "accessLevel": "restricted public",
+  "identifier": "2872",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "ADAM/DUF Program",
+    "alcohol abuse",
+    "arrests",
+    "crime patterns",
+    "criminal histories",
+    "demographic characteristics",
+    "drug law offenses",
+    "drug offenders",
+    "drug related crimes",
+    "drug testing",
+    "drug treatment",
+    "drug use",
+    "drugs",
+    "substance abuse",
+    "trends",
+    "urinalysis"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "3023",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2009-06-03T10:25:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR22381.v1",
+      "title": "Monitoring Drug Markets in Manhattan [New York City], With the Arrestee Drug Abuse Monitoring (ADAM) Program, 1998-2002"
+    }
+  ]
+}

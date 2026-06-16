@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Assessment of Criminal Justice Needs, 1983:  [United States]",
+  "description": "In 1983, the National Institute of Justice sponsored a\r\n program evaluation survey by Abt Associates that was designed to\r\n identify the highest priority needs for management and operational\r\n improvements in the criminal justice system. Six groups were surveyed:\r\n judges and trial court administrators, corrections officials, public\r\n defenders, police, prosecutors, and probation/parole officials.\r\n Variables in this study include background information on the\r\n respondents' agencies, such as operating budget and number of\r\n employees, financial resources available to the agency, and technical\r\n assistance, research, and initiative programs used by the agency. The\r\n codebook includes the mailed questionnaire sent to each of the six\r\n groups in the study as well as a copy of the telephone interview\r\nguide.",
+  "modified": "2006-01-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3740",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "United States",
+    "administration",
+    "budgets",
+    "correctional facilities",
+    "court system",
+    "criminal justice system",
+    "government agencies",
+    "judicial process",
+    "legal systems",
+    "management",
+    "organizational behavior",
+    "parole services",
+    "police",
+    "policies and procedures",
+    "program ev"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1985-05-24T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08362.v1",
+      "title": "National Assessment of Criminal Justice Needs, 1983:  [United States]"
+    }
+  ]
+}

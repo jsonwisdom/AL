@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Pennsylvania Task Force on Prison Overcrowding, 2004-2005",
+  "description": "The current jail population control study is the second phase of a two-part inquiry by the County Commissioners Association of Pennsylvania that began in 2003. Phase II builds upon the findings of the initial survey by using a number of information sources to obtain data with which to examine in greater detail the reasons and remedies for jail overcrowding. The Phase II study was implemented in September 2004 and was designed to examine jail population control data from four sources: Pennsylvania Statewide Jail Survey (Part 1), Intensive Site Visits to selected Pennsylvania Counties (Part 2), National Association of Counties (NACo) Best Practices Survey, and National Institute of Corrections (NIC) Technical Assistance reports. The Pennsylvania Statewide Survey (Part 1, Pennsylvania Statewide Survey Quantitative Data) was sent to all counties operating their own jails in September 2004. Surveys were mailed to 63 of the state's 67 counties. Counties were selected for intensive site visits (Part 2, Intensive Site Visit Qualitative Data) based largely on the results of the Phase I survey and focused on counties with the most extreme crowding problems and/or expressing interest in tackling population control issues. Visits were made to 14 of the state's 67 counties between September 2004 and May 2005. Part 1 includes variables on jail capacity and population, construction, population control measures, potential change targets, and transportation issues. Part 2 includes background to the site visit, site visit agenda and aims, and an exploration of population control options.",
+  "modified": "2010-06-30T15:30:35",
+  "accessLevel": "restricted public",
+  "identifier": "3616",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "alternatives to institutionalization",
+    "policies and procedures",
+    "policy analysis",
+    "prison conditions",
+    "prison overcrowding"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2010-06-30T15:24:32",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR25301.v1",
+      "title": "Pennsylvania Task Force on Prison Overcrowding, 2004-2005"
+    }
+  ]
+}

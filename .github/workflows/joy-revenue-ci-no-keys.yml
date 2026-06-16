@@ -1,0 +1,31 @@
+name: joy-revenue-ci-no-keys
+
+on:
+  push:
+    paths:
+      - "joy-revenue/**"
+      - ".github/workflows/joy-revenue-ci-no-keys.yml"
+  pull_request:
+    paths:
+      - "joy-revenue/**"
+      - ".github/workflows/joy-revenue-ci-no-keys.yml"
+
+jobs:
+  no-keys:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install
+        working-directory: joy-revenue
+        run: npm install
+
+      - name: Zero-key check
+        working-directory: joy-revenue
+        run: npm run check:no-keys

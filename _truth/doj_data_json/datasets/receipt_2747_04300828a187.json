@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Law Enforcement Agency Identifiers Crosswalk, United States,  2012",
+  "description": "Criminal justice research may require merging disparate data sources that have no common match keys. The Law Enforcement Agency Identifiers Crosswalk (LEAIC) file facilitates linking reported crime data with socio-economic data. It does this by having a record for each law enforcement agency, law enforcement reporting entity, and access identifier for the National Crime Information Center (NCIC). Essentially, if an entity (law enforcement agency or section of a law enforcement agency) is capable of reporting crime information, it is included in the file.  The LEAIC records contain common match keys for merging reported crime data and Census Bureau data. These linkage variables include the Originating Agency Identifier (ORI) code, Federal Information Processing Standards (FIPS) state, county and place codes, and Governments Integrated Directory government identifier codes.",
+  "modified": "2018-09-18T11:41:59",
+  "accessLevel": "public",
+  "identifier": "2747",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "law enforcement",
+    "law enforcement agencies"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2632",
+  "dataQuality": false,
+  "issued": "2015-04-17T12:05:15",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR35158.v2",
+      "title": "Law Enforcement Agency Identifiers Crosswalk, United States,  2012"
+    }
+  ]
+}

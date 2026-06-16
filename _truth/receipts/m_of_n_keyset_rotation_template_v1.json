@@ -1,0 +1,54 @@
+{
+  "schema_version": "alms.keyset_rotation_template.v1",
+  "artifact": "m_of_n_keyset_rotation_template_v1.json",
+  "classification": "KEYSET_ROTATION_TEMPLATE",
+  "status": "DRAFT_NOT_INDEXED_ZERO_AUTHORITY",
+  "scope": "defines required m-of-n upgrade path before experimental promotion can become possible",
+  "binding_rule": "This template has zero authority until instantiated as a signed rotation receipt and indexed in _truth/receipts/index.json.",
+  "required_before": [
+    "experimental claim promotion",
+    "epoch freeze based on experimental receipts",
+    "legitimacy claim indexing"
+  ],
+  "threshold": {
+    "minimum": "2_of_3",
+    "recommended": "3_of_5",
+    "roles": [
+      "technical_validator",
+      "historical_reviewer",
+      "governance_reviewer",
+      "operator_key",
+      "public_witness_key"
+    ]
+  },
+  "must_include": [
+    "old_keyset_hash",
+    "new_keyset_hash",
+    "effective_epoch",
+    "activation_timestamp",
+    "revocation_rules",
+    "signatures_over_full_rotation_payload"
+  ],
+  "bootstrap_reference": {
+    "old_keyset_hash": "sha256:7e21d446e26c5cb9ad4cfea4b7247aa11f5e226e86ac3b32dfd69b62c7349124",
+    "old_keyset_artifact": "epoch_0_keyset_publication_v1_1.json",
+    "old_threshold": "1_of_1_bootstrap",
+    "old_threshold_must_sign_rotation": true
+  },
+  "post_activation_rules": [
+    "After activation_timestamp, validators must reject bootstrap signatures for experimental promotion.",
+    "Experimental promotion requires signatures satisfying the indexed m-of-n keyset.",
+    "Old bootstrap keys remain valid only for receipts issued before rotation effective timestamp and within bootstrap allowed_scope.",
+    "Any m-of-n rotation must be indexed before it has canonical effect."
+  ],
+  "not_scope": [
+    "immediate authority",
+    "current experimental promotion",
+    "OpenAI legitimacy",
+    "RED_TO_GREEN narrative elevation",
+    "visual art as truth",
+    "universal canonical supremacy"
+  ],
+  "operator": "Jay Wisdom",
+  "timestamp_issued": "2026-05-14T20:20:00Z"
+}

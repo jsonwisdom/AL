@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Deaths in Custody Reporting Program: Arrest-Related Deaths, 2003-2009",
+  "description": "The Arrest-Related Deaths (ARD) program is an annual\r\nnational census of persons who die either during the\r\nprocess of arrest or while in the custody of state or local\r\nlaw enforcement personnel. The Bureau of Justice Statistics\r\n(BJS) implemented the ARD program in 2003 as part of the\r\nDeaths in Custody Reporting Program (DCRP). The DCRP\r\nwas initiated to fulfill the data collection requirement of the\r\nDeaths in Custody Reporting Act of 2000 (DICRA, P.L. 106-\r\n247). It collects in-depth information on deaths during arrest\r\nand incarceration, and it provides national-level information\r\non the deaths of suspects and offenders from their initial\r\ncontact with law enforcement personnel through the time\r\nthey are incarcerated in a jail or prison.\r\nARD data are collected to quantify and describe the\r\ncircumstances surrounding civilian deaths that take place\r\nduring an arrest or while in the custody of law enforcement.\r\nThese data describe the prevalence and incidence of arrest-related\r\ndeaths across the nation, identify the circumstances\r\nor activities that contribute to these deaths, and reveal\r\ntrends in the causes and circumstances of these deaths in\r\ncustody at national and state levels. These data can be used\r\nto inform specific policies that may increase the safety of\r\nlaw enforcement officers and citizens, identify training\r\nneeds in law enforcement agencies, and assist in developing\r\nprevention strategies.\r\nThe current ARD program relies on state reporting\r\ncoordinators (SRCs) in each of the 50 states and the District\r\nof Columbia to identify and report on all eligible cases of\r\narrest-related deaths. BJS compiles data from the states to\r\nproduce national-level statistics on deaths that occur in the\r\nprocess of arrest by, or while in the custody of, state and local\r\nlaw enforcement personnel.",
+  "modified": "2016-01-29T09:49:28",
+  "accessLevel": "restricted public",
+  "identifier": "2160",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "arrests",
+    "correctional facilities",
+    "corrections",
+    "death",
+    "homicide",
+    "suicide"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2441",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2016-01-29T09:40:14",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36291.v1",
+      "title": "Deaths in Custody Reporting Program: Arrest-Related Deaths, 2003-2009"
+    }
+  ]
+}

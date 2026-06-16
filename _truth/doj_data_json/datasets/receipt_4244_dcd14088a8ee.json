@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Evaluation of the Bureau of Justice Assistance Sexual Assault Kit Initiative, United States, 2018",
+  "description": "Since 2015, the Bureau of Justice Assistance (BJA) has funded sites to engage in reforms intended to improve the national response to sexual assault cases. The goals of this initiative are to (1) create a coordinated community response that ensures just resolution to unsubmitted sexual assault kit (SAK) cases through a victim-centered approach and (2) build jurisdictions' capacity to prevent the development of conditions that lead to high numbers of unsubmitted sexual assault kits. Site efforts to address these issues include agencies such as law enforcement, prosecution, forensic laboratories, and victim advocacy service organizations. Westat was awarded a contract by the National Institute of Justice (NIJ) to assess components of BJA's Sexual Assault Kit Initiative (SAKI). The study includes (1) an evaluability assessment of 17 sites to determine their readiness for an evaluation, (2) a process evaluation and system reform assessment of the 17 sites, (3) a feasibility assessment of using case level data for an outcome evaluation, and analysis of a subset of unsubmitted SAK cases to identify how characteristics of incidents, offenders, and victims are associated with case processing decisions and outcomes, and (4) development of a long-term outcome evaluation plan.\r\nTwo sources of data are archived with NAJCD: (1) coded qualitative data from primarily on-site interviews the Westat Team conducted in 2018 with stakeholders from 17 of the fiscal year (FY) 2015 SAKI grantees and 2 private lab facilities and 2) quantitative case-level data from the 2 FY 2015 SAKI grantees on SAKI cases associated with previously unsubmitted sexual assault kits that were determined to contain foreign DNA or biological evidence through laboratory testing. The interview data file contains coded data from 172 interviews the research team conducted with one or more agency representatives regarding their organization's goals, strategies, and activities for processing sexual assault kits, and associated lessons learned, challenges, and expected outcomes.  The quantitative case-level data file includes case-level information on 576 sexual assault kits determined to have DNA and associated cases included in the 2 sites' SAKI inventories. The case-level data captures information on case or offense-level information (e.g., date of offense, date offense reported to police, number of victims and suspects involved, investigation and prosecution activities), victim-level information (e.g., victim age, sex, race, participation in investigation), and suspect-level information (e.g., suspect's age, race, sex, criminal history).",
+  "modified": "2022-03-30T12:47:31",
+  "accessLevel": "restricted public",
+  "identifier": "4244",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "criminal justice programs",
+    "evaluation",
+    "evidence",
+    "forensic sciences",
+    "offenses",
+    "police records",
+    "program evaluation",
+    "sexual assault",
+    "victim rights",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2022-03-30T11:32:44",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37897.v1",
+      "title": "Evaluation of the Bureau of Justice Assistance Sexual Assault Kit Initiative, United States, 2018"
+    }
+  ]
+}

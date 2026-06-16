@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Effectiveness of Prisoner Reentry Services as Crime Control for Inmates Released in New York, 2000-2005",
+  "description": "The Fortune Society, a private not-for-profit organization located in New York City, provides a variety of services that are intended to support former prisoners in becoming stable and productive members of society. The purpose of this evaluation was to explore the extent to which receiving supportive services at the Fortune Society improved clients' prospects for law abiding behavior. More specifically, this study examined the extent to which receipt of these services reduced recidivism and homelessness following release.  The research team adopted a quasi-experimental design that compared recidivism outcomes for persons enrolled at Fortune (clients) to persons released from New York State prisons and returning to New York City and, separately, inmates released from the New York City jails, none of whom went to Fortune (non-clients). All -- clients and non-clients alike -- were released after January 1, 2000, and before November 3, 2005 (for state prisoners), and March 3, 2005 (for city jail prisoners). Information about all prisoners released during these time frames was obtained from the New York State Department of Correctional Services for state prisoners and from the New York City Department of Correction for city prisoners. The research team also obtained records from the Fortune Society for its clients and arrest and conviction information for all released prisoners from the New York State Division of Criminal Justice Services' criminal history repository. These records were matched and merged, producing a 72,408 case dataset on 57,349 released state prisoners (Part 1) and a 68,614 case dataset on 64,049 city jail prisoners (Part 2).  The research team obtained data from the Fortune Society for 15,685 persons formally registered as clients between 1989 and 2006 (Part 3) and data on 416,943 activities provided to clients at the Fortune Society between September 1999 and March 2006 (Part 4). Additionally, the research team obtained 97,665 records from the New York City Department of Homeless Services of all persons who sought shelter or other homeless services during the period from January 2000 to July 2006 (Part 5). Part 6 contains 96,009 cases and catalogs matches between a New York State criminal record identifier and a Fortune Society client identifier. The New York State Prisons Releases Data (Part 1) contain a total of 124 variables on released prison inmate characteristics including demographic information, criminal history variables, indicator variables, geographic variables, and service variables. The New York City Jails Releases Data (Part 2) contain a total of 92 variables on released jail inmate characteristics including demographic information, criminal history variables, indicator variables, and geographic variables. The Fortune Society Client Data (Part 3) contain 44 variables including demographic, criminal history, needs/issues, and other variables. The Fortune Society Client Activity Data (Part 4) contain seven variables including two identifiers, end date, Fortune service unit, duration in hours, activity type, and activity. The Homelessness Events Data (Part 5) contain four variables including two identifiers, change in homeless status, and date of change. The New York State Criminal Record/Fortune Society Client Match Data (Part 6) contain four variables including three identifiers and a variable that indicates the type of match between a New York State criminal record identifier and a Fortune Society client identifier.",
+  "modified": "2010-08-31T14:43:29",
+  "accessLevel": "restricted public",
+  "identifier": "3316",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "criminal justice programs",
+    "ex-offenders",
+    "homelessness",
+    "inmate release plans",
+    "parole",
+    "parole services",
+    "postrelease programs",
+    "prisoner reentry",
+    "probation",
+    "recidivism"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2010-08-31T14:25:57",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR27841.v1",
+      "title": "Effectiveness of Prisoner Reentry Services as Crime Control for Inmates Released in New York, 2000-2005"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Law Enforcement Management and Administrative Statistics (LEMAS), 2013",
+  "description": "The Law Enforcement Management and Administrative Statistics (LEMAS) survey collects data from a nationally representative sample of state and local law enforcement agencies in the United States. Although the data collection instrument (see page 150 of the codebook) uses the year 2012 for the title, most questions have a reference date of January 1, 2013. For this reason, the study title uses the year 2013. The 2013 LEMAS sample design called for the survey questionnaire to be sent to 3,336 general purpose state and local law enforcement agencies including 2,353 local police departments, 933 sheriffs' offices, and the 50 primary state law enforcement agencies. The design called for all agencies employing 100 or sworn personnel to be included with certainty (self-representing) and for smaller agencies to be sampled from strata base on number of officers employed. A total of 26 local police departments were determined to be out-of-scope for the survey because they were closed, outsourced, or operating on a part-time basis. A total of 38 sheriffs' offices were excluded from the survey because they had no primary law enforcement jurisdiction. The final mailout total of 3,272 agencies included 2,327 local police departments, 895 sheriffs' offices, and the 50 state agencies.",
+  "modified": "2015-09-22T16:25:38",
+  "accessLevel": "public",
+  "identifier": "2151",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "administration",
+    "budgets",
+    "law enforcement",
+    "law enforcement agencies",
+    "management",
+    "personnel",
+    "police departments",
+    "police equipment",
+    "police weapons",
+    "policies and procedures",
+    "statistical data",
+    "wages and salaries",
+    "workers"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2430",
+  "dataQuality": false,
+  "issued": "2015-07-06T13:34:07",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36164.v2",
+      "title": "Law Enforcement Management and Administrative Statistics (LEMAS), 2013"
+    }
+  ]
+}

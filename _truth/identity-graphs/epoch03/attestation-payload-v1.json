@@ -1,0 +1,42 @@
+{
+  "payload_id": "EPOCH03_GRAPH_ATTESTATION_PAYLOAD_V1",
+  "status": "READY_FOR_BASE_SEPOLIA_ATTESTATION",
+  "graph_id": "EPOCH03_IDENTITY_GRAPH_WITNESS_PRIMITIVE_001",
+  "portable_sha256": "bd14d54188da6f98a18ef2e5dd0dee8edd08a89b9e5a890104ac07d176c2d139",
+  "root_identity": "jaywisdom.base.eth",
+  "references": {
+    "graph_commit": "66267edb11cab0db48512411734e7d171ae8f4bd",
+    "receipt_commit": "6e8b3f8fd33642f26a90b30a8f8a2c5cdb963aab",
+    "diagram_commit": "51a5b7dcd80eae6e436cd04d70a695a0feb1715d",
+    "graph_path": "_truth/identity-graphs/epoch03/witness-primitive-001.json",
+    "receipt_path": "_truth/identity-graphs/epoch03/witness-primitive-001.receipt.json",
+    "diagram_spec_path": "_truth/identity-graphs/epoch03/witness-primitive-001.diagram.json"
+  },
+  "existing_witness_anchor": {
+    "attestation_uid": "0x69ac3aa79adfadce4e0861ee7405474cade13f1d804ba426281c1e92c5db7981",
+    "receipt_hash": "0x83620a9b85b76b0439547898687e294607a50f09e5d83e27871b2ecc8c0112b4",
+    "network": "base-sepolia"
+  },
+  "attestation_scope": {
+    "purpose": "Anchor the portable identity graph hash as a replay-stable discovery artifact.",
+    "anchors_runtime": false,
+    "anchors_execution": false,
+    "anchors_receipt_bound_graph": true
+  },
+  "invariants": [
+    "attestation_does_not_replace_receipt",
+    "attestation_references_portable_sha256",
+    "attestation_references_commits_but_is_not_their_source_of_truth",
+    "runtime_is_not_anchored_by_this_attestation",
+    "identity discovers",
+    "receipts prove",
+    "hashes anchor",
+    "attestations challenge"
+  ],
+  "doctrine": [
+    "no ghost anchors",
+    "replay first",
+    "scale later"
+  ],
+  "timestamp": "2026-05-16T00:00:00Z"
+}

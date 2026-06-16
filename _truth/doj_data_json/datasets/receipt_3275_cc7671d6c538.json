@@ -1,0 +1,52 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Fraud Victimization Survey, 1990: [United States]",
+  "description": "The fraud victimization survey was administered by telephone \r\n to 400 respondents 18 years or older. Screener items were used to \r\n determine whether respondents had been fraud victims. Respondents with \r\n victimizations to report were administered the incident report items \r\n for up to five fraud incidents. The collection contains two general \r\n groups of variables: those pertaining to the individual respondent \r\n (Part 1), and those pertaining to the fraud incident (Part 2). Personal \r\n information includes basic demographic information (age, race, sex, \r\n income) and information about experiences as a victim of crimes other \r\n than fraud (robbery, assault, burglary, vehicle theft). Specific \r\n questions about fraud victimization experiences distinguished among \r\n twenty different types of fraud, including sales of misrepresented \r\n products or services, nondelivery of promised work or services, various \r\n types of confidence schemes, and fraud relating to credit cards, \r\n charities, health products, insurance, investments, or prizes. For each \r\n type of fraud the respondent had experienced, a series of questions was \r\n asked covering the time, place, and circumstances of the incident, the \r\n relationship of the respondent to the person attempting to defraud, the \r\n response of the respondent and of other agencies and organizations to \r\n the incident, and the financial, psychological, and physical \r\nconsequences of the victimization experience.",
+  "modified": "2010-05-04T12:14:05",
+  "accessLevel": "public",
+  "identifier": "3275",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "fraud",
+    "victimization",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1992-03-04T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09733.v2",
+      "title": "Fraud Victimization Survey, 1990: [United States]"
+    }
+  ]
+}

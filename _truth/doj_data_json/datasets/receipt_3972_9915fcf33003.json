@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Federally Prosecuted Commercial Sexual Exploitation of Children (CSEC) Cases, United States, 1998-2005",
+  "description": "To increase understanding of the prosecution of Commercial Sexual Exploitation of Children and Youth (CSEC) offenders, the Urban Institute, a non-partisan social and economic policy research organization, along with Polaris Project, an anti-human trafficking organization based in the United States and Japan, were awarded a cooperative agreement from the Office of Juvenile Justice and Delinquency Prevention (OJJDP) to conduct a 12-month study on CSEC in the United States. The purpose of this research was to conduct a national analysis of federal prosecutions of CSEC-related cases from 1998 through 2005, in order to answer the following four research questions:\r\n\r\nIs the United States enforcing existing federal laws related to CSEC?\r\nWhat are key features of successfully prosecuted CSEC cases? What factors predict convictions in cases? What factors predict sentence length?\r\nHave the U.S. courts increased penalties associated with sexual crimes against children?\r\nWhat, if any, are the effects of CSEC legislation on service providers who work with these victims?\r\nThe data collection includes three datasets: (Dataset 1) Base Cohort File with 7,696 cases for 50 variables, (Dataset 2) Commercial Sexual Exploitation of Children (CSEC) Defendants in cases filed in U.S. Court with 7,696 cases for 100 variables, and (Dataset 3) Suspects in Criminal Matters Investigated and Concluded by U.S. Attorneys Dataset with 13,819 cases for 14 variables.",
+  "modified": "2019-10-29T08:44:34",
+  "accessLevel": "restricted public",
+  "identifier": "3972",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "child prostitution",
+    "children",
+    "convictions (law)",
+    "court cases",
+    "exploitation",
+    "human rights",
+    "human trafficking",
+    "prosecution",
+    "sex offenses",
+    "sex trafficking",
+    "sexual exploitation"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2019-10-29T08:40:30",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR26722.v1",
+      "title": "Federally Prosecuted Commercial Sexual Exploitation of Children (CSEC) Cases, United States, 1998-2005"
+    }
+  ]
+}

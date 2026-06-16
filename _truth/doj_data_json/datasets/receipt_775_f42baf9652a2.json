@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Civil Justice Survey of State Courts, 1996",
+  "description": "In 1996, the Bureau of Justice Statistics awarded a grant\r\nto the National Center for State Courts to gather detailed information\r\non tort, contract, and real property rights trial cases in 45\r\njurisdictions chosen to represent the 75 most populous counties in the\r\nnation. The result is this survey, which is a systematic examination\r\nof civil trial cases disposed in state general jurisdiction\r\ncourts. The study expands the 1992 civil jury study, CIVIL JUSTICE\r\nSURVEY OF STATE COURTS, 1992 (ICPSR 6587), by\r\nspecifically sampling bench and jury trial cases. Information gathered\r\nincludes the type of case, the presence of legal representation, the\r\ntype of litigation, the amount of compensatory damages awarded, the\r\namount of punitive damages awarded, and case processing time.",
+  "modified": "2011-11-02T16:12:20",
+  "accessLevel": "restricted public",
+  "identifier": "775",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "case processing",
+    "civil courts",
+    "civil law",
+    "court cases",
+    "court system",
+    "disposition (legal)",
+    "lawsuits",
+    "state courts"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2172",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2000-09-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02883.v4",
+      "title": "Civil Justice Survey of State Courts, 1996"
+    }
+  ]
+}

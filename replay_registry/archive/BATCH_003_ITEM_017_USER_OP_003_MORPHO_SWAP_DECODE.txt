@@ -1,0 +1,36 @@
+BATCH_003 ITEM_017
+status: USER_OP_003_MORPHO_SWAP_DECODED
+network: base
+explorer: base.blockscout.com
+parent_tx: 0x0d96232a39eb4842ec7cbe72f78350769b630016b9692f6340e98e0085b673dc
+block: 46454006
+user_op_hash: 0x4cb58353c55bc65b95924e5cf4211cf37183a93be2614d14d5b9785af1780fe4
+sender: 0xCf8427B03a2D05eC6B4E27161F0eb8eb29dfC6B1
+status: Success
+visible_action: Swap 276.81 USDC for 252.41 gtUSDCp
+
+key_events:
+- USDC Approval owner 0xCf8427B03a2D05eC6B4E27161F0eb8eb29dfC6B1 spender 0xeE8F4eC5672F09119b96Ab6fB59C27E1b7e44b61 value 276812738
+- USDC Transfer from 0xCf8427B03a2D05eC6B4E27161F0eb8eb29dfC6B1 to 0xeE8F4eC5672F09119b96Ab6fB59C27E1b7e44b61 value 276812738
+- Morpho gtUSDCp Transfer from zero address to 0xCf8427B03a2D05eC6B4E27161F0eb8eb29dfC6B1 value 252414327118341911768
+- Morpho gtUSDCp Deposit sender 0xCf8427B03a2D05eC6B4E27161F0eb8eb29dfC6B1 owner 0xCf8427B03a2D05eC6B4E27161F0eb8eb29dfC6B1 assets 276812738 shares 252414327118341911768
+- Morpho Markets Router Supply assets 276812738 shares 253757368865496
+
+proof_007_classification:
+- not_jaywisdom_contract_touch
+- not_creation_tx
+- not_first_mint_or_buy_evidence_for_jaywisdom
+- usable_as_morpho_swap_or_deposit_evidence_only
+
+claim_allowed:
+- User operation 003 decoded as USDC to gtUSDCp Morpho swap/deposit path.
+- User operation 003 does not provide JAYWISDOM deployer/minter evidence from visible logs.
+
+claim_not_allowed:
+- JAYWISDOM contract touched by user op 003
+- creation transaction identified
+- first minter or buyer identified
+- deployer versus first minter comparison completed
+- Proof-007 passed
+
+boundary: decoded Morpho swap/deposit evidence only; not JAYWISDOM contract evidence; no Proof-007 result claimed

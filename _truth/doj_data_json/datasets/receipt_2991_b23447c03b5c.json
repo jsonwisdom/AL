@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Individual Responses to Affirmative Action Issues in Criminal Justice Agencies, 1981:  [United States]",
+  "description": "These data, which are part of a larger study undertaken by\r\nthe University of Wisconsin-Milwaukee, evaluate the responses of\r\ncriminal justice employees to affirmative action within criminal\r\njustice agencies. Information is provided on employees' (1) general\r\nmood, (2) attitudes across various attributes, such as race, sex, rank,\r\neducation and length of service, and (3) demographic characteristics\r\nincluding age, sex, race, educational level, parents' occupations, and\r\nliving arrangements. The use of criminal justice employees as the units\r\nof analysis provides attitudinal and perceptual data in assessing\r\naffirmative action programs within each agency. Variables include\r\nreasons for becoming a criminal justice employee, attitudes toward\r\naffirmative action status in general, and attitudes about affirmative\r\naction in criminal justice settings.",
+  "modified": "1992-02-17T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2991",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "Affirmative Action",
+    "attitudes",
+    "criminal justice system",
+    "law enforcement agencies",
+    "workers"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1990-05-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09311.v1",
+      "title": "Individual Responses to Affirmative Action Issues in Criminal Justice Agencies, 1981:  [United States]"
+    }
+  ]
+}

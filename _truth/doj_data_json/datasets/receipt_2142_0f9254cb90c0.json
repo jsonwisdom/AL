@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Multi-User Database on the Attributes of United States District Court Judges, 1801-2000",
+  "description": "This project was undertaken to compile a definitive database on the personal, social, economic, career, and political attributes of judges who served on the United States District Courts from 1801 to 2000. The database includes conventional social background variables such as the name of the appointing president, the judge's religion, political party affiliation, education, and prior experience. In addition, unique items are provided: the temporal sequence of prior career experiences, the timing of and reason for leaving the bench, gender, race and ethnicity, position numbering analogous to the scheme used for the Supreme Court, American Bar Association rating, and net worth (for judges who began service on the bench after 1978). The second objective of this project was to merge these data with a multi-user database on United States District Court decisions. The database is headed by Donald Songer and funded by the National Science Foundation. It includes a unique identification number for each judge participating in a particular decision. The combined databases should enable scholars to explore: (1) intra- and inter-circuit fluctuation in the distribution of social background characteristics, (2) generational and presidential cohort variation in these attributes, and (3) state and partisan control of seats. The collection also facilitates the construction of models that examine the effects of personal attributes on decision making, while controlling for the conditions above. See also MULTI-USER DATABASE ON THE ATTRIBUTES OF UNITED STATES APPEALS COURT JUDGES, 1801-1994 (ICPSR 6796).",
+  "modified": "2009-02-03T14:53:32",
+  "accessLevel": "restricted public",
+  "identifier": "2142",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "biographical data",
+    "careers",
+    "databases",
+    "district courts",
+    "educational background",
+    "ethnicity",
+    "judges",
+    "judicial decisions",
+    "personal finances",
+    "political affiliation",
+    "religious behavior",
+    "social history"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2009-02-02T09:23:56",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04553.v1",
+      "title": "Multi-User Database on the Attributes of United States District Court Judges, 1801-2000"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Organizations Convicted in Federal Criminal Courts Series",
+  "description": "\r\nInvestigator(s): U.S. Sentencing Commission\r\nThese data, collected to assist in the development of \r\nsentencing guidelines, describe offense and sentencing characteristics for \r\norganizations sentenced in federal district courts. The United States \r\nSentencing Commission's primary function is to inform federal courts of \r\nsentencing policies and practices that include guidelines prescribing the \r\nappropriate form and severity of punishment for offenders convicted of federal \r\ncrimes. Court-related variables include primary offense type, pecuniary \r\noffense loss and gain, dates of disposition and sentencing, method of \r\ndetermination of guilt, number of counts pled and charged, and dates and types\r\nof sentencing and restitution. Defendant organization variables include \r\nownership structure, number of owners and employees, highest level of \r\ncorporate knowledge of the criminal offense, highest level of corporate \r\nindictment and conviction for participation in the criminal offense, annual \r\nrevenue, equity and financial status of the defendant organization, whether \r\nit was a criminal organization, duration of criminal activity, and risk to \r\nnational security. Part 1, Organizational Defendants Data, 1988, describes \r\noffense and sentencing characteristics for organizations sentenced in federal \r\ndistrict courts in 1988.\r\nPart 2, Organizational Defendants Data, 1989-1990, is a compilation of \r\noffense and sentencing characteristics for the population of organizations \r\nsentenced in federal district courts during the period January 1, 1989, to \r\nJune 30, 1990. Part 3, Statute Data, 1989-1990, is a secondary component of \r\nthe Commission's study that includes only the statutes of conviction and \r\nnumber of counts per conviction, during the period January 1, 1989, to June \r\n30, 1990. Part 4, Organizational Defendants Data, 1987-1993, includes all \r\norganizational defendants sentenced pursuant to the Chapter Two, Part R (1987)\r\nantitrust guidelines and the Chapter Eight (1991) sentencing guidelines for \r\norganizational defendants that were sentenced between November 1, 1987, \r\nthrough September 30, 1993, and were received by the Commission. Part 6, \r\nOrganizational Defendants Data, 1994, gives information on organizational \r\ndefendants sentenced during fiscal year October 1, 1993, through September 30,\r\n1994, and includes culpability scores and Chapter Eight (1991) culpability \r\nscoring procedures. Part 8, Organizational Defendants Data, 1995, covers \r\nfiscal year October 1, 1994, through September 30, 1995, and also includes \r\nculpability scores and Chapter Eight (1991) culpability scoring procedures. \r\nThis file includes 9 defendants sentenced pursuant to Section 2R1.1 (1987) \r\nand 111 defendants sentenced pursuant to the Chapter Eight guidelines.\r\nYears Produced: Updated annually\r\n",
+  "modified": "2022-03-29T13:59:04",
+  "accessLevel": "public",
+  "identifier": "2427",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "convictions (law)",
+    "corporate crime",
+    "corporate sentencing",
+    "defendants",
+    "disposition (legal)",
+    "federal courts",
+    "federal offenses",
+    "fines",
+    "organizational structure",
+    "organizations",
+    "restitution programs",
+    "sentencing",
+    "sentencing guidelines"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1991-05-03T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/85",
+      "title": "Organizations Convicted in Federal Criminal Courts Series"
+    }
+  ]
+}

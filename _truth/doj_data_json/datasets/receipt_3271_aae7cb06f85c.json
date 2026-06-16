@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Police Documentation of Drunk Driving Arrests, 1984-1987:  Los Angeles, Denver, and Boston  ",
+  "description": "These data measure the effects of blood alcohol content\r\ncoupled with officer reports at the time of arrest on driving while\r\nintoxicated (DWI) case outcomes (jury verdicts and guilty\r\npleas). Court records and relevant police reports for drunk-driving\r\ncases drawn from the greater metropolitan areas of Boston, Denver, and\r\nLos Angeles were compiled to produce this data collection. Cases were\r\nselected to include roughly equal proportions of guilty pleas, guilty\r\nverdicts, and not-guilty verdicts. DWI cases were compared on the\r\nquality and quantity of evidence concerning the suspect's behavior,\r\nwith the evidence coming from any mention of 20 standard visual\r\ndetection cues prior to the stop, 13 attributes of general appearance\r\nand behavior immediately after the stop, and the results of as many as\r\n7 field sobriety tests. Questions concerned driving-under-the-influence\r\ncues (scoring sheet), observed traffic violations and actual traffic\r\naccidents, the verdict, DWI history, whether the stop resulted from\r\nan accident, whether the attorney was public or private, and sanctions\r\nthat followed the verdict. Also included were demographic questions on\r\nage, sex, and ethnicity.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3271",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrests",
+    "court cases",
+    "driving under the influence",
+    "pleas",
+    "verdicts"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1990-10-16T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09400.v3",
+      "title": "Police Documentation of Drunk Driving Arrests, 1984-1987:  Los Angeles, Denver, and Boston  "
+    }
+  ]
+}

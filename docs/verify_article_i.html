@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ALMS Article I Verifier</title>
+  <style>
+    :root { color-scheme: dark; }
+    body { margin: 0; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background: #050505; color: #e8ffe8; }
+    main { max-width: 980px; margin: 0 auto; padding: 40px 20px; }
+    h1 { color: #8cff8c; }
+    .card { border: 1px solid #235a23; border-radius: 12px; padding: 20px; background: #0b120b; margin: 16px 0; }
+    .status { font-size: 1.8rem; font-weight: 700; padding: 18px; border-radius: 10px; border: 1px solid #666; display: inline-block; }
+    .verified { color: #72ff72; border-color: #72ff72; }
+    .mismatch, .error { color: #ff7070; border-color: #ff7070; }
+    code, pre { word-break: break-all; white-space: pre-wrap; }
+    .muted { color: #b8cbb8; }
+    button { font: inherit; background: #102010; color: #e8ffe8; border: 1px solid #72ff72; border-radius: 8px; padding: 10px 14px; cursor: pointer; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>ALMS Article I Verifier</h1>
+  <p class="muted">Client-side verification of the Article I Global Root under ALMS_GLOBAL_MERKLE_RULE_V1.</p>
+  <div class="card"><div id="status" class="status">ANALYZING...</div></div>
+  <div class="card">
+    <h2>Expected Root</h2>
+    <code id="expected"></code><br><br>
+    <button id="copyRoot" disabled>Copy Verified Root</button>
+  </div>
+  <div class="card">
+    <h2>Computed Root</h2>
+    <code id="computed">pending</code>
+  </div>
+  <div class="card">
+    <h2>Source Pin</h2>
+    <code id="pin"></code>
+  </div>
+  <div class="card">
+    <h2>Section Roots + Manifest Fingerprints</h2>
+    <pre id="sections">pending</pre>
+  </div>
+</main>
+<script>
+const EXPECTED = "09873d69046c82736187786483562306208a0d01f974673323065a0438627341";
+const PINNED_REF = "4a533c3f19c3052bcb14a78b46cadc4edd45bdd6";
+const BASE = `https://raw.githubusercontent.com/jsonwisdom/AL/${PINNED_REF}/_truth/us/constitution/`;
+const SECTION_MANIFESTS = [
+  ["USC-A1-S8", "a1_s8_merkle_manifest.json"],
+  ["USC-A1-S9", "a1_s9_merkle_manifest.json"],
+  ["USC-A1-S10", "a1_s10_merkle_manifest.json"]
+];
+
+function bytesToHex(bytes) {
+  return Array.from(bytes).map(b => b.toString(16).padStart(2, "0")).join("");
+}
+
+async function sha256Bytes(data) {
+  return new Uint8Array(await crypto.subtle.digest("SHA-256", data));
+}
+
+async function sha256Text(text) {
+  return bytesToHex(await sha256Bytes(new TextEncoder().encode(text)));
+}
+
+async function leafHash(id, rootHex) {
+  return sha256Bytes(new TextEncoder().encode(`${id}:${rootHex}`));
+}
+
+async function parentHash(leftBytes, rightBytes) {
+  const combined = new Uint8Array(leftBytes.length + rightBytes.length);
+  combined.set(leftBytes, 0);
+  combined.set(rightBytes, leftBytes.length);
+  return sha256Bytes(combined);
+}
+
+async function fetchManifest(file) {
+  const res = await fetch(BASE + file, { cache: "no-store" });
+  if (!res.ok) throw new Error(`${file} fetch failed: ${res.status}`);
+  const raw = await res.text();
+  return { raw, json: JSON.parse(raw), fingerprint_sha256: await sha256Text(raw) };
+}
+
+async function run() {
+  document.getElementById("expected").textContent = EXPECTED;
+  document.getElementById("pin").textContent = PINNED_REF;
+  const roots = [];
+  const report = [];
+
+  for (const [id, file] of SECTION_MANIFESTS) {
+    const manifest = await fetchManifest(file);
+    if (manifest.json.rule_id !== "ALMS_GLOBAL_MERKLE_RULE_V1") throw new Error(`${file} rule mismatch`);
+    if (!manifest.json.root_sha256) throw new Error(`${file} missing root_sha256`);
+    roots.push(await leafHash(id, manifest.json.root_sha256));
+    report.push({ id, file, root_sha256: manifest.json.root_sha256, manifest_fingerprint_sha256: manifest.fingerprint_sha256 });
+  }
+
+  const h89 = await parentHash(roots[0], roots[1]);
+  const articleRoot = bytesToHex(await parentHash(h89, roots[2]));
+
+  document.getElementById("sections").textContent = JSON.stringify(report, null, 2);
+  document.getElementById("computed").textContent = articleRoot;
+
+  const status = document.getElementById("status");
+  const copyButton = document.getElementById("copyRoot");
+  if (articleRoot === EXPECTED) {
+    status.textContent = "VERIFIED";
+    status.className = "status verified";
+    copyButton.disabled = false;
+    copyButton.onclick = () => navigator.clipboard.writeText(articleRoot);
+  } else {
+    status.textContent = "MISMATCH";
+    status.className = "status mismatch";
+  }
+}
+
+run().catch(err => {
+  document.getElementById("status").textContent = "ERROR: " + err.message;
+  document.getElementById("status").className = "status error";
+});
+</script>
+</body>
+</html>

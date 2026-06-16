@@ -1,0 +1,78 @@
+{
+  "spec_version": "v1",
+  "artifact": "ZK_SENSOR_DIVERGENCE_MARKET_V1",
+  "claim_type": "SENSOR_OBSERVATION",
+  "last_verified": "2026-05-06",
+  "verifier": "jsonwisdom",
+  "oracle_definition": {
+    "type": "hardware_root + ZK proof stream",
+    "bond": "B_o",
+    "liveness_requirement": "one proof per epoch T_epoch"
+  },
+  "states": [
+    "INITIAL",
+    "ACTIVE",
+    "CHALLENGED",
+    "RESOLVING_REFERENCE_SET",
+    "DIVERSITY_FALLBACK",
+    "RESOLVED_SLASHED",
+    "RESOLVED_UPHELD",
+    "APPEAL"
+  ],
+  "reference_set": {
+    "selection_rule": "peer sensors in same geographic compact",
+    "size_k": 5,
+    "lookback_delta": 100,
+    "entropy_filter": "drop claims where local_variance > sigma_max",
+    "diversity_requirement": {
+      "vendor_diversity_min": 3,
+      "enforcement": "if not met -> transition DIVERSITY_FALLBACK"
+    }
+  },
+  "diversity_fallback": {
+    "trigger": "vendor_diversity < vendor_diversity_min",
+    "state": "DIVERSITY_FALLBACK",
+    "reference_set": "historical self-consistency time-shifted same sensor",
+    "slash_condition": "entropy > sigma_max * 2 over sliding window",
+    "challenger_bond_multiplier": 2,
+    "meaning": "Refusal to judge by monoculture peers; judge by sensor's bounded history instead."
+  },
+  "challenge_mechanics": {
+    "freeze_on_challenge": true,
+    "challenger_bond_B_c": "k * delta * proof_verification_cost + grief_margin_g",
+    "grief_margin_g": "0.1 * B_c_base",
+    "reference_unpredictability_invariant": "No sensor can predict the reference set before challenge freeze."
+  },
+  "slash_condition": {
+    "metric": "abs(sensor_claim - reference_median)",
+    "threshold_epsilon": "per_claim_type_parameter",
+    "deviation_score": "abs(claim - reference) / epsilon",
+    "slash_amount": "min(B_o, alpha * deviation_score * B_o)",
+    "alpha": 0.8
+  },
+  "payout": {
+    "challenger_reward_beta": 0.5,
+    "protocol_burn_gamma": 0.3,
+    "remaining": "treasury_or_return",
+    "constraint": "beta + gamma <= 1"
+  },
+  "appeal_path": {
+    "exists": true,
+    "to": "higher_geographic_compact",
+    "bond_multiplier": 1.5
+  },
+  "failure_modes": [
+    "LOW_ACTIVITY_ORACLE_SET",
+    "TEE_VENDOR_MONOCULTURE",
+    "COLLUDING_VENDOR_SET",
+    "ENTROPY_FILTER_FALSE_POSITIVE",
+    "GRIEFING_EXPENSIVE_REFERENCE_SET"
+  ],
+  "invariants": [
+    "No sensor may force peer reference judgment under vendor monoculture.",
+    "Diversity failure is not capture; it is refusal to judge by contaminated peer class.",
+    "Fallback shifts reference from peer median to bounded historical self-consistency.",
+    "No sensor can force its reference set to exclude diversity failure unless it accepts higher entropy scrutiny against its own history.",
+    "Reference-set unpredictability is the core anti-capture property."
+  ]
+}

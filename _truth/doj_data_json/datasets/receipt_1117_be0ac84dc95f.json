@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Recidivism Among Released Prisoners, 1983:  [United States]  ",
+  "description": "This data collection provides comprehensive criminal history\r\ndata on prisoners released from custody in 1983. Precise estimates are\r\nsupplied on recidivism among prisoners of all ages with all types of\r\npostrelease supervision. Data cover recidivism both within and outside\r\nthe states in which the prisoners were released. Variables include\r\nsociodemographic indices, type of sentence, length of sentence, offense,\r\ncourt action, and date of court action.",
+  "modified": "2011-03-08T09:36:25",
+  "accessLevel": "restricted public",
+  "identifier": "1117",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "criminal histories",
+    "ex-offenders",
+    "offenders",
+    "postrelease programs",
+    "recidivism"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "1989-09-26T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08875.v3",
+      "title": "Recidivism Among Released Prisoners, 1983:  [United States]  "
+    }
+  ]
+}

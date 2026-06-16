@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ObserverReport",
+  "description": "Single cryptographically signed observation for contradiction detection",
+  "type": "object",
+  "properties": {
+    "observer_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$",
+      "description": "Raw 32-byte observer public key in hex"
+    },
+    "event_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "observed_state_root": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "signature": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{128}$",
+      "description": "Ed25519 64-byte signature in hex"
+    }
+  },
+  "required": [
+    "observer_id",
+    "event_id",
+    "observed_state_root",
+    "signature"
+  ],
+  "additionalProperties": false
+}

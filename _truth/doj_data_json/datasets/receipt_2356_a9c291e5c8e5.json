@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Census of Federal Law Enforcement Officers (CFLEO), [United States], Fiscal Year 2016",
+  "description": "In 2016, there were approximately 132,000 full-time federal law enforcement officers who were authorized to make arrests and carry firearms in the United States and its territories. This data collection comes from the Census of Federal Law Enforcement Officers (CFLEO) and describes the agencies, functions, sex, and race of these officers. The data cover federal officers with arrest and firearm authority in both supervisory and non-supervisory roles employed as of September 30, 2016. The Bureau of Justice Statistics (BJS) administered the CFLEO to 86 federal agencies employing officers with arrest and firearm authority. The data do not include officers stationed in foreign countries and also exclude officers in the U.S. Armed Forces.",
+  "modified": "2020-03-24T10:15:23",
+  "accessLevel": "public",
+  "identifier": "2356",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "arrests",
+    "census",
+    "federal government",
+    "firearms",
+    "law enforcement agencies"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2020-03-24T10:15:23",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37607.v1",
+      "title": "Census of Federal Law Enforcement Officers (CFLEO), [United States], Fiscal Year 2016"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "AL_RECEIPT_SCHEMA_TARGET_V1",
+  "title": "AL Receipt Structure",
+  "description": "Defines the mandatory layout for verifiable receipt artifacts entering the AL pipeline.",
+  "type": "object",
+  "required": [
+    "receipt_id",
+    "timestamp",
+    "payload_digest",
+    "state_root",
+    "proof_metadata"
+  ],
+  "properties": {
+    "receipt_id": {
+      "type": "string",
+      "pattern": "^AL-[0-9a-fA-F]{8}$",
+      "description": "Unique forensic identifier string."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 UTC execution record timestamp."
+    },
+    "payload_digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$",
+      "description": "Lowercase hex encoded SHA-256 hash matching AL_HASH_ALGORITHM_SPEC_V1."
+    },
+    "state_root": {
+      "type": "string",
+      "pattern": "^0x[0-9a-fA-F]{64}$",
+      "description": "Hex string representing the verified state root anchor."
+    },
+    "proof_metadata": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "system_status"
+      ],
+      "properties": {
+        "schema_version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "system_status": {
+          "type": "string",
+          "enum": [
+            "STUB_LOCKED",
+            "ACTIVE_AUDIT"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

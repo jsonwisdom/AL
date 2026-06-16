@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Evaluating the Crime Control and Cost-Benefit Effectiveness of License Plate Recognition (LPR) Technology in Patrol and Investigations, United States, 2014",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThis study, through a national survey and field studies in both patrols and investigations, examined the crime control and cost-effectiveness of the use of license plate readers (LPRs) within police agencies in the United States.\r\nThe collection contains 1 SPSS data file (Data-file-for-2013-IJ-CX-0017.sav (n=329; 94 variables)).\r\nA demographic variable includes an agency's number of authorized full time personnel.",
+  "modified": "2018-08-02T10:54:24",
+  "accessLevel": "restricted public",
+  "identifier": "3564",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrests",
+    "auto theft",
+    "automobile license plates",
+    "crime",
+    "crime prevention",
+    "law enforcement",
+    "law enforcement agencies",
+    "national security",
+    "police",
+    "police departments",
+    "police equipment",
+    "police officers",
+    "technology",
+    "traffic"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-08-02T10:44:05",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37049.v1",
+      "title": "Evaluating the Crime Control and Cost-Benefit Effectiveness of License Plate Recognition (LPR) Technology in Patrol and Investigations, United States, 2014"
+    }
+  ]
+}

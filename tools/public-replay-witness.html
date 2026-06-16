@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Public Replay Witness</title></head>
+<body style="font-family:monospace;background:#080604;color:#f5d58a;padding:24px">
+<h1>⚖️🧾 Public Replay Witness</h1>
+<button onclick="run()">PRESS REPLAY WITNESS</button>
+<pre id="out"></pre>
+<script>
+async function run(){
+ const receipt={
+  receipt:"PUBLIC_REPLAY_WITNESS_V1",
+  epoch:"E05",
+  deployment_url:"https://jaywisdom.base.eth.limo/E05",
+  expected_commit:"5b69b24f9010d1f0817be3bd81479e24b58f0fa8",
+  expected_root:"60e117e759cf1f19375233dd59a5eac6076b1f4b0d7fe5d07dc0352dd778141c",
+  expected_artifact_sha256:"36f3a099fe616ebd73f642b90d30b1dc9d05a4d65d8ad9e56070b36b55515b7e",
+  authority:"REPLAY_ONLY",
+  verdict:"WITNESS_TOOL_READY_OPERATOR_MUST_CAPTURE_SCREENSHOT",
+  created_at:new Date().toISOString()
+ };
+ document.getElementById("out").textContent=JSON.stringify(receipt,null,2);
+}
+</script>
+</body>
+</html>

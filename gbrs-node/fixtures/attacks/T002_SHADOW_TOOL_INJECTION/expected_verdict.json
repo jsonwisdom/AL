@@ -1,0 +1,8 @@
+{
+  "test_id": "T002_SHADOW_TOOL_INJECTION",
+  "expected_verdict": "DIVERGENT",
+  "required_action": "ROLLBACK_VISIBLE",
+  "divergence_type": "MCP_SHADOW_TOOL",
+  "expected_state_hash": "sha256:expected-mcp-state",
+  "live_state_hash": "sha256:live-mcp-state"
+}

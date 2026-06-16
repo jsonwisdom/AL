@@ -1,0 +1,25 @@
+{
+  "entry": 2,
+  "protocol": "ALMS-WS",
+  "version": "v0.3",
+  "anchor_surface": "GITHUB_COMMIT",
+  "classification": "PENDING_LOCAL_EXECUTION",
+  "purpose": "repeatability check for the ALMS-WS v0.3 GitHub attestation layer",
+  "planned_receipt_path": "_truth/websocket_sessions/entry_002_repeatability.json",
+  "generation_command": "printf '%s\\n' '{\"type\":\"entry_002_repeatability\",\"protocol\":\"ALMS-WS v0.3\"}' '{\"b\":4,\"a\":3}' | bash scripts/ws_session_receipt.sh entry_002_repeatability --json --stdin",
+  "verification_command": "bash scripts/verify_ws_session.sh _truth/websocket_sessions/entry_002_repeatability.json",
+  "hash_command": "sha256sum _truth/websocket_sessions/entry_002_repeatability.json",
+  "required_outputs": {
+    "cid": "PENDING",
+    "sha256": "PENDING",
+    "local_replay_match": "PENDING",
+    "ipfs_fetch_hash_match": "PENDING"
+  },
+  "previous_entry": {
+    "entry": 1,
+    "cid": "bafkreickbxqyu5wcrwmcd3ac4vk43kmncuzc7tdd63xzpmeqbdhatgv7oa",
+    "sha256": "4a0de18a76c28d9821ec02e555cada98d15322fcc63f6ef97b09008ce099abf70",
+    "commit": "be16c92e8567a04fc343390bda522820a2c2cb1b"
+  },
+  "status": "ENTRY_002_INTAKE_READY"
+}

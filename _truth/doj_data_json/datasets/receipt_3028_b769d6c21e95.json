@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Gun Density, Gun Type, and the Dallas Homicide Rate, 1980-1992",
+  "description": "This study examined the relationships among trends in\r\ndeadly gun violence, overall gun availability, and the availability of\r\nmore lethal types of guns. Using firearms confiscated by the Dallas,\r\nTexas, police department from 1980 to 1992 as indicators of the types\r\nof guns circulating among criminal/high-risk groups, the project\r\nexamined changes over time in Dallas' street gun arsenal and assessed\r\nthe impact these changes had upon gun violence mortality in\r\nDallas. The focus of the project was on the characteristics of the\r\nguns rather than their numbers. All confiscated firearms were analyzed\r\nand characterized according to basic weapon type and caliber\r\ngroupings. Dates of confiscation were missing from the majority of the\r\npre-1988 records, but by aggregating the gun data into bimonthly (Part\r\n1) and quarterly (Part 2) time series databases, it was possible to\r\nestimate the bimonthly and quarterly periods of confiscation for most\r\nof the 1980-1992 records. Records that could not be assigned to\r\nbimonthly or quarterly periods were dropped. Confiscated firearms were\r\ngrouped into basic categories based on stopping power (i.e., wounding\r\npotential), rate of fire, and ammunition capacity. The following\r\nmeasures were created for each bimonthly and quarterly period: (1)\r\nweapons with high stopping power (large guns), (2) semiautomatic\r\nweaponry (semis), (3) weapons combining high stopping power and a\r\nsemiautomatic firing mechanism (large semis), (4) handguns with high\r\nstopping power (large handguns), (5) semiautomatic handguns (semi\r\nhandguns), and (6) handguns combining high stopping power and\r\nsemiautomatic firing (large semi handguns). Several violence measures\r\nwere obtained from the Federal Bureau of Investigation's (FBI) Uniform\r\nCrime Reports Supplemental Homicide Reports and Return A (or Offenses\r\nKnown and Clearances by Arrest) data files (see UNIFORM CRIME\r\nREPORTING PROGRAM DATA [UNITED STATES]: 1975-1997 [ICPSR 9028]). These\r\nmeasures were also aggregated at bimonthly and quarterly levels. Data\r\nfrom the Dallas Police Department master gun property file include\r\ntotal handguns, total semiautomatic handguns, total large-caliber\r\nhandguns, total large-caliber semiautomatic handguns, total shotguns,\r\ntotal semiautomatic shotguns, total rifles, total semiautomatic\r\nrifles, and total counts and total semiautomatic counts for various\r\ncalibers of handguns, shotguns, and rifles. Data that were aggregated\r\nusing the FBI data include total homicides, gun homicides, total\r\nrobberies, gun robberies, and gun aggravated assaults. The data file\r\nalso includes the year and the bimonthly or quarterly period counter.",
+  "modified": "2006-03-30T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3028",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "assault weapons",
+    "crime reporting",
+    "firearms",
+    "gun ownership",
+    "gun use",
+    "handguns",
+    "mortality rates",
+    "police records"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2001-05-09T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03145.v1",
+      "title": "Gun Density, Gun Type, and the Dallas Homicide Rate, 1980-1992"
+    }
+  ]
+}

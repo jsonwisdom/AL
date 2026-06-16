@@ -1,0 +1,35 @@
+{
+  "execution_root": "1bb779c7e5683bf5cd9cd54be99231adc0abbcd2e14d7e6149d173eeb250491f",
+  "leaves": [
+    "ccfdf6adbc533c4dc0612e7aa705b9622d94bacdbde73431ad20ebcad7907357",
+    "2c07d55661558b40a3bc68f617488c580d8d62cc45418b968755b19f22012eb4",
+    "c71ce3a98bf541fd0725e5bc8bea50396798db747baf2dec67727448cf24bda7"
+  ],
+  "target_index": 1,
+  "target_entry": {
+    "seq": 1,
+    "timestamp": 1773618402,
+    "event_type": "POLICY_CHECK_PASS",
+    "payload_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "prev_hash": "ccfdf6adbc533c4dc0612e7aa705b9622d94bacdbde73431ad20ebcad7907357"
+  },
+  "proof": [
+    {
+      "sibling": "ccfdf6adbc533c4dc0612e7aa705b9622d94bacdbde73431ad20ebcad7907357",
+      "position": "left"
+    },
+    {
+      "sibling": "a6111274fe41c3ec4e06f51935898e2adb704b8af900f2031c4e7882b12b8428",
+      "position": "right"
+    }
+  ],
+  "signed_commitment": {
+    "execution_root": "1bb779c7e5683bf5cd9cd54be99231adc0abbcd2e14d7e6149d173eeb250491f",
+    "agent_id": "jaywisdom.base.eth/agent-pilot-001",
+    "runtime_hash": "79c487d9efaa373b534fe69e5d144bfba295122a58826386308f0567db78f111",
+    "timestamp": 1778907905,
+    "challenge_window_seconds": 259200,
+    "signature": "f2f174acfeac44a8fb8f1df707a05742c8db93b24ad042ac6ccbd301a1e02845910da9eea47c42e63298534bcbd2eed447e40b729b476e1e1c440c9a2f297adc",
+    "public_key": "0486615126b98ec1c54e7ded65f13cecb5287e06b9433a15e91f596959535381863f3e4e19cf671fac352cbf8080a017e9abb80a40c5a4822d2da0f1b536cefed6"
+  }
+}

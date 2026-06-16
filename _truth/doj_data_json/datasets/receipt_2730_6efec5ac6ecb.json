@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Uniform Crime Reporting Program Data [United States]:  Supplementary Homicide Reports, 2001  ",
+  "description": "Since 1930, the Federal Bureau of Investigation has\r\ncompiled the Uniform Crime Reports (UCR) to serve as a periodic\r\nnationwide assessment of reported crimes not available elsewhere in\r\nthe criminal justice system. Each year, this information is reported\r\nin four types of files: (1) Offenses Known and Clearances by Arrest,\r\n(2) Property Stolen and Recovered, (3) Supplementary Homicide Reports\r\n(SHR), and (4) Police Employee (LEOKA) Data. The Supplementary\r\nHomicide Reports provide incident-based information on criminal\r\nhomicides reported to the police. These homicides consist of murders,\r\nnon-negligent manslaughter, and justifiable homicides. The data,\r\nprovided monthly by UCR agencies, contain information describing the\r\nvictim of the homicide, the offender, and the relationship between\r\nvictim and offender.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2730",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "arrests",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "homicide",
+    "justifiable homicide",
+    "law enforcement",
+    "offenders",
+    "offenses",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2167",
+  "dataQuality": false,
+  "issued": "2003-05-09T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03722.v1",
+      "title": "Uniform Crime Reporting Program Data [United States]:  Supplementary Homicide Reports, 2001  "
+    }
+  ]
+}

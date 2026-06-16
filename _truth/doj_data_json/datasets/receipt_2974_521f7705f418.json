@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Process Evaluation of a Residential Substance Abuse Treatment (RSAT) Program in Dallas County, Texas, 1998-1999",
+  "description": "This study assessed the Dallas County Judicial Treatment\r\nCenter (DCJTC) in Texas. The DCJTC is a residential substance abuse\r\ntreatment center for drug-involved felony offenders. It provides a\r\ntreatment program of approximately six months in three major phases:\r\norientation, main treatment, and re-entry. Data were collected from\r\n429 offenders admitted to the DCJTC between January and December\r\n1998. During their first week of treatment, residents completed a\r\ncomprehensive intake battery that included (1) the Texas Christian\r\nUniversity (TCU) initial assessment, (2) the TCU self-rating form\r\n(SRF), and (3) the TCU intake interview. The initial assessment gauged\r\nmental status, background and psychosocial functioning, alcohol and\r\nother drug use, and psychological status. The SRF assessed\r\npsychological functioning, social functioning, and motivation for\r\ntreatment. The intake interview included detailed questions on the\r\nresident's social background, family and peer relations, health and\r\npsychological status, criminal history, drug use problems, and\r\nbehavioral risks for HIV/AIDS. Progress made during treatment was\r\nmeasured by the TCU Resident Evaluation of Self and Treatment (REST)\r\nand the TCU Counselor Rating of Client (CRC) forms. The REST included\r\nall questions on the SRF, plus questions on offenders' perceptions of\r\nthe structure of the program and their experiences while in treatment,\r\nan evaluation of the counselor, an evaluation of their own\r\npersonality, and ratings of group and individual treatment sessions.\r\nThe CRC forms rated residents on a set of attributes related to\r\nresidents' ability to benefit from treatment and indicated the extent\r\nto which counseling activities with each client had focused on certain\r\nactivities.",
+  "modified": "2003-06-05T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "2974",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "AIDS",
+    "HIV",
+    "alcohol abuse",
+    "alcohol consumption",
+    "counseling",
+    "felons",
+    "inmate classification",
+    "mental health",
+    "offenders",
+    "process evaluation",
+    "psychological evaluation",
+    "residential programs",
+    "substance abuse",
+    "substance abuse treatment"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2003-06-05T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03077.v1",
+      "title": "Process Evaluation of a Residential Substance Abuse Treatment (RSAT) Program in Dallas County, Texas, 1998-1999"
+    }
+  ]
+}

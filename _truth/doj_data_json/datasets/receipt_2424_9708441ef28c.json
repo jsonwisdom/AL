@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Uniform Crime Reporting Program Data: Offenses Known and Clearances by Arrest, 2015",
+  "description": "The UNIFORM CRIME REPORTING PROGRAM DATA: OFFENSES KNOWN AND CLEARANCES BY ARREST, 2015 dataset is a compilation of offenses reported to law enforcement agencies in the United States. Due to the vast number of categories of crime committed in the United States, the FBI has limited the type of crimes included in this compilation to those crimes which people are most likely to report to police and those crimes which occur frequently enough to be analyzed across time. Crimes included are criminal homicide, forcible rape, robbery, aggravated assault, burglary, larceny-theft, and motor vehicle theft.\r\nMuch information about these crimes is provided in this dataset. The number of times an offense has been reported, the number of reported offenses that have been cleared by arrests, and the number of cleared offenses which involved offenders under the age of 18 are the major items of information collected.",
+  "modified": "2017-05-15T15:46:35",
+  "accessLevel": "public",
+  "identifier": "2424",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "arrests",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "law enforcement",
+    "offenses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2167",
+  "dataQuality": false,
+  "issued": "2017-04-26T09:44:25",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36789.v1",
+      "title": "Uniform Crime Reporting Program Data: Offenses Known and Clearances by Arrest, 2015"
+    }
+  ]
+}

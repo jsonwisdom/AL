@@ -1,0 +1,41 @@
+{
+  "artifact_type": "epoch_2_receipt",
+  "artifact": "openai_epoch_2_receipt_001_l3_epistemic_coherence.json",
+  "receipt_id": "OPENAI_EPOCH_2_RECEIPT_001",
+  "institution_id": "OPENAI",
+  "epoch": 2,
+  "receipt_class": "L3_epistemic_coherence",
+  "gap_targets": [
+    "GAP_003",
+    "GAP_004",
+    "GAP_011"
+  ],
+  "event_type": "PUBLIC_CLAIM_SURFACE",
+  "claim_surface": {
+    "claim_category": "mission_safety_governance_claim",
+    "public_claim_hash": null,
+    "evidence_uri": null,
+    "source_visibility": "PENDING_PUBLIC_URI",
+    "timestamp_observed": null
+  },
+  "delta_inputs": {
+    "claim_receipt_divergence_delta": null,
+    "safety_narrative_inflation_delta": null,
+    "transparency_penalty_delta": null
+  },
+  "recompute_status": "PENDING_RECEIPT_COMPLETION",
+  "parent_transition_artifact": "institution_state_transition_openai_epoch_2_v1.json",
+  "previous_verdict_hash": "sha256:0c50d561cc202ea2",
+  "receipt_set_hash_before": "sha256:e43902cf95da",
+  "receipt_set_hash_after": null,
+  "doctrine_version": "ALMS_DOCTRINE_V1.3",
+  "schema_version": "ALMS_GAP_SCHEMA_V2",
+  "timestamp_issued": "2026-05-14T20:20:00Z",
+  "mutation_policy": "APPEND_ONLY_RECEIPT_NO_PRIOR_EPOCH_MUTATION",
+  "next_allowed_action": "FILL_PUBLIC_CLAIM_HASH_EVIDENCE_URI_AND_RECOMPUTE_EPOCH_2_DELTA",
+  "forbidden_actions": [
+    "MUTATE_FROZEN_TAXONOMY",
+    "MUTATE_EPOCH_1_VERDICT",
+    "OVERWRITE_PRIOR_RECEIPTS"
+  ]
+}

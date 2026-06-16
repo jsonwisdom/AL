@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Project on Human Development in Chicago Neighborhoods (PHDCN) Series",
+  "description": "The Project on Human Development in Chicago Neighborhoods (PHDCN) is a large-scale, interdisciplinary study of how families, schools, and neighborhoods affect child and adolescent development. It was designed to advance the understanding of the developmental pathways of both positive and negative human social behaviors. In particular, the project examined the causes and pathways of juvenile delinquency, adult crime, substance abuse, and violence. At the same time, the project also provided a detailed look at the environments in which these social behaviors take place by collecting substantial amounts of data about urban Chicago, including its people, institutions, and resources.\r\nPHDCN was directed from the Harvard School of Public Health, and funded by the John D. and Catherine T. MacArthur Foundation, the National Institute of Justice, the National Institute of Mental Health, the U.S. Department of Education, and the Administration for Children, Youth and Families.\r\nThe project design consisted of two major components. The first was an intensive study of Chicago's neighborhoods, particularly the social, economic, organizational, political, and cultural structures and the dynamic changes that take place in the structures over time. The second component was a series of coordinated longitudinal studies that followed over 6,000 randomly selected children, adolescents, and young adults over time to examine the changing circumstances of their lives, as well as the personal characteristics, that might lead them toward or away from a variety of antisocial behaviors.\r\nFor more information about the PHDCN series, please visit NACJD's PHDCN Resource Guide. ",
+  "modified": "2007-10-29T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3702",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "adolescents",
+    "assault",
+    "child development",
+    "childhood",
+    "family violence",
+    "neighborhoods",
+    "sexual assault",
+    "social behavior",
+    "threats",
+    "violence"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1999-12-14T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/206",
+      "title": "Project on Human Development in Chicago Neighborhoods (PHDCN) Series"
+    }
+  ]
+}

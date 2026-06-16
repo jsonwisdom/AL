@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "CrimeMapTutorial Workbooks and Sample Data for ArcView and MapInfo, 2000  ",
+  "description": "CrimeMapTutorial is a step-by-step tutorial for learning\r\n \r\n crime mapping using ArcView GIS or MapInfo Professional GIS. It was\r\n \r\n designed to give users a thorough introduction to most of the\r\n \r\n knowledge and skills needed to produce daily maps and spatial data\r\n \r\n queries that uniformed officers and detectives find valuable for crime\r\n \r\n prevention and enforcement. The tutorials can be used either for\r\n \r\n self-learning or in a laboratory setting. The geographic information\r\n \r\n system (GIS) and police data were supplied by the Rochester, New York,\r\n \r\n Police Department. For each mapping software package, there are three\r\n \r\n PDF tutorial workbooks and one WinZip archive containing sample data\r\n \r\n and maps. Workbook 1 was designed for GIS users who want to learn how\r\n \r\n to use a crime-mapping GIS and how to generate maps and data queries.\r\n \r\n Workbook 2 was created to assist data preparers in processing police\r\n \r\n data for use in a GIS. This includes address-matching of police\r\n \r\n incidents to place them on pin maps and aggregating crime counts by\r\n \r\n areas (like car beats) to produce area or choropleth maps. Workbook 3\r\n \r\n was designed for map makers who want to learn how to construct useful\r\n \r\n crime maps, given police data that have already been address-matched\r\n \r\n and preprocessed by data preparers. It is estimated that the three\r\n \r\n tutorials take approximately six hours to complete in total, including\r\n \r\nexercises.",
+  "modified": "2001-04-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3027",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime mapping",
+    "crime prevention",
+    "geographic information systems",
+    "instructional materials",
+    "law enforcement",
+    "police officers",
+    "police records",
+    "program evaluation"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2001-04-12T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR03143.v1",
+      "title": "CrimeMapTutorial Workbooks and Sample Data for ArcView and MapInfo, 2000  "
+    }
+  ]
+}

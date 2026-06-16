@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "The Challenge and Promise of Using Community Policing Strategies to Prevent Violent Extremism, United States, 2014",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThe study contains data from a survey of 480 large (200+ sworn officers) state and local law enforcement agencies, and 63 additional smaller county and municipal agencies that experienced violent extremism.  These data were collected as part of a project to perform a comprehensive assessment of challenges and opportunities when developing partnerships between police and communities to counter violent extremism.  Qualitative data collected as a part of this project are not included in this release.\r\nThis collection includes one tab-delimited data file: \"file6-NIJ-2012-3163-Survey-Responses.csv\" with 194 variables and 382 cases.",
+  "modified": "2018-03-07T16:18:46",
+  "accessLevel": "restricted public",
+  "identifier": "3324",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "Islam",
+    "Muslims--United States",
+    "community policing",
+    "counterterrorism",
+    "extremism",
+    "law enforcement",
+    "police citizen interactions",
+    "police training"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-03-07T16:15:04",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36460.v1",
+      "title": "The Challenge and Promise of Using Community Policing Strategies to Prevent Violent Extremism, United States, 2014"
+    }
+  ]
+}

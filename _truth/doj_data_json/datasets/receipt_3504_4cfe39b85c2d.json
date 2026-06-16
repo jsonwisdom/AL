@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Analyzing Trial Time in California, Colorado, and New Jersey, 1986",
+  "description": "This study of nine courts was undertaken to identify\r\n procedural factors that can be used to reduce the length of criminal\r\n and civil trials without impairing fairness. The data collection\r\n provides direct information on the actual amount of time consumed by\r\n various trial segments and the perceived length of trial segments as\r\n gauged by judges and attorneys. In addition, data are supplied on the\r\n legal community's attitudes toward existing trial length, reasons for\r\n it, and judicial control over it. The trial case file contains\r\n information on types of cases and trials, estimated trial length, type\r\n of disposition, type of defense attorney, number of claims,\r\n cross-claims, and counterclaims, number of exhibits introduced, number\r\n of expert and lay witnesses called by the defense, number of\r\n peremptory challenges, and day and time the trial ended. The\r\n questionnaire data contain information on professional experiences,\r\n number of cases tried per month, opinions about time consumed by each\r\n segment of the trial, estimated time used in each segment, and\r\nattitudes toward judicial control over the trial length.",
+  "modified": "2006-01-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3504",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "attitudes",
+    "attorneys",
+    "case processing",
+    "disposition (legal)",
+    "judges",
+    "time utilization",
+    "trial procedures",
+    "trials"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1989-09-26T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09223.v1",
+      "title": "Analyzing Trial Time in California, Colorado, and New Jersey, 1986"
+    }
+  ]
+}

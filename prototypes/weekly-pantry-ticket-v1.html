@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jay's Wisdom Season Tickets — Weekly Pantry</title>
+  <style>
+    :root{--bg:#07110b;--panel:#0e1d14;--panel2:#13261a;--green:#67ff9a;--green2:#1fd66b;--text:#effff3;--muted:#a5b8ac;--warn:#ffd166;--bad:#ff6b6b;--line:rgba(103,255,154,.22);--shadow:0 20px 60px rgba(0,0,0,.38)}
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:radial-gradient(circle at 20% 0%,rgba(103,255,154,.14),transparent 32%),linear-gradient(180deg,#061007,#020503);color:var(--text)}
+    body:before{content:"";position:fixed;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.85),transparent 85%);pointer-events:none}
+    .wrap{position:relative;max-width:1120px;margin:0 auto;padding:28px 18px 70px}.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:36px}.brand{font-weight:900;letter-spacing:.02em}.pill{border:1px solid var(--line);color:var(--green);border-radius:999px;padding:8px 12px;background:rgba(103,255,154,.06);font-size:13px}.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:stretch}.card{border:1px solid var(--line);background:linear-gradient(180deg,rgba(14,29,20,.92),rgba(9,18,13,.92));border-radius:24px;box-shadow:var(--shadow);padding:24px}.hero h1{font-size:clamp(42px,7vw,82px);line-height:.92;margin:8px 0 18px;letter-spacing:-.07em}.glow{color:var(--green);text-shadow:0 0 26px rgba(103,255,154,.45)}.sub{font-size:20px;line-height:1.45;color:#d8f7df;max-width:680px}.small{color:var(--muted);font-size:14px;line-height:1.45}.matrix{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--green);font-size:13px;white-space:pre-wrap;line-height:1.55;opacity:.9}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}.stat{padding:14px;border:1px solid var(--line);border-radius:16px;background:rgba(103,255,154,.06)}.stat b{display:block;font-size:22px;color:var(--green)}.section{margin-top:24px}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.step{padding:16px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.03)}.step b{color:var(--green)}.form{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}input,select,textarea{width:100%;background:#07120b;color:var(--text);border:1px solid var(--line);border-radius:14px;padding:12px;font:inherit;outline:none}textarea{min-height:90px;resize:vertical}.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}.btn{border:0;border-radius:15px;padding:13px 16px;font-weight:800;cursor:pointer;background:var(--green);color:#021207;box-shadow:0 0 28px rgba(103,255,154,.2)}.btn.secondary{background:transparent;color:var(--green);border:1px solid var(--line);box-shadow:none}.btn.warn{background:var(--warn);color:#171105}.bundle{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:14px}.bundle .item{border:1px solid var(--line);background:rgba(255,255,255,.035);border-radius:16px;padding:14px}.price{font-weight:900;color:var(--green)}.receipt{background:#07120b;border:1px solid var(--line);border-radius:18px;padding:16px;overflow:auto;max-height:360px}.receipt pre{margin:0;color:#d7ffe0;font-size:12px;line-height:1.5}.status{display:inline-flex;gap:8px;align-items:center}.dot{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 16px var(--green)}.footer{margin-top:28px;color:var(--muted);font-size:13px;text-align:center}@media(max-width:850px){.hero,.form{grid-template-columns:1fr}.steps,.bundle,.grid{grid-template-columns:1fr}.hero h1{font-size:48px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="nav"><div class="brand">Jay's Wisdom Season Tickets</div><div class="pill">Prototype v1 · Testable Tuesday</div></div>
+    <section class="hero">
+      <div class="card">
+        <div class="pill">Household OS · Weekly Pantry Ticket</div>
+        <h1>Define once.<br><span class="glow">Repeat cheaper.</span></h1>
+        <p class="sub">A weekly pantry route for families who want fewer grocery decisions, fewer missed items, and a cleaner repeat button.</p>
+        <div class="btns"><button class="btn" onclick="document.getElementById('setup').scrollIntoView({behavior:'smooth'})">Build My Weekly Pantry</button><button class="btn secondary" onclick="repeatCheaper()">Repeat Last Week But Cheaper</button></div>
+        <div class="grid"><div class="stat"><b>$180</b><span>default weekly budget</span></div><div class="stat"><b>5</b><span>dinners included</span></div><div class="stat"><b>1</b><span>pickup route</span></div></div>
+      </div>
+      <div class="card"><div class="status"><span class="dot"></span><b>Runtime Online</b></div><p class="small">Bloomington, MN · Walmart American Blvd primary · Target backup</p><div class="matrix" id="terminal">&gt; Stress detected: weekly grocery planning\n&gt; Family profile: 4 people\n&gt; Constraint: healthy + kid-friendly\n&gt; Action: build route + receipt\n&gt; Human control: approve / skip / pause</div></div>
+    </section>
+
+    <section class="section card">
+      <h2>One Flow</h2>
+      <div class="steps"><div class="step"><b>1. Setup</b><br><span class="small">Family, budget, store, delivery day.</span></div><div class="step"><b>2. Route</b><br><span class="small">5 dinners + staples + snacks.</span></div><div class="step"><b>3. Approve</b><br><span class="small">No auto-spend without approval.</span></div><div class="step"><b>4. Receipt</b><br><span class="small">Memory for next week.</span></div></div>
+    </section>
+
+    <section class="section card" id="setup">
+      <h2>Weekly Pantry Ticket Setup</h2>
+      <div class="form">
+        <div><label>Household</label><select id="family"><option>Family of 4</option><option>Family of 3</option><option>Family of 5</option></select></div>
+        <div><label>Weekly budget</label><input id="budget" value="180" type="number" /></div>
+        <div><label>Primary route</label><select id="route"><option>Walmart American Blvd pickup</option><option>Target 79th & Penn pickup</option><option>Cheapest mix route</option></select></div>
+        <div><label>Delivery day</label><select id="day"><option>Thursday</option><option>Friday</option><option>Sunday</option><option>Monday</option></select></div>
+        <div style="grid-column:1/-1"><label>Family notes / constraints</label><textarea id="notes">Healthy + kid-friendly. 5 dinners. Keep snacks reasonable. Prefer store brands.</textarea></div>
+      </div>
+      <div class="btns"><button class="btn" onclick="buildTicket()">Generate Ticket</button><button class="btn secondary" onclick="reduceBudget()">Reduce to $150</button><button class="btn secondary" onclick="addSnacks()">Add More Snacks</button></div>
+    </section>
+
+    <section class="section card">
+      <h2>Base Pantry Recipe</h2>
+      <div class="bundle" id="bundle"></div>
+      <div class="btns"><button class="btn warn" onclick="approveOrder()">Approve Week 1 Order</button><button class="btn secondary" onclick="pauseTicket()">Pause Ticket</button><button class="btn secondary" onclick="skipWeek()">Skip Next Week</button></div>
+    </section>
+
+    <section class="section card">
+      <h2>Receipt Memory Object</h2>
+      <div class="receipt"><pre id="receipt"></pre></div>
+    </section>
+
+    <p class="footer">Prototype only. Prices are estimates for user testing. No real checkout, no real order, no medical/legal advice. Human approval required before spending.</p>
+  </main>
+
+<script>
+const baseItems=[
+  ['Staples','Eggs, milk, bread, peanut butter, rice, pasta, beans, fruit, vegetables, cheese','68'],
+  ['5 Dinners','Chicken stir-fry, turkey tacos, pasta meatballs, sheet pan sausage, bean quesadillas','76'],
+  ['Snacks','Granola bars, applesauce, string cheese, nuts or trail mix','28']
+];
+let state={status:'Draft',total:172,savings:'~25-35',mode:'Base'};
+function render(){
+  const budget=+document.getElementById('budget').value||180;
+  document.getElementById('bundle').innerHTML=baseItems.map(x=>`<div class="item"><b>${x[0]}</b><p class="small">${x[1]}</p><div class="price">~$${x[2]}</div></div>`).join('');
+  const tax=Math.round(state.total*.08);
+  const receipt={ticket_id:'WeeklyPantry_Family4_Bloomington_v1',date:new Date().toISOString().slice(0,10),household:document.getElementById('family').value,budget_usd:budget,scenario:'Weekly Pantry - healthy kid-friendly, 5 dinners',estimated_total_usd:state.total,tax_est_usd:tax,grand_total_usd:state.total+tax,route:document.getElementById('route').value,delivery_day:document.getElementById('day').value,status:state.status,mode:state.mode,savings:state.savings,controls:['approve','skip','pause','repeat_last_week_but_cheaper'],notes:document.getElementById('notes').value,next_actions: state.status==='Approved'?['Prepare checkout/payment link','Save receipt to family profile','Enable repeat button next week']:['Review bundle','Approve or adjust']};
+  document.getElementById('receipt').textContent=JSON.stringify(receipt,null,2);
+}
+function buildTicket(){state.status='Ready for approval';state.mode='Base pantry route';state.total=172;log('Ticket generated. Review bundle, then approve.');render()}
+function approveOrder(){state.status='Approved - simulated';log('Week 1 approved. Receipt memory created. No real order placed.');render()}
+function pauseTicket(){state.status='Paused';log('Ticket paused. No spending.');render()}
+function skipWeek(){state.status='Skipped next week';log('Next week skipped. Memory preserved.');render()}
+function repeatCheaper(){state.status='Cheaper repeat proposed';state.mode='Repeat cheaper';state.total=150;state.savings='~45-55';document.getElementById('budget').value=150;log('Cheaper route proposed: store brands + frozen veg + beans substitution.');render()}
+function reduceBudget(){state.total=150;state.mode='Reduced budget';document.getElementById('budget').value=150;log('Budget reduced to $150. Substitution logic active.');render()}
+function addSnacks(){state.total+=18;state.mode='More snacks';log('Added extra snacks. Watch budget.');render()}
+function log(msg){document.getElementById('terminal').textContent += '\n> '+msg}
+render();
+</script>
+</body>
+</html>

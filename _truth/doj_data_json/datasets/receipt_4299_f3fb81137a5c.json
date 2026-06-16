@@ -1,0 +1,67 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Annual Freedom of Information Act Report",
+  "description": "Annual Reports shine a light on agencies' administration of the FOIA by providing members of the public with detailed FOIA statistics.",
+  "modified": "2008-01-01T00:00:00",
+  "accessLevel": "public",
+  "identifier": "4299",
+  "publisher": {
+    "name": "Justice Management Division",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Data Management US Department of Justice (USDOJ)",
+    "hasEmail": "mailto:DataManagement@usdoj.gov"
+  },
+  "keyword": [
+    "Annual FOIA Report",
+    "Annual Report"
+  ],
+  "bureauCode": [
+    "011:00"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "accrualPeriodicity": "R/P1Y",
+  "dataQuality": false,
+  "issued": "2008-01-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://api.foia.gov/api/annual_foia_report",
+      "description": "This is a JSON API endpoint for the annual report data as it is stored in the Drupal backend. An access token is required and can be created here: https://www.foia.gov/developer/#api-key-signup",
+      "format": "Api",
+      "title": "Annual Report JSON API"
+    },
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.foia.gov/developer/#annual-report-xml-api",
+      "description": "Individual annual reports, in XML format, are available via an API endpoint:\r\n\r\n/api/annual-report-xml/[agency abbreviation]/[year]\r\n\r\nExample: /api/annual-report-xml/DOJ/2021\r\n\r\nAccess token required: https://www.foia.gov/developer/#api-key-signup",
+      "format": "Api",
+      "title": "Annual Report XML API by Year and Agency"
+    },
+    {
+      "@type": "dcat:Distribution",
+      "description": "These compressed files are complete archives of the FOIA Data sets for the years 2008 through current.\r\n\r\nExample: https://www.foia.gov/2020-FOIASetFull.zip",
+      "downloadURL": "https://www.foia.gov/developer/#the-foia-xml-schema",
+      "mediaType": "application/zip",
+      "title": "Annual Report XML Downloads by Year"
+    },
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.foia.gov/data.html",
+      "title": "Create an Annual FOIA Report"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Longevity of American Terrorists: Factors Affecting Sustainability, [United States], 1980-2015",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator if further information is needed.\r\nThis study examined the longevity of individual terrorists using data from the American Terrorism Study (ATS).\r\nUsing these data, researchers examined the longevity of individual terrorists in relationship to five major factors: 1) the possible effects of changes in the Attorney General's Guidelines for terrorism investigations; 2) the impact of ideology, which may indirectly affect longevity through perpetrator and incident characteristics; 3) lone actors versus group participation; 4) the extent of participation in preparatory activity; and 5) the sophistication of the incidents in which the person participated.\r\nPrevious ATS research funded through National Institute of Justice (NIJ) by focusing on individual terrorists, instead of terrorist groups.\r\nThe collection includes 1 SPSS data file: ICPSR_Data_File_Edit.sav (n=346; 15 variables).",
+  "modified": "2019-08-29T11:32:29",
+  "accessLevel": "restricted public",
+  "identifier": "3809",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "counterterrorism",
+    "environmentalists",
+    "extremism",
+    "offenders",
+    "radicalism",
+    "terrorism",
+    "terrorist profiles",
+    "terrorists"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2019-08-29T11:26:42",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37175.v1",
+      "title": "Longevity of American Terrorists: Factors Affecting Sustainability, [United States], 1980-2015"
+    }
+  ]
+}

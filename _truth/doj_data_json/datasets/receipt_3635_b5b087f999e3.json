@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Effects of Stress Among Correctional Officers, United States, 2017-2018",
+  "description": "There is a growing body of empirical evidence to suggest (1) that correctional officers are exposed through their work to a number of stressors and, as a result, have a higher level of job-related stress than is found in other occupations, and (2) that stress has a variety of debilitating effects on the medical, behavioral, attitudinal, and emotional well-being of correctional officers. In light of these consistent conclusions, it is important that research extend the current state of knowledge by addressing other important empirical questions. One is the question of how correctional officer stress levels affect the well-being of the officer, as measured in terms of potential (1) attitudinal, (2) emotional and (3) behavioral effects on the officer. A second question is the extent to which correctional officer stress levels affect the well-being of the prison organization. Research in non-correctional settings finds that increased levels of a worker's stress are significantly related to three dimensions of that worker's behaviors in the organization:  (1) task performance, (2) organizational citizenship behaviors, and (3) counterproductive work behaviors. A third question explored is the degree to which the individual-level effects of stress mediate the organizational-level effects of stress. Finally, a fourth question to be explored is the extent to which officer stress levels are correlated with, and can be predicted by, data routinely collected by the state department of corrections, such as performance evaluations, workplace injuries, overtime, grievances, and incident reports.",
+  "modified": "2020-08-27T10:10:30",
+  "accessLevel": "public",
+  "identifier": "3635",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "correctional officers",
+    "cynicism",
+    "depersonalization",
+    "depression (psychology)",
+    "job stress",
+    "work attitudes"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2020-08-27T10:10:30",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37329.v1",
+      "title": "Effects of Stress Among Correctional Officers, United States, 2017-2018"
+    }
+  ]
+}

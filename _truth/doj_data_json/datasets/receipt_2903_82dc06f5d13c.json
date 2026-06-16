@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Empirical Investigation of \"Going to Scale\" in Drug Interventions in the United States, 1990, 2003",
+  "description": "Despite a growing consensus among scholars that substance abuse treatment is effective in reducing offending, strict eligibility rules have limited the impact of current models of therapeutic jurisprudence on public safety. This research effort was aimed at providing policy makers some guidance on whether expanding this model to more drug-involved offenders is cost-beneficial.  Since data needed for providing evidence-based analysis of this issue were not readily available, micro-level data from three nationally representative sources were used to construct a 40,320 case synthetic dataset -- defined using population profiles rather than sampled observation -- that was used to estimate the benefits of going to scale in treating drug involved offenders. The principal investigators combined information from the NATIONAL SURVEY ON DRUG USE AND HEALTH, 2003 (ICPSR 4138) and the ARRESTEE DRUG ABUSE MONITORING (ADAM) PROGRAM IN THE UNITED STATES, 2003 (ICPSR 4020) to estimate the likelihood of drug addiction or dependence problems and develop nationally representative prevalence estimates. They used information in the DRUG ABUSE TREATMENT OUTCOME STUDY (DATOS), 1991-1994 (ICPSR 2258) to compute expected crime reducing benefits of treating various types of drug involved offenders under four different treatment modalities. The project computed expected crime reducing benefits that were conditional on treatment modality as well as arrestee attributes and risk of drug dependence or abuse. Moreover, the principal investigators obtained estimates of crime reducing benefits for all crimes as well as select sub-types.  Variables include age, race, gender, offense, history of violence, history of treatment, co-occurring alcohol problem, criminal justice system status, geographic location, arrest history, and a total of 134 prevalence and treatment effect estimates and variances.",
+  "modified": "2009-08-26T15:55:25",
+  "accessLevel": "public",
+  "identifier": "2903",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "ADAM/DUF Program",
+    "cost effectiveness",
+    "crime patterns",
+    "crime reduction",
+    "criminality prediction",
+    "drug abuse",
+    "drug courts",
+    "drug dependence",
+    "drug offender profiles",
+    "drug offenders",
+    "drug related crimes",
+    "drug treatment",
+    "drug use",
+    "simulation models",
+    "substance ab"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2009-08-26T15:55:25",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR26101.v1",
+      "title": "Empirical Investigation of \"Going to Scale\" in Drug Interventions in the United States, 1990, 2003"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "The Self-Determination and Mental Health of Youth in Residential Placement, United States, 2003",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nSecondary data analysis was performed on the Office of Juvenile Justice and Delinquency Prevention's Survey of Youth in Residential Placement (SYRP), which is the only national survey that gathers data directly from youth in the juvenile justice system. The Office of Juvenile Justice and Delinquency Prevention (OJJDP) designed the survey in 2000 and 2001 to survey offender youth between the ages of 10 and 20. SYRP asks the youth about their backgrounds, offense histories and problems; the facility environment; experiences in the facility; experiences with alcohol and drugs; experiences of victimization in placement; medical needs and services received; and their expectations for the future. \r\nThe collection contains 1 syntax text file (Mplus syntax.txt). No data is included in this collection. ",
+  "modified": "2018-05-15T10:58:49",
+  "accessLevel": "public",
+  "identifier": "3342",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "abuse",
+    "correctional facilities (juveniles)",
+    "emotional problems",
+    "expectations",
+    "juvenile offenders",
+    "mental health",
+    "victimization"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2018-05-15T10:58:49",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36429.v1",
+      "title": "The Self-Determination and Mental Health of Youth in Residential Placement, United States, 2003"
+    }
+  ]
+}

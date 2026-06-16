@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.github.io/AL/schemas/UID_V1.schema.json",
+  "title": "UID_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "schema_hash",
+    "kind",
+    "repo",
+    "timestamp_logical",
+    "state_hash",
+    "engine_fingerprint",
+    "event_payload_hash"
+  ],
+  "properties": {
+    "schema": {
+      "const": "alms/uid@v1"
+    },
+    "schema_hash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "kind": {
+      "type": "string",
+      "enum": ["GAUNTLET_RUN"]
+    },
+    "repo": {
+      "type": "string",
+      "const": "jsonwisdom/AL"
+    },
+    "timestamp_logical": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "state_hash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "engine_fingerprint": {
+      "type": "string",
+      "minLength": 1
+    },
+    "event_payload_hash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "actor_fingerprint": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

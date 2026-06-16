@@ -1,0 +1,74 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Antitrust Division Select Case Filings",
+  "description": "Index of select cases and documents filed by the U.S. Department of Justice, Antitrust Division. Cases are listed alphabetically by the last name of individual defendants, by company name, or by the entity's first name.",
+  "modified": "2025-08-25T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2",
+  "publisher": {
+    "name": "Antitrust Division",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Richard Hess",
+    "hasEmail": "mailto:richard.hess2@usdoj.gov"
+  },
+  "keyword": [
+    "Select Case Filings",
+    "Antitrust Division",
+    "Department of Justice",
+    "United States",
+    "antitrust",
+    "case",
+    "filings",
+    "case filings",
+    "document",
+    "pleading",
+    "complaint",
+    "indictment",
+    "information",
+    "judgment",
+    "plea agreement",
+    "brief",
+    "competitive impact statement",
+    "motion",
+    "memoranda",
+    "order",
+    "trial exhibits",
+    "expert reports",
+    "testimony"
+  ],
+  "bureauCode": [
+    "011:00"
+  ],
+  "programCode": [
+    "011:022"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2017-02-15T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.justice.gov/atr/antitrust-case-filings",
+      "conformsTo": "https://www.isotc211.org/2005/gmi/",
+      "mediaType": "text/html",
+      "title": "Antitrust Division Select Case Filings"
+    },
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.justice.gov/atr/antitrust-case-filings-alpha",
+      "mediaType": "text/html",
+      "title": "Antitrust Division Select Case Filings - Alphabetical"
+    }
+  ]
+}

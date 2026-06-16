@@ -1,0 +1,45 @@
+{
+  "registry_version": "1.0.0",
+  "entries": [
+    {
+      "id": "ALMS_PROTOCOL",
+      "layer": "protocol_version",
+      "version": "1.0.0",
+      "state": "LOCKED",
+      "artifact_path": "docs/specs/ALMS_VERSIONING_SYSTEM.md",
+      "hash": "UNSET",
+      "depends_on": [],
+      "notes": "Protocol bootstrap"
+    },
+    {
+      "id": "WORKFLOW_SIGNAL_MAP",
+      "layer": "workflow_version",
+      "version": "1.0.0",
+      "state": "LOCKED",
+      "artifact_path": "docs/ops/WORKFLOW_SIGNAL_MAP.md",
+      "hash": "UNSET",
+      "depends_on": [],
+      "notes": "Human/machine triage layer"
+    },
+    {
+      "id": "C0001",
+      "layer": "corpus_version",
+      "version": "1.0.0",
+      "state": "REPLAY_REQUIRED",
+      "artifact_path": "corpus/C0001/replay/expected_hashes.json",
+      "hash": "UNSET",
+      "depends_on": [],
+      "notes": "Minnesota proof"
+    },
+    {
+      "id": "C0002",
+      "layer": "corpus_version",
+      "version": "1.0.0",
+      "state": "REPLAY_REQUIRED",
+      "artifact_path": "corpus/C0002/replay/expected_hashes.json",
+      "hash": "UNSET",
+      "depends_on": [],
+      "notes": "ERA5 JSON proof"
+    }
+  ]
+}

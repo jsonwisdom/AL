@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Trends in Juvenile Criminal Case Processing and Education, Connecticut, 2006-2012",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThe goals of the study were to estimate the effect of juvenile versus criminal jurisdiction on recidivism and educational outcomes in Connecticut, and describe the relationships among education and juvenile justice outcomes from early to late adolescence. The study sample included all court-referred juveniles and adults in Connecticut between the years 2006 to 2012. The individual-level juvenile case records and educational variables for each year were acquired from the Connecticut Court Support Services Division (CSSD) and the Connecticut State Department of Education (CSDE). Data on court-involvement (CSSD) include juvenile referral history, detention data, service data, adult criminal history, and data on multiple risk assessments. Educational data (CSDE) include demographic information, student enrollment (i.e., number of days in attendance, graduation, dropout), statewide, standardized academic achievement test scores, disciplinary offense data, and special education data.",
+  "modified": "2018-05-18T10:21:57",
+  "accessLevel": "restricted public",
+  "identifier": "3004",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "court system",
+    "delinquent behavior",
+    "education",
+    "educational assessment",
+    "juvenile justice",
+    "juvenile offenders",
+    "recidivism"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-05-18T10:18:22",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36141.v1",
+      "title": "Trends in Juvenile Criminal Case Processing and Education, Connecticut, 2006-2012"
+    }
+  ]
+}

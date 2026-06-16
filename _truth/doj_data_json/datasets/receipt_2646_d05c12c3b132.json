@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "United States Federal Mandatory Minimum Statutes Study, 1989-1990 ",
+  "description": "In response to a Congressional directive, the United States\r\n Sentencing Commission completed this study of federal mandatory\r\n minimum statutes with an emphasis on the presence and/or applicability\r\n of statutes prior to conviction and sentencing. To collect this type\r\n of detailed information, it was necessary to examine actual offense\r\n behavior. To that end, the Commission selected for detailed review a\r\n 12.5-percent random sample of its FY90 database of 29,011 cases,\r\n focusing on controlled substance offenses and firearms violations. The\r\n screening process yielded 1,165 cases. For these defendants,\r\n information was recorded on real offense components, indictment\r\n history, mode of conviction, and convicted charges, as well as\r\n sentence imposed, plea agreements, stipulations, and guideline\r\n factors. This information allows for a procedural tracking of cases\r\n and the application of mandatory minimum provisions at various stages\r\nof the criminal justice process.",
+  "modified": "2003-01-23T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2646",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "case processing",
+    "convictions (law)",
+    "federal courts",
+    "offenses",
+    "pleas",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1993-05-13T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06009.v2",
+      "title": "United States Federal Mandatory Minimum Statutes Study, 1989-1990 "
+    }
+  ]
+}

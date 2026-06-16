@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Disturbed Violent Offenders in New York, 1985",
+  "description": "This data collection was designed to investigate the \r\n relationship between mental illness and violent involvement over an \r\n offender's criminal career and to develop a typology of violent \r\n offenders that takes into account both mental health history and \r\n substance use history. The collection is organized so that data for the \r\n violent offender cohort can be matched with records of offender mental \r\n health history, substance abuse history, and criminal career history. \r\n The offenders were convicted of statutorily-defined \"violent \r\n offenses.\" Included in the collection are variables concerning \r\n conviction offenses, intoxication status, victim-offender relationship, \r\n injury result, type of violence, employment, marital status, gender, \r\n and race. The criminal history file contains variables on dates of \r\n arrest or juvenile contacts. The mental history file includes dates of \r\nentry and types of mental health services received.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3256",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "career criminals",
+    "criminal histories",
+    "mental disorders",
+    "mental health",
+    "offenders",
+    "substance abuse",
+    "violence"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1990-05-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09325.v2",
+      "title": "Disturbed Violent Offenders in New York, 1985"
+    }
+  ]
+}

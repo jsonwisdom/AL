@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Census of Juveniles on Probation, United States, 2012",
+  "description": "\r\nThe purpose of the Census of Juveniles on Probation (CJP) was to collect individual-level data about youth on probation, including their numbers and characteristics. The CJP survey asked respondents to report the total number of juveniles on formal probation within their reporting jurisdiction on the reference date of October 24, 2012.\r\nFor each youth on probation, responding agencies were asked to provide the following information: sex, date of birth, race, most serious offense, state and county where most serious offense was committed, and the state and county where the juvenile resided on the census reference date.\r\nThis data collection contains the national data.",
+  "modified": "2020-01-30T11:47:37",
+  "accessLevel": "restricted public",
+  "identifier": "3977",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "age",
+    "gender",
+    "juvenile justice",
+    "juvenile offenders",
+    "offenses",
+    "probation",
+    "probationers",
+    "race",
+    "supervision"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2020-01-30T11:37:12",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37438.v1",
+      "title": "Census of Juveniles on Probation, United States, 2012"
+    }
+  ]
+}

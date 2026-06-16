@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "A Multi-Jurisdictional Test of Risk Terrain Modeling and a Place-Based Evaluation of Environmental Risk-Based Patrol Deployment Strategies, 6 U.S. States, 2012-2014",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThe study used a place-based method of evaluation and spatial units of analysis to measure the extent to which allocating police patrols to high-risk areas effected the frequency and spatial distribution of new crime events in 5 U.S. cities. High-risk areas were defined using risk terrain modeling methods. Risk terrain modeling, or RTM, is a geospatial method of operationalizing the spatial influence of risk factors to common geographic units. \r\nThe collection contains 333 shape files, 8 SPSS files, and 9 Excel files. The shape files include both city level risk factor locations and crime data from police departments. SPSS and Excel files contain output from GIS data used for analysis.",
+  "modified": "2018-05-29T15:27:09",
+  "accessLevel": "restricted public",
+  "identifier": "3552",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "crime",
+    "crime mapping",
+    "geographic information systems",
+    "police intervention",
+    "risk factors"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-05-29T15:23:37",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36369.v1",
+      "title": "A Multi-Jurisdictional Test of Risk Terrain Modeling and a Place-Based Evaluation of Environmental Risk-Based Patrol Deployment Strategies, 6 U.S. States, 2012-2014"
+    }
+  ]
+}

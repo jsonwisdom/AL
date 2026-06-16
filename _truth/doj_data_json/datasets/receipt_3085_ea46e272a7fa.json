@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Trends in American Homicide, 1968-1978:  Victim-Level Supplementary Homicide Reports",
+  "description": "This study was undertaken to standardize the format of \r\n national homicide data and to analyze trends over the period 1968-1978. \r\n The unit of analysis is the homicide victim, and variables include \r\n information on the reporting agency, the circumstances of the incident, \r\n and the characteristics of the victim and the offender. Within these \r\n categories are variables pertaining to population and city size, \r\n victim's and offender's age, race, and sex, and the number of victims \r\n and offenders involved in the incident. Information about the incident \r\n includes the type of weapon used and the circumstances surrounding the \r\nincident.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3085",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrests",
+    "assault",
+    "crime",
+    "demographic characteristics",
+    "murder",
+    "victimization",
+    "violence"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1987-05-19T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08676.v1",
+      "title": "Trends in American Homicide, 1968-1978:  Victim-Level Supplementary Homicide Reports"
+    }
+  ]
+}

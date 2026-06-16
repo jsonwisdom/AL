@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Prosecution of Felony Arrests, 1982: Portland, Oregon and Washington, D.C.",
+  "description": "This study provides statistical information on how\r\nprosecutors and the courts disposed of criminal cases involving adults\r\narrested for felony crimes in two individual urban jurisdictions,\r\nPortland, Oregon and Washington, D.C. Cases in the data files were\r\ninitiated or filed in 1982. Both the Washington, D.C. file and the\r\nPortland file contain information on all felony arrests (which include\r\narrests declined as well as those filed), cases filed, and cases\r\nindicted. Sentencing information is provided in the Portland file but\r\nis not available for Washington D.C.",
+  "modified": "2006-01-18T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2407",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "arrests",
+    "court cases",
+    "court system",
+    "criminal justice system",
+    "defendants",
+    "prosecuting attorneys",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1988-01-06T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08717.v1",
+      "title": "Prosecution of Felony Arrests, 1982: Portland, Oregon and Washington, D.C."
+    }
+  ]
+}

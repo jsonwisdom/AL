@@ -1,0 +1,47 @@
+{
+  "mapping_table_id": "BADGE_RENDERER_MAPPING_001",
+  "version": "1.0.0",
+  "purpose": "Immutable lookup surface for translating replay evidence into membrane-safe visual markers.",
+  "semantics": {
+    "SEMANTIC_AUTHORITY": {
+      "label": "AUTHORITY: SEMANTIC",
+      "color": "GOLD",
+      "border": "SOLID",
+      "icon": "CROWN_NULLIFIED",
+      "description": "Final source of truth. Replay-bound."
+    },
+    "REPRODUCTION_WITNESS": {
+      "label": "WITNESS: REPRODUCTION",
+      "color": "SILVER",
+      "border": "DOTTED",
+      "icon": "GEAR_LOCKED",
+      "description": "CI-verified deterministic build."
+    },
+    "EXISTENCE_WITNESS": {
+      "label": "WITNESS: EXISTENCE",
+      "color": "GRAY",
+      "border": "FADED",
+      "icon": "EYE_MUZZLED",
+      "description": "Existence attested. Semantic interpretation forbidden."
+    },
+    "UNVERIFIED": {
+      "label": "UNVERIFIED",
+      "color": "GRAY",
+      "border": "FADED",
+      "icon": "SHIELD_X",
+      "description": "Evidence missing or authority drift detected."
+    }
+  },
+  "invariants": {
+    "network_reads": "FORBIDDEN",
+    "inference_logic": "FORBIDDEN",
+    "fallback_to_success": "FORBIDDEN",
+    "unknown_input_behavior": "UNVERIFIED"
+  },
+  "forbidden_visual_promotions": [
+    "EXISTENCE_WITNESS_TO_SEMANTIC_AUTHORITY",
+    "REPRODUCTION_WITNESS_TO_SEMANTIC_AUTHORITY",
+    "UNVERIFIED_TO_SUCCESS"
+  ],
+  "doctrine": "Proof may travel. Meaning stays replayable."
+}

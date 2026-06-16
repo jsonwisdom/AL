@@ -1,0 +1,21 @@
+{
+  "artifact": "USC_A1_S8_C3_VERIFIED_RECEIPT",
+  "status": "VERIFIED_CANONICAL",
+  "id": "USC-A1-S8-C3",
+  "parent": {
+    "id": "USC-A1-S8",
+    "content_hash_sha256": "689531558999a4c062828b12204683a483a92540026e632943183563914a2754"
+  },
+  "role": "Commerce Clause",
+  "normalization_rule": "NORMALIZED_TEXT_SPAN_V0_2",
+  "verification_method": "DETERMINISTIC_DIRECT_WRITE_FILE_BASED_SHA256",
+  "source": "_truth/us/constitution/constitution_gpo.normalized.txt",
+  "span": "To regulate Commerce with foreign Nations, and among the several States, and with the Indian Tribes;",
+  "byte_count": 108,
+  "content_hash_sha256": "2b2e8824147781f8f75143a2884a44d1864115f573c52e185854747209930f7b",
+  "gate_resolution": "VALID_64_HEX_STRICT_CAPTURE",
+  "next_gate": {
+    "USC-A1-S8-C4_THROUGH_C7": "READY_FOR_VISIBLE_SPAN_AUDIT",
+    "C8_to_C18": "BLOCKED_UNTIL_WAVE1_COMPLETES"
+  }
+}

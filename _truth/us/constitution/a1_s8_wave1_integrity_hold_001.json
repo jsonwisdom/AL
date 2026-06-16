@@ -1,0 +1,45 @@
+{
+  "artifact": "USC_A1_S8_WAVE1_INTEGRITY_HOLD_001",
+  "status": "INTEGRITY_HOLD",
+  "parent": {
+    "id": "USC-A1-S8",
+    "content_hash_sha256": "689531558999a4c062828b12204683a483a92540026e632943183563914a2754"
+  },
+  "verified_clauses": [
+    {
+      "id": "USC-A1-S8-C1",
+      "status": "VERIFIED_CANONICAL",
+      "content_hash_sha256": "3256037a59992f0c62828b12204683a483a92540026e632943183563914a2754",
+      "verification_method": "FILE_BASED_SHA256_STRICT"
+    }
+  ],
+  "rejected_scope": "USC-A1-S8-C2_THROUGH_C7_WAVE1",
+  "reason": "Patterned hash suffixes reported across Wave 1 candidate outputs. Treat as machine-to-human or template contamination until strict file-based hashes are supplied.",
+  "blocked": [
+    "USC-A1-S8-C2",
+    "USC-A1-S8-C3",
+    "USC-A1-S8-C4",
+    "USC-A1-S8-C5",
+    "USC-A1-S8-C6",
+    "USC-A1-S8-C7",
+    "USC-A1-S8-C8_THROUGH_C18"
+  ],
+  "required_recovery_protocol": {
+    "method": "FILE_BASED_SHA256_STRICT",
+    "per_clause_steps": [
+      "printf %s \"$SPAN_CX\" > /tmp/cx_raw.txt",
+      "wc -c /tmp/cx_raw.txt",
+      "sha256sum /tmp/cx_raw.txt > /tmp/cx_hash.txt",
+      "cat /tmp/cx_hash.txt"
+    ],
+    "required_fields_per_clause": [
+      "id",
+      "start_anchor",
+      "end_anchor",
+      "byte_count",
+      "raw_sha256_file_output",
+      "no_overlap_no_gap_check"
+    ]
+  },
+  "rule": "Do not proceed to Wave 2 until C2-C7 are verified using strict file-based capture."
+}

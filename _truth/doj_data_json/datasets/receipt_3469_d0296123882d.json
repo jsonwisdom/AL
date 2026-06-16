@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "The Dynamic Context of Teen Dating Violence in Adolescent Relationships, Baltimore, Maryland, 2014-2016",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nTeenage adolescent females residing in Baltimore, Maryland who were involved in a relationship with a history of violence were sought after to participate in this research study. Respondents were interviewed and then followed through daily diary entries for several months. The aim of the research was to understand the context regarding teen dating violence (TDV). Prior research on relationship context has not focused on minority populations; therefore, the focus of this project was urban, predominantly African American females.\r\nThe available data in this collection includes three SAS (.sas7bdat) files and a single SAS formats file that contains variable and value label information for all three data files. The three data files are:\r\n\r\nfinal_baseline.sas7bdat (157 cases / 252 variables)\r\nfinal_partnergrid.sas7bdat (156 cases / 76 variables)\r\nhart_final_sas7bdata (7004 cases / 23 variables)\r\n",
+  "modified": "2018-05-23T11:22:56",
+  "accessLevel": "restricted public",
+  "identifier": "3469",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "adolescents",
+    "alcohol abuse",
+    "dating (social)",
+    "demographic characteristics",
+    "drug abuse",
+    "family conflict",
+    "family relationships",
+    "intimate partner violence",
+    "mental health",
+    "substance abuse",
+    "victimization",
+    "violence against women"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-05-23T11:14:58",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36869.v1",
+      "title": "The Dynamic Context of Teen Dating Violence in Adolescent Relationships, Baltimore, Maryland, 2014-2016"
+    }
+  ]
+}

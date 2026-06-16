@@ -1,0 +1,89 @@
+{
+  "layout_type": "FAF_EPOCH_03_MERKLE_LAYOUT",
+  "version": "1.0.0",
+  "status": "DECLARED_PENDING_REPLAY",
+  "operator": "jaywisdom.base.eth",
+  "capsule_path": "receipts/faf/epoch_03/parody_paradox_jay_faf_epoch_03_capsule.v1.json",
+  "replay_matrix": {
+    "alpha": "canonicalization_phase",
+    "beta": "deterministic_transform_phase",
+    "gamma": "leaf_construction_phase",
+    "delta": "merkle_assembly_phase",
+    "epsilon": "replay_parity_phase",
+    "zeta": "convergence_phase"
+  },
+  "hash_policy": {
+    "leaf_hash": "sha256(canonical_leaf_bytes)",
+    "internal_node_hash": "sha256(left_child_hash || right_child_hash)",
+    "odd_node_rule": "duplicate_last_node",
+    "encoding": "lowercase_hex",
+    "canonicalization": "jq -cS",
+    "self_reference_rule": "receipt_hash MUST be null before hashing"
+  },
+  "leaf_order_policy": {
+    "ordering": "stable_index_ascending",
+    "index_base": 0,
+    "mutation_rule": "new leaves append only unless capsule version increments",
+    "meaning_rule": "leaf order is replay geometry, not narrative preference"
+  },
+  "leaf_set": [
+    {
+      "index": 0,
+      "leaf_id": "alpha_canonical_capsule",
+      "source": "capsule.canonical.json",
+      "phase": "alpha",
+      "required": true
+    },
+    {
+      "index": 1,
+      "leaf_id": "beta_transformed_capsule",
+      "source": "capsule.transformed.json",
+      "phase": "beta",
+      "required": true
+    },
+    {
+      "index": 2,
+      "leaf_id": "gamma_leaf_index_manifest",
+      "source": "leaves/index.manifest.json",
+      "phase": "gamma",
+      "required": true
+    },
+    {
+      "index": 3,
+      "leaf_id": "delta_merkle_levels_manifest",
+      "source": "merkle/levels.manifest.json",
+      "phase": "delta",
+      "required": true
+    },
+    {
+      "index": 4,
+      "leaf_id": "epsilon_replay_parity_report",
+      "source": "replay/parity.report.json",
+      "phase": "epsilon",
+      "required": true
+    },
+    {
+      "index": 5,
+      "leaf_id": "zeta_convergence_receipt",
+      "source": "replay/convergence.receipt.json",
+      "phase": "zeta",
+      "required": true
+    }
+  ],
+  "expected_root": null,
+  "root_status": "UNCOMPUTED",
+  "anchor_permission": false,
+  "refusal_code_attachment": {
+    "enabled": true,
+    "attachment_rule": "refusal codes attach to phase_id and leaf_id, not freeform prose",
+    "map_path": "receipts/faf/epoch_03/parody_paradox_jay_faf_epoch_03_refusal_code_map.v1.json"
+  },
+  "convergence_requirements": {
+    "local_root_required": true,
+    "ci_witness_root_required": true,
+    "human_receipt_count_required": 2,
+    "all_roots_identical_required": true,
+    "no_refusal_codes_required": true
+  },
+  "receipt_hash": null
+}

@@ -1,0 +1,108 @@
+{
+  "version": "WITNESS_INCENTIVE_MODEL_V1",
+  "purpose": "Price witness availability over time without granting witnesses authority over epoch truth.",
+  "last_verified": "2026-05-06",
+  "verifier": "jsonwisdom",
+  "inherits": "storage/REPLICATION_WITNESS_MODEL_V1.json",
+  "authority_boundary": {
+    "witnesses_can_earn_or_lose_economic_weight": true,
+    "witnesses_can_create_authority": false,
+    "anchor_truth_unchanged_by_incentives": true,
+    "replica_majority_rule": "forbidden"
+  },
+  "state_coefficients": {
+    "HEALTHY": {
+      "reward_rate_per_epoch": 1.0,
+      "penalty_rate_per_epoch": 0.0,
+      "meaning": "Witness successfully serves anchor-valid bytes."
+    },
+    "MISSING": {
+      "reward_rate_per_epoch": 0.0,
+      "penalty_rate_per_epoch": 0.25,
+      "meaning": "Witness cannot serve required object."
+    },
+    "FAULTY_WITNESS": {
+      "reward_rate_per_epoch": 0.0,
+      "penalty_rate_per_epoch": 1.0,
+      "meaning": "Witness serves bytes that fail anchor-relative verification."
+    },
+    "REPAIRING": {
+      "reward_rate_per_epoch": 0.25,
+      "penalty_rate_per_epoch": 0.05,
+      "meaning": "Witness is in bounded repair window and must reverify before returning to HEALTHY."
+    },
+    "UNAVAILABLE_BUT_ANCHORED": {
+      "reward_rate_per_epoch": 0.0,
+      "penalty_rate_per_epoch": 0.0,
+      "meaning": "No healthy witness exists; truth is unavailable but not ambiguous. No witness may claim authority."
+    }
+  },
+  "time_in_state_pricing": {
+    "enabled": true,
+    "penalty_formula": "penalty = base_penalty * state_penalty_rate * log2(1 + epochs_in_state)",
+    "reward_formula": "reward = base_reward * state_reward_rate * coverage_multiplier",
+    "chronic_missing_threshold_epochs": 7,
+    "chronic_faulty_threshold_epochs": 2,
+    "chronic_multiplier": 2.0
+  },
+  "coverage_rewards": {
+    "coverage_metric": "healthy_witness_count_per_epoch_object",
+    "target_healthy_witnesses": 3,
+    "coverage_multiplier_formula": "min(1.0, healthy_witness_count / target_healthy_witnesses)",
+    "minimum_reward_condition": "witness_state == HEALTHY AND bytes_match_anchor_defined_hashes"
+  },
+  "slashing_conditions": [
+    {
+      "condition": "state == FAULTY_WITNESS for chronic_faulty_threshold_epochs",
+      "action": "slash_or_decay_stake",
+      "reason_code": "CHRONIC_FAULTY_WITNESS"
+    },
+    {
+      "condition": "state == MISSING for chronic_missing_threshold_epochs",
+      "action": "reward_decay_or_deactivation_review",
+      "reason_code": "CHRONIC_MISSING_WITNESS"
+    },
+    {
+      "condition": "witness_attempts_to_override_anchor == true",
+      "action": "slash_and_mark_faulty",
+      "reason_code": "REPLICA_AUTHORITY_ATTEMPT"
+    }
+  ],
+  "deactivation_policy": {
+    "terminal_state": "DEACTIVATED_WITNESS",
+    "allowed_reasons": [
+      "CHRONIC_FAULTY_WITNESS",
+      "CHRONIC_MISSING_WITNESS",
+      "REPLICA_AUTHORITY_ATTEMPT"
+    ],
+    "deactivated_witness_may_reenter": "only_as_new_identity_with_new_bond_and_audit_log"
+  },
+  "logging": {
+    "ledger_path": "logs/witness_incentives.jsonl",
+    "required_fields": [
+      "epoch_id",
+      "object_id",
+      "witness_id",
+      "state",
+      "epochs_in_state",
+      "reward_delta",
+      "penalty_delta",
+      "reason_code",
+      "timestamp_unix_ms"
+    ]
+  },
+  "failure_modes": [
+    "WITNESS_FREE_OPTION_DETECTED",
+    "CHRONIC_MISSING_WITNESS",
+    "CHRONIC_FAULTY_WITNESS",
+    "REPLICA_AUTHORITY_ATTEMPT",
+    "INCENTIVE_LEDGER_MISMATCH"
+  ],
+  "invariants": [
+    "Witness economics price availability, not truth.",
+    "Healthy status is earned only by serving bytes that match anchor-defined hashes.",
+    "Time in unhealthy states creates economic drag.",
+    "No incentive formula may make a witness authoritative.",
+    "UNAVAILABLE_BUT_ANCHORED is a critical availability alarm, not a truth fork."
+  ]
+}

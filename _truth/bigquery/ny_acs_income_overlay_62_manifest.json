@@ -1,0 +1,13 @@
+{
+  "receipt": "NY-002",
+  "artifact": "NY_ACS_INCOME_OVERLAY",
+  "input": "NY-001",
+  "rows": 62,
+  "rows_with_income": 38,
+  "hash": "f5ca406d41ce6fbef0519e79285f18c2ac1daacf884c388ae4cfa88d8196f394",
+  "timestamp": "2026-05-02T23:47:07.153610+00:00",
+  "join_key": "fips",
+  "guardrails": [
+    "Do not claim risk model; this is income overlay only"
+  ]
+}

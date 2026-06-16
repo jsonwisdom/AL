@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Expanded Assessment of the Consequences of Imprisonment for Employment in Maricopa County, Arizona from 2011-2012",
+  "description": "\r\nThese data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\n\r\n\r\nThis research completed a three-year study of the impact of a prison record on gaining employment. It included two separate experiments and an employer survey in the research. The first experiment involved the submission of more than 6,000 online applications for entry-level jobs. The second experiment sent individuals (auditors) to apply for 60 jobs in-person. The third research method was a survey conducted among 49 employers, all of whom were included in the second experiment.\r\n\r\n\r\nThe collection contains 3 SPSS data files:\r\n\r\nfile1-male_and_female_inperson_data.sav (n=518; 17 variables)\r\nfile2-employer_survey-ICPSR.sav (n=48; 79 variables)\r\nfile3-male_and_female_online_data.sav (n=6,198; 19 variables)\r\n\r\n",
+  "modified": "2017-08-25T16:28:50",
+  "accessLevel": "restricted public",
+  "identifier": "3337",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "employment",
+    "employment discrimination",
+    "employment qualifications",
+    "ex-offender employment",
+    "ex-offenders",
+    "job search",
+    "prisoner reentry",
+    "sex discrimination"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2017-08-25T16:19:29",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR35613.v1",
+      "title": "Expanded Assessment of the Consequences of Imprisonment for Employment in Maricopa County, Arizona from 2011-2012"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Uniform Crime Reporting Program Data [United States]:  Offenses Known and Clearances by Arrest, 1962  ",
+  "description": "Since 1930, the Federal Bureau of Investigation has compiled \r\n the Uniform Crime Reports (UCR) to serve as periodic nationwide \r\n assessments of reported crimes not available elsewhere in the criminal \r\n justice system. Law enforcement agencies contribute reports either \r\n directly or through their state reporting programs. Each year, summary \r\n data are reported in four types of files: (1) Offenses Known and \r\n Clearances by Arrest, (2) Property Stolen and Recovered, (3) \r\n Supplementary Homicide Reports (SHR), and (4) Police Employee (LEOKA) \r\n Data. The Offenses Known and Clearances by Arrest data files include \r\n monthly data on the number of Crime Index offenses reported and the \r\n number of offenses cleared by arrest or other means. The counts include \r\n all reports of Index crimes (excluding arson) received from victims, \r\nofficers who discovered infractions, or other sources.",
+  "modified": "2005-04-22T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2121",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "arrest records",
+    "arrests",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "homicide",
+    "larceny",
+    "law enforcement",
+    "offenders",
+    "offenses",
+    "police deaths",
+    "police officers",
+    "stolen property"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2167",
+  "dataQuality": false,
+  "issued": "2005-04-22T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR04190.v1",
+      "title": "Uniform Crime Reporting Program Data [United States]:  Offenses Known and Clearances by Arrest, 1962  "
+    }
+  ]
+}

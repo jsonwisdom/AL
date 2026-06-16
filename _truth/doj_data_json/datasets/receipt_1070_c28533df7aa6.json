@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Corrections Reporting Program, 1995",
+  "description": "The purpose of this study was to gather data on prisoners\r\nentering and leaving the custody or supervision of state and federal\r\nauthorities. Data refer to prisoners who were admitted to prison,\r\nreleased from prison, or released from parole in 1995. Variables\r\ninclude incarceration history, current offenses, and total time\r\nserved. Background information on individuals includes year of birth,\r\nsex, age, race, Hispanic origin, and educational attainment.",
+  "modified": "2010-04-23T18:00:38",
+  "accessLevel": "restricted public",
+  "identifier": "1070",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "correctional facilities",
+    "correctional facilities (juveniles)",
+    "correctional system",
+    "demographic characteristics",
+    "federal correctional facilities",
+    "jail inmates",
+    "juvenile offenders",
+    "national crime statistics (USA)",
+    "offenders",
+    "offenses",
+    "parole",
+    "prison inmates",
+    "probation",
+    "state correctional facilities"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2589",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "1998-07-28T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR02194.v1",
+      "title": "National Corrections Reporting Program, 1995"
+    }
+  ]
+}

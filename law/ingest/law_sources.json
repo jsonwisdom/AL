@@ -2,24 +2,87 @@
   "sources": [
     {
       "id": "doj_press_releases",
-      "type": "public_json_or_html",
       "lane": "doj",
+      "jurisdiction": "US",
       "url": "https://www.justice.gov/news",
-      "status": "seed"
+      "method": "GET",
+      "auth": "none",
+      "cadence": "daily",
+      "pagination": "page",
+      "normalization": {
+        "version": "lg-normalize-v1",
+        "format": "html",
+        "canonicalization": {
+          "spec": "docs/normalize/html_to_text_v1.md",
+          "version": "v1",
+          "spec_hash": "sha256:9ae4b9c454339747eed7fb4ffbe146c6c2410b627f0bee5a4543a9973cb38c2b"
+        }
+      },
+      "hash_policy": {
+        "algorithm": "sha256",
+        "scope": "normalized_text"
+      },
+      "receipt_policy": {
+        "emit": true,
+        "path": "law/receipts/doj/"
+      },
+      "status": "active"
     },
     {
       "id": "courtlistener_opinions",
-      "type": "public_api",
       "lane": "cases",
+      "jurisdiction": "US",
       "url": "https://www.courtlistener.com/api/rest/v4/opinions/",
-      "status": "seed"
+      "method": "GET",
+      "auth": "none",
+      "cadence": "daily",
+      "pagination": "page",
+      "normalization": {
+        "version": "lg-normalize-v1",
+        "format": "json",
+        "canonicalization": {
+          "spec": "docs/normalize/json_canonical_jcs.md",
+          "version": "v1",
+          "spec_hash": "sha256:cc989d0775a2bc0bfe312031421c05b8b97907f12f6cc90b2db62aaa3b66e2a2"
+        }
+      },
+      "hash_policy": {
+        "algorithm": "sha256",
+        "scope": "normalized_json"
+      },
+      "receipt_policy": {
+        "emit": true,
+        "path": "law/receipts/cases/"
+      },
+      "status": "active"
     },
     {
       "id": "us_code_house",
-      "type": "public_law",
       "lane": "lawbooks",
+      "jurisdiction": "US",
       "url": "https://uscode.house.gov/download/download.shtml",
-      "status": "seed"
+      "method": "GET",
+      "auth": "none",
+      "cadence": "weekly",
+      "pagination": "none",
+      "normalization": {
+        "version": "lg-normalize-v1",
+        "format": "pdf",
+        "canonicalization": {
+          "spec": "docs/normalize/pdf_text_v1.md",
+          "version": "v1",
+          "spec_hash": "sha256:ab55ee7f0d9c53e18b68f1bfacd56cdba5a156df36e5784240b58a72d19aa256"
+        }
+      },
+      "hash_policy": {
+        "algorithm": "sha256",
+        "scope": "normalized_text"
+      },
+      "receipt_policy": {
+        "emit": true,
+        "path": "law/receipts/lawbooks/"
+      },
+      "status": "active"
     }
   ]
 }

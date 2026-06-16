@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Justice Response to Repeat Victimization in Cases of Violence Against Women in Redlands, California, 2005",
+  "description": "The study set out to test the question of whether more efficacious outcomes would be gained the closer that a second response by police officers occurs to an actual domestic violence event.  Researchers conducted a randomized experiment in which households that reported a domestic incident to the police were assigned to one of three experimental conditions: (a) second responders were dispatched to the crime scene within 24 hours, (b) second responders visited victims' homes one week after the call for service, or (c) no second response occurred. Beginning January 1, 2005, and continuing through December 3, 2005, incidents reported to the Redlands Police Department were reviewed each morning by a research assistant to determine whether the incidents involved intimate partners. Cases were determined to be eligible if the incident was coded as a misdemeanor or felony battery of a spouse or intimate partner. Eighty-two percent of the victims were females. For designated incidents, a team of officers, including a trained female domestic violence detective, visited households within either twenty-four hours or seven days of a domestic complaint. A written protocol guided the officer or officers making home visits. Officers also asked the victim a series of questions about her relationship with the abuser, history of abuse, and the presence of children and weapons in the home. In Part 1 (Home Visit Data), six months after the reporting date of the last incident in the study, Redlands Police crime analysis officers wrote a software program to search their database to determine if any new incidents had been reported. For Part 2 (New Incident Data), the search returned any cases associated with the same victim in the trigger incident. For any new incidents identified, information was collected on the date, charge, and identity of the perpetrator. Six months following the trigger incident, research staff attempted to interview victims about any new incidents of abuse that might have occurred. These interview attempts were made by telephone. In cases where the victim could not be reached by phone, an incentive letter was sent to the victim's home, offering a $50 stipend to call the research offices.  Part 1 (Home Visit Data) contains 345 cases while Part 2 (New Incident Data) contains 344 cases. The discrepancy in the final number across the two parts is due to cases randomized into the sample that turned out to be ineligible or had been assigned previously from another incident.  Part 1 (Home Visit Data) contains 63 variables including basic administrative variables such as date(s) of contact and group assignment. There are also variables related to the victim and the perpetrator such as their relationship, whether the perpetrator was arrested during the incident, and whether the perpetrator was present during the interview. Victims were also asked a series of questions as to whether the perpetrator did such things as hit, push, or threatened the victim. Part 2 (New Incident Data) contains 68 variables including dates and charges of previous incidents as well as basic administrative and demographic variables.",
+  "modified": "2010-09-24T12:24:43",
+  "accessLevel": "restricted public",
+  "identifier": "3869",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "domestic assault",
+    "domestic violence",
+    "victimization",
+    "violence against women"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2010-09-24T12:00:36",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR21182.v1",
+      "title": "Justice Response to Repeat Victimization in Cases of Violence Against Women in Redlands, California, 2005"
+    }
+  ]
+}

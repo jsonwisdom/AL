@@ -1,0 +1,10 @@
+{
+  "artifact": "USC_ARTICLE_I_ROOT_V2_PROMOTION",
+  "status": "PROMOTED_FROM_DRIFT_RECEIPT",
+  "rule_id": "ALMS_GLOBAL_MERKLE_RULE_V1",
+  "previous_expected_root": "09873d69046c82736187786483562306208a0d01f974673323065a0438627341",
+  "promoted_root": "2c595278a5a1ecbafd00544bdcd81a5473b4a13775950d5300e2b44c1bbcd518",
+  "drift_receipt": "_truth/us/constitution/drift/article_i_root_drift_2026-05-05.json",
+  "finding": "Current Section 8, 9, and 10 manifests replay deterministically to promoted_root under ALMS_GLOBAL_MERKLE_RULE_V1. The previous Article I global root does not replay from the current repo-resident section manifests.",
+  "policy": "Preserve prior root as historical record. Promote V2 explicitly instead of silently overwriting all references."
+}

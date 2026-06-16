@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ALMS Trilogy V1 Audit</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;margin:40px;max-width:980px;line-height:1.45}
+    code,pre{background:#f4f4f4;padding:12px;display:block;overflow:auto;border-radius:8px}
+    .ok{color:green;font-weight:700}.hold{color:#b8860b;font-weight:700}.no{color:#b00020;font-weight:700}
+    table{border-collapse:collapse;width:100%;margin:16px 0}td,th{border:1px solid #ddd;padding:8px;text-align:left}th{background:#f7f7f7}
+  </style>
+</head>
+<body>
+<h1>ALMS Trilogy V1 Audit</h1>
+<p class="ok">GitHub/IPFS/offchain receipt layer locked.</p>
+<p class="hold">EAS status: pending until schema UID + attestation UIDs exist.</p>
+<p class="no">No onchain anchor is claimed on this page.</p>
+
+<h2>Core Receipts</h2>
+<pre>TRILOGY_HASH=0xbff64af27865e7967a9992c4ac8089bc8ca6a637e58194236d1b3abd25e1ac57
+PAYLOADS_HASH=0x50d60b388455bb73dc9f1ae6261a6d64a09556020d4b0aee7ea1213884131244
+BUNDLE_CID=bafybeibcc32x2jq3ktmk4epvugprux2ehrsx2ukzqbn5gxffvudztc6ile
+BUNDLE_SHA256=0xf8011a130a39f43b97d4db7091536755dc175602f486d342f603b30a83bb1617
+MEDIA_COMMIT=00479ae7a48d7915409277e3e684e4c3ffb4b377
+PAYLOADS_COMMIT=4b3c6ae8187fc581d9a262209067684821b96407</pre>
+
+<h2>Image Hashes</h2>
+<pre>ANDY_IMAGE_HASH=0xfb4521ae28e166ee9442c20e68ea38e2f9dc51d40a68fbfcdf2c0d8e773ea821
+GARY_IMAGE_HASH=0x603a559a8da229d90c731a8be517f408471e1f72b095fa4361a93ddeba56060c
+ALLISON_IMAGE_HASH=0xe7eb95287af70d21676a43c395881e6477968fccfd35fd46b0774c5c0281f4de</pre>
+
+<h2>Manual Verification</h2>
+<pre>curl -L -o alms_trilogy_v1_bundle.zip https://ipfs.io/ipfs/bafybeibcc32x2jq3ktmk4epvugprux2ehrsx2ukzqbn5gxffvudztc6ile
+sha256sum alms_trilogy_v1_bundle.zip</pre>
+<p>Expected ZIP SHA256:</p>
+<pre>f8011a130a39f43b97d4db7091536755dc175602f486d342f603b30a83bb1617</pre>
+
+<h2>Source Files</h2>
+<table>
+<tr><th>Artifact</th><th>Status</th></tr>
+<tr><td>Manifest</td><td>Locked in GitHub</td></tr>
+<tr><td>Media bundle</td><td>Locked by IPFS CID + SHA256</td></tr>
+<tr><td>EAS schema / attestations</td><td>Pending</td></tr>
+</table>
+
+<h2>Rule</h2>
+<p>No claim of EAS anchoring is valid until schema UID and attestation UIDs are published here.</p>
+</body>
+</html>

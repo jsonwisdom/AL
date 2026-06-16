@@ -1,0 +1,44 @@
+REPLAY FLYWHEEL V2 WITH BASE AND ZORA DOCS
+
+status: ACTIVE
+repository: jsonwisdom/AL
+network: BASE
+surface: ZORA_BASE
+identity: jaywisdom.base.eth
+identity_alt: jaywisdom.eth
+anchor: 0xa380552a27b0a5a2874ea7aa52cac09f542002e8
+
+reference_docs:
+- base_docs: https://docs.base.org/get-started/base
+- base_docs_index: https://docs.base.org/llms.txt
+- zora_docs: https://docs.zora.co/
+- zora_skill: https://docs.zora.co/skill.md
+- zora_coins_sdk: https://docs.zora.co/coins/sdk
+- zora_coins_protocol: https://docs.zora.co/coins/protocol
+
+flywheel_order:
+1. schema_committed
+2. validator_committed
+3. receipt_candidates_appended
+4. reference_docs_recorded
+5. record_validated
+6. attestation_allowed_only_after_validation
+
+current_schema_commit: 3826d9df225f616ac5d70e6a9b3cc176e18b542b
+current_validator_commit: 2dab03c953a3ac2d36a645d0d23e90352d39c9ac
+current_receipt_chain_head: b50d5a65593b870671d1517515becba6fbacf545
+previous_flywheel_commit: 08806d21f640175ae2494f186f8b6f3853a3331a
+
+current_batch: BATCH_002
+current_batch_status: OPEN_WITH_RECEIPT_CANDIDATES
+
+rules:
+- schema before attestation
+- validator before claims
+- receipts before narrative
+- docs are reference surfaces, not proof of user action
+- github commits are valid receipt sources
+- onchain claims require onchain proof
+- wallet signature claims require wallet signature proof
+
+boundary: flywheel active as GitHub direct control record; Base docs and Zora docs included as reference surfaces only; no onchain attestation claimed; no wallet signature claimed; no final validation claimed in this file

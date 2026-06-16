@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Evaluation of a Global Positioning System for Monitoring High-Risk Gang Offenders in California, 2006-2009",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they there received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except of the removal of direct identifiers. Users should refer to the accompany readme file for a brief description of the files available with this collections and consult the investigator(s) if further information is needed.The purpose of this evaluation was to determine the effectiveness of the global positioning system (GPS) monitoring of high-risk gang offenders (HRGOs) who are placed on parole. The study focuses on HGROs who were released from prison and placed on parole supervision with GPS monitoring in six California jurisdictions between March 2006 and October 2009. A propensity score procedure was performed using a sample of offenders drawn from the same six communities who were not placed on GPS monitoring. The matching procedure resulted in a final sample of 784 subjects (392 treatment and 392 control). The study used six primary sources to collect data: 1)the California Department of Corrections and Rehabilitation (CDCR) data management system, 2) official arrest records, 3) parole supervision records, 4) GPS monitoring data, 5) a CDCR parole agent (PA) survey, and 6) CDCR cost information.",
+  "modified": "2016-09-26T12:11:08",
+  "accessLevel": "restricted public",
+  "identifier": "1179",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "gang members",
+    "gangs",
+    "parole",
+    "parole violation",
+    "parolees",
+    "recidivism",
+    "recidivists"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2016-09-26T12:06:47",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR34926.v1",
+      "title": "Evaluation of a Global Positioning System for Monitoring High-Risk Gang Offenders in California, 2006-2009"
+    }
+  ]
+}

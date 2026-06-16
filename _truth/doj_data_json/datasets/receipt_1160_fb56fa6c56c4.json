@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Therapeutic Change, Length of Stay, and Recidivism in Incarcerated Juvenile Offenders in Washington State, 2008-2015",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThis is a quasi-experimental, observational study using administrative data to assess whether time in juvenile placement was associated with the acquisition of social-emotional skills and subsequent felony recidivism.  Concurrent with a change in juvenile sentencing policy in Washington State a comprehensive risk and needs assessment tool (R-PACT) was piloted to investigate the impact that therapeutically oriented incarceration had on youth. This tool was made up of 12 domains of risk and needs, including a section on dynamic factors related to therapeutic skills.  Youth were admitted into the study in two cohorts, a main study cohort and a replication study cohort. ",
+  "modified": "2016-04-28T15:58:09",
+  "accessLevel": "restricted public",
+  "identifier": "1160",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "juvenile detention",
+    "juvenile offenders",
+    "juvenile recidivists",
+    "juvenile sentencing",
+    "policy",
+    "therapeutic jurisprudence",
+    "treatment outcome"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2016-04-28T15:54:28",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36226.v1",
+      "title": "Therapeutic Change, Length of Stay, and Recidivism in Incarcerated Juvenile Offenders in Washington State, 2008-2015"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "claim_id": "AL-BUDGET-2026-01",
+  "layer": "CLAIM",
+  "state": "AL",
+  "claim_text": "Alabama FY2026 General Fund appropriations are represented by Act 2025-251 (signed), used as the canonical ALMS source artifact.",
+  "timestamp": "2026-05-03T21:10:00Z",
+  "source": {
+    "description": "FY26 General Fund Appropriation Act 2025-251 (Signed)",
+    "source_url": "https://budget.alabama.gov/wp-content/uploads/2026/01/FY26-General-Fund-Appropriation-Bill-Act-2025-251-Signed.pdf"
+  },
+  "frozen_artifact": {
+    "mode": "repo",
+    "reference": "fixtures/al/sources/al_budget_act_2025_251.pdf",
+    "capture_date": "2026-05-03"
+  },
+  "hash": "sha256:ecf65398c0a34307065aa78d0eafbfbfe4641405cc4a1a14d796058522a78206",
+  "receipt": {
+    "receipt_id": "AL-BUDGET-RECEIPT-001",
+    "status": "INDETERMINATE",
+    "notes": "Official source candidate selected. Awaiting frozen PDF commit, hash, and replay confirmation.",
+    "replay_passed": false
+  },
+  "replay": { "status": "PENDING" },
+  "state_root": { "status": "PENDING" },
+  "national_root": { "status": "PENDING" },
+  "public_explanation": {
+    "status": "PENDING",
+    "content_summary": "AL lane pending replay against Act 2025-251 signed General Fund source artifact.",
+    "explanation_hash": "UNSET"
+  }
+}

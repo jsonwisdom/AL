@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Effects of Foot Patrol Policing in Boston, 1977-1985",
+  "description": "This collection evaluates the impact of a new foot patrol \r\n plan, implemented by the Boston Police Department, on incidents of \r\n crime and neighborhood disturbances. Part 1 contains information on \r\n service calls by types of criminal offenses such as murder, rape, \r\n aggravated assault, simple assault, robbery, larceny, burglary, and \r\n auto theft. It also contains data on types of community disturbances \r\n such as noisy party, gang, or minor disturbance and response priority \r\n of the incidents. Response priorities are classified according to a \r\n four-level scale: Priority 1: emergency calls including crimes in \r\n progress, high risk or personal injury, and medical emergencies, \r\n Priority 2: calls of intermediate urgency, Priority 3: calls not \r\n requiring immediate response, Priority 4: calls of undetermined \r\n priority. Parts 2 and 3 include information about patrol time used in \r\n each of the three daily shifts during the pre- and post-intervention \r\n periods. Part 4 presents information similar to Parts 2 and 3 but the \r\ndata span a longer period of time--approximately seven years.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3266",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "assault",
+    "auto theft",
+    "burglary",
+    "civil disorders",
+    "crime",
+    "foot patrol",
+    "larceny",
+    "murder",
+    "neighborhoods",
+    "police departments",
+    "police patrol",
+    "police response",
+    "rape"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1990-08-15T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09351.v1",
+      "title": "Effects of Foot Patrol Policing in Boston, 1977-1985"
+    }
+  ]
+}

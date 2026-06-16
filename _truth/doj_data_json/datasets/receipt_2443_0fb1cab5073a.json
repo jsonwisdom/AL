@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Census of Publicly Funded Forensic Crime Labs Series",
+  "description": "\r\n\r\nThe Census of\r\nPublicly Funded Forensic Crime Labs (CPFFCL) was first conducted in\r\n2003 to capture data on the 2002 workload and operations of the 351\r\npublicly funded crime labs operating that year. It is produced every\r\nthree or four years since it was first conducted. The CPFFCL includes\r\nall state, county, municipal, and federal crime labs that (1) are\r\nsolely funded by government or whose parent organization is a\r\ngovernment agency and (2) employ at least one full-time natural\r\nscientist who examines physical evidence in criminal matters and\r\nprovides reports and opinion testimony with respect to such physical\r\nevidence in courts of law. For example, this includes DNA testing and\r\ncontrolled substance identification for federal, state, and local\r\njurisdictions. Some publicly funded crime labs are part of a multi-lab\r\nsystem. The census attempted to collect information from each lab in\r\nthe system. Police identification units, although sometimes\r\nresponsible for fingerprint analysis, and privately operated\r\nfacilities were not included in the census.\r\n\r\n",
+  "modified": "2018-10-18T12:21:02",
+  "accessLevel": "public",
+  "identifier": "2443",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "DNA fingerprinting",
+    "budgets",
+    "crime laboratories",
+    "criminal investigations",
+    "expenditures",
+    "forensic sciences",
+    "personnel",
+    "policies and procedures"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2005-09-02T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://www.icpsr.umich.edu/web/ICPSR/series/258",
+      "title": "Census of Publicly Funded Forensic Crime Labs Series"
+    }
+  ]
+}

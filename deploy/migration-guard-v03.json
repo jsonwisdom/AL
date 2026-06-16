@@ -1,0 +1,22 @@
+{
+  "chain": "base-sepolia",
+  "chain_id": 84532,
+  "contract": "MigrationGuardV03",
+  "address": "0x40CD283C2eA45Ece83625aF06F7Bd83cb8C03d82",
+  "transaction_hash": "0x08bacd1b17a1b972d3b9715506ddafef4a9a30d8dee3a1598f136ed195f9bc34",
+  "deployer": "0x992d94aA31dcD8fDb7d8E6885370ef8202AED399",
+  "constructor_args": {
+    "eas": "0x4200000000000000000000000000000000000021",
+    "schema_registry": "0x4200000000000000000000000000000000000020",
+    "constitutional_root_schema_uid": "0xf9ab1ef5e8864a163be606d0663ae5a40b97a5622ed0f466fe7e83dc20fc2927",
+    "migration_receipt_schema_uid": "0x8284257a5cc5544985b831d108d50ff5e4bf39f1b2055b28f340b6a4fe297ed6",
+    "agent_output_receipt_schema_uid": "0x43f36f520c1070797c630b4641377765622c3cb45624ef58235e6d3e9337934d"
+  },
+  "genesis_attestation_uid": "0xc79d3d89dabf16db6a59ba612d0d79db68b20f127baf5fa16e454c911e2beb93",
+  "genesis_transaction_hash": "0xdbf5f716e8a591ba08a2e35f1cd0c4d14563f5c3f615dd6f37829455b51c83e6",
+  "instrument_hash": "0xa0abea7c8feb12950210600fdf2a5fef2433364afbf7a6eb88d9dfb51d3868f4",
+  "articles_hash": "0xf31e744baa494fb369b3448c80a170c5011f37508428efac743c64d36aa9cf9f",
+  "source_file": "contracts/MigrationGuardV03.sol",
+  "source_blob_sha": "8d1344195200858389b70c273e8bdae40ce8c8a5",
+  "status": "MIGRATION_GUARD_V03_DEPLOYED"
+}

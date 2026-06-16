@@ -1,0 +1,49 @@
+{
+  "artifact": "DELTA_OVERLAY_INJECTION_V1",
+  "layer": "CORE-OVERLAY",
+  "purpose": "Define deterministic rules for injecting state or local topology deltas without mutating verified baselines.",
+  "last_verified": "2026-05-06",
+  "verifier": "jsonwisdom",
+  "kernel_rule": {
+    "baseline_is_immutable": true,
+    "delta_is_additive": true,
+    "conflict_logic_is_scoped": true
+  },
+  "overlay_contract": {
+    "required_fields": [
+      "artifact",
+      "extends",
+      "overlay_type",
+      "baseline_integrity",
+      "delta_scope",
+      "shadowing_rules",
+      "conflict_resolution",
+      "blocked_actions"
+    ],
+    "extends_required": true,
+    "modifies_baseline_required_false": true,
+    "baseline_precedence_required_absolute": true
+  },
+  "allowed_overlay_operations": [
+    "add",
+    "shadow"
+  ],
+  "forbidden_overlay_operations": [
+    "delete",
+    "rebase",
+    "rewrite"
+  ],
+  "fail_closed_conditions": [
+    "baseline_hash_missing",
+    "baseline_mutation_detected",
+    "cross_jurisdiction_shadowing_detected",
+    "missing_extends_field",
+    "overlay_type_missing"
+  ],
+  "invariants": [
+    "Baseline may be extended but never rewritten.",
+    "Delta shadowing is local to the declared delta scope.",
+    "Conflict resolution belongs to the delta, not the baseline.",
+    "Cook may override inside Cook Delta only; Cook may not rewrite Illinois baseline."
+  ]
+}

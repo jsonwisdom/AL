@@ -1,0 +1,21 @@
+{
+  "artifact": "USC_A1_S8_C7_VERIFIED_RECEIPT",
+  "status": "VERIFIED_CANONICAL",
+  "id": "USC-A1-S8-C7",
+  "parent": {
+    "id": "USC-A1-S8",
+    "content_hash_sha256": "689531558999a4c062828b12204683a483a92540026e632943183563914a2754"
+  },
+  "role": "Post Offices and Post Roads Power",
+  "normalization_rule": "NORMALIZED_TEXT_SPAN_V0_2",
+  "verification_method": "EXACT_CHARACTER_AUDIT_PLUS_INDEPENDENT_MATCH",
+  "span": "To establish Post Offices and post Roads;",
+  "byte_count_utf8": 41,
+  "content_hash_sha256": "c25e6a8b3b557f93584e7f30d847dae0b94e43817a0ba1424a34883186fa387a",
+  "gate_resolution": "MATCHED_INDEPENDENT_GROUND_TRUTH",
+  "note": "Operator-provided illustrative commit-like value was not used as evidence. This receipt is anchored by the actual GitHub commit returned by the connector.",
+  "next_gate": {
+    "WAVE_1": "READY_FOR_FINAL_REGISTRY_AFTER_C4_STRICT_LOCK_OR_RECONFIRMATION",
+    "WAVE_2": "BLOCKED_UNTIL_WAVE_1_FINAL_REGISTRY"
+  }
+}

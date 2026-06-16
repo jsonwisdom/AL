@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Youth Justice Policy Environments and Their Effects on Youth Confinement Rates, United States, 1996-2016",
+  "description": "This study was conducted to address the dropping rates in residential placements of adjudicated youth after the 1990s. Policymakers, advocates, and reseraches began to attirbute the decline to reform measures and proposed that this was the cause of the drop seen in historic national crime. In response, researchers set out to use state-level data on economic factors, crime rates, political ideology scores, and youth justice policies and practices to test the association between the youth justice policy environment and recent reductions in out-of-home placements for adjudicated youth.\r\n\r\nThis data collection contains two files, a multivariate and bivariate analyses. In the multivariate file the aim was to assess the impact of the progressive policy characteristics on the dependent variable which is known as youth confinement. In the bivariate analyses file Wave 1-Wave 10 the aim was to assess the states as they are divided into 2 groups across all 16 dichotomized variables that comprised the progressive policy scale: those with more progressive youth justice environments and those with less progressive or punitive environments. Some examples of these dichotomized variables include purpose clause, courtroom shackling, and competency standard.\r\n",
+  "modified": "2020-12-17T09:48:01",
+  "accessLevel": "public",
+  "identifier": "3982",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "criminal justice policy",
+    "juvenile detention",
+    "juvenile justice",
+    "policy analysis",
+    "reform"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2020-12-17T09:48:01",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37618.v1",
+      "title": "Youth Justice Policy Environments and Their Effects on Youth Confinement Rates, United States, 1996-2016"
+    }
+  ]
+}

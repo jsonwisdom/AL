@@ -1,0 +1,90 @@
+{
+  "schema": "al_exposure_posture_v2/runtime_green_receipt@v1",
+  "status": "FULL_RUNTIME_GREEN",
+  "timestamp_utc": "2026-05-12T09:49:03Z",
+  "operator": {
+    "identity": "jaywisdom.eth",
+    "base_identity": "jaywisdom.base.eth",
+    "github": "jsonwisdom"
+  },
+  "repo": {
+    "repository": "jsonwisdom/AL",
+    "branch": "master",
+    "runtime_green_commit": "1c48caab5a8ee27f3307fbde49a6160501040426",
+    "runtime_green_commit_message": "📦 [automated] SBOM update - CycloneDX + SPDX",
+    "runtime_green_commit_timestamp_utc": "2026-05-12T09:49:03Z",
+    "tag": null
+  },
+  "workflows": {
+    "exposure_audit": {
+      "workflow_file": ".github/workflows/exposure-audit.yml",
+      "patch_commit": "fabbde3de2eb914ef8e7bfd0240e37f3b245d63b",
+      "status": "GREEN",
+      "observed_run": {
+        "run_label": "Exposure Audit #5",
+        "trigger": "workflow_dispatch",
+        "duration_seconds": 34,
+        "artifact_count": 1,
+        "jobs": {
+          "gitleaks_secret_exposure_scan": "GREEN",
+          "openssf_scorecard": "GREEN"
+        },
+        "github_run_id": null,
+        "github_run_url": null
+      }
+    },
+    "sbom_generation": {
+      "workflow_file": ".github/workflows/sbom-cyclonedx.yml",
+      "patch_commits": [
+        "61bed645d921446aa961f7a2b2ceb109321dc905",
+        "9080dd7a0077e53d379bd2d83c51db3ab6fb66a6",
+        "dd2c22775c45584987d2dbfa911595ee14cad683"
+      ],
+      "status": "GREEN",
+      "observed_run": {
+        "run_label": "SBOM Generation (CycloneDX) #6",
+        "trigger": "workflow_dispatch",
+        "duration_seconds": 19,
+        "artifact_count": 1,
+        "job": "generate-sbom",
+        "job_status": "GREEN",
+        "github_run_id": null,
+        "github_run_url": null
+      }
+    }
+  },
+  "artifacts": {
+    "sbom_cyclonedx_json": {
+      "path": "_truth/security/sbom.cdx.json",
+      "sha256": "3b312e687989bddc9124a4454fc4b16291e590e753feb92d4eedc5baea6ca736"
+    },
+    "sbom_spdx_json": {
+      "path": "_truth/security/sbom.spdx.json",
+      "sha256": "49812e72a016adf2f88e5ca89a985b6596528a4b25c06065fff47e4e6bdc48fa"
+    },
+    "sbom_cyclonedx_sha256": {
+      "path": "_truth/security/sbom.cdx.sha256"
+    },
+    "sbom_spdx_sha256": {
+      "path": "_truth/security/sbom.spdx.sha256"
+    }
+  },
+  "promotions": {
+    "custom_secret_scan": "GREEN",
+    "exposure_runtime": "GREEN",
+    "gitleaks_runtime": "GREEN",
+    "scorecard_runtime": "GREEN",
+    "sbom_runtime": "GREEN",
+    "repo_artifacts": "GREEN",
+    "artifact_hashes": "GREEN"
+  },
+  "constraints": {
+    "on_chain_anchor": "DEFERRED",
+    "ens_anchor": "DEFERRED",
+    "no_private_keys_in_repo": true,
+    "claim_is_not_receipt": true,
+    "output_is_not_authority": true,
+    "prediction_is_not_truth": true
+  },
+  "notes": "Runtime green achieved through custom repo safety scan, Exposure Audit runtime success, SBOM Generation runtime success, repository persistence of SBOM artifacts, and SHA256 anchor files. Receipt frozen before any on-chain anchoring. Fields not directly observed remain null."
+}

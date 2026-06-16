@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Learning Deficiencies Among Adult Inmates, 1982:  Louisiana, Pennsylvania, and Washington",
+  "description": "The National Institute of Justice sponsored this study of\r\n1,065 prison inmates in Louisiana, Pennsylvania, and Washington.\r\nRespondents were administered an academic achievement test, the Tests\r\nof Adult Basic Education, and an individual intelligence test, the\r\nWechsler Adult Intelligence Scale-Revised (WAIS-R). Other screening\r\ntests were also given to certain respondents, including the\r\nMann-Suiter Disabilities Screening Test and the Adaptive Behavior\r\nChecklist. Data for each inmate includes offenses committed, prior\r\ninstitutionalization, juvenile adjudication, years of formal\r\neducation, academic and vocational participation while incarcerated,\r\nprevious diagnoses, childhood home situation, death of parents, number\r\nof siblings, and any childhood problems. Information on demographic\r\ncharacteristics, such as age, sex, race, employment history, and\r\nphysical condition, is available for each respondent.",
+  "modified": "1992-02-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3739",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "academic ability",
+    "academic achievement",
+    "criminal histories",
+    "criminal justice system",
+    "educational background",
+    "educationally disadvantaged",
+    "family histories",
+    "health status",
+    "inmate programs",
+    "job history",
+    "justice",
+    "learning disabilities",
+    "prison inmates",
+    "test s"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1985-05-24T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08359.v1",
+      "title": "Learning Deficiencies Among Adult Inmates, 1982:  Louisiana, Pennsylvania, and Washington"
+    }
+  ]
+}

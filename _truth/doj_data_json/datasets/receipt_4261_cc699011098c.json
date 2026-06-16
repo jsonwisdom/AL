@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Jurors' Judgments About Forensic Identification Evidence, Arizona, 2011-2014",
+  "description": "This data file describes three different experiments that were designed to examine how differences in the way forensic scientific evidence is communicated affects jurors.\r\nIn each experiment, participants consisted of jury-eligible community members in Maricopa County, Arizona. Groups of participants attended a research session in which they were shown a 35-40-minute videotapes of one of two mock criminal trials (one, a rape case, centers around bitemark evidence, and the other, an attempted murder, centers around fingerprint evidence). Within each trial the content of a forensic scientist's testimony was manipulated. These manipulations involved: 1) whether the technique used by the forensic scientist was \"high tech\" or \"low tech,\" 2) the amount of experience possessed by the forensic scientist, 3) whether the technique used by the forensic scientist had been scientifically validated, 4) whether the forensic scientist conceded that an error was possible, and 5) whether any exculpatory evidence was present at the crime scene.\r\nImmediately following the trial, each individual participants completed a questionnaire in which they gave their individual impressions of the strength of the case. Following that, the group of participant would deliberate and attempt to reach a unanimous verdict. Finally, each individual participant completed an additional questionnaire that again measured perceptions of the case along with individual difference measures and demographics.",
+  "modified": "2021-08-31T10:11:23",
+  "accessLevel": "restricted public",
+  "identifier": "4261",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "courts",
+    "evidence",
+    "juries",
+    "perceptions",
+    "testimony"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2021-08-31T10:00:40",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36169.v1",
+      "title": "Jurors' Judgments About Forensic Identification Evidence, Arizona, 2011-2014"
+    }
+  ]
+}

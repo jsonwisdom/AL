@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Relationships Between Employment and Crime:  A Survey of Brooklyn Residents, 1979-1980",
+  "description": "The study was designed to explore the relationship between\r\nemployment and involvement with the criminal justice system. Males\r\narrested primarily for felony offenses were interviewed at the central\r\nbooking agency in Brooklyn, New York, at the time of their arrests in\r\n1979. A subsample of 152 arrestees was reinterviewed in 1980. The\r\ndata include information on labor market participation, arrests,\r\nperiods of incarceration, and the respondents' demographic\r\ncharacteristics. The labor market information spans a two-year period\r\nprior to those arrests. Arrest history and other criminal justice\r\ndata cover the two years prior to arrest and one year following the\r\narrest. Additional variables supply information on employment and\r\noccupation, social and neighborhood characteristics, and perceptions\r\nof the risk of committing selected crimes.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3084",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrests",
+    "crime",
+    "criminal justice system",
+    "demographic characteristics",
+    "employment",
+    "job history",
+    "labor markets",
+    "neighborhood characteristics",
+    "occupations"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1987-02-26T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08649.v2",
+      "title": "Relationships Between Employment and Crime:  A Survey of Brooklyn Residents, 1979-1980"
+    }
+  ]
+}

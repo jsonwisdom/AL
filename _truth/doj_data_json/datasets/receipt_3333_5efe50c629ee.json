@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Evaluation of the Community Supervision Mapping System for Released Prisoners in Rhode Island, 2008-2010",
+  "description": "This study evaluated the Community Supervision Mapping System (CSMS), an online geospatial tool that enables users to map the formerly incarcerated and others on probation, along with related data such as service provider locations and police districts. Probation officers in the state of Rhode Island were surveyed a few weeks before and 18 months after the implementation of CSMS. A total of 56 probation officers participated in the first wave of the study (pre-implementation survey), and 52 probation officers participated in the second wave (post-implementation survey), yielding an overall sample size of 108 probation officers. Dataset 1 contains the data for both waves of the study. The dataset is comprised of 140 variables. Both waves of the study examined the following categories of variables: the probation officer's professional background, contact with clients, amount of time spent on job duties specific to the profession, contact with other agencies, and computer usage. The second wave added 86 variables to explore officers' experiences with CSMS, which features they used, how it impacted their work, and their expected use of CSMS in the future.",
+  "modified": "2014-09-30T14:28:53",
+  "accessLevel": "restricted public",
+  "identifier": "3333",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "case management",
+    "computer aided mapping",
+    "computer software",
+    "correctional system",
+    "criminal justice programs",
+    "geographic information systems",
+    "mapping",
+    "parole services",
+    "parolees",
+    "prisoner reentry",
+    "probation services",
+    "probationers",
+    "records",
+    "records management"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2014-09-30T14:25:49",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR32004.v1",
+      "title": "Evaluation of the Community Supervision Mapping System for Released Prisoners in Rhode Island, 2008-2010"
+    }
+  ]
+}

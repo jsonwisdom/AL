@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Forensic Laboratory Information System (NFLIS) Public Data Sets",
+  "description": "NFLIS data provides the community with midyear and annual reports highlighting trends in seized drug data submitted to and analyzed in laboratories. The tables report results by frequently reported substances, by geography, and by year. The tables are publicly posted to provide easy access to the most frequently requested NFLIS data. \r\n\r\nNFLIS began in September 1997 as a single data collection effort of drug chemistry analysis results from by local, State, and Federal forensic laboratories (now called NFLIS-Drug). These laboratories analyze substances secured in law enforcement operations across the country. NFLIS-Drug includes voluntary participation from 50 State systems and 111 local or municipal laboratories/laboratory systems. The NFLIS-Drug Snapshots highlight new and emerging drugs, and the public data tables show drug reports by state from 2007 through present. \r\n\r\nThe NFLIS program has since expanded the scope of data collection to include public and private toxicology laboratory data on toxicological findings from antemortem and postmortem drug testing (NFLIS-Tox) and medical examiner and coroner office data regarding deaths in which drugs were identified (NFLIS-MEC). ",
+  "modified": "2023-07-21T00:00:00",
+  "accessLevel": "public",
+  "identifier": "455",
+  "publisher": {
+    "name": "Drug Enforcement Administration",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Drug Enforcement Agency (USDOJ)",
+    "hasEmail": "mailto:opendata@dea.gov"
+  },
+  "keyword": [
+    "forensics",
+    "laboratory",
+    "drugs"
+  ],
+  "bureauCode": [
+    "011:12"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "spatial": "U.S. states",
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "accrualPeriodicity": "R/P1Y",
+  "dataQuality": true,
+  "issued": "2014-01-25T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "landingPage": "https://www.nflis.deadiversion.usdoj.gov/home.xhtml",
+  "theme": [
+    "geospatial"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "description": "Each Public Data Set download file is a zip file with a one-pager overview, five reports in PDF format, and five corresponding data files in csv format.",
+      "downloadURL": "https://www.nflis.deadiversion.usdoj.gov/publicationsRedesign.xhtml",
+      "mediaType": "application/zip",
+      "title": "National Forensic Laboratory Information System (NFLIS) Public Data Sets"
+    }
+  ]
+}

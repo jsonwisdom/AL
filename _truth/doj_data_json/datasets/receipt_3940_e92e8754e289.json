@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Missouri Juvenile Court Records, 1984-1987",
+  "description": "This data collections provides information on each juvenile \r\n case disposed in the state of Missouri during calendar years 1984-1987. \r\n The state of Missouri began collecting and disseminating juvenile court \r\n data in 1975 as the result of legislation by the Division of Youth \r\n Services within the Department of Social Services. Despite this \r\n legislation no binding laws required the courts to submit data to the \r\n Division of Youth Services. In 1980, such a law was passed, and data \r\n were first collected in 1982 and 1983. The system was automated in \r\n 1984, and these data are now available for public use. The data files \r\n provide information on juveniles' progress through the juvenile justice \r\n system from the time of referral to juvenile court to final \r\n disposition. Variables include sex, race, and birth date of the \r\n juveniles, court referral date, major allegation, number of law \r\n violations, number of prior referrals, detention status, jail status, \r\ncourt orders, placement status, and final court action.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3940",
+  "publisher": {
+    "name": "Office of Juvenile Justice and Delinquency Prevention",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "court cases",
+    "courts",
+    "criminal justice system",
+    "disposition (legal)",
+    "juvenile courts",
+    "juvenile offenders"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1990-12-04T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09448.v1",
+      "title": "Missouri Juvenile Court Records, 1984-1987"
+    }
+  ]
+}

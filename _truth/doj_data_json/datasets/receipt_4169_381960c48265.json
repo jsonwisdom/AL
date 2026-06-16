@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Prisoner Statistics, [United States], 1978-2019",
+  "description": "The National Prisoner Statistics (NPS) data collection began in 1926 in response to a congressional mandate to gather information on persons incarcerated in state and federal prisons. Originally under the auspices of the U.S. Census Bureau, the collection moved to the Bureau of Prisons in 1950, and then in 1971 to the National Criminal Justice Information and Statistics Service, the precursor to the Bureau of Justice Statistics (BJS) which was established in 1979. From 1979 to 2013, the Census Bureau was the NPS data collection agent. In 2014, the collection was competitively bid in conjunction with the National Corrections Reporting Program (NCRP), since many of the respondents for NPS and NCRP are the same. The contract was awarded to Abt Associates, Inc.\r\nThe NPS is administered to 51 respondents. Before 2001, the District of Columbia was also a respondent, but responsibility for housing the District of Columbia's sentenced prisoners was transferred to the Federal Bureau of Prisons, and by yearend 2001 the District of Columbia no longer operated a prison system.\r\nThe NPS provides an enumeration of persons in state and federal prisons and collects data on key characteristics of the nation's prison population. NPS has been adapted over time to keep pace with the changing information needs of the public, researchers, and federal, state, and local governments. ",
+  "modified": "2021-12-16T10:57:16",
+  "accessLevel": "public",
+  "identifier": "4169",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "HIV",
+    "correctional system",
+    "demographic characteristics",
+    "offenders",
+    "parole",
+    "prison inmates",
+    "state correctional facilities"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2633",
+  "dataQuality": false,
+  "issued": "2021-12-16T10:57:16",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37986.v1",
+      "title": "National Prisoner Statistics, [United States], 1978-2019"
+    }
+  ]
+}

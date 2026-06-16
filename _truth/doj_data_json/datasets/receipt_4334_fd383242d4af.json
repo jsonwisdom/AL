@@ -1,0 +1,47 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Post-PCAST Court Decisions Assessing the Admissibility of Forensic Science Evidence",
+  "description": "This database gathers federal and state court decisions issued after the release of a 2016 report by the President’s Council of Advisors on Science and Technology titled Forensic Science in Criminal Courts: Ensuring Scientific Validity of Feature-Comparison Methods (the “PCAST Report”). The database seeks to compile decisions addressing the PCAST Report in a manner that is easy for courts, attorneys, forensic scientists, and others to review. It is both sortable by column and searchable. Columns are described below, and the terms used in each column are explained. The database includes cases that have been published in recognized court reporters, cases that have been published by Lexis Nexis, unpublished cases, and oral decisions.",
+  "modified": "2024-10-10T00:00:00",
+  "accessLevel": "public",
+  "identifier": "4334",
+  "publisher": {
+    "name": "Office of Justice Programs",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "Forensic science"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "public",
+  "dataQuality": false,
+  "issued": "2024-10-03T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "landingPage": "https://nij.ojp.gov/program/national-center-forensics/post-pcast-court-decisions-assessing-admissibility-forensic-science-evidence",
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://nij.ojp.gov/program/national-center-forensics/post-pcast-court-decisions-assessing-admissibility-forensic-science-evidence",
+      "description": "This database gathers federal and state court decisions issued after the release of a 2016 report by the President’s Council of Advisors on Science and Technology.",
+      "title": "Post-PCAST Court Decisions Assessing the Admissibility of Forensic Science Evidence"
+    }
+  ]
+}

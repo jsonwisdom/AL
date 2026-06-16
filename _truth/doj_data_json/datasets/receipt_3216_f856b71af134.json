@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Nature and Sanctioning of White Collar Crime, 1976-1978:  Federal Judicial Districts  ",
+  "description": "This data collection, one of only a small number available\r\n on federal white collar crimes, focuses on white collar criminals and\r\n the nature of their offenses. The data contain information on the\r\n source of conviction, offense category, number of counts in the\r\n indictment, maximum prison time and maximum fine associated with the\r\n offense, the duration and geographic spread of the offense, number of\r\n participants, number of persons arrested, number of businesses\r\n indicted, and spouse's employment. The data are limited to crimes\r\n committed solely by convicted individuals and do not include\r\n defendants that are organizations or groups. The defendant's\r\n socioeconomic status is measured using the Duncan Index. Further\r\n information provided about the defendant includes age, sex, marital\r\n status, past criminal history, neighborhood environment, education,\r\nand employment history.",
+  "modified": "2000-12-08T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "3216",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "convictions (law)",
+    "criminal histories",
+    "federal courts",
+    "offenders",
+    "offenses",
+    "sentencing",
+    "white collar crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "1989-01-10T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08989.v2",
+      "title": "Nature and Sanctioning of White Collar Crime, 1976-1978:  Federal Judicial Districts  "
+    }
+  ]
+}

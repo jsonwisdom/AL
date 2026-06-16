@@ -1,0 +1,58 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Improving Prison Classification Procedures in Vermont:  Applying an Interaction Model, 1983-1985  ",
+  "description": "The purpose of this data collection was to develop and test\r\n an interactive model for classifying prisoners. The model includes\r\n person variables, environmental or situation variables, and\r\n prison-environmental interaction variables in order to study the\r\n interactions between individuals and their environments and to predict\r\n offender behaviors such as escape, misconduct, and violence. The model\r\n was designed to enhance the predictive validity of the National\r\n Institute of Corrections' classification system that was being used in\r\n Vermont prisons. Included are scores from the National Institute of\r\n Corrections' custody classification and reclassification instruments,\r\n scores from a needs assessment, sentencing information, and\r\ncharacteristics of the prison in which the inmate was housed.",
+  "modified": "2000-03-21T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3095",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "United States",
+    "Vermont",
+    "correctional facilities",
+    "criminal justice system",
+    "inmates",
+    "living conditions",
+    "sentencing",
+    "socioeconomic indicators",
+    "violence"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1988-10-25T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08933.v1",
+      "title": "Improving Prison Classification Procedures in Vermont:  Applying an Interaction Model, 1983-1985  "
+    }
+  ]
+}

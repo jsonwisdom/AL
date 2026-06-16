@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "State Court Statistics, 2008",
+  "description": "This data collection provides comparable measures of state\r\nappellate and trial court caseloads by type of case for the 50 states,\r\nthe District of Columbia, and Puerto Rico. Court caseloads are\r\ntabulated according to generic reporting categories developed by the\r\nCourt Statistics Project (CSP) Committee of the Conference of State Court\r\nAdministrators. These categories describe differences in the unit of\r\ncount and the point of count when compiling each court's caseload.\r\nMajor areas of investigation include (1) case filings in state\r\nappellate and trial courts, (2) case processing and dispositions in\r\nstate appellate and trial courts, and (3) appellate opinions. The trial caseload consists of civil, domestic relations, criminal, juvenile, and traffic violation cases.  The appellate caseload consists of appeal by right, appeal by permission, death penalty, and original proceeding/other appellate matter cases.",
+  "modified": "2012-05-22T18:35:45",
+  "accessLevel": "public",
+  "identifier": "2377",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "appellate courts",
+    "case processing",
+    "caseloads",
+    "court cases",
+    "disposition (legal)",
+    "legal appeals",
+    "state courts",
+    "statistical data",
+    "trial courts"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2179",
+  "dataQuality": false,
+  "issued": "2012-05-22T18:35:45",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR30481.v1",
+      "title": "State Court Statistics, 2008"
+    }
+  ]
+}

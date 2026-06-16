@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Assessing the Link Between Foreclosure and Crime Rates: A Multi-level Analysis of Neighborhoods Across 29 Large United States Cities, 2007-2009",
+  "description": "\r\nThese data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\n\r\n\r\nThe study integrated neighborhood-level data on robbery and burglary gathered from local police agencies across the United States, foreclosure data from RealtyTrac (a real estate information company), and a wide variety of social, economic, and demographic control variables from multiple sources. Using census tracts to approximate neighborhoods, the study regressed 2009 neighborhood robbery and burglary rates on foreclosure rates measured for 2007-2008 (a period during which foreclosure spiked dramatically in the nation), while accounting for 2007 robbery and burglary rates and other control variables that captured differences in social, economic, and demographic context across American neighborhoods and cities for this period. The analysis was based on more than 7,200 census tracts in over 60 large cities spread across 29 states. Core research questions were addressed with a series of multivariate multilevel and single-level regression models that accounted for the skewed nature of neighborhood crime patterns and the well-documented spatial dependence of crime.\r\n\r\n\r\nThe study contains one data file with 8,198 cases and 99 variables.\r\n",
+  "modified": "2016-09-29T10:15:15",
+  "accessLevel": "restricted public",
+  "identifier": "1188",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "burglary",
+    "census data",
+    "census tract level",
+    "crime",
+    "foreclosure",
+    "neighborhoods",
+    "robbery"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2016-09-29T10:04:25",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR34570.v1",
+      "title": "Assessing the Link Between Foreclosure and Crime Rates: A Multi-level Analysis of Neighborhoods Across 29 Large United States Cities, 2007-2009"
+    }
+  ]
+}

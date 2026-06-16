@@ -1,0 +1,69 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Uniform Crime Reports, 1966-1976:  Data Aggregated by Standard Metropolitan Statistical Areas ",
+  "description": "This data collection contains a revised SMSA (Standard\r\n Metropolitan Statistical Area) aggregate version of the FBI's\r\n Uniform Crime Reports (UCR) statistics gathered from 1966-1976, in\r\n which original UCR agency records are combined to produce several\r\n types of crime rates, by SMSA, for eight crimes. The data were\r\n prepared by the Hoover Institution for Economic Studies of the\r\n Criminal Justice System, at Stanford University. The data in the file\r\n are an aggregation of all relevant law enforcement reporting agencies\r\n into 291 SMSAs, and corresponding approximate aggregations of crime\r\n rates and dispositions. Each record contains crime rates for one SMSA\r\n in one specific year, with data including annual statistics of eight\r\n index crimes, i.e., murder, manslaughter, rape, robbery, assault,\r\n burglary, larceny, and motor vehicle theft. Calculations include\r\n offense-based clearance rates (the number of clearances of juvenile\r\n clearances per reported offense), clearance-based rates (the number of\r\n persons charged per offense cleared by arrest), and charge-based rates\r\n (the number of persons whose cases were disposed in a particular manner\r\n per person charged). A related study is UNIFORM CRIME REPORTS,\r\n1966-1976 (ICPSR 7676).",
+  "modified": "1992-02-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2529",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "arrests",
+    "assault",
+    "auto theft",
+    "burglary",
+    "clearance rates",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "criminal justice system",
+    "disposition (legal)",
+    "juvenile crime",
+    "larceny",
+    "law enforcement",
+    "manslaughter",
+    "murder",
+    "offenses",
+    "rape",
+    "robbery"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2167",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR07743.v1",
+      "title": "Uniform Crime Reports, 1966-1976:  Data Aggregated by Standard Metropolitan Statistical Areas "
+    }
+  ]
+}

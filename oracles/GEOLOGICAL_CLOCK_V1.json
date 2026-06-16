@@ -1,0 +1,90 @@
+{
+  "spec_version": "v1",
+  "artifact": "GEOLOGICAL_CLOCK_V1",
+  "purpose": "Passive pull-only observer log for divergence markets, recording substrate state and reaction waves without becoming an oracle or command surface.",
+  "last_verified": "2026-05-06",
+  "verifier": "jsonwisdom",
+  "observer_model": {
+    "mode": "pull_only",
+    "push_inputs_forbidden": true,
+    "market_writes_forbidden": true,
+    "sovereign_command_surface": false,
+    "meaning": "The Clock records observed strata; it never tells markets or sovereigns what to do."
+  },
+  "tracks": {
+    "substrate": {
+      "meaning": "Pre-reaction market or oracle state pulled from public endpoints or proofs.",
+      "signal_type": "substrate"
+    },
+    "reaction": {
+      "meaning": "Observed behavior after substrate degradation becomes public or priced.",
+      "signal_type": "reaction"
+    }
+  },
+  "entry_schema": {
+    "entry_id": "geo_v1_{unix_ms}_{observer_consensus_hash}",
+    "timestamp_unix_ms": "observer_pull_time",
+    "commitment_pre": "hash_of_data_posted_before_reveal",
+    "sources": [
+      {
+        "market_id": "divergence_market_id",
+        "state_proof": "proof_or_root",
+        "methodology_hash": "sha256_of_entropy_or_correlation_formula",
+        "fallback_status": "ACTIVE_OR_INACTIVE",
+        "entropy_delta": "number_or_null",
+        "verified_at_unix_ms": "verification_time",
+        "signal_type": "substrate_or_reaction"
+      }
+    ],
+    "aggregated": {
+      "correlated_index": "number_or_null",
+      "regime": "normal_or_high_correlation_or_extreme",
+      "num_markets": "integer",
+      "transition_types": [
+        "fallback_entry",
+        "corr_shift",
+        "volume_decay",
+        "liquidity_exit"
+      ]
+    },
+    "prev_hash": "previous_clock_entry_hash",
+    "observer_signatures": [
+      "threshold_or_bls_signature"
+    ]
+  },
+  "commit_reveal": {
+    "commit_before_reveal_required": true,
+    "randomized_reveal_delay": true,
+    "early_leakage_is_observer_fault": true
+  },
+  "observer_security": {
+    "redundant_observers_required": true,
+    "stake_required": true,
+    "slashing_condition": "provable deviation from pull schedule or bad data pull",
+    "randomized_pull_timing": "public_seed_vdf_or_randao",
+    "public_replay_required": true
+  },
+  "data_availability": {
+    "main_log_stores_roots_and_summaries": true,
+    "raw_high_resolution_data_externalized": true,
+    "raw_data_references_allowed": [
+      "ipfs_cid",
+      "arweave_tx",
+      "content_addressed_archive_uri"
+    ]
+  },
+  "forbidden_behaviors": [
+    "market_push_to_clock",
+    "clock_as_oracle",
+    "clock_as_governance_command",
+    "reaction_signal_written_as_substrate",
+    "retroactive_entry_mutation"
+  ],
+  "invariants": [
+    "The Clock observes; it does not command.",
+    "Substrate and reaction are separate tracks.",
+    "Markets may lie publicly, but cannot write privately to the Clock.",
+    "The Clock records entropy as observed history, not governance authority.",
+    "Less certainty narrows interpretation; it does not expand authority."
+  ]
+}

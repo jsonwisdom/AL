@@ -1,0 +1,45 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "www.unicor.gov",
+  "description": "The FPI internet website; contains public-facing program information and many business applications integrated with back-end SAP systems.",
+  "modified": "2013-11-25T00:00:00",
+  "accessLevel": "public",
+  "identifier": "548",
+  "publisher": {
+    "name": "FPI-UNICOR",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 3,
+      "acronym": "BOP",
+      "name": "Bureau of Prisons",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "David Marshall",
+    "hasEmail": "mailto:david.marshall@usdoj.gov"
+  },
+  "keyword": [
+    "internet",
+    "ecommerce",
+    "online store",
+    "order",
+    "product information"
+  ],
+  "bureauCode": [
+    "011:20"
+  ],
+  "programCode": [
+    "011:044"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "2013-11-25T00:00:00",
+  "distribution": []
+}

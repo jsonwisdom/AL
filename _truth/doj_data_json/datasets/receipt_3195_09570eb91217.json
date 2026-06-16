@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Longitudinal Study of Violent Criminal Behavior in the United States, 1970-1984  ",
+  "description": "The primary objective of this project was to explore the\r\nfamilial, physical, psychological, social, and cultural antecedents\r\nand correlates of violent criminal offending. This research used an\r\nextensive longitudinal database collected on 1,345 young adult male\r\noffenders admitted to the Federal Correctional Institution (FCI) in\r\nTallahassee, Florida, from November 3, 1970, to November 2, 1972.\r\nUsing FBI arrest records (\"rap sheets\"), each inmate was classified\r\non the basis of the National Crime Information Center Uniform Offense\r\nCodes into one of four distinct categories: (1) \"angry violent,\" in\r\nwhich the apparent goal was to injure the victim, (2) \"instrumentally\r\nviolent,\" in which the aggressive behavior was a means to an end (as\r\nin a robbery), (3) \"potentially violent,\" as evidenced by making\r\nthreats or carrying weapons but in which the offender was not accused\r\nof any violent offenses, and (4) \"nonviolent,\" in which the offender\r\nhad not been charged with violent criminal behavior. Violent offenders\r\nwere also subdivided into those who had been repetitively violent and\r\nthose who had been charged with just one violent offense. As part of\r\nthe classification process, each inmate was administered an extensive\r\nbattery of tests by the research project staff. The two primary\r\npersonality assessment instruments utilized were the Minnesota\r\nMultiphasic Personality Inventory (MMPI) and the California\r\nPsychological Inventory (CPI). Each inmate's caseworker filled out a\r\nseries of of standard Bureau of Prisons forms recording the results of\r\nthe medical, educational, and psychological evaluations, as well as\r\nsalient aspects of the case and criminal history. The researchers also\r\nobtained copies of each offender's Presentence Investigation Report\r\n(PSI) that had been prepared by the federal probation officer, and\r\nthen devised a series of scales to quantify the PSI data. In addition,\r\nan hour-long structured intake interview was administered to each\r\ninmate by his team psychologist. Global scales were constructed from\r\nthese intake interviews. After each interview, the psychologists\r\nperformed an evaluative Q-sort. Nine scales were later constructed\r\nbased on these Q-sorts. Also, every dormitory officer and every work\r\nsupervisor completed scales assessing each subject's interpersonal\r\nadjustment and work performance at 90-day intervals. Immediately prior\r\nto release, as many inmates as possible were reinterviewed and\r\nretested on the MMPI and the CPI. Follow-ups using FBI rap sheets were\r\nconducted in 1976 and 1984. Variables obtained from the Bureau of\r\nPrisons forms include age upon entry, race, marital status, age at\r\nfirst arrest, number of prior adult convictions, commitment\r\noffense(s), highest school grade completed, drug dependency, and\r\nalcoholism. Scales developed from the PSIs provide data on father,\r\nmother, and siblings, family incohesiveness, adequacy of childhood\r\ndwelling, social deviance of family, school problems, employment\r\nproblems, achievement motivation, problems with interpersonal\r\nrelations, authority conflicts, childhood and adolescent or adult\r\nmaladjustment and deviance, poor physical health, juvenile conviction\r\nrecord, adult arrest and conviction record, violence of offense, group\r\ninfluence on illegal behavior, and prior prison adjustment. The intake\r\ninterview inquired about the developmental family history and the\r\nchild's development, the inmate's marriage, educational, and work\r\nhistory and attitudes, attitudes toward sex, military service and\r\nattitudes, self-reported use of alcohol and other substances,\r\nreligious preferences and practices, and problems during any previous\r\nconfinements. Scales based on the psychologists' Q-sorts evaluated\r\naggression, hostility avoidance, authority conflict, sociability,\r\nsocial withdrawal, social/emotional constriction, passivity,\r\ndominance, and adaptation to the environment. Data are also provided\r\non global dorm adjustment and the number of shots, cell house days,\r\nsick calls, and infractions for the offenders' first and second 90-day\r\nperiods at the FCI.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3195",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "arrest records",
+    "criminal histories",
+    "educational assessment",
+    "family histories",
+    "health status",
+    "inmates",
+    "nonviolent crime",
+    "offender classification",
+    "offenders",
+    "personality assessment",
+    "psychological evaluation",
+    "psychological wellbeing",
+    "violent crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1996-10-08T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06103.v1",
+      "title": "Longitudinal Study of Violent Criminal Behavior in the United States, 1970-1984  "
+    }
+  ]
+}

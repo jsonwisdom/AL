@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Body Worn Camera Resources",
+  "description": "Body Worn Camera Resources",
+  "modified": "2021-11-22T00:00:00",
+  "accessLevel": "public",
+  "identifier": "4093",
+  "publisher": {
+    "name": "Office of Justice Programs",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 10,
+      "acronym": "DOJ",
+      "name": "Department of Justice"
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "body worn camera"
+  ],
+  "bureauCode": [
+    "011:00"
+  ],
+  "programCode": [
+    "011:000"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "Public ",
+  "dataQuality": false,
+  "issued": "2020-08-07T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "landingPage": "https://bja.ojp.gov/program/bwc/resources-faqs/resources",
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://bja.ojp.gov/program/bwc/resources-faqs/resources",
+      "mediaType": "text/html",
+      "title": "Body Worn Camera Resources"
+    },
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://api.ojp.gov/ojpdataset/v1/ak2j-ub9q.json",
+      "format": "Api",
+      "mediaType": "application/json",
+      "title": "Body Worn Camera Resources - Api "
+    }
+  ]
+}

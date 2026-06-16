@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Criminal Justice Response to Victim Harm in the United States, 1981",
+  "description": "This data collection examines the ways in which victim harm \r\n affects decisions regarding arrest, prosecution, and sentencing, and \r\n the impact of these decisions on the victim's perception of the \r\n criminal justice system. Five types of offenses were studied: homicide, \r\n sexual assault, burglary, robbery, and aggravated assault. The victim \r\n file contains information on personal characteristics, results of \r\n victimization, involvement in case processing, use of victim assistance \r\n service, satisfaction with case outcomes, and opinions about the court \r\n system. The police file and the prosecutor file variables cover \r\n personal background, screening decisions on scenario cases, \r\n communication with victims, and opinions about the role of victims in \r\n the criminal justice system. The prosecutor file also includes \r\n sentencing recommendations on the scenarios. Data in the judge file \r\n cover personal background, sentencing recommendations on the scenario \r\n cases, communications with victims, sources of information regarding \r\n victim harm, and opinions about the role of victims in the criminal \r\njustice system.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2805",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "aggravated assault",
+    "arrests",
+    "burglary",
+    "case processing",
+    "criminal justice system",
+    "homicide",
+    "perceptions",
+    "prosecution",
+    "robbery",
+    "sentencing",
+    "sexual assault",
+    "victim services",
+    "victimization",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1989-09-26T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08249.v1",
+      "title": "Criminal Justice Response to Victim Harm in the United States, 1981"
+    }
+  ]
+}

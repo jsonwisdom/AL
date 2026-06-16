@@ -1,0 +1,55 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Decision Making in Sexual Assault Cases: Replication Research on Sexual Violence Case Attrition in the United States, 2006-2012",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor.  The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers.  Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThe study contains data on sexual assault cases reported to the police for the years 2006-2012, collected from six police agencies and also their corresponding public prosecutor's offices across the United States. The study analyzed the attrition of sexual assault cases from the criminal justice system.\r\nThis study includes two SPSS data files:\r\n\r\nCourt-Form-2008-2010-Sample-Revised-Nov-2018.sav (801 variables, 417 cases)\r\nPolice-Form-2008-2010-Sample-Revised-Nov-2018.sav (1,276 variables, 3,269 cases)\r\n\r\nThis study also includes two SPSS syntax files:\r\n\r\nICPSR-Court-Form-Variable-Construction-2008-2010.sps\r\nICPSR-Constructed-Variables-Syntax.sps\r\n\r\nThe study also contains qualitative data which are not available as part of this data collection at this time.  The qualitative data includes interviews, field observations, and focus groups which were conducted with key personnel to examine organizational and cultural dimensions of handling sexual assault cases in order to understand how these factors influence case outcomes.  ",
+  "modified": "2019-04-29T12:36:48",
+  "accessLevel": "restricted public",
+  "identifier": "2955",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "case attrition",
+    "case processing",
+    "criminal justice system",
+    "rape statistics",
+    "sexual assault"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2019-04-29T12:35:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37181.v1",
+      "title": "Decision Making in Sexual Assault Cases: Replication Research on Sexual Violence Case Attrition in the United States, 2006-2012"
+    }
+  ]
+}

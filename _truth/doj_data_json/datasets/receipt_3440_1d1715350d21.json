@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Evaluation of Adult Urine Testing/Drug Use Surveillance Project in Washington, DC, 1984-1986",
+  "description": "These data were gathered to assess whether drug users are\r\ngreater risks than nonusers for rearrest or failure to appear for\r\nscheduled court appearances while on pretrial release. The data also\r\nevaluate the relative effectiveness of periodic surveillance through\r\nurinalysis, traditional narcotic treatment, or neither in reducing\r\nrearrest and failure to appear during the pretrial period. The\r\ncollection provides information on arrestees who both tested positive\r\nfor drugs and were released on recognizance as well as those arrestees\r\nwho tested negative but were not released on recognizance. Drugs\r\ntested for include heroin, cocaine, PCP, methadone, and\r\namphetamines. Arrestees who were released were randomly assigned to\r\none of three groups: weekly urine testing, referral to drug treatment,\r\nor a control condition. The data offer information on the offender's\r\nbackground, family and employment status, probation and parole status,\r\npending charges, and prior convictions. Other variables include date\r\nof arrest, charge, initial release, decision, date of disposition,\r\ntype of final disposition, number of subsequent arrests before trial,\r\nand number of bench warrants issued. Results of urine tests at arrest\r\nare available for about 65 percent of the total sample. For those in\r\nthe experimental surveillance group, summary urine test results from\r\nthe periodic testing program are available. There is no measure of\r\ntreatment for the drug treatment or control groups.",
+  "modified": "1993-05-13T00:00:00",
+  "accessLevel": "public",
+  "identifier": "3440",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "drug testing",
+    "drug treatment",
+    "drug use",
+    "pretrial procedures",
+    "recidivism",
+    "substance abuse",
+    "urinalysis"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1993-05-13T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09947.v1",
+      "title": "Evaluation of Adult Urine Testing/Drug Use Surveillance Project in Washington, DC, 1984-1986"
+    }
+  ]
+}

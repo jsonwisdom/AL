@@ -1,0 +1,37 @@
+{
+  "run_id": "run_002",
+  "timestamp": "2026-05-09T03:10:00Z",
+  "operator": "human_coordinator",
+  "infrastructure": "model_based",
+  "tasks_assigned": [
+    "restore_viewport_gauntlet_scaffold"
+  ],
+  "tasks_completed": [
+    "restore_viewport_gauntlet_scaffold"
+  ],
+  "tasks_failed": [],
+  "constraints_active": [
+    "mobile_safari_390px",
+    "intermittent_network"
+  ],
+  "overall_status": "completed",
+  "metrics": {
+    "completion_rate": 1.0,
+    "intervention_count": 0,
+    "recovery_count": 1,
+    "unintended_edits": 0,
+    "state_loss_incidents": 0,
+    "hallucinated_commands_executed": 0,
+    "elapsed_time_seconds": 0,
+    "token_refreshes": 1
+  },
+  "verification": {
+    "tests_passed": true,
+    "commit_hash": "73a21838031cfd2dfc320030cf0c66e4ad34e1de",
+    "pr_url": "https://github.com/jsonwisdom/AL/pull/144",
+    "logs_attached": true
+  },
+  "logs_location": "viewport-gauntlet/logs/",
+  "diff_location": "viewport-gauntlet/results/run_002.diff",
+  "notes": "Initial evidence record for scaffold restoration and schema alignment merge."
+}

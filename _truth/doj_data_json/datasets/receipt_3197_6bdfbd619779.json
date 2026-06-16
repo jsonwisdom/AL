@@ -1,0 +1,67 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Drug Use Forecasting in 24 Cities in the United States, 1987-1997",
+  "description": "The Drug Use Forecasting (DUF) Program measures levels of\r\nand trends in drug use among persons arrested and booked in the United\r\nStates. The data address the following topics: (1) types of drugs used\r\nby arrestees (based on self-reports and urinalysis), (2) self-reported\r\ndependency on drugs, (3) self-reported need for alcohol/drug\r\ntreatment, (4) the relationship between drug use and certain types of\r\noffenses, and (5) the relationship between self-reported indicators of\r\ndrug use and indicators of drug use based on urinalysis. Participation\r\nin the project is voluntary, and all information collected from the\r\narrestees is anonymous and confidential. The data include the\r\narrestee's age, race, gender, educational attainment, marital status,\r\nand the charge at the time of booking. The recently modified DUF\r\ninterview instrument (used for part of the 1995 data and all of the\r\n1996 and 1997 data) also collected information about the arrestee's\r\nuse of 15 drugs, including recent and past use (e.g., 3-day and 30-day\r\ndrug use) of each of these drugs, age at first use, and whether the\r\narrestee had ever been dependent on drugs. In the original DUF\r\ninterview instrument (used for the 1987 to 1994 data and part of the\r\n1995 data), the information collected was the same as above except\r\nthat the use of 22 drugs was queried, and the age at which the\r\narrestee first became dependent on the drug was included. Arrestees\r\nalso were questioned in the original instrument about their history of\r\nintravenous drug use, whether the consideration of AIDS influenced\r\nwhether they shared needles, history of drug and alcohol treatment,\r\ntheir past and current drug treatment needs, and how many persons they\r\nhad sex with during the past 12 months. Finally, arrestees were asked\r\nto provide a urine specimen, which was screened for the presence of\r\nten drugs, including marijuana, opiates, cocaine, PCP, methadone,\r\nbenzodiazepines (Valium), methaqualone, propoxyphene (Darvon),\r\nbarbiturates, and amphetamines (positive test results for amphetamines\r\nwere confirmed by gas chromatography). The Gun Addendum Data (Parts\r\n27, 35, and 37) contain variables on topics such as arrestees'\r\nencounters with guns, whether they agreed or disagreed with statements\r\nabout guns, gun possession, how they obtained handgun(s), whether they\r\nwere armed with a gun at their arrest or during crimes, and if they\r\nhad ever used a gun against another person. The Heroin Addendum Data,\r\n1995 (Part 29) contains information that was formerly covered in the\r\nmain annual file in 1992-1994, but in 1995 was revised and prepared as\r\na separate dataset.",
+  "modified": "1998-07-15T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "3197",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "ADAM/DUF Program",
+    "alcohol abuse",
+    "crime patterns",
+    "criminal histories",
+    "demographic characteristics",
+    "drug dependence",
+    "drug law offenses",
+    "drug offenders",
+    "drug related crimes",
+    "drug testing",
+    "drug use",
+    "gun use",
+    "handguns",
+    "recidivism prediction",
+    "substance abuse",
+    "t"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "3023",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "1991-03-05T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09477.v2",
+      "title": "Drug Use Forecasting in 24 Cities in the United States, 1987-1997"
+    }
+  ]
+}

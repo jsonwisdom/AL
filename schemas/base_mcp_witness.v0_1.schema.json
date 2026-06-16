@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.dev/schemas/base_mcp_witness.v0_1.schema.json",
+  "title": "Base MCP Witness V0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "witness_type",
+    "version",
+    "timestamp_utc",
+    "mcp_audit_root",
+    "receipt_count",
+    "manifest_uri",
+    "chain",
+    "network",
+    "semantic_inference",
+    "authority",
+    "attestation_uid"
+  ],
+  "properties": {
+    "witness_type": { "const": "BASE_MCP_WITNESS" },
+    "version": { "const": "0.1" },
+    "timestamp_utc": { "type": "string", "format": "date-time" },
+    "mcp_audit_root": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "receipt_count": { "type": "integer", "minimum": 1 },
+    "manifest_uri": { "type": "string", "minLength": 1 },
+    "chain": { "const": "Base" },
+    "network": { "enum": ["base-mainnet", "base-sepolia"] },
+    "semantic_inference": { "const": false },
+    "authority": { "const": false },
+    "attestation_uid": {
+      "type": ["string", "null"],
+      "pattern": "^0x[a-fA-F0-9]{64}$"
+    }
+  }
+}

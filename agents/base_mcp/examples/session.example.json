@@ -1,0 +1,28 @@
+{
+  "session_id": "sess-2026-05-27-001",
+  "started_at": "2026-05-27T14:00:00Z",
+  "ended_at": "2026-05-27T14:45:00Z",
+  "agent_identity": "base_mcp_agent/session-abc123",
+  "session_context": {
+    "thread_id": "thread_42",
+    "deployment": "staging",
+    "user_initiated": true
+  },
+  "receipt_chain": [
+    "550e8400-e29b-41d4-a716-446655440001",
+    "550e8400-e29b-41d4-a716-446655440002",
+    "550e8400-e29b-41d4-a716-446655440000"
+  ],
+  "session_status": "terminated",
+  "termination_reason": "user_initiated",
+  "policy_bundle_id": "policy-2026-05-27-base-mcp-v1",
+  "authority_limits_used": {
+    "total_spend_usd": 150,
+    "action_count": 3
+  },
+  "checkpoint": {
+    "last_receipt_id": "550e8400-e29b-41d4-a716-446655440000",
+    "state_hash": "0x7f83b1657ff1fc53b92dc18148a1d65dfc2d4b1fa3d677284addd200126d9069",
+    "checkpointed_at": "2026-05-27T14:45:00Z"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Commercial Victimization Surveys, 1972-1975 [United States]: Cities Sample",
+  "description": "The National Crime Surveys, of which these Commercial\r\nVictimization Surveys are a part, were conducted to obtain current and\r\nreliable measures of serious crime in the United States. The\r\nCommercial Victimization Surveys are restricted to coverage of\r\nburglary and robbery incidents. They include all types of commercial\r\nestablishments as well as political, cultural, and religious\r\norganizations. The survey includes a series of questions about the\r\nbusiness, e.g., type and size, form of ownership, insurance, security,\r\nand break-in and robbery characteristics. Time and place, weapon,\r\ninjury, entry evidence, offender characteristics, and stolen property\r\ndata were collected for each of the incidents. Data on both victimized\r\nand nonvictimized establishments in 26 different cities were collected\r\nduring 1972, 1973, and 1974. In the 1975 survey, data from the 13\r\ncities surveyed during 1972 and 1973 were collected again.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "98",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "armed robbery",
+    "burglary",
+    "businesses",
+    "cities",
+    "crime rates",
+    "larceny",
+    "national crime statistics (USA)",
+    "offenders",
+    "organizations",
+    "robbery",
+    "security systems",
+    "urban crime",
+    "victimization"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08002.v2",
+      "title": "Commercial Victimization Surveys, 1972-1975 [United States]: Cities Sample"
+    }
+  ]
+}

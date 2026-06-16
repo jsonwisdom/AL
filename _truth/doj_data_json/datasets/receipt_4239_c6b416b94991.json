@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Multi-State Recidivism Study Using Static-99R and Static-2002 Risk Scores and Tier Guidelines From the Adam Walsh Act, Florida, Minnesota, New Jersey, South Carolina, 1990-2004",
+  "description": "This study seeks to examine important components of our nation's sex offender tracking and monitoring systems, with a focus on risk assessment and sexual\r\nrecidivism (measured by re-arrest). Data were collected from 1,789 adult sex offenders in the following states.\r\n\r\nFlorida: 500 cases\r\nMinnesota: 500 cases\r\nNew Jersey: 291 cases\r\nSouth Carolina: 498 cases\r\n\r\nThe data file contains another 551 cases from the state of Massachusetts. However, due to how and when those cases were identified they were not included in the Principal Investigator's focus and analysis. There are also another 151 cases where a study participant's state is missing. Total there are 2,491 cases and 1,947 variables. ",
+  "modified": "2022-05-26T11:11:18",
+  "accessLevel": "restricted public",
+  "identifier": "4239",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "Adam Walsh Act",
+    "behavior problems",
+    "criminal justice system",
+    "criminality prediction",
+    "delinquent behavior",
+    "juveniles",
+    "recidivism",
+    "rehabilitation",
+    "risk assessment",
+    "sentencing",
+    "sex offenders",
+    "victimization"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2022-05-26T11:04:11",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR34628.v1",
+      "title": "Multi-State Recidivism Study Using Static-99R and Static-2002 Risk Scores and Tier Guidelines From the Adam Walsh Act, Florida, Minnesota, New Jersey, South Carolina, 1990-2004"
+    }
+  ]
+}

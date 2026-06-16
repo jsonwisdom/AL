@@ -1,0 +1,67 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Prosecutors Survey, 1992",
+  "description": "This survey queried chief prosecuting attorneys of state\r\nprosecutorial districts (district attorneys, commonwealth attorneys,\r\netc.) about the prosecution of felony cases within their jurisdictions\r\nduring 1991 and 1992. Some items included in an earlier survey,\r\nNATIONAL PROSECUTORS SURVEY, 1990 (ICPSR 9579), were repeated,\r\ncovering topics such as new methods of prosecution, new kinds of\r\nevidence, use of criminal history data, general workload statistics,\r\nfunding, plea negotiations, sentencing of intermediate sanctions,\r\nrelationships with victims and other persons aiding prosecution,\r\ncriminal defense of indigents, and the use of lower courts and grand\r\njuries. New areas of concern in 1992 included staffing, turnover,\r\nrecruitment, new kinds of felonies, problem cases, scientific\r\nevidence, computerization, staff training, drug testing, and the\r\npersonal risks associated with the role of prosecutor. Demographic\r\ndata include sex, race, and ethnic composition of current staff\r\nmembers.",
+  "modified": "2005-11-04T00:00:00",
+  "accessLevel": "restricted public",
+  "identifier": "1102",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "attorneys",
+    "case processing",
+    "district attorneys",
+    "evidence",
+    "felony courts",
+    "felony offenses",
+    "personel",
+    "plea negotiations",
+    "policies and procedures",
+    "prosecuting attorneys",
+    "prosecution",
+    "sentencing",
+    "state courts",
+    "training",
+    "trial procedures",
+    "victim services"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2181",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "1994-05-20T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06273.v1",
+      "title": "National Prosecutors Survey, 1992"
+    }
+  ]
+}

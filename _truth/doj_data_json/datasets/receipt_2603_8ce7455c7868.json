@@ -1,0 +1,72 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Uniform Crime Reports:  County Level Detailed Arrest and Offense Data, 1985 and 1987",
+  "description": "The files in this collection contain counts of arrests and\r\noffenses in the United States for Part I and Part II offenses: murder,\r\nrape, robbery, assault, burglary, larceny, auto theft, arson, forgery,\r\nfraud, embezzlement, vandalism, weapons violations, sex offenses, drug\r\nand alcohol abuse violations, gambling, vagrancy, curfew, and\r\nrunaways. County populations are also reported.",
+  "modified": "2006-01-12T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2603",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "arrests",
+    "arson",
+    "assault",
+    "auto theft",
+    "burglary",
+    "counties",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "drug abuse",
+    "fraud",
+    "illegal gambling",
+    "larceny",
+    "law enforcement",
+    "murder",
+    "offenses",
+    "rape",
+    "robbery",
+    "sex offenses",
+    "vandalism",
+    "weapons offenses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2167",
+  "dataQuality": false,
+  "issued": "1990-05-01T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR09252.v1",
+      "title": "Uniform Crime Reports:  County Level Detailed Arrest and Offense Data, 1985 and 1987"
+    }
+  ]
+}

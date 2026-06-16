@@ -1,0 +1,36 @@
+{
+  "schema_id": "AL_CANONICALIZATION_ALGORITHM_SPEC_V1",
+  "status": "PRESENT",
+  "algorithm": "JCS_COMPATIBLE_JSON_CANONICALIZATION",
+  "encoding": "UTF-8",
+  "input_type": "JSON object",
+  "rules": {
+    "parse_json": "Input must parse as valid JSON.",
+    "object_keys": "Sort object keys lexicographically by Unicode code point.",
+    "arrays": "Preserve array order exactly.",
+    "whitespace": "Emit no insignificant whitespace.",
+    "strings": "Use JSON string escaping only.",
+    "numbers": "Use JSON-compatible finite numbers only; reject NaN and Infinity.",
+    "booleans": "Emit true or false.",
+    "null": "Emit null.",
+    "encoding_output": "Hash bytes are the UTF-8 bytes of the canonical JSON string."
+  },
+  "rejection_rules": [
+    "invalid_json",
+    "duplicate_keys",
+    "non_finite_numbers",
+    "undefined_values",
+    "functions",
+    "comments",
+    "trailing_commas"
+  ],
+  "hash_input_boundary": "Only canonical UTF-8 bytes may enter digest calculation.",
+  "promotion_effect": "Satisfies canonicalization_algorithm_spec only.",
+  "remaining_requirements": [
+    "receipt_schema_target",
+    "hash_algorithm_specification",
+    "replay_input_specification",
+    "deterministic_execution_contract",
+    "baseline_commit_anchor"
+  ]
+}

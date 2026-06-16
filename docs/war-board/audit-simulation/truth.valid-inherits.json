@@ -1,0 +1,28 @@
+{
+  "truth_boundary": {
+    "public_facing": true,
+    "repo_canonical": true,
+    "upper_level_parent_reference": true,
+    "parent_eas_attestation_linked": true,
+    "family_node_navigation_enabled": true,
+    "dedicated_war_board_schema_registered": false,
+    "dedicated_war_board_schema_verified": false,
+    "meta_certified": false
+  },
+  "lineage_tree": {
+    "parent": {
+      "label": "Upper-Level Parent EAS Reference",
+      "status": "PARENT_REFERENCED"
+    },
+    "family_node": {
+      "label": "Family Node Attestation Tree v1",
+      "status": "PARENT_REFERENCED"
+    },
+    "children": [
+      {
+        "label": "War Board Spec",
+        "status": "PARENT_REFERENCED"
+      }
+    ]
+  }
+}

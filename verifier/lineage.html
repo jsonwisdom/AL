@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ALMS Lineage Verifier</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 960px; margin: 2rem auto; padding: 0 1rem; }
+    input { width: 100%; box-sizing: border-box; margin: .5rem 0 1rem; }
+    pre { background: #111; color: #eee; padding: 1rem; overflow: auto; }
+  </style>
+</head>
+<body>
+  <h1>ALMS Lineage Verifier</h1>
+  <p>Input a child link attestation UID. The verifier reads the link attestation from Base and renders the parent → child edge.</p>
+
+  <label>Link attestation UID</label>
+  <input id="uid" placeholder="0x..." />
+  <button id="verify">Verify Lineage Edge</button>
+
+  <h2>Result</h2>
+  <pre id="out">Waiting.</pre>
+
+<script type="module">
+import { ethers } from 'https://cdn.jsdelivr.net/npm/ethers/+esm';
+
+const EAS = '0x4200000000000000000000000000000000000021';
+const RPC = 'https://mainnet.base.org';
+const LINK_SCHEMA_UID = '0x93c5ccbb6334ce3f9b56e77580c45cbeb616ad27a9f1955a65ab51b8f7e2d35e';
+
+const uidEl = document.getElementById('uid');
+const out = document.getElementById('out');
+function print(x) { out.textContent = JSON.stringify(x, null, 2); }
+
+async function verifyLineage(uid) {
+  const provider = new ethers.JsonRpcProvider(RPC);
+  const eas = new ethers.Contract(
+    EAS,
+    ['function getAttestation(bytes32 uid) view returns (tuple(bytes32 uid,bytes32 schema,uint64 time,uint64 expirationTime,uint64 revocationTime,bytes32 refUID,address recipient,address attester,bool revocable,bytes data))'],
+    provider
+  );
+  const att = await eas.getAttestation(uid);
+  if (!att.uid || att.uid === ethers.ZeroHash) return { verdict: 'CHAIN_LINEAGE_BROKEN', reason: 'link_attestation_not_found' };
+  if (att.schema.toLowerCase() !== LINK_SCHEMA_UID.toLowerCase()) {
+    return { verdict: 'CHAIN_LINEAGE_BROKEN', reason: 'wrong_schema', expected: LINK_SCHEMA_UID, actual: att.schema };
+  }
+
+  const decoded = ethers.AbiCoder.defaultAbiCoder().decode(
+    ['bytes32','bytes32','bytes32','bytes32','address','address','string','uint64','string'],
+    att.data
+  );
+
+  const edge = {
+    parentUID: decoded[0],
+    childUID: decoded[1],
+    parentActionHash: decoded[2],
+    childActionHash: decoded[3],
+    parentSigner: decoded[4],
+    childSigner: decoded[5],
+    relation: decoded[6],
+    timestamp: Number(decoded[7]),
+    payloadRef: decoded[8]
+  };
+
+  const allowed = ['spawned', 'verified', 'delegated', 'superseded'];
+  const relationValid = allowed.includes(edge.relation);
+  if (!relationValid) return { verdict: 'CHAIN_LINEAGE_BROKEN', reason: 'invalid_relation', edge };
+  if (edge.childUID.toLowerCase() !== uid.toLowerCase()) return { verdict: 'CHAIN_LINEAGE_BROKEN', reason: 'uid_mismatch', expected: uid, actual: edge.childUID, edge };
+
+  return {
+    verdict: 'CHAIN_LINEAGE_VALID',
+    uid,
+    schemaUID: att.schema,
+    attester: att.attester,
+    recipient: att.recipient,
+    edge,
+    rendered: `${edge.parentSigner} --${edge.relation}--> ${edge.childSigner}`
+  };
+}
+
+document.getElementById('verify').onclick = async () => {
+  try { print(await verifyLineage(uidEl.value.trim())); }
+  catch (e) { print({ verdict: 'CHAIN_LINEAGE_BROKEN', error: e instanceof Error ? e.message : String(e) }); }
+};
+
+const params = new URLSearchParams(location.search);
+if (params.get('uid')) {
+  uidEl.value = params.get('uid');
+  document.getElementById('verify').click();
+}
+</script>
+</body>
+</html>

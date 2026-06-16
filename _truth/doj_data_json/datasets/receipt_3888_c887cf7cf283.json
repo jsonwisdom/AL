@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Environmental Scan of Family Justice Centers in the United States, 2016-2017",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor. The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers. Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information in needed.\r\n This study conducts an environmental scan of current Family Justice Centers (FJCs) across the United States as part of a multi-phase effort to develop a formal evaluation plan to measure the effectiveness of FJCs and similar multi-agency co-located collaboratives.\r\nThe collection contains 1 SAS data file (fjc_analysis_nacjd_20180226.sas7bdat (n=52; 813 variables)) and 1 syntax file.",
+  "modified": "2018-05-15T12:05:49",
+  "accessLevel": "restricted public",
+  "identifier": "3888",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "Family Justice Center",
+    "domestic violence",
+    "evaluation",
+    "family violence",
+    "victim safety",
+    "victim services",
+    "victims"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-05-15T11:52:06",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36973.v1",
+      "title": "Environmental Scan of Family Justice Centers in the United States, 2016-2017"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Federal Justice Statistics Program: Paired-Agency Linked Files, 1994-2018",
+  "description": "The new FJSRC linking system, implemented with the 2008\r\nFJSRC data, includes sets of agency dyad linked files\r\ncreated by improved methods of algorithmic matching.  There\r\nare both inter-agency linked files and intra-agency dyad\r\nlinked files.\r\nThe inter-agency matched pair files (or \"dyads\") permit\r\nthe linking of records from two different source agencies\r\nfor adjacent stages of federal case processing by providing\r\na crosswalk of the agency-specific key ID variables for the\r\ntwo agency data files in the pair.  These agency ID\r\nvariables (sequential ID numbers) may be used to link\r\nrecords from one agency's standard analysis file (SAF) to\r\nthe next. The system enables users to track individual\r\ndefendant-cases through stages of the federal criminal\r\njustice system (from arrest to prosecution, adjudication,\r\nsentencing, and corrections) sequentially, one agency dyad\r\npair at a time.  Each inter-agency paired linked file\r\nrelates the sequential record numbers (i.e. SEQ_NUM)\r\nincluded in the SAFs from one agency/stage to another.\r\nThe intra-agency matched pair files (also dyads) permit\r\nthe same type of linking as described above except that the\r\nlinkages are within the same federal agency. The linkages\r\nare to different stages of case processing withing a\r\nparticular agency.\r\nThe system covers all data years from 1994-2018.\r\nThese data are part of a series designed by the Urban\r\nInstitute (Washington, D.C.)  and the Bureau of Justice\r\nStatistics. Data and documentation were prepared by the\r\nUrban Institute through 2012. Data from 2013 and on were prepared by Abt Associates.",
+  "modified": "2022-06-23T14:35:52",
+  "accessLevel": "restricted public",
+  "identifier": "1010",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "case processing",
+    "federal courts",
+    "federal offenses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2174",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2011-06-14T17:11:28",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR30701.v10",
+      "title": "Federal Justice Statistics Program: Paired-Agency Linked Files, 1994-2018"
+    }
+  ]
+}

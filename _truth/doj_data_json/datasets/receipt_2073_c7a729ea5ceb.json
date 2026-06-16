@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Monitoring of Federal Criminal Convictions and Sentences:  Appeals Data, 1993-1998   ",
+  "description": "This collection contains appellate information from the 12\r\ncircuit courts of appeals of the United States. The United States\r\nSentencing Commission compiled from the Clerk of the Court of each\r\ncourt of appeals the final opinions and orders, both published and\r\nunpublished, in all criminal appeals for the time period surveyed. The\r\nCommission also collected habeas corpus decisions (although\r\ntechnically civil matters), because such cases often involve\r\nsentencing issues. Both the \"case\" and the \"defendant\" are used in\r\nthis collection as units of analysis. Each \"case\" comprises\r\nindividual records representing all codefendants participating in a\r\nconsolidated appeal. Each defendant's record comprises the\r\nsentencing-related issues corresponding to that particular defendant.\r\nThe 1993 data file (Part 1) includes all appeals cases received by the\r\nUnited States Sentencing Commission as of December 22, 1993, that had\r\ndisposition dates between March 9, 1990, and September 30, 1993\r\n(inclusive). The 1994 file (Part 2) includes all appeals cases\r\nreceived as of December 23, 1994, that had disposition dates between\r\nOctober 1, 1993, and September 30, 1994 (inclusive). The 1995 data\r\nfile (Part 6) includes all appeals cases received as of December 26,\r\n1995, that had disposition dates between October 1, 1994, and\r\nSeptember 30, 1995 (inclusive). The 1996 data file (Part 7) includes\r\nall appeals cases received as of December 27, 1996, that had\r\ndisposition dates between October 1, 1995, and September 30, 1996\r\n(inclusive). The 1997 data file (Part 8) includes all appeals cases\r\nreceived as of December 27, 1997, that had disposition dates between\r\nOctober 1, 1996, and September 30, 1997 (inclusive). The 1998 data\r\nfile (Part 9) includes all appeals cases received as of December 27,\r\n1997, that had disposition dates between October 1, 1997, and\r\nSeptember 30, 1998 (inclusive).",
+  "modified": "2014-06-27T14:29:03",
+  "accessLevel": "public",
+  "identifier": "2073",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "appeal procedures",
+    "appellate courts",
+    "convictions (law)",
+    "court cases",
+    "defendants",
+    "federal courts",
+    "habeas corpus",
+    "judicial decisions",
+    "legal appeals",
+    "offenses",
+    "sentence review",
+    "sentencing"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2175",
+  "dataQuality": false,
+  "issued": "1996-03-06T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR06559.v4",
+      "title": "Monitoring of Federal Criminal Convictions and Sentences:  Appeals Data, 1993-1998   "
+    }
+  ]
+}

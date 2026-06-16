@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "National Survey of Children: Wave I, 1976, Wave II, 1981, and Wave III, 1987",
+  "description": "The purpose of this study was to assess the physical,\r\nsocial, and psychological well-being of American children, to develop a\r\nnational profile of the way children in the United States live, to\r\npermit analysis of the relationships between the conditions of\r\nchildren's lives and measures of child development, and to examine the\r\neffects of marital disruption on the development of children and on the\r\noperation of single and multi-parent families. Information is provided\r\non the child's well-being, family, experiences with family disruption,\r\nbehavior, physical health, and mental health.",
+  "modified": "1992-02-16T00:00:00",
+  "accessLevel": "public",
+  "identifier": "2401",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "child development",
+    "children",
+    "divorce",
+    "families",
+    "family structure",
+    "mental health",
+    "single parent families",
+    "youths"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "dataQuality": false,
+  "issued": "1987-05-19T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR08670.v3",
+      "title": "National Survey of Children: Wave I, 1976, Wave II, 1981, and Wave III, 1987"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "The Residential Substance Abuse Treatment (RSAT) Aftercare Study, United States, 2014-2015",
+  "description": "These data are part of NACJD's Fast Track Release and are distributed as they were received from the data depositor.  The files have been zipped by NACJD for release, but not checked or processed except for the removal of direct identifiers.  Users should refer to the accompanying readme file for a brief description of the files available with this collection and consult the investigator(s) if further information is needed.\r\nThe goal of the Residential Substance Abuse Treatment (RSAT) Study is to provide programmatic information about the treatment and aftercare services funded by the Bureau of Justice Assistance (BJA) RSAT program, to help understand the extent to which, and in what ways, RSAT programs are fulfilling their mandate under the Second Chance Act to connect participants to aftercare services. The study focuses on describing the range and types of substance abuse treatment, re-entry/release planning activities, and related aftercare services that are provided to offenders through the BJA RSAT program. The major objectives of the study are to:\r\n\r\n Document how states make decisions about how to use RSAT funds for treatment and aftercare services; \r\n Describe the types of treatment and other services supported with BJA RSAT funds, including implementation of evidence-based practices; \r\n Document the re-entry/release planning activities for RSAT participants; and \r\n Describe the aftercare services available to RSAT participants, and the challenges and facilitators to implementing these services. \r\n\r\nThe study includes two SPSS files: RSAT_State_Coordinator_Program.sav (n=47; 92 variables) and RSAT_Subgrantee_Program.sav (n=60; 1,018 variables).\r\n",
+  "modified": "2018-03-01T09:15:34",
+  "accessLevel": "restricted public",
+  "identifier": "3553",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "aftercare",
+    "residential programs",
+    "substance abuse treatment"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2018-03-01T09:11:54",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR36377.v1",
+      "title": "The Residential Substance Abuse Treatment (RSAT) Aftercare Study, United States, 2014-2015"
+    }
+  ]
+}

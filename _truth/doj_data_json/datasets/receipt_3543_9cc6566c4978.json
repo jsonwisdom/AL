@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Assessing Consistency and Fairness in Sentencing in Michigan, Minnesota, and Virginia, 2001-2002, 2004",
+  "description": "The purpose of the study was to evaluate the integrity of sentencing outcomes under alternative state guideline systems and to investigate how this variation in structure impacted actual sentencing practice.  The research team sought to address the question, to what extent do sentencing guidelines contribute to the goals of consistency, proportionality, and a lack of discrimination.  The National Center for State Courts conducted an examination of sentencing patterns in three states with substantially different guidelines systems: Minnesota, Michigan, and Virginia.  The three states vary along critical dimensions of the presumptive versus voluntary nature of guidelines as well as basic mechanics. There are differences in the formal design, administration, and statutory framework of the Michigan, Minnesota, and Virginia sentencing systems. For the 2004 Michigan Sentencing Outcomes Data (Part 1), the Michigan Department of Corrections Offender Management Network Information System (OMNI) provided sentencing guideline data for 32,754 individual offenders sentenced during calendar year 2004. For the 2002 Minnesota Sentencing Outcomes Data (Part 2), the Minnesota Sentencing Commission provided data for 12,978 individual offenders sentenced in calendar year 2002. The Virginia Sentencing Commission provided the Fiscal Year 2002 Virginia Assault Sentencing Outcomes Data (Part 3) and the Fiscal Year 2002 Virginia Burglary Sentencing Outcomes Data (Part 4). The Assault and Burglary/Dwelling crime groups have 1,614 and 1,743 observations, respectively.  Variables in the four datasets are classified into the broad categories of conviction offense severity, prior record, offense seriousness, grid cell type, habitual/modifiers, departure, and extra guideline variables.",
+  "modified": "2009-11-30T15:08:00",
+  "accessLevel": "restricted public",
+  "identifier": "3543",
+  "publisher": {
+    "name": "National Institute of Justice",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Open Data Office of Justice Programs (USDOJ)",
+    "hasEmail": "mailto:opendata@usdoj.gov"
+  },
+  "keyword": [
+    "correctional classification",
+    "discrimination",
+    "imprisonment",
+    "judicial decisions",
+    "offenders",
+    "offenders sentencing",
+    "offense classification",
+    "offenses",
+    "prison inmates",
+    "sentencing",
+    "sentencing guidelines"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:060"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "rights": "These data are restricted due to the increased risk of violation of confidentiality of respondent and subject data.",
+  "dataQuality": false,
+  "issued": "2009-11-30T15:04:49",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR22642.v1",
+      "title": "Assessing Consistency and Fairness in Sentencing in Michigan, Minnesota, and Virginia, 2001-2002, 2004"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "verdict": "SOURCE_HASH_COMPUTED_AND_EXPECTED_HASHES_UPDATED",
+  "corpus_id": "C0002",
+  "source_path": "_truth/bigquery/ny007_era5_schema_probe_manifest.json",
+  "source_hash": "sha256:82f9c0b56c39566ac40ad04153b6d13855dfb233cf0bfb3f8329abfe7cdff4dc",
+  "expected_hashes_path": "corpus/C0002/replay/expected_hashes.json",
+  "expected_hashes_patch": {
+    "normalized_artifact_hash": "sha256:82f9c0b56c39566ac40ad04153b6d13855dfb233cf0bfb3f8329abfe7cdff4dc",
+    "identity": {
+      "source_url": "repo://jsonwisdom/AL/_truth/bigquery/ny007_era5_schema_probe_manifest.json",
+      "canonical_url": "repo://jsonwisdom/AL/_truth/bigquery/ny007_era5_schema_probe_manifest.json",
+      "FETCH_FINGERPRINT": "sha256:82f9c0b56c39566ac40ad04153b6d13855dfb233cf0bfb3f8329abfe7cdff4dc"
+    },
+    "status": "LOCKED_FROM_CI_SOURCE_HASH_DISCOVERY"
+  },
+  "note": "C0002 hashes raw repo JSON bytes. No RFC 8785 transform is applied in this workflow."
+}

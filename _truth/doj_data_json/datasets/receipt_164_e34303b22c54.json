@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Juvenile Detention and Correctional Facility Census, 1971",
+  "description": "The purpose of this census was to provide information on\r\njuvenile detention centers throughout the United States. The data\r\ninclude information on type of facility, level of government\r\nadministering the facility, resident population by sex, by age range,\r\nby detention status, and by offense, admissions and discharges,\r\naverage length of stay, staffing and expenditures, age and capacity of\r\nfacility, and programs and services available.",
+  "modified": "2008-02-06T00:00:00",
+  "accessLevel": "public",
+  "identifier": "164",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "census data",
+    "correctional facilities (juveniles)",
+    "criminal justice system",
+    "group homes",
+    "inmate populations",
+    "juvenile crime",
+    "juvenile detention",
+    "juvenile inmates",
+    "juvenile offenders",
+    "juveniles",
+    "offenses",
+    "restitution centers",
+    "status offenses"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2588",
+  "dataQuality": false,
+  "issued": "1984-03-18T00:00:00",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR07637.v2",
+      "title": "Juvenile Detention and Correctional Facility Census, 1971"
+    }
+  ]
+}

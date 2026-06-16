@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Dataset",
+  "title": "Uniform Crime Reporting Program Data: Arrests by Age, Sex, and Race, Summarized Yearly, United States, 2016",
+  "description": "These data provide information on the number of arrests reported to the Federal Bureau of Investigation's Uniform Crime Reporting (UCR) Program each year by police agencies in the United States. These arrest reports provide data on 43 offenses including violent crime, drug use, gambling, and larceny. The data received by ICPSR were structured as a hierarchical file containing, per reporting police agency: an agency header record, and 1 to 43 detail offense records containing the counts of arrests by age, sex, and race for a particular offense. ICPSR restructured the original data to logical record length format with the agency header record variables copied onto the detail records. Consequently, each record contains arrest counts for a particular agency-offense.",
+  "modified": "2018-08-17T09:18:25",
+  "accessLevel": "public",
+  "identifier": "2661",
+  "publisher": {
+    "name": "Bureau of Justice Statistics",
+    "@type": "org:Organization",
+    "subOrganizationOf": {
+      "id": 22,
+      "acronym": "OJP",
+      "name": "Office of Justice Programs",
+      "parentOrganizationID": 10,
+      "parentOrganization": {
+        "id": 10,
+        "acronym": "DOJ",
+        "name": "Department of Justice"
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": "vcard:Contact",
+    "fn": "Ask BJS Bureau of Justice Statistics (USDOJ)",
+    "hasEmail": "mailto:askbjs@usdoj.gov"
+  },
+  "keyword": [
+    "Uniform Crime Reports",
+    "arrest records",
+    "arrests",
+    "crime rates",
+    "crime reporting",
+    "crime statistics",
+    "drug abuse",
+    "illegal gambling",
+    "larceny",
+    "law enforcement",
+    "offenders",
+    "offenses",
+    "violent crime"
+  ],
+  "bureauCode": [
+    "011:21"
+  ],
+  "programCode": [
+    "011:061"
+  ],
+  "license": "http://www.usa.gov/publicdomain/label/1.0/",
+  "isPartOf": "2167",
+  "dataQuality": false,
+  "issued": "2018-08-17T09:18:25",
+  "language": [
+    "eng"
+  ],
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "accessURL": "https://doi.org/10.3886/ICPSR37057.v1",
+      "title": "Uniform Crime Reporting Program Data: Arrests by Age, Sex, and Race, Summarized Yearly, United States, 2016"
+    }
+  ]
+}

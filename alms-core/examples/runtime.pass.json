@@ -1,0 +1,35 @@
+{
+  "dependency_closure": {
+    "container_hash": "sha256:2222222222222222222222222222222222222222222222222222222222222222",
+    "lockfile_hash": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+    "sbom_hash": "sha256:3333333333333333333333333333333333333333333333333333333333333333"
+  },
+  "determinism_controls": {
+    "float_mode": "ieee754-strict",
+    "line_endings": "LF",
+    "locale": "C",
+    "random_seed_source": "ReplayBundle.deterministic_seed",
+    "timezone": "UTC"
+  },
+  "execution_backend": {
+    "engine": "wasmtime",
+    "engine_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+    "engine_version": "18.0.2",
+    "type": "wasm"
+  },
+  "resource_constraints": {
+    "max_cpu_ms": 1000,
+    "max_file_descriptors": 16,
+    "max_memory_mb": 128,
+    "max_processes": 1
+  },
+  "runtime_hash": "sha256:7ab21151c6096225b549a88381e2a5f0257046359fd50c4cc268183137e5b23e",
+  "runtime_version": "ALMS_RUNTIME_ENVIRONMENT_V0_1",
+  "sandbox": {
+    "clock_mode": "deterministic",
+    "entropy_mode": "seeded",
+    "filesystem_mode": "ephemeral",
+    "isolation": "none",
+    "network_mode": "disabled"
+  }
+}

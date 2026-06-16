@@ -1,0 +1,51 @@
+{
+  "artifact": "ALMS_MISSION_CONTROL_MEMORY_V0_1",
+  "status": "QUEUED",
+  "activation": "BLOCKED_UNTIL_PR_165_MERGE_RECEIPT",
+  "authority": false,
+  "membrane": "HOLDS",
+  "source_chain": [
+    "AL",
+    "COMPUTERWISDOM",
+    "JOY",
+    "ENS",
+    "ALMS"
+  ],
+  "routing": {
+    "3": "JOY_PROTECTION",
+    "6": "ENS_IDENTITY_DISCOVERY_DISPLAY_ONLY",
+    "9": "ALMS_REPLAY_MEMORY"
+  },
+  "receipts": {
+    "al_courts_doctrine": "2d050d623ab4a9ba7aff8547dc4f64d28b2f4c27",
+    "al_emergency_management_scheme": "d9620e98c6479542b5d6e74bd882da251cba6a2e",
+    "al_three_repo_mechanics": "b29bf5f597e5c9fb56fbe2958c2b65fc8ed06d9c",
+    "computerwisdom_pr_165_latest_known_head": "6538ab63a08ef9877a5adf11d12a1734429de6cd",
+    "computerwisdom_alms_9_route_memory": "e2ca25c94a71e3d339dfd1ceff64b7fae8d8f49d",
+    "joy_day_2": "d3eba9b21fa361fc4045b4bf8cb212945d70f09d",
+    "joy_ens_surface": "98ff2c1640d5a3cd97e54c20b7b75942345ea098"
+  },
+  "current_state": {
+    "public_gap": "CLOSED",
+    "joy_gap": "CLOSED",
+    "constitutional_gap": "CLOSED",
+    "verify_workflow": "PASSING",
+    "merge_gate": "BLOCKED_BY_RULE_REFERENCE",
+    "runtime_status": "NOT_ACTIVE_UNTIL_PR_165_MERGES",
+    "alms_mission_control": "QUEUED"
+  },
+  "mission_control_blocks": {
+    "three_courts_log": [],
+    "ens_discovery_events": [],
+    "eas_witness_events": [],
+    "alms_replay_events": []
+  },
+  "rules": [
+    "Memory is allowed before merge.",
+    "Promotion is blocked until receipt.",
+    "ENS routes identity but does not prove authority.",
+    "EAS witnesses claims but does not make claims true.",
+    "ALMS remembers receipts and replay paths.",
+    "No custody mutation occurs without explicit receipt."
+  ]
+}
