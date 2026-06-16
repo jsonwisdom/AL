@@ -41,7 +41,8 @@ run_grep() {
   local pattern="$1"
   grep -RInE "${COMMON_EXCLUDES[@]}" "$pattern" "$ROOT" 2>/dev/null \
     | grep -vE '^[^:]+:[0-9]+:[[:space:]]*#' \
-    | grep -vE 'keystore account name|_ACCOUNT|ACCOUNT=' || true
+    | grep -vE 'keystore account name|_ACCOUNT|ACCOUNT=' \
+    | grep -vE 'github_pat_or_fine_grained_token_here|GITHUB_TOKEN_PLACEHOLDER|REPLACE_WITH_GITHUB_TOKEN' || true
 }
 
 scan_fail() {
@@ -106,7 +107,7 @@ scan_report() {
   fi
 }
 
-scan_fail "PRIVATE_KEY_PATTERNS" 'PRIVATE_KEY=|\"private_key\"[[:space:]]*:|BEGIN (RSA |EC |OPENSSH |)?PRIVATE KEY|wallet\.json|keystore|UTC--'
+scan_fail "PRIVATE_KEY_PATTERNS" 'PRIVATE_KEY=|"private_key"[[:space:]]*:|BEGIN (RSA |EC |OPENSSH |)?PRIVATE KEY|wallet\.json|keystore|UTC--'
 scan_fail "SEED_OR_MNEMONIC_PATTERNS" 'MNEMONIC=|SEED_PHRASE=|seed phrase|recovery phrase'
 scan_fail "API_TOKEN_PATTERNS" 'ghp_[A-Za-z0-9_]{20,}|github_pat_[A-Za-z0-9_]{20,}|sk-[A-Za-z0-9]{20,}|xox[baprs]-[A-Za-z0-9-]+'
 scan_env_file_leaks
