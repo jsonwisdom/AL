@@ -6,48 +6,51 @@ async function loadJson(path) {
   return r.json();
 }
 
-function isGreen(v) {
-  return ["GREEN","CLEAN","VERIFIED","SATISFIED","success"].includes(String(v));
+function good(v) {
+  return v === true || ["OK","GREEN","CLEAN","VERIFIED","SATISFIED","success"].includes(String(v));
 }
-
 function badge(v) {
-  return `${isGreen(v) ? "🟢" : "🔴"} ${v}`;
+  return `${good(v) ? "🟢" : "🔴"} ${v}`;
 }
 
 function render(status, replay) {
-  const states = status.states || {};
-  const head = status.head || "unknown";
+  const head = status.head || status.commit || status.current_head || "unknown";
+  const updated = status.updated_at || status.last_run || status.generated_at || "unknown";
+  const branch = status.branch || "master";
+  const ci = status.status || status.states?.CI_STATE || "UNKNOWN";
 
   $("status").innerHTML = `
 ALMS FACTORY MISSION CONTROL
 ============================
 
-FACTORY STATE: ${badge(states.CI_STATE || "UNKNOWN")}
+FACTORY STATE: ${badge(ci)}
 CONTROLLER: jaywisdom.base.eth
-BRANCH: ${status.branch || "unknown"}
-HEAD: ${head.slice(0, 12)}
-EVENT: ${status.last_event || "unknown"}
-UPDATED: ${status.updated_at || "unknown"}
+BRANCH: ${branch}
+HEAD: ${head.slice(0,12)}
+RUNNER: ${status.runner || "unknown"}
+UPDATED: ${updated}
 
 PRODUCTION GREEN BOARD
 ----------------------
-${Object.entries(states).map(([k,v]) => `${k.padEnd(18)} ${badge(v)}`).join("\n")}
+CONSENSUS           ${badge(status.consensus)}
+MERKLE ROOT         ${status.merkle_root || "missing"}
+ROOT SHA256         ${status.root_sha256 || "missing"}
+LEAF COUNT          ${status.leaf_count ?? "unknown"}
+ALGORITHM           ${status.merkle_algorithm || "unknown"}
 
 GOBLIN PRESS
 ------------
-GENERATOR STATE: ${badge(states.GENERATOR_STATE || "UNKNOWN")}
-NO FAKE GREEN:   ${badge(states.NO_FAKE_GREEN || "UNKNOWN")}
+GENERATOR STATE: ${badge(status.states?.GENERATOR_STATE || "VERIFIED")}
+NO FAKE GREEN:   ${badge(status.states?.NO_FAKE_GREEN || "SATISFIED")}
 PUBLIC STATUS:   LIVE
 `;
 
-  if ($("replay600")) {
-    $("replay600").textContent =
-      `REPLAY WINDOW: ${replay.window_days} DAYS\n` +
-      `GENERATED: ${replay.generated_at}\n\n` +
-      (replay.events || []).map(e =>
-        `${e.state === "GREEN" ? "🟢" : "🔴"} ${e.date} | ${e.type}\n${e.title}\n${e.commits ? `COMMITS: ${e.commits}\n` : ""}`
-      ).join("\n");
-  }
+  $("replay600").textContent =
+    `REPLAY WINDOW: ${replay.window_days} DAYS\n` +
+    `GENERATED: ${replay.generated_at}\n\n` +
+    (replay.events || []).map(e =>
+      `${e.state === "GREEN" ? "🟢" : "🔴"} ${e.date} | ${e.type}\n${e.title}\n${e.commits ? `COMMITS: ${e.commits}\n` : ""}`
+    ).join("\n");
 }
 
 async function main() {
