@@ -1,18 +1,29 @@
-// egg_inclusion_compile_pass_v0
-// Minimal Noir compile target for Arcade ZK.
-// This proves circuit wiring compiles; it does NOT prove Merkle inclusion yet.
+// aggregation_gate.nr
+// Episode 002: Constellation Alignment
+// Design target: prove composite progression before Nebula Egg unlock.
 
-global MIN_REPLAY_REQUIRED: u32 = 1;
-global EPISODE_001_ID: Field = 1001;
+global EPISODE_002_ID: Field = 1002;
+global NEBULA_EGG_ID: Field = 2002;
+global MIN_TOTAL_REPLAYS: u32 = 5;
 
 fn main(
     episode_id: Field,
-    replay_count: u32,
-    root: pub Field,
-    egg_id: pub Field
+    egg_id: Field,
+    total_replay_count: u32,
+
+    fragment_a: Field,
+    fragment_b: Field,
+    fragment_c: Field,
+
+    completion_hash: pub Field
 ) {
-    assert(episode_id == EPISODE_001_ID);
-    assert(replay_count >= MIN_REPLAY_REQUIRED);
-    assert(root != 0);
-    assert(egg_id != 0);
+    assert(episode_id == EPISODE_002_ID);
+    assert(egg_id == NEBULA_EGG_ID);
+    assert(total_replay_count >= MIN_TOTAL_REPLAYS);
+
+    assert(fragment_a != 0);
+    assert(fragment_b != 0);
+    assert(fragment_c != 0);
+
+    assert(completion_hash != 0);
 }
