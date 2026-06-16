@@ -36,8 +36,7 @@
     "alms.matrix.hash"
   ],
   "checker_output": "YELLOW subject=jaywisdom.base.eth rule=MISSING_WITH_PENDING_UPDATE_RECEIPT expires_at=2026-06-16T22:04:10Z missing=alms.packet.cid alms.packet.sha256 alms.matrix.hash",
-  "expiry_enforcer_output": "YELLOW subject=jaywisdom.base.eth rule=MISSING_WITH_PENDING_UPDATE_RECEIPT expires_at=2026-06-16T22:04:10Z missing=alms.packet.cid alms.packet.sha256 alms.matrix.hash
-EXPIRY_ENFORCER_OK pending_update_unexpired expires_at=2026-06-16T22:04:10Z",
+  "expiry_enforcer_output": "YELLOW subject=jaywisdom.base.eth rule=MISSING_WITH_PENDING_UPDATE_RECEIPT expires_at=2026-06-16T22:04:10Z missing=alms.packet.cid alms.packet.sha256 alms.matrix.hash\nEXPIRY_ENFORCER_OK pending_update_unexpired expires_at=2026-06-16T22:04:10Z",
   "unproven": [
     "resolver TXT records present",
     "byte-for-byte resolver match",
