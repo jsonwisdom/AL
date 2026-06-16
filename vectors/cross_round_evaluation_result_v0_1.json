@@ -1,14 +1,13 @@
 {
-  "schema_version": "0.1",
+  "verifier": "ALMS_CROSS_ROUND_REPLAY_VERIFIER_V0_1",
   "schema_name": "CROSS_ROUND_INVARIANT_VECTORS",
+  "schema_version": "0.1",
   "operator_root": "jaywisdom.eth",
   "operator_alias": "jaywisdom.base.eth",
   "project": "PRESS_YOUR_LUCK_WITH_JAY",
-  "description": "Deterministic test vectors for C1-C5 cross-round enforcement. Pure observation layer.",
-  "vectors": [
+  "results": [
     {
       "vector_id": "C1_UNEXPLAINED_UNCONSTITUTIONAL",
-      "description": "Single unconstitutional round with no timely public explanation",
       "history": {
         "unconstitutionalRounds12m": 1,
         "unconstitutionalRounds24m": 1,
@@ -20,12 +19,15 @@
         "submittedSchemaUID": "1000",
         "schemaVersionBumped": false
       },
+      "violation": "C1_UNEXPLAINED_UNCONSTITUTIONAL",
       "expected_violation": "C1_UNEXPLAINED_UNCONSTITUTIONAL",
-      "sha256_replay_hash": "PENDING_AFTER_VERIFIER_RUN"
+      "passed": true,
+      "sha256_replay_hash": "0x8d8d108d19728020bcf7f5fe1114bf48cdde497836cad956d74ecea86c6b861c",
+      "sha3_256_bridge_hash": "0x52c0e98d61d06cf7ae9d15f2ff247c081dca7a9304a16a09460419aba4297026",
+      "bridge_hash_domain": "SHA3_256_NOT_ETHEREUM_KECCAK256"
     },
     {
       "vector_id": "C2_IDENTITY_FREEZE_TRIGGER",
-      "description": "Two unconstitutional rounds within 12 months",
       "history": {
         "unconstitutionalRounds12m": 2,
         "unconstitutionalRounds24m": 2,
@@ -37,12 +39,15 @@
         "submittedSchemaUID": "1000",
         "schemaVersionBumped": false
       },
+      "violation": "C2_IDENTITY_FREEZE_REQUIRED",
       "expected_violation": "C2_IDENTITY_FREEZE_REQUIRED",
-      "sha256_replay_hash": "PENDING_AFTER_VERIFIER_RUN"
+      "passed": true,
+      "sha256_replay_hash": "0x9106c57c57dada1bf05421fd9959d02740397a8477ad0b8b90678c8b253bb950",
+      "sha3_256_bridge_hash": "0x5762c052c626fbdf115a51f8e939ed43e27e488122cf7d4ec575dc35030b335d",
+      "bridge_hash_domain": "SHA3_256_NOT_ETHEREUM_KECCAK256"
     },
     {
       "vector_id": "C3_SCHEMA_ROTATION_TRIGGER",
-      "description": "Three unconstitutional rounds within 24 months",
       "history": {
         "unconstitutionalRounds12m": 2,
         "unconstitutionalRounds24m": 3,
@@ -54,12 +59,15 @@
         "submittedSchemaUID": "1000",
         "schemaVersionBumped": false
       },
+      "violation": "C3_SCHEMA_ROTATION_REQUIRED",
       "expected_violation": "C3_SCHEMA_ROTATION_REQUIRED",
-      "sha256_replay_hash": "PENDING_AFTER_VERIFIER_RUN"
+      "passed": true,
+      "sha256_replay_hash": "0xb7b566f77b59203a3932403eb7507d256c2935ea2f94af00f55d768d6772d403",
+      "sha3_256_bridge_hash": "0x4936cd086a2e87d9018de34151122d258bb9e43551869115cca549b32ca12d72",
+      "bridge_hash_domain": "SHA3_256_NOT_ETHEREUM_KECCAK256"
     },
     {
       "vector_id": "C4_TAX_NOTICE_DRIFT",
-      "description": "Tax notice structure changed without schema version bump",
       "history": {
         "unconstitutionalRounds12m": 0,
         "unconstitutionalRounds24m": 0,
@@ -71,12 +79,15 @@
         "submittedSchemaUID": "1000",
         "schemaVersionBumped": false
       },
+      "violation": "C4_TAX_NOTICE_DRIFT",
       "expected_violation": "C4_TAX_NOTICE_DRIFT",
-      "sha256_replay_hash": "PENDING_AFTER_VERIFIER_RUN"
+      "passed": true,
+      "sha256_replay_hash": "0x27ae70808737b619da445164756083add5281ed44abf36cb11b7d6733e68d0bb",
+      "sha3_256_bridge_hash": "0xd10df1aae0c02c95f8a6623bb3d24cd22b50f8dd9dcfa387e3b6cedf5115f100",
+      "bridge_hash_domain": "SHA3_256_NOT_ETHEREUM_KECCAK256"
     },
     {
       "vector_id": "C5_SCHEMA_UID_MISMATCH",
-      "description": "Submitted schema UID does not match canonical registration",
       "history": {
         "unconstitutionalRounds12m": 0,
         "unconstitutionalRounds24m": 0,
@@ -84,16 +95,19 @@
         "explanationTimestamp": 1718100000,
         "previousTaxNoticeStructureHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
         "currentTaxNoticeStructureHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
-        "canonicalSchemaUID": "0xCANONICAL_UID_ABC123",
-        "submittedSchemaUID": "0xSUBMITTED_UID_XYZ789",
+        "canonicalSchemaUID": "0x1111111111111111111111111111111111111111111111111111111111111111",
+        "submittedSchemaUID": "0x2222222222222222222222222222222222222222222222222222222222222222",
         "schemaVersionBumped": true
       },
+      "violation": "C5_SCHEMA_UID_MISMATCH",
       "expected_violation": "C5_SCHEMA_UID_MISMATCH",
-      "sha256_replay_hash": "PENDING_AFTER_VERIFIER_RUN"
+      "passed": true,
+      "sha256_replay_hash": "0xc735405d940d767170dfde9db0cfde9fa67b7e1ac706a3af6cfb82e031329375",
+      "sha3_256_bridge_hash": "0xd5fe365323191ba2e31d0bf4a499c4c1fbd39f7c931701da5663ee7af620e36b",
+      "bridge_hash_domain": "SHA3_256_NOT_ETHEREUM_KECCAK256"
     },
     {
       "vector_id": "CLEAN_NO_VIOLATION",
-      "description": "Fully compliant history \u2014 no violations",
       "history": {
         "unconstitutionalRounds12m": 0,
         "unconstitutionalRounds24m": 0,
@@ -105,13 +119,27 @@
         "submittedSchemaUID": "1000",
         "schemaVersionBumped": true
       },
+      "violation": "NONE",
       "expected_violation": "NONE",
-      "sha256_replay_hash": "PENDING_AFTER_VERIFIER_RUN"
+      "passed": true,
+      "sha256_replay_hash": "0x67d3ad1bc4473babeb10431751b2b31438a5b7217e9fc891d1fa76014440480a",
+      "sha3_256_bridge_hash": "0x7c84f08d7342ed8f185617c5515ed837c9759c9a654c400345d43d3ba3eef607",
+      "bridge_hash_domain": "SHA3_256_NOT_ETHEREUM_KECCAK256"
     }
   ],
-  "constitutional_locks": [
-    "NO_REPLAY = NO_EVALUATION",
-    "SHA256_FOR_ALMS = TRUTH_LAYER",
-    "KECCAK_BRIDGE_LABELED = ENFORCEMENT_LAYER"
-  ]
+  "result": "PASS",
+  "sha256_replay_hash": "0xf72d4c0460572c8cc3ac3f9cc7ac9d674d635d1f06b085fc2e2c8a31accbefa7",
+  "sha3_256_bridge_hash": "0x980edb5f9e5a03d77c595cd1d8f5d31eaecf9918cd562c222377cbe8608c9260",
+  "bridge_hash_domain": "SHA3_256_NOT_ETHEREUM_KECCAK256",
+  "eas_attestation_payload": {
+    "schema_uid": "1000",
+    "operator_root": "jaywisdom.eth",
+    "operator_alias": "jaywisdom.base.eth",
+    "project": "PRESS_YOUR_LUCK_WITH_JAY",
+    "sha256_replay_hash": "0xf72d4c0460572c8cc3ac3f9cc7ac9d674d635d1f06b085fc2e2c8a31accbefa7",
+    "sha3_256_bridge_hash": "0x980edb5f9e5a03d77c595cd1d8f5d31eaecf9918cd562c222377cbe8608c9260",
+    "bridge_hash_domain": "SHA3_256_NOT_ETHEREUM_KECCAK256",
+    "verifier": "ALMS_CROSS_ROUND_REPLAY_VERIFIER_V0_1",
+    "result": "PASS"
+  }
 }

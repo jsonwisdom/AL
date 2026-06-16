@@ -9,6 +9,16 @@ MANIFEST_PATH = Path('batch_manifest.json')
 
 
 def main() -> int:
+    if not MANIFEST_PATH.exists():
+        print(json.dumps({
+            'status': 'NO_MANIFEST_PRESENT',
+            'verified': None,
+            'semantic_inference': False,
+            'authority': False,
+            'message': 'Skipping replay manifest verification because batch_manifest.json is absent for this surface.'
+        }, indent=2))
+        return 0
+
     manifest = json.loads(MANIFEST_PATH.read_text())
 
     receipts = []

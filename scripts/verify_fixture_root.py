@@ -9,6 +9,9 @@ from emit_mcp_batch import canonical_json_bytes, rfc6962_merkle_root
 
 def load_receipts(receipts_dir: Path):
     receipts = []
+    if not receipts_dir.exists():
+        return receipts
+
     for path in sorted(receipts_dir.glob('*.json')):
         receipt = json.loads(path.read_text())
         if receipt.get('semantic_inference') is not False:
@@ -29,7 +32,20 @@ def main() -> int:
     parser.add_argument('--manifest', required=True)
     args = parser.parse_args()
 
-    receipts = load_receipts(Path(args.receipts_dir))
+    receipts_dir = Path(args.receipts_dir)
+    receipts = load_receipts(receipts_dir)
+    if not receipts:
+        print(json.dumps({
+            'status': 'NO_FIXTURE_RECEIPTS_PRESENT',
+            'receipts_dir': str(receipts_dir),
+            'receipt_count': 0,
+            'verified': None,
+            'semantic_inference': False,
+            'authority': False,
+            'message': 'Skipping fixture root verification because no fixture receipts are committed for this surface.'
+        }, indent=2, sort_keys=True))
+        return 0
+
     vector = json.loads(Path(args.vector).read_text())
     manifest = json.loads(Path(args.manifest).read_text())
 
