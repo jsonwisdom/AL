@@ -1,0 +1,13 @@
+{
+  "leaf_id": "la_006",
+  "model": "linear_algebra_determinant_v1",
+  "fields": [{
+    "id": "determinant_zero",
+    "canonical_claim": "A=[[1,2],[2,4]] has determinant 0",
+    "tests": [
+      {"id":"exact_match","claim_text":"A=[[1,2],[2,4]] has determinant 0"},
+      {"id":"wrong_nonzero","claim_text":"A=[[1,2],[2,4]] has determinant 2"},
+      {"id":"wrong_matrix","claim_text":"A=[[1,2],[3,4]] has determinant 0"}
+    ]
+  }]
+}

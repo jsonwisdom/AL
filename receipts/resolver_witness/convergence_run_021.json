@@ -1,0 +1,34 @@
+{
+  "receipt_id": "RESOLVER_WITNESS_CONVERGENCE_RUN_021",
+  "repo": "jsonwisdom/AL",
+  "branch": "main",
+  "commit": "653aa95f4be188be9608c8ee13133ce766210476",
+  "workflow": "Resolver Witness Convergence",
+  "workflow_file": ".github/workflows/resolver-witness-convergence.yml",
+  "run_number": 21,
+  "status": "Success",
+  "duration_seconds": 10,
+  "trigger": "push",
+  "verified_scope": [
+    "python_observer",
+    "typescript_observer",
+    "committed_hash_registry",
+    "five_convergence_fixtures"
+  ],
+  "canonical_hashes": {
+    "CONVERGENCE_001": "ae4f530af2d5f4676dc9f0f102ed17bc465aa6824db69e69ecaf2249ccac71b3",
+    "CONVERGENCE_002_HASH_MISMATCH": "9b90567281c808d99f06fdb856cf6810cb36e8d51f4a5af53250118c3ce59974",
+    "CONVERGENCE_003_REVOCABLE_PARENT": "317c6594e7861bff755eb5f8901167a8f22c56db71b52a9eecedf8b8690b2296",
+    "CONVERGENCE_004_MISSING_ATTESTATION": "678470c5f4363a3f18fa9e41f7d812207434443bfb2a319e728ec7e0bf44b629",
+    "CONVERGENCE_005_SCHEMA_VIOLATION": "3ae2a0374b80a3a6c8e5b39b7292cd891a8ca9fee86f941d11a10e5399233f7f"
+  },
+  "claim": "TWO_OBSERVER_CONSENSUS_VERIFIED_ON_MAIN",
+  "non_claim": "THREE_OBSERVER_CANON_NOT_YET_CLAIMED",
+  "external_observer": "PENDING",
+  "state": "RESOLVER_WITNESS_WORKFLOW_GREEN",
+  "notes": [
+    "CI refused incomplete state until fixture corpus and registry existed.",
+    "Two in-repo observers converged against committed canonical hash registry.",
+    "External Observer C remains pending by design."
+  ]
+}

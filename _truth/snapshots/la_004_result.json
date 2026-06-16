@@ -1,0 +1,19 @@
+{
+  "ground_state": {
+    "fields": {
+      "eigenvector_check": {
+        "accepted": [
+          "exact_match"
+        ],
+        "rejected": [
+          "wrong_lambda",
+          "wrong_vector"
+        ]
+      }
+    },
+    "total_energy": 0,
+    "status": "VERIFIED"
+  },
+  "leaf_id": "la_004",
+  "model": "linear_algebra_eigen_v1"
+}

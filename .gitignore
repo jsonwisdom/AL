@@ -28,3 +28,15 @@ _sources/
 studio/live-intel/
 _secrets/
 _quarantine/
+# ALMS runtime noise
+_truth/tmp/
+_truth/logs/
+_truth/*_result.json
+
+# optional if you want clean repo
+_truth/*_receipt.json
+
+# local experiments
+data/leaf003/
+qubo/
+sources/

@@ -1,0 +1,16 @@
+{
+  "log_id": "cw_recovery_log",
+  "version": "1.0.0",
+  "source": "file_export_from_runtime_localStorage",
+  "entries": [
+    {
+      "event_type": "CANON_RESEED",
+      "previous_chain_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "recovery_timestamp_utc": "2026-05-10T23:59:59Z",
+      "recovery_reason": "HASH_CHAIN_DISCONTINUITY",
+      "operator_identity": "jason",
+      "restored_head_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "recovery_block_hash": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+    }
+  ]
+}

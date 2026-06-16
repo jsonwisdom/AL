@@ -1,0 +1,33 @@
+{
+  "leaf_id": "mn_005",
+  "model": "mn_budget_source_binding_v1",
+  "source": {
+    "agency": "Minnesota Management and Budget",
+    "document": "February 2026 Budget and Economic Forecast",
+    "claim_type": "source_binding"
+  },
+  "fields": [
+    {
+      "id": "source_bound_claim",
+      "canonical_claim": "source=MN_MMB_February_2026_Budget_Forecast, claim=General Fund Balance         3 670 799",
+      "tests": [
+        {
+          "id": "exact_match",
+          "claim_text": "source=MN_MMB_February_2026_Budget_Forecast, claim=General Fund Balance         3 670 799"
+        },
+        {
+          "id": "wrong_source",
+          "claim_text": "source=Unknown_Report, claim=General Fund Balance         3 670 799"
+        },
+        {
+          "id": "unbound_claim",
+          "claim_text": "claim=General Fund Balance         3 670 799"
+        },
+        {
+          "id": "wrong_claim",
+          "claim_text": "source=MN_MMB_February_2026_Budget_Forecast, claim=General Fund Balance         3 670 800"
+        }
+      ]
+    }
+  ]
+}

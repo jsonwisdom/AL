@@ -1,0 +1,19 @@
+{
+  "ground_state": {
+    "fields": {
+      "matrix_vector_product": {
+        "accepted": [
+          "exact_match"
+        ],
+        "rejected": [
+          "wrong_value",
+          "wrong_dimension"
+        ]
+      }
+    },
+    "status": "VERIFIED",
+    "total_energy": 0
+  },
+  "leaf_id": "la_001",
+  "model": "linear_algebra_matrix_vector_v1"
+}

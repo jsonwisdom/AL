@@ -1,0 +1,91 @@
+name: Epoch03 Membrane Level 3 Gate
+
+on:
+  pull_request:
+    paths:
+      - 'docs/specs/EPOCH03_CANONICAL_MEMBRANE_CONTRACT_V1_0_1.schema.json'
+      - 'fixtures/epoch03/membrane/**'
+      - 'fixtures/runtime/cw_recovery_log.json'
+      - 'scripts/epoch03_membrane_level3_gate.py'
+      - '.github/workflows/epoch03-membrane-level3-gate.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/specs/EPOCH03_CANONICAL_MEMBRANE_CONTRACT_V1_0_1.schema.json'
+      - 'fixtures/epoch03/membrane/**'
+      - 'fixtures/runtime/cw_recovery_log.json'
+      - 'scripts/epoch03_membrane_level3_gate.py'
+      - '.github/workflows/epoch03-membrane-level3-gate.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  membrane-level3-gate:
+    name: Validate Epoch03 membrane Level 3 runtime evidence
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install validator dependency
+        run: python -m pip install --upgrade jsonschema
+
+      - name: Run Epoch03 Level 3 membrane gate
+        id: membrane
+        run: |
+          python scripts/epoch03_membrane_level3_gate.py | tee membrane_gate.out
+
+          grep -qx "DUPLICATE_JSON_KEY_CONTAINS_CLASS_BLOCKED" membrane_gate.out
+          grep -qx "RECOVERY_RECEIPT_FIELDS_STRUCTURALLY_ENFORCED" membrane_gate.out
+          grep -qx "EPOCH03_MEMBRANE_SCHEMA_GATE_PASS" membrane_gate.out
+
+      - name: Publish constitutional transition summary
+        if: success()
+        run: |
+          TRANSITION_TIME="$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+          TRANSITION_BODY="STATE: ARCHITECTURE_COMPLETE -> REPOSITORY_INSIDE_MEMBRANE
+          TIME: ${TRANSITION_TIME}
+          WITNESS: DUPLICATE_JSON_KEY_CONTAINS_CLASS_BLOCKED
+          WITNESS: RECOVERY_RECEIPT_FIELDS_STRUCTURALLY_ENFORCED
+          WITNESS: EPOCH03_MEMBRANE_SCHEMA_GATE_PASS"
+          TRANSITION_HASH="$(printf '%s' "$TRANSITION_BODY" | sha256sum | awk '{print $1}')"
+
+          echo "::notice title=Constitutional State::REPOSITORY_INSIDE_MEMBRANE = TRUE"
+          echo "::notice title=Witness::DUPLICATE_JSON_KEY_CONTAINS_CLASS_BLOCKED"
+          echo "::notice title=Witness::RECOVERY_RECEIPT_FIELDS_STRUCTURALLY_ENFORCED"
+          echo "::notice title=Witness::EPOCH03_MEMBRANE_SCHEMA_GATE_PASS"
+          echo "::notice title=Transition Hash::sha256:${TRANSITION_HASH}"
+
+          {
+            echo "## ⚖️ EPOCH03 Constitutional Transition"
+            echo ""
+            echo "**STATE:** ARCHITECTURE_COMPLETE → REPOSITORY_INSIDE_MEMBRANE"
+            echo ""
+            echo "**transition_timestamp_utc:** ${TRANSITION_TIME}"
+            echo "**transition_hash:** sha256:${TRANSITION_HASH}"
+            echo ""
+            echo "The membrane is no longer merely stored in the repository."
+            echo "The repository is now evaluated by the membrane."
+            echo ""
+            echo "### Earned witnesses"
+            echo ""
+            echo "- DUPLICATE_JSON_KEY_CONTAINS_CLASS_BLOCKED"
+            echo "- RECOVERY_RECEIPT_FIELDS_STRUCTURALLY_ENFORCED"
+            echo "- EPOCH03_MEMBRANE_SCHEMA_GATE_PASS"
+            echo ""
+            echo "### Canon guard"
+            echo ""
+            echo "These witnesses were emitted by the Level-3 validator and verified from stdout before this summary was published."
+            echo ""
+            echo "### Goblin Court note"
+            echo ""
+            echo "> The cursed vault's seal is now a runtime assertion. Stories explain. Hashes enforce. The membrane remembers."
+          } >> "$GITHUB_STEP_SUMMARY"

@@ -1,0 +1,19 @@
+{
+  "ground_state": {
+    "fields": {
+      "determinant_zero": {
+        "accepted": [
+          "exact_match"
+        ],
+        "rejected": [
+          "wrong_nonzero",
+          "wrong_matrix"
+        ]
+      }
+    },
+    "total_energy": 0,
+    "status": "VERIFIED"
+  },
+  "leaf_id": "la_006",
+  "model": "linear_algebra_determinant_v1"
+}

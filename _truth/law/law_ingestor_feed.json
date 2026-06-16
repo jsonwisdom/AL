@@ -1,0 +1,54 @@
+{
+  "observer": "law_ingestor_v1",
+  "generated_at": "2026-04-25T06:34:14Z",
+  "rule": "ingest_normalize_hash_verify_surface",
+  "source_manifest_hash": "ac03b95c655bfce07b4c66bb1d9a88517e436b59983c7b5692a37e32f66f53f0",
+  "sources": [
+    {
+      "id": "doj_press_releases",
+      "lane": "doj",
+      "status": "seed",
+      "type": "public_json_or_html",
+      "url": "https://www.justice.gov/news"
+    },
+    {
+      "id": "courtlistener_opinions",
+      "lane": "cases",
+      "status": "seed",
+      "type": "public_api",
+      "url": "https://www.courtlistener.com/api/rest/v4/opinions/"
+    },
+    {
+      "id": "us_code_house",
+      "lane": "lawbooks",
+      "status": "seed",
+      "type": "public_law",
+      "url": "https://uscode.house.gov/download/download.shtml"
+    }
+  ],
+  "lanes": {
+    "lawbooks": {
+      "status": "GREEN",
+      "reason": "static source manifest normalized"
+    },
+    "cases": {
+      "status": "YELLOW",
+      "reason": "public API seed registered; no docket-specific watch active yet"
+    },
+    "doj": {
+      "status": "YELLOW",
+      "reason": "DOJ source registered; no claim-specific receipt bound yet"
+    }
+  },
+  "requirements": [
+    "source",
+    "timestamp",
+    "type",
+    "lane",
+    "hash"
+  ],
+  "global": {
+    "visibility": "YELLOW",
+    "reason": "source manifest exists; live ingestion adapters not yet attached"
+  }
+}

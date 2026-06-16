@@ -1,0 +1,24 @@
+{
+  "leaf_id": "la_003",
+  "model": "linear_algebra_independence_v1",
+  "fields": [
+    {
+      "id": "linear_independence",
+      "canonical_claim": "A=[[1,2],[2,4]] has dependent columns",
+      "tests": [
+        {
+          "id": "exact_match",
+          "claim_text": "A=[[1,2],[2,4]] has dependent columns"
+        },
+        {
+          "id": "wrong_independent",
+          "claim_text": "A=[[1,2],[2,4]] has independent columns"
+        },
+        {
+          "id": "wrong_matrix",
+          "claim_text": "A=[[1,2],[3,4]] has dependent columns"
+        }
+      ]
+    }
+  ]
+}

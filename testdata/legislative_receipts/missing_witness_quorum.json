@@ -1,0 +1,64 @@
+{
+  "schema": "alms.legislative_receipt.v0.1",
+  "receipt_id": "vote_test_001",
+  "event_type": "floor_vote",
+  "jurisdiction": "US_CONGRESS",
+  "chamber": "HOUSE",
+  "session": "119",
+  "actor": {
+    "member_id": "HOUSE_MN_06",
+    "display_name": "Representative Test",
+    "ens": "member.mn06.transparency.eth",
+    "public_key": "did:key:test"
+  },
+  "object": {
+    "bill_id": "HR-1234",
+    "bill_title": "Example Act",
+    "bill_text_cid": "ipfs://bafyexample",
+    "bill_text_hash": "sha256:billhash"
+  },
+  "action": {
+    "vote": "YES",
+    "timestamp_utc": "2026-04-26T18:30:00Z",
+    "source_system": "house_clerk_vote_system",
+    "device_attestation": "sig:hardware-key"
+  },
+  "chain": {
+    "prev_hash": "sha256:previous",
+    "receipt_hash": "sha256:ea47f41f0ee817420eeca7110f579c218a0df4b70be22acc756e88b68d52fea3",
+    "merkle_leaf_hash": "sha256:leaf"
+  },
+  "signature": {
+    "algorithm": "ed25519",
+    "signed_by": "member.mn06.transparency.eth",
+    "signature": "base64:test"
+  },
+  "witnesses": [
+    {
+      "operator": "house_clerk_node",
+      "root": "sha256:root",
+      "signed_root": "sig:1"
+    },
+    {
+      "operator": "university_monitor_001",
+      "root": "sha256:root",
+      "signed_root": "sig:2"
+    }
+  ],
+  "anchor": {
+    "network": "base",
+    "ens_name": "votes.transparency.eth",
+    "ens_text_key": "alms.root.latest",
+    "root": "sha256:root",
+    "tx_hash": "0xabc"
+  },
+  "verification": {
+    "status": "VERIFIED",
+    "inclusion_proof": [
+      "sha256:a",
+      "sha256:b"
+    ],
+    "witness_quorum": "3_of_5",
+    "verified_at": "2026-04-26T18:32:00Z"
+  }
+}

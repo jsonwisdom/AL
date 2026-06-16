@@ -1,0 +1,31 @@
+{
+  "receipt_type": "AGENT_DELEGATION_RECEIPT_V1",
+  "receipt_version": "1.0.0",
+  "delegator": {
+    "github_user": "alice",
+    "signing_key": "did:key:zV1MockDelegator"
+  },
+  "agent": {
+    "agent_id": "copilot-agent-123",
+    "runtime": "github-copilot-agent"
+  },
+  "scope": {
+    "repo": "jsonwisdom/AL",
+    "issue": 295,
+    "allowed_actions": ["read", "branch", "commit", "open_pr"],
+    "forbidden_actions": ["merge", "delete_secret", "change_permissions"],
+    "expires_at": "2099-01-01T00:00:00Z"
+  },
+  "authorization": {
+    "intent": "Validate V1 per-receipt public key verification",
+    "policy_file": "testdata/v1/valid/policy.json",
+    "policy_hash": "sha256:mock-v1-policy"
+  },
+  "proof": {
+    "canonicalization": "RFC8785-JCS",
+    "digest": "sha256:mock-v1-receipt-public-key-valid",
+    "signature_alg": "Ed25519",
+    "public_key": "45c62e0ff6962ca5afd4f6cb9518e9acd4295b674385850ce1d1a7dbb46cb36f",
+    "signature": "ed25519:a7ccb61e10b54f650c5de6baa15d4691bb3958833de4dd71a80189d5e0fe9f94bf831684bad7cde5e1f1434970a17d76a7c0896e7fcc3111860eb83d7aeef80e"
+  }
+}

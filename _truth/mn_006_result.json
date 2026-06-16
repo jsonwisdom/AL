@@ -1,0 +1,25 @@
+{
+  "ground_state": {
+    "constraints": {
+      "chain_integrity": true,
+      "sequence_complete": true,
+      "source_binding_present": true
+    },
+    "fields": {
+      "mn_chain_integrity": {
+        "accepted": [
+          "exact_match"
+        ],
+        "rejected": [
+          "missing_source_binding",
+          "wrong_order",
+          "false_chain"
+        ]
+      }
+    },
+    "status": "VERIFIED",
+    "total_energy": 0
+  },
+  "leaf_id": "mn_006",
+  "model": "mn_budget_evidence_chain_v1"
+}

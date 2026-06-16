@@ -6,6 +6,14 @@
 <style>
 body { background:#050505; color:#00ff88; font-family:monospace; padding:40px; }
 .box { border:1px solid #00ff88; padding:20px; margin-bottom:20px; }
+<meta charset="UTF-8">
+<title>ALMS Dashboard</title>
+<style>
+body{font-family:monospace;background:#0b0b0b;color:#00ff88;padding:20px}
+.card{border:1px solid #00ff88;padding:15px;margin-bottom:15px}
+.mono{word-break:break-all}
+.status{color:#9cff9c;font-weight:bold}
+button{background:#0b0b0b;color:#00ff88;border:1px solid #00ff88;padding:8px;cursor:pointer}
 </style>
 </head>
 <body>
@@ -22,6 +30,57 @@ fetch('live.json')
   .then(d=>{
     document.getElementById('data').textContent = JSON.stringify(d,null,2);
   });
+<h2>ALMS — Verified Anchor</h2>
+<div id="app">loading...</div>
+
+<script>
+async function sha256Hex(text){
+  const b=new TextEncoder().encode(text);
+  const h=await crypto.subtle.digest('SHA-256',b);
+  return [...new Uint8Array(h)].map(x=>x.toString(16).padStart(2,'0')).join('');
+}
+function stable(v){
+  if(v===null||typeof v!=='object') return JSON.stringify(v);
+  if(Array.isArray(v)) return '['+v.map(stable).join(',')+']';
+  return '{'+Object.keys(v).sort().map(k=>JSON.stringify(k)+':'+stable(v[k])).join(',')+'}';
+}
+
+const anchor={
+  cid:"bafkreidd5zm6gwqkwscg2jck34bakqe6tct237pftvqbv4njjxonh4ieme",
+  root:"cad549f24bec742fd1f6bd280e3202921fa2dd6a11f82eb36ff9ecd990303546",
+  leaf_count:3,
+  url:"https://gateway.pinata.cloud/ipfs/bafkreidd5zm6gwqkwscg2jck34bakqe6tct237pftvqbv4njjxonh4ieme"
+};
+
+async function verify(){
+  const el=document.getElementById('result');
+  el.textContent="verifying...";
+  try{
+    const j=await fetch(anchor.url).then(r=>r.json());
+    const okRoot=j.merkle_root_sha256===anchor.root;
+    const okCount=j.leaf_count===anchor.leaf_count;
+    const hash=await sha256Hex(stable(j));
+
+    el.innerHTML=`
+      status: ${okRoot&&okCount?"PASS":"FAIL"}<br>
+      root_match: ${okRoot}<br>
+      count_match: ${okCount}<br>
+      sha256: ${hash}
+    `;
+  }catch(e){
+    el.textContent="error: "+e.message;
+  }
+}
+
+document.getElementById('app').innerHTML=`
+<div class="card">
+CID:<br><span class="mono">${anchor.cid}</span><br><br>
+Root:<br><span class="mono">${anchor.root}</span><br><br>
+<button onclick="verify()">Verify Anchor</button>
+<div id="result">not run</div><br>
+<a href="${anchor.url}" target="_blank">open ipfs</a>
+</div>
+`;
 </script>
 
 </body>

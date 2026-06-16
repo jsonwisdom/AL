@@ -1,0 +1,33 @@
+{
+  "leaf_id": "mn_006",
+  "model": "mn_budget_evidence_chain_v1",
+  "source": {
+    "agency": "Minnesota Management and Budget",
+    "document": "February 2026 Budget and Economic Forecast",
+    "claim_type": "evidence_chain"
+  },
+  "fields": [
+    {
+      "id": "mn_chain_integrity",
+      "canonical_claim": "mn_001 exact_text, mn_002 format_guard, mn_003 balance_identity, mn_004 multi_claim_consistency, mn_005 source_binding form a valid evidence chain",
+      "tests": [
+        {
+          "id": "exact_match",
+          "claim_text": "mn_001 exact_text, mn_002 format_guard, mn_003 balance_identity, mn_004 multi_claim_consistency, mn_005 source_binding form a valid evidence chain"
+        },
+        {
+          "id": "missing_source_binding",
+          "claim_text": "mn_001 exact_text, mn_002 format_guard, mn_003 balance_identity, mn_004 multi_claim_consistency form a valid evidence chain"
+        },
+        {
+          "id": "wrong_order",
+          "claim_text": "mn_005 source_binding, mn_001 exact_text, mn_002 format_guard, mn_003 balance_identity, mn_004 multi_claim_consistency form a valid evidence chain"
+        },
+        {
+          "id": "false_chain",
+          "claim_text": "mn_001 exact_text alone forms a valid evidence chain"
+        }
+      ]
+    }
+  ]
+}

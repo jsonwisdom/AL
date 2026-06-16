@@ -1,0 +1,20 @@
+{
+  "ground_state": {
+    "fields": {
+      "property_tax_aids_credits": {
+        "accepted": [
+          "exact_match"
+        ],
+        "rejected": [
+          "wrong_value",
+          "normalized_number",
+          "wrong_label"
+        ]
+      }
+    },
+    "status": "VERIFIED",
+    "total_energy": 0
+  },
+  "leaf_id": "mn_067",
+  "model": "mn_budget_expenditure_property_tax_aids_v1"
+}

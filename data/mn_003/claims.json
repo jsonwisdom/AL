@@ -1,0 +1,29 @@
+{
+  "leaf_id": "mn_003",
+  "model": "mn_budget_balance_identity_v1",
+  "source": {
+    "agency": "Minnesota Management and Budget",
+    "document": "February 2026 Budget and Economic Forecast",
+    "claim_type": "balance_identity"
+  },
+  "fields": [
+    {
+      "id": "balance_equation",
+      "canonical_claim": "revenue=4000000, expenses=330000, balance=3670000 satisfies balance=revenue-expenses",
+      "tests": [
+        {
+          "id": "exact_match",
+          "claim_text": "revenue=4000000, expenses=330000, balance=3670000 satisfies balance=revenue-expenses"
+        },
+        {
+          "id": "wrong_balance",
+          "claim_text": "revenue=4000000, expenses=330000, balance=3600000 satisfies balance=revenue-expenses"
+        },
+        {
+          "id": "wrong_relation",
+          "claim_text": "revenue=4000000, expenses=330000, balance=3670000 satisfies balance=revenue+expenses"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "leaf_id": "la_005",
+  "model": "linear_algebra_orthogonal_v1",
+  "fields": [{
+    "id": "dot_product_zero",
+    "canonical_claim": "v=[1,0], w=[0,1] are orthogonal",
+    "tests": [
+      {"id":"exact_match","claim_text":"v=[1,0], w=[0,1] are orthogonal"},
+      {"id":"wrong_not_orthogonal","claim_text":"v=[1,0], w=[0,1] are not orthogonal"},
+      {"id":"wrong_vectors","claim_text":"v=[1,1], w=[1,1] are orthogonal"}
+    ]
+  }]
+}

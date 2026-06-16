@@ -1,0 +1,38 @@
+{
+  "ground_state": {
+    "constraints": {
+      "balance_identity": true,
+      "multi_claim_exactness": true
+    },
+    "fields": {
+      "balance_claim": {
+        "accepted": [
+          "exact_match"
+        ],
+        "rejected": [
+          "wrong_value"
+        ]
+      },
+      "expenses_claim": {
+        "accepted": [
+          "exact_match"
+        ],
+        "rejected": [
+          "wrong_value"
+        ]
+      },
+      "revenue_claim": {
+        "accepted": [
+          "exact_match"
+        ],
+        "rejected": [
+          "wrong_value"
+        ]
+      }
+    },
+    "status": "VERIFIED",
+    "total_energy": 0
+  },
+  "leaf_id": "mn_004",
+  "model": "mn_budget_multi_claim_consistency_v1"
+}

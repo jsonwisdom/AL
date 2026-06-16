@@ -1,0 +1,20 @@
+{
+  "ground_state": {
+    "fields": {
+      "balance_forward_prior_year": {
+        "accepted": [
+          "exact_match"
+        ],
+        "rejected": [
+          "wrong_value",
+          "normalized_number",
+          "comma_removed"
+        ]
+      }
+    },
+    "status": "VERIFIED",
+    "total_energy": 0
+  },
+  "leaf_id": "mn_007",
+  "model": "mn_budget_balance_forward_v1"
+}
