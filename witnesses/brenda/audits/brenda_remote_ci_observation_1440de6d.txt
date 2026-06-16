@@ -1,0 +1,61 @@
+BRENDA_REMOTE_CI_OBSERVATION_V0_1
+observed_at_utc: 2026-06-16T07:36:40Z
+repo: jsonwisdom/AL
+branch: alms-v2-machine-speed
+commit: 1440de6d
+
+== LOCAL REMOTE HEAD ==
+1440de6d feat(alms): preserve Brenda local enforcing candidate
+3f460a8c chore(alms): replay output evidence state
+ebbe060c feat(alms): add Mrs Wisdom quantum birthday claim
+8432929c release(alms): freeze Brenda Base Batch Boss v1.0
+e4fa692f ci(alms): preserve Brenda CI after workflow enforcement patch
+
+== WORKFLOW FILE ==
+name: Brenda Boundary
+
+on:
+  push:
+    branches:
+      - alms-v2-machine-speed
+  pull_request:
+    branches:
+      - alms-v2-machine-speed
+  workflow_dispatch:
+
+jobs:
+  brenda-boundary:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run Brenda verifier
+        run: |
+          chmod +x ./verify-brenda.sh
+          ./verify-brenda.sh 69c90f7
+
+== LOCAL VERIFIER REPLAY ==
+== BRENDA VERIFY ==
+emission_id=69c90f7
+PASS gate_1: DID and public key present
+PASS gate_2: signed emission materials present
+external/brenda/emission-69c90f7.tar.gz: OK
+PASS gate_3: bundle hash verifies
+POST_LANDING_STATE.txt: OK
+RECEIPT_EXTERNAL.json: OK
+CARD_EXTERNAL.md: OK
+PASS gate_4: unpacked artifact hashes verify
+PASS gate_5: reported binding present
+PASS gate_6: veto=false, signature valid, not expired
+PASS gate_7: resolver witness ACTIVE
+BRENDA_ALL_LOCAL_GATES_PASS
+state=BRENDA_LOCAL_ENFORCING_CANDIDATE
+exit_code=0
+
+== RULING ==
+remote_ci_observed: pending_external_github_actions_ui_or_api
+local_verifier_exit_code: 0
+brenda_state: BRENDA_LOCAL_ENFORCING_CANDIDATE
+production_green: false
+no_fake_green: true
