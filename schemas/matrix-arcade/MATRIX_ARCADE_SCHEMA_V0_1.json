@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.github.io/AL/schemas/matrix-arcade/MATRIX_ARCADE_SCHEMA_V0_1.json",
+  "title": "MATRIX_ARCADE_SCHEMA_V0_1",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "version",
+    "arcade_episode",
+    "learning_cards",
+    "challenges",
+    "trophy_case",
+    "completion_receipt"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "MATRIX_ARCADE_SCHEMA_V0_1"
+    },
+    "version": {
+      "const": "0.1"
+    },
+    "arcade_episode": {
+      "type": "object",
+      "required": ["episode_id", "title", "family_safe", "canon_state"],
+      "properties": {
+        "episode_id": { "type": "string" },
+        "title": { "type": "string" },
+        "family_safe": { "const": true },
+        "canon_state": {
+          "enum": ["DRAFT", "LOCKED", "ATTESTED", "RETIRED"]
+        }
+      },
+      "additionalProperties": false
+    },
+    "learning_cards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["card_id", "concept", "reward_type"],
+        "properties": {
+          "card_id": { "type": "string" },
+          "concept": { "type": "string" },
+          "reward_type": {
+            "enum": ["COVER_ART", "BADGE", "TROPHY", "NONE"]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "challenges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["challenge_id", "verification_method", "expected_result"],
+        "properties": {
+          "challenge_id": { "type": "string" },
+          "verification_method": {
+            "enum": ["HASH_MATCH", "MANUAL_PARENT_APPROVAL", "QUIZ_PASS", "REPLAY_CHECK"]
+          },
+          "expected_result": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "trophy_case": {
+      "type": "object",
+      "required": ["earned_cards", "completed_episodes"],
+      "properties": {
+        "earned_cards": { "type": "array", "items": { "type": "string" } },
+        "completed_episodes": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
+    "completion_receipt": {
+      "type": "object",
+      "required": ["receipt_id", "episode_id", "result", "artifact_sha256"],
+      "properties": {
+        "receipt_id": { "type": "string" },
+        "episode_id": { "type": "string" },
+        "result": { "enum": ["GREEN", "RED", "NOT_EVALUATED"] },
+        "artifact_sha256": {
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{64}$"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
