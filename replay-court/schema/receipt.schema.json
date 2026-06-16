@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Replay Court Doctrine Receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["receipt_version","doctrine_version","verifier","commit_sha","generated_at","invariants","summary","signature","receipt_hash"],
+  "properties": {
+    "receipt_version": {"const":"1.0.0"},
+    "doctrine_version": {"const":"1.1.0"},
+    "commit_sha": {"type":"string","pattern":"^[0-9a-f]{40}$"},
+    "generated_at": {"type":"string"},
+    "verifier": {
+      "type":"object","additionalProperties":false,
+      "required":["name","version"],
+      "properties":{"name":{"const":"replay-court"},"version":{"type":"string"}}
+    },
+    "invariants": {
+      "type":"object","additionalProperties":false,
+      "required":["TC001","TC002","TC003","TC004","TC005","TC006","TC007","TC008","TC009","TC010","TC011","TC012","TC013","TC014","TC015","TC016","TC017","TC018","TC019"],
+      "properties": {
+        "TC001":{"$ref":"#/definitions/invariant"},"TC002":{"$ref":"#/definitions/invariant"},"TC003":{"$ref":"#/definitions/invariant"},"TC004":{"$ref":"#/definitions/invariant"},"TC005":{"$ref":"#/definitions/invariant"},"TC006":{"$ref":"#/definitions/invariant"},"TC007":{"$ref":"#/definitions/invariant"},"TC008":{"$ref":"#/definitions/invariant"},"TC009":{"$ref":"#/definitions/invariant"},"TC010":{"$ref":"#/definitions/invariant"},"TC011":{"$ref":"#/definitions/invariant"},"TC012":{"$ref":"#/definitions/invariant"},"TC013":{"$ref":"#/definitions/invariant"},"TC014":{"$ref":"#/definitions/invariant"},"TC015":{"$ref":"#/definitions/invariant"},"TC016":{"$ref":"#/definitions/invariant"},"TC017":{"$ref":"#/definitions/invariant"},"TC018":{"$ref":"#/definitions/invariant"},"TC019":{"$ref":"#/definitions/invariant"}
+      }
+    },
+    "summary": {
+      "type":"object","additionalProperties":false,
+      "required":["state","passed","failed","total"],
+      "properties":{"state":{"enum":["GREEN_STATE","RED_STATE"]},"passed":{"type":"integer"},"failed":{"type":"integer"},"total":{"const":19}}
+    },
+    "signature": {
+      "type":"object","additionalProperties":false,
+      "required":["algorithm","signing_key_id","signed_at","value"],
+      "properties":{"algorithm":{"const":"ed25519"},"signing_key_id":{"type":"string"},"signed_at":{"type":"string"},"value":{"type":"string"}}
+    },
+    "receipt_hash":{"type":"string","pattern":"^[0-9a-f]{64}$"}
+  },
+  "definitions": {
+    "invariant": {
+      "type":"object","additionalProperties":false,
+      "required":["status","name","details"],
+      "properties":{"status":{"enum":["PASS","FAIL"]},"name":{"type":"string"},"details":{"type":"string"}}
+    }
+  }
+}
