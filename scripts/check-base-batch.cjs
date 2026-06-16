@@ -15,7 +15,7 @@ const required = [
 const file = process.argv[2];
 
 if (!file) {
-  console.error("usage: node scripts/check-base-batch.js <packet.json>");
+  console.error("usage: node scripts/check-base-batch.cjs <packet.json>");
   process.exit(1);
 }
 

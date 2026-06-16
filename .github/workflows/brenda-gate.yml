@@ -19,7 +19,7 @@ jobs:
         run: ./verify-brenda.sh 69c90f7
 
       - name: Brenda Base Batch boundary checker
-        run: node scripts/check-base-batch.js witnesses/brenda/base_batch_boundary_packet.json
+        run: node scripts/check-base-batch.cjs witnesses/brenda/base_batch_boundary_packet.json
 
       - name: Brenda receipt tail bound checker
         run: |
