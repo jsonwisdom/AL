@@ -1,0 +1,16 @@
+== BRENDA VERIFY ==
+emission_id=69c90f7
+PASS gate_1: DID and public key present
+PASS gate_2: signed emission materials present
+external/brenda/emission-69c90f7.tar.gz: OK
+PASS gate_3: bundle hash verifies
+POST_LANDING_STATE.txt: OK
+RECEIPT_EXTERNAL.json: OK
+CARD_EXTERNAL.md: OK
+PASS gate_4: unpacked artifact hashes verify
+PASS gate_5: reported binding present
+PASS gate_6: veto=false, signature valid, not expired
+PASS gate_7: resolver witness ACTIVE
+BRENDA_ALL_LOCAL_GATES_PASS
+state=BRENDA_LOCAL_ENFORCING_CANDIDATE
+exit_code=0

@@ -1,0 +1,22 @@
+name: Brenda Boundary
+
+on:
+  push:
+    branches:
+      - alms-v2-machine-speed
+  pull_request:
+    branches:
+      - alms-v2-machine-speed
+  workflow_dispatch:
+
+jobs:
+  brenda-boundary:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run Brenda verifier
+        run: |
+          chmod +x ./verify-brenda.sh
+          ./verify-brenda.sh 69c90f7
