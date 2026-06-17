@@ -1,0 +1,25 @@
+{
+  "proof": "RECEIPT_013_SETTLEMENT_STAGED_V1",
+  "episode": "004",
+  "status": "STAGED_NOT_BROADCAST",
+  "settlement_hash": "d49a45a82729bdb1692fc9a62d156a87138c7ce9f1e7dba5b951a6ecb0c1acae",
+  "anchor_encoding": "RAW_BYTES32_CALLDATA",
+  "script_path": "anchor_episode_004.mjs",
+  "script_sha256": "2ef2007e2cc8da76eab5a9729ae551a16d935018b80e27aa6ef48120aaa3b17b",
+  "anchor_plan": {
+    "chain": "base",
+    "to": "0xA5a5491bCa93dD4C076e4906e79E7673F4A5A142",
+    "value": "0",
+    "data": "0xd49a45a82729bdb1692fc9a62d156a87138c7ce9f1e7dba5b951a6ecb0c1acae"
+  },
+  "required_before_green": [
+    "real_tx_hash",
+    "block_number",
+    "block_timestamp",
+    "chain_id"
+  ],
+  "funds_moved": "NO",
+  "secrets_printed": "NO",
+  "rule": "Do not mint RECEIPT_014 unless Base confirms real tx",
+  "no_fake_green": "ACTIVE"
+}
