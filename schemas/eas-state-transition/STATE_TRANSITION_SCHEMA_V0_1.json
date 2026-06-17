@@ -1,0 +1,10 @@
+{
+  "proof": "STATE_TRANSITION_SCHEMA_V0_1",
+  "role": "EAS_PUBLIC_FSM_SPINE",
+  "raw_schema": "string protocol,string episode,string from_state,string trigger,string to_state,string evidence_hash,string guardrail_hash,string authority",
+  "canonical_evidence_layer": "GitHub receipts + local replay kit",
+  "public_witness_layer": "EAS on Base",
+  "layer0_policy": "OFFCHAIN_HASH_REFERENCED",
+  "no_fake_green": "ACTIVE",
+  "status": "READY_FOR_EAS_SCHEMA_REGISTRATION"
+}
