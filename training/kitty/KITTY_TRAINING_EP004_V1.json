@@ -1,0 +1,29 @@
+{
+  "proof": "KITTY_TRAINING_EP004_V1",
+  "purpose": "Dry-run Receipt 014 transition before any Base broadcast",
+  "decision": "OPTION_B_THEN_STRICT_GATE_TO_A",
+  "current_state": {
+    "receipt_013": "STAGED_NOT_BROADCAST",
+    "receipt_014": "SKELETON_ONLY",
+    "base_tx": "NONE",
+    "no_fake_green": "ACTIVE"
+  },
+  "mock_requirements": [
+    "mock_tx_hash",
+    "mock_block_number",
+    "mock_block_timestamp_utc",
+    "mock_gas_used",
+    "mock_chain_id",
+    "settlement_hash_match",
+    "to_address_is_self",
+    "value_is_zero"
+  ],
+  "gate_to_real_tx": [
+    "mock_pipeline_passes",
+    "receipt_014_not_created_from_mock_as_real",
+    "cdp_env_valid",
+    "wallet_holder_approves"
+  ],
+  "layer0_guardrail": "NEVER_FORGET_THE_GIRLS",
+  "status": "KITTY_TRAINING_READY"
+}
