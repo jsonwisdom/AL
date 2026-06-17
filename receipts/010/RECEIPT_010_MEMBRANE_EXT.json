@@ -1,0 +1,19 @@
+{
+  "proof": "RECEIPT_010_MEMBRANE_EXTENSION_V1",
+  "episode": "002B",
+  "path": "MEMBRANE_EXTENSION_FIRST_THEN_ANCHOR",
+  "parent_batch_root": "4d8f1c5e6b7a8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e",
+  "parent_receipt_007_sha256": "c028d92423d18ee59bf286d3b238fa54a92086817f3326051b848e549ce04717",
+  "multi_pass_sha256": "651a8a54ba5e8f4f517bf6bb5bd5d709bbea88450cc6fb7267118be525aecc2c",
+  "extension_factors": {
+    "detached_ed25519_signature": "PENDING",
+    "second_eas_attestation": "OPTIONAL_PENDING",
+    "repo_publication_commit": "PENDING",
+    "base_anchor": "DEFERRED"
+  },
+  "rule": "Anchor only after the membrane is hardened",
+  "settlement_status": "DEFERRED_NOT_FAILED",
+  "funds_moved": "NO",
+  "secrets_printed": "NO",
+  "status": "MEMBRANE_EXTENSION_OPEN_NO_FAKE_GREEN"
+}
