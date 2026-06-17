@@ -2,7 +2,7 @@
   "lane": "al-wisdom",
   "multipass_version": "V0_1",
   "timestamp": "2026-06-17T06:23:00Z",
-  "last_updated": "2026-06-17T06:40:00Z",
+  "last_updated": "2026-06-17T12:02:41.856331+00:00",
   "entries": [
     {
       "id": "GENESIS-001",
@@ -12,10 +12,30 @@
       "status": "PRECEDENT_BOUND",
       "authority": "jaywisdom.base.eth",
       "guardrail": "LAYER_0_FAMILY_SUPREME"
+    },
+    {
+      "id": "ZORA-001",
+      "event": "ZORA_FLYWHEEL_ANCHOR",
+      "source": "jaywisdom Zora profile",
+      "feed_version": "EV-010",
+      "timestamp": "2026-06-17T12:02:41.855560+00:00",
+      "content": {
+        "creator_coin": "$jaywisdom",
+        "market_cap": "PENDING_LIVE_CONFIRMATION",
+        "profile": "https://zora.co/@jaywisdom",
+        "content_coins": [
+          "TRACE",
+          "SILENT_GOBLIN",
+          "CIA_JAY_4_CARD_BATCH"
+        ]
+      },
+      "status": "DECLARED_PENDING_LIVE_CONFIRMATION",
+      "authority": "jaywisdom.base.eth",
+      "guardrail": "LAYER_0_FAMILY_SUPREME"
     }
   ],
   "summary": {
-    "total_entries": 1,
+    "total_entries": 2,
     "zora_velocity": "low",
     "constitutional_health": "INTACT"
   },
