@@ -1,0 +1,26 @@
+{
+  "proof": "RECEIPT_014_SETTLEMENT_CONFIRMED_V1_SKELETON",
+  "episode": "004",
+  "status": "PENDING_REAL_BASE_TX",
+  "parent_receipt_013_sha256": "1c7cff3c0766585b061da2c4ec964a2598441950596ac9f2da76f5775a9a1a7f",
+  "episode_004_audit_sha256": "bfa3057d5a2d99915fa47cb89578ad97eb5a1e34bd0173bbc95576b5c4134556",
+  "layer0_verify_sha256": "052fc71b966d02d66a2b8f248efdab2123e7c34254d68f4360ecb0c694acb8cf",
+  "settlement_hash": "d49a45a82729bdb1692fc9a62d156a87138c7ce9f1e7dba5b951a6ecb0c1acae",
+  "anchor_encoding": "RAW_BYTES32_CALLDATA",
+  "required_real_fields": [
+    "tx_hash",
+    "block_number",
+    "block_timestamp_utc",
+    "chain_id",
+    "gas_used"
+  ],
+  "tx_hash": "PENDING",
+  "block_number": "PENDING",
+  "block_timestamp_utc": "PENDING",
+  "chain_id": "PENDING",
+  "gas_used": "PENDING",
+  "funds_moved": "NO_VALUE_TRANSFER_EXPECTED_GAS_ONLY",
+  "secrets_printed": "NO",
+  "no_fake_green": "ACTIVE",
+  "rule": "This skeleton is not settlement confirmation. Replace only after real Base tx confirmation."
+}
