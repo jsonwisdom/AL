@@ -1,0 +1,23 @@
+{
+  "proof": "RECEIPT_012_SECOND_EAS_V1",
+  "episode": "003B",
+  "parent": "RECEIPT_011_ED25519_WITNESS",
+  "parent_commit": "132eed0b",
+  "batch_root": "4d8f1c5e6b7a8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e",
+  "witness_receipt_sha256": "5fa17dd9c84e78d4d89609ff17f21d18826f9a1c99eb886d2ee7fa421b2dd3a6",
+  "eas": {
+    "network": "PENDING",
+    "schema_uid": "PENDING",
+    "attestation_uid": "PENDING",
+    "attester": "PENDING",
+    "recipient": "PENDING",
+    "statement": "Pending second EAS attestation binding batch root and witness commit under MULTI_PASS_LEELOO_DALLAS_V0_1.",
+    "revocable": "PENDING",
+    "expiration": "PENDING"
+  },
+  "rule": "Do not claim EAS_BOUND until real attestation UID exists",
+  "settlement_status": "BASE_ANCHOR_DEFERRED",
+  "funds_moved": "NO",
+  "secrets_printed": "NO",
+  "status": "EAS_PENDING_NO_FAKE_GREEN"
+}
