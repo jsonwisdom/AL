@@ -1,0 +1,30 @@
+name: Boss Brenda Archive Observer v2
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  observe:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-actions[bot]'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate Receipt Hook
+        run: python tools/github_receipt_hook.py
+      - name: Run Classifier Watcher
+        run: python boss_brenda_watcher_v0.1.py --mode live
+      - name: Commit Receipts
+        run: |
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git config user.name "Boss Brenda"
+          git config user.email "boss@brenda.archive"
+          git add receipts/boss-brenda/
+          git commit -m "Boss Brenda v2: Archive snapshot + metrics [auto]"
+          git push
