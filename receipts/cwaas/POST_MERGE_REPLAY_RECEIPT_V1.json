@@ -1,0 +1,28 @@
+{
+  "receipt_type": "POST_MERGE_REPLAY_RECEIPT_V1",
+  "project": "cwaas",
+  "artifact": "AUDIT_WORKFLOW_STOREFRONT_01_INTAKE_GATE_SPEC_V1",
+  "repo": "jsonwisdom/AL",
+  "branch": "master",
+  "merge_commit": "a6ffdc2b8ec45e0141bf9a6a989a793316236ae5",
+  "source_pr": 337,
+  "merge_method": "squash",
+  "replay_invariants": {
+    "master_branch_canonicality": "PENDING_HASH",
+    "deterministic_output": "PENDING_HASH",
+    "receipt_stability": "PENDING_HASH",
+    "cold_path_verification": "PENDING_HASH",
+    "no_authority_elevation": "PENDING_HASH",
+    "no_fake_green_enforcement": "PENDING_HASH"
+  },
+  "hashes": {
+    "tree_sha": "PENDING",
+    "spec_sha256": "PENDING",
+    "receipt_sha256": "PENDING",
+    "replay_output_sha256": "PENDING"
+  },
+  "verdict": {
+    "post_merge_replay": "PENDING",
+    "deployment_branch_authorized": false
+  }
+}
