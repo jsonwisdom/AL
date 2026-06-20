@@ -20,6 +20,11 @@ jobs:
       - name: Verify jq
         run: jq --version
 
+      - name: Configure git identity
+        run: |
+          git config user.name "alms-bot"
+          git config user.email "bot@users.noreply.github.com"
+
       - name: Run ALMS cycle
         run: |
           chmod +x scripts/*.sh
