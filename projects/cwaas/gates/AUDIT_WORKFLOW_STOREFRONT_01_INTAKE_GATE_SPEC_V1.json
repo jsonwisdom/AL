@@ -1,0 +1,58 @@
+{
+  "artifact": "AUDIT_WORKFLOW_STOREFRONT_01_INTAKE_GATE_SPEC_V1",
+  "version": "1.0",
+  "status": "DRAFT_ONLY",
+  "project": "cwaas",
+  "gate": "audit_workflow_storefront_01",
+  "identity": {
+    "root_identity": "jaywisdom.base.eth",
+    "authority_source": "root_identity",
+    "aliases_authority": "provenance_only",
+    "authority_escalation": "DISABLED"
+  },
+  "provenance": {
+    "github_alias": "jsonwisdom",
+    "ens_alias": "jaywisdom.eth",
+    "merge_trail": [
+      {
+        "label": "backfill",
+        "commit": "077efa9"
+      },
+      {
+        "label": "bound",
+        "commit": "b7b5da6"
+      },
+      {
+        "label": "registration",
+        "commit": "15083a2"
+      },
+      {
+        "label": "spine_binding",
+        "commit": "6a986f1"
+      }
+    ]
+  },
+  "locks": {
+    "intake_allowed": false,
+    "intake_mode": "DRAFT_ONLY",
+    "permissions": "READ_ARTIFACTS_ONLY",
+    "payment_execution": false,
+    "treasury_lane": "hold_cold",
+    "treasury_access": "DENIED",
+    "token_claim": false,
+    "settlement_claim": false,
+    "family_layer_protected": true
+  },
+  "validation": {
+    "receipts_required_before_green": true,
+    "replay_required_before_green": true,
+    "remote_branch_required_before_green": true,
+    "pr_required_before_review_green": true
+  },
+  "doctrine": {
+    "no_fake_green": true,
+    "root_identity_strict": true,
+    "aliases_do_not_escalate_authority": true,
+    "family_layer_not_subordinate_to_governance": true
+  }
+}
