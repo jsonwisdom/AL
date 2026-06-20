@@ -74,35 +74,21 @@ fi
 # === CLEANUP ===
 rm -f "$PRE_SNAP" "$POST_SNAP"
 
-# === COMMIT IF CHANGE ===
-if [ "$CHANGE_TYPE" != "NO_CHANGE" ]; then
-  # Never commit runtime alert streams. GitHub rejects files over 100MB, and alerts.jsonl is generated output.
-  git add \
-    _truth/root/alms_root.json \
-    _truth/logs/root_events.jsonl \
-    _truth/alerts/alerts_summary.json 2>/dev/null || true
+# === DEFER GIT MUTATION TO WORKFLOW ===
+# This script builds ALMS artifacts only. The GitHub Actions workflow owns git add/commit/push.
+# Keeping git writes out of the cycle step prevents identity, token, rebase, and detached-head failures inside Run ALMS cycle.
+echo "AUTO_ROOT_GIT_COMMIT_DEFERRED_TO_WORKFLOW"
 
-  if [ -f "_truth/timeline/timeline.json" ]; then
-    git add _truth/timeline/timeline.json
-  fi
-
-  git commit -m "Auto-run: root + alert summary + timeline"
-  git pull --rebase origin master
-  git push
-fi
-
-echo "AUTO_ROOT_COMPLETE"
-
-# --- WRITE LAST RUN ---
+# === WRITE LAST RUN ===
 ./scripts/write_last_run.sh
 cp _truth/status/last_run.json status.json
 echo "STATUS_UPDATED"
-
 
 # --- FINALIZE STATUS ---
 ./scripts/write_last_run.sh
 echo "STATUS_UPDATED"
 
-
 # --- ROOT HISTORY ---
 ./scripts/append_root_history.sh
+
+echo "AUTO_ROOT_COMPLETE"
