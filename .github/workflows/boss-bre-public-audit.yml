@@ -10,11 +10,6 @@ permissions:
   issues: write
   pull-requests: read
 
-group_note: &gate_note |
-  NO_FAKE_GREEN: ACTIVE
-  PUBLIC_CONTENT_CLAIM: BLOCKED_BY_DEFAULT
-  HUMAN_REVIEW_REQUIRED: TRUE
-
 concurrency:
   group: boss-bre-public-audit
   cancel-in-progress: false
