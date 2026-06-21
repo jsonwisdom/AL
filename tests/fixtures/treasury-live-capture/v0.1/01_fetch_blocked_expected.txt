@@ -1,0 +1,10 @@
+TEST_VECTOR=01_fetch_blocked_failure_receipt
+STRICT=FAIL
+AUDIT=PASS_WITH_WARNINGS
+PROMOTION=BLOCKED
+REASON=FETCH_BLOCKED
+NO_FAKE_GREEN=ACTIVE
+
+A blocked fetch may produce a failure receipt.
+A blocked fetch must not produce a real capture receipt.
+A blocked fetch must not satisfy real-genesis promotion.

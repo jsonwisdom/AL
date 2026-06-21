@@ -1,0 +1,40 @@
+schema_version: treasury-live-capture-signed-receipt/v0.1
+required:
+  - schema_version
+  - receipt_id
+  - capture_id
+  - mode
+  - authority_level
+  - trust_policy
+  - trust_bundle_path
+  - quorum
+  - receipt_hash
+  - signatures
+  - verification
+allowed_modes:
+  - REAL
+  - FAILURE
+allowed_authority_levels:
+  - LIVE_CAPTURE
+quorum:
+  required:
+    - threshold
+    - satisfied
+    - active_signature_count
+signature:
+  required:
+    - key_id
+    - algorithm
+    - signature
+    - signed_at_utc
+    - witness_role
+  allowed_algorithms:
+    - ed25519
+verification:
+  required:
+    - strict_status
+    - audit_status
+    - revoked_key_present
+    - staging_key_present
+    - no_fake_green
+    - promotion_eligible

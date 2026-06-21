@@ -1,0 +1,28 @@
+schema_version: treasury-live-capture-normalized-payload/v0.1
+required:
+  - schema_version
+  - capture_id
+  - source
+  - raw_payload_hash
+  - normalizer
+  - normalized_payload_hash
+  - normalized_payload
+source:
+  required:
+    - name
+    - url
+    - fetched_at_utc
+    - fetch_status
+  allowed_fetch_status:
+    - PASS
+    - FETCH_BLOCKED
+    - FETCH_ERROR
+normalizer:
+  required:
+    - name
+    - version
+    - code_hash
+normalized_payload:
+  required:
+    - target_date
+    - observations
