@@ -8,8 +8,7 @@ on:
 permissions:
   contents: write
   issues: write
-
-concurrency:
+\concurrency:
   group: boss-bre-15m-sweep
   cancel-in-progress: false
 
@@ -22,12 +21,12 @@ jobs:
           persist-credentials: true
 
       - name: Install deps
-        run: sudo apt-get update && sudo apt-get install -y jq
+        run: sudo apt-get update && sudo apt-get install -y jq curl poppler-utils
 
-      - name: Run Boss Bre
+      - name: Run Boss Bre PDF scanner and forensic sweep
         run: |
-          chmod +x scripts/mn001_forensic_worker_v0_1.sh scripts/boss_bre_runner.sh
-          ./scripts/boss_bre_runner.sh
+          chmod +x scripts/mn001_forensic_worker_v0_1.sh scripts/boss_bre_pdf_scanner.sh scripts/boss_bre_runner_v0_2.sh
+          ./scripts/boss_bre_runner_v0_2.sh
 
       - name: Update Librarian
         env:
