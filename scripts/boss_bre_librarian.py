@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Boss Bre Librarian.
-Scans jurisdiction receipts and comments a master summary on issue #348.
+Scans jurisdiction receipts, scanner inventory, and learning state; comments master summary on issue #348.
 Doctrine: NO_FAKE_GREEN. Summaries only; no public claim promotion.
 """
 
@@ -14,6 +14,9 @@ from pathlib import Path
 ROOT = Path(subprocess.check_output(["git", "rev-parse", "--show-toplevel"], text=True).strip())
 RECEIPTS = sorted(glob.glob(str(ROOT / "projects/mn-fiscal-replay/live_fetch/*/MN_001_forensic_receipt.json")))
 MASTER_ISSUE = os.environ.get("BOSS_BRE_MASTER_ISSUE", "348")
+BOSS_BRE_DIR = ROOT / "projects/mn-fiscal-replay/boss_bre"
+LATEST_SCAN = BOSS_BRE_DIR / "latest_sweep_summary.json"
+LEARN_FILE = BOSS_BRE_DIR / "boss_bre_learning_state.json"
 
 summary = {
     "utc": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
@@ -61,8 +64,38 @@ for receipt_path in RECEIPTS:
     elif claim != "BLOCKED":
         summary["confirmed_green"] += 1
 
+try:
+    scan_summary = json.loads(LATEST_SCAN.read_text())
+except Exception as exc:
+    scan_summary = {
+        "status": "SCAN_SUMMARY_MISSING_OR_PARSE_BLOCKED",
+        "blocked_reason": str(exc),
+        "public_content_claim": "BLOCKED",
+        "no_fake_green": True,
+    }
+
+try:
+    learning_state = json.loads(LEARN_FILE.read_text())
+except Exception as exc:
+    learning_state = {
+        "status": "LEARNING_STATE_MISSING_OR_PARSE_BLOCKED",
+        "blocked_reason": str(exc),
+        "public_content_claim": "BLOCKED",
+        "no_fake_green": True,
+    }
+
 body = f"""## Boss Bre 15m Sweep Summary
 UTC: {summary['utc']}
+
+**Scanner / learning state**
+```json
+{json.dumps(scan_summary, indent=2)}
+```
+
+**What Boss Bre learned for next run**
+```json
+{json.dumps(learning_state, indent=2)}
+```
 
 **Gate status**
 - BLOCKED: {summary['blocked']}
