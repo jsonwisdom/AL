@@ -1,0 +1,18 @@
+{
+  "artifact": "BOSS_BRE_MANIFEST_VALIDATOR_V1_3_RECEIPT",
+  "version": "1.3",
+  "generated_utc": "2026-06-21T08:54:56Z",
+  "status": "PASS",
+  "reason": "OK",
+  "manifest_path": "projects/mn-fiscal-replay/boss_bre/BOSS_BRE_MACHINE_READABLE_PACKAGE_MANIFEST_V1_1_POPULATED.json",
+  "details_path": "projects/mn-fiscal-replay/boss_bre/BOSS_BRE_MANIFEST_VALIDATOR_V1_3_DETAILS.jsonl",
+  "component_count": 9,
+  "mismatch_count": 0,
+  "missing_count": 0,
+  "full_package_sha256_expected": "sha256:f7ed60c159833d5e61e2a0787e8b95b7e5d6d51233c2ddfb932478b5df5117e9",
+  "full_package_sha256_actual": "sha256:f7ed60c159833d5e61e2a0787e8b95b7e5d6d51233c2ddfb932478b5df5117e9",
+  "public_content_claim": "BLOCKED_PENDING_HUMAN_REVIEW",
+  "claim_status": "PACKAGE_MANIFEST_VALIDATOR_ONLY",
+  "human_review_required": true,
+  "no_fake_green": true
+}

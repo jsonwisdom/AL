@@ -1,0 +1,80 @@
+{
+  "manifest_id": "boss-bre-package-20260621T085445Z",
+  "release_utc": "2026-06-21T08:54:45Z",
+  "package_version": "1.2",
+  "manifest_status": "POPULATED",
+  "rules_version": "0.2",
+  "payload_id": "9ebc3651-b198-4e93-97a0-b0ab869275ec",
+  "payload_path": "projects/mn-fiscal-replay/boss_bre/latest_lead_payload.json",
+  "components": [
+    {
+      "component": "rules",
+      "version": "0.2",
+      "path": "data/boss_bre_anomaly_rules.json",
+      "commit_ref": "889e78e17b1bdc21a6a1af4af859a4d1d88f8935",
+      "sha256": "sha256:c0bb105fd09c048d3977978d9a0fcda075fbcc8f1793494dc98703c9983d5744"
+    },
+    {
+      "component": "lead_payload",
+      "version": "0.3",
+      "path": "projects/mn-fiscal-replay/boss_bre/latest_lead_payload.json",
+      "commit_ref": "d9e8db3a66fa1e5c91f136608531cef020384a41",
+      "sha256": "sha256:1565e01310d187723c9db5511dbb555e2e2bd8bbe7bcdc7f86c89a756ed08a3d"
+    },
+    {
+      "component": "distribution",
+      "version": "0.4",
+      "path": "projects/mn-fiscal-replay/boss_bre/BOSS_BRE_PAYLOAD_DISTRIBUTION_V0_4.md",
+      "commit_ref": "863e6b9e8c35754967793098a509d7aca163e956",
+      "sha256": "sha256:cd5d73fec26cc436a375e99d3bb1e2ebf58d4ecd618369fdd36f6662f47a4f86"
+    },
+    {
+      "component": "distribution_log",
+      "version": "0.5",
+      "path": "projects/mn-fiscal-replay/boss_bre/BOSS_BRE_DISTRIBUTION_LOG_V0_5.md",
+      "commit_ref": "9e92b3a36035257ec350a0c558c95dfa18dbbbd7",
+      "sha256": "sha256:d224ce1a746f51c500c14967a32f696963ed07000262868fbc39acdaf4fd9024"
+    },
+    {
+      "component": "acknowledgment_receipt",
+      "version": "0.6",
+      "path": "projects/mn-fiscal-replay/boss_bre/BOSS_BRE_ACKNOWLEDGMENT_RECEIPT_V0_6.md",
+      "commit_ref": "ec04fb35ec524abd4a0d20b850f6c204f5e6e097",
+      "sha256": "sha256:e560e69cb290fd72074e282eda56b9eb83854d717fe07a4ed31f1fd19b9cb1d4"
+    },
+    {
+      "component": "question_intake",
+      "version": "0.7",
+      "path": "projects/mn-fiscal-replay/boss_bre/BOSS_BRE_REVIEW_QUESTION_INTAKE_V0_7.md",
+      "commit_ref": "3ffca5a34aa87eb56a1615e25974d5de59667e52",
+      "sha256": "sha256:36f689c67e570247860b449866f3a0425e9ada5164cd1ac722fe96e95ab51410"
+    },
+    {
+      "component": "evidence_response_packet",
+      "version": "0.8",
+      "path": "projects/mn-fiscal-replay/boss_bre/BOSS_BRE_EVIDENCE_RESPONSE_PACKET_V0_8.md",
+      "commit_ref": "afece75830800029b2b62732bd6cac6e8473ed08",
+      "sha256": "sha256:b2d6960a822ac3882a469da2d26cdcd62a5492f04fc816e55d64fdce16ae74d8"
+    },
+    {
+      "component": "review_closeout",
+      "version": "0.9",
+      "path": "projects/mn-fiscal-replay/boss_bre/BOSS_BRE_REVIEW_CLOSEOUT_DISPOSITION_V0_9.md",
+      "commit_ref": "fb198f2dc63f5d0eb5ed1d442154286a162b6980",
+      "sha256": "sha256:c8c263feadeab9baea145a8316000027df83ab28cf8d324399cd4bc98a55bd22"
+    },
+    {
+      "component": "review_package_index",
+      "version": "1.0",
+      "path": "projects/mn-fiscal-replay/boss_bre/BOSS_BRE_REVIEW_PACKAGE_INDEX_V1_0.md",
+      "commit_ref": "6390c31ed32a9d481150422979a52e727c70f51c",
+      "sha256": "sha256:7edf314d5c47c8441de578488415ccc9d97a9e9b469c7c5212c467f8f91c3a4d"
+    }
+  ],
+  "full_package_sha256": "sha256:f7ed60c159833d5e61e2a0787e8b95b7e5d6d51233c2ddfb932478b5df5117e9",
+  "notes": "Machine-readable manifest for complete reviewed anomaly lead package. Review material only. Source-backed fiscal risk signals. No final public conclusion authorized.",
+  "public_content_claim": "BLOCKED_PENDING_HUMAN_REVIEW",
+  "claim_status": "MACHINE_READABLE_PACKAGE_MANIFEST_ONLY",
+  "human_review_required": true,
+  "no_fake_green": true
+}
