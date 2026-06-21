@@ -15,6 +15,9 @@ on:
         description: 'Commit to display as latest verified dashboard vector'
         required: true
         default: '195a5a29c1dc9f5db6f9ad39eb9c82480638351d'
+  push:
+    paths:
+      - 'registry/_dashboard_triggers/**'
 
 permissions:
   contents: write
@@ -23,6 +26,11 @@ defaults:
   run:
     shell: bash
 
+env:
+  DEFAULT_LIBRARIAN_RECEIPT: registry/_receipts/LIBRARIAN-REPLAY-27920834257.json
+  DEFAULT_GAUNTLET_RECEIPT: registry/_receipts/GAUNTLET-RUN-27920957650.json
+  DEFAULT_LATEST_VERIFIED_COMMIT: 195a5a29c1dc9f5db6f9ad39eb9c82480638351d
+
 jobs:
   update-dashboard:
     runs-on: ubuntu-latest
@@ -30,14 +38,28 @@ jobs:
       - name: Checkout Ledger
         uses: actions/checkout@v4
 
+      - name: Resolve Receipt Inputs
+        run: |
+          LIBRARIAN_RECEIPT="${{ inputs.librarian_receipt || env.DEFAULT_LIBRARIAN_RECEIPT }}"
+          GAUNTLET_RECEIPT="${{ inputs.gauntlet_receipt || env.DEFAULT_GAUNTLET_RECEIPT }}"
+          LATEST_VERIFIED_COMMIT="${{ inputs.latest_verified_commit || env.DEFAULT_LATEST_VERIFIED_COMMIT }}"
+
+          echo "LIBRARIAN_RECEIPT=$LIBRARIAN_RECEIPT" >> "$GITHUB_ENV"
+          echo "GAUNTLET_RECEIPT=$GAUNTLET_RECEIPT" >> "$GITHUB_ENV"
+          echo "LATEST_VERIFIED_COMMIT=$LATEST_VERIFIED_COMMIT" >> "$GITHUB_ENV"
+
+          echo "Resolved librarian receipt: $LIBRARIAN_RECEIPT"
+          echo "Resolved gauntlet receipt: $GAUNTLET_RECEIPT"
+          echo "Resolved latest verified commit: $LATEST_VERIFIED_COMMIT"
+
       - name: Confirm Receipt Inputs Exist
         run: |
-          test -f "${{ inputs.librarian_receipt }}" || {
-            echo "FATAL: Missing librarian receipt: ${{ inputs.librarian_receipt }}"
+          test -f "$LIBRARIAN_RECEIPT" || {
+            echo "FATAL: Missing librarian receipt: $LIBRARIAN_RECEIPT"
             exit 1
           }
-          test -f "${{ inputs.gauntlet_receipt }}" || {
-            echo "FATAL: Missing gauntlet receipt: ${{ inputs.gauntlet_receipt }}"
+          test -f "$GAUNTLET_RECEIPT" || {
+            echo "FATAL: Missing gauntlet receipt: $GAUNTLET_RECEIPT"
             exit 1
           }
 
@@ -48,15 +70,15 @@ jobs:
       - name: Validate Selected Receipt Pair
         run: |
           node scripts/validate-receipt-taxonomy.cjs \
-            "${{ inputs.librarian_receipt }}" \
-            "${{ inputs.gauntlet_receipt }}"
+            "$LIBRARIAN_RECEIPT" \
+            "$GAUNTLET_RECEIPT"
 
       - name: Build latest dashboard receipt JSON
         run: |
           python tools/build_latest_json.py \
-            --librarian "${{ inputs.librarian_receipt }}" \
-            --gauntlet "${{ inputs.gauntlet_receipt }}" \
-            --latest-verified-commit "${{ inputs.latest_verified_commit }}" \
+            --librarian "$LIBRARIAN_RECEIPT" \
+            --gauntlet "$GAUNTLET_RECEIPT" \
+            --latest-verified-commit "$LATEST_VERIFIED_COMMIT" \
             --output receipts/latest.json
 
       - name: Commit latest dashboard JSON
