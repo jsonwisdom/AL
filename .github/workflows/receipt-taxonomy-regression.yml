@@ -1,0 +1,23 @@
+name: Receipt Taxonomy Regression
+
+on:
+  workflow_dispatch: {}
+  push:
+    paths:
+      - 'scripts/validate-receipt-taxonomy.cjs'
+      - 'scripts/test-receipt-taxonomy-golden.cjs'
+      - 'test/fixtures/**'
+      - '.github/workflows/receipt-taxonomy-regression.yml'
+      - '.github/workflows/librarian-replay.yml'
+      - '.github/workflows/gauntlet.yml'
+
+jobs:
+  golden-receipts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run Golden Receipt Taxonomy Regression
+        run: |
+          node scripts/test-receipt-taxonomy-golden.cjs
