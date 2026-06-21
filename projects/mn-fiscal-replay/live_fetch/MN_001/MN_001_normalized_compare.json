@@ -1,0 +1,13 @@
+{
+  "id": "MN_001",
+  "verdict": "NORMALIZED_TEXT_DIFF_DETECTED",
+  "baseline_normalized_sha256": "b855c4e2e6907a918229587edde60bfe42bef32a22a6d02fa9247e7f92662bf7",
+  "live_normalized_sha256": "a873eeb682157affc1ea9f34ab7cdba1b79c1540dbde748496081ccb323e5379",
+  "baseline_normalized_bytes": "195144",
+  "live_normalized_bytes": "195165",
+  "normalization_logic": "LC_ALL=C whitespace collapse + trim only",
+  "content_change_claim": "BLOCKED_PENDING_SECTION_DIFF",
+  "timestamp": "2026-06-21T06:39:21Z",
+  "status": "DETERMINISTIC_NORMALIZED_COMPARE_COMPLETE",
+  "no_fake_green": true
+}
