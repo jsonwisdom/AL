@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Boss Bre anomaly detector v0.1
+# Boss Bre anomaly detector v0.2
 # Purpose: convert statewide fiscal text/receipts into storefront-safe anomaly leads.
 # Doctrine: NO_FAKE_GREEN. This emits leads only, never fraud verdicts.
 
@@ -8,26 +8,52 @@ set -euo pipefail
 ROOT="$(git rev-parse --show-toplevel)"
 RULES="$ROOT/data/boss_bre_anomaly_rules.json"
 STATE_DIR="$ROOT/projects/mn-fiscal-replay/boss_bre"
-LATEST="$STATE_DIR/latest_sweep_summary.json"
 UTC="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 RUN_ID="${UTC//[:]/-}"
 RUN_DIR="$STATE_DIR/runs/$RUN_ID"
 OUT_JSONL="$RUN_DIR/anomaly_leads.jsonl"
 PUBLIC_MD="$STATE_DIR/boss_bre_public_anomaly_board.md"
 LATEST_LEADS="$STATE_DIR/latest_anomaly_leads.jsonl"
+LATEST_SUMMARY="$STATE_DIR/latest_anomaly_summary.json"
 
 mkdir -p "$RUN_DIR" "$STATE_DIR"
 : > "$OUT_JSONL"
 
+hash_file() {
+  if command -v sha256sum >/dev/null 2>&1; then
+    sha256sum "$1" | awk '{print $1}'
+  else
+    shasum -a 256 "$1" | awk '{print $1}'
+  fi
+}
+
+write_blocked_summary() {
+  local reason="$1"
+  jq -n \
+    --arg utc "$UTC" \
+    --arg reason "$reason" \
+    '{utc:$utc,status:"BLOCKED",blocked_reason:$reason,lead_count:0,high_count:0,medium_count:0,low_count:0,unique_lanes:0,public_content_claim:"BLOCKED",claim_type:"ANOMALY_LEAD_ONLY",human_review_required:true,no_fake_green:true}' \
+    > "$LATEST_SUMMARY"
+  cp "$LATEST_SUMMARY" "$LATEST_LEADS"
+  cat > "$PUBLIC_MD" <<MD
+# Boss Bre Minnesota Anomaly Board
+
+UTC: $UTC
+
+STATUS: BLOCKED
+BLOCKED_REASON: $reason
+
+PUBLIC_CONTENT_CLAIM: BLOCKED
+HUMAN_REVIEW_REQUIRED: TRUE
+NO_FAKE_GREEN: ACTIVE
+MD
+}
+
 if [ ! -f "$RULES" ]; then
-  jq -nc --arg utc "$UTC" '{utc:$utc,status:"BLOCKED",blocked_reason:"ANOMALY_RULES_MISSING",public_content_claim:"BLOCKED",no_fake_green:true}' > "$LATEST_LEADS"
-  cp "$LATEST_LEADS" "$OUT_JSONL"
+  write_blocked_summary "ANOMALY_RULES_MISSING"
+  echo "ANOMALY_RULES_MISSING"
   exit 0
 fi
-
-hash_file() {
-  if command -v sha256sum >/dev/null 2>&1; then sha256sum "$1" | awk '{print $1}'; else shasum -a 256 "$1" | awk '{print $1}'; fi
-}
 
 emit_lead() {
   local lane="$1" source_path="$2" rule_id="$3" severity="$4" label="$5" evidence="$6"
@@ -40,7 +66,8 @@ emit_lead() {
     --arg severity "$severity" \
     --arg label "$label" \
     --arg evidence "$evidence" \
-    '{utc:$utc,lane:$lane,source_path:$source_path,rule_id:$rule_id,severity:$severity,label:$label,evidence_excerpt:$evidence,claim_status:"ANOMALY_LEAD_ONLY",public_content_claim:"BLOCKED_PENDING_HUMAN_REVIEW",human_review_required:true,no_fake_green:true}' >> "$OUT_JSONL"
+    '{utc:$utc,lane:$lane,source_path:$source_path,rule_id:$rule_id,severity:$severity,label:$label,evidence_excerpt:$evidence,claim_status:"ANOMALY_LEAD_ONLY",public_content_claim:"BLOCKED_PENDING_HUMAN_REVIEW",human_review_required:true,no_fake_green:true}' \
+    >> "$OUT_JSONL"
 }
 
 scan_text_file() {
@@ -52,7 +79,7 @@ scan_text_file() {
     projects/mn-fiscal-replay/boss_bre/*) lane="BOSS_BRE" ;;
   esac
 
-  jq -c '.rules[]' "$RULES" | while IFS= read -r rule; do
+  jq -c '.rules[]?' "$RULES" | while IFS= read -r rule; do
     rule_id="$(jq -r '.id' <<<"$rule")"
     severity="$(jq -r '.severity' <<<"$rule")"
     label="$(jq -r '.label' <<<"$rule")"
@@ -64,18 +91,19 @@ scan_text_file() {
   done
 }
 
-# Scan forensic outputs, receipts, sweep summaries, source text extracts, and logs.
-while IFS= read -r -d '' f; do
-  scan_text_file "$f"
-done < <(find "$ROOT/projects/mn-fiscal-replay" -type f \( \
-  -name '*.txt' -o -name '*.md' -o -name '*.json' -o -name '*.jsonl' -o -name '*.diff' \
-\) -print0 | sort -z)
+if [ -d "$ROOT/projects/mn-fiscal-replay" ]; then
+  while IFS= read -r -d '' f; do
+    scan_text_file "$f"
+  done < <(find "$ROOT/projects/mn-fiscal-replay" -type f \( \
+    -name '*.txt' -o -name '*.md' -o -name '*.json' -o -name '*.jsonl' -o -name '*.diff' \
+  \) -print0 | sort -z)
+fi
 
 LEAD_COUNT="$(wc -l < "$OUT_JSONL" | tr -d ' ')"
 HIGH_COUNT="$(jq -sr '[.[] | select(.severity=="HIGH")] | length' "$OUT_JSONL")"
 MED_COUNT="$(jq -sr '[.[] | select(.severity=="MEDIUM")] | length' "$OUT_JSONL")"
 LOW_COUNT="$(jq -sr '[.[] | select(.severity=="LOW")] | length' "$OUT_JSONL")"
-UNIQUE_LANES="$(jq -sr '[.[] .lane] | unique | length' "$OUT_JSONL")"
+UNIQUE_LANES="$(jq -sr '[.[].lane] | unique | length' "$OUT_JSONL")"
 OUT_HASH="$(hash_file "$OUT_JSONL")"
 
 cp "$OUT_JSONL" "$LATEST_LEADS"
@@ -122,7 +150,7 @@ jq -n \
   --argjson low_count "$LOW_COUNT" \
   --argjson unique_lanes "$UNIQUE_LANES" \
   '{utc:$utc,status:"ANOMALY_SCAN_COMPLETE",lead_count:$lead_count,high_count:$high_count,medium_count:$medium_count,low_count:$low_count,unique_lanes:$unique_lanes,anomaly_leads_path:$anomaly_leads_path,latest_leads_path:$latest_leads_path,public_board_path:$public_board_path,sha256:$sha256,public_content_claim:"BLOCKED_PENDING_HUMAN_REVIEW",claim_type:"ANOMALY_LEAD_ONLY",human_review_required:true,no_fake_green:true}' \
-  > "$STATE_DIR/latest_anomaly_summary.json"
+  > "$LATEST_SUMMARY"
 
 echo "=== Boss Bre anomaly detector complete ==="
 echo "Leads: $LEAD_COUNT"
