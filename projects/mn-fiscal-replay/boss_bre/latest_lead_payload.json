@@ -1,0 +1,24 @@
+{
+  "payload_id": "9ebc3651-b198-4e93-97a0-b0ab869275ec",
+  "generated_utc": "2026-06-21T08:25:39.641280Z",
+  "rules_version": "0.2",
+  "rules_sha256": "sha256:4ca65fe3774e5af0c54b29e59c9144992a4305fb91a4e71c1533292bc6af5070",
+  "lead_receipts_sha256": "sha256:c10fb67d980dac3c8dbeb002fc26bb2b27d1328f793eac2454af3ce8cb6b8207",
+  "compare_sha256": "sha256:f7d59863aeacf62ec48ce90779ccc7deb2c7aa91f16291942f214dae57297e48",
+  "witness_verify_sha256": "sha256:8499bec0a2e53fbab9e65b8ea5bef99a1ebd1c17182a8fbc071e37acf5358584",
+  "review_decision_sha256": "sha256:b0c7ab24b9524ef1011d5ed019e779bde36bd67c16c6b1a6a34d3ff16b38feba",
+  "high_lead_count": 1,
+  "selected_high_leads": [
+    {
+      "leads_processed": 1,
+      "anomalies_detected": [
+        "BBRISK_MEDICAID_CMS_WITHHOLDING"
+      ],
+      "version": "0.2"
+    }
+  ],
+  "public_content_claim": "BLOCKED_PENDING_HUMAN_REVIEW",
+  "claim_status": "LEAD_PAYLOAD_ONLY",
+  "human_review_required": true,
+  "no_fake_green": true
+}
