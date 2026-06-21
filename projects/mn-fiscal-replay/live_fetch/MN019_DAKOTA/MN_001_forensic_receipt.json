@@ -1,0 +1,17 @@
+{
+  "artifact": "MN_001_forensic_receipt.json",
+  "version": "0.1",
+  "jurisdiction": "MN019_DAKOTA",
+  "generated_utc": "2026-06-21T09:02:47Z",
+  "status": "FORENSIC_PAYLOAD_MISSING",
+  "blocked_reason": "FORENSIC_PAYLOAD_MISSING",
+  "public_content_claim": "BLOCKED",
+  "human_review_required": true,
+  "no_fake_green": true,
+  "outputs": {
+    "sentence_level_diff": "/home/runner/work/AL/AL/projects/mn-fiscal-replay/live_fetch/MN019_DAKOTA/MN_001_sentence_level.diff",
+    "sentence_review_json": "/home/runner/work/AL/AL/projects/mn-fiscal-replay/live_fetch/MN019_DAKOTA/MN_001_sentence_review.json",
+    "delta_classification_md": "/home/runner/work/AL/AL/projects/mn-fiscal-replay/live_fetch/MN019_DAKOTA/MN_001_delta_classification.md",
+    "forensic_receipt_json": "/home/runner/work/AL/AL/projects/mn-fiscal-replay/live_fetch/MN019_DAKOTA/MN_001_forensic_receipt.json"
+  }
+}

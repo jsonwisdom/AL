@@ -1,0 +1,23 @@
+{
+  "artifact": "boss_bre_fetch_extract_receipt.json",
+  "version": "0.1",
+  "generated_utc": "2026-06-21T09:01:59Z",
+  "jurisdiction": "MN062_RAMSEY",
+  "name": "Ramsey County",
+  "source_url": "TODO_RAMSEY_COUNTY_SOURCE_PDF_URL",
+  "status": "FETCH_BLOCKED",
+  "blocked_reason": "SOURCE_URL_MISSING_OR_TODO",
+  "source_latest_sha256": "",
+  "source_previous_sha256": "",
+  "source_latest_text_sha256": "",
+  "drift_status": "NO_SOURCE",
+  "public_content_claim": "BLOCKED",
+  "human_review_required": true,
+  "no_fake_green": true,
+  "outputs": {
+    "source_latest_pdf": "source_latest.pdf",
+    "source_latest_text": "source_latest.txt",
+    "source_previous_pdf": "source_previous.pdf",
+    "source_previous_text": "source_previous.txt"
+  }
+}

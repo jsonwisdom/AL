@@ -1,0 +1,24 @@
+{
+  "updated_utc": "2026-06-21T09:02:09Z",
+  "runs_observed": 1,
+  "last_total_records": 846,
+  "last_repo_pdfs": 841,
+  "last_fetched_registry_pdfs": 2,
+  "last_blocked_or_missing_sources": 3,
+  "last_extracted_repo_pdfs": 841,
+  "learned_rules": [
+    "Never promote public content claims from scanner output",
+    "Prefer registered source_latest.pdf when present",
+    "Treat TODO or unreachable pdf_url as FETCH_BLOCKED",
+    "Persist hashes so later sweeps can detect source churn",
+    "Escalate lanes with changed PDF hashes to forensic worker"
+  ],
+  "next_run_adjustments": {
+    "prioritize_changed_hashes": true,
+    "suppress_unchanged_hash_noise": true,
+    "keep_missing_payload_on_master_issue": true
+  },
+  "public_content_claim": "BLOCKED",
+  "human_review_required": true,
+  "no_fake_green": true
+}
