@@ -1,0 +1,67 @@
+name: ZTVS Replay Loop
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  verify_baseline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Ledger
+        uses: actions/checkout@v4
+
+      - name: Fetch Official Source Core
+        id: fetch
+        run: ./scripts/1_fetch_target.sh configs/MN_001.json
+
+      - name: Normalize & Chunk (Proof Preservation)
+        id: process
+        run: ./scripts/2_normalize_chunks.sh registry/MN_001/raw.pdf
+
+      - name: Calculate State Drift
+        id: diff
+        run: |
+          if git diff --quiet registry/MN_001/chunks/; then
+            echo "STATE=VERIFIED" >> $GITHUB_ENV
+          else
+            echo "STATE=DRIFT_DETECTED" >> $GITHUB_ENV
+          fi
+
+      - name: Enforce Transition Constraint (No Fake Green)
+        id: gatekeeper
+        run: |
+          CURRENT_STATE=$(cat registry/MN_001/state.json | jq -r .state 2>/dev/null || echo "VERIFIED")
+
+          if [[ "$CURRENT_STATE" == "DRIFT_DETECTED" && "$STATE" == "VERIFIED" ]]; then
+            RECEIPT_FILE="registry/MN_001/receipts/pending_review.md"
+            if [ ! -f "$RECEIPT_FILE" ]; then
+              echo "FATAL: Direct transition from DRIFT_DETECTED to VERIFIED blocked. Missing signed review receipt."
+              exit 1
+            fi
+            # Generate deterministic hash of the active witness file
+            HASH=$(sha256sum "$RECEIPT_FILE" | awk '{print $1}')
+            echo "RECEIPT_HASH=$HASH" >> $GITHUB_ENV
+          else
+            echo "RECEIPT_HASH=null" >> $GITHUB_ENV
+          fi
+
+      - name: Generate Evidence Card JSON
+        run: |
+          ./scripts/3_generate_evidence_card.sh \
+            --target_id MN_001 \
+            --state ${{ env.STATE }} \
+            --commit ${{ github.sha }} \
+            --receipt_hash ${{ env.RECEIPT_HASH }}
+
+      - name: Commit ZTVS Proof
+        run: |
+          git config --global user.name "ZTVS Replay Engine"
+          git config --global user.email "ztvs@zero-trust.local"
+          git add registry/MN_001/
+          git commit -m "chore(ztvs): anchor verification state [${{ env.STATE }}]" || echo "No changes to commit"
+          git push
