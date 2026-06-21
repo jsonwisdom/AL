@@ -33,6 +33,11 @@ jobs:
           git config user.name "Boss Bre Bot"
           git config user.email "boss-bre@users.noreply.github.com"
 
+      - name: Run Boss Bre source ingest
+        run: |
+          chmod +x scripts/boss_bre_fetch_extract_v0_1.sh || true
+          ./scripts/boss_bre_fetch_extract_v0_1.sh
+
       - name: Run Boss Bre public sweep
         run: |
           chmod +x scripts/mn001_forensic_worker_v0_1.sh || true
