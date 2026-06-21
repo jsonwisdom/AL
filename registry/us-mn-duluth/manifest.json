@@ -3,7 +3,7 @@
   "scope": "municipal_governance",
   "jurisdiction": "us-mn-duluth",
   "document_class": "city_council_minutes",
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "extraction_profile": {
     "engine": "html_table_pdf_extractor",
     "origin_uri": "https://duluthmn.gov/city-council/council-meetings/",
@@ -19,11 +19,17 @@
       "remove_page_numbers_and_running_footers"
     ],
     "drift_keywords": [
-      "solar_project",
-      "energy_ordinance",
-      "zoning_variance",
-      "appropriation",
-      "charter_amendment"
+      "port",
+      "lake",
+      "ore",
+      "waterfront",
+      "MU-W",
+      "IW",
+      "NR-O",
+      "shoreland",
+      "fourplex",
+      "density",
+      "setback"
     ]
   },
   "polling_policy": {
