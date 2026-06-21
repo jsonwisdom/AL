@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ZTVS Verification Dashboard</title>
+  <style>
+    :root {
+      --bg: #07111f;
+      --panel: #0d1b2f;
+      --panel-2: #101f35;
+      --text: #f3f7fb;
+      --muted: #9fb0c7;
+      --green: #3ddc84;
+      --blue: #6aa9ff;
+      --orange: #ffb357;
+      --red: #ff6b6b;
+      --line: rgba(255,255,255,0.12);
+      --shadow: 0 24px 80px rgba(0,0,0,0.35);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(61,220,132,0.12), transparent 30rem),
+        radial-gradient(circle at top right, rgba(106,169,255,0.16), transparent 28rem),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+    header { padding: 32px 0 18px; border-bottom: 1px solid var(--line); }
+    nav { display:flex; justify-content:space-between; gap:16px; align-items:center; }
+    .brand { display:flex; gap:12px; align-items:center; font-weight:800; letter-spacing:.02em; }
+    .mark { width:38px; height:38px; border-radius:12px; background:linear-gradient(135deg,var(--green),var(--blue)); box-shadow:0 0 32px rgba(61,220,132,.25); }
+    .nav-links { display:flex; gap:14px; flex-wrap:wrap; color:var(--muted); font-size:14px; }
+    .hero { padding: 72px 0 44px; display:grid; grid-template-columns: 1.2fr .8fr; gap:32px; align-items:stretch; }
+    h1 { font-size: clamp(42px, 7vw, 78px); line-height:.95; margin:0 0 22px; letter-spacing:-.06em; }
+    .lead { font-size: clamp(18px, 2vw, 22px); color:var(--muted); max-width:720px; margin:0 0 26px; }
+    .badge-row { display:flex; gap:12px; flex-wrap:wrap; margin:26px 0; }
+    .badge { border:1px solid var(--line); background:rgba(255,255,255,.05); padding:10px 14px; border-radius:999px; font-size:13px; font-weight:800; letter-spacing:.04em; text-transform:uppercase; }
+    .badge.green { color:var(--green); border-color:rgba(61,220,132,.35); }
+    .badge.blue { color:var(--blue); border-color:rgba(106,169,255,.35); }
+    .badge.orange { color:var(--orange); border-color:rgba(255,179,87,.35); }
+    .panel { background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.035)); border:1px solid var(--line); border-radius:26px; padding:24px; box-shadow:var(--shadow); }
+    .receipt-panel { display:flex; flex-direction:column; justify-content:space-between; min-height:320px; }
+    .label { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.12em; font-weight:800; }
+    .big-status { font-size:34px; font-weight:900; margin:8px 0; color:var(--green); }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; word-break: break-all; }
+    .hash { color:#dce7f5; background:rgba(0,0,0,.22); border:1px solid var(--line); border-radius:12px; padding:10px; font-size:12px; }
+    section { padding: 24px 0; }
+    h2 { font-size: clamp(26px, 3vw, 38px); margin:0 0 14px; letter-spacing:-.03em; }
+    .section-copy { color:var(--muted); margin:0 0 22px; max-width:760px; }
+    .grid { display:grid; gap:16px; }
+    .grid.two { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .grid.three { grid-template-columns: repeat(3, minmax(0,1fr)); }
+    .grid.five { grid-template-columns: repeat(5, minmax(0,1fr)); }
+    .card { background:var(--panel); border:1px solid var(--line); border-radius:22px; padding:20px; }
+    .card h3 { margin:0 0 10px; font-size:20px; }
+    .muted { color:var(--muted); }
+    .green { color:var(--green); } .blue { color:var(--blue); } .orange { color:var(--orange); } .red { color:var(--red); }
+    .kv { display:grid; gap:8px; margin-top:14px; }
+    .kv div { display:flex; justify-content:space-between; gap:12px; border-top:1px solid var(--line); padding-top:8px; font-size:13px; }
+    .kv span:first-child { color:var(--muted); }
+    .layers { counter-reset: layer; display:grid; gap:12px; }
+    .layer { display:flex; gap:12px; align-items:flex-start; padding:14px; border:1px solid var(--line); border-radius:18px; background:rgba(255,255,255,.04); }
+    .layer::before { counter-increment: layer; content: counter(layer); width:28px; height:28px; border-radius:999px; background:rgba(61,220,132,.16); color:var(--green); display:grid; place-items:center; font-weight:900; flex:0 0 auto; }
+    .timeline { display:grid; gap:12px; }
+    .event { display:grid; grid-template-columns: 150px 1fr auto; gap:12px; align-items:center; padding:14px 16px; border:1px solid var(--line); border-radius:18px; background:rgba(255,255,255,.04); }
+    .node-card { min-height: 210px; }
+    .node-card .city { font-weight:900; font-size:18px; }
+    .footer-rules { display:grid; gap:10px; color:var(--muted); font-size:15px; }
+    .error { border-color: rgba(255,107,107,.55); color: var(--red); }
+    @media (max-width: 900px) {
+      .hero, .grid.two, .grid.three, .grid.five { grid-template-columns:1fr; }
+      .event { grid-template-columns:1fr; }
+      .nav-links { display:none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav>
+        <div class="brand"><div class="mark"></div><div>ZTVS Verification Dashboard</div></div>
+        <div class="nav-links">
+          <a href="#proof">Proof</a>
+          <a href="#nodes">Nodes</a>
+          <a href="#timeline">Timeline</a>
+          <a href="../../receipts/latest.json">latest.json</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <div class="badge-row">
+          <span class="badge green" id="systemStatus">Loading status</span>
+          <span class="badge orange" id="fakeGreen">NO_FAKE_GREEN</span>
+        </div>
+        <h1>Public Records,<br />Verified by Replay.</h1>
+        <p class="lead">ZTVS does not trust official-looking data. It verifies public records through replay, receipts, evidence hashes, and fail-closed settlement guards.</p>
+        <p class="lead"><strong>Librarian proves state. Gauntlet records process. Neither can impersonate the other.</strong></p>
+      </div>
+      <aside class="panel receipt-panel" id="heroReceipt">
+        <div>
+          <div class="label">Latest verified state</div>
+          <div class="big-status">Loading…</div>
+          <p class="muted">Reading only from <span class="mono">./receipts/latest.json</span>. No live API. No UI-decided green.</p>
+        </div>
+        <div class="hash mono">Waiting for validated receipt data…</div>
+      </aside>
+    </section>
+
+    <section id="proof">
+      <h2>Two lanes, one rule: no fake green.</h2>
+      <p class="section-copy">The homepage renders the last validated receipt state. It does not inspect GitHub Actions and it does not decide truth.</p>
+      <div class="grid two" id="laneCards"></div>
+    </section>
+
+    <section>
+      <h2>Latest verification</h2>
+      <div class="grid three" id="verificationCards"></div>
+    </section>
+
+    <section>
+      <h2>No Fake Green layers</h2>
+      <p class="section-copy">A dashboard is not trusted because it says green. It becomes green only when the receipt taxonomy, signatures, node count, and settlement guard all pass.</p>
+      <div class="layers">
+        <div class="layer">Evidence cards are emitted per municipal lane.</div>
+        <div class="layer">Librarian index requires exactly five evidence nodes.</div>
+        <div class="layer">Settlement guard blocks unverified drift.</div>
+        <div class="layer">Receipt taxonomy validator prevents lane impersonation.</div>
+        <div class="layer">Golden regression suite guards validator drift.</div>
+      </div>
+    </section>
+
+    <section id="timeline">
+      <h2>Receipt timeline</h2>
+      <div class="timeline" id="timelineList"></div>
+    </section>
+
+    <section id="nodes">
+      <h2>Five municipal nodes</h2>
+      <p class="section-copy">Each card is sourced from the validated Librarian Replay receipt and rendered through <span class="mono">receipts/latest.json</span>.</p>
+      <div class="grid five" id="nodeGrid"></div>
+    </section>
+
+    <section>
+      <div class="panel">
+        <h2>Verification rules</h2>
+        <div class="footer-rules" id="rules"></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const dataPath = '../../receipts/latest.json';
+    const short = (value, size = 10) => value ? `${String(value).slice(0, size)}…` : 'n/a';
+    const esc = (value) => String(value ?? '').replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+
+    function card(title, body, accent = 'green') {
+      return `<div class="card"><h3 class="${accent}">${esc(title)}</h3>${body}</div>`;
+    }
+
+    function kv(rows) {
+      return `<div class="kv">${rows.map(([k,v]) => `<div><span>${esc(k)}</span><strong class="mono">${esc(v)}</strong></div>`).join('')}</div>`;
+    }
+
+    function render(data) {
+      document.getElementById('systemStatus').textContent = data.system_status;
+      document.getElementById('fakeGreen').textContent = `NO_FAKE_GREEN = ${data.no_fake_green}`;
+
+      document.getElementById('heroReceipt').innerHTML = `
+        <div>
+          <div class="label">Latest verified state</div>
+          <div class="big-status">${esc(data.system_status)}</div>
+          <p class="muted">Latest verified commit <span class="mono">${esc(short(data.latest_verified_commit, 12))}</span></p>
+        </div>
+        <div class="hash mono">${esc(data.librarian_receipt.signature)}</div>
+      `;
+
+      document.getElementById('laneCards').innerHTML = [
+        card('Librarian Replay', `<p class="muted">Proves verified system state and settlement eligibility.</p>${kv([
+          ['receipt', data.librarian_receipt.receipt_id],
+          ['status', data.librarian_receipt.authorized_green ? 'GREEN AUTHORITY' : 'NOT GREEN'],
+          ['settlement_guard', data.librarian_receipt.settlement_guard],
+          ['nodes', data.librarian_receipt.node_count]
+        ])}`, 'green'),
+        card('Constitutional Gauntlet', `<p class="muted">Records execution trace. It is intentionally not settlement authority.</p>${kv([
+          ['receipt', data.gauntlet_receipt.receipt_id],
+          ['status', data.gauntlet_receipt.status],
+          ['green_claim', data.gauntlet_receipt.green_claim],
+          ['settlement_guard', data.gauntlet_receipt.settlement_guard]
+        ])}`, 'blue')
+      ].join('');
+
+      document.getElementById('verificationCards').innerHTML = [
+        card('State proof', kv([['verdict', data.librarian_receipt.verdict], ['drift', data.librarian_receipt.drift_detected], ['signature', short(data.librarian_receipt.signature, 20)]]), 'green'),
+        card('Process trace', kv([['verdict', data.gauntlet_receipt.verdict], ['pytest', data.gauntlet_receipt.pytest_returncode], ['signature', short(data.gauntlet_receipt.signature, 20)]]), 'blue'),
+        card('Taxonomy gate', kv([['validator', data.taxonomy_gate.validator], ['golden', 'installed'], ['live API', 'OFF']]), 'orange')
+      ].join('');
+
+      document.getElementById('timelineList').innerHTML = data.timeline.map(item => `
+        <div class="event">
+          <strong>${esc(item.commit || item.receipt_id || '')}</strong>
+          <span>${esc(item.label)}</span>
+          <span class="badge ${item.state.includes('VALID') || item.state.includes('VERIFIED') || item.state.includes('PASS') ? 'green' : 'orange'}">${esc(item.state)}</span>
+        </div>
+      `).join('');
+
+      document.getElementById('nodeGrid').innerHTML = data.nodes.map(node => `
+        <div class="card node-card">
+          <div class="city">${esc(node.city)}</div>
+          <div class="badge green">${esc(node.state)}</div>
+          ${kv([
+            ['target_id', node.target_id],
+            ['drift', node.drift],
+            ['schema', node.schema_version],
+            ['hash', short(node.evidence_card_sha256, 24)]
+          ])}
+        </div>
+      `).join('');
+
+      document.getElementById('rules').innerHTML = data.constitutional_rules.map(rule => `<div>• ${esc(rule)}</div>`).join('');
+    }
+
+    fetch(dataPath, { cache: 'no-store' })
+      .then(res => {
+        if (!res.ok) throw new Error(`latest.json unavailable: ${res.status}`);
+        return res.json();
+      })
+      .then(render)
+      .catch(err => {
+        document.getElementById('heroReceipt').classList.add('error');
+        document.getElementById('heroReceipt').innerHTML = `<div class="label">Fail closed</div><div class="big-status red">No validated status</div><p>${esc(err.message)}</p>`;
+      });
+  </script>
+</body>
+</html>
