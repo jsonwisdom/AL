@@ -22,6 +22,7 @@ sha_file() {
 json_escape() {
   sed 's/\\/\\\\/g; s/"/\\"/g'
 }
+
 write_blocked_receipt() {
   local reason="$1"
   cat > "$OUT_RECEIPT" <<EOF
@@ -41,8 +42,7 @@ EOF
 }
 
 find_one() {
-  # $1 is a grep-style include pattern applied to basename list
-  find "$MN_DIR" -maxdepth 3 -type f \
+  find "$MN_DIR" -maxdepth 4 -type f \
     \( -name "*.txt" -o -name "*.md" -o -name "*.diff" -o -name "*.json" \) \
     | grep -Ei "$1" \
     | grep -Ev 'sentence_level|sentence_review|delta_classification|forensic_receipt|\.mn001_forensic_work' \
@@ -63,7 +63,7 @@ if [ -z "$HUMAN_DIFF_FILE" ]; then
   HUMAN_DIFF_FILE="$(find_one 'human_readable_diff|sectional.*diff|normalized_sectional\.diff')"
 fi
 
-# Fallback: derive rough sentence streams from an existing +/- diff if source texts are missing.
+# Fallback: derive rough baseline/live streams from an existing +/- diff if source texts are missing.
 if { [ -z "$BASELINE_FILE" ] || [ -z "$LIVE_FILE" ]; } && [ -n "$HUMAN_DIFF_FILE" ] && [ -f "$HUMAN_DIFF_FILE" ]; then
   BASELINE_FILE="$WORK_DIR/baseline_from_diff.txt"
   LIVE_FILE="$WORK_DIR/live_from_diff.txt"
@@ -166,27 +166,27 @@ TOTAL_CLASSIFIED="$(wc -l < "$TMP_CLASS" | tr -d ' ')"
 
 MD_HASH="$(sha_file "$OUT_MD")"
 
+cat > "$OUT_REVIEW" <<EOF
 {
-  echo "{"
-  echo "  \"artifact\": \"MN_001_sentence_review.json\"," 
-  echo "  \"version\": \"0.1\"," 
-  echo "  \"generated_utc\": \"$(utc_now)\"," 
-  echo "  \"baseline_file\": \"$(printf '%s' "$BASELINE_FILE" | json_escape)\"," 
-  echo "  \"live_file\": \"$(printf '%s' "$LIVE_FILE" | json_escape)\"," 
-  echo "  \"baseline_sha256\": \"$BASE_HASH\"," 
-  echo "  \"live_sha256\": \"$LIVE_HASH\"," 
-  echo "  \"baseline_sentence_count\": $BASE_COUNT," 
-  echo "  \"live_sentence_count\": $LIVE_COUNT," 
-  echo "  \"diff_line_count\": $DIFF_LINES," 
-  echo "  \"classified_delta_count\": $TOTAL_CLASSIFIED," 
-  echo "  \"possible_content_delta_count\": $POSSIBLE_COUNT," 
-  echo "  \"extractor_artifact_count\": $EXTRACTOR_COUNT," 
-  echo "  \"normalization_artifact_count\": $NORMALIZATION_COUNT," 
-  echo "  \"public_content_claim\": \"BLOCKED\"," 
-  echo "  \"human_review_required\": true," 
-  echo "  \"no_fake_green\": true"
-  echo "}"
-} > "$OUT_REVIEW"
+  "artifact": "MN_001_sentence_review.json",
+  "version": "0.1",
+  "generated_utc": "$(utc_now)",
+  "baseline_file": "$(printf '%s' "$BASELINE_FILE" | json_escape)",
+  "live_file": "$(printf '%s' "$LIVE_FILE" | json_escape)",
+  "baseline_sha256": "$BASE_HASH",
+  "live_sha256": "$LIVE_HASH",
+  "baseline_sentence_count": $BASE_COUNT,
+  "live_sentence_count": $LIVE_COUNT,
+  "diff_line_count": $DIFF_LINES,
+  "classified_delta_count": $TOTAL_CLASSIFIED,
+  "possible_content_delta_count": $POSSIBLE_COUNT,
+  "extractor_artifact_count": $EXTRACTOR_COUNT,
+  "normalization_artifact_count": $NORMALIZATION_COUNT,
+  "public_content_claim": "BLOCKED",
+  "human_review_required": true,
+  "no_fake_green": true
+}
+EOF
 
 REVIEW_HASH="$(sha_file "$OUT_REVIEW")"
 
@@ -204,6 +204,12 @@ cat > "$OUT_RECEIPT" <<EOF
   "public_content_claim": "BLOCKED",
   "human_review_required": true,
   "no_fake_green": true,
+  "inputs": {
+    "baseline_file": "$(printf '%s' "$BASELINE_FILE" | json_escape)",
+    "baseline_sha256": "$BASE_HASH",
+    "live_file": "$(printf '%s' "$LIVE_FILE" | json_escape)",
+    "live_sha256": "$LIVE_HASH"
+  },
   "outputs": {
     "sentence_level_diff": "$OUT_DIFF",
     "sentence_level_diff_sha256": "$DIFF_HASH",
@@ -215,6 +221,8 @@ cat > "$OUT_RECEIPT" <<EOF
   "counts": {
     "baseline_sentences": $BASE_COUNT,
     "live_sentences": $LIVE_COUNT,
+    "diff_lines": $DIFF_LINES,
+    "classified_delta_lines": $TOTAL_CLASSIFIED,
     "possible_content_deltas": $POSSIBLE_COUNT,
     "extractor_artifacts": $EXTRACTOR_COUNT,
     "normalization_artifacts": $NORMALIZATION_COUNT
@@ -222,15 +230,11 @@ cat > "$OUT_RECEIPT" <<EOF
 }
 EOF
 
-RECEIPT_HASH="$(sha_file "$OUT_RECEIPT")"
-
-echo "=== MN_001 FORENSIC WORKER V0.1 ==="
-echo "STATUS: $STATUS"
-echo "PUBLIC_CONTENT_CLAIM: BLOCKED"
-echo "NO_FAKE_GREEN: ACTIVE"
-echo "Possible content deltas: $POSSIBLE_COUNT"
-echo "Sentence diff: $OUT_DIFF"
+echo "=== MN_001 forensic worker complete ==="
+echo "Status: $STATUS"
+echo "Public content claim: BLOCKED"
+echo "Human review required: TRUE"
+echo "Diff: $OUT_DIFF"
 echo "Review JSON: $OUT_REVIEW"
 echo "Classification MD: $OUT_MD"
-echo "Forensic receipt: $OUT_RECEIPT"
-echo "Forensic receipt sha256: $RECEIPT_HASH"
+echo "Receipt: $OUT_RECEIPT"
