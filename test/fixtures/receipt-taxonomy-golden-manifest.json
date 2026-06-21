@@ -1,0 +1,16 @@
+{
+  "golden_receipts": {
+    "LIBRARIAN": {
+      "path": "test/fixtures/LIBRARIAN-REPLAY-27920834257.json",
+      "signature": "4855e5cca3bcf5ab4aa9cd6e657b8995a5644395b5689012950586aa00d3644b",
+      "expectation": "PASS_OPERATIONAL",
+      "authorized_green": true
+    },
+    "GAUNTLET": {
+      "path": "test/fixtures/GAUNTLET-RUN-27920957650.json",
+      "signature": "cb7c50b78faa02a6aad0d530df6a423153b44065e0a6740a961b000f6c08ca9c",
+      "expectation": "RECORDED_NOT_VERIFIED",
+      "authorized_green": false
+    }
+  }
+}
