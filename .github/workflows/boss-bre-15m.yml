@@ -1,0 +1,37 @@
+name: Boss Bre 15m Sweep
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: boss-bre-15m-sweep
+  cancel-in-progress: false
+
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Install deps
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Run Boss Bre
+        run: |
+          chmod +x scripts/mn001_forensic_worker_v0_1.sh scripts/boss_bre_runner.sh
+          ./scripts/boss_bre_runner.sh
+
+      - name: Update Librarian
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          chmod +x scripts/boss_bre_librarian.py
+          python3 scripts/boss_bre_librarian.py
