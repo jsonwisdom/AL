@@ -64,10 +64,11 @@ jobs:
         run: |
           ORIGINAL_FILE="$TARGET_PATH/baselines/latest.txt"
           MUTATED_FILE="$TARGET_PATH/chunks/current.txt"
+          MANIFEST_FILE="$TARGET_PATH/manifest.json"
 
           if [ -f "$ORIGINAL_FILE" ] && [ -f "$MUTATED_FILE" ]; then
             set +e
-            node scripts/drift-schema-validator.js "$CITY" "$ORIGINAL_FILE" "$MUTATED_FILE" > "$TARGET_PATH/drift_output.json"
+            node scripts/drift-schema-validator.js "$CITY" "$ORIGINAL_FILE" "$MUTATED_FILE" "$MANIFEST_FILE" > "$TARGET_PATH/drift_output.json"
             EXIT_CODE=$?
             set -e
             if [ "$EXIT_CODE" -eq 2 ]; then
@@ -81,7 +82,8 @@ jobs:
             fi
           else
             mkdir -p "$TARGET_PATH"
-            echo '{"has_drift":false,"schema_version":"1.0.0","validator_version":"1.0.0","diff_segments":[]}' > "$TARGET_PATH/drift_output.json"
+            SCHEMA_VERSION=$(jq -r '.schema_version // "1.0.0"' "$MANIFEST_FILE" 2>/dev/null || echo "1.0.0")
+            jq -n --arg schema_version "$SCHEMA_VERSION" '{has_drift:false,schema_version:$schema_version,validator_version:"1.1.0",diff_segments:[]}' > "$TARGET_PATH/drift_output.json"
             HAS_DRIFT="false"
           fi
 
