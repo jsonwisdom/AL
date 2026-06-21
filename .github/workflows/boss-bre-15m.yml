@@ -8,7 +8,8 @@ on:
 permissions:
   contents: write
   issues: write
-\concurrency:
+
+concurrency:
   group: boss-bre-15m-sweep
   cancel-in-progress: false
 
