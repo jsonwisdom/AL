@@ -7,6 +7,10 @@ on:
       - master
       - fix-176-execution-surface
 
+permissions:
+  contents: write
+  actions: read
+
 jobs:
   constitutional-gauntlet:
     runs-on: ubuntu-latest
@@ -29,4 +33,65 @@ jobs:
         run: |
           PYTHONPATH="$PWD" python scripts/record_gauntlet.py \
             --storage-path ./data/prod_spine \
-            --workflow-file .github/workflows/gauntlet.yml
+            --workflow-file .github/workflows/gauntlet.yml \
+            | tee gauntlet-recorder-output.json
+
+      - name: Generate Atomic Gauntlet Receipt
+        if: success()
+        run: |
+          RUN_ID="${{ github.run_id }}"
+          COMMIT="$GITHUB_SHA"
+          TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          RECEIPT_PATH="registry/_receipts/GAUNTLET-RUN-$RUN_ID.json"
+
+          mkdir -p registry/_receipts
+
+          STATUS=$(jq -r '.status' gauntlet-recorder-output.json)
+          PYTEST_RETURN=$(jq -r '.pytest_returncode' gauntlet-recorder-output.json)
+          RECORDED_HASH=$(jq -r '.receipt_hash' gauntlet-recorder-output.json)
+          WORKFLOW_SHA=$(jq -r '.workflow_sha' gauntlet-recorder-output.json)
+          PARENT_ROOT=$(jq -r '.parent_cumulative_root' gauntlet-recorder-output.json)
+
+          jq -n \
+            --arg receipt_id "GAUNTLET-RUN-$RUN_ID" \
+            --arg timestamp "$TIMESTAMP" \
+            --arg commit "$COMMIT" \
+            --arg run_id "$RUN_ID" \
+            --arg status "$STATUS" \
+            --arg receipt_hash "$RECORDED_HASH" \
+            --arg workflow_sha "$WORKFLOW_SHA" \
+            --arg parent_root "$PARENT_ROOT" \
+            --argjson pytest_returncode "$PYTEST_RETURN" \
+            '{receipt_id:$receipt_id,version:"1.0.0",timestamp:$timestamp,workflow:"constitutional-gauntlet",run_id:$run_id,commit_anchor:$commit,recorded_receipt_hash:$receipt_hash,parent_cumulative_root:$parent_root,workflow_sha:$workflow_sha,verdict:{status:$status,pytest_returncode:$pytest_returncode,green_claim:false,settlement_guard:false}}' \
+            > /tmp/gauntlet-receipt-base.json
+
+          jq -S -c . /tmp/gauntlet-receipt-base.json > /tmp/gauntlet-receipt-canonical.json
+          SIGNATURE=$(sha256sum /tmp/gauntlet-receipt-canonical.json | awk '{print $1}')
+          jq --arg sig "SHA256:$SIGNATURE" '. + {signature:$sig}' /tmp/gauntlet-receipt-canonical.json > "$RECEIPT_PATH"
+          cp "$RECEIPT_PATH" gauntlet-runtime-receipt.json
+
+          echo "ATOMIC_GAUNTLET_RECEIPT=$RECEIPT_PATH"
+          echo "ATOMIC_GAUNTLET_RECEIPT_SIGNATURE=SHA256:$SIGNATURE"
+          cat gauntlet-runtime-receipt.json
+
+      - name: Upload Gauntlet Receipt Artifact
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gauntlet-runtime-receipt-${{ github.run_id }}
+          path: gauntlet-runtime-receipt.json
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Commit Gauntlet Receipt
+        if: success()
+        run: |
+          git config user.name "ZTVS Gauntlet"
+          git config user.email "gauntlet@ztvs.system"
+          git add data/prod_spine registry/_receipts/
+          if git diff --staged --quiet; then
+            echo "No gauntlet receipt changes to commit"
+          else
+            git commit -m "chore(ztvs): atomic gauntlet receipt ${{ github.run_id }} [skip ci]"
+            git push
+          fi
