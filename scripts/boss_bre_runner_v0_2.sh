@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Boss Bre runner v0.2: statewide PDF scanner + jurisdiction forensic sweep.
+# Boss Bre runner v0.2: source ingest + statewide PDF scanner + jurisdiction forensic sweep.
 # Doctrine: NO_FAKE_GREEN. Logs observations and receipts only; no public claim promotion.
 
 set -euo pipefail
@@ -8,6 +8,7 @@ ROOT="$(git rev-parse --show-toplevel)"
 JFILE="$ROOT/data/mn_jurisdictions.json"
 WORKER="$ROOT/scripts/mn001_forensic_worker_v0_1.sh"
 SCANNER="$ROOT/scripts/boss_bre_pdf_scanner.sh"
+INGEST="$ROOT/scripts/boss_bre_fetch_extract_v0_1.sh"
 
 if [ ! -f "$JFILE" ]; then
   echo "BLOCKED_REASON: missing jurisdiction registry: $JFILE"
@@ -19,9 +20,17 @@ if ! command -v jq >/dev/null 2>&1; then
 fi
 chmod +x "$WORKER" 2>/dev/null || true
 chmod +x "$SCANNER" 2>/dev/null || true
+chmod +x "$INGEST" 2>/dev/null || true
 
 git config user.name "github-actions[bot]" || true
 git config user.email "41898282+github-actions[bot]@users.noreply.github.com" || true
+
+echo "=== Boss Bre Agent 00: source ingest + baseline rotation ==="
+if [ -x "$INGEST" ]; then
+  "$INGEST" || echo "INGEST_BLOCKED: continuing with scanner and jurisdiction receipts"
+else
+  echo "INGEST_MISSING: $INGEST"
+fi
 
 echo "=== Boss Bre Agent 01: PDF scan + learning state ==="
 if [ -x "$SCANNER" ]; then
@@ -47,7 +56,7 @@ jq -c '.jurisdictions[]' "$JFILE" | while IFS= read -r J; do
     echo "SOURCE_PDF_PRESENT: source_latest.pdf" > "$OUTDIR/fetch_status.txt"
   else
     echo "SOURCE_URL_REGISTERED: $PDF" > "$OUTDIR/fetch_status.txt"
-    echo "FETCH_BLOCKED: scanner did not produce source_latest.pdf" >> "$OUTDIR/fetch_status.txt"
+    echo "FETCH_BLOCKED: ingest did not produce source_latest.pdf" >> "$OUTDIR/fetch_status.txt"
   fi
 
   JURISDICTION="$CODE" "$WORKER" "$ROOT" || true
