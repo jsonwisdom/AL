@@ -74,6 +74,12 @@ jobs:
           echo "ATOMIC_GAUNTLET_RECEIPT_SIGNATURE=SHA256:$SIGNATURE"
           cat gauntlet-runtime-receipt.json
 
+      - name: Validate Gauntlet Receipt Taxonomy
+        if: success()
+        run: |
+          node scripts/validate-receipt-taxonomy.cjs gauntlet-runtime-receipt.json
+          echo "✅ GAUNTLET-RUN receipt taxonomy gate passed"
+
       - name: Upload Gauntlet Receipt Artifact
         if: success()
         uses: actions/upload-artifact@v4
