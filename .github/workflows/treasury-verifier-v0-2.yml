@@ -1,0 +1,12 @@
+name: treasury-verifier-v0.2
+on: [push, pull_request]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: tools/treasury_verifier/treasury-verifier batch-verify receipts --mode audit
+      - run: |
+          if echo "$GITHUB_REF_NAME" | grep -E 'real-genesis|production|v1.0'; then
+            ! grep -RInE '"mode": *"SIMULATED"|sim_|sha256:simulated|SIMULATED' receipts
+          fi

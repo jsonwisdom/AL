@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -e
+bad=$(grep -RInE '"mode": *"SIMULATED"|sim_|sha256:simulated|SIMULATED' receipts || true)
+ref=$(git symbolic-ref --short HEAD 2>/dev/null || true)
+if [[ -n "$bad" ]]; then
+  echo "NO_FAKE_GREEN WARNING: simulated artifacts present"
+  echo "$bad"
+  if [[ "$*" =~ real-genesis|production|v1.0 ]]; then
+    echo "BLOCKED: production/real tag with simulated artifacts"
+    exit 1
+  fi
+  [[ "$ref" =~ ^(master|main)$ ]] && echo "LOUD WARNING: pushing simulated artifacts to $ref"
+fi

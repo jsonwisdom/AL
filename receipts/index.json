@@ -1,35 +1,45 @@
 {
-  "schema_version": "0.1.1",
-  "index_type": "TREASURY_LEDGER_INDEX",
-  "ledger_name": "treasury-can-audit",
-  "ledger_status": "SIMULATED_SHADOW_AUDIT_GENESIS",
-  "no_fake_green": true,
-  "genesis_receipt": {
-    "receipt_type": "TREASURY_CAN_AUDIT",
-    "target_date": "2026-06-17",
-    "authority_level": "SHADOW_AUDIT",
-    "replay_status": "PASS",
-    "diff_status": "NOT_EVALUATED",
-    "receipt_hash": "sha256:f6aa358aa5c83eccafa5aa5d207892b7c9d75c35dc66be95d0a1405dbdf3987e",
-    "parent_receipt_hash": null,
-    "raw_snapshot_hash": "sha256:simulated_raw_hash_for_genesis_2026_06_17",
-    "normalizer_code_hash": "sha256:simulated_normalizer_source_hash",
-    "simulation_notice": "Simulated SHADOW_AUDIT genesis only. Not REAL_GENESIS until raw FiscalData capture hash, normalizer code hash, detached signature, and independent replay receipt are real."
-  },
   "chain": [
     {
-      "sequence": 0,
-      "role": "GENESIS",
-      "receipt_hash": "sha256:f6aa358aa5c83eccafa5aa5d207892b7c9d75c35dc66be95d0a1405dbdf3987e",
       "parent_receipt_hash": null,
+      "receipt_hash": "sha256:f6aa358aa5c83eccafa5aa5d207892b7c9d75c35dc66be95d0a1405dbdf3987e",
+      "role": "GENESIS",
+      "sequence": 0,
       "status": "SIMULATED_GREEN"
     }
   ],
+  "genesis_receipt": {
+    "authority_level": "SHADOW_AUDIT",
+    "diff_status": "NOT_EVALUATED",
+    "normalizer_code_hash": "sha256:simulated_normalizer_source_hash",
+    "parent_receipt_hash": null,
+    "raw_snapshot_hash": "sha256:simulated_raw_hash_for_genesis_2026_06_17",
+    "receipt_hash": "sha256:f6aa358aa5c83eccafa5aa5d207892b7c9d75c35dc66be95d0a1405dbdf3987e",
+    "receipt_type": "TREASURY_CAN_AUDIT",
+    "replay_status": "PASS",
+    "simulation_notice": "Simulated SHADOW_AUDIT genesis only. Not REAL_GENESIS until raw FiscalData capture hash, normalizer code hash, detached signature, and independent replay receipt are real.",
+    "target_date": "2026-06-17"
+  },
+  "genesis_simulated": {
+    "commit": "6ff5e1f54b141e59c137a0b5769c6d65aa74a302",
+    "mode": "SIMULATED",
+    "parent": null,
+    "real_promotion_blocked": true,
+    "status": "STAGING_ANCHOR",
+    "tag": "treasury-can-audit-v0.1.1-simulated-genesis"
+  },
+  "index_type": "TREASURY_LEDGER_INDEX",
+  "last_verified": "2026-06-21T02:12:54.413775+00:00",
+  "ledger_name": "treasury-can-audit",
+  "ledger_status": "SIMULATED_SHADOW_AUDIT_GENESIS",
+  "master": "8b47b862d1a9d2e0c8398d54639faa4bba7aad3",
   "missing_for_real_genesis": [
     "real raw FiscalData snapshot hash",
     "real normalizer source hash",
     "real detached Ed25519 signature",
     "verifier log with non-simulated signature verification",
     "independent replay receipt"
-  ]
+  ],
+  "no_fake_green": true,
+  "schema_version": "treasury-can-audit/v0.1"
 }
