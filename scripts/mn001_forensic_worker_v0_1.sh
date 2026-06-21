@@ -102,9 +102,19 @@ DIFF_LINES="$(wc -l < "$OUT_DIFF" | tr -d ' ')"
 
 classify_line() {
   local text="$1"
-  if echo "$text" | grep -Eiq '\$[0-9]|[0-9][0-9,]*(\.[0-9]+)?[[:space:]]*(million|billion|thousand)|appropriat|obligation|expenditure|revenue|deficit|surplus|fund|agency|program|fiscal year|FY[0-9]|20[0-9][0-9]'; then
+
+  # Order matters: suppress known extractor/PDF/OCR artifacts before the broad numeric rule.
+  if echo "$text" | grep -Eiq '^(page[[:space:]]+)?[0-9]+[[:space:]]+Budget[[:space:]]*&[[:space:]]*Economic[[:space:]]+Forecast|Budget[[:space:]]*&[[:space:]]*Economic[[:space:]]+Forecast[[:space:]]+February[[:space:]]+2026[[:space:]]+[0-9]+|^[0-9]+[[:space:]]+Budget[[:space:]]*&[[:space:]]*Economic[[:space:]]+Forecast'; then
+    echo "PAGE_HEADER_SHIFT"
+  elif echo "$text" | grep -Eiq '[[:alpha:]]{1,4}[[:space:]]+[[:alpha:]]{1,4}[[:space:]]+[[:alpha:]]{2,}|[[:alpha:]][[:space:]]+-[[:space:]]*[[:alpha:]]|[[:alpha:]][[:space:]]+[[:alpha:]]{1,3}\b|[$][[:space:]]+[0-9]|[0-9][[:space:]]+[0-9][[:space:]]+percent|FY[[:space:]]+20[0-9][0-9][[:space:]]*-[[:space:]]*[0-9]{2}'; then
+    echo "WORD_SPLIT_OCR"
+  elif echo "$text" | grep -Eiq '[.][0-9]{1,3}[[:space:]]+[A-Z]|[0-9]{4}[.][0-9]{1,3}\b|[[:lower:]][.][0-9]{1,3}[[:space:]]'; then
+    echo "FOOTNOTE_JOIN"
+  elif echo "$text" | grep -Eiq '(Forecast|Actual|[$][[:space:]]*Change|%[[:space:]]*Change|Annual[[:space:]]+%|FY[[:space:]]*20[0-9]{2}|November[[:space:]]+20[0-9]{2}|February[[:space:]]+20[0-9]{2}).*(Forecast|Actual|[$][[:space:]]*Change|%[[:space:]]*Change|Annual[[:space:]]+%|FY[[:space:]]*20[0-9]{2})'; then
+    echo "TABLE_LAYOUT_REFLOW"
+  elif echo "$text" | grep -Eiq '\$[0-9]|[0-9][0-9,]*(\.[0-9]+)?[[:space:]]*(million|billion|thousand)|appropriat|obligation|expenditure|revenue|deficit|surplus|fund|agency|program|fiscal year|FY[0-9]|20[0-9][0-9]'; then
     echo "POSSIBLE_CONTENT_DELTA"
-  elif echo "$text" | grep -Eiq '^[[:space:][:punct:]]*$|page [0-9]|policy template|budget & economic forecast|header|footer|copyright|generated|uuid|sha256|hash|id:'; then
+  elif echo "$text" | grep -Eiq '^[[:space:][:punct:]]*$|policy template|header|footer|copyright|generated|uuid|sha256|hash|id:'; then
     echo "EXTRACTOR_ARTIFACT"
   else
     echo "NORMALIZATION_ARTIFACT"
@@ -120,9 +130,17 @@ awk '/^[+-][^+-]/ {print}' "$OUT_DIFF" | while IFS= read -r line; do
   printf '%s\t%s\t%s\n' "$sign" "$class" "$body" >> "$TMP_CLASS"
 done
 
-POSSIBLE_COUNT="$(grep -c $'\tPOSSIBLE_CONTENT_DELTA\t' "$TMP_CLASS" || true)"
-EXTRACTOR_COUNT="$(grep -c $'\tEXTRACTOR_ARTIFACT\t' "$TMP_CLASS" || true)"
-NORMALIZATION_COUNT="$(grep -c $'\tNORMALIZATION_ARTIFACT\t' "$TMP_CLASS" || true)"
+count_class() {
+  grep -c $'\t'"$1"$'\t' "$TMP_CLASS" || true
+}
+
+POSSIBLE_COUNT="$(count_class POSSIBLE_CONTENT_DELTA)"
+EXTRACTOR_COUNT="$(count_class EXTRACTOR_ARTIFACT)"
+NORMALIZATION_COUNT="$(count_class NORMALIZATION_ARTIFACT)"
+PAGE_HEADER_COUNT="$(count_class PAGE_HEADER_SHIFT)"
+WORD_SPLIT_COUNT="$(count_class WORD_SPLIT_OCR)"
+FOOTNOTE_JOIN_COUNT="$(count_class FOOTNOTE_JOIN)"
+TABLE_REFLOW_COUNT="$(count_class TABLE_LAYOUT_REFLOW)"
 TOTAL_CLASSIFIED="$(wc -l < "$TMP_CLASS" | tr -d ' ')"
 
 {
@@ -137,6 +155,16 @@ TOTAL_CLASSIFIED="$(wc -l < "$TMP_CLASS" | tr -d ' ')"
   echo "HUMAN_REVIEW_REQUIRED: TRUE"
   echo "NO_FAKE_GREEN: ACTIVE"
   echo '```'
+  echo
+  echo "## Taxonomy Order"
+  echo
+  echo "1. PAGE_HEADER_SHIFT"
+  echo "2. WORD_SPLIT_OCR"
+  echo "3. FOOTNOTE_JOIN"
+  echo "4. TABLE_LAYOUT_REFLOW"
+  echo "5. POSSIBLE_CONTENT_DELTA"
+  echo "6. EXTRACTOR_ARTIFACT"
+  echo "7. NORMALIZATION_ARTIFACT"
   echo
   echo "## Source Files"
   echo
@@ -153,6 +181,10 @@ TOTAL_CLASSIFIED="$(wc -l < "$TMP_CLASS" | tr -d ' ')"
   echo "| Live sentences | $LIVE_COUNT |"
   echo "| Diff lines | $DIFF_LINES |"
   echo "| Classified +/- lines | $TOTAL_CLASSIFIED |"
+  echo "| Page header shifts | $PAGE_HEADER_COUNT |"
+  echo "| Word split / OCR artifacts | $WORD_SPLIT_COUNT |"
+  echo "| Footnote joins | $FOOTNOTE_JOIN_COUNT |"
+  echo "| Table layout reflows | $TABLE_REFLOW_COUNT |"
   echo "| Possible content deltas | $POSSIBLE_COUNT |"
   echo "| Extractor artifacts | $EXTRACTOR_COUNT |"
   echo "| Normalization artifacts | $NORMALIZATION_COUNT |"
@@ -179,6 +211,10 @@ cat > "$OUT_REVIEW" <<EOF
   "live_sentence_count": $LIVE_COUNT,
   "diff_line_count": $DIFF_LINES,
   "classified_delta_count": $TOTAL_CLASSIFIED,
+  "page_header_shift_count": $PAGE_HEADER_COUNT,
+  "word_split_ocr_count": $WORD_SPLIT_COUNT,
+  "footnote_join_count": $FOOTNOTE_JOIN_COUNT,
+  "table_layout_reflow_count": $TABLE_REFLOW_COUNT,
   "possible_content_delta_count": $POSSIBLE_COUNT,
   "extractor_artifact_count": $EXTRACTOR_COUNT,
   "normalization_artifact_count": $NORMALIZATION_COUNT,
@@ -223,6 +259,10 @@ cat > "$OUT_RECEIPT" <<EOF
     "live_sentences": $LIVE_COUNT,
     "diff_lines": $DIFF_LINES,
     "classified_delta_lines": $TOTAL_CLASSIFIED,
+    "page_header_shifts": $PAGE_HEADER_COUNT,
+    "word_split_ocr": $WORD_SPLIT_COUNT,
+    "footnote_joins": $FOOTNOTE_JOIN_COUNT,
+    "table_layout_reflows": $TABLE_REFLOW_COUNT,
     "possible_content_deltas": $POSSIBLE_COUNT,
     "extractor_artifacts": $EXTRACTOR_COUNT,
     "normalization_artifacts": $NORMALIZATION_COUNT
