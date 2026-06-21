@@ -13,36 +13,36 @@ quorum:
 witnesses:
   - key_id: prod-witness-001
     algorithm: ed25519
-    public_key: TODO_GENERATE_PUBLIC_KEY
+    public_key: PLACEHOLDER_FILL_LOCALLY_PROD_WITNESS_001_PUBLIC
     role: treasury_capture_witness
-    active_from: TODO_UTC
+    active_from: PLACEHOLDER_FILL_LOCALLY_ACTIVE_FROM_Z
     active_until: null
-    status: active
-    custody: offline_or_hsm
+    status: pending_local_fill
+    custody: external_signer_backend
     allowed_actions:
       - live_capture_attestation
       - real_treasury_genesis_promotion
 
   - key_id: prod-witness-002
     algorithm: ed25519
-    public_key: TODO_GENERATE_PUBLIC_KEY
+    public_key: PLACEHOLDER_FILL_LOCALLY_PROD_WITNESS_002_PUBLIC
     role: treasury_capture_witness
-    active_from: TODO_UTC
+    active_from: PLACEHOLDER_FILL_LOCALLY_ACTIVE_FROM_Z
     active_until: null
-    status: active
-    custody: offline_or_hsm
+    status: pending_local_fill
+    custody: external_signer_backend
     allowed_actions:
       - live_capture_attestation
       - real_treasury_genesis_promotion
 
   - key_id: prod-witness-003
     algorithm: ed25519
-    public_key: TODO_GENERATE_PUBLIC_KEY
+    public_key: PLACEHOLDER_FILL_LOCALLY_PROD_WITNESS_003_PUBLIC
     role: treasury_capture_witness
-    active_from: TODO_UTC
+    active_from: PLACEHOLDER_FILL_LOCALLY_ACTIVE_FROM_Z
     active_until: null
-    status: active
-    custody: offline_or_hsm
+    status: pending_local_fill
+    custody: external_signer_backend
     allowed_actions:
       - live_capture_attestation
       - real_treasury_genesis_promotion
@@ -52,6 +52,6 @@ revoked:
     algorithm: ed25519_or_placeholder
     public_key: simulated_or_unknown
     reason: simulated_genesis
-    revoked_at: TODO_UTC
+    revoked_at: PLACEHOLDER_FILL_LOCALLY_REVOCATION_TIME_Z
     effect: fail_strict_and_promotion
-    notes: Sim-era/staging material has no production witness authority.
+    notes: Sim-era material has no production witness authority.
