@@ -3,7 +3,7 @@
 
 const fs = require('fs');
 const crypto = require('crypto');
-const { validate } = require('./validate-receipt-taxonomy.cjs');
+const { validate, canonicalBytes } = require('./validate-receipt-taxonomy.cjs');
 
 const MANIFEST_PATH = 'test/fixtures/receipt-taxonomy-golden-manifest.json';
 
@@ -16,16 +16,10 @@ function readJson(path) {
   return JSON.parse(fs.readFileSync(path, 'utf8'));
 }
 
-function stableStringify(value) {
-  if (value === null || typeof value !== 'object') return JSON.stringify(value);
-  if (Array.isArray(value)) return `[${value.map(stableStringify).join(',')}]`;
-  return `{${Object.keys(value).sort().map((key) => `${JSON.stringify(key)}:${stableStringify(value[key])}`).join(',')}}`;
-}
-
 function signatureDigest(receipt) {
   const clone = JSON.parse(JSON.stringify(receipt));
   delete clone.signature;
-  return crypto.createHash('sha256').update(stableStringify(clone)).digest('hex');
+  return crypto.createHash('sha256').update(canonicalBytes(clone)).digest('hex');
 }
 
 const manifest = readJson(MANIFEST_PATH);
