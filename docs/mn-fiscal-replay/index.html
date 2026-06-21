@@ -6,326 +6,35 @@
   <title>Minnesota Fiscal Record Verification Index</title>
   <meta name="description" content="A public verification register for official Minnesota fiscal documents, showing monitored records, evidence receipts, reviewed drift, and public discrepancy boundaries." />
   <style>
-    :root {
-      --paper: #f7f5f0;
-      --paper-2: #fffdf8;
-      --ink: #0f1519;
-      --muted: #5f666b;
-      --rule: #d4ccbc;
-      --rule-dark: #a99f8e;
-      --green: #2e7d32;
-      --green-soft: #e8f3ea;
-      --red: #b91c1c;
-      --red-soft: #f7e7e5;
-      --amber: #8a5b10;
-      --amber-soft: #f6edda;
-      --mono-bg: #ebe5d9;
-      --shadow: 0 22px 70px rgba(15, 21, 25, .10);
-      --radius: 18px;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      background:
-        linear-gradient(90deg, rgba(15,21,25,.025) 1px, transparent 1px) 0 0/36px 36px,
-        linear-gradient(180deg, var(--paper), #efe9dd 100%);
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.55;
-    }
-    a { color: #174f88; text-decoration-thickness: .08em; text-underline-offset: .18em; }
-    a:hover { color: #0f355d; }
-    .page { max-width: 1240px; margin: 0 auto; padding: 28px 22px 60px; }
-    .topbar {
-      display: flex; justify-content: space-between; align-items: center; gap: 18px;
-      border-bottom: 1px solid var(--rule); padding-bottom: 16px; margin-bottom: 38px;
-      color: var(--muted); font-size: .92rem;
-    }
-    .mark { font-weight: 800; letter-spacing: .03em; text-transform: uppercase; color: var(--ink); }
-    .layout { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 28px; align-items: start; }
-    .sidebar { position: sticky; top: 22px; }
-    .panel, .doc-card, .side-card, .evidence-card {
-      background: rgba(255,253,248,.78);
-      border: 1px solid var(--rule);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-    .panel { padding: 30px; margin-bottom: 22px; }
-    .side-card { padding: 20px; margin-bottom: 16px; }
-    .eyebrow { color: var(--muted); text-transform: uppercase; letter-spacing: .12em; font-weight: 800; font-size: .78rem; }
-    h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; line-height: 1.06; color: var(--ink); }
-    h1 { font-size: clamp(2.5rem, 6.4vw, 5.4rem); letter-spacing: -.055em; margin: 12px 0 18px; max-width: 940px; }
-    h2 { font-size: clamp(1.55rem, 3vw, 2.35rem); margin: 0 0 14px; letter-spacing: -.035em; }
-    h3 { font-size: 1.28rem; margin: 0 0 8px; }
-    p { color: var(--muted); margin: 0 0 14px; }
-    .lead { font-size: clamp(1.05rem, 2vw, 1.35rem); max-width: 900px; color: #343b40; }
-    .status-box {
-      margin-top: 24px; padding: 18px 20px; border-radius: 14px;
-      background: var(--green-soft); border: 1px solid rgba(46,125,50,.28);
-    }
-    .status-box strong { color: var(--green); display: block; margin-bottom: 6px; font-size: 1.05rem; }
-    .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 22px; }
-    .metric { background: var(--paper-2); border: 1px solid var(--rule); border-radius: 14px; padding: 16px; }
-    .metric .num { font-size: 1.85rem; font-weight: 900; letter-spacing: -.04em; }
-    .metric .label { color: var(--muted); font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; font-weight: 800; }
-    .badge { display: inline-flex; align-items: center; gap: 7px; border-radius: 999px; padding: 6px 10px; font-size: .78rem; font-weight: 850; letter-spacing: .04em; text-transform: uppercase; border: 1px solid transparent; }
-    .badge.green { color: var(--green); background: var(--green-soft); border-color: rgba(46,125,50,.24); }
-    .badge.red { color: var(--red); background: var(--red-soft); border-color: rgba(185,28,28,.18); }
-    .badge.amber { color: var(--amber); background: var(--amber-soft); border-color: rgba(138,91,16,.18); }
-    .side-title { color: var(--muted); font-size: .78rem; text-transform: uppercase; letter-spacing: .12em; font-weight: 900; margin-bottom: 8px; }
-    .side-verdict { font-family: Georgia, "Times New Roman", serif; font-size: 1.75rem; line-height: 1.05; margin-bottom: 10px; }
-    .stamp {
-      margin: 14px 0; display: inline-block; color: var(--red); border: 3px solid var(--red); border-radius: 10px;
-      padding: 8px 12px; font-weight: 950; letter-spacing: .14em; transform: rotate(-4deg); text-transform: uppercase; background: rgba(255,255,255,.44);
-    }
-    .toc { list-style: none; padding: 0; margin: 0; }
-    .toc li { margin: 8px 0; }
-    .toc a { color: var(--ink); text-decoration: none; }
-    .toc a:hover { text-decoration: underline; }
-    .doc-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-    .doc-card { padding: 20px; }
-    .doc-meta { display: grid; gap: 8px; margin: 14px 0; }
-    .row { display: flex; justify-content: space-between; gap: 14px; border-bottom: 1px dashed var(--rule); padding-bottom: 8px; }
-    .row span:first-child { color: var(--muted); }
-    .row span:last-child { text-align: right; font-weight: 760; }
-    .button-row { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 16px; }
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; min-height: 38px;
-      border-radius: 999px; padding: 8px 12px; font-weight: 850; font-size: .86rem;
-      background: var(--ink); color: #fff !important; text-decoration: none; border: 1px solid var(--ink);
-    }
-    .btn.secondary { background: transparent; color: var(--ink) !important; border-color: var(--rule-dark); }
-    .btn.source { background: var(--green); border-color: var(--green); }
-    .process { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; margin-top: 18px; }
-    .step { background: var(--paper-2); border: 1px solid var(--rule); border-radius: 12px; padding: 12px; min-height: 112px; }
-    .step b { display: block; margin-bottom: 6px; }
-    .step small { color: var(--muted); display: block; }
-    table { width: 100%; border-collapse: collapse; }
-    th, td { text-align: left; padding: 13px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
-    th { font-size: .76rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
-    code, .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background: var(--mono-bg); border-radius: 6px; padding: 2px 6px; color: #25292d; font-size: .92em; }
-    pre { overflow-x: auto; background: #171b1f; color: #f8f4e9; padding: 14px; border-radius: 14px; font-size: .9rem; }
-    .callout { border-left: 5px solid var(--red); background: var(--red-soft); padding: 16px; border-radius: 12px; }
-    .callout p { color: #4a2220; }
-    .evidence-stack { display: grid; gap: 14px; margin-top: 18px; }
-    .evidence-card { padding: 18px; }
-    .evidence-card:target { outline: 4px solid rgba(46,125,50,.22); background: #fffefb; }
-    .evidence-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
-    .mini-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 12px 0; }
-    .mini { border: 1px solid var(--rule); border-radius: 12px; background: var(--paper-2); padding: 12px; }
-    .mini b { display: block; font-size: .8rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 3px; }
-    .raw-link { font-size: .88rem; color: var(--muted); }
-    .glossary { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-    .term { background: var(--paper-2); border: 1px solid var(--rule); border-radius: 12px; padding: 14px; }
-    footer { color: var(--muted); border-top: 1px solid var(--rule); margin-top: 34px; padding-top: 20px; font-size: .92rem; }
-    @media (max-width: 980px) {
-      .layout { grid-template-columns: 1fr; }
-      .sidebar { position: static; order: -1; }
-      .metrics, .doc-grid, .glossary, .mini-grid { grid-template-columns: 1fr; }
-      .process { grid-template-columns: 1fr; }
-      .topbar, .evidence-head { align-items: flex-start; flex-direction: column; }
-    }
+    :root { --paper:#f7f5f0; --paper-2:#fffdf8; --ink:#0f1519; --muted:#5f666b; --rule:#d4ccbc; --rule-dark:#a99f8e; --green:#2e7d32; --green-soft:#e8f3ea; --red:#b91c1c; --red-soft:#f7e7e5; --amber:#8a5b10; --amber-soft:#f6edda; --mono-bg:#ebe5d9; --shadow:0 22px 70px rgba(15,21,25,.10); --radius:18px; }
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;color:var(--ink);background:linear-gradient(90deg,rgba(15,21,25,.025) 1px,transparent 1px) 0 0/36px 36px,linear-gradient(180deg,var(--paper),#efe9dd 100%);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55} a{color:#174f88;text-decoration-thickness:.08em;text-underline-offset:.18em} a:hover{color:#0f355d}.page{max-width:1240px;margin:0 auto;padding:28px 22px 60px}.topbar{display:flex;justify-content:space-between;align-items:center;gap:18px;border-bottom:1px solid var(--rule);padding-bottom:16px;margin-bottom:38px;color:var(--muted);font-size:.92rem}.mark{font-weight:800;letter-spacing:.03em;text-transform:uppercase;color:var(--ink)}.layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:28px;align-items:start}.sidebar{position:sticky;top:22px}.panel,.doc-card,.side-card,.evidence-card,.audience-card{background:rgba(255,253,248,.78);border:1px solid var(--rule);border-radius:var(--radius);box-shadow:var(--shadow)}.panel{padding:30px;margin-bottom:22px}.side-card{padding:20px;margin-bottom:16px}.eyebrow{color:var(--muted);text-transform:uppercase;letter-spacing:.12em;font-weight:800;font-size:.78rem}h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.06;color:var(--ink)}h1{font-size:clamp(2.5rem,6.4vw,5.4rem);letter-spacing:-.055em;margin:12px 0 18px;max-width:940px}h2{font-size:clamp(1.55rem,3vw,2.35rem);margin:0 0 14px;letter-spacing:-.035em}h3{font-size:1.28rem;margin:0 0 8px}p{color:var(--muted);margin:0 0 14px}.lead{font-size:clamp(1.05rem,2vw,1.35rem);max-width:900px;color:#343b40}.status-box{margin-top:24px;padding:18px 20px;border-radius:14px;background:var(--green-soft);border:1px solid rgba(46,125,50,.28)}.status-box strong{color:var(--green);display:block;margin-bottom:6px;font-size:1.05rem}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px}.metric{background:var(--paper-2);border:1px solid var(--rule);border-radius:14px;padding:16px}.metric .num{font-size:1.85rem;font-weight:900;letter-spacing:-.04em}.metric .label{color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;font-weight:800}.badge{display:inline-flex;align-items:center;gap:7px;border-radius:999px;padding:6px 10px;font-size:.78rem;font-weight:850;letter-spacing:.04em;text-transform:uppercase;border:1px solid transparent}.badge.green{color:var(--green);background:var(--green-soft);border-color:rgba(46,125,50,.24)}.badge.red{color:var(--red);background:var(--red-soft);border-color:rgba(185,28,28,.18)}.badge.amber{color:var(--amber);background:var(--amber-soft);border-color:rgba(138,91,16,.18)}.side-title{color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;font-weight:900;margin-bottom:8px}.side-verdict{font-family:Georgia,"Times New Roman",serif;font-size:1.75rem;line-height:1.05;margin-bottom:10px}.stamp{margin:14px 0;display:inline-block;color:var(--red);border:3px solid var(--red);border-radius:10px;padding:8px 12px;font-weight:950;letter-spacing:.14em;transform:rotate(-4deg);text-transform:uppercase;background:rgba(255,255,255,.44)}.toc{list-style:none;padding:0;margin:0}.toc li{margin:8px 0}.toc a{color:var(--ink);text-decoration:none}.toc a:hover{text-decoration:underline}.doc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.doc-card{padding:20px}.audience-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:18px}.audience-card{padding:16px;box-shadow:none}.audience-card h3{font-size:1.05rem}.audience-card b{display:block;color:var(--ink);font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;margin:10px 0 3px}.doc-meta{display:grid;gap:8px;margin:14px 0}.row{display:flex;justify-content:space-between;gap:14px;border-bottom:1px dashed var(--rule);padding-bottom:8px}.row span:first-child{color:var(--muted)}.row span:last-child{text-align:right;font-weight:760}.button-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:38px;border-radius:999px;padding:8px 12px;font-weight:850;font-size:.86rem;background:var(--ink);color:#fff!important;text-decoration:none;border:1px solid var(--ink)}.btn.secondary{background:transparent;color:var(--ink)!important;border-color:var(--rule-dark)}.btn.source{background:var(--green);border-color:var(--green)}.process{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:18px}.step{background:var(--paper-2);border:1px solid var(--rule);border-radius:12px;padding:12px;min-height:112px}.step b{display:block;margin-bottom:6px}.step small{color:var(--muted);display:block}table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:13px 10px;border-bottom:1px solid var(--rule);vertical-align:top}th{font-size:.76rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}code,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--mono-bg);border-radius:6px;padding:2px 6px;color:#25292d;font-size:.92em}pre{overflow-x:auto;background:#171b1f;color:#f8f4e9;padding:14px;border-radius:14px;font-size:.9rem}.callout{border-left:5px solid var(--red);background:var(--red-soft);padding:16px;border-radius:12px}.callout p{color:#4a2220}.evidence-stack{display:grid;gap:14px;margin-top:18px}.evidence-card{padding:18px}.evidence-card:target{outline:4px solid rgba(46,125,50,.22);background:#fffefb}.evidence-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:10px}.mini-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:12px 0}.mini{border:1px solid var(--rule);border-radius:12px;background:var(--paper-2);padding:12px}.mini b{display:block;font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}.raw-link{font-size:.88rem;color:var(--muted)}.glossary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.term{background:var(--paper-2);border:1px solid var(--rule);border-radius:12px;padding:14px}footer{color:var(--muted);border-top:1px solid var(--rule);margin-top:34px;padding-top:20px;font-size:.92rem}@media(max-width:1100px){.audience-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:980px){.layout{grid-template-columns:1fr}.sidebar{position:static;order:-1}.metrics,.doc-grid,.glossary,.mini-grid,.audience-grid{grid-template-columns:1fr}.process{grid-template-columns:1fr}.topbar,.evidence-head{align-items:flex-start;flex-direction:column}}
   </style>
 </head>
 <body>
   <div class="page">
-    <div class="topbar">
-      <div class="mark">Minnesota Fiscal Replay</div>
-      <div>Public transparency register · jsonwisdom/AL</div>
-    </div>
-
+    <div class="topbar"><div class="mark">Minnesota Fiscal Replay</div><div>Public transparency register · jsonwisdom/AL</div></div>
     <div class="layout">
       <main>
         <section class="panel" id="overview">
           <div class="eyebrow">Public Transparency Register</div>
           <h1>Minnesota Fiscal Record Verification Index</h1>
           <p class="lead">A public verification register for official Minnesota fiscal documents. The system tracks source records, compares them to stored baselines, separates formatting drift from substantive content changes, and publishes receipts for independent review.</p>
-          <div class="status-box">
-            <strong>Current status: Verified consistent</strong>
-            <p>Two monitored document streams have been reviewed. Formatting and extraction differences were detected, but no substantive fiscal content changes were confirmed. No public discrepancy claim has been issued.</p>
-          </div>
-          <div class="metrics" aria-label="Current verification metrics">
-            <div class="metric"><div class="num">2</div><div class="label">Documents monitored</div></div>
-            <div class="metric"><div class="num">0</div><div class="label">Confirmed content changes</div></div>
-            <div class="metric"><div class="num">2</div><div class="label">Verification certificates</div></div>
-            <div class="metric"><div class="num">0</div><div class="label">Public discrepancy claims</div></div>
-          </div>
+          <div class="status-box"><strong>Current status: Verified consistent</strong><p>Two monitored document streams have been reviewed. Formatting and extraction differences were detected, but no substantive fiscal content changes were confirmed. No public discrepancy claim has been issued.</p></div>
+          <div class="metrics" aria-label="Current verification metrics"><div class="metric"><div class="num">2</div><div class="label">Documents monitored</div></div><div class="metric"><div class="num">0</div><div class="label">Confirmed content changes</div></div><div class="metric"><div class="num">2</div><div class="label">Verification certificates</div></div><div class="metric"><div class="num">0</div><div class="label">Public discrepancy claims</div></div></div>
         </section>
-
-        <section class="panel" id="monitored">
-          <h2>What is being monitored?</h2>
-          <p>The current monitored records are based on Minnesota Management and Budget fiscal forecast material, including the official February 2026 Budget and Economic Forecast PDF. The identifiers <code>MN_001</code> and <code>MN_002</code> are internal tracking IDs for monitored document streams; they are not government-issued labels.</p>
-          <p>Both current streams derive from the same official February 2026 Minnesota MMB source record but maintain separate receipt paths for replay and validation testing.</p>
-        </section>
-
-        <section class="panel" id="streams">
-          <h2>Audited document streams</h2>
-          <div class="doc-grid">
-            <article class="doc-card">
-              <span class="badge green">Verified baseline</span>
-              <h3>MN MMB February 2026 Budget Forecast — Stream 1</h3>
-              <p>Internal ID: <code>MN_001</code></p>
-              <div class="doc-meta">
-                <div class="row"><span>Result</span><span>No substantive content anomaly found</span></div>
-                <div class="row"><span>Public discrepancy claim</span><span>Not issued</span></div>
-                <div class="row"><span>Last classification</span><span>PDF extraction/layout drift</span></div>
-              </div>
-              <div class="button-row">
-                <a class="btn source" href="https://mn.gov/mmb-stat/000/az/forecast/2026/budget-and-economic-forecast/february.pdf">Official source PDF</a>
-                <a class="btn" href="#mn001-certificate">Verification summary</a>
-                <a class="btn secondary" href="#mn001-review">Review notes</a>
-                <a class="btn secondary" href="#mn001-comparison">Comparison summary</a>
-                <a class="btn secondary" href="#mn001-source">Source manifest</a>
-              </div>
-            </article>
-            <article class="doc-card">
-              <span class="badge green">Verified baseline</span>
-              <h3>MN MMB February 2026 Budget Forecast — Stream 2</h3>
-              <p>Internal ID: <code>MN_002</code></p>
-              <div class="doc-meta">
-                <div class="row"><span>Result</span><span>No substantive content anomaly found</span></div>
-                <div class="row"><span>Public discrepancy claim</span><span>Not issued</span></div>
-                <div class="row"><span>Last classification</span><span>PDF extraction/layout drift</span></div>
-              </div>
-              <div class="button-row">
-                <a class="btn source" href="https://mn.gov/mmb-stat/000/az/forecast/2026/budget-and-economic-forecast/february.pdf">Official source PDF</a>
-                <a class="btn" href="#mn002-certificate">Verification summary</a>
-                <a class="btn secondary" href="#mn002-review">Review notes</a>
-                <a class="btn secondary" href="#mn002-comparison">Comparison summary</a>
-                <a class="btn secondary" href="#mn002-source">Source manifest</a>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section class="panel" id="process">
-          <h2>How verification works</h2>
-          <div class="process">
-            <div class="step"><b>Official source</b><small>The public government document being monitored.</small></div>
-            <div class="step"><b>Source manifest</b><small>Stored pointer, hashes, and source metadata.</small></div>
-            <div class="step"><b>Live fetch</b><small>A later copy of the same source is retrieved.</small></div>
-            <div class="step"><b>Text normalization</b><small>Extracted text is normalized for comparison.</small></div>
-            <div class="step"><b>Paragraph comparison</b><small>Document text is compared in small chunks.</small></div>
-            <div class="step"><b>Review classification</b><small>Detected differences are reviewed before public claims.</small></div>
-            <div class="step"><b>Certificate</b><small>A final receipt records the public status.</small></div>
-          </div>
-        </section>
-
-        <section class="panel" id="drift">
-          <h2>Why formatting drift is not automatically a discrepancy</h2>
-          <p>PDF files often produce different extracted text when page numbers, table-of-contents spacing, footnotes, line breaks, or layout metadata shift. This project treats those differences as formatting or extraction artifacts unless the actual fiscal figures, tables, or sentences are proven to have changed.</p>
-          <div class="callout">
-            <p><strong>No public discrepancy claim has been issued.</strong> Current reviewed evidence supports baseline maintenance only: formatting drift was detected, reviewed, and classified as non-substantive.</p>
-          </div>
-        </section>
-
-        <section class="panel" id="evidence">
-          <h2>On-page evidence register</h2>
-          <p>The main buttons now stay inside this public page. Raw GitHub receipts remain available as secondary technical links for auditors and developers.</p>
-          <div class="evidence-stack">
-            <article class="evidence-card" id="mn001-certificate">
-              <div class="evidence-head"><h3>MN_001 verification summary</h3><span class="badge green">Verified consistent</span></div>
-              <p>Final public status: no substantive fiscal content anomaly found. The stream is treated as a verified baseline under maintenance.</p>
-              <div class="mini-grid"><div class="mini"><b>Public claim</b>Not issued</div><div class="mini"><b>Delta status</b>False / not proven</div><div class="mini"><b>Verdict</b>No anomaly found</div></div>
-              <a class="raw-link" href="https://github.com/jsonwisdom/AL/blob/master/projects/mn-fiscal-replay/live_fetch/MN_001/MN_001_FINAL_SAFE_STATUS_V0_1.json">Technical receipt JSON</a>
-            </article>
-
-            <article class="evidence-card" id="mn001-review">
-              <div class="evidence-head"><h3>MN_001 auditor review notes</h3><span class="badge amber">Formatting drift reviewed</span></div>
-              <p>Detected differences were classified as ordering, extraction, page marker, footnote, or table-of-contents artifacts. The review did not establish a substantive fiscal content change.</p>
-              <a class="raw-link" href="https://github.com/jsonwisdom/AL/blob/master/projects/mn-fiscal-replay/reviews/MN_001_CHUNK_REVIEW_CLASSIFICATION_V0_1.md">Technical review markdown</a>
-            </article>
-
-            <article class="evidence-card" id="mn001-comparison">
-              <div class="evidence-head"><h3>MN_001 paragraph comparison summary</h3><span class="badge amber">Diff detected</span></div>
-              <p>A paragraph-level comparison detected text-layout drift. The public claim remains withheld because the differences were not proven to be substantive fiscal data changes.</p>
-              <a class="raw-link" href="https://github.com/jsonwisdom/AL/blob/master/projects/mn-fiscal-replay/live_fetch/MN_001/chunks/MN_001.chunked_verdict.json">Technical comparison receipt</a>
-            </article>
-
-            <article class="evidence-card" id="mn001-source">
-              <div class="evidence-head"><h3>MN_001 source manifest summary</h3><span class="badge green">Official source tracked</span></div>
-              <p>Source record: Minnesota Management and Budget February 2026 Budget and Economic Forecast PDF.</p>
-              <div class="button-row"><a class="btn source" href="https://mn.gov/mmb-stat/000/az/forecast/2026/budget-and-economic-forecast/february.pdf">Official source PDF</a><a class="btn secondary" href="https://github.com/jsonwisdom/AL/blob/master/_sources/MN_001/source_manifest.json">Technical source manifest</a></div>
-            </article>
-
-            <article class="evidence-card" id="mn002-certificate">
-              <div class="evidence-head"><h3>MN_002 verification summary</h3><span class="badge green">Verified consistent</span></div>
-              <p>Final public status: no substantive fiscal content anomaly found. The stream is treated as a verified baseline under maintenance.</p>
-              <div class="mini-grid"><div class="mini"><b>Public claim</b>Not issued</div><div class="mini"><b>Delta status</b>False / not proven</div><div class="mini"><b>Verdict</b>No anomaly found</div></div>
-              <a class="raw-link" href="https://github.com/jsonwisdom/AL/blob/master/projects/mn-fiscal-replay/live_fetch/MN_002/MN_002_FINAL_SAFE_STATUS_V0_1.json">Technical receipt JSON</a>
-            </article>
-
-            <article class="evidence-card" id="mn002-review">
-              <div class="evidence-head"><h3>MN_002 auditor review notes</h3><span class="badge amber">Formatting drift reviewed</span></div>
-              <p>Detected differences were classified as ordering, extraction, page marker, footnote, or table-of-contents artifacts. The review did not establish a substantive fiscal content change.</p>
-              <a class="raw-link" href="https://github.com/jsonwisdom/AL/blob/master/projects/mn-fiscal-replay/reviews/MN_002_CHUNK_REVIEW_CLASSIFICATION_V0_1.md">Technical review markdown</a>
-            </article>
-
-            <article class="evidence-card" id="mn002-comparison">
-              <div class="evidence-head"><h3>MN_002 paragraph comparison summary</h3><span class="badge amber">Diff detected</span></div>
-              <p>A paragraph-level comparison detected text-layout drift. The public claim remains withheld because the differences were not proven to be substantive fiscal data changes.</p>
-              <a class="raw-link" href="https://github.com/jsonwisdom/AL/blob/master/projects/mn-fiscal-replay/live_fetch/MN_002/chunks/MN_002.chunked_verdict.json">Technical comparison receipt</a>
-            </article>
-
-            <article class="evidence-card" id="mn002-source">
-              <div class="evidence-head"><h3>MN_002 source manifest summary</h3><span class="badge green">Official source tracked</span></div>
-              <p>Source record: Minnesota Management and Budget February 2026 Budget and Economic Forecast PDF.</p>
-              <div class="button-row"><a class="btn source" href="https://mn.gov/mmb-stat/000/az/forecast/2026/budget-and-economic-forecast/february.pdf">Official source PDF</a><a class="btn secondary" href="https://github.com/jsonwisdom/AL/blob/master/_sources/MN_002/source_manifest.json">Technical source manifest</a></div>
-            </article>
-          </div>
-        </section>
-
-        <section class="panel" id="developer">
-          <h2>Developer verification</h2>
-          <p>Technical users can inspect the repository, receipt paths, and replay artifacts directly. Replay scripts and receipts are available under <code>projects/mn-fiscal-replay/</code>.</p>
-          <pre><code>git clone https://github.com/jsonwisdom/AL.git
-cd AL</code></pre>
-        </section>
-
-        <section class="panel" id="glossary">
-          <h2>Technical glossary</h2>
-          <div class="glossary">
-            <div class="term"><strong>NO_FAKE_GREEN</strong><p>No success or discrepancy claim without supporting evidence.</p></div>
-            <div class="term"><strong>Discovery before delegation</strong><p>The system searches existing receipts before asking a human to find files.</p></div>
-            <div class="term"><strong>Machine index</strong><p>JSON receipt index used by scripts and auditors.</p></div>
-            <div class="term"><strong>Verification certificate</strong><p>Final status receipt for a monitored stream.</p></div>
-            <div class="term"><strong>Paragraph-level comparison</strong><p>Chunked comparison used to identify meaningful differences.</p></div>
-            <div class="term"><strong>Internal roles</strong><p>“Librarian” refers to discovery/indexing; “Boss Bre” refers to claim-gating logic.</p></div>
-          </div>
-        </section>
+        <section class="panel" id="monitored"><h2>What is being monitored?</h2><p>The current monitored records are based on Minnesota Management and Budget fiscal forecast material, including the official February 2026 Budget and Economic Forecast PDF. The identifiers <code>MN_001</code> and <code>MN_002</code> are internal tracking IDs for monitored document streams; they are not government-issued labels.</p><p>Both current streams derive from the same official February 2026 Minnesota MMB source record but maintain separate receipt paths for replay and validation testing.</p></section>
+        <section class="panel" id="users"><h2>Who this register is for</h2><p>This architecture is optimized for operators who require public records to be <strong>traceable, reproducible, and independently reviewable</strong> under a zero-trust model.</p><div class="audience-grid"><article class="audience-card"><h3>Forensic Auditors & Civic Watchdogs</h3><b>Objective</b><p>Eliminate institutional reliance by maintaining independent, stable baselines.</p><b>Utility</b><p>Tracks official state records against receipt-backed baselines to flag document drift for review.</p></article><article class="audience-card"><h3>Legislative Researchers & Policy Analysts</h3><b>Objective</b><p>Reduce manual, multi-hundred-page comparative readings.</p><b>Utility</b><p>Runs paragraph-level regression checks to isolate text and numerical drift across forecast revisions.</p></article><article class="audience-card"><h3>Investigative & Data Journalists</h3><b>Objective</b><p>Ground reporting in reproducible evidence rather than speculation.</p><b>Utility</b><p>Uses deterministic diff trails and verification logs to separate objective modifications from unsupported claims.</p></article><article class="audience-card"><h3>MGDPA & Public Records Litigators</h3><b>Objective</b><p>Establish evidentiary chains of custody for administrative tracking.</p><b>Utility</b><p>Uses open provenance records to validate baselines, document integrity, and historical timelines for discovery.</p></article><article class="audience-card"><h3>Civic Tech Developers & Sovereign Archivists</h3><b>Objective</b><p>Deploy modular monitoring nodes without reinventing the stack.</p><b>Utility</b><p>Standardizes source manifests, live fetches, text normalization, paragraph parsing, and verification certificates.</p></article></div></section>
+        <section class="panel" id="streams"><h2>Audited document streams</h2><div class="doc-grid"><article class="doc-card"><span class="badge green">Verified baseline</span><h3>MN MMB February 2026 Budget Forecast — Stream 1</h3><p>Internal ID: <code>MN_001</code></p><div class="doc-meta"><div class="row"><span>Result</span><span>No substantive content anomaly found</span></div><div class="row"><span>Public discrepancy claim</span><span>Not issued</span></div><div class="row"><span>Last classification</span><span>PDF extraction/layout drift</span></div></div><div class="button-row"><a class="btn source" href="https://mn.gov/mmb-stat/000/az/forecast/2026/budget-and-economic-forecast/february.pdf">Official source PDF</a><a class="btn" href="#mn001-certificate">Verification summary</a><a class="btn secondary" href="#mn001-review">Review notes</a><a class="btn secondary" href="#mn001-comparison">Comparison summary</a><a class="btn secondary" href="#mn001-source">Source manifest</a></div></article><article class="doc-card"><span class="badge green">Verified baseline</span><h3>MN MMB February 2026 Budget Forecast — Stream 2</h3><p>Internal ID: <code>MN_002</code></p><div class="doc-meta"><div class="row"><span>Result</span><span>No substantive content anomaly found</span></div><div class="row"><span>Public discrepancy claim</span><span>Not issued</span></div><div class="row"><span>Last classification</span><span>PDF extraction/layout drift</span></div></div><div class="button-row"><a class="btn source" href="https://mn.gov/mmb-stat/000/az/forecast/2026/budget-and-economic-forecast/february.pdf">Official source PDF</a><a class="btn" href="#mn002-certificate">Verification summary</a><a class="btn secondary" href="#mn002-review">Review notes</a><a class="btn secondary" href="#mn002-comparison">Comparison summary</a><a class="btn secondary" href="#mn002-source">Source manifest</a></div></article></div></section>
+        <section class="panel" id="process"><h2>How verification works</h2><div class="process"><div class="step"><b>Official source</b><small>The public government document being monitored.</small></div><div class="step"><b>Source manifest</b><small>Stored pointer, hashes, and source metadata.</small></div><div class="step"><b>Live fetch</b><small>A later copy of the same source is retrieved.</small></div><div class="step"><b>Text normalization</b><small>Extracted text is normalized for comparison.</small></div><div class="step"><b>Paragraph comparison</b><small>Document text is compared in small chunks.</small></div><div class="step"><b>Review classification</b><small>Detected differences are reviewed before public claims.</small></div><div class="step"><b>Certificate</b><small>A final receipt records the public status.</small></div></div></section>
+        <section class="panel" id="drift"><h2>Why formatting drift is not automatically a discrepancy</h2><p>PDF files often produce different extracted text when page numbers, table-of-contents spacing, footnotes, line breaks, or layout metadata shift. This project treats those differences as formatting or extraction artifacts unless the actual fiscal figures, tables, or sentences are proven to have changed.</p><div class="callout"><p><strong>No public discrepancy claim has been issued.</strong> Current reviewed evidence supports baseline maintenance only: formatting drift was detected, reviewed, and classified as non-substantive.</p></div></section>
+        <section class="panel" id="evidence"><h2>On-page evidence register</h2><p>The main buttons now stay inside this public page. Raw GitHub receipts remain available as secondary technical links for auditors and developers.</p><div class="evidence-stack"><article class="evidence-card" id="mn001-certificate"><div class="evidence-head"><h3>MN_001 verification summary</h3><span class="badge green">Verified consistent</span></div><p>Final public status: no substantive fiscal content anomaly found. The stream is treated as a verified baseline under maintenance.</p><div class="mini-grid"><div class="mini"><b>Public claim</b>Not issued</div><div class="mini"><b>Delta status</b>False / not proven</div><div class="mini"><b>Verdict</b>No anomaly found</div></div><a class="raw-link" href="https://github.com/jsonwisdom/AL/blob/master/projects/mn-fiscal-replay/live_fetch/MN_001/MN_001_FINAL_SAFE_STATUS_V0_1.json">Technical receipt JSON</a></article><article class="evidence-card" id="mn001-review"><div class="evidence-head"><h3>MN_001 auditor review notes</h3><span class="badge amber">Formatting drift reviewed</span></div><p>Detected differences were classified as ordering, extraction, page marker, footnote, or table-of-contents artifacts. The review did not establish a substantive fiscal content change.</p><a class="raw-link" href="https://github.com/jsonwisdom/AL/blob/master/projects/mn-fiscal-replay/reviews/MN_001_CHUNK_REVIEW_CLASSIFICATION_V0_1.md">Technical review markdown</a></article><article class="evidence-card" id="mn001-comparison"><div class="evidence-head"><h3>MN_001 paragraph comparison summary</h3><span class="badge amber">Diff detected</span></div><p>A paragraph-level comparison detected text-layout drift. The public claim remains withheld because the differences were not proven to be substantive fiscal data changes.</p><a class="raw-link" href="https://github.com/jsonwisdom/AL/blob/master/projects/mn-fiscal-replay/live_fetch/MN_001/chunks/MN_001.chunked_verdict.json">Technical comparison receipt</a></article><article class="evidence-card" id="mn001-source"><div class="evidence-head"><h3>MN_001 source manifest summary</h3><span class="badge green">Official source tracked</span></div><p>Source record: Minnesota Management and Budget February 2026 Budget and Economic Forecast PDF.</p><div class="button-row"><a class="btn source" href="https://mn.gov/mmb-stat/000/az/forecast/2026/budget-and-economic-forecast/february.pdf">Official source PDF</a><a class="btn secondary" href="https://github.com/jsonwisdom/AL/blob/master/_sources/MN_001/source_manifest.json">Technical source manifest</a></div></article><article class="evidence-card" id="mn002-certificate"><div class="evidence-head"><h3>MN_002 verification summary</h3><span class="badge green">Verified consistent</span></div><p>Final public status: no substantive fiscal content anomaly found. The stream is treated as a verified baseline under maintenance.</p><div class="mini-grid"><div class="mini"><b>Public claim</b>Not issued</div><div class="mini"><b>Delta status</b>False / not proven</div><div class="mini"><b>Verdict</b>No anomaly found</div></div><a class="raw-link" href="https://github.com/jsonwisdom/AL/blob/master/projects/mn-fiscal-replay/live_fetch/MN_002/MN_002_FINAL_SAFE_STATUS_V0_1.json">Technical receipt JSON</a></article><article class="evidence-card" id="mn002-review"><div class="evidence-head"><h3>MN_002 auditor review notes</h3><span class="badge amber">Formatting drift reviewed</span></div><p>Detected differences were classified as ordering, extraction, page marker, footnote, or table-of-contents artifacts. The review did not establish a substantive fiscal content change.</p><a class="raw-link" href="https://github.com/jsonwisdom/AL/blob/master/projects/mn-fiscal-replay/reviews/MN_002_CHUNK_REVIEW_CLASSIFICATION_V0_1.md">Technical review markdown</a></article><article class="evidence-card" id="mn002-comparison"><div class="evidence-head"><h3>MN_002 paragraph comparison summary</h3><span class="badge amber">Diff detected</span></div><p>A paragraph-level comparison detected text-layout drift. The public claim remains withheld because the differences were not proven to be substantive fiscal data changes.</p><a class="raw-link" href="https://github.com/jsonwisdom/AL/blob/master/projects/mn-fiscal-replay/live_fetch/MN_002/chunks/MN_002.chunked_verdict.json">Technical comparison receipt</a></article><article class="evidence-card" id="mn002-source"><div class="evidence-head"><h3>MN_002 source manifest summary</h3><span class="badge green">Official source tracked</span></div><p>Source record: Minnesota Management and Budget February 2026 Budget and Economic Forecast PDF.</p><div class="button-row"><a class="btn source" href="https://mn.gov/mmb-stat/000/az/forecast/2026/budget-and-economic-forecast/february.pdf">Official source PDF</a><a class="btn secondary" href="https://github.com/jsonwisdom/AL/blob/master/_sources/MN_002/source_manifest.json">Technical source manifest</a></div></article></div></section>
+        <section class="panel" id="developer"><h2>Developer verification</h2><p>Technical users can inspect the repository, receipt paths, and replay artifacts directly. Replay scripts and receipts are available under <code>projects/mn-fiscal-replay/</code>.</p><pre><code>git clone https://github.com/jsonwisdom/AL.git
+cd AL</code></pre></section>
+        <section class="panel" id="glossary"><h2>Technical glossary</h2><div class="glossary"><div class="term"><strong>NO_FAKE_GREEN</strong><p>No success or discrepancy claim without supporting evidence.</p></div><div class="term"><strong>Discovery before delegation</strong><p>The system searches existing receipts before asking a human to find files.</p></div><div class="term"><strong>Machine index</strong><p>JSON receipt index used by scripts and auditors.</p></div><div class="term"><strong>Verification certificate</strong><p>Final status receipt for a monitored stream.</p></div><div class="term"><strong>Paragraph-level comparison</strong><p>Chunked comparison used to identify meaningful differences.</p></div><div class="term"><strong>Internal roles</strong><p>“Librarian” refers to discovery/indexing; “Boss Bre” refers to claim-gating logic.</p></div></div></section>
       </main>
-
-      <aside class="sidebar" aria-label="Current audit status">
-        <div class="side-card">
-          <div class="side-title">Current public result</div>
-          <div class="side-verdict">Verified consistent</div>
-          <span class="badge green">No substantive anomaly found</span>
-          <div class="stamp">No claim issued</div>
-          <p>Detected differences have been reviewed as formatting or extraction artifacts. No unsupported allegation is made here.</p>
-        </div>
-        <div class="side-card">
-          <div class="side-title">Quick navigation</div>
-          <ul class="toc">
-            <li><a href="#overview">Overview</a></li>
-            <li><a href="#monitored">What is monitored</a></li>
-            <li><a href="#streams">Audited streams</a></li>
-            <li><a href="#process">Verification process</a></li>
-            <li><a href="#evidence">On-page evidence</a></li>
-            <li><a href="#glossary">Glossary</a></li>
-          </ul>
-        </div>
-        <div class="side-card">
-          <div class="side-title">Machine-readable source</div>
-          <p>Scripts and auditors can consume the JSON index directly.</p>
-          <a class="btn secondary" href="https://raw.githubusercontent.com/jsonwisdom/AL/master/projects/mn-fiscal-replay/librarian/MN_FISCAL_REPLAY_LIBRARIAN_INDEX_V0_3.json">Raw index JSON</a>
-        </div>
-      </aside>
+      <aside class="sidebar" aria-label="Current audit status"><div class="side-card"><div class="side-title">Current public result</div><div class="side-verdict">Verified consistent</div><span class="badge green">No substantive anomaly found</span><div class="stamp">No claim issued</div><p>Detected differences have been reviewed as formatting or extraction artifacts. No unsupported allegation is made here.</p></div><div class="side-card"><div class="side-title">Quick navigation</div><ul class="toc"><li><a href="#overview">Overview</a></li><li><a href="#monitored">What is monitored</a></li><li><a href="#users">Who it is for</a></li><li><a href="#streams">Audited streams</a></li><li><a href="#process">Verification process</a></li><li><a href="#evidence">On-page evidence</a></li><li><a href="#glossary">Glossary</a></li></ul></div><div class="side-card"><div class="side-title">Machine-readable source</div><p>Scripts and auditors can consume the JSON index directly.</p><a class="btn secondary" href="https://raw.githubusercontent.com/jsonwisdom/AL/master/projects/mn-fiscal-replay/librarian/MN_FISCAL_REPLAY_LIBRARIAN_INDEX_V0_3.json">Raw index JSON</a></div></aside>
     </div>
-
-    <footer>
-      <p>Repository: <a href="https://github.com/jsonwisdom/AL">jsonwisdom/AL</a>. This page is a public summary layer; machine-readable receipts remain available for verification.</p>
-    </footer>
+    <footer><p>Repository: <a href="https://github.com/jsonwisdom/AL">jsonwisdom/AL</a>. This page is a public summary layer; machine-readable receipts remain available for verification.</p></footer>
   </div>
 </body>
 </html>
