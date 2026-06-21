@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MN Fiscal Replay · Jay Wisdom</title>
+  <meta name="description" content="Public front door for Jay Wisdom's Minnesota Fiscal Replay archive: Librarian-first lineage, Boss Bre gates, sealed safe baselines, and public claim boundaries." />
+  <style>
+    :root {
+      --bg: #08111f;
+      --panel: #0f1d31;
+      --panel2: #14253d;
+      --ink: #f7fbff;
+      --muted: #b6c5d8;
+      --line: rgba(255,255,255,.14);
+      --good: #76f0b2;
+      --warn: #ffd166;
+      --blue: #7cc7ff;
+      --red: #ff7a90;
+      --shadow: 0 24px 70px rgba(0,0,0,.35);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 20% 0%, rgba(124,199,255,.22), transparent 32rem),
+        radial-gradient(circle at 85% 10%, rgba(118,240,178,.15), transparent 28rem),
+        linear-gradient(180deg, #08111f 0%, #0b1422 58%, #050912 100%);
+      line-height: 1.55;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 0 22px; }
+    header { padding: 64px 0 36px; }
+    .eyebrow { color: var(--good); text-transform: uppercase; letter-spacing: .16em; font-size: .78rem; font-weight: 800; }
+    h1 { font-size: clamp(2.5rem, 7vw, 5.6rem); line-height: .94; margin: 14px 0 20px; letter-spacing: -0.06em; }
+    .lead { max-width: 920px; font-size: clamp(1.1rem, 2.2vw, 1.55rem); color: var(--muted); margin: 0; }
+    .notice {
+      margin-top: 28px;
+      padding: 18px 20px;
+      border: 1px solid rgba(255,209,102,.38);
+      background: rgba(255,209,102,.08);
+      border-radius: 18px;
+      color: #fff2c2;
+      max-width: 980px;
+    }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 28px 0; }
+    .grid2 { display: grid; grid-template-columns: 1.15fr .85fr; gap: 18px; align-items: start; }
+    .card, .hero-card {
+      background: linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.035));
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+    .hero-card { margin-top: 18px; }
+    .kpi { font-size: 2.15rem; font-weight: 900; letter-spacing: -.04em; }
+    .label { color: var(--muted); font-size: .92rem; }
+    .tag { display: inline-block; padding: 6px 10px; border-radius: 999px; background: rgba(118,240,178,.12); border: 1px solid rgba(118,240,178,.32); color: var(--good); font-size: .78rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
+    h2 { font-size: clamp(1.55rem, 3vw, 2.3rem); margin: 0 0 16px; letter-spacing: -.035em; }
+    h3 { margin: 12px 0 8px; font-size: 1.2rem; }
+    p { color: var(--muted); }
+    .table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 18px; }
+    .table th, .table td { padding: 14px 12px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
+    .table th { color: var(--ink); background: rgba(255,255,255,.06); font-size: .86rem; text-transform: uppercase; letter-spacing: .07em; }
+    .status { color: var(--good); font-weight: 900; }
+    .blocked { color: var(--warn); font-weight: 900; }
+    .btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 10px 14px;
+      background: var(--blue);
+      color: #04101d;
+      font-weight: 900;
+      border: 0;
+    }
+    .btn.secondary { background: transparent; color: var(--blue); border: 1px solid rgba(124,199,255,.45); }
+    .btn.warn { background: var(--warn); color: #1d1300; }
+    section { margin: 30px 0; }
+    code, .path { color: #d8e9ff; background: rgba(255,255,255,.075); padding: 2px 6px; border-radius: 7px; }
+    .list { margin: 0; padding-left: 20px; color: var(--muted); }
+    .list li { margin: 8px 0; }
+    footer { border-top: 1px solid var(--line); margin-top: 50px; padding: 24px 0 40px; color: var(--muted); }
+    @media (max-width: 880px) { .grid, .grid2 { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="eyebrow">Jay Wisdom · Minnesota Fiscal Replay · Public Evidence Index</div>
+      <h1>MN Fiscal Replay</h1>
+      <p class="lead">A public front door for replay-verifiable Minnesota fiscal records: what exists, what is sealed, what remains blocked, and where the receipts live.</p>
+      <div class="notice"><strong>No fake green:</strong> this page does not claim fraud, alteration, or public content change. The current public verdict is that MN_001 and MN_002 are safe baselines with public claims blocked because no substantive fiscal content delta has been proven.</div>
+      <div class="grid">
+        <div class="card"><div class="kpi">2</div><div class="label">maintenance safe baselines</div></div>
+        <div class="card"><div class="kpi">2</div><div class="label">public claims blocked</div></div>
+        <div class="card"><div class="kpi">0</div><div class="label">confirmed fiscal content deltas</div></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="grid2">
+      <div class="hero-card">
+        <span class="tag">What this is</span>
+        <h2>A Librarian-first audit trail</h2>
+        <p>This project turns raw source files, manifests, replay receipts, live fetches, chunk diffs, human classifications, and final safe-status receipts into a public lineage index. The point is simple: nobody should have to hunt through raw files to find the evidence.</p>
+        <ul class="list">
+          <li><strong>Librarian:</strong> discovers existing lineage before asking a human for anything.</li>
+          <li><strong>Boss Bre:</strong> blocks public claims unless the receipts prove them.</li>
+          <li><strong>Safe Baseline:</strong> allows maintenance when drift is extractor/layout noise, not proven content change.</li>
+        </ul>
+      </div>
+      <div class="hero-card">
+        <span class="tag">Current ruling</span>
+        <h2>Public claim status</h2>
+        <p><span class="blocked">BLOCKED.</span> Differences were detected, but the reviewed differences are classified as ordering/extractor artifacts: page marker movement, table-of-contents splitting, footnote spacing, and PDF layout extraction drift.</p>
+        <p><span class="status">PUBLIC_CONTENT_ANOMALY_UNPROVEN</span> remains the public-safe verdict for the sealed lanes.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Sealed lanes</h2>
+      <table class="table">
+        <thead>
+          <tr><th>Lane</th><th>Status</th><th>Public claim</th><th>Verdict</th><th>Receipts</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>MN_001</strong></td>
+            <td><span class="status">MAINTENANCE_SAFE_BASELINE</span></td>
+            <td><span class="blocked">BLOCKED</span></td>
+            <td>PUBLIC_CONTENT_ANOMALY_UNPROVEN</td>
+            <td><a href="https://github.com/jsonwisdom/AL/blob/master/projects/mn-fiscal-replay/live_fetch/MN_001/MN_001_FINAL_SAFE_STATUS_V0_1.json">Final safe status</a><br><a href="https://github.com/jsonwisdom/AL/blob/master/projects/mn-fiscal-replay/reviews/MN_001_CHUNK_REVIEW_CLASSIFICATION_V0_1.md">Human classification</a><br><a href="https://github.com/jsonwisdom/AL/blob/master/projects/mn-fiscal-replay/live_fetch/MN_001/chunks/MN_001.chunked_verdict.json">Chunk verdict</a></td>
+          </tr>
+          <tr>
+            <td><strong>MN_002</strong></td>
+            <td><span class="status">MAINTENANCE_SAFE_BASELINE</span></td>
+            <td><span class="blocked">BLOCKED</span></td>
+            <td>PUBLIC_CONTENT_ANOMALY_UNPROVEN</td>
+            <td><a href="https://github.com/jsonwisdom/AL/blob/master/projects/mn-fiscal-replay/live_fetch/MN_002/MN_002_FINAL_SAFE_STATUS_V0_1.json">Final safe status</a><br><a href="https://github.com/jsonwisdom/AL/blob/master/projects/mn-fiscal-replay/reviews/MN_002_CHUNK_REVIEW_CLASSIFICATION_V0_1.md">Human classification</a><br><a href="https://github.com/jsonwisdom/AL/blob/master/projects/mn-fiscal-replay/live_fetch/MN_002/chunks/MN_002.chunked_verdict.json">Chunk verdict</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="grid2">
+      <div class="card">
+        <h2>Source of truth</h2>
+        <p>The machine-readable index remains available for replay clients, scripts, and auditors. Humans should start here; machines can consume the raw JSON.</p>
+        <div class="btns">
+          <a class="btn" href="https://github.com/jsonwisdom/AL/blob/master/projects/mn-fiscal-replay/librarian/MN_FISCAL_REPLAY_LIBRARIAN_INDEX_V0_3.json">Open Librarian Index v0.3</a>
+          <a class="btn secondary" href="https://raw.githubusercontent.com/jsonwisdom/AL/master/projects/mn-fiscal-replay/librarian/MN_FISCAL_REPLAY_LIBRARIAN_INDEX_V0_3.json">Raw JSON</a>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Next target</h2>
+        <p><code>BOSS_BRE_V1_6_CLEANUP_OR_DISCOVER_NEXT_MANIFEST</code></p>
+        <p>No MN_003 is claimed here unless a manifest is discovered. The next target must be found by audit, not invented.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Doctrine</h2>
+      <ul class="list">
+        <li><strong>Discovery before delegation:</strong> the system searches existing lineage before asking Jay to find files.</li>
+        <li><strong>No fake green:</strong> source discovery is not a public content claim.</li>
+        <li><strong>Receipts over narrative:</strong> every public status must point to a receipt, manifest, or classification.</li>
+        <li><strong>Click paths point to status:</strong> public links should route to status definitions and receipts, not raw data dumps.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">Source repository: <a href="https://github.com/jsonwisdom/AL">jsonwisdom/AL</a>. Maintained under NO_FAKE_GREEN. Family first, receipts second, narrative last.</div>
+  </footer>
+</body>
+</html>
