@@ -26,7 +26,7 @@ jobs:
       - name: Install deps
         run: |
           sudo apt-get update
-          sudo apt-get install -y jq curl poppler-utils python3
+          sudo apt-get install -y jq curl poppler-utils python3 gh
 
       - name: Configure Boss Bre git identity
         run: |
@@ -59,12 +59,25 @@ jobs:
           chmod +x scripts/boss_bre_lead_receipt_v0_1.sh || true
           ./scripts/boss_bre_lead_receipt_v0_1.sh
 
-      - name: Commit anomaly artifacts
+      - name: Run Boss Bre simulated artifact scan v1.5
+        run: |
+          chmod +x projects/mn-fiscal-replay/boss_bre/BOSS_BRE_SIMULATED_ARTIFACT_CLEANUP_V1_5.sh || true
+          if [ -x projects/mn-fiscal-replay/boss_bre/BOSS_BRE_SIMULATED_ARTIFACT_CLEANUP_V1_5.sh ]; then
+            ./projects/mn-fiscal-replay/boss_bre/BOSS_BRE_SIMULATED_ARTIFACT_CLEANUP_V1_5.sh
+          else
+            echo "SIMULATED_ARTIFACT_SCAN_BLOCKED: v1.5 script missing or not executable"
+          fi
+
+      - name: Commit Boss Bre artifacts if changed
         run: |
           git add projects/mn-fiscal-replay/boss_bre || true
           git add projects/mn-fiscal-replay/live_fetch || true
-          git commit -m "Boss Bre: public anomaly audit $(date -u +%Y-%m-%dT%H:%M:%SZ)" || echo "No public anomaly artifacts to commit"
-          git push || true
+          if [[ -n $(git status --porcelain) ]]; then
+            git commit -m "Boss Bre v1.6: automated sweep routing $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            git push
+          else
+            echo "No Boss Bre artifacts to commit."
+          fi
 
       - name: Run Librarian update
         env:
@@ -77,6 +90,7 @@ jobs:
         run: |
           cat <<'EOF'
           NO_FAKE_GREEN: ACTIVE
-          PUBLIC_CONTENT_CLAIM: BLOCKED_BY_DEFAULT
+          PUBLIC_CONTENT_CLAIM: BLOCKED_PENDING_HUMAN_REVIEW
           HUMAN_REVIEW_REQUIRED: TRUE
+          WORKFLOW_ROUTING_VERSION: v1.6
           EOF
