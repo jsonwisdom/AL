@@ -68,7 +68,7 @@ jobs:
 
           if [ -f "$ORIGINAL_FILE" ] && [ -f "$MUTATED_FILE" ]; then
             set +e
-            node scripts/drift-schema-validator.js "$CITY" "$ORIGINAL_FILE" "$MUTATED_FILE" "$MANIFEST_FILE" > "$TARGET_PATH/drift_output.json"
+            node scripts/drift-schema-validator.cjs "$CITY" "$ORIGINAL_FILE" "$MUTATED_FILE" "$MANIFEST_FILE" > "$TARGET_PATH/drift_output.json"
             EXIT_CODE=$?
             set -e
             if [ "$EXIT_CODE" -eq 2 ]; then
