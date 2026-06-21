@@ -1,0 +1,39 @@
+{
+  "version": "v0_3",
+  "last_updated": "2026-06-21T19:50:26Z",
+  "artifact": "MN_FISCAL_REPLAY_LIBRARIAN_INDEX_V0_3",
+  "rule": "DISCOVERY_BEFORE_DELEGATION",
+  "manifest": [
+    {
+      "id": "MN_001",
+      "status": "MAINTENANCE_SAFE_BASELINE",
+      "public_content_claim": "BLOCKED",
+      "source_url": "https://mn.gov/mmb-stat/000/az/forecast/2026/budget-and-economic-forecast/february.pdf",
+      "source_manifest": "_sources/MN_001/source_manifest.json",
+      "final_safe_status": "projects/mn-fiscal-replay/live_fetch/MN_001/MN_001_FINAL_SAFE_STATUS_V0_1.json",
+      "verdict": "PUBLIC_CONTENT_ANOMALY_UNPROVEN",
+      "possible_content_delta": false,
+      "provenance": "SEALED_V0_1"
+    },
+    {
+      "id": "MN_002",
+      "status": "MAINTENANCE_SAFE_BASELINE",
+      "public_content_claim": "BLOCKED",
+      "source_url": "https://mn.gov/mmb-stat/000/az/forecast/2026/budget-and-economic-forecast/february.pdf",
+      "source_manifest": "_sources/MN_002/source_manifest.json",
+      "final_safe_status": "projects/mn-fiscal-replay/live_fetch/MN_002/MN_002_FINAL_SAFE_STATUS_V0_1.json",
+      "verdict": "PUBLIC_CONTENT_ANOMALY_UNPROVEN",
+      "possible_content_delta": false,
+      "provenance": "SEALED_V0_1"
+    }
+  ],
+  "counts": {
+    "maintenance_safe_baselines": 2,
+    "public_claims_blocked": 2,
+    "manual_operator_file_search_required": false
+  },
+  "next_best_target": "BOSS_BRE_V1_6_CLEANUP_OR_DISCOVER_NEXT_MANIFEST",
+  "global_policy": "NO_FAKE_GREEN_ACTIVE",
+  "instruction": "Click-paths must point to status definitions and receipts, not raw data dumps.",
+  "no_fake_green": true
+}
