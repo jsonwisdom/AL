@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: write
+  actions: read
 
 defaults:
   run:
@@ -48,6 +49,7 @@ jobs:
           echo "Run ID: ${{ github.run_id }}"
           echo "City: ${{ matrix.city }}"
           echo "Registry path: ${{ matrix.path }}"
+          git log -1 --format=%H
 
       - name: Verify lane exists
         run: |
@@ -139,6 +141,14 @@ jobs:
             '{target_id:$target_id,state:$state,verdict:$verdict,review_receipt_hash:$review_receipt_hash}' \
             > "$TARGET_PATH/state.json"
 
+      - name: Upload Evidence Card
+        uses: actions/upload-artifact@v4
+        with:
+          name: evidence-card-${{ matrix.city }}
+          path: ${{ matrix.path }}/evidence_card.json
+          if-no-files-found: error
+          retention-days: 7
+
   librarian_index:
     runs-on: ubuntu-latest
     needs: replay
@@ -150,13 +160,28 @@ jobs:
       - name: Checkout Ledger
         uses: actions/checkout@v4
 
+      - name: Download Evidence Cards
+        uses: actions/download-artifact@v4
+        with:
+          pattern: evidence-card-*
+          path: public/evidence-card-artifacts
+          merge-multiple: false
+
       - name: Build Librarian Index
         run: |
           mkdir -p public
-          find registry -path '*/evidence_card.json' -print0 | xargs -0 jq -s '{generated_at:(now|todateiso8601), cards:.}' > public/LIBRARIAN_INDEX.json
+          find public/evidence-card-artifacts -name 'evidence_card.json' -print0 | xargs -0 jq -s '{generated_at:(now|todateiso8601), cards:.}' > public/LIBRARIAN_INDEX.json
+          COUNT=$(jq '.cards | length' public/LIBRARIAN_INDEX.json)
+          echo "LIBRARIAN_INDEX_NODE_COUNT=$COUNT"
+          test "$COUNT" -eq 5 || {
+            echo "FATAL: Expected 5 evidence cards, got $COUNT"
+            cat public/LIBRARIAN_INDEX.json
+            exit 1
+          }
 
       - name: Run Production Settlement Guard
         run: |
+          git log -1 --format=%H
           node scripts/production-settlement-guard.cjs public/LIBRARIAN_INDEX.json
 
       - name: Commit Librarian Index
