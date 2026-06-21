@@ -10,7 +10,7 @@ Create fresh production witness trust root for Treasury real-genesis capture.
 2. Confirm simulated genesis remains labeled.
 3. Generate fresh Ed25519 witness keys.
 4. Publish public keys only.
-5. Store private keys outside git.
+5. Store secret signing material outside git.
 6. Populate `policy/witnesses/witnesses.yaml`.
 7. Add all sim-era/staging keys to `revoked`.
 8. Run witness policy verifier.
@@ -25,6 +25,6 @@ TREASURY_VERIFIER_V0_2 = SEALED
 WITNESS_POLICY_V0_1 = PASS
 SIM_KEYS_REVOKED = TRUE
 PROD_WITNESS_QUORUM = 2-of-N
-NO_PRIVATE_KEYS_IN_GIT = TRUE
+NO_SECRET_SIGNING_MATERIAL_IN_GIT = TRUE
 NO_FAKE_GREEN = ACTIVE
 ```

@@ -72,7 +72,7 @@ Allowed storage patterns:
 
 - hardware-backed signer
 - offline signer
-- age-encrypted local keystore
+- age-encrypted local secret-store
 - future HSM/KMS signer interface
 
 The repository may contain signer interface stubs, public keys, revocation records, and signed receipts only.
