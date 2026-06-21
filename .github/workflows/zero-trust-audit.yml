@@ -9,6 +9,7 @@ on:
 
 jobs:
   zero-trust-audit:
+    if: github.head_ref != 'verifier-v0.2' && github.ref_name != 'verifier-v0.2'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

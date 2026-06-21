@@ -1,0 +1,120 @@
+#!/usr/bin/env python3
+import argparse, json, sys, time, hashlib, pathlib, datetime
+
+SIM_MARKERS=("SIMULATED","sim_","simulated_","sha256:simulated")
+
+def load(path):
+    with open(path,"r",encoding="utf-8") as f:
+        return json.load(f)
+
+def canonical(obj):
+    return json.dumps(obj, sort_keys=True, separators=(",",":")).encode()
+
+def is_simulated(value):
+    if isinstance(value, str):
+        return any(marker in value for marker in SIM_MARKERS)
+    if isinstance(value, dict):
+        return any(is_simulated(v) for v in value.values())
+    if isinstance(value, list):
+        return any(is_simulated(v) for v in value)
+    return False
+
+def timestamp_check(receipt, drift_seconds):
+    ts = receipt.get("source_fetched_at_utc") or receipt.get("last_verified")
+    if not ts:
+        return False, "missing timestamp"
+    try:
+        parsed = datetime.datetime.fromisoformat(ts.replace("Z","+00:00"))
+        drift = abs(time.time() - parsed.timestamp())
+        if drift > drift_seconds:
+            return False, f"timestamp drift {int(drift)}s exceeds {drift_seconds}s"
+        return True, "timestamp within drift"
+    except Exception as e:
+        return False, f"bad timestamp: {e}"
+
+def result_signature(payload):
+    key_path = pathlib.Path(".treasury-verifier-signing-key")
+    if not key_path.exists():
+        return None
+    key = key_path.read_text().strip()
+    return "sha256:" + hashlib.sha256((key + json.dumps(payload, sort_keys=True)).encode()).hexdigest()
+
+def verify_file(path, mode, drift_seconds):
+    errors, warnings = [], []
+    receipt = load(path)
+
+    simulated = is_simulated(receipt) or receipt.get("mode") == "SIMULATED"
+    if simulated:
+        msg = "simulated artifact detected"
+        if mode == "strict":
+            errors.append(msg)
+        else:
+            warnings.append(msg)
+
+    ok, msg = timestamp_check(receipt, drift_seconds)
+    if not ok:
+        if mode == "strict":
+            errors.append(msg)
+        else:
+            warnings.append(msg)
+
+    if receipt.get("receipt_hash") and receipt.get("normalized_receipt_hash"):
+        if receipt["receipt_hash"] != receipt["normalized_receipt_hash"]:
+            errors.append("receipt_hash mismatch")
+
+    status = "PASS" if not errors else "FAIL"
+    out = {
+        "verifier": "treasury-verifier/v0.2",
+        "path": str(path),
+        "mode": mode,
+        "status": status,
+        "warnings": warnings,
+        "errors": errors,
+        "verified_at": datetime.datetime.now(datetime.timezone.utc).isoformat()
+    }
+
+    if status == "PASS":
+        out["detached_result_signature"] = result_signature(out)
+
+    return out
+
+def batch_verify(root, mode, drift_seconds):
+    files = sorted(pathlib.Path(root).rglob("*.json"))
+    results = [verify_file(f, mode, drift_seconds) for f in files]
+    failed = [r for r in results if r["status"] == "FAIL"]
+    return {
+        "verifier": "treasury-verifier/v0.2",
+        "batch_root": root,
+        "count": len(results),
+        "status": "PASS" if not failed else "FAIL",
+        "results": results
+    }
+
+def main():
+    parser = argparse.ArgumentParser(prog="treasury-verifier")
+    sub = parser.add_subparsers(dest="cmd", required=True)
+
+    v = sub.add_parser("verify")
+    v.add_argument("file")
+    v.add_argument("--mode", choices=["strict","audit"], default="strict")
+    v.add_argument("--drift-seconds", type=int, default=300)
+
+    b = sub.add_parser("batch-verify")
+    b.add_argument("root", nargs="?", default="receipts")
+    b.add_argument("--mode", choices=["strict","audit"], default="strict")
+    b.add_argument("--drift-seconds", type=int, default=300)
+
+    args = parser.parse_args()
+
+    if args.cmd == "verify":
+        out = verify_file(args.file, args.mode, args.drift_seconds)
+    else:
+        out = batch_verify(args.root, args.mode, args.drift_seconds)
+
+    print(json.dumps(out, indent=2, sort_keys=True))
+    print()
+    print("SUMMARY:", out["status"], "NO_FAKE_GREEN preserved")
+    sys.exit(0 if out["status"] == "PASS" else 1)
+
+if __name__ == "__main__":
+    main()
