@@ -1,0 +1,45 @@
+{
+  "schema_version": "treasury-live-capture-receipt/v0.1",
+  "receipt_id": "live-capture-fetch-blocked-v0-1-001",
+  "capture_id": "treasury-live-capture-v0-1-001",
+  "mode": "FAILURE",
+  "authority_level": "LIVE_CAPTURE",
+  "trust_policy": "WITNESS_KEY_ROTATION_POLICY_V0_1",
+  "trust_bundle_path": "policy/witnesses/witnesses.yaml",
+  "source": {
+    "name": "FiscalData Treasury API",
+    "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/",
+    "fetched_at_utc": "2026-06-21T00:00:00Z",
+    "fetch_status": "FETCH_BLOCKED",
+    "failure_reason": "network_or_source_unavailable"
+  },
+  "raw_payload_hash": null,
+  "normalizer": {
+    "name": "treasury-live-capture-normalizer",
+    "version": "v0.1",
+    "code_hash": null
+  },
+  "normalized_payload_hash": null,
+  "receipt_hash": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+  "quorum": {
+    "threshold": 2,
+    "satisfied": false,
+    "active_signature_count": 0
+  },
+  "signatures": [],
+  "verification": {
+    "strict_status": "FAIL",
+    "audit_status": "PASS_WITH_WARNINGS",
+    "revoked_key_present": false,
+    "staging_key_present": false,
+    "no_fake_green": "ACTIVE",
+    "promotion_eligible": false,
+    "failure_receipt_allowed": true
+  },
+  "expected_result": {
+    "strict": "FAIL",
+    "audit": "PASS_WITH_WARNINGS",
+    "promotion": "BLOCKED",
+    "reason": "FETCH_BLOCKED"
+  }
+}
