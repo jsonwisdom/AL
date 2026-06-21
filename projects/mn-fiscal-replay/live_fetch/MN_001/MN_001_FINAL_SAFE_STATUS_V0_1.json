@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-06-21T19:35:00Z",
+  "component": "MN_001",
+  "status": "SEALED",
+  "verdict": "PUBLIC_CONTENT_ANOMALY_UNPROVEN",
+  "live_hash_drift": true,
+  "normalized_text_diff": true,
+  "chunk_diff_detected": true,
+  "human_review_classification": "ORDERING_ARTIFACT + EXTRACTOR_ARTIFACT",
+  "possible_content_delta": false,
+  "public_content_claim": "BLOCKED",
+  "recommended_action": "BASELINE_UPGRADE_WITH_EXTRACTOR_DRIFT_NOTE",
+  "reason": "Differences dominated by page marker movement, table-of-contents splitting, and PDF extraction/layout order drift. No confirmed fiscal content changes.",
+  "no_fake_green": true,
+  "seal_commit": "cfae5874c12007946baaad1eb0629c2cd00d5618",
+  "next_step": "BASELINE_UPGRADE_ELIGIBLE",
+  "issue_ref": "#348"
+}
