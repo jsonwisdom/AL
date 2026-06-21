@@ -1,0 +1,44 @@
+{
+  "artifact": "LIBRARIAN_HOURLY_DELTA_LATEST",
+  "timestamp": "2026-06-21T20:20:00Z",
+  "status": "LIBRARIAN_DELTA_RECORDED",
+  "top_growth_signal": {
+    "name": "CAAE-RTR ledger chain validator",
+    "pr_number": 352,
+    "pr_title": "Add CAAE-RTR ledger chain v0.2 validator",
+    "state": "open",
+    "merged": false,
+    "head": "cae-rtr-ledger-chain-v0-2",
+    "head_sha": "53ef0c7e76c412f84715b32e9924a1fcf390dfca",
+    "changed_files": 3,
+    "additions": 477,
+    "no_fake_green_note": "Visible growth signal only; not a merged-production claim. Runtime replay / CI still governs promotion."
+  },
+  "wisdom_tracker": {
+    "ledger_validation": "UP_4",
+    "witness_governance": "UP_3",
+    "treasury_replay": "UP_2",
+    "credits": "UP_1",
+    "payments": "NO_NEW_EXECUTION_EVIDENCE",
+    "royalties": "NO_NEW_SETTLEMENT_EVIDENCE"
+  },
+  "missing_receipts_priority": [
+    "PAYMENT_EXECUTION_RECEIPT",
+    "ROYALTY_SETTLEMENT_RECEIPT",
+    "PRODUCTION_QUORUM_RECEIPT",
+    "CREDITS_ATTRIBUTION_LEDGER",
+    "CI_RECEIPT_FOR_LEDGER_VALIDATOR"
+  ],
+  "ecosystem_state": {
+    "repo": "jsonwisdom/AL",
+    "repo_health": "ACTIVE",
+    "pr_flow": "ACTIVE",
+    "treasury_lane": "ACTIVE",
+    "ledger_lane": "GROWING",
+    "family_root": "PRESERVED",
+    "treasury": "CANDIDATE_REVIEW_TERRITORY",
+    "production_genesis": "BLOCKED_PENDING_QUORUM_EVIDENCE",
+    "no_fake_green": true
+  },
+  "markdown_receipt": "projects/librarian/LIBRARIAN_HOURLY_DELTA_20260621_CAAE_RTR_LEDGER_VALIDATOR.md"
+}
