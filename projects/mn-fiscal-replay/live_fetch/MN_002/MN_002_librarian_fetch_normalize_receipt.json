@@ -1,0 +1,32 @@
+{
+  "id": "MN_002",
+  "timestamp": "2026-06-21T19:44:59Z",
+  "status": "LIBRARIAN_INDEX_FETCH_NORMALIZE_COMPLETE",
+  "source": {
+    "source_url": "https://mn.gov/mmb-stat/000/az/forecast/2026/budget-and-economic-forecast/february.pdf",
+    "source_manifest": "_sources/MN_002/source_manifest.json",
+    "replay_receipt": "projects/mn-fiscal-replay/replay/MN_002.replay.json",
+    "enriched_baseline": "projects/mn-fiscal-replay/enriched/MN_002.enriched.json"
+  },
+  "outputs": {
+    "pdf_path": "projects/mn-fiscal-replay/live_fetch/MN_002/MN_002_live.pdf",
+    "headers_path": "projects/mn-fiscal-replay/live_fetch/MN_002/MN_002_live_headers.txt",
+    "text_path": "projects/mn-fiscal-replay/live_fetch/MN_002/MN_002_live_source.txt",
+    "normalized_path": "projects/mn-fiscal-replay/live_fetch/MN_002/MN_002_live_normalized.txt"
+  },
+  "hashes": {
+    "pdf_sha256": "a2d5fc66913d864895125d19a450d2c024e1c3f283513caa59912f5b39814cdd",
+    "headers_sha256": "f2616cbf284babd411da7c0f8fa88382b61766b4c7b6a4d72593cf08952550fa",
+    "extracted_text_sha256": "5ebd808f695ed3a54319ee8219dca83a0a96f17afee955485ae92ad48488675d",
+    "normalized_text_sha256": "77578610eee9f4a3298d677758aac00a4adbb2774e847b74a92ec2afda5377e0"
+  },
+  "byte_counts": {
+    "pdf_bytes": "2416758",
+    "extracted_text_bytes": "199644",
+    "normalized_text_bytes": "195167"
+  },
+  "public_content_claim": "BLOCKED",
+  "next_step": "MN_002_CHUNK_DIFF_AND_CLASSIFY",
+  "manual_operator_file_search_required": false,
+  "no_fake_green": true
+}
