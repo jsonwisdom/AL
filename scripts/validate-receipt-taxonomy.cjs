@@ -23,6 +23,11 @@ function stableStringify(value) {
   return `{${Object.keys(value).sort().map((key) => `${JSON.stringify(key)}:${stableStringify(value[key])}`).join(',')}}`;
 }
 
+function canonicalBytes(value) {
+  // Workflows sign `jq -S -c` output written to a file. jq appends a trailing newline.
+  return `${stableStringify(value)}\n`;
+}
+
 function sha256(value) {
   return crypto.createHash('sha256').update(value).digest('hex');
 }
@@ -38,7 +43,7 @@ function verifySignature(receipt) {
   const clone = JSON.parse(JSON.stringify(receipt));
   const provided = clone.signature.slice('SHA256:'.length);
   delete clone.signature;
-  const computed = sha256(stableStringify(clone));
+  const computed = sha256(canonicalBytes(clone));
 
   if (provided !== computed) {
     fail(`Signature mismatch: expected SHA256:${computed}, got SHA256:${provided}`);
@@ -128,4 +133,4 @@ if (require.main === module) {
   }
 }
 
-module.exports = { validate, stableStringify };
+module.exports = { validate, stableStringify, canonicalBytes };
