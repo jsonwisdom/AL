@@ -1,0 +1,11 @@
+{
+  "id": "MN_001",
+  "verdict": "PUBLIC_CONTENT_ANOMALY_UNPROVEN",
+  "note": "Hash differences detected, but safest classification is RAW_PDF_BASELINE_UPGRADED + HTTP_METADATA_DRIFT + TEXT_EXTRACTOR_OR_NORMALIZATION_DRIFT. No public content-change claim is made.",
+  "timestamp": "2026-06-21T06:21:07Z",
+  "source_receipt": "projects/mn-fiscal-replay/live_fetch/MN_001/MN_001.live_compare.json",
+  "raw_pdf_diff_detected": "true",
+  "text_hash_diff_detected": "true",
+  "http_metadata_diff_detected": "true",
+  "classification": "SAFE_VERDICT"
+}
