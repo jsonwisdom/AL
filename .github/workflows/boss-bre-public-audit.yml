@@ -1,0 +1,77 @@
+name: Boss Bre Public Audit
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: read
+
+group_note: &gate_note |
+  NO_FAKE_GREEN: ACTIVE
+  PUBLIC_CONTENT_CLAIM: BLOCKED_BY_DEFAULT
+  HUMAN_REVIEW_REQUIRED: TRUE
+
+concurrency:
+  group: boss-bre-public-audit
+  cancel-in-progress: false
+
+jobs:
+  forensic-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout AL
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install deps
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq curl poppler-utils python3
+
+      - name: Configure Boss Bre git identity
+        run: |
+          git config user.name "Boss Bre Bot"
+          git config user.email "boss-bre@users.noreply.github.com"
+
+      - name: Run Boss Bre public sweep
+        run: |
+          chmod +x scripts/mn001_forensic_worker_v0_1.sh || true
+          chmod +x scripts/boss_bre_pdf_scanner.sh || true
+          chmod +x scripts/boss_bre_runner_v0_2.sh || true
+          chmod +x scripts/boss_bre_anomaly_detector.sh || true
+          ./scripts/boss_bre_runner_v0_2.sh
+
+      - name: Run Boss Bre anomaly detector
+        run: |
+          if [ -x scripts/boss_bre_anomaly_detector.sh ]; then
+            ./scripts/boss_bre_anomaly_detector.sh
+          else
+            echo "ANOMALY_DETECTOR_BLOCKED: script missing or not executable"
+          fi
+
+      - name: Commit anomaly artifacts
+        run: |
+          git add projects/mn-fiscal-replay/boss_bre || true
+          git add projects/mn-fiscal-replay/live_fetch || true
+          git commit -m "Boss Bre: public anomaly audit $(date -u +%Y-%m-%dT%H:%M:%SZ)" || echo "No public anomaly artifacts to commit"
+          git push || true
+
+      - name: Run Librarian update
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BOSS_BRE_MASTER_ISSUE: "348"
+        run: |
+          python3 scripts/boss_bre_librarian.py
+
+      - name: Print gate status
+        run: |
+          cat <<'EOF'
+          NO_FAKE_GREEN: ACTIVE
+          PUBLIC_CONTENT_CLAIM: BLOCKED_BY_DEFAULT
+          HUMAN_REVIEW_REQUIRED: TRUE
+          EOF
