@@ -229,6 +229,12 @@ jobs:
           echo "ATOMIC_RUNTIME_RECEIPT_SIGNATURE=SHA256:$SIGNATURE"
           cat runtime-receipt.json
 
+      - name: Validate Runtime Receipt Taxonomy
+        if: success()
+        run: |
+          node scripts/validate-receipt-taxonomy.cjs runtime-receipt.json
+          echo "✅ LIBRARIAN-REPLAY receipt taxonomy gate passed"
+
       - name: Upload Runtime Receipt
         if: success()
         uses: actions/upload-artifact@v4
