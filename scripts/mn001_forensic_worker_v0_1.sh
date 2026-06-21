@@ -1,0 +1,236 @@
+#!/usr/bin/env bash
+# MN_001_FORENSIC_WORKER_V0_1.sh
+# Purpose: turn MN_001 normalized drift into sentence-level forensic artifacts.
+# Doctrine: NO_FAKE_GREEN. Never promote PUBLIC_CONTENT_CLAIM from this script.
+
+set -euo pipefail
+
+ROOT="${1:-.}"
+MN_DIR="$ROOT/projects/mn-fiscal-replay/live_fetch/MN_001"
+OUT_DIFF="$MN_DIR/MN_001_sentence_level.diff"
+OUT_REVIEW="$MN_DIR/MN_001_sentence_review.json"
+OUT_MD="$MN_DIR/MN_001_delta_classification.md"
+OUT_RECEIPT="$MN_DIR/MN_001_forensic_receipt.json"
+WORK_DIR="$MN_DIR/.mn001_forensic_work"
+
+mkdir -p "$MN_DIR" "$WORK_DIR"
+
+utc_now() { date -u +"%Y-%m-%dT%H:%M:%SZ"; }
+sha_file() {
+  if [ -f "$1" ]; then sha256sum "$1" | awk '{print $1}'; else echo ""; fi
+}
+json_escape() {
+  sed 's/\\/\\\\/g; s/"/\\"/g'
+}
+write_blocked_receipt() {
+  local reason="$1"
+  cat > "$OUT_RECEIPT" <<EOF
+{
+  "artifact": "MN_001_forensic_receipt.json",
+  "version": "0.1",
+  "generated_utc": "$(utc_now)",
+  "status": "BLOCKED",
+  "blocked_reason": "$reason",
+  "public_content_claim": "BLOCKED",
+  "human_review_required": true,
+  "no_fake_green": true
+}
+EOF
+  echo "BLOCKED_REASON: $reason"
+  echo "Receipt: $OUT_RECEIPT"
+}
+
+find_one() {
+  # $1 is a grep-style include pattern applied to basename list
+  find "$MN_DIR" -maxdepth 3 -type f \
+    \( -name "*.txt" -o -name "*.md" -o -name "*.diff" -o -name "*.json" \) \
+    | grep -Ei "$1" \
+    | grep -Ev 'sentence_level|sentence_review|delta_classification|forensic_receipt|\.mn001_forensic_work' \
+    | head -n 1 || true
+}
+
+BASELINE_FILE="${BASELINE_FILE:-}"
+LIVE_FILE="${LIVE_FILE:-}"
+HUMAN_DIFF_FILE="${HUMAN_DIFF_FILE:-}"
+
+if [ -z "$BASELINE_FILE" ]; then
+  BASELINE_FILE="$(find_one 'baseline.*normalized|normalized.*baseline|baseline')"
+fi
+if [ -z "$LIVE_FILE" ]; then
+  LIVE_FILE="$(find_one 'live.*normalized|normalized.*live|current.*normalized|normalized.*current|current')"
+fi
+if [ -z "$HUMAN_DIFF_FILE" ]; then
+  HUMAN_DIFF_FILE="$(find_one 'human_readable_diff|sectional.*diff|normalized_sectional\.diff')"
+fi
+
+# Fallback: derive rough sentence streams from an existing +/- diff if source texts are missing.
+if { [ -z "$BASELINE_FILE" ] || [ -z "$LIVE_FILE" ]; } && [ -n "$HUMAN_DIFF_FILE" ] && [ -f "$HUMAN_DIFF_FILE" ]; then
+  BASELINE_FILE="$WORK_DIR/baseline_from_diff.txt"
+  LIVE_FILE="$WORK_DIR/live_from_diff.txt"
+  grep '^-' "$HUMAN_DIFF_FILE" | grep -v '^---' | sed 's/^-//' > "$BASELINE_FILE" || true
+  grep '^+' "$HUMAN_DIFF_FILE" | grep -v '^+++' | sed 's/^+//' > "$LIVE_FILE" || true
+fi
+
+if [ -z "$BASELINE_FILE" ] || [ -z "$LIVE_FILE" ] || [ ! -s "$BASELINE_FILE" ] || [ ! -s "$LIVE_FILE" ]; then
+  write_blocked_receipt "FORENSIC_PAYLOAD_MISSING"
+  exit 1
+fi
+
+BASE_SENT="$WORK_DIR/baseline.sentences.txt"
+LIVE_SENT="$WORK_DIR/live.sentences.txt"
+
+sentence_split() {
+  tr '\r' '\n' < "$1" \
+    | sed -E 's/[[:space:]]+/ /g' \
+    | sed -E 's/([.!?])([[:space:]]+)/\1\
+/g' \
+    | sed 's/^ *//; s/ *$//' \
+    | awk 'NF {print}'
+}
+
+sentence_split "$BASELINE_FILE" > "$BASE_SENT"
+sentence_split "$LIVE_FILE" > "$LIVE_SENT"
+
+diff -u "$BASE_SENT" "$LIVE_SENT" > "$OUT_DIFF" || true
+
+BASE_HASH="$(sha_file "$BASELINE_FILE")"
+LIVE_HASH="$(sha_file "$LIVE_FILE")"
+DIFF_HASH="$(sha_file "$OUT_DIFF")"
+BASE_COUNT="$(wc -l < "$BASE_SENT" | tr -d ' ')"
+LIVE_COUNT="$(wc -l < "$LIVE_SENT" | tr -d ' ')"
+DIFF_LINES="$(wc -l < "$OUT_DIFF" | tr -d ' ')"
+
+classify_line() {
+  local text="$1"
+  if echo "$text" | grep -Eiq '\$[0-9]|[0-9][0-9,]*(\.[0-9]+)?[[:space:]]*(million|billion|thousand)|appropriat|obligation|expenditure|revenue|deficit|surplus|fund|agency|program|fiscal year|FY[0-9]|20[0-9][0-9]'; then
+    echo "POSSIBLE_CONTENT_DELTA"
+  elif echo "$text" | grep -Eiq '^[[:space:][:punct:]]*$|page [0-9]|policy template|budget & economic forecast|header|footer|copyright|generated|uuid|sha256|hash|id:'; then
+    echo "EXTRACTOR_ARTIFACT"
+  else
+    echo "NORMALIZATION_ARTIFACT"
+  fi
+}
+
+TMP_CLASS="$WORK_DIR/classifications.tsv"
+: > "$TMP_CLASS"
+awk '/^[+-][^+-]/ {print}' "$OUT_DIFF" | while IFS= read -r line; do
+  sign="${line:0:1}"
+  body="${line:1}"
+  class="$(classify_line "$body")"
+  printf '%s\t%s\t%s\n' "$sign" "$class" "$body" >> "$TMP_CLASS"
+done
+
+POSSIBLE_COUNT="$(grep -c $'\tPOSSIBLE_CONTENT_DELTA\t' "$TMP_CLASS" || true)"
+EXTRACTOR_COUNT="$(grep -c $'\tEXTRACTOR_ARTIFACT\t' "$TMP_CLASS" || true)"
+NORMALIZATION_COUNT="$(grep -c $'\tNORMALIZATION_ARTIFACT\t' "$TMP_CLASS" || true)"
+TOTAL_CLASSIFIED="$(wc -l < "$TMP_CLASS" | tr -d ' ')"
+
+{
+  echo "# MN_001 Delta Classification v0.1"
+  echo
+  echo "Generated UTC: $(utc_now)"
+  echo
+  echo "## Standing Gate"
+  echo
+  echo '```text'
+  echo "PUBLIC_CONTENT_CLAIM: BLOCKED"
+  echo "HUMAN_REVIEW_REQUIRED: TRUE"
+  echo "NO_FAKE_GREEN: ACTIVE"
+  echo '```'
+  echo
+  echo "## Source Files"
+  echo
+  echo "- Baseline: \`$BASELINE_FILE\`"
+  echo "- Live: \`$LIVE_FILE\`"
+  echo "- Baseline SHA256: \`$BASE_HASH\`"
+  echo "- Live SHA256: \`$LIVE_HASH\`"
+  echo
+  echo "## Summary"
+  echo
+  echo "| Metric | Value |"
+  echo "|---|---:|"
+  echo "| Baseline sentences | $BASE_COUNT |"
+  echo "| Live sentences | $LIVE_COUNT |"
+  echo "| Diff lines | $DIFF_LINES |"
+  echo "| Classified +/- lines | $TOTAL_CLASSIFIED |"
+  echo "| Possible content deltas | $POSSIBLE_COUNT |"
+  echo "| Extractor artifacts | $EXTRACTOR_COUNT |"
+  echo "| Normalization artifacts | $NORMALIZATION_COUNT |"
+  echo
+  echo "## Classified Lines"
+  echo
+  echo "| Sign | Classification | Text |"
+  echo "|---|---|---|"
+  awk -F '\t' '{gsub(/\|/, "\\|", $3); if (length($3) > 240) $3=substr($3,1,237) "..."; printf("| `%s` | `%s` | %s |\n", $1, $2, $3)}' "$TMP_CLASS"
+} > "$OUT_MD"
+
+MD_HASH="$(sha_file "$OUT_MD")"
+
+{
+  echo "{"
+  echo "  \"artifact\": \"MN_001_sentence_review.json\"," 
+  echo "  \"version\": \"0.1\"," 
+  echo "  \"generated_utc\": \"$(utc_now)\"," 
+  echo "  \"baseline_file\": \"$(printf '%s' "$BASELINE_FILE" | json_escape)\"," 
+  echo "  \"live_file\": \"$(printf '%s' "$LIVE_FILE" | json_escape)\"," 
+  echo "  \"baseline_sha256\": \"$BASE_HASH\"," 
+  echo "  \"live_sha256\": \"$LIVE_HASH\"," 
+  echo "  \"baseline_sentence_count\": $BASE_COUNT," 
+  echo "  \"live_sentence_count\": $LIVE_COUNT," 
+  echo "  \"diff_line_count\": $DIFF_LINES," 
+  echo "  \"classified_delta_count\": $TOTAL_CLASSIFIED," 
+  echo "  \"possible_content_delta_count\": $POSSIBLE_COUNT," 
+  echo "  \"extractor_artifact_count\": $EXTRACTOR_COUNT," 
+  echo "  \"normalization_artifact_count\": $NORMALIZATION_COUNT," 
+  echo "  \"public_content_claim\": \"BLOCKED\"," 
+  echo "  \"human_review_required\": true," 
+  echo "  \"no_fake_green\": true"
+  echo "}"
+} > "$OUT_REVIEW"
+
+REVIEW_HASH="$(sha_file "$OUT_REVIEW")"
+
+STATUS="FORENSIC_REVIEW_REQUIRED"
+if [ "$POSSIBLE_COUNT" -eq 0 ]; then
+  STATUS="NO_POSSIBLE_CONTENT_DELTA_DETECTED_BY_HEURISTIC_BUT_STILL_BLOCKED"
+fi
+
+cat > "$OUT_RECEIPT" <<EOF
+{
+  "artifact": "MN_001_forensic_receipt.json",
+  "version": "0.1",
+  "generated_utc": "$(utc_now)",
+  "status": "$STATUS",
+  "public_content_claim": "BLOCKED",
+  "human_review_required": true,
+  "no_fake_green": true,
+  "outputs": {
+    "sentence_level_diff": "$OUT_DIFF",
+    "sentence_level_diff_sha256": "$DIFF_HASH",
+    "sentence_review_json": "$OUT_REVIEW",
+    "sentence_review_json_sha256": "$REVIEW_HASH",
+    "delta_classification_md": "$OUT_MD",
+    "delta_classification_md_sha256": "$MD_HASH"
+  },
+  "counts": {
+    "baseline_sentences": $BASE_COUNT,
+    "live_sentences": $LIVE_COUNT,
+    "possible_content_deltas": $POSSIBLE_COUNT,
+    "extractor_artifacts": $EXTRACTOR_COUNT,
+    "normalization_artifacts": $NORMALIZATION_COUNT
+  }
+}
+EOF
+
+RECEIPT_HASH="$(sha_file "$OUT_RECEIPT")"
+
+echo "=== MN_001 FORENSIC WORKER V0.1 ==="
+echo "STATUS: $STATUS"
+echo "PUBLIC_CONTENT_CLAIM: BLOCKED"
+echo "NO_FAKE_GREEN: ACTIVE"
+echo "Possible content deltas: $POSSIBLE_COUNT"
+echo "Sentence diff: $OUT_DIFF"
+echo "Review JSON: $OUT_REVIEW"
+echo "Classification MD: $OUT_MD"
+echo "Forensic receipt: $OUT_RECEIPT"
+echo "Forensic receipt sha256: $RECEIPT_HASH"
