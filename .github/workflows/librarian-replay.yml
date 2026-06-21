@@ -155,6 +155,10 @@ jobs:
           mkdir -p public
           find registry -path '*/evidence_card.json' -print0 | xargs -0 jq -s '{generated_at:(now|todateiso8601), cards:.}' > public/LIBRARIAN_INDEX.json
 
+      - name: Run Production Settlement Guard
+        run: |
+          node scripts/production-settlement-guard.js public/LIBRARIAN_INDEX.json
+
       - name: Commit Librarian Index
         run: |
           git config --global user.name "ZTVS Librarian"
