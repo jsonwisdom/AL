@@ -33,7 +33,7 @@ external_source
   -> normalized_payload
   -> normalized_payload_hash
   -> unsigned_receipt_canonical_json
-  -> witness_keystore_sign(receipt_hash, key_id)
+  -> witness_signer_attest(receipt_hash, key_id)
   -> signed_receipt
   -> trust_bundle_verify(policy/witnesses/witnesses.yaml)
   -> quorum_check(2-of-N)
