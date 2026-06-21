@@ -54,6 +54,11 @@ jobs:
             echo "ANOMALY_DETECTOR_BLOCKED: script missing or not executable"
           fi
 
+      - name: Run Boss Bre lead receipts
+        run: |
+          chmod +x scripts/boss_bre_lead_receipt_v0_1.sh || true
+          ./scripts/boss_bre_lead_receipt_v0_1.sh
+
       - name: Commit anomaly artifacts
         run: |
           git add projects/mn-fiscal-replay/boss_bre || true
