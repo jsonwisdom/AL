@@ -1,11 +1,35 @@
 {
-  "version": "0.1",
-  "purpose": "Lightweight registry for generated receipts. Maps receipt_id to path, state hash, and verification status.",
-  "canonicalization": {
-    "method": "JCS_PENDING",
-    "unicode": "NFC",
-    "encoding": "UTF-8",
-    "line_endings": "LF"
+  "schema_version": "0.1.1",
+  "index_type": "TREASURY_LEDGER_INDEX",
+  "ledger_name": "treasury-can-audit",
+  "ledger_status": "SIMULATED_SHADOW_AUDIT_GENESIS",
+  "no_fake_green": true,
+  "genesis_receipt": {
+    "receipt_type": "TREASURY_CAN_AUDIT",
+    "target_date": "2026-06-17",
+    "authority_level": "SHADOW_AUDIT",
+    "replay_status": "PASS",
+    "diff_status": "NOT_EVALUATED",
+    "receipt_hash": "sha256:f6aa358aa5c83eccafa5aa5d207892b7c9d75c35dc66be95d0a1405dbdf3987e",
+    "parent_receipt_hash": null,
+    "raw_snapshot_hash": "sha256:simulated_raw_hash_for_genesis_2026_06_17",
+    "normalizer_code_hash": "sha256:simulated_normalizer_source_hash",
+    "simulation_notice": "Simulated SHADOW_AUDIT genesis only. Not REAL_GENESIS until raw FiscalData capture hash, normalizer code hash, detached signature, and independent replay receipt are real."
   },
-  "entries": []
+  "chain": [
+    {
+      "sequence": 0,
+      "role": "GENESIS",
+      "receipt_hash": "sha256:f6aa358aa5c83eccafa5aa5d207892b7c9d75c35dc66be95d0a1405dbdf3987e",
+      "parent_receipt_hash": null,
+      "status": "SIMULATED_GREEN"
+    }
+  ],
+  "missing_for_real_genesis": [
+    "real raw FiscalData snapshot hash",
+    "real normalizer source hash",
+    "real detached Ed25519 signature",
+    "verifier log with non-simulated signature verification",
+    "independent replay receipt"
+  ]
 }
