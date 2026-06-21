@@ -23,7 +23,6 @@ mkdir -p "$MN_DIR" "$WORK_DIR"
 
 utc_now() { date -u +"%Y-%m-%dT%H:%M:%SZ"; }
 sha_file() { if [ -f "$1" ]; then sha256sum "$1" | awk '{print $1}'; else echo ""; fi; }
-json_escape() { sed 's/\\/\\\\/g; s/"/\\"/g'; }
 
 write_blocked_receipt() {
   local reason="$1"
@@ -39,38 +38,24 @@ PUBLIC_CONTENT_CLAIM: BLOCKED
 HUMAN_REVIEW_REQUIRED: TRUE
 NO_FAKE_GREEN: ACTIVE
 EOF
-  cat > "$OUT_REVIEW" <<EOF
-{
-  "artifact": "MN_001_sentence_review.json",
-  "jurisdiction": "$JURISDICTION",
-  "generated_utc": "$(utc_now)",
-  "status": "BLOCKED",
-  "blocked_reason": "$reason",
-  "public_content_claim": "BLOCKED",
-  "human_review_required": true,
-  "no_fake_green": true,
-  "items": []
-}
-EOF
-  cat > "$OUT_RECEIPT" <<EOF
-{
-  "artifact": "MN_001_forensic_receipt.json",
-  "version": "0.1",
-  "jurisdiction": "$JURISDICTION",
-  "generated_utc": "$(utc_now)",
-  "status": "FORENSIC_PAYLOAD_MISSING",
-  "blocked_reason": "$reason",
-  "public_content_claim": "BLOCKED",
-  "human_review_required": true,
-  "no_fake_green": true,
-  "outputs": {
-    "sentence_level_diff": "$OUT_DIFF",
-    "sentence_review_json": "$OUT_REVIEW",
-    "delta_classification_md": "$OUT_MD",
-    "forensic_receipt_json": "$OUT_RECEIPT"
-  }
-}
-EOF
+  jq -n \
+    --arg artifact "MN_001_sentence_review.json" \
+    --arg jurisdiction "$JURISDICTION" \
+    --arg utc "$(utc_now)" \
+    --arg reason "$reason" \
+    '{artifact:$artifact,jurisdiction:$jurisdiction,generated_utc:$utc,status:"BLOCKED",blocked_reason:$reason,public_content_claim:"BLOCKED",human_review_required:true,no_fake_green:true,items:[]}' \
+    > "$OUT_REVIEW"
+  jq -n \
+    --arg artifact "MN_001_forensic_receipt.json" \
+    --arg jurisdiction "$JURISDICTION" \
+    --arg utc "$(utc_now)" \
+    --arg reason "$reason" \
+    --arg diff "$OUT_DIFF" \
+    --arg review "$OUT_REVIEW" \
+    --arg md "$OUT_MD" \
+    --arg receipt "$OUT_RECEIPT" \
+    '{artifact:$artifact,version:"0.1",jurisdiction:$jurisdiction,generated_utc:$utc,status:"FORENSIC_PAYLOAD_MISSING",blocked_reason:$reason,public_content_claim:"BLOCKED",human_review_required:true,no_fake_green:true,outputs:{sentence_level_diff:$diff,sentence_review_json:$review,delta_classification_md:$md,forensic_receipt_json:$receipt}}' \
+    > "$OUT_RECEIPT"
   echo "BLOCKED_REASON: $reason"
   echo "Receipt: $OUT_RECEIPT"
 }
@@ -87,15 +72,9 @@ BASELINE_FILE="${BASELINE_FILE:-}"
 LIVE_FILE="${LIVE_FILE:-}"
 HUMAN_DIFF_FILE="${HUMAN_DIFF_FILE:-}"
 
-if [ -z "$BASELINE_FILE" ]; then
-  BASELINE_FILE="$(find_one 'baseline.*normalized|normalized.*baseline|baseline')"
-fi
-if [ -z "$LIVE_FILE" ]; then
-  LIVE_FILE="$(find_one 'live.*normalized|normalized.*live|current.*normalized|normalized.*current|current')"
-fi
-if [ -z "$HUMAN_DIFF_FILE" ]; then
-  HUMAN_DIFF_FILE="$(find_one 'human_readable_diff|sectional.*diff|normalized_sectional\.diff')"
-fi
+[ -n "$BASELINE_FILE" ] || BASELINE_FILE="$(find_one 'baseline.*normalized|normalized.*baseline|baseline')"
+[ -n "$LIVE_FILE" ] || LIVE_FILE="$(find_one 'live.*normalized|normalized.*live|current.*normalized|normalized.*current|current')"
+[ -n "$HUMAN_DIFF_FILE" ] || HUMAN_DIFF_FILE="$(find_one 'human_readable_diff|sectional.*diff|normalized_sectional\.diff')"
 
 # Fallback: derive rough baseline/live streams from an existing +/- diff if source texts are missing.
 if { [ -z "$BASELINE_FILE" ] || [ -z "$LIVE_FILE" ]; } && [ -n "$HUMAN_DIFF_FILE" ] && [ -f "$HUMAN_DIFF_FILE" ]; then
@@ -116,9 +95,13 @@ RAW_DIFF="$WORK_DIR/raw_sentence.diff"
 CLASS_TSV="$WORK_DIR/classification.tsv"
 
 sentence_split() {
+  # Bootstrap-safe sentence splitter: normalize whitespace, then place sentence endings on separate lines.
   tr '\r' '\n' < "$1" \
     | sed 's/[[:space:]]\+/ /g; s/^ //; s/ $//' \
-    | perl -pe 's/(?<=[.!?])\s+/(?<=.)\n/g' \
+    | sed 's/\. /\.\
+/g; s/! /!\
+/g; s/? /?\
+/g' \
     | sed '/^$/d'
 }
 
@@ -129,10 +112,7 @@ diff -u "$BASE_SENT" "$LIVE_SENT" > "$RAW_DIFF" || true
 cp "$RAW_DIFF" "$OUT_DIFF"
 
 classify_line() {
-  local sign="$1"
-  local text="$2"
-
-  # Order matters: suppress PDF/OCR/layout artifacts before broad fiscal-number flags.
+  local text="$1"
   if echo "$text" | grep -Eq '^(Budget & Economic Forecast February 2026 [0-9]+|[0-9]+ Budget & Economic Forecast February 2026)'; then
     echo "PAGE_HEADER_SHIFT"
   elif echo "$text" | grep -Eq '([A-Za-z]{1,3} -[A-Za-z]{2,}|[A-Za-z]{1,3} [A-Za-z]{2,}|\$ [0-9]|[0-9]{4} -[0-9]{2})'; then
@@ -158,21 +138,22 @@ while IFS= read -r line; do
     +*) sign="+"; text="${line#+}" ;;
     *) continue ;;
   esac
-  label="$(classify_line "$sign" "$text")"
+  label="$(classify_line "$text")"
   printf '%s\t%s\t%s\n' "$label" "$sign" "$text" >> "$CLASS_TSV"
 done < "$RAW_DIFF"
 
+count_label() { grep -c "^$1" "$CLASS_TSV" 2>/dev/null || true; }
 BASE_COUNT="$(wc -l < "$BASE_SENT" | tr -d ' ')"
 LIVE_COUNT="$(wc -l < "$LIVE_SENT" | tr -d ' ')"
 DIFF_COUNT="$(wc -l < "$RAW_DIFF" | tr -d ' ')"
 CLASS_COUNT="$(wc -l < "$CLASS_TSV" | tr -d ' ')"
-POSSIBLE_COUNT="$(grep -c '^POSSIBLE_CONTENT_DELTA' "$CLASS_TSV" || true)"
-PAGE_COUNT="$(grep -c '^PAGE_HEADER_SHIFT' "$CLASS_TSV" || true)"
-WORD_COUNT="$(grep -c '^WORD_SPLIT_OCR' "$CLASS_TSV" || true)"
-FOOTNOTE_COUNT="$(grep -c '^FOOTNOTE_JOIN' "$CLASS_TSV" || true)"
-TABLE_COUNT="$(grep -c '^TABLE_LAYOUT_REFLOW' "$CLASS_TSV" || true)"
-EXTRACTOR_COUNT="$(grep -c '^EXTRACTOR_ARTIFACT' "$CLASS_TSV" || true)"
-NORMALIZATION_COUNT="$(grep -c '^NORMALIZATION_ARTIFACT' "$CLASS_TSV" || true)"
+PAGE_COUNT="$(count_label PAGE_HEADER_SHIFT)"
+WORD_COUNT="$(count_label WORD_SPLIT_OCR)"
+FOOTNOTE_COUNT="$(count_label FOOTNOTE_JOIN)"
+TABLE_COUNT="$(count_label TABLE_LAYOUT_REFLOW)"
+POSSIBLE_COUNT="$(count_label POSSIBLE_CONTENT_DELTA)"
+EXTRACTOR_COUNT="$(count_label EXTRACTOR_ARTIFACT)"
+NORMALIZATION_COUNT="$(count_label NORMALIZATION_ARTIFACT)"
 
 if cmp -s "$BASE_SENT" "$LIVE_SENT"; then
   STATUS="NO_DIFF_DETECTED"
@@ -213,63 +194,41 @@ EOF
 
 awk -F '\t' 'BEGIN{max=500} NR<=max {gsub(/\|/, "\\|", $3); print "| " $1 " | `" $2 "` | " $3 " |"}' "$CLASS_TSV" >> "$OUT_MD"
 
-{
-  echo '{'
-  echo '  "artifact": "MN_001_sentence_review.json",'
-  echo "  \"jurisdiction\": \"$JURISDICTION\","
-  echo "  \"generated_utc\": \"$(utc_now)\","
-  echo "  \"status\": \"$STATUS\","
-  echo '  "public_content_claim": "BLOCKED",'
-  echo '  "human_review_required": true,'
-  echo '  "no_fake_green": true,'
-  echo '  "confirmed_content_delta": "NONE_BY_WORKER",'
-  echo '  "items": ['
-  awk -F '\t' 'NR<=500 {gsub(/\\/, "\\\\", $3); gsub(/"/, "\\\"", $3); if (NR>1) printf ",\n"; printf "    {\"label\":\"%s\",\"side\":\"%s\",\"text\":\"%s\"}", $1, $2, $3}' "$CLASS_TSV"
-  echo
-  echo '  ]'
-  echo '}'
-} > "$OUT_REVIEW"
+jq -Rn \
+  --arg jurisdiction "$JURISDICTION" \
+  --arg utc "$(utc_now)" \
+  --arg status "$STATUS" \
+  --argjson max 500 \
+  'def parse: split("\t") | {label:.[0],side:.[1],text:.[2]}; [inputs | parse] | .[0:$max] | {artifact:"MN_001_sentence_review.json",jurisdiction:$jurisdiction,generated_utc:$utc,status:$status,public_content_claim:"BLOCKED",human_review_required:true,no_fake_green:true,confirmed_content_delta:"NONE_BY_WORKER",items:.}' \
+  < "$CLASS_TSV" > "$OUT_REVIEW"
 
-cat > "$OUT_RECEIPT" <<EOF
-{
-  "artifact": "MN_001_forensic_receipt.json",
-  "version": "0.1",
-  "jurisdiction": "$JURISDICTION",
-  "generated_utc": "$(utc_now)",
-  "status": "$STATUS",
-  "public_content_claim": "BLOCKED",
-  "human_review_required": true,
-  "no_fake_green": true,
-  "confirmed_content_delta": "NONE_BY_WORKER",
-  "inputs": {
-    "baseline_file": "$BASELINE_FILE",
-    "baseline_sha256": "$(sha_file "$BASELINE_FILE")",
-    "live_file": "$LIVE_FILE",
-    "live_sha256": "$(sha_file "$LIVE_FILE")",
-    "human_diff_file": "$HUMAN_DIFF_FILE",
-    "human_diff_sha256": "$(sha_file "$HUMAN_DIFF_FILE")"
-  },
-  "counts": {
-    "baseline_sentences": $BASE_COUNT,
-    "live_sentences": $LIVE_COUNT,
-    "diff_lines": $DIFF_COUNT,
-    "classified_delta_lines": $CLASS_COUNT,
-    "page_header_shift": $PAGE_COUNT,
-    "word_split_ocr": $WORD_COUNT,
-    "footnote_join": $FOOTNOTE_COUNT,
-    "table_layout_reflow": $TABLE_COUNT,
-    "possible_content_deltas": $POSSIBLE_COUNT,
-    "extractor_artifacts": $EXTRACTOR_COUNT,
-    "normalization_artifacts": $NORMALIZATION_COUNT
-  },
-  "outputs": {
-    "sentence_level_diff": "$OUT_DIFF",
-    "sentence_review_json": "$OUT_REVIEW",
-    "delta_classification_md": "$OUT_MD",
-    "forensic_receipt_json": "$OUT_RECEIPT"
-  }
-}
-EOF
+jq -n \
+  --arg jurisdiction "$JURISDICTION" \
+  --arg utc "$(utc_now)" \
+  --arg status "$STATUS" \
+  --arg baseline_file "$BASELINE_FILE" \
+  --arg baseline_sha "$(sha_file "$BASELINE_FILE")" \
+  --arg live_file "$LIVE_FILE" \
+  --arg live_sha "$(sha_file "$LIVE_FILE")" \
+  --arg human_diff_file "$HUMAN_DIFF_FILE" \
+  --arg human_diff_sha "$(sha_file "$HUMAN_DIFF_FILE")" \
+  --arg diff "$OUT_DIFF" \
+  --arg review "$OUT_REVIEW" \
+  --arg md "$OUT_MD" \
+  --arg receipt "$OUT_RECEIPT" \
+  --argjson base_count "$BASE_COUNT" \
+  --argjson live_count "$LIVE_COUNT" \
+  --argjson diff_count "$DIFF_COUNT" \
+  --argjson class_count "$CLASS_COUNT" \
+  --argjson page_count "$PAGE_COUNT" \
+  --argjson word_count "$WORD_COUNT" \
+  --argjson footnote_count "$FOOTNOTE_COUNT" \
+  --argjson table_count "$TABLE_COUNT" \
+  --argjson possible_count "$POSSIBLE_COUNT" \
+  --argjson extractor_count "$EXTRACTOR_COUNT" \
+  --argjson normalization_count "$NORMALIZATION_COUNT" \
+  '{artifact:"MN_001_forensic_receipt.json",version:"0.1",jurisdiction:$jurisdiction,generated_utc:$utc,status:$status,public_content_claim:"BLOCKED",human_review_required:true,no_fake_green:true,confirmed_content_delta:"NONE_BY_WORKER",inputs:{baseline_file:$baseline_file,baseline_sha256:$baseline_sha,live_file:$live_file,live_sha256:$live_sha,human_diff_file:$human_diff_file,human_diff_sha256:$human_diff_sha},counts:{baseline_sentences:$base_count,live_sentences:$live_count,diff_lines:$diff_count,classified_delta_lines:$class_count,page_header_shift:$page_count,word_split_ocr:$word_count,footnote_join:$footnote_count,table_layout_reflow:$table_count,possible_content_deltas:$possible_count,extractor_artifacts:$extractor_count,normalization_artifacts:$normalization_count},outputs:{sentence_level_diff:$diff,sentence_review_json:$review,delta_classification_md:$md,forensic_receipt_json:$receipt}}' \
+  > "$OUT_RECEIPT"
 
 echo "=== MN_001 forensic worker complete ==="
 echo "Jurisdiction: $JURISDICTION"
