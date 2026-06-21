@@ -1,0 +1,42 @@
+schema_version: witnesses/v0.1
+required:
+  - schema_version
+  - policy_id
+  - quorum
+  - witnesses
+  - revoked
+fields:
+  policy_id:
+    type: string
+  quorum:
+    type: object
+    required:
+      - threshold
+      - total
+  witnesses:
+    type: list
+    item_required:
+      - key_id
+      - algorithm
+      - public_key
+      - role
+      - active_from
+      - status
+      - custody
+      - allowed_actions
+  revoked:
+    type: list
+    item_required:
+      - key_id
+      - reason
+      - revoked_at
+      - effect
+allowed_algorithms:
+  - ed25519
+allowed_status:
+  - active
+  - retired
+  - revoked
+allowed_revocation_effects:
+  - fail_strict
+  - fail_strict_and_promotion

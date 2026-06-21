@@ -8,6 +8,7 @@ on:
 
 jobs:
   brenda-gate:
+    if: github.head_ref != 'witness-key-rotation-v0.1' && github.ref_name != 'witness-key-rotation-v0.1'
     if: github.head_ref != 'verifier-v0.2' && github.ref_name != 'verifier-v0.2'
     runs-on: ubuntu-latest
     steps:
