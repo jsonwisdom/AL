@@ -1,0 +1,13 @@
+{
+  "id": "MN_001",
+  "url": "https://mn.gov/mmb-stat/000/az/forecast/2026/budget-and-economic-forecast/february.pdf",
+  "baseline": "projects/mn-fiscal-replay/enriched/MN_001.enriched.json",
+  "current": "projects/mn-fiscal-replay/live_fetch/MN_001/MN_001.current.enriched.json",
+  "result": "ANOMALY_DETECTED\n{\n  \"raw_pdf_sha256\": {\n    \"baseline\": \"RAW_PDF_MISSING\",\n    \"current\": \"a2d5fc66913d864895125d19a450d2c024e1c3f283513caa59912f5b39814cdd\"\n  },\n  \"normalized_pdf_text_sha256\": {\n    \"baseline\": \"ccb06e11c5f8cf79d0a860a5de24c8125614a71460c09bd922751a9703d722a3\",\n    \"current\": \"d96a8f8abdeb0ca67f257c3fe2c16e882450714bcff0d8a068de8d527575a77d\"\n  },\n  \"http_metadata_sha256\": {\n    \"baseline\": \"981641b7d3de4dcf8191f71d517f8a4e92a15917c942dad6835f60d2b4b694d4\",\n    \"current\": \"874ded2bc6f805a587ee227ec0d429c242ee336fabdd7206a672037c79010c1e\"\n  }\n}",
+  "raw_pdf_sha256": "a2d5fc66913d864895125d19a450d2c024e1c3f283513caa59912f5b39814cdd",
+  "normalized_pdf_text_sha256": "d96a8f8abdeb0ca67f257c3fe2c16e882450714bcff0d8a068de8d527575a77d",
+  "http_metadata_sha256": "874ded2bc6f805a587ee227ec0d429c242ee336fabdd7206a672037c79010c1e",
+  "extraction_method": "pypdf",
+  "timestamp": "2026-06-21T06:12:27Z",
+  "status": "LIVE_COMPARE_COMPLETE"
+}
