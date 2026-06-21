@@ -157,7 +157,7 @@ jobs:
 
       - name: Run Production Settlement Guard
         run: |
-          node scripts/production-settlement-guard.js public/LIBRARIAN_INDEX.json
+          node scripts/production-settlement-guard.cjs public/LIBRARIAN_INDEX.json
 
       - name: Commit Librarian Index
         run: |
