@@ -5,6 +5,8 @@ const fs = require('fs');
 
 const SUPPORTED_VERSIONS = ['1.0.0', '1.1.0'];
 
+const DEFAULT_IGNORE_PATTERNS = ['\\bPage\\s+\\d+\\b', 'Minutes\\s+Approved', 'Approved\\s+Minutes', '\\bAgenda\\s+Packet\\b'];
+
 const SCHEMAS = {
   supported_versions: SUPPORTED_VERSIONS,
   version: '1.1.0',
@@ -45,18 +47,7 @@ const SCHEMAS = {
       schema_version: '1.1.0',
       scopes: {
         zoning_land_use: {
-          fields: [
-            'setback_standards',
-            'zoning_overlay',
-            'high_density',
-            'height setback',
-            'rear setback',
-            'industrial adjacency setback',
-            'R-5',
-            'R-6',
-            'Board of Adjustment variance',
-            'multi-family setback'
-          ],
+          fields: ['setback_standards', 'zoning_overlay', 'high_density', 'height setback', 'rear setback', 'industrial adjacency setback', 'R-5', 'R-6', 'Board of Adjustment variance', 'multi-family setback'],
           parameters: ['setback', 'variance', 'overlay', 'high-density', 'multifamily', 'height', 'rear', 'adjacency', 'R-5', 'R-6'],
           criticality_weight: 1.0
         },
@@ -66,23 +57,13 @@ const SCHEMAS = {
           criticality_weight: 0.8
         }
       },
-      ignore_patterns: ['\\bPage\\s+\\d+\\b', 'Minutes\\s+Approved', 'Approved\\s+Minutes', '\\bAgenda\\s+Packet\\b']
+      ignore_patterns: DEFAULT_IGNORE_PATTERNS
     },
     DULUTH: {
       schema_version: '1.1.0',
       scopes: {
         waterfront_port_infra: {
-          fields: [
-            'port_infra',
-            'shipping',
-            'environmental',
-            'MU-W',
-            'IW',
-            'waterfront',
-            'natural resources overlay',
-            'shoreland',
-            'commercial containers'
-          ],
+          fields: ['port_infra', 'shipping', 'environmental', 'MU-W', 'IW', 'waterfront', 'natural resources overlay', 'shoreland', 'commercial containers'],
           parameters: ['port', 'lake', 'ore', 'waterfront', 'MU-W', 'IW', 'NR-O', 'shoreland', 'dock'],
           criticality_weight: 1.0
         },
@@ -92,7 +73,55 @@ const SCHEMAS = {
           criticality_weight: 0.85
         }
       },
-      ignore_patterns: ['\\bPage\\s+\\d+\\b', 'Minutes\\s+Approved', 'Approved\\s+Minutes', '\\bAgenda\\s+Packet\\b']
+      ignore_patterns: DEFAULT_IGNORE_PATTERNS
+    },
+    MANKATO: {
+      schema_version: '1.1.0',
+      scopes: {
+        renewable_energy: {
+          fields: ['solar_project', 'energy_ordinance', 'solar_array', 'interconnection', 'distributed_generation'],
+          parameters: ['solar', 'array', 'kw', 'kilowatt', 'interconnect', 'generation'],
+          criticality_weight: 0.85
+        },
+        land_use_utility: {
+          fields: ['conditional_use', 'utility_corridor', 'setback', 'easement'],
+          parameters: ['conditional use', 'utility', 'corridor', 'setback', 'easement'],
+          criticality_weight: 0.75
+        }
+      },
+      ignore_patterns: DEFAULT_IGNORE_PATTERNS
+    },
+    MINNEAPOLIS: {
+      schema_version: '1.1.0',
+      scopes: {
+        housing_density: {
+          fields: ['housing_density', 'multi-family', 'fourplex', 'upzoning', 'dwelling_units'],
+          parameters: ['density', 'multi-family', 'multifamily', 'fourplex', 'dwelling', 'units'],
+          criticality_weight: 1.0
+        },
+        transit_corridor: {
+          fields: ['transit', 'corridor', 'station_area', 'bus_rapid_transit'],
+          parameters: ['transit', 'corridor', 'station', 'brt', 'rapid transit'],
+          criticality_weight: 0.9
+        }
+      },
+      ignore_patterns: DEFAULT_IGNORE_PATTERNS
+    },
+    ROCHESTER: {
+      schema_version: '1.1.0',
+      scopes: {
+        medical_campus: {
+          fields: ['medical', 'mayo_clinic', 'healthcare_zoning', 'hospital_campus', 'biotech'],
+          parameters: ['clinic', 'hospital', 'biotech', 'medical', 'campus', 'healthcare'],
+          criticality_weight: 0.9
+        },
+        housing_transport: {
+          fields: ['housing_density', 'transit_corridor', 'setback_standards'],
+          parameters: ['housing', 'density', 'transit', 'corridor', 'setback'],
+          criticality_weight: 0.8
+        }
+      },
+      ignore_patterns: DEFAULT_IGNORE_PATTERNS
     }
   }
 };
