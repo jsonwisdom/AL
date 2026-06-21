@@ -1,0 +1,59 @@
+{
+  "schema_version": "treasury-live-capture-receipt/v0.1",
+  "receipt_id": "live-capture-real-flow-v0-1-template",
+  "capture_id": "treasury-live-capture-real-flow-v0-1-template",
+  "mode": "REAL",
+  "authority_level": "LIVE_CAPTURE",
+  "trust_policy": "WITNESS_KEY_ROTATION_POLICY_V0_1",
+  "trust_bundle_path": "policy/witnesses/witnesses.yaml",
+  "source": {
+    "name": "FiscalData Treasury API",
+    "url": "PLACEHOLDER_FILL_WITH_EXACT_LIVE_ENDPOINT",
+    "fetched_at_utc": "PLACEHOLDER_FILL_WITH_FETCH_TIME_Z",
+    "fetch_status": "PASS"
+  },
+  "raw_payload_hash": "sha256:PLACEHOLDER_FILL_WITH_RAW_PAYLOAD_HASH",
+  "normalizer": {
+    "name": "treasury-live-capture-normalizer",
+    "version": "v0.1",
+    "code_hash": "sha256:PLACEHOLDER_FILL_WITH_NORMALIZER_CODE_HASH"
+  },
+  "normalized_payload_hash": "sha256:PLACEHOLDER_FILL_WITH_NORMALIZED_PAYLOAD_HASH",
+  "receipt_hash": "sha256:PLACEHOLDER_FILL_WITH_CANONICAL_RECEIPT_HASH",
+  "quorum": {
+    "threshold": 2,
+    "satisfied": false,
+    "active_signature_count": 0
+  },
+  "signatures": [
+    {
+      "key_id": "prod-witness-001",
+      "algorithm": "ed25519",
+      "signature": "base64:PLACEHOLDER_FILL_LOCALLY_SIGNATURE_001",
+      "signed_at_utc": "PLACEHOLDER_FILL_LOCALLY_SIGNED_TIME_Z",
+      "witness_role": "treasury_capture_witness"
+    },
+    {
+      "key_id": "prod-witness-002",
+      "algorithm": "ed25519",
+      "signature": "base64:PLACEHOLDER_FILL_LOCALLY_SIGNATURE_002",
+      "signed_at_utc": "PLACEHOLDER_FILL_LOCALLY_SIGNED_TIME_Z",
+      "witness_role": "treasury_capture_witness"
+    }
+  ],
+  "verification": {
+    "strict_status": "PENDING_NOT_EXECUTED",
+    "audit_status": "PENDING_NOT_EXECUTED",
+    "revoked_key_present": false,
+    "staging_key_present": false,
+    "no_fake_green": "ACTIVE",
+    "promotion_eligible": false,
+    "failure_receipt_allowed": false
+  },
+  "expected_result": {
+    "before_local_fill": "STRICT_FAIL",
+    "after_local_fill_with_live_fetch_and_2_signatures": "STRICT_PASS_CANDIDATE",
+    "promotion": "BLOCKED_UNTIL_VERIFIER_PASS",
+    "reason": "PLACEHOLDERS_NOT_PROMOTABLE"
+  }
+}

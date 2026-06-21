@@ -1,0 +1,13 @@
+TEST_VECTOR=02_real_capture_flow_template
+STATUS=TEMPLATE_ONLY
+STRICT_BEFORE_LOCAL_FILL=FAIL
+PROMOTION_BEFORE_LOCAL_FILL=BLOCKED
+REQUIRES_LIVE_FETCH=TRUE
+REQUIRES_RAW_PAYLOAD_HASH=TRUE
+REQUIRES_NORMALIZED_PAYLOAD_HASH=TRUE
+REQUIRES_RECEIPT_HASH=TRUE
+REQUIRES_PROD_WITNESS_QUORUM=2-of-N
+NO_FAKE_GREEN=ACTIVE
+
+This template is not a real capture.
+This template becomes eligible only after local fill, live fetch evidence, deterministic normalization, and strict verification.
