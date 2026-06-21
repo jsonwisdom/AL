@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ZTVS Evidence Card",
+  "description": "Public-facing state representation of a verified document chunk.",
+  "type": "object",
+  "properties": {
+    "target_id": { "type": "string" },
+    "document": { "type": "string" },
+    "state": {
+      "type": "string",
+      "enum": ["VERIFIED", "DRIFT_DETECTED", "REVIEW_PENDING", "INVALIDATED", "FETCH_BLOCKED"]
+    },
+    "anchor": {
+      "type": "string",
+      "pattern": "^commit:[a-f0-9]{40}$"
+    },
+    "verdict": {
+      "type": "string",
+      "enum": ["VERIFIED", "REVIEW_PENDING", "INVALIDATED"]
+    },
+    "source_uri": { "type": "string", "format": "uri" },
+    "raw_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "normalized_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "chunk_root": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "review_receipt_hash": {
+      "type": ["string", "null"],
+      "pattern": "^[a-f0-9]{64}$",
+      "description": "Cryptographic hash of the signed review receipt required to clear a DRIFT_DETECTED state."
+    },
+    "captured_at": { "type": "string", "format": "date-time" }
+  },
+  "required": [
+    "target_id",
+    "document",
+    "state",
+    "anchor",
+    "verdict",
+    "raw_sha256",
+    "review_receipt_hash",
+    "captured_at"
+  ],
+  "additionalProperties": false
+}

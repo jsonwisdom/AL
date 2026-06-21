@@ -1,0 +1,39 @@
+{
+  "target_id": "MANKATO_001",
+  "scope": "municipal_governance",
+  "jurisdiction": "us-mn-mankato",
+  "document_class": "city_council_minutes",
+  "schema_version": "1.1.0",
+  "extraction_profile": {
+    "engine": "html_table_pdf_extractor",
+    "origin_uri": "https://www.mankatomn.gov/government/city-council/city-council-meetings",
+    "selectors": {
+      "container": "#main-content",
+      "row_link": "a[href*='.pdf']",
+      "date_regex": "\\b(?:January|February|March|April|May|June|July|August|September|October|November|December)\\s+\\d{1,2},\\s+2026\\b"
+    },
+    "normalization_rules": [
+      "strip_ephemeral_session_tokens",
+      "convert_tables_to_markdown_pipes",
+      "collate_whitespace_blocks",
+      "remove_page_numbers_and_running_footers"
+    ],
+    "drift_keywords": [
+      "solar",
+      "array",
+      "kw",
+      "interconnect",
+      "solar_project",
+      "energy_ordinance"
+    ]
+  },
+  "polling_policy": {
+    "frequency_hours": 24,
+    "timeout_seconds": 30,
+    "retry_limit": 3
+  },
+  "state_control": {
+    "initial_state": "VERIFIED",
+    "require_receipt_on_drift": true
+  }
+}

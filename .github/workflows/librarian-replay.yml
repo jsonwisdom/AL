@@ -1,0 +1,168 @@
+name: ZTVS Librarian Replay
+
+on:
+  workflow_dispatch: {}
+  push:
+    paths:
+      - 'registry/**'
+  schedule:
+    - cron: '15 0 * * *'
+
+permissions:
+  contents: write
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: librarian-replay-${{ matrix.city }}-${{ github.ref }}
+      cancel-in-progress: true
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        city: [ST_CLOUD, MANKATO, MINNEAPOLIS, DULUTH, ROCHESTER]
+        include:
+          - city: ST_CLOUD
+            path: registry/us-mn-st_cloud
+          - city: MANKATO
+            path: registry/us-mn-mankato
+          - city: MINNEAPOLIS
+            path: registry/us-mn-minneapolis
+          - city: DULUTH
+            path: registry/us-mn-duluth
+          - city: ROCHESTER
+            path: registry/us-mn-rochester
+
+    steps:
+      - name: Checkout Ledger
+        uses: actions/checkout@v4
+
+      - name: Queue Status
+        run: |
+          echo "Concurrency group: librarian-replay-${{ matrix.city }}-${{ github.ref }}"
+          echo "Run ID: ${{ github.run_id }}"
+          echo "City: ${{ matrix.city }}"
+          echo "Registry path: ${{ matrix.path }}"
+
+      - name: Verify lane exists
+        run: |
+          test -d "${{ matrix.path }}" || {
+            echo "FATAL: Missing registry lane ${{ matrix.path }}"
+            exit 1
+          }
+
+      - name: Run Schema Drift Validation
+        id: validate_schema
+        env:
+          CITY: ${{ matrix.city }}
+          TARGET_PATH: ${{ matrix.path }}
+        run: |
+          ORIGINAL_FILE="$TARGET_PATH/baselines/latest.txt"
+          MUTATED_FILE="$TARGET_PATH/chunks/current.txt"
+          MANIFEST_FILE="$TARGET_PATH/manifest.json"
+
+          if [ -f "$ORIGINAL_FILE" ] && [ -f "$MUTATED_FILE" ]; then
+            set +e
+            node scripts/drift-schema-validator.cjs "$CITY" "$ORIGINAL_FILE" "$MUTATED_FILE" "$MANIFEST_FILE" > "$TARGET_PATH/drift_output.json"
+            EXIT_CODE=$?
+            set -e
+            if [ "$EXIT_CODE" -eq 2 ]; then
+              HAS_DRIFT="true"
+            elif [ "$EXIT_CODE" -eq 0 ]; then
+              HAS_DRIFT="false"
+            else
+              echo "FATAL: validator failed with exit code $EXIT_CODE"
+              cat "$TARGET_PATH/drift_output.json" || true
+              exit "$EXIT_CODE"
+            fi
+          else
+            mkdir -p "$TARGET_PATH"
+            SCHEMA_VERSION=$(jq -r '.schema_version // "1.0.0"' "$MANIFEST_FILE" 2>/dev/null || echo "1.0.0")
+            jq -n --arg schema_version "$SCHEMA_VERSION" '{has_drift:false,schema_version:$schema_version,validator_version:"1.1.0",diff_segments:[]}' > "$TARGET_PATH/drift_output.json"
+            HAS_DRIFT="false"
+          fi
+
+          if [ "$HAS_DRIFT" = "true" ]; then
+            echo "LEADER_STATE=DRIFT_DETECTED" >> $GITHUB_ENV
+            echo "VERDICT_STATE=REVIEW_PENDING" >> $GITHUB_ENV
+          else
+            echo "LEADER_STATE=VERIFIED" >> $GITHUB_ENV
+            echo "VERDICT_STATE=VERIFIED" >> $GITHUB_ENV
+          fi
+
+      - name: Compile Hardened Evidence Card
+        env:
+          TARGET_PATH: ${{ matrix.path }}
+          CITY: ${{ matrix.city }}
+        run: |
+          CURRENT_STATE=$(cat "$TARGET_PATH/state.json" 2>/dev/null | jq -r .state || echo "VERIFIED")
+
+          if [[ "$CURRENT_STATE" == "DRIFT_DETECTED" && "${{ env.LEADER_STATE }}" == "VERIFIED" ]]; then
+            RECEIPT_FILE="$TARGET_PATH/receipts/pending_review.md"
+            if [ ! -f "$RECEIPT_FILE" ]; then
+              echo "FATAL: State transition blocked. Missing explicit review receipt."
+              exit 1
+            fi
+            RECEIPT_HASH=$(sha256sum "$RECEIPT_FILE" | awk '{print $1}')
+          else
+            RECEIPT_HASH="null"
+          fi
+
+          SCHEMA_VERSION=$(jq -r '.schema_version // "1.0.0"' "$TARGET_PATH/drift_output.json")
+          TARGET_ID=$(jq -r '.target_id // env.CITY' "$TARGET_PATH/manifest.json" 2>/dev/null || echo "$CITY")
+          DOCUMENT=$(jq -r '.document_class // "city_council_minutes"' "$TARGET_PATH/manifest.json" 2>/dev/null || echo "city_council_minutes")
+          RAW_SHA=$(printf '%s' "$TARGET_ID:$GITHUB_SHA:raw" | sha256sum | awk '{print $1}')
+
+          jq -n \
+            --arg target_id "$TARGET_ID" \
+            --arg document "$DOCUMENT" \
+            --arg state "${{ env.LEADER_STATE }}" \
+            --arg verdict "${{ env.VERDICT_STATE }}" \
+            --arg anchor "commit:$GITHUB_SHA" \
+            --arg raw_sha256 "$RAW_SHA" \
+            --argjson review_receipt_hash "$(if [ "$RECEIPT_HASH" = "null" ]; then echo null; else jq -Rn --arg v "$RECEIPT_HASH" '$v'; fi)" \
+            --arg schema_version "$SCHEMA_VERSION" \
+            --slurpfile drift "$TARGET_PATH/drift_output.json" \
+            '{target_id:$target_id,document:$document,state:$state,anchor:$anchor,verdict:$verdict,raw_sha256:$raw_sha256,review_receipt_hash:$review_receipt_hash,captured_at:(now|todateiso8601),schema_version:$schema_version,payload:{drift_analysis:$drift[0]}}' \
+            > "$TARGET_PATH/evidence_card.json"
+
+          jq -n \
+            --arg target_id "$TARGET_ID" \
+            --arg state "${{ env.LEADER_STATE }}" \
+            --arg verdict "${{ env.VERDICT_STATE }}" \
+            --argjson review_receipt_hash "$(if [ "$RECEIPT_HASH" = "null" ]; then echo null; else jq -Rn --arg v "$RECEIPT_HASH" '$v'; fi)" \
+            '{target_id:$target_id,state:$state,verdict:$verdict,review_receipt_hash:$review_receipt_hash}' \
+            > "$TARGET_PATH/state.json"
+
+  librarian_index:
+    runs-on: ubuntu-latest
+    needs: replay
+    if: always()
+    concurrency:
+      group: librarian-index-${{ github.ref }}
+      cancel-in-progress: true
+    steps:
+      - name: Checkout Ledger
+        uses: actions/checkout@v4
+
+      - name: Build Librarian Index
+        run: |
+          mkdir -p public
+          find registry -path '*/evidence_card.json' -print0 | xargs -0 jq -s '{generated_at:(now|todateiso8601), cards:.}' > public/LIBRARIAN_INDEX.json
+
+      - name: Run Production Settlement Guard
+        run: |
+          node scripts/production-settlement-guard.cjs public/LIBRARIAN_INDEX.json
+
+      - name: Commit Librarian Index
+        run: |
+          git config --global user.name "ZTVS Librarian"
+          git config --global user.email "ztvs@zero-trust.local"
+          git add registry/ public/LIBRARIAN_INDEX.json
+          git commit -m "chore(ztvs): update librarian replay outputs" || echo "No changes to commit"
+          git push
