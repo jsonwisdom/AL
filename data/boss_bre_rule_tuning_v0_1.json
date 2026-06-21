@@ -1,0 +1,65 @@
+{
+  "version": "0.1",
+  "mode": "PROPOSAL_ONLY",
+  "doctrine": {
+    "mutates_live_rules": false,
+    "requires_human_review_before_rule_patch": true,
+    "public_content_claim_default": "BLOCKED_PENDING_HUMAN_REVIEW",
+    "claim_type": "RULE_TUNING_PROPOSAL_ONLY",
+    "no_fake_green": true
+  },
+  "proposal_classes": [
+    "PROMOTE_TO_HIGH",
+    "DEMOTE_TO_MEDIUM",
+    "DEMOTE_TO_LOW",
+    "SUPPRESS_NOISE",
+    "ADD_RULE",
+    "REQUIRE_HUMAN_REVIEW"
+  ],
+  "triage_targets": {
+    "HIGH": [
+      "fraud",
+      "CMS",
+      "Medicaid",
+      "withhold",
+      "withheld",
+      "denied",
+      "disallowance",
+      "deficit",
+      "shortfall",
+      "unexplained variance"
+    ],
+    "MEDIUM": [
+      "large dollar movement",
+      "forecast revision",
+      "program reduction",
+      "debt service movement",
+      "reserve drawdown",
+      "material increase",
+      "material decrease"
+    ],
+    "LOW": [
+      "generic risk language",
+      "boilerplate caution",
+      "page header",
+      "table layout noise",
+      "OCR artifact",
+      "forecast uncertainty"
+    ]
+  },
+  "noise_patterns": [
+    "Budget & Economic Forecast February 2026",
+    "page header",
+    "table of contents",
+    "contents",
+    "appendix",
+    "source:",
+    "accessed"
+  ],
+  "approval_gate": {
+    "required_before_patch": true,
+    "approved_patch_target": "data/boss_bre_anomaly_rules.json",
+    "approved_patch_must_increment_version": true,
+    "approved_patch_must_preserve_no_fake_green": true
+  }
+}
