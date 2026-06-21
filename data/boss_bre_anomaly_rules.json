@@ -1,0 +1,57 @@
+{
+  "version": "0.1",
+  "doctrine": {
+    "public_claim_mode": "ANOMALY_LEADS_ONLY",
+    "no_fraud_verdict_without_source_and_human_review": true,
+    "public_content_claim_default": "BLOCKED",
+    "human_review_required_default": true,
+    "no_fake_green": true
+  },
+  "rules": [
+    {
+      "id": "BBRISK_MEDICAID_FRAUD_TERMS",
+      "severity": "HIGH",
+      "label": "MEDICAID_FRAUD_RISK_LANGUAGE",
+      "pattern": "fraud|suspicious|prepayment review|high-risk Medicaid|CMS|federal matching funds|withhold|deferral|disallowance"
+    },
+    {
+      "id": "BBRISK_LARGE_DOLLAR_AMOUNT",
+      "severity": "MEDIUM",
+      "label": "LARGE_DOLLAR_AMOUNT",
+      "pattern": "\\$[0-9][0-9,]*(\\.[0-9]+)?[ ]*(million|billion)|[0-9]+(\\.[0-9]+)?[ ]*(million|billion)"
+    },
+    {
+      "id": "BBRISK_NEGATIVE_VARIANCE",
+      "severity": "MEDIUM",
+      "label": "NEGATIVE_VARIANCE_OR_REDUCTION",
+      "pattern": "reduction|decrease|decline|lower than|down compared|shortfall|deficit|imbalance|withheld|denied"
+    },
+    {
+      "id": "BBRISK_FORECAST_VOLATILITY",
+      "severity": "LOW",
+      "label": "FORECAST_VOLATILITY_LANGUAGE",
+      "pattern": "volatile|uncertain|risk|planning estimate|structural imbalance|negative shocks|baseline projection"
+    },
+    {
+      "id": "BBRISK_MISSING_PAYLOAD",
+      "severity": "HIGH",
+      "label": "EVIDENCE_CHAIN_BLOCKED",
+      "pattern": "FORENSIC_PAYLOAD_MISSING|FETCH_BLOCKED|SOURCE_URL_MISSING|EXTRACT_BLOCKED"
+    }
+  ],
+  "public_language": {
+    "allowed": [
+      "audit lead",
+      "anomaly lead",
+      "risk signal",
+      "requires human review",
+      "source-backed fiscal inconsistency"
+    ],
+    "blocked_without_review": [
+      "fraud proven",
+      "criminal finding",
+      "confirmed corruption",
+      "illegal payment"
+    ]
+  }
+}
