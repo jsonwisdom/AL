@@ -1,0 +1,50 @@
+{
+  "artifact": "MN_FISCAL_REPLAY_LIBRARIAN_INDEX_V0_2",
+  "timestamp": "2026-06-21T19:42:14Z",
+  "status": "CURATED_LINEAGE_INDEX_CREATED",
+  "rule": "DISCOVERY_BEFORE_DELEGATION",
+  "counts": {
+    "source_manifests": 2,
+    "replay_receipts": 2,
+    "enriched_baselines": 2,
+    "final_safe_status_receipts": 1,
+    "chunk_review_docs": 1,
+    "boss_bre_run_dirs": 24,
+    "mn_live_fetch_lanes": 5
+  },
+  "components": {
+    "MN_001": {
+      "source_manifest": "_sources/MN_001/source_manifest.json",
+      "source_url": "https://mn.gov/mmb-stat/000/az/forecast/2026/budget-and-economic-forecast/february.pdf",
+      "manifest_status": "FETCHED",
+      "raw_sha256": "UNKNOWN",
+      "text_sha256": "UNKNOWN",
+      "replay_receipt": "projects/mn-fiscal-replay/replay/MN_001.replay.json",
+      "replay_result": "NO_ANOMALY",
+      "replay_status": "REPLAY_COMPLETE",
+      "enriched_baseline": "projects/mn-fiscal-replay/enriched/MN_001.enriched.json",
+      "final_safe_status": "projects/mn-fiscal-replay/live_fetch/MN_001/MN_001_FINAL_SAFE_STATUS_V0_1.json",
+      "public_verdict": "PUBLIC_CONTENT_ANOMALY_UNPROVEN",
+      "possible_content_delta": false
+    },
+    "MN_002": {
+      "source_manifest": "_sources/MN_002/source_manifest.json",
+      "source_url": "https://mn.gov/mmb-stat/000/az/forecast/2026/budget-and-economic-forecast/february.pdf",
+      "manifest_status": "FETCHED",
+      "raw_sha256": "UNKNOWN",
+      "text_sha256": "UNKNOWN",
+      "replay_receipt": "projects/mn-fiscal-replay/replay/MN_002.replay.json",
+      "replay_result": "NO_ANOMALY",
+      "replay_status": "REPLAY_COMPLETE",
+      "enriched_baseline": "projects/mn-fiscal-replay/enriched/MN_002.enriched.json"
+    },
+    "MN019_DAKOTA": {},
+    "MN027_HENNEPIN": {},
+    "MN062_RAMSEY": {},
+    "MNCI_MPLS": {}
+  },
+  "next_best_target": "MN_002_FROM_EXISTING_SOURCE_MANIFEST",
+  "manual_operator_file_search_required": false,
+  "public_content_claim": "BLOCKED",
+  "no_fake_green": true
+}
