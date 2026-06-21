@@ -1,0 +1,17 @@
+{
+  "id": "MN_002",
+  "timestamp": "2026-06-21T19:46:29Z",
+  "verdict": "CHUNK_DIFF_DETECTED",
+  "claim_status": "BLOCKED_PENDING_HUMAN_CHUNK_REVIEW",
+  "human_review_classification": "PENDING_HUMAN_REVIEW",
+  "baseline_chunk_count": "1109",
+  "live_chunk_count": "1114",
+  "diff_line_count": "2003",
+  "added_diff_lines": "962",
+  "removed_diff_lines": "957",
+  "chunked_diff_sha256": "365bcb70324d7e3b0ce0e3e042d3f9e9f2bc9a4bd026e779dc9c38c3d211eca8",
+  "chunked_diff_file": "projects/mn-fiscal-replay/live_fetch/MN_002/chunks/MN_002_chunked_sectional.diff",
+  "public_content_claim": "BLOCKED",
+  "next_step": "HUMAN_CHUNK_REVIEW_OR_FINAL_SAFE_STATUS",
+  "no_fake_green": true
+}

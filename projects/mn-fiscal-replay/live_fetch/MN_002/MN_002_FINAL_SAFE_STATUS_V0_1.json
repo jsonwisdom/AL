@@ -1,0 +1,20 @@
+{
+  "component": "MN_002",
+  "status": "SEALED",
+  "verdict": "PUBLIC_CONTENT_ANOMALY_UNPROVEN",
+  "live_hash_drift": true,
+  "normalized_text_diff": true,
+  "chunk_diff_detected": true,
+  "human_review_classification": "ORDERING_ARTIFACT + EXTRACTOR_ARTIFACT",
+  "possible_content_delta": false,
+  "public_content_claim": "BLOCKED",
+  "recommended_action": "BASELINE_UPGRADE_WITH_EXTRACTOR_DRIFT_NOTE",
+  "reason": "Differences dominated by page marker movement, table-of-contents splitting, footnote spacing, chunk-boundary differences, and PDF extraction/layout order drift. No confirmed fiscal content changes.",
+  "chunked_diff_sha256": "365bcb70324d7e3b0ce0e3e042d3f9e9f2bc9a4bd026e779dc9c38c3d211eca8",
+  "source_manifest": "_sources/MN_002/source_manifest.json",
+  "librarian_fetch_receipt": "projects/mn-fiscal-replay/live_fetch/MN_002/MN_002_librarian_fetch_normalize_receipt.json",
+  "chunk_verdict_receipt": "projects/mn-fiscal-replay/live_fetch/MN_002/chunks/MN_002.chunked_verdict.json",
+  "manual_operator_file_search_required": false,
+  "next_step": "BASELINE_UPGRADE_ELIGIBLE",
+  "no_fake_green": true
+}
