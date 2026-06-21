@@ -1,0 +1,72 @@
+name: Update ZTVS Dashboard
+
+on:
+  workflow_dispatch:
+    inputs:
+      librarian_receipt:
+        description: 'Path to validated LIBRARIAN-REPLAY receipt'
+        required: true
+        default: 'registry/_receipts/LIBRARIAN-REPLAY-27920834257.json'
+      gauntlet_receipt:
+        description: 'Path to validated GAUNTLET-RUN receipt'
+        required: true
+        default: 'registry/_receipts/GAUNTLET-RUN-27920957650.json'
+      latest_verified_commit:
+        description: 'Commit to display as latest verified dashboard vector'
+        required: true
+        default: '195a5a29c1dc9f5db6f9ad39eb9c82480638351d'
+
+permissions:
+  contents: write
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  update-dashboard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Ledger
+        uses: actions/checkout@v4
+
+      - name: Confirm Receipt Inputs Exist
+        run: |
+          test -f "${{ inputs.librarian_receipt }}" || {
+            echo "FATAL: Missing librarian receipt: ${{ inputs.librarian_receipt }}"
+            exit 1
+          }
+          test -f "${{ inputs.gauntlet_receipt }}" || {
+            echo "FATAL: Missing gauntlet receipt: ${{ inputs.gauntlet_receipt }}"
+            exit 1
+          }
+
+      - name: Run Golden Receipt Taxonomy Regression
+        run: |
+          node scripts/test-receipt-taxonomy-golden.cjs
+
+      - name: Validate Selected Receipt Pair
+        run: |
+          node scripts/validate-receipt-taxonomy.cjs \
+            "${{ inputs.librarian_receipt }}" \
+            "${{ inputs.gauntlet_receipt }}"
+
+      - name: Build latest dashboard receipt JSON
+        run: |
+          python tools/build_latest_json.py \
+            --librarian "${{ inputs.librarian_receipt }}" \
+            --gauntlet "${{ inputs.gauntlet_receipt }}" \
+            --latest-verified-commit "${{ inputs.latest_verified_commit }}" \
+            --output receipts/latest.json
+
+      - name: Commit latest dashboard JSON
+        run: |
+          git config user.name "ZTVS Dashboard"
+          git config user.email "dashboard@ztvs.system"
+          git add receipts/latest.json
+          if git diff --staged --quiet; then
+            echo "No latest.json changes"
+          else
+            git commit -m "chore(ztvs): update validated latest dashboard receipt [skip ci]"
+            git push
+          fi
