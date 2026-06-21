@@ -1,0 +1,56 @@
+{
+  "artifact": "boss_bre_review_decision_record",
+  "version": "0.1",
+  "status": "TEMPLATE",
+  "review_scope": "RULE_TUNING_V0_1_TO_RULES_V0_2",
+  "generated_utc": "TODO_FILL_UTC",
+  "reviewer": "TODO_FILL_HUMAN_REVIEWER",
+  "repo": "jsonwisdom/AL",
+  "workflow": "Boss Bre Public Audit",
+  "witness_chain_verify_receipt_sha256": "sha256:TODO",
+  "rule_tuning_manifest_sha256": "sha256:TODO",
+  "rule_tuning_proposals_sha256": "sha256:TODO",
+  "current_rules_sha256": "sha256:TODO",
+  "current_rules_version": "0.1",
+  "target_rules_version": "0.2",
+  "decision_mode": "HUMAN_REVIEW_REQUIRED",
+  "allowed_decisions": [
+    "APPROVE_PROMOTE",
+    "APPROVE_SUPPRESS",
+    "APPROVE_REVIEW_REQUIRED",
+    "REJECT_NOISE",
+    "DEFER_MORE_EVIDENCE"
+  ],
+  "approval_requirements": {
+    "source_pdf_sha256_present": true,
+    "source_text_sha256_present": true,
+    "meaningful_evidence_excerpt_required": true,
+    "public_content_claim_must_remain_blocked_pending_review": true,
+    "no_fake_green_must_remain_true": true
+  },
+  "decisions": [
+    {
+      "proposal_id": "sha256:TODO",
+      "decision": "TODO_ONE_OF_ALLOWED_DECISIONS",
+      "reason": "TODO_HUMAN_REASON",
+      "approved_rule_action": "TODO_NONE_OR_PROMOTE_OR_SUPPRESS_OR_REQUIRE_REVIEW",
+      "source_pdf_sha256": "sha256:TODO",
+      "source_text_sha256": "sha256:TODO",
+      "evidence_excerpt_reviewed": "TODO_COPY_SHORT_EXCERPT",
+      "human_review_required": true,
+      "public_content_claim": "BLOCKED_PENDING_HUMAN_REVIEW",
+      "no_fake_green": true
+    }
+  ],
+  "patch_authorization": {
+    "rules_patch_authorized": false,
+    "authorized_target": "data/boss_bre_anomaly_rules.json",
+    "must_increment_version": true,
+    "must_preserve_no_fake_green": true,
+    "must_preserve_no_fraud_verdict_without_source_and_human_review": true
+  },
+  "claim_status": "REVIEW_DECISION_RECORD_ONLY",
+  "public_content_claim": "BLOCKED_PENDING_HUMAN_REVIEW",
+  "human_review_required": true,
+  "no_fake_green": true
+}
