@@ -184,6 +184,60 @@ jobs:
           git log -1 --format=%H
           node scripts/production-settlement-guard.cjs public/LIBRARIAN_INDEX.json
 
+      - name: Generate Atomic Runtime Receipt
+        if: success()
+        run: |
+          RUN_ID="${{ github.run_id }}"
+          COMMIT="$GITHUB_SHA"
+          TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          NODE_COUNT=$(jq '.cards | length' public/LIBRARIAN_INDEX.json)
+
+          test "$NODE_COUNT" -eq 5 || {
+            echo "FATAL: Refusing to emit runtime receipt with NODE_COUNT=$NODE_COUNT"
+            exit 1
+          }
+
+          mkdir -p registry/_receipts
+          jq -c '.cards[]' public/LIBRARIAN_INDEX.json > /tmp/evidence-cards.jsonl
+          : > /tmp/evidence-cards-with-hashes.jsonl
+
+          while IFS= read -r CARD; do
+            CARD_HASH=$(printf '%s' "$CARD" | sha256sum | awk '{print $1}')
+            printf '%s\n' "$CARD" | jq -c --arg h "SHA256:$CARD_HASH" '. + {evidence_card_sha256:$h}' >> /tmp/evidence-cards-with-hashes.jsonl
+          done < /tmp/evidence-cards.jsonl
+
+          jq -s . /tmp/evidence-cards-with-hashes.jsonl > /tmp/nodes.json
+
+          jq -n \
+            --arg receipt_id "LIBRARIAN-REPLAY-$RUN_ID" \
+            --arg timestamp "$TIMESTAMP" \
+            --arg commit "$COMMIT" \
+            --arg run_id "$RUN_ID" \
+            --argjson node_count "$NODE_COUNT" \
+            --slurpfile nodes /tmp/nodes.json \
+            '{receipt_id:$receipt_id,version:"1.0.0",timestamp:$timestamp,master_runtime:{status:"GREEN",commit_anchor:$commit,workflow:"ZTVS Librarian Replay",run_id:$run_id,librarian_index:"artifact-hydrated-v1"},audit_summary:{node_count:$node_count,settlement_guard:"PASS",drift_detected:false},nodes:$nodes[0]}' \
+            > /tmp/runtime-receipt-base.json
+
+          jq -S -c . /tmp/runtime-receipt-base.json > /tmp/runtime-receipt-canonical.json
+          SIGNATURE=$(sha256sum /tmp/runtime-receipt-canonical.json | awk '{print $1}')
+          RECEIPT_PATH="registry/_receipts/LIBRARIAN-REPLAY-$RUN_ID.json"
+
+          jq --arg sig "SHA256:$SIGNATURE" '. + {signature:$sig}' /tmp/runtime-receipt-canonical.json > "$RECEIPT_PATH"
+          cp "$RECEIPT_PATH" runtime-receipt.json
+
+          echo "ATOMIC_RUNTIME_RECEIPT=$RECEIPT_PATH"
+          echo "ATOMIC_RUNTIME_RECEIPT_SIGNATURE=SHA256:$SIGNATURE"
+          cat runtime-receipt.json
+
+      - name: Upload Runtime Receipt
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: runtime-receipt-${{ github.run_id }}
+          path: runtime-receipt.json
+          if-no-files-found: error
+          retention-days: 30
+
       - name: Commit Librarian Index
         run: |
           git config --global user.name "ZTVS Librarian"
