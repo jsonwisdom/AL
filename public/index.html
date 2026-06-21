@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ZTVS Public Explorer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-zinc-100 min-h-screen">
+  <main class="max-w-6xl mx-auto px-4 py-8">
+    <header class="mb-8 border-b border-zinc-800 pb-6">
+      <p class="text-xs uppercase tracking-[0.35em] text-cyan-400 font-mono">Zero-Trust Verification System</p>
+      <h1 class="text-3xl font-bold mt-2">Public Explorer</h1>
+      <p class="text-zinc-400 mt-2 max-w-3xl">A public utility for understanding proof. The website displays evidence cards; it does not manufacture verification state.</p>
+    </header>
+
+    <section id="status" class="font-mono text-xs text-zinc-500 mb-4">Loading LIBRARIAN_INDEX.json...</section>
+    <section id="cards" class="grid gap-4 md:grid-cols-2 xl:grid-cols-3"></section>
+  </main>
+
+  <script>
+    function escapeHtml(value) {
+      return String(value ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    function cityContext(entry) {
+      if (entry.jurisdiction) return entry.jurisdiction;
+      const prefix = String(entry.target_id || '').split('_')[0].toLowerCase();
+      const map = {
+        st: 'us-mn-st_cloud',
+        duluth: 'us-mn-duluth',
+        rochester: 'us-mn-rochester',
+        mankato: 'us-mn-mankato',
+        minneapolis: 'us-mn-minneapolis'
+      };
+      return map[prefix] || `us-mn-${prefix}`;
+    }
+
+    function shortHash(value, length = 7) {
+      if (!value) return 'null';
+      return String(value).replace(/^commit:/, '').substring(0, length);
+    }
+
+    function generateEvidenceCard(entry) {
+      const schemaVersion = entry.payload?.drift_analysis?.schema_version || entry.schema_version || '1.0.0';
+      const isDrifted = entry.state === 'DRIFT_DETECTED' || entry.state === 'REVIEW_PENDING';
+      const node = String(entry.target_id || 'UNKNOWN').split('_')[0];
+
+      return `
+        <article class="card border ${isDrifted ? 'border-red-900 bg-red-950/20' : 'border-zinc-800 bg-zinc-900/40'} p-6 rounded-lg font-mono">
+          <div class="flex justify-between items-start border-b border-zinc-800 pb-4 mb-4 gap-4">
+            <div>
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-zinc-800 text-zinc-400 uppercase tracking-widest">${escapeHtml(node)} Node</span>
+              <h3 class="text-sm font-bold text-zinc-100 mt-2">${escapeHtml(entry.document || entry.target_id || 'Untitled record')}</h3>
+            </div>
+            <div class="text-right">
+              <span class="text-xs uppercase tracking-wider px-2 py-1 rounded font-bold ${isDrifted ? 'bg-red-500/10 text-red-400' : 'bg-green-500/10 text-green-400'}">
+                ${escapeHtml(entry.state || 'UNKNOWN')}
+              </span>
+            </div>
+          </div>
+
+          <div class="text-xs text-zinc-400 space-y-1">
+            <div>├── <span class="text-zinc-600">Evidence Anchor:</span> <span class="text-yellow-500">commit:${escapeHtml(shortHash(entry.anchor))}</span></div>
+            <div>├── <span class="text-zinc-600">Receipt Hash:</span> <span class="text-zinc-300">${escapeHtml(shortHash(entry.review_receipt_hash))}</span></div>
+            <div>├── <span class="text-zinc-600">Drift Schema:</span> <span class="text-cyan-400">${escapeHtml(schemaVersion)}</span></div>
+            <div>├── <span class="text-zinc-600">Replay State:</span> <span class="text-zinc-300">${escapeHtml(entry.verdict || entry.state || 'UNKNOWN')}</span></div>
+            <div>└── <span class="text-zinc-600">City Context:</span> <span class="text-zinc-400">${escapeHtml(cityContext(entry))}</span></div>
+          </div>
+        </article>
+      `;
+    }
+
+    async function loadIndex() {
+      const status = document.getElementById('status');
+      const cards = document.getElementById('cards');
+
+      try {
+        const response = await fetch('./LIBRARIAN_INDEX.json', { cache: 'no-store' });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const index = await response.json();
+        const entries = Array.isArray(index.cards) ? index.cards : [];
+        cards.innerHTML = entries.map(generateEvidenceCard).join('') || '<p class="text-zinc-500 font-mono text-sm">No evidence cards found.</p>';
+        status.textContent = `Loaded ${entries.length} evidence card(s). Generated: ${index.generated_at || 'unknown'}`;
+      } catch (error) {
+        status.textContent = `Explorer index unavailable: ${error.message}`;
+        cards.innerHTML = '<div class="border border-zinc-800 rounded-lg p-6 text-zinc-400 font-mono text-sm">LIBRARIAN_INDEX.json has not been generated yet. Proof state remains in the GitHub replay ledger.</div>';
+      }
+    }
+
+    loadIndex();
+  </script>
+</body>
+</html>
