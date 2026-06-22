@@ -1,0 +1,89 @@
+{
+  "schema_name": "EAS_ZORA_1155_CONTINUITY_V0_1",
+  "status": "DRAFT_ONLY_NOT_REGISTERED",
+  "network": "base",
+  "authority": "NONE",
+  "no_fake_green": true,
+  "schema_string": "string tokenId,string zoraContract,string metadataURI,string continuityCommit,string receiptHash,string replayHash,string laneRoot,string zoraRef,bool isSoulbound,uint256 mintTimestamp",
+  "resolver": "0x0000000000000000000000000000000000000000",
+  "revocable": true,
+  "schema_uid": null,
+  "registry_tx_hash": null,
+  "fields": [
+    {
+      "name": "tokenId",
+      "type": "string",
+      "required": true,
+      "description": "Zora 1155 token id as a string to preserve cross-tool compatibility."
+    },
+    {
+      "name": "zoraContract",
+      "type": "string",
+      "required": true,
+      "description": "Zora 1155 contract address or contract pointer."
+    },
+    {
+      "name": "metadataURI",
+      "type": "string",
+      "required": true,
+      "description": "IPFS, Arweave, HTTPS, or ENS-linked metadata URI."
+    },
+    {
+      "name": "continuityCommit",
+      "type": "string",
+      "required": true,
+      "description": "Git commit SHA anchoring the continuity entry."
+    },
+    {
+      "name": "receiptHash",
+      "type": "string",
+      "required": true,
+      "description": "sha256 receipt hash for the continuity artifact."
+    },
+    {
+      "name": "replayHash",
+      "type": "string",
+      "required": true,
+      "description": "sha256 hash of deterministic replay output."
+    },
+    {
+      "name": "laneRoot",
+      "type": "string",
+      "required": true,
+      "description": "sha256 hash over the relevant ACTIVE_LANES lane object or lane bundle."
+    },
+    {
+      "name": "zoraRef",
+      "type": "string",
+      "required": true,
+      "description": "Human-readable Zora reference such as contract:tokenId or URL."
+    },
+    {
+      "name": "isSoulbound",
+      "type": "bool",
+      "required": true,
+      "description": "Whether the minted proof should be treated as non-transferable by policy."
+    },
+    {
+      "name": "mintTimestamp",
+      "type": "uint256",
+      "required": true,
+      "description": "Unix timestamp for mint or planned mint. Zero is allowed only for dry-run drafts."
+    }
+  ],
+  "promotion_gates": {
+    "draft": "Schema exists in GitHub only.",
+    "dry_run_pass": "JSON and ABI field order validate and hashes are deterministic.",
+    "registered_unverified": "SchemaUID and tx hash exist but replay has not validated them.",
+    "validated": "SchemaUID, tx hash, schema string, lane root, and replay hash validate with delta_h 0."
+  },
+  "green_conditions": [
+    "schema_uid is not null",
+    "registry_tx_hash is not null",
+    "receiptHash starts with sha256:",
+    "replayHash starts with sha256:",
+    "laneRoot starts with sha256:",
+    "replay_verdict equals PASS",
+    "delta_h equals 0"
+  ]
+}
