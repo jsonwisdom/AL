@@ -1,0 +1,37 @@
+{
+  "receipt_type": "POST_MERGE_REPLAY_RECEIPT_V1",
+  "project": "cwaas",
+  "artifact": "AUDIT_WORKFLOW_STOREFRONT_01_INTAKE_GATE_SPEC_V1",
+  "repo": "jsonwisdom/AL",
+  "branch": "master",
+  "merge_commit": "a6ffdc2b8ec45e0141bf9a6a989a793316236ae5",
+  "source_pr": 337,
+  "merge_method": "squash",
+  "replay_invariants": {
+    "master_branch_canonicality": "c85d116be498ccf5609574fbbe6dc5e2731612b6ae475c9e32cccb26813e073b",
+    "deterministic_output": "0aaacd1d3c565fae3fcc304de3e0e606dc56a026b7d23e91e81133a5a4d5bda2",
+    "receipt_stability": "915106c91271b51364b5c9c43147eb5a27a99f6f8c8f4943d8736e66b30aa30a",
+    "cold_path_verification": "54f383ead5f979954288b9d24919f5890a1908bc1a7a6a118baeefea66dcb5fa",
+    "no_authority_elevation": "PASS",
+    "no_fake_green_enforcement": "PASS"
+  },
+  "hashes": {
+    "tree_sha": "c85d116be498ccf5609574fbbe6dc5e2731612b6ae475c9e32cccb26813e073b",
+    "spec_sha256": "54f383ead5f979954288b9d24919f5890a1908bc1a7a6a118baeefea66dcb5fa",
+    "receipt_sha256": "915106c91271b51364b5c9c43147eb5a27a99f6f8c8f4943d8736e66b30aa30a",
+    "replay_output_sha256": "0aaacd1d3c565fae3fcc304de3e0e606dc56a026b7d23e91e81133a5a4d5bda2"
+  },
+  "ci_evidence": {
+    "workflow": "Post Merge Replay Receipt V1",
+    "run_id": 27860820453,
+    "job_id": 82456420671,
+    "artifact_id": 7762217699,
+    "artifact_digest": "sha256:3cc683670a280031253c2cab475f2f96d62b0cce5165e9c2581ac98d6fdcd5c7",
+    "status": "SUCCESS"
+  },
+  "verdict": {
+    "post_merge_replay": "GREEN",
+    "deployment_branch_authorized": true,
+    "no_fake_hashes": true
+  }
+}

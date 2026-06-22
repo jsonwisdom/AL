@@ -1,0 +1,33 @@
+name: Post Merge Replay Receipt V1
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/cwaas/post_merge_replay_v1.sh'
+      - 'receipts/cwaas/POST_MERGE_REPLAY_RECEIPT_V1.json'
+      - '.github/workflows/post-merge-replay-receipt-v1.yml'
+      - 'projects/cwaas/gates/AUDIT_WORKFLOW_STOREFRONT_01_INTAKE_GATE_SPEC_V1.json'
+  workflow_dispatch:
+
+jobs:
+  post-merge-replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+      - name: Run post merge replay
+        run: bash scripts/cwaas/post_merge_replay_v1.sh
+      - name: Print replay hashes
+        run: cat receipts/cwaas/post_merge_replay_hashes.env
+      - name: Upload replay artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: post-merge-replay-receipt-v1
+          path: |
+            receipts/cwaas/tree_sha.txt
+            receipts/cwaas/post_merge_replay_output.txt
+            receipts/cwaas/post_merge_replay_hashes.env
+            receipts/cwaas/POST_MERGE_REPLAY_RECEIPT_V1.json
