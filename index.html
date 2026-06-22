@@ -1,52 +1,41 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Goblin Court — Document Finder</title>
-  <meta name="description" content="Find the public record in under 5 minutes. Then replay it forever.">
-  <meta name="cache-bust" content="goblin-document-finder-v0-1-20260622">
-  <link rel="stylesheet" href="site/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Goblin Court — Replay</title>
+<meta name="description" content="Replay Goblin Court. Replay Minnesota. Replay St Cloud.">
+<meta name="cache-bust" content="goblin-replay-front-door-v0-1-20260622">
+<style>
+:root{--ink:#120f0b;--paper:#f4e2b8;--gold:#d19b37;--red:#a52222;--purple:#542486;--green:#188342;--soft:#fff7db;--shadow:rgba(18,15,11,.28)}*{box-sizing:border-box}html,body{margin:0;max-width:100%;overflow-x:hidden;scroll-behavior:smooth}body{min-height:100vh;background:radial-gradient(circle at 14% 0%,rgba(165,34,34,.22),transparent 30%),radial-gradient(circle at 90% 6%,rgba(84,36,134,.24),transparent 32%),linear-gradient(135deg,#fff0c9,var(--paper));color:var(--ink);font-family:Georgia,'Times New Roman',serif;padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)}.top{background:var(--ink);color:#ffe7a0;padding:.72rem 16px;font:900 .78rem ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.02em}.wrap{width:min(1040px,calc(100% - 32px));margin:auto}.hero{padding:34px 0 22px}.seal{display:inline-block;border:2px solid var(--purple);border-radius:999px;padding:.45rem .7rem;color:var(--purple);background:rgba(255,255,255,.4);font:900 .78rem ui-monospace,SFMono-Regular,Menlo,monospace}h1{font-size:clamp(3.4rem,16vw,9rem);line-height:.82;letter-spacing:-.07em;text-transform:uppercase;margin:18px 0 12px}.doctrine{border:4px solid var(--ink);background:var(--gold);box-shadow:8px 8px 0 var(--shadow);padding:18px;margin:18px 0;font-size:clamp(2.05rem,9vw,4.7rem);line-height:.92;font-weight:900;text-transform:uppercase;letter-spacing:-.045em}.sub{font-size:clamp(1.18rem,4.8vw,2.2rem);line-height:1.05;font-weight:900;max-width:900px}.actions{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:26px 0}.action{border:4px solid var(--ink);background:rgba(255,248,226,.92);box-shadow:7px 7px 0 var(--shadow);padding:18px;text-decoration:none;color:var(--ink);min-height:190px;display:flex;flex-direction:column;justify-content:space-between}.action strong{font-size:clamp(1.5rem,5.2vw,2.7rem);line-height:.96;text-transform:uppercase}.action span{font:900 .78rem ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--red);text-transform:uppercase}.action.red{background:#fff1dd}.action.purple{background:#f3e6ff}.action.green{background:#e9ffe9}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:.75rem 1rem;border:2px solid var(--ink);border-radius:10px;background:var(--red);color:#fff5d0;text-decoration:none;font-weight:900;text-transform:uppercase;box-shadow:4px 4px 0 var(--ink);cursor:pointer}.btn.alt{background:var(--purple)}.btn.green{background:var(--green)}section{margin:32px 0}.title{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:4px double var(--ink);margin-bottom:14px;flex-wrap:wrap}h2{font-size:clamp(1.9rem,8vw,3.4rem);line-height:.94;text-transform:uppercase;margin:0 0 8px}.verdict{display:inline-block;border:3px solid var(--red);color:var(--red);background:rgba(255,255,255,.55);font-weight:900;text-transform:uppercase;padding:.24rem .48rem;transform:rotate(-2deg)}.verdict.purple{border-color:var(--purple);color:var(--purple);background:#f3e6ff}.verdict.green{border-color:var(--green);color:var(--green);background:#e9ffe9}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card{background:rgba(255,248,226,.9);border:3px solid var(--ink);box-shadow:7px 7px 0 var(--shadow);padding:18px}.tag{display:inline-block;color:var(--red);font:900 .76rem ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase;margin-bottom:10px}.card h3{font-size:1.45rem;line-height:1;margin:0 0 10px}.card p{line-height:1.35}.receipt{font:800 .78rem ui-monospace,SFMono-Regular,Menlo,monospace;word-break:break-word;background:var(--ink);color:#82ff35;padding:12px;border-radius:10px}.output{margin-top:14px;border:2px dashed var(--ink);padding:16px;background:var(--soft);font-size:1.18rem;line-height:1.32;transition:opacity 120ms ease}.output.swap{opacity:.2}.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--ink);padding:10px max(14px,env(safe-area-inset-left)) calc(10px + env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.sticky .btn{box-shadow:none;font-size:.76rem;padding:.55rem}.finder input{width:100%;min-height:48px;border:3px solid var(--ink);background:#fff7db;padding:.75rem;font:900 1rem ui-monospace,SFMono-Regular,Menlo,monospace}.results{margin-top:16px}footer{margin-top:44px;background:var(--ink);color:#ffe7a0;padding:26px 0 calc(86px + env(safe-area-inset-bottom))}footer .wrap{display:grid;grid-template-columns:1fr 1fr;gap:20px}@media(max-width:860px){.actions,.grid,footer .wrap{grid-template-columns:1fr}.action{min-height:150px}.sticky{grid-template-columns:1fr 1fr 1fr}.sticky .btn{font-size:.68rem}.card{box-shadow:5px 5px 0 var(--shadow)}}
+</style>
 </head>
 <body>
-  <div class="ticker">GOBLIN COURT LIVE · FIND DOCUMENTS FAST · THEN REPLAY FOREVER · NO LINE = NO JOKE</div>
-  <header class="wrap">
-    <div class="seal">⚖️🧌 COURT IN SESSION · ZERO TRUST WEBSITE</div>
-    <h1>Goblin Court</h1>
-    <div id="doctrine" class="doctrine">Find the record.<br>Lock the receipt.<br>Replay forever.</div>
-    <p class="subtitle">Can’t find the public document in under 5 minutes? That is the problem. Goblin Court starts with document discovery, then turns receipts into replayable proof.</p>
-    <div class="rules"><div>Find source fast</div><div>Lock receipt</div><div>No line, no joke</div><div>Replay is proof</div></div>
-    <div class="grid hero">
-      <div class="panel">
-        <h2>Not a PDF empire. A document finder.</h2>
-        <p>Search for a public record, open the source, then replay the docket. The joke only starts after the source is found.</p>
-        <div class="btns"><a class="btn" href="#finder">Find Document</a><a class="btn alt" href="#docket">Open Docket</a><a class="btn light" href="site/data/document-index.json">Document Index JSON</a></div>
-      </div>
-      <aside class="side">
-        <span class="tag">Latest Verdicts</span>
-        <div id="feed" class="feed"><p>Loading latest verdicts...</p></div>
-      </aside>
-    </div>
-  </header>
-  <main class="wrap">
-    <section id="finder">
-      <div class="title"><h2>Find Document</h2><span class="verdict green">Under 5 minutes</span></div>
-      <input id="docSearchBox" class="search" type="search" placeholder="Search source: Saint Cloud minutes, General Fund, zoning, variance...">
-      <div id="docResults" class="grid two" style="margin-top:18px"><p>Type to find a public record source.</p></div>
-    </section>
-    <section id="states">
-      <div class="title"><h2>State Index</h2><span class="verdict green">Router active</span></div>
-      <div id="stateHub" class="state-grid"><p>Loading states...</p></div>
-    </section>
-    <section id="search">
-      <div class="title"><h2>Search Docket</h2><span class="verdict">Replay layer</span></div>
-      <input id="searchBox" class="search" type="search" placeholder="Search docket: General Fund, hash, artifact, page markers...">
-      <div id="searchResults" class="grid two" style="margin-top:18px"></div>
-    </section>
-    <section id="docket"><div class="card"><h2>Loading docket...</h2><p>Replay engine booting.</p></div></section>
-  </main>
-  <footer><div class="wrap"><div><strong>Built by Jaywisdom.eth</strong><br>Powered by jaywisdom.base.eth · JSONwisdom source tree</div><div>Goblin Court is a document finder plus replay docket. The fun UI never outranks the receipts.</div></div></footer>
-  <div class="sticky-replay"><a class="btn" href="#finder">Find Source</a><a class="btn alt" href="#docket">Replay</a></div>
-  <script src="site/app.js"></script>
+<div class="top">GOBLIN COURT · REPLAY FIRST · FIND SOURCE FAST · NO LINE = NO JOKE</div>
+<header class="wrap hero">
+<div class="seal">⚖️🧌 COURT IN SESSION</div>
+<h1>Goblin Court</h1>
+<div class="doctrine">Can’t hack it.<br>Can’t change it.<br>Can only replay it.</div>
+<p class="sub">Funny proof receipts for public records. Start with replay. Then open the source.</p>
+<div class="actions">
+<a class="action red" href="#goblin"><span>Main court</span><strong>Replay<br>Goblin Court</strong><em>One conviction. One dismissal. One signal.</em></a>
+<a class="action purple" href="#mn"><span>State docket</span><strong>Replay<br>MN</strong><em>Minnesota cases MN_001 → MN_003.</em></a>
+<a class="action green" href="#stcloud"><span>Municipal signal</span><strong>Replay<br>St Cloud</strong><em>City minutes lane. Source first.</em></a>
+</div>
+</header>
+<main class="wrap">
+<section id="goblin"><div class="title"><h2>Replay Goblin Court</h2><span class="verdict green">Docket live</span></div><div class="grid"><article class="card"><span class="tag">Court doctrine</span><h3>Find the record. Lock the receipt. Replay forever.</h3><p>The homepage is not the evidence. The homepage is the door. The docket is data. The receipt is proof. The joke is the delivery system.</p><div class="receipt">identity: jaywisdom.eth<br>signed_by: 0xa380552a27b0a5a2874ea7aa52cac09f542002e8</div></article><article class="card"><span class="tag">Replay</span><h3 id="courtText">Click replay for the court line.</h3><div class="btn" onclick="nextCourt()">Replay Goblin Court</div><div id="courtOut" class="output">Awaiting goblin testimony...</div></article></div></section>
+<section id="mn"><div class="title"><h2>Replay MN</h2><span class="verdict">Minnesota active</span></div><div class="grid"><article class="card"><span class="tag">MN docket</span><h3>MN_001 · MN_002 · MN_003</h3><p><strong>MN_001:</strong> GUILTY — General Fund Balance 3 670 799.</p><p><strong>MN_002:</strong> INSUFFICIENT EVIDENCE — artifact, not fiscal confession.</p><p><strong>MN_003:</strong> MUNICIPAL SIGNAL — Saint Cloud lane verified, claim kept narrow.</p><div class="receipt">mn_cases: 3<br>router: static<br>source: site/data/states/mn.index.json</div></article><article class="card"><span class="tag">Replay</span><h3 id="mnText">Click replay for the Minnesota angle.</h3><div class="btn alt" onclick="nextMN()">Replay MN</div><div id="mnOut" class="output">Awaiting Minnesota goblin...</div></article></div></section>
+<section id="stcloud"><div class="title"><h2>Replay St Cloud</h2><span class="verdict green">Municipal signal</span></div><div class="grid"><article class="card"><span class="tag">ST_CLOUD_001</span><h3>Saint Cloud City Council Minutes Archive</h3><p>Document class: city council minutes. Keywords: zoning, variance, setback, buffer. This is the source-finding lane — not a fake guilty stamp.</p><div class="receipt">target_id: ST_CLOUD_001<br>jurisdiction: us-mn-st_cloud<br>origin_uri: https://ci.stcloud.mn.us/Archive.aspx?AMID=43</div><p><a class="btn green" href="https://ci.stcloud.mn.us/Archive.aspx?AMID=43" target="_blank" rel="noopener">Open Source</a></p></article><article class="card"><span class="tag">Replay</span><h3 id="stText">Click replay for St Cloud.</h3><div class="btn green" onclick="nextST()">Replay St Cloud</div><div id="stOut" class="output">Awaiting municipal goblin...</div></article></div></section>
+<section class="finder"><div class="title"><h2>Find Document</h2><span class="verdict green">Under 5 minutes</span></div><input id="finderBox" placeholder="Search: Saint Cloud, General Fund, zoning, variance, hash"><div id="finderResults" class="results card">Type a term. Find the source before the joke.</div></section>
+</main>
+<footer><div class="wrap"><div><strong>Goblin Court</strong><br>jaywisdom.eth · jaywisdom.base.eth</div><div>The receipt is free. The goblin is paid. No line, no joke.</div></div></footer>
+<div class="sticky"><a class="btn" href="#goblin">Goblin</a><a class="btn alt" href="#mn">MN</a><a class="btn green" href="#stcloud">St Cloud</a></div>
+<script>
+const court=['Can’t hack it. Can’t change it. Can only replay it.','The joke travels. The ENS signs it. The receipt proves it.','The receipt is free. The goblin is paid.','No line, no joke. No receipt, no authority.'];
+const mn=['MN_001: They signed it. We saved it. They cannot unsign the receipt.','MN_001: The PDF brought pages. The goblin brought one line.','MN_002: Extractor artifact, not fiscal confession.','MN_003: Saint Cloud is on the docket. The court accepts the signal and keeps the claim narrow.'];
+const st=['Saint Cloud walked in with city council minutes. Goblin Court accepted the signal and refused to add extra drama.','Zoning, variance, setback, buffer: the municipal goblin smells future docket material, not a finished verdict.','The archive brought minutes. The goblin brought restraint.','Source first. Joke second. Receipt always.'];
+let a=-1,b=-1,c=-1;function swap(id,text){const e=document.getElementById(id);e.classList.add('swap');setTimeout(()=>{e.textContent=text;e.classList.remove('swap')},120)}function nextCourt(){a=(a+1)%court.length;swap('courtOut',court[a]);document.getElementById('courtText').textContent='Court angle '+(a+1)+' of '+court.length;}function nextMN(){b=(b+1)%mn.length;swap('mnOut',mn[b]);document.getElementById('mnText').textContent='MN angle '+(b+1)+' of '+mn.length;}function nextST(){c=(c+1)%st.length;swap('stOut',st[c]);document.getElementById('stText').textContent='St Cloud angle '+(c+1)+' of '+st.length;}const docs=[['Saint Cloud','Saint Cloud City Council Minutes Archive','https://ci.stcloud.mn.us/Archive.aspx?AMID=43'],['General Fund','Minnesota MMB February 2026 Budget Forecast','https://mn.gov/mmb-stat/000/az/forecast/2026/budget-and-economic-forecast/february.pdf'],['Zoning','Saint Cloud municipal signal keywords','https://ci.stcloud.mn.us/Archive.aspx?AMID=43'],['Hash','MN_002 Hash Witness','site/data/states/mn.index.json']];document.getElementById('finderBox').addEventListener('input',e=>{const q=e.target.value.toLowerCase();const hits=docs.filter(d=>d.join(' ').toLowerCase().includes(q));document.getElementById('finderResults').innerHTML=q&&hits.length?hits.map(d=>'<p><strong>'+d[0]+':</strong> <a href="'+d[2]+'" target="_blank" rel="noopener">'+d[1]+'</a></p>').join(''):'No source found yet. No joke until source.'});
+</script>
 </body>
 </html>
