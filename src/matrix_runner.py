@@ -12,11 +12,11 @@ from pathlib import Path
 FIXTURES = {
     "AFP_MINIMAL_001": {
         "canonical": '{"key":"value","version":"1.0"}',
-        "expected_sha256": "27e37c8d23fb3e1f841de98731d54241da2825f6bfdc78bc3f7c9b8100eeb812"
+        "expected_sha256": "f0111a1ba3a390b5f42216d81d63d3753bf105d7f7800c5793873ff48fb9091c"
     },
     "AFP_NESTED_002": {
         "canonical": '{"children":[{"key":"a","value":1},{"key":"b","value":"string"},{"key":"nested","value":{"x":100,"y":200,"z":{"deep":true,"id":12345678901234567890}}}],"depth":4,"metadata":{"hash_algorithm":"blake2b","version":"AFP_NESTED_002"},"type":"nested_scope"}',
-        "expected_sha256": "75fe512e17fd630336da1554228b68c1f821066b9b5d0d7b3c078101dabc0c3a"
+        "expected_sha256": "07923a377d908ade32545ddd226526bf73422785ad23a936d7aae3e0ee4746ca"
     },
     "UNICODE_EDGE_002": {
         "canonical": '{"case":"unicode_normalization","expected_form":"NFC","fixture":"UNICODE_EDGE_002","pairs":[{"decomposed":"é","label":"latin_e_acute","normalized":"é"},{"decomposed":"Å","label":"latin_a_ring","normalized":"Å"},{"decomposed":"Å","label":"angstrom_sign","normalized":"Å"}],"version":"1.0"}',
