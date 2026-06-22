@@ -1,15 +1,15 @@
 # Boss Bre Minnesota Anomaly Board
 
-UTC: 2026-06-21T15:04:24Z
+UTC: 2026-06-22T18:04:47Z
 
 ## Status
 
-- Anomaly leads: 11484
-- HIGH: 7037
-- MEDIUM: 291
-- LOW: 4156
-- Unique lanes: 6
-- Leads hash: sha256:bd660b56fcb50ab7bd284df54661fb802f857f7e00e20faa0fa55ee4c58a1e9d
+- Anomaly leads: 34603
+- HIGH: 21199
+- MEDIUM: 851
+- LOW: 12553
+- Unique lanes: 8
+- Leads hash: sha256:0f04316ed9093f4c61730a45b472b71c25651b7cdd02e931f9bd4a09308da406
 
 ## Doctrine
 
@@ -25,7 +25,20 @@ Boss Bre publishes **audit leads**, not fraud verdicts.
 ```json
 [
   {
-    "utc": "2026-06-21T15:04:24Z",
+    "utc": "2026-06-22T18:04:47Z",
+    "lane": "GLOBAL",
+    "source_path": "projects/mn-fiscal-replay/MN_FISCAL_REPLAY_GOVERNANCE_BRIEF_V0_2.md",
+    "rule_id": "BBRISK_FRAUD_RISK_LANGUAGE",
+    "severity": "HIGH",
+    "label": "FRAUD_RISK_LANGUAGE_REQUIRES_REVIEW",
+    "evidence_excerpt": "14:This system does not declare fraud.",
+    "claim_status": "ANOMALY_LEAD_ONLY",
+    "public_content_claim": "BLOCKED_PENDING_HUMAN_REVIEW",
+    "human_review_required": true,
+    "no_fake_green": true
+  },
+  {
+    "utc": "2026-06-22T18:04:47Z",
     "lane": "BOSS_BRE",
     "source_path": "projects/mn-fiscal-replay/boss_bre/BOSS_BRE_ACKNOWLEDGMENT_RECEIPT_V0_6.md",
     "rule_id": "BBRISK_FRAUD_RISK_LANGUAGE",
@@ -38,7 +51,7 @@ Boss Bre publishes **audit leads**, not fraud verdicts.
     "no_fake_green": true
   },
   {
-    "utc": "2026-06-21T15:04:24Z",
+    "utc": "2026-06-22T18:04:47Z",
     "lane": "BOSS_BRE",
     "source_path": "projects/mn-fiscal-replay/boss_bre/BOSS_BRE_ACKNOWLEDGMENT_RECEIPT_V0_6.md",
     "rule_id": "BBRISK_FORECAST_VOLATILITY",
@@ -51,7 +64,7 @@ Boss Bre publishes **audit leads**, not fraud verdicts.
     "no_fake_green": true
   },
   {
-    "utc": "2026-06-21T15:04:24Z",
+    "utc": "2026-06-22T18:04:47Z",
     "lane": "BOSS_BRE",
     "source_path": "projects/mn-fiscal-replay/boss_bre/BOSS_BRE_DISTRIBUTION_LOG_V0_5.md",
     "rule_id": "BBRISK_MEDICAID_CMS_WITHHOLDING",
@@ -64,7 +77,7 @@ Boss Bre publishes **audit leads**, not fraud verdicts.
     "no_fake_green": true
   },
   {
-    "utc": "2026-06-21T15:04:24Z",
+    "utc": "2026-06-22T18:04:47Z",
     "lane": "BOSS_BRE",
     "source_path": "projects/mn-fiscal-replay/boss_bre/BOSS_BRE_DISTRIBUTION_LOG_V0_5.md",
     "rule_id": "BBRISK_FRAUD_RISK_LANGUAGE",
@@ -77,7 +90,7 @@ Boss Bre publishes **audit leads**, not fraud verdicts.
     "no_fake_green": true
   },
   {
-    "utc": "2026-06-21T15:04:24Z",
+    "utc": "2026-06-22T18:04:47Z",
     "lane": "BOSS_BRE",
     "source_path": "projects/mn-fiscal-replay/boss_bre/BOSS_BRE_DISTRIBUTION_LOG_V0_5.md",
     "rule_id": "BBRISK_FORECAST_VOLATILITY",
@@ -90,7 +103,7 @@ Boss Bre publishes **audit leads**, not fraud verdicts.
     "no_fake_green": true
   },
   {
-    "utc": "2026-06-21T15:04:24Z",
+    "utc": "2026-06-22T18:04:47Z",
     "lane": "BOSS_BRE",
     "source_path": "projects/mn-fiscal-replay/boss_bre/BOSS_BRE_EVIDENCE_RESPONSE_PACKET_V0_8.md",
     "rule_id": "BBRISK_MEDICAID_CMS_WITHHOLDING",
@@ -103,7 +116,7 @@ Boss Bre publishes **audit leads**, not fraud verdicts.
     "no_fake_green": true
   },
   {
-    "utc": "2026-06-21T15:04:24Z",
+    "utc": "2026-06-22T18:04:47Z",
     "lane": "BOSS_BRE",
     "source_path": "projects/mn-fiscal-replay/boss_bre/BOSS_BRE_EVIDENCE_RESPONSE_PACKET_V0_8.md",
     "rule_id": "BBRISK_FORECAST_VOLATILITY",
@@ -116,7 +129,7 @@ Boss Bre publishes **audit leads**, not fraud verdicts.
     "no_fake_green": true
   },
   {
-    "utc": "2026-06-21T15:04:24Z",
+    "utc": "2026-06-22T18:04:47Z",
     "lane": "BOSS_BRE",
     "source_path": "projects/mn-fiscal-replay/boss_bre/BOSS_BRE_MACHINE_READABLE_PACKAGE_MANIFEST_V1_1.json",
     "rule_id": "BBRISK_FORECAST_VOLATILITY",
@@ -129,7 +142,7 @@ Boss Bre publishes **audit leads**, not fraud verdicts.
     "no_fake_green": true
   },
   {
-    "utc": "2026-06-21T15:04:24Z",
+    "utc": "2026-06-22T18:04:47Z",
     "lane": "BOSS_BRE",
     "source_path": "projects/mn-fiscal-replay/boss_bre/BOSS_BRE_MACHINE_READABLE_PACKAGE_MANIFEST_V1_1_POPULATED.json",
     "rule_id": "BBRISK_FORECAST_VOLATILITY",
@@ -142,7 +155,7 @@ Boss Bre publishes **audit leads**, not fraud verdicts.
     "no_fake_green": true
   },
   {
-    "utc": "2026-06-21T15:04:24Z",
+    "utc": "2026-06-22T18:04:47Z",
     "lane": "BOSS_BRE",
     "source_path": "projects/mn-fiscal-replay/boss_bre/BOSS_BRE_PAYLOAD_DISTRIBUTION_V0_4.md",
     "rule_id": "BBRISK_MEDICAID_CMS_WITHHOLDING",
@@ -155,7 +168,7 @@ Boss Bre publishes **audit leads**, not fraud verdicts.
     "no_fake_green": true
   },
   {
-    "utc": "2026-06-21T15:04:24Z",
+    "utc": "2026-06-22T18:04:47Z",
     "lane": "BOSS_BRE",
     "source_path": "projects/mn-fiscal-replay/boss_bre/BOSS_BRE_PAYLOAD_DISTRIBUTION_V0_4.md",
     "rule_id": "BBRISK_FRAUD_RISK_LANGUAGE",
@@ -168,7 +181,7 @@ Boss Bre publishes **audit leads**, not fraud verdicts.
     "no_fake_green": true
   },
   {
-    "utc": "2026-06-21T15:04:24Z",
+    "utc": "2026-06-22T18:04:47Z",
     "lane": "BOSS_BRE",
     "source_path": "projects/mn-fiscal-replay/boss_bre/BOSS_BRE_PAYLOAD_DISTRIBUTION_V0_4.md",
     "rule_id": "BBRISK_FORECAST_VOLATILITY",
@@ -181,7 +194,7 @@ Boss Bre publishes **audit leads**, not fraud verdicts.
     "no_fake_green": true
   },
   {
-    "utc": "2026-06-21T15:04:24Z",
+    "utc": "2026-06-22T18:04:47Z",
     "lane": "BOSS_BRE",
     "source_path": "projects/mn-fiscal-replay/boss_bre/BOSS_BRE_PUBLIC_AUDITOR_BRAND_V0_1.md",
     "rule_id": "BBRISK_FRAUD_RISK_LANGUAGE",
@@ -194,7 +207,7 @@ Boss Bre publishes **audit leads**, not fraud verdicts.
     "no_fake_green": true
   },
   {
-    "utc": "2026-06-21T15:04:24Z",
+    "utc": "2026-06-22T18:04:47Z",
     "lane": "BOSS_BRE",
     "source_path": "projects/mn-fiscal-replay/boss_bre/BOSS_BRE_PUBLIC_AUDITOR_BRAND_V0_1.md",
     "rule_id": "BBRISK_FORECAST_VOLATILITY",
@@ -207,7 +220,7 @@ Boss Bre publishes **audit leads**, not fraud verdicts.
     "no_fake_green": true
   },
   {
-    "utc": "2026-06-21T15:04:24Z",
+    "utc": "2026-06-22T18:04:47Z",
     "lane": "BOSS_BRE",
     "source_path": "projects/mn-fiscal-replay/boss_bre/BOSS_BRE_REVIEW_CLOSEOUT_DISPOSITION_V0_9.md",
     "rule_id": "BBRISK_MEDICAID_CMS_WITHHOLDING",
@@ -220,7 +233,7 @@ Boss Bre publishes **audit leads**, not fraud verdicts.
     "no_fake_green": true
   },
   {
-    "utc": "2026-06-21T15:04:24Z",
+    "utc": "2026-06-22T18:04:47Z",
     "lane": "BOSS_BRE",
     "source_path": "projects/mn-fiscal-replay/boss_bre/BOSS_BRE_REVIEW_CLOSEOUT_DISPOSITION_V0_9.md",
     "rule_id": "BBRISK_FORECAST_VOLATILITY",
@@ -233,7 +246,7 @@ Boss Bre publishes **audit leads**, not fraud verdicts.
     "no_fake_green": true
   },
   {
-    "utc": "2026-06-21T15:04:24Z",
+    "utc": "2026-06-22T18:04:47Z",
     "lane": "BOSS_BRE",
     "source_path": "projects/mn-fiscal-replay/boss_bre/BOSS_BRE_REVIEW_PACKAGE_ARCHIVE_V1_4.md",
     "rule_id": "BBRISK_FORECAST_VOLATILITY",
@@ -246,7 +259,7 @@ Boss Bre publishes **audit leads**, not fraud verdicts.
     "no_fake_green": true
   },
   {
-    "utc": "2026-06-21T15:04:24Z",
+    "utc": "2026-06-22T18:04:47Z",
     "lane": "BOSS_BRE",
     "source_path": "projects/mn-fiscal-replay/boss_bre/BOSS_BRE_REVIEW_PACKAGE_INDEX_V1_0.md",
     "rule_id": "BBRISK_MEDICAID_CMS_WITHHOLDING",
@@ -259,7 +272,7 @@ Boss Bre publishes **audit leads**, not fraud verdicts.
     "no_fake_green": true
   },
   {
-    "utc": "2026-06-21T15:04:24Z",
+    "utc": "2026-06-22T18:04:47Z",
     "lane": "BOSS_BRE",
     "source_path": "projects/mn-fiscal-replay/boss_bre/BOSS_BRE_REVIEW_PACKAGE_INDEX_V1_0.md",
     "rule_id": "BBRISK_FORECAST_VOLATILITY",
@@ -272,7 +285,7 @@ Boss Bre publishes **audit leads**, not fraud verdicts.
     "no_fake_green": true
   },
   {
-    "utc": "2026-06-21T15:04:24Z",
+    "utc": "2026-06-22T18:04:47Z",
     "lane": "BOSS_BRE",
     "source_path": "projects/mn-fiscal-replay/boss_bre/BOSS_BRE_REVIEW_QUESTION_INTAKE_V0_7.md",
     "rule_id": "BBRISK_MEDICAID_CMS_WITHHOLDING",
@@ -285,7 +298,7 @@ Boss Bre publishes **audit leads**, not fraud verdicts.
     "no_fake_green": true
   },
   {
-    "utc": "2026-06-21T15:04:24Z",
+    "utc": "2026-06-22T18:04:47Z",
     "lane": "BOSS_BRE",
     "source_path": "projects/mn-fiscal-replay/boss_bre/BOSS_BRE_REVIEW_QUESTION_INTAKE_V0_7.md",
     "rule_id": "BBRISK_FORECAST_VOLATILITY",
@@ -298,7 +311,7 @@ Boss Bre publishes **audit leads**, not fraud verdicts.
     "no_fake_green": true
   },
   {
-    "utc": "2026-06-21T15:04:24Z",
+    "utc": "2026-06-22T18:04:47Z",
     "lane": "BOSS_BRE",
     "source_path": "projects/mn-fiscal-replay/boss_bre/REVIEW_DECISION_RECORD_TEMPLATE_V0_1.json",
     "rule_id": "BBRISK_FRAUD_RISK_LANGUAGE",
@@ -311,39 +324,26 @@ Boss Bre publishes **audit leads**, not fraud verdicts.
     "no_fake_green": true
   },
   {
-    "utc": "2026-06-21T15:04:24Z",
+    "utc": "2026-06-22T18:04:47Z",
     "lane": "BOSS_BRE",
-    "source_path": "projects/mn-fiscal-replay/boss_bre/boss_bre_learning_state.json",
-    "rule_id": "BBRISK_MISSING_PAYLOAD",
+    "source_path": "projects/mn-fiscal-replay/boss_bre/audits/BOSS_BRE_V1_6_AUDIT_2026-06-21T19-54-16Z.json",
+    "rule_id": "BBRISK_FRAUD_RISK_LANGUAGE",
     "severity": "HIGH",
-    "label": "EVIDENCE_CHAIN_BLOCKED",
-    "evidence_excerpt": "12: \"Treat TODO or unreachable pdf_url as FETCH_BLOCKED\",",
+    "label": "FRAUD_RISK_LANGUAGE_REQUIRES_REVIEW",
+    "evidence_excerpt": "39: \"Placeholder/suspicious URL strings found\"",
     "claim_status": "ANOMALY_LEAD_ONLY",
     "public_content_claim": "BLOCKED_PENDING_HUMAN_REVIEW",
     "human_review_required": true,
     "no_fake_green": true
   },
   {
-    "utc": "2026-06-21T15:04:24Z",
+    "utc": "2026-06-22T18:04:47Z",
     "lane": "BOSS_BRE",
-    "source_path": "projects/mn-fiscal-replay/boss_bre/boss_bre_pdf_inventory.jsonl",
-    "rule_id": "BBRISK_MISSING_PAYLOAD",
-    "severity": "HIGH",
-    "label": "EVIDENCE_CHAIN_BLOCKED",
-    "evidence_excerpt": "842:{\"utc\":\"2026-06-21T09:02:09Z\",\"kind\":\"registry_pdf_url\",\"code\":\"MN_001\",\"name\":\"State of Minnesota\",\"url\":\"TODO_MN_STATE_BUDGET_FORECAST_PDF_URL\",\"status\":\"SOURCE_URL_MISSING\",\"http_status\":\"NA\",\"content_type\":\"UNKNOWN\",\"content_length\":\"UNKNOWN\",\"downloaded_sha256\":\"\",\"downloaded_path\":\"\",\"public_content_claim\":\"BLOCKED\",\"no_fake_green\":true}",
-    "claim_status": "ANOMALY_LEAD_ONLY",
-    "public_content_claim": "BLOCKED_PENDING_HUMAN_REVIEW",
-    "human_review_required": true,
-    "no_fake_green": true
-  },
-  {
-    "utc": "2026-06-21T15:04:24Z",
-    "lane": "BOSS_BRE",
-    "source_path": "projects/mn-fiscal-replay/boss_bre/boss_bre_public_anomaly_board.md",
-    "rule_id": "BBRISK_MEDICAID_CMS_WITHHOLDING",
-    "severity": "HIGH",
-    "label": "MEDICAID_CMS_WITHHOLDING_OR_DISALLOWANCE_RISK",
-    "evidence_excerpt": "57: \"rule_id\": \"BBRISK_MEDICAID_CMS_WITHHOLDING\",",
+    "source_path": "projects/mn-fiscal-replay/boss_bre/audits/BOSS_BRE_V1_6_AUDIT_2026-06-21T19-54-16Z.json",
+    "rule_id": "BBRISK_FORECAST_VOLATILITY",
+    "severity": "LOW",
+    "label": "FORECAST_VOLATILITY_LANGUAGE",
+    "evidence_excerpt": "210: \"projects/mn-fiscal-replay/boss_bre/latest_anomaly_leads.jsonl:24:{\\\"utc\\\":\\\"2026-06-21T15:04:24Z\\\",\\\"lane\\\":\\\"BOSS_BRE\\\",\\\"source_path\\\":\\\"projects/mn-fiscal-replay/boss_bre/boss_bre_pdf_inventory.jsonl\\\",\\\"rule_id\\\":\\\"BBRISK_MISSING_PAYLOAD\\\",\\\"severity\\\":\\\"HIGH\\\",\\\"label\\\":\\\"EVIDENCE_CHAIN_BLOCKED\\\",\\\"evidence_excerpt\\\":\\\"842:{\\\\\\\"utc\\\\\\\":\\\\\\\"2026-06-21T09:02:09Z\\\\\\\",\\\\\\\"kind\\\\\\\":\\\\\\\"registry_pdf_url\\\\\\\",\\\\\\\"",
     "claim_status": "ANOMALY_LEAD_ONLY",
     "public_content_claim": "BLOCKED_PENDING_HUMAN_REVIEW",
     "human_review_required": true,
