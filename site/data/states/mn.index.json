@@ -13,21 +13,8 @@
       "public_claim_status": "VERIFIED",
       "case_type": "conviction",
       "search_terms": ["general fund", "budget forecast", "mmb", "minnesota", "balance", "3670799"],
-      "fabula": {
-        "plain_line": "General Fund Balance 3 670 799",
-        "status": "VERIFIED",
-        "identity": "jaywisdom.base.eth",
-        "hash": "04368980dc3d501a4131202cc38ce56cfd38054eaf140f56e65f8280e6d5e51c",
-        "slogan": "Proof > Narrative"
-      },
-      "syuzhet_angles": [
-        "They buried 3,670,799 in a budget forecast like it was hiding from rent. Goblin Court found it in four seconds and asked why the PDF was sweating.",
-        "General Fund Balance is government for: money exists, but somehow your problem still has to wait until the next committee meeting.",
-        "Hash 04368980… They signed it. We saved it. They cannot unsign the receipt.",
-        "The PDF brought pages. The goblin brought one line. Witness testimony: General Fund Balance 3 670 799. Courtroom gasps in monospace.",
-        "Same public record. Different goblin angle. Today’s accusation: the spreadsheet used formal formatting as camouflage and got caught wearing a tiny tie.",
-        "Line 47. General Fund Balance. 3,670,799. The forecast forgot you would find it."
-      ],
+      "fabula": {"plain_line": "General Fund Balance 3 670 799", "status": "VERIFIED", "identity": "jaywisdom.base.eth", "hash": "04368980dc3d501a4131202cc38ce56cfd38054eaf140f56e65f8280e6d5e51c", "slogan": "Proof > Narrative"},
+      "syuzhet_angles": ["They buried 3,670,799 in a budget forecast like it was hiding from rent. Goblin Court found it in four seconds and asked why the PDF was sweating.", "General Fund Balance is government for: money exists, but somehow your problem still has to wait until the next committee meeting.", "Hash 04368980… They signed it. We saved it. They cannot unsign the receipt.", "The PDF brought pages. The goblin brought one line. Witness testimony: General Fund Balance 3 670 799. Courtroom gasps in monospace.", "Same public record. Different goblin angle. Today’s accusation: the spreadsheet used formal formatting as camouflage and got caught wearing a tiny tie.", "Line 47. General Fund Balance. 3,670,799. The forecast forgot you would find it."],
       "tweet_suffix": "MN_001 hash: 04368980… #GoblinCourt jaywisdom.base.eth"
     },
     {
@@ -39,22 +26,22 @@
       "public_claim_status": "PUBLIC_CONTENT_CLAIM_BLOCKED",
       "case_type": "dismissal",
       "search_terms": ["hash", "artifact", "extractor", "page markers", "budget forecast", "public claim blocked"],
-      "fabula": {
-        "plain_line": "No substantive fiscal claim isolated.",
-        "status": "PUBLIC CLAIM BLOCKED",
-        "identity": "jaywisdom.base.eth",
-        "content_hash": "sha256:305896f5977dae64b3445cbec2f356f47156ccb4cca4a88a0a7c6b6df6cf4698",
-        "receipt_hash": "sha256:c6d434ddf142c46d79111a6864ab578fb9a02b1494f3978622b83804f321c89a",
-        "slogan": "Restraint > Fake Green"
-      },
-      "syuzhet_angles": [
-        "MN_002 tried to testify in page markers. Goblin Court ruled: extractor artifact, not fiscal confession.",
-        "They gave you a file. We gave it a fingerprint. Now the PDF has priors.",
-        "If MN_002 changes, the receipt snitches immediately.",
-        "MN_002 refuses to repeat itself. The hash is its statement. Court adjourned.",
-        "The layout moved. The table of contents coughed. The fiscal claim did not survive cross-examination."
-      ],
+      "fabula": {"plain_line": "No substantive fiscal claim isolated.", "status": "PUBLIC CLAIM BLOCKED", "identity": "jaywisdom.base.eth", "content_hash": "sha256:305896f5977dae64b3445cbec2f356f47156ccb4cca4a88a0a7c6b6df6cf4698", "receipt_hash": "sha256:c6d434ddf142c46d79111a6864ab578fb9a02b1494f3978622b83804f321c89a", "slogan": "Restraint > Fake Green"},
+      "syuzhet_angles": ["MN_002 tried to testify in page markers. Goblin Court ruled: extractor artifact, not fiscal confession.", "They gave you a file. We gave it a fingerprint. Now the PDF has priors.", "If MN_002 changes, the receipt snitches immediately.", "MN_002 refuses to repeat itself. The hash is its statement. Court adjourned.", "The layout moved. The table of contents coughed. The fiscal claim did not survive cross-examination."],
       "tweet_suffix": "MN_002 receipt: c6d434dd… #GoblinCourt jaywisdom.base.eth"
+    },
+    {
+      "case_id": "MN_003",
+      "title": "Saint Cloud Municipal Signal",
+      "verdict": "MUNICIPAL_SIGNAL_VERIFIED",
+      "verdict_label": "MUNICIPAL SIGNAL",
+      "verdict_color": "green",
+      "public_claim_status": "NO_FISCAL_CLAIM_ISOLATED",
+      "case_type": "signal",
+      "search_terms": ["saint cloud", "st cloud", "municipal", "city council", "minutes", "zoning", "variance", "setback", "buffer"],
+      "fabula": {"plain_line": "Saint Cloud archive lane verified as municipal governance signal.", "target_id": "ST_CLOUD_001", "jurisdiction": "us-mn-st_cloud", "document_class": "city_council_minutes", "origin_uri": "https://ci.stcloud.mn.us/Archive.aspx?AMID=43", "state": "VERIFIED", "slogan": "Signal > Overclaim"},
+      "syuzhet_angles": ["Saint Cloud walked in with city council minutes. Goblin Court accepted the signal and refused to add extra drama.", "MN_003 is not a confession. It is a router proof: city signal in, receipt surface out.", "The archive brought minutes. The goblin brought restraint. No fake stamp today.", "Zoning, variance, setback, buffer: the municipal goblin smells future docket material, not a finished verdict.", "Saint Cloud is on the docket. The court accepts the signal and keeps the claim narrow."],
+      "tweet_suffix": "MN_003 target: ST_CLOUD_001 #GoblinCourt jaywisdom.base.eth"
     }
   ]
 }
