@@ -142,6 +142,17 @@ Dynamic rendering does not confer authority. `ACTIVE_LANES.json` remains the sou
   - Evidence: repository exists, is public, and README defines the identity root / orientation layer / canonical doorway for Jay Wisdom / JSONWisdom
   - Boundary: narrator and orientation layer only; it does not promote claims into proof
 
+- Anchor 002 / Challengeable Genesis Receipt v0.2
+  - Status: CONTINUITY_NODE_SEALED
+  - Doctrine: Genesis is version 0 of the constraint set, not sacred ground.
+  - Core invariant: preserve enough lineage that future correction remains possible.
+  - Completeness rule: preserved, traversable, comprehensible, challengeable, and supersedable without mutation.
+  - Authority rule: authority is a participant in the lineage, not an exception outside the graph.
+  - Replay boundary: this anchor records continuity doctrine only; it does not promote any downstream lane to GREEN without receipts.
+  - Required schema hooks: `special_exemption_claimed: false`, `PROVISIONAL_VALID`, `not_immutable_truth: true`, `superseded_by_uid: null`, `challenge_hook`, `comprehensibility_artifacts`.
+  - Comprehensibility artifacts: `GENESIS_HUMAN_SUMMARY.md`, `GENESIS_GRAPH_DIAGRAM.svg`, `GENESIS_REPLAY_WALKTHROUGH.md`.
+  - Failure classes: disappearance, severance, semantic thinning, complexity overload.
+
 ## Replay Rule
 
 Before creating new work, replay this map and ask:
