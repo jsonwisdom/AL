@@ -3,24 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Goblin Court — Zero Trust Website</title>
-  <meta name="description" content="Can’t hack it. Can’t change it. Can only replay it.">
-  <meta name="cache-bust" content="goblin-state-router-v0-1-20260622">
+  <title>Goblin Court — Document Finder</title>
+  <meta name="description" content="Find the public record in under 5 minutes. Then replay it forever.">
+  <meta name="cache-bust" content="goblin-document-finder-v0-1-20260622">
   <link rel="stylesheet" href="site/style.css">
 </head>
 <body>
-  <div class="ticker">GOBLIN COURT LIVE · STATE ROUTER ACTIVE · SEARCH THE DOCKET · RECEIPTS UNDER EVERY VERDICT</div>
+  <div class="ticker">GOBLIN COURT LIVE · FIND DOCUMENTS FAST · THEN REPLAY FOREVER · NO LINE = NO JOKE</div>
   <header class="wrap">
     <div class="seal">⚖️🧌 COURT IN SESSION · ZERO TRUST WEBSITE</div>
     <h1>Goblin Court</h1>
-    <div id="doctrine" class="doctrine">Can’t hack it.<br>Can’t change it.<br>Can only replay it.</div>
-    <p class="subtitle">Government documents on trial. Replay the receipt. Roast the bureaucracy.</p>
-    <div class="rules"><div>UI is presentation</div><div>Sources are clickable</div><div>Receipts are discoverable</div><div>Replay is proof</div></div>
+    <div id="doctrine" class="doctrine">Find the record.<br>Lock the receipt.<br>Replay forever.</div>
+    <p class="subtitle">Can’t find the public document in under 5 minutes? That is the problem. Goblin Court starts with document discovery, then turns receipts into replayable proof.</p>
+    <div class="rules"><div>Find source fast</div><div>Lock receipt</div><div>No line, no joke</div><div>Replay is proof</div></div>
     <div class="grid hero">
       <div class="panel">
-        <h2>From billboard to docket directory.</h2>
-        <p>Pick a state. Search a fiscal term. Open a case. The replay component reads JSON, not hand-coded page sections.</p>
-        <div class="btns"><a class="btn" href="#docket">Open Docket</a><a class="btn alt" href="#search">Search Records</a><a class="btn light" href="site/data/state-index.json">State Index JSON</a></div>
+        <h2>Not a PDF empire. A document finder.</h2>
+        <p>Search for a public record, open the source, then replay the docket. The joke only starts after the source is found.</p>
+        <div class="btns"><a class="btn" href="#finder">Find Document</a><a class="btn alt" href="#docket">Open Docket</a><a class="btn light" href="site/data/document-index.json">Document Index JSON</a></div>
       </div>
       <aside class="side">
         <span class="tag">Latest Verdicts</span>
@@ -29,19 +29,24 @@
     </div>
   </header>
   <main class="wrap">
+    <section id="finder">
+      <div class="title"><h2>Find Document</h2><span class="verdict green">Under 5 minutes</span></div>
+      <input id="docSearchBox" class="search" type="search" placeholder="Search source: Saint Cloud minutes, General Fund, zoning, variance...">
+      <div id="docResults" class="grid two" style="margin-top:18px"><p>Type to find a public record source.</p></div>
+    </section>
     <section id="states">
       <div class="title"><h2>State Index</h2><span class="verdict green">Router active</span></div>
       <div id="stateHub" class="state-grid"><p>Loading states...</p></div>
     </section>
     <section id="search">
-      <div class="title"><h2>Search Docket</h2><span class="verdict">Fiscal intelligence layer</span></div>
-      <input id="searchBox" class="search" type="search" placeholder="Search: General Fund, hash, artifact, page markers...">
+      <div class="title"><h2>Search Docket</h2><span class="verdict">Replay layer</span></div>
+      <input id="searchBox" class="search" type="search" placeholder="Search docket: General Fund, hash, artifact, page markers...">
       <div id="searchResults" class="grid two" style="margin-top:18px"></div>
     </section>
     <section id="docket"><div class="card"><h2>Loading docket...</h2><p>Replay engine booting.</p></div></section>
   </main>
-  <footer><div class="wrap"><div><strong>Built by Jaywisdom.eth</strong><br>Powered by jaywisdom.base.eth · JSONwisdom source tree</div><div>Goblin Court is now a state-indexed docket directory. The fun UI never outranks the receipts.</div></div></footer>
-  <div class="sticky-replay"><a class="btn" href="#docket">Open Docket</a><a class="btn alt" href="#search">Search</a></div>
+  <footer><div class="wrap"><div><strong>Built by Jaywisdom.eth</strong><br>Powered by jaywisdom.base.eth · JSONwisdom source tree</div><div>Goblin Court is a document finder plus replay docket. The fun UI never outranks the receipts.</div></div></footer>
+  <div class="sticky-replay"><a class="btn" href="#finder">Find Source</a><a class="btn alt" href="#docket">Replay</a></div>
   <script src="site/app.js"></script>
 </body>
 </html>
