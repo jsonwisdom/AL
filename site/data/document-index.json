@@ -1,0 +1,42 @@
+{
+  "product": "Goblin Court Document Finder",
+  "promise": "Find the public record in under 5 minutes. Then replay it forever.",
+  "documents": [
+    {
+      "id": "MN_001_SOURCE",
+      "state": "MN",
+      "case_id": "MN_001",
+      "title": "Minnesota MMB February 2026 Budget Forecast",
+      "document_class": "budget_forecast_pdf",
+      "source_url": "https://mn.gov/mmb-stat/000/az/forecast/2026/budget-and-economic-forecast/february.pdf",
+      "known_signal": "General Fund Balance 3 670 799",
+      "status": "FOUND",
+      "docket_url": "site/data/states/mn.index.json",
+      "search_terms": ["minnesota", "mmb", "budget forecast", "general fund", "balance", "february 2026"]
+    },
+    {
+      "id": "MN_002_SOURCE",
+      "state": "MN",
+      "case_id": "MN_002",
+      "title": "Minnesota MMB February 2026 Budget Forecast Hash Witness",
+      "document_class": "budget_forecast_pdf",
+      "source_url": "https://mn.gov/mmb-stat/000/az/forecast/2026/budget-and-economic-forecast/february.pdf",
+      "known_signal": "Public claim blocked; extractor artifact review",
+      "status": "FOUND",
+      "docket_url": "site/data/states/mn.index.json",
+      "search_terms": ["hash", "extractor", "artifact", "page markers", "public claim blocked"]
+    },
+    {
+      "id": "ST_CLOUD_001_SOURCE",
+      "state": "MN",
+      "case_id": "MN_003",
+      "title": "Saint Cloud City Council Minutes Archive",
+      "document_class": "city_council_minutes",
+      "source_url": "https://ci.stcloud.mn.us/Archive.aspx?AMID=43",
+      "known_signal": "Saint Cloud archive lane verified as municipal governance signal",
+      "status": "FOUND",
+      "docket_url": "site/data/states/mn.index.json",
+      "search_terms": ["saint cloud", "st cloud", "city council", "minutes", "zoning", "variance", "setback", "buffer"]
+    }
+  ]
+}
