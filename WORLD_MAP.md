@@ -1,6 +1,6 @@
 # JSONWisdom World Map
 
-Status: DRAFT ON BRANCH
+Status: COMMITTED CONTINUITY MAP
 
 This file exists to prevent continuity loss across GitHub, ChatGPT, Pages, receipts, and public artifacts.
 
@@ -49,6 +49,58 @@ Family remains the root layer. Project narratives do not outrank family.
 - Zora artifacts
 - Public identity anchors
 
+## Dynamic Nodes v1
+
+Dynamic nodes convert the static continuity spine into a live index surface without changing authority rules.
+
+- **Layer 0 (Family Root)**: Static anchor. Never auto-promoted by UI.
+- **Layer 1 (Trust)**: ALMS, receipt discipline, continuity gates.
+- **Layer 2 (Consumers)**: Goblin Court, Meme Court, Clown Court, ZTVS Replay Map.
+- **Layer 3 (Public)**: Live projection may pull from `ACTIVE_LANES.json`.
+
+### Live Index Feed
+
+The live homepage may parse `ACTIVE_LANES.json` on load and render lane nodes as a projection.
+
+```json
+{
+  "nodes": [
+    {
+      "id": "AL",
+      "source": "ACTIVE_LANES.json",
+      "overlay": "Audit Ledger",
+      "authority": "projection_only"
+    },
+    {
+      "id": "ZTVS",
+      "source": "ACTIVE_LANES.json",
+      "overlay": "Replay Map",
+      "authority": "projection_only"
+    },
+    {
+      "id": "COMPUTERWISDOM",
+      "source": "ACTIVE_LANES.json",
+      "overlay": "Agent Systems",
+      "authority": "projection_only"
+    },
+    {
+      "id": "JOY",
+      "source": "ACTIVE_LANES.json",
+      "overlay": "Family/Public Artifacts",
+      "authority": "projection_only"
+    },
+    {
+      "id": "CWaaS",
+      "source": "ACTIVE_LANES.json",
+      "overlay": "Service Layer",
+      "authority": "projection_only"
+    }
+  ]
+}
+```
+
+Dynamic rendering does not confer authority. `ACTIVE_LANES.json` remains the source for lane status. Replay remains the validator.
+
 ## Active Identities
 
 - Jason Wisdom
@@ -67,8 +119,11 @@ Family remains the root layer. Project narratives do not outrank family.
 
 ## Current Working Files in jsonwisdom/AL
 
-- `index.html` — current Goblin Court / PDF Empire receipt factory surface
-- `docs/index.html` — docs homepage and Goblin Rendering adapter surface in PR work
+- `index.html` — live Jay's World Map homepage and continuity front door
+- `WORLD_MAP.md` — continuity map and replay spine
+- `CONTINUITY_INDEX.json` — committed continuity anchor
+- `ACTIVE_LANES.json` — active lane source projection
+- `docs/index.html` — generated/public distribution surface in workflow lanes
 - `site/data/payment-config.json` — Goblin Rendering configuration in PR work
 - `site/data/states/mn.index.json` — Minnesota docket data
 - `site/data/audits/` — audit data lane
@@ -98,4 +153,4 @@ Before creating new work, replay this map and ask:
 
 ## Authority Status
 
-This file is a continuity map. It becomes authority only when committed and referenced by a real commit SHA.
+This file is a committed continuity map. It is presented by the live homepage but does not become authority through UI display. Authority comes from committed receipts and replayable references.
