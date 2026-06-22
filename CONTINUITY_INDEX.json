@@ -88,17 +88,19 @@
       ]
     }
   },
-  "continuity_gaps": [
+  "continuity_anchors": [
     {
       "id": "ANCHOR_001",
       "target": "jsonwisdom/Welcome-to-JSONWISDOM",
-      "status": "BROKEN_OR_PRIVATE",
-      "risk": "Root verifier lineage is not publicly replayable until restored or mirrored."
+      "status": "PUBLIC_REPLAYABLE_IDENTITY_ROOT",
+      "evidence": "Repository exists, is public, and README defines the identity root / orientation layer / canonical doorway for Jay Wisdom / JSONWisdom.",
+      "boundary": "Narrator and orientation layer only; it does not promote claims into proof."
     }
   ],
+  "continuity_gaps": [],
   "next_actions": [
     "Replay WORLD_MAP.md at the start of future sessions",
-    "Restore or mirror Anchor 001",
+    "Keep Anchor 001 under replay watch",
     "Link GitHub Pages to WORLD_MAP.md",
     "Update PR 364 after payment adapter verification"
   ]
