@@ -1,0 +1,14 @@
+{
+  "schema": "goblin_rendering_config_v0_1",
+  "product": "goblin_rendering_addon",
+  "display_name": "Add Funny Goblin Rendering",
+  "price_usd": "0.01",
+  "chain": "base",
+  "asset": "USDC",
+  "recipient": "0xa380552a27b0a5a2874ea7aa52cac09f542002e8",
+  "identity_anchor": "jaywisdom.eth",
+  "basename_anchor": "jaywisdom.base.eth",
+  "free_output": "text_goblin_docket_receipt",
+  "paid_output": "goblin_docket_receipt_with_rendering",
+  "unlock_rule": "tx_hash_required"
+}
