@@ -1,0 +1,104 @@
+{
+  "schema": "jsonwisdom_continuity_index_v0_1",
+  "status": "OPEN_PR_UNVERIFIED",
+  "root_repo": "jsonwisdom/AL",
+  "principle": "Cumulative Existence",
+  "branch": "continuity-world-map-v0-1",
+  "authority": "NOT_GREEN_UNTIL_MERGED",
+  "foundation": {
+    "family": {
+      "role": "Layer 0"
+    },
+    "alms": {
+      "role": "Trust Engine",
+      "rules": [
+        "No Anchor without Proof",
+        "No Fake Green",
+        "Receipts over Narrative"
+      ]
+    },
+    "pdf_empire": {
+      "role": "Source Asset",
+      "scope": [
+        "Minnesota records",
+        "city records",
+        "public documents",
+        "future state expansion"
+      ]
+    }
+  },
+  "active_consumers": {
+    "goblin_court": {
+      "role": "Funny proof receipt consumer",
+      "files": [
+        "index.html"
+      ],
+      "status": "WORKING_TREE_OBSERVED",
+      "commit_hash": "PENDING_MAIN_MERGE"
+    },
+    "meme_court": {
+      "role": "Shareability and meme review layer",
+      "status": "CONTINUITY_ANCHOR"
+    },
+    "clown_court": {
+      "role": "Absurdity review layer",
+      "status": "CONTINUITY_ANCHOR"
+    },
+    "ztvs": {
+      "role": "Replay map and verification surface",
+      "files": [
+        "docs/index.html"
+      ],
+      "status": "WORKING_TREE_OBSERVED",
+      "commit_hash": "PENDING_MAIN_MERGE"
+    },
+    "payment_adapter": {
+      "role": "One cent goblin rendering unlock surface",
+      "files": [
+        "site/data/payment-config.json",
+        "docs/index.html"
+      ],
+      "pr": 364,
+      "branch": "goblin-payment-adapter-v0-1",
+      "status": "OPEN_PR"
+    },
+    "minnesota_docket": {
+      "role": "PDF Empire consumer docket",
+      "files": [
+        "site/data/states/mn.index.json"
+      ],
+      "status": "WORKING_TREE_OBSERVED"
+    }
+  },
+  "public_artifacts": {
+    "github_pages": {
+      "role": "Public display layer",
+      "status": "REQUIRES_LIVE_VERIFICATION"
+    },
+    "zora": {
+      "role": "Public artifact and distribution layer",
+      "status": "CONTINUITY_ANCHOR"
+    },
+    "ens_base": {
+      "identity_anchor": [
+        "jaywisdom.eth",
+        "jaywisdom.base.eth"
+      ]
+    }
+  },
+  "continuity_gaps": [
+    {
+      "id": "ANCHOR_001",
+      "target": "jsonwisdom/Welcome-to-JSONWISDOM",
+      "status": "BROKEN_OR_PRIVATE",
+      "risk": "Root verifier lineage is not publicly replayable until restored or mirrored."
+    }
+  ],
+  "next_actions": [
+    "Merge continuity-world-map-v0-1 after review",
+    "Update this file with the actual merge commit SHA",
+    "Restore or mirror Anchor 001",
+    "Link GitHub Pages to WORLD_MAP.md",
+    "Update PR 364 after payment adapter verification"
+  ]
+}
