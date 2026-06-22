@@ -99,5 +99,7 @@ jobs:
             echo "No gauntlet receipt changes to commit"
           else
             git commit -m "chore(ztvs): atomic gauntlet receipt ${{ github.run_id }} [skip ci]"
+            git fetch origin master
+            git rebase origin/master
             git push
           fi
