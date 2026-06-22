@@ -1,0 +1,29 @@
+name: World Map Continuity Gate
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  continuity-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify index.html anchors
+        run: |
+          grep -q "Jay's World Map is the front door" index.html || { echo "❌ Missing 'Jay's World Map is the front door' in index.html"; exit 1; }
+          grep -q "WORLD_MAP.md" index.html || { echo "❌ Missing WORLD_MAP.md reference in index.html"; exit 1; }
+          grep -q "CONTINUITY_INDEX.json" index.html || { echo "❌ Missing CONTINUITY_INDEX.json reference in index.html"; exit 1; }
+          grep -q "ACTIVE_LANES.json" index.html || { echo "❌ Missing ACTIVE_LANES.json reference in index.html"; exit 1; }
+          echo "✅ All index.html anchors present"
+
+      - name: Verify required files exist
+        run: |
+          test -f WORLD_MAP.md || { echo "❌ WORLD_MAP.md missing"; exit 1; }
+          test -f CONTINUITY_INDEX.json || { echo "❌ CONTINUITY_INDEX.json missing"; exit 1; }
+          test -f ACTIVE_LANES.json || { echo "❌ ACTIVE_LANES.json missing"; exit 1; }
+          echo "✅ All core files present"
