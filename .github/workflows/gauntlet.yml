@@ -70,7 +70,7 @@ jobs:
           jq --arg sig "SHA256:$SIGNATURE" '. + {signature:$sig}' /tmp/gauntlet-receipt-canonical.json > "$RECEIPT_PATH"
           cp "$RECEIPT_PATH" gauntlet-runtime-receipt.json
 
-          echo "ATOMIC_GAUNTLET_RECEIPT=$RECEIPT_PATH"
+          echo "ATOMIC_GAUNTLET_RECEIPT=$RECEIPT_PATH" >> "$GITHUB_ENV"
           echo "ATOMIC_GAUNTLET_RECEIPT_SIGNATURE=SHA256:$SIGNATURE"
           cat gauntlet-runtime-receipt.json
 
@@ -94,12 +94,12 @@ jobs:
         run: |
           git config user.name "ZTVS Gauntlet"
           git config user.email "gauntlet@ztvs.system"
-          git add data/prod_spine registry/_receipts/
+          git fetch origin master
+          git rebase origin/master
+          git add "$ATOMIC_GAUNTLET_RECEIPT"
           if git diff --staged --quiet; then
             echo "No gauntlet receipt changes to commit"
           else
             git commit -m "chore(ztvs): atomic gauntlet receipt ${{ github.run_id }} [skip ci]"
-            git fetch origin master
-            git rebase origin/master
             git push
           fi
