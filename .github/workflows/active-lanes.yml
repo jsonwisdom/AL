@@ -1,0 +1,40 @@
+name: Active Lanes Gate
+
+on:
+  pull_request:
+    paths:
+      - 'ACTIVE_LANES.json'
+      - 'ACTIVE_LANES.md'
+      - 'scripts/sync_active_lanes_md.py'
+      - '.github/workflows/active-lanes.yml'
+  push:
+    branches:
+      - master
+    paths:
+      - 'ACTIVE_LANES.json'
+      - 'ACTIVE_LANES.md'
+      - 'scripts/sync_active_lanes_md.py'
+      - '.github/workflows/active-lanes.yml'
+
+jobs:
+  active-lanes-generated-md:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Regenerate ACTIVE_LANES.md
+        run: python scripts/sync_active_lanes_md.py
+
+      - name: Fail on generated markdown drift
+        run: |
+          if ! git diff --exit-code -- ACTIVE_LANES.md; then
+            echo 'ACTIVE_LANES.md is not synchronized with ACTIVE_LANES.json.'
+            echo 'Run: python scripts/sync_active_lanes_md.py'
+            exit 1
+          fi
