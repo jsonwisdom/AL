@@ -3,101 +3,326 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Due Process at Machine Speed</title>
-  <meta name="description" content="A constitutional framework for machine-speed government decisions: replayable administrative records, meaningful review, and public-facing due process materials." />
-  <link rel="stylesheet" href="assets/minimal.css" />
-  <link rel="stylesheet" href="print.css" media="print" />
+  <title>Goblin Court — Zero Trust Website</title>
+  <meta name="description" content="Goblin Court is a funny zero-trust website for replaying government documents. Minnesota first, every state later." />
+  <style>
+    :root {
+      --ink: #1d1512;
+      --paper: #f4e4bf;
+      --paper-2: #ead19b;
+      --red: #a52222;
+      --purple: #4b246d;
+      --gold: #b8872b;
+      --green: #1f6b42;
+      --shadow: rgba(29, 21, 18, 0.22);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 15% 10%, rgba(165,34,34,.18), transparent 28%),
+        radial-gradient(circle at 85% 0%, rgba(75,36,109,.18), transparent 24%),
+        linear-gradient(135deg, #f8edcf, var(--paper));
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+    a { color: inherit; }
+    .ticker {
+      background: var(--ink);
+      color: #ffe9a8;
+      padding: .7rem 1rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: .86rem;
+      letter-spacing: .03em;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .wrap { width: min(1160px, calc(100% - 32px)); margin: 0 auto; }
+    header { padding: 42px 0 24px; }
+    .seal {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      border: 2px solid var(--purple);
+      color: var(--purple);
+      border-radius: 999px;
+      padding: .45rem .8rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-weight: 800;
+      background: rgba(255,255,255,.35);
+      box-shadow: 0 6px 0 rgba(75,36,109,.15);
+    }
+    h1 {
+      font-size: clamp(3.2rem, 12vw, 9rem);
+      line-height: .82;
+      margin: 24px 0 12px;
+      letter-spacing: -.08em;
+      text-transform: uppercase;
+    }
+    .subtitle {
+      font-size: clamp(1.2rem, 3vw, 2.25rem);
+      max-width: 950px;
+      line-height: 1.08;
+      margin: 0 0 24px;
+      font-weight: 800;
+    }
+    .rulebar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border: 3px solid var(--ink);
+      box-shadow: 10px 10px 0 var(--shadow);
+      background: var(--gold);
+      margin: 28px 0;
+    }
+    .rulebar div {
+      padding: 14px;
+      border-right: 2px solid var(--ink);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: .86rem;
+    }
+    .rulebar div:last-child { border-right: 0; }
+    .hero-grid { display: grid; grid-template-columns: 1.35fr .65fr; gap: 24px; align-items: stretch; }
+    .panel, .card, .sidebar {
+      background: rgba(255,248,226,.78);
+      border: 3px solid var(--ink);
+      box-shadow: 9px 9px 0 var(--shadow);
+    }
+    .panel { padding: 24px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .45rem;
+      min-height: 46px;
+      padding: .75rem 1rem;
+      border: 2px solid var(--ink);
+      background: var(--red);
+      color: #fff5d0;
+      text-decoration: none;
+      font-weight: 900;
+      border-radius: 10px;
+      box-shadow: 4px 4px 0 var(--ink);
+      text-transform: uppercase;
+      font-size: .88rem;
+    }
+    .btn.alt { background: var(--purple); }
+    .btn.light { background: #fff2c8; color: var(--ink); }
+    .sidebar { padding: 18px; }
+    .meter {
+      margin: 12px 0 18px;
+      border: 2px solid var(--ink);
+      background: #fff2c8;
+      height: 26px;
+      position: relative;
+    }
+    .meter span { display: block; height: 100%; width: 88%; background: linear-gradient(90deg, var(--green), var(--gold), var(--red)); }
+    section { margin: 34px 0; }
+    .section-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      border-bottom: 4px double var(--ink);
+      margin-bottom: 16px;
+    }
+    h2 { font-size: clamp(1.8rem, 4vw, 3.6rem); margin: 0 0 10px; line-height: .95; text-transform: uppercase; }
+    .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card { padding: 18px; position: relative; overflow: hidden; }
+    .tag {
+      display: inline-block;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      color: var(--red);
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: .78rem;
+      margin-bottom: 10px;
+    }
+    .card h3 { margin: 0 0 10px; font-size: 1.55rem; line-height: 1; }
+    .card p { margin: 0 0 14px; line-height: 1.35; }
+    .verdict {
+      display: inline-block;
+      transform: rotate(-2deg);
+      border: 3px solid var(--red);
+      color: var(--red);
+      padding: .25rem .5rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      background: rgba(255,255,255,.5);
+    }
+    .docket { width: 100%; border-collapse: collapse; background: rgba(255,248,226,.78); border: 3px solid var(--ink); box-shadow: 9px 9px 0 var(--shadow); }
+    .docket th, .docket td { border-bottom: 2px solid rgba(29,21,18,.25); padding: 12px; text-align: left; vertical-align: top; }
+    .docket th { background: var(--ink); color: #ffe9a8; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; text-transform: uppercase; font-size: .78rem; }
+    .states { display: flex; flex-wrap: wrap; gap: 10px; }
+    .state {
+      border: 2px solid var(--ink);
+      background: #fff2c8;
+      padding: .65rem .85rem;
+      font-weight: 900;
+      border-radius: 999px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+    .state.active { background: var(--green); color: #fff5d0; }
+    footer { margin-top: 40px; padding: 28px 0 42px; background: var(--ink); color: #ffe9a8; }
+    footer .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 880px) {
+      .hero-grid, .grid4, .grid3, footer .wrap { grid-template-columns: 1fr; }
+      .rulebar { grid-template-columns: 1fr 1fr; }
+      .docket { font-size: .9rem; }
+    }
+  </style>
 </head>
 <body>
-<header>
-  <div class="wrap">
-    <div class="eyebrow">Public resource · constitutional procedure · machine-speed government</div>
-    <h1>Due Process at Machine Speed</h1>
-    <p class="lead">This is a constitutional framework for machine-speed government decisions.</p>
-    <div class="clarity"><strong>It is not AI ethics. It is not a technology proposal.</strong> It is procedural due process applied to automated public power: when the government uses machines to affect rights, benefits, or eligibility, the decision must be reviewable.</div>
-  </div>
-</header>
+  <div class="ticker">BREAKING: GOVERNMENT DOCUMENT ENTERED THE GROUP CHAT · REPLAY THE RECEIPT · ROAST THE BUREAUCRACY · MINNESOTA FIRST · EVERY STATE LATER</div>
 
-<main class="wrap">
-  <div class="grid2">
-    <div>
-      <section class="audience">
-        <h2>Choose your path</h2>
-        <div class="grid3">
-          <div class="card">
-            <span class="tag">Judges · clerks · scholars</span>
-            <h3>The Legal Framework</h3>
-            <p>Law review article, model judicial opinion, and litigation package grounded in Mathews, Goldberg, Overton Park, State Farm, and the APA.</p>
-            <div class="btns"><a class="btn" href="#legal">Open legal materials</a></div>
-          </div>
-          <div class="card">
-            <span class="tag">Advocates · clinics · organizers</span>
-            <h3>If the Computer Said No</h3>
-            <p>Plain-language steps for people who received a computer-generated denial and need to know what to ask for next.</p>
-            <div class="btns"><a class="btn" href="#advocates">Open handout</a></div>
-          </div>
-          <div class="card">
-            <span class="tag">Journalists · policy staff</span>
-            <h3>What This Means</h3>
-            <p>A clear summary of the doctrine, the two-track framework, and what the framework does and does not claim.</p>
-            <div class="btns"><a class="btn" href="#press">Open summary</a></div>
-          </div>
-        </div>
-      </section>
-
-      <section id="press">
-        <h2>What this means</h2>
-        <div class="summary">
-          <p><strong>Core claim:</strong> When an agency uses an automated or semi-automated system to make a materially consequential decision, the administrative record must include the computational basis of the decision, not merely the inputs and output.</p>
-          <p><strong>What this is:</strong> A due-process framework for notice, hearing, administrative record, and meaningful review in machine-mediated government decisions.</p>
-          <p><strong>What this is not:</strong> A ban on automation, a demand for public source-code disclosure, or an AI ethics pledge.</p>
-        </div>
-      </section>
-
-      <section class="two-track-section">
-        <h2>The two-track framework</h2>
-        <div class="two-track">
-          <div class="card track">
-            <h3>Track 1: Execution fidelity</h3>
-            <p>Did the system do what the record says it did?</p>
-            <ul><li>Was the right policy version used?</li><li>Were the correct inputs used?</li><li>Can the decision path be checked?</li></ul>
-          </div>
-          <div class="card track">
-            <h3>Track 2: Substantive legitimacy</h3>
-            <p>Was the system allowed to do that at all?</p>
-            <ul><li>Was the rule lawful?</li><li>Was the threshold fair?</li><li>Can the person understand and challenge the explanation?</li></ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="legal">
-        <h2>The Legal Framework</h2>
-        <div class="artifact"><div><strong>Law Review Article</strong><p>Due Process at Machine Speed: The Constitutional Requirement for Replayable Administrative Records.</p></div><div class="btns"><a class="btn" href="pdf/due-process-at-machine-speed.pdf">PDF</a></div></div>
-        <div class="artifact"><div><strong>Model Judicial Opinion</strong><p>District court memorandum and order granting summary judgment in an automated benefits denial case.</p></div><div class="btns"><a class="btn" href="pdf/model-judicial-opinion.pdf">PDF</a></div></div>
-        <div class="artifact"><div><strong>Litigation Package</strong><p>Unified doctrine, agency opposition, and reply brief.</p></div><div class="btns"><a class="btn" href="pdf/litigation-package.pdf">PDF</a></div></div>
-      </section>
-
-      <section id="advocates">
-        <h2>If the Computer Said No</h2>
-        <div class="artifact"><div><strong>Plain-Language Public Explainer</strong><p>One-page resource for people who received a computer-generated denial.</p></div><div class="btns"><a class="btn" href="the-computer-said-no.html">Printable HTML</a><a class="btn secondary" href="pdf/the-computer-said-no.pdf">PDF</a></div></div>
-        <div class="summary"><p><strong>Plain-language core:</strong> Ask two questions: did the computer follow its own rules, and were the rules themselves fair?</p></div>
-      </section>
+  <header class="wrap">
+    <div class="seal">⚖️🧌 COURT IN SESSION · ZERO TRUST WEBSITE</div>
+    <h1>Goblin Court</h1>
+    <p class="subtitle">Government documents on trial. Replay the receipt. Roast the bureaucracy.</p>
+    <div class="rulebar" aria-label="Trust rules">
+      <div>UI is presentation</div>
+      <div>Sources are clickable</div>
+      <div>Receipts are discoverable</div>
+      <div>Replay is proof</div>
     </div>
 
-    <aside>
-      <div class="doctrine">
-        <small>Core doctrine</small>
-        NO MANIFEST,<br />NO AUTHORITY.<br /><br />
-        NO REPLAY,<br />NO AUTOMATED POWER.<br /><br />
-        NO PLAIN-LANGUAGE EXPLANATION,<br />NO AUTOMATED AUTHORITY.<br /><br />
-        A DELAY THAT FUNCTIONS AS A DENIAL<br />IS A DECISION.
+    <div class="hero-grid">
+      <div class="panel">
+        <h2>File the PDF. Summon the Goblin.</h2>
+        <p>Goblin Court is a funny, intelligently built zero-trust website for public records. It starts with Minnesota government documents, turns them into clickable exhibits, and keeps the jokes separate from the evidence.</p>
+        <div class="actions">
+          <a class="btn" href="#mn-docket">Replay Minnesota</a>
+          <a class="btn alt" href="ztvs/replay-map/index.html">Open Replay Map</a>
+          <a class="btn light" href="site/goblin-court/case-004-green/index.html">Enter Goblin Court</a>
+          <a class="btn light" href="site/meme-court/wfg-0001.html">Meme Court</a>
+        </div>
       </div>
-    </aside>
-  </div>
-</main>
+      <aside class="sidebar">
+        <span class="tag">Boss Bre lane</span>
+        <h3>Roast-O-Meter</h3>
+        <div class="meter" aria-label="Roast meter"><span></span></div>
+        <p><strong>Status:</strong> Funny enough to click. Legal enough to survive cross-examination.</p>
+        <p><strong>Librarian lane:</strong> source links, docket metadata, receipts, state index.</p>
+      </aside>
+    </div>
+  </header>
 
-<footer>
-  <div class="wrap">Source of truth: <a href="https://github.com/jsonwisdom/AL">jsonwisdom/AL</a>. This site is a public distribution surface for constitutional due process materials on machine-mediated government decisions.</div>
-</footer>
+  <main class="wrap">
+    <section>
+      <div class="section-title"><h2>The Four Courts</h2><span class="verdict">All legal · all legit · all lethal</span></div>
+      <div class="grid4">
+        <article class="card">
+          <span class="tag">🧌 Goblin Court</span>
+          <h3>PDF said what now?</h3>
+          <p>Government documents get dragged into court and forced to show receipts.</p>
+          <a class="btn light" href="site/goblin-court/case-004-green/index.html">Open case</a>
+        </article>
+        <article class="card">
+          <span class="tag">😂 Meme Court</span>
+          <h3>Verdict: extremely postable.</h3>
+          <p>Turns source-backed claims into jokes, tweets, and meme-ready exhibits.</p>
+          <a class="btn light" href="site/meme-court/wfg-0001.html">Open meme court</a>
+        </article>
+        <article class="card">
+          <span class="tag">🌆 Cyberpunk Court</span>
+          <h3>Neon receipts.</h3>
+          <p>Machine-speed due process with the lights turned purple and the citations still intact.</p>
+          <a class="btn light" href="ztvs/replay-map/index.html">Open replay map</a>
+        </article>
+        <article class="card">
+          <span class="tag">🤡 Clown Court</span>
+          <h3>Honk if the record is incomplete.</h3>
+          <p>For bureaucracy that trips over its own clipboard and calls it procedure.</p>
+          <a class="btn light" href="#mn-docket">View docket</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="mn-docket">
+      <div class="section-title"><h2>Minnesota Docket</h2><span class="verdict">MN active · more states queued</span></div>
+      <table class="docket" aria-label="Minnesota replay docket">
+        <thead><tr><th>Exhibit</th><th>Agency / Source</th><th>Verdict</th><th>Actions</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>MN Fiscal Replay</strong><br />Budget goblin smells a spreadsheet.</td>
+            <td>Public fiscal documents · source-ready lane</td>
+            <td><span class="verdict">Suspicious</span></td>
+            <td><a href="projects/mn-fiscal-replay/">Read the receipt →</a></td>
+          </tr>
+          <tr>
+            <td><strong>ZTVS Replay Map</strong><br />The map says: no fake green.</td>
+            <td>Zero-trust verification lane</td>
+            <td><span class="verdict">Admissible</span></td>
+            <td><a href="ztvs/replay-map/index.html">Replay →</a></td>
+          </tr>
+          <tr>
+            <td><strong>Goblin Stack</strong><br />Court goblin demands metadata.</td>
+            <td>Goblin Court receipts and truth reports</td>
+            <td><span class="verdict">Guilty of vibes</span></td>
+            <td><a href="docs/goblin_court/metadata_fetcher_v0_patch.md">Read →</a></td>
+          </tr>
+          <tr>
+            <td><strong>Meme Court Case</strong><br />The joke is funny. The source still matters.</td>
+            <td>Meme Court docket and case files</td>
+            <td><span class="verdict">Postable</span></td>
+            <td><a href="alms/meme_court/cases/MC-0001.json">Receipt →</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <div class="section-title"><h2>State Index</h2><span class="verdict">Minnesota first</span></div>
+      <div class="states">
+        <span class="state active">MN · active</span>
+        <span class="state">WI · queued</span>
+        <span class="state">IA · queued</span>
+        <span class="state">NY · queued</span>
+        <span class="state">AL · queued</span>
+        <span class="state">CA · queued</span>
+        <span class="state">TX · queued</span>
+        <span class="state">FL · queued</span>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title"><h2>Share Tools</h2><span class="verdict">Jokes are jokes, not evidence</span></div>
+      <div class="grid3">
+        <article class="card">
+          <span class="tag">Make Tweet</span>
+          <h3>Copy the roast.</h3>
+          <p>“Government document entered Goblin Court. Replay says: citation needed.”</p>
+          <a class="btn" href="https://twitter.com/intent/tweet?text=Government%20document%20entered%20Goblin%20Court.%20Replay%20says%3A%20citation%20needed.%20Built%20by%20jaywisdom.base.eth">Tweet it</a>
+        </article>
+        <article class="card">
+          <span class="tag">Make Image</span>
+          <h3>Screenshot bait.</h3>
+          <p>Use the verdict cards as meme panels. Stamp-red badges included at no extra charge.</p>
+          <a class="btn alt" href="#mn-docket">Pick exhibit</a>
+        </article>
+        <article class="card">
+          <span class="tag">Copy Joke</span>
+          <h3>For the group chat.</h3>
+          <p>“Your honor, the spreadsheet is acting suspicious.”</p>
+          <a class="btn light" href="#">Copy manually</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div>
+        <strong>Built by Jaywisdom.eth</strong><br />Powered by jaywisdom.base.eth · JSONwisdom source tree
+      </div>
+      <div>
+        Goblin Court is parody, product, and public-records infrastructure. The fun UI never outranks the receipts.
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
