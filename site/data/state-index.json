@@ -1,0 +1,30 @@
+{
+  "product": "Goblin Court",
+  "doctrine": ["Can’t hack it.", "Can’t change it.", "Can only replay it."],
+  "latest_verdicts": [
+    {
+      "state": "MN",
+      "case_id": "MN_001",
+      "verdict": "GUILTY",
+      "tone": "conviction",
+      "headline": "The PDF brought pages. The goblin brought one line."
+    },
+    {
+      "state": "MN",
+      "case_id": "MN_002",
+      "verdict": "INSUFFICIENT_EVIDENCE",
+      "tone": "dismissal",
+      "headline": "Extractor artifact, not fiscal confession."
+    }
+  ],
+  "states": [
+    {"code": "MN", "name": "Minnesota", "status": "active", "docket_url": "site/data/states/mn.index.json", "case_count": 2},
+    {"code": "WI", "name": "Wisconsin", "status": "queued", "docket_url": "site/data/states/wi.index.json", "case_count": 0},
+    {"code": "IA", "name": "Iowa", "status": "queued", "docket_url": "site/data/states/ia.index.json", "case_count": 0},
+    {"code": "NY", "name": "New York", "status": "queued", "docket_url": "site/data/states/ny.index.json", "case_count": 0},
+    {"code": "AL", "name": "Alabama", "status": "queued", "docket_url": "site/data/states/al.index.json", "case_count": 0},
+    {"code": "CA", "name": "California", "status": "queued", "docket_url": "site/data/states/ca.index.json", "case_count": 0},
+    {"code": "TX", "name": "Texas", "status": "queued", "docket_url": "site/data/states/tx.index.json", "case_count": 0},
+    {"code": "FL", "name": "Florida", "status": "queued", "docket_url": "site/data/states/fl.index.json", "case_count": 0}
+  ]
+}
