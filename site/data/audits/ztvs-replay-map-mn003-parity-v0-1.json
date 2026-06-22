@@ -1,0 +1,45 @@
+{
+  "audit_id": "ZTVS_REPLAY_MAP_MN003_PARITY_V0_1",
+  "scope": "Goblin Court static router and ZTVS replay map",
+  "candidate_case": {
+    "case_id": "MN_003",
+    "source_lane": "registry/us-mn-st_cloud",
+    "target_id": "ST_CLOUD_001",
+    "jurisdiction": "us-mn-st_cloud",
+    "document_class": "city_council_minutes",
+    "source_url": "https://ci.stcloud.mn.us/Archive.aspx?AMID=43",
+    "current_state": "VERIFIED",
+    "allowed_public_verdict": "MUNICIPAL_SIGNAL_VERIFIED",
+    "blocked_public_verdicts": ["GUILTY"]
+  },
+  "visual_checks": [
+    "desktop_grid_stable",
+    "mobile_grid_no_horizontal_scroll",
+    "goblin_header_not_clipped_390px",
+    "ztvs_map_border_not_clipped",
+    "touch_targets_accessible",
+    "sticky_replay_not_obstructing_receipts",
+    "no_top_overlay_collision",
+    "typeface_stable_on_resize"
+  ],
+  "functional_checks": [
+    "desktop_mobile_replay_output_equal",
+    "desktop_mobile_receipt_hash_equal",
+    "intent_links_route_without_hard_refresh",
+    "router_opens_state_and_case_deterministically",
+    "replay_transition_under_120ms",
+    "tweet_intent_contains_current_angle_and_hash"
+  ],
+  "data_checks": [
+    "mn003_json_parse_success",
+    "required_case_fields_present",
+    "target_id_maps_to_st_cloud_001",
+    "jurisdiction_maps_to_us_mn_st_cloud",
+    "document_class_maps_to_city_council_minutes",
+    "source_url_exposed",
+    "replay_load_below_50ms_after_fetch",
+    "high_contrast_signal_card_renders_cleanly"
+  ],
+  "status": "AUDIT_SPEC_READY",
+  "promotion_rule": "MN_003 may enter as municipal signal verified only; no guilty verdict without isolated public claim line."
+}
