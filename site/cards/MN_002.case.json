@@ -1,0 +1,26 @@
+{
+  "case_id": "MN_002",
+  "title": "MN_002 — Hash Witness",
+  "court": "Goblin Court",
+  "verdict": "ARTIFACT",
+  "public_claim_status": "PUBLIC_CONTENT_CLAIM_BLOCKED",
+  "identity": "jaywisdom.base.eth",
+  "source_uri": "https://mn.gov/mmb-stat/000/az/forecast/2026/budget-and-economic-forecast/february.pdf",
+  "content_hash": "sha256:305896f5977dae64b3445cbec2f356f47156ccb4cca4a88a0a7c6b6df6cf4698",
+  "receipt_hash": "sha256:c6d434ddf142c46d79111a6864ab578fb9a02b1494f3978622b83804f321c89a",
+  "receipt_rule": "Receipt-backed anomaly, not substantive fiscal proof.",
+  "fabula": [
+    "MN_002 fetched and normalized the Minnesota MMB February 2026 Budget Forecast PDF.",
+    "The replay detected chunk-level differences.",
+    "Review classified the differences as ordering, extractor, page-marker, table-of-contents, footnote-spacing, and chunk-boundary artifacts.",
+    "Goblin Court blocked the public content claim. No fake fiscal confession."
+  ],
+  "syuzhet_angles": [
+    "MN_002 tried to testify in page markers. Goblin Court ruled: extractor artifact, not fiscal confession.",
+    "They gave you a file. We gave it a fingerprint. Now the PDF has priors.",
+    "If MN_002 changes, the receipt snitches immediately.",
+    "MN_002 refuses to repeat itself. The hash is its statement. Court adjourned.",
+    "The layout moved. The table of contents coughed. The fiscal claim did not survive cross-examination."
+  ],
+  "tweet_seed": "MN_002 tried to testify in page markers. Goblin Court ruled: extractor artifact, not fiscal confession. Receipt-backed restraint > fake green. jaywisdom.base.eth"
+}
