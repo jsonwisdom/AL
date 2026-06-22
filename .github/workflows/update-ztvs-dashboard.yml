@@ -90,5 +90,7 @@ jobs:
             echo "No latest.json changes"
           else
             git commit -m "chore(ztvs): update validated latest dashboard receipt [skip ci]"
+            git fetch origin master
+            git rebase origin/master
             git push
           fi
