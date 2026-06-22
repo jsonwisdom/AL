@@ -95,7 +95,9 @@ jobs:
             git config user.email "github-actions[bot]@users.noreply.github.com"
             git add dist/pdf docs/index.html docs/print.css docs/assets docs/pdf docs/.well-known
             git commit -m "dist: rebuild and mirror citable artifacts ${{ steps.stamp.outputs.date }} ${{ steps.stamp.outputs.short_sha }}"
-            git push
+            git fetch origin master
+            git rebase origin/master
+            git push origin HEAD:master
           else
             echo "No distribution changes to commit."
           fi
