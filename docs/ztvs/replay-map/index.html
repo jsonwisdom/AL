@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Jaywisdom.base.eth — Verification Over Narrative</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #050608;
+      --bg-alt: #0b0f14;
+      --fg: #f5f7fa;
+      --muted: #9aa4b2;
+      --accent: #4ade80;
+      --accent-soft: rgba(74, 222, 128, 0.12);
+      --border: #1f2933;
+      --card: #0f1720;
+      --danger: #f97373;
+      --mono: "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      --sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at top, #111827 0, #020617 55%);
+      color: var(--fg);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid var(--accent-soft);
+      background: radial-gradient(circle at 30% 0, #22c55e 0, #16a34a 40%, #052e16 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--mono);
+      font-size: 14px;
+      color: #e5ffe9;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-title {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+
+    .brand-subtitle {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+    }
+
+    .tagline {
+      font-size: 14px;
+      color: var(--muted);
+      max-width: 420px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pill {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(15, 23, 42, 0.8);
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px var(--accent-soft);
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.2fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 840px) {
+      main {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .card {
+      background: linear-gradient(145deg, #020617, #020617 40%, #020617 100%);
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      padding: 16px 16px 14px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top left, rgba(74, 222, 128, 0.12), transparent 55%);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-title {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+    }
+
+    .card-tag {
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--muted);
+    }
+
+    .card-body {
+      position: relative;
+      z-index: 1;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #e5e7eb;
+    }
+
+    .card-body strong {
+      font-weight: 600;
+      color: #f9fafb;
+    }
+
+    .card-body p {
+      margin: 0 0 6px;
+    }
+
+    .card-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .divider {
+      height: 1px;
+      border: 0;
+      margin: 10px 0 8px;
+      background: linear-gradient(to right, transparent, #1f2933, transparent);
+    }
+
+    .list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 13px;
+      color: #d1d5db;
+    }
+
+    .list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 3px 0;
+    }
+
+    .list-bullet {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      margin-top: 6px;
+      background: var(--accent-soft);
+      border: 1px solid var(--accent);
+    }
+
+    .list-label {
+      font-weight: 500;
+      color: #e5e7eb;
+    }
+
+    .mono {
+      font-family: var(--mono);
+      font-size: 12px;
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 8px;
+      padding: 8px 10px;
+      border: 1px solid #111827;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .mono span.key {
+      color: #9ca3af;
+    }
+
+    .mono span.val {
+      color: #e5e7eb;
+    }
+
+    .mono span.accent {
+      color: #4ade80;
+    }
+
+    .mono span.danger {
+      color: var(--danger);
+    }
+
+    .footer {
+      margin-top: 32px;
+      padding-top: 16px;
+      border-top: 1px solid #111827;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .footer-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .footer-pill-emoji {
+      font-size: 13px;
+    }
+
+    .footer-quote {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: #9ca3af;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand-row">
+        <div class="brand">
+          <div class="brand-mark">J</div>
+          <div class="brand-text">
+            <div class="brand-title">Jaywisdom.base.eth</div>
+            <div class="brand-subtitle">Verification over narrative</div>
+          </div>
+        </div>
+        <div class="tagline">
+          Kill the green dashboard fallacy. Only receipts, hashes, replay, quorum, and witnesses can prove state.
+        </div>
+      </div>
+      <div class="pill-row">
+        <div class="pill">
+          <span class="pill-dot"></span>
+          <span>ZTVS Replay Map</span>
+        </div>
+        <div class="pill">
+          <span>UI ≠ Proof</span>
+        </div>
+        <div class="pill">
+          <span>Receipts &amp; Replay = Authority</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="column">
+        <!-- 1. Core Problem -->
+        <article class="card">
+          <div class="card-header">
+            <div class="card-title">1 · Core Problem</div>
+            <div class="card-tag">Green Dashboard Fallacy</div>
+          </div>
+          <div class="card-body">
+            <p><strong>Kill the Green Dashboard fallacy.</strong></p>
+            <hr class="divider" />
+            <p>A dashboard saying “green” is not proof.</p>
+            <p>Only <strong>receipts</strong>, <strong>hashes</strong>, <strong>replay</strong>, <strong>quorum</strong>, and <strong>witnesses</strong> can prove state.</p>
+          </div>
+        </article>
+
+        <!-- 2. Core Rule -->
+        <article class="card">
+          <div class="card-header">
+            <div class="card-title">2 · Core Rule</div>
+            <div class="card-tag">Presentation vs Authority</div>
+          </div>
+          <div class="card-body">
+            <p><strong>UI is presentation.</strong><br />
+              <strong>Receipts are authority.</strong><br />
+              <strong>Replay is proof.</strong>
+            </p>
+            <hr class="divider" />
+            <ul class="list">
+              <li>
+                <div class="list-bullet"></div>
+                <div>No fake green.</div>
+              </li>
+              <li>
+                <div class="list-bullet"></div>
+                <div>No silent mutation.</div>
+              </li>
+              <li>
+                <div class="list-bullet"></div>
+                <div>No admin override.</div>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 3. Architecture -->
+        <article class="card">
+          <div class="card-header">
+            <div class="card-title">3 · Architecture</div>
+            <div class="card-tag">Layered Proof Stack</div>
+          </div>
+          <div class="card-body">
+            <ul class="list">
+              <li>
+                <div class="list-bullet"></div>
+                <div>
+                  <span class="list-label">Inside Layer</span><br />
+                  Official sources are captured as raw evidence.
+                </div>
+              </li>
+              <li>
+                <div class="list-bullet"></div>
+                <div>
+                  <span class="list-label">Middle Layer</span><br />
+                  Replay engine verifies receipts and hashes.
+                </div>
+              </li>
+              <li>
+                <div class="list-bullet"></div>
+                <div>
+                  <span class="list-label">Outside Layer</span><br />
+                  Dashboard only reads from <code>verified/latest.json</code>.
+                </div>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 4. Registry -->
+        <article class="card">
+          <div class="card-header">
+            <div class="card-title">4 · Registry</div>
+            <div class="card-tag">Root of Trust</div>
+          </div>
+          <div class="card-body">
+            <p>The <strong>Registry</strong> defines:</p>
+            <ul class="list">
+              <li>
+                <div class="list-bullet"></div>
+                <div>What sources count</div>
+              </li>
+              <li>
+                <div class="list-bullet"></div>
+                <div>What hashes are valid</div>
+              </li>
+              <li>
+                <div class="list-bullet"></div>
+                <div>What quorum is required</div>
+              </li>
+              <li>
+                <div class="list-bullet"></div>
+                <div>What receipts are accepted</div>
+              </li>
+            </ul>
+            <hr class="divider" />
+            <p>Registry changes must be treated like <strong>constitutional amendments</strong>.</p>
+          </div>
+        </article>
+
+        <!-- 5. Governance Protocol -->
+        <article class="card">
+          <div class="card-header">
+            <div class="card-title">5 · Governance Protocol</div>
+            <div class="card-tag">Amendment Flow</div>
+          </div>
+          <div class="card-body">
+            <p><strong>Registry updates require:</strong></p>
+            <ul class="list">
+              <li><div class="list-bullet"></div><div>Proposal</div></li>
+              <li><div class="list-bullet"></div><div>Gauntlet simulation</div></li>
+              <li><div class="list-bullet"></div><div>4/5 quorum</div></li>
+              <li><div class="list-bullet"></div><div>Witness receipts</div></li>
+              <li><div class="list-bullet"></div><div>Constitutional Pause</div></li>
+              <li><div class="list-bullet"></div><div>Replay preservation check</div></li>
+              <li><div class="list-bullet"></div><div>Epoch activation</div></li>
+            </ul>
+          </div>
+        </article>
+      </section>
+
+      <section class="column">
+        <!-- 6. Receipt Classes -->
+        <article class="card">
+          <div class="card-header">
+            <div class="card-title">6 · Receipt Classes</div>
+            <div class="card-tag">Canonical Evidence</div>
+          </div>
+          <div class="card-body">
+            <p><strong>Three receipt classes:</strong></p>
+            <ul class="list">
+              <li><div class="list-bullet"></div><div><code>REGISTRY_RELEASE_V0_1</code></div></li>
+              <li><div class="list-bullet"></div><div><code>CONSTITUTIONAL_PAUSE_V0_1</code></div></li>
+              <li><div class="list-bullet"></div><div><code>SYSTEM_VETO_RECEIPT_V0_1</code></div></li>
+            </ul>
+            <hr class="divider" />
+            <p><strong>All must use:</strong></p>
+            <ul class="list">
+              <li><div class="list-bullet"></div><div><code>version: "0.1"</code></div></li>
+              <li><div class="list-bullet"></div><div><code>replay_preservation_status: "TRUE" | "FALSE"</code></div></li>
+              <li><div class="list-bullet"></div><div><strong>sha256</strong> anchors only</div></li>
+              <li><div class="list-bullet"></div><div><code>additionalProperties: false</code></div></li>
+              <li><div class="list-bullet"></div><div><strong>RFC8785_JCS</strong> canonicalization</div></li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 7. Epoch Transition Rule -->
+        <article class="card">
+          <div class="card-header">
+            <div class="card-title">7 · Epoch Transition</div>
+            <div class="card-tag">No Verification Gap</div>
+          </div>
+          <div class="card-body">
+            <p><strong>Epoch rule:</strong> <code>Sₙ</code> remains active until <code>Sₙ₊₁</code> proves itself.</p>
+            <p>No verification gap.</p>
+            <hr class="divider" />
+            <p><strong>Happy path:</strong></p>
+            <ul class="list">
+              <li><div class="list-bullet"></div><div>Pause passed</div></li>
+              <li><div class="list-bullet"></div><div>No veto receipts</div></li>
+              <li><div class="list-bullet"></div><div>Pause window closed</div></li>
+              <li><div class="list-bullet"></div><div>Replay preservation <strong>TRUE</strong></div></li>
+              <li><div class="list-bullet"></div><div>Activate <code>Sₙ₊₁</code></div></li>
+              <li><div class="list-bullet"></div><div>Deactivate <code>Sₙ</code></div></li>
+            </ul>
+            <hr class="divider" />
+            <p><strong>Veto path:</strong></p>
+            <ul class="list">
+              <li><div class="list-bullet"></div><div>Replay preservation fails</div></li>
+              <li><div class="list-bullet"></div><div>Emit <code>SYSTEM_VETO_RECEIPT_V0_1</code></div></li>
+              <li><div class="list-bullet"></div><div>Keep <code>Sₙ</code> active</div></li>
+              <li><div class="list-bullet"></div><div>Abort transition</div></li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Final Lock -->
+        <article class="card">
+          <div class="card-header">
+            <div class="card-title">Final Lock</div>
+            <div class="card-tag">Law of the System</div>
+          </div>
+          <div class="card-body">
+            <p><strong>Old law governs until new law proves itself.</strong></p>
+            <hr class="divider" />
+            <div class="mono">
+              <span class="key">lane</span><span class="val">:</span>
+              <span class="accent">"verification_over_narrative"</span><span class="val">,</span>
+              <span class="key">author</span><span class="val">:</span>
+              <span class="accent">"jaywisdom.base.eth"</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- System Snapshot -->
+        <article class="card">
+          <div class="card-header">
+            <div class="card-title">System Snapshot</div>
+            <div class="card-tag">Replay-First</div>
+          </div>
+          <div class="card-body">
+            <p><strong>ZTVS project replay in plain map form.</strong></p>
+            <div class="mono">
+              <span class="key">ui_role</span><span class="val">:</span>
+              <span class="val">"presentation_only"</span><span class="val">,</span>
+              <span class="key">authority</span><span class="val">:</span>
+              <span class="val">"receipts + hashes + replay"</span><span class="val">,</span>
+              <span class="key">registry</span><span class="val">:</span>
+              <span class="val">"root_of_trust"</span><span class="val">,</span>
+              <span class="key">epoch_rule</span><span class="val">:</span>
+              <span class="val">"S_n active until S_n+1 proves"</span>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-pill">
+        <span class="footer-pill-emoji">🧾</span>
+        <span>Receipts or it didn’t happen.</span>
+      </div>
+      <div class="footer-quote">
+        Jaywisdom.base.eth lane: verification over narrative. ⚙️
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
