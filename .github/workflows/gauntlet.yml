@@ -94,6 +94,8 @@ jobs:
         run: |
           git config user.name "ZTVS Gauntlet"
           git config user.email "gauntlet@ztvs.system"
+          git restore data/prod_spine || true
+          git clean -fd data/prod_spine || true
           git fetch origin master
           git rebase origin/master
           git add "$ATOMIC_GAUNTLET_RECEIPT"
