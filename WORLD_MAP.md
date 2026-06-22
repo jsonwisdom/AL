@@ -135,11 +135,12 @@ Dynamic rendering does not confer authority. `ACTIVE_LANES.json` remains the sou
   - Status: OPEN_PR
   - Green status: NOT MERGED
 
-## Continuity Gaps
+## Continuity Anchors
 
 - Anchor 001 / `jsonwisdom/Welcome-to-JSONWISDOM`
-  - Status: BROKEN_OR_PRIVATE
-  - Risk: root verifier lineage is not publicly replayable until restored or mirrored
+  - Status: PUBLIC_REPLAYABLE_IDENTITY_ROOT
+  - Evidence: repository exists, is public, and README defines the identity root / orientation layer / canonical doorway for Jay Wisdom / JSONWisdom
+  - Boundary: narrator and orientation layer only; it does not promote claims into proof
 
 ## Replay Rule
 
