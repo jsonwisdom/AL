@@ -1,0 +1,33 @@
+{
+  "receipts": [
+    {
+      "schema": "CAAE_RTR_REMEDIATION_RECEIPT_V0_2",
+      "service": "payments-api",
+      "sequence": 1,
+      "finding_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "prev_receipt_hash": null,
+      "first_seen_receipt_hash": null,
+      "severity": "critical",
+      "capability_telemetry_cid": "ipfs://bafybeicapabilitytelemetry",
+      "exploit_harness_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "pre_patch_replay": "PASS_EXPLOIT_CONFIRMED",
+      "authority_token_id": "jit-w02",
+      "authority_scope_hash": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "patch_commit": "deadbeefdeadbeefdeadbeefdeadbeefdeadbeef",
+      "canary_id": "canary-w02",
+      "canary_verdict": "PASS",
+      "post_patch_replay": "FAIL_EXPLOIT_STILL_WORKS",
+      "replay_verdict": "FAIL",
+      "rollback_available": true,
+      "rollback_receipt_hash": null,
+      "transition_timestamps": [
+        {"state": "CAPABILITY_VERIFIED", "timestamp_utc": "2026-06-21T18:00:00Z"},
+        {"state": "ACCESS_SCOPED", "timestamp_utc": "2026-06-21T18:01:00Z"},
+        {"state": "AUTHORITY_GRANTED", "timestamp_utc": "2026-06-21T18:02:00Z"},
+        {"state": "CANARY_EXECUTED", "timestamp_utc": "2026-06-21T18:03:00Z"},
+        {"state": "REPLAY_VERIFIED", "timestamp_utc": "2026-06-21T18:04:00Z"}
+      ],
+      "status": "REMEDIATION_RECEIPTED"
+    }
+  ]
+}
