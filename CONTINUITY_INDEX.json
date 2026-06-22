@@ -1,10 +1,12 @@
 {
   "schema": "jsonwisdom_continuity_index_v0_1",
-  "status": "OPEN_PR_UNVERIFIED",
+  "status": "COMMITTED",
   "root_repo": "jsonwisdom/AL",
   "principle": "Cumulative Existence",
-  "branch": "continuity-world-map-v0-1",
-  "authority": "NOT_GREEN_UNTIL_MERGED",
+  "authority": "GREEN_ON_MASTER",
+  "last_verified_commit": "55d332b031cde60ceaa1c35f44eebe8f3f85a2f1",
+  "source_pr": 365,
+  "source_pr_title": "Add continuity world map and index",
   "foundation": {
     "family": {
       "role": "Layer 0"
@@ -33,8 +35,8 @@
       "files": [
         "index.html"
       ],
-      "status": "WORKING_TREE_OBSERVED",
-      "commit_hash": "PENDING_MAIN_MERGE"
+      "status": "COMMITTED_REFERENCE",
+      "commit_hash": "55d332b031cde60ceaa1c35f44eebe8f3f85a2f1"
     },
     "meme_court": {
       "role": "Shareability and meme review layer",
@@ -49,8 +51,8 @@
       "files": [
         "docs/index.html"
       ],
-      "status": "WORKING_TREE_OBSERVED",
-      "commit_hash": "PENDING_MAIN_MERGE"
+      "status": "COMMITTED_REFERENCE",
+      "commit_hash": "55d332b031cde60ceaa1c35f44eebe8f3f85a2f1"
     },
     "payment_adapter": {
       "role": "One cent goblin rendering unlock surface",
@@ -67,7 +69,7 @@
       "files": [
         "site/data/states/mn.index.json"
       ],
-      "status": "WORKING_TREE_OBSERVED"
+      "status": "COMMITTED_REFERENCE"
     }
   },
   "public_artifacts": {
@@ -95,8 +97,7 @@
     }
   ],
   "next_actions": [
-    "Merge continuity-world-map-v0-1 after review",
-    "Update this file with the actual merge commit SHA",
+    "Replay WORLD_MAP.md at the start of future sessions",
     "Restore or mirror Anchor 001",
     "Link GitHub Pages to WORLD_MAP.md",
     "Update PR 364 after payment adapter verification"
