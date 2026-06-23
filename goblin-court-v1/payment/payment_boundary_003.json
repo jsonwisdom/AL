@@ -1,0 +1,27 @@
+{
+  "schema": "PAYMENT_GATE_CONFIG_V0_1",
+  "status": "REVIEW_FIXTURE",
+  "boundary": "PAYMENT_BOUNDARY_V0_1",
+  "docket_id": "MN-STEARNS-003",
+  "receipt_id": "r_mn_stearns_003_v1",
+  "replay_id": "replay_mn_stearns_003_v1",
+  "nutrition_score": 78,
+  "nutrition_band": "GOBLIN_FEAST",
+  "replay_url": "https://goblin.court/replay/mn-stearns-003",
+  "builder_code": "bc_j1200j64",
+  "paid_output": "PROMPT_PACK_UNIT_V0_1",
+  "artifact_count": 7,
+  "authority": false,
+  "truth_claims": "prohibited",
+  "source_files": {
+    "receipt": "../fixtures/mn-stearns-003/receipt.json",
+    "replay": "../fixtures/mn-stearns-003/replay.json",
+    "payment_boundary": "../fixtures/mn-stearns-003/payment_boundary.json",
+    "prompt_pack_unit": "../fixtures/mn-stearns-003/prompt_pack_unit.json"
+  },
+  "serve_rule": "Do not serve prompt_pack_unit unless payment is valid and lineage validation passes.",
+  "refund_rule": {
+    "prompt_quality_dispute": "not_automatic_refund",
+    "receipt_mismatch": "refund"
+  }
+}
