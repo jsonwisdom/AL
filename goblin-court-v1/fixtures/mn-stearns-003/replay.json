@@ -1,0 +1,62 @@
+{
+  "schema": "GOBLIN_REPLAY_V0_1",
+  "status": "FIXTURE",
+  "authority": false,
+  "truth_claims": "prohibited",
+  "docket_id": "MN-STEARNS-003",
+  "receipt_id": "r_mn_stearns_003_v1",
+  "replay_id": "replay_mn_stearns_003_v1",
+  "replay_url": "https://goblin.court/replay/mn-stearns-003",
+  "title": "The Parking Ticket That Lived for 3 Years",
+  "one_line_verdict": "The original ticket was $35. The paperwork disagreed.",
+  "nutrition_score": {
+    "score": 78,
+    "band": "GOBLIN_FEAST",
+    "version": "NUTRITION_SCORE_V0_1",
+    "computed_at_publish_time": true,
+    "llm_used": false,
+    "inputs": {
+      "filing_count": 6,
+      "continuance_count": 0,
+      "days_open": 1095,
+      "original_amount": 35,
+      "final_amount": 210,
+      "fee_multiplier": 6,
+      "outcome_type": "fee_chain_persistence"
+    }
+  },
+  "timeline": [
+    {
+      "position": 1,
+      "event_type": "original_ticket",
+      "summary": "Original parking ticket represented as $35.",
+      "receipt_refs": ["r_mn_stearns_003_v1"]
+    },
+    {
+      "position": 2,
+      "event_type": "fee_growth",
+      "summary": "Fee chain grows through paperwork and time.",
+      "receipt_refs": ["r_mn_stearns_003_v1"]
+    },
+    {
+      "position": 3,
+      "event_type": "final_amount",
+      "summary": "Final represented amount reaches $210.",
+      "receipt_refs": ["r_mn_stearns_003_v1"]
+    }
+  ],
+  "free_tier": {
+    "includes": [
+      "receipt",
+      "replay",
+      "one_line_goblin_verdict",
+      "nutrition_score"
+    ],
+    "stops_before": "PROMPT_PACK_UNIT_V0_1"
+  },
+  "lineage": {
+    "product_lock": "PRODUCT_LOCK_V0_1_1",
+    "payment_boundary": "PAYMENT_BOUNDARY_V0_1",
+    "builder_code": "bc_j1200j64"
+  }
+}

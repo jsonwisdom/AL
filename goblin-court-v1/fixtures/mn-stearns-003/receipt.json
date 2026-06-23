@@ -1,0 +1,53 @@
+{
+  "schema": "GOBLIN_RECEIPT_V0_1",
+  "status": "FIXTURE",
+  "authority": false,
+  "truth_claims": "prohibited",
+  "docket_id": "MN-STEARNS-003",
+  "receipt_id": "r_mn_stearns_003_v1",
+  "title": "The Parking Ticket That Lived for 3 Years",
+  "jurisdiction": {
+    "country": "US",
+    "state": "MN",
+    "county": "Stearns",
+    "court_system": "Minnesota 7th Judicial District"
+  },
+  "record_type": "Conciliation Court / Fees / Fine Replay",
+  "source": {
+    "source_url": "PLACEHOLDER_PUBLIC_RECORD_URL",
+    "source_label": "public docket source placeholder",
+    "source_status": "placeholder_until_real_record_seeded",
+    "content_hash": "PLACEHOLDER_CONTENT_HASH"
+  },
+  "amounts": {
+    "original_amount": 35,
+    "final_amount": 210,
+    "currency": "USD",
+    "fee_multiplier": 6
+  },
+  "extracted_claims": [
+    {
+      "claim_id": "c_mn_stearns_003_001",
+      "claim_text": "Original parking ticket amount recorded as $35.",
+      "claim_type": "amount",
+      "source_ref": "fixture"
+    },
+    {
+      "claim_id": "c_mn_stearns_003_002",
+      "claim_text": "Final fee chain amount represented as $210.",
+      "claim_type": "amount",
+      "source_ref": "fixture"
+    },
+    {
+      "claim_id": "c_mn_stearns_003_003",
+      "claim_text": "The case remained active long enough to be represented as a three-year fee persistence replay.",
+      "claim_type": "timeline",
+      "source_ref": "fixture"
+    }
+  ],
+  "lineage": {
+    "product_lock": "PRODUCT_LOCK_V0_1_1",
+    "payment_boundary": "PAYMENT_BOUNDARY_V0_1",
+    "builder_code": "bc_j1200j64"
+  }
+}
