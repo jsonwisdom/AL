@@ -47,4 +47,17 @@ const badPackResult = mayServePromptPack(validPaymentContext, badPack);
 assert.strictEqual(badPackResult.ok, false);
 assert.ok(badPackResult.prompt_pack_errors.includes("mismatch:receipt_id"));
 
+const shortPack = {
+  ...promptPack,
+  artifacts: {
+    ...promptPack.artifacts
+  }
+};
+
+delete shortPack.artifacts.headline_pack;
+
+const shortPackResult = mayServePromptPack(validPaymentContext, shortPack);
+assert.strictEqual(shortPackResult.ok, false);
+assert.ok(shortPackResult.prompt_pack_errors.includes("artifact_count:6"));
+
 console.log("PASS gate_003 fixture tests");
