@@ -1,0 +1,20 @@
+{
+  "name": "goblin-court-v1-live-003",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Live x402 settlement pass for Goblin Court MN-STEARNS-003.",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node lineage_live_003.test.mjs"
+  },
+  "dependencies": {
+    "@x402/core": "latest",
+    "@x402/evm": "latest",
+    "@x402/express": "latest",
+    "express": "latest"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
