@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Goblin Court v1 — MN-STEARNS-003</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, sans-serif; margin: 0; background: #111; color: #f5f0df; }
+    main { max-width: 920px; margin: 0 auto; padding: 32px 18px 64px; }
+    .card { border: 1px solid #3f3a2f; border-radius: 16px; padding: 18px; margin: 16px 0; background: #181611; }
+    .pill { display: inline-block; padding: 6px 10px; border: 1px solid #6b5f40; border-radius: 999px; margin: 4px 4px 4px 0; font-size: 13px; }
+    .score { font-size: 48px; font-weight: 800; line-height: 1; }
+    button { font: inherit; font-weight: 700; padding: 12px 16px; border-radius: 12px; border: 0; cursor: pointer; }
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; background: #0a0a08; border-radius: 12px; padding: 14px; }
+    .locked { opacity: .65; }
+    .footer { font-size: 12px; opacity: .75; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>🧌 Goblin Court v1</h1>
+  <p><strong>Canonical demo:</strong> MN-STEARNS-003 — The Parking Ticket That Lived for 3 Years</p>
+
+  <section class="card">
+    <span class="pill">Receipt</span>
+    <span class="pill">Replay</span>
+    <span class="pill">Score</span>
+    <span class="pill">x402 Boundary</span>
+    <span class="pill">Prompt Pack</span>
+    <h2>Free Tier</h2>
+    <p id="verdict">The original ticket was $35. The paperwork disagreed.</p>
+    <div class="score">78</div>
+    <p><strong>Band:</strong> GOBLIN_FEAST</p>
+    <p class="footer">Receipt: r_mn_stearns_003_v1 · Builder Code: bc_j1200j64</p>
+  </section>
+
+  <section class="card">
+    <h2>Replay</h2>
+    <ol>
+      <li>Original parking ticket represented as $35.</li>
+      <li>Fee chain grows through paperwork and time.</li>
+      <li>Final represented amount reaches $210.</li>
+    </ol>
+    <p class="footer">Replay URL: https://goblin.court/replay/mn-stearns-003</p>
+  </section>
+
+  <section class="card locked" id="paywall">
+    <h2>Paid Prompt Pack Unit</h2>
+    <p>Unlock exactly 7 artifacts after valid x402 payment.</p>
+    <p><strong>Payment boundary:</strong> PAYMENT_BOUNDARY_V0_1</p>
+    <p><strong>Builder code:</strong> bc_j1200j64</p>
+    <button id="unlock">Demo Unlock Prompt Pack</button>
+    <p class="footer">Live x402 middleware is not included in this static fixture. This button demonstrates the post-payment state only.</p>
+  </section>
+
+  <section class="card" id="pack" hidden>
+    <h2>Unlocked: PROMPT_PACK_UNIT_V0_1</h2>
+    <p class="footer">LINEAGE: docket=MN-STEARNS-003 | receipt=r_mn_stearns_003_v1 | score=78 | replay=https://goblin.court/replay/mn-stearns-003</p>
+    <h3>1. Poster Prompt</h3>
+    <pre>Create a satirical courtroom poster titled The Parking Ticket That Lived for 3 Years. Scene: a dramatic Minnesota courthouse interior, a tiny $35 parking ticket sitting in the witness chair, slowly mutating into a towering monster made of late fees, stamps, envelopes, and filing notices. A goblin judge peers over the bench with exhausted disbelief. No real people, no real names, no official court seal.</pre>
+    <h3>2. Meme Prompt</h3>
+    <pre>Top text: THE TICKET WAS $35. Bottom text: THEN THE PAPERWORK STARTED EATING. Visual: a goblin clerk feeding a tiny parking ticket into an absurd fee machine labeled $35 -> $210.</pre>
+    <h3>3. Storyboard Prompt</h3>
+    <pre>Three panels: $35 ticket appears; paperwork feeds over time; final $210 paperwork creature meets Goblin Judge.</pre>
+    <h3>4. Trading Card Prompt</h3>
+    <pre>Card Name: Undying Parking Ticket. Type: Bureaucratic Goblin Artifact. Power: 78. Ability: Fee Multiplier — grows whenever ignored.</pre>
+    <h3>5. Court Sketch Prompt</h3>
+    <pre>A goblin judge presides over a hearing where the only witness is a blown-up $35 parking ticket beside a $210 stack of notices.</pre>
+    <h3>6. Tweet Thread</h3>
+    <pre>1/ Goblin Court reviewed MN-STEARNS-003: The Parking Ticket That Lived for 3 Years. The original ticket was $35. The paperwork disagreed.</pre>
+    <h3>7. Headline Pack</h3>
+    <pre>The $35 Parking Ticket That Lived for 3 Years
+How a Parking Fine Grew 6x Without Leaving St. Cloud
+Goblin Court Docket #003: The Undying Ticket</pre>
+  </section>
+</main>
+<script>
+  document.getElementById('unlock').addEventListener('click', () => {
+    document.getElementById('paywall').classList.remove('locked');
+    document.getElementById('pack').hidden = false;
+  });
+</script>
+</body>
+</html>
