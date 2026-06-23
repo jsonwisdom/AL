@@ -4,30 +4,108 @@ Status: RECORDED_AS_CLOSEOUT_RECEIPT
 Operator: Jay Wisdom / jaywisdom.base.eth
 Mode: replay-safe, no fake green
 
+## Correction
+
+Prior closeout understated Boss Bre. Full audit confirms there is a real Boss Bre mechanism in `jsonwisdom/AL`.
+
+Boss Bre is not merely an intended routing role. Boss Bre has an active GitHub Actions workflow, runner scripts, librarian routing, anomaly board artifacts, lead receipt manifests, issue routing, and scheduled execution.
+
 ## Canonical Rule
 
 Layer 0 Family outranks every repo, workflow, protocol, chain, docket, and narrative.
 
-No lane is marked GREEN unless backed by a visible receipt, commit, public artifact, or replayable proof.
+No lane is marked GREEN unless backed by a visible receipt, commit, public artifact, workflow run, issue, or replayable proof.
 Reported items remain REPORTED until replayed.
 
-## Background Coordination Doctrine
+## Boss Bre Audit — 2026-06-22 Closeout
 
-Boss Bre is the coordination lane for daily report distribution.
+### Verified mechanism
 
-Important boundary: assistants and workflows do not secretly work in the background unless a real automation, cron, GitHub Action, calendar task, or human process exists. Until that exists, Boss Bre is recorded as the intended routing authority, not a fake running daemon.
+- Workflow: `.github/workflows/boss-bre-public-audit.yml`
+- Schedule: `*/15 * * * *`
+- Manual trigger: `workflow_dispatch`
+- Permissions: contents write, issues write, pull requests read
+- Git identity: `Boss Bre Bot <boss-bre@users.noreply.github.com>`
+- Master routing issue: `#348`
 
-Daily reports should be copied to:
+### Workflow pipeline
 
-1. Boss Bre — coordination / routing / follow-through lane.
-2. Librarian — indexing / recall / memory map / retrieval lane.
-3. Workflows — replay checks, CI status, receipts, and automation evidence.
+1. Checkout AL.
+2. Install `jq`, `curl`, `poppler-utils`, `python3`, and `gh`.
+3. Configure Boss Bre git identity.
+4. Run Boss Bre source ingest.
+5. Run Boss Bre public sweep.
+6. Run Boss Bre anomaly detector.
+7. Run Boss Bre lead receipts.
+8. Run simulated artifact scan v1.5.
+9. Commit Boss Bre artifacts if changed.
+10. Run Librarian update.
+11. Print gate status.
 
-Boss Bre takes care of the handoff structure:
+### Real scripts / artifacts found
 
+- `scripts/boss_bre_runner.sh`
+- `scripts/boss_bre_runner_v0_2.sh`
+- `scripts/boss_bre_librarian.py`
+- `scripts/boss_bre_fetch_extract_v0_1.sh`
+- `scripts/boss_bre_anomaly_detector.sh`
+- `scripts/boss_bre_lead_receipt_v0_1.sh`
+- `scripts/boss_bre_witness_chain_v0_2.sh`
+- `scripts/boss_bre_witness_feed_v0_1.sh`
+- `data/boss_bre_anomaly_rules.json`
+- `projects/mn-fiscal-replay/boss_bre/latest_sweep_summary.json`
+- `projects/mn-fiscal-replay/boss_bre/latest_lead_receipt_manifest.json`
+- `projects/mn-fiscal-replay/boss_bre/boss_bre_public_anomaly_board.md`
+
+### Latest observed sweep summary
+
+- UTC: `2026-06-23T02:39:16Z`
+- Run ID: `2026-06-23T02-39-16Z`
+- Total records: `911`
+- Repo PDFs: `906`
+- Fetched registry PDFs: `2`
+- Blocked or missing sources: `3`
+- Extracted repo PDFs: `906`
+- Public content claim: `BLOCKED`
+- Human review required: `true`
+- No fake green: `true`
+
+### Lead receipt manifest
+
+- Status: `LEAD_RECEIPTS_EMITTED`
+- Lead receipt count: `726663`
+- High count: `21199`
+- Medium count: `851`
+- Low count: `12553`
+- Unique lanes: `8`
+- Claim type: `ANOMALY_LEAD_ONLY`
+- Public content claim: `BLOCKED_PENDING_HUMAN_REVIEW`
+- Human review required: `true`
+- No fake green: `true`
+
+### Issue routing evidence
+
+- `#348` is the Boss Bre / MN_001 master review lane.
+- `#351` exists as `Boss Bre review queue: MN_001 forensic review required`.
+- `#350` and `#349` also exist as MN_001 forensic review issues.
+
+### Doctrine
+
+Boss Bre works in the background through GitHub Actions and committed artifacts.
+
+Boss Bre does not publish fraud verdicts, criminal findings, or final conclusions. Boss Bre publishes anomaly leads, review packets, routed issues, summaries, and receipts.
+
+Correct routing structure:
+
+```text
+Scheduled Boss Bre Workflow -> Source Ingest -> Public Sweep -> Anomaly Detector -> Lead Receipts -> Artifact Commit -> Librarian Issue Routing -> Morning Replay
+```
+
+Daily reports should route into the same structure:
+
+```text
 Daily Report -> Boss Bre -> Librarian Index -> Workflow Replay -> Morning Report
-
-No fake background work. No fake green. If Boss Bre is represented as active, there must eventually be a receipt, automation, message, issue, commit, or workflow run showing that the report was routed.
+```
 
 ## Lanes Updated for Morning Replay
 
@@ -57,24 +135,23 @@ No fake background work. No fake green. If Boss Bre is represented as active, th
 - Morning task: replay JOY lane without dragging unrelated repo clutter into the family or birthday lanes.
 - Guardrail: JOY stays human-first, not workflow-first.
 
-### 5. Boss Bre
-- Status: DAILY_REPORT_ROUTER_REPORTED
-- Use: Boss Bre
-- Function: receives copies of daily reports and routes them to Librarian + workflows.
-- Avoid accidental drift from Boss Bray / Braylee unless user explicitly says otherwise.
-- Morning task: confirm whether there is an actual routing mechanism. If not, create TODO for automation or manual copy step.
+### 5. Boss Bre / Boss Bray
+- Status: VERIFIED_MECHANISM_PRESENT
+- Use: Boss Bre / Boss Bray as the active coordination lane unless Jay specifies a narrower distinction.
+- Function: scheduled audit runner, artifact committer, lead receipt emitter, anomaly board maintainer, and Librarian issue router.
+- Morning task: check latest Boss Bre workflow run, latest sweep summary, latest lead receipt manifest, open review issues, and whether daily closeout reports are routed into Boss Bre.
 
 ### 6. Librarian
-- Status: ACTIVE_SUPPORT_LANE_REPORTED
-- Morning task: organize recall, links, documents, and project index so Jay can find his work again.
-- Function: memory map / library index / retrieval helper.
-- Receives daily report copies from Boss Bre.
+- Status: VERIFIED_COMPONENT_PRESENT
+- File: `scripts/boss_bre_librarian.py`
+- Function: scans jurisdiction receipts, scan inventory, learning state, and scan results; comments master summary on issue #348; routes review-required lanes without claim promotion.
+- Morning task: confirm latest Librarian issue comment / routing result.
 
 ### 7. Workflows
-- Status: MORNING_REPLAY_REQUIRED
-- Morning task: check GitHub workflows only with actual evidence.
-- Rule: workflow success is not claimed without a visible run, commit, or CI receipt.
-- Receives daily report references from Boss Bre for replay checks.
+- Status: VERIFIED_SCHEDULED_WORKFLOW_PRESENT
+- File: `.github/workflows/boss-bre-public-audit.yml`
+- Schedule: every 15 minutes.
+- Rule: workflow success still requires checking actual run status; workflow existence alone is not a success verdict.
 
 ## Wake Prompt
 
@@ -86,19 +163,22 @@ replay day closeout 2026-06-22
 
 Expected assistant behavior:
 1. Load this closeout receipt.
-2. Replay WORLD_MAP, Family, COMPUTERWISDOM, AL, JOY, Boss Bre, Librarian, and workflows.
-3. Produce a before/after morning report.
-4. Mark each lane VERIFIED, REPORTED, INFERRED, BLOCKED, or TODO.
-5. Do not claim green without receipts.
-6. Start with Family / Layer 0.
-7. Confirm daily report routing: Boss Bre -> Librarian -> Workflows.
+2. Start with Family / Layer 0.
+3. Audit Boss Bre first after Family.
+4. Check the latest Boss Bre workflow run and latest committed artifacts.
+5. Replay WORLD_MAP, COMPUTERWISDOM, AL, JOY, Boss Bre/Boss Bray, Librarian, and workflows.
+6. Produce a before/after morning report.
+7. Mark each lane VERIFIED, REPORTED, INFERRED, BLOCKED, or TODO.
+8. Do not claim green without receipts.
 
 ## Closing State
 
 DAY_CLOSED: TRUE
 NO_FAKE_GREEN: ACTIVE
 FAMILY_LAYER_0: ACTIVE
-BOSS_BRE_DAILY_REPORT_ROUTER: REPORTED
-LIBRARIAN_REPORT_INDEX: REPORTED
-WORKFLOW_REPLAY_HANDOFF: REPORTED
+BOSS_BRE_MECHANISM: VERIFIED_PRESENT
+BOSS_BRE_SCHEDULE: EVERY_15_MINUTES
+BOSS_BRE_DAILY_REPORT_ROUTER: ACTIVE_MECHANISM_PRESENT
+LIBRARIAN_REPORT_INDEX: VERIFIED_COMPONENT_PRESENT
+WORKFLOW_REPLAY_HANDOFF: VERIFIED_WORKFLOW_PRESENT
 MORNING_TRIGGER: replay day closeout 2026-06-22
