@@ -1,0 +1,37 @@
+{
+  "schema": "PAYMENT_BOUNDARY_V0_1",
+  "status": "SIGNED_FIXTURE",
+  "docket_id": "MN-STEARNS-003",
+  "receipt_id": "r_mn_stearns_003_v1",
+  "replay_id": "replay_mn_stearns_003_v1",
+  "nutrition_score": 78,
+  "replay_url": "https://goblin.court/replay/mn-stearns-003",
+  "trigger": "valid_x402_payment_received",
+  "builder_code": "bc_j1200j64",
+  "input_required": [
+    "docket_id",
+    "receipt_id",
+    "nutrition_score",
+    "replay_url"
+  ],
+  "output": "PROMPT_PACK_UNIT_V0_1",
+  "artifact_count": 7,
+  "delivery": "single_immutable_bundle",
+  "regeneration": {
+    "allowed": true,
+    "rule": "same inputs may regenerate outputs; lineage must remain identical"
+  },
+  "refund_rule": {
+    "prompt_quality_dispute": "not_automatic_refund",
+    "receipt_mismatch": "refund"
+  },
+  "authority": false,
+  "truth_claims": "prohibited",
+  "v1_scope": {
+    "subscriptions": false,
+    "marketplace": false,
+    "image_rendering": false,
+    "agents": false,
+    "additional_seeds": false
+  }
+}
