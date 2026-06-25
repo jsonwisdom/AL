@@ -1,0 +1,22 @@
+{
+  "system": "constitutional-receipts-v0.1",
+  "authority": false,
+  "entrypoints": [
+    "receipt.py",
+    "claim_pipeline.py",
+    "world_map.py",
+    "map_query.py",
+    "policy_loader.py",
+    "replay_engine.py",
+    "receiptctl.py",
+    "verify_all.py"
+  ],
+  "policies": [
+    "POLICY_CLAIM_VERIFICATION_V0_1",
+    "POLICY_WORLD_MAP_INGEST_V0_1"
+  ],
+  "invariant": "Receipts prove process only. Receipts do not prove truth or grant authority.",
+  "version": "0.1",
+  "replay_command": "python verify_all.py",
+  "manifest_hash": "TODO: compute on release tag"
+}
