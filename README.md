@@ -49,3 +49,49 @@ Public positioning:
 
 **Boss Bre: Minnesota Fiscal Anomaly Intelligence**  
 Public PDFs. Replayable receipts. Human-reviewed audit leads.
+
+---
+
+## Constitutional Receipts v0.1
+
+This repository includes a **receipt-first replay architecture** for transparent AI and governance workflows.
+
+> **Core invariant:** Receipts prove process only. Receipts do not prove truth or grant authority.
+
+### Verify Locally
+
+```bash
+python verify_all.py
+```
+
+Expected success output:
+
+```text
+CONSTITUTIONAL_REPLAY_PASS
+```
+
+### Public Replay Surface
+
+A GitHub Action runs the full verifier on every push and pull request.
+
+Check the Actions tab for **Constitutional Replay v0.1** to inspect live replay results.
+
+### Components
+
+- `receipt.py` — receipt hashing, invariants, and attestations
+- `claim_pipeline.py` — claim verification receipt generator
+- `policy_loader.py` — immutable policy registry
+- `world_map.py` — receipt-backed projection layer
+- `map_query.py` — read-only map inspection
+- `replay_engine.py` — independent receipt replay
+- `receiptctl.py` — CLI control surface
+- `verify_all.py` — one-command verifier
+- `REPLAY_MANIFEST_V0_1.json` — canonical manifest
+
+### Authority Rule
+
+`authority` must always be `false`.
+
+Authorization is explicit, scoped, and separate from receipts. The world map consumes authorized receipts but never creates authority or decides truth.
+
+`REPLAY_MANIFEST_V0_1.json` defines the canonical entrypoints and policies for this version.
