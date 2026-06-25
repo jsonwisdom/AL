@@ -1,0 +1,32 @@
+{
+  "policy_id": "POLICY_WORLD_MAP_INGEST_V0_1",
+  "version": "0.1",
+  "effective_from": "2026-06-25T00:00:00Z",
+  "supersedes": null,
+  "rules": [
+    {
+      "id": "valid_receipt",
+      "description": "Receipt must pass structural, hash, and attestation verification."
+    },
+    {
+      "id": "authority_false",
+      "description": "Receipt authority must remain false."
+    },
+    {
+      "id": "authorization_granted",
+      "description": "Authorization result must be granted."
+    },
+    {
+      "id": "execution_executed",
+      "description": "Execution status must be executed."
+    },
+    {
+      "id": "policy_compliant",
+      "description": "Receipt policy result must be compliant."
+    },
+    {
+      "id": "policy_hash_present",
+      "description": "Referenced policy hash must be embedded in the receipt."
+    }
+  ]
+}
