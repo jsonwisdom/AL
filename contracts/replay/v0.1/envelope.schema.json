@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.org/contracts/replay/v0.1/envelope.schema.json",
+  "title": "Replay Envelope v0.1",
+  "description": "Minimal replay-adjudication container. The envelope defines the byte-exact object passed into replay verification; verdicts are computed after replay and must not be embedded here.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "envelope_version",
+    "envelope_id",
+    "source_fixture",
+    "canonicalization",
+    "payload",
+    "expected",
+    "integrity"
+  ],
+  "properties": {
+    "envelope_version": {
+      "const": "replay-envelope-v0.1"
+    },
+    "envelope_id": {
+      "type": "string",
+      "pattern": "^REPLAYENV_[0-9]{8}_[0-9]{6}_[0-9]{5}$"
+    },
+    "source_fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["claim_id", "fixture_version", "candidate_canonical_hash"],
+      "properties": {
+        "claim_id": {
+          "type": "string",
+          "pattern": "^CHATFIXTURE_[0-9]{8}_[0-9]{6}_[0-9]{5}$"
+        },
+        "fixture_version": {
+          "const": "fixture-v1"
+        },
+        "candidate_canonical_hash": {
+          "$ref": "#/$defs/sha256_uri"
+        }
+      }
+    },
+    "canonicalization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["unicode", "json", "key_order", "whitespace", "encoding", "runtime_fields"],
+      "properties": {
+        "unicode": {
+          "const": "NFC"
+        },
+        "json": {
+          "const": "JCS"
+        },
+        "key_order": {
+          "const": "lexicographic"
+        },
+        "whitespace": {
+          "const": "compact"
+        },
+        "encoding": {
+          "const": "UTF-8"
+        },
+        "runtime_fields": {
+          "const": "forbidden"
+        }
+      }
+    },
+    "payload": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fixture_path", "fixture_sha256", "runner", "entrypoint"],
+      "properties": {
+        "fixture_path": {
+          "type": "string",
+          "pattern": "^claims/extractor/tests/fixtures/golden/[A-Za-z0-9_./-]+\\.json$"
+        },
+        "fixture_sha256": {
+          "$ref": "#/$defs/sha256_uri"
+        },
+        "runner": {
+          "const": "claims/extractor/tests/run_acceptance.py"
+        },
+        "entrypoint": {
+          "const": "python3 claims/extractor/tests/run_acceptance.py"
+        }
+      }
+    },
+    "expected": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["replay_result", "verdict_scope"],
+      "properties": {
+        "replay_result": {
+          "enum": ["MATCH"]
+        },
+        "verdict_scope": {
+          "const": "fixture_acceptance"
+        }
+      }
+    },
+    "integrity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["envelope_canonical_hash", "sha256sums_path"],
+      "properties": {
+        "envelope_canonical_hash": {
+          "$ref": "#/$defs/sha256_uri"
+        },
+        "sha256sums_path": {
+          "const": "contracts/replay/v0.1/SHA256SUMS"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "sha256_uri": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    }
+  }
+}
