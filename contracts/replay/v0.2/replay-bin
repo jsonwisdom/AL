@@ -1,0 +1,43 @@
+#!/usr/bin/env python3
+"""
+Deterministic ALMS replay-bin v0.2.
+
+Allowed commands:
+- echo_golden
+- check_policy
+
+Reads invocation JSON from stdin. Writes canonical bytes to stdout only.
+No stderr on success.
+"""
+
+from __future__ import annotations
+
+import json
+import sys
+from typing import Any, Dict
+
+
+def read_invocation() -> Dict[str, Any]:
+    return json.loads(sys.stdin.buffer.read().decode("utf-8"))
+
+
+def main() -> int:
+    if len(sys.argv) < 2:
+        return 2
+
+    command = sys.argv[1]
+    _invocation = read_invocation()
+
+    if command == "echo_golden":
+        sys.stdout.write("REPLAY_GOLDEN_V0_1\n")
+        return 0
+
+    if command == "check_policy":
+        sys.stdout.write('{"result": "PASS"}\n')
+        return 0
+
+    return 64
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
