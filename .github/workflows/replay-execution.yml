@@ -1,10 +1,11 @@
-name: Replay Execution v0.1
+name: Replay Execution v0.2
 
 on:
   push:
     branches: [ master, main ]
     paths:
       - 'contracts/replay/v0.1/**'
+      - 'contracts/replay/v0.2/**'
       - 'contracts/keys/v0.1/**'
       - 'contracts/invocation/v0.1/**'
       - 'verify.sh'
@@ -13,6 +14,7 @@ on:
     branches: [ master, main ]
     paths:
       - 'contracts/replay/v0.1/**'
+      - 'contracts/replay/v0.2/**'
       - 'contracts/keys/v0.1/**'
       - 'contracts/invocation/v0.1/**'
       - 'verify.sh'
@@ -44,5 +46,17 @@ jobs:
       - name: Signature Verifier Present
         run: test -f contracts/replay/v0.1/verify_envelope_signature.py
 
+      - name: Replay v0.2 Invocation Schema Present
+        run: test -f contracts/replay/v0.2/invocation.schema.json
+
+      - name: Replay v0.2 Command Grammar Present
+        run: test -f contracts/replay/v0.2/COMMANDS.md
+
+      - name: Replay v0.2 Check Policy Golden Present
+        run: test -f contracts/replay/v0.2/golden_check_policy.json
+
+      - name: Replay Handler Has Command Allowlist
+        run: grep -q 'ALLOWED_REPLAY_COMMANDS' contracts/replay/v0.1/execute_invocation.py
+
       - name: Replay Execution Stub Verdict
-        run: echo "REPLAY_EXECUTION_STUB_GREEN"
+        run: echo "REPLAY_EXECUTION_V0_2_STUB_GREEN"
