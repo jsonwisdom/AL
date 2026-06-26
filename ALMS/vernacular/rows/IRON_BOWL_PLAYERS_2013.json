@@ -1,0 +1,83 @@
+{
+  "schema_version": "AI_IRON_BOWL_PLAYERS_ROW_V0_1",
+  "row_id": "IRON_BOWL_PLAYERS_2013",
+  "season_year": 2013,
+  "game_id": "IRON_BOWL_2013",
+  "source_packet": {
+    "source_url": "ALMS/vernacular/IRON_BOWL_2013_KICK_SIX_SOURCE_PACKET_V0_1.md",
+    "source_packet_state": "SOURCE_PACKET_ACTIVE",
+    "source_packet_commit": "1e486bb6c3aa5eafc69969d9b0450e5fbff97745",
+    "source_packet_content_sha": "13cfa01f51af5e8ce0de694493d7f1506d48053a"
+  },
+  "linked_rows": {
+    "coaches_row": "ALMS/vernacular/rows/IRON_BOWL_COACHES_2013.json",
+    "replay_mechanics_row": "ALMS/vernacular/rows/IRON_BOWL_REPLAY_2013.json"
+  },
+  "players": [
+    {
+      "name": "Chris Davis",
+      "team": "Auburn",
+      "position": "DB/KR",
+      "play_role": "returned missed field goal for game-winning Auburn touchdown",
+      "row_state": "SOURCE_SUPPORTED"
+    },
+    {
+      "name": "Adam Griffith",
+      "team": "Alabama",
+      "position": "K",
+      "play_role": "attempted final 57-yard field goal",
+      "row_state": "SOURCE_SUPPORTED"
+    },
+    {
+      "name": "AJ McCarron",
+      "team": "Alabama",
+      "position": "QB",
+      "play_role": "Alabama quarterback in 2013 Iron Bowl context",
+      "row_state": "SOURCE_SUPPORTED_CONTEXT_ONLY"
+    },
+    {
+      "name": "Nick Marshall",
+      "team": "Auburn",
+      "position": "QB",
+      "play_role": "Auburn quarterback in 2013 Iron Bowl context",
+      "row_state": "SOURCE_SUPPORTED_CONTEXT_ONLY"
+    },
+    {
+      "name": "T.J. Yeldon",
+      "team": "Alabama",
+      "position": "RB",
+      "play_role": "Alabama running back in late-game clock/context sequence",
+      "row_state": "SOURCE_SUPPORTED_CONTEXT_ONLY"
+    }
+  ],
+  "replay_situation": {
+    "common_name": "Kick Six",
+    "score_before_play": "28-28",
+    "final_score": "Auburn 34, Alabama 28",
+    "clock_state": "0:01 restored after replay review; final play ended with no time remaining",
+    "play_type": "missed field goal return",
+    "field_goal_attempt_yards": 57,
+    "return_result": "game-winning Auburn touchdown"
+  },
+  "verification": {
+    "field_state": "TOUCHDOWN_CONFIRMED",
+    "verified_status": "SOURCE_PACKET_ACTIVE",
+    "promotion_scope": "players_and_play_roles_only",
+    "no_fake_green": true
+  },
+  "guardrails": {
+    "broadcaster_perspective": "EXCLUDED_PENDING_VERIFIED_BROADCAST_POINTER",
+    "coach_reputation": "UNMEASURED",
+    "player_reputation": "UNMEASURED",
+    "loyalty_state": "UNMEASURED",
+    "family_gate": "NOT_TOUCHED"
+  },
+  "boundary": [
+    "PLAYERS_ROW_CONFIRMED != AUTHORITY_TRUE",
+    "PLAYERS_ROW_CONFIRMED != FAMILY_APPROVAL",
+    "PLAYERS_ROW_CONFIRMED != PLAYER_REPUTATION_MEASURED",
+    "PLAYERS_ROW_CONFIRMED != LOYALTY_PROVEN",
+    "PLAYERS_ROW_CONFIRMED != BROADCASTER_TRANSCRIPT_VERIFIED"
+  ],
+  "authority": false
+}
