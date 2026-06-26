@@ -15,8 +15,8 @@ on:
       - '.github/workflows/replay-interface.yml'
 
 jobs:
-  replay-envelope-gate:
-    name: Replay Envelope Gate
+  replay-interface-gate:
+    name: Replay Interface Gate
     runs-on: ubuntu-latest
 
     steps:
@@ -36,6 +36,12 @@ jobs:
 
       - name: Validate Replay Canonicalization Doctrine Presence
         run: test -f contracts/replay/v0.1/CANONICALIZATION.md
+
+      - name: Validate Replay Invocation Schema Presence
+        run: test -f contracts/replay/v0.1/invocation-v0.1.schema.json
+
+      - name: Validate Replay Invocation Doctrine Presence
+        run: test -f contracts/replay/v0.1/INVOCATION.md
 
       - name: Replay Interface Stub Verdict
         run: echo "REPLAY_INTERFACE_STUB_GREEN"
