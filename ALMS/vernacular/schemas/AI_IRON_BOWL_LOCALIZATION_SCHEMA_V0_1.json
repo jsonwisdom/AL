@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "AI_IRON_BOWL_LOCALIZATION_SCHEMA_V0_1",
+  "title": "AI Iron Bowl Localization Schema V0.1",
+  "description": "Localization schema for Alabama ALMS / AI Iron Bowl replay surfaces. Captures place, citizen context, venue, jurisdiction, source packet, and replay state without promoting unsupported claims.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "localization_id",
+    "state",
+    "locality",
+    "venue_or_surface",
+    "jurisdiction_context",
+    "replay_context",
+    "source_packet",
+    "verification",
+    "authority"
+  ],
+  "properties": {
+    "schema_version": { "const": "AI_IRON_BOWL_LOCALIZATION_SCHEMA_V0_1" },
+    "localization_id": {
+      "type": "string",
+      "pattern": "^AL_LOCALIZATION_[A-Z0-9_]+_V0_1$"
+    },
+    "state": { "const": "Alabama" },
+    "locality": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["city", "county", "source_status"],
+      "properties": {
+        "city": { "type": "string", "minLength": 1 },
+        "county": { "type": "string" },
+        "source_status": {
+          "type": "string",
+          "enum": ["USER_SUPPLIED", "SOURCE_PACKET_PENDING", "SOURCE_PACKET_ACTIVE", "VERIFIED", "UNKNOWN"]
+        }
+      }
+    },
+    "venue_or_surface": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "surface_type", "source_status"],
+      "properties": {
+        "name": { "type": "string" },
+        "surface_type": {
+          "type": "string",
+          "enum": ["restaurant", "civic", "school", "stadium", "broadcast", "emergency_services", "online", "unknown"]
+        },
+        "handle_or_alias": { "type": "string" },
+        "source_status": {
+          "type": "string",
+          "enum": ["USER_SUPPLIED", "SOURCE_PACKET_PENDING", "SOURCE_PACKET_ACTIVE", "VERIFIED", "UNKNOWN"]
+        }
+      }
+    },
+    "jurisdiction_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state_level", "county_level", "municipal_level"],
+      "properties": {
+        "state_level": { "type": "string" },
+        "county_level": { "type": "string" },
+        "municipal_level": { "type": "string" }
+      }
+    },
+    "replay_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["game_layer", "citizen_layer", "coach_voice"],
+      "properties": {
+        "game_layer": { "type": "string" },
+        "citizen_layer": { "type": "string" },
+        "coach_voice": { "type": "string" },
+        "lunch_surface": { "type": "string" }
+      }
+    },
+    "source_packet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_url", "fetched_at_utc", "content_hash", "extractor_version", "replay_notes"],
+      "properties": {
+        "source_url": { "type": "string" },
+        "fetched_at_utc": { "type": "string" },
+        "content_hash": { "type": "string" },
+        "extractor_version": { "type": "string" },
+        "replay_notes": { "type": "string" }
+      }
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["field_state", "verified_status", "no_fake_green"],
+      "properties": {
+        "field_state": {
+          "type": "string",
+          "enum": ["PUNTED", "GOAL_LINE_REVIEW", "TOUCHDOWN_CONFIRMED", "FLAG_ON_THE_PLAY", "NO_FAKE_GREEN"]
+        },
+        "verified_status": {
+          "type": "string",
+          "enum": ["SOURCE_PACKET_PENDING", "SOURCE_PACKET_ACTIVE", "VERIFIED", "CONFLICT_FOUND", "UNKNOWN"]
+        },
+        "no_fake_green": { "const": true }
+      }
+    },
+    "authority": { "const": false }
+  }
+}
