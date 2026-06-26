@@ -1,0 +1,24 @@
+{
+  "claim_id": "CHATFIXTURE_20260626_000002_00002",
+  "ingestion_id": "ING_20260626_000002_00002",
+  "version": "fixture-v1",
+  "extracted_claim": "We must ship the receipt format by Friday.",
+  "confidence": 0.95,
+  "needs_clarification": false,
+  "context_window": {
+    "message_ids": [],
+    "excerpts": []
+  },
+  "normalization": {
+    "unicode": "NFC",
+    "whitespace": "canonical",
+    "case": "preserve",
+    "json": "JCS"
+  },
+  "raw_hash": "sha256:9fa7876dece5a2deda753cb089ed723da3719a2e54dbf9c55b85da57a9ee1004",
+  "candidate_canonical_hash": "sha256:ec1b0d09716940b56f160e579f5ed21c0ed76fa3ba781d0659a5d9e17e99a712",
+  "regime": {
+    "canonicalizer": "ALMS_EXTRACTOR_V1",
+    "timestamp": "2026-06-26T00:00:02Z"
+  }
+}
