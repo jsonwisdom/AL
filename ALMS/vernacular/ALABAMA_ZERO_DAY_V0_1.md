@@ -8,6 +8,8 @@ DEFENSIVE_RECEIPT_LAYER_ONLY
 REPLAY_FIRST
 AUTHORITY_FALSE
 FAMILY_GATE_NOT_TOUCHED
+MONITOR_RULE_ENCODED
+BACKGROUND_MONITOR_RUNNING_FALSE
 NO_FAKE_GREEN_ACTIVE
 ```
 
@@ -37,6 +39,31 @@ ALABAMA_ZERO_DAY != VULNERABILITY_EXPLOIT
 ALABAMA_ZERO_DAY != AUTHORITY_TRUE
 ALABAMA_ZERO_DAY != FAMILY_APPROVAL
 ```
+
+## Monitor Boundary
+
+```text
+MONITOR_RULE_ENCODED = true
+BACKGROUND_MONITOR_RUNNING = false
+FAILURE_MODE = BACKGROUND_MONITORING_DEPENDENCY
+```
+
+This protocol defines how inbound `#ALABAMA_ZERO_DAY` signals must be handled when surfaced in-session.
+
+It does not claim autonomous background monitoring.
+
+Any new handled signal routes to:
+
+```text
+REPLAY_VERIFICATION
+SOURCE_PACKET_CHECK
+BOOTH_REPLAY
+RESOLUTION_ONLY
+```
+
+No phantom automation.
+No background claim unless an explicit automation exists.
+No fake green.
 
 ## Core Lanes
 
@@ -85,6 +112,8 @@ REPLAY_2013 = TOUCHDOWN_CONFIRMED_MECHANICS_ONLY
 PLAYERS_2013 = TOUCHDOWN_CONFIRMED_ROLES_ONLY
 BROADCAST_2013 = GOAL_LINE_REVIEW_METADATA_ONLY
 AUTHORITY = false
+MONITOR_RULE_ENCODED = true
+BACKGROUND_MONITOR_RUNNING = false
 NO_FAKE_GREEN = true
 ```
 
@@ -101,6 +130,7 @@ RULE_007: If loyalty is asserted without adversarial replay, flag the play.
 RULE_008: If family approval is implied by a game receipt, flag the play.
 RULE_009: If authority=true appears, flag the play.
 RULE_010: If the packet cannot be replayed, no fake green.
+RULE_011: If monitoring is claimed without an explicit automation, flag phantom monitoring.
 ```
 
 ## Boundary
@@ -111,6 +141,7 @@ ALABAMA_ZERO_DAY != FAMILY_GATE_PASS
 ALABAMA_ZERO_DAY != CHILD_CONSENT
 ALABAMA_ZERO_DAY != MRS_WISDOM_GATE_PASS
 ALABAMA_ZERO_DAY != CYBER_ZERO_DAY
+ALABAMA_ZERO_DAY != BACKGROUND_MONITOR_RUNNING
 ALABAMA_ZERO_DAY = DEFENSIVE_REPLAY_PROTOCOL
 ```
 
@@ -134,6 +165,10 @@ Alabama Zero Day: replay first, receipts cold, no fake touchdown. Roll Tide. üè
 Alabama Zero Day opened.
 
 This is a defensive receipt protocol.
+
+Monitor rule encoded.
+
+Background monitor not running.
 
 No cyber exploit lane.
 
