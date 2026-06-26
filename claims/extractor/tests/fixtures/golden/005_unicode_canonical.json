@@ -1,0 +1,24 @@
+{
+  "claim_id": "CHATFIXTURE_20260626_000005_00005",
+  "ingestion_id": "ING_20260626_000005_00005",
+  "version": "fixture-v1",
+  "extracted_claim": "We agreed to preserve Caf\u00e9 metadata before v1.",
+  "confidence": 0.98,
+  "needs_clarification": false,
+  "context_window": {
+    "message_ids": [],
+    "excerpts": []
+  },
+  "normalization": {
+    "unicode": "NFC",
+    "whitespace": "canonical",
+    "case": "preserve",
+    "json": "JCS"
+  },
+  "raw_hash": "sha256:f7de9b52046e43d41f6c7ab85300e195f4168b20020d4ddcfb6bd5efe8d347d2",
+  "candidate_canonical_hash": "sha256:d75d236cb1ba6c6e0d19d886dfe21da86127fab7c717939a607127020d648fca",
+  "regime": {
+    "canonicalizer": "ALMS_EXTRACTOR_V1",
+    "timestamp": "2026-06-26T00:00:05Z"
+  }
+}
