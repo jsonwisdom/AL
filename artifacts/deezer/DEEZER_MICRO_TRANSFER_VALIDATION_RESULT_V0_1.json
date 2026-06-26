@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "schema_version": "DEEZER_MICRO_TRANSFER_VALIDATION_RESULT_V0_1",
   "status": "SENT_TO_EXPECTED_ARTIFACT_PATH",
   "tx_hash": "0x4092721e7db7a389727e0f05a1fb2ad97caf9b6fa4a07bdcbab3a3d72ea6774b",
@@ -38,4 +39,61 @@
     "TRANSFER_EXISTS != ANCHOR_001_PASS"
   ],
   "next_required": "Run purpose-built Base RPC validator and replace this packet with raw_receipt_hash and normalized_event_hash populated."
+=======
+  "schema_version": "DEEZER_MICRO_TRANSFER_CI_VALIDATION_RECEIPT_V0_1",
+  "validator_version": "validate_deezer_micro_transfer_v0_1.js",
+  "checked_at_utc": "2026-06-26T19:58:53.861Z",
+  "tx_hash": "0x4092721e7db7a389727e0f05a1fb2ad97caf9b6fa4a07bdcbab3a3d72ea6774b",
+  "chain_id": 8453,
+  "network": "Base",
+  "tx_status": "success",
+  "block_number": 47855949,
+  "block_hash": "0x31ec071f681688b8cc21cae7ad789d93d56fc7a5a59ce347bf34a7adec26fc2c",
+  "timestamp_unix": 1782501245,
+  "logs_present": true,
+  "log_count": 5,
+  "deezer_event_match": true,
+  "token_symbol_expected": "DEEZER",
+  "token_contract_candidates": [
+    "0x5ff137d4b0fdcd49dca30c7cf57e578a026d2789",
+    "0x4bf1a3993d635b7593ebe3f5742e07b91442a692",
+    "0x2faeb0760d4230ef2ac21496bb4f0b47d634fd4c"
+  ],
+  "from_address": "0x54e2acab04c89a3fe02852bf8dd69ee8f526bc75",
+  "to_address": "0x5ff137d4b0fdcd49dca30c7cf57e578a026d2789",
+  "recipient_expected": "0xa380552a27b0a5a2874ea7aa52cac09f542002e8",
+  "recipient_match": true,
+  "amount_expected": "0.00000000001 DEEZER",
+  "amount_observed": [
+    {
+      "address": "0x4bf1a3993d635b7593ebe3f5742e07b91442a692",
+      "data": "0x0000000000000000000000000000000000000000000000000000000000989680",
+      "raw": "10000000"
+    },
+    {
+      "address": "0x2faeb0760d4230ef2ac21496bb4f0b47d634fd4c",
+      "data": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "raw": "0"
+    }
+  ],
+  "amount_match": true,
+  "raw_receipt_hash": "4979c16d1e625a0544acdc6a0afe21d2b0344cd5aa32149ad5dec68f9a2fdd5b",
+  "normalized_event_hash": "a6eea94572fda82231605d74430ea7a1382e0f02484b696a5fc8b24f49ab460e",
+  "normalized_event": {
+    "tx_hash": "0x4092721e7db7a389727e0f05a1fb2ad97caf9b6fa4a07bdcbab3a3d72ea6774b",
+    "chain_id": 8453,
+    "status_hex": "0x1",
+    "block_number": 47855949,
+    "from_address": "0x54e2acab04c89a3fe02852bf8dd69ee8f526bc75",
+    "to_address": "0x5ff137d4b0fdcd49dca30c7cf57e578a026d2789",
+    "expected_recipient": "0xa380552a27b0a5a2874ea7aa52cac09f542002e8",
+    "recipient_log_count": 2,
+    "amount_candidate_log_count": 2,
+    "log_count": 5,
+    "token_symbol_expected": "DEEZER"
+  },
+  "field_state": "TOUCHDOWN_CONFIRMED_INDEPENDENT",
+  "authority": false,
+  "no_fake_green": true
+>>>>>>> 8bec937be (Add DEEZER independent validation result)
 }
