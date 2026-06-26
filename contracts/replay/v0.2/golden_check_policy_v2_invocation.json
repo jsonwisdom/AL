@@ -1,0 +1,34 @@
+{
+  "invocation_id": "sha256:c407b83c13edb15b54481715454a3271165b35aa4bb7758e492edb919bb7a2f0",
+  "schema_version": "invocation-v0.2",
+  "envelope_ref": "contracts/replay/v0.2/golden_check_policy_v2_signed.json",
+  "envelope_sha256": "sha256:481c9c7e5be261ab6b67df78ffca23e73e5b6aad8c51919d525179f7f0a85ac0",
+  "entrypoint": "./verify.sh --invocation",
+  "replay_command": "check_policy",
+  "replay_args": [],
+  "witness": {
+    "target": "PYTHON_3.12",
+    "strict_mode": true
+  },
+  "canonicalization": {
+    "unicode": "NFC",
+    "encoding": "UTF-8",
+    "json": "JCS",
+    "key_order": "lexicographic",
+    "whitespace": "compact",
+    "case": "preserve"
+  },
+  "options": {
+    "require_convergence": true,
+    "timeout_seconds": 30,
+    "network": "disabled"
+  },
+  "expected_outputs": {
+    "stdout_sha256": "sha256:757b67230bd34a7dcc4c4a857b0c76a826f8246b0ea6471f26d87490330e2aa8",
+    "canonicalization": {
+      "strip_single_trailing_newline": true,
+      "unicode": "NFC_IF_VALID_UTF8",
+      "invalid_utf8": "HASH_RAW_BYTES"
+    }
+  }
+}
