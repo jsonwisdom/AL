@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://jsonwisdom.org/contracts/replay/v0.1/envelope.schema.json",
   "title": "Replay Envelope v0.1",
-  "description": "Minimal replay-adjudication container. The envelope defines the byte-exact object passed into replay verification; verdicts are computed after replay and must not be embedded here.",
+  "description": "Minimal replay-adjudication container. The envelope defines the byte-exact object passed into replay verification; verdicts are computed after replay and must not be embedded here. v0.1 requires an attestation signature block for authorship and chain-of-custody.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -12,7 +12,8 @@
     "canonicalization",
     "payload",
     "expected",
-    "integrity"
+    "integrity",
+    "signature"
   ],
   "properties": {
     "envelope_version": {
@@ -44,24 +45,12 @@
       "additionalProperties": false,
       "required": ["unicode", "json", "key_order", "whitespace", "encoding", "runtime_fields"],
       "properties": {
-        "unicode": {
-          "const": "NFC"
-        },
-        "json": {
-          "const": "JCS"
-        },
-        "key_order": {
-          "const": "lexicographic"
-        },
-        "whitespace": {
-          "const": "compact"
-        },
-        "encoding": {
-          "const": "UTF-8"
-        },
-        "runtime_fields": {
-          "const": "forbidden"
-        }
+        "unicode": { "const": "NFC" },
+        "json": { "const": "JCS" },
+        "key_order": { "const": "lexicographic" },
+        "whitespace": { "const": "compact" },
+        "encoding": { "const": "UTF-8" },
+        "runtime_fields": { "const": "forbidden" }
       }
     },
     "payload": {
@@ -73,15 +62,9 @@
           "type": "string",
           "pattern": "^claims/extractor/tests/fixtures/golden/[A-Za-z0-9_./-]+\\.json$"
         },
-        "fixture_sha256": {
-          "$ref": "#/$defs/sha256_uri"
-        },
-        "runner": {
-          "const": "claims/extractor/tests/run_acceptance.py"
-        },
-        "entrypoint": {
-          "const": "python3 claims/extractor/tests/run_acceptance.py"
-        }
+        "fixture_sha256": { "$ref": "#/$defs/sha256_uri" },
+        "runner": { "const": "claims/extractor/tests/run_acceptance.py" },
+        "entrypoint": { "const": "python3 claims/extractor/tests/run_acceptance.py" }
       }
     },
     "expected": {
@@ -89,12 +72,8 @@
       "additionalProperties": false,
       "required": ["replay_result", "verdict_scope"],
       "properties": {
-        "replay_result": {
-          "enum": ["MATCH"]
-        },
-        "verdict_scope": {
-          "const": "fixture_acceptance"
-        }
+        "replay_result": { "enum": ["MATCH"] },
+        "verdict_scope": { "const": "fixture_acceptance" }
       }
     },
     "integrity": {
@@ -102,11 +81,41 @@
       "additionalProperties": false,
       "required": ["envelope_canonical_hash", "sha256sums_path"],
       "properties": {
-        "envelope_canonical_hash": {
-          "$ref": "#/$defs/sha256_uri"
+        "envelope_canonical_hash": { "$ref": "#/$defs/sha256_uri" },
+        "sha256sums_path": { "const": "contracts/replay/v0.1/SHA256SUMS" }
+      }
+    },
+    "signature": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "signature_version",
+        "key_id",
+        "algorithm",
+        "signed_payload",
+        "signature_encoding",
+        "signature_value"
+      ],
+      "properties": {
+        "signature_version": { "const": "envelope-signature-v0.1" },
+        "key_id": {
+          "type": "string",
+          "pattern": "^KEY_[A-Za-z0-9_.:-]+$"
         },
-        "sha256sums_path": {
-          "const": "contracts/replay/v0.1/SHA256SUMS"
+        "algorithm": { "const": "ECDSA_P256_SHA256_DER_V1" },
+        "signed_payload": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["field", "hash"],
+          "properties": {
+            "field": { "const": "integrity.envelope_canonical_hash" },
+            "hash": { "$ref": "#/$defs/sha256_uri" }
+          }
+        },
+        "signature_encoding": { "const": "base64_der" },
+        "signature_value": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9+/]+={0,2}$"
         }
       }
     }
