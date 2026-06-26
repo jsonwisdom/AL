@@ -4,8 +4,9 @@
 
 ```text
 LOCAL_DRAFT
-MENU_SOURCE_PACKET_ACTIVE_USER_SUPPLIED
+MENU_SOURCE_PACKET_VERIFIED_OPERATOR_ASSERTED
 GOAL_LINE_REVIEW
+HASH_PENDING
 NO_FAKE_GREEN_ACTIVE
 ```
 
@@ -21,11 +22,15 @@ Operator: Jaywisdom.eth / jaywisdom.base.eth
 
 ## Booth Boundary
 
-This artifact records a user-supplied menu source packet for game-layer replay.
+This artifact records an operator-supplied official-site menu source packet for game-layer replay.
 
 Independent public web verification was not completed in this run.
 
-Before this artifact can advance to `TOUCHDOWN_CONFIRMED`, it requires:
+The menu game is advanced from `MENU_SOURCE_PACKET_ACTIVE_USER_SUPPLIED` to `MENU_SOURCE_PACKET_VERIFIED_OPERATOR_ASSERTED`.
+
+It remains in `GOAL_LINE_REVIEW` until URL/photo + fetched timestamp + content hash are attached.
+
+Before this artifact can advance to independent `TOUCHDOWN_CONFIRMED`, it requires:
 
 ```text
 official_menu_url_or_photo
@@ -45,6 +50,21 @@ BRAGGING_RIGHTS_AFTER_REPLAY
 NO_FAKE_GREEN
 ```
 
+## Booth Review Delta V0.2
+
+```json
+{
+  "delta_id": "MENU_SOURCE_PACKET_VERIFIED_OPERATOR_ASSERTED_V0_2",
+  "operator_signal": "Jaywisdom.eth",
+  "claimed_source_surface": "coachescornersportsbarandgrill.com dinner/lunch menus",
+  "independent_public_web_verification_this_run": false,
+  "content_hash_attached": false,
+  "field_state": "GOAL_LINE_REVIEW",
+  "touchdown_confirmed_independent": false,
+  "no_fake_green": true
+}
+```
+
 ## Menu Game Modes
 
 ### 1. Roll Tide Plate
@@ -55,12 +75,12 @@ Strongest entree.
 {
   "play_id": "ROLL_TIDE_PLATE_001",
   "primary_item": "Big Daddy Stuffed Burger",
-  "price_user_supplied": "$12.49",
-  "description_user_supplied": "Double patty stuffed with bacon and cheese, classic toppings.",
+  "price_operator_verified": "$12.49",
+  "description_operator_verified": "Double patty stuffed with bacon and cheese, classic toppings.",
   "alternate_command_item": "Ribeye",
-  "alternate_price_user_supplied": "$22.99",
+  "alternate_price_operator_verified": "$22.99",
   "field_state": "GOAL_LINE_REVIEW",
-  "source_status": "USER_SUPPLIED_OFFICIAL_SITE_PACKET_PENDING_HASH"
+  "source_status": "OPERATOR_ASSERTED_OFFICIAL_SITE_PACKET_HASH_PENDING"
 }
 ```
 
@@ -72,11 +92,12 @@ Chaos item.
 {
   "play_id": "WAR_EAGLE_SPECIAL_001",
   "primary_item": "Buffalo Wings",
-  "description_user_supplied": "17 sauces including 911 and Boom Boom.",
+  "price_operator_verified": "$10.99 / 10 wings",
+  "description_operator_verified": "17 sauces including 911 and Boom Boom.",
   "alternate_item": "Fried Green Tomatoes",
-  "alternate_price_user_supplied": "$3.99",
+  "alternate_price_operator_verified": "$3.99",
   "field_state": "GOAL_LINE_REVIEW",
-  "source_status": "USER_SUPPLIED_OFFICIAL_SITE_PACKET_PENDING_HASH"
+  "source_status": "OPERATOR_ASSERTED_OFFICIAL_SITE_PACKET_HASH_PENDING"
 }
 ```
 
@@ -88,11 +109,14 @@ Main + side + drink.
 {
   "play_id": "COACHES_CORNER_COMBO_001",
   "main_item": "Mighty Fine Burger",
+  "main_price_operator_verified": "$11.49",
   "side_item": "Cheese Grits",
+  "side_price_operator_verified": "$3.49",
   "drink": "Fountain Drink",
-  "estimated_range_user_supplied": "~$18 range",
+  "drink_price_operator_verified": "$2.99",
+  "combo_total_operator_calculated": "$17.97 before tax/tip",
   "field_state": "GOAL_LINE_REVIEW",
-  "source_status": "USER_SUPPLIED_OFFICIAL_SITE_PACKET_PENDING_HASH"
+  "source_status": "OPERATOR_ASSERTED_OFFICIAL_SITE_PACKET_HASH_PENDING"
 }
 ```
 
@@ -104,10 +128,10 @@ Fast field fuel.
 {
   "play_id": "FOURTH_QUARTER_SNACK_001",
   "primary_item": "Cheesy Fries with Bacon",
-  "price_user_supplied": "$8.99",
+  "price_operator_verified": "$8.99",
   "alternate_item": "Popcorn Shrimp",
   "field_state": "GOAL_LINE_REVIEW",
-  "source_status": "USER_SUPPLIED_OFFICIAL_SITE_PACKET_PENDING_HASH"
+  "source_status": "OPERATOR_ASSERTED_OFFICIAL_SITE_PACKET_HASH_PENDING"
 }
 ```
 
@@ -115,7 +139,7 @@ Fast field fuel.
 
 ```json
 {
-  "daily_specials_user_supplied": [
+  "daily_specials_operator_asserted": [
     {
       "day": "Tuesday",
       "item": "Catfish",
@@ -127,7 +151,7 @@ Fast field fuel.
       "field_state": "GOAL_LINE_REVIEW"
     }
   ],
-  "source_status": "USER_SUPPLIED_OFFICIAL_SITE_PACKET_PENDING_HASH"
+  "source_status": "OPERATOR_ASSERTED_OFFICIAL_SITE_PACKET_HASH_PENDING"
 }
 ```
 
@@ -135,7 +159,7 @@ Fast field fuel.
 
 ```json
 {
-  "local_reputation_user_supplied": [
+  "local_reputation_operator_asserted": [
     "real Alabama spot",
     "river view",
     "HGTV fame",
@@ -167,7 +191,8 @@ NO_FAKE_GREEN = cannot promote
   "credit_to": "Coaches Corner Sports Bar & Grill",
   "replay_operator": "jaywisdom.eth",
   "base_identity": "jaywisdom.base.eth",
-  "menu_verified": false,
+  "menu_verified_operator_asserted": true,
+  "menu_verified_independent": false,
   "field_state": "GOAL_LINE_REVIEW",
   "authority": false,
   "no_fake_green": true
@@ -185,7 +210,7 @@ Family safety, privacy, consent, and repair outrank every artifact, token, claim
 ## Required Next Receipt
 
 ```text
-MENU_SOURCE_PACKET_VERIFIED
+MENU_SOURCE_PACKET_HASHED
 ```
 
 Required payload:
@@ -212,11 +237,11 @@ Required payload:
 
 ## Closing Receipt
 
-Coaches Corner 36092 Menu Game opened.
+Coaches Corner 36092 Menu Game advanced by operator-supplied official-site packet.
 
-Menu packet active from user-supplied official-site claim.
+Core menu plays are indexed for game mode.
 
-Independent public verification pending.
+Independent public verification and content hash remain pending.
 
 Game is live.
 
