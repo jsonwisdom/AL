@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Directive.json",
+  "title": "PolicyRules",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "ambiguous_policy": {
+      "type": "string",
+      "enum": [
+        "STRICT_HALT",
+        "TIERED_ALLOW"
+      ],
+      "description": "Behavioral constraint for undefined state vectors."
+    },
+    "max_value_without_model": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Threshold for automated execution."
+    },
+    "strict_mode": {
+      "type": "boolean",
+      "description": "Enforcement of hard-coded policy constraints."
+    },
+    "allowlisted_contracts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true,
+      "description": "List of authorized contract identifiers."
+    },
+    "halt_all_user_tx": {
+      "type": "boolean",
+      "description": "Emergency kill switch: prevents all transaction processing."
+    }
+  },
+  "required": [
+    "ambiguous_policy",
+    "max_value_without_model",
+    "strict_mode",
+    "allowlisted_contracts",
+    "halt_all_user_tx"
+  ]
+}
