@@ -1,0 +1,48 @@
+name: Replay Execution v0.1
+
+on:
+  push:
+    branches: [ master, main ]
+    paths:
+      - 'contracts/replay/v0.1/**'
+      - 'contracts/keys/v0.1/**'
+      - 'contracts/invocation/v0.1/**'
+      - 'verify.sh'
+      - '.github/workflows/replay-execution.yml'
+  pull_request:
+    branches: [ master, main ]
+    paths:
+      - 'contracts/replay/v0.1/**'
+      - 'contracts/keys/v0.1/**'
+      - 'contracts/invocation/v0.1/**'
+      - 'verify.sh'
+      - '.github/workflows/replay-execution.yml'
+
+jobs:
+  replay-execution-gate:
+    name: Replay Execution Gate
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Execution Contract Present
+        run: test -f contracts/replay/v0.1/EXECUTION.md
+
+      - name: Execution Handler Present
+        run: test -f contracts/replay/v0.1/execute_invocation.py
+
+      - name: Verify Invocation Mode Present
+        run: grep -q -- '--invocation' verify.sh
+
+      - name: Signature Verifier Present
+        run: test -f contracts/replay/v0.1/verify_envelope_signature.py
+
+      - name: Replay Execution Stub Verdict
+        run: echo "REPLAY_EXECUTION_STUB_GREEN"
