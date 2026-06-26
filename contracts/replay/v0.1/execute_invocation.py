@@ -1,27 +1,27 @@
 #!/usr/bin/env python3
 """
-Replay Invocation Execution Handler v0.1
+Replay Invocation Execution Handler v0.2
 
 Fail-safe execution bridge for ./verify.sh --invocation <invocation.json>.
 
-This handler intentionally refuses or quarantines when the execution surface is
-not fully available. It must not emit ceremonial convergence.
+v0.2 adds replay_command + replay_args allowlist dispatch while preserving the
+v0.1 execution surface for existing invocations.
 """
 
 from __future__ import annotations
 
 import hashlib
 import json
-import os
 import subprocess
 import sys
 import unicodedata
 from pathlib import Path
-from typing import Any, Dict, Optional
+from typing import Any, Dict, List
 
 ROOT = Path(__file__).resolve().parents[3]
 REPLAY_BIN = Path("/usr/local/alms/bin/replay-bin")
 SIGNATURE_VERIFIER = ROOT / "contracts" / "replay" / "v0.1" / "verify_envelope_signature.py"
+ALLOWED_REPLAY_COMMANDS = {"echo_golden", "check_policy"}
 
 
 class ReplayRefused(Exception):
@@ -110,10 +110,28 @@ def sealed_env(invocation_id: str) -> Dict[str, str]:
     }
 
 
+def replay_argv(invocation: Dict[str, Any]) -> List[str]:
+    schema_version = invocation.get("schema_version")
+
+    if schema_version == "invocation-v0.1":
+        return [str(REPLAY_BIN)]
+
+    command = invocation.get("replay_command")
+    if command not in ALLOWED_REPLAY_COMMANDS:
+        raise ReplayQuarantined("COMMAND_NOT_ALLOWED")
+
+    args = invocation.get("replay_args", [])
+    if not isinstance(args, list) or not all(isinstance(arg, str) for arg in args):
+        raise ReplayQuarantined("REPLAY_ARGS_INVALID")
+
+    return [str(REPLAY_BIN), command, *args]
+
+
 def execute(invocation_path: Path) -> Dict[str, Any]:
     invocation = load_json(invocation_path)
     invocation_id = invocation.get("invocation_id")
     witness = invocation.get("witness", {}).get("target")
+    command = invocation.get("replay_command") if invocation.get("schema_version") == "invocation-v0.2" else "default_v0.1"
 
     verify_invocation_id(invocation)
     expected_sha256 = expected_stdout_hash(invocation)
@@ -124,7 +142,7 @@ def execute(invocation_path: Path) -> Dict[str, Any]:
         raise ReplayQuarantined("REPLAY_BIN_MISSING")
 
     result = subprocess.run(
-        [str(REPLAY_BIN)],
+        replay_argv(invocation),
         input=invocation_path.read_bytes(),
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
@@ -132,7 +150,7 @@ def execute(invocation_path: Path) -> Dict[str, Any]:
     )
 
     if result.returncode != 0:
-        raise ReplayQuarantined("REPLAY_BIN_NONZERO_EXIT")
+        raise ReplayQuarantined("NONZERO_EXIT")
 
     if result.stderr:
         raise ReplayQuarantined("STDERR_NOT_EMPTY")
@@ -145,6 +163,7 @@ def execute(invocation_path: Path) -> Dict[str, Any]:
         "invocation_id": invocation_id,
         "envelope_sha256": invocation.get("envelope_sha256"),
         "witness": witness,
+        "replay_command": command,
         "state": state,
         "actual_sha256": actual_sha256,
         "expected_sha256": expected_sha256,
@@ -160,11 +179,13 @@ def verdict_from_failure(invocation_path: Path, state: str, reason: str) -> Dict
     except Exception:
         invocation = {}
     expected = (invocation.get("expected_outputs") or {}).get("stdout_sha256")
+    command = invocation.get("replay_command") if invocation.get("schema_version") == "invocation-v0.2" else None
     return {
         "verdict_version": "replay-verdict-v0.1",
         "invocation_id": invocation.get("invocation_id"),
         "envelope_sha256": invocation.get("envelope_sha256"),
         "witness": (invocation.get("witness") or {}).get("target"),
+        "replay_command": command,
         "state": state,
         "actual_sha256": None,
         "expected_sha256": expected,
