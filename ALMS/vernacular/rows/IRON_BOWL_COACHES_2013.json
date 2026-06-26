@@ -1,0 +1,62 @@
+{
+  "schema_version": "AI_IRON_BOWL_COACHES_SCHEMA_V0_1",
+  "row_id": "IRON_BOWL_COACHES_2013",
+  "season_year": 2013,
+  "game_id": "IRON_BOWL_2013",
+  "alabama": {
+    "team": "Alabama",
+    "head_coach": "Nick Saban",
+    "coach_status": "VERIFIED",
+    "record_entering_game": "11-0",
+    "record_after_game": "11-1",
+    "legacy_tags": [
+      "ALABAMA_PERSPECTIVE_PRESERVED",
+      "NO_REPUTATION_PROMOTION"
+    ]
+  },
+  "auburn": {
+    "team": "Auburn",
+    "head_coach": "Gus Malzahn",
+    "coach_status": "VERIFIED",
+    "record_entering_game": "10-1",
+    "record_after_game": "11-1",
+    "legacy_tags": [
+      "AUBURN_PERSPECTIVE_PRESERVED",
+      "NO_REPUTATION_PROMOTION"
+    ]
+  },
+  "game_context": {
+    "game_date": "2013-11-30",
+    "location": "Jordan-Hare Stadium, Auburn, Alabama",
+    "winner": "Auburn",
+    "score": "Auburn 34, Alabama 28",
+    "series_record_after_game": "Alabama 42, Auburn 35, Ties 1",
+    "situation_focus": "Kick Six: final-second missed 57-yard Alabama field goal returned by Auburn's Chris Davis for game-winning touchdown"
+  },
+  "perspective_reputation_loyalty": {
+    "perspective_axes": [
+      "ALABAMA_FAN",
+      "AUBURN_FAN",
+      "COACH",
+      "PLAYER",
+      "HISTORIAN",
+      "REPLAY_BOOTH"
+    ],
+    "reputation_state": "UNMEASURED",
+    "loyalty_state": "UNMEASURED",
+    "notes": "Coach identities and game-context row promoted only because IRON_BOWL_2013_KICK_SIX_SOURCE_PACKET_V0_1 is active. Reputation and loyalty remain unmeasured pending separate timeline and quote packets. Broadcaster perspective excluded until verified broadcast pointer is attached."
+  },
+  "source_packet": {
+    "source_url": "ALMS/vernacular/IRON_BOWL_2013_KICK_SIX_SOURCE_PACKET_V0_1.md",
+    "fetched_at_utc": "2026-06-26T00:00:00Z",
+    "content_hash": "sha1:13cfa01f51af5e8ce0de694493d7f1506d48053a",
+    "extractor_version": "iron_bowl_coaches_row_manual_v0_1",
+    "replay_notes": "Promotion from GOAL_LINE_REVIEW to TOUCHDOWN_CONFIRMED is limited to coach identities and game context for the 2013 Kick Six situation. Authority remains false."
+  },
+  "verification": {
+    "field_state": "TOUCHDOWN_CONFIRMED",
+    "verified_status": "SOURCE_PACKET_ACTIVE",
+    "no_fake_green": true
+  },
+  "authority": false
+}
