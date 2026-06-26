@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.org/contracts/replay/v0.1/invocation-v0.1.schema.json",
+  "title": "ALMS Replay Invocation v0.1",
+  "description": "Canonical input contract for invoking the Replay Court. Immutable, deterministic, and free of runtime entropy. Execution timestamps belong in verdict or receipt objects, not invocation input.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "invocation_id",
+    "envelope",
+    "regime",
+    "options"
+  ],
+  "properties": {
+    "invocation_id": {
+      "type": "string",
+      "pattern": "^INV_[0-9]{8}_[0-9]{6}_[0-9]{5}$"
+    },
+    "envelope": {
+      "description": "Embedded sealed replay envelope. The envelope must validate against envelope.schema.json before invocation.",
+      "$ref": "envelope.schema.json"
+    },
+    "regime": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "canonicalizer",
+        "witness",
+        "strict_mode"
+      ],
+      "properties": {
+        "canonicalizer": {
+          "const": "ALMS_REPLAY_V1"
+        },
+        "witness": {
+          "type": "string",
+          "enum": [
+            "PYTHON_3.8",
+            "PYTHON_3.9",
+            "PYTHON_3.10",
+            "PYTHON_3.11",
+            "PYTHON_3.12",
+            "PYTHON_3.13",
+            "DOCKER_3.12_SLIM"
+          ]
+        },
+        "strict_mode": {
+          "const": true
+        }
+      }
+    },
+    "options": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "require_convergence",
+        "timeout_seconds"
+      ],
+      "properties": {
+        "require_convergence": {
+          "const": true
+        },
+        "timeout_seconds": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 300,
+          "default": 30
+        }
+      }
+    }
+  },
+  "not": {
+    "anyOf": [
+      { "required": ["invoked_at"] },
+      { "required": ["timestamp_generated"] },
+      { "required": ["generated_at"] },
+      { "required": ["uuid"] },
+      { "required": ["random"] },
+      { "required": ["nonce"] }
+    ]
+  }
+}
