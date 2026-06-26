@@ -1,0 +1,65 @@
+{
+  "schema_version": "AI_IRON_BOWL_BROADCAST_POINTER_ROW_V0_1",
+  "row_id": "IRON_BOWL_BROADCAST_2013",
+  "season_year": 2013,
+  "game_id": "IRON_BOWL_2013",
+  "source_packet": {
+    "source_url": "ALMS/vernacular/IRON_BOWL_2013_KICK_SIX_SOURCE_PACKET_V0_1.md",
+    "source_packet_state": "SOURCE_PACKET_ACTIVE",
+    "source_packet_commit": "1e486bb6c3aa5eafc69969d9b0450e5fbff97745",
+    "source_packet_content_sha": "13cfa01f51af5e8ce0de694493d7f1506d48053a"
+  },
+  "linked_rows": {
+    "coaches_row": "ALMS/vernacular/rows/IRON_BOWL_COACHES_2013.json",
+    "replay_mechanics_row": "ALMS/vernacular/rows/IRON_BOWL_REPLAY_2013.json",
+    "players_row": "ALMS/vernacular/rows/IRON_BOWL_PLAYERS_2013.json"
+  },
+  "broadcast_metadata": {
+    "network": "CBS",
+    "play_by_play": "Verne Lundquist",
+    "analyst": "Gary Danielson",
+    "sideline_reporter": "Allie LaForce",
+    "broadcast_asset_state": "POINTER_REQUIRED_BEFORE_TRANSCRIPT_CLAIMS",
+    "commentary_state": "NOT_EXTRACTED"
+  },
+  "replay_situation": {
+    "common_name": "Kick Six",
+    "date": "2013-11-30",
+    "venue": "Jordan-Hare Stadium, Auburn, Alabama",
+    "score_before_play": "28-28",
+    "final_score": "Auburn 34, Alabama 28",
+    "clock_state": "0:01 restored after replay review; final play ended with no time remaining",
+    "play_type": "missed field goal return",
+    "field_goal_attempt_yards": 57,
+    "return_result": "game-winning Auburn touchdown"
+  },
+  "verification": {
+    "field_state": "GOAL_LINE_REVIEW",
+    "verified_status": "BROADCAST_METADATA_STAGED",
+    "promotion_scope": "broadcast_metadata_only",
+    "no_fake_green": true
+  },
+  "guardrails": {
+    "broadcast_transcript": "NOT_VERIFIED",
+    "commentary_quotes": "FORBIDDEN_UNTIL_VERIFIED_BROADCAST_POINTER",
+    "broadcaster_perspective": "POINTER_STAGED_NOT_PROMOTED",
+    "coach_reputation": "UNMEASURED",
+    "player_reputation": "UNMEASURED",
+    "loyalty_state": "UNMEASURED",
+    "family_gate": "NOT_TOUCHED"
+  },
+  "boundary": [
+    "BROADCAST_POINTER_STAGED != BROADCAST_TRANSCRIPT_VERIFIED",
+    "BROADCAST_POINTER_STAGED != COMMENTARY_QUOTE_AUTHORIZED",
+    "BROADCAST_POINTER_STAGED != AUTHORITY_TRUE",
+    "BROADCAST_POINTER_STAGED != FAMILY_APPROVAL",
+    "BROADCAST_POINTER_STAGED != REPUTATION_MEASURED",
+    "BROADCAST_POINTER_STAGED != LOYALTY_PROVEN"
+  ],
+  "next_required": [
+    "Attach exact broadcast asset URL or archive pointer.",
+    "Hash retrieved broadcast asset or transcript excerpt packet.",
+    "Only then promote broadcaster_perspective from POINTER_STAGED_NOT_PROMOTED to TRANSCRIPT_VERIFIED."
+  ],
+  "authority": false
+}
