@@ -58,5 +58,15 @@ jobs:
       - name: Replay Handler Has Command Allowlist
         run: grep -q 'ALLOWED_REPLAY_COMMANDS' contracts/replay/v0.1/execute_invocation.py
 
-      - name: Replay Execution Stub Verdict
-        run: echo "REPLAY_EXECUTION_V0_2_STUB_GREEN"
+      - name: Provision replay-bin
+        run: sudo bash contracts/replay/v0.2/provision_replay_bin.sh
+
+      - name: Run check_policy golden convergence
+        run: |
+          set -euo pipefail
+          ./verify.sh --invocation contracts/replay/v0.2/golden_check_policy.json | tee verdict.json
+          grep -q '"state":"REPLAY_CONVERGED"' verdict.json
+          grep -q '"replay_command":"check_policy"' verdict.json
+
+      - name: Replay Execution Verdict
+        run: echo "REPLAY_EXECUTION_V0_2_GREEN"
