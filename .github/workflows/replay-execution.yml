@@ -46,6 +46,9 @@ jobs:
       - name: Signature Verifier Present
         run: test -f contracts/replay/v0.1/verify_envelope_signature.py
 
+      - name: Revocation Registry Fixture Present
+        run: test -f contracts/keys/v0.1/registry_v1_inactive.json
+
       - name: Replay v0.2 Invocation Schema Present
         run: test -f contracts/replay/v0.2/invocation.schema.json
 
@@ -74,6 +77,18 @@ jobs:
           grep -q '"state":"REPLAY_CONVERGED"' verdict.json
           grep -q '"replay_command":"check_policy"' verdict.json
 
+      - name: Assert v1 inactive key refusal
+        env:
+          ALMS_KEY_REGISTRY: contracts/keys/v0.1/registry_v1_inactive.json
+        run: |
+          set +e
+          ./verify.sh --invocation contracts/replay/v0.2/golden_check_policy.json | tee verdict_revoked.json
+          status=$?
+          set -e
+          test "$status" -ne 0
+          grep -q '"state":"REPLAY_REFUSED"' verdict_revoked.json
+          grep -q '"reason":"SIGNATURE_INVALID"' verdict_revoked.json
+
       - name: Run rotated key v2 golden convergence
         run: |
           set -euo pipefail
@@ -82,4 +97,4 @@ jobs:
           grep -q '"replay_command":"check_policy"' verdict_v2.json
 
       - name: Replay Execution Verdict
-        run: echo "REPLAY_EXECUTION_V0_2_KEY_ROTATION_GREEN"
+        run: echo "REPLAY_EXECUTION_V0_2_REVOCATION_GREEN"
