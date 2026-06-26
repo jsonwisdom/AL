@@ -1,0 +1,155 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.org/schema/fixture-v1.json",
+  "title": "Claim Extractor Canonical Fixture v1",
+  "description": "Schema gate for replay-admissible extracted claims. The extractor identifies explicit semantic commitments only; it does not decide truth.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "claim_id",
+    "ingestion_id",
+    "version",
+    "extracted_claim",
+    "confidence",
+    "needs_clarification",
+    "context_window",
+    "normalization",
+    "raw_hash",
+    "candidate_canonical_hash",
+    "regime"
+  ],
+  "properties": {
+    "claim_id": {
+      "type": "string",
+      "pattern": "^CHATFIXTURE_[0-9]{8}_[0-9]{6}_[0-9]{5}$"
+    },
+    "ingestion_id": {
+      "type": "string",
+      "pattern": "^ING_[0-9]{8}_[0-9]{6}_[0-9]{5}$"
+    },
+    "version": {
+      "const": "fixture-v1"
+    },
+    "extracted_claim": {
+      "type": ["string", "null"],
+      "minLength": 1
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "needs_clarification": {
+      "type": "boolean"
+    },
+    "context_window": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["message_ids", "excerpts"],
+      "properties": {
+        "message_ids": {
+          "type": "array",
+          "maxItems": 5,
+          "items": {
+            "type": "string"
+          }
+        },
+        "excerpts": {
+          "type": "array",
+          "maxItems": 5,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "normalization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["unicode", "whitespace", "case", "json"],
+      "properties": {
+        "unicode": {
+          "const": "NFC"
+        },
+        "whitespace": {
+          "const": "canonical"
+        },
+        "case": {
+          "const": "preserve"
+        },
+        "json": {
+          "const": "JCS"
+        }
+      }
+    },
+    "raw_hash": {
+      "$ref": "#/$defs/sha256_uri"
+    },
+    "candidate_canonical_hash": {
+      "$ref": "#/$defs/sha256_uri"
+    },
+    "regime": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["canonicalizer", "timestamp"],
+      "properties": {
+        "canonicalizer": {
+          "const": "ALMS_EXTRACTOR_V1"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "confidence": {
+            "minimum": 0.95
+          }
+        },
+        "required": ["confidence"]
+      },
+      "then": {
+        "properties": {
+          "needs_clarification": {
+            "const": false
+          },
+          "extracted_claim": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "confidence": {
+            "exclusiveMaximum": 0.95
+          }
+        },
+        "required": ["confidence"]
+      },
+      "then": {
+        "properties": {
+          "needs_clarification": {
+            "const": true
+          },
+          "extracted_claim": {
+            "type": "null"
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "sha256_uri": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    }
+  }
+}
