@@ -20,6 +20,23 @@ if [[ "${1:-}" == "--signature-check" ]]; then
     exit $?
 fi
 
+if [[ "${1:-}" == "--invocation" ]]; then
+    if [[ -z "${2:-}" ]]; then
+        echo '{"state":"REPLAY_REFUSED","reason":"MISSING_INVOCATION_PATH"}'
+        exit 2
+    fi
+    if ! command -v python3 &> /dev/null; then
+        echo '{"state":"REPLAY_REFUSED","reason":"PYTHON3_NOT_FOUND"}'
+        exit 2
+    fi
+    if ! command -v openssl &> /dev/null; then
+        echo '{"state":"REPLAY_REFUSED","reason":"OPENSSL_NOT_FOUND"}'
+        exit 2
+    fi
+    python3 contracts/replay/v0.1/execute_invocation.py "$2"
+    exit $?
+fi
+
 echo "🧾 Sovereign Replay Court — Public Oath"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo "Mode: Stranger-Friendly Verification"
