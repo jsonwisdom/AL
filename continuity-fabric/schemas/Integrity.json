@@ -1,0 +1,123 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Integrity.json",
+  "title": "IntegrityBinding",
+  "description": "Defines cryptographic binding, canonicalization, signature, and tamper-evidence requirements for Continuity Fabric artifacts. Integrity records prove whether data changed; they do not grant authority.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9._:-]+$"
+    },
+    "artifact_type": {
+      "type": "string",
+      "enum": [
+        "WAL_ENTRY",
+        "QUORUM_RECEIPT",
+        "SETTLEMENT_RECORD",
+        "POLICY_DECISION_LOG",
+        "ALERT_EVENT",
+        "CONFIG_UPDATE",
+        "ACTIVATION_RECORD",
+        "SCHEMA_FREEZE_RECEIPT"
+      ]
+    },
+    "canonicalization": {
+      "type": "string",
+      "enum": [
+        "JCS"
+      ]
+    },
+    "hash_algorithm": {
+      "type": "string",
+      "enum": [
+        "sha256",
+        "keccak256"
+      ]
+    },
+    "artifact_hash": {
+      "type": "string",
+      "pattern": "^(sha256:[0-9a-f]{64}|0x[0-9a-fA-F]{64})$"
+    },
+    "domain_separation": {
+      "type": "string",
+      "enum": [
+        "CONTINUITY_FABRIC_QUORUM_RECEIPT_V0",
+        "ConfigUpdate.v1.0.0",
+        "SettlementRecord.v1.0.0",
+        "PolicyDecisionLog.v1.0.0",
+        "AlertEvent.v1.0.0",
+        "ActivationRecord.v1.0.0",
+        "SchemaFreezeReceipt.v1.0.0"
+      ]
+    },
+    "signer_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9._:-]+$"
+    },
+    "signer_role": {
+      "type": "string",
+      "enum": [
+        "P2P_IDENTITY",
+        "QUORUM_RECEIPT_SIGNER",
+        "CONFIG_ISSUER",
+        "GATEWAY_ATTESTER",
+        "ROOT_TRUST_SIGNER"
+      ]
+    },
+    "signature_algorithm": {
+      "type": "string",
+      "enum": [
+        "SECP256K1_ECDSA"
+      ]
+    },
+    "signature": {
+      "type": "string",
+      "pattern": "^0x[0-9a-fA-F]{130}$"
+    },
+    "previous_artifact_hash": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^(sha256:[0-9a-f]{64}|0x[0-9a-fA-F]{64})$"
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "tamper_response": {
+      "type": "string",
+      "enum": [
+        "REJECT",
+        "QUARANTINE_TX",
+        "VIEW_CHANGE",
+        "FABRIC_GLOBAL_HALT"
+      ]
+    },
+    "authority": {
+      "const": false
+    }
+  },
+  "required": [
+    "artifact_id",
+    "artifact_type",
+    "canonicalization",
+    "hash_algorithm",
+    "artifact_hash",
+    "domain_separation",
+    "signer_id",
+    "signer_role",
+    "signature_algorithm",
+    "signature",
+    "previous_artifact_hash",
+    "sequence",
+    "tamper_response",
+    "authority"
+  ]
+}

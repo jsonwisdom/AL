@@ -1,0 +1,122 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Influence.json",
+  "title": "InfluenceBoundary",
+  "description": "Defines admissible external influence vectors and ingress controls for the Continuity Fabric. Influence records classify outside signals; they do not grant authority.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "source_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9._:-]+$"
+    },
+    "source_type": {
+      "type": "string",
+      "enum": [
+        "RPC_PROVIDER",
+        "L2_CHAIN",
+        "LOG_NODE",
+        "CONFIG_ISSUER",
+        "USER_CLIENT",
+        "SYSTEM_CONTRACT",
+        "OPERATOR"
+      ]
+    },
+    "ingress_channel": {
+      "type": "string",
+      "enum": [
+        "JSON_RPC",
+        "P2P_GOSSIP",
+        "CONFIG_UPDATE",
+        "WAL_APPEND",
+        "QUORUM_RECEIPT",
+        "SETTLEMENT_RECEIPT",
+        "MANUAL_APPROVAL"
+      ]
+    },
+    "trust_level": {
+      "type": "string",
+      "enum": [
+        "UNTRUSTED",
+        "QUORUM_BOUND",
+        "ROOT_TRUST_BOUND",
+        "AUDIT_ONLY"
+      ]
+    },
+    "allowed_methods": {
+      "type": "array",
+      "minItems": 0,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 128
+      }
+    },
+    "canonical_error_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "normalize_provider_errors": {
+          "type": "boolean"
+        },
+        "reject_malformed_response": {
+          "type": "boolean"
+        },
+        "taint_on_state_divergence": {
+          "type": "boolean"
+        },
+        "provider_raw_debug_only": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "normalize_provider_errors",
+        "reject_malformed_response",
+        "taint_on_state_divergence",
+        "provider_raw_debug_only"
+      ]
+    },
+    "quarantine_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "quarantine_scope": {
+          "type": "string",
+          "enum": [
+            "TX_ID",
+            "FROM_ADDRESS",
+            "PROVIDER",
+            "FABRIC_GLOBAL"
+          ]
+        },
+        "requires_view_change": {
+          "type": "boolean"
+        },
+        "requires_manual_review": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "quarantine_scope",
+        "requires_view_change",
+        "requires_manual_review"
+      ]
+    },
+    "authority": {
+      "const": false
+    }
+  },
+  "required": [
+    "source_id",
+    "source_type",
+    "ingress_channel",
+    "trust_level",
+    "allowed_methods",
+    "canonical_error_policy",
+    "quarantine_policy",
+    "authority"
+  ]
+}

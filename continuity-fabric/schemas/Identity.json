@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jaywisdom.base.eth/continuity-fabric/schemas/Identity.v1.json",
+  "title": "Continuity Fabric Identity Schema",
+  "description": "Defines admitted identity surfaces for Continuity Fabric actors. Identity is boundary definition only; it does not grant truth authority.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_id",
+    "schema_version",
+    "subject_id",
+    "subject_type",
+    "network",
+    "key_bindings",
+    "trust_scope",
+    "effective_from_timestamp",
+    "authority"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "IDENTITY"
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "subject_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9._:-]+$"
+    },
+    "subject_type": {
+      "type": "string",
+      "enum": [
+        "GATEWAY",
+        "LOG_NODE",
+        "CONFIG_ISSUER",
+        "ROOT_TRUST",
+        "USER_ACTOR",
+        "SYSTEM_CONTRACT"
+      ]
+    },
+    "network": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "chain_id",
+        "domain"
+      ],
+      "properties": {
+        "chain_id": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "domain": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        }
+      }
+    },
+    "key_bindings": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "key_id",
+          "key_type",
+          "public_key",
+          "role",
+          "domain_separation"
+        ],
+        "properties": {
+          "key_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128,
+            "pattern": "^[A-Za-z0-9._:-]+$"
+          },
+          "key_type": {
+            "type": "string",
+            "enum": [
+              "SECP256K1"
+            ]
+          },
+          "public_key": {
+            "type": "string",
+            "pattern": "^0x[0-9a-fA-F]{66}$"
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "P2P_IDENTITY",
+              "QUORUM_RECEIPT_SIGNER",
+              "CONFIG_ISSUER",
+              "GATEWAY_ATTESTER",
+              "ROOT_TRUST_SIGNER"
+            ]
+          },
+          "domain_separation": {
+            "type": "string",
+            "enum": [
+              "CONTINUITY_FABRIC_QUORUM_RECEIPT_V0",
+              "ConfigUpdate.v1.0.0",
+              "SettlementRecord.v1.0.0",
+              "PolicyDecisionLog.v1.0.0",
+              "AlertEvent.v1.0.0",
+              "RootTrustConfig.v1.0.0"
+            ]
+          }
+        }
+      }
+    },
+    "trust_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "may_sign_quorum_receipts",
+        "may_issue_config_updates",
+        "may_attest_settlement_records",
+        "may_sign_policy_decisions",
+        "may_sign_alert_events"
+      ],
+      "properties": {
+        "may_sign_quorum_receipts": {
+          "type": "boolean"
+        },
+        "may_issue_config_updates": {
+          "type": "boolean"
+        },
+        "may_attest_settlement_records": {
+          "type": "boolean"
+        },
+        "may_sign_policy_decisions": {
+          "type": "boolean"
+        },
+        "may_sign_alert_events": {
+          "type": "boolean"
+        }
+      }
+    },
+    "effective_from_timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "previous_identity_hash": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "authority": {
+      "const": false
+    }
+  }
+}

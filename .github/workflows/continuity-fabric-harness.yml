@@ -1,0 +1,114 @@
+name: Continuity Fabric Harness
+
+on:
+  pull_request:
+    branches:
+      - master
+    paths:
+      - 'continuity-fabric/**'
+      - 'scripts/freeze_schemas_v1.js'
+      - '.github/workflows/continuity-fabric-harness.yml'
+  push:
+    branches:
+      - implement-continuity-fabric-harness-371
+    paths:
+      - 'continuity-fabric/**'
+      - 'scripts/freeze_schemas_v1.js'
+      - '.github/workflows/continuity-fabric-harness.yml'
+
+jobs:
+  schema-integrity:
+    name: schema-integrity
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Recompute freeze artifacts
+        run: node scripts/freeze_schemas_v1.js
+
+      - name: Assert frozen schema ledger unchanged
+        run: git diff --exit-code -- continuity-fabric/schemas/FROZEN_v1.0.0.sha256 continuity-fabric/receipts
+
+  valid-policy-reload:
+    name: vector-valid-policy-reload
+    runs-on: ubuntu-latest
+    needs: schema-integrity
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run valid policy reload vector
+        run: npx vitest run continuity-fabric/test/harness/valid_policy_reload.spec.ts
+
+  unknown-issuer:
+    name: vector-unknown-issuer
+    runs-on: ubuntu-latest
+    needs: schema-integrity
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run unknown issuer vector
+        run: npx vitest run continuity-fabric/test/harness/unknown_issuer.spec.ts
+
+  emergency-kill-switch:
+    name: vector-emergency-kill-switch
+    runs-on: ubuntu-latest
+    needs: schema-integrity
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run emergency kill switch vector
+        run: npx vitest run continuity-fabric/test/harness/emergency_kill_switch.spec.ts
+
+  gate-release:
+    name: gate-release
+    runs-on: ubuntu-latest
+    needs:
+      - schema-integrity
+      - valid-policy-reload
+      - unknown-issuer
+      - emergency-kill-switch
+    steps:
+      - name: Release gate satisfied
+        run: |
+          echo "Issue #371 harness vectors green."
+          echo "Issue #372 remains blocked until 24h zero-flake soak."
