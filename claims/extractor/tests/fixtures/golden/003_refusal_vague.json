@@ -1,0 +1,24 @@
+{
+  "claim_id": "CHATFIXTURE_20260626_000003_00003",
+  "ingestion_id": "ING_20260626_000003_00003",
+  "version": "fixture-v1",
+  "extracted_claim": null,
+  "confidence": 0.42,
+  "needs_clarification": true,
+  "context_window": {
+    "message_ids": [],
+    "excerpts": []
+  },
+  "normalization": {
+    "unicode": "NFC",
+    "whitespace": "canonical",
+    "case": "preserve",
+    "json": "JCS"
+  },
+  "raw_hash": "sha256:9a8cf513b0dde2024574dd775a145709ff08ab2adc0bfbb8a8d2fdf72f5cd395",
+  "candidate_canonical_hash": "sha256:a34d98e59be4a2949a6a0974cf16dc5fa9e7dd57682a31a1bf0556d5d74ac457",
+  "regime": {
+    "canonicalizer": "ALMS_EXTRACTOR_V1",
+    "timestamp": "2026-06-26T00:00:03Z"
+  }
+}
