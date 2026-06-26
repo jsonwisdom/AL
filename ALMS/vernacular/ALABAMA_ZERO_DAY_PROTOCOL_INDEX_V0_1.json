@@ -1,0 +1,61 @@
+{
+  "schema_version": "ALABAMA_ZERO_DAY_PROTOCOL_INDEX_V0_1",
+  "status": "INDEXED",
+  "thread_tag": "#ALABAMA_ZERO_DAY",
+  "root_repo": "jsonwisdom/AL",
+  "protocol_file": "ALMS/vernacular/ALABAMA_ZERO_DAY_V0_1.md",
+  "protocol_commit": "f89cb85f8c2cd7f05a09cb2c531d372137d01ef8",
+  "protocol_content_sha": "2356d553788e7d7ecfea1f8416df04801813047f",
+  "field_state": {
+    "replay_first": true,
+    "authority": false,
+    "family_gate": "INTACT_NOT_TOUCHED",
+    "no_fake_green": true,
+    "defensive_receipt_layer_only": true
+  },
+  "active_surfaces": {
+    "anchor_001": {
+      "status": "VERIFICATION_SURFACE_COMPLETE_ENS_DEFERRED",
+      "tag": "#ALABAMA_ZERO_DAY",
+      "boundary": "ANCHOR_001 does not promote authority=true."
+    },
+    "family_gate": {
+      "status": "SOVEREIGN_NOT_TOUCHED",
+      "tag": "#ALABAMA_ZERO_DAY",
+      "boundary": "No game or protocol packet implies family approval."
+    },
+    "iron_bowl_stack": {
+      "status": "ACTIVE_REPLAY_STACK",
+      "tag": "#ALABAMA_ZERO_DAY",
+      "files": [
+        "ALMS/vernacular/IRON_BOWL_2013_KICK_SIX_SOURCE_PACKET_V0_1.md",
+        "ALMS/vernacular/rows/IRON_BOWL_COACHES_2013.json",
+        "ALMS/vernacular/rows/IRON_BOWL_REPLAY_2013.json",
+        "ALMS/vernacular/rows/IRON_BOWL_PLAYERS_2013.json",
+        "ALMS/vernacular/rows/IRON_BOWL_BROADCAST_2013.json"
+      ]
+    },
+    "menu_game": {
+      "status": "TAGGED_FOR_REPLAY_VERIFICATION",
+      "tag": "#ALABAMA_ZERO_DAY",
+      "boundary": "Menu claims require source packet before touchdown."
+    },
+    "ens_trigger": {
+      "status": "STAGED_ONLY_ENS_DEFERRED_UNTIL_EDITABLE",
+      "tag": "#ALABAMA_ZERO_DAY",
+      "boundary": "ENS activation is discovery pointer only, not trust layer."
+    }
+  },
+  "inbound_gate": {
+    "trigger": "ANY_NEW_ALABAMA_ZERO_DAY_SIGNAL",
+    "required_response": "REPLAY_VERIFICATION",
+    "rules": [
+      "No touchdown without source packet.",
+      "No source packet without replay booth review.",
+      "No authority=true.",
+      "No Family Gate inheritance.",
+      "No fake green."
+    ]
+  },
+  "authority": false
+}
