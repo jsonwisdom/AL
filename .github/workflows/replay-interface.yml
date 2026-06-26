@@ -1,0 +1,41 @@
+name: Replay Interface v0.1
+
+on:
+  push:
+    branches: [ master, main ]
+    paths:
+      - 'contracts/replay/v0.1/**'
+      - 'claims/extractor/**'
+      - '.github/workflows/replay-interface.yml'
+  pull_request:
+    branches: [ master, main ]
+    paths:
+      - 'contracts/replay/v0.1/**'
+      - 'claims/extractor/**'
+      - '.github/workflows/replay-interface.yml'
+
+jobs:
+  replay-envelope-gate:
+    name: Replay Envelope Gate
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate Claim Extractor Golden Acceptance
+        run: python3 claims/extractor/tests/run_acceptance.py
+
+      - name: Validate Replay Envelope Schema Presence
+        run: test -f contracts/replay/v0.1/envelope.schema.json
+
+      - name: Validate Replay Canonicalization Doctrine Presence
+        run: test -f contracts/replay/v0.1/CANONICALIZATION.md
+
+      - name: Replay Interface Stub Verdict
+        run: echo "REPLAY_INTERFACE_STUB_GREEN"
