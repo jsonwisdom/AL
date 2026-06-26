@@ -55,6 +55,12 @@ jobs:
       - name: Replay v0.2 Check Policy Golden Present
         run: test -f contracts/replay/v0.2/golden_check_policy.json
 
+      - name: Replay v2 Signed Golden Invocation Present
+        run: test -f contracts/replay/v0.2/golden_check_policy_v2_signed.json
+
+      - name: Replay v2 Signed Envelope Present
+        run: test -f contracts/replay/v0.2/golden_check_policy_v2_envelope.json
+
       - name: Replay Handler Has Command Allowlist
         run: grep -q 'ALLOWED_REPLAY_COMMANDS' contracts/replay/v0.1/execute_invocation.py
 
@@ -68,5 +74,12 @@ jobs:
           grep -q '"state":"REPLAY_CONVERGED"' verdict.json
           grep -q '"replay_command":"check_policy"' verdict.json
 
+      - name: Run rotated key v2 golden convergence
+        run: |
+          set -euo pipefail
+          ./verify.sh --invocation contracts/replay/v0.2/golden_check_policy_v2_signed.json | tee verdict_v2.json
+          grep -q '"state":"REPLAY_CONVERGED"' verdict_v2.json
+          grep -q '"replay_command":"check_policy"' verdict_v2.json
+
       - name: Replay Execution Verdict
-        run: echo "REPLAY_EXECUTION_V0_2_GREEN"
+        run: echo "REPLAY_EXECUTION_V0_2_KEY_ROTATION_GREEN"
