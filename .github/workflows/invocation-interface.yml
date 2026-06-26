@@ -1,0 +1,46 @@
+name: Invocation Interface v0.1
+
+on:
+  push:
+    branches: [ master, main ]
+    paths:
+      - 'contracts/invocation/v0.1/**'
+      - 'contracts/replay/v0.1/**'
+      - 'verify.sh'
+      - '.github/workflows/invocation-interface.yml'
+  pull_request:
+    branches: [ master, main ]
+    paths:
+      - 'contracts/invocation/v0.1/**'
+      - 'contracts/replay/v0.1/**'
+      - 'verify.sh'
+      - '.github/workflows/invocation-interface.yml'
+
+jobs:
+  invocation-interface-gate:
+    name: Invocation Interface Gate
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Invocation Schema Present
+        run: test -f contracts/invocation/v0.1/invocation.schema.json
+
+      - name: Invocation Canonicalization Doctrine Present
+        run: test -f contracts/invocation/v0.1/CANONICALIZATION.md
+
+      - name: Replay Envelope Schema Present
+        run: test -f contracts/replay/v0.1/envelope.schema.json
+
+      - name: Verify Handler Present
+        run: test -f verify.sh
+
+      - name: Invocation Interface Stub Verdict
+        run: echo "INVOCATION_INTERFACE_STUB_GREEN"
