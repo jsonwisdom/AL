@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "AI_IRON_BOWL_ENS_BINDING_SCHEMA_V0_1",
+  "title": "AI Iron Bowl ENS Binding Schema V0.1",
+  "description": "ENS/Base identity binding schema for Alabama ALMS replay artifacts. This binds public-safe artifact identity to ENS/Basename surfaces without creating authority or private-family claims.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "binding_id",
+    "operator_identity",
+    "artifact_binding",
+    "network_binding",
+    "source_packet",
+    "verification",
+    "authority"
+  ],
+  "properties": {
+    "schema_version": { "const": "AI_IRON_BOWL_ENS_BINDING_SCHEMA_V0_1" },
+    "binding_id": {
+      "type": "string",
+      "pattern": "^ENS_BINDING_[A-Z0-9_]+_V0_1$"
+    },
+    "operator_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ens_name", "basename", "operator_label"],
+      "properties": {
+        "ens_name": { "type": "string" },
+        "basename": { "type": "string" },
+        "operator_label": { "type": "string" }
+      }
+    },
+    "artifact_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "artifact_path", "artifact_hash_status"],
+      "properties": {
+        "artifact_id": { "type": "string" },
+        "artifact_path": { "type": "string" },
+        "artifact_hash": { "type": "string" },
+        "artifact_hash_status": {
+          "type": "string",
+          "enum": ["UNSET", "SOURCE_PACKET_PENDING", "HASH_PRESENT", "VERIFIED"]
+        }
+      }
+    },
+    "network_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["chain", "tx_hash", "eas_uid", "binding_status"],
+      "properties": {
+        "chain": { "type": "string", "enum": ["base_mainnet", "ethereum_mainnet", "unknown"] },
+        "tx_hash": { "type": "string" },
+        "eas_uid": { "type": "string" },
+        "resolver_or_record": { "type": "string" },
+        "binding_status": {
+          "type": "string",
+          "enum": ["LOCAL_ONLY", "GOAL_LINE_REVIEW", "TOUCHDOWN_CONFIRMED", "FLAG_ON_THE_PLAY", "UNKNOWN"]
+        }
+      }
+    },
+    "source_packet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_url", "fetched_at_utc", "content_hash", "extractor_version", "replay_notes"],
+      "properties": {
+        "source_url": { "type": "string" },
+        "fetched_at_utc": { "type": "string" },
+        "content_hash": { "type": "string" },
+        "extractor_version": { "type": "string" },
+        "replay_notes": { "type": "string" }
+      }
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["field_state", "verified_status", "no_fake_green"],
+      "properties": {
+        "field_state": {
+          "type": "string",
+          "enum": ["PUNTED", "GOAL_LINE_REVIEW", "TOUCHDOWN_CONFIRMED", "FLAG_ON_THE_PLAY", "NO_FAKE_GREEN"]
+        },
+        "verified_status": {
+          "type": "string",
+          "enum": ["SOURCE_PACKET_PENDING", "SOURCE_PACKET_ACTIVE", "VERIFIED", "CONFLICT_FOUND", "UNKNOWN"]
+        },
+        "no_fake_green": { "const": true }
+      }
+    },
+    "authority": { "const": false }
+  }
+}
