@@ -1,0 +1,24 @@
+{
+  "claim_id": "CHATFIXTURE_20260626_000001_00001",
+  "ingestion_id": "ING_20260626_000001_00001",
+  "version": "fixture-v1",
+  "extracted_claim": "We agreed to freeze the canonicalization regime object before v1.",
+  "confidence": 0.97,
+  "needs_clarification": false,
+  "context_window": {
+    "message_ids": [],
+    "excerpts": []
+  },
+  "normalization": {
+    "unicode": "NFC",
+    "whitespace": "canonical",
+    "case": "preserve",
+    "json": "JCS"
+  },
+  "raw_hash": "sha256:1a7d0f177e52ce94d8501a213a081f5610ae9a8cc9339be02805ac232bc66c2a",
+  "candidate_canonical_hash": "sha256:578091f56c4a775f08cd7654ef40105bedc7fe7d0062b721898e22b28d8833ab",
+  "regime": {
+    "canonicalizer": "ALMS_EXTRACTOR_V1",
+    "timestamp": "2026-06-26T00:00:01Z"
+  }
+}
