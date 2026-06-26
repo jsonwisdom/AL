@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://jsonwisdom.org/contracts/invocation/v0.1/invocation.schema.json",
   "title": "Invocation Schema v0.1",
-  "description": "Single canonical input to replay. No ambient state, no debug fields, no runtime entropy. invocation_id is content-addressed from canonical JSON without invocation_id.",
+  "description": "Single canonical input to replay. No ambient state, no debug fields, no runtime entropy. invocation_id is content-addressed from canonical JSON without invocation_id. Expected stdout hash is mandatory for constitutional drift detection.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -13,7 +13,8 @@
     "entrypoint",
     "witness",
     "canonicalization",
-    "options"
+    "options",
+    "expected_outputs"
   ],
   "properties": {
     "invocation_id": {
@@ -80,6 +81,27 @@
           "maximum": 300
         },
         "network": { "const": "disabled" }
+      }
+    },
+    "expected_outputs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stdout_sha256", "canonicalization"],
+      "properties": {
+        "stdout_sha256": {
+          "$ref": "#/$defs/sha256_uri",
+          "description": "SHA-256 of replay stdout after execution canonicalization."
+        },
+        "canonicalization": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["strip_single_trailing_newline", "unicode", "invalid_utf8"],
+          "properties": {
+            "strip_single_trailing_newline": { "const": true },
+            "unicode": { "const": "NFC_IF_VALID_UTF8" },
+            "invalid_utf8": { "const": "HASH_RAW_BYTES" }
+          }
+        }
       }
     }
   },
