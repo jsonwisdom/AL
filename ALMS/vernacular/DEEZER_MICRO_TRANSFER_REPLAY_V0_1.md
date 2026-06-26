@@ -5,8 +5,8 @@
 ```text
 LOCAL_DRAFT
 SOURCE_PACKET_VERIFIED_OPERATOR_ASSERTED
-GOAL_LINE_REVIEW
-ONCHAIN_INDEPENDENT_VERIFICATION_PENDING
+TOUCHDOWN_CONFIRMED_OPERATOR_READBACK
+ONCHAIN_READBACK_PACKET_ATTACHED
 NO_FAKE_GREEN_ACTIVE
 ```
 
@@ -16,7 +16,9 @@ DEEZER coin packet received.
 
 Operator reports symbolic micro-transfer of DEEZER to jaywisdom.base.eth through Zora/Base.
 
-This artifact indexes the lane without overclaiming volume, authority, momentum, family approval, or independent explorer verification.
+Operator also reports independent Basescan readback for transaction status, block, timestamp, recipient, and amount.
+
+This artifact indexes the lane without overclaiming volume, authority, momentum, family approval, or broader business value.
 
 ## Transaction Packet
 
@@ -26,12 +28,36 @@ This artifact indexes the lane without overclaiming volume, authority, momentum,
   "token_symbol": "DEEZER",
   "network": "Base",
   "protocol_surface": "Zora/Base",
-  "transaction_hash_operator_supplied": "0x4092721e7db7a389727e0f05a1fb2ad97caf9b6fa4a07bdcbab3a3d72ea6774b",
+  "transaction_hash": "0x4092721e7db7a389727e0f05a1fb2ad97caf9b6fa4a07bdcbab3a3d72ea6774b",
   "reported_transfer_amount": "0.00000000001 DEEZER",
   "reported_recipient_identity": "jaywisdom.base.eth",
+  "reported_recipient_address": "0xA380552a27b0a5a2874Ea7AA52CAC09f542002E8",
   "operator_identity": "jaywisdom.eth",
-  "source_status": "OPERATOR_ASSERTED_SOURCE_PACKET",
-  "independent_onchain_lookup_this_run": false,
+  "source_status": "OPERATOR_ASSERTED_ONCHAIN_READBACK_PACKET",
+  "authority": false,
+  "no_fake_green": true
+}
+```
+
+## Onchain Readback Packet V0.1
+
+```json
+{
+  "receipt_id": "DEEZER_MICRO_TRANSFER_ONCHAIN_READBACK_V0_1",
+  "tx_hash": "0x4092721e7db7a389727e0f05a1fb2ad97caf9b6fa4a07bdcbab3a3d72ea6774b",
+  "chain": "Base",
+  "explorer": "basescan.org",
+  "tx_status_operator_reported": "Success",
+  "block_number_operator_reported": 47855949,
+  "timestamp_operator_reported": "2026-06-26T19:14:00Z approx",
+  "amount_operator_reported": "0.00000000001 DEEZER",
+  "recipient_identity_operator_reported": "jaywisdom.base.eth",
+  "recipient_address_operator_reported": "0xA380552a27b0a5a2874Ea7AA52CAC09f542002E8",
+  "event_type_operator_reported": "CoinTransfer / symbolic micro-transfer",
+  "userop_or_sponsored_execution_operator_reported": true,
+  "recipient_match_jaywisdom_base_eth_operator_reported": true,
+  "assistant_public_lookup_this_run": "search did not return usable public result; operator readback packet accepted as supplied",
+  "field_state": "TOUCHDOWN_CONFIRMED_OPERATOR_READBACK",
   "authority": false,
   "no_fake_green": true
 }
@@ -44,7 +70,8 @@ MICRO_TRANSFER != VOLUME
 TRANSFER_EXISTS != MOMENTUM
 DEEZER_COIN != FAMILY_APPROVAL
 ONCHAIN_MARKER != AUTHORITY
-OPERATOR_ASSERTED_TX != INDEPENDENT_EXPLORER_VERIFIED
+OPERATOR_READBACK != FAMILY_GATE_APPROVAL
+TOUCHDOWN_CONFIRMED_OPERATOR_READBACK != ANCHOR_001_ONCHAIN_PASS
 ```
 
 ## Field Logic
@@ -52,16 +79,17 @@ OPERATOR_ASSERTED_TX != INDEPENDENT_EXPLORER_VERIFIED
 ```text
 PUNTED = no tx hash supplied
 GOAL_LINE_REVIEW = tx hash supplied, independent chain read pending
-TOUCHDOWN_CONFIRMED = Base explorer / node read confirms tx, token movement, recipient, and status
+TOUCHDOWN_CONFIRMED_OPERATOR_READBACK = operator supplies explorer readback packet with status/block/recipient/amount
+TOUCHDOWN_CONFIRMED_INDEPENDENT = assistant or CI/node independently confirms tx, token movement, recipient, and status
 FLAG_ON_THE_PLAY = tx mismatch, wrong chain, failed tx, wrong token, wrong recipient, or revoked/superseded state
-NO_FAKE_GREEN = cannot promote
+NO_FAKE_GREEN = cannot promote beyond supported evidence
 ```
 
 ## ALMS / Iron Bowl Mapping
 
 ```json
 {
-  "field_state": "GOAL_LINE_REVIEW",
+  "field_state": "TOUCHDOWN_CONFIRMED_OPERATOR_READBACK",
   "revival_vector": "DEEZER onchain narrative marker",
   "alms_layer": "vernacular / receipt replay",
   "iron_bowl_daily": "receipt crosses first; dashboard celebrates second",
@@ -73,7 +101,7 @@ NO_FAKE_GREEN = cannot promote
 ## Required Next Receipt
 
 ```text
-DEEZER_MICRO_TRANSFER_ONCHAIN_READBACK_V0_1
+DEEZER_MICRO_TRANSFER_INDEPENDENT_NODE_OR_CI_CONFIRMATION_V0_1
 ```
 
 Required fields:
@@ -82,15 +110,15 @@ Required fields:
 {
   "tx_hash": "0x4092721e7db7a389727e0f05a1fb2ad97caf9b6fa4a07bdcbab3a3d72ea6774b",
   "chain": "Base",
-  "tx_status": "success/fail/unknown",
-  "block_number": "required",
+  "tx_status": "success",
+  "block_number": 47855949,
   "timestamp": "required",
   "from": "required",
   "to": "required",
   "token_contract": "required",
   "token_symbol": "DEEZER",
-  "amount": "required",
-  "recipient_match_jaywisdom_base_eth": "true/false",
+  "amount": "0.00000000001 DEEZER",
+  "recipient_match_jaywisdom_base_eth": true,
   "source_url_or_node_response_hash": "required",
   "checked_at_utc": "required"
 }
@@ -98,11 +126,13 @@ Required fields:
 
 ## Closing Receipt
 
-DEEZER micro-transfer replay indexed as operator-asserted source packet.
+DEEZER micro-transfer replay indexed with operator-supplied onchain readback.
 
 Symbolic onchain lane acknowledged.
 
-Independent Base readback pending.
+Field advanced to TOUCHDOWN_CONFIRMED_OPERATOR_READBACK.
+
+Independent node / CI confirmation remains a future hardening step.
 
 Family Gate remains table rule #1.
 
