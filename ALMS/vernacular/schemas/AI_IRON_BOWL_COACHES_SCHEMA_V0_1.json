@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "AI_IRON_BOWL_COACHES_SCHEMA_V0_1",
+  "title": "AI Iron Bowl Coaches Schema V0.1",
+  "description": "Row-level schema for Alabama and Auburn head coaches by Iron Bowl season. Source packets are required before scoreboard or reputation promotion.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "row_id",
+    "season_year",
+    "game_id",
+    "alabama",
+    "auburn",
+    "game_context",
+    "perspective_reputation_loyalty",
+    "source_packet",
+    "verification",
+    "authority"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "AI_IRON_BOWL_COACHES_SCHEMA_V0_1"
+    },
+    "row_id": {
+      "type": "string",
+      "pattern": "^IRON_BOWL_COACHES_[0-9]{4}$"
+    },
+    "season_year": {
+      "type": "integer",
+      "minimum": 1893,
+      "maximum": 2100
+    },
+    "game_id": {
+      "type": "string",
+      "pattern": "^IRON_BOWL_[0-9]{4}$"
+    },
+    "alabama": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["team", "head_coach", "coach_status", "record_entering_game", "record_after_game"],
+      "properties": {
+        "team": { "const": "Alabama" },
+        "head_coach": { "type": "string", "minLength": 1 },
+        "coach_status": {
+          "type": "string",
+          "enum": ["VERIFIED", "SOURCE_PACKET_PENDING", "CONFLICT_FOUND", "UNKNOWN"]
+        },
+        "record_entering_game": { "type": "string" },
+        "record_after_game": { "type": "string" },
+        "legacy_tags": {
+          "type": "array",
+          "items": { "type": "string" },
+          "default": []
+        }
+      }
+    },
+    "auburn": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["team", "head_coach", "coach_status", "record_entering_game", "record_after_game"],
+      "properties": {
+        "team": { "const": "Auburn" },
+        "head_coach": { "type": "string", "minLength": 1 },
+        "coach_status": {
+          "type": "string",
+          "enum": ["VERIFIED", "SOURCE_PACKET_PENDING", "CONFLICT_FOUND", "UNKNOWN"]
+        },
+        "record_entering_game": { "type": "string" },
+        "record_after_game": { "type": "string" },
+        "legacy_tags": {
+          "type": "array",
+          "items": { "type": "string" },
+          "default": []
+        }
+      }
+    },
+    "game_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["game_date", "location", "winner", "score", "series_record_after_game"],
+      "properties": {
+        "game_date": { "type": "string" },
+        "location": { "type": "string" },
+        "winner": { "type": "string", "enum": ["Alabama", "Auburn", "Tie", "Unknown"] },
+        "score": { "type": "string" },
+        "series_record_after_game": { "type": "string" },
+        "situation_focus": { "type": "string" }
+      }
+    },
+    "perspective_reputation_loyalty": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["perspective_axes", "reputation_state", "loyalty_state"],
+      "properties": {
+        "perspective_axes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["ALABAMA_FAN", "AUBURN_FAN", "NEUTRAL_CITIZEN", "COACH", "PLAYER", "BROADCASTER", "HISTORIAN", "REPLAY_BOOTH"]
+          }
+        },
+        "reputation_state": {
+          "type": "string",
+          "enum": ["UNMEASURED", "NARRATIVE_ONLY", "RECEIPT_SUPPORTED", "CONTESTED", "REPLAY_STRENGTHENED", "REPLAY_DAMAGED"]
+        },
+        "loyalty_state": {
+          "type": "string",
+          "enum": ["TEAM_LOYAL", "TRUTH_LOYAL", "RIVALRY_LOYAL", "BLIND_LOYALTY_FLAGGED", "REPLAY_LOYAL", "UNMEASURED"]
+        },
+        "notes": { "type": "string" }
+      }
+    },
+    "source_packet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_url", "fetched_at_utc", "content_hash", "extractor_version", "replay_notes"],
+      "properties": {
+        "source_url": { "type": "string" },
+        "fetched_at_utc": { "type": "string" },
+        "content_hash": { "type": "string" },
+        "extractor_version": { "type": "string" },
+        "replay_notes": { "type": "string" }
+      }
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["field_state", "verified_status", "no_fake_green"],
+      "properties": {
+        "field_state": {
+          "type": "string",
+          "enum": ["PUNTED", "GOAL_LINE_REVIEW", "TOUCHDOWN_CONFIRMED", "FLAG_ON_THE_PLAY", "NO_FAKE_GREEN"]
+        },
+        "verified_status": {
+          "type": "string",
+          "enum": ["SOURCE_PACKET_PENDING", "SOURCE_PACKET_ACTIVE", "VERIFIED", "CONFLICT_FOUND", "UNKNOWN"]
+        },
+        "no_fake_green": { "const": true }
+      }
+    },
+    "authority": { "const": false }
+  }
+}
