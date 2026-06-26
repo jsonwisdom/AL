@@ -1,45 +1,4 @@
 {
-<<<<<<< HEAD
-  "schema_version": "DEEZER_MICRO_TRANSFER_VALIDATION_RESULT_V0_1",
-  "status": "SENT_TO_EXPECTED_ARTIFACT_PATH",
-  "tx_hash": "0x4092721e7db7a389727e0f05a1fb2ad97caf9b6fa4a07bdcbab3a3d72ea6774b",
-  "chain_id": 8453,
-  "network": "Base",
-  "token_symbol": "DEEZER",
-  "operator_reported_tx_status": "success",
-  "operator_reported_block_number": 47855949,
-  "operator_reported_timestamp_utc_approx": "2026-06-26T19:14:00Z",
-  "operator_reported_recipient_identity": "jaywisdom.base.eth",
-  "operator_reported_recipient_address": "0xA380552a27b0a5a2874Ea7AA52CAC09f542002E8",
-  "operator_reported_amount": "0.00000000001 DEEZER",
-  "wallet_ui_status_observed": "Complete",
-  "wallet_ui_from_observed": "0x829A...55E2",
-  "wallet_ui_amount_observed": "< 0.0₉1 DEEZER",
-  "wallet_ui_price_observed": "<$0.01",
-  "wallet_ui_tx_hash_short_observed": "0x4092...774b",
-  "logs_present": "PENDING_RAW_RPC_READ",
-  "deezer_event_match": "PENDING_RAW_RPC_READ",
-  "recipient_match": "OPERATOR_AND_WALLET_UI_SUPPORTED_PENDING_RAW_RPC",
-  "amount_match": "OPERATOR_AND_WALLET_UI_SUPPORTED_PENDING_RAW_RPC_DECIMAL_NORMALIZATION",
-  "raw_receipt_hash": null,
-  "normalized_event_hash": null,
-  "validator_version": "manual_artifact_packet_v0_1_pending_rpc_validator",
-  "checked_at_utc": "2026-06-26T00:00:00Z_MANUAL_PACKET_TIMESTAMP_PLACEHOLDER",
-  "field_state": "ARTIFACT_PATH_SENT_OPERATOR_READBACK_LOCKED_RAW_RPC_PENDING",
-  "promotion_allowed": false,
-  "touchdown_confirmed_independent": false,
-  "authority": false,
-  "no_fake_green": true,
-  "boundary": [
-    "ARTIFACT_EXISTS != RAW_RPC_RECEIPT",
-    "OPERATOR_READBACK != INDEPENDENT_NODE_CONFIRMATION",
-    "WALLET_UI_COMPLETE != DETERMINISTIC_LOG_DECODE",
-    "MICRO_TRANSFER != VOLUME",
-    "TRANSFER_EXISTS != FAMILY_APPROVAL",
-    "TRANSFER_EXISTS != ANCHOR_001_PASS"
-  ],
-  "next_required": "Run purpose-built Base RPC validator and replace this packet with raw_receipt_hash and normalized_event_hash populated."
-=======
   "schema_version": "DEEZER_MICRO_TRANSFER_CI_VALIDATION_RECEIPT_V0_1",
   "validator_version": "validate_deezer_micro_transfer_v0_1.js",
   "checked_at_utc": "2026-06-26T19:58:53.861Z",
@@ -95,5 +54,4 @@
   "field_state": "TOUCHDOWN_CONFIRMED_INDEPENDENT",
   "authority": false,
   "no_fake_green": true
->>>>>>> 8bec937be (Add DEEZER independent validation result)
 }
