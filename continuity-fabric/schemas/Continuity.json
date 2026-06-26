@@ -1,0 +1,182 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Continuity.json",
+  "title": "ContinuityRecord",
+  "description": "Defines ordered lineage records for Continuity Fabric state transitions. Continuity records bind prior state, active policy, and current artifact hashes into an append-only chain. Continuity proves sequence; it does not grant authority.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "record_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9._:-]+$"
+    },
+    "record_type": {
+      "type": "string",
+      "enum": [
+        "GENESIS",
+        "CONFIG_UPDATE",
+        "WAL_APPEND",
+        "QUORUM_COMMIT",
+        "SETTLEMENT_RECORD",
+        "POLICY_DECISION",
+        "ALERT_EVENT",
+        "ACTIVATION_RECORD",
+        "SCHEMA_FREEZE"
+      ]
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "prev_record_hash": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^(sha256:[0-9a-f]{64}|0x[0-9a-fA-F]{64})$"
+    },
+    "current_record_hash": {
+      "type": "string",
+      "pattern": "^(sha256:[0-9a-f]{64}|0x[0-9a-fA-F]{64})$"
+    },
+    "policy_config_hash": {
+      "type": "string",
+      "pattern": "^(sha256:[0-9a-f]{64}|0x[0-9a-fA-F]{64})$"
+    },
+    "artifact_hashes": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "artifact_type": {
+            "type": "string",
+            "enum": [
+              "IDENTITY",
+              "DIRECTIVE",
+              "PROPERTY",
+              "INFLUENCE",
+              "INTEGRITY",
+              "CONTINUITY",
+              "WAL_ENTRY",
+              "QUORUM_RECEIPT",
+              "SETTLEMENT_RECORD",
+              "POLICY_DECISION_LOG",
+              "ALERT_EVENT",
+              "CONFIG_UPDATE",
+              "ACTIVATION_RECORD",
+              "SCHEMA_FREEZE_RECEIPT"
+            ]
+          },
+          "artifact_path": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512
+          },
+          "artifact_hash": {
+            "type": "string",
+            "pattern": "^(sha256:[0-9a-f]{64}|0x[0-9a-fA-F]{64})$"
+          }
+        },
+        "required": [
+          "artifact_type",
+          "artifact_path",
+          "artifact_hash"
+        ]
+      }
+    },
+    "activation_state": {
+      "type": "string",
+      "enum": [
+        "PENDING",
+        "ACTIVE",
+        "SUPERSEDED",
+        "QUARANTINED",
+        "HALTED"
+      ]
+    },
+    "effective_from_timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "signer_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9._:-]+$"
+    },
+    "signature": {
+      "type": "string",
+      "pattern": "^0x[0-9a-fA-F]{130}$"
+    },
+    "authority": {
+      "const": false
+    }
+  },
+  "required": [
+    "record_id",
+    "record_type",
+    "sequence",
+    "prev_record_hash",
+    "current_record_hash",
+    "policy_config_hash",
+    "artifact_hashes",
+    "activation_state",
+    "effective_from_timestamp",
+    "created_at",
+    "signer_id",
+    "signature",
+    "authority"
+  ],
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "record_type": {
+            "const": "GENESIS"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "prev_record_hash": {
+            "type": "null"
+          },
+          "sequence": {
+            "const": 0
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "record_type": {
+            "not": {
+              "const": "GENESIS"
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "prev_record_hash": {
+            "type": "string",
+            "pattern": "^(sha256:[0-9a-f]{64}|0x[0-9a-fA-F]{64})$"
+          },
+          "sequence": {
+            "minimum": 1
+          }
+        }
+      }
+    }
+  ]
+}
