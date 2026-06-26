@@ -52,6 +52,16 @@ def verify_invocation_id(invocation: Dict[str, Any]) -> None:
         raise ReplayRefused("INVOCATION_ID_MISMATCH")
 
 
+def expected_stdout_hash(invocation: Dict[str, Any]) -> str:
+    expected = invocation.get("expected_outputs")
+    if not isinstance(expected, dict):
+        raise ReplayQuarantined("MISSING_EXPECTED_OUTPUT_HASH")
+    stdout_sha256 = expected.get("stdout_sha256")
+    if not isinstance(stdout_sha256, str) or not stdout_sha256.startswith("sha256:"):
+        raise ReplayQuarantined("MISSING_EXPECTED_OUTPUT_HASH")
+    return stdout_sha256
+
+
 def verify_envelope_reference(invocation: Dict[str, Any]) -> Path:
     envelope_ref = invocation.get("envelope_ref")
     envelope_sha256 = invocation.get("envelope_sha256")
@@ -104,14 +114,11 @@ def execute(invocation_path: Path) -> Dict[str, Any]:
     invocation = load_json(invocation_path)
     invocation_id = invocation.get("invocation_id")
     witness = invocation.get("witness", {}).get("target")
-    expected_stdout_sha256: Optional[str] = invocation.get("expected_outputs", {}).get("stdout_sha256")
 
     verify_invocation_id(invocation)
+    expected_sha256 = expected_stdout_hash(invocation)
     envelope_path = verify_envelope_reference(invocation)
     verify_signature(envelope_path)
-
-    if not expected_stdout_sha256:
-        raise ReplayQuarantined("EXPECTED_OUTPUT_NOT_DECLARED")
 
     if not REPLAY_BIN.exists():
         raise ReplayQuarantined("REPLAY_BIN_MISSING")
@@ -130,8 +137,8 @@ def execute(invocation_path: Path) -> Dict[str, Any]:
     if result.stderr:
         raise ReplayQuarantined("STDERR_NOT_EMPTY")
 
-    actual_stdout_sha256 = sha256_bytes(normalize_output_bytes(result.stdout))
-    state = "REPLAY_CONVERGED" if actual_stdout_sha256 == expected_stdout_sha256 else "REPLAY_DIVERGED"
+    actual_sha256 = sha256_bytes(normalize_output_bytes(result.stdout))
+    state = "REPLAY_CONVERGED" if actual_sha256 == expected_sha256 else "REPLAY_DIVERGED"
 
     return {
         "verdict_version": "replay-verdict-v0.1",
@@ -139,8 +146,10 @@ def execute(invocation_path: Path) -> Dict[str, Any]:
         "envelope_sha256": invocation.get("envelope_sha256"),
         "witness": witness,
         "state": state,
-        "actual_stdout_sha256": actual_stdout_sha256,
-        "expected_stdout_sha256": expected_stdout_sha256,
+        "actual_sha256": actual_sha256,
+        "expected_sha256": expected_sha256,
+        "actual_stdout_sha256": actual_sha256,
+        "expected_stdout_sha256": expected_sha256,
         "reason": "OUTPUT_HASH_MATCH" if state == "REPLAY_CONVERGED" else "OUTPUT_HASH_MISMATCH",
     }
 
@@ -150,14 +159,17 @@ def verdict_from_failure(invocation_path: Path, state: str, reason: str) -> Dict
         invocation = load_json(invocation_path)
     except Exception:
         invocation = {}
+    expected = (invocation.get("expected_outputs") or {}).get("stdout_sha256")
     return {
         "verdict_version": "replay-verdict-v0.1",
         "invocation_id": invocation.get("invocation_id"),
         "envelope_sha256": invocation.get("envelope_sha256"),
         "witness": (invocation.get("witness") or {}).get("target"),
         "state": state,
+        "actual_sha256": None,
+        "expected_sha256": expected,
         "actual_stdout_sha256": None,
-        "expected_stdout_sha256": (invocation.get("expected_outputs") or {}).get("stdout_sha256"),
+        "expected_stdout_sha256": expected,
         "reason": reason,
     }
 
