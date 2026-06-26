@@ -5,13 +5,17 @@ on:
     branches: [ master, main ]
     paths:
       - 'contracts/replay/v0.1/**'
+      - 'contracts/keys/v0.1/**'
       - 'claims/extractor/**'
+      - 'verify.sh'
       - '.github/workflows/replay-interface.yml'
   pull_request:
     branches: [ master, main ]
     paths:
       - 'contracts/replay/v0.1/**'
+      - 'contracts/keys/v0.1/**'
       - 'claims/extractor/**'
+      - 'verify.sh'
       - '.github/workflows/replay-interface.yml'
 
 jobs:
@@ -36,6 +40,18 @@ jobs:
 
       - name: Validate Replay Canonicalization Doctrine Presence
         run: test -f contracts/replay/v0.1/CANONICALIZATION.md
+
+      - name: Validate Replay Envelope Signature Doctrine Presence
+        run: test -f contracts/replay/v0.1/SIGNATURES.md
+
+      - name: Validate Replay Signature Verifier Presence
+        run: test -f contracts/replay/v0.1/verify_envelope_signature.py
+
+      - name: Validate Key Registry Schema Presence
+        run: test -f contracts/keys/v0.1/registry.schema.json
+
+      - name: Validate Key Registry Presence
+        run: test -f contracts/keys/v0.1/registry.json
 
       - name: Validate Replay Invocation Schema Presence
         run: test -f contracts/replay/v0.1/invocation-v0.1.schema.json
