@@ -4,7 +4,7 @@
 
 ```text
 LOCAL_DRAFT
-SOURCE_PACKET_PENDING
+SOURCE_PACKET_ACTIVE
 IRON_BOWL_DAILY_EXTENSION
 NO_FAKE_GREEN_ACTIVE
 ```
@@ -71,7 +71,7 @@ No fake green.
     "source_hash",
     "verified_status"
   ],
-  "status": "SOURCE_PACKET_PENDING"
+  "status": "SOURCE_PACKET_ACTIVE"
 }
 ```
 
@@ -112,6 +112,58 @@ No fake green.
   ],
   "status": "SOURCE_PACKET_PENDING"
 }
+```
+
+## Starter Source Packet V0.1
+
+```json
+{
+  "packet_id": "IRON_BOWL_STARTER_SOURCE_PACKET_V0_1",
+  "status": "SOURCE_PACKET_ACTIVE",
+  "verification_state": "GOAL_LINE_REVIEW",
+  "scope": "starter_summary_only",
+  "source_policy": "locator_sources_allowed_for_bootstrap; row_level_receipts_required_before scoreboard promotion",
+  "current_summary": {
+    "first_played_year": 1893,
+    "known_gap": "1908-1947 not played",
+    "modern_resume_year": 1948,
+    "games_through_2025": 90,
+    "series_leader": "Alabama",
+    "series_record_through_2025": "52-37-1",
+    "source_status": "public_web_summary_checked; row_level_receipts_pending"
+  },
+  "location_summary_through_2025": {
+    "cities": ["Birmingham", "Auburn", "Tuscaloosa", "Montgomery"],
+    "source_status": "public_web_summary_checked; row_level receipts pending"
+  },
+  "recent_broadcast_bootstrap": {
+    "2025_tv_network": "ABC",
+    "2025_booth": ["Chris Fowler", "Kirk Herbstreit", "Holly Rowe"],
+    "source_status": "public_web_summary_checked; broadcaster timeline pending"
+  }
+}
+```
+
+### Starter Source Notes
+
+The starter packet confirms the lane shape and current scoreboard summary only.
+
+It does not complete the almanac.
+
+It does not replace row-level source receipts.
+
+It does not verify all coaches.
+
+It does not verify all broadcasters.
+
+It does not authorize public scoreboard promotion.
+
+### Starter Source Targets Used
+
+```text
+Iron Bowl public all-time results summary
+2025 Alabama football game-summary surface
+2025 Auburn football game-summary surface
 ```
 
 ## Field Logic
@@ -172,12 +224,13 @@ radio network records
 5. Do not erase Auburn from the rivalry graph.
 6. Family Layer 0 still outranks the game.
 7. Revival energy must serve replay discipline.
+8. Starter source packet may shape the graph but may not promote the scoreboard.
 
 ## Closing Receipt
 
-AI Iron Bowl Quantum Almanac lane opened as LOCAL_DRAFT.
+AI Iron Bowl Quantum Almanac lane opened as LOCAL_DRAFT and advanced to SOURCE_PACKET_ACTIVE for starter summary only.
 
-All years, all coaches, and famous broadcasters are now required data lanes.
+All years, all coaches, and famous broadcasters remain required data lanes.
 
 The game is live.
 
