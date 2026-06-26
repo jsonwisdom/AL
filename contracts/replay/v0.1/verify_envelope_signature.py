@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import base64
 import json
+import os
 import subprocess
 import sys
 import tempfile
@@ -20,11 +21,19 @@ from pathlib import Path
 from typing import Any, Dict
 
 ROOT = Path(__file__).resolve().parents[3]
-KEY_REGISTRY = ROOT / "contracts" / "keys" / "v0.1" / "registry.json"
+DEFAULT_KEY_REGISTRY = ROOT / "contracts" / "keys" / "v0.1" / "registry.json"
 
 
 class SignatureRefusal(Exception):
     pass
+
+
+def registry_path() -> Path:
+    override = os.environ.get("ALMS_KEY_REGISTRY")
+    if override:
+        candidate = Path(override)
+        return candidate if candidate.is_absolute() else ROOT / candidate
+    return DEFAULT_KEY_REGISTRY
 
 
 def load_json(path: Path) -> Dict[str, Any]:
@@ -45,7 +54,7 @@ def find_key(registry: Dict[str, Any], key_id: str) -> Dict[str, Any]:
 
 def verify_signature(envelope_path: Path) -> None:
     envelope = load_json(envelope_path)
-    registry = load_json(KEY_REGISTRY)
+    registry = load_json(registry_path())
 
     signature = envelope.get("signature")
     require(isinstance(signature, dict), "signature_block_missing")
