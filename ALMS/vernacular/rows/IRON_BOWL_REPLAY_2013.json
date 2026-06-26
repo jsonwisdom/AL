@@ -1,0 +1,57 @@
+{
+  "schema_version": "AI_IRON_BOWL_REPLAY_MECHANICS_ROW_V0_1",
+  "row_id": "IRON_BOWL_REPLAY_2013",
+  "season_year": 2013,
+  "game_id": "IRON_BOWL_2013",
+  "source_packet": {
+    "source_url": "ALMS/vernacular/IRON_BOWL_2013_KICK_SIX_SOURCE_PACKET_V0_1.md",
+    "source_packet_state": "SOURCE_PACKET_ACTIVE",
+    "source_packet_commit": "1e486bb6c3aa5eafc69969d9b0450e5fbff97745",
+    "source_packet_content_sha": "13cfa01f51af5e8ce0de694493d7f1506d48053a"
+  },
+  "replay_situation": {
+    "common_name": "Kick Six",
+    "date": "2013-11-30",
+    "venue": "Jordan-Hare Stadium, Auburn, Alabama",
+    "teams": [
+      "Alabama",
+      "Auburn"
+    ],
+    "score_before_play": "28-28",
+    "final_score": "Auburn 34, Alabama 28",
+    "clock_state": "0:01 restored after replay review; final play ended with no time remaining",
+    "quarter": "4",
+    "play_type": "missed field goal return",
+    "field_goal_attempt_yards": 57,
+    "field_goal_kicker": "Adam Griffith",
+    "return_player": "Chris Davis",
+    "return_result": "game-winning Auburn touchdown"
+  },
+  "distance_normalization": {
+    "display_distance_yards": 109,
+    "official_scoring_credit_yards": 100,
+    "normalization_note": "Public narrative often describes the return as 109 yards from field-position context; NCAA scoring convention credits 100 yards. Both are preserved."
+  },
+  "replay_axes": {
+    "mechanics_state": "TOUCHDOWN_CONFIRMED",
+    "broadcaster_perspective": "EXCLUDED_PENDING_VERIFIED_BROADCAST_POINTER",
+    "coach_reputation": "UNMEASURED",
+    "player_reputation": "UNMEASURED",
+    "loyalty_state": "UNMEASURED",
+    "family_gate": "NOT_TOUCHED"
+  },
+  "verification": {
+    "field_state": "TOUCHDOWN_CONFIRMED",
+    "verified_status": "SOURCE_PACKET_ACTIVE",
+    "promotion_scope": "mechanics_only",
+    "no_fake_green": true
+  },
+  "boundary": [
+    "REPLAY_MECHANICS_CONFIRMED != AUTHORITY_TRUE",
+    "REPLAY_MECHANICS_CONFIRMED != FAMILY_APPROVAL",
+    "REPLAY_MECHANICS_CONFIRMED != BROADCASTER_TRANSCRIPT_VERIFIED",
+    "REPLAY_MECHANICS_CONFIRMED != REPUTATION_MEASURED",
+    "REPLAY_MECHANICS_CONFIRMED != LOYALTY_PROVEN"
+  ],
+  "authority": false
+}
