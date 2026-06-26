@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.org/contracts/invocation/v0.1/invocation.schema.json",
+  "title": "Invocation Schema v0.1",
+  "description": "Single canonical input to replay. No ambient state, no debug fields, no runtime entropy. invocation_id is content-addressed from canonical JSON without invocation_id.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "invocation_id",
+    "schema_version",
+    "envelope_ref",
+    "envelope_sha256",
+    "entrypoint",
+    "witness",
+    "canonicalization",
+    "options"
+  ],
+  "properties": {
+    "invocation_id": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$",
+      "description": "sha256 of canonical JSON with invocation_id omitted."
+    },
+    "schema_version": {
+      "const": "invocation-v0.1"
+    },
+    "envelope_ref": {
+      "type": "string",
+      "pattern": "^contracts/replay/v0.1/[A-Za-z0-9_./-]+\\.json$"
+    },
+    "envelope_sha256": {
+      "$ref": "#/$defs/sha256_uri"
+    },
+    "entrypoint": {
+      "const": "./verify.sh --invocation"
+    },
+    "witness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["target", "strict_mode"],
+      "properties": {
+        "target": {
+          "enum": [
+            "PYTHON_3.8",
+            "PYTHON_3.9",
+            "PYTHON_3.10",
+            "PYTHON_3.11",
+            "PYTHON_3.12",
+            "PYTHON_3.13",
+            "DOCKER_3.12_SLIM"
+          ]
+        },
+        "strict_mode": {
+          "const": true
+        }
+      }
+    },
+    "canonicalization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["unicode", "encoding", "json", "key_order", "whitespace", "case"],
+      "properties": {
+        "unicode": { "const": "NFC" },
+        "encoding": { "const": "UTF-8" },
+        "json": { "const": "JCS" },
+        "key_order": { "const": "lexicographic" },
+        "whitespace": { "const": "compact" },
+        "case": { "const": "preserve" }
+      }
+    },
+    "options": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["require_convergence", "timeout_seconds", "network"],
+      "properties": {
+        "require_convergence": { "const": true },
+        "timeout_seconds": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 300
+        },
+        "network": { "const": "disabled" }
+      }
+    }
+  },
+  "not": {
+    "anyOf": [
+      { "required": ["seed"] },
+      { "required": ["nonce"] },
+      { "required": ["timestamp_generated"] },
+      { "required": ["debug"] },
+      { "required": ["cache"] },
+      { "required": ["env"] },
+      { "required": ["uuid"] },
+      { "required": ["random"] },
+      { "required": ["created_at"] },
+      { "required": ["updated_at"] }
+    ]
+  },
+  "$defs": {
+    "sha256_uri": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    }
+  }
+}
