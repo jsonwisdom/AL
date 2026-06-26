@@ -11,7 +11,17 @@
     "authority": false,
     "family_gate": "INTACT_NOT_TOUCHED",
     "no_fake_green": true,
-    "defensive_receipt_layer_only": true
+    "defensive_receipt_layer_only": true,
+    "monitor_rule_encoded": true,
+    "background_monitor_running": false
+  },
+  "monitor_boundary": {
+    "status": "BOUNDARY_ENCODED",
+    "monitor_rule_encoded": true,
+    "background_monitor_running": false,
+    "failure_mode": "BACKGROUND_MONITORING_DEPENDENCY",
+    "rule": "This index defines routing behavior for future handled signals, but does not claim autonomous or background monitoring.",
+    "required_handling": "Any new inbound #ALABAMA_ZERO_DAY signal handled in-session must route to REPLAY_VERIFICATION plus SOURCE_PACKET_CHECK before resolution."
   },
   "active_surfaces": {
     "anchor_001": {
@@ -47,14 +57,16 @@
     }
   },
   "inbound_gate": {
-    "trigger": "ANY_NEW_ALABAMA_ZERO_DAY_SIGNAL",
-    "required_response": "REPLAY_VERIFICATION",
+    "trigger": "ANY_NEW_ALABAMA_ZERO_DAY_SIGNAL_HANDLED_IN_SESSION",
+    "required_response": "REPLAY_VERIFICATION_PLUS_SOURCE_PACKET_CHECK",
     "rules": [
       "No touchdown without source packet.",
       "No source packet without replay booth review.",
       "No authority=true.",
       "No Family Gate inheritance.",
-      "No fake green."
+      "No fake green.",
+      "No phantom automation claim.",
+      "No background monitor claim unless an explicit automation exists."
     ]
   },
   "authority": false
