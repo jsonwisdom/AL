@@ -99,15 +99,15 @@ def aggregate(manifest: dict[str, Any]) -> dict[str, Any]:
 
     return {
         "framework": "WITNESS_CONSENSUS_V2_8",
-        "consensus_id": manifest.get("consensus_id", ""),
+        "consensusId": manifest.get("consensusId", manifest.get("consensus_id", "")),
         "repo": manifest.get("repo", "jsonwisdom/AL"),
         "tag": manifest.get("tag", "v2.8-live"),
         "threshold": threshold,
-        "witness_count": len(configured_ids),
-        "state_root": state_root,
-        "matched_witnesses": [a["witness_id"] for a in matched],
-        "witness_uids": [a["uid"] for a in matched],
-        "replay_cid": manifest.get("replay_cid", ""),
+        "witnessCount": len(configured_ids),
+        "stateRoot": state_root,
+        "matchedWitnesses": ",".join(a["witness_id"] for a in matched),
+        "witnessUids": ",".join(a["uid"] for a in matched),
+        "replayCid": manifest.get("replayCid", manifest.get("replay_cid", "")),
         "authority": False,
         "status": "PASS"
     }
