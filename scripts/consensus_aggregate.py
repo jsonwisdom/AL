@@ -2,9 +2,9 @@
 """ALMS v2.8 witness consensus aggregator.
 
 Sprint 1 strict mode: every submitted configured witness attestation must be
-PASS, authority=false, and all submitted state_roots must match. Posting the
-final EAS consensus attestation is explicit/off by default so CI cannot
-silently mint authority.
+PASS, authority=false, and all submitted state_roots must match the replay
+manifest state_root. The witness allow-list comes from the committed witness
+config, not from the manifest being evaluated.
 """
 
 from __future__ import annotations
@@ -21,7 +21,7 @@ class ConsensusError(SystemExit):
     """Explicit halt for non-consensus states."""
 
 
-def load_json(path: str) -> dict[str, Any]:
+def load_json(path: str | Path) -> dict[str, Any]:
     return json.loads(Path(path).read_text(encoding="utf-8"))
 
 
@@ -35,20 +35,32 @@ def norm_root(value: str) -> str:
     return value.lower()
 
 
-def configured_witness_ids(consensus: dict[str, Any]) -> set[str]:
-    witnesses = consensus.get("witnesses", [])
+def configured_witness_ids(witness_config: dict[str, Any]) -> set[str]:
+    witnesses = witness_config.get("witnesses", [])
     ids = [w["id"] for w in witnesses]
     if len(ids) != len(set(ids)):
         raise ConsensusError("HALT_ON_MISMATCH: duplicate configured witness id")
     return set(ids)
 
 
-def aggregate(manifest: dict[str, Any]) -> dict[str, Any]:
+def manifest_status_ok(manifest: dict[str, Any]) -> None:
+    if manifest.get("status") != "PASS":
+        raise ConsensusError("HALT_ON_MISMATCH: manifest status is not PASS")
+    if manifest.get("authority") is not False:
+        raise ConsensusError("HALT_ON_MISMATCH: manifest authority is not false")
+
+
+def aggregate(manifest: dict[str, Any], witness_config: dict[str, Any]) -> dict[str, Any]:
+    manifest_status_ok(manifest)
+
     consensus = manifest["consensus"]
     threshold = int(consensus["threshold"])
     attestations = consensus["attestations"]
-    configured_ids = configured_witness_ids(consensus)
+    configured_ids = configured_witness_ids(witness_config)
+    manifest_root = norm_root(manifest["state_root"])
 
+    if threshold != int(witness_config.get("threshold", threshold)):
+        raise ConsensusError("HALT_ON_MISMATCH: manifest threshold differs from witness config")
     if threshold < 2:
         raise ConsensusError("HALT_ON_MISMATCH: threshold must be >= 2")
     if len(configured_ids) < threshold:
@@ -77,7 +89,11 @@ def aggregate(manifest: dict[str, Any]) -> dict[str, Any]:
         if item.get("authority") is not False:
             raise ConsensusError(f"HALT_ON_MISMATCH: authority claim from {witness_id}")
 
-        valid.append({**item, "state_root": norm_root(item["state_root"])})
+        witness_root = norm_root(item["state_root"])
+        if witness_root != manifest_root:
+            raise ConsensusError(f"HALT_ON_MISMATCH: state_root mismatch from {witness_id}")
+
+        valid.append({**item, "state_root": witness_root})
 
     if len(valid) < threshold:
         raise ConsensusError(
@@ -92,6 +108,8 @@ def aggregate(manifest: dict[str, Any]) -> dict[str, Any]:
         raise ConsensusError(f"HALT_ON_MISMATCH: root_groups={len(by_root)}")
 
     state_root, matched = next(iter(by_root.items()))
+    if state_root != manifest_root:
+        raise ConsensusError("HALT_ON_MISMATCH: consensus root differs from manifest root")
     if len(matched) < threshold:
         raise ConsensusError(
             f"HALT_ON_MISMATCH: matched={len(matched)}, threshold={threshold}"
@@ -116,10 +134,15 @@ def aggregate(manifest: dict[str, Any]) -> dict[str, Any]:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("manifest", help="v2.8 replay manifest JSON")
+    parser.add_argument(
+        "--witness-config",
+        default="config/witnesses.v2.8.json",
+        help="committed witness allow-list JSON"
+    )
     parser.add_argument("--out", default="consensus-output.v2.8.json")
     args = parser.parse_args()
 
-    result = aggregate(load_json(args.manifest))
+    result = aggregate(load_json(args.manifest), load_json(args.witness_config))
     Path(args.out).write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(result, indent=2))
     return 0
