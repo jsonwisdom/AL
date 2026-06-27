@@ -1,0 +1,24 @@
+{
+  "version": "v2.8",
+  "threshold": 2,
+  "witnesses": [
+    {
+      "id": "witness_1_jay",
+      "address": "0xC345B26094c63C69222Ee775189a3d3eaead5a84",
+      "mode": "online",
+      "label": "Jay witness wallet"
+    },
+    {
+      "id": "witness_2_node8",
+      "address": "0x2AcdCE2FaF9Ffd9580897fF8d18919982b20b65c",
+      "mode": "node8",
+      "label": "Node8 separate host wallet"
+    },
+    {
+      "id": "witness_3_coldbox",
+      "address": "0x933527c220E2E47a9B26271920A7bd45D099358A",
+      "mode": "coldbox",
+      "label": "ColdBox offline signer"
+    }
+  ]
+}

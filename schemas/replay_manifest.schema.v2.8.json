@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ALMS_REPLAY_MANIFEST_V2_8",
+  "type": "object",
+  "required": ["version", "framework", "status", "authority", "state_root", "consensus"],
+  "properties": {
+    "version": { "const": "v2.8" },
+    "framework": { "type": "string" },
+    "status": { "enum": ["PASS", "FAIL", "INCOMPLETE", "HALT_ON_MISMATCH"] },
+    "authority": { "const": false },
+    "state_root": { "type": "string", "pattern": "^[0-9a-fA-F]{64}$" },
+    "replay_cid": { "type": "string" },
+    "consensus": {
+      "type": "object",
+      "required": ["threshold", "witnesses", "attestations"],
+      "properties": {
+        "threshold": { "type": "integer", "minimum": 2 },
+        "witnesses": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "type": "object",
+            "required": ["id", "address", "mode"],
+            "properties": {
+              "id": { "type": "string" },
+              "address": { "type": "string", "pattern": "^0x[a-fA-F0-9]{40}$" },
+              "mode": { "enum": ["online", "node8", "coldbox", "third_party"] }
+            }
+          }
+        },
+        "attestations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["uid", "witness_id", "state_root", "status", "authority"],
+            "properties": {
+              "uid": { "type": "string", "pattern": "^0x[a-fA-F0-9]{64}$" },
+              "witness_id": { "type": "string" },
+              "state_root": { "type": "string", "pattern": "^0x[a-fA-F0-9]{64}$" },
+              "status": { "const": "PASS" },
+              "authority": { "const": false }
+            }
+          }
+        }
+      }
+    }
+  }
+}
