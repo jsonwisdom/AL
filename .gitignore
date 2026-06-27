@@ -16,3 +16,15 @@ tools/al-verifier/node_modules/
 target/
 tools/al-verifier/target/
 receiptnet/.keys/
+
+# Witness private material: public addresses may be committed, secrets never.
+*.privatekey
+*.key
+*.pem
+*.mnemonic
+*.seed
+keystore*.json
+node8.privatekey
+coldbox.privatekey
+alms-v2.8-node8-wallet/
+alms-v2.8-coldbox-wallet/
