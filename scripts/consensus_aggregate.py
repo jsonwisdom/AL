@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """ALMS v2.8 witness consensus aggregator.
 
-Reads witness attestations from JSON, requires threshold matching state_root,
-and emits a consensus packet. Posting the final EAS consensus attestation is
-left explicit/off by default so CI cannot silently mint authority.
+Reads witness attestations from JSON, requires one unique winning state_root
+from threshold distinct witnesses, and emits a consensus packet. Posting the
+final EAS consensus attestation is explicit/off by default so CI cannot
+silently mint authority.
 """
 
 from __future__ import annotations
@@ -11,9 +12,13 @@ from __future__ import annotations
 import argparse
 import json
 import sys
-from collections import Counter, defaultdict
+from collections import defaultdict
 from pathlib import Path
 from typing import Any
+
+
+class ConsensusError(SystemExit):
+    """Explicit halt for non-consensus states."""
 
 
 def load_json(path: str) -> dict[str, Any]:
@@ -26,38 +31,75 @@ def norm_root(value: str) -> str:
         value = "0x" + value
     if len(value) != 66:
         raise ValueError(f"invalid state_root length: {value}")
+    int(value[2:], 16)
     return value.lower()
+
+
+def configured_witness_ids(consensus: dict[str, Any]) -> set[str]:
+    witnesses = consensus.get("witnesses", [])
+    ids = [w["id"] for w in witnesses]
+    if len(ids) != len(set(ids)):
+        raise ConsensusError("HALT_ON_MISMATCH: duplicate configured witness id")
+    return set(ids)
 
 
 def aggregate(manifest: dict[str, Any]) -> dict[str, Any]:
     consensus = manifest["consensus"]
     threshold = int(consensus["threshold"])
     attestations = consensus["attestations"]
+    configured_ids = configured_witness_ids(consensus)
 
-    valid = []
+    if threshold < 2:
+        raise ConsensusError("HALT_ON_MISMATCH: threshold must be >= 2")
+    if len(configured_ids) < threshold:
+        raise ConsensusError("HALT_ON_MISMATCH: threshold exceeds configured witnesses")
+
+    seen_witness_ids: set[str] = set()
+    seen_uids: set[str] = set()
+    valid: list[dict[str, Any]] = []
+
     for item in attestations:
+        witness_id = item.get("witness_id")
+        uid = item.get("uid")
+
+        if witness_id not in configured_ids:
+            raise ConsensusError(f"HALT_ON_MISMATCH: unknown witness_id {witness_id}")
+        if witness_id in seen_witness_ids:
+            raise ConsensusError(f"HALT_ON_MISMATCH: duplicate witness_id {witness_id}")
+        if uid in seen_uids:
+            raise ConsensusError(f"HALT_ON_MISMATCH: duplicate uid {uid}")
+
+        seen_witness_ids.add(witness_id)
+        seen_uids.add(uid)
+
         if item.get("status") != "PASS":
             continue
         if item.get("authority") is not False:
             continue
+
         valid.append({**item, "state_root": norm_root(item["state_root"])})
 
-    counts = Counter(a["state_root"] for a in valid)
-    if not counts:
-        raise SystemExit("HALT_ON_MISMATCH: no valid PASS/authority=false attestations")
+    if not valid:
+        raise ConsensusError("HALT_ON_MISMATCH: no valid PASS/authority=false attestations")
 
-    state_root, count = counts.most_common(1)[0]
-    if count < threshold:
-        raise SystemExit(f"HALT_ON_MISMATCH: best={count}, threshold={threshold}")
+    by_root: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for item in valid:
+        by_root[item["state_root"]].append(item)
 
-    matched = [a for a in valid if a["state_root"] == state_root]
+    winners = {root: group for root, group in by_root.items() if len(group) >= threshold}
+    if len(winners) != 1:
+        raise ConsensusError(
+            f"HALT_ON_MISMATCH: winners={len(winners)}, threshold={threshold}"
+        )
+
+    state_root, matched = next(iter(winners.items()))
     return {
         "framework": "WITNESS_CONSENSUS_V2_8",
         "consensus_id": manifest.get("consensus_id", ""),
         "repo": manifest.get("repo", "jsonwisdom/AL"),
         "tag": manifest.get("tag", "v2.8-live"),
         "threshold": threshold,
-        "witness_count": len(consensus.get("witnesses", [])),
+        "witness_count": len(configured_ids),
         "state_root": state_root,
         "matched_witnesses": [a["witness_id"] for a in matched],
         "witness_uids": [a["uid"] for a in matched],
