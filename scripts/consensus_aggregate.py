@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """ALMS v2.8 witness consensus aggregator.
 
-Reads witness attestations from JSON, requires one unique winning state_root
-from threshold distinct witnesses, and emits a consensus packet. Posting the
+Sprint 1 strict mode: every submitted configured witness attestation must be
+PASS, authority=false, and all submitted state_roots must match. Posting the
 final EAS consensus attestation is explicit/off by default so CI cannot
 silently mint authority.
 """
@@ -73,26 +73,30 @@ def aggregate(manifest: dict[str, Any]) -> dict[str, Any]:
         seen_uids.add(uid)
 
         if item.get("status") != "PASS":
-            continue
+            raise ConsensusError(f"HALT_ON_MISMATCH: non-PASS status from {witness_id}")
         if item.get("authority") is not False:
-            continue
+            raise ConsensusError(f"HALT_ON_MISMATCH: authority claim from {witness_id}")
 
         valid.append({**item, "state_root": norm_root(item["state_root"])})
 
-    if not valid:
-        raise ConsensusError("HALT_ON_MISMATCH: no valid PASS/authority=false attestations")
+    if len(valid) < threshold:
+        raise ConsensusError(
+            f"HALT_ON_MISMATCH: valid={len(valid)}, threshold={threshold}"
+        )
 
     by_root: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for item in valid:
         by_root[item["state_root"]].append(item)
 
-    winners = {root: group for root, group in by_root.items() if len(group) >= threshold}
-    if len(winners) != 1:
+    if len(by_root) != 1:
+        raise ConsensusError(f"HALT_ON_MISMATCH: root_groups={len(by_root)}")
+
+    state_root, matched = next(iter(by_root.items()))
+    if len(matched) < threshold:
         raise ConsensusError(
-            f"HALT_ON_MISMATCH: winners={len(winners)}, threshold={threshold}"
+            f"HALT_ON_MISMATCH: matched={len(matched)}, threshold={threshold}"
         )
 
-    state_root, matched = next(iter(winners.items()))
     return {
         "framework": "WITNESS_CONSENSUS_V2_8",
         "consensus_id": manifest.get("consensus_id", ""),
