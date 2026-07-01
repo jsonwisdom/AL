@@ -1,0 +1,65 @@
+{
+  "artifact_id": "ALMS-MACHINE-SPEED-JAY-001",
+  "title": "ALMS Machine Speed Jay",
+  "type": "alms_machine_speed_receipt",
+  "version": "1",
+  "repository": "jsonwisdom/AL",
+  "framework": "ALMS",
+  "subject": "Machine Speed Jay",
+  "mode": "procedural_acceleration",
+  "status": "ACTIVE_SCAFFOLD",
+  "purpose": "Define a bounded acceleration lane for ALMS work inside the AL repository while preserving replay, receipt, and no-fake-green invariants.",
+  "core_signal": {
+    "name": "ALMS Machine Speed Jay",
+    "operator": "Jay Wisdom / JSONWisdom",
+    "intent": "Increase execution speed without sacrificing verification boundaries.",
+    "slogan": "Move fast, but leave receipts."
+  },
+  "invariants": {
+    "authority": false,
+    "truth_claim": false,
+    "mutation_of_prior_receipts": false,
+    "no_fake_green": true,
+    "human_review_required_for_public_claims": true,
+    "replay_required": true,
+    "receipt_first": true,
+    "deterministic_outputs_preferred": true
+  },
+  "speed_rules": {
+    "SR_001": "Acceleration MAY reduce handoff friction but SHALL NOT bypass verification.",
+    "SR_002": "Machine-generated outputs SHALL remain procedural until independently reviewed or replayed.",
+    "SR_003": "No receipt SHALL be treated as proof of external truth or authority.",
+    "SR_004": "Fast lanes SHALL preserve input, output, timestamp, and dependency visibility.",
+    "SR_005": "Blocked states SHALL remain visible rather than converted into fake success."
+  },
+  "workflow": [
+    "intake_signal",
+    "freeze_payload",
+    "run_replay_or_verifier",
+    "emit_receipt",
+    "index_result",
+    "human_review_if_public_claim",
+    "archive_without_authority"
+  ],
+  "compatible_with": [
+    "Constitutional Receipts v0.1",
+    "Boss Bre Public Auditor",
+    "AL replay architecture",
+    "No fake green rule"
+  ],
+  "blocked_actions": [
+    "claiming external truth from process receipts",
+    "granting authority from speed lane output",
+    "mutating prior receipts silently",
+    "publishing unsupported fraud verdicts",
+    "skipping replay for convenience"
+  ],
+  "expected_result": {
+    "status": "PASS_IF_REPLAYABLE",
+    "authority": false,
+    "truth_claim": false,
+    "public_claim_state": "BLOCKED_UNLESS_HUMAN_REVIEWED",
+    "canonical_effect": "procedural_scaffold_only"
+  },
+  "summary": "ALMS Machine Speed Jay establishes a bounded acceleration lane: faster execution is allowed only when replay, receipts, human-review boundaries, and no-fake-green invariants remain intact."
+}
