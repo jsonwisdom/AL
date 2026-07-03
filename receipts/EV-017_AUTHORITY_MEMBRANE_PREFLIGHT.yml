@@ -1,0 +1,35 @@
+artifact_id: EV-017
+title: Authority Membrane Pre-Flight
+state: FROZEN
+
+basis:
+  ev015_receipt_sha256: aead2bebedfde99ed32200edf0f44ab82c353b5f2fefd3937b484dd599995bba
+  ev016_tag_ref: refs/tags/ev-016
+  ev016_tag_sha: d004db5b37818adfac953ae32847d4fca9c37f0e
+
+checks:
+  ev015_verified: PASS
+  ev016_tag_frozen: PASS
+  receipt_chain_continuous: PASS
+  replay_deterministic: PASS
+  identity_verified: PASS
+  governance_notification_sent: PENDING
+  governance_decision_recorded: PENDING
+
+invariants:
+  authority: false
+  authority_eligible: true
+  implicit_transition: prohibited
+  governance_required: true
+  no_fake_authority: enforced
+
+status:
+  governance_notification:
+    draft: READY
+    dispatched: false
+  next_lane: EV-017_TAG_FREEZE
+
+notes:
+  - EV-017 is a pre-authority specification.
+  - EV-017 does not elevate authority.
+  - Authority remains false until explicit governance decision is recorded.
