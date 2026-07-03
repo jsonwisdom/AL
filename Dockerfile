@@ -10,4 +10,4 @@ RUN npm install --include=dev
 COPY . .
 
 ENV NODE_ENV=production
-CMD ["npm", "run", "witness:verify", "--", ".runtime/witnesses/latest.json"]
+CMD ["node", "server.js"]
