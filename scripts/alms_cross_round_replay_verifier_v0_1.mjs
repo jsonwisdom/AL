@@ -4,6 +4,7 @@
 
 import fs from "fs";
 import crypto from "crypto";
+import path from "path";
 
 const INPUT = "vectors/cross_round_invariant_vectors_v0_1.json";
 const OUTPUT = "vectors/cross_round_evaluation_result_v0_1.json";
@@ -26,8 +27,31 @@ function canonicalJson(value) {
   return JSON.stringify(value);
 }
 
-function sha256Hex(value) {
-  return "0x" + crypto.createHash("sha256").update(canonicalJson(value)).digest("hex");
+function sha256Hex(value, emitPreimage = false) {
+  const preimage = canonicalJson(value);
+  const preimageBytes = Buffer.from(preimage, "utf8");
+
+  if (emitPreimage) {
+    fs.writeFileSync("vectors/alms_replay_preimage_bytes_v0_1.json", preimageBytes);
+
+    const replayHash = crypto.createHash("sha256").update(preimageBytes).digest("hex");
+    const meta = {
+      schema_name: "ALMS_REPLAY_PREIMAGE_BYTES_META",
+      schema_version: "0.1",
+      preimage_file: "vectors/alms_replay_preimage_bytes_v0_1.json",
+      hash_domain: "SHA256_REPLAY_HASH",
+      encoding: "UTF8_CANONICAL_JSON",
+      sha256_replay_hash: "0x" + replayHash
+    };
+
+    fs.writeFileSync(
+      "vectors/alms_replay_preimage_bytes_v0_1.meta.json",
+      JSON.stringify(meta, null, 2) + "\n",
+      "utf8"
+    );
+  }
+
+  return "0x" + crypto.createHash("sha256").update(preimageBytes).digest("hex");
 }
 
 function bridgeHashHex(value) {
@@ -116,7 +140,7 @@ function main() {
     results
   };
 
-  const sha256ReplayHash = sha256Hex(replayPayload);
+  const sha256ReplayHash = sha256Hex(replayPayload, true);
   const sha3BridgeHash = bridgeHashHex(replayPayload);
 
   const output = {
