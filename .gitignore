@@ -17,6 +17,10 @@ target/
 tools/al-verifier/target/
 receiptnet/.keys/
 
+# Generated replay preimage artifacts
+vectors/alms_replay_preimage_bytes_v0_1.json
+vectors/alms_replay_preimage_bytes_v0_1.meta.json
+
 # Witness private material: public addresses may be committed, secrets never.
 *.privatekey
 *.key
