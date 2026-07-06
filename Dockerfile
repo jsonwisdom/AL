@@ -3,11 +3,11 @@ FROM node:22-slim
 WORKDIR /app
 ENV LANG=C
 ENV LC_ALL=C
+ENV NODE_ENV=production
 
 COPY package*.json ./
-RUN npm install --include=dev
+RUN npm ci --include=dev
 
 COPY . .
 
-ENV NODE_ENV=production
 CMD ["node", "server.js"]
