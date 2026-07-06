@@ -1,0 +1,33 @@
+# Docker / Render deploy context guard
+.git
+.gitignore
+.github
+node_modules
+npm-debug.log*
+yarn-error.log*
+.pnpm-store
+
+# Python/test/build caches
+__pycache__
+.pytest_cache
+.ruff_cache
+.mypy_cache
+.coverage
+coverage
+htmlcov
+.cache
+
+# Local/runtime noise
+.env
+.env.*
+.runtime
+runtime/state/*.tmp
+
+# Receipt-only commits should not bloat or destabilize Docker context
+registry/_receipts
+registry/_receipts/**
+
+# Large generated/local data should not ship unless explicitly promoted
+data/prod_spine
+artifacts
+reports
