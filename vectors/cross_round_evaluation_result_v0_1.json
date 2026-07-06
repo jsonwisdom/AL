@@ -95,8 +95,8 @@
         "explanationTimestamp": 1718100000,
         "previousTaxNoticeStructureHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
         "currentTaxNoticeStructureHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
-        "canonicalSchemaUID": "0x1111111111111111111111111111111111111111111111111111111111111111",
-        "submittedSchemaUID": "0x2222222222222222222222222222222222222222222222222222222222222222",
+        "canonicalSchemaUID": "0xCANONICAL_UID_ABC123",
+        "submittedSchemaUID": "0xSUBMITTED_UID_XYZ789",
         "schemaVersionBumped": true
       },
       "violation": "C5_SCHEMA_UID_MISMATCH",
@@ -132,7 +132,7 @@
   "sha3_256_bridge_hash": "0x980edb5f9e5a03d77c595cd1d8f5d31eaecf9918cd562c222377cbe8608c9260",
   "bridge_hash_domain": "SHA3_256_NOT_ETHEREUM_KECCAK256",
   "eas_attestation_payload": {
-    "schema_uid": "1000",
+    "schema_uid": "<REPLACE_AFTER_REGISTRATION>",
     "operator_root": "jaywisdom.eth",
     "operator_alias": "jaywisdom.base.eth",
     "project": "PRESS_YOUR_LUCK_WITH_JAY",
