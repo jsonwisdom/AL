@@ -1,0 +1,109 @@
+{
+  "artifact_type": "eas_attestation_envelope_dry_run",
+  "schema_name": "CanonStateAttestationV0_2",
+  "schema_version": "v0.2",
+  "status": "DRY_RUN_NOT_ATTESTED",
+  "authority": false,
+  "witness_only": true,
+  "no_fake_green": true,
+  "schema": {
+    "canonical_abi_string": "string ensName,address subject,address controller,bytes32 canonStateHash,bytes32 almsStateHash,bytes32 prCommitHash,bytes32 replayBoardEntryUID,bool authority,bool witnessOnly,bool noFakeGreen,uint64 attestedAt,uint64 expiresAt,string chainContext",
+    "schema_string_sha256": "0x9a9d54550b9319fed5b73df285756e46af41114c39f4083752abcbed3e6908b3",
+    "revocable": true,
+    "resolver": null,
+    "schema_uid": null
+  },
+  "payload_fields": [
+    {
+      "name": "ensName",
+      "type": "string",
+      "value": "alabama-engine.eth"
+    },
+    {
+      "name": "subject",
+      "type": "address",
+      "value": "0x0000000000000000000000000000000000000000",
+      "note": "DRY_RUN_PLACEHOLDER_REPLACE_WITH_SUBJECT_ADDRESS"
+    },
+    {
+      "name": "controller",
+      "type": "address",
+      "value": "0x0000000000000000000000000000000000000000",
+      "note": "DRY_RUN_PLACEHOLDER_REPLACE_WITH_CONTROLLER_ADDRESS"
+    },
+    {
+      "name": "canonStateHash",
+      "type": "bytes32",
+      "value": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "note": "DRY_RUN_PLACEHOLDER_REPLACE_WITH_CANON_STATE_HASH"
+    },
+    {
+      "name": "almsStateHash",
+      "type": "bytes32",
+      "value": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "note": "DRY_RUN_PLACEHOLDER_REPLACE_WITH_ALMS_STATE_HASH"
+    },
+    {
+      "name": "prCommitHash",
+      "type": "bytes32",
+      "value": "0xf4d9d564d71d0fd0c3ef1bb48794aee2a7f64f94234e0c5c155ade715c88b3b4",
+      "derivation": "sha256('git:jsonwisdom/AL@5587ce3bfc2f8f8f776456cf7ab70c671d398c05')"
+    },
+    {
+      "name": "replayBoardEntryUID",
+      "type": "bytes32",
+      "value": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "note": "DRY_RUN_PLACEHOLDER_REPLACE_WITH_REPLAYBOARD_ENTRY_UID"
+    },
+    {
+      "name": "authority",
+      "type": "bool",
+      "value": false
+    },
+    {
+      "name": "witnessOnly",
+      "type": "bool",
+      "value": true
+    },
+    {
+      "name": "noFakeGreen",
+      "type": "bool",
+      "value": true
+    },
+    {
+      "name": "attestedAt",
+      "type": "uint64",
+      "value": 0,
+      "note": "DRY_RUN_PLACEHOLDER_SET_AT_ATTESTATION_TIME"
+    },
+    {
+      "name": "expiresAt",
+      "type": "uint64",
+      "value": 0
+    },
+    {
+      "name": "chainContext",
+      "type": "string",
+      "value": "chain:mainnet,eas:UNSET,doc:CanonStateAttestation-v0.2,mode:dry-run"
+    }
+  ],
+  "source_refs": {
+    "repo": "jsonwisdom/AL",
+    "pull_request": 379,
+    "pr_title": "Use JOY EAS bootstrap anchor for Alabama gate",
+    "base": "master",
+    "head": "joy-eas-bootstrap-gate-v0-1",
+    "head_sha": "5587ce3bfc2f8f8f776456cf7ab70c671d398c05",
+    "mergeable_observed": true,
+    "merged_observed": false,
+    "workflow_observation": "head_sha_workflow_runs_returned_completed_success_for_observed_runs"
+  },
+  "governance_boundary": {
+    "does_not_claim_load_verified": true,
+    "does_not_claim_final_truth": true,
+    "does_not_claim_wallet_control_from_address_alone": true,
+    "classification": "BOOTSTRAP_NOT_VERIFIED",
+    "public_release_allowed": false,
+    "dry_run_only": true
+  }
+}
