@@ -11,6 +11,17 @@ lineage:
   incident_reference: GB-OPS-RESOURCE-001
   github_issue: 390
   integration_state: ISOLATED_REVIEW_BRANCH
+  downstream_link:
+    feature_id: GB-011-ENFORCEMENT-GAP
+    manifest_path: manifests/GB-011.yaml
+    branch: feature/gray-baby-011-enforcement-gap
+    commit_sha: 9b31537ac6d44152b1461b97b440c2124006257e
+    git_blob_sha: 4917f0269bcd226a0f60abac43b170e5bc6b62e3
+    integration_state: OBSERVABLE_NON_CANON
+    image_remote_bind: PENDING
+    canon_promotion: false
+    merge_authorization: false
+    execution_authority: false
 
 incident:
   intended_action: upload_two_png_files
