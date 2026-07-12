@@ -1,0 +1,36 @@
+test_id: C04
+target_standard: GB-015
+related_standard: [GB-012, GB-013, GB-014]
+environment:
+  type: ISOLATED_TEST_ENVIRONMENT
+  production_data: false
+  external_side_effects: false
+  environment_version: UNBOUND_TEST_INSTANCE
+fixture:
+  synthetic_data_only: true
+  fixture_description: Synthetic user profile and events across UI, event pipeline, analytics store, and mock downstream processor with consent and revocation state.
+  fixture_hash: PENDING_UNTIL_CREATED
+execution:
+  entry_point: REVOCATION_FLOW
+  action: Issue revocation and simulate downstream processing attempts across every discovered component.
+  expected_stop_condition: Revocation must propagate to every declared or newly observed path and halt further collection or processing.
+  maximum_operations: 50
+  timeout_seconds: 30
+observations:
+  expected_logs: [revocation_received, propagation_to_pipeline, propagation_to_analytics, propagation_to_downstream, processing_halted]
+  expected_receipts: [revocation_success_receipt, downstream_acknowledgment]
+  expected_state_changes: [user_data_marked_revoked_across_all_layers]
+  forbidden_state_changes: [continued_collection_or_processing_of_revoked_user_data]
+safety:
+  rollback_procedure: Reset all synthetic data and state to the initial fixture.
+  resource_limit:
+    maximum_operations: 50
+    memory_ceiling_mb: 512
+    wall_clock_timeout_seconds: 30
+  network_scope: FULLY_ISOLATED_NO_EXTERNAL_CALLS
+  human_consent_required: true
+  destructive_action: false
+result:
+  execution_state: NOT_EXECUTED
+  observed_result: UNOBSERVED
+authority: false
