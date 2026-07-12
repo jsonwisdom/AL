@@ -1,0 +1,36 @@
+test_id: C02
+target_standard: GB-015
+related_standard: [GB-012, GB-013, GB-014]
+environment:
+  type: ISOLATED_TEST_ENVIRONMENT
+  production_data: false
+  external_side_effects: false
+  environment_version: UNBOUND_TEST_INSTANCE
+fixture:
+  synthetic_data_only: true
+  fixture_description: Synthetic app with one approved processor and one undisclosed mock processor plus a subprocessor chain.
+  fixture_hash: PENDING_UNTIL_CREATED
+execution:
+  entry_point: VENDOR_INTEGRATION
+  action: Trace outbound requests, queues, exports, webhooks, SDK events, processor identities, and subprocessors against the vendor inventory and consent scope.
+  expected_stop_condition: Any undeclared processor or subprocessor must be blocked before transfer and placed under review.
+  maximum_operations: 80
+  timeout_seconds: 40
+observations:
+  expected_logs: [outbound_transfer_attempted, recipient_identity_resolved, vendor_inventory_checked, transfer_allowed_or_blocked]
+  expected_receipts: [processor_identity_receipt, vendor_inventory_comparison_receipt, blocked_transfer_receipt]
+  expected_state_changes: [unknown_processor_registered, affected_scope_held]
+  forbidden_state_changes: [data_transferred_before_vendor_check, unknown_vendor_defaults_to_allow, undisclosed_processor_receives_payload]
+safety:
+  rollback_procedure: Stop synthetic transfers, clear isolated queues and mock processor stores, restore the vendor inventory, and invalidate test receipts.
+  resource_limit:
+    maximum_operations: 80
+    memory_ceiling_mb: 768
+    wall_clock_timeout_seconds: 40
+  network_scope: FULLY_ISOLATED_NO_EXTERNAL_CALLS
+  human_consent_required: true
+  destructive_action: false
+result:
+  execution_state: NOT_EXECUTED
+  observed_result: UNOBSERVED
+authority: false
