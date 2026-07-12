@@ -12,13 +12,36 @@ import (
 // Cleansing Gate decision chain has a concrete fail-closed implementation.
 var ErrFullGateNotImplemented = errors.New("FULL_GATE_NOT_IMPLEMENTED")
 
+// ExportTarget is the runtime export destination binding.
+type ExportTarget struct {
+	Mode        string  `json:"mode"`
+	Destination *string `json:"destination"`
+	BranchID    string  `json:"branch_id"`
+}
+
 // Manifest is the runtime contract consumed by ValidateFullCleansingGate.
-// It intentionally separates expected values from observed inputs supplied
-// through FileSet and NonceStore.
+// ParentSignature is excluded from the canonical signed payload.
 type Manifest struct {
-	BranchContext string
-	Nonce         string
-	Merkle        MerkleProof
+	Version            string       `json:"version"`
+	AssetID            string       `json:"asset_id"`
+	BranchContext      string       `json:"branch_context"`
+	Lineage            []string     `json:"lineage"`
+	ParentSignature    []byte       `json:"parent_signature"`
+	SessionID          string       `json:"session_id"`
+	Nonce              string       `json:"nonce"`
+	IssuedAt           string       `json:"issued_at"`
+	ExpiresAt          string       `json:"expires_at"`
+	PipelineVersion    string       `json:"pipeline_version"`
+	InputSHA256        string       `json:"input_sha256"`
+	OutputSHA256       string       `json:"output_sha256"`
+	PreviewSHA256      string       `json:"preview_sha256"`
+	ExportTarget       ExportTarget `json:"export_target"`
+	Merkle             MerkleProof  `json:"merkle"`
+	NormalizedFilename string       `json:"normalized_filename"`
+	StegoPolicy        string       `json:"stego_policy"`
+	SigningKeyID       string       `json:"signing_key_id"`
+	SignatureAlgorithm string       `json:"signature_algorithm"`
+	CleansingRequired  bool         `json:"cleansing_required"`
 }
 
 // FileSet supplies the actual bytes whose SHA-256 digests must be recomputed.
@@ -35,17 +58,6 @@ type NonceStore interface {
 }
 
 // ValidateFullCleansingGate defines the complete fail-closed entrypoint.
-//
-// Required execution order:
-//   1. Ed25519 signature and signing-key binding
-//   2. Atomic nonce consumption / replay rejection
-//   3. Branch binding
-//   4. Merkle proof verification
-//   5. Input/output/preview SHA-256 recomputation
-//
-// This contract scaffold never returns nil. Concrete dependency
-// implementations must be introduced and tested before an ALLOW decision is
-// possible.
 func ValidateFullCleansingGate(
 	ctx context.Context,
 	manifest Manifest,
@@ -54,14 +66,14 @@ func ValidateFullCleansingGate(
 	nonceStore NonceStore,
 	now time.Time,
 ) error {
-	if ctx == nil || len(publicKey) != ed25519.PublicKeySize || nonceStore == nil || now.IsZero() {
-		return ErrFullGateNotImplemented
-	}
-	if manifest.BranchContext == "" || manifest.Nonce == "" {
+	if ctx == nil || nonceStore == nil || now.IsZero() {
 		return ErrFullGateNotImplemented
 	}
 	if files.Input == nil || files.Output == nil || files.Preview == nil {
 		return ErrFullGateNotImplemented
+	}
+	if err := verifySignature(manifest, publicKey); err != nil {
+		return err
 	}
 	return ErrFullGateNotImplemented
 }
