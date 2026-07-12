@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"encoding/json"
 	"errors"
 	"fmt"
@@ -22,7 +23,7 @@ func main() {
 	}
 
 	var proof validator.MerkleProof
-	decoder := json.NewDecoder(newByteReader(proofBytes))
+	decoder := json.NewDecoder(bytes.NewReader(proofBytes))
 	decoder.DisallowUnknownFields()
 	if err := decoder.Decode(&proof); err != nil {
 		fmt.Fprintf(os.Stderr, "SYSTEM_OR_IO_ERROR: decode proof: %v\n", err)
@@ -37,22 +38,4 @@ func main() {
 		fmt.Fprintf(os.Stderr, "SYSTEM_OR_IO_ERROR: %v\n", err)
 		os.Exit(1)
 	}
-}
-
-type byteReader struct {
-	data []byte
-	off  int
-}
-
-func newByteReader(data []byte) *byteReader {
-	return &byteReader{data: data}
-}
-
-func (r *byteReader) Read(p []byte) (int, error) {
-	if r.off >= len(r.data) {
-		return 0, os.ErrClosed
-	}
-	n := copy(p, r.data[r.off:])
-	r.off += n
-	return n, nil
 }
