@@ -1,0 +1,36 @@
+test_id: C06
+target_standard: GB-015
+related_standard: [GB-012, GB-013, GB-014]
+environment:
+  type: ISOLATED_TEST_ENVIRONMENT
+  production_data: false
+  external_side_effects: false
+  environment_version: UNBOUND_TEST_INSTANCE
+fixture:
+  synthetic_data_only: true
+  fixture_description: Synthetic subject data distributed across primary store, replica, cache, queue, search index, analytics store, encrypted backup, archive, DR snapshot, and mock vendor processor.
+  fixture_hash: PENDING_UNTIL_CREATED
+execution:
+  entry_point: DELETION_REQUEST
+  action: Issue deletion and revocation, propagate across every discovered retention path, then attempt access, replay, restore, analytics lookup, and vendor retrieval.
+  expected_stop_condition: Active copies must be deleted or inaccessible; retained exception copies must be isolated, blocked from reintroduction, assigned expiry, and linked to retention receipts.
+  maximum_operations: 150
+  timeout_seconds: 60
+observations:
+  expected_logs: [deletion_request_received, retention_paths_resolved, layer_action_completed_or_failed, restore_block_checked, deletion_status_aggregated]
+  expected_receipts: [deletion_request_receipt, per_layer_deletion_receipt, retention_exception_receipt, restore_block_receipt]
+  expected_state_changes: [active_processing_blocked, retained_exception_copy_restricted]
+  forbidden_state_changes: [deleted_data_restored, legal_hold_used_for_ordinary_processing, failed_purge_defaults_to_success]
+safety:
+  rollback_procedure: Recreate the synthetic fixture from a clean seed, clear queues and caches, destroy test-only keys, and invalidate test receipts.
+  resource_limit:
+    maximum_operations: 150
+    memory_ceiling_mb: 1024
+    wall_clock_timeout_seconds: 60
+  network_scope: FULLY_ISOLATED_NO_EXTERNAL_CALLS
+  human_consent_required: true
+  destructive_action: false
+result:
+  execution_state: NOT_EXECUTED
+  observed_result: UNOBSERVED
+authority: false
