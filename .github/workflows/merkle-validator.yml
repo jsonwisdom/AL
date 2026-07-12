@@ -13,9 +13,6 @@ permissions:
 jobs:
   merkle-validator:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: x-files-alien-files-26/privacy/cleansing-gate/src/validator
 
     steps:
       - name: Checkout
@@ -25,10 +22,18 @@ jobs:
         uses: actions/setup-go@v5
         with:
           go-version: "1.22"
-          cache-dependency-path: x-files-alien-files-26/privacy/cleansing-gate/src/validator/go.mod
+          cache-dependency-path: |
+            x-files-alien-files-26/privacy/cleansing-gate/src/validator/go.mod
+            x-files-alien-files-26/privacy/cleansing-gate/tests/integration/boundary/go.mod
 
       - name: Run validator tests
+        working-directory: x-files-alien-files-26/privacy/cleansing-gate/src/validator
         run: go test ./... -v
 
       - name: Build CLI bridge
+        working-directory: x-files-alien-files-26/privacy/cleansing-gate/src/validator
         run: go build ./cmd/merkle-validator
+
+      - name: Run manifest boundary integration tests
+        working-directory: x-files-alien-files-26/privacy/cleansing-gate/tests/integration/boundary
+        run: go test ./... -v
