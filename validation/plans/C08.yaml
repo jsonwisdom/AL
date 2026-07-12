@@ -1,0 +1,36 @@
+test_id: C08
+target_standard: GB-015
+related_standard: [GB-012, GB-013, GB-014, C06]
+environment:
+  type: ISOLATED_TEST_ENVIRONMENT
+  production_data: false
+  external_side_effects: false
+  environment_version: UNBOUND_TEST_INSTANCE
+fixture:
+  synthetic_data_only: true
+  fixture_description: Synthetic platform with user workflows, admin console, support tooling, direct database path, backup restore, privileged export, reinstatement controls, break-glass access, and multi-tenant subjects.
+  fixture_hash: PENDING_UNTIL_CREATED
+execution:
+  entry_point: ADMINISTRATOR_WORKFLOW
+  action: Execute bounded privileged actions against active, revoked, deleted, restricted, legal-hold, and cross-tenant synthetic subjects.
+  expected_stop_condition: Any action lacking authorization, bounded scope, justification, required approval, tenant match, or audit lineage must be blocked before access, export, restore, mutation, or downstream use.
+  maximum_operations: 100
+  timeout_seconds: 60
+observations:
+  expected_logs: [privileged_session_requested, justification_checked, scope_checked, approval_state_checked, audit_receipt_emitted]
+  expected_receipts: [privileged_access_receipt, restore_block_receipt, admin_export_composition_receipt, integrity_failure_receipt]
+  expected_state_changes: [unauthorized_admin_action_blocked, affected_scope_held, privileged_session_expired]
+  forbidden_state_changes: [deleted_data_restored, revoked_consent_reactivated, cross_tenant_access_allowed, audit_record_mutated]
+safety:
+  rollback_procedure: End synthetic privileged sessions, restore fixture state from a clean seed, clear test exports and restore attempts, and invalidate temporary credentials.
+  resource_limit:
+    maximum_operations: 100
+    memory_ceiling_mb: 1024
+    wall_clock_timeout_seconds: 60
+  network_scope: FULLY_ISOLATED_NO_EXTERNAL_CALLS
+  human_consent_required: true
+  destructive_action: false
+result:
+  execution_state: NOT_EXECUTED
+  observed_result: UNOBSERVED
+authority: false
