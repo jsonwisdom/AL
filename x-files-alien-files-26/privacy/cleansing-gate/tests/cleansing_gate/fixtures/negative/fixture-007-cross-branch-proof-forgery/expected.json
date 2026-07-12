@@ -1,0 +1,7 @@
+{
+  "expected_result": "REJECT",
+  "expected_error": "MERKLE_MISMATCH",
+  "expected_cli_exit_code": 8,
+  "branch_context": "cg-branch-main-v0",
+  "reason": "The proof is structurally valid for a foreign branch but its branch_id does not equal the active branch context."
+}
