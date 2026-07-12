@@ -1,0 +1,36 @@
+test_id: C07
+target_standard: GB-015
+related_standard: [GB-013, GB-014]
+environment:
+  type: ISOLATED_TEST_ENVIRONMENT
+  production_data: false
+  external_side_effects: false
+  environment_version: UNBOUND_TEST_INSTANCE
+fixture:
+  synthetic_data_only: true
+  fixture_description: Synthetic approved vendor record with declared data flow, contract version, endpoint allowlist, subprocessors, retention policy, and verification receipt.
+  fixture_hash: PENDING_UNTIL_CREATED
+execution:
+  entry_point: VENDOR_CHANGE
+  action: Apply bounded changes to vendor identity, contract, endpoint, subprocessors, data region, and retention behavior.
+  expected_stop_condition: Any material or unknown vendor change must mark verification stale and hold affected processing until re-review.
+  maximum_operations: 30
+  timeout_seconds: 25
+observations:
+  expected_logs: [vendor_change_detected, materiality_evaluated, coverage_object_marked_stale, affected_scope_held]
+  expected_receipts: [vendor_change_receipt, materiality_decision_receipt, stale_verification_receipt]
+  expected_state_changes: [verification_stale_for_affected_scope, adoption_state_review_required]
+  forbidden_state_changes: [processing_continues_under_old_receipt, new_subprocessor_receives_data, stale_badge_remains_current]
+safety:
+  rollback_procedure: Restore the original synthetic vendor configuration, clear staged change events, invalidate test receipts, and verify no data left the namespace.
+  resource_limit:
+    maximum_operations: 30
+    memory_ceiling_mb: 512
+    wall_clock_timeout_seconds: 25
+  network_scope: FULLY_ISOLATED_NO_EXTERNAL_CALLS
+  human_consent_required: true
+  destructive_action: false
+result:
+  execution_state: NOT_EXECUTED
+  observed_result: UNOBSERVED
+authority: false
