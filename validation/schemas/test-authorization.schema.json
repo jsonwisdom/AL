@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/gray-baby/test-authorization.schema.json",
+  "title": "Gray Baby Test Authorization",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["authorization_id", "authorized_test_ids", "environment", "authorized_scope", "prohibited_scope", "resource_limits", "required_outputs", "success_conditions", "failure_conditions", "rollback", "authorized_at", "expires_after_execution", "authorizer", "authorization_hash", "authority"],
+  "properties": {
+    "authorization_id": {"type": "string", "minLength": 1},
+    "authorized_test_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+    "environment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "production_data", "external_side_effects"],
+      "properties": {
+        "type": {"type": "string", "minLength": 1},
+        "production_data": {"const": false},
+        "external_side_effects": {"const": false}
+      }
+    },
+    "authorized_scope": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "prohibited_scope": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "resource_limits": {"type": "object", "minProperties": 1},
+    "required_outputs": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "success_conditions": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "failure_conditions": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "rollback": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["procedure"],
+      "properties": {"procedure": {"type": "string", "minLength": 1}}
+    },
+    "authorized_at": {"type": "string", "format": "date-time"},
+    "expires_after_execution": {"const": true},
+    "authorizer": {"type": "string", "minLength": 1},
+    "authorization_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "authority": {"const": false}
+  }
+}
