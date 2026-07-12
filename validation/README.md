@@ -8,8 +8,9 @@ This directory contains the fail-closed validation substrate for the GB-015 C01-
 - Runtime-plan schema: present and non-empty
 - Test-receipt schema: present and non-empty
 - Test-authorization schema: present and non-empty
-- C01-C10 full plan files: **not yet present on this branch**
+- C01-C10 runtime plan files: present
 - Validation receipt: **not generated on this branch**
+- Validator execution: **not observed on this branch**
 - Fixture creation: **not authorized**
 - Runtime execution: **not authorized**
 - Canon promotion: **false**
@@ -25,4 +26,4 @@ python3 validation/validate.py > validation/raw_stdout.txt 2> validation/raw_std
 printf '%s\n' "$?" > validation/exit_code.txt
 ```
 
-A zero exit code is admissible only after all ten complete plan files exist and all schema and negative tests pass. The generated receipt is evidence of that execution only; it is not a compliance certificate or authority elevation.
+A zero exit code is admissible only after all ten plan files and all schemas pass the validator and its negative tests. The generated receipt is evidence of that execution only; it is not a compliance certificate or authority elevation.
