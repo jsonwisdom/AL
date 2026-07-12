@@ -46,3 +46,14 @@ lineage:
   review_state: "BLOCKED"
   activation_condition: "GB_008_ATTESTED"
   runtime_initialization: false
+  downstream_link:
+    feature_id: "GB-010-AUTHORITY-GAP"
+    manifest_path: "manifests/GB-010.yaml"
+    branch: "feature/gray-baby-010-authority-gap"
+    commit_sha: "16976c6aacac5b6d903069675bdf4bf9e6eb5ccc"
+    manifest_sha256: "31a8f65e520083ba486b8a52d8d6b1e5a29663b8a963b88dc422ef3db3ffb79a"
+    incident_reference: "GB-OPS-RESOURCE-001"
+    integration_state: "OBSERVABLE_NON_CANON"
+    canon_promotion: false
+    merge_authorization: false
+    execution_authority: false
