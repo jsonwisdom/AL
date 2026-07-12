@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/gray-baby/runtime-test-plan.schema.json",
+  "title": "Gray Baby Runtime Test Plan",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "test_id",
+    "target_standard",
+    "environment",
+    "fixture",
+    "execution",
+    "observations",
+    "safety",
+    "result",
+    "authority"
+  ],
+  "properties": {
+    "test_id": {"type": "string", "pattern": "^C(0[1-9]|10)$"},
+    "target_standard": {"const": "GB-015"},
+    "related_standard": {
+      "type": "array",
+      "items": {"type": "string"},
+      "uniqueItems": true
+    },
+    "environment": {
+      "type": "object",
+      "required": ["type", "production_data", "external_side_effects", "environment_version"],
+      "properties": {
+        "type": {"const": "ISOLATED_TEST_ENVIRONMENT"},
+        "production_data": {"const": false},
+        "external_side_effects": {"const": false},
+        "environment_version": {"type": "string", "minLength": 1}
+      }
+    },
+    "fixture": {
+      "type": "object",
+      "required": ["synthetic_data_only", "fixture_description", "fixture_hash"],
+      "properties": {
+        "synthetic_data_only": {"const": true},
+        "fixture_description": {"type": "string", "minLength": 1},
+        "fixture_hash": {"type": "string", "minLength": 1}
+      }
+    },
+    "execution": {
+      "type": "object",
+      "required": ["entry_point", "action", "expected_stop_condition", "maximum_operations", "timeout_seconds"],
+      "properties": {
+        "entry_point": {"type": "string", "minLength": 1},
+        "action": {"type": "string", "minLength": 1},
+        "expected_stop_condition": {"type": "string", "minLength": 1},
+        "maximum_operations": {"type": "integer", "minimum": 1},
+        "timeout_seconds": {"type": "integer", "minimum": 1}
+      }
+    },
+    "observations": {
+      "type": "object",
+      "required": ["expected_logs", "expected_receipts", "expected_state_changes", "forbidden_state_changes"],
+      "properties": {
+        "expected_logs": {"type": "array", "items": {"type": "string"}},
+        "expected_receipts": {"type": "array", "items": {"type": "string"}},
+        "expected_state_changes": {"type": "array", "items": {"type": "string"}},
+        "forbidden_state_changes": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "safety": {
+      "type": "object",
+      "required": ["rollback_procedure", "resource_limit", "network_scope", "human_consent_required", "destructive_action"],
+      "properties": {
+        "rollback_procedure": {"type": "string", "minLength": 1},
+        "resource_limit": {"type": ["object", "string"]},
+        "network_scope": {"const": "FULLY_ISOLATED_NO_EXTERNAL_CALLS"},
+        "human_consent_required": {"const": true},
+        "destructive_action": {"const": false}
+      }
+    },
+    "result": {
+      "type": "object",
+      "required": ["execution_state", "observed_result"],
+      "properties": {
+        "execution_state": {"enum": ["NOT_EXECUTED", "COMPLETED", "ABORTED"]},
+        "observed_result": {"enum": ["UNOBSERVED", "PASS", "FAIL", "INCONCLUSIVE"]}
+      }
+    },
+    "authority": {"const": false}
+  }
+}
