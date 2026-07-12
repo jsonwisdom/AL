@@ -1,0 +1,36 @@
+MERKLE_VALIDATOR_LOCAL_RUN_001
+
+SOURCE_BRANCH=cleansing-gate-v0.1
+SOURCE_HEAD_AT_TEST_INPUT=def37681557c799e350c58532611994e5fef14ce
+EXECUTION_ENVIRONMENT=ISOLATED_RECONSTRUCTION_FROM_REMOTE_FILE_CONTENTS
+REPOSITORY_CHECKOUT=FALSE
+GITHUB_ACTIONS_RUN=FALSE
+NETWORK_ACCESS=UNAVAILABLE
+
+COMMAND_1=go test -v -run TestNegativeMerkleFixtures
+RESULT_1=PASS
+OUTPUT_1_BEGIN
+=== RUN   TestNegativeMerkleFixtures
+=== RUN   TestNegativeMerkleFixtures/fixture-006-merkle-mutated-leaf
+=== RUN   TestNegativeMerkleFixtures/fixture-007-cross-branch-proof-forgery
+--- PASS: TestNegativeMerkleFixtures (0.00s)
+    --- PASS: TestNegativeMerkleFixtures/fixture-006-merkle-mutated-leaf (0.00s)
+    --- PASS: TestNegativeMerkleFixtures/fixture-007-cross-branch-proof-forgery (0.00s)
+PASS
+ok  cleansing-gate/merkle-validator  0.011s
+OUTPUT_1_END
+
+COMMAND_2=go build ./cmd/merkle-validator
+RESULT_2=PASS
+
+COMMAND_3=./merkle-validator <fixture-006-proof> cg-branch-main-v0
+RESULT_3=EXPECTED_REJECTION
+STDERR_3=MERKLE_MISMATCH
+EXIT_CODE_3=8
+
+TEST_EXECUTION_OBSERVED=TRUE
+NEGATIVE_FIXTURE_TESTS_PASS=TRUE
+CLI_EXIT_8_OBSERVED=TRUE
+REMOTE_CI_OBSERVED=FALSE
+MERGE_READY=FALSE
+AUTHORITY=FALSE
