@@ -1,0 +1,36 @@
+test_id: C05
+target_standard: GB-015
+related_standard: [GB-012, GB-013, GB-014]
+environment:
+  type: ISOLATED_TEST_ENVIRONMENT
+  production_data: false
+  external_side_effects: false
+  environment_version: UNBOUND_TEST_INSTANCE
+fixture:
+  synthetic_data_only: true
+  fixture_description: Synthetic application with declared service and analytics purposes plus one undeclared model-training pipeline, dataset manifest, queue, and model-input snapshot.
+  fixture_hash: PENDING_UNTIL_CREATED
+execution:
+  entry_point: MODEL_TRAINING_FLOW
+  action: Trace whether synthetic interactions enter dataset preparation, labeling, feature extraction, embedding, evaluation, or model-improvement workflows.
+  expected_stop_condition: Any model use not explicitly disclosed, separately scoped, and affirmatively consented must be blocked before dataset inclusion or training execution.
+  maximum_operations: 100
+  timeout_seconds: 45
+observations:
+  expected_logs: [synthetic_interaction_created, purpose_label_resolved, consent_scope_checked, dataset_inclusion_attempted, training_use_allowed_or_blocked]
+  expected_receipts: [model_use_decision_receipt, dataset_inclusion_receipt, blocked_training_use_receipt]
+  expected_state_changes: [undisclosed_training_path_registered, affected_dataset_held]
+  forbidden_state_changes: [analytics_scope_reused_for_training, data_added_before_consent_check, revoked_data_training_eligible]
+safety:
+  rollback_procedure: Stop synthetic dataset and training jobs, clear isolated queues, delete test datasets and embeddings, and restore consent state.
+  resource_limit:
+    maximum_operations: 100
+    memory_ceiling_mb: 768
+    wall_clock_timeout_seconds: 45
+  network_scope: FULLY_ISOLATED_NO_EXTERNAL_CALLS
+  human_consent_required: true
+  destructive_action: false
+result:
+  execution_state: NOT_EXECUTED
+  observed_result: UNOBSERVED
+authority: false
