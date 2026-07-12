@@ -1,0 +1,36 @@
+test_id: C03
+target_standard: GB-015
+related_standard: [GB-012, GB-013, GB-014]
+environment:
+  type: ISOLATED_TEST_ENVIRONMENT
+  production_data: false
+  external_side_effects: false
+  environment_version: UNBOUND_TEST_INSTANCE
+fixture:
+  synthetic_data_only: true
+  fixture_description: Synthetic records with explicit consent scopes, export permissions, exclusions, approved destinations, and one unauthorized destination.
+  fixture_hash: PENDING_UNTIL_CREATED
+execution:
+  entry_point: DATA_EXPORT
+  action: Submit bounded export requests under valid, excluded, mismatched, stale, unknown-destination, and alternate-route conditions.
+  expected_stop_condition: Any export outside current consent scope or approved destination policy must be blocked before serialization, file creation, queueing, or transmission.
+  maximum_operations: 25
+  timeout_seconds: 20
+observations:
+  expected_logs: [export_request_received, consent_scope_checked, destination_policy_checked, export_allowed_or_blocked]
+  expected_receipts: [export_decision_receipt, failure_receipt_for_rejected_export, destination_validation_receipt]
+  expected_state_changes: [authorized_export_created_only_after_all_checks_pass]
+  forbidden_state_changes: [file_created_before_scope_check, unauthorized_fields_serialized, unknown_destination_contacted]
+safety:
+  rollback_procedure: Delete synthetic export artifacts, clear isolated queues, reset the fixture database, and verify no destination acknowledgments remain.
+  resource_limit:
+    maximum_operations: 25
+    memory_ceiling_mb: 512
+    wall_clock_timeout_seconds: 20
+  network_scope: FULLY_ISOLATED_NO_EXTERNAL_CALLS
+  human_consent_required: true
+  destructive_action: false
+result:
+  execution_state: NOT_EXECUTED
+  observed_result: UNOBSERVED
+authority: false
