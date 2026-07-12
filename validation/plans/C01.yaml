@@ -1,0 +1,36 @@
+test_id: C01
+target_standard: GB-015
+related_standard: [GB-012, GB-013, GB-014]
+environment:
+  type: ISOLATED_TEST_ENVIRONMENT
+  production_data: false
+  external_side_effects: false
+  environment_version: UNBOUND_TEST_INSTANCE
+fixture:
+  synthetic_data_only: true
+  fixture_description: Synthetic app with declared user flow and one undeclared analytics pipeline spanning logs, queue, batch job, storage, and dashboard.
+  fixture_hash: PENDING_UNTIL_CREATED
+execution:
+  entry_point: INTERNAL_DATA_FLOW
+  action: Generate bounded synthetic activity and trace every write, queue event, internal API call, batch job, storage update, and dashboard feed against the declared coverage object.
+  expected_stop_condition: Any undeclared internal path must create a blind-spot receipt, reduce the claim to partial scope, and hold affected processing.
+  maximum_operations: 100
+  timeout_seconds: 45
+observations:
+  expected_logs: [synthetic_event_created, data_flow_trace_started, undeclared_path_detected_or_cleared]
+  expected_receipts: [data_flow_trace_receipt, declared_vs_observed_scope_receipt, blind_spot_receipt]
+  expected_state_changes: [undeclared_path_added_to_registry, affected_processing_held]
+  forbidden_state_changes: [undeclared_pipeline_unrecorded, hidden_processing_continues, global_claim_remains_current]
+safety:
+  rollback_procedure: Stop synthetic events, clear isolated queues and logs, reset the fixture database, and remove test-only mappings.
+  resource_limit:
+    maximum_operations: 100
+    memory_ceiling_mb: 768
+    wall_clock_timeout_seconds: 45
+  network_scope: FULLY_ISOLATED_NO_EXTERNAL_CALLS
+  human_consent_required: true
+  destructive_action: false
+result:
+  execution_state: NOT_EXECUTED
+  observed_result: UNOBSERVED
+authority: false
