@@ -1,12 +1,14 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "ParentExportApproval",
-  "description": "Schema for verifying parent-authorized export manifests. Runtime validation required: expires_at must be later than issued_at with a maximum five-minute validity window.",
+  "description": "Schema for verifying parent-authorized export manifests. Runtime invariant: export_target.branch_id MUST equal branch_context.",
   "type": "object",
   "additionalProperties": false,
   "required": [
     "version",
     "asset_id",
+    "branch_context",
+    "lineage",
     "parent_signature",
     "session_id",
     "nonce",
@@ -31,6 +33,19 @@
     "asset_id": {
       "type": "string",
       "minLength": 1
+    },
+    "branch_context": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lineage": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
     },
     "parent_signature": {
       "type": "string",
@@ -78,11 +93,16 @@
             },
             "destination": {
               "type": "null"
+            },
+            "branch_id": {
+              "type": "string",
+              "minLength": 1
             }
           },
           "required": [
             "mode",
-            "destination"
+            "destination",
+            "branch_id"
           ],
           "additionalProperties": false
         },
@@ -95,11 +115,16 @@
             "destination": {
               "type": "string",
               "minLength": 1
+            },
+            "branch_id": {
+              "type": "string",
+              "minLength": 1
             }
           },
           "required": [
             "mode",
-            "destination"
+            "destination",
+            "branch_id"
           ],
           "additionalProperties": false
         }
