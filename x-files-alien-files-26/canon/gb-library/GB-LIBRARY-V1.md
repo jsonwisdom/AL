@@ -3,12 +3,12 @@
 ## Gray Baby Canon Index
 
 ### GB-009: Replay Reston
-- **Status:** Bound + LIVE
-- **Lineage:** x-files-alien-files-26 → AL replay core
-- **Replay Layer:** Deterministic governance artifact
-- **Binding:** Full canon integration; anchors continuity fabric
-- **Verification:** Cross-linked to REPLAY.md, records/, anchors/
+- Status: Bound + LIVE
+- ... 
 
-[Link to GB-009-replay-reston.md](./GB-009-replay-reston.md)
+### GB-010: Continuity Casey
+- Status: Forged
+- Lineage: GB-009 → Casey layer
+- [Link](./GB-010-continuity-casey.md)
 
-**Next Bind:** GB-010 vector prep.
+**Next:** GB-011 vector.
