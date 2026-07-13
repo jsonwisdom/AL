@@ -18,6 +18,18 @@ Deterministic capture of Reston layer events — governance simulation, continui
 3. Governance Continuity
 4. Next Jump: GB-010 vector
 
-**Status:** LIVE + EXPANDED
+### Binding Receipt
+- **Index Commit:** f723a32fd9e3ff4190dd1bb14d4c861288e19e48
+- **GB-009 Blob SHA:** 3c9cd4c67907e31443f857c2e2c52e4a2269e310 (pre-binding)
+- **Library Binding:** GB-LIBRARY-V1.md updated
+- **Cross-Links:** REPLAY.md, records/, anchors/, lineage/
+- **Status:** RECORD_LEVEL_BOUND
+- **Replay Verification:** git checkout [commit] && sha256sum [path]
+
+**Immutability Proven:** Via AL commit chain + embedded receipts.
+
+**Authority:** Governance continuity asserted through replay lattice.
+
+**Status:** LIVE + FULLY BOUND
 
 👽📚⚙️
