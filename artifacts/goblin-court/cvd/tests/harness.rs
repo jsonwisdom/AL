@@ -1,4 +1,6 @@
-use goblin_court_cvd::{DigestOracle, Event, EventKind, FailureCode, OracleState, DEBOUNCE_SECONDS};
+use goblin_court_cvd::{
+    DigestOracle, Event, EventKind, FailureCode, OracleState, DEBOUNCE_SECONDS,
+};
 
 #[test]
 fn stale_attestation_debounces_then_enters_alarm() {
