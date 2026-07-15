@@ -111,7 +111,8 @@ impl DigestOracle {
                     resulting_state: previous_state,
                     event: event_name(event.kind).to_string(),
                     accepted: false,
-                    reason: "hysteresis guard blocked transition inside minimum interval".to_string(),
+                    reason: "hysteresis guard blocked transition inside minimum interval"
+                        .to_string(),
                     observed_at_secs: event.observed_at_secs,
                 };
             }
