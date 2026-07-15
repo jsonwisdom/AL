@@ -185,7 +185,9 @@ impl DigestOracle {
 fn target_state(kind: EventKind) -> OracleState {
     match kind {
         EventKind::Healthy => OracleState::Normal,
-        EventKind::AttestationStale => OracleState::Alarm(FailureCode::F001AttestationStale),
+        EventKind::AttestationStale => {
+            OracleState::Alarm(FailureCode::F001AttestationStale)
+        }
         EventKind::OracleUnreachable => OracleState::Degraded,
         EventKind::DigestMismatch => OracleState::Critical,
         EventKind::OracleEquivocation => OracleState::Critical,
