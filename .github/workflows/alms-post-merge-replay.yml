@@ -1,0 +1,135 @@
+name: ALMS Post-Merge Replay + CRO
+
+on:
+  workflow_dispatch:
+    inputs:
+      replay_sha:
+        description: Exact Bedrock SHA to replay
+        required: true
+        default: 59448d850d355854956cb5834ebef17f7f14c7dc
+        type: string
+      cro_id:
+        description: Constitutional Replay Object identifier
+        required: true
+        default: CRO-REPLAY-001
+        type: string
+      signed_at:
+        description: Fixed RFC3339 signing instant for deterministic replay
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  statuses: write
+
+jobs:
+  alms-replay:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout replay controller
+        uses: actions/checkout@v4
+        with:
+          path: controller
+
+      - name: Checkout exact Bedrock runtime
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.replay_sha }}
+          fetch-depth: 0
+          path: runtime-root
+
+      - name: Verify exact Bedrock checkout
+        shell: bash
+        run: |
+          set -euo pipefail
+          expected='59448d850d355854956cb5834ebef17f7f14c7dc'
+          test '${{ inputs.replay_sha }}' = "$expected"
+          observed="$(git -C runtime-root rev-parse HEAD)"
+          test "$observed" = "$expected"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install schema validator
+        run: python -m pip install --disable-pip-version-check jsonschema==4.23.0
+
+      - name: Require runtime and HSM adapters
+        env:
+          ALMS_RUNTIME_COMMAND: ${{ secrets.ALMS_RUNTIME_COMMAND }}
+          ALMS_SIGNER_COMMAND: ${{ secrets.ALMS_SIGNER_COMMAND }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$ALMS_RUNTIME_COMMAND"
+          test -n "$ALMS_SIGNER_COMMAND"
+
+      - name: Execute constitutional replay
+        env:
+          ALMS_RUNTIME_COMMAND: ${{ secrets.ALMS_RUNTIME_COMMAND }}
+          ALMS_SIGNER_COMMAND: ${{ secrets.ALMS_SIGNER_COMMAND }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python controller/artifacts/alms/post-merge-replay/harness/corpus_runner.py \
+            --replay-sha '${{ inputs.replay_sha }}' \
+            --runtime-root runtime-root \
+            --matrix controller/artifacts/alms/post-merge-replay/matrix/definitions.json \
+            --schema controller/artifacts/alms/post-merge-replay/schemas/CRO.schema.json \
+            --output controller/artifacts/alms/post-merge-replay/receipts/cro.json \
+            --cro-id '${{ inputs.cro_id }}' \
+            --signed-at '${{ inputs.signed_at }}' \
+            --runtime-command "$ALMS_RUNTIME_COMMAND" \
+            --signer-command "$ALMS_SIGNER_COMMAND"
+
+      - name: Independently validate CRO and GREEN verdict
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from jsonschema import Draft202012Validator, FormatChecker
+
+          root = Path('controller/artifacts/alms/post-merge-replay')
+          schema = json.loads((root / 'schemas/CRO.schema.json').read_text())
+          receipt = json.loads((root / 'receipts/cro.json').read_text())
+          Draft202012Validator(schema, format_checker=FormatChecker()).validate(receipt)
+          if receipt['replay_verdict']['status'] != 'GREEN':
+              raise SystemExit('ALMS replay verdict is RED')
+          PY
+
+      - name: Upload CRO receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: cro-receipt-${{ inputs.cro_id }}
+          path: controller/artifacts/alms/post-merge-replay/receipts/cro.json
+          if-no-files-found: error
+
+      - name: Attach GREEN status to Bedrock SHA
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.repos.createCommitStatus({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              sha: '${{ inputs.replay_sha }}',
+              state: 'success',
+              context: 'ALMS Replay',
+              description: 'Signed constitutional replay receipt validated GREEN'
+            });
+
+      - name: Attach RED status on failure
+        if: ${{ failure() }}
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.repos.createCommitStatus({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              sha: '${{ inputs.replay_sha }}',
+              state: 'failure',
+              context: 'ALMS Replay',
+              description: 'Constitutional replay failed or produced no admissible CRO'
+            });
