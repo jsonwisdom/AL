@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Deterministic ALMS post-merge replay harness.
+"""Fail-closed ALMS replay payload and receipt builder.
 
-The runner does not simulate runtime behavior or signatures. It delegates each
-failure injection to an external runtime adapter and delegates signing to an
-external signer command. Missing or malformed adapters fail closed.
+Phase 1 emits and validates an unsigned constitutional replay payload.
+Phase 2 is optional and appends an external signature before validating the
+final CRO. Runtime behavior and signatures are never simulated here.
 """
 
 from __future__ import annotations
@@ -20,6 +20,7 @@ from jsonschema import Draft202012Validator, FormatChecker
 
 BEDROCK_SHA = "59448d850d355854956cb5834ebef17f7f14c7dc"
 ALLOWED_SIGNERS = {"CVD_DAEMON", "COURT_CLERK"}
+EXPECTED_FAILURE_IDS = ["F001", "F002", "F003", "F004", "F005", "F006"]
 
 
 def canonical_bytes(value: Any) -> bytes:
@@ -29,6 +30,18 @@ def canonical_bytes(value: Any) -> bytes:
 def load_json(path: Path) -> Any:
     with path.open("r", encoding="utf-8") as handle:
         return json.load(handle)
+
+
+def validate_json(instance: Any, schema_path: Path, label: str) -> None:
+    schema = load_json(schema_path)
+    validator = Draft202012Validator(schema, format_checker=FormatChecker())
+    errors = sorted(validator.iter_errors(instance), key=lambda error: list(error.path))
+    if errors:
+        formatted = "; ".join(
+            f"{'/'.join(map(str, error.path)) or '<root>'}: {error.message}"
+            for error in errors
+        )
+        raise RuntimeError(f"{label} schema validation failed: {formatted}")
 
 
 def invoke_json(command: str, payload: Any, label: str) -> Any:
@@ -56,6 +69,7 @@ def require_runtime_result(raw: Any, failure_id: str) -> dict[str, Any]:
         raise RuntimeError(f"runtime adapter result for {failure_id} is not an object")
     required = {
         "failure_id",
+        "injected",
         "observed_state",
         "events",
         "counters_before",
@@ -68,6 +82,8 @@ def require_runtime_result(raw: Any, failure_id: str) -> dict[str, Any]:
         raise RuntimeError(
             f"runtime adapter returned {raw['failure_id']!r}; expected {failure_id!r}"
         )
+    if raw["injected"] is not True:
+        raise RuntimeError(f"runtime adapter did not inject {failure_id}")
     if not isinstance(raw["events"], list) or not raw["events"]:
         raise RuntimeError(f"runtime adapter emitted no events for {failure_id}")
     before = raw["counters_before"]
@@ -79,7 +95,7 @@ def require_runtime_result(raw: Any, failure_id: str) -> dict[str, Any]:
     return raw
 
 
-def build_receipt(args: argparse.Namespace) -> dict[str, Any]:
+def build_payload(args: argparse.Namespace) -> dict[str, Any]:
     if args.replay_sha != BEDROCK_SHA:
         raise RuntimeError(
             f"replay SHA must equal constitutional Bedrock root {BEDROCK_SHA}"
@@ -89,14 +105,7 @@ def build_receipt(args: argparse.Namespace) -> dict[str, Any]:
     if matrix.get("bedrock_sha") != BEDROCK_SHA:
         raise RuntimeError("failure matrix is not bound to the Bedrock root")
     vectors = matrix.get("vectors")
-    if not isinstance(vectors, list) or [v.get("failure_id") for v in vectors] != [
-        "F001",
-        "F002",
-        "F003",
-        "F004",
-        "F005",
-        "F006",
-    ]:
+    if not isinstance(vectors, list) or [v.get("failure_id") for v in vectors] != EXPECTED_FAILURE_IDS:
         raise RuntimeError("failure matrix must contain ordered F001-F006 vectors")
 
     results: list[dict[str, Any]] = []
@@ -138,12 +147,12 @@ def build_receipt(args: argparse.Namespace) -> dict[str, Any]:
     )
     green = all(item["passed"] for item in results) and monotonic
 
-    receipt: dict[str, Any] = {
+    payload: dict[str, Any] = {
         "cro_id": args.cro_id,
         "replay_root": BEDROCK_SHA,
         "bedrock_sha": BEDROCK_SHA,
-        "replay_started_at": args.signed_at,
-        "replay_completed_at": args.signed_at,
+        "replay_started_at": args.replay_at,
+        "replay_completed_at": args.replay_at,
         "replay_verdict": {
             "status": "GREEN" if green else "RED",
             "reason": (
@@ -158,12 +167,15 @@ def build_receipt(args: argparse.Namespace) -> dict[str, Any]:
             "after": aggregate_after,
             "monotonic": monotonic,
         },
-        "signature_chain": [],
     }
+    validate_json(payload, args.payload_schema, "CRO payload")
+    return payload
 
-    unsigned = dict(receipt)
-    unsigned.pop("signature_chain")
-    signature = invoke_json(args.signer_command, unsigned, "HSM signer")
+
+def build_signed_receipt(
+    payload: dict[str, Any], signer_command: str, signed_at: str, receipt_schema: Path
+) -> dict[str, Any]:
+    signature = invoke_json(signer_command, payload, "HSM signer")
     if not isinstance(signature, dict):
         raise RuntimeError("HSM signer response is not an object")
     signer = signature.get("signer")
@@ -175,24 +187,17 @@ def build_receipt(args: argparse.Namespace) -> dict[str, Any]:
         raise RuntimeError("HSM signer omitted algorithm")
     if not isinstance(value, str) or not value:
         raise RuntimeError("HSM signer omitted signature")
+
+    receipt = dict(payload)
     receipt["signature_chain"] = [
         {
             "signer": signer,
             "algorithm": algorithm,
             "signature": value,
-            "signed_at": args.signed_at,
+            "signed_at": signed_at,
         }
     ]
-
-    schema = load_json(args.schema)
-    validator = Draft202012Validator(schema, format_checker=FormatChecker())
-    errors = sorted(validator.iter_errors(receipt), key=lambda error: list(error.path))
-    if errors:
-        formatted = "; ".join(
-            f"{'/'.join(map(str, error.path)) or '<root>'}: {error.message}"
-            for error in errors
-        )
-        raise RuntimeError(f"CRO schema validation failed: {formatted}")
+    validate_json(receipt, receipt_schema, "final CRO")
     return receipt
 
 
@@ -201,23 +206,58 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--replay-sha", required=True)
     parser.add_argument("--runtime-root", type=Path, required=True)
     parser.add_argument("--matrix", type=Path, required=True)
-    parser.add_argument("--schema", type=Path, required=True)
-    parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--payload-schema", type=Path, required=True)
+    parser.add_argument("--payload-output", type=Path, required=True)
     parser.add_argument("--cro-id", required=True)
-    parser.add_argument("--signed-at", required=True)
+    parser.add_argument("--replay-at", required=True)
     parser.add_argument("--runtime-command", required=True)
-    parser.add_argument("--signer-command", required=True)
+    parser.add_argument("--signer-command")
+    parser.add_argument("--receipt-schema", type=Path)
+    parser.add_argument("--receipt-output", type=Path)
+    parser.add_argument("--signed-at")
     return parser.parse_args()
 
 
 def main() -> int:
     args = parse_args()
     try:
-        receipt = build_receipt(args)
-        args.output.parent.mkdir(parents=True, exist_ok=True)
-        args.output.write_bytes(canonical_bytes(receipt))
-        return 0 if receipt["replay_verdict"]["status"] == "GREEN" else 1
-    except Exception as exc:  # fail closed with one bounded error surface
+        payload = build_payload(args)
+        args.payload_output.parent.mkdir(parents=True, exist_ok=True)
+        args.payload_output.write_bytes(canonical_bytes(payload))
+
+        if payload["replay_verdict"]["status"] != "GREEN":
+            return 1
+
+        signing_requested = any(
+            value is not None
+            for value in (
+                args.signer_command,
+                args.receipt_schema,
+                args.receipt_output,
+                args.signed_at,
+            )
+        )
+        if signing_requested:
+            if not all(
+                value is not None
+                for value in (
+                    args.signer_command,
+                    args.receipt_schema,
+                    args.receipt_output,
+                    args.signed_at,
+                )
+            ):
+                raise RuntimeError("receipt phase requires signer, schema, output, and signed_at")
+            receipt = build_signed_receipt(
+                payload,
+                args.signer_command,
+                args.signed_at,
+                args.receipt_schema,
+            )
+            args.receipt_output.parent.mkdir(parents=True, exist_ok=True)
+            args.receipt_output.write_bytes(canonical_bytes(receipt))
+        return 0
+    except Exception as exc:
         print(f"ALMS_REPLAY_ERROR: {exc}", file=sys.stderr)
         return 2
 
