@@ -1,6 +1,10 @@
-name: ALMS Post-Merge Replay + CRO
+name: ALMS Payload Replay + Contract Gates
 
 on:
+  pull_request:
+    paths:
+      - 'artifacts/alms/post-merge-replay/**'
+      - '.github/workflows/alms-post-merge-replay.yml'
   workflow_dispatch:
     inputs:
       replay_sha:
@@ -9,12 +13,12 @@ on:
         default: 59448d850d355854956cb5834ebef17f7f14c7dc
         type: string
       cro_id:
-        description: Constitutional Replay Object identifier
+        description: Constitutional Replay Payload identifier
         required: true
-        default: CRO-REPLAY-001
+        default: CRO-PAYLOAD-001
         type: string
-      signed_at:
-        description: Fixed RFC3339 signing instant for deterministic replay
+      replay_at:
+        description: Fixed RFC3339 replay instant for deterministic payload bytes
         required: true
         type: string
 
@@ -23,7 +27,32 @@ permissions:
   statuses: write
 
 jobs:
-  alms-replay:
+  contract-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout controller
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install test dependencies
+        run: python -m pip install --disable-pip-version-check jsonschema==4.23.0
+
+      - name: Run ALMS contract tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m unittest discover \
+            -s artifacts/alms/post-merge-replay/harness/tests \
+            -p 'test_*.py' \
+            -v
+
+  payload-replay:
+    if: ${{ github.event_name == 'workflow_dispatch' }}
+    needs: contract-tests
     runs-on: ubuntu-latest
     steps:
       - name: Checkout replay controller
@@ -55,29 +84,17 @@ jobs:
       - name: Install schema validator
         run: python -m pip install --disable-pip-version-check jsonschema==4.23.0
 
-      - name: Run runtime adapter contract tests
-        shell: bash
-        run: |
-          set -euo pipefail
-          python -m unittest discover \
-            -s controller/artifacts/alms/post-merge-replay/harness/tests \
-            -p 'test_*.py' \
-            -v
-
-      - name: Require runtime and HSM adapters
+      - name: Require runtime adapter
         env:
           ALMS_RUNTIME_COMMAND: ${{ secrets.ALMS_RUNTIME_COMMAND }}
-          ALMS_SIGNER_COMMAND: ${{ secrets.ALMS_SIGNER_COMMAND }}
         shell: bash
         run: |
           set -euo pipefail
           test -n "$ALMS_RUNTIME_COMMAND"
-          test -n "$ALMS_SIGNER_COMMAND"
 
-      - name: Execute constitutional replay
+      - name: Execute constitutional payload replay
         env:
           ALMS_RUNTIME_COMMAND: ${{ secrets.ALMS_RUNTIME_COMMAND }}
-          ALMS_SIGNER_COMMAND: ${{ secrets.ALMS_SIGNER_COMMAND }}
         shell: bash
         run: |
           set -euo pipefail
@@ -85,14 +102,13 @@ jobs:
             --replay-sha '${{ inputs.replay_sha }}' \
             --runtime-root runtime-root \
             --matrix controller/artifacts/alms/post-merge-replay/matrix/definitions.json \
-            --schema controller/artifacts/alms/post-merge-replay/schemas/CRO.schema.json \
-            --output controller/artifacts/alms/post-merge-replay/receipts/cro.json \
+            --payload-schema controller/artifacts/alms/post-merge-replay/schemas/CRO.payload.schema.json \
+            --payload-output controller/artifacts/alms/post-merge-replay/receipts/cro.payload.json \
             --cro-id '${{ inputs.cro_id }}' \
-            --signed-at '${{ inputs.signed_at }}' \
-            --runtime-command "$ALMS_RUNTIME_COMMAND" \
-            --signer-command "$ALMS_SIGNER_COMMAND"
+            --replay-at '${{ inputs.replay_at }}' \
+            --runtime-command "$ALMS_RUNTIME_COMMAND"
 
-      - name: Independently validate CRO and GREEN verdict
+      - name: Independently validate GREEN payload
         shell: bash
         run: |
           set -euo pipefail
@@ -102,21 +118,30 @@ jobs:
           from jsonschema import Draft202012Validator, FormatChecker
 
           root = Path('controller/artifacts/alms/post-merge-replay')
-          schema = json.loads((root / 'schemas/CRO.schema.json').read_text())
-          receipt = json.loads((root / 'receipts/cro.json').read_text())
-          Draft202012Validator(schema, format_checker=FormatChecker()).validate(receipt)
-          if receipt['replay_verdict']['status'] != 'GREEN':
-              raise SystemExit('ALMS replay verdict is RED')
+          schema = json.loads((root / 'schemas/CRO.payload.schema.json').read_text())
+          payload = json.loads((root / 'receipts/cro.payload.json').read_text())
+          Draft202012Validator(schema, format_checker=FormatChecker()).validate(payload)
+          if payload['replay_verdict']['status'] != 'GREEN':
+              raise SystemExit('ALMS payload replay verdict is RED')
+          if not all(
+              item['injected'] is True
+              and item['passed'] is True
+              and item['observed_state'] == item['expected_state']
+              for item in payload['failure_results']
+          ):
+              raise SystemExit('GREEN payload contains an uncontained vector')
+          if payload['monotonic_counters']['monotonic'] is not True:
+              raise SystemExit('GREEN payload counters are not monotonic')
           PY
 
-      - name: Upload CRO receipt
+      - name: Upload unsigned CRO payload
         uses: actions/upload-artifact@v4
         with:
-          name: cro-receipt-${{ inputs.cro_id }}
-          path: controller/artifacts/alms/post-merge-replay/receipts/cro.json
+          name: cro-payload-${{ inputs.cro_id }}
+          path: controller/artifacts/alms/post-merge-replay/receipts/cro.payload.json
           if-no-files-found: error
 
-      - name: Attach GREEN status to Bedrock SHA
+      - name: Attach GREEN payload status to Bedrock SHA
         uses: actions/github-script@v7
         with:
           script: |
@@ -125,11 +150,11 @@ jobs:
               repo: context.repo.repo,
               sha: '${{ inputs.replay_sha }}',
               state: 'success',
-              context: 'ALMS Replay',
-              description: 'Signed constitutional replay receipt validated GREEN'
+              context: 'ALMS Payload Replay',
+              description: 'Unsigned constitutional replay payload validated GREEN'
             });
 
-      - name: Attach RED status on failure
+      - name: Attach RED payload status on failure
         if: ${{ failure() }}
         uses: actions/github-script@v7
         with:
@@ -139,6 +164,6 @@ jobs:
               repo: context.repo.repo,
               sha: '${{ inputs.replay_sha }}',
               state: 'failure',
-              context: 'ALMS Replay',
-              description: 'Constitutional replay failed or produced no admissible CRO'
+              context: 'ALMS Payload Replay',
+              description: 'Payload replay failed or produced no admissible GREEN payload'
             });
