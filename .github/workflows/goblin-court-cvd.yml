@@ -1,0 +1,38 @@
+name: Goblin Court CVD
+
+on:
+  pull_request:
+    paths:
+      - 'artifacts/goblin-court/cvd/**'
+      - '.github/workflows/goblin-court-cvd.yml'
+  push:
+    branches:
+      - feat/goblin-court-cvd-directories-first
+    paths:
+      - 'artifacts/goblin-court/cvd/**'
+      - '.github/workflows/goblin-court-cvd.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: artifacts/goblin-court/cvd
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install stable Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Verify formatting
+        run: cargo fmt --check
+
+      - name: Run harness
+        run: cargo test --test harness --verbose
+
+      - name: Run all tests
+        run: cargo test --all-targets --verbose
