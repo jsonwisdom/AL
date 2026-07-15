@@ -1,0 +1,71 @@
+{
+  "schema": "goblin_court_cvd_failure_state_matrix_v0_1",
+  "status": "design_only",
+  "invariants": [
+    "receipt_first",
+    "no_green_without_observed_ci",
+    "availability_failure_does_not_inherit_integrity_failure",
+    "blast_radius_must_be_scoped",
+    "provisional_remains_locked_until_acceptance_gate_passes"
+  ],
+  "states": [
+    {
+      "id": "NORMAL",
+      "failure_state": null,
+      "entry_condition": "attestation_current_and_all_integrity_checks_pass",
+      "response": "allow_current_workload_and_normal_deploy_policy",
+      "recovery_condition": null
+    },
+    {
+      "id": "F001",
+      "failure_state": "ATTESTATION_STALE",
+      "entry_condition": "attestation_ttl_expired_without_digest_mismatch",
+      "response": "emit_cro_alert_and_freeze_new_deployments",
+      "recovery_condition": "fresh_valid_attestation_for_same_or_superseding_release"
+    },
+    {
+      "id": "F002",
+      "failure_state": "ORACLE_UNREACHABLE",
+      "entry_condition": "required_oracle_quorum_unreachable",
+      "response": "emit_cro_alert_and_enter_degraded_trust_without_global_shutdown",
+      "recovery_condition": "oracle_quorum_reachable_with_consistent_signed_checkpoint"
+    },
+    {
+      "id": "F003",
+      "failure_state": "DIGEST_MISMATCH",
+      "entry_condition": "measured_runtime_digest_differs_from_attested_artifact",
+      "response": "fail_closed_for_affected_rollout_scope_and_emit_cro",
+      "recovery_condition": "affected_scope_redeployed_to_verified_digest_and_remeasured"
+    },
+    {
+      "id": "F004",
+      "failure_state": "ORACLE_EQUIVOCATION",
+      "entry_condition": "validly_signed_conflicting_views_detected",
+      "response": "halt_new_deployments_for_affected_scope_and_trigger_witness_review",
+      "recovery_condition": "public_consistency_proof_and_quorum_signed_recovery_checkpoint"
+    },
+    {
+      "id": "F005",
+      "failure_state": "ROLLBACK_OR_REPLAY_DETECTED",
+      "entry_condition": "non_monotonic_release_or_replayed_attestation_detected",
+      "response": "immediate_fail_closed_for_affected_rollout_path_and_revoke_compromised_builder_identity_when_authorized",
+      "recovery_condition": "new_monotonic_release_attested_by_valid_quorum_plus_key_or_builder_recovery_receipt"
+    }
+  ],
+  "anti_flap": {
+    "debounce_seconds_for_non_f005": 10,
+    "minimum_transition_interval_seconds": 1,
+    "f005_bypasses_debounce": true,
+    "f006_state_oscillation_deferred_to": "v1.1"
+  },
+  "gate_state": {
+    "directory_scaffold_present": true,
+    "matrix_file_present": true,
+    "matrix_semantics_verified_by_tests": false,
+    "cvd_code_present": false,
+    "harness_present": false,
+    "ci_run_observed": false,
+    "provisional": "LOCKED",
+    "t": 0
+  }
+}
