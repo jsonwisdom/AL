@@ -1,0 +1,18 @@
+schema: doctrine-index-v1
+version: 1.0.0
+authority: jsonwisdom/AL
+updated_at: 2026-07-28
+doctrines:
+  - doctrine_id: NSJ-001
+    title: National-Security Journalism Doctrine
+    subtitle: "Epstein Files × Guantánamo: The Architecture of Controlled Truth"
+    status: ratified
+    version: 1.0.0
+    path: national-security-journalism/
+    source_artifact: NATIONAL_SECURITY_JOURNALISM_DOCTRINE.md
+    envelope_ref: national-security-journalism/envelope.yaml
+    sovereign_ref: national-security-journalism/sovereign.md
+    civic_ref: national-security-journalism/civic.md
+    lint_target: docs/doctrines/national-security-journalism
+    replay_manifest_ref: null
+    replay_status: pending_first_full_receipt
