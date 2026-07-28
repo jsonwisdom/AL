@@ -1,0 +1,21 @@
+schema: verification-envelope-v1
+version: 1.0.0
+authority: jsonwisdom/AL
+status: ratified
+ratified_at: 2026-07-28
+scope: national-security journalism, controlled disclosure, corpus verification, and civic-record accountability
+source_artifact: ../NATIONAL_SECURITY_JOURNALISM_DOCTRINE.md
+verification_contract:
+  doctrine_id: NSJ-001
+  sovereign_path: sovereign.md
+  civic_path: civic.md
+  sovereign_hash: 48aef7fb9c6a781004db61bec2fb7e80f9e53bbf7c53d18c2d19175480ef1fc1
+  hash_algorithm: sha256
+  replay_manifest_ref: null
+  replay_status: pending_first_full_receipt
+separation_contract:
+  schema: separation-v1
+  sovereign_authority: normative
+  civic_authority: derived_operational_guidance
+  civic_may_modify_sovereign: false
+  unknown_is_valid: true
