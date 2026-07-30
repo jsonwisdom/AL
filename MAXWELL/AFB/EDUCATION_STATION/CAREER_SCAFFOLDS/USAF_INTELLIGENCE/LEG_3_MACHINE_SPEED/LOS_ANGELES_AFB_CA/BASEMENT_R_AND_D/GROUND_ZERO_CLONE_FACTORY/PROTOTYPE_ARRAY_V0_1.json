@@ -1,0 +1,50 @@
+[
+  {
+    "prototype_id": "leg3:clone:0001",
+    "parent_id": null,
+    "type": "career_learning_object",
+    "title": "USAF Intelligence Knowledge Management Replay",
+    "input_state": "PUBLIC_OR_SYNTHETIC_ONLY",
+    "creates_truth": false,
+    "modules": [
+      "capture",
+      "organize",
+      "verify",
+      "analyze",
+      "share",
+      "apply",
+      "correct",
+      "replay"
+    ],
+    "challenge_roles": [
+      "MAX",
+      "GRAY_BABY",
+      "ATHENA",
+      "GIRL_MATH"
+    ],
+    "validation_state": "UNEXECUTED",
+    "promotion_state": "HELD",
+    "receipt_required": true
+  },
+  {
+    "prototype_id": "leg3:clone:0002",
+    "parent_id": "leg3:clone:0001",
+    "type": "strategic_scenario_variant",
+    "title": "Air War College Interservice Sandwich Challenge",
+    "input_state": "SYNTHETIC_EDUCATIONAL_SCENARIO",
+    "creates_truth": false,
+    "variation": {
+      "theater": "LOVE_AND_WAR",
+      "opponent_label": "NAVAL_WAR_COLLEGE_FICTIONAL_TEAM",
+      "hidden_cost_model": "GIRL_MATH",
+      "reward_model": [
+        "SANDWICHES",
+        "BRAGGING_RIGHTS",
+        "REPLAY_RECEIPT"
+      ]
+    },
+    "validation_state": "UNEXECUTED",
+    "promotion_state": "HELD",
+    "receipt_required": true
+  }
+]
