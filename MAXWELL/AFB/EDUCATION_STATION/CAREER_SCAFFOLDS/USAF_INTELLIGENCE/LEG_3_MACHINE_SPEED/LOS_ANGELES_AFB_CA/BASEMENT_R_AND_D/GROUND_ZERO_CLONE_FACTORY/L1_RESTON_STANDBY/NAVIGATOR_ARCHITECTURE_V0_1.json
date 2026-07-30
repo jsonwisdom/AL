@@ -1,0 +1,56 @@
+[
+  {
+    "layer": "L1",
+    "node_id": "RESTON_STANDBY",
+    "role": "NAVIGATOR",
+    "status": "STANDBY_HELD",
+    "creates_truth": false,
+    "executes_network_operations": false,
+    "mission": "REDUNDANT_INTELLECTUAL_PROPERTY_MANAGEMENT",
+    "transport_model": "ABSTRACT_FIBER_AWARE",
+    "routes": [
+      {
+        "route_id": "PRIMARY",
+        "purpose": "normal artifact transfer",
+        "observed_health": "UNKNOWN",
+        "eligible": false
+      },
+      {
+        "route_id": "SECONDARY",
+        "purpose": "independent continuity path",
+        "observed_health": "UNKNOWN",
+        "eligible": false
+      },
+      {
+        "route_id": "TERTIARY_OFFLINE",
+        "purpose": "cold recovery package",
+        "observed_health": "UNKNOWN",
+        "eligible": false
+      }
+    ],
+    "ip_record": {
+      "required_fields": [
+        "artifact_id",
+        "version",
+        "content_sha256",
+        "source_provenance",
+        "author_or_rightsholder_claim",
+        "license_or_use_basis",
+        "dependency_manifest",
+        "custody_receipts"
+      ],
+      "ownership_verified_by_manifest_alone": false,
+      "duplicate_copy_creates_rights": false
+    },
+    "recovery_gates": [
+      "MANIFEST_PRESENT",
+      "BYTES_HASH_MATCH",
+      "LICENSE_METADATA_PRESENT",
+      "DEPENDENCY_CLOSURE_PASS",
+      "CONFLICTS_PRESERVED",
+      "INDEPENDENT_REPLAY_PASS"
+    ],
+    "promotion_rule": "ALL_GATES_PASS_AND_OPERATOR_AUTHORIZES",
+    "current_result": "NO_RECOVERY_EXECUTED"
+  }
+]
