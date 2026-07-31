@@ -2,6 +2,7 @@
 
 **For:** a tokenized universe inside the pedagogical substrate  
 **Parent:** `CHAOS_ORDER_VERTICAL_SCALING_v0.1-theta`, `PONY_EXPRESS_v0.1`, `CIVIC_WAR_BOARD_GAME_v0.1`  
+**Materiality control:** `MATERIALITY_RULE_v1.0`  
 **Classification:** Naming taxonomy & token grammar (simulation only)  
 **Authority:** false  
 **Gate 1:** BLOCKED  
@@ -63,9 +64,27 @@ Rules:
 2. **Fusion** MUST list all parent token ids; fusion does not erase parents (forks may remain).
 3. **Nuclear fuel** is spent only inside session rules; it never buys Gate 1 or mass.
 4. Tokens may sit inside a **Containment vessel** (`GOVERNOR_SOURCE_RECORD` EMPTY_VESSEL or session packet) without becoming primary sources.
-5. Every material Fission/Fusion SHOULD append a receipt under `RECEIPT_CHAIN_PROTOCOL_v0.1-theta` (RFC 8785 JCS).
+5. Every material Fission/Fusion MUST append a receipt under `RECEIPT_CHAIN_PROTOCOL_v0.1-theta` (RFC 8785 JCS).
+6. Materiality defaults to `MUST`; a `MAY` classification must be explicit and receipted.
+7. Fusion and Fission inherit materiality under `STRICTEST_PARENT_WINS`; any `MUST` or unknown parent makes the child `MUST`.
 
-## 5. Mapping to Existing Layers
+## 5. Materiality Binding
+
+```text
+DEFAULT_MATERIALITY = MUST
+INHERITANCE_RULE    = STRICTEST_PARENT_WINS
+UNRECEIPTED_EDIT    = MATERIAL
+```
+
+Token creation, deletion, renaming, lineage edits, scoring changes, stage changes, custody changes, and replay-state changes are material. Decorative classification is permitted only through the explicit `MAY` path defined by `MATERIALITY_RULE_v1.0`.
+
+```text
+MATERIALITY ≠ EPISTEMIC_MASS
+MATERIALITY ≠ ADMISSION
+MATERIALITY ≠ AUTHORITY
+```
+
+## 6. Mapping to Existing Layers
 
 | Token idea | Maps toward |
 |------------|-------------|
@@ -77,7 +96,7 @@ Rules:
 | Chain reaction log | Receipt chain |
 | Magnitude (M0–M5) | How many tokens interact in one reading |
 
-## 6. Organized Chaos Principle
+## 7. Organized Chaos Principle
 
 ```text
 CHAOS   = unrestricted split/join without lineage
@@ -87,7 +106,7 @@ ORGANIZED_CHAOS = Chaos allowed only inside Order’s naming and custody rules
 
 Vertical scaling magnitude (`CHAOS_ORDER_VERTICAL_SCALING_v0.1-theta`) may report how organized a token graph is; it does not rank real institutions.
 
-## 7. Hard Boundaries
+## 8. Hard Boundaries
 
 ```text
 NO_REAL_NUCLEAR_OR_WEAPON_CONTENT     = ENFORCED
@@ -98,19 +117,21 @@ NO_METAPHOR_AS_PHYSICAL_INSTRUCTION   = ENFORCED
 SEPARATION_OF_DUTIES                  = FROZEN
 ```
 
-## 8. Media & RePlay
+## 9. Media & RePlay
 
 - Learning videos may animate Fission/Fusion as graph edits
 - Teaching props: cards labeled ATM / FIS / FUS / NFL
 - 80s RePlay: optional “reactor” aesthetic for session energy bars (fuel = attention only)
 - JSON movie streams may include `token_events[]` frames
 
-## 9. Current State
+## 10. Current State
 
 ```text
 ARTIFACT              = ORGANIZED_CHAOS_NAMING_v0.1-theta
 UNIVERSE              = TOKENIZED_SIMULATION
 TAXONOMY              = FUSION | FISSION | ATOMIC | NUCLEAR_FUEL | …
+DEFAULT_MATERIALITY   = MUST
+INHERITANCE_RULE      = STRICTEST_PARENT_WINS
 GATE_1                = BLOCKED
 VESSEL_STATUS         = EMPTY_VESSEL
 AUTHORITY             = FALSE
@@ -118,7 +139,7 @@ CORE_DOCKET           = EMPTY
 PROMOTION             = BLOCKED
 ```
 
-## 10. Promotion Boundary
+## 11. Promotion Boundary
 
 Scholarly nicknames for sandbox tokens are not a theory of matter and not a source-admission path. Real-source work still requires Entrenched Admissions, epistemic_class declaration, and Gate 1 after explicit operator action.
 
