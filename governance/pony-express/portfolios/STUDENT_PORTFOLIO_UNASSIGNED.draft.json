@@ -34,9 +34,31 @@
       "jurisdiction_status": "UNASSIGNED",
       "timestamp_utc": "2026-07-31T14:30:00Z",
       "timestamp_status": "OPERATOR_SUPPLIED_UNVERIFIED"
+    },
+    {
+      "scenario_id": "LW-S02",
+      "epistemic_class": "FICTIONAL_SANDBOX",
+      "scenario_title": "Tribal Customary vs International Treaty Zone Conflict",
+      "scenario_hash": null,
+      "hash_status": "NOT_COMPUTED",
+      "hash_canonicalization": "RFC_8785_JCS",
+      "hash_algorithm": "SHA-256",
+      "self_score": 8,
+      "justice_score": 9,
+      "score_differential": 1,
+      "score_scale": "PROVISIONAL_SELF_ASSESSMENT_0_TO_10",
+      "score_status": "PROVISIONAL_SELF_ASSESSMENT_NOT_JUDGE_ATTESTED",
+      "precedent_applied": "LW-S01-P001",
+      "outcome": "NO_PARTY_ESTABLISHES_AUTHORITY",
+      "final_custody": "UNOCCUPIED",
+      "jurisdiction_status": "UNASSIGNED",
+      "checkpoint": 34,
+      "board_constraint": "NO_EXPRESS_ZONE_CROSSING_RULE",
+      "timestamp_utc": null,
+      "timestamp_status": "NOT_SUPPLIED"
     }
   ],
-  "total_scenarios": 1,
+  "total_scenarios": 2,
   "required_scenarios": 3,
   "self_examination": {
     "submitted": false,
@@ -52,11 +74,11 @@
   "promotion_eligible": false,
   "fail_closed_reasons": [
     "STUDENT_ID_UNASSIGNED",
-    "SCENARIO_DIGEST_NOT_COMPUTED",
+    "SCENARIO_DIGESTS_NOT_COMPUTED",
     "SCENARIO_COUNT_BELOW_REQUIRED",
     "SELF_EXAMINATION_MISSING",
     "JUDGE_ATTESTATION_MISSING",
     "BYTE_CAPTURE_PAIR_NOT_FORMED"
   ],
-  "notes": "Repository-side draft only. Commit existence does not establish Seat A validation, digest equality, judge approval, promotion eligibility, authority, or historical truth."
+  "notes": "Repository-side draft only. Commit existence does not establish Seat A validation, digest equality, judge approval, promotion eligibility, authority, historical truth, or a mass-bearing source record."
 }
