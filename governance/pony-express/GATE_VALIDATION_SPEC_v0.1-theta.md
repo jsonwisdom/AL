@@ -1,6 +1,7 @@
 # Gate Validation Spec v0.1-θ
 
 **Parent:** `TRANSITION_CONTROL_MATRIX_v0.1-theta`  
+**Materiality control:** `MATERIALITY_RULE_v1.0`  
 **Classification:** Procedural validation rules for pedagogical progression gates  
 **Authority:** false  
 **Gate 1:** BLOCKED  
@@ -30,6 +31,9 @@ Every gate validation MUST enforce:
 5. **Authority annotation** — Every generated receipt carries `authority: false` and `historical_truth_established: false`.
 6. **Gate 1 respect** — No validation path may set `gate_1` to any value other than `BLOCKED` unless an external, independently verified byte-capture pair has already been admitted (currently none).
 7. **Docket emptiness** — Core historical docket remains `EMPTY`. Pedagogical hypos must be labeled `PEDAGOGICAL_ONLY`.
+8. **Materiality enforcement** — Every affected object defaults to `MUST`. Missing, malformed, conflicting, or indeterminate classifications resolve to `MUST`.
+9. **Strict inheritance** — Every Fission/Fusion child must satisfy `STRICTEST_PARENT_WINS`; any `MUST` or unknown parent yields `MUST`.
+10. **Materiality receipt completeness** — A material transformation without a valid `RECEIPT-MAT-*` chain entry yields FAIL.
 
 ## 3. Per-Stage Validation Rules
 
@@ -86,12 +90,12 @@ Every gate validation MUST enforce:
 | Check | Rule |
 |-------|------|
 | Artifacts | `JUDICIAL_ENGINEER_V1.py` present and executable inside the sandbox |
-| Exercises | Contradiction dominance enforced; fail-closed gate block authored |
-| Receipts | ≥ 3 passing automated test receipts under malicious fixture injection |
-| Conditions | `INTERPRETATION ≠ ADJUDICATION` enforced in code |
-| Fail | Indeterminate states allowed to pass; absolute paths hardcoded |
+| Exercises | Contradiction dominance enforced; fail-closed gate block authored; materiality inheritance tested |
+| Receipts | ≥ 3 passing automated test receipts under malicious fixture injection, including missing-materiality and mixed-parent cases |
+| Conditions | `INTERPRETATION ≠ ADJUDICATION`; `DEFAULT_MATERIALITY = MUST`; `STRICTEST_PARENT_WINS` enforced in code |
+| Fail | Indeterminate states allowed to pass; absolute paths hardcoded; material child downgraded to decorative; required materiality receipt absent |
 | Reviewer | System Architect / Lead Maintainer |
-| Appeal | Patch script; fix path encapsulation; run full integration suite |
+| Appeal | Patch script; fix path encapsulation or materiality enforcement; run full integration suite |
 
 ### STAGE-6  JUDICIAL_ENGINEER → STEWARD_OF_JUSTICE
 
@@ -99,13 +103,32 @@ Every gate validation MUST enforce:
 |-------|------|
 | Artifacts | `STEWARD_MANIFEST_V1.md` present |
 | Exercises | Dual-axis audit (SELF-Score + JUSTICE-Score) completed; full lifecycle audit from raw bytes to steward receipt |
-| Receipts | Complete verified chain covering Stages 1–5; zero-defect self-examination log |
+| Receipts | Complete verified chain covering Stages 1–5; zero-defect self-examination log; complete required materiality receipts |
 | Conditions | `WISDOM = SELF ∩ JUSTICE` demonstrated inside the simulation |
-| Fail | High SELF / low JUSTICE (Ego); Low SELF / high JUSTICE (Accident) |
+| Fail | High SELF / low JUSTICE (Ego); Low SELF / high JUSTICE (Accident); material transformation without receipt |
 | Reviewer | Full Judicial Council |
 | Appeal | Complete remediation module on bias + procedural humility; restart promotion cycle |
 
-## 4. Validation Outcome Object
+## 4. Materiality Validation
+
+For each created, updated, deleted, split, joined, classified, scored, or replayed object:
+
+```text
+classification absent       → MUST
+classification malformed    → MUST
+classification conflicting  → MUST
+any parent MUST             → MUST
+any parent unknown          → MUST
+required receipt absent     → FAIL
+lineage incomplete          → FAIL
+receipt chain invalid       → FAIL
+```
+
+A `MAY` result is valid only when an explicit `RECEIPT-MAT-*` records a purely decorative change and proves that identity, lineage, meaning, scoring, progression, custody, admission, and replay state are unchanged.
+
+Materiality validation does not verify source truth, admit evidence, assign civic mass, or open Gate 1.
+
+## 5. Validation Outcome Object
 
 Every gate evaluation MUST emit a receipt of the form:
 
@@ -113,6 +136,7 @@ Every gate evaluation MUST emit a receipt of the form:
 {
   "receipt_id": "RECEIPT-GV-<stage>-<seq>",
   "matrix_version": "TRANSITION_CONTROL_MATRIX_v0.1-theta",
+  "materiality_rule_version": "MATERIALITY_RULE_v1.0",
   "stage_id": "STAGE-N",
   "candidate_id": "...",
   "result": "PASS | FAIL | INDETERMINATE",
@@ -120,6 +144,7 @@ Every gate evaluation MUST emit a receipt of the form:
   "historical_truth_established": false,
   "gate_1_status": "BLOCKED",
   "checks": [],
+  "materiality_checks": [],
   "previous_receipt_hash": null,
   "receipt_hash": null,
   "recorded_at": null
@@ -128,7 +153,7 @@ Every gate evaluation MUST emit a receipt of the form:
 
 `INDETERMINATE` is treated as FAIL for advancement purposes.
 
-## 5. Prohibited Behaviors
+## 6. Prohibited Behaviors
 
 ```text
 SKIP_STAGE                         = PROHIBITED
@@ -138,13 +163,19 @@ REAL_WORLD_AUTHORITY_CLAIM         = PROHIBITED
 HISTORICAL_TRUTH_FROM_SIMULATION   = PROHIBITED
 SYNTHETIC_SOURCE_BYTES             = PROHIBITED
 UNLABELED_PEDAGOGICAL_HYPO         = PROHIBITED
+MATERIALITY_DEFAULT_MAY            = PROHIBITED
+MATERIAL_PARENT_DOWNGRADE          = PROHIBITED
+UNRECEIPTED_MATERIAL_TRANSFORMATION = PROHIBITED
 ```
 
-## 6. Current State
+## 7. Current State
 
 ```text
 ARTIFACT                = GATE_VALIDATION_SPEC_v0.1-theta
 PARENT                  = TRANSITION_CONTROL_MATRIX_v0.1-theta
+MATERIALITY_CONTROL     = MATERIALITY_RULE_v1.0
+DEFAULT_MATERIALITY     = MUST
+INHERITANCE_RULE        = STRICTEST_PARENT_WINS
 GATE_1                  = BLOCKED
 AUTHORITY               = FALSE
 CORE_DOCKET             = EMPTY
