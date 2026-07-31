@@ -1,0 +1,62 @@
+{
+  "artifact_type": "STUDENT_PORTFOLIO_DRAFT",
+  "artifact_version": "v0.1-theta",
+  "student_id": "UNASSIGNED",
+  "status": "DRAFT_UNVALIDATED",
+  "authority": false,
+  "simulation_only": true,
+  "promotion_gate": "CLOSED",
+  "gate_1": "BLOCKED",
+  "core_docket": "EMPTY",
+  "portfolio_committed_to_pr": true,
+  "byte_capture_pair": {
+    "status": "NOT_FORMED",
+    "seat_a_digest": null,
+    "seat_b_digest": null,
+    "digests_match": false
+  },
+  "scenario_entries": [
+    {
+      "scenario_id": "LW-S01",
+      "epistemic_class": "FICTIONAL_SANDBOX",
+      "scenario_hash": null,
+      "hash_status": "NOT_COMPUTED",
+      "hash_canonicalization": "RFC_8785_JCS",
+      "hash_algorithm": "SHA-256",
+      "self_score": 8,
+      "justice_score": 8,
+      "score_differential": 0,
+      "score_scale": "OPERATOR_SUPPLIED_0_TO_10",
+      "score_status": "SELF_REPORTED_NOT_JUDGE_ATTESTED",
+      "precedent_applied": "LW-S01-P001",
+      "outcome": "NO_PARTY_ESTABLISHES_AUTHORITY",
+      "final_custody": "TEMPORARY_POSITIONAL_CONTROL",
+      "jurisdiction_status": "UNASSIGNED",
+      "timestamp_utc": "2026-07-31T14:30:00Z",
+      "timestamp_status": "OPERATOR_SUPPLIED_UNVERIFIED"
+    }
+  ],
+  "total_scenarios": 1,
+  "required_scenarios": 3,
+  "self_examination": {
+    "submitted": false,
+    "text_hash": null,
+    "word_count": 0
+  },
+  "judge_attestation": {
+    "status": "MISSING",
+    "judge_id": null,
+    "procedure_verdict": null
+  },
+  "portfolio_digest": null,
+  "promotion_eligible": false,
+  "fail_closed_reasons": [
+    "STUDENT_ID_UNASSIGNED",
+    "SCENARIO_DIGEST_NOT_COMPUTED",
+    "SCENARIO_COUNT_BELOW_REQUIRED",
+    "SELF_EXAMINATION_MISSING",
+    "JUDGE_ATTESTATION_MISSING",
+    "BYTE_CAPTURE_PAIR_NOT_FORMED"
+  ],
+  "notes": "Repository-side draft only. Commit existence does not establish Seat A validation, digest equality, judge approval, promotion eligibility, authority, or historical truth."
+}
