@@ -56,14 +56,44 @@
       "board_constraint": "NO_EXPRESS_ZONE_CROSSING_RULE",
       "timestamp_utc": null,
       "timestamp_status": "NOT_SUPPLIED"
+    },
+    {
+      "scenario_id": "LW-S03",
+      "epistemic_class": "FICTIONAL_SANDBOX",
+      "scenario_title": "Federal Admiralty vs Provincial Common Law with Neutral Observer",
+      "scenario_hash": null,
+      "hash_status": "NOT_COMPUTED",
+      "hash_canonicalization": "RFC_8785_JCS",
+      "hash_algorithm": "SHA-256",
+      "self_score": 9,
+      "justice_score": 9,
+      "score_differential": 0,
+      "score_scale": "PROVISIONAL_SELF_ASSESSMENT_0_TO_10",
+      "score_status": "PROVISIONAL_SELF_ASSESSMENT_NOT_JUDGE_ATTESTED",
+      "precedent_applied": "LW-S01-P001",
+      "outcome": "NO_PARTY_ESTABLISHES_AUTHORITY",
+      "final_custody": "TEMPORARY_POSITIONAL_CONTROL",
+      "jurisdiction_status": "UNASSIGNED",
+      "checkpoint": 26,
+      "occupying_token": "N",
+      "board_constraints": [
+        "ABSENCE_OF_AUTHORITY_DOES_NOT_TRANSFER_AUTHORITY",
+        "OCCUPATION_DOES_NOT_CREATE_JURISDICTION",
+        "BOARD_SILENCE_DOES_NOT_CREATE_IMPLIED_GRANT",
+        "SCENARIO_MUTATION_PROHIBITED_AFTER_START"
+      ],
+      "timestamp_utc": null,
+      "timestamp_status": "NOT_SUPPLIED"
     }
   ],
-  "total_scenarios": 2,
+  "total_scenarios": 3,
   "required_scenarios": 3,
+  "scenario_count_requirement_met": true,
   "self_examination": {
     "submitted": false,
     "text_hash": null,
-    "word_count": 0
+    "word_count": 0,
+    "next_required_phase": true
   },
   "judge_attestation": {
     "status": "MISSING",
@@ -75,10 +105,9 @@
   "fail_closed_reasons": [
     "STUDENT_ID_UNASSIGNED",
     "SCENARIO_DIGESTS_NOT_COMPUTED",
-    "SCENARIO_COUNT_BELOW_REQUIRED",
     "SELF_EXAMINATION_MISSING",
     "JUDGE_ATTESTATION_MISSING",
     "BYTE_CAPTURE_PAIR_NOT_FORMED"
   ],
-  "notes": "Repository-side draft only. Commit existence does not establish Seat A validation, digest equality, judge approval, promotion eligibility, authority, historical truth, or a mass-bearing source record."
+  "notes": "Repository-side draft only. Three pedagogical scenarios are recorded, but scenario count completion does not establish Seat A validation, digest equality, judge approval, promotion eligibility, authority, historical truth, or a mass-bearing source record."
 }
