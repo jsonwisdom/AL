@@ -1,1 +1,265 @@
-PLACEHOLDER
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.dev/schemas/m2/graph-event.schema.json",
+  "title": "Self Reflection Audit Station Graph Event",
+  "description": "Append-only canonical event with an explicit SHA-256 hash chain and a complete aggregate snapshot.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "event_id",
+    "stream_id",
+    "sequence",
+    "event_type",
+    "aggregate_type",
+    "aggregate_id",
+    "aggregate_version",
+    "occurred_at",
+    "actor_id",
+    "canonicalization",
+    "hash_algorithm",
+    "prev_event_hash",
+    "event_hash",
+    "payload"
+  ],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "event_id": { "$ref": "https://jsonwisdom.dev/schemas/m2/graph-event.schema.json#/$defs/stableId" },
+    "stream_id": { "$ref": "https://jsonwisdom.dev/schemas/m2/graph-event.schema.json#/$defs/stableId" },
+    "sequence": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "event_type": {
+      "enum": [
+        "NODE_CREATED",
+        "NODE_UPDATED",
+        "NODE_TOMBSTONED",
+        "EDGE_CREATED",
+        "EDGE_UPDATED",
+        "EDGE_TOMBSTONED"
+      ]
+    },
+    "aggregate_type": { "enum": ["NODE", "EDGE"] },
+    "aggregate_id": { "$ref": "https://jsonwisdom.dev/schemas/m2/graph-event.schema.json#/$defs/stableId" },
+    "aggregate_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "occurred_at": { "$ref": "https://jsonwisdom.dev/schemas/m2/graph-event.schema.json#/$defs/rfc3339" },
+    "actor_id": { "$ref": "https://jsonwisdom.dev/schemas/m2/graph-event.schema.json#/$defs/stableId" },
+    "canonicalization": { "const": "RFC8785" },
+    "hash_algorithm": { "const": "SHA-256" },
+    "prev_event_hash": {
+      "oneOf": [
+        { "type": "null" },
+        { "$ref": "https://jsonwisdom.dev/schemas/m2/graph-event.schema.json#/$defs/sha256" }
+      ]
+    },
+    "event_hash": { "$ref": "https://jsonwisdom.dev/schemas/m2/graph-event.schema.json#/$defs/sha256" },
+    "correlation_id": { "$ref": "https://jsonwisdom.dev/schemas/m2/graph-event.schema.json#/$defs/stableId" },
+    "causation_event_id": { "$ref": "https://jsonwisdom.dev/schemas/m2/graph-event.schema.json#/$defs/stableId" },
+    "payload": {
+      "oneOf": [
+        { "$ref": "https://jsonwisdom.dev/schemas/m2/graph-node.schema.json" },
+        { "$ref": "https://jsonwisdom.dev/schemas/m2/graph-event.schema.json#/$defs/edgeSnapshot" }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "sequence": { "const": 0 } },
+        "required": ["sequence"]
+      },
+      "then": {
+        "properties": { "prev_event_hash": { "type": "null" } }
+      },
+      "else": {
+        "properties": { "prev_event_hash": { "$ref": "https://jsonwisdom.dev/schemas/m2/graph-event.schema.json#/$defs/sha256" } }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "enum": ["NODE_CREATED", "NODE_UPDATED", "NODE_TOMBSTONED"]
+          }
+        },
+        "required": ["event_type"]
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": { "const": "NODE" },
+          "payload": {
+            "$ref": "https://jsonwisdom.dev/schemas/m2/graph-node.schema.json"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "enum": ["EDGE_CREATED", "EDGE_UPDATED", "EDGE_TOMBSTONED"]
+          }
+        },
+        "required": ["event_type"]
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": { "const": "EDGE" },
+          "payload": { "$ref": "https://jsonwisdom.dev/schemas/m2/graph-event.schema.json#/$defs/edgeSnapshot" }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "enum": ["NODE_TOMBSTONED", "EDGE_TOMBSTONED"]
+          }
+        },
+        "required": ["event_type"]
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "properties": { "status": { "const": "TOMBSTONED" } },
+            "required": ["status", "tombstone"]
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "stableId": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 160,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "rfc3339": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "edgeSnapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type",
+        "from",
+        "to",
+        "created_at",
+        "created_by",
+        "version",
+        "status",
+        "source_receipt",
+        "content_hash",
+        "payload"
+      ],
+      "properties": {
+        "id": { "$ref": "https://jsonwisdom.dev/schemas/m2/graph-event.schema.json#/$defs/stableId" },
+        "type": {
+          "enum": [
+            "SUPPORTS",
+            "CONTRADICTS",
+            "DERIVED_FROM",
+            "QUOTES",
+            "SUMMARIZES",
+            "VERIFIED_BY",
+            "AUTHORIZED_BY",
+            "DECIDED_BY",
+            "SUPERSEDES",
+            "CHALLENGES",
+            "HAS_RECEIPT"
+          ]
+        },
+        "from": { "$ref": "https://jsonwisdom.dev/schemas/m2/graph-event.schema.json#/$defs/stableId" },
+        "to": { "$ref": "https://jsonwisdom.dev/schemas/m2/graph-event.schema.json#/$defs/stableId" },
+        "created_at": { "$ref": "https://jsonwisdom.dev/schemas/m2/graph-event.schema.json#/$defs/rfc3339" },
+        "created_by": { "$ref": "https://jsonwisdom.dev/schemas/m2/graph-event.schema.json#/$defs/stableId" },
+        "version": { "type": "integer", "minimum": 1 },
+        "status": { "enum": ["ACTIVE", "SUPERSEDED", "TOMBSTONED"] },
+        "source_receipt": { "$ref": "https://jsonwisdom.dev/schemas/m2/graph-event.schema.json#/$defs/stableId" },
+        "content_hash": { "$ref": "https://jsonwisdom.dev/schemas/m2/graph-event.schema.json#/$defs/sha256" },
+        "payload": {
+          "type": "object",
+          "propertyNames": {
+            "not": {
+              "enum": [
+                "id",
+                "type",
+                "from",
+                "to",
+                "created_at",
+                "created_by",
+                "version",
+                "status",
+                "source_receipt",
+                "content_hash",
+                "payload",
+                "superseded_by",
+                "tombstone"
+              ]
+            }
+          },
+          "additionalProperties": true
+        },
+        "superseded_by": { "$ref": "https://jsonwisdom.dev/schemas/m2/graph-event.schema.json#/$defs/stableId" },
+        "tombstone": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["reason", "tombstoned_at", "tombstoned_by"],
+          "properties": {
+            "reason": { "type": "string", "minLength": 1, "maxLength": 2048 },
+            "tombstoned_at": { "$ref": "https://jsonwisdom.dev/schemas/m2/graph-event.schema.json#/$defs/rfc3339" },
+            "tombstoned_by": { "$ref": "https://jsonwisdom.dev/schemas/m2/graph-event.schema.json#/$defs/stableId" }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "status": { "const": "ACTIVE" } },
+            "required": ["status"]
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                { "required": ["superseded_by"] },
+                { "required": ["tombstone"] }
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": { "status": { "const": "SUPERSEDED" } },
+            "required": ["status"]
+          },
+          "then": {
+            "required": ["superseded_by"],
+            "not": { "required": ["tombstone"] }
+          }
+        },
+        {
+          "if": {
+            "properties": { "status": { "const": "TOMBSTONED" } },
+            "required": ["status"]
+          },
+          "then": {
+            "required": ["tombstone"],
+            "properties": { "payload": { "maxProperties": 0 } },
+            "not": { "required": ["superseded_by"] }
+          }
+        }
+      ]
+    }
+  }
+}
