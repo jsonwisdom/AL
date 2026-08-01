@@ -2,42 +2,133 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://jsonwisdom.dev/schemas/m2/graph-node.schema.json",
   "title": "Self Reflection Audit Station Graph Node",
-  "description": "Canonical schema for graph nodes in the M2 Self Reflection Audit Station publication.",
+  "description": "Canonical, versioned graph-node snapshot. The payload cannot shadow or override reserved envelope fields.",
   "type": "object",
   "additionalProperties": false,
-  "required": ["id", "kind", "created_at"],
+  "required": [
+    "id",
+    "type",
+    "created_at",
+    "created_by",
+    "version",
+    "status",
+    "source_receipt",
+    "content_hash",
+    "payload"
+  ],
   "properties": {
-    "id": {
-      "type": "string",
-      "minLength": 1,
-      "description": "Stable node identifier"
+    "id": { "$ref": "#/$defs/stableId" },
+    "type": {
+      "enum": [
+        "Claim",
+        "Artifact",
+        "Source",
+        "Actor",
+        "Decision",
+        "Receipt",
+        "Verification",
+        "Attestation",
+        "Conflict",
+        "AuthorityGrant"
+      ]
     },
-    "kind": {
-      "type": "string",
-      "minLength": 1
+    "created_at": { "$ref": "#/$defs/rfc3339" },
+    "created_by": { "$ref": "#/$defs/stableId" },
+    "version": {
+      "type": "integer",
+      "minimum": 1
     },
-    "created_at": {
-      "$ref": "#/$defs/rfc3339"
+    "status": {
+      "enum": ["ACTIVE", "SUPERSEDED", "TOMBSTONED"]
     },
-    "updated_at": {
-      "$ref": "#/$defs/rfc3339"
-    },
-    "labels": {
-      "type": "array",
-      "items": { "type": "string" }
-    },
-    "properties": {
+    "source_receipt": { "$ref": "#/$defs/stableId" },
+    "content_hash": { "$ref": "#/$defs/sha256" },
+    "payload": {
       "type": "object",
+      "propertyNames": {
+        "not": {
+          "enum": [
+            "id",
+            "type",
+            "created_at",
+            "created_by",
+            "version",
+            "status",
+            "source_receipt",
+            "content_hash",
+            "payload",
+            "superseded_by",
+            "tombstone"
+          ]
+        }
+      },
       "additionalProperties": true
     },
-    "content_hash": {
-      "$ref": "#/$defs/sha256"
+    "superseded_by": { "$ref": "#/$defs/stableId" },
+    "tombstone": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reason", "tombstoned_at", "tombstoned_by"],
+      "properties": {
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048
+        },
+        "tombstoned_at": { "$ref": "#/$defs/rfc3339" },
+        "tombstoned_by": { "$ref": "#/$defs/stableId" }
+      }
     }
   },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "status": { "const": "ACTIVE" } },
+        "required": ["status"]
+      },
+      "then": {
+        "not": {
+          "anyOf": [
+            { "required": ["superseded_by"] },
+            { "required": ["tombstone"] }
+          ]
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "status": { "const": "SUPERSEDED" } },
+        "required": ["status"]
+      },
+      "then": {
+        "required": ["superseded_by"],
+        "not": { "required": ["tombstone"] }
+      }
+    },
+    {
+      "if": {
+        "properties": { "status": { "const": "TOMBSTONED" } },
+        "required": ["status"]
+      },
+      "then": {
+        "required": ["tombstone"],
+        "properties": {
+          "payload": { "maxProperties": 0 }
+        },
+        "not": { "required": ["superseded_by"] }
+      }
+    }
+  ],
   "$defs": {
+    "stableId": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 160,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+    },
     "sha256": {
       "type": "string",
-      "pattern": "^[a-f0-9]{64}$"
+      "pattern": "^sha256:[a-f0-9]{64}$"
     },
     "rfc3339": {
       "type": "string",
