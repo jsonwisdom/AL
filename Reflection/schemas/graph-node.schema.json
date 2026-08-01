@@ -1,1 +1,22 @@
-PLACEHOLDER
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.github.io/AL/Reflection/schemas/graph-node.schema.json",
+  "title": "GraphNode",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "type", "created_at"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "type": { "type": "string", "minLength": 1 },
+    "created_at": { "type": "string", "format": "date-time" },
+    "updated_at": { "type": "string", "format": "date-time" },
+    "labels": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "properties": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}
