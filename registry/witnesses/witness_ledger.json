@@ -1,0 +1,47 @@
+{
+  "version": "1.0",
+  "description": "Append-only witness declarations for registry entries. Authority: NONE.",
+  "authority_status": false,
+  "ledger_status": "PROPOSED",
+  "witnesses": [
+    {
+      "witness_id": "WITNESS-20260731-001",
+      "entry_id": "AL",
+      "signer": {
+        "type": "github",
+        "username": "jsonwisdom",
+        "identity_status": "ACCOUNT_RESOLVED",
+        "commit": "cccf1965dc2aebf9902a45ff9dcc66c0e93cde0c"
+      },
+      "timestamp": "2026-07-31T20:57:00Z",
+      "attestation_status": "DECLARED_UNVERIFIED",
+      "message": "I witness the AL entry as stated, with authority_status false. This declaration attests to observation of the entry and does not confer authority."
+    },
+    {
+      "witness_id": "WITNESS-20260731-002",
+      "entry_id": "Welcome-to-JSONWISDOM",
+      "signer": {
+        "type": "github",
+        "username": "jsonwisdom",
+        "identity_status": "ACCOUNT_RESOLVED",
+        "commit": "cccf1965dc2aebf9902a45ff9dcc66c0e93cde0c"
+      },
+      "timestamp": "2026-07-31T20:57:00Z",
+      "attestation_status": "DECLARED_UNVERIFIED",
+      "message": "I witness the Welcome-to-JSONWISDOM entry as stated. Authority remains NONE."
+    },
+    {
+      "witness_id": "WITNESS-20260731-003",
+      "entry_id": "COMPUTERWISDOM",
+      "signer": {
+        "type": "github",
+        "username": "jsonwisdom",
+        "identity_status": "ACCOUNT_RESOLVED",
+        "commit": "cccf1965dc2aebf9902a45ff9dcc66c0e93cde0c"
+      },
+      "timestamp": "2026-07-31T20:57:00Z",
+      "attestation_status": "DECLARED_UNVERIFIED",
+      "message": "I witness the COMPUTERWISDOM entry as stated. This declaration attests to the recorded mechanical role, not to operational decisions."
+    }
+  ]
+}
