@@ -1,0 +1,57 @@
+{
+  "receipt_id": "IDENTITY_ANCHOR-20260801-001",
+  "verifier_status": "PROPOSED",
+  "implementation_status": "MATERIALIZED_UNVERIFIED",
+  "generation_timestamp": "2026-08-01T01:04:00Z",
+  "description": "Fail-closed identity anchoring system implementation.",
+  "components": [
+    {
+      "name": "Witness Ledger",
+      "path": "registry/witnesses/witness_ledger.json",
+      "commit": "f37cd14573672f837704f91d3e52a06c30351fc0",
+      "status": "MATERIALIZED"
+    },
+    {
+      "name": "Registry Schema V2",
+      "path": "registry/schema/registry_v2_schema.json",
+      "commit": "f0c0917bf996bfc01320bd5990c1b32f3715055f",
+      "status": "MATERIALIZED"
+    },
+    {
+      "name": "Identity Gate Specification",
+      "path": "gates/identity_gate/identity_gate_spec.md",
+      "commit": "3e7e1aa89a151ee0dd16400047bc7f55341fbfda",
+      "status": "MATERIALIZED"
+    },
+    {
+      "name": "Witness Registry Specification",
+      "path": "gates/identity_gate/witness_registry_spec.md",
+      "commit": "e4d739df8a2e8f5e484f5c057e5c2c7165c5d155",
+      "status": "MATERIALIZED"
+    },
+    {
+      "name": "Verifier Promotion Specification",
+      "path": "gates/identity_gate/verifier_promotion_spec.md",
+      "commit": "85e31fe7789bd8422cc1a31fae5bff3f012e98e3",
+      "status": "MATERIALIZED"
+    },
+    {
+      "name": "GitHub Actions Workflow",
+      "path": ".github/workflows/verify_identity_gates.yml",
+      "commit": "24b19316bb1fdd7c7bf23ac5d35a3ddf8f2346ac",
+      "status": "MATERIALIZED_CI_UNEVALUATED"
+    }
+  ],
+  "registry_payload_commit": "cccf1965dc2aebf9902a45ff9dcc66c0e93cde0c",
+  "authority_status": "NONE",
+  "promotion_effect": "NONE",
+  "ci_status": "UNEVALUATED",
+  "corrections_applied": [
+    "GitHub signer username corrected to jsonwisdom",
+    "Unsigned witness declarations labeled DECLARED_UNVERIFIED",
+    "JSON Schema validation replaces invalid whole-file equality check",
+    "Placeholder replay pass removed",
+    "CI prohibited from directly creating ACTIVE status",
+    "Independent verification required before ACTIVE eligibility"
+  ]
+}
