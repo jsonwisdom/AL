@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jsonwisdom/AL/blob/master/registry/schema/registry_v2_schema.json",
+  "title": "JSONWISDOM Mission Registry Entry V2",
+  "description": "Identity-anchoring extension for registry entries. Validation does not confer authority.",
+  "type": "object",
+  "required": [
+    "repo_id",
+    "full_name",
+    "mechanical_role",
+    "lifecycle_state",
+    "authority_status",
+    "verification_status"
+  ],
+  "properties": {
+    "repo_id": {"type": "string", "minLength": 1},
+    "full_name": {"type": "string", "pattern": "^[^/]+/[^/]+$"},
+    "mechanical_role": {"type": "string", "minLength": 1},
+    "lifecycle_state": {"type": "string", "enum": ["PROPOSED", "ACTIVE", "FROZEN", "DEPRECATED", "ARCHIVED"]},
+    "authority_status": {"const": false},
+    "verification_status": {"type": "string", "minLength": 1},
+    "signers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "identity", "timestamp"],
+        "properties": {
+          "type": {"type": "string", "enum": ["pgp", "github", "did", "ethereum"]},
+          "identity": {"type": "string", "minLength": 1},
+          "timestamp": {"type": "string", "format": "date-time"},
+          "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+          "signature_ref": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "witness_count": {"type": "integer", "minimum": 0},
+    "last_witnessed_at": {"type": "string", "format": "date-time"},
+    "dependencies": {"type": "array", "items": {"type": "string"}},
+    "successors": {"type": "array", "items": {"type": "string"}},
+    "canonical_artifact_refs": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}
