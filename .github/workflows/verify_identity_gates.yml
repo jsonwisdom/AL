@@ -1,0 +1,89 @@
+name: Verify Identity Gates
+
+on:
+  push:
+    paths:
+      - 'registry/**'
+      - 'gates/**'
+      - '.github/workflows/verify_identity_gates.yml'
+  pull_request:
+    paths:
+      - 'registry/**'
+      - 'gates/**'
+      - '.github/workflows/verify_identity_gates.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install validators
+        run: python -m pip install --disable-pip-version-check jsonschema
+
+      - name: Validate JSON syntax
+        run: |
+          jq empty registry/JSONWISDOM_ORG_MISSION_REGISTRY_V1.json
+          jq empty registry/witnesses/witness_ledger.json
+          jq empty registry/schema/registry_v2_schema.json
+
+      - name: Enforce non-authority boundary
+        run: |
+          test "$(jq '[.repositories[] | select(.authority_status != false)] | length' registry/JSONWISDOM_ORG_MISSION_REGISTRY_V1.json)" = "0"
+          test "$(jq '.authority_status' registry/witnesses/witness_ledger.json)" = "false"
+
+      - name: Validate registry entries against V2 schema
+        run: |
+          python - <<'PY'
+          import json
+          from jsonschema import Draft202012Validator
+          registry=json.load(open("registry/JSONWISDOM_ORG_MISSION_REGISTRY_V1.json", encoding="utf-8"))
+          schema=json.load(open("registry/schema/registry_v2_schema.json", encoding="utf-8"))
+          validator=Draft202012Validator(schema)
+          errors=[]
+          for index, entry in enumerate(registry["repositories"]):
+              for error in validator.iter_errors(entry):
+                  errors.append(f"repositories[{index}]: {error.message}")
+          if errors:
+              raise SystemExit("\n".join(errors))
+          PY
+
+      - name: Validate witness ledger references
+        run: |
+          python - <<'PY'
+          import json, re, subprocess
+          registry=json.load(open("registry/JSONWISDOM_ORG_MISSION_REGISTRY_V1.json", encoding="utf-8"))
+          ledger=json.load(open("registry/witnesses/witness_ledger.json", encoding="utf-8"))
+          ids={entry["repo_id"] for entry in registry["repositories"]}
+          seen=set()
+          for witness in ledger["witnesses"]:
+              wid=witness["witness_id"]
+              if wid in seen:
+                  raise SystemExit(f"duplicate witness_id: {wid}")
+              seen.add(wid)
+              if witness["entry_id"] not in ids:
+                  raise SystemExit(f"unknown entry_id: {witness['entry_id']}")
+              commit=witness["signer"].get("commit","")
+              if not re.fullmatch(r"[0-9a-f]{40}", commit):
+                  raise SystemExit(f"invalid commit: {commit}")
+              subprocess.run(["git","cat-file","-e",f"{commit}^{{commit}}"],check=True)
+              if witness["attestation_status"] not in {"DECLARED_UNVERIFIED","SIGNATURE_VERIFIED","DISPUTED","SUPERSEDED"}:
+                  raise SystemExit("invalid attestation_status")
+          PY
+
+      - name: Verify open gates are explicit
+        run: |
+          test "$(jq '.unresolved_namespace_gates | type' registry/JSONWISDOM_ORG_MISSION_REGISTRY_V1.json)" = '"array"'
+          test "$(jq '.unresolved_namespace_gates | length' registry/JSONWISDOM_ORG_MISSION_REGISTRY_V1.json)" -gt 0
+
+      - name: Report non-promoting result
+        run: |
+          echo "Mechanical identity-gate checks passed."
+          echo "Verifier status remains PROPOSED."
+          echo "CI does not create authority or ACTIVE status."
