@@ -167,7 +167,8 @@ def rewrite_references(root: Path, policy: dict, moves: list[dict]) -> list[dict
     replacements = {item["source"]: item["destination"] for item in moves}
     for prefix in policy["safe_prefixes"]:
         replacements[prefix] = f'{policy["destination_root"]}/{prefix}'
-    ordered = sorted(replacements.items(), key=lambda item: len(item[0]), reverse=True)
+    keys = sorted(replacements, key=len, reverse=True)
+    pattern = re.compile("|".join(re.escape(key) for key in keys)) if keys else None
     changes: list[dict] = []
 
     for path in root.rglob("*"):
@@ -182,12 +183,10 @@ def rewrite_references(root: Path, policy: dict, moves: list[dict]) -> list[dict
             original = path.read_text(encoding="utf-8")
         except (UnicodeDecodeError, OSError):
             continue
-        updated = original
-        applied: list[str] = []
-        for old, new in ordered:
-            if old in updated:
-                updated = updated.replace(old, new)
-                applied.append(old)
+        if pattern is None:
+            continue
+        applied = sorted(set(pattern.findall(original)))
+        updated = pattern.sub(lambda match: replacements[match.group(0)], original)
         if updated != original:
             path.write_text(updated, encoding="utf-8")
             changes.append({"path": path_rel, "replacements": applied})
@@ -268,18 +267,37 @@ def main() -> int:
                 continue
             move_one(root, source, destination, item["status"] == "DUPLICATE_ALREADY_PRESENT")
 
-        rewrites = rewrite_references(root, policy, moves)
-        verification_failures: list[dict] = []
+        pre_rewrite_failures: list[dict] = []
         for item in moves:
             destination = root / item["destination"]
             if not destination.exists() or sha256_file(destination) != item["sha256"]:
-                verification_failures.append(item)
+                pre_rewrite_failures.append(item)
 
         old_paths_remaining = [item["source"] for item in moves if (root / item["source"]).exists()]
-        if verification_failures or old_paths_remaining:
-            result["status"] = "VERIFY_FAILED"
-            result["verification_failures"] = verification_failures
+        if pre_rewrite_failures or old_paths_remaining:
+            result["status"] = "VERIFY_FAILED_BEFORE_REWRITE"
+            result["verification_failures"] = pre_rewrite_failures
             result["old_paths_remaining"] = old_paths_remaining
+            raise SystemExit(json.dumps(result, indent=2))
+
+        rewrites = rewrite_references(root, policy, moves)
+        immutable_failures: list[dict] = []
+        mutable_hashes: list[dict] = []
+        for item in moves:
+            destination = root / item["destination"]
+            post_hash = sha256_file(destination)
+            if mutable_text(item["destination"], policy):
+                mutable_hashes.append({
+                    "path": item["destination"],
+                    "source_sha256": item["sha256"],
+                    "post_rewrite_sha256": post_hash,
+                })
+            elif post_hash != item["sha256"]:
+                immutable_failures.append(item)
+
+        if immutable_failures:
+            result["status"] = "IMMUTABLE_BYTES_CHANGED"
+            result["verification_failures"] = immutable_failures
             raise SystemExit(json.dumps(result, indent=2))
 
         manifest = build_manifest(root)
@@ -288,6 +306,7 @@ def main() -> int:
             "status": "APPLY_VERIFIED",
             "rewrite_count": len(rewrites),
             "rewrites": rewrites,
+            "mutable_post_rewrite_hashes": mutable_hashes,
             "manifest_path": MANIFEST_PATH.as_posix(),
             "manifest_aggregate_sha256": manifest["aggregate_sha256"],
         })
