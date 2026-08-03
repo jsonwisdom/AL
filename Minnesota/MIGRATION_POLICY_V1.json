@@ -1,6 +1,6 @@
 {
   "policy_id": "MN_CANONICAL_FOLDER_MIGRATION_V1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "destination_root": "Minnesota",
   "default_mode": "dry-run",
   "apply_confirmation": "MOVE_MINNESOTA_WITH_RECEIPTS",
@@ -27,16 +27,38 @@
     "docs/**/minnesota*",
     "docs/**/MN_*"
   ],
-  "required_external_adapters": [
-    ".github/workflows/minnesota-canonical-migration.yml",
-    ".github/workflows/boss-bre-public-audit.yml"
-  ],
   "exclude_prefixes": [
     ".git",
     "Minnesota",
     "node_modules",
     ".venv",
     "venv"
+  ],
+  "immutable_destination_prefixes": [
+    "Minnesota/_truth",
+    "Minnesota/_sources",
+    "Minnesota/sources",
+    "Minnesota/fixtures",
+    "Minnesota/projects/mn-fiscal-replay/boss_bre/runs",
+    "Minnesota/projects/mn-fiscal-replay/live_fetch"
+  ],
+  "rewrite_globs": [
+    ".github/workflows/*.yml",
+    ".github/workflows/*.yaml",
+    "README.md",
+    "*.md",
+    "scripts/*.sh",
+    "scripts/*.py",
+    "Minnesota/scripts/*.sh",
+    "Minnesota/scripts/*.py",
+    "Minnesota/projects/mn-fiscal-replay/*.md",
+    "Minnesota/projects/mn-fiscal-replay/*.json",
+    "Minnesota/projects/mn-fiscal-replay/*.sh",
+    "Minnesota/projects/mn-fiscal-replay/*.py",
+    "Minnesota/projects/mn-fiscal-replay/boss_bre/*.md",
+    "Minnesota/projects/mn-fiscal-replay/boss_bre/*.json",
+    "Minnesota/projects/mn-fiscal-replay/boss_bre/*.sh",
+    "Minnesota/projects/mn-fiscal-replay/boss_bre/*.py"
   ],
   "review_path_markers": [
     "minnesota",
@@ -85,6 +107,10 @@
     "direct_default_branch_mutation": false,
     "hash_algorithm": "sha256",
     "preserve_source_bytes": true,
-    "fail_on_destination_conflict": true
+    "fail_on_destination_conflict": true,
+    "silence_is_not_consent": true,
+    "minority_report_preserved": true,
+    "womens_opinions_preserved": true,
+    "nonviolent_only": true
   }
 }
