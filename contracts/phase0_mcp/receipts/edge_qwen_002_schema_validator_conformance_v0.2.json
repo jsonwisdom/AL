@@ -1,0 +1,18 @@
+{
+  "receipt_id": "EDGE_QWEN_002_SCHEMA_VALIDATOR_CONFORMANCE_V0.2",
+  "edge_id": "EDGE_QWEN_002",
+  "contract_commit_sha": "4abe4f08fbf1e9a0dcdfdf9c19ce5bde7c8f0b79",
+  "contract_blob_sha": "5e66ad1eacd1d6e73d510fae91988d515e198c33",
+  "source_schema_path": "contracts/phase0_mcp/schemas/signed_mcp_receipt_v0.1.schema.json",
+  "source_schema_blob_sha": "4f2e9ffd7ec599d46a8780dbe3fa5f4506f4c6cc",
+  "referenced_phase0_schema_blob_sha": "8cb7cd2f7c0a6015ead549d3c086b692db34ffcb",
+  "matrix": "PINNED_55_CASE_SCHEMA_VALIDATOR_CONFORMANCE",
+  "cases_total": 55,
+  "agreement_cases": 55,
+  "mismatch_cases": 0,
+  "compatibility_result": "PASS",
+  "normalized_result_sha256": "sha256:80dc95398a41bcc29f9174746ce90c23a26d6d3599c9774ee954aefc6d27687d",
+  "relation_assessment": "VALIDATED_BY survives the dedicated 55-case conformance test at the pinned revisions.",
+  "edge_state_preserved": "PROPOSED",
+  "authority": false
+}
