@@ -1,0 +1,47 @@
+{
+  "protocol_id": "QUADRATIC_MINDSET_V0.1",
+  "status": "ACTIVE",
+  "purpose": "Discover, test, receipt, and recombine relationships between artifacts.",
+  "constitution": "Never treat an artifact as isolated; search for its testable relationships to other artifacts, preserve evidence for each claimed relationship, and allow verified relationships to become inputs to the next reasoning cycle.",
+  "authority_rule": "NO_MODEL_JUDGMENT_CREATES_EXECUTION_AUTHORITY",
+  "loop": [
+    "OBSERVE",
+    "ENUMERATE_NODES",
+    "DISCOVER_EDGES",
+    "CHALLENGE_EDGES",
+    "TEST",
+    "RECEIPT",
+    "REPLAY",
+    "RECOMBINE"
+  ],
+  "relations": [
+    "ENABLES",
+    "DEPENDS_ON",
+    "CONTRADICTS",
+    "COMPLEMENTS",
+    "SUPERSEDES",
+    "REVERSES",
+    "WITNESSES",
+    "VERIFIES",
+    "RECOMBINES",
+    "SCALES"
+  ],
+  "edge_states": [
+    "PROPOSED",
+    "TESTING",
+    "VERIFIED",
+    "FALSIFIED",
+    "STALE",
+    "ARCHIVED"
+  ],
+  "valid_transitions": {
+    "PROPOSED": ["TESTING", "ARCHIVED"],
+    "TESTING": ["VERIFIED", "FALSIFIED", "ARCHIVED"],
+    "VERIFIED": ["STALE", "ARCHIVED"],
+    "FALSIFIED": ["ARCHIVED", "PROPOSED"],
+    "STALE": ["TESTING", "ARCHIVED"],
+    "ARCHIVED": []
+  },
+  "promotion_rule": "ONLY_VERIFIED_EDGES_MAY_BE_USED_AS_ASSERTED_INPUTS",
+  "execution_rule": "VERIFIED_RELATIONSHIP_DOES_NOT_IMPLY_EXECUTION_AUTHORITY"
+}
