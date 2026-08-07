@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jsonwisdom/AL/blob/master/contracts/phase0_mcp/schemas/contract_test_receipt_v0.1.schema.json",
+  "title": "Phase 0 MCP Contract Test Receipt v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "input_fixture_sha256",
+    "adapter_commit_sha",
+    "test_command",
+    "exit_code",
+    "output_sha256",
+    "compatibility_result",
+    "failure_reason",
+    "authority"
+  ],
+  "properties": {
+    "input_fixture_sha256": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "adapter_commit_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "test_command": {"type": "string", "minLength": 1},
+    "exit_code": {"type": "integer"},
+    "output_sha256": {"type": ["string", "null"], "pattern": "^sha256:[0-9a-f]{64}$"},
+    "normalized_result_sha256": {
+      "description": "Optional SHA-256 digest of a deterministic normalized semantic result. Preserves output_sha256 for backward compatibility while avoiding nondeterministic raw console output.",
+      "type": ["string", "null"],
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "compatibility_result": {"enum": ["PASS", "FAIL", "NOT_EXECUTED"]},
+    "failure_reason": {"type": ["string", "null"]},
+    "authority": {"const": false}
+  }
+}

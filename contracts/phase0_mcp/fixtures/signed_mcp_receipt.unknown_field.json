@@ -1,0 +1,25 @@
+{
+  "receipt": {
+    "run_id": "phase0-mcp-fixture-003",
+    "call_index": 2,
+    "parent_call_index": null,
+    "tool_name": "example_tool",
+    "tool_version": "0.1.0",
+    "requested_arguments_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "executed_arguments_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "mutation_source": null,
+    "authorization": "ALLOWED",
+    "mode": "OBSERVE",
+    "execution_status": "COMPLETED",
+    "output_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "error": null,
+    "authority": false,
+    "unexpected": "must be rejected"
+  },
+  "signature": {
+    "algorithm": "TEST-SHA256",
+    "key_id": "fixture-key-001",
+    "signed_payload_hash": "TO_BE_GENERATED_BY_HARNESS",
+    "value": "TO_BE_GENERATED_BY_HARNESS"
+  }
+}
