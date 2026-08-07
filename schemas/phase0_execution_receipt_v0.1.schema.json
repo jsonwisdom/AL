@@ -1,0 +1,187 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jsonwisdom/AL/blob/master/schemas/phase0_execution_receipt_v0.1.schema.json",
+  "title": "JSONWisdom Phase 0 Execution Receipt v0.1",
+  "description": "Canonical Phase 0 execution-receipt contract for issue jsonwisdom/AL#415. Validation of this schema does not create merge, deployment, or execution authority.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "run_id",
+    "call_index",
+    "parent_call_index",
+    "tool_name",
+    "tool_version",
+    "requested_arguments_hash",
+    "executed_arguments_hash",
+    "mutation_source",
+    "authorization",
+    "mode",
+    "execution_status",
+    "output_hash",
+    "error",
+    "authority"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "call_index": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "parent_call_index": {
+      "type": ["integer", "null"],
+      "minimum": 0
+    },
+    "tool_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tool_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "requested_arguments_hash": {
+      "$ref": "#/$defs/sha256"
+    },
+    "executed_arguments_hash": {
+      "$ref": "#/$defs/sha256"
+    },
+    "mutation_source": {
+      "type": ["string", "null"]
+    },
+    "authorization": {
+      "enum": ["ALLOWED", "DENIED"]
+    },
+    "mode": {
+      "enum": ["OBSERVE", "ENFORCE"]
+    },
+    "execution_status": {
+      "enum": ["COMPLETED", "FAILED", "DENIED"]
+    },
+    "output_hash": {
+      "oneOf": [
+        { "$ref": "#/$defs/sha256" },
+        { "type": "null" }
+      ]
+    },
+    "error": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "message"],
+          "properties": {
+            "type": {
+              "type": "string",
+              "minLength": 1
+            },
+            "message": {
+              "type": "string"
+            }
+          }
+        },
+        { "type": "null" }
+      ]
+    },
+    "authority": {
+      "const": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "requested_arguments_hash": {
+            "type": "string"
+          },
+          "executed_arguments_hash": {
+            "type": "string"
+          }
+        },
+        "required": ["requested_arguments_hash", "executed_arguments_hash"]
+      },
+      "then": {
+        "anyOf": [
+          {
+            "properties": {
+              "requested_arguments_hash": {
+                "const": "__SAME_AS_EXECUTED_HASH__"
+              }
+            }
+          },
+          {
+            "required": ["mutation_source"],
+            "properties": {
+              "mutation_source": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "execution_status": {
+            "const": "COMPLETED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "output_hash": {
+            "$ref": "#/$defs/sha256"
+          },
+          "error": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "execution_status": {
+            "const": "FAILED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "error": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "execution_status": {
+            "const": "DENIED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "authorization": {
+            "const": "DENIED"
+          },
+          "output_hash": {
+            "type": "null"
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}
