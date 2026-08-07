@@ -2,13 +2,13 @@
   "edge_id": "EDGE_QWEN_001",
   "source": "PR_414",
   "relation": "COMPLEMENTS",
-  "target": "ISSUE_854",
+  "target": "jsonwisdom/AL#415",
   "state": "TESTING",
   "evidence": [
     "CI_RUN_31145821790",
     "HEAD_SHA_343a2c894ba74da6493e470fd864992680601be8"
   ],
-  "test": "Determine whether signed MCP receipts can consume the Phase 0 execution receipt structure.",
+  "test": "Determine whether signed MCP receipts can consume the Phase 0 execution receipt structure per acceptance criteria in jsonwisdom/AL#415.",
   "receipt_ref": null,
   "confidence": 0.8,
   "authority": false
