@@ -10,12 +10,15 @@
     "exit_code": "MATCH",
     "failure_reason": "MATCH",
     "input_fixture_sha256": "MATCH",
+    "normalized_result_sha256": "MATCH",
     "test_command": "MATCH",
     "output_sha256": "DIFF"
   },
   "semantic_replay_result": "REPRODUCED",
+  "normalized_result": "IDENTICAL",
   "byte_output_result": "NOT_IDENTICAL",
-  "anomaly": "Pytest console output includes elapsed time, so raw stdout hashing is nondeterministic across independent runs.",
+  "anomaly": "Pytest console output includes elapsed time, so raw stdout hashing is nondeterministic across independent runs. normalized_result_sha256 removes that runtime noise.",
+  "normalized_result_sha256": "sha256:f3c6dd22fbecb2022051cc7fd3e5cbe1f788bd05507d4710cef4359915789e00",
   "primary_output_sha256": "sha256:230effda9db0987c1082d5a249cf585b3ea3b442fed3cd1f49a1a62eba9de13c",
   "replay_output_sha256": "sha256:c2cba0e5b1275bde99432021fd22a26635493fa35d0886fcd5cd38708b0f7cca"
 }
