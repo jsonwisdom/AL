@@ -12,7 +12,7 @@ from contracts.phase0_mcp.src.receipt import build_contract_receipt
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURES = ROOT / "fixtures"
 ADAPTER_SHA = "343a2c894ba74da6493e470fd864992680601be8"
-COMMAND = "python -m pytest contracts/phase0-mcp/tests -q"
+COMMAND = "python -m pytest contracts/phase0_mcp/tests -q"
 
 
 def load(name: str) -> dict:
