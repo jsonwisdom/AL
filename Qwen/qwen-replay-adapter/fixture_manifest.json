@@ -1,0 +1,29 @@
+{
+  "canonicalizer": "PYTHON_JSON_NFC_V0_1",
+  "cross_language_jcs": false,
+  "generated_at": "2026-08-07T12:00:00Z",
+  "status": "HARNESS_READY",
+  "suite": "JSONWISDOM_QWEN_REPLAY_V0_1",
+  "vectors": {
+    "QV_001": {
+      "file": "qv_001_success.json",
+      "sha256": "dc01fc78475bbda3480ff8951ab823431be9287ccc09d395986df2c9563e9029"
+    },
+    "QV_002": {
+      "file": "qv_002_canonical_order.json",
+      "sha256": "c8c5b05ae4544549a53a996d61ad55ed802788ed0581d15038eed8221d58db3b"
+    },
+    "QV_003": {
+      "file": "qv_003_denied.json",
+      "sha256": "a65edaeab29559ca9fb60aa1de8a7a5164eec25a3b9234410615592c642dfa3a"
+    },
+    "QV_004": {
+      "file": "qv_004_error.json",
+      "sha256": "6cb236a94957b38f4209df79322494747b14a61ded82b75d51dfdc923a04283d"
+    },
+    "QV_005": {
+      "file": "qv_005_nested_graph.json",
+      "sha256": "42a2cc85a73e1923dbf2589dda3d669d946ff806151698e9abbbb50b5fa842b8"
+    }
+  }
+}
