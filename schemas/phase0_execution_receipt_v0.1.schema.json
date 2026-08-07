@@ -66,6 +66,13 @@
         { "type": "null" }
       ]
     },
+    "normalized_result_sha256": {
+      "description": "Optional SHA-256 digest of a deterministic normalized semantic result. Preserves output_hash for backward compatibility while avoiding nondeterministic raw console output.",
+      "oneOf": [
+        { "$ref": "#/$defs/sha256" },
+        { "type": "null" }
+      ]
+    },
     "error": {
       "oneOf": [
         {
