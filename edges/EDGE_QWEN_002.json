@@ -1,0 +1,12 @@
+{
+  "edge_id": "EDGE_QWEN_002",
+  "source": "contracts/phase0_mcp/schemas/signed_mcp_receipt_v0.1.schema.json",
+  "relation": "VALIDATED_BY",
+  "target": "contracts/phase0_mcp/src/contract.py",
+  "state": "PROPOSED",
+  "evidence": [],
+  "test": "validate_signed_envelope() rejects objects that violate signed_mcp_receipt_v0.1.schema.json. PASS: validator raises/rejects on structural violation. FAIL: validator accepts structurally invalid input, falsifying or narrowing VALIDATED_BY.",
+  "receipt_ref": null,
+  "confidence": 0.5,
+  "authority": false
+}
