@@ -1,0 +1,28 @@
+name: Qwen Replay Adapter CI
+
+on:
+  push:
+    paths:
+      - 'Qwen/qwen-replay-adapter/**'
+  pull_request:
+    paths:
+      - 'Qwen/qwen-replay-adapter/**'
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Qwen/qwen-replay-adapter
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install -e . pytest
+      - run: pytest -q
+      - run: python scripts/verify_manifest.py
