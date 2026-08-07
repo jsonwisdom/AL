@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jsonwisdom/AL/blob/master/contracts/phase0-mcp/schemas/signed_mcp_receipt_v0.1.schema.json",
+  "title": "Signed MCP Receipt v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["receipt", "signature"],
+  "properties": {
+    "receipt": {"$ref": "../../../schemas/phase0_execution_receipt_v0.1.schema.json"},
+    "signature": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["algorithm", "key_id", "signed_payload_hash", "value"],
+      "properties": {
+        "algorithm": {"const": "TEST-SHA256"},
+        "key_id": {"type": "string", "minLength": 1},
+        "signed_payload_hash": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+        "value": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+      }
+    }
+  }
+}
