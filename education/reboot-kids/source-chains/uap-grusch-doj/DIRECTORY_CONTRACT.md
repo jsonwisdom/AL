@@ -28,11 +28,17 @@ Purpose: narrow provenance-routing lane for public-source UAP claims associated 
 - AARO FY2025 Consolidated Annual Report, information cutoff May 30, 2025: states that no evidence suggests a USG or private entity has ever captured or exploited UAP-derived materials. This is preserved as an official conflict-state record, not treated as proof of universal nonexistence.
 - DOJ Office of Information Policy: Slaughter v. Department of the Air Force, No. 24-862, 2026 WL 571249 (D.D.C. Mar. 2, 2026), documents litigation over Air Force UAP/UFO records and deficiencies in parts of the agency's FOIA search explanation. It provides a legal-record/FOIA edge only.
 
-## Primary-media caution
+## First-party Dr. Phil surface — 2026-08-17
 
-The Grusch / Dr. Phil attribution is currently routed from the user-supplied source chain plus downstream press reporting. Direct first-party episode media has not been captured into this repository by this directory contract.
+The official Dr. Phil Podcast website currently lists a 55:39 video titled **David Grusch: The Whistleblower Who Told Congress We're Not Alone**.
 
+`FIRST_PARTY_DRPHIL_SURFACE = FOUND`
+`FIRST_PARTY_DRPHIL_VIDEO_TITLE_BOUND = TRUE`
+`FIRST_PARTY_DRPHIL_DURATION_BOUND = TRUE`
 `PRIMARY_MEDIA_DIRECT_CAPTURE = PENDING`
+`DIRECT_PROVIDER_TRANSCRIPT_CAPTURE = PENDING`
+
+The first-party surface establishes that the interview/video exists on the official host site. It does not validate Grusch's underlying allegations, and no provider media bytes or transcript have been captured into this repository by this contract.
 
 ## Fail-closed membranes
 
@@ -44,6 +50,8 @@ The Grusch / Dr. Phil attribution is currently routed from the user-supplied sou
 `AARO_ASSESSMENT != UNIVERSAL_NEGATIVE_PROOF`
 `PRESS_RELAY != PRIMARY_EVENT_EVIDENCE`
 `CHENEY_IDENTIFICATION != CHENEY_EVENT_PROOF`
+`FIRST_PARTY_SURFACE != UNDERLYING_CLAIM_VERIFIED`
+`SOURCE_SURFACE_FOUND != SOURCE_BYTES_CAPTURED`
 
 ## Current topology state
 
