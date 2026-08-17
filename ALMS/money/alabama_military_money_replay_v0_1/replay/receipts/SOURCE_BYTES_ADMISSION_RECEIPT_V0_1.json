@@ -1,0 +1,42 @@
+{
+  "receipt_type": "SOURCE_BYTES_ADMISSION_RECEIPT_V0_1",
+  "created_at_utc": "2026-08-17T20:31:21Z",
+  "repo": "jsonwisdom/AL",
+  "branch": "agent/alms-money-directories-first-v0-1",
+  "parent_head": "e9c819c9daaa8d03a737a1cd18b0aef56b5b4792",
+  "observer": "jaywisdom.base.eth",
+  "source": {
+    "logical_id": "MONEY_REPLAY_PDF",
+    "file_name": "Source-Bound Alabama Military Money Replay_ Evidence Architecture and First Draft.pdf",
+    "mime_type": "application/pdf",
+    "byte_length": 402108,
+    "sha256": "4c26fa6fd020ee95eb8fa7b47dffb485c39b0d49755fe4b153904fb727cc9564",
+    "classification": "ARCHITECTURE_DRAFT",
+    "financial_evidence": false,
+    "contains_financial_numbers": true,
+    "financial_numbers_promoted": false,
+    "reported_number_status": "USER_REPORTED_PENDING_SOURCE_ATTACHMENT"
+  },
+  "storage": {
+    "drive_raw_binary_preserved": true,
+    "drive_file_id": "1cgIKUG5uFl4w_GJtKyzVCP4VbTQGvMyI",
+    "drive_parent_folder_id": "1-14kUJ7cbvlMn2BmDm_0O_8awXi-Shr_",
+    "github_raw_binary_preserved": false,
+    "github_raw_binary_reason": "CONNECTED_GITHUB_ACTIONS_EXPOSE_NO_LOCAL_BINARY_FILE_PARAMETER; NO SUBSTITUTE_ENCODING_ACCEPTED_AS_RAW_BYTES",
+    "github_receipt_mirror": true
+  },
+  "state": {
+    "directories_first": true,
+    "source_bytes_admitted": true,
+    "schema_admitted": false,
+    "schema_extraction_performed": false,
+    "financial_edges": 0,
+    "replay_executed": false,
+    "promotion": false,
+    "authority_created": false,
+    "production_green": false,
+    "no_fake_green": true
+  },
+  "next_gate": "SCHEMA_EXTRACTION_V0_1",
+  "next_gate_state": "HELD"
+}
