@@ -18,8 +18,9 @@ Purpose: dated routing lane for the user-supplied summary of an `@InterstellarUA
 
 ## Current topology state
 
-`DIRECTORY_ONLY = TRUE`
-`CLAIM_BUNDLE_CREATED = FALSE`
+`DIRECTORY_ONLY = FALSE`
+`CLAIM_BUNDLE_CREATED = TRUE`
+`CLAIM_FILE = CLAIM_BUNDLE.md`
 `CLAIM_PROMOTION = FALSE`
 `SOURCE_BYTES_CAPTURED = FALSE`
 `AUTHORITY_CREATED = FALSE`
