@@ -1,0 +1,83 @@
+{
+  "schema": "jsonwisdom.hybrid_alabama_warfare.typed_lane_manifest.v0.1",
+  "artifact_id": "ALABAMA_CAMPUS_EDITION",
+  "record_type": "typed_lane_manifest",
+  "lane_label": "Alabama Campus Edition",
+  "semantic_class": "EDUCATIONAL_STORY_RENDER",
+  "status": "DECLARED_NOT_PROMOTED",
+  "operator_identity_claim": "jaywisdom.eth",
+  "operator_identity_claim_is_authority": false,
+  "source_binding": {
+    "artifact_id": "AL-UA-TUSCALOOSA-0001",
+    "path": "source_bytes/hybrid-alabama-warfare/metadata.json",
+    "record_type": "institution_metadata",
+    "semantic_class": "SOURCE_BOUND_PUBLIC_REFERENCE",
+    "git_blob_sha": "caae3aeeef1a3aab77961582ca49aac485ae9481",
+    "byte_length": 5544,
+    "binding_mode": "REFERENCE_ONLY",
+    "claim_promotion": false
+  },
+  "related_lane_labels": [
+    {
+      "label": "IronBowlFacts",
+      "binding_type": "LANE_LABEL_REFERENCE_ONLY",
+      "artifact_existence_asserted": false
+    }
+  ],
+  "field_bindings": [
+    {
+      "json_pointer": "/athletics/iron_bowl_reference",
+      "use": "SOURCE_BOUND_REFERENCE"
+    },
+    {
+      "json_pointer": "/athletics/conference",
+      "use": "SOURCE_BOUND_REFERENCE"
+    },
+    {
+      "json_pointer": "/campus/story_render_tags",
+      "use": "EDUCATIONAL_STORY_RENDER"
+    },
+    {
+      "json_pointer": "/emoji_profile/alabama",
+      "use": "ALABAMA_CAMPUS_EMOJI_RENDER"
+    },
+    {
+      "json_pointer": "/emoji_profile/auburn_rivalry_render",
+      "use": "AUBURN_RIVALRY_EMOJI_RENDER"
+    },
+    {
+      "json_pointer": "/emoji_profile/sec_war_render",
+      "use": "SEC_RIVALRY_EMOJI_RENDER"
+    }
+  ],
+  "source_ids_inherited_by_reference": [
+    "UA-ABOUT",
+    "UA-BRAND-COLORS",
+    "UA-TRADITIONS",
+    "UA-VISITORS-GUIDE",
+    "SEC-UA"
+  ],
+  "render_semantics": {
+    "alabama_campus": "EDUCATIONAL_STORY_RENDER_ONLY",
+    "iron_bowl": "SPORTS_RIVALRY_RENDER_ONLY",
+    "sec": "SPORTS_CONFERENCE_RIVALRY_RENDER_ONLY",
+    "emoji_profiles": "RENDER_SEMANTICS_ONLY"
+  },
+  "membranes": [
+    "LANE_LABEL != FACT",
+    "RELATED_LANE_LABEL != ARTIFACT_EXISTENCE",
+    "SOURCE_BOUND != CLAIM_TRUE",
+    "METADATA != AUTHORITY",
+    "EDUCATIONAL_STORY_RENDER != OFFICIAL_COMMUNICATION",
+    "RIVALRY_RENDER != HOSTILITY",
+    "EMOJI_RENDER != OFFICIAL_MARK",
+    "RENDER_BINDING != BRAND_LICENSE",
+    "LANE_DESCRIPTOR != CONSTITUTION_AMENDMENT"
+  ],
+  "promotion": {
+    "constitution_amendment_created": false,
+    "canonical_promotion": false,
+    "human_review_required_for_future_promotion": true
+  },
+  "authority_created": false
+}
