@@ -1,0 +1,226 @@
+{
+  "schema": "jsonwisdom.source_bound_institution_metadata.v0.1",
+  "artifact_id": "AL-UA-TUSCALOOSA-0001",
+  "record_type": "institution_metadata",
+  "semantic_class": "SOURCE_BOUND_PUBLIC_REFERENCE",
+  "status": "SOURCE_BOUND",
+  "observed_at": "2026-08-17T00:37:00-05:00",
+  "operator_identity_claim": "jaywisdom.eth",
+  "operator_identity_claim_is_authority": false,
+  "authority_created": false,
+  "institution": {
+    "official_name": "The University of Alabama",
+    "abbreviation": "UA",
+    "institution_nickname": "The Capstone",
+    "founded_year": 1831,
+    "flagship_claim": "state flagship university",
+    "location": {
+      "city": "Tuscaloosa",
+      "state": "Alabama",
+      "postal_code": "35487",
+      "country": "United States"
+    },
+    "mission_core": [
+      "teaching",
+      "research",
+      "service"
+    ],
+    "research_classification": {
+      "label": "R1",
+      "ua_description": "Very High Spending and Doctorate Production"
+    },
+    "enrollment": {
+      "term": "Fall 2025",
+      "students": 42360,
+      "temporal_fact": true
+    }
+  },
+  "athletics": {
+    "program_name": "Alabama Crimson Tide",
+    "conference": "Southeastern Conference",
+    "conference_abbreviation": "SEC",
+    "nickname": "Crimson Tide",
+    "mascot": {
+      "name": "Big Al",
+      "symbol": "elephant",
+      "official_costumed_debut": "1979 Sugar Bowl"
+    },
+    "tradition_terms": [
+      "Roll Tide",
+      "Crimson Tide"
+    ],
+    "iron_bowl_reference": {
+      "opponent": "Auburn",
+      "historical_anchor": "1907 Alabama-Auburn game appears in UA's Crimson Tide naming tradition",
+      "rivalry_render_only": false
+    }
+  },
+  "brand": {
+    "official_primary_colors": [
+      {
+        "name": "Crimson Flame",
+        "hex": "#9E1B32",
+        "rgb": [158, 27, 50]
+      },
+      {
+        "name": "Capstone Gray",
+        "hex": "#828A8F",
+        "rgb": [130, 138, 143]
+      },
+      {
+        "name": "Victory White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "campus_edition_render_palette": [
+      "crimson",
+      "white",
+      "gray",
+      "black_as_secondary_only"
+    ],
+    "user_phrase_alias": {
+      "phrase": "maroon & white",
+      "official_brand_term": false,
+      "canonical_render": "crimson & white"
+    }
+  },
+  "campus": {
+    "approximate_acres": 1400,
+    "landmarks": [
+      "Denny Chimes & the Quad",
+      "Saban Field at Bryant-Denny Stadium",
+      "Walk of Champions",
+      "Malone-Hood Plaza & Autherine Lucy Clock Tower",
+      "Gorgas Library",
+      "Rose Administration Building",
+      "Tuska Plaza"
+    ],
+    "story_render_tags": [
+      "ALABAMA CAMPUS EDITION",
+      "TUSCALOOSA",
+      "GAME DAY",
+      "TAILGATE",
+      "GREEK LIFE",
+      "SEC",
+      "IRON BOWL"
+    ]
+  },
+  "emoji_profile": {
+    "alabama": [
+      "❤️",
+      "🤍",
+      "🐘",
+      "🏈",
+      "🌊",
+      "🔥",
+      "🏆",
+      "⭐️",
+      "👑",
+      "🎀",
+      "🏛️",
+      "📚"
+    ],
+    "auburn_rivalry_render": [
+      "🧡",
+      "💙",
+      "🐅",
+      "🦅",
+      "🏈",
+      "⚡️",
+      "🔥"
+    ],
+    "sec_war_render": [
+      "❤️",
+      "🤍",
+      "🐘",
+      "🏈",
+      "🔥",
+      "🏆",
+      "🆚",
+      "🧡",
+      "💙",
+      "🐅",
+      "🦅",
+      "⚡️"
+    ]
+  },
+  "sources": [
+    {
+      "source_id": "UA-ABOUT",
+      "publisher": "The University of Alabama",
+      "url": "https://www.ua.edu/about/",
+      "supports": [
+        "official_name",
+        "founded_year",
+        "flagship_claim",
+        "location",
+        "mission_core",
+        "research_classification",
+        "fall_2025_enrollment",
+        "campus_acres",
+        "Capstone nickname"
+      ]
+    },
+    {
+      "source_id": "UA-BRAND-COLORS",
+      "publisher": "The University of Alabama Brand Resources",
+      "url": "https://brand.ua.edu/colors/",
+      "supports": [
+        "Crimson Flame",
+        "Capstone Gray",
+        "Victory White",
+        "official color values"
+      ]
+    },
+    {
+      "source_id": "UA-TRADITIONS",
+      "publisher": "The University of Alabama",
+      "url": "https://www.ua.edu/about/traditions/",
+      "supports": [
+        "Crimson Tide naming tradition",
+        "1907 Auburn reference",
+        "elephant tradition",
+        "Big Al debut",
+        "Roll Tide tradition"
+      ]
+    },
+    {
+      "source_id": "UA-VISITORS-GUIDE",
+      "publisher": "The University of Alabama",
+      "url": "https://stories.ua.edu/visitors-guide/",
+      "supports": [
+        "campus landmarks",
+        "Tuscaloosa campus context",
+        "Bryant-Denny Stadium",
+        "Denny Chimes and Quad",
+        "Gorgas Library"
+      ]
+    },
+    {
+      "source_id": "SEC-UA",
+      "publisher": "Southeastern Conference",
+      "url": "https://www.secsports.com/school/university-of-alabama",
+      "supports": [
+        "Alabama Crimson Tide SEC membership reference"
+      ]
+    }
+  ],
+  "membranes": {
+    "public_reference_is_endorsement": false,
+    "brand_reference_is_affiliation": false,
+    "emoji_render_is_official_mark": false,
+    "rivalry_render_is_hostility": false,
+    "campus_story_tag_is_event_fact": false,
+    "metadata_is_authority": false,
+    "source_bound_is_claim_true": false
+  },
+  "invariants": [
+    "REFERENCE != IDENTITY",
+    "BRAND_REFERENCE != AFFILIATION",
+    "STORY_RENDER != OFFICIAL_COMMUNICATION",
+    "EMOJI != TRADEMARK_GRANT",
+    "SEC_RIVALRY != HOSTILITY",
+    "SOURCE_BOUND != CLAIM_TRUE",
+    "METADATA != AUTHORITY"
+  ]
+}
