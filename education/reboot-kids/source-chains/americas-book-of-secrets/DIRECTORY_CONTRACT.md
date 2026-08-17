@@ -21,14 +21,20 @@ Purpose: route a user-supplied multi-episode transcript into separate evidence l
 
 ## Child lanes
 
-- `secret-space-program/`
-- `mlk-fbi-cointelpro/`
-- `fbi-secrecy-operations/`
+- `secret-space-program/CLAIM_REGISTRY.md`
+- `mlk-fbi-cointelpro/CLAIM_REGISTRY.md`
+- `fbi-secrecy-operations/CLAIM_REGISTRY.md`
 
 ## Current state
 
-`DIRECTORY_ONLY = TRUE`
-`CLAIM_REGISTRIES_CREATED = FALSE`
+`DIRECTORY_ONLY = FALSE`
+`CLAIM_REGISTRIES_CREATED = TRUE`
+`SOURCE_BYTES_CAPTURED = FALSE`
 `CLAIM_PROMOTION = FALSE`
 `AUTHORITY_CREATED = FALSE`
+`PRODUCTION_GREEN = FALSE`
 `NO_FAKE_GREEN = TRUE`
+
+`facts_promoted = 0`
+`edges_inferred = 0`
+`silent_inference = BLOCKED`
