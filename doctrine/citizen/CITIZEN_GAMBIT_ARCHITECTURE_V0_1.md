@@ -19,35 +19,14 @@ CITIZEN_RESEARCH = PUBLIC_RECORD_ONLY
 JOY_FAMILY_PRIVACY = SEALED
 ```
 
-This file is a routing/doctrine record. It does not duplicate the primary ledger and does not import family material.
-
-## Blockchain reverse-replay doctrine
-
-```text
-CURRENT CLAIM
-→ WALLET / CONTRACT STATE
-→ TX HASH
-→ RECEIPT + EVENT LOG
-→ CONTRACT / FUNCTION
-→ ASSET / COUNTERPARTY
-→ AGREEMENT / INVOICE / ORDER IF CLAIMED
-→ PAYMENT SOURCE IF CLAIMED
-→ APPROPRIATION ONLY IF GOVERNMENT MONEY
-→ STATUTE / AUTHORITY
-→ ORIGINAL CLAIM
-```
-
-Missing required edge = `HOLD`.
-Valid contradictory receipts = `CONFLICT`.
-A repository claim that fails replay is not silently preserved as chain truth.
-
 ## Permanent membranes
 
 ```text
 TX_HASH != FACT
 REPOSITORY_RECORD != CHAIN_TRUTH
 UID_STRING != ATTESTATION
-SEARCH_ABSENCE != CHAIN_ABSENCE
+NEGATIVE_CHAIN_REPLAY != MOTIVE_PROOF
+REJECTED_BASE_SEPOLIA_EDGE != GLOBAL_ABSENCE
 HASH != SEMANTIC_TRUTH
 TOKEN_TRANSFER != INVOICE
 ONCHAIN_EVENT != LEGAL_AUTHORITY
@@ -60,72 +39,67 @@ AUTHORITY_CREATED = FALSE
 
 ## Current pinned implementation
 
-Primary ledger proposal:
+Primary ledger:
 
 - Repo: `jsonwisdom/COMPUTERWISDOM`
 - PR: `#493`
 - Branch: `stack/dual-onion-azure-blockchain-audit-v0-1`
-- Exact head at strategy registration: `f37fc371c68bb61232e4fc6bb53d522f31632880`
-- Path: `citizen/blockchain-reverse-replay/CITIZEN_BLOCKCHAIN_REVERSE_REPLAY_LEDGER_V0_1.json`
-- Seed: `CITIZEN_LEDGER_ITEM_001`
-- Seed disposition: `CONFLICT`
-- Negative replay receipt: `citizen/blockchain-reverse-replay/receipts/CITIZEN_LEDGER_ITEM_001_NEGATIVE_RPC_REPLAY_2026_08_18.json`
+- Head: `a0d30740c4e8e8844ad5e2fa304bc668a7ae3407`
+- Parent: `CITIZEN_LEDGER_ITEM_001 = CONFLICT_PRESERVED`
+- Direct replay receipt: `citizen/blockchain-reverse-replay/receipts/CITIZEN_LEDGER_ITEM_001_EAS_UID_DIRECT_REPLAY_2026_08_18.json`
 - Recovery record: `citizen/blockchain-reverse-replay/EAS_UID_RECOVERY_REPLAY_V0_1.json`
-- Negative replay source: `USER_SUPPLIED_RPC_OUTPUT`
 
-ReceiptOS replay packet proposal:
+ReceiptOS:
 
 - Repo: `jsonwisdom/receiptos-base`
 - Draft PR: `#178`
 - Branch: `agent/citizen-blockchain-replay-packet-v0-1`
-- Exact head at strategy registration: `ea810688dca8ad8d82d30621a839ab29b6e254e2`
-- Replay state: `CONFLICT_PRESERVED_EAS_UID_RECOVERY_OPEN`
+- Head: `f4dee5ef75728732ce950824994ce3998f13284a`
+- State: `PARENT_CONFLICT_PRESERVED_CHILD_EAS_REPLAY_REJECT`
 
-## Strategy rule
+## Direct Base Sepolia replay
+
+Bound GitHub Actions replay:
+
+- run: `32106944392`
+- replay head: `141d4af42578d28586ddcadbf661efcc33c7c0c2`
+- artifact: `9313480754`
+- artifact SHA-256: `fdb0e6d5d28221ed21b2452b85803234b2e5507e8e39df30d879f4e75b96a8ff`
+
+Observed:
 
 ```text
-PRESERVE_CITIZEN_LEDGER_ITEM_001_CONFLICT = TRUE
-OPTION_A_HASH_CORRECTION = BLOCKED_NO_CORRECTED_HASH
-OPTION_B_DIRECT_EAS_UID_REPLAY = ACTIVE_RECOVERY_PATH
+CHAIN_ID = 84532 / PASS
+DECLARED_TX = NOT_FOUND
+DECLARED_TX_RECEIPT = NOT_FOUND
+EASSCAN_ATTESTATION = NOT_FOUND
+EAS.getAttestation(DECLARED_UID) = ZERO ATTESTATION STRUCT
+SchemaRegistry.getSchema(DECLARED_SCHEMA_UID) = ZERO SCHEMA RECORD
 ```
 
-The failed transaction hash is historical evidence and must not be silently overwritten.
-
-A replacement transaction hash is accepted only if it is returned by a bound EAS attestation object or independently replayed chain record.
-
-The EAS UID path is a separate recovery lane. Its existence does not upgrade the parent conflict.
-
-## Internal transition audit
-
-Two COMPUTERWISDOM receipts expose a transition that itself requires replay:
+Current doctrine disposition:
 
 ```text
-EAS_SCHEMA_AND_ATTESTATION_ENTRIES_001
-= SCHEMA_AND_ENTRIES_PREPARED_NOT_REGISTERED_NOT_SUBMITTED
-
-↓ later repository claim ↓
-
-EAS_ATTESTATION_SUBMITTED_001
-= EAS_ATTESTATION_SUBMITTED / base-sepolia
-```
-
-The later receipt asserts schema registration and attestation submission. That transition is not authority-validated merely because it is written in the repository.
-
-```text
-REPOSITORY_TRANSITION_CLAIM != CHAIN_TRANSITION_PROVEN
-```
-
-## Executive-round gate
-
-```text
+PARENT_HISTORICAL_STATE = CONFLICT_PRESERVED
+DECLARED_TRANSACTION_EDGE = REJECT
+DECLARED_TRANSACTION_RECEIPT_EDGE = REJECT
+DECLARED_ONCHAIN_ATTESTATION_EDGE = REJECT
+DECLARED_SCHEMA_REGISTRATION_EDGE = REJECT
+OPTION_B_DIRECT_EAS_UID_REPLAY = COMPLETED_REJECT
+RECOVERY_TERMINAL = REJECT_DECLARED_BASE_SEPOLIA_ANCHOR_OBJECTS
 ROUND_06_EXECUTIVE = READY_NOT_ROLLED
+AUTHORITY_CREATED = FALSE
 ```
 
-Round 06 may not advance merely because the schema, ledger, packet, CI, negative replay, conflict state, or EAS recovery lane exists. Advance requires the named upstream evidence gate for the intended public-record event.
+The earlier HOLD and CONFLICT states remain part of the audit history. The child REJECT receipt does not erase them.
+
+## Scope boundary
+
+The replay rejects the repository-declared **Base Sepolia** anchor-object edges only. It does not establish motive, wrongdoing, who introduced the values, or absence on unrelated networks or private/offchain systems.
 
 ## Family boundary
 
-No family names, relationships, private messages, family claims, custody material, or family-derived inference belong in this doctrine or its replay packets.
+No family names, relationships, private messages, custody material, or family-derived inference belong in this doctrine or its replay packets.
 
 ```text
 FAMILY_LANE_IMPORTED = FALSE
