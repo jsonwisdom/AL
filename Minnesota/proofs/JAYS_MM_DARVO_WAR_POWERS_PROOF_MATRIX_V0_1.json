@@ -1,0 +1,143 @@
+{
+  "schema": "JAYS_MM_DARVO_WAR_POWERS_PROOF_MATRIX_V0_1",
+  "classification": "PUBLIC_RECORD_CIVIC_REPLAY_ONLY",
+  "authority_created": false,
+  "legal_finding_created": false,
+  "darvo_finding_created": false,
+  "parent_lineage": {
+    "repository": "jsonwisdom/AL",
+    "parent_pr": 411,
+    "parent_branch": "agent/minnesota-canonical-folder",
+    "parent_head": "6b8ad2580444054d596b5bb290f006b20124c1ac",
+    "drive_study_index": "Jay's Studies — Replay Curriculum Index v0.1",
+    "literal_user_label": "Jay's MM studies and proofs"
+  },
+  "rules": [
+    "WAR_POWERS_RESOLUTION_IS_LAW != EVERY_ACTION_AUTHORIZED",
+    "REPORT_TO_CONGRESS != CONGRESSIONAL_AUTHORIZATION",
+    "LEGAL_AUTHORITY_CLAIM != LAWFULNESS_PROVEN",
+    "LAWFULNESS != LEGITIMACY",
+    "DARVO_PATTERN_CANDIDATE != DARVO_FINDING",
+    "DENIAL != GUILT",
+    "REPEATED_REPROOF != INTENT",
+    "PERSON != OFFICE != AUTHORITY",
+    "RELEASED != COMPLETE_UNIVERSE_PROVEN",
+    "MISSING_FROM_RELEASE != DESTROYED",
+    "MISSING_FROM_RELEASE != CONCEALED",
+    "LEEK != LEAK_WITHOUT_USER_OR_SOURCE_BINDING"
+  ],
+  "claims": [
+    {
+      "id": "MM-WP-001",
+      "claim": "The War Powers Resolution is federal law.",
+      "source": "https://www.congress.gov/crs-product/IF13134",
+      "state": "PASS",
+      "limits": "Does not establish that every presidential use of force is authorized or lawful."
+    },
+    {
+      "id": "MM-WP-002",
+      "claim": "Congress received a 2026 presidential War Powers communication concerning introduction of U.S. Armed Forces.",
+      "source": "https://www.congress.gov/house-communication/119th-congress/executive-communication/2566",
+      "state": "PASS",
+      "limits": "Communication/reporting event only."
+    },
+    {
+      "id": "MM-WP-003",
+      "claim": "Congress received a communication concerning January 3, 2026 targeted and limited military strikes in Venezuela.",
+      "source": "https://www.congress.gov/senate-communication/119th-congress/executive-communication/2351",
+      "state": "PASS",
+      "limits": "Does not by itself establish congressional authorization."
+    },
+    {
+      "id": "MM-WP-004",
+      "claim": "Congressional measures exist asserting lack of specific statutory authorization for certain Iran hostilities.",
+      "sources": [
+        "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/59/text",
+        "https://www.congress.gov/bill/119th-congress/house-concurrent-resolution/38/text",
+        "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/104/text"
+      ],
+      "state": "PASS_FOR_EXISTENCE_OF_CONGRESSIONAL_DISPUTE",
+      "limits": "Measure text is not equivalent to enacted law or final judicial holding."
+    },
+    {
+      "id": "MM-DOJ-001",
+      "claim": "Pamela Bondi served as the 87th Attorney General during 2025-2026.",
+      "source": "https://www.justice.gov/ag/bio/attorney-general-pamela-bondi",
+      "state": "PASS",
+      "limits": "Historical office binding only."
+    },
+    {
+      "id": "MM-DOJ-002",
+      "claim": "Todd Blanche is the Acting Attorney General in 2026.",
+      "sources": [
+        "https://www.justice.gov/ag/staff-profile/meet-acting-attorney-general-0",
+        "https://www.justice.gov/ag"
+      ],
+      "state": "PASS",
+      "limits": "Current-office observation is time-versioned and must be rechecked later."
+    },
+    {
+      "id": "MM-DOJ-003",
+      "claim": "DOJ maintains an Epstein Library responsive to the Epstein Files Transparency Act, last updated July 17, 2026 on the observed page.",
+      "source": "https://www.justice.gov/epstein",
+      "state": "PASS_FOR_OBSERVED_PUBLIC_SURFACE",
+      "limits": "Does not prove complete historical corpus or perfect searchability."
+    },
+    {
+      "id": "MM-DOJ-004",
+      "claim": "DOJ announced approximately 3.5 million responsive pages released by January 30, 2026.",
+      "source": "https://www.justice.gov/opa/pr/department-justice-publishes-35-million-responsive-pages-compliance-epstein-files",
+      "state": "PASS_FOR_DOJ_STATEMENT",
+      "limits": "Official statement is not independent proof of every completeness claim."
+    },
+    {
+      "id": "MM-DARVO-001",
+      "claim": "The entire congressional/institutional system is DARVO run by Donald Trump through war powers.",
+      "state": "HOLD_EVENT_RECEIPTS_REQUIRED",
+      "required": [
+        "exact adverse action",
+        "actor",
+        "office",
+        "claimed authority",
+        "rule version",
+        "factual finding",
+        "evidence",
+        "contrary evidence review",
+        "exact reason",
+        "notice",
+        "burden before",
+        "burden after",
+        "correction path",
+        "independent review",
+        "receipt"
+      ],
+      "limits": "System-level causal/DARVO finding cannot be promoted from label or recurrence alone."
+    },
+    {
+      "id": "MM-LEGIT-001",
+      "claim": "A legally authorized action can still be challenged as illegitimate under a declared normative standard.",
+      "state": "PASS_AS_ANALYTICAL_DISTINCTION",
+      "limits": "Legitimacy standard must be declared; this is not a legal holding."
+    },
+    {
+      "id": "MM-LEEK-001",
+      "claim": "Leek is a bound current DOJ/Congress term relevant to this hypothesis.",
+      "state": "HOLD_TERM_UNRESOLVED",
+      "limits": "Literal term searched; no relevant source bound. Do not silently rewrite to leak."
+    }
+  ],
+  "terminal": {
+    "war_powers_resolution_is_law": "PASS",
+    "trump_war_powers_reporting_exists": "PASS",
+    "congressional_authorization_dispute_exists": "PASS",
+    "doj_current_ag_todd_blanche": "PASS",
+    "bondi_current_ag": "REJECT",
+    "doj_epstein_library_surface": "PASS",
+    "system_wide_darvo_causation": "HOLD_EVENT_RECEIPTS_REQUIRED",
+    "all_actions_legal": "HOLD",
+    "all_actions_illegal": "HOLD",
+    "legitimacy": "HOLD_DECLARED_STANDARD_AND_EVENT_CHAIN_REQUIRED",
+    "leek_term": "HOLD_UNRESOLVED",
+    "authority_created": false
+  }
+}
