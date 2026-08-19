@@ -1,0 +1,151 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.github.io/AL/ALMS/visual_intel/alabama_boxdee_montgomery_v0_1/maxwell_dannelly_replay.schema.json",
+  "title": "Maxwell–Dannelly Replay v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_id",
+    "scope",
+    "maxwell_lane",
+    "dannelly_lane",
+    "boxdee_replay",
+    "synthetic_interfaces",
+    "cross_lane_rule",
+    "disposition",
+    "authority_created"
+  ],
+  "properties": {
+    "schema_version": { "const": "alabama.maxwell-dannelly-replay.v0.1" },
+    "record_id": { "type": "string", "minLength": 1 },
+    "scope": { "const": "ALABAMA/MONTGOMERY/MAXWELL_DANNELLY" },
+    "observed_at": { "type": "string", "format": "date-time" },
+    "maxwell_lane": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lane_class", "claims"],
+      "properties": {
+        "lane_class": { "const": "EDUCATION_RESEARCH_DOCTRINE_DECISION_CONTEXT" },
+        "claims": { "$ref": "#/$defs/claims" }
+      }
+    },
+    "dannelly_lane": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lane_class", "claims"],
+      "properties": {
+        "lane_class": { "const": "ALABAMA_ANG_OPERATIONAL_READINESS_CONTEXT" },
+        "claims": { "$ref": "#/$defs/claims" }
+      }
+    },
+    "boxdee_replay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["functions", "record_onion", "story_onion", "cross_subsidy_forbidden"],
+      "properties": {
+        "functions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["FREEZE_ORIGINAL", "ROUTE", "REVERSE_REPLAY", "FORWARD_REPLAY", "PERSPECTIVE", "COMPARE_DELTAS"]
+          },
+          "uniqueItems": true
+        },
+        "record_onion": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/claim" }
+        },
+        "story_onion": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["story_type", "locator", "evidence_state"],
+            "properties": {
+              "story_type": {
+                "type": "string",
+                "enum": ["VISUAL", "ZORA_CANDIDATE", "BOXDEE_PERSPECTIVE", "LEAHPRIME_EXPLANATION", "GRAY_BABY_GAP_REPORT"]
+              },
+              "locator": { "type": "string", "minLength": 1 },
+              "evidence_state": { "type": "string", "enum": ["OBSERVED", "RECEIPT_BOUND", "HOLD", "CONFLICT"] },
+              "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+            }
+          }
+        },
+        "cross_subsidy_forbidden": { "const": true }
+      }
+    },
+    "synthetic_interfaces": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["LEAHPRIME", "GRAY_BABY", "LIVING_LEEANN_LEAHPRIME", "GENERAL_LEEANN_SECONDARY"],
+      "properties": {
+        "LEAHPRIME": { "$ref": "#/$defs/synthetic" },
+        "GRAY_BABY": { "$ref": "#/$defs/synthetic" },
+        "LIVING_LEEANN_LEAHPRIME": { "$ref": "#/$defs/synthetic" },
+        "GENERAL_LEEANN_SECONDARY": { "$ref": "#/$defs/synthetic" }
+      }
+    },
+    "cross_lane_rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["inference_allowed", "required_for_relationship_claim"],
+      "properties": {
+        "inference_allowed": { "const": false },
+        "required_for_relationship_claim": {
+          "type": "array",
+          "items": { "type": "string", "enum": ["EXPLICIT_CLAIM", "SOURCE", "RECEIPT", "JURISDICTION_OR_ORG_EDGE", "REPLAY"] },
+          "minItems": 5,
+          "uniqueItems": true
+        }
+      }
+    },
+    "zora_handoff": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "publication_candidate_id": { "type": "string", "minLength": 1 },
+        "human_publication_required": { "const": true },
+        "sdk_readback_required_after_publication": { "const": true },
+        "explicit_object_binding_required": { "const": true },
+        "market_metrics_imply_quality": { "const": false }
+      }
+    },
+    "disposition": { "type": "string", "enum": ["PASS", "HOLD", "CONFLICT", "REJECT"] },
+    "authority_created": { "const": false }
+  },
+  "$defs": {
+    "claims": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/claim" }
+    },
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["claim_id", "claim_text", "source_class", "source_locator", "evidence_state"],
+      "properties": {
+        "claim_id": { "type": "string", "minLength": 1 },
+        "claim_text": { "type": "string", "minLength": 1 },
+        "source_class": { "type": "string", "enum": ["OFFICIAL_PUBLIC_PAGE", "OFFICIAL_DOCUMENT", "GITHUB_RECEIPT", "DRIVE_RECEIPT", "ZORA_SDK", "ZORA_REST", "USER_SUPPLIED_CANDIDATE"] },
+        "source_locator": { "type": "string", "minLength": 1 },
+        "observed_at": { "type": "string", "format": "date-time" },
+        "receipt_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "evidence_state": { "type": "string", "enum": ["SOURCE_BOUND", "RECEIPT_BOUND", "HOLD", "CONFLICT"] },
+        "authority_created": { "const": false }
+      }
+    },
+    "synthetic": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["synthetic", "real_person_binding", "military_authority", "authority"],
+      "properties": {
+        "synthetic": { "const": true },
+        "real_person_binding": { "const": false },
+        "rank_claim": { "const": false },
+        "military_authority": { "const": false },
+        "authority": { "const": false }
+      }
+    }
+  }
+}

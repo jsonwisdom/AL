@@ -1,0 +1,120 @@
+{
+  "artifact": "ALABAMA_BOXDEE_MONTGOMERY_VISUAL_INTELLIGENCE_V0_1",
+  "version": "0.1",
+  "status": "DRAFT_REVIEW_OPEN",
+  "scope": "ALABAMA / MONTGOMERY / MAXWELL / DANNELLY / 187FW / BOXDEE",
+  "authority_created": false,
+  "production_green": false,
+  "no_fake_green": true,
+  "purpose": "Create a non-blank Alabama visual-intelligence surface that separates public-record military context, Zora/story candidates, and synthetic replay interfaces.",
+  "replay_schema": {
+    "schema_version": "alabama.maxwell-dannelly-replay.v0.1",
+    "path": "ALMS/visual_intel/alabama_boxdee_montgomery_v0_1/maxwell_dannelly_replay.schema.json",
+    "state": "DEFINED_REVIEW_OPEN",
+    "cross_lane_inference_allowed": false
+  },
+  "visual_artifact": {
+    "drive_file_id": "1uQIpmhQWcPJMVOl2PbedPt6z1-ppFRpm",
+    "drive_file_name": "ALABAMA_BOXDEE_MONTGOMERY_VISUAL_INTELLIGENCE_V0_1.png",
+    "sha256": "b0548ed2bb29d8fcc1915aaead844ae6c67815f36f129134022575462dd8207f",
+    "semantic_class": "VISUAL_INTELLIGENCE_SCHEMATIC_NOT_SOURCE_PROOF"
+  },
+  "mildenhall_zora_candidate": {
+    "contract_address": "0x04ea9a5650470f06a6b09cb31ede50fbb0667f95",
+    "network": "base",
+    "chain_id": 8453,
+    "supplied_url": "https://zora.co/coin/base:0x04ea9a5650470f06a6b09cb31ede50fbb0667f95?referrer=0x829adfedbe565f9885a7ea6bc78912acaef055e2",
+    "readback_state": "HOLD_DIRECT_ZORA_CACHE_MISS",
+    "semantic_binding": "CANDIDATE_MILDENHALL_ART_BOX_D",
+    "canon_state": "NOT_PROMOTED"
+  },
+  "montgomery_public_context": {
+    "maxwell_air_force_base": {
+      "source": "https://www.maxwell.af.mil/About-Us/Fact-Sheets/Display/Article/1004960/maxwell-air-force-base/",
+      "role": "INSTALLATION_AND_AIR_UNIVERSITY_CONTEXT"
+    },
+    "air_university_strategy_2026": {
+      "source": "https://www.maxwell.af.mil/News/Display/Article/4448557/air-university-strategy-2026-delivering-decision-advantage-to-the-joint-force/",
+      "role": "EDUCATION_RESEARCH_DOCTRINE_DECISION_ADVANTAGE_CONTEXT"
+    },
+    "air_university_research_collaboration_2026": {
+      "source": "https://www.maxwell.af.mil/News/Display/Article/4517656/air-university-creates-new-pathway-for-research-collaboration/",
+      "role": "PUBLIC_RESEARCH_ENGAGEMENT_CONTEXT"
+    },
+    "187th_fighter_wing": {
+      "source": "https://www.187fw.ang.af.mil/Home/Welcome/",
+      "role": "MONTGOMERY_ALABAMA_ANG_F35A_RED_TAIL_OPERATIONAL_CONTEXT"
+    }
+  },
+  "synthetic_interfaces": {
+    "BOXDEE": {
+      "functions": ["FREEZE_ORIGINAL", "ROUTE", "REVERSE_REPLAY", "FORWARD_REPLAY", "PERSPECTIVE"],
+      "authority": false
+    },
+    "LEAHPRIME": {
+      "functions": ["EXPLAIN", "TRANSLATE", "HUMANIZE", "ROUTE_TO_REVIEW"],
+      "real_person": false,
+      "military_officer": false,
+      "command_authority": false
+    },
+    "LIVING_LEEANN_LEAHPRIME": {
+      "class": "USER_NAMED_SYNTHETIC_STORY_INTERFACE",
+      "public_person_binding": "NOT_CREATED",
+      "real_person": false,
+      "authority": false
+    },
+    "GENERAL_LEEANN_SECONDARY": {
+      "class": "USER_NAMED_SYNTHETIC_SECONDARY_PERSPECTIVE",
+      "rank_claim": "NOT_CREATED",
+      "public_person_binding": "NOT_CREATED",
+      "military_authority": false,
+      "authority": false
+    },
+    "GRAY_BABY": {
+      "functions": ["NOTICE_GAPS", "PRESERVE_UNKNOWN", "BLOCK_FAKE_GREEN"],
+      "authority": false
+    }
+  },
+  "dual_onion": {
+    "record_onion": ["OFFICIAL_SOURCE", "DATE_VERSION", "CLAIM", "RECEIPT", "DELTA", "REPLAY"],
+    "story_onion": ["ZORA_ART", "BOXDEE_PERSPECTIVE", "LEAHPRIME_EXPLANATION", "GRAY_BABY_GAPS", "HUMAN_REVIEW"],
+    "cross_subsidy_forbidden": true
+  },
+  "zora_ingestion_v2_handoff": {
+    "publication_candidate_id": "ALABAMA_MONTGOMERY_BOXDEE_VISUAL_V0_1",
+    "candidate_class": "VISUAL_INTELLIGENCE_PUBLICATION_CANDIDATE",
+    "visual_sha256": "b0548ed2bb29d8fcc1915aaead844ae6c67815f36f129134022575462dd8207f",
+    "human_publication_required": true,
+    "agent_publish_authorized": false,
+    "agent_sign_authorized": false,
+    "agent_trade_authorized": false,
+    "post_publication_requirements": [
+      "ZORA_SDK_OR_REST_READBACK",
+      "CONTRACT_ADDRESS_CAPTURE",
+      "CREATOR_ADDRESS_OBSERVATION",
+      "METADATA_CAPTURE",
+      "RAW_RESPONSE_RECEIPT",
+      "EXPLICIT_ZORA_OBJECT_BINDING",
+      "DRIFT_CHECK"
+    ],
+    "canon_rule": "PUBLICATION != CANON; SDK_READBACK + RECEIPT + EXPLICIT_GIT_BINDING REQUIRED"
+  },
+  "invariants": [
+    "STORY != SOURCE",
+    "ART != AUTHORITY",
+    "IMAGE != AUTHORITY",
+    "ZORA_OBJECT != EXTERNAL_FACT",
+    "ZORA_TIMESTAMP != EVENT_PROOF",
+    "CONTRACT_ADDRESS != HUMAN_IDENTITY",
+    "PUBLIC_BASE_PAGE != INSTALLATION_BUDGET",
+    "COUNTY_TOTAL != INSTALLATION_BUDGET",
+    "MAXWELL_LANE != DANNELLY_LANE",
+    "CROSS_LANE_RELATIONSHIP_REQUIRES_EXPLICIT_RECEIPT",
+    "LEAHPRIME != REAL_PERSON",
+    "GENERAL_LEEANN_SECONDARY != MILITARY_RANK",
+    "LIVING_LEEANN_LEAHPRIME != PUBLIC_PERSON_IDENTITY",
+    "BOXDEE != COMMAND_AUTHORITY",
+    "PUBLICATION != CANON",
+    "AUTHORITY_CREATED = FALSE"
+  ]
+}
