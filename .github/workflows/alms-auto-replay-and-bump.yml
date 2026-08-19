@@ -5,6 +5,12 @@ on:
     paths:
       - "corpus/**"
       - "_truth/**"
+      - "alms/version_registry.json"
+      - "schemas/JSONWISDOM_GLOBAL_EXECUTION_LEDGER_V0_2.schema.json"
+      - "scripts/alms_write_execution_receipt.py"
+      - "scripts/alms_consume_execution_receipts.py"
+      - "scripts/alms_bind_active_lanes.py"
+      - ".github/workflows/alms-auto-replay-and-bump.yml"
 
 permissions:
   contents: write
@@ -77,6 +83,7 @@ jobs:
             --started-at "${REPLAY_STARTED_AT:-}" \
             --completed-at "${REPLAY_COMPLETED_AT:-}" \
             --report-path ci/corpus_report.json \
+            --version-registry-path alms/version_registry.json \
             --out-dir alms/execution_receipts
 
       - name: Consume execution receipts into global ledger
@@ -122,11 +129,15 @@ jobs:
           from pathlib import Path
           import subprocess
 
-          report_path = Path("ci/corpus_report.json")
-          report = json.loads(report_path.read_text())
+          report = json.loads(Path("ci/corpus_report.json").read_text())
+          registry = json.loads(Path("alms/version_registry.json").read_text())
+          registry_entries = {
+              entry.get("id"): entry
+              for entry in registry.get("entries", [])
+              if isinstance(entry, dict)
+          }
 
           cases = report.get("cases", []) if "cases" in report else []
-
           if not cases and report.get("verdict") == "PASS":
               cases = [
                   {"id": "C0001", "verdict": "PASS"},
@@ -140,6 +151,14 @@ jobs:
               if cid not in ["C0001", "C0002"]:
                   continue
 
+              registry_entry = registry_entries.get(cid)
+              if not registry_entry:
+                  raise SystemExit(f"missing registry entry for {cid}")
+
+              version = registry_entry.get("version")
+              if not version:
+                  raise SystemExit(f"missing registry version for {cid}")
+
               state = "REPLAY_PASSED" if verdict == "PASS" else "BLOCKED"
               artifact = f"corpus/{cid}/replay/expected_hashes.json"
 
@@ -150,7 +169,7 @@ jobs:
                       "--id",
                       cid,
                       "--version",
-                      "1.0.0",
+                      version,
                       "--state",
                       state,
                       "--artifact",
