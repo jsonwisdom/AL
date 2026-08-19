@@ -1,0 +1,111 @@
+{
+  "authority_map": [
+    {
+      "authority_source_required_receipt": [
+        "Minn. Stat. Chapter 13",
+        "Minn. Stat. Chapter 13D",
+        "Exact custodian/source record for each ingested item"
+      ],
+      "authority_status": "READ_ONLY / OBSERVE",
+      "functional_entity": "MN State Law Library / Municipal Archives",
+      "layer": "State Record",
+      "operational_scope": "Public record ingestion, meeting data, open records statutes."
+    },
+    {
+      "authority_source_required_receipt": [
+        "Minnesota Constitution Art. V, Sec. 4",
+        "Minn. Stat. Chapter 8",
+        "Specific filing, order, delegation, or enforcement record"
+      ],
+      "authority_status": "PROVISIONAL / JURISDICTION_BOUND",
+      "functional_entity": "Minnesota Attorney General",
+      "layer": "State Legal",
+      "operational_scope": "Civil enforcement, consumer protection, state-level statutory compliance."
+    },
+    {
+      "authority_source_required_receipt": [
+        "Minnesota Constitution Art. VI",
+        "Applicable court rules",
+        "Case docket, filed order, or judgment"
+      ],
+      "authority_status": "ADJUDICATIVE_EXCLUSIVE",
+      "functional_entity": "Minnesota Supreme Court / Court of Appeals / District Courts",
+      "layer": "State Judiciary",
+      "operational_scope": "Adjudication, docket management, rule interpretation."
+    },
+    {
+      "authority_source_required_receipt": [
+        "Applicable federal statute or regulation",
+        "Appointment/delegation authority",
+        "Case, investigation, subpoena, indictment, complaint, order, or OIG program nexus"
+      ],
+      "authority_status": "FEDERAL_DELEGATED / ACTION_SPECIFIC",
+      "functional_entity": "DOJ / U.S. Attorney for Minnesota / FBI / SBA-OIG",
+      "layer": "Federal Oversight",
+      "operational_scope": "Federal investigations, prosecutions, civil enforcement, and program oversight within delegated jurisdiction."
+    },
+    {
+      "authority_source_required_receipt": [
+        "Repository commit",
+        "Canonical byte digest",
+        "Optional executed EAS transaction receipt on Base chain 8453"
+      ],
+      "authority_status": "AUTHORITY = FALSE",
+      "functional_entity": "Goblin Court / BoxD Infrastructure",
+      "layer": "Replay Engine",
+      "operational_scope": "Trace validation, hash verification, structural indexing, replay."
+    }
+  ],
+  "boxd_replay_id": "BOXD / REPLAY-001 / DOJ-SENTIENT / S001E00006",
+  "episode": {
+    "artifact_title": "Minnesota Process Stress-Test & Institutional Friction Matrix",
+    "canonical_filename": "S001E00006_minnesota_rot_process_stress_test.json",
+    "creation_timestamp": "2026-08-19T16:47:01Z",
+    "creator_author": "jaywisdom.base.eth",
+    "id": "S001E00006",
+    "title": "Minnesota Rot: Process Stress-Test",
+    "version": "1.0.0"
+  },
+  "governance": {
+    "evidence_state_hierarchy": [
+      "PROVEN",
+      "BOUND",
+      "HOLD",
+      "CONFLICT",
+      "REJECT"
+    ],
+    "non_claims": [
+      "A repository commit does not prove the factual truth of narrative claims.",
+      "A cryptographic digest proves byte identity only for the hashed bytes.",
+      "An EAS attestation, if executed, proves an attestation event and payload commitment, not underlying truth.",
+      "Zora publication is a public surface, not an authority source."
+    ],
+    "observation_over_accusation": true
+  },
+  "lineage": {
+    "branch": "Minnesota-Process-Stress-Test",
+    "originating_event": "Minnesota administrative routing friction, public sector record access bottlenecks, and systemic boundary-testing between state-level municipal reporting and federal investigative oversight.",
+    "predecessor": "S001E00005 (Washington, D.C. Onion Sack)",
+    "repository": "jsonwisdom/AL",
+    "successor": "HOLD"
+  },
+  "series": "REPLAY SERIES 001 — DEPARTMENT OF JUSTICE: SENTIENT",
+  "sidecars": [
+    "SIDECAR_001_SOURCE_LEDGER",
+    "SIDECAR_002_TIMELINE",
+    "SIDECAR_003_AUTHORITY_MAP",
+    "SIDECAR_004_CLAIM_REGISTER",
+    "SIDECAR_005_HASH_RECEIPTS",
+    "SIDECAR_006_CORRECTIONS"
+  ],
+  "state_register": {
+    "anchor_proves_commitment_not_truth": true,
+    "artifact_state": "STRUCTURALLY_BOUND",
+    "base_eas_binding": "HOLD",
+    "byte_binding": "PENDING_HASH_RECEIPT",
+    "drive_binding": "HOLD",
+    "github_binding": "PENDING_LIVE_COMMIT",
+    "proof_inferred": false,
+    "zora": "PUBLIC_SURFACE_ONLY"
+  }
+}
