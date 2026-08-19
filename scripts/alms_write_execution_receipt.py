@@ -7,6 +7,7 @@ Boundaries:
 - never sets authority=true;
 - never claims PASS when runner_exit_code != 0;
 - distinguishes FAIL, INDETERMINATE, and ERROR;
+- binds hard_gate_result explicitly for downstream ledger consumption;
 - hashes the exact corpus report bytes when present;
 - uses deterministic compact sorted-key JSON for receipt hashing;
 - does not claim RFC 8785 JCS compatibility;
@@ -92,6 +93,14 @@ def classify_verdict(exit_code: int, report_state: str, report: Optional[Dict[st
     return "ERROR"
 
 
+def classify_hard_gate(verdict: str) -> str:
+    if verdict == "PASS":
+        return "PASS"
+    if verdict == "FAIL":
+        return "REJECT"
+    return "HOLD"
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser()
     p.add_argument("--runner-exit-code", required=True, type=int)
@@ -123,6 +132,7 @@ def main() -> int:
     report = report or {}
 
     verdict = classify_verdict(args.runner_exit_code, report_state, report)
+    hard_gate_result = classify_hard_gate(verdict)
 
     now = datetime.now(timezone.utc)
     timestamp = now.isoformat().replace("+00:00", "Z")
@@ -148,6 +158,7 @@ def main() -> int:
         "runner_completed_at": args.completed_at or None,
         "runner_exit_code": args.runner_exit_code,
         "verdict": verdict,
+        "hard_gate_result": hard_gate_result,
         "items_requested": report.get("total_cases"),
         "items_passed": report.get("pass"),
         "items_failed": report.get("fail"),
@@ -215,6 +226,7 @@ def main() -> int:
     print(
         f"WROTE {out_path} "
         f"verdict={verdict} "
+        f"hard_gate={hard_gate_result} "
         f"exit={args.runner_exit_code} "
         f"report={report_state} "
         f"final_hash={receipt['final_hash']}"
