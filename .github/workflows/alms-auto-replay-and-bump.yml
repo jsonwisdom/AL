@@ -33,8 +33,33 @@ jobs:
       - name: Dependency gate (enforce DAG integrity)
         run: python scripts/alms_dependency_gate.py
 
-      - name: Run replay corpus
-        run: python ci/replay_corpus_runner.py || true
+      - name: Run replay corpus (hard gate)
+        run: python ci/replay_corpus_runner.py
+
+      - name: Assert replay corpus report (hard gate)
+        run: |
+          python - << 'EOF'
+import json
+from pathlib import Path
+
+report_path = Path("ci/corpus_report.json")
+if not report_path.exists():
+    raise SystemExit("missing ci/corpus_report.json")
+
+report = json.loads(report_path.read_text())
+if report.get("verdict") != "PASS":
+    raise SystemExit(
+        "replay corpus verdict is not PASS: "
+        f"{report.get('verdict')} "
+        f"(pass={report.get('pass')}, fail={report.get('fail')}, "
+        f"indeterminate={report.get('indeterminate')})"
+    )
+
+print(
+    "Replay corpus hard gate passed: "
+    f"total={report.get('total_cases')} pass={report.get('pass')}"
+)
+EOF
 
       - name: Evaluate and bump versions
         run: |
