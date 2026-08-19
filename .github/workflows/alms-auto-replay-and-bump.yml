@@ -9,6 +9,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: alms-global-execution-ledger-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   replay-and-bump:
     runs-on: ubuntu-latest
@@ -22,7 +26,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install deps
-        run: pip install jsonschema || true
+        run: pip install jsonschema
 
       - name: Validate ALMS version schemas (hard gate)
         run: python scripts/alms_validate_version_schemas.py
@@ -74,6 +78,14 @@ jobs:
             --completed-at "${REPLAY_COMPLETED_AT:-}" \
             --report-path ci/corpus_report.json \
             --out-dir alms/execution_receipts
+
+      - name: Consume execution receipts into global ledger
+        if: ${{ always() }}
+        run: python scripts/alms_consume_execution_receipts.py
+
+      - name: Bind ACTIVE_LANES only to real ledger entries
+        if: ${{ always() }}
+        run: python scripts/alms_bind_active_lanes.py
 
       - name: Assert replay corpus report before promotion
         if: ${{ success() && steps.replay.outputs.exit_code == '0' }}
@@ -153,7 +165,7 @@ jobs:
         if: ${{ success() && steps.replay.outputs.exit_code == '0' }}
         run: python scripts/alms_merkle_root_gate.py
 
-      - name: Commit execution receipt + clean promotion artifacts
+      - name: Commit execution history + optional clean promotion artifacts
         if: ${{ always() }}
         shell: bash
         env:
@@ -168,6 +180,12 @@ jobs:
             git add alms/execution_receipts/
           fi
 
+          if [[ -f "alms/JSONWISDOM_GLOBAL_EXECUTION_LEDGER.jsonl" ]]; then
+            git add alms/JSONWISDOM_GLOBAL_EXECUTION_LEDGER.jsonl
+          fi
+
+          git add ACTIVE_LANES.json
+
           if [[ "${REPLAY_EXIT_CODE:-255}" == "0" \
                 && "${BUMP_OUTCOME:-}" == "success" \
                 && "${MERKLE_OUTCOME:-}" == "success" ]]; then
@@ -179,12 +197,18 @@ jobs:
           if git diff --cached --quiet; then
             echo "NO_CHANGES"
           else
-            git commit -m "ALMS EXECUTION RECEIPT + optional clean promotion"
+            git commit -m "ALMS GLOBAL EXECUTION LEDGER + LANE BIND"
             git push
           fi
 
       - name: Fail workflow if replay runner failed
-        if: ${{ always() && steps.replay.outputs.exit_code != '0' }}
+        if: ${{ always() }}
+        shell: bash
+        env:
+          REPLAY_EXIT_CODE: ${{ steps.replay.outputs.exit_code }}
         run: |
-          echo "Replay corpus runner exited non-zero. Execution receipt was attempted. Workflow stays failed."
-          exit 1
+          if [[ "${REPLAY_EXIT_CODE:-255}" != "0" ]]; then
+            echo "Replay corpus runner exited non-zero. Execution receipt and ledger commit were attempted. Workflow stays failed."
+            exit 1
+          fi
+          echo "Replay corpus runner exited cleanly."
