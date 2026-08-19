@@ -4,7 +4,7 @@
     "authority_created": false,
     "base_eas_binding": "HOLD",
     "byte_binding": "BOUND_TO_CANONICAL_ARTIFACT_BYTES",
-    "drive_binding": "HOLD",
+    "drive_binding": "BOUND_TO_CANONICAL_ARTIFACT_BYTES",
     "github_binding": "BOUND",
     "proof_inferred": false
   },
@@ -19,11 +19,21 @@
     "sha256": "554456a25da8609d4af32126d6c363f657cab5b5ea05f7dd6c9088a080757a29",
     "sha3_256": "e3b2f4d4db679bee1a4a0b5ecf01fe4222971496b5fcec741ee01ef223ca702c"
   },
+  "drive_receipt": {
+    "file_id": "1DW_0UXguXC5yoOkzoa7RiY9tg_p-jIxy",
+    "folder_id": "1MW_vWb0PR5BZiTGynm8dke7BCa_H2K2z",
+    "mime_type": "application/json",
+    "raw_fetch_verified": true,
+    "reported_size": 4463,
+    "sha256": "554456a25da8609d4af32126d6c363f657cab5b5ea05f7dd6c9088a080757a29",
+    "sha3_256": "e3b2f4d4db679bee1a4a0b5ecf01fe4222971496b5fcec741ee01ef223ca702c"
+  },
   "notes": [
     "SHA-256 and SHA3-256 are independently computed over the exact UTF-8 bytes of the canonical artifact including its final newline.",
     "GitHub commit/blob presence plus digest verification binds this receipt to artifact bytes; it does not prove factual claims inside the artifact.",
+    "Drive raw-file fetch was hashed independently and matched the canonical artifact digests.",
     "Base/EAS remains HOLD until an executed chain-8453 transaction receipt is observed."
   ],
-  "receipt_version": "0.1.0",
+  "receipt_version": "0.2.0",
   "sidecar": "SIDECAR_005_HASH_RECEIPTS"
 }
