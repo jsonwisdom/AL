@@ -6,7 +6,8 @@ Rules:
 - idempotent by both receipt_id and receipt final_hash;
 - conflicting duplicate identifiers fail closed;
 - only valid sealed EXECUTION_RECEIPTs with authority=false are ingestible;
-- every ledger entry validates against the locked v0.1 JSON Schema;
+- receipt format v0.3.0 must carry a BOUND execution version snapshot;
+- every ledger entry validates against the locked v0.2.0 JSON Schema;
 - the pending batch is fully validated before any new row is appended;
 - no PASS is inferred from silence;
 - deterministic compact sorted-key UTF-8 JSON hashing is used;
@@ -27,11 +28,22 @@ from jsonschema import Draft202012Validator, FormatChecker
 
 RECEIPTS_DIR = Path("alms/execution_receipts")
 LEDGER_PATH = Path("alms/JSONWISDOM_GLOBAL_EXECUTION_LEDGER.jsonl")
-SCHEMA_PATH = Path("schemas/JSONWISDOM_GLOBAL_EXECUTION_LEDGER_V0_1.schema.json")
+SCHEMA_PATH = Path("schemas/JSONWISDOM_GLOBAL_EXECUTION_LEDGER_V0_2.schema.json")
 GENESIS = "genesis"
+LEDGER_VERSION = "0.2.0"
+RECEIPT_VERSION = "0.3.0"
 CANON_METHOD = "JSON_SORTED_KEYS_COMPACT_UTF8_V0_1"
 SHA256_RE = re.compile(r"^sha256:[0-9a-f]{64}$")
+SEMVER_RE = re.compile(r"^[0-9]+\.[0-9]+\.[0-9]+$")
 COMMIT_RE = re.compile(r"^[0-9a-fA-F]{40}$")
+REQUIRED_VERSION_IDS = (
+    "ALMS_PROTOCOL",
+    "ALMS_AUTO_REPLAY_WORKFLOW",
+    "ALMS_EXECUTION_RECEIPT",
+    "JSONWISDOM_GLOBAL_EXECUTION_LEDGER",
+    "ALMS_EXECUTION_RECEIPT_CONSUMER",
+    "ALMS_ACTIVE_LANES_BINDER",
+)
 
 
 def canonical_json_bytes(obj: Any) -> bytes:
@@ -76,8 +88,62 @@ def validate_schema(entry: Dict[str, Any], validator: Draft202012Validator, labe
         raise ValueError(f"{label}: schema validation failed: {rendered}")
 
 
+def verify_version_snapshot(receipt: Dict[str, Any], path: Path) -> Dict[str, Any]:
+    bindings = receipt.get("bindings")
+    require(isinstance(bindings, dict), f"{path}: missing bindings")
+
+    snapshot = bindings.get("version_registry")
+    require(isinstance(snapshot, dict), f"{path}: missing version_registry snapshot")
+    require(snapshot.get("state") == "BOUND", f"{path}: version_registry state must be BOUND")
+    require(snapshot.get("path") == "alms/version_registry.json", f"{path}: unexpected version registry path")
+
+    digest = snapshot.get("sha256")
+    require(isinstance(digest, str) and SHA256_RE.fullmatch(digest), f"{path}: invalid version registry sha256")
+    require(
+        (receipt.get("source_hashes") or {}).get("version_registry") == digest,
+        f"{path}: version registry source hash mismatch",
+    )
+
+    registry_version = snapshot.get("registry_version")
+    require(
+        isinstance(registry_version, str) and SEMVER_RE.fullmatch(registry_version),
+        f"{path}: invalid registry_version",
+    )
+
+    components = snapshot.get("components")
+    require(isinstance(components, dict), f"{path}: version components missing")
+    missing = [component_id for component_id in REQUIRED_VERSION_IDS if component_id not in components]
+    require(not missing, f"{path}: missing version components: {', '.join(missing)}")
+
+    for component_id in REQUIRED_VERSION_IDS:
+        component = components[component_id]
+        require(isinstance(component, dict), f"{path}: invalid version component {component_id}")
+        version = component.get("version")
+        require(
+            isinstance(version, str) and SEMVER_RE.fullmatch(version),
+            f"{path}: invalid version for {component_id}",
+        )
+        require(
+            component.get("state") in {"DRAFT", "LOCKED", "REPLAY_REQUIRED", "REPLAY_PASSED", "BLOCKED", "DEPRECATED"},
+            f"{path}: invalid state for {component_id}",
+        )
+        require(bool(component.get("artifact_path")), f"{path}: missing artifact_path for {component_id}")
+        component_hash = component.get("hash")
+        require(
+            component_hash == "UNSET" or (isinstance(component_hash, str) and SHA256_RE.fullmatch(component_hash)),
+            f"{path}: invalid hash for {component_id}",
+        )
+
+    alms_version = bindings.get("alms_version")
+    protocol_version = components["ALMS_PROTOCOL"].get("version")
+    require(alms_version == protocol_version, f"{path}: ALMS protocol version mismatch")
+
+    return snapshot
+
+
 def verify_receipt(receipt: Dict[str, Any], path: Path) -> None:
     require(receipt.get("receipt_type") == "EXECUTION_RECEIPT", f"{path}: wrong receipt_type")
+    require(receipt.get("version") == RECEIPT_VERSION, f"{path}: unsupported receipt version")
     require(bool(receipt.get("receipt_id")), f"{path}: missing receipt_id")
     require(receipt.get("authority") is False, f"{path}: authority must be false")
     require(receipt.get("proof_inferred") is False, f"{path}: proof_inferred must be false")
@@ -90,7 +156,7 @@ def verify_receipt(receipt: Dict[str, Any], path: Path) -> None:
     )
     require(
         canonicalization.get("rfc8785_jcs_claimed") is False,
-        f"{path}: RFC 8785 JCS must not be claimed by this v0.1 consumer",
+        f"{path}: RFC 8785 JCS must not be claimed by this consumer",
     )
 
     final_hash = receipt.get("final_hash")
@@ -131,6 +197,8 @@ def verify_receipt(receipt: Dict[str, Any], path: Path) -> None:
             f"{path}: PASS verdict without PASS hard gate",
         )
 
+    verify_version_snapshot(receipt, path)
+
 
 def verify_ledger_entry(
     entry: Dict[str, Any],
@@ -139,14 +207,9 @@ def verify_ledger_entry(
     validator: Draft202012Validator,
 ) -> None:
     validate_schema(entry, validator, f"ledger seq {expected_seq}")
-    require(
-        entry.get("seq") == expected_seq,
-        f"ledger: expected seq {expected_seq}",
-    )
-    require(
-        entry.get("prev_tip") == expected_prev,
-        f"ledger seq {expected_seq}: prev_tip mismatch",
-    )
+    require(entry.get("ledger_version") == LEDGER_VERSION, f"ledger seq {expected_seq}: wrong ledger_version")
+    require(entry.get("seq") == expected_seq, f"ledger: expected seq {expected_seq}")
+    require(entry.get("prev_tip") == expected_prev, f"ledger seq {expected_seq}: prev_tip mismatch")
 
     entry_hash = entry.get("entry_hash")
     body = {k: v for k, v in entry.items() if k != "entry_hash"}
@@ -176,23 +239,15 @@ def load_existing_ledger() -> Tuple[List[Dict[str, Any]], Set[str], Set[str], st
         try:
             entry = json.loads(raw_line)
         except Exception as exc:
-            raise ValueError(
-                f"ledger line {line_number}: invalid JSON: {exc}"
-            ) from exc
+            raise ValueError(f"ledger line {line_number}: invalid JSON: {exc}") from exc
 
         expected_seq = len(entries) + 1
         verify_ledger_entry(entry, expected_seq, tip, validator)
 
         receipt_id = entry["receipt_id"]
         final_hash = entry["receipt_final_hash"]
-        require(
-            receipt_id not in seen_ids,
-            f"ledger seq {expected_seq}: duplicate receipt_id",
-        )
-        require(
-            final_hash not in seen_hashes,
-            f"ledger seq {expected_seq}: duplicate receipt_final_hash",
-        )
+        require(receipt_id not in seen_ids, f"ledger seq {expected_seq}: duplicate receipt_id")
+        require(final_hash not in seen_hashes, f"ledger seq {expected_seq}: duplicate receipt_final_hash")
 
         entries.append(entry)
         seen_ids.add(receipt_id)
@@ -228,7 +283,7 @@ def make_entry(
 
     body: Dict[str, Any] = {
         "type": "EXECUTION_RECEIPT",
-        "ledger_version": "0.1",
+        "ledger_version": LEDGER_VERSION,
         "seq": seq,
         "prev_tip": prev_tip,
         "canonicalization": {
@@ -255,6 +310,7 @@ def make_entry(
         "items_failed": execution.get("items_failed"),
         "items_indeterminate": execution.get("items_indeterminate"),
         "alms_version": bindings.get("alms_version"),
+        "version_registry": bindings.get("version_registry"),
         "receiptos_frame": bindings.get("receiptos_frame"),
         "ens_pointer": bindings.get("ens_pointer"),
         "requested_replay_parameter": receipt.get("requested_replay_parameter"),
@@ -262,9 +318,7 @@ def make_entry(
         "authority": False,
         "proof_inferred": False,
         "no_fake_green": True,
-        "ingested_at": datetime.now(timezone.utc)
-        .isoformat()
-        .replace("+00:00", "Z"),
+        "ingested_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
     }
     body["entry_hash"] = sha256_object(body)
     return body
@@ -281,14 +335,8 @@ def main() -> int:
         print(f"CONSUME_REJECT {exc}", file=sys.stderr)
         return 1
 
-    id_to_hash = {
-        entry["receipt_id"]: entry["receipt_final_hash"]
-        for entry in existing
-    }
-    hash_to_id = {
-        entry["receipt_final_hash"]: entry["receipt_id"]
-        for entry in existing
-    }
+    id_to_hash = {entry["receipt_id"]: entry["receipt_final_hash"] for entry in existing}
+    hash_to_id = {entry["receipt_final_hash"]: entry["receipt_id"] for entry in existing}
 
     seq = len(existing)
     pending: List[Dict[str, Any]] = []
@@ -300,19 +348,13 @@ def main() -> int:
 
         if receipt_id in seen_ids:
             if id_to_hash.get(receipt_id) != final_hash:
-                print(
-                    f"CONFLICT receipt_id={receipt_id} final_hash changed",
-                    file=sys.stderr,
-                )
+                print(f"CONFLICT receipt_id={receipt_id} final_hash changed", file=sys.stderr)
                 return 1
             continue
 
         if final_hash in seen_hashes:
             if hash_to_id.get(final_hash) != receipt_id:
-                print(
-                    f"CONFLICT final_hash={final_hash} reused by another receipt_id",
-                    file=sys.stderr,
-                )
+                print(f"CONFLICT final_hash={final_hash} reused by another receipt_id", file=sys.stderr)
                 return 1
             continue
 
