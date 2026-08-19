@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.1.0",
+  "registry_version": "1.2.0",
   "entries": [
     {
       "id": "ALMS_PROTOCOL",
@@ -24,39 +24,32 @@
     {
       "id": "ALMS_EXECUTION_RECEIPT",
       "layer": "schema_version",
-      "version": "0.2.0",
+      "version": "0.3.0",
       "state": "REPLAY_REQUIRED",
       "artifact_path": "scripts/alms_write_execution_receipt.py",
       "hash": "UNSET",
-      "depends_on": [
-        "ALMS_PROTOCOL"
-      ],
-      "notes": "Terminal execution receipt contract. Version is registered before first live global-ledger receipt; artifact hash remains unbound until replay."
+      "depends_on": ["ALMS_PROTOCOL"],
+      "notes": "Terminal execution receipt contract with version-registry snapshot; artifact hash remains unbound until replay."
     },
     {
       "id": "JSONWISDOM_GLOBAL_EXECUTION_LEDGER",
       "layer": "schema_version",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "state": "REPLAY_REQUIRED",
-      "artifact_path": "schemas/JSONWISDOM_GLOBAL_EXECUTION_LEDGER_V0_1.schema.json",
+      "artifact_path": "schemas/JSONWISDOM_GLOBAL_EXECUTION_LEDGER_V0_2.schema.json",
       "hash": "UNSET",
-      "depends_on": [
-        "ALMS_EXECUTION_RECEIPT"
-      ],
-      "notes": "Hash-linked global execution ledger entry schema. No synthetic first row."
+      "depends_on": ["ALMS_EXECUTION_RECEIPT"],
+      "notes": "Hash-linked global execution ledger entry schema requiring execution version snapshot. No synthetic first row."
     },
     {
       "id": "ALMS_EXECUTION_RECEIPT_CONSUMER",
       "layer": "workflow_version",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "state": "REPLAY_REQUIRED",
       "artifact_path": "scripts/alms_consume_execution_receipts.py",
       "hash": "UNSET",
-      "depends_on": [
-        "ALMS_EXECUTION_RECEIPT",
-        "JSONWISDOM_GLOBAL_EXECUTION_LEDGER"
-      ],
-      "notes": "Validates sealed execution receipts and appends a batch-atomic tip-chained ledger."
+      "depends_on": ["ALMS_EXECUTION_RECEIPT", "JSONWISDOM_GLOBAL_EXECUTION_LEDGER"],
+      "notes": "Validates sealed version-bound execution receipts and appends a batch-atomic tip-chained ledger."
     },
     {
       "id": "ALMS_ACTIVE_LANES_BINDER",
@@ -65,15 +58,13 @@
       "state": "REPLAY_REQUIRED",
       "artifact_path": "scripts/alms_bind_active_lanes.py",
       "hash": "UNSET",
-      "depends_on": [
-        "JSONWISDOM_GLOBAL_EXECUTION_LEDGER"
-      ],
+      "depends_on": ["JSONWISDOM_GLOBAL_EXECUTION_LEDGER"],
       "notes": "Binds ACTIVE_LANES receipt_ptr only to verified global-ledger receipt IDs."
     },
     {
       "id": "ALMS_AUTO_REPLAY_WORKFLOW",
       "layer": "workflow_version",
-      "version": "0.2.0",
+      "version": "0.3.0",
       "state": "REPLAY_REQUIRED",
       "artifact_path": ".github/workflows/alms-auto-replay-and-bump.yml",
       "hash": "UNSET",
@@ -84,7 +75,7 @@
         "ALMS_EXECUTION_RECEIPT_CONSUMER",
         "ALMS_ACTIVE_LANES_BINDER"
       ],
-      "notes": "Fail-closed replay workflow with durable execution receipt, global ledger consumption, and real lane pointer binding."
+      "notes": "Fail-closed replay workflow with version-bound durable execution receipt, global ledger consumption, and real lane pointer binding."
     },
     {
       "id": "C0001",
