@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.example/schemas/JSONWISDOM_GLOBAL_EXECUTION_LEDGER_V0_2.schema.json",
+  "title": "JSONWisdom Global Execution Ledger Entry v0.2.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "type", "ledger_version", "seq", "prev_tip", "canonicalization",
+    "receipt_id", "receipt_final_hash", "receipt_path", "workflow_name",
+    "workflow_run_id", "workflow_run_attempt", "repo", "ref", "commit",
+    "runner_exit_code", "verdict", "hard_gate_result", "items_requested",
+    "items_passed", "items_failed", "items_indeterminate", "alms_version",
+    "version_registry", "source_hashes", "authority", "proof_inferred",
+    "no_fake_green", "ingested_at", "entry_hash"
+  ],
+  "properties": {
+    "type": {"const": "EXECUTION_RECEIPT"},
+    "ledger_version": {"const": "0.2.0"},
+    "seq": {"type": "integer", "minimum": 1},
+    "prev_tip": {"anyOf": [{"const": "genesis"}, {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}]},
+    "canonicalization": {
+      "type": "object", "additionalProperties": false,
+      "required": ["method", "hash_alg", "rfc8785_jcs_claimed"],
+      "properties": {
+        "method": {"const": "JSON_SORTED_KEYS_COMPACT_UTF8_V0_1"},
+        "hash_alg": {"const": "sha256"},
+        "rfc8785_jcs_claimed": {"const": false}
+      }
+    },
+    "receipt_id": {"type": "string", "minLength": 1},
+    "receipt_final_hash": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "receipt_path": {"type": "string", "pattern": "^alms/execution_receipts/.+\\.json$"},
+    "workflow_name": {"type": ["string", "null"]},
+    "workflow_run_id": {"type": "string", "minLength": 1},
+    "workflow_run_attempt": {"type": "string", "minLength": 1},
+    "repo": {"type": "string", "pattern": "^[^/]+/[^/]+$"},
+    "ref": {"type": ["string", "null"]},
+    "commit": {"type": "string", "pattern": "^[0-9a-fA-F]{40}$"},
+    "actor": {"type": ["string", "null"]},
+    "event_name": {"type": ["string", "null"]},
+    "runner_exit_code": {"type": "integer"},
+    "verdict": {"enum": ["PASS", "FAIL", "INDETERMINATE", "ERROR"]},
+    "hard_gate_result": {"enum": ["PASS", "REJECT", "HOLD"]},
+    "items_requested": {"type": ["integer", "null"], "minimum": 0},
+    "items_passed": {"type": ["integer", "null"], "minimum": 0},
+    "items_failed": {"type": ["integer", "null"], "minimum": 0},
+    "items_indeterminate": {"type": ["integer", "null"], "minimum": 0},
+    "alms_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "version_registry": {
+      "type": "object", "additionalProperties": false,
+      "required": ["state", "path", "sha256", "registry_version", "components"],
+      "properties": {
+        "state": {"const": "BOUND"},
+        "path": {"const": "alms/version_registry.json"},
+        "sha256": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+        "registry_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+        "components": {
+          "type": "object",
+          "required": [
+            "ALMS_PROTOCOL", "ALMS_AUTO_REPLAY_WORKFLOW",
+            "ALMS_EXECUTION_RECEIPT_FORMAT", "GLOBAL_EXECUTION_LEDGER_SCHEMA",
+            "GLOBAL_EXECUTION_LEDGER_CONSUMER", "ACTIVE_LANES_BINDER"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "ALMS_PROTOCOL": {"$ref": "#/$defs/component"},
+            "ALMS_AUTO_REPLAY_WORKFLOW": {"$ref": "#/$defs/component"},
+            "ALMS_EXECUTION_RECEIPT_FORMAT": {"$ref": "#/$defs/component"},
+            "GLOBAL_EXECUTION_LEDGER_SCHEMA": {"$ref": "#/$defs/component"},
+            "GLOBAL_EXECUTION_LEDGER_CONSUMER": {"$ref": "#/$defs/component"},
+            "ACTIVE_LANES_BINDER": {"$ref": "#/$defs/component"}
+          }
+        }
+      }
+    },
+    "receiptos_frame": {"type": ["string", "null"]},
+    "ens_pointer": {"type": ["string", "null"]},
+    "requested_replay_parameter": {
+      "oneOf": [
+        {"type": "null"},
+        {"type": "object", "additionalProperties": false, "required": ["value", "unit"], "properties": {
+          "value": {"type": "integer", "minimum": 0},
+          "unit": {"type": "string", "minLength": 1}
+        }}
+      ]
+    },
+    "source_hashes": {"type": "object", "additionalProperties": {"anyOf": [{"type": "null"}, {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}]}},
+    "authority": {"const": false},
+    "proof_inferred": {"const": false},
+    "no_fake_green": {"const": true},
+    "ingested_at": {"type": "string", "format": "date-time"},
+    "entry_hash": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  },
+  "$defs": {
+    "component": {
+      "type": "object", "additionalProperties": false,
+      "required": ["layer", "version", "state", "artifact_path", "hash"],
+      "properties": {
+        "layer": {"enum": ["protocol_version", "schema_version", "corpus_version", "workflow_version"]},
+        "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+        "state": {"enum": ["DRAFT", "LOCKED", "REPLAY_REQUIRED", "REPLAY_PASSED", "BLOCKED", "DEPRECATED"]},
+        "artifact_path": {"type": "string", "minLength": 1},
+        "hash": {"type": "string", "pattern": "^(UNSET|sha256:[0-9a-f]{64})$"}
+      }
+    }
+  }
+}
