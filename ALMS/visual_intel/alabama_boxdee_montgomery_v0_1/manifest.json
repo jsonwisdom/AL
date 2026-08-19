@@ -7,6 +7,12 @@
   "production_green": false,
   "no_fake_green": true,
   "purpose": "Create a non-blank Alabama visual-intelligence surface that separates public-record military context, Zora/story candidates, and synthetic replay interfaces.",
+  "replay_schema": {
+    "schema_version": "alabama.maxwell-dannelly-replay.v0.1",
+    "path": "ALMS/visual_intel/alabama_boxdee_montgomery_v0_1/maxwell_dannelly_replay.schema.json",
+    "state": "DEFINED_REVIEW_OPEN",
+    "cross_lane_inference_allowed": false
+  },
   "visual_artifact": {
     "drive_file_id": "1uQIpmhQWcPJMVOl2PbedPt6z1-ppFRpm",
     "drive_file_name": "ALABAMA_BOXDEE_MONTGOMERY_VISUAL_INTELLIGENCE_V0_1.png",
@@ -74,18 +80,41 @@
     "story_onion": ["ZORA_ART", "BOXDEE_PERSPECTIVE", "LEAHPRIME_EXPLANATION", "GRAY_BABY_GAPS", "HUMAN_REVIEW"],
     "cross_subsidy_forbidden": true
   },
+  "zora_ingestion_v2_handoff": {
+    "publication_candidate_id": "ALABAMA_MONTGOMERY_BOXDEE_VISUAL_V0_1",
+    "candidate_class": "VISUAL_INTELLIGENCE_PUBLICATION_CANDIDATE",
+    "visual_sha256": "b0548ed2bb29d8fcc1915aaead844ae6c67815f36f129134022575462dd8207f",
+    "human_publication_required": true,
+    "agent_publish_authorized": false,
+    "agent_sign_authorized": false,
+    "agent_trade_authorized": false,
+    "post_publication_requirements": [
+      "ZORA_SDK_OR_REST_READBACK",
+      "CONTRACT_ADDRESS_CAPTURE",
+      "CREATOR_ADDRESS_OBSERVATION",
+      "METADATA_CAPTURE",
+      "RAW_RESPONSE_RECEIPT",
+      "EXPLICIT_ZORA_OBJECT_BINDING",
+      "DRIFT_CHECK"
+    ],
+    "canon_rule": "PUBLICATION != CANON; SDK_READBACK + RECEIPT + EXPLICIT_GIT_BINDING REQUIRED"
+  },
   "invariants": [
     "STORY != SOURCE",
     "ART != AUTHORITY",
+    "IMAGE != AUTHORITY",
     "ZORA_OBJECT != EXTERNAL_FACT",
     "ZORA_TIMESTAMP != EVENT_PROOF",
     "CONTRACT_ADDRESS != HUMAN_IDENTITY",
     "PUBLIC_BASE_PAGE != INSTALLATION_BUDGET",
     "COUNTY_TOTAL != INSTALLATION_BUDGET",
+    "MAXWELL_LANE != DANNELLY_LANE",
+    "CROSS_LANE_RELATIONSHIP_REQUIRES_EXPLICIT_RECEIPT",
     "LEAHPRIME != REAL_PERSON",
     "GENERAL_LEEANN_SECONDARY != MILITARY_RANK",
     "LIVING_LEEANN_LEAHPRIME != PUBLIC_PERSON_IDENTITY",
     "BOXDEE != COMMAND_AUTHORITY",
+    "PUBLICATION != CANON",
     "AUTHORITY_CREATED = FALSE"
   ]
 }
