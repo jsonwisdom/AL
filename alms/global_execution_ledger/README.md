@@ -1,90 +1,112 @@
 # JSONWisdom Global Execution Ledger — v0.1
 
-Status: `SKELETON / REVIEW_ONLY / NO_SYNTHETIC_RUNS`
+Status: `WIRED / REVIEW_ONLY / NO_SYNTHETIC_RUNS`
 
 ```text
 authority = false
+proof_inferred = false
 no_fake_green = true
 ```
 
-## Purpose
+## Canonical flow
 
-Provide one append-only arithmetic surface for machine-speed replay across JSONWisdom repositories and ALMS workflows.
+```text
+alms/execution_receipts/*.json
+        ↓
+scripts/alms_consume_execution_receipts.py
+        ↓
+alms/JSONWISDOM_GLOBAL_EXECUTION_LEDGER.jsonl
+        ↓
+scripts/alms_bind_active_lanes.py
+        ↓
+ACTIVE_LANES.json
+```
 
-The ledger is intended to answer, per real execution:
+There is **one canonical global ledger path**:
 
-- repository / ref / commit
-- workflow run ID and attempt
-- started / completed timestamps
-- replay runner exit code
-- hard-gate disposition
-- items requested / observed / validated / passed / held / conflicted / rejected / indeterminate
-- receipt IDs and source hashes
-- replay hash
-- optional ReceiptOS frame and ENS discovery pointer
+`alms/JSONWISDOM_GLOBAL_EXECUTION_LEDGER.jsonl`
 
-It does **not** convert workflow execution into factual truth, legal authority, or whole-lane GREEN.
+The older direct-append skeleton has been retired. `scripts/alms_append_global_execution_ledger.py` is now only a compatibility entrypoint to the receipt consumer. A ledger row must originate from a sealed execution receipt.
 
-## Files
+The runtime ledger remains intentionally absent until a real workflow execution receipt is consumed. Do not seed it with a fabricated first row.
 
-- Schema: `schemas/JSONWISDOM_GLOBAL_EXECUTION_LEDGER_V0_1.schema.json`
-- Ledger writer: `scripts/alms_append_global_execution_ledger.py`
-- Execution-receipt writer: `scripts/alms_write_execution_receipt.py`
-- Execution receipts: `alms/execution_receipts/*.json`
-- Future runtime ledger: `alms/global_execution_ledger/ledger.jsonl`
+## Receipt consumption contract
 
-`ledger.jsonl` is intentionally absent until a real workflow run is bound. Do not seed it with a fabricated first execution.
+The consumer:
 
-## Append contract
+1. validates each execution receipt's fixed boundaries (`authority=false`, `proof_inferred=false`, `no_fake_green=true`);
+2. recomputes and verifies the execution receipt `final_hash` before ingestion;
+3. validates every ledger row against `schemas/JSONWISDOM_GLOBAL_EXECUTION_LEDGER_V0_1.schema.json`;
+4. verifies the complete existing ledger chain before appending anything;
+5. requires monotonically increasing `seq` values;
+6. requires `prev_tip = genesis` for the first row and the prior `entry_hash` thereafter;
+7. recomputes every existing `entry_hash` and fails closed on any mismatch;
+8. is idempotent by both `receipt_id` and `receipt_final_hash`;
+9. rejects conflicting duplicate IDs or hashes instead of silently skipping them;
+10. appends only after all validation succeeds.
 
-Each ledger row is one JSON object. The ledger writer:
+Hashing uses deterministic compact sorted-key UTF-8 JSON:
 
-1. requires explicit workflow identity, commit, start/completion timestamps, and runner exit code;
-2. hashes the exact replay report when present;
-3. derives counters from `ci/corpus_report.json`;
-4. rejects duplicate `workflow_run_id + workflow_attempt` bindings;
-5. links the new row to the previous row with `previous_entry_sha256`;
-6. computes `entry_sha256` over the canonical JSON payload before the hash field is added;
-7. validates the completed record against the v0.1 schema;
-8. appends one line only after validation.
+`JSON_SORTED_KEYS_COMPACT_UTF8_V0_1`
+
+This implementation **does not claim RFC 8785 JCS compatibility**.
+
+## Ledger arithmetic
+
+For a valid ledger:
+
+```text
+execution_receipt_count = last.seq
+current_tip             = last.entry_hash
+PASS                     = count(verdict == PASS)
+FAIL                     = count(verdict == FAIL)
+INDETERMINATE            = count(verdict == INDETERMINATE)
+ERROR                     = count(verdict == ERROR)
+```
+
+Every row binds workflow run/attempt, repository, ref, commit, actor/trigger, runner exit code, explicit verdict, explicit hard-gate result, case counters, source hashes, and optional ALMS / ReceiptOS / ENS bindings.
+
+## ACTIVE_LANES pointer law
+
+`ACTIVE_LANES.json.receipt_ptr` may only contain a `receipt_id` that resolves to a verified entry on the canonical ledger.
+
+Known exact bindings in v0.1 are:
+
+```text
+AL              -> jsonwisdom/AL
+COMPUTERWISDOM  -> jsonwisdom/COMPUTERWISDOM
+JOY             -> jsonwisdom/JOY
+```
+
+The binder selects the latest verified ledger entry for an exact known repo binding. If no matching real ledger entry exists, the pointer remains `null` and `replay_verdict` remains `UNAVAILABLE`.
+
+A stale/non-resolving pointer is cleared rather than inferred.
 
 ## Replay parameter 125
 
 The user-requested replay parameter `125` remains **unit-unbound**.
 
-Do not write it into the execution ledger as cases, scans, repos, workers, or any other unit until an explicit contract binds the unit. When bound, use:
+Do not write it as cases, scans, repos, workers, or any other unit until an explicit contract binds the unit.
 
-```json
-{
-  "requested_replay_parameter": {
-    "value": 125,
-    "unit": "<EXPLICIT_UNIT>"
-  }
-}
-```
-
-## Current integration boundary
-
-`alms-auto-replay-and-bump.yml` now captures the replay runner exit code instead of swallowing it. The workflow writes a terminal execution receipt on the post-run path and explicitly fails the workflow when the replay runner exited non-zero.
-
-Promotion artifacts are only staged when replay, version bump, and Merkle publication all complete as a clean PASS. The version-bump subprocess is invoked with `check=True` so a failed bump cannot silently continue to Merkle publication.
-
-The execution receipt writer distinguishes `PASS`, `FAIL`, `INDETERMINATE`, and `ERROR`, binds the corpus report hash when available, fixes `authority=false` and `no_fake_green=true`, and does not claim RFC 8785 JCS compatibility for its local deterministic JSON hashing method.
-
-The global JSONL ledger writer is **not yet invoked by the workflow**. The next integration step is to index committed `alms/execution_receipts/*.json` into `alms/global_execution_ledger/ledger.jsonl` without changing the workflow disposition.
-
-### Timeout / cancellation boundary
-
-The terminal execution receipt is a post-run step. Normal non-zero exits and recoverable runner failures are receipted. A whole-job timeout, workflow cancellation, or runner-host loss can prevent that post-step from executing. Closing that gap requires a two-phase durable receipt (`STARTED` before replay, `TERMINAL` after replay) or an external watcher.
+## Failure law
 
 ```text
-RUNNER_FAIL          -> EXECUTION_RECEIPT_ATTEMPT + WORKFLOW_FAIL
-RUNNER_PASS          -> RECEIPT + PROMOTION_ELIGIBILITY
-BUMP_FAIL            -> NO_MERKLE_PROMOTION
-MERKLE_FAIL          -> NO_PROMOTION_ARTIFACT_COMMIT
-RECEIPT_PUSH_FAIL    -> WORKFLOW_FAILS; DURABILITY_NOT_CLAIMED
-LEDGER_APPEND_FAIL   -> NO_GREEN
+RUNNER_FAIL          -> TERMINAL RECEIPT ATTEMPT
+RUNNER_FAIL          -> NO VERSION BUMP
+RUNNER_FAIL          -> NO MERKLE PROMOTION
+RUNNER_FAIL          -> WORKFLOW FAIL
+LEDGER_VERIFY_FAIL   -> NO POINTER BIND
+POINTER_NOT_ON_CHAIN -> NULL / UNAVAILABLE
+PUSH_FAIL            -> DURABILITY NOT CLAIMED
 REPLAY_SUCCESS       != FACT_TRUE
 RECEIPT              != VERDICT
 AUTHORITY_CREATED    = FALSE
 ```
+
+## Concurrency boundary
+
+The workflow serializes global-ledger mutation per Git ref with `cancel-in-progress: false`. This prevents two same-ref runs from intentionally racing the append-only tip. A failed/non-fast-forward push still leaves the workflow red; no durable receipt is claimed until GitHub accepts the commit.
+
+## Timeout boundary
+
+The terminal execution receipt is still a post-run step. Whole-job timeout, workflow cancellation, or runner-host loss may prevent the terminal receipt from being written. The future hardening path remains a two-phase durable `STARTED -> TERMINAL` receipt or an external watcher.
