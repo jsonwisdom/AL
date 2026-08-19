@@ -1,0 +1,29 @@
+{
+  "binding_state": {
+    "anchor_proves_commitment_not_truth": true,
+    "authority_created": false,
+    "base_eas_binding": "HOLD",
+    "byte_binding": "BOUND_TO_CANONICAL_ARTIFACT_BYTES",
+    "drive_binding": "HOLD",
+    "github_binding": "BOUND",
+    "proof_inferred": false
+  },
+  "boxd_replay_id": "BOXD / REPLAY-001 / DOJ-SENTIENT / S001E00006",
+  "canonical_artifact": {
+    "branch": "Minnesota-Process-Stress-Test",
+    "byte_size": 4463,
+    "github_blob_sha": "8e11304f77f33d868816c7381b54df78f7a0d972",
+    "github_commit_sha": "be272a758fcb9388147cb6798a53829a5efdb5cd",
+    "path": "boxd/replay-001/doj-sentient/S001E00006/S001E00006_minnesota_rot_process_stress_test.json",
+    "repository": "jsonwisdom/AL",
+    "sha256": "554456a25da8609d4af32126d6c363f657cab5b5ea05f7dd6c9088a080757a29",
+    "sha3_256": "e3b2f4d4db679bee1a4a0b5ecf01fe4222971496b5fcec741ee01ef223ca702c"
+  },
+  "notes": [
+    "SHA-256 and SHA3-256 are independently computed over the exact UTF-8 bytes of the canonical artifact including its final newline.",
+    "GitHub commit/blob presence plus digest verification binds this receipt to artifact bytes; it does not prove factual claims inside the artifact.",
+    "Base/EAS remains HOLD until an executed chain-8453 transaction receipt is observed."
+  ],
+  "receipt_version": "0.1.0",
+  "sidecar": "SIDECAR_005_HASH_RECEIPTS"
+}
