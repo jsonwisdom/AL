@@ -7,6 +7,7 @@ Rules:
 - conflicting duplicate identifiers fail closed;
 - only valid sealed EXECUTION_RECEIPTs with authority=false are ingestible;
 - every ledger entry validates against the locked v0.1 JSON Schema;
+- the pending batch is fully validated before any new row is appended;
 - no PASS is inferred from silence;
 - deterministic compact sorted-key UTF-8 JSON hashing is used;
 - RFC 8785 JCS compatibility is not claimed.
@@ -290,53 +291,60 @@ def main() -> int:
     }
 
     seq = len(existing)
-    new_count = 0
+    pending: List[Dict[str, Any]] = []
 
-    with LEDGER_PATH.open("a", encoding="utf-8", newline="\n") as handle:
-        for path, receipt in receipts:
-            receipt_id = receipt["receipt_id"]
-            final_hash = receipt["final_hash"]
+    # Build and validate the complete candidate batch before mutating the ledger file.
+    for path, receipt in receipts:
+        receipt_id = receipt["receipt_id"]
+        final_hash = receipt["final_hash"]
 
-            if receipt_id in seen_ids:
-                if id_to_hash.get(receipt_id) != final_hash:
-                    print(
-                        f"CONFLICT receipt_id={receipt_id} final_hash changed",
-                        file=sys.stderr,
-                    )
-                    return 1
-                continue
-
-            if final_hash in seen_hashes:
-                if hash_to_id.get(final_hash) != receipt_id:
-                    print(
-                        f"CONFLICT final_hash={final_hash} reused by another receipt_id",
-                        file=sys.stderr,
-                    )
-                    return 1
-                continue
-
-            seq += 1
-            entry = make_entry(receipt, path, seq, tip)
-            try:
-                validate_schema(entry, validator, f"new ledger seq {seq}")
-            except Exception as exc:
-                print(f"CONSUME_REJECT {exc}", file=sys.stderr)
+        if receipt_id in seen_ids:
+            if id_to_hash.get(receipt_id) != final_hash:
+                print(
+                    f"CONFLICT receipt_id={receipt_id} final_hash changed",
+                    file=sys.stderr,
+                )
                 return 1
+            continue
 
-            handle.write(canonical_json_text(entry) + "\n")
+        if final_hash in seen_hashes:
+            if hash_to_id.get(final_hash) != receipt_id:
+                print(
+                    f"CONFLICT final_hash={final_hash} reused by another receipt_id",
+                    file=sys.stderr,
+                )
+                return 1
+            continue
+
+        seq += 1
+        entry = make_entry(receipt, path, seq, tip)
+        try:
+            validate_schema(entry, validator, f"new ledger seq {seq}")
+        except Exception as exc:
+            print(f"CONSUME_REJECT {exc}", file=sys.stderr)
+            return 1
+
+        pending.append(entry)
+        tip = entry["entry_hash"]
+        seen_ids.add(receipt_id)
+        seen_hashes.add(final_hash)
+        id_to_hash[receipt_id] = final_hash
+        hash_to_id[final_hash] = receipt_id
+
+    if pending:
+        with LEDGER_PATH.open("a", encoding="utf-8", newline="\n") as handle:
+            for entry in pending:
+                handle.write(canonical_json_text(entry) + "\n")
             handle.flush()
 
-            tip = entry["entry_hash"]
-            seen_ids.add(receipt_id)
-            seen_hashes.add(final_hash)
-            id_to_hash[receipt_id] = final_hash
-            hash_to_id[final_hash] = receipt_id
-            new_count += 1
+        for entry in pending:
             print(
-                f"APPENDED seq={seq} receipt_id={receipt_id} tip={tip}"
+                f"APPENDED seq={entry['seq']} "
+                f"receipt_id={entry['receipt_id']} "
+                f"tip={entry['entry_hash']}"
             )
 
-    print(f"DONE new={new_count} total_seq={seq} tip={tip}")
+    print(f"DONE new={len(pending)} total_seq={seq} tip={tip}")
     return 0
 
 
