@@ -59,7 +59,7 @@ Every admitted fact MUST carry one source class:
 
 | Class | Meaning |
 | --- | --- |
-| `OBSERVED` | Directly read from the named surface at a frozen locator and time. |
+| `OBSERVED` | Directly read from the named surface at a frozen locator and source-native evidence coordinate. |
 | `RECEIPT` | Bound to exact bytes or a provider receipt whose digest is recorded. |
 | `OPERATOR_REPORTED` | Supplied by the operator but not independently replayed in the current run. |
 | `UNOBSERVED` | Required evidence was not read or was unavailable. |
@@ -73,36 +73,60 @@ UNOBSERVED        != NONEXISTENT
 SEARCH_MISS       != ABSENCE
 ```
 
+## Timestamp membrane
+
+State evaluation admits only source-bound evidence time. A chain slot or block number is an ordered evidence coordinate rather than a wall-clock timestamp, but it belongs to the same lawful rail when it is bound to exact receipt bytes.
+
+| Rail | Schema location | Effect on state evaluation |
+| --- | --- | --- |
+| Evidence time / source-state coordinate | Input: `evidence[].evidence_time` | Admissible only after byte, digest, provenance, and source reconciliation |
+| Replay time | Result only, verifier-derived | Records when bytes were re-read; cannot select or alter state |
+| Transport time | Out-of-band audit metadata only | No evidentiary effect; excluded from verifier input and input digest |
+| Memory time | Advisory index only | May help locate evidence; never substitutes for re-read bytes |
+| Evaluation or authority time | Result or separate governed action receipt only | Caller supply is forbidden |
+
+`RRR-B20-STATE-V001.input.schema.json` closes every object boundary. Fields such as `transport_timestamp`, `chat_timestamp`, `replay_timestamp`, `memory_timestamp`, `evaluation_timestamp`, `authority_timestamp`, `result`, `burden_satisfied`, `execution_authorized`, and `authority_created` are not admitted anywhere in the input.
+
+```text
+EVIDENCE_TIME_WITHOUT_BYTE_BINDING = INADMISSIBLE
+TRANSPORT_TIME                     = NON_BINDING
+MEMORY_TIME                        = ADVISORY_ONLY
+CALLER_SUPPLIED_RESULT             = INVALID_INPUT
+SCHEMA_VALID                       != EVIDENCE_ADMISSIBLE
+```
+
+JSON Schema validates structure. The verifier must still establish that the claimed time or coordinate is native to the source record, that `bound_content_sha256` equals the re-read content digest, and that the state anchor resolves to exactly one evidence item.
+
 ## Minimum replay input
 
-A domain replay is not burden-satisfied unless it freezes all applicable fields:
+A domain replay input is defined by [`schemas/RRR-B20-STATE-V001.input.schema.json`](../../schemas/RRR-B20-STATE-V001.input.schema.json). Its minimum shape is:
 
 ```json
 {
+  "schema_id": "RRR-B20-STATE-V001.input",
   "srm_version": "0.1",
-  "domain_id": "",
-  "surface_id": "",
-  "surface_locator": "",
-  "network_or_provider": "",
-  "exact_head_or_state_ref": "",
-  "observed_at": "",
-  "timezone": "",
-  "requested_claim": "",
-  "requested_action": "",
-  "receipts": [
+  "canonicalization": "RFC8785",
+  "digest_algorithm": "SHA-256",
+  "claim": {},
+  "surface": {},
+  "state_anchor_evidence_id": "",
+  "evidence": [
     {
-      "receipt_type": "",
-      "locator": "",
-      "sha256": "",
-      "source_class": "OBSERVED | RECEIPT | OPERATOR_REPORTED"
+      "evidence_id": "",
+      "role": "STATE_ANCHOR",
+      "source_class": "OBSERVED | RECEIPT",
+      "content": {},
+      "provenance": {},
+      "evidence_time": {}
     }
   ],
-  "open_surfaces": [],
-  "authority_created": false
+  "open_surfaces": []
 }
 ```
 
-Missing inapplicable fields may be marked `NOT_APPLICABLE` with a reason. Missing applicable fields MUST remain missing and force `HOLD`; they may not be replaced by narrative.
+The abbreviated object above is explanatory and is not itself valid. The schema contains the complete required fields and four evidence-time variants: `CHAIN_POSITION`, `RECEIPT_CREATED_AT`, `PROGRAM_EXECUTED_AT`, and `SOURCE_STATE`.
+
+Missing applicable fields MUST remain missing and force `HOLD`; they may not be replaced by narrative or a caller-authored `NOT_APPLICABLE` value.
 
 ## Shared invariants
 
@@ -145,6 +169,8 @@ PUMPFUN_RECEIPT   -> COINBASE_BURDEN = NO_EFFECT
 BASE_TOKEN_STATE  -> COINBASE_BURDEN = NO_EFFECT
 GPK_ASSET_RECEIPT -> COINBASE_BURDEN = NO_EFFECT
 COINBASE_CLAIM    -> COINBASE_RECEIPTS_REQUIRED
+ERROR_WITHOUT_BOUND_RECEIPT -> HOLD / UNEXPLAINED
+MISSING_RECEIPT != ERROR_PROVEN_FALSE
 ```
 
 ### SRM-INV-005 — Treasury preview only
@@ -210,7 +236,7 @@ An SRM result is claim-scoped. A `PASS` for one field, file, transaction, or sup
 ## Replay procedure
 
 1. Identify one domain and one exact claim.
-2. Freeze the domain-native locator and observation time.
+2. Freeze the domain-native locator and source-bound evidence time or state coordinate.
 3. Freeze directory/file topology before semantic search when a repository is involved.
 4. Read exact receipt bytes from the native surface.
 5. Verify hashes and bindings.
@@ -241,7 +267,7 @@ An SRM result is claim-scoped. A `PASS` for one field, file, transaction, or sup
 }
 ```
 
-This envelope is documentary in V0.1. No JSON Schema or executable verifier is introduced by this PR.
+This result envelope remains documentary in V0.1. The PR introduces the closed input schema `RRR-B20-STATE-V001.input.schema.json`; it does not introduce a result schema or executable verifier.
 
 ## Initial unified snapshot
 
@@ -252,6 +278,7 @@ SRM_EVALUATION_MODE       = ACTIVE
 SRM_CANON_STATUS          = PROPOSED / PR-BOUND
 DOMAINS_DECLARED          = 4
 DOMAIN_RECEIPT_BUNDLES    = 0
+INPUT_SCHEMA              = PROPOSED / NON-CANON
 AUTHORITY_CREATED         = FALSE
 CANON_MUTATION            = FALSE
 NO_FAKE_GREEN             = TRUE
@@ -297,13 +324,12 @@ Merge, if separately approved by a human, would canonize only this documentation
 
 Before an executable SRM version may claim conformance, a later PR must add:
 
-1. a machine-readable input schema;
-2. a deterministic result schema;
-3. a verifier implementing the fixed precedence;
-4. positive and negative test vectors for all four domains;
-5. canonicalization and digest rules;
-6. a replay receipt from an exact commit;
-7. any signatures required by the frozen semantic-membrane contract.
+1. a deterministic result schema;
+2. a verifier implementing the fixed precedence and cross-field binding rules;
+3. positive and negative test vectors for all four domains;
+4. executable RFC 8785 canonicalization and digest checks;
+5. a replay receipt from an exact commit;
+6. any signatures required by the frozen semantic-membrane contract.
 
 ```text
 DOCUMENT_CREATED != SRM_EXECUTED
