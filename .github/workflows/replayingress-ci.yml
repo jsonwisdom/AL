@@ -1,6 +1,14 @@
 name: ReplayIngress CI Witness
 
 on:
+  push:
+    branches:
+      - "replayingress/v1-lock"
+    paths:
+      - "ReplayIngress/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/replayingress-ci.yml"
   pull_request:
     branches: [master]
     paths:
