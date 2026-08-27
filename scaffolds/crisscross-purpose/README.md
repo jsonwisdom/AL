@@ -80,6 +80,14 @@ JOY
 
 Cross-repo links are references, not authority transfer.
 
+## Observed sibling (2026-08-27 CT)
+
+GitHubBot observed `jsonwisdom/JOY#96` draft, unmerged, head `cabc8d59fd20cd740783a611abe87100b7132e8d`, path `scaffolds/crisscross-family-choice/`.
+
+Same source purpose head: `jsonwisdom/COMPUTERWISDOM#527` (`f20c8ecf29031a8be6c8ce60dbb204b7517bf035`).
+
+Not merged. Not verified. `authority_created=false`.
+
 ## Identity anchor
 
 `jaywisdom.base.eth` is recorded as Jason's declared identity/payment anchor because existing AL and JOY documents use it.
