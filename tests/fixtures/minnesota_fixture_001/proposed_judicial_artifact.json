@@ -1,0 +1,23 @@
+{
+  "case_id": "MINNESOTA_FIXTURE_001",
+  "artifact_status": "PROPOSED_NOT_ADMITTED",
+  "artifact_type": "judicial_opinion",
+  "case_name": "Minnesota Voters Alliance v. Office of the Minnesota Secretary of State",
+  "citation": "990 N.W.2d 441 (Minn. 2023)",
+  "canonical_docket_number": "A22-0111",
+  "decision_date": "2023-05-24",
+  "direct_pdf_url": "https://mn.gov/law-library-stat/archive/supct/2023/OPA220111-052423.pdf",
+  "proposed_holding": "Because Minnesota Rule 8210.2450, subpart 3 (2021), authorizes any ballot board member to review signatures in the event of an identification number mismatch and Minn. Stat. § 203B.121, subd. 2(b)(3) (2022), requires that election judges conduct that review, the rule conflicts with the statute.",
+  "proposed_civic_relevance": "This ruling invalidated an administrative rule from the Secretary of State, stripping non-election judge ballot board members of the authority to verify signatures on absentee ballots. It directly impacts the integrity and procedural handling of absentee ballots in Minnesota.",
+  "operator_claim_note": "The numerical claim regarding over 1.2 million absentee voters is excluded from canonical admission until independently sourced.",
+  "required_before_admission": [
+    "confirm official title against source PDF or Minnesota Law Library metadata",
+    "confirm holding text against opinion text",
+    "capture operator retrieval timestamp in RFC3339 format",
+    "construct bounded canonical_inline_json",
+    "compute sha256 over canonical bytes",
+    "create fixture.json",
+    "register case in tests/run_replay_cases.py",
+    "run Replay Court Harness"
+  ]
+}
