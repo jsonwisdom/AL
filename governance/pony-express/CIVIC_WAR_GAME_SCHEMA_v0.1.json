@@ -1,0 +1,248 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.example/schemas/CIVIC_WAR_GAME_SCHEMA_v0.1.json",
+  "title": "Civic War Game Schema v0.1",
+  "description": "Fail-closed schema for a JSON-driven American history board game. Validation establishes structural conformance only, not historical truth or public authority.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "game_version",
+    "session_id",
+    "authority",
+    "historical_verification",
+    "players",
+    "current_coordinate",
+    "turn",
+    "claims",
+    "forks",
+    "gaps",
+    "receipts"
+  ],
+  "properties": {
+    "game_version": {
+      "const": "CIVIC-WAR-v0.1"
+    },
+    "session_id": {
+      "type": "string",
+      "pattern": "^CW-[A-Z0-9-]{8,64}$"
+    },
+    "authority": {
+      "const": false
+    },
+    "historical_verification": {
+      "enum": ["NOT_PERFORMED", "PARTIAL", "PERFORMED"]
+    },
+    "promotion": {
+      "enum": ["BLOCKED", "CANDIDATE", "APPROVED"],
+      "default": "BLOCKED"
+    },
+    "players": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 6,
+      "items": { "$ref": "#/$defs/player" }
+    },
+    "current_coordinate": {
+      "$ref": "#/$defs/coordinate"
+    },
+    "turn": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["number", "active_player_id", "phase"],
+      "properties": {
+        "number": { "type": "integer", "minimum": 1 },
+        "active_player_id": { "type": "string" },
+        "phase": {
+          "enum": [
+            "OBSERVE",
+            "MOVE",
+            "DRAW",
+            "CLAIM_OR_CHALLENGE",
+            "ATTACH_EVIDENCE",
+            "REVIEW_GATE",
+            "RECORD_RECEIPT"
+          ]
+        }
+      }
+    },
+    "claims": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/claim" }
+    },
+    "forks": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/fork" }
+    },
+    "gaps": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/gap" }
+    },
+    "receipts": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/receipt" }
+    }
+  },
+  "$defs": {
+    "player": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["player_id", "role", "civic_integrity_score"],
+      "properties": {
+        "player_id": { "type": "string", "minLength": 1 },
+        "role": {
+          "enum": ["ARCHIVIST", "REPORTER", "ADVOCATE", "LEGISLATOR", "JUDGE", "CITIZEN"]
+        },
+        "civic_integrity_score": { "type": "integer" },
+        "record_cubes": { "type": "integer", "minimum": 0, "default": 0 },
+        "custody_marker": { "type": "boolean", "default": false },
+        "appeal_marker": { "type": "boolean", "default": false }
+      }
+    },
+    "coordinate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["time", "geography", "authority_class", "depth_layer"],
+      "properties": {
+        "time": { "type": "string", "minLength": 4 },
+        "geography": { "type": "string", "pattern": "^US(?:-[A-Z0-9]+)*$" },
+        "direction": {
+          "enum": ["NORTHBOUND", "SOUTHBOUND", "EASTBOUND", "WESTBOUND", "INBOUND", "OUTBOUND", "CENTER_TO_EDGE", "EDGE_TO_CENTER", "CROSS_BORDER"]
+        },
+        "authority_class": { "$ref": "#/$defs/authorityClass" },
+        "depth_layer": {
+          "enum": ["Z0", "Z1", "Z2", "Z3", "Z4", "Z5", "Z6", "Z7", "Z8"]
+        }
+      }
+    },
+    "authorityClass": {
+      "enum": [
+        "CONSTITUTIONAL_TEXT",
+        "AMENDMENT",
+        "FEDERAL_STATUTE",
+        "STATE_CONSTITUTION",
+        "STATE_STATUTE",
+        "EXECUTIVE_ACT",
+        "JUDICIAL_DECISION",
+        "ADMINISTRATIVE_RULE",
+        "MILITARY_ORDER",
+        "TREATY",
+        "ELECTION_RESULT",
+        "PUBLIC_PETITION",
+        "UNPROVEN_CLAIM"
+      ]
+    },
+    "gateStatus": {
+      "enum": ["UNTESTED", "UNPROVEN", "CONTESTED", "PASS", "FAIL", "INDETERMINATE"]
+    },
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim_id",
+        "claimant_player_id",
+        "statement",
+        "coordinate",
+        "requested_effect",
+        "gate_status",
+        "authority"
+      ],
+      "properties": {
+        "claim_id": { "type": "string", "pattern": "^CLAIM-[A-Z0-9-]+$" },
+        "claimant_player_id": { "type": "string" },
+        "statement": { "type": "string", "minLength": 1 },
+        "coordinate": { "$ref": "#/$defs/coordinate" },
+        "source_refs": {
+          "type": "array",
+          "items": { "type": "string" },
+          "default": []
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": { "type": "string" },
+          "default": []
+        },
+        "requested_effect": { "type": "string", "minLength": 1 },
+        "challenge_path": {
+          "type": "array",
+          "items": { "type": "string" },
+          "default": []
+        },
+        "gate_status": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["integrity", "identity", "provenance", "authority", "jurisdiction", "truth"],
+          "properties": {
+            "integrity": { "$ref": "#/$defs/gateStatus" },
+            "identity": { "$ref": "#/$defs/gateStatus" },
+            "provenance": { "$ref": "#/$defs/gateStatus" },
+            "authority": { "$ref": "#/$defs/gateStatus" },
+            "jurisdiction": { "$ref": "#/$defs/gateStatus" },
+            "truth": { "$ref": "#/$defs/gateStatus" }
+          }
+        },
+        "authority": { "const": false },
+        "status": {
+          "enum": ["OPEN", "CONTESTED", "UPHELD_IN_GAME", "OVERRULED_IN_GAME", "DENIED", "INDETERMINATE"]
+        }
+      }
+    },
+    "fork": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fork_id", "claim_ids", "status"],
+      "properties": {
+        "fork_id": { "type": "string", "pattern": "^FORK-[A-Z0-9-]+$" },
+        "claim_ids": {
+          "type": "array",
+          "minItems": 2,
+          "uniqueItems": true,
+          "items": { "type": "string" }
+        },
+        "status": { "enum": ["PRESERVED", "RESOLVED", "IMPROPERLY_COLLAPSED"] },
+        "resolution_receipt_id": { "type": ["string", "null"] }
+      }
+    },
+    "gap": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["gap_id", "description", "status"],
+      "properties": {
+        "gap_id": { "type": "string", "pattern": "^GAP-[A-Z0-9-]+$" },
+        "description": { "type": "string", "minLength": 1 },
+        "required_record": { "type": ["string", "null"] },
+        "status": { "enum": ["OPEN", "SEARCHING", "FILLED", "UNRESOLVED"] },
+        "invented_history": { "const": false }
+      }
+    },
+    "receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "receipt_id",
+        "turn_number",
+        "action",
+        "result",
+        "recorded_at",
+        "authority",
+        "historical_truth_established"
+      ],
+      "properties": {
+        "receipt_id": { "type": "string", "pattern": "^RECEIPT-CW-[A-Z0-9-]+$" },
+        "turn_number": { "type": "integer", "minimum": 1 },
+        "action": { "type": "string", "minLength": 1 },
+        "claim_id": { "type": ["string", "null"] },
+        "evidence_refs": {
+          "type": "array",
+          "items": { "type": "string" },
+          "default": []
+        },
+        "result": { "enum": ["PASS", "FAIL", "CONTESTED", "INDETERMINATE", "RECORDED"] },
+        "recorded_at": { "type": "string", "format": "date-time" },
+        "previous_receipt_hash": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" },
+        "receipt_hash": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" },
+        "authority": { "const": false },
+        "historical_truth_established": { "const": false }
+      }
+    }
+  }
+}

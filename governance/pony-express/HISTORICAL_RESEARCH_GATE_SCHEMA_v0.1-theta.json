@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.example/schemas/HISTORICAL_RESEARCH_GATE_SCHEMA_v0.1-theta.json",
+  "title": "Historical Research Gate Schema v0.1-theta",
+  "description": "Fail-closed structural schema for design-only review of candidate historical material. Validation creates no authority, admission, or historical truth.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "object_id",
+    "authority",
+    "execution",
+    "gate_1",
+    "historical_verification",
+    "capture_packet",
+    "stage",
+    "stage_results",
+    "receipts"
+  ],
+  "properties": {
+    "schema_version": { "const": "HISTORICAL_RESEARCH_GATE_v0.1-theta" },
+    "object_id": { "type": "string", "pattern": "^HIST-[A-Z0-9-]{4,80}$" },
+    "authority": { "const": false },
+    "execution": { "const": "DESIGN_ONLY" },
+    "gate_1": { "const": "BLOCKED" },
+    "historical_verification": { "const": "NOT_PERFORMED" },
+    "core_docket": { "const": "EMPTY" },
+    "capture_pairs_admitted": { "const": 0 },
+    "capture_packet": { "$ref": "#/$defs/capturePacket" },
+    "stage": {
+      "enum": [
+        "CAPTURE",
+        "HASH",
+        "IDENTITY_CHECK",
+        "PROVENANCE",
+        "CUSTODY_REVIEW",
+        "SOURCE_COMPARISON",
+        "AUTHORITY_CLASSIFICATION",
+        "CONFLICT_AND_GAP_ANALYSIS",
+        "EXTERNAL_VERIFICATION",
+        "ADMISSION_REVIEW",
+        "CLOSED"
+      ]
+    },
+    "stage_results": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/stageResult" }
+    },
+    "admission_review": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "result": {
+          "enum": [
+            "ELIGIBLE_FOR_LIMITED_REVIEW",
+            "REJECTED",
+            "REMANDED_FOR_MORE_EVIDENCE",
+            "INDETERMINATE"
+          ]
+        },
+        "authority": { "const": false },
+        "historical_truth_established": { "const": false },
+        "core_docket_populated": { "const": false },
+        "notes": { "type": "string" }
+      }
+    },
+    "receipts": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/receipt" }
+    }
+  },
+  "$defs": {
+    "capturePacket": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_uri",
+        "physical_locator",
+        "capture_method",
+        "captured_at",
+        "media_type",
+        "byte_length",
+        "sha256",
+        "claimed_author",
+        "claimed_date",
+        "claimed_jurisdiction",
+        "custody_before_capture",
+        "capture_operator",
+        "uncertainty_notes"
+      ],
+      "properties": {
+        "source_uri": { "type": ["string", "null"] },
+        "physical_locator": { "type": ["string", "null"] },
+        "capture_method": { "type": ["string", "null"] },
+        "captured_at": { "type": ["string", "null"], "format": "date-time" },
+        "media_type": { "type": ["string", "null"] },
+        "byte_length": { "type": ["integer", "null"], "minimum": 0 },
+        "sha256": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" },
+        "claimed_author": { "type": ["string", "null"] },
+        "claimed_date": { "type": ["string", "null"] },
+        "claimed_jurisdiction": { "type": ["string", "null"] },
+        "custody_before_capture": {
+          "enum": ["COMPLETE", "PARTIAL", "BROKEN", "UNKNOWN", null]
+        },
+        "capture_operator": { "type": ["string", "null"] },
+        "uncertainty_notes": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "stageResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stage", "result", "authority", "evidence_refs"],
+      "properties": {
+        "stage": {
+          "enum": [
+            "CAPTURE",
+            "HASH",
+            "IDENTITY_CHECK",
+            "PROVENANCE",
+            "CUSTODY_REVIEW",
+            "SOURCE_COMPARISON",
+            "AUTHORITY_CLASSIFICATION",
+            "CONFLICT_AND_GAP_ANALYSIS",
+            "EXTERNAL_VERIFICATION",
+            "ADMISSION_REVIEW"
+          ]
+        },
+        "result": {
+          "enum": ["UNOPENED", "PENDING_INPUT", "IN_REVIEW", "PASS_LIMITED", "FAIL", "INDETERMINATE"]
+        },
+        "authority": { "const": false },
+        "evidence_refs": { "type": "array", "items": { "type": "string" } },
+        "reviewer_ref": { "type": ["string", "null"] },
+        "notes": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "receipt_id",
+        "object_id",
+        "stage",
+        "result",
+        "authority",
+        "gate_1",
+        "historical_truth_established",
+        "previous_receipt_hash"
+      ],
+      "properties": {
+        "receipt_id": { "type": "string", "pattern": "^RECEIPT-HRG-[A-Z0-9-]+$" },
+        "object_id": { "type": "string", "pattern": "^HIST-[A-Z0-9-]{4,80}$" },
+        "stage": { "type": "string" },
+        "result": { "type": "string" },
+        "authority": { "const": false },
+        "gate_1": { "const": "BLOCKED" },
+        "historical_truth_established": { "const": false },
+        "previous_receipt_hash": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" },
+        "recorded_at": { "type": ["string", "null"], "format": "date-time" }
+      }
+    }
+  }
+}
