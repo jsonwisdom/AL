@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ALMS WalkV1 Test Vector",
+  "type": "object",
+  "required": ["vector_id", "description", "start_uid", "config", "expected"],
+  "properties": {
+    "vector_id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+    "description": { "type": "string" },
+    "start_uid": { "type": "string", "pattern": "^(<UID_[A-Z]+>|0x[0-9a-fA-F]{64})$" },
+    "config": {
+      "type": "object",
+      "properties": {
+        "max_depth": { "type": "integer", "minimum": 0 },
+        "network": { "type": "string", "enum": ["base-sepolia"] },
+        "chain_id": { "type": "integer", "enum": [84532] },
+        "allowed_relations": {
+          "type": "array",
+          "items": { "type": "string", "enum": ["spawned", "verified", "delegated", "superseded"] }
+        },
+        "simulate_missing_uids": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": true
+    },
+    "expected": {
+      "type": "object",
+      "required": ["status"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["ROOT", "BROKEN_EDGE", "CYCLE_DETECTED", "MAX_DEPTH", "CHAIN_MISMATCH"]
+        },
+        "break_at_depth": { "type": "integer", "minimum": 0 },
+        "reason": {
+          "type": "string",
+          "enum": ["link_attestation_not_found", "wrong_schema", "invalid_relation", "uid_mismatch", "simulated_missing_uid"]
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
