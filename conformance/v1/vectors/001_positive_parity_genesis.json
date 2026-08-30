@@ -1,0 +1,47 @@
+{
+  "vector_id": "001_positive_parity_genesis",
+  "kernel_version": "1.0.0",
+  "description": "Single system_init genesis event under the v1 manifest. Conforming kernels must converge without degradation.",
+  "manifest": {
+    "version": "1.0.0",
+    "hash": null,
+    "rules": {
+      "json": "RFC8785",
+      "text_encoding": "UTF-8",
+      "text_normalization": "NFC",
+      "line_endings": "LF",
+      "float_policy": "forbidden",
+      "timestamp_format": "TAI64",
+      "ordering": "index-ascending"
+    },
+    "pin": {
+      "hashFunction": "SHA-256",
+      "hashFunctionSpec": "FIPS 180-4"
+    }
+  },
+  "events": [
+    {
+      "index": 0,
+      "payload": {
+        "type": "system_init",
+        "authority": "jaywisdom.base",
+        "manifest_hash": "SELF",
+        "kernel_version": "1.0.0"
+      },
+      "timestamp": "TAI64N:PLACEHOLDER"
+    }
+  ],
+  "expected": {
+    "event_ids": null,
+    "checkpoint_roots": null,
+    "final_root": null,
+    "event_count": 1,
+    "degraded": false,
+    "degradation_notes": []
+  },
+  "acceptance_criteria": {
+    "must_match_root": true,
+    "must_not_degrade": true,
+    "expected_values_must_be_generated": true
+  }
+}

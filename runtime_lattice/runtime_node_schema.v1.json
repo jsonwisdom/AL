@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Runtime Lattice Node Schema v1",
+  "type": "object",
+  "required": ["mutation_id", "parent_deployment_id", "parent_checkpoint_hash", "timestamp_unix_ms", "override_actor", "policy_delta", "affected_behavior_classes", "beneficiary_projection", "runtime_delta_hash", "dissent_log_append"],
+  "properties": {
+    "mutation_id": {"type": "string", "pattern": "^sha3-256:[a-f0-9]{64}$"},
+    "parent_deployment_id": {"type": "string"},
+    "parent_checkpoint_hash": {"type": "string", "pattern": "^sha3-256:[a-f0-9]{64}$"},
+    "timestamp_unix_ms": {"type": "integer", "minimum": 0},
+    "override_actor": {"type": "object", "required": ["type", "identity_hash"], "properties": {"type": {"enum": ["human", "automated_policy", "api_key"]}, "identity_hash": {"type": "string"}}},
+    "policy_delta": {"type": "object", "required": ["before_hash", "after_hash", "diff_summary"], "properties": {"before_hash": {"type": "string"}, "after_hash": {"type": "string"}, "diff_summary": {"type": "string"}}},
+    "affected_behavior_classes": {"type": "array", "items": {"type": "string"}},
+    "beneficiary_projection": {"type": "object", "required": ["direct_sponsor", "confidence", "evidence"], "properties": {"direct_sponsor": {"type": "string"}, "confidence": {"type": "number", "minimum": 0, "maximum": 1}, "evidence": {"type": "array", "items": {"type": "string"}}}},
+    "runtime_delta_hash": {"type": "string"},
+    "dissent_log_append": {"type": "array", "items": {"type": "string"}}
+  }
+}
