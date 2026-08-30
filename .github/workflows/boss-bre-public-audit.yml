@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   issues: write
   pull-requests: read
 
@@ -18,20 +18,16 @@ jobs:
   forensic-audit:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout AL
+      - name: Checkout AL without push credentials
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          persist-credentials: false
 
       - name: Install deps
         run: |
           sudo apt-get update
           sudo apt-get install -y jq curl poppler-utils python3 gh
-
-      - name: Configure Boss Bre git identity
-        run: |
-          git config user.name "Boss Bre Bot"
-          git config user.email "boss-bre@users.noreply.github.com"
 
       - name: Run Boss Bre source ingest
         run: |
@@ -68,16 +64,67 @@ jobs:
             echo "SIMULATED_ARTIFACT_SCAN_BLOCKED: v1.5 script missing or not executable"
           fi
 
-      - name: Commit Boss Bre artifacts if changed
+      - name: Enforce generated-output boundary
+        shell: bash
         run: |
-          git add projects/mn-fiscal-replay/boss_bre || true
-          git add projects/mn-fiscal-replay/live_fetch || true
-          if [[ -n $(git status --porcelain) ]]; then
-            git commit -m "Boss Bre v1.6: automated sweep routing $(date -u +%Y-%m-%dT%H:%M:%SZ)"
-            git push
-          else
-            echo "No Boss Bre artifacts to commit."
+          set -euo pipefail
+          mapfile -t changed < <(git status --porcelain=v1 | sed -E 's/^.. //')
+
+          for path in "${changed[@]}"; do
+            case "$path" in
+              projects/mn-fiscal-replay/boss_bre/*|projects/mn-fiscal-replay/live_fetch/*)
+                ;;
+              *)
+                echo "WRITE_BOUNDARY_VIOLATION: $path"
+                exit 1
+                ;;
+            esac
+          done
+
+          printf '%s\n' "${changed[@]}" > /tmp/boss-bre-changed-files.txt
+          echo "GENERATED_OUTPUT_BOUNDARY: PASS"
+
+      - name: Build review artifact bundle
+        shell: bash
+        run: |
+          set -euo pipefail
+          bundle=/tmp/boss-bre-artifacts
+          mkdir -p "$bundle/projects/mn-fiscal-replay"
+
+          if [ -d projects/mn-fiscal-replay/boss_bre ]; then
+            cp -a projects/mn-fiscal-replay/boss_bre "$bundle/projects/mn-fiscal-replay/"
           fi
+          if [ -d projects/mn-fiscal-replay/live_fetch ]; then
+            cp -a projects/mn-fiscal-replay/live_fetch "$bundle/projects/mn-fiscal-replay/"
+          fi
+
+          cp /tmp/boss-bre-changed-files.txt "$bundle/changed-files.txt"
+          git diff --stat > "$bundle/diff-stat.txt"
+          git diff --binary > "$bundle/generated-output.patch"
+
+          cat > "$bundle/provenance.json" <<EOF
+          {
+            "artifact_class": "GENERATED_EVIDENCE",
+            "repository": "${GITHUB_REPOSITORY}",
+            "source_commit": "${GITHUB_SHA}",
+            "workflow": "${GITHUB_WORKFLOW}",
+            "run_id": "${GITHUB_RUN_ID}",
+            "run_attempt": "${GITHUB_RUN_ATTEMPT}",
+            "ref": "${GITHUB_REF}",
+            "authority": false,
+            "promotion": false,
+            "default_branch_mutated": false,
+            "human_review_required": true
+          }
+          EOF
+
+      - name: Upload Boss Bre generated evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: boss-bre-generated-evidence-${{ github.run_id }}-${{ github.run_attempt }}
+          path: /tmp/boss-bre-artifacts
+          if-no-files-found: error
+          retention-days: 30
 
       - name: Run Librarian update
         env:
@@ -92,5 +139,7 @@ jobs:
           NO_FAKE_GREEN: ACTIVE
           PUBLIC_CONTENT_CLAIM: BLOCKED_PENDING_HUMAN_REVIEW
           HUMAN_REVIEW_REQUIRED: TRUE
-          WORKFLOW_ROUTING_VERSION: v1.6
+          DEFAULT_BRANCH_MUTATION: BLOCKED
+          GENERATED_EVIDENCE: WORKFLOW_ARTIFACT_ONLY
+          WORKFLOW_ROUTING_VERSION: v1.7-review-artifacts
           EOF
