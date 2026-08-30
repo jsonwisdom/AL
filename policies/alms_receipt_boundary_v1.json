@@ -1,0 +1,34 @@
+{
+  "policy": "ALMS_RECEIPT_BOUNDARY_V1",
+  "status": "CANONICAL_DRAFT",
+  "constitutional_rule": "Correctly scoped. Remainder guaranteed.",
+  "ledger_rule": "The ledger records the transformation, not the world.",
+  "receipt_boundary": {
+    "inside_scope": "explicitly transformed and replayable material",
+    "outside_scope": "material for which no correspondence claim is made",
+    "latent": {
+      "definition": "Compatible with capture, present near the system, not yet transformed, not irrelevant, not claimed.",
+      "purpose": "Preserve the boundary between what the system has processed and what exists outside processing. This category carries no payload, only position.",
+      "failure_mode_prevented": "Calibration drift under internal coherence. Without this state, a ledger of accurate receipts will over time be read as a complete account of the world. Silence accumulates as implicit confirmation.",
+      "invariant": "Completeness of records is not completeness of world. Absence of a receipt is not evidence of irrelevance or nonexistence.",
+      "temporality": "Latent status applies only at cycle completion. Do not set retroactively from later absence. Status reflects what the system knew at the intake boundary, not what can be inferred afterward.",
+      "usage": "Set when a phenomenon is detected as proximate and compatible but not converted to a receipt in this cycle. Do not use for errors, rejections, out-of-scope data, or any state inferred after cycle completion."
+    }
+  },
+  "required_fields": [
+    "scope",
+    "transformed",
+    "tolerance",
+    "threshold",
+    "latent",
+    "remainder",
+    "correspondence_outside_scope"
+  ],
+  "forbidden_implications": [
+    "receipt captures whole event",
+    "unreceipted phenomena are irrelevant",
+    "receipt exhausts correspondence",
+    "ledger equals world state"
+  ],
+  "preferred_statement": "This receipt records a scoped transformation. The threshold existed. Some phenomena did not cross it. Their status remains ambient. Correspondence outside scope is not claimed."
+}
