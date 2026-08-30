@@ -1,0 +1,58 @@
+{
+  "receipt_id": "MN_EDU_CIVIL_RIGHTS_001",
+  "ingest_status": "NOT_STARTED",
+  "source_acquisition_order": [
+    {
+      "rank": 1,
+      "source": "US_DOE_OCR",
+      "target": "Minnesota education civil-rights complaint outcomes",
+      "goal": "Get state-level filed/resolved/dismissed/pending/remedy data",
+      "failure_state": "MISSING_STATE_BREAKDOWN"
+    },
+    {
+      "rank": 2,
+      "source": "MN_DEPARTMENT_OF_EDUCATION",
+      "target": "State complaint and discrimination-resolution records",
+      "goal": "Compare state complaint outcomes against federal OCR view",
+      "failure_state": "PARTIAL_DATA_ONLY"
+    },
+    {
+      "rank": 3,
+      "source": "DISTRICT_PUBLIC_RECORDS",
+      "target": "District-level complaint/resolution artifacts",
+      "goal": "Only ingest if public, source-hashable, and machine-readable",
+      "failure_state": "LOCAL_DATA_UNAVAILABLE"
+    },
+    {
+      "rank": 4,
+      "source": "FOIA_OR_DATA_REQUEST",
+      "target": "Missing OCR/MDE breakdowns",
+      "goal": "Trigger if public data does not expose Minnesota category/outcome counts",
+      "failure_state": "NON_RESPONSIVE_REPLY"
+    }
+  ],
+  "canonical_extraction_fields": [
+    "year",
+    "state",
+    "agency",
+    "office",
+    "complaint_category",
+    "case_count",
+    "resolution_count",
+    "positive_resolution_count",
+    "dismissal_count",
+    "pending_count",
+    "mediated_count",
+    "median_days_to_resolution",
+    "source_url",
+    "source_hash",
+    "retrieved_at"
+  ],
+  "null_rule": "If a field is not explicitly present in the source, keep null. Do not infer.",
+  "closure_rule": "Closed, dismissed, or administratively resolved does not count as positive_resolution_count unless a documented remedy exists.",
+  "notes": [
+    "This manifest contains no numeric data.",
+    "This manifest contains no inferred fields.",
+    "This manifest is safe to hash and commit."
+  ]
+}
