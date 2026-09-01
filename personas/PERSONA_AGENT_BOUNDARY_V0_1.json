@@ -1,0 +1,68 @@
+{
+  "artifact": "AL_PERSONA_AGENT_BOUNDARY_V0.1",
+  "artifact_class": "STRUCTURAL_SEPARATION_MANIFEST",
+  "repository": "jsonwisdom/AL",
+  "requested_active_head": "3f75c1104437adc733bf49f9af52792048620a31",
+  "requested_active_head_resolved": false,
+  "staging_base_head": "60338dc2ab5ccaea1fa83f7ff6716e48e2aa0065",
+  "staging_branch": "agent/persona-agent-boundary-v0-1",
+  "operation": "SCHEMA_ENFORCEMENT_AND_STORY_ISOLATION",
+  "authority_created": false,
+  "namespaces": {
+    "operational_agents": {
+      "path": "agents/",
+      "runtime_class": "EXECUTION_RUNTIME",
+      "executable": true,
+      "allowed_classes": [
+        "MACHINE_CONTRACT",
+        "MCP_SCHEMA",
+        "CRAWLER",
+        "VERIFIER",
+        "DETERMINISTIC_STATE_MACHINE"
+      ],
+      "story_personas_allowed": false,
+      "creates_human_or_institutional_authority": false
+    },
+    "story_personas": {
+      "path": "personas/",
+      "runtime_class": "NON_EXECUTABLE_SEMANTIC_NAMESPACE",
+      "executable": false,
+      "authority": false,
+      "witness_archive_only": true,
+      "candidates": [
+        "LEAHPRIME",
+        "ZIGGY",
+        "MAX",
+        "HEIDEE"
+      ],
+      "candidate_presence_does_not_create_identity_or_relationship_fact": true
+    }
+  },
+  "hard_boundaries": [
+    "PERSONA != OPERATIONAL_AGENT",
+    "STORY != EXECUTION",
+    "WITNESS_ARCHIVE != RUNTIME",
+    "ROLE != IDENTITY",
+    "REFERENCE != AFFILIATION",
+    "PERSONA_PRESENCE != PERSON_VERIFICATION",
+    "PERSONA_PRESENCE != FAMILY_RELATIONSHIP_PROOF",
+    "PERSONA_CANNOT_CREATE_AUTHORITY",
+    "NO_SILENT_CROSS_NAMESPACE_PROMOTION"
+  ],
+  "cross_namespace_rule": {
+    "default": "BLOCK",
+    "exception": "EXPLICIT_TYPED_ADAPTER_WITH_RECEIPT",
+    "promotion_by_import": false,
+    "runtime_execution_from_personas": false
+  },
+  "boundary_check": {
+    "story_in_agents_observed": false,
+    "operational_agent_in_personas_observed": false,
+    "result": "PASS_AT_MANIFEST_CREATION"
+  },
+  "replay": {
+    "status": "PR_STAGED",
+    "merge_authorized": false,
+    "default_branch_mutated": false
+  }
+}
