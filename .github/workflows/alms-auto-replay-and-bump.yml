@@ -5,9 +5,19 @@ on:
     paths:
       - "corpus/**"
       - "_truth/**"
+      - "alms/version_registry.json"
+      - "schemas/JSONWISDOM_GLOBAL_EXECUTION_LEDGER_V0_2.schema.json"
+      - "scripts/alms_write_execution_receipt.py"
+      - "scripts/alms_consume_execution_receipts.py"
+      - "scripts/alms_bind_active_lanes.py"
+      - ".github/workflows/alms-auto-replay-and-bump.yml"
 
 permissions:
   contents: write
+
+concurrency:
+  group: alms-global-execution-ledger-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   replay-and-bump:
@@ -22,7 +32,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install deps
-        run: pip install jsonschema || true
+        run: pip install jsonschema
 
       - name: Validate ALMS version schemas (hard gate)
         run: python scripts/alms_validate_version_schemas.py
@@ -33,59 +43,191 @@ jobs:
       - name: Dependency gate (enforce DAG integrity)
         run: python scripts/alms_dependency_gate.py
 
-      - name: Run replay corpus
-        run: python ci/replay_corpus_runner.py || true
+      - name: Run replay corpus (capture exit, never swallow)
+        id: replay
+        shell: bash
+        run: |
+          started_at="$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+          set +e
+          python ci/replay_corpus_runner.py
+          exit_code=$?
+          set -e
+          completed_at="$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
 
-      - name: Evaluate and bump versions
+          {
+            echo "exit_code=${exit_code}"
+            echo "started_at=${started_at}"
+            echo "completed_at=${completed_at}"
+          } >> "$GITHUB_OUTPUT"
+
+          echo "Replay runner exit_code=${exit_code}"
+
+      - name: Write execution receipt (always)
+        id: execution_receipt
+        if: ${{ always() }}
+        env:
+          REPLAY_EXIT_CODE: ${{ steps.replay.outputs.exit_code }}
+          REPLAY_STARTED_AT: ${{ steps.replay.outputs.started_at }}
+          REPLAY_COMPLETED_AT: ${{ steps.replay.outputs.completed_at }}
+        run: |
+          python scripts/alms_write_execution_receipt.py \
+            --runner-exit-code "${REPLAY_EXIT_CODE:-255}" \
+            --workflow-run-id "${{ github.run_id }}" \
+            --workflow-run-attempt "${{ github.run_attempt }}" \
+            --repo "${{ github.repository }}" \
+            --ref "${{ github.ref }}" \
+            --sha "${{ github.sha }}" \
+            --actor "${{ github.actor }}" \
+            --event-name "${{ github.event_name }}" \
+            --workflow-name "${{ github.workflow }}" \
+            --started-at "${REPLAY_STARTED_AT:-}" \
+            --completed-at "${REPLAY_COMPLETED_AT:-}" \
+            --report-path ci/corpus_report.json \
+            --version-registry-path alms/version_registry.json \
+            --out-dir alms/execution_receipts
+
+      - name: Consume execution receipts into global ledger
+        if: ${{ always() }}
+        run: python scripts/alms_consume_execution_receipts.py
+
+      - name: Bind ACTIVE_LANES only to real ledger entries
+        if: ${{ always() }}
+        run: python scripts/alms_bind_active_lanes.py
+
+      - name: Assert replay corpus report before promotion
+        if: ${{ success() && steps.replay.outputs.exit_code == '0' }}
         run: |
           python - << 'EOF'
-import json
-from pathlib import Path
-import subprocess
+          import json
+          from pathlib import Path
 
-report_path = Path("ci/corpus_report.json")
-if not report_path.exists():
-    print("NO_REPORT")
-    exit(0)
+          report_path = Path("ci/corpus_report.json")
+          if not report_path.exists():
+              raise SystemExit("missing ci/corpus_report.json")
 
-report = json.loads(report_path.read_text())
+          report = json.loads(report_path.read_text())
+          if report.get("verdict") != "PASS":
+              raise SystemExit(
+                  "replay corpus verdict is not PASS: "
+                  f"{report.get('verdict')} "
+                  f"(pass={report.get('pass')}, fail={report.get('fail')}, "
+                  f"indeterminate={report.get('indeterminate')})"
+              )
 
-cases = report.get("cases", []) if "cases" in report else []
+          print(
+              "Replay corpus promotion gate passed: "
+              f"total={report.get('total_cases')} pass={report.get('pass')}"
+          )
+          EOF
 
-if not cases:
-    if report.get("verdict") == "PASS":
-        cases = [
-            {"id": "C0001", "verdict": "PASS"},
-            {"id": "C0002", "verdict": "PASS"}
-        ]
+      - name: Evaluate and bump versions (only on clean PASS)
+        id: bump
+        if: ${{ success() && steps.replay.outputs.exit_code == '0' }}
+        run: |
+          python - << 'EOF'
+          import json
+          from pathlib import Path
+          import subprocess
 
-for c in cases:
-    cid = c.get("id")
-    verdict = c.get("verdict")
+          report = json.loads(Path("ci/corpus_report.json").read_text())
+          registry = json.loads(Path("alms/version_registry.json").read_text())
+          registry_entries = {
+              entry.get("id"): entry
+              for entry in registry.get("entries", [])
+              if isinstance(entry, dict)
+          }
 
-    if cid not in ["C0001", "C0002"]:
-        continue
+          cases = report.get("cases", []) if "cases" in report else []
+          if not cases and report.get("verdict") == "PASS":
+              cases = [
+                  {"id": "C0001", "verdict": "PASS"},
+                  {"id": "C0002", "verdict": "PASS"},
+              ]
 
-    state = "REPLAY_PASSED" if verdict == "PASS" else "BLOCKED"
+          for case in cases:
+              cid = case.get("id")
+              verdict = case.get("verdict")
 
-    artifact = f"corpus/{cid}/replay/expected_hashes.json"
+              if cid not in ["C0001", "C0002"]:
+                  continue
 
-    subprocess.run([
-        "python", "scripts/alms_version_bump.py",
-        "--id", cid,
-        "--version", "1.0.0",
-        "--state", state,
-        "--artifact", artifact
-    ])
-EOF
+              registry_entry = registry_entries.get(cid)
+              if not registry_entry:
+                  raise SystemExit(f"missing registry entry for {cid}")
 
-      - name: Merkle root gate (publish global root)
+              version = registry_entry.get("version")
+              if not version:
+                  raise SystemExit(f"missing registry version for {cid}")
+
+              state = "REPLAY_PASSED" if verdict == "PASS" else "BLOCKED"
+              artifact = f"corpus/{cid}/replay/expected_hashes.json"
+
+              subprocess.run(
+                  [
+                      "python",
+                      "scripts/alms_version_bump.py",
+                      "--id",
+                      cid,
+                      "--version",
+                      version,
+                      "--state",
+                      state,
+                      "--artifact",
+                      artifact,
+                  ],
+                  check=True,
+              )
+          EOF
+
+      - name: Merkle root gate (only on clean PASS)
+        id: merkle
+        if: ${{ success() && steps.replay.outputs.exit_code == '0' }}
         run: python scripts/alms_merkle_root_gate.py
 
-      - name: Commit registry updates + root
+      - name: Commit execution history + optional clean promotion artifacts
+        if: ${{ always() }}
+        shell: bash
+        env:
+          REPLAY_EXIT_CODE: ${{ steps.replay.outputs.exit_code }}
+          BUMP_OUTCOME: ${{ steps.bump.outcome }}
+          MERKLE_OUTCOME: ${{ steps.merkle.outcome }}
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add alms/version_registry.json alms/version_receipts/ alms/merkle/
-          git commit -m "ALMS AUTO REPLAY BUMP + ROOT" || echo "NO_CHANGES"
-          git push
+
+          if compgen -G "alms/execution_receipts/*.json" > /dev/null; then
+            git add alms/execution_receipts/
+          fi
+
+          if [[ -f "alms/JSONWISDOM_GLOBAL_EXECUTION_LEDGER.jsonl" ]]; then
+            git add alms/JSONWISDOM_GLOBAL_EXECUTION_LEDGER.jsonl
+          fi
+
+          git add ACTIVE_LANES.json
+
+          if [[ "${REPLAY_EXIT_CODE:-255}" == "0" \
+                && "${BUMP_OUTCOME:-}" == "success" \
+                && "${MERKLE_OUTCOME:-}" == "success" ]]; then
+            git add alms/version_registry.json alms/version_receipts/ alms/merkle/
+          else
+            echo "Promotion artifacts not staged: replay/bump/Merkle was not a complete clean PASS."
+          fi
+
+          if git diff --cached --quiet; then
+            echo "NO_CHANGES"
+          else
+            git commit -m "ALMS GLOBAL EXECUTION LEDGER + LANE BIND"
+            git push
+          fi
+
+      - name: Fail workflow if replay runner failed
+        if: ${{ always() }}
+        shell: bash
+        env:
+          REPLAY_EXIT_CODE: ${{ steps.replay.outputs.exit_code }}
+        run: |
+          if [[ "${REPLAY_EXIT_CODE:-255}" != "0" ]]; then
+            echo "Replay corpus runner exited non-zero. Execution receipt and ledger commit were attempted. Workflow stays failed."
+            exit 1
+          fi
+          echo "Replay corpus runner exited cleanly."
