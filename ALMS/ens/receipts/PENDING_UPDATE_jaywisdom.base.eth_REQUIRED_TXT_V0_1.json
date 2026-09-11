@@ -3,12 +3,10 @@
   "subject_name": "jaywisdom.base.eth",
   "missing_record": "alms.packet.cid,alms.packet.sha256,alms.matrix.hash",
   "expected_value_hash": "PENDING_RESOLVER_ARTIFACT",
-  "reason": "Engine TXT records missing; divergence is acknowledged and time-bounded under Alabama ALMS Engine policy.",
-  "opened_at_utc": "2026-06-13T22:04:10Z",
-  "renewed_at_utc": "2026-07-09T06:20:00Z",
-  "expires_at_utc": "2026-07-16T06:20:00Z",
+  "reason": "PR427 Alabama Engine ENS Divergence CI failed RED_EXPIRED after the 2026-07-16T06:20:00Z pending window. Required TXT keys alms.packet.cid, alms.packet.sha256, and alms.matrix.hash remain missing. No live jaywisdom.base.eth resolver TXT observation is checked in. The expired receipt is archived, not rewritten. This receipt opens a new 72h YELLOW window only. It does not claim GREEN, does not invent resolver TXT, and does not change ALMS truth, merkle, or Alabama PASS.",
+  "opened_at_utc": "2026-08-28T09:49:52Z",
+  "expires_at_utc": "2026-08-31T09:49:52Z",
   "controller": "jaywisdom.base.eth",
-  "signature_or_commit_sha": "PR381_DRY_RUN_RENEWAL_PENDING_FINAL_COMMIT_SHA",
-  "renewal_reason": "PR381 dry-run repair: keep Alabama Engine ENS divergence time-bounded while CanonStateAttestationV0_2 dry-run envelope and JOY bootstrap anchor are reviewed. This remains YELLOW and does not claim LOAD_VERIFIED.",
+  "signature_or_commit_sha": "108dfc0fdf8a740f21d9b58ddc9681ab1981192a",
   "no_fake_green": true
 }
