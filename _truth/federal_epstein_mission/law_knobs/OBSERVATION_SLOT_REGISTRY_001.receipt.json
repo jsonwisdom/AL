@@ -1,0 +1,21 @@
+{
+  "receipt": "OBSERVATION_SLOT_REGISTRY_001_RECEIPT",
+  "version": "0.1",
+  "authority": false,
+  "artifact_path": "_truth/federal_epstein_mission/law_knobs/OBSERVATION_SLOT_REGISTRY_001.json",
+  "artifact_sha256": "9acc28d18d5b6f9d7f6c6828c6e1d7a55ca466919865b0dddd5f01de4563a2cd",
+  "artifact_blob_sha": "978ee6ecbd8d3859ff03e43e986c35b895e8e9ea",
+  "artifact_commit_sha": "ccff4098a0e2a95f3c90ae0dd6437e2d1d703cab",
+  "branch": "epstein-law-knobs-v0-1",
+  "slot_count": 32,
+  "bound_slots": 4,
+  "unbound_slots": 28,
+  "evaluation_state": "NOT_RUN",
+  "source_byte_seals": "NOT_CAPTURED_THIS_RUN",
+  "hard_boundaries": [
+    "PUBLIC_WEB_OBSERVATION != BYTE_SEALED_SOURCE",
+    "DOJ_SELF_DESCRIPTION != INDEPENDENT_COMPLIANCE_PROOF",
+    "UNBOUND != FAIL",
+    "AUTHORITY_CREATED = FALSE"
+  ]
+}

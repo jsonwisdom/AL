@@ -1,0 +1,332 @@
+{
+  "artifact": "EPSTEIN_LAW_KNOB_SET",
+  "artifact_id": "LAW_KNOB_SET_001",
+  "version": "0.1",
+  "authority": false,
+  "legal_conclusion": false,
+  "purpose": "Deterministic, evidence-bounded comparison surface between Public Law 119-38 requirements and observed justice.gov release artifacts.",
+  "scope": {
+    "law": "Public Law 119-38, Epstein Files Transparency Act",
+    "target_surface": "justice.gov/epstein and DOJ publications concerning the Epstein Files Transparency Act",
+    "knob_count": 32,
+    "observation_slot_target": 32,
+    "matrix_target": "32x32 logical comparison matrix (1024 cells)",
+    "qubo_status": "NOT_COMPILED",
+    "compliance_status": "NOT_EVALUATED"
+  },
+  "state_values": [
+    "PASS",
+    "FAIL",
+    "UNRESOLVED",
+    "NOT_APPLICABLE"
+  ],
+  "hard_boundaries": [
+    "LAW_TEXT != COMPLIANCE_FINDING",
+    "DOJ_PUBLICATION != PROOF_OF_COMPLETE_COMPLIANCE",
+    "MISSING_PUBLIC_ARTIFACT != PROOF_OF_CONCEALMENT",
+    "POLICY_CHANGE != CONTRADICTION_WITHOUT_SHARED_PREDICATE_AND_TIME",
+    "PARODY != EVIDENCE",
+    "MODEL_OUTPUT != LEGAL_AUTHORITY",
+    "AUTHORITY_CREATED = FALSE"
+  ],
+  "official_sources": [
+    {
+      "id": "LAW_PL119_38",
+      "url": "https://www.congress.gov/119/plaws/publ38/PLAW-119publ38.htm",
+      "role": "governing_statute",
+      "byte_seal": "NOT_CAPTURED_THIS_RUN"
+    },
+    {
+      "id": "DOJ_RELEASE_2026_01_30",
+      "url": "https://www.justice.gov/opa/pr/department-justice-publishes-35-million-responsive-pages-compliance-epstein-files",
+      "role": "observed_DOJ_release_statement",
+      "byte_seal": "NOT_CAPTURED_THIS_RUN"
+    },
+    {
+      "id": "DOJ_EPSTEIN_LIBRARY",
+      "url": "https://www.justice.gov/epstein",
+      "role": "observed_DOJ_public_library",
+      "byte_seal": "NOT_CAPTURED_THIS_RUN"
+    },
+    {
+      "id": "DOJ_FBI_MEMO_2025_07",
+      "url": "https://www.justice.gov/opa/media/1407001/dl",
+      "role": "pre_statute_policy_baseline",
+      "byte_seal": "NOT_CAPTURED_THIS_RUN"
+    }
+  ],
+  "knobs": [
+    {
+      "id": "K01",
+      "name": "ENACTMENT",
+      "requirement": "Public Law 119-38 is the governing statute for this knob set.",
+      "authority_ref": "PL119-38: enactment",
+      "evaluation": "UNRESOLVED",
+      "evidence_refs": []
+    },
+    {
+      "id": "K02",
+      "name": "RELEASE_DEADLINE_30_DAYS",
+      "requirement": "Release required not later than 30 days after enactment.",
+      "authority_ref": "Sec.2(a)",
+      "evaluation": "UNRESOLVED",
+      "evidence_refs": []
+    },
+    {
+      "id": "K03",
+      "name": "SEARCHABLE_FORMAT",
+      "requirement": "Covered release must be publicly available in searchable format.",
+      "authority_ref": "Sec.2(a)",
+      "evaluation": "UNRESOLVED",
+      "evidence_refs": []
+    },
+    {
+      "id": "K04",
+      "name": "DOWNLOADABLE_FORMAT",
+      "requirement": "Covered release must be publicly available in downloadable format.",
+      "authority_ref": "Sec.2(a)",
+      "evaluation": "UNRESOLVED",
+      "evidence_refs": []
+    },
+    {
+      "id": "K05",
+      "name": "ALL_UNCLASSIFIED_COVERED_RECORDS",
+      "requirement": "Scope covers all unclassified covered records in DOJ possession, subject to permitted withholdings.",
+      "authority_ref": "Sec.2(a),2(c)",
+      "evaluation": "UNRESOLVED",
+      "evidence_refs": []
+    },
+    {
+      "id": "K06",
+      "name": "FBI_INCLUDED",
+      "requirement": "FBI records are expressly within covered DOJ possession.",
+      "authority_ref": "Sec.2(a)",
+      "evaluation": "UNRESOLVED",
+      "evidence_refs": []
+    },
+    {
+      "id": "K07",
+      "name": "USAO_INCLUDED",
+      "requirement": "United States Attorneys' Offices are expressly within covered DOJ possession.",
+      "authority_ref": "Sec.2(a)",
+      "evaluation": "UNRESOLVED",
+      "evidence_refs": []
+    },
+    {
+      "id": "K08",
+      "name": "EPSTEIN_INVESTIGATION_PROSECUTION_CUSTODY",
+      "requirement": "Epstein investigations, prosecutions, and custodial matters are covered.",
+      "authority_ref": "Sec.2(a)(1)",
+      "evaluation": "UNRESOLVED",
+      "evidence_refs": []
+    },
+    {
+      "id": "K09",
+      "name": "MAXWELL_MATERIALS",
+      "requirement": "Ghislaine Maxwell materials are covered.",
+      "authority_ref": "Sec.2(a)(2)",
+      "evaluation": "UNRESOLVED",
+      "evidence_refs": []
+    },
+    {
+      "id": "K10",
+      "name": "FLIGHT_TRAVEL_RECORDS",
+      "requirement": "Flight logs and travel records are covered.",
+      "authority_ref": "Sec.2(a)(3)",
+      "evaluation": "UNRESOLVED",
+      "evidence_refs": []
+    },
+    {
+      "id": "K11",
+      "name": "NAMED_REFERENCED_INDIVIDUALS",
+      "requirement": "Individuals named or referenced in specified Epstein-related contexts are covered.",
+      "authority_ref": "Sec.2(a)(4)",
+      "evaluation": "UNRESOLVED",
+      "evidence_refs": []
+    },
+    {
+      "id": "K12",
+      "name": "RELATED_ENTITIES",
+      "requirement": "Specified corporate, nonprofit, academic, or governmental entities are covered.",
+      "authority_ref": "Sec.2(a)(5)",
+      "evaluation": "UNRESOLVED",
+      "evidence_refs": []
+    },
+    {
+      "id": "K13",
+      "name": "DEALS_AND_SETTLEMENTS",
+      "requirement": "Specified immunity, non-prosecution, plea, and sealed-settlement materials are covered.",
+      "authority_ref": "Sec.2(a)(6)",
+      "evaluation": "UNRESOLVED",
+      "evidence_refs": []
+    },
+    {
+      "id": "K14",
+      "name": "INTERNAL_DOJ_CHARGING_COMMUNICATIONS",
+      "requirement": "Internal DOJ communications about charging/investigative decisions are covered.",
+      "authority_ref": "Sec.2(a)(7)",
+      "evaluation": "UNRESOLVED",
+      "evidence_refs": []
+    },
+    {
+      "id": "K15",
+      "name": "DESTRUCTION_ALTERATION_CONCEALMENT_METADATA",
+      "requirement": "Specified records about destruction, deletion, alteration, misplacement, or concealment are covered.",
+      "authority_ref": "Sec.2(a)(8)",
+      "evaluation": "UNRESOLVED",
+      "evidence_refs": []
+    },
+    {
+      "id": "K16",
+      "name": "DETENTION_DEATH_RECORDS",
+      "requirement": "Specified detention and death records are covered.",
+      "authority_ref": "Sec.2(a)(9)",
+      "evaluation": "UNRESOLVED",
+      "evidence_refs": []
+    },
+    {
+      "id": "K17",
+      "name": "NO_EMBARRASSMENT_WITHHOLDING",
+      "requirement": "Embarrassment is prohibited as a withholding/delay/redaction basis.",
+      "authority_ref": "Sec.2(b)(1)",
+      "evaluation": "UNRESOLVED",
+      "evidence_refs": []
+    },
+    {
+      "id": "K18",
+      "name": "NO_REPUTATIONAL_HARM_WITHHOLDING",
+      "requirement": "Reputational harm is prohibited as a withholding/delay/redaction basis.",
+      "authority_ref": "Sec.2(b)(1)",
+      "evaluation": "UNRESOLVED",
+      "evidence_refs": []
+    },
+    {
+      "id": "K19",
+      "name": "NO_POLITICAL_SENSITIVITY_WITHHOLDING",
+      "requirement": "Political sensitivity is prohibited as a withholding/delay/redaction basis.",
+      "authority_ref": "Sec.2(b)(1)",
+      "evaluation": "UNRESOLVED",
+      "evidence_refs": []
+    },
+    {
+      "id": "K20",
+      "name": "VICTIM_PRIVACY_WITHHOLDING",
+      "requirement": "Segregable victim PII/private-file material may be withheld or redacted under the statute.",
+      "authority_ref": "Sec.2(c)(1)(A)",
+      "evaluation": "UNRESOLVED",
+      "evidence_refs": []
+    },
+    {
+      "id": "K21",
+      "name": "CSAM_WITHHOLDING",
+      "requirement": "CSAM may be withheld or redacted.",
+      "authority_ref": "Sec.2(c)(1)(B)",
+      "evaluation": "UNRESOLVED",
+      "evidence_refs": []
+    },
+    {
+      "id": "K22",
+      "name": "ACTIVE_INVESTIGATION_WITHHOLDING",
+      "requirement": "Active-investigation/prosecution withholding must be narrowly tailored and temporary.",
+      "authority_ref": "Sec.2(c)(1)(C)",
+      "evaluation": "UNRESOLVED",
+      "evidence_refs": []
+    },
+    {
+      "id": "K23",
+      "name": "DEATH_ABUSE_INJURY_IMAGES_WITHHOLDING",
+      "requirement": "Images of death, physical abuse, or injury may be withheld or redacted.",
+      "authority_ref": "Sec.2(c)(1)(D)",
+      "evaluation": "UNRESOLVED",
+      "evidence_refs": []
+    },
+    {
+      "id": "K24",
+      "name": "CLASSIFIED_INFORMATION_WITHHOLDING",
+      "requirement": "Properly classified national-defense/foreign-policy information may be withheld or redacted.",
+      "authority_ref": "Sec.2(c)(1)(E)",
+      "evaluation": "UNRESOLVED",
+      "evidence_refs": []
+    },
+    {
+      "id": "K25",
+      "name": "REDACTION_JUSTIFICATION_PUBLICATION",
+      "requirement": "Redactions require written justification published in the Federal Register and submitted to Congress.",
+      "authority_ref": "Sec.2(c)(2)",
+      "evaluation": "UNRESOLVED",
+      "evidence_refs": []
+    },
+    {
+      "id": "K26",
+      "name": "MAXIMUM_DECLASSIFICATION",
+      "requirement": "Covered classified information must be declassified to the maximum extent possible.",
+      "authority_ref": "Sec.2(c)(3)",
+      "evaluation": "UNRESOLVED",
+      "evidence_refs": []
+    },
+    {
+      "id": "K27",
+      "name": "UNCLASSIFIED_SUMMARY_IF_NOT_DECLASSIFIED",
+      "requirement": "If covered classified information cannot be released, an unclassified summary is required.",
+      "authority_ref": "Sec.2(c)(3)(A)",
+      "evaluation": "UNRESOLVED",
+      "evidence_refs": []
+    },
+    {
+      "id": "K28",
+      "name": "POST_JULY_1_CLASSIFICATION_DISCLOSURE",
+      "requirement": "Post-July 1, 2025 classification decisions require Federal Register publication and congressional submission with specified metadata.",
+      "authority_ref": "Sec.2(c)(4)",
+      "evaluation": "UNRESOLVED",
+      "evidence_refs": []
+    },
+    {
+      "id": "K29",
+      "name": "REPORT_TO_CONGRESS_15_DAYS",
+      "requirement": "Within 15 days of completion of the required release, the Attorney General must submit the Section 3 report.",
+      "authority_ref": "Sec.3",
+      "evaluation": "UNRESOLVED",
+      "evidence_refs": []
+    },
+    {
+      "id": "K30",
+      "name": "REPORT_RELEASED_WITHHELD_CATEGORIES",
+      "requirement": "The Section 3 report must list categories of records released and withheld.",
+      "authority_ref": "Sec.3(1)",
+      "evaluation": "UNRESOLVED",
+      "evidence_refs": []
+    },
+    {
+      "id": "K31",
+      "name": "REPORT_REDACTION_SUMMARY_LEGAL_BASIS",
+      "requirement": "The Section 3 report must summarize redactions including legal basis.",
+      "authority_ref": "Sec.3(2)",
+      "evaluation": "UNRESOLVED",
+      "evidence_refs": []
+    },
+    {
+      "id": "K32",
+      "name": "REPORT_OFFICIALS_PEPS",
+      "requirement": "The Section 3 report must list government officials and politically exposed persons named or referenced in released materials.",
+      "authority_ref": "Sec.3(3)",
+      "evaluation": "UNRESOLVED",
+      "evidence_refs": []
+    }
+  ],
+  "evaluation_rules": {
+    "pass": "Requires evidence sufficient to show the specific statutory requirement was met for the evaluated observation scope.",
+    "fail": "Requires evidence sufficient to show the specific statutory requirement was not met for the evaluated observation scope.",
+    "unresolved": "Default. Evidence is incomplete, ambiguous, not yet bound, or not yet evaluated.",
+    "not_applicable": "Requirement does not apply to the evaluated observation."
+  },
+  "qubo_bridge": {
+    "logical_law_variables": 32,
+    "logical_observation_slots": 32,
+    "logical_cells": 1024,
+    "cell_semantics": "law_knob_i x observation_j",
+    "physical_qubit_count": "UNKNOWN_UNTIL_EMBEDDING",
+    "energy_is_confidence": false
+  },
+  "write_policy": "APPEND_ONLY_SIDE_CAR",
+  "created_for": "jsonwisdom/AL _truth/federal_epstein_mission/law_knobs/"
+}
