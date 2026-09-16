@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jsonwisdom/AL/schemas/jasons_369_rails_v0.json",
+  "title": "JASONS_369_RAILS_V0",
+  "type": "object",
+  "description": "Foundational invariant rails and atomic constraints for the accountability stack.",
+  "properties": {
+    "rail_version": {
+      "type": "string",
+      "const": "V0"
+    },
+    "authority": {
+      "type": "boolean",
+      "const": false
+    },
+    "core_invariants": {
+      "type": "object",
+      "properties": {
+        "protect_assets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "const": ["PEOPLE", "PLACES", "INTEL-PROPERTY", "DENY OUTSIDE INFLUENCE"]
+        },
+        "deterministic_engine": {
+          "type": "boolean",
+          "const": true
+        }
+      },
+      "required": ["protect_assets", "deterministic_engine"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["rail_version", "authority", "core_invariants"],
+  "additionalProperties": false
+}
