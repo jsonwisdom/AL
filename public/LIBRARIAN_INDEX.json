@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-09-23T04:41:35Z",
+  "generated_at": "2026-09-24T04:43:17Z",
   "cards": [
     {
       "target_id": "ST_CLOUD_001",
       "document": "city_council_minutes",
       "state": "VERIFIED",
-      "anchor": "commit:4cba49cb1885d8d40e78d5f0da89784a51766460",
+      "anchor": "commit:374f9b9125cf5806ceb65a5d936dafae790cc243",
       "verdict": "VERIFIED",
-      "raw_sha256": "3bc3c37578acec9f630aa0ba44f8bcad09b86e140eb07aeb7b57de144c6a8f7c",
+      "raw_sha256": "0222789f1cb26f6a86e2371533a111a09498c9530d24d0cee61e129bfce62067",
       "review_receipt_hash": null,
-      "captured_at": "2026-09-23T04:40:18Z",
+      "captured_at": "2026-09-24T04:42:07Z",
       "schema_version": "1.1.0",
       "payload": {
         "drift_analysis": {
@@ -37,11 +37,11 @@
       "target_id": "MINNEAPOLIS_001",
       "document": "city_council_minutes",
       "state": "VERIFIED",
-      "anchor": "commit:4cba49cb1885d8d40e78d5f0da89784a51766460",
+      "anchor": "commit:374f9b9125cf5806ceb65a5d936dafae790cc243",
       "verdict": "VERIFIED",
-      "raw_sha256": "45636d6cd96606908b648ea74fcced5edbcea70de2bb58c6a1a0dbc1a90d053d",
+      "raw_sha256": "8af183f8496e352da442c5834dc95ef4952c2ff831d11f4dc5055748268d6a19",
       "review_receipt_hash": null,
-      "captured_at": "2026-09-23T04:40:12Z",
+      "captured_at": "2026-09-24T04:42:07Z",
       "schema_version": "1.1.0",
       "payload": {
         "drift_analysis": {
@@ -56,30 +56,11 @@
       "target_id": "MANKATO_001",
       "document": "city_council_minutes",
       "state": "VERIFIED",
-      "anchor": "commit:4cba49cb1885d8d40e78d5f0da89784a51766460",
+      "anchor": "commit:374f9b9125cf5806ceb65a5d936dafae790cc243",
       "verdict": "VERIFIED",
-      "raw_sha256": "8a1962c43ac97a8977963af957dc803d4b3b7e9826f96a78e9db810654ca4a7a",
+      "raw_sha256": "8c75e4fd43e5e4b46d23951483e8fa35b327070e5680ad9235c814da04bc9920",
       "review_receipt_hash": null,
-      "captured_at": "2026-09-23T04:40:21Z",
-      "schema_version": "1.1.0",
-      "payload": {
-        "drift_analysis": {
-          "has_drift": false,
-          "schema_version": "1.1.0",
-          "validator_version": "1.1.0",
-          "diff_segments": []
-        }
-      }
-    },
-    {
-      "target_id": "DULUTH_001",
-      "document": "city_council_minutes",
-      "state": "VERIFIED",
-      "anchor": "commit:4cba49cb1885d8d40e78d5f0da89784a51766460",
-      "verdict": "VERIFIED",
-      "raw_sha256": "7490167d866a690e7c2c42c2eb79eb1181dd16c8444127e05702f36d88e6b04c",
-      "review_receipt_hash": null,
-      "captured_at": "2026-09-23T04:40:55Z",
+      "captured_at": "2026-09-24T04:42:06Z",
       "schema_version": "1.1.0",
       "payload": {
         "drift_analysis": {
@@ -94,11 +75,30 @@
       "target_id": "ROCHESTER_001",
       "document": "city_council_minutes",
       "state": "VERIFIED",
-      "anchor": "commit:4cba49cb1885d8d40e78d5f0da89784a51766460",
+      "anchor": "commit:374f9b9125cf5806ceb65a5d936dafae790cc243",
       "verdict": "VERIFIED",
-      "raw_sha256": "67e65f97dae0f307ffa1c5c23da4e61d619c51b6e3b3495f62909f0d0ce83ca8",
+      "raw_sha256": "c129539c2575e62835cacd237bb7c9ac52bb28300ca02b19bf5c4d08ce036a3a",
       "review_receipt_hash": null,
-      "captured_at": "2026-09-23T04:40:51Z",
+      "captured_at": "2026-09-24T04:42:37Z",
+      "schema_version": "1.1.0",
+      "payload": {
+        "drift_analysis": {
+          "has_drift": false,
+          "schema_version": "1.1.0",
+          "validator_version": "1.1.0",
+          "diff_segments": []
+        }
+      }
+    },
+    {
+      "target_id": "DULUTH_001",
+      "document": "city_council_minutes",
+      "state": "VERIFIED",
+      "anchor": "commit:374f9b9125cf5806ceb65a5d936dafae790cc243",
+      "verdict": "VERIFIED",
+      "raw_sha256": "80469c0162698b23b1ce5f71d9ed08da40044b62b2388087f91ca7b69a51c1b3",
+      "review_receipt_hash": null,
+      "captured_at": "2026-09-24T04:42:42Z",
       "schema_version": "1.1.0",
       "payload": {
         "drift_analysis": {
