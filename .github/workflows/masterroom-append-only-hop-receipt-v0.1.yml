@@ -1,0 +1,169 @@
+name: Masterroom Append-Only Hop Receipt V0.1
+
+on:
+  workflow_run:
+    workflows: ["ALMS Auto Root"]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      target_sha:
+        description: "Commit to classify (defaults to current HEAD)"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: masterroom-append-only-hop-receipt
+  cancel-in-progress: false
+
+jobs:
+  receipt:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout full history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Classify AL-local hop and build append-only receipt
+        env:
+          INPUT_SHA: ${{ inputs.target_sha }}
+          WORKFLOW_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          set -euo pipefail
+
+          TARGET_SHA="${INPUT_SHA:-}"
+          if [ -z "$TARGET_SHA" ]; then TARGET_SHA="${WORKFLOW_SHA:-}"; fi
+          if [ -z "$TARGET_SHA" ]; then TARGET_SHA="$(git rev-parse HEAD)"; fi
+
+          git fetch origin "$TARGET_SHA" --quiet || true
+          PARENT_SHA="$(git rev-parse "$TARGET_SHA^")"
+
+          # Exact file-set fixture learned from observed ALMS auto-root hop f20523b7.
+          # Changing this fixture is a human-reviewed change to this proposed runner.
+          EXPECTED_FILE_SET="$(cat <<'EOF'
+_truth/alerts/alerts.jsonl
+_truth/alerts/alerts_summary.json
+_truth/logs/execution.log
+_truth/logs/root_events.jsonl
+_truth/root_history/root_history.jsonl
+_truth/status/last_run.json
+_truth/timeline/timeline.json
+status.json
+EOF
+          )"
+
+          ACTUAL_FILE_SET="$(git diff-tree --no-commit-id --name-only -r "$TARGET_SHA" | LC_ALL=C sort)"
+          EXPECTED_FILE_SET="$(printf '%s\n' "$EXPECTED_FILE_SET" | LC_ALL=C sort)"
+
+          SAME_FILE_SET=false
+          if [ "$ACTUAL_FILE_SET" = "$EXPECTED_FILE_SET" ]; then SAME_FILE_SET=true; fi
+
+          AUTHOR_NAME="$(git show -s --format='%an' "$TARGET_SHA")"
+          AUTHOR_EMAIL="$(git show -s --format='%ae' "$TARGET_SHA")"
+          AUTOMATED_ACTOR=false
+          case "$AUTHOR_NAME|$AUTHOR_EMAIL" in
+            alms-bot*|*github-actions*|*users.noreply.github.com*) AUTOMATED_ACTOR=true ;;
+          esac
+
+          read_json_at() {
+            local ref="$1" path="$2" key="$3"
+            git show "$ref:$path" 2>/dev/null | jq -r --arg k "$key" '.[$k] // empty' 2>/dev/null || true
+          }
+
+          ROOT_PRE="$(read_json_at "$PARENT_SHA" status.json root_sha256)"
+          ROOT_POST="$(read_json_at "$TARGET_SHA" status.json root_sha256)"
+          MERKLE_PRE="$(read_json_at "$PARENT_SHA" status.json merkle_root)"
+          MERKLE_POST="$(read_json_at "$TARGET_SHA" status.json merkle_root)"
+
+          ROOT_UNCHANGED=false
+          MERKLE_UNCHANGED=false
+          [ -n "$ROOT_PRE" ] && [ "$ROOT_PRE" = "$ROOT_POST" ] && ROOT_UNCHANGED=true
+          [ -n "$MERKLE_PRE" ] && [ "$MERKLE_PRE" = "$MERKLE_POST" ] && MERKLE_UNCHANGED=true
+
+          # AL-local protected surfaces only. Cross-repo JOY/CW/HEIDEE tips, PR state,
+          # external HOLDs, and human meaning are deliberately NOT tested here.
+          LOCAL_PROTECTED_REGEX='^(index\.html|README\.md|CANON|canon/|authority/|security/|holds?/|HOLD)'
+          LOCAL_PROTECTED_TOUCHED=false
+          if printf '%s\n' "$ACTUAL_FILE_SET" | grep -Eq "$LOCAL_PROTECTED_REGEX"; then
+            LOCAL_PROTECTED_TOUCHED=true
+          fi
+
+          CLASS="MATERIAL_DELTA_LOCAL"
+          if [ "$AUTOMATED_ACTOR" = true ] &&
+             [ "$SAME_FILE_SET" = true ] &&
+             [ "$ROOT_UNCHANGED" = true ] &&
+             [ "$MERKLE_UNCHANGED" = true ] &&
+             [ "$LOCAL_PROTECTED_TOUCHED" = false ]; then
+            CLASS="IDENTICAL_HOP_LOCAL"
+          fi
+
+          TS="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          DAY="$(date -u +%Y/%m/%d)"
+          OUT="_truth/masterroom_hourly/$DAY/${TARGET_SHA}.json"
+
+          # Append-only means a commit SHA gets one immutable receipt path.
+          if [ -e "$OUT" ]; then
+            echo "REFUSE_OVERWRITE $OUT"
+            exit 1
+          fi
+          mkdir -p "$(dirname "$OUT")"
+
+          jq -n             --arg schema "JASON_PURPOSE_DRIVEN_MASTERROOM_HOP_RECEIPT_V0_1"             --arg ts "$TS"             --arg target "$TARGET_SHA"             --arg parent "$PARENT_SHA"             --arg actor "$AUTHOR_NAME <$AUTHOR_EMAIL>"             --arg class "$CLASS"             --arg root_pre "$ROOT_PRE"             --arg root_post "$ROOT_POST"             --arg merkle_pre "$MERKLE_PRE"             --arg merkle_post "$MERKLE_POST"             --argjson automated_actor "$AUTOMATED_ACTOR"             --argjson same_file_set "$SAME_FILE_SET"             --argjson root_unchanged "$ROOT_UNCHANGED"             --argjson merkle_unchanged "$MERKLE_UNCHANGED"             --argjson local_protected_touched "$LOCAL_PROTECTED_TOUCHED"             --arg files "$ACTUAL_FILE_SET"             '{
+              schema:$schema,
+              status:"PROPOSED_V0_1",
+              canon:false,
+              authority_created:false,
+              generated_at:$ts,
+              target_sha:$target,
+              parent_sha:$parent,
+              actor:$actor,
+              classification:$class,
+              tests:{
+                automated_actor:$automated_actor,
+                same_file_set:$same_file_set,
+                root_unchanged:$root_unchanged,
+                merkle_unchanged:$merkle_unchanged,
+                local_protected_surface_touched:$local_protected_touched
+              },
+              full_math:{
+                changed_file_count:($files|split("\n")|map(select(length>0))|length),
+                changed_files:($files|split("\n")|map(select(length>0))),
+                root_pre:$root_pre,
+                root_post:$root_post,
+                merkle_pre:$merkle_pre,
+                merkle_post:$merkle_post
+              },
+              scope:{
+                tested:"jsonwisdom/AL local commit + status.json roots",
+                not_tested:[
+                  "JOY tip",
+                  "COMPUTERWISDOM tip",
+                  "HEIDEE tip",
+                  "open PR state",
+                  "external HOLD state",
+                  "human intent",
+                  "canon promotion"
+                ]
+              },
+              silence_rule:"IDENTICAL_HOP_LOCAL is receiptable without attention, but is not a global IDENTICAL_HOP until external protected surfaces are checked.",
+              promotion:"NONE"
+            }' > "$OUT"
+
+          echo "RECEIPT=$OUT"
+          echo "CLASSIFICATION=$CLASS"
+
+      - name: Commit receipt only
+        run: |
+          set -euo pipefail
+          git config user.name "masterroom-receipt-bot"
+          git config user.email "masterroom-receipt-bot@users.noreply.github.com"
+          git add _truth/masterroom_hourly/
+          if git diff --cached --quiet; then
+            echo "NO_RECEIPT"
+            exit 0
+          fi
+          git commit -m "Masterroom append-only hop receipt"
+          git push
