@@ -1,0 +1,136 @@
+id: GB-012
+title: The Consent Gap
+status: DRAFT_REPOSITORY_SPEC
+authority: false
+canon_promotion: false
+runtime_initialization: false
+binary_assets_required: false
+
+lineage:
+  previous: GB-011
+  previous_title: The Enforcement Gap
+  previous_branch: feature/gray-baby-011-enforcement-gap
+  previous_commit_sha: 9b31537ac6d44152b1461b97b440c2124006257e
+  grandparent: GB-010
+  integration_state: ISOLATED_REVIEW_BRANCH
+
+revealing_question: >-
+  When a human clicks approve, was that consent actually informed, or merely
+  momentum completing the agent's suggestion?
+
+core_distinction: CLICKED_APPROVE_IS_NOT_INFORMED_CONSENT
+
+consent_requirements:
+  scope_disclosed: REQUIRED
+  resource_cost_disclosed: REQUIRED
+  minimum_alternative_disclosed: REQUIRED
+  rollback_disclosed: REQUIRED
+  environment_preflight: PASS_REQUIRED
+  revocation_path: REQUIRED
+  comprehension_check: REQUIRED
+  consent_timestamp: REQUIRED
+  consent_scope_hash: REQUIRED
+
+valid_consent_state:
+  all_requirements_present: true
+  contradictions_resolved: true
+  stale_preflight: false
+  coercive_momentum_detected: false
+  consent_state: VALID
+
+failure_states:
+  - when: required_disclosure_missing
+    consent_state: INVALID
+    execution_state: HOLD
+  - when: environment_preflight_not_passed
+    consent_state: INVALID
+    execution_state: HOLD
+  - when: consent_scope_differs_from_execution_scope
+    consent_state: INVALID
+    execution_state: ABORT
+  - when: revocation_path_missing
+    consent_state: INVALID
+    execution_state: HOLD
+  - when: comprehension_check_failed
+    consent_state: INVALID
+    execution_state: REDIRECT
+  - when: suggestion_momentum_substitutes_for_review
+    consent_state: INVALID
+    execution_state: HOLD
+
+consent_gate:
+  name: INFORMED_CONSENT_CHECKPOINT
+  default_state: HOLD
+  fail_closed: true
+  required_receipts:
+    - scope_disclosure_receipt
+    - resource_cost_receipt
+    - minimum_alternative_receipt
+    - rollback_receipt
+    - environment_preflight_receipt
+    - revocation_path_receipt
+    - comprehension_receipt
+    - human_consent_receipt
+  execution_allowed_only_when_all_present: true
+  autonomous_override: denied
+  silent_scope_expansion: denied
+
+six_year_old_knowledge_management:
+  brutal_simplicity_test: >-
+    Can a six-year-old understand what happened, what is known, what is
+    guessed, and what happens next?
+  standards:
+    - id: GRAY_BABY_STANDARD_01
+      question: WHAT_DID_YOU_SEE
+    - id: GRAY_BABY_STANDARD_02
+      question: HOW_DO_YOU_KNOW
+    - id: GRAY_BABY_STANDARD_03
+      question: WHAT_PART_ARE_YOU_GUESSING
+    - id: GRAY_BABY_STANDARD_04
+      question: WHAT_COULD_PROVE_YOU_WRONG
+    - id: GRAY_BABY_STANDARD_05
+      question: WHAT_IS_THE_SMALLEST_SAFE_NEXT_STEP
+    - id: GRAY_BABY_STANDARD_06
+      question: WHO_FIXES_THE_RECORD_IF_WE_WERE_WRONG
+  operational_spine:
+    - SEE
+    - SAVE
+    - ASK
+    - CHECK
+    - ACT_SMALL
+    - LOOK_AGAIN
+    - CORRECT
+  truth_membrane:
+    i_saw_it: OBSERVATION
+    i_think_it: INFERENCE
+    i_can_show_it: EVIDENCE
+    i_was_wrong: CORRECTION
+    i_do_not_know: VALID_STATE
+
+clarity_constraints:
+  no_big_words_hiding_weak_evidence: true
+  no_confidence_hiding_uncertainty: true
+  no_action_hiding_cost: true
+  no_memory_hiding_correction: true
+  clear_does_not_mean_incomplete: true
+  simple_does_not_mean_oversimplified: true
+
+witness_statement: >-
+  Consent is valid only when the human can understand the disclosed scope,
+  cost, alternatives, rollback path, environment state, and revocation path.
+  Approval without comprehension is not informed consent.
+
+promotion_requirements:
+  - human_review
+  - lineage_binding_confirmed
+  - consent_gate_reviewed
+  - negative_test_matrix_present
+  - explicit_merge_authorization
+
+boundaries:
+  no_binary_upload: true
+  no_remote_image_bind: true
+  no_runtime_execution: true
+  no_merge_authorization: true
+  no_canon_promotion: true
+  no_authority_elevation: true
