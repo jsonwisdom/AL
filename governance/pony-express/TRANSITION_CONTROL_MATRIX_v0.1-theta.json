@@ -1,0 +1,371 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.example/schemas/TRANSITION_CONTROL_MATRIX_v0.1-theta.json",
+  "title": "Transition Control Matrix v0.1-θ",
+  "description": "Canonical, replay-ready progression gates for the pedagogical simulation. Each transition is a gate, not a promotion. Validation establishes structural conformance only. No historical truth or public authority is created.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "matrix_version",
+    "authority",
+    "gate_1",
+    "historical_verification",
+    "core_docket",
+    "simulation_only",
+    "monotonic",
+    "stages"
+  ],
+  "properties": {
+    "matrix_version": {
+      "const": "TRANSITION_CONTROL_MATRIX_v0.1-theta"
+    },
+    "authority": {
+      "const": false
+    },
+    "gate_1": {
+      "const": "BLOCKED"
+    },
+    "historical_verification": {
+      "const": "NOT_PERFORMED"
+    },
+    "core_docket": {
+      "const": "EMPTY"
+    },
+    "simulation_only": {
+      "const": true
+    },
+    "monotonic": {
+      "const": true,
+      "description": "No stage may collapse backward. Advancement requires explicit receipt chain."
+    },
+    "promotion": {
+      "enum": ["BLOCKED", "CANDIDATE", "APPROVED"],
+      "default": "BLOCKED"
+    },
+    "stages": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": { "$ref": "#/$defs/stage" }
+    }
+  },
+  "$defs": {
+    "stage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stage_id",
+        "from_role",
+        "to_role",
+        "takeaway",
+        "required_artifacts",
+        "required_exercises",
+        "minimum_receipts",
+        "gate_conditions",
+        "failure_conditions",
+        "reviewer",
+        "appeal_path"
+      ],
+      "properties": {
+        "stage_id": {
+          "type": "string",
+          "pattern": "^STAGE-[1-6]$"
+        },
+        "from_role": {
+          "enum": [
+            "STUDENT",
+            "READER",
+            "ADVOCATE",
+            "CLERK",
+            "PANELIST",
+            "JUDICIAL_ENGINEER"
+          ]
+        },
+        "to_role": {
+          "enum": [
+            "READER",
+            "ADVOCATE",
+            "CLERK",
+            "PANELIST",
+            "JUDICIAL_ENGINEER",
+            "STEWARD_OF_JUSTICE"
+          ]
+        },
+        "takeaway": {
+          "type": "string",
+          "minLength": 10
+        },
+        "required_artifacts": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/artifactRef" }
+        },
+        "required_exercises": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 5 }
+        },
+        "minimum_receipts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["count", "description"],
+          "properties": {
+            "count": { "type": "integer", "minimum": 1 },
+            "description": { "type": "string", "minLength": 5 }
+          }
+        },
+        "gate_conditions": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 5 }
+        },
+        "failure_conditions": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 5 }
+        },
+        "reviewer": {
+          "type": "string",
+          "minLength": 3
+        },
+        "appeal_path": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 5 }
+        }
+      }
+    },
+    "artifactRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "description"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "pattern": "^[A-Z0-9_]+\\.(json|md|py)$"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 5
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "matrix_version": "TRANSITION_CONTROL_MATRIX_v0.1-theta",
+      "authority": false,
+      "gate_1": "BLOCKED",
+      "historical_verification": "NOT_PERFORMED",
+      "core_docket": "EMPTY",
+      "simulation_only": true,
+      "monotonic": true,
+      "promotion": "BLOCKED",
+      "stages": [
+        {
+          "stage_id": "STAGE-1",
+          "from_role": "STUDENT",
+          "to_role": "READER",
+          "takeaway": "This gate establishes byte-level discipline and rejects historical inference.",
+          "required_artifacts": [
+            {
+              "name": "ONBOARDING_ACK.json",
+              "description": "Signed onboarding acknowledgment"
+            },
+            {
+              "name": "REPO_INIT_RECEIPT.json",
+              "description": "Confirmation of local repository initialization"
+            }
+          ],
+          "required_exercises": [
+            "3D coordinate mapping using US3D:// syntax",
+            "Byte integrity isolation — prove integrity ≠ interpretation"
+          ],
+          "minimum_receipts": {
+            "count": 1,
+            "description": "Cryptographic replication receipt confirming fixture reproduction"
+          },
+          "gate_conditions": [
+            "BYTE_EQUALITY = INTEGRITY_ONLY",
+            "Zero unauthorized branch mutations"
+          ],
+          "failure_conditions": [
+            "Treating document existence as historical truth",
+            "Skipping coordinate syntax validation"
+          ],
+          "reviewer": "Automated CI Linter",
+          "appeal_path": [
+            "Re-run local harness",
+            "Submit patch commit correcting schema failures"
+          ]
+        },
+        {
+          "stage_id": "STAGE-2",
+          "from_role": "READER",
+          "to_role": "ADVOCATE",
+          "takeaway": "This gate enforces layer separation—claim, evidence, authority.",
+          "required_artifacts": [
+            {
+              "name": "RULE_MAP_V1.md",
+              "description": "Completed rule-mapping module"
+            }
+          ],
+          "required_exercises": [
+            "Separate claim/evidence/authority in a test scenario",
+            "Pass one counterargument exercise",
+            "Record one structural self-correction"
+          ],
+          "minimum_receipts": {
+            "count": 3,
+            "description": "Receipts demonstrating distinct claim-layer separation"
+          },
+          "gate_conditions": [
+            "No Z-layer authority skipping",
+            "ROUTE_EXISTENCE ≠ AUTHORITY"
+          ],
+          "failure_conditions": [
+            "Conflating interpretation with adjudication",
+            "Prioritizing narrative speed over procedure"
+          ],
+          "reviewer": "Peer Reviewer (Reader+)",
+          "appeal_path": [
+            "Submit missing receipt hash via PR addendum",
+            "Peer re-test required"
+          ]
+        },
+        {
+          "stage_id": "STAGE-3",
+          "from_role": "ADVOCATE",
+          "to_role": "CLERK",
+          "takeaway": "This gate establishes evidentiary ingestion discipline.",
+          "required_artifacts": [
+            {
+              "name": "DOCKET_ENTRY_V1.json",
+              "description": "Raw bytes + identity metadata"
+            }
+          ],
+          "required_exercises": [
+            "Construct historical depth pipeline (Source Bytes → Implementation)",
+            "Log missing witness fields without synthetic generation"
+          ],
+          "minimum_receipts": {
+            "count": 5,
+            "description": "Ingestion receipts with SHA-256 digests"
+          },
+          "gate_conditions": [
+            "EVIDENCE_PRECEDES_EVOLUTION",
+            "Zero unverified source pointers"
+          ],
+          "failure_conditions": [
+            "Ingesting unverified IPFS CIDs",
+            "Treating dead URLs as active evidence"
+          ],
+          "reviewer": "Senior Clerk / Docket Administrator",
+          "appeal_path": [
+            "Re-verify source pointers",
+            "Replace broken hashes",
+            "Re-submit docket package"
+          ]
+        },
+        {
+          "stage_id": "STAGE-4",
+          "from_role": "CLERK",
+          "to_role": "PANELIST",
+          "takeaway": "This gate enforces simulation-only precedent fidelity.",
+          "required_artifacts": [
+            {
+              "name": "PRECEDENT_BRIEF_V1.md",
+              "description": "Citing simulation rulings only"
+            }
+          ],
+          "required_exercises": [
+            "Distinguish binding simulation precedent vs non-binding narrative",
+            "Formulate structured challenge to an existing simulation ruling"
+          ],
+          "minimum_receipts": {
+            "count": 2,
+            "description": "Hash-chained precedent receipts"
+          },
+          "gate_conditions": [
+            "Precedent fidelity confirmed",
+            "Zero real-world legal authority claims"
+          ],
+          "failure_conditions": [
+            "Treating simulation outcomes as real-world law",
+            "Confusing public opinion with procedural validity"
+          ],
+          "reviewer": "Panel Board (2+ Panelists)",
+          "appeal_path": [
+            "Revise brief to restrict scope",
+            "Resubmit to docket pool"
+          ]
+        },
+        {
+          "stage_id": "STAGE-5",
+          "from_role": "PANELIST",
+          "to_role": "JUDICIAL_ENGINEER",
+          "takeaway": "This gate enforces programmatic fail-closed behavior.",
+          "required_artifacts": [
+            {
+              "name": "JUDICIAL_ENGINEER_V1.py",
+              "description": "Algorithmic review script"
+            }
+          ],
+          "required_exercises": [
+            "Enforce contradiction dominance in validation chains",
+            "Author fail-closed gate block for rule breakage"
+          ],
+          "minimum_receipts": {
+            "count": 3,
+            "description": "Passing automated test receipts under malicious fixture injection"
+          },
+          "gate_conditions": [
+            "INTERPRETATION ≠ ADJUDICATION enforced in code"
+          ],
+          "failure_conditions": [
+            "Allowing indeterminate states to pass",
+            "Hardcoding absolute paths"
+          ],
+          "reviewer": "System Architect / Lead Maintainer",
+          "appeal_path": [
+            "Patch script",
+            "Fix path encapsulation",
+            "Run full integration suite"
+          ]
+        },
+        {
+          "stage_id": "STAGE-6",
+          "from_role": "JUDICIAL_ENGINEER",
+          "to_role": "STEWARD_OF_JUSTICE",
+          "takeaway": "This gate verifies dual-axis mastery: SELF-Score × JUSTICE-Score.",
+          "required_artifacts": [
+            {
+              "name": "STEWARD_MANIFEST_V1.md",
+              "description": "Constitution + governance manifest"
+            }
+          ],
+          "required_exercises": [
+            "Dual-axis audit: SELF-Score + JUSTICE-Score",
+            "Full lifecycle promotion audit (raw bytes → steward receipt)"
+          ],
+          "minimum_receipts": {
+            "count": 1,
+            "description": "Complete verified chain from Stage 1–5 plus zero-defect self-examination log"
+          },
+          "gate_conditions": [
+            "WISDOM = SELF ∩ JUSTICE demonstrated in simulation"
+          ],
+          "failure_conditions": [
+            "High SELF, low JUSTICE (Ego)",
+            "Low SELF, high JUSTICE (Accident)"
+          ],
+          "reviewer": "Full Judicial Council",
+          "appeal_path": [
+            "Complete remediation module on bias + procedural humility",
+            "Restart promotion cycle"
+          ]
+        }
+      ]
+    }
+  ]
+}

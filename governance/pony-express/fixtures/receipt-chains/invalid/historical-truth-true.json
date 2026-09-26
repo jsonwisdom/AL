@@ -1,0 +1,20 @@
+{
+  "fixture_id": "FX-INVALID-HIST-TRUTH-001",
+  "expected_verdict": "FAIL",
+  "description": "Receipt illegally asserts historical_truth_established: true",
+  "receipts": [
+    {
+      "receipt_id": "RECEIPT-FX-HT-001",
+      "protocol_version": "RECEIPT_CHAIN_v0.1-theta",
+      "action": "GENESIS",
+      "result": "RECORDED",
+      "authority": false,
+      "historical_truth_established": true,
+      "gate_1_status": "BLOCKED",
+      "previous_receipt_hash": null,
+      "receipt_hash": "ddd444ddd444ddd444ddd444ddd444ddd444ddd444ddd444ddd444ddd444ddd4",
+      "recorded_at": "2026-07-31T19:57:00Z",
+      "payload": { "note": "Must be rejected solely because historical_truth_established is true" }
+    }
+  ]
+}

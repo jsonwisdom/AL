@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.example/schemas/JUDICIAL_ENGINEERING_QUANTUM_VARIANT_v0.1.json",
+  "title": "Judicial Engineering Quantum Variant v0.1-psi",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "variant_version",
+    "enabled",
+    "simulation_only",
+    "authority",
+    "gate_1",
+    "historical_verification",
+    "quantum_mayhem"
+  ],
+  "properties": {
+    "variant_version": {
+      "const": "JUDICIAL_ENGINEERING_QUANTUM_v0.1-psi"
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "simulation_only": {
+      "const": true
+    },
+    "authority": {
+      "const": false
+    },
+    "gate_1": {
+      "const": "BLOCKED"
+    },
+    "historical_verification": {
+      "const": "NOT_PERFORMED"
+    },
+    "quantum_mayhem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "superposition_rounds",
+        "entanglement_pairs",
+        "observer_effect_rate",
+        "tunneling_cost",
+        "tunneling_scope",
+        "decoherence_timer",
+        "decoherence_fallback"
+      ],
+      "properties": {
+        "superposition_rounds": {
+          "type": "boolean"
+        },
+        "entanglement_pairs": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 16,
+          "default": 3
+        },
+        "observer_effect_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 0.25,
+          "default": 0.05
+        },
+        "tunneling_cost": {
+          "type": "integer",
+          "minimum": 1,
+          "default": 20
+        },
+        "tunneling_scope": {
+          "const": "ROUTE_OBSTACLE_ONLY"
+        },
+        "decoherence_timer": {
+          "type": "integer",
+          "minimum": 1,
+          "default": 5
+        },
+        "decoherence_fallback": {
+          "const": "EARLIEST_INDEPENDENTLY_VERIFIED_SOURCE_OR_FAIL_CLOSED"
+        }
+      }
+    },
+    "invariants": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "game_result_is_historical_truth": { "const": false },
+        "player_role_is_public_authority": { "const": false },
+        "tunneling_bypasses_gate_1": { "const": false },
+        "entanglement_proves_causation": { "const": false },
+        "observer_effect_rewrites_source_bytes": { "const": false },
+        "decoherence_erases_forks": { "const": false }
+      }
+    }
+  }
+}

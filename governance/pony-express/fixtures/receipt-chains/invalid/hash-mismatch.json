@@ -1,0 +1,20 @@
+{
+  "fixture_id": "FX-INVALID-HASH-MISMATCH-001",
+  "expected_verdict": "FAIL",
+  "description": "receipt_hash does not equal SHA-256 of RFC 8785 JCS of the object",
+  "receipts": [
+    {
+      "receipt_id": "RECEIPT-FX-HM-001",
+      "protocol_version": "RECEIPT_CHAIN_v0.1-theta",
+      "action": "GENESIS",
+      "result": "RECORDED",
+      "authority": false,
+      "historical_truth_established": false,
+      "gate_1_status": "BLOCKED",
+      "previous_receipt_hash": null,
+      "receipt_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "recorded_at": "2026-07-31T19:57:00Z",
+      "payload": { "note": "Deliberately wrong hash" }
+    }
+  ]
+}
