@@ -1,0 +1,24 @@
+file: "007_WITNESS_FEEDBACK_LOOP"
+status: "DRAFT_REPOSITORY_SPEC"
+authority: false
+canon_promotion: false
+attestation: "PENDING"
+visual:
+  expected_path: "assets/GB-007-Witness-Feedback-Loop.png"
+  local_observed_size_bytes: 2214339
+  local_observed_sha256: "1aa726e2741c94a6d76be93ab4fbe8e0575018b9d8124e6f3f00043a8b69fbc7"
+  repository_blob: null
+  remote_bytes_retrieved: false
+mechanics:
+  stages:
+    - "OBSERVE"
+    - "ROUTE"
+    - "ENFORCE"
+    - "RECORD"
+    - "REVIEW"
+  witness_role: "NON_AUTHORITATIVE_OBSERVER"
+  truth_adjudication: "NONE"
+lineage:
+  previous_file: "006_GOVERNANCE_LAYER"
+  next_file: "008_DISSENT_PROTOCOL"
+  activation: "PENDING_REMOTE_ASSET_BIND"

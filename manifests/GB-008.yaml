@@ -1,0 +1,76 @@
+file: "008_DISSENT_PROTOCOL"
+status: "DRAFT_REPOSITORY_SPEC"
+authority: false
+erasure: false
+branching: true
+truth_adjudication: "NONE"
+canon_promotion: false
+attestation: "PENDING"
+visual:
+  expected_path: "assets/GB-008-Dissent-Protocol.png"
+  local_observed_size_bytes: 2004214
+  local_observed_sha256: "87053babf6bc1176a8218cf201b6f000fb889e7a6a687c10eb0969e80dffb5d1"
+  repository_blob: null
+  remote_bytes_retrieved: false
+mechanics:
+  review_corridor:
+    entry_triggers:
+      - "DISSENT_GLYPH_ACTIVATED"
+      - "HOLD_STATE_APPLIED"
+    attraction_logic:
+      type: "STATE_INCOMPATIBILITY_DETERMINISTIC"
+    continuity_contract:
+      required_fields:
+        - "SOURCE"
+        - "IDENTITY"
+        - "CONSENT"
+        - "TRANSFORM"
+        - "DESTINATION"
+        - "EVIDENCE_STATE"
+    incompatibility_condition:
+      evidence_state: "NON_ADMISSIBLE_FOR_FORWARD_CONTINUITY"
+      allowed_causes:
+        - "MISSING"
+        - "INCOMPLETE"
+        - "CONTRADICTORY"
+        - "STALE"
+        - "MALFORMED"
+        - "SCOPE_MISMATCH"
+        - "SIGNATURE_FAILURE"
+        - "LINEAGE_GAP"
+    routing_effect:
+      forward_route: "SUSPENDED"
+      original_route: "PRESERVED"
+      review_route: "ACTIVATED"
+      lineage: "UNBROKEN"
+    corridor:
+      state: "DIAGNOSTIC_DECOMPOSITION"
+      punitive: false
+      reversible: true
+      decomposition_fields:
+        - "SOURCE"
+        - "IDENTITY"
+        - "CONSENT"
+        - "TRANSFORM"
+        - "DESTINATION"
+      anchors:
+        source: "ORIGIN_ANCHOR"
+        identity: "CREDENTIAL_ANCHOR"
+        consent: "AUTHORIZATION_ANCHOR"
+        transform: "OPERATION_ANCHOR"
+        destination: "ROUTING_ANCHOR"
+    review_outcomes:
+      uphold:
+        effect: "RESTORE_AUTHORIZED_FORWARD_ROUTE"
+      reverse:
+        effect: "RESTORE_PRIOR_ROUTE_OR_APPEND_CORRECTED_ROUTE"
+      escalate:
+        effect: "TRANSFER_TO_MULTI_WITNESS_REVIEW"
+        hold_preserved: true
+      tombstone:
+        effect: "END_FUTURE_ACTIVE_USE"
+        history_erasure: false
+lineage:
+  previous_file: "007_WITNESS_FEEDBACK_LOOP"
+  next_file: "009_REVOCATION_REGISTRY"
+  activation: "PENDING_REMOTE_ASSET_BIND"
