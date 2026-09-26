@@ -119,6 +119,49 @@ function semantics() {
   const workflow = fileText('.github/workflows/librarian-replay.yml');
   const guard = fileText('scripts/production-settlement-guard.cjs');
 
+  const validatorModule = require(path.join(ROOT, 'scripts/drift-schema-validator.cjs'));
+  const behavior = {};
+  try {
+    const legacySame = validatorModule.validateDrift(
+      'ST_CLOUD', '1.0.0',
+      'Council Minutes Page 1 setback variance',
+      'Council Minutes Page 1 setback variance'
+    );
+    behavior.legacy_same_no_drift = legacySame.has_drift === false;
+
+    const legacyChanged = validatorModule.validateDrift(
+      'ST_CLOUD', '1.0.0',
+      'Council Minutes Page 1 setback variance',
+      'Council Minutes Page 2 setback variance'
+    );
+    behavior.legacy_page_change_is_drift = legacyChanged.has_drift === true;
+
+    const evolvedIgnored = validatorModule.validateDrift(
+      'ST_CLOUD', '1.1.0',
+      'Council Minutes Page 1 Minutes Approved setback variance',
+      'Council Minutes Page 99 setback variance'
+    );
+    behavior.evolved_ignored_change_no_drift = evolvedIgnored.has_drift === false;
+
+    const evolvedChanged = validatorModule.validateDrift(
+      'ST_CLOUD', '1.1.0',
+      'Council Minutes setback variance',
+      'Council Minutes setback variance amended'
+    );
+    behavior.evolved_substantive_change_is_drift = evolvedChanged.has_drift === true;
+
+    let unknownThrows = false;
+    try {
+      validatorModule.validateDrift('ST_CLOUD', '9.9.9', 'a', 'a');
+    } catch (error) {
+      unknownThrows = /Unsupported schema version validation requested/.test(String(error.message || error));
+    }
+    behavior.unknown_version_throws = unknownThrows;
+  } catch (error) {
+    r.status = 'HOLD';
+    r.reasons.push('BEHAVIORAL_TEST_HARNESS_ERROR:' + String(error.message || error));
+  }
+
   const checks = {
     schema_fallback_1_0_0: /manifest\.schema_version\s*\|\|\s*['"]1\.0\.0['"]/.test(validator),
     explicit_supported_version_guard: /SUPPORTED_VERSIONS\.includes\(targetVersion\)/.test(validator),
@@ -137,8 +180,16 @@ function semantics() {
   };
 
   for (const [k, ok] of Object.entries(checks)) if (!ok) r.reasons.push('SEMANTIC_CONTRACT_CHANGED:' + k);
-  if (r.reasons.length) { r.status = 'PASS'; r.material = true; }
-  r.observations = checks;
+  for (const [k, ok] of Object.entries(behavior)) if (!ok) r.reasons.push('BEHAVIORAL_CONTRACT_CHANGED:' + k);
+
+  const contractReasons = r.reasons.filter(x =>
+    x.startsWith('SEMANTIC_CONTRACT_CHANGED:') || x.startsWith('BEHAVIORAL_CONTRACT_CHANGED:')
+  );
+  if (contractReasons.length && r.status !== 'HOLD') {
+    r.status = 'PASS';
+    r.material = true;
+  }
+  r.observations = { source_checks: checks, behavioral_checks: behavior };
   write('semantics.json', r); return r;
 }
 
