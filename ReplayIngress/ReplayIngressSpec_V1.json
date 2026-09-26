@@ -1,0 +1,236 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "JSONWisdom/AL/ReplayIngress/ReplayIngressSpec_V1.json",
+  "title": "ReplayIngressSpec_V1",
+  "type": "object",
+  "required": [
+    "replay_result",
+    "receipt_id",
+    "parent_receipt_ids",
+    "replay_hash",
+    "procedure_id",
+    "timestamp",
+    "authority_created",
+    "acceptance_created",
+    "correctness_proved"
+  ],
+  "properties": {
+    "replay_result": {
+      "type": "string",
+      "enum": [
+        "REPLAY_MATCH",
+        "REPLAY_MISMATCH",
+        "REPLAY_DRIFT",
+        "REPLAY_UNREPLAYABLE"
+      ]
+    },
+    "receipt_id": {
+      "$ref": "#/definitions/safe_string"
+    },
+    "parent_receipt_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/safe_string"
+      }
+    },
+    "replay_hash": {
+      "$ref": "#/definitions/safe_string"
+    },
+    "procedure_id": {
+      "$ref": "#/definitions/safe_string"
+    },
+    "timestamp": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/safe_string"
+        },
+        {
+          "type": "string",
+          "format": "date-time"
+        }
+      ]
+    },
+    "authority_created": {
+      "type": "boolean",
+      "const": false
+    },
+    "acceptance_created": {
+      "type": "boolean",
+      "const": false
+    },
+    "correctness_proved": {
+      "type": "boolean",
+      "const": false
+    },
+    "diff_summary": {
+      "type": "object",
+      "propertyNames": {
+        "not": {
+          "enum": [
+            "MATCH",
+            "DELTA",
+            "HOLD",
+            "MISMATCH",
+            "DRIFT",
+            "UNREPLAYABLE",
+            "al_match",
+            "al_delta",
+            "al_hold",
+            "authorized",
+            "accepted",
+            "correct",
+            "truth",
+            "verified",
+            "valid",
+            "actor",
+            "identity",
+            "signer",
+            "wallet",
+            "settled",
+            "final",
+            "approved"
+          ]
+        }
+      },
+      "additionalProperties": {
+        "$ref": "#/definitions/safe_diff_value"
+      }
+    },
+    "unreplayable_reason": {
+      "$ref": "#/definitions/safe_string"
+    }
+  },
+  "propertyNames": {
+    "not": {
+      "enum": [
+        "MATCH",
+        "DELTA",
+        "HOLD",
+        "MISMATCH",
+        "DRIFT",
+        "UNREPLAYABLE",
+        "al_match",
+        "al_delta",
+        "al_hold",
+        "authorized",
+        "accepted",
+        "correct",
+        "truth",
+        "verified",
+        "valid",
+        "actor",
+        "identity",
+        "signer",
+        "wallet",
+        "settled",
+        "final",
+        "approved"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "replay_result": {
+            "enum": [
+              "REPLAY_MISMATCH",
+              "REPLAY_DRIFT"
+            ]
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "diff_summary"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "replay_result": {
+            "const": "REPLAY_UNREPLAYABLE"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "unreplayable_reason"
+        ]
+      }
+    }
+  ],
+  "definitions": {
+    "safe_string": {
+      "type": "string",
+      "not": {
+        "enum": [
+          "MATCH",
+          "DELTA",
+          "HOLD",
+          "MISMATCH",
+          "DRIFT",
+          "UNREPLAYABLE"
+        ]
+      }
+    },
+    "safe_diff_value": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "$ref": "#/definitions/safe_string"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/safe_diff_value"
+          }
+        },
+        {
+          "type": "object",
+          "propertyNames": {
+            "not": {
+              "enum": [
+                "MATCH",
+                "DELTA",
+                "HOLD",
+                "MISMATCH",
+                "DRIFT",
+                "UNREPLAYABLE",
+                "al_match",
+                "al_delta",
+                "al_hold",
+                "authorized",
+                "accepted",
+                "correct",
+                "truth",
+                "verified",
+                "valid",
+                "actor",
+                "identity",
+                "signer",
+                "wallet",
+                "settled",
+                "final",
+                "approved"
+              ]
+            }
+          },
+          "additionalProperties": {
+            "$ref": "#/definitions/safe_diff_value"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -8,6 +8,7 @@
   },
   "scripts": {
     "build": "npm run witness:build",
+    "test:replayingress": "vitest run ReplayIngress/Tests",
     "track001:preflight": "node scripts/track001_preflight.js",
     "track001:finalize": "node scripts/track001_finalize.js",
     "track001:verify": "node scripts/track001_verify.js",
