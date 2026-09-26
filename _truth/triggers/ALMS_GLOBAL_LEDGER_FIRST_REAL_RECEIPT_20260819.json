@@ -1,0 +1,23 @@
+{
+  "trigger_id": "ALMS_GLOBAL_LEDGER_FIRST_REAL_RECEIPT_20260819",
+  "purpose": "Controlled branch-local trigger for alms-auto-replay-and-bump.yml to attempt the first real execution receipt and global-ledger append.",
+  "target_pr": 422,
+  "target_branch": "alms-hard-gate-global-execution-ledger",
+  "expected_flow": [
+    "replay_corpus_runner",
+    "terminal_execution_receipt",
+    "consume_execution_receipts",
+    "global_execution_ledger",
+    "active_lanes_binding",
+    "workflow_disposition_preserved"
+  ],
+  "synthetic_ledger_row_created": false,
+  "authority_created": false,
+  "proof_inferred": false,
+  "no_fake_green": true,
+  "requested_replay_parameter": {
+    "value": 125,
+    "unit": "UNBOUND"
+  },
+  "note": "This file is a trigger stimulus only. The GitHub Actions execution must independently produce any execution receipt and ledger row."
+}

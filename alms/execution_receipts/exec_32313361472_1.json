@@ -1,0 +1,117 @@
+{
+  "receipt_id": "exec_32313361472_1",
+  "receipt_type": "EXECUTION_RECEIPT",
+  "version": "0.3.0",
+  "phase": "TERMINAL",
+  "timestamp": "2026-08-19T23:35:37.636734Z",
+  "authority": false,
+  "proof_inferred": false,
+  "no_fake_green": true,
+  "canonicalization": {
+    "method": "JSON_SORTED_KEYS_COMPACT_UTF8_V0_1",
+    "hash_alg": "sha256",
+    "rfc8785_jcs_claimed": false
+  },
+  "execution": {
+    "workflow_name": "ALMS Auto Replay + Auto Bump",
+    "workflow_run_id": "32313361472",
+    "workflow_run_attempt": "1",
+    "repo": "jsonwisdom/AL",
+    "ref": "refs/heads/alms-hard-gate-global-execution-ledger",
+    "commit": "dc6220c9adcc9415ba2c7221d743fb32d176dc23",
+    "actor": "jsonwisdom",
+    "event_name": "push",
+    "runner_started_at": "2026-08-19T23:35:37Z",
+    "runner_completed_at": "2026-08-19T23:35:37Z",
+    "runner_exit_code": 1,
+    "verdict": "INDETERMINATE",
+    "hard_gate_result": "HOLD",
+    "items_requested": 2,
+    "items_passed": 1,
+    "items_failed": 0,
+    "items_indeterminate": 1,
+    "failed_cases": [
+      {
+        "case": "C0002",
+        "reason": "missing_manifests",
+        "details": {}
+      }
+    ],
+    "corpus_report_state": "PARSED",
+    "corpus_report_present": true,
+    "corpus_report_parse_error": null
+  },
+  "requested_replay_parameter": null,
+  "bindings": {
+    "alms_version": "1.0.0",
+    "version_registry": {
+      "state": "BOUND",
+      "path": "alms/version_registry.json",
+      "sha256": "sha256:d846e17d83fee9b6da5849945539ff0b5162a2d89e444e3c3d96031f1795253a",
+      "registry_version": "1.2.0",
+      "components": {
+        "ALMS_PROTOCOL": {
+          "layer": "protocol_version",
+          "version": "1.0.0",
+          "state": "LOCKED",
+          "artifact_path": "docs/specs/ALMS_VERSIONING_SYSTEM.md",
+          "hash": "UNSET"
+        },
+        "ALMS_AUTO_REPLAY_WORKFLOW": {
+          "layer": "workflow_version",
+          "version": "0.3.0",
+          "state": "REPLAY_REQUIRED",
+          "artifact_path": ".github/workflows/alms-auto-replay-and-bump.yml",
+          "hash": "UNSET"
+        },
+        "ALMS_EXECUTION_RECEIPT": {
+          "layer": "schema_version",
+          "version": "0.3.0",
+          "state": "REPLAY_REQUIRED",
+          "artifact_path": "scripts/alms_write_execution_receipt.py",
+          "hash": "UNSET"
+        },
+        "JSONWISDOM_GLOBAL_EXECUTION_LEDGER": {
+          "layer": "schema_version",
+          "version": "0.2.0",
+          "state": "REPLAY_REQUIRED",
+          "artifact_path": "schemas/JSONWISDOM_GLOBAL_EXECUTION_LEDGER_V0_2.schema.json",
+          "hash": "UNSET"
+        },
+        "ALMS_EXECUTION_RECEIPT_CONSUMER": {
+          "layer": "workflow_version",
+          "version": "0.2.0",
+          "state": "REPLAY_REQUIRED",
+          "artifact_path": "scripts/alms_consume_execution_receipts.py",
+          "hash": "UNSET"
+        },
+        "ALMS_ACTIVE_LANES_BINDER": {
+          "layer": "workflow_version",
+          "version": "0.1.0",
+          "state": "REPLAY_REQUIRED",
+          "artifact_path": "scripts/alms_bind_active_lanes.py",
+          "hash": "UNSET"
+        }
+      },
+      "error": null
+    },
+    "receiptos_frame": null,
+    "ens_pointer": null
+  },
+  "source_hashes": {
+    "corpus_report": "sha256:9a84b28b9ea4df465cdcd4648238c886e97b8705f0b3ce5769a42c6b518158cb",
+    "version_registry": "sha256:d846e17d83fee9b6da5849945539ff0b5162a2d89e444e3c3d96031f1795253a"
+  },
+  "limitations": {
+    "post_step_terminal_receipt": true,
+    "whole_job_timeout_or_cancellation_can_prevent_terminal_receipt": true,
+    "runner_host_loss_can_prevent_terminal_receipt": true,
+    "future_two_phase_started_terminal_receipt_recommended": true
+  },
+  "section_hashes": {
+    "execution_hash": "sha256:2de7e067fbe26a7b26eca6f784d786039e7f351033adcac358cffbd8a18a6eb7",
+    "version_registry_hash": "sha256:ae28224a41ce5bde14e16c40980360207e3908ae61a71d629dbcda5ea1e75f3a",
+    "core_hash": "sha256:43efd86ea46e24934f91c10764a143aa03e52d2f4b84c2f500eff50521f3e6e5"
+  },
+  "final_hash": "sha256:55b7b32fdbd40bfb0736f08802a8eacc055ba98aa8ffe16705813d83fe692d30"
+}
