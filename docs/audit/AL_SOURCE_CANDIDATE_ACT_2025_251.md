@@ -2,7 +2,9 @@
 
 ## Status
 
-`SOURCE_CANDIDATE_ACCEPTED_FOR_FREEZE`
+`SOURCE_BYTES_FROZEN_CLAIM_STILL_INDETERMINATE`
+
+The Act 2025-251 PDF is checked in at `fixtures/al/sources/al_budget_act_2025_251.pdf`. Lead-only replay lives at `docs/audit/AL_CHECKED_IN_BYTES_REPLAY_LEADS.md`. This does not flip AL to `PASS`.
 
 This document records the first official Alabama source candidate for the AL PASS gate.
 
