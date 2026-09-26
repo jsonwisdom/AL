@@ -123,7 +123,8 @@ function semantics() {
     schema_fallback_1_0_0: /manifest\.schema_version\s*\|\|\s*['"]1\.0\.0['"]/.test(validator),
     explicit_supported_version_guard: /SUPPORTED_VERSIONS\.includes\(targetVersion\)/.test(validator),
     legacy_explicit_branch: /targetVersion\s*===\s*['"]1\.0\.0['"]/.test(validator),
-    evolved_fallthrough_present: /return\s+runEvolvedValidator\(/.test(validator),
+    explicit_1_1_0_branch: /targetVersion\s*===\s*['"]1\.1\.0['"]/.test(validator),
+    unimplemented_supported_version_is_fatal: /Supported schema version .* has no implemented predicate/.test(validator),
     raw_sha_is_synthetic: /TARGET_ID:\$GITHUB_SHA:raw/.test(workflow),
     receipt_drift_is_literal_false: /drift_detected:false/.test(workflow),
     receipt_green_is_literal: /status:"GREEN"/.test(workflow),
@@ -163,7 +164,10 @@ function history() {
         ['validator_version', oldD.validator_version, newD.validator_version],
         ['has_drift', oldD.has_drift, newD.has_drift],
         ['diff_segments_count', Array.isArray(oldD.diff_segments) ? oldD.diff_segments.length : null,
-                                Array.isArray(newD.diff_segments) ? newD.diff_segments.length : null]
+                                Array.isArray(newD.diff_segments) ? newD.diff_segments.length : null],
+        ['diff_segments_sha256',
+          sha256Text(JSON.stringify(Array.isArray(oldD.diff_segments) ? oldD.diff_segments : null)),
+          sha256Text(JSON.stringify(Array.isArray(newD.diff_segments) ? newD.diff_segments : null))]
       ];
       for (const [field, oldValue, newValue] of compare) {
         if (JSON.stringify(oldValue) !== JSON.stringify(newValue)) changes.push({target_id:id, field, oldValue, newValue});
@@ -175,6 +179,7 @@ function history() {
     const d = n.payload?.drift_analysis || {};
     if (!CONFIG.known_schema_versions.includes(d.schema_version)) {
       changes.push({target_id:n.target_id, field:'unknown_schema_version', newValue:d.schema_version});
+      r.status = 'HOLD';
     }
     if (d.has_drift === true || (Array.isArray(d.diff_segments) && d.diff_segments.length > 0)) {
       changes.push({target_id:n.target_id, field:'drift_signal', has_drift:d.has_drift, diff_segments_count:d.diff_segments?.length});
