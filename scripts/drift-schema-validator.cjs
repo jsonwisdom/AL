@@ -183,8 +183,8 @@ function runLegacyValidator(city, schema, original, mutated) {
 }
 
 function runEvolvedValidator(city, schema, original, mutated) {
-  const cleanOriginal = applyIgnorePatterns(original, schema.ignore_patterns || []);
-  const cleanMutated = applyIgnorePatterns(mutated, schema.ignore_patterns || []);
+  const cleanOriginal = normalizeText(applyIgnorePatterns(original, schema.ignore_patterns || []));
+  const cleanMutated = normalizeText(applyIgnorePatterns(mutated, schema.ignore_patterns || []));
   const diffSegments = buildDiffSegments(cleanOriginal, cleanMutated);
   const triggeredScopes = [];
 
