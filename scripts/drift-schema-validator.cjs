@@ -235,7 +235,11 @@ function validateDrift(city, targetVersion, originalText, mutatedText) {
     return runLegacyValidator(city, schema, original, mutated);
   }
 
-  return runEvolvedValidator(city, schema, original, mutated);
+  if (targetVersion === '1.1.0') {
+    return runEvolvedValidator(city, schema, original, mutated);
+  }
+
+  throw new Error(`Supported schema version ${targetVersion} has no implemented predicate`);
 }
 
 function readManifestVersion(city, manifestPath) {
