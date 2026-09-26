@@ -2,6 +2,16 @@ name: Librarian Pattern Watch
 
 on:
   workflow_dispatch: {}
+  pull_request:
+    paths:
+      - 'registry/_receipts/LIBRARIAN-REPLAY-*.json'
+      - 'public/LIBRARIAN_INDEX.json'
+      - 'scripts/drift-schema-validator.cjs'
+      - 'scripts/production-settlement-guard.cjs'
+      - 'scripts/librarian-pattern-watch.cjs'
+      - 'config/librarian-pattern-watch.json'
+      - '.github/workflows/librarian-replay.yml'
+      - '.github/workflows/librarian-pattern-watch.yml'
   push:
     paths:
       - 'registry/_receipts/LIBRARIAN-REPLAY-*.json'
