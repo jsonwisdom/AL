@@ -13,6 +13,8 @@ on:
       - '.github/workflows/librarian-replay.yml'
       - '.github/workflows/librarian-pattern-watch.yml'
   push:
+    branches:
+      - master
     paths:
       - 'registry/_receipts/LIBRARIAN-REPLAY-*.json'
       - 'public/LIBRARIAN_INDEX.json'
