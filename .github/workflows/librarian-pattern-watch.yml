@@ -1,0 +1,98 @@
+name: Librarian Pattern Watch
+
+on:
+  workflow_dispatch: {}
+  push:
+    paths:
+      - 'registry/_receipts/LIBRARIAN-REPLAY-*.json'
+      - 'public/LIBRARIAN_INDEX.json'
+      - 'scripts/drift-schema-validator.cjs'
+      - 'scripts/production-settlement-guard.cjs'
+      - 'scripts/librarian-pattern-watch.cjs'
+      - 'config/librarian-pattern-watch.json'
+      - '.github/workflows/librarian-replay.yml'
+      - '.github/workflows/librarian-pattern-watch.yml'
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: librarian-pattern-watch-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  receipt-structure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Inspect receipt structure
+        run: node scripts/librarian-pattern-watch.cjs --mode structure
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pattern-watch-structure
+          path: pattern-watch-out/structure.json
+          if-no-files-found: error
+
+  validator-semantics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Inspect validator and writer semantics
+        run: node scripts/librarian-pattern-watch.cjs --mode semantics
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pattern-watch-semantics
+          path: pattern-watch-out/semantics.json
+          if-no-files-found: error
+
+  historical-delta:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Compare replay history and control code
+        run: node scripts/librarian-pattern-watch.cjs --mode history
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pattern-watch-history
+          path: pattern-watch-out/history.json
+          if-no-files-found: error
+
+  final-gate:
+    if: always()
+    needs: [receipt-structure, validator-semantics, historical-delta]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: pattern-watch-*
+          path: downloaded
+      - name: Assemble runner receipts
+        shell: bash
+        run: |
+          mkdir -p pattern-watch-out
+          find downloaded -type f -name '*.json' -maxdepth 3 -exec cp {} pattern-watch-out/ \;
+          ls -la pattern-watch-out
+      - name: Final mechanical gate
+        run: node scripts/librarian-pattern-watch.cjs --mode gate
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: librarian-pattern-watch-receipt
+          path: pattern-watch-out/pattern_watch.json
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v4
+        if: ${{ hashFiles('pattern-watch-out/grok_handoff.json') != '' }}
+        with:
+          name: grok-agent-handoff
+          path: pattern-watch-out/grok_handoff.json
+          if-no-files-found: error
