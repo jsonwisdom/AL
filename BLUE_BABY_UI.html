@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLUE BABY — Provenance Receipt</title>
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --panel: #121820;
+      --border: #1e2a38;
+      --text: #e6edf5;
+      --muted: #8b9bb0;
+      --accent: #3b82f6;
+      --green: #22c55e;
+      --amber: #f59e0b;
+      --red: #ef4444;
+      --blue: #38bdf8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "SF Mono", "Fira Code", "Consolas", ui-monospace, monospace;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .logo span { color: var(--blue); }
+
+    .badge {
+      font-size: 0.7rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .badge.locked {
+      border-color: var(--green);
+      color: var(--green);
+    }
+
+    h2 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 640px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.35rem 0;
+      border-bottom: 1px solid transparent;
+    }
+
+    .row:not(:last-child) {
+      border-bottom-color: var(--border);
+    }
+
+    .label {
+      color: var(--muted);
+      font-size: 0.8rem;
+      flex-shrink: 0;
+    }
+
+    .value {
+      font-size: 0.8rem;
+      text-align: right;
+      word-break: break-all;
+    }
+
+    .status {
+      display: inline-block;
+      font-size: 0.7rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+
+    .status.pass { background: rgba(34, 197, 94, 0.15); color: var(--green); }
+    .status.hold { background: rgba(245, 158, 11, 0.15); color: var(--amber); }
+    .status.none { background: rgba(139, 155, 176, 0.15); color: var(--muted); }
+
+    .invariant {
+      font-size: 0.85rem;
+      color: var(--blue);
+      text-align: center;
+      padding: 0.75rem;
+      border: 1px dashed var(--border);
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+
+    .firewall {
+      display: grid;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+    }
+
+    .firewall div {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      color: var(--muted);
+    }
+
+    .firewall .eq {
+      color: var(--text);
+    }
+
+    footer {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .hash {
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">BLUE <span>BABY</span></div>
+      <div class="badge locked">Locked · 2026-09-30</div>
+    </header>
+
+    <div class="invariant">
+      TWO VALID OBJECTS ≠ A VALID JOIN
+    </div>
+
+    <div class="grid">
+      <!-- Coinbase Panel -->
+      <section class="panel">
+        <h2>Coinbase Receipt</h2>
+        <div class="row">
+          <span class="label">Status</span>
+          <span class="status pass">PASS</span>
+        </div>
+        <div class="row">
+          <span class="label">External Replay</span>
+          <span class="status hold">HOLD</span>
+        </div>
+        <div class="row">
+          <span class="label">Order ID</span>
+          <span class="value">af317ca0-99f6-…aae1</span>
+        </div>
+        <div class="row">
+          <span class="label">Trade ID</span>
+          <span class="value">016809c9-abfc-…4f6e</span>
+        </div>
+        <div class="row">
+          <span class="label">Product</span>
+          <span class="value">NVDA-USDC</span>
+        </div>
+        <div class="row">
+          <span class="label">Side / Status</span>
+          <span class="value">BUY · FILLED</span>
+        </div>
+        <div class="row">
+          <span class="label">Price / Size</span>
+          <span class="value">219.0155 · 0.02282</span>
+        </div>
+        <div class="row">
+          <span class="label">Time</span>
+          <span class="value">2026-09-18 14:45:25Z</span>
+        </div>
+      </section>
+
+      <!-- Base Panel -->
+      <section class="panel">
+        <h2>Base Transaction</h2>
+        <div class="row">
+          <span class="label">Object</span>
+          <span class="status pass">PASS_AS_SUPPLIED</span>
+        </div>
+        <div class="row">
+          <span class="label">External Replay</span>
+          <span class="status pass">REPORTED_PASS</span>
+        </div>
+        <div class="row">
+          <span class="label">Live Replay</span>
+          <span class="status none">NOT_PERFORMED</span>
+        </div>
+        <div class="row">
+          <span class="label">Network</span>
+          <span class="value">Base · 8453</span>
+        </div>
+        <div class="row">
+          <span class="label">Block</span>
+          <span class="value">51921275</span>
+        </div>
+        <div class="row">
+          <span class="label">Tx Hash</span>
+          <span class="value hash">0xcf5ce6…7995</span>
+        </div>
+        <div class="row">
+          <span class="label">Status</span>
+          <span class="value">Success · transfer</span>
+        </div>
+        <div class="row">
+          <span class="label">Time</span>
+          <span class="value">2026-09-28 21:44:57Z</span>
+        </div>
+      </section>
+    </div>
+
+    <!-- Join Status -->
+    <section class="panel">
+      <h2>Join & Binding Status</h2>
+      <div class="row">
+        <span class="label">Base ↔ Coinbase</span>
+        <span class="status hold">UNBOUND / NO JOIN</span>
+      </div>
+      <div class="row">
+        <span class="label">On-chain Binding</span>
+        <span class="status none">NONE</span>
+      </div>
+      <div class="row">
+        <span class="label">Identity Binding</span>
+        <span class="status none">NONE</span>
+      </div>
+      <div class="row">
+        <span class="label">Write Action (probe)</span>
+        <span class="status none">FALSE</span>
+      </div>
+    </section>
+
+    <!-- Firewall -->
+    <section class="panel">
+      <h2>Permanent Firewall Equations</h2>
+      <div class="firewall">
+        <div><span>TICKER</span><span class="eq">≠ CONTRACT</span></div>
+        <div><span>ACCOUNT / DISPLAY LABEL</span><span class="eq">≠ LEGAL_IDENTITY</span></div>
+        <div><span>ENS_NAME / BASENAME</span><span class="eq">≠ WALLET_OWNERSHIP</span></div>
+        <div><span>COINBASE RECORD</span><span class="eq">≠ BLOCKCHAIN REPLAY</span></div>
+        <div><span>OBSERVATION</span><span class="eq">≠ VERIFICATION</span></div>
+        <div><span>TWO VALID OBJECTS</span><span class="eq">≠ A VALID JOIN</span></div>
+        <div><span>LABEL</span><span class="eq">≠ AUTHORITY</span></div>
+        <div><span>CONTRACT ADDRESS</span><span class="eq">≠ CONNECTED WALLET</span></div>
+      </div>
+    </section>
+
+    <!-- Anchor -->
+    <section class="panel">
+      <h2>Repository Anchor</h2>
+      <div class="row">
+        <span class="label">Repo</span>
+        <span class="value"><a href="https://github.com/jsonwisdom/AL" target="_blank">jsonwisdom/AL</a></span>
+      </div>
+      <div class="row">
+        <span class="label">File</span>
+        <span class="value"><a href="https://github.com/jsonwisdom/AL/blob/master/BLUE_BABY_RECEIPT.md" target="_blank">BLUE_BABY_RECEIPT.md</a></span>
+      </div>
+      <div class="row">
+        <span class="label">Commit</span>
+        <span class="value hash">849e405745b24fc2de3ffdce3df77bb052912a68</span>
+      </div>
+    </section>
+
+    <footer>
+      BLUE BABY · Observation ≠ Verification · No identity promotion · No manufactured join
+    </footer>
+  </div>
+</body>
+</html>
