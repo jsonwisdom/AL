@@ -183,8 +183,8 @@ function runLegacyValidator(city, schema, original, mutated) {
 }
 
 function runEvolvedValidator(city, schema, original, mutated) {
-  const cleanOriginal = applyIgnorePatterns(original, schema.ignore_patterns || []);
-  const cleanMutated = applyIgnorePatterns(mutated, schema.ignore_patterns || []);
+  const cleanOriginal = normalizeText(applyIgnorePatterns(original, schema.ignore_patterns || []));
+  const cleanMutated = normalizeText(applyIgnorePatterns(mutated, schema.ignore_patterns || []));
   const diffSegments = buildDiffSegments(cleanOriginal, cleanMutated);
   const triggeredScopes = [];
 
@@ -235,7 +235,11 @@ function validateDrift(city, targetVersion, originalText, mutatedText) {
     return runLegacyValidator(city, schema, original, mutated);
   }
 
-  return runEvolvedValidator(city, schema, original, mutated);
+  if (targetVersion === '1.1.0') {
+    return runEvolvedValidator(city, schema, original, mutated);
+  }
+
+  throw new Error(`Supported schema version ${targetVersion} has no implemented predicate`);
 }
 
 function readManifestVersion(city, manifestPath) {

@@ -1,0 +1,33 @@
+{
+  "version": "1.0.0",
+  "expected_node_count": 5,
+  "expected_targets": [
+    "ST_CLOUD_001",
+    "MANKATO_001",
+    "MINNEAPOLIS_001",
+    "DULUTH_001",
+    "ROCHESTER_001"
+  ],
+  "known_receipt_versions": ["1.0.0"],
+  "known_schema_versions": ["1.0.0", "1.1.0"],
+  "control_paths": [
+    ".github/workflows/librarian-replay.yml",
+    "scripts/drift-schema-validator.cjs",
+    "scripts/production-settlement-guard.cjs"
+  ],
+  "material_fields": [
+    "schema_version",
+    "validator_version",
+    "has_drift",
+    "diff_segments"
+  ],
+  "invariants": {
+    "audit_summary_is_metadata": true,
+    "receipt_green_is_not_drift_proof": true,
+    "raw_sha256_is_synthetic_run_bound": true,
+    "historical_results_are_immutable": true,
+    "new_rules_require_new_result_object": true,
+    "unknown_schema_version_is_hold": true,
+    "supported_version_requires_explicit_predicate": true
+  }
+}
