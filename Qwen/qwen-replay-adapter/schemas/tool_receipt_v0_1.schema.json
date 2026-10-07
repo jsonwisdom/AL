@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "JSONWisdom Qwen Tool Receipt v0.1",
+  "type": "object",
+  "required": ["run_id", "call_index", "tool_name", "requested_arguments_hash", "executed_arguments_hash", "authorization", "mode", "execution_status"],
+  "properties": {
+    "run_id": {"type": "string"},
+    "call_index": {"type": "integer", "minimum": 0},
+    "parent_call_index": {"type": ["integer", "null"]},
+    "tool_name": {"type": "string"},
+    "requested_arguments_hash": {"type": "string"},
+    "executed_arguments_hash": {"type": "string"},
+    "mutation_source": {"type": ["string", "null"]},
+    "authorization": {"enum": ["ALLOWED", "DENIED"]},
+    "mode": {"enum": ["OBSERVE", "ENFORCE"]},
+    "execution_status": {"enum": ["COMPLETED", "FAILED", "DENIED"]}
+  }
+}
