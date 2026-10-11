@@ -1,0 +1,86 @@
+{
+  "annotation_id": "PP-AL404-C1",
+  "record_type": "APPEND_ONLY_CORRECTIVE_NOTE",
+  "revision": "v0.1",
+  "status": "HUMAN_DIRECTED_REVIEW_BRANCH_PENDING_MERGE",
+  "decision_lane": "DELTA",
+  "target_url": "https://www.courts.oregon.gov/opinions/Documents/S070001.pdf",
+  "evidence_baseline": {
+    "repo": "jsonwisdom/AL",
+    "commit": "48d84a5cc9e51434329c37fe5857e27734c7d3de",
+    "inspected_source": "GitHub repo files and classifier; no live court fetch"
+  },
+  "original_receipts": [
+    {
+      "date": "2026-10-10",
+      "path": "receipts/2026-10-10/404_NOT_FOUND_50a12d9dbad7.json",
+      "git_blob_sha": "f8a5904dfdd7ff388c8a21758c64f46821b3526e",
+      "observed_http_status": 404,
+      "original_verdict": "NOT_FOUND",
+      "evidence_classification": "HTTP_404_OBSERVED",
+      "observed_body_hash": "sha256:2445074df59da20e035850c165869e4507b764c14bc017b57775b4b0428494b8",
+      "body_bytes_preserved_in_receipt": false
+    },
+    {
+      "date": "2026-10-11",
+      "path": "receipts/2026-10-11/404_CRAWLER_BLOCKED_50a12d9dbad7.json",
+      "git_blob_sha": "b149e7e39b1d519138dcf3e4571a29e1e7b6fb28",
+      "observed_http_status": null,
+      "original_verdict": "CRAWLER_BLOCKED",
+      "evidence_classification": "FETCH_STATUS_UNOBSERVED",
+      "observed_body_hash": null
+    }
+  ],
+  "shared_url_identity_hash": "sha256:7357db2480b8dba4be90ec9ce0d747496d1fe86be1cb08c845c550a12d9dbad7",
+  "independent_comparator": {
+    "date": "2026-10-11",
+    "path": "receipts/2026-10-11/404_CRAWLER_BLOCKED_38747bb7e167.json",
+    "git_blob_sha": "7bcb8bbdbef5d7aa5f9ad24b7292e2dde73a2e1b",
+    "target_url": "https://www.mncourts.gov/mncourtsgov/media/supreme-court/opinions/OPA220001-0523.pdf",
+    "observed_http_status": 403,
+    "original_verdict": "CRAWLER_BLOCKED",
+    "evidence_classification": "HTTP_403_FORBIDDEN",
+    "crawler_specific_block_proven": false,
+    "comparator_is_oregon": false
+  },
+  "source_classifier": {
+    "path": "agents/four04_crawler/main.py",
+    "git_blob_sha": "4604f5c83a55fe4a1fcb360a3887cf0df515b572",
+    "observed_behavior": "404→NOT_FOUND; 200→FOUND or VERSION_DRIFT; 401/403 and all other statuses→CRAWLER_BLOCKED; any caught exception→CRAWLER_BLOCKED with null status/hash",
+    "error_exception_type_logged": false
+  },
+  "findings": {
+    "classification_mismatch": "OBSERVED",
+    "root_cause_of_oct11_fetch_failure": "UNKNOWN",
+    "source_resource_state_changed": "NOT_ESTABLISHED",
+    "response_body_hash_comparison": "NOT_POSSIBLE_WITH_MISSING_OCT11_BODY_HASH",
+    "permanent_resource_absence": "NOT_ESTABLISHED",
+    "intent_or_fault": "NOT_ALLEGED",
+    "historical_receipts_immutable": true,
+    "legacy_dashboard_count_is_independent_confirmation": false
+  },
+  "disposition": "WATCH_HOLD_FOR_CAUSE; ACCEPT_CORRECTIVE_INTERPRETATION_NOT_CAUSATION",
+  "source_limitations": {
+    "proofpocket_full_local_report": "NOT_RETRIEVED_OR_HASH_VERIFIED_IN_THIS_SESSION",
+    "proofpocket_digest": "USER_REPORTED_TRUNCATED_ONLY",
+    "wolfram": "RECLASSIFICATION_LOGIC_EXECUTED_FROM_RETRIEVED_FIELDS; NOT_HTTP_FETCH",
+    "raw_oct10_response_body": "NOT_PRESERVED_IN_RECEIPT",
+    "oct11_http_headers_and_exception_type": "NOT_CAPTURED"
+  },
+  "links": {
+    "governance_issue": "https://github.com/jsonwisdom/AL/issues/433",
+    "oct10": "https://github.com/jsonwisdom/AL/blob/48d84a5cc9e51434329c37fe5857e27734c7d3de/receipts/2026-10-10/404_NOT_FOUND_50a12d9dbad7.json",
+    "oct11": "https://github.com/jsonwisdom/AL/blob/48d84a5cc9e51434329c37fe5857e27734c7d3de/receipts/2026-10-11/404_CRAWLER_BLOCKED_50a12d9dbad7.json"
+  },
+  "operator_directive": {
+    "date": "2026-10-11",
+    "recorded_text": "Full send",
+    "scope": "authorize append-only annotation and V0.2 governance proposal, no historical rewrite",
+    "actor_label": "JASON",
+    "identity_attestation": "NOT_INDEPENDENTLY_VERIFIED",
+    "final_release_authority": "JASON"
+  },
+  "authority_created": false,
+  "canon": false,
+  "applied_to_runtime": false
+}
