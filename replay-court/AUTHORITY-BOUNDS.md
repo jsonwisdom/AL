@@ -234,3 +234,5 @@ No actor may exempt themselves from replay.
 ```text
 If the authority boundary cannot be checked, authority cannot be claimed.
 ```
+
+<!-- validator-fail-test: protected core touch without amendment metadata -->
