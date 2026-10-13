@@ -1,0 +1,20 @@
+{
+  "system": "EDU_CIVIL_RIGHTS_OBSERVER",
+  "receipt_family": "STATE_EDU_CIVIL_RIGHTS_RESOLUTION_RATE",
+  "required_fields": [
+    "state",
+    "year",
+    "aggregates.case_count",
+    "aggregates.resolution_count",
+    "aggregates.positive_resolution_count",
+    "hash.value"
+  ],
+  "allowed_states": "50_states_plus_DC",
+  "national_rule": {
+    "no_state_without_leaf": true,
+    "no_leaf_without_hash": true,
+    "no_aggregate_without_validated_rows": true,
+    "no_narrative_without_receipt": true,
+    "missing_states_are_absent_not_estimated": true
+  }
+}

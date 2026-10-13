@@ -1,0 +1,135 @@
+MN_EDU_CIVIL_RIGHTS_001 — FOIA / Data Request Template (Hardened v1)
+
+Purpose: Acquire the missing Minnesota-specific complaint counts, outcome codes, and remedy documentation required to populate the leaf.
+
+A. OCR FOIA Request (Federal)
+
+To: foia@ed.gov
+Subject: FOIA Request – Minnesota Education Civil Rights Complaints (Latest Complete Year)
+
+This is a request under the Freedom of Information Act.
+
+I request machine-readable records for the latest complete reporting year covering all education-related civil-rights complaints involving Minnesota students, schools, or districts, including but not limited to:
+
+1. Case-level fields:
+   - complaint ID
+   - date filed
+   - date closed (if applicable)
+   - complaint category (e.g., disability/504, disability/IDEA, race, sex, retaliation, discipline, etc.)
+   - outcome code
+   - whether a remedy was required
+   - description of corrective action, compensatory services, or policy change (if applicable)
+   - mediation outcome (if applicable)
+
+2. Aggregated fields:
+   - total complaints filed
+   - total resolved
+   - total dismissed
+   - total pending
+   - total mediated (with and without remedy)
+   - median days to resolution
+
+3. Documentation:
+   - resolution letters
+   - voluntary resolution agreements
+   - corrective action plans
+   - any summary documents used internally to classify outcomes
+
+Format requested:
+- JSON, CSV, or other machine-readable format.
+- If documents exist only as PDFs, please provide them.
+
+Scope:
+- Minnesota-only complaints.
+- Education-related civil-rights matters handled by the Office for Civil Rights.
+- Latest complete reporting year.
+
+This request is made for public transparency and analysis.
+Please provide a tracking number for this request.
+
+Sincerely,
+[Your Name]
+
+---
+
+B. Minnesota Department of Education Data Request (State)
+
+To: datarequests.mde@state.mn.us
+Subject: Data Request – Minnesota Education Civil Rights / Discrimination Complaints
+
+This is a request for public data under the Minnesota Government Data Practices Act.
+
+I request machine-readable records for the latest complete year covering all discrimination or civil-rights complaints received or processed by the Minnesota Department of Education, including:
+
+1. Case-level fields:
+   - complaint ID
+   - date filed
+   - date closed
+   - complaint category
+   - outcome code
+   - whether a remedy was required
+   - description of remedy or corrective action (if applicable)
+
+2. Aggregated fields:
+   - total complaints filed
+   - total resolved
+   - total dismissed
+   - total pending
+   - total mediated (with and without remedy)
+   - median days to resolution
+
+3. Documentation:
+   - resolution letters
+   - corrective action plans
+   - mediation agreements
+   - any summary documents used to classify outcomes
+
+Format requested:
+- JSON, CSV, or other machine-readable format.
+
+Scope:
+- Minnesota-only.
+- Education-related civil-rights or discrimination complaints.
+- Latest complete reporting year.
+
+Please confirm receipt and provide a tracking number.
+
+Sincerely,
+[Your Name]
+
+---
+
+C. District-Level Public Records Request (Optional Trigger)
+
+Only used if OCR + MDE fail to provide category/outcome breakdowns.
+
+To: [District Data Practices Contact]
+Subject: Data Request – Civil Rights / Discrimination Complaints (Latest Year)
+
+Under the Minnesota Government Data Practices Act, I request:
+
+- Complaint categories
+- Outcome codes
+- Remedy documentation (if any)
+- Aggregated counts (filed/resolved/dismissed/pending)
+
+Machine-readable format preferred.
+
+---
+
+D. Machine Alignment Block
+
+{
+  "receipt_id": "MN_EDU_CIVIL_RIGHTS_001",
+  "ingest_mode": "AWAITING_PRIMARY_SOURCE",
+  "foia_status": "TEMPLATES_READY",
+  "next_action": "SEND_REQUESTS",
+  "blocked_actions": [
+    "populate_numeric_fields",
+    "derive_outcomes_from_clip",
+    "infer_missing_counts"
+  ]
+}
+
+Operator Line:
+Leaf is frozen. FOIA pressure begins. No numbers enter the machine without a source hash.
