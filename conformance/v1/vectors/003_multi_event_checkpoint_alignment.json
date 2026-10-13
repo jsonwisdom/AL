@@ -1,0 +1,47 @@
+{
+  "vector_id": "003_multi_event_checkpoint_alignment",
+  "kernel_version": "1.0.0",
+  "description": "Three-event replay vector that requires every-event checkpoint roots and final root convergence across observers.",
+  "events": [
+    {
+      "index": 0,
+      "payload": {
+        "type": "system_init",
+        "authority": "jaywisdom.base",
+        "kernel_version": "1.0.0"
+      },
+      "timestamp": "TAI64N:PLACEHOLDER"
+    },
+    {
+      "index": 1,
+      "payload": {
+        "type": "genesis_attestation",
+        "root": "0xc79d3d89dabf16db6a59ba612d0d79db68b20f127baf5fa16e454c911e2beb93"
+      },
+      "timestamp": "TAI64N:PLACEHOLDER"
+    },
+    {
+      "index": 2,
+      "payload": {
+        "type": "schema_registration",
+        "schema": "CONSTITUTIONAL_ROOT"
+      },
+      "timestamp": "TAI64N:PLACEHOLDER"
+    }
+  ],
+  "expected": {
+    "event_ids": null,
+    "checkpoint_roots": null,
+    "final_root": null,
+    "event_count": 3,
+    "degraded": false,
+    "degradation_notes": []
+  },
+  "acceptance_criteria": {
+    "must_match_event_ids": true,
+    "must_match_checkpoint_roots": true,
+    "must_match_root": true,
+    "must_not_degrade": true,
+    "expected_values_must_be_generated": true
+  }
+}

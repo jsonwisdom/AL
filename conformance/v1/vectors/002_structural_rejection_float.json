@@ -1,0 +1,26 @@
+{
+  "vector_id": "002_structural_rejection_float",
+  "kernel_version": "1.0.0",
+  "description": "Payload contains a forbidden numeric value under float_policy=forbidden.",
+  "manifest_ref": "manifest_v1_canonical.json",
+  "events": [
+    {
+      "index": 0,
+      "payload": {
+        "type": "invalid_numeric_payload",
+        "value": 3.1415926535
+      },
+      "timestamp": "TAI64N:PLACEHOLDER"
+    }
+  ],
+  "expected": {
+    "verdict": "FAIL_NUMBER_FORBIDDEN",
+    "final_root": null,
+    "degraded": false
+  },
+  "acceptance_criteria": {
+    "must_reject": true,
+    "must_emit_specific_failure": true,
+    "failure_class": "FAIL_NUMBER_FORBIDDEN"
+  }
+}
