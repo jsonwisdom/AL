@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "ParentExportApproval",
-  "description": "Schema for verifying parent-authorized export manifests. Runtime invariant: export_target.branch_id MUST equal branch_context.",
+  "description": "Schema for verifying parent-authorized export manifests. Runtime invariants: export_target.branch_id MUST equal branch_context and merkle.branch_id MUST equal branch_context.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -19,6 +19,7 @@
     "output_sha256",
     "preview_sha256",
     "export_target",
+    "merkle",
     "normalized_filename",
     "stego_policy",
     "signing_key_id",
@@ -26,109 +27,73 @@
     "cleansing_required"
   ],
   "properties": {
-    "version": {
-      "type": "string",
-      "const": "0.1"
-    },
-    "asset_id": {
-      "type": "string",
-      "minLength": 1
-    },
-    "branch_context": {
-      "type": "string",
-      "minLength": 1
-    },
+    "version": {"type": "string", "const": "0.1"},
+    "asset_id": {"type": "string", "minLength": 1},
+    "branch_context": {"type": "string", "minLength": 1},
     "lineage": {
       "type": "array",
       "minItems": 1,
       "uniqueItems": true,
-      "items": {
-        "type": "string",
-        "minLength": 1
-      }
+      "items": {"type": "string", "minLength": 1}
     },
     "parent_signature": {
       "type": "string",
       "pattern": "^[A-Za-z0-9+/]+={0,2}$"
     },
-    "session_id": {
-      "type": "string",
-      "format": "uuid"
-    },
-    "nonce": {
-      "type": "string",
-      "pattern": "^[a-f0-9]{64}$"
-    },
-    "issued_at": {
-      "type": "string",
-      "format": "date-time"
-    },
-    "expires_at": {
-      "type": "string",
-      "format": "date-time"
-    },
-    "pipeline_version": {
-      "type": "string",
-      "const": "CLEANSING_GATE_V0_1"
-    },
-    "input_sha256": {
-      "type": "string",
-      "pattern": "^[a-f0-9]{64}$"
-    },
-    "output_sha256": {
-      "type": "string",
-      "pattern": "^[a-f0-9]{64}$"
-    },
-    "preview_sha256": {
-      "type": "string",
-      "pattern": "^[a-f0-9]{64}$"
-    },
+    "session_id": {"type": "string", "format": "uuid"},
+    "nonce": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "issued_at": {"type": "string", "format": "date-time"},
+    "expires_at": {"type": "string", "format": "date-time"},
+    "pipeline_version": {"type": "string", "const": "CLEANSING_GATE_V0_1"},
+    "input_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "output_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "preview_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
     "export_target": {
       "oneOf": [
         {
           "type": "object",
           "properties": {
-            "mode": {
-              "const": "local-only"
-            },
-            "destination": {
-              "type": "null"
-            },
-            "branch_id": {
-              "type": "string",
-              "minLength": 1
-            }
+            "mode": {"const": "local-only"},
+            "destination": {"type": "null"},
+            "branch_id": {"type": "string", "minLength": 1}
           },
-          "required": [
-            "mode",
-            "destination",
-            "branch_id"
-          ],
+          "required": ["mode", "destination", "branch_id"],
           "additionalProperties": false
         },
         {
           "type": "object",
           "properties": {
-            "mode": {
-              "const": "explicit-destination"
-            },
-            "destination": {
-              "type": "string",
-              "minLength": 1
-            },
-            "branch_id": {
-              "type": "string",
-              "minLength": 1
-            }
+            "mode": {"const": "explicit-destination"},
+            "destination": {"type": "string", "minLength": 1},
+            "branch_id": {"type": "string", "minLength": 1}
           },
-          "required": [
-            "mode",
-            "destination",
-            "branch_id"
-          ],
+          "required": ["mode", "destination", "branch_id"],
           "additionalProperties": false
         }
       ]
+    },
+    "merkle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["leaf_hash", "siblings", "root", "branch_id", "depth"],
+      "properties": {
+        "leaf_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "siblings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["position", "hash"],
+            "properties": {
+              "position": {"type": "string", "enum": ["left", "right"]},
+              "hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+            }
+          }
+        },
+        "root": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "branch_id": {"type": "string", "minLength": 1},
+        "depth": {"type": "integer", "minimum": 0}
+      }
     },
     "normalized_filename": {
       "type": "string",
@@ -136,21 +101,10 @@
     },
     "stego_policy": {
       "type": "string",
-      "enum": [
-        "REJECT_IF_DETECTED_OR_UNSUPPORTED"
-      ]
+      "enum": ["REJECT_IF_DETECTED_OR_UNSUPPORTED"]
     },
-    "signing_key_id": {
-      "type": "string",
-      "pattern": "^[a-f0-9]{64}$"
-    },
-    "signature_algorithm": {
-      "type": "string",
-      "const": "Ed25519"
-    },
-    "cleansing_required": {
-      "type": "boolean",
-      "const": true
-    }
+    "signing_key_id": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "signature_algorithm": {"type": "string", "const": "Ed25519"},
+    "cleansing_required": {"type": "boolean", "const": true}
   }
 }
