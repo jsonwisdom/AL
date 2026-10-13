@@ -1,0 +1,59 @@
+metadata:
+  version: "1.0.0-draft"
+  entry_id: "009_REVOCATION_REGISTRY"
+  status: "DRAFT_ELIGIBLE"
+  authority: false
+  canon_promotion: false
+
+dependencies:
+  required_upstream:
+    feature_id: "GB-008-DISSENT-PROTOCOL"
+    required_attestation_status: "ATTESTED"
+    verification_method: "REMOTE_COMMIT_AND_VISUAL_FINGERPRINT_MATCH"
+
+revocation_parameters:
+  action: "REVOKE_AND_TOMBSTONE"
+  scope:
+    target_type: "DECLARED_ASSET"
+    target_id: null
+    affected_uses:
+      - "FUTURE_DISTRIBUTION"
+      - "FUTURE_TRANSFORMATION"
+      - "FUTURE_MODEL_INPUT"
+    unaffected_records:
+      - "AUDIT_HISTORY"
+      - "PRIOR_RECEIPTS"
+      - "LINEAGE_METADATA"
+  effects:
+    future_active_use: "DENIED"
+    historical_record: "PRESERVED"
+    source_asset_deletion: false
+    lineage_erasure: false
+    reversible_by_new_event: true
+  protection_directives:
+    - "DENY_UNAUTHORIZED_IDENTITY_USE"
+    - "DENY_UNAUTHORIZED_LOCATION_DISCLOSURE"
+    - "DENY_USE_OUTSIDE_DECLARED_CONSENT_SCOPE"
+
+integrity_verification:
+  upstream_visual_sha256: "87053babf6bc1176a8218cf201b6f000fb889e7a6a687c10eb0969e80dffb5d1"
+  upstream_remote_commit_sha: null
+  upstream_blob_url: null
+  fingerprint_match: "UNOBSERVED"
+
+lineage:
+  upstream_linkage: "PENDING_ATTESTATION"
+  review_state: "BLOCKED"
+  activation_condition: "GB_008_ATTESTED"
+  runtime_initialization: false
+  downstream_link:
+    feature_id: "GB-010-AUTHORITY-GAP"
+    manifest_path: "manifests/GB-010.yaml"
+    branch: "feature/gray-baby-010-authority-gap"
+    commit_sha: "16976c6aacac5b6d903069675bdf4bf9e6eb5ccc"
+    manifest_sha256: "31a8f65e520083ba486b8a52d8d6b1e5a29663b8a963b88dc422ef3db3ffb79a"
+    incident_reference: "GB-OPS-RESOURCE-001"
+    integration_state: "OBSERVABLE_NON_CANON"
+    canon_promotion: false
+    merge_authorization: false
+    execution_authority: false
