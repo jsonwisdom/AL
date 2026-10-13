@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ALMS Boundary Receipt",
+  "type": "object",
+  "required": [
+    "claim_id",
+    "timestamp_utc",
+    "actor",
+    "nonce",
+    "inputs",
+    "outputs",
+    "verdict",
+    "receipt_status",
+    "threshold",
+    "remainder"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "claim_id": { "type": "string" },
+    "timestamp_utc": { "type": "string" },
+    "actor": { "type": "string" },
+    "nonce": { "type": "string" },
+    "inputs": { "type": "object" },
+    "outputs": { "type": "object" },
+    "verdict": { "type": "string" },
+    "receipt_status": { "enum": ["COMPLETE", "PARTIAL"] },
+    "upstream_status": { "enum": ["COMPLETE", "PARTIAL", "NONE"] },
+    "inherited_latent": {
+      "type": "object",
+      "properties": {
+        "present": { "type": "boolean" },
+        "origin_receipt": { "type": "string" },
+        "origin_hash": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" }
+      },
+      "required": ["present"]
+    },
+    "latent": {
+      "type": "object",
+      "properties": {
+        "state": { "enum": ["present", "possible", "none"] },
+        "kind": { "enum": ["known", "possible"] },
+        "items": { "type": "array" },
+        "temporality": { "type": "string" }
+      },
+      "required": ["state"]
+    },
+    "threshold": {
+      "type": "object",
+      "required": ["declared", "cycle_id"],
+      "properties": {
+        "declared": { "type": "boolean" },
+        "cycle_id": { "type": "string" },
+        "policy_id": { "type": "string" }
+      }
+    },
+    "remainder": {
+      "type": "object",
+      "required": ["guaranteed", "correspondence_outside_scope"],
+      "properties": {
+        "guaranteed": { "const": true },
+        "correspondence_outside_scope": { "const": "NOT_CLAIMED" }
+      }
+    },
+    "conversion_receipt": { "type": "string" }
+  }
+}

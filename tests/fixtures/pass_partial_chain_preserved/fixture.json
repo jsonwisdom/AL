@@ -1,0 +1,15 @@
+{
+  "fixture_spec": "FIXTURE_SPEC_V1",
+  "fixture_id": "fixture:receipt-boundary:pass-partial-preserved:001",
+  "upstream_status": "PARTIAL",
+  "inherited_latent": true,
+  "receipt": {
+    "receipt_spec": "ALMS_RECEIPT_V1",
+    "status": "PARTIAL",
+    "digest": "sha256:passfixture"
+  },
+  "replay": {
+    "replay_spec": "REPLAY_SPEC_V1",
+    "expected_verdict": "PASS"
+  }
+}
