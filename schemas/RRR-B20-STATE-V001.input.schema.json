@@ -1,0 +1,464 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jsonwisdom/AL/schemas/RRR-B20-STATE-V001.input.schema.json",
+  "title": "RRR-B20-STATE-V001 Input",
+  "description": "Closed input contract for claim-scoped state evaluation. Source-bound evidence time or a source-native state coordinate is admissible; replay, transport, memory, evaluation, authority, and result fields are output-side or out-of-band only. Schema validity proves shape, not authenticity, completeness, burden satisfaction, or authority.",
+  "$comment": "Every object boundary is closed. Caller-supplied replay/evaluation/transport/memory timestamps and caller-supplied result, status, burden_satisfied, execution_authorized, or authority_created fields are therefore rejected. A verifier must still re-read exact bytes, verify hashes and provenance, reconcile the state anchor, and derive any result. Missing applicable evidence yields HOLD; it is not proof that the claimed state is false or illegitimate.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_id",
+    "srm_version",
+    "canonicalization",
+    "digest_algorithm",
+    "claim",
+    "surface",
+    "state_anchor_evidence_id",
+    "evidence",
+    "open_surfaces"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "RRR-B20-STATE-V001.input"
+    },
+    "srm_version": {
+      "const": "0.1"
+    },
+    "canonicalization": {
+      "const": "RFC8785"
+    },
+    "digest_algorithm": {
+      "const": "SHA-256"
+    },
+    "claim": {
+      "$ref": "#/$defs/claim"
+    },
+    "surface": {
+      "$ref": "#/$defs/surface"
+    },
+    "state_anchor_evidence_id": {
+      "$ref": "#/$defs/nonempty_string",
+      "description": "Must resolve to the sole evidence item whose role is STATE_ANCHOR. Referential equality is a verifier rule."
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 4096,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/evidence_item"
+      },
+      "contains": {
+        "type": "object",
+        "required": [
+          "role"
+        ],
+        "properties": {
+          "role": {
+            "const": "STATE_ANCHOR"
+          }
+        }
+      },
+      "minContains": 1,
+      "maxContains": 1
+    },
+    "open_surfaces": {
+      "type": "array",
+      "maxItems": 4096,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/open_surface"
+      },
+      "description": "Caller-declared unresolved surfaces. An empty array is not completeness proof; the verifier must derive missing edges independently."
+    }
+  },
+  "$defs": {
+    "nonempty_string": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2048
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "utc_evidence_time": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]{1,9})?Z$",
+      "description": "Source-native UTC event time bound to the evidence bytes; never a caller, replay, transport, memory, evaluation, or authority timestamp."
+    },
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim_id",
+        "domain_id",
+        "subject_id",
+        "claim_type",
+        "requested_evaluation"
+      ],
+      "properties": {
+        "claim_id": {
+          "$ref": "#/$defs/nonempty_string"
+        },
+        "domain_id": {
+          "enum": [
+            "GPK_FACTORY",
+            "SOLANA_PUMP",
+            "BASE_CULTURE",
+            "COINBASE_LIVE"
+          ]
+        },
+        "subject_id": {
+          "$ref": "#/$defs/nonempty_string"
+        },
+        "claim_type": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]{0,127}$"
+        },
+        "requested_evaluation": {
+          "enum": [
+            "STATE_AT_EVIDENCE",
+            "EDGE_BINDING",
+            "RECEIPT_RECONCILIATION"
+          ]
+        }
+      }
+    },
+    "surface": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "surface_id",
+        "native_system",
+        "locator"
+      ],
+      "properties": {
+        "surface_id": {
+          "$ref": "#/$defs/nonempty_string"
+        },
+        "native_system": {
+          "$ref": "#/$defs/nonempty_string"
+        },
+        "locator": {
+          "$ref": "#/$defs/nonempty_string"
+        },
+        "network_or_provider": {
+          "$ref": "#/$defs/nonempty_string"
+        }
+      }
+    },
+    "evidence_item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_id",
+        "role",
+        "source_class",
+        "content",
+        "provenance",
+        "evidence_time"
+      ],
+      "properties": {
+        "evidence_id": {
+          "$ref": "#/$defs/nonempty_string"
+        },
+        "role": {
+          "enum": [
+            "STATE_ANCHOR",
+            "CORROBORATING",
+            "COMPARISON_BASELINE",
+            "EDGE_PROOF"
+          ]
+        },
+        "source_class": {
+          "enum": [
+            "OBSERVED",
+            "RECEIPT"
+          ],
+          "description": "OPERATOR_REPORTED, memory-only, and transport-only material is excluded from verifier input."
+        },
+        "content": {
+          "$ref": "#/$defs/content_binding"
+        },
+        "provenance": {
+          "$ref": "#/$defs/provenance"
+        },
+        "evidence_time": {
+          "$ref": "#/$defs/evidence_time"
+        }
+      }
+    },
+    "content_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "locator",
+        "media_type",
+        "byte_length",
+        "sha256"
+      ],
+      "properties": {
+        "locator": {
+          "$ref": "#/$defs/nonempty_string"
+        },
+        "media_type": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9!#$&^_.+-]+/[A-Za-z0-9!#$&^_.+-]+$"
+        },
+        "byte_length": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "origin_system",
+        "issuer_id",
+        "source_locator",
+        "attestation"
+      ],
+      "properties": {
+        "origin_system": {
+          "$ref": "#/$defs/nonempty_string"
+        },
+        "issuer_id": {
+          "$ref": "#/$defs/nonempty_string"
+        },
+        "source_locator": {
+          "$ref": "#/$defs/nonempty_string"
+        },
+        "attestation": {
+          "$ref": "#/$defs/attestation"
+        }
+      }
+    },
+    "attestation": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/signed_attestation"
+        },
+        {
+          "$ref": "#/$defs/unsigned_attestation"
+        }
+      ]
+    },
+    "signed_attestation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "signer_id",
+        "algorithm",
+        "signature_locator",
+        "signature_sha256"
+      ],
+      "properties": {
+        "kind": {
+          "const": "SIGNED"
+        },
+        "signer_id": {
+          "$ref": "#/$defs/nonempty_string"
+        },
+        "algorithm": {
+          "$ref": "#/$defs/nonempty_string"
+        },
+        "signature_locator": {
+          "$ref": "#/$defs/nonempty_string"
+        },
+        "signature_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "unsigned_attestation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "reason"
+      ],
+      "properties": {
+        "kind": {
+          "const": "UNSIGNED"
+        },
+        "reason": {
+          "$ref": "#/$defs/nonempty_string"
+        }
+      }
+    },
+    "evidence_time": {
+      "description": "The sole admissible state-evaluation time rail. Each variant binds a source-native event time or ordered state coordinate to the exact evidence content digest.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/chain_position"
+        },
+        {
+          "$ref": "#/$defs/receipt_created_at"
+        },
+        {
+          "$ref": "#/$defs/program_executed_at"
+        },
+        {
+          "$ref": "#/$defs/source_state"
+        }
+      ]
+    },
+    "chain_position": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "network",
+        "coordinate_type",
+        "coordinate",
+        "state_ref",
+        "bound_content_sha256"
+      ],
+      "properties": {
+        "kind": {
+          "const": "CHAIN_POSITION"
+        },
+        "network": {
+          "$ref": "#/$defs/nonempty_string"
+        },
+        "coordinate_type": {
+          "enum": [
+            "SLOT",
+            "BLOCK_NUMBER"
+          ]
+        },
+        "coordinate": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)$"
+        },
+        "state_ref": {
+          "$ref": "#/$defs/nonempty_string"
+        },
+        "transaction_id": {
+          "$ref": "#/$defs/nonempty_string"
+        },
+        "bound_content_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "receipt_created_at": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "created_at",
+        "issuer_id",
+        "receipt_id",
+        "bound_content_sha256"
+      ],
+      "properties": {
+        "kind": {
+          "const": "RECEIPT_CREATED_AT"
+        },
+        "created_at": {
+          "$ref": "#/$defs/utc_evidence_time"
+        },
+        "issuer_id": {
+          "$ref": "#/$defs/nonempty_string"
+        },
+        "receipt_id": {
+          "$ref": "#/$defs/nonempty_string"
+        },
+        "bound_content_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "program_executed_at": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "executed_at",
+        "program_id",
+        "execution_id",
+        "bound_content_sha256"
+      ],
+      "properties": {
+        "kind": {
+          "const": "PROGRAM_EXECUTED_AT"
+        },
+        "executed_at": {
+          "$ref": "#/$defs/utc_evidence_time"
+        },
+        "program_id": {
+          "$ref": "#/$defs/nonempty_string"
+        },
+        "execution_id": {
+          "$ref": "#/$defs/nonempty_string"
+        },
+        "bound_content_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "source_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "source_system",
+        "state_ref",
+        "object_id",
+        "bound_content_sha256"
+      ],
+      "properties": {
+        "kind": {
+          "const": "SOURCE_STATE"
+        },
+        "source_system": {
+          "$ref": "#/$defs/nonempty_string"
+        },
+        "state_ref": {
+          "$ref": "#/$defs/nonempty_string"
+        },
+        "object_id": {
+          "$ref": "#/$defs/nonempty_string"
+        },
+        "bound_content_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "open_surface": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "surface_id",
+        "required_edge",
+        "reason_code"
+      ],
+      "properties": {
+        "surface_id": {
+          "$ref": "#/$defs/nonempty_string"
+        },
+        "required_edge": {
+          "$ref": "#/$defs/nonempty_string"
+        },
+        "reason_code": {
+          "enum": [
+            "MISSING_RECEIPT",
+            "UNREADABLE_SOURCE",
+            "UNRESOLVED_BINDING",
+            "NOT_INDEXED",
+            "NOT_REPLAYED"
+          ]
+        }
+      }
+    }
+  }
+}
