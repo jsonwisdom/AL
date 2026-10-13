@@ -1,0 +1,61 @@
+name: ReplayIngress CI Witness
+
+on:
+  push:
+    branches:
+      - "replayingress/v1-lock"
+    paths:
+      - "ReplayIngress/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/replayingress-ci.yml"
+  pull_request:
+    branches: [master]
+    paths:
+      - "ReplayIngress/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/replayingress-ci.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  replayingress-vitest:
+    name: ReplayIngress Vitest Witness
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run ReplayIngress Vitest
+        run: npm run test:replayingress -- --reporter=json --outputFile=replayingress-test-summary.json
+
+      - name: Emit test summary to runner log
+        if: always()
+        run: |
+          if [ -f replayingress-test-summary.json ]; then
+            cat replayingress-test-summary.json
+          else
+            echo '{"summary":"NOT_PRODUCED"}'
+          fi
+
+      - name: Upload ReplayIngress test summary
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: replayingress-test-summary
+          path: replayingress-test-summary.json
+          if-no-files-found: warn
+          retention-days: 90
