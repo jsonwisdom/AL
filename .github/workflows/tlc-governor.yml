@@ -1,0 +1,32 @@
+name: TLC Governor Check
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  model-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install TLC
+        run: |
+          mkdir -p bin
+          curl -L -o bin/tla2tools.jar https://github.com/tlaplus/tlaplus/releases/download/v1.7.1/tla2tools.jar
+
+      - name: Run Model Checker
+        run: |
+          java -cp bin/tla2tools.jar tlc2.TLC CEC_GOVERNOR_STATE_MACHINE_V0_1.tla
+
+      - name: Upload TLC Output (on failure)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tlc-counterexample
+          path: |
+            *.tla
+            *.cfg
+            *.out
