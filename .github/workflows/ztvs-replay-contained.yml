@@ -4,7 +4,8 @@ name: ZTVS Replay Loop (Contained)
 # - Does not modify the original ztvs-replay.yml
 # - contents: read only
 # - no git push
-# - missing evidence produces HOLD, never VERIFIED
+# - incomplete evidence fails the job (no misleading green)
+# - expected artifacts must be present or the job fails
 
 on:
   workflow_dispatch:
@@ -39,17 +40,54 @@ jobs:
             --commit ${{ github.sha }} \
             --receipt_hash null
 
-      - name: Upload receipts
+      - name: Require expected artifacts
+        if: always()
+        run: |
+          set -euo pipefail
+          missing=0
+          for f in \
+            registry/MN_001/fetch_receipt.json \
+            registry/MN_001/normalize_receipt.json \
+            registry/MN_001/evidence_card.json
+          do
+            if [ ! -f "$f" ]; then
+              echo "MISSING_ARTIFACT: $f"
+              missing=1
+            else
+              echo "PRESENT: $f"
+            fi
+          done
+          if [ "$missing" -ne 0 ]; then
+            echo "EXPECTED_ARTIFACTS_MISSING"
+            exit 1
+          fi
+
+      - name: Fail if evidence is incomplete
+        if: always()
+        run: |
+          set -euo pipefail
+          CARD=registry/MN_001/evidence_card.json
+          STATUS=$(jq -r '.status // empty' "$CARD")
+          VERIFIED=$(jq -r '.verified // empty' "$CARD")
+          echo "evidence_status=$STATUS"
+          echo "evidence_verified=$VERIFIED"
+          if [ "$STATUS" != "HOLD" ] && [ "$STATUS" != "VERIFIED" ]; then
+            echo "INVALID_STATUS: $STATUS"
+            exit 1
+          fi
+          if [ "$STATUS" = "HOLD" ] || [ "$VERIFIED" != "true" ]; then
+            echo "HOLD: evidence incomplete. Job fails so GitHub does not show green."
+            exit 1
+          fi
+          echo "VERIFIED with proof."
+
+      - name: Upload receipts and evidence card
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: ztvs-contained-receipts
-          path: registry/MN_001/*receipt*.json
-          if-no-files-found: warn
-
-      - name: Summary
-        if: always()
-        run: |
-          echo "Contained ZTVS run complete."
-          echo "No push performed."
-          echo "Status is HOLD unless a future authorized stage establishes proof."
+          path: |
+            registry/MN_001/fetch_receipt.json
+            registry/MN_001/normalize_receipt.json
+            registry/MN_001/evidence_card.json
+          if-no-files-found: error
