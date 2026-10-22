@@ -1,0 +1,55 @@
+name: ZTVS Replay Loop (Contained)
+
+# Contained repair v0.1
+# - Does not modify the original ztvs-replay.yml
+# - contents: read only
+# - no git push
+# - missing evidence produces HOLD, never VERIFIED
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify_baseline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fetch (HOLD if source missing)
+        id: fetch
+        continue-on-error: true
+        run: bash scripts/1_fetch_target.sh configs/MN_001.json registry/MN_001
+
+      - name: Normalize (HOLD if raw missing or unimplemented)
+        id: normalize
+        continue-on-error: true
+        run: bash scripts/2_normalize_chunks.sh registry/MN_001/raw.pdf registry/MN_001
+
+      - name: Evidence card (always HOLD until proof exists)
+        id: evidence
+        continue-on-error: true
+        run: |
+          bash scripts/3_generate_evidence_card.sh \
+            --target_id MN_001 \
+            --state HOLD \
+            --commit ${{ github.sha }} \
+            --receipt_hash null
+
+      - name: Upload receipts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ztvs-contained-receipts
+          path: registry/MN_001/*receipt*.json
+          if-no-files-found: warn
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "Contained ZTVS run complete."
+          echo "No push performed."
+          echo "Status is HOLD unless a future authorized stage establishes proof."
