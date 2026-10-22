@@ -6,9 +6,12 @@ name: ZTVS Replay Loop (Contained)
 # - no git push
 # - incomplete evidence fails the job (no misleading green)
 # - expected artifacts must be present or the job fails
+# - pull_request trigger allows branch-safe CI without registering on master
 
 on:
   workflow_dispatch:
+  pull_request:
+    branches: [master]
 
 permissions:
   contents: read
