@@ -7,6 +7,7 @@ name: ZTVS Replay Loop (Contained)
 # - incomplete evidence fails the job (no misleading green)
 # - expected artifacts must be present or the job fails
 # - pull_request trigger allows branch-safe CI without registering on master
+# - evidence card records source_head_sha and executed_checkout_sha separately
 
 on:
   workflow_dispatch:
@@ -40,7 +41,11 @@ jobs:
           bash scripts/3_generate_evidence_card.sh \
             --target_id MN_001 \
             --state HOLD \
-            --commit ${{ github.sha }} \
+            --commit "${{ github.sha }}" \
+            --source_head_sha "${{ github.event.pull_request.head.sha || github.sha }}" \
+            --executed_checkout_sha "${{ github.sha }}" \
+            --run_id "${{ github.run_id }}" \
+            --job_id "${{ github.job }}" \
             --receipt_hash null
 
       - name: Require expected artifacts
