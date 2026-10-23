@@ -1,0 +1,52 @@
+name: Minnesota Migration Tests
+
+on:
+  pull_request:
+    paths:
+      - "Minnesota/**"
+      - ".github/workflows/minnesota-canonical-migration.yml"
+      - ".github/workflows/minnesota-migration-tests.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  migration-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate Python and JSON
+        run: |
+          python -m py_compile Minnesota/automation/migrate_minnesota_v1.py
+          python -m py_compile Minnesota/automation/test_migrate_minnesota_v1.py
+          python -m json.tool Minnesota/MIGRATION_POLICY_V1.json >/dev/null
+          python -m json.tool Minnesota/governance/WOMENS_OPINION_RECORD_SCHEMA_V1.json >/dev/null
+
+      - name: Run disposable-repository migration tests
+        run: python Minnesota/automation/test_migrate_minnesota_v1.py -v
+
+      - name: Governance assertions
+        run: |
+          python - <<'PY'
+          import json
+          policy = json.load(open("Minnesota/MIGRATION_POLICY_V1.json", encoding="utf-8"))
+          governance = policy["governance"]
+          required_true = [
+              "no_fake_green",
+              "human_review_required",
+              "preserve_source_bytes",
+              "fail_on_destination_conflict",
+              "silence_is_not_consent",
+              "minority_report_preserved",
+              "womens_opinions_preserved",
+              "nonviolent_only",
+          ]
+          for key in required_true:
+              assert governance.get(key) is True, f"{key} must remain true"
+          assert governance.get("public_promotion_authorized") is False
+          assert governance.get("direct_default_branch_mutation") is False
+          print("MINNESOTA_MIGRATION_GOVERNANCE_PASS")
+          PY
