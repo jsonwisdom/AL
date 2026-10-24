@@ -1,0 +1,133 @@
+{
+  "audit_summary": {
+    "drift_detected": false,
+    "node_count": 5,
+    "settlement_guard": "PASS"
+  },
+  "master_runtime": {
+    "commit_anchor": "1ed424455c0f8ba24bd602147b95b715e14a03fb",
+    "librarian_index": "artifact-hydrated-v1",
+    "run_id": "40062509830",
+    "status": "GREEN",
+    "workflow": "ZTVS Librarian Replay"
+  },
+  "nodes": [
+    {
+      "anchor": "commit:1ed424455c0f8ba24bd602147b95b715e14a03fb",
+      "captured_at": "2026-10-24T04:29:35Z",
+      "document": "city_council_minutes",
+      "evidence_card_sha256": "SHA256:628244ddbdcb6d858386e60c5a14bb66ecc2c9d3f901e3370f602b58c208c760",
+      "payload": {
+        "drift_analysis": {
+          "city": "ST_CLOUD",
+          "diff_segments": [],
+          "drift_metadata": {
+            "max_criticality_weight": 0,
+            "triggered_scope_count": 0
+          },
+          "has_drift": false,
+          "ignored_patterns": [
+            "\\bPage\\s+\\d+\\b",
+            "Minutes\\s+Approved",
+            "Approved\\s+Minutes",
+            "\\bAgenda\\s+Packet\\b"
+          ],
+          "impact_score": 0,
+          "schema_version": "1.1.0",
+          "triggered_scopes": [],
+          "validator_version": "1.1.0"
+        }
+      },
+      "raw_sha256": "55e86587ae1b77315c23aceb2ca0ebc8ad9db78b59ca828f6a2b3dff80c22335",
+      "review_receipt_hash": null,
+      "schema_version": "1.1.0",
+      "state": "VERIFIED",
+      "target_id": "ST_CLOUD_001",
+      "verdict": "VERIFIED"
+    },
+    {
+      "anchor": "commit:1ed424455c0f8ba24bd602147b95b715e14a03fb",
+      "captured_at": "2026-10-24T04:29:34Z",
+      "document": "city_council_minutes",
+      "evidence_card_sha256": "SHA256:b850d2a596a721e18a715486025da06a03e5a0c02bfe65dab53853d917855b0e",
+      "payload": {
+        "drift_analysis": {
+          "diff_segments": [],
+          "has_drift": false,
+          "schema_version": "1.1.0",
+          "validator_version": "1.1.0"
+        }
+      },
+      "raw_sha256": "3049d090eca2b97a204717bd6eac96216e7f34d75fd51eb1452a1adf44a060fe",
+      "review_receipt_hash": null,
+      "schema_version": "1.1.0",
+      "state": "VERIFIED",
+      "target_id": "MINNEAPOLIS_001",
+      "verdict": "VERIFIED"
+    },
+    {
+      "anchor": "commit:1ed424455c0f8ba24bd602147b95b715e14a03fb",
+      "captured_at": "2026-10-24T04:29:51Z",
+      "document": "city_council_minutes",
+      "evidence_card_sha256": "SHA256:2ec0a41fc33c1f6b716e0e68405f32fb002e743d111484e32bfe800334d2a224",
+      "payload": {
+        "drift_analysis": {
+          "diff_segments": [],
+          "has_drift": false,
+          "schema_version": "1.1.0",
+          "validator_version": "1.1.0"
+        }
+      },
+      "raw_sha256": "a8bf1cd766b80c499ab976546fd71befdf860bf6eb4d85bcddc207fa3910c756",
+      "review_receipt_hash": null,
+      "schema_version": "1.1.0",
+      "state": "VERIFIED",
+      "target_id": "MANKATO_001",
+      "verdict": "VERIFIED"
+    },
+    {
+      "anchor": "commit:1ed424455c0f8ba24bd602147b95b715e14a03fb",
+      "captured_at": "2026-10-24T04:30:13Z",
+      "document": "city_council_minutes",
+      "evidence_card_sha256": "SHA256:f38c15fe993bbb164794b7dc50f2736c1c10873d60cff152bea0b68d090e293c",
+      "payload": {
+        "drift_analysis": {
+          "diff_segments": [],
+          "has_drift": false,
+          "schema_version": "1.1.0",
+          "validator_version": "1.1.0"
+        }
+      },
+      "raw_sha256": "9d4bfb62515d6c3a7e302ab106e73fc817e8fafbe23dfe97c4bf13f3438bcdb5",
+      "review_receipt_hash": null,
+      "schema_version": "1.1.0",
+      "state": "VERIFIED",
+      "target_id": "ROCHESTER_001",
+      "verdict": "VERIFIED"
+    },
+    {
+      "anchor": "commit:1ed424455c0f8ba24bd602147b95b715e14a03fb",
+      "captured_at": "2026-10-24T04:30:11Z",
+      "document": "city_council_minutes",
+      "evidence_card_sha256": "SHA256:5d456e24055fa4acef3af00599b4383d1729838fb9d1af4815bcf800c0e2585f",
+      "payload": {
+        "drift_analysis": {
+          "diff_segments": [],
+          "has_drift": false,
+          "schema_version": "1.1.0",
+          "validator_version": "1.1.0"
+        }
+      },
+      "raw_sha256": "7972d81d9de34fec25d07e584d5f9d01d3c35e3b6017ee1a6072fc9042d64f80",
+      "review_receipt_hash": null,
+      "schema_version": "1.1.0",
+      "state": "VERIFIED",
+      "target_id": "DULUTH_001",
+      "verdict": "VERIFIED"
+    }
+  ],
+  "receipt_id": "LIBRARIAN-REPLAY-40062509830",
+  "timestamp": "2026-10-24T04:30:59Z",
+  "version": "1.0.0",
+  "signature": "SHA256:feb4ed4c33d8a7169fba276d4545bed41b8b1cde0e0bd068316d89dfdeeb4630"
+}
