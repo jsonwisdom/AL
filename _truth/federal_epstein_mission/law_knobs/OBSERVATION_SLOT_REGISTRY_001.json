@@ -1,0 +1,361 @@
+{
+  "artifact": "EPSTEIN_JUSTICE_GOV_OBSERVATION_SLOT_REGISTRY",
+  "artifact_id": "OBSERVATION_SLOT_REGISTRY_001",
+  "version": "0.1",
+  "authority": false,
+  "legal_conclusion": false,
+  "target": "justice.gov public Epstein/EFTA surfaces",
+  "slot_count": 32,
+  "bound_slots": 4,
+  "unbound_slots": 28,
+  "matrix_partner": "LAW_KNOB_SET_001",
+  "matrix_target": "32 law knobs x 32 observation slots = 1024 logical comparison cells",
+  "evaluation_state": "NOT_RUN",
+  "hard_boundaries": [
+    "PUBLIC_WEB_OBSERVATION != BYTE_SEALED_SOURCE",
+    "DOJ_SELF_DESCRIPTION != INDEPENDENT_COMPLIANCE_PROOF",
+    "MISSING_SLOT != MISSING_RECORD",
+    "UNBOUND != FAIL",
+    "AUTHORITY_CREATED = FALSE"
+  ],
+  "slots": [
+    {
+      "id": "O01",
+      "name": "DOJ_EPSTEIN_LIBRARY_ROOT",
+      "url": "https://www.justice.gov/epstein",
+      "observed_claims": [
+        "DOJ operates an Epstein Library for materials responsive under the Epstein Files Transparency Act.",
+        "The page states it will be updated if additional documents are identified for release.",
+        "The page displays a full-library search interface and notes technical limitations in searchability.",
+        "The page displayed Last Updated: July 17, 2026 when checked in this build."
+      ],
+      "slot": 1,
+      "binding_state": "BOUND_PUBLIC_SOURCE",
+      "byte_seal": "NOT_CAPTURED_THIS_RUN",
+      "evaluation_state": "NOT_CROSSED_AGAINST_KNOBS"
+    },
+    {
+      "id": "O02",
+      "name": "DOJ_RELEASE_2026_01_30",
+      "url": "https://www.justice.gov/opa/pr/department-justice-publishes-35-million-responsive-pages-compliance-epstein-files",
+      "observed_claims": [
+        "DOJ announced publication of over 3 million additional pages responsive to the Act.",
+        "DOJ described the production as nearly 3.5 million responsive pages total.",
+        "DOJ listed categories of duplicate, privileged, statutory-exception, and unrelated material in its release statement.",
+        "DOJ stated more than 500 attorneys and reviewers contributed to the review."
+      ],
+      "slot": 2,
+      "binding_state": "BOUND_PUBLIC_SOURCE",
+      "byte_seal": "NOT_CAPTURED_THIS_RUN",
+      "evaluation_state": "NOT_CROSSED_AGAINST_KNOBS"
+    },
+    {
+      "id": "O03",
+      "name": "DOJ_FBI_MEMO_2025_07",
+      "url": "https://www.justice.gov/opa/media/1407001/dl",
+      "observed_claims": [
+        "Pre-statute DOJ/FBI memo stated no incriminating client list was found.",
+        "Pre-statute DOJ/FBI memo stated no credible evidence was found of a blackmail scheme involving prominent individuals.",
+        "Pre-statute DOJ/FBI memo stated no further disclosure would be appropriate or warranted.",
+        "This observation is a pre-Public-Law-119-38 policy baseline and is not itself a compliance finding under the later statute."
+      ],
+      "slot": 3,
+      "binding_state": "BOUND_PUBLIC_SOURCE",
+      "byte_seal": "NOT_CAPTURED_THIS_RUN",
+      "evaluation_state": "NOT_CROSSED_AGAINST_KNOBS"
+    },
+    {
+      "id": "O04",
+      "name": "DOJ_DISCLOSURES_DIRECTORY",
+      "url": "https://www.justice.gov/epstein/doj-disclosures",
+      "observed_claims": [
+        "DOJ maintains a disclosures directory under the Epstein Library.",
+        "The directory presents DOJ disclosures and applies victim-identifying redactions."
+      ],
+      "slot": 4,
+      "binding_state": "BOUND_PUBLIC_SOURCE",
+      "byte_seal": "NOT_CAPTURED_THIS_RUN",
+      "evaluation_state": "NOT_CROSSED_AGAINST_KNOBS"
+    },
+    {
+      "id": "O05",
+      "slot": 5,
+      "name": "UNSET",
+      "url": null,
+      "observed_claims": [],
+      "binding_state": "UNSET",
+      "byte_seal": "NOT_APPLICABLE",
+      "evaluation_state": "NOT_CROSSED_AGAINST_KNOBS"
+    },
+    {
+      "id": "O06",
+      "slot": 6,
+      "name": "UNSET",
+      "url": null,
+      "observed_claims": [],
+      "binding_state": "UNSET",
+      "byte_seal": "NOT_APPLICABLE",
+      "evaluation_state": "NOT_CROSSED_AGAINST_KNOBS"
+    },
+    {
+      "id": "O07",
+      "slot": 7,
+      "name": "UNSET",
+      "url": null,
+      "observed_claims": [],
+      "binding_state": "UNSET",
+      "byte_seal": "NOT_APPLICABLE",
+      "evaluation_state": "NOT_CROSSED_AGAINST_KNOBS"
+    },
+    {
+      "id": "O08",
+      "slot": 8,
+      "name": "UNSET",
+      "url": null,
+      "observed_claims": [],
+      "binding_state": "UNSET",
+      "byte_seal": "NOT_APPLICABLE",
+      "evaluation_state": "NOT_CROSSED_AGAINST_KNOBS"
+    },
+    {
+      "id": "O09",
+      "slot": 9,
+      "name": "UNSET",
+      "url": null,
+      "observed_claims": [],
+      "binding_state": "UNSET",
+      "byte_seal": "NOT_APPLICABLE",
+      "evaluation_state": "NOT_CROSSED_AGAINST_KNOBS"
+    },
+    {
+      "id": "O10",
+      "slot": 10,
+      "name": "UNSET",
+      "url": null,
+      "observed_claims": [],
+      "binding_state": "UNSET",
+      "byte_seal": "NOT_APPLICABLE",
+      "evaluation_state": "NOT_CROSSED_AGAINST_KNOBS"
+    },
+    {
+      "id": "O11",
+      "slot": 11,
+      "name": "UNSET",
+      "url": null,
+      "observed_claims": [],
+      "binding_state": "UNSET",
+      "byte_seal": "NOT_APPLICABLE",
+      "evaluation_state": "NOT_CROSSED_AGAINST_KNOBS"
+    },
+    {
+      "id": "O12",
+      "slot": 12,
+      "name": "UNSET",
+      "url": null,
+      "observed_claims": [],
+      "binding_state": "UNSET",
+      "byte_seal": "NOT_APPLICABLE",
+      "evaluation_state": "NOT_CROSSED_AGAINST_KNOBS"
+    },
+    {
+      "id": "O13",
+      "slot": 13,
+      "name": "UNSET",
+      "url": null,
+      "observed_claims": [],
+      "binding_state": "UNSET",
+      "byte_seal": "NOT_APPLICABLE",
+      "evaluation_state": "NOT_CROSSED_AGAINST_KNOBS"
+    },
+    {
+      "id": "O14",
+      "slot": 14,
+      "name": "UNSET",
+      "url": null,
+      "observed_claims": [],
+      "binding_state": "UNSET",
+      "byte_seal": "NOT_APPLICABLE",
+      "evaluation_state": "NOT_CROSSED_AGAINST_KNOBS"
+    },
+    {
+      "id": "O15",
+      "slot": 15,
+      "name": "UNSET",
+      "url": null,
+      "observed_claims": [],
+      "binding_state": "UNSET",
+      "byte_seal": "NOT_APPLICABLE",
+      "evaluation_state": "NOT_CROSSED_AGAINST_KNOBS"
+    },
+    {
+      "id": "O16",
+      "slot": 16,
+      "name": "UNSET",
+      "url": null,
+      "observed_claims": [],
+      "binding_state": "UNSET",
+      "byte_seal": "NOT_APPLICABLE",
+      "evaluation_state": "NOT_CROSSED_AGAINST_KNOBS"
+    },
+    {
+      "id": "O17",
+      "slot": 17,
+      "name": "UNSET",
+      "url": null,
+      "observed_claims": [],
+      "binding_state": "UNSET",
+      "byte_seal": "NOT_APPLICABLE",
+      "evaluation_state": "NOT_CROSSED_AGAINST_KNOBS"
+    },
+    {
+      "id": "O18",
+      "slot": 18,
+      "name": "UNSET",
+      "url": null,
+      "observed_claims": [],
+      "binding_state": "UNSET",
+      "byte_seal": "NOT_APPLICABLE",
+      "evaluation_state": "NOT_CROSSED_AGAINST_KNOBS"
+    },
+    {
+      "id": "O19",
+      "slot": 19,
+      "name": "UNSET",
+      "url": null,
+      "observed_claims": [],
+      "binding_state": "UNSET",
+      "byte_seal": "NOT_APPLICABLE",
+      "evaluation_state": "NOT_CROSSED_AGAINST_KNOBS"
+    },
+    {
+      "id": "O20",
+      "slot": 20,
+      "name": "UNSET",
+      "url": null,
+      "observed_claims": [],
+      "binding_state": "UNSET",
+      "byte_seal": "NOT_APPLICABLE",
+      "evaluation_state": "NOT_CROSSED_AGAINST_KNOBS"
+    },
+    {
+      "id": "O21",
+      "slot": 21,
+      "name": "UNSET",
+      "url": null,
+      "observed_claims": [],
+      "binding_state": "UNSET",
+      "byte_seal": "NOT_APPLICABLE",
+      "evaluation_state": "NOT_CROSSED_AGAINST_KNOBS"
+    },
+    {
+      "id": "O22",
+      "slot": 22,
+      "name": "UNSET",
+      "url": null,
+      "observed_claims": [],
+      "binding_state": "UNSET",
+      "byte_seal": "NOT_APPLICABLE",
+      "evaluation_state": "NOT_CROSSED_AGAINST_KNOBS"
+    },
+    {
+      "id": "O23",
+      "slot": 23,
+      "name": "UNSET",
+      "url": null,
+      "observed_claims": [],
+      "binding_state": "UNSET",
+      "byte_seal": "NOT_APPLICABLE",
+      "evaluation_state": "NOT_CROSSED_AGAINST_KNOBS"
+    },
+    {
+      "id": "O24",
+      "slot": 24,
+      "name": "UNSET",
+      "url": null,
+      "observed_claims": [],
+      "binding_state": "UNSET",
+      "byte_seal": "NOT_APPLICABLE",
+      "evaluation_state": "NOT_CROSSED_AGAINST_KNOBS"
+    },
+    {
+      "id": "O25",
+      "slot": 25,
+      "name": "UNSET",
+      "url": null,
+      "observed_claims": [],
+      "binding_state": "UNSET",
+      "byte_seal": "NOT_APPLICABLE",
+      "evaluation_state": "NOT_CROSSED_AGAINST_KNOBS"
+    },
+    {
+      "id": "O26",
+      "slot": 26,
+      "name": "UNSET",
+      "url": null,
+      "observed_claims": [],
+      "binding_state": "UNSET",
+      "byte_seal": "NOT_APPLICABLE",
+      "evaluation_state": "NOT_CROSSED_AGAINST_KNOBS"
+    },
+    {
+      "id": "O27",
+      "slot": 27,
+      "name": "UNSET",
+      "url": null,
+      "observed_claims": [],
+      "binding_state": "UNSET",
+      "byte_seal": "NOT_APPLICABLE",
+      "evaluation_state": "NOT_CROSSED_AGAINST_KNOBS"
+    },
+    {
+      "id": "O28",
+      "slot": 28,
+      "name": "UNSET",
+      "url": null,
+      "observed_claims": [],
+      "binding_state": "UNSET",
+      "byte_seal": "NOT_APPLICABLE",
+      "evaluation_state": "NOT_CROSSED_AGAINST_KNOBS"
+    },
+    {
+      "id": "O29",
+      "slot": 29,
+      "name": "UNSET",
+      "url": null,
+      "observed_claims": [],
+      "binding_state": "UNSET",
+      "byte_seal": "NOT_APPLICABLE",
+      "evaluation_state": "NOT_CROSSED_AGAINST_KNOBS"
+    },
+    {
+      "id": "O30",
+      "slot": 30,
+      "name": "UNSET",
+      "url": null,
+      "observed_claims": [],
+      "binding_state": "UNSET",
+      "byte_seal": "NOT_APPLICABLE",
+      "evaluation_state": "NOT_CROSSED_AGAINST_KNOBS"
+    },
+    {
+      "id": "O31",
+      "slot": 31,
+      "name": "UNSET",
+      "url": null,
+      "observed_claims": [],
+      "binding_state": "UNSET",
+      "byte_seal": "NOT_APPLICABLE",
+      "evaluation_state": "NOT_CROSSED_AGAINST_KNOBS"
+    },
+    {
+      "id": "O32",
+      "slot": 32,
+      "name": "UNSET",
+      "url": null,
+      "observed_claims": [],
+      "binding_state": "UNSET",
+      "byte_seal": "NOT_APPLICABLE",
+      "evaluation_state": "NOT_CROSSED_AGAINST_KNOBS"
+    }
+  ]
+}
