@@ -1,0 +1,32 @@
+name: Pony Express Receipt Fixtures
+
+on:
+  pull_request:
+    paths:
+      - "governance/pony-express/RECEIPT_CHAIN_PROTOCOL_v0.1-theta.md"
+      - "governance/pony-express/fixtures/receipt-chains/**"
+      - "governance/pony-express/harness/verify_receipt_fixtures.py"
+      - ".github/workflows/pony-express-receipt-fixtures.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-receipt-fixtures:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install RFC 8785 implementation
+        run: python -m pip install --disable-pip-version-check "rfc8785>=0.1,<1"
+
+      - name: Verify expected fixture verdicts
+        run: python governance/pony-express/harness/verify_receipt_fixtures.py

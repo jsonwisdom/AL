@@ -1,0 +1,161 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.example/schemas/GOVERNOR_SOURCE_RECORD_v0.1.schema.json",
+  "title": "Governor Source Record Schema v0.1",
+  "description": "EMPTY_VESSEL. Structurally valid container for a future primary-source record. Carries zero epistemic weight until an independently verified byte-capture pair is admitted. Does not satisfy Gate 1. Does not create authority or historical truth.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_id",
+    "vessel_status",
+    "authority",
+    "gate_1",
+    "historical_verification",
+    "core_docket",
+    "mass_units",
+    "sensors",
+    "primary_source",
+    "provenance_chain",
+    "verification_receipts"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "GOVERNOR_SOURCE_RECORD_v0.1"
+    },
+    "record_id": {
+      "type": "string",
+      "pattern": "^GSR-[A-Z0-9-]{8,64}$",
+      "description": "Stable identifier for this vessel instance. Does not imply content."
+    },
+    "vessel_status": {
+      "const": "EMPTY_VESSEL",
+      "description": "Constitutional posture prior to first admitted artifact."
+    },
+    "authority": {
+      "const": false
+    },
+    "gate_1": {
+      "const": "BLOCKED",
+      "description": "Remains BLOCKED until an independently verified byte-capture pair is admitted."
+    },
+    "historical_verification": {
+      "const": "NOT_PERFORMED"
+    },
+    "core_docket": {
+      "const": "EMPTY"
+    },
+    "mass_units": {
+      "const": "EMPTY_VESSEL",
+      "description": "Zero epistemic weight. No mass-bearing object has crossed the threshold."
+    },
+    "simulation_only": {
+      "const": true
+    },
+    "promotion": {
+      "enum": ["BLOCKED", "CANDIDATE", "APPROVED"],
+      "default": "BLOCKED"
+    },
+    "sensors": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "byte_integrity",
+        "identity",
+        "provenance",
+        "custody",
+        "authority_claim",
+        "jurisdiction",
+        "truth"
+      ],
+      "properties": {
+        "byte_integrity": { "$ref": "#/$defs/sensorState" },
+        "identity": { "$ref": "#/$defs/sensorState" },
+        "provenance": { "$ref": "#/$defs/sensorState" },
+        "custody": { "$ref": "#/$defs/sensorState" },
+        "authority_claim": { "$ref": "#/$defs/sensorState" },
+        "jurisdiction": { "$ref": "#/$defs/sensorState" },
+        "truth": { "$ref": "#/$defs/sensorState" }
+      },
+      "description": "All sensors default to UNVERIFIED / NOT_RUN while vessel is empty."
+    },
+    "primary_source": {
+      "type": "null",
+      "description": "No primary-source record has been admitted."
+    },
+    "provenance_chain": {
+      "type": "array",
+      "maxItems": 0,
+      "items": { "type": "object" },
+      "description": "Empty. No provenance events recorded."
+    },
+    "verification_receipts": {
+      "type": "array",
+      "maxItems": 0,
+      "items": { "type": "object" },
+      "description": "Empty. No verification receipts exist."
+    },
+    "byte_capture_pair": {
+      "type": "null",
+      "description": "Absent. Gate 1 requires an independently executed byte-capture pair."
+    },
+    "admitted_at": {
+      "type": "null"
+    },
+    "admitted_by": {
+      "type": "null"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Optional operator notes. Must not assert authority or historical truth."
+    }
+  },
+  "$defs": {
+    "sensorState": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "last_run"],
+      "properties": {
+        "status": {
+          "enum": ["UNVERIFIED", "PASS", "FAIL", "INDETERMINATE", "NOT_APPLICABLE"]
+        },
+        "last_run": {
+          "enum": ["NOT_RUN", "RUN"]
+        },
+        "detail": {
+          "type": ["string", "null"]
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "schema_version": "GOVERNOR_SOURCE_RECORD_v0.1",
+      "record_id": "GSR-EMPTY-VESSEL-001",
+      "vessel_status": "EMPTY_VESSEL",
+      "authority": false,
+      "gate_1": "BLOCKED",
+      "historical_verification": "NOT_PERFORMED",
+      "core_docket": "EMPTY",
+      "mass_units": "EMPTY_VESSEL",
+      "simulation_only": true,
+      "promotion": "BLOCKED",
+      "sensors": {
+        "byte_integrity": { "status": "UNVERIFIED", "last_run": "NOT_RUN", "detail": null },
+        "identity": { "status": "UNVERIFIED", "last_run": "NOT_RUN", "detail": null },
+        "provenance": { "status": "UNVERIFIED", "last_run": "NOT_RUN", "detail": null },
+        "custody": { "status": "UNVERIFIED", "last_run": "NOT_RUN", "detail": null },
+        "authority_claim": { "status": "UNVERIFIED", "last_run": "NOT_RUN", "detail": null },
+        "jurisdiction": { "status": "UNVERIFIED", "last_run": "NOT_RUN", "detail": null },
+        "truth": { "status": "UNVERIFIED", "last_run": "NOT_RUN", "detail": null }
+      },
+      "primary_source": null,
+      "provenance_chain": [],
+      "verification_receipts": [],
+      "byte_capture_pair": null,
+      "admitted_at": null,
+      "admitted_by": null,
+      "notes": "EMPTY_VESSEL. Awaiting first independently verified primary-source admission."
+    }
+  ]
+}

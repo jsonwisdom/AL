@@ -1,0 +1,222 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.example/schemas/MOOT_COURT_SCHEMA_v0.1-theta.json",
+  "title": "Moot Court Framework Schema v0.1-θ",
+  "description": "Fail-closed schema for a pedagogical moot-court simulation. Validation establishes structural conformance only. No historical truth or public authority is created.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "framework_version",
+    "session_id",
+    "authority",
+    "gate_1",
+    "historical_verification",
+    "core_docket",
+    "simulation_only",
+    "participants",
+    "question_presented",
+    "phase",
+    "claims",
+    "receipts"
+  ],
+  "properties": {
+    "framework_version": {
+      "const": "MOOT_COURT_v0.1-theta"
+    },
+    "session_id": {
+      "type": "string",
+      "pattern": "^MC-[A-Z0-9-]{8,64}$"
+    },
+    "authority": {
+      "const": false
+    },
+    "gate_1": {
+      "const": "BLOCKED"
+    },
+    "historical_verification": {
+      "const": "NOT_PERFORMED"
+    },
+    "core_docket": {
+      "const": "EMPTY"
+    },
+    "simulation_only": {
+      "const": true
+    },
+    "promotion": {
+      "enum": ["BLOCKED", "CANDIDATE", "APPROVED"],
+      "default": "BLOCKED"
+    },
+    "participants": {
+      "type": "array",
+      "minItems": 2,
+      "items": { "$ref": "#/$defs/participant" }
+    },
+    "question_presented": {
+      "type": "string",
+      "minLength": 10
+    },
+    "pedagogical_only": {
+      "type": "boolean",
+      "default": true
+    },
+    "phase": {
+      "enum": [
+        "OPEN_SESSION",
+        "ADMIT_PARTICIPANTS",
+        "STATE_QUESTION_PRESENTED",
+        "JURISDICTION_CHECK",
+        "EVIDENCE_EXCHANGE",
+        "ORAL_ARGUMENT",
+        "PANEL_DELIBERATION",
+        "PROVISIONAL_RULING",
+        "DISSENT_OR_CONCURRENCE",
+        "APPEAL_WINDOW",
+        "CLOSE_SESSION"
+      ]
+    },
+    "claims": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/claim" }
+    },
+    "provisional_ruling": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "result": {
+          "enum": [
+            "UPHELD_IN_GAME",
+            "OVERRULED_IN_GAME",
+            "REMANDED_FOR_EVIDENCE",
+            "INDETERMINATE",
+            "DENIED_FOR_PROCEDURE"
+          ]
+        },
+        "authority": { "const": false },
+        "historical_truth_established": { "const": false },
+        "public_effect": { "const": "none" },
+        "panel_notes": { "type": "string" }
+      }
+    },
+    "receipts": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/receipt" }
+    }
+  },
+  "$defs": {
+    "participant": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["participant_id", "role"],
+      "properties": {
+        "participant_id": { "type": "string", "minLength": 1 },
+        "role": {
+          "enum": [
+            "CHIEF_MODERATOR",
+            "CLAIMANT",
+            "RESPONDENT",
+            "AMICUS",
+            "CLERK",
+            "PANEL",
+            "OBSERVER"
+          ]
+        },
+        "display_name": { "type": "string" }
+      }
+    },
+    "gateStatus": {
+      "enum": ["UNTESTED", "UNPROVEN", "CONTESTED", "PASS", "FAIL", "INDETERMINATE"]
+    },
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim_id",
+        "claimant_id",
+        "statement",
+        "requested_effect",
+        "gate_status",
+        "authority"
+      ],
+      "properties": {
+        "claim_id": { "type": "string", "pattern": "^CLAIM-MC-[A-Z0-9-]+$" },
+        "claimant_id": { "type": "string" },
+        "statement": { "type": "string", "minLength": 1 },
+        "source_refs": {
+          "type": "array",
+          "items": { "type": "string" },
+          "default": []
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": { "type": "string" },
+          "default": []
+        },
+        "requested_effect": { "type": "string", "minLength": 1 },
+        "depth_layers_addressed": {
+          "type": "array",
+          "items": {
+            "enum": ["Z0", "Z1", "Z2", "Z3", "Z4", "Z5", "Z6", "Z7", "Z8"]
+          },
+          "default": []
+        },
+        "gate_status": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["integrity", "identity", "provenance", "authority", "jurisdiction", "truth"],
+          "properties": {
+            "integrity": { "$ref": "#/$defs/gateStatus" },
+            "identity": { "$ref": "#/$defs/gateStatus" },
+            "provenance": { "$ref": "#/$defs/gateStatus" },
+            "authority": { "$ref": "#/$defs/gateStatus" },
+            "jurisdiction": { "$ref": "#/$defs/gateStatus" },
+            "truth": { "$ref": "#/$defs/gateStatus" }
+          }
+        },
+        "authority": { "const": false },
+        "status": {
+          "enum": [
+            "OPEN",
+            "CONTESTED",
+            "UPHELD_IN_GAME",
+            "OVERRULED_IN_GAME",
+            "REMANDED_FOR_EVIDENCE",
+            "DENIED_FOR_PROCEDURE",
+            "INDETERMINATE"
+          ]
+        }
+      }
+    },
+    "receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "receipt_id",
+        "action",
+        "result",
+        "authority",
+        "historical_truth_established",
+        "gate_1_status"
+      ],
+      "properties": {
+        "receipt_id": { "type": "string", "pattern": "^RECEIPT-MC-[A-Z0-9-]+$" },
+        "action": { "type": "string", "minLength": 1 },
+        "claim_id": { "type": ["string", "null"] },
+        "result": {
+          "enum": ["PASS", "FAIL", "CONTESTED", "INDETERMINATE", "RECORDED"]
+        },
+        "recorded_at": { "type": ["string", "null"], "format": "date-time" },
+        "previous_receipt_hash": {
+          "type": ["string", "null"],
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "receipt_hash": {
+          "type": ["string", "null"],
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "authority": { "const": false },
+        "historical_truth_established": { "const": false },
+        "gate_1_status": { "const": "BLOCKED" }
+      }
+    }
+  }
+}

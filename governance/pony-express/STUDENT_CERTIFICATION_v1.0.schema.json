@@ -1,0 +1,218 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.example/schemas/STUDENT_CERTIFICATION_v1.0.schema.json",
+  "title": "Student Certification Schema v1.0",
+  "description": "Pedagogical certification vessel for sandbox participants. External authorization is an explicit null stub. Internal certification may become ACTIVE. Does not open Gate 1, does not admit mass-bearing records, and does not create public authority or historical truth.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "certification_id",
+    "participant_id",
+    "authority",
+    "gate_1",
+    "historical_verification",
+    "core_docket",
+    "external_authorization",
+    "internal_certification",
+    "dual_axis",
+    "weakest_link",
+    "sandbox_status",
+    "real_source_eligibility"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "STUDENT_CERTIFICATION_v1.0"
+    },
+    "certification_id": {
+      "type": "string",
+      "pattern": "^SC-[A-Z0-9-]{8,64}$"
+    },
+    "participant_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "authority": {
+      "const": false
+    },
+    "gate_1": {
+      "const": "BLOCKED"
+    },
+    "historical_verification": {
+      "const": "NOT_PERFORMED"
+    },
+    "core_docket": {
+      "const": "EMPTY"
+    },
+    "simulation_only": {
+      "const": true
+    },
+    "promotion": {
+      "enum": ["BLOCKED", "CANDIDATE", "APPROVED"],
+      "default": "BLOCKED"
+    },
+    "external_authorization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["external_credential", "status"],
+      "properties": {
+        "external_credential": {
+          "type": "null",
+          "description": "STUB_NULL. All external credentialism deferred until the simulation logs 10 complete real-source admission cycles."
+        },
+        "status": {
+          "const": "STUB_NULL"
+        },
+        "deferred_until": {
+          "const": "10_COMPLETE_REAL_SOURCE_ADMISSION_CYCLES"
+        }
+      }
+    },
+    "internal_certification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "issued_at"],
+      "properties": {
+        "status": {
+          "enum": ["INACTIVE", "ACTIVE", "SUSPENDED", "REVOKED"]
+        },
+        "issued_at": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "scope": {
+          "const": "FICTIONAL_SANDBOX_ONLY",
+          "description": "Internal certification authorizes sandbox participation only. It does not authorize real-source docket proposals."
+        }
+      }
+    },
+    "dual_axis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["self_score", "justice_score", "balanced"],
+      "properties": {
+        "self_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "justice_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "balanced": {
+          "type": "boolean",
+          "description": "true only when |self_score - justice_score| <= 0.15 (SELF ≈ JUSTICE)."
+        },
+        "delta": {
+          "type": "number",
+          "description": "Absolute difference |self_score - justice_score|."
+        },
+        "wisdom_predicate": {
+          "const": "WISDOM = SELF ∩ JUSTICE",
+          "description": "Inherited from Transition Control Matrix Stage-6."
+        }
+      }
+    },
+    "weakest_link": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["disclosed", "statement"],
+      "properties": {
+        "disclosed": {
+          "type": "boolean",
+          "description": "Mandatory. Must be true before real-source docket proposal eligibility."
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 20,
+          "description": "Explicit disclosure of the participant's weakest epistemic, procedural, or integrity link."
+        },
+        "recorded_at": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        }
+      }
+    },
+    "sandbox_status": {
+      "enum": ["ELIGIBLE", "ACTIVE", "SUSPENDED", "COMPLETED"],
+      "description": "Participation status inside the fictional sandbox only."
+    },
+    "real_source_eligibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["eligible", "gateway_rule"],
+      "properties": {
+        "eligible": {
+          "type": "boolean",
+          "description": "true only when weakest_link.disclosed == true AND dual_axis.balanced == true AND internal_certification.status == ACTIVE. Still does not open Gate 1."
+        },
+        "gateway_rule": {
+          "const": "WEAKEST_LINK_DISCLOSURE_AND_BALANCED_DUAL_AXIS",
+          "description": "Sole gateway from fictional sandbox participation to real-source docket proposals. External credentials remain null."
+        },
+        "gate_1_still_blocked": {
+          "const": true
+        },
+        "cycles_completed": {
+          "type": "integer",
+          "minimum": 0,
+          "default": 0,
+          "description": "Count of complete real-source admission cycles logged by the simulation. External credentialism deferred until >= 10."
+        }
+      }
+    },
+    "receipts": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "default": [],
+      "description": "Append-only certification and disclosure receipts under RECEIPT_CHAIN_PROTOCOL_v0.1-theta (RFC 8785 JCS)."
+    }
+  },
+  "examples": [
+    {
+      "schema_version": "STUDENT_CERTIFICATION_v1.0",
+      "certification_id": "SC-SANDBOX-001",
+      "participant_id": "participant-example",
+      "authority": false,
+      "gate_1": "BLOCKED",
+      "historical_verification": "NOT_PERFORMED",
+      "core_docket": "EMPTY",
+      "simulation_only": true,
+      "promotion": "BLOCKED",
+      "external_authorization": {
+        "external_credential": null,
+        "status": "STUB_NULL",
+        "deferred_until": "10_COMPLETE_REAL_SOURCE_ADMISSION_CYCLES"
+      },
+      "internal_certification": {
+        "status": "ACTIVE",
+        "issued_at": "2026-07-31T20:10:00Z",
+        "scope": "FICTIONAL_SANDBOX_ONLY"
+      },
+      "dual_axis": {
+        "self_score": 0.72,
+        "justice_score": 0.70,
+        "balanced": true,
+        "delta": 0.02,
+        "wisdom_predicate": "WISDOM = SELF ∩ JUSTICE"
+      },
+      "weakest_link": {
+        "disclosed": true,
+        "statement": "Tendency to treat narrative coherence as substitute for byte-level provenance under time pressure.",
+        "recorded_at": "2026-07-31T20:10:00Z"
+      },
+      "sandbox_status": "ACTIVE",
+      "real_source_eligibility": {
+        "eligible": true,
+        "gateway_rule": "WEAKEST_LINK_DISCLOSURE_AND_BALANCED_DUAL_AXIS",
+        "gate_1_still_blocked": true,
+        "cycles_completed": 0
+      },
+      "receipts": []
+    }
+  ]
+}
