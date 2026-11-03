@@ -1,0 +1,23 @@
+{
+  "receipt": "LAW_KNOB_SET_001_RECEIPT",
+  "version": "0.1",
+  "authority": false,
+  "artifact_path": "_truth/federal_epstein_mission/law_knobs/LAW_KNOB_SET_001.json",
+  "artifact_sha256": "db23c0ab7fd9a04e3be32f4a616427f441ebf552ac62066ede4178cc77720b40",
+  "artifact_blob_sha": "1edf63df8341182fc84d618dc15fd4d259a0a8d3",
+  "artifact_commit_sha": "37e0004edabff9eeee0aeed142f6c575c50f4e03",
+  "branch": "epstein-law-knobs-v0-1",
+  "knob_count": 32,
+  "matrix_target": "32x32 / 1024 logical comparison cells",
+  "evaluation_state": "NOT_RUN",
+  "compliance_finding": "NONE",
+  "qubo_state": "NOT_COMPILED",
+  "physical_qubit_count": "UNKNOWN_UNTIL_EMBEDDING",
+  "source_byte_seals": "NOT_CAPTURED_THIS_RUN",
+  "hard_boundaries": [
+    "RECEIPT != COMPLIANCE_FINDING",
+    "MODEL_OUTPUT != LEGAL_AUTHORITY",
+    "MISSING_PUBLIC_ARTIFACT != PROOF_OF_CONCEALMENT",
+    "AUTHORITY_CREATED = FALSE"
+  ]
+}
