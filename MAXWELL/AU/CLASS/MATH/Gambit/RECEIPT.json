@@ -1,0 +1,47 @@
+{
+  "receipt_type": "placement",
+  "path": "AL/MAXWELL/AU/CLASS/MATH/Gambit",
+  "repo": "jsonwisdom/AL",
+  "branch": "maxwell-au-math-gambit",
+  "action": "scaffold + seed product class literature",
+  "creates_truth": false,
+  "discipline": "replay",
+  "rules": [
+    "no witness no claim",
+    "receipts over narrative",
+    "observe != assume"
+  ],
+  "sources_observed": [
+    {
+      "label": "AU Fact Sheet September 2024",
+      "publisher": "AU Office of Academic Affairs",
+      "key_figures": {
+        "completions_IR": 25706,
+        "completions_DL": 47085,
+        "degrees_total": 11649,
+        "associates": 10116,
+        "masters": 1484,
+        "doctoral": 49,
+        "CCAF_associates": 10060
+      }
+    },
+    {
+      "label": "AETC Snapshot as of 19 Sep 2025 (FY24 production)",
+      "publisher": "AETC",
+      "key_figures": {
+        "academic_degrees_awarded": 11480,
+        "PME_total": 24177,
+        "PME_resident": 9012,
+        "PME_non_resident": 15165
+      }
+    }
+  ],
+  "literature_files": [
+    "README.md",
+    "CLASS_LITERATURE_V0_1.md",
+    "FORMULAE.md",
+    "RECEIPT.json"
+  ],
+  "status": "provisional scaffold; pending PR review",
+  "timestamp_note": "placement receipt generated at scaffold time; re-verify numbers against live public sheets before any promotion"
+}
