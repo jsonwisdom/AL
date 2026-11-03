@@ -95,3 +95,26 @@ Check the Actions tab for **Constitutional Replay v0.1** to inspect live replay 
 Authorization is explicit, scoped, and separate from receipts. The world map consumes authorized receipts but never creates authority or decides truth.
 
 `REPLAY_MANIFEST_V0_1.json` defines the canonical entrypoints and policies for this version.
+
+---
+
+## Wisdom Family Game Mirror Boundary
+
+AL may mirror public-safe Wisdom Family game receipts, approval states, and anomaly summaries. It does not govern the family.
+
+`FAMILY_ROOT = HUMAN_ROOT`
+`AL = MIRROR / RECORD_PROTECTION_ROOT`
+`AL != FAMILY_AUTHORITY`
+`FAMILY_VALUE != CIVIC_LAW`
+`BIBLICAL_LANGUAGE != GOVERNMENT_AUTHORITY`
+`FAMILY_VOTE != PUBLIC_ELECTION`
+`FAMILY_TOKEN != CURRENCY`
+
+Always-on audit is limited to recorded game and publication events. Hidden family surveillance is forbidden.
+
+`ALWAYS_ON_AUDIT = EVENT_LOG_AUDIT_ONLY`
+`ALWAYS_ON_AUDIT != FAMILY_SURVEILLANCE`
+
+Machine processing may detect anomalies and prepare a human-review packet, but cannot auto-publish, auto-punish, or satisfy a human consent field.
+
+`AUTHORITY_CREATED = FALSE`
