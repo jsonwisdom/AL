@@ -1,0 +1,80 @@
+name: Update Factory Console Status (Contained)
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [master]
+    paths:
+      - '.github/workflows/update-factory-status-contained.yml'
+
+# Original update-factory-status.yml is unchanged.
+# This workflow records observed metadata only.
+# It does not assert CI_STATE, REMOTE_STATE, GENERATOR_STATE, or NO_FAKE_GREEN.
+# It does not commit or push.
+
+permissions:
+  contents: read
+
+jobs:
+  status:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Write observed status only
+        run: |
+          mkdir -p site/factory-console
+          cat > site/factory-console/status.contained.json << EOF
+          {
+            "branch": "${GITHUB_REF_NAME}",
+            "head": "$(git rev-parse HEAD)",
+            "event": "${GITHUB_EVENT_NAME}",
+            "updated_at": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+            "states": {
+              "MERGE_STATE": "UNOBSERVED",
+              "CI_STATE": "UNVERIFIED",
+              "REMOTE_STATE": "UNVERIFIED",
+              "GENERATOR_STATE": "UNVERIFIED",
+              "NO_FAKE_GREEN": "NOT_SATISFIED"
+            },
+            "claims": {
+              "green": false,
+              "verified": false,
+              "source": "observed_metadata_only"
+            }
+          }
+          EOF
+          echo "=== status.contained.json ==="
+          cat site/factory-console/status.contained.json
+
+      - name: Reject hardcoded green
+        run: |
+          set -euo pipefail
+          FILE=site/factory-console/status.contained.json
+          if grep -q '"CI_STATE": "GREEN"' "$FILE"; then
+            echo "FAIL: hardcoded CI_STATE GREEN"
+            exit 1
+          fi
+          if grep -q '"NO_FAKE_GREEN": "SATISFIED"' "$FILE"; then
+            echo "FAIL: hardcoded NO_FAKE_GREEN SATISFIED"
+            exit 1
+          fi
+          if grep -q '"GENERATOR_STATE": "VERIFIED"' "$FILE"; then
+            echo "FAIL: hardcoded GENERATOR_STATE VERIFIED"
+            exit 1
+          fi
+          python3 - << 'PY'
+          import json
+          s=json.load(open("site/factory-console/status.contained.json"))
+          assert s["claims"]["green"] is False
+          assert s["claims"]["verified"] is False
+          assert s["states"]["CI_STATE"] == "UNVERIFIED"
+          print("NO_FAKE_GREEN_GATE=PASS")
+          PY
+
+      - name: Upload observed status
+        uses: actions/upload-artifact@v4
+        with:
+          name: factory-status-contained
+          path: site/factory-console/status.contained.json
+          if-no-files-found: error
