@@ -2,6 +2,10 @@ node_modules/
 .env
 .env.*
 .DS_Store
+
+# Generated at runtime / build time by the witness pipeline and tsc
+.runtime/
+dist-ts/
 AL-witness-A/
 AL-witness-B/
 replay-membrane/
