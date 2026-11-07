@@ -4,18 +4,32 @@
 
 `INDETERMINATE` — locked.
 
+Official Alabama source PDF bytes are now frozen at:
+
+```text
+fixtures/al/sources/al_budget_act_2025_251.pdf
+```
+
+That freeze is a source-custody fact. It is not a PASS flip. Lead-only replay: [AL_CHECKED_IN_BYTES_REPLAY_LEADS.md](./AL_CHECKED_IN_BYTES_REPLAY_LEADS.md).
+
+A placeholder snapshot remains at `fixtures/al/sources/al_budget_snapshot_2026-05-03.txt` and still self-declares `OFFICIAL_SOURCE_PENDING`. That file is not the official Act 2025-251 capture.
+
 ## Why AL Is Not PASS
 
-The current Alabama source artifact in `fixtures/al/sources/` self-declares that it is not eligible for verified status.
+Hashable is not verified. The claim wrapper still records:
+
+- `receipt.status = INDETERMINATE`
+- `receipt.replay_passed = false`
+- `replay.status = PENDING`
 
 Current blocking constraints:
 
-- `OFFICIAL_SOURCE_PENDING`
-- Not an official source capture
-- Not a verified Alabama budget claim
-- Not eligible for `VERIFIED` status
+- Human review has not sealed a claimable AL receipt
+- Public content claim remains blocked
+- No fraud verdict is authorized
+- `authority` remains `false`
 
-Hashing this placeholder would only prove the placeholder bytes exist. It would not prove an official Alabama budget source claim.
+Hashing the frozen PDF only proves those checked-in bytes match the claim hash field. It does not prove an official Alabama budget claim, does not promote a public content change, and does not authorize green.
 
 ## Gate Condition for PASS
 
@@ -26,15 +40,19 @@ Alabama can only move to `PASS` after:
 3. SHA-256 is computed from the official bytes.
 4. The AL claim is updated with the expected `sha256:<hex>` hash.
 5. Replay confirms the source hash match.
-6. The verifier reports AL as `PASS` without changing engine rules.
+6. A human review record authorizes claim promotion.
+7. The verifier reports AL as `PASS` without changing engine rules.
+
+Steps 1 through 5 may be observed from checked-in bytes. Steps 6 and 7 remain blocked.
 
 ## Prohibited Actions
 
-- Hashing the placeholder file to force `PASS`
-- Flipping AL to `PASS` based on placeholder bytes
+- Treating a hash match as `PASS`
+- Flipping AL to `PASS` from placeholder snapshot bytes
 - Updating the audit log with false verification
-- Making public claims of AL verification before official source replay
+- Making public claims of AL verification before human-reviewed claim promotion
 - Changing engine logic to relax the gate
+- Declaring fraud from rule-language hits
 
 ## Principle
 
@@ -47,9 +65,11 @@ The machine must respect source constraints, not override them for convenience.
 ```json
 {
   "verdict": "AL_PASS_ATTEMPT_REJECTED",
-  "reason": "Source artifact self-declares non-verified / official source pending",
+  "reason": "Frozen Act 2025-251 bytes may be hashed and lead-scanned, but the claim receipt remains INDETERMINATE and replay_passed remains false",
   "action": "Preserve INDETERMINATE",
-  "state": "AL"
+  "state": "AL",
+  "authority": false,
+  "claim_type": "ANOMALY_LEAD_ONLY"
 }
 ```
 
