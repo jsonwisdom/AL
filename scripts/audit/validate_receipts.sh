@@ -1,71 +1,69 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ROOT="_truth/receipts"
+# CI-FIRST: validate production receipts separately from preserved legacy claim-hash receipts.
+# This validator never writes, upgrades, or re-labels evidence.
+ROOT="${ALMS_RECEIPT_ROOT:-_truth/receipts}"
 SCHEMA="$ROOT/schema.json"
+test -f "$SCHEMA" || { echo "ALMS_RECEIPT_SCHEMA_FAIL missing_schema=$SCHEMA"; exit 1; }
 
-test -f "$SCHEMA"
+production=0
+legacy=0
+found=0
 
-FOUND=0
+while IFS= read -r -d '' f; do
+  found=$((found + 1))
+  base="${f##*/}"
+  python3 -m json.tool "$f" >/dev/null || { echo "ALMS_RECEIPT_SCHEMA_FAIL invalid_json file=$f"; exit 1; }
 
-find "$ROOT" -maxdepth 1 -type f -name 'CLAIM_*.json' | LC_ALL=C sort | while read -r f; do
-  FOUND=1
-
-  python3 -m json.tool "$f" >/dev/null
-  jq -e 'type == "object"' "$f" >/dev/null
-
-  claim_id="$(jq -r '.claim_id // empty' "$f")"
-  timestamp_utc="$(jq -r '.timestamp_utc // empty' "$f")"
-  actor="$(jq -r '.actor // empty' "$f")"
-  nonce="$(jq -r '.nonce // empty' "$f")"
-  verdict="$(jq -r '.verdict // empty' "$f")"
-  base="$(basename "$f" .json)"
-
-  if [ "$claim_id" != "$base" ]; then
-    echo "ALMS_RECEIPT_SCHEMA_FAIL claim_id_filename_mismatch file=$f claim_id=$claim_id expected=$base"
-    exit 1
-  fi
-
-  printf '%s\n' "$claim_id" | grep -Eq '^CLAIM_[0-9]{8}_[0-9]{6}Z_[a-zA-Z0-9_-]+$' || {
-    echo "ALMS_RECEIPT_SCHEMA_FAIL invalid_claim_id file=$f claim_id=$claim_id"
-    exit 1
-  }
-
-  printf '%s\n' "$timestamp_utc" | grep -Eq '^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$' || {
-    echo "ALMS_RECEIPT_SCHEMA_FAIL invalid_timestamp_utc file=$f timestamp_utc=$timestamp_utc"
-    exit 1
-  }
-
-  test -n "$actor" || { echo "ALMS_RECEIPT_SCHEMA_FAIL missing_actor file=$f"; exit 1; }
-  test "${#nonce}" -ge 8 || { echo "ALMS_RECEIPT_SCHEMA_FAIL nonce_too_short file=$f"; exit 1; }
-
-  jq -e '.inputs | type == "object"' "$f" >/dev/null || {
-    echo "ALMS_RECEIPT_SCHEMA_FAIL inputs_not_object file=$f"
-    exit 1
-  }
-
-  jq -e '.outputs | type == "object"' "$f" >/dev/null || {
-    echo "ALMS_RECEIPT_SCHEMA_FAIL outputs_not_object file=$f"
-    exit 1
-  }
-
-  case "$verdict" in
-    VERIFIED|FALSE|MISLEADING|UNVERIFIED|NEEDS_MORE_EVIDENCE|VOID) ;;
-    *) echo "ALMS_RECEIPT_SCHEMA_FAIL invalid_verdict file=$f verdict=$verdict"; exit 1 ;;
-  esac
-
-  if [ "$verdict" = "VOID" ]; then
-    jq -e '.voids_claim_id | test("^CLAIM_[0-9]{8}_[0-9]{6}Z_[a-zA-Z0-9_-]+$")' "$f" >/dev/null || {
-      echo "ALMS_RECEIPT_SCHEMA_FAIL void_missing_target file=$f"
+  if [[ "$base" =~ ^CLAIM_[0-9]+\.receipt\.json$ ]]; then
+    # These older source-hash records are not production verdicts or replay evidence.
+    claim_id="${base%.receipt.json}"
+    if ! jq -e --arg id "$claim_id" \
+      'type == "object"
+       and (.claim_id == $id)
+       and (.claim_path == ("_truth/claims/" + $id + ".json"))
+       and (.claim_hash | type == "string" and test("^[0-9a-fA-F]{64}$"))
+       and (.version == 1)
+       and (.status | type == "string" and length > 0)' "$f" >/dev/null; then
+      echo "ALMS_RECEIPT_SCHEMA_FAIL malformed_legacy file=$f"
       exit 1
-    }
+    fi
+    legacy=$((legacy + 1))
+    echo "ALMS_LEGACY_RECEIPT_INVENTORIED file=$f claim_id=$claim_id hash_format=VALID hash_content=UNKNOWN not_production=true"
+    continue
   fi
 
-  echo "ALMS_RECEIPT_OK file=$f claim_id=$claim_id verdict=$verdict"
-done
+  if [[ ! "$base" =~ ^CLAIM_[0-9]{8}_[0-9]{6}Z_[a-zA-Z0-9_-]+\.json$ ]]; then
+    echo "ALMS_RECEIPT_SCHEMA_FAIL unclassified_claim_file=$f"
+    exit 1
+  fi
 
-if [ "$FOUND" = "0" ]; then
-  echo "ALMS_RECEIPTS_EMPTY root=$ROOT"
-else
-  echo "ALMS_RECEIPTS_VALIDATE_OK root=$ROOT"
+  claim_id="${base%.json}"
+  if ! jq -e --arg id "$claim_id" \
+    'type == "object"
+     and (.claim_id == $id)
+     and (.claim_id | type == "string" and test("^CLAIM_[0-9]{8}_[0-9]{6}Z_[a-zA-Z0-9_-]+$"))
+     and (.timestamp_utc | type == "string" and test("^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"))
+     and (.actor | type == "string" and length > 0)
+     and (.nonce | type == "string" and length >= 8)
+     and (.inputs | type == "object")
+     and (.outputs | type == "object")
+     and (.verdict as $v | ["VERIFIED", "FALSE", "MISLEADING", "UNVERIFIED", "NEEDS_MORE_EVIDENCE", "VOID"] | index($v) != null)
+     and (if .verdict == "VOID" then (.voids_claim_id | type == "string" and test("^CLAIM_[0-9]{8}_[0-9]{6}Z_[a-zA-Z0-9_-]+$")) else true end)
+     and ((keys - ["claim_id", "timestamp_utc", "actor", "nonce", "inputs", "outputs", "verdict", "voids_claim_id"]) | length == 0)' "$f" >/dev/null; then
+    echo "ALMS_RECEIPT_SCHEMA_FAIL invalid_production_record file=$f"
+    exit 1
+  fi
+
+  production=$((production + 1))
+  echo "ALMS_PRODUCTION_RECEIPT_SCHEMA_OK file=$f claim_id=$claim_id"
+done < <(find "$ROOT" -maxdepth 1 -type f -name 'CLAIM_*.json' -print0 | LC_ALL=C sort -z)
+
+if (( found == 0 || production == 0 )); then
+  echo "ALMS_PRODUCTION_RECEIPTS_MISSING root=$ROOT production_count=$production legacy_count=$legacy"
+  exit 1
 fi
+
+echo "ALMS_RECEIPT_SCHEMA_PASS production_count=$production legacy_count=$legacy"
+echo "ALMS_RUNTIME_EXECUTION=UNKNOWN ALMS_LEGACY_HASH_CONTENT=UNKNOWN AUTHORITY_CREATED=false"
