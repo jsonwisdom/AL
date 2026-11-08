@@ -34,7 +34,7 @@ export interface ReceiptBatchV1 {
   merkle_root: string;
 }
 
-function normalizeLeaf(hash: string): string {
+export function normalizeLeaf(hash: string): string {
   if (!hash.startsWith("sha256:") || hash.length !== "sha256:".length + 64) {
     throw new BatchError("RECEIPT_HASH_MISSING", hash);
   }
@@ -42,7 +42,7 @@ function normalizeLeaf(hash: string): string {
   return hash;
 }
 
-function hashPair(left: string, right: string): string {
+export function hashPair(left: string, right: string): string {
   const leftHex = normalizeLeaf(left).slice("sha256:".length);
   const rightHex = normalizeLeaf(right).slice("sha256:".length);
   const combined = Buffer.from(`${leftHex}${rightHex}`, "utf8");
