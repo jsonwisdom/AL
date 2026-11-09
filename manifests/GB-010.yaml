@@ -1,0 +1,116 @@
+id: GB-010
+title: The Authority Gap
+status: DRAFT_REPOSITORY_SPEC
+authority: false
+canon_promotion: false
+runtime_initialization: false
+binary_assets_required: false
+
+lineage:
+  previous: GB-009
+  incident_reference: GB-OPS-RESOURCE-001
+  github_issue: 390
+  integration_state: ISOLATED_REVIEW_BRANCH
+  downstream_link:
+    feature_id: GB-011-ENFORCEMENT-GAP
+    manifest_path: manifests/GB-011.yaml
+    branch: feature/gray-baby-011-enforcement-gap
+    commit_sha: 9b31537ac6d44152b1461b97b440c2124006257e
+    git_blob_sha: 4917f0269bcd226a0f60abac43b170e5bc6b62e3
+    integration_state: OBSERVABLE_NON_CANON
+    image_remote_bind: PENDING
+    canon_promotion: false
+    merge_authorization: false
+    execution_authority: false
+
+incident:
+  intended_action: upload_two_png_files
+  actual_expansion:
+    git_objects_received: 169569
+    deltas_resolved: 147024
+    working_tree_files: 175587
+  observed_consequence:
+    cloud_shell_home_usage_percent: 100
+    failure: ENOSPC
+    shell_stability: DEGRADED
+    recovery_burden: HUMAN_SIDE
+  repository_damage_observed: false
+
+gap_definition:
+  declared_authority: false
+  practical_influence: MATERIAL
+  consequence: REAL
+  statement: >-
+    A system may truthfully declare authority false while still exerting
+    enough practical influence to expand operational scope and create
+    material compute, storage, energy, and human recovery costs.
+
+principal_agent_analysis:
+  proposing_mechanism: AGENT_RECOMMENDATION
+  execution_authorization: IMPLICIT_HUMAN_FOLLOW_THROUGH
+  cost_measurement: NONE
+  pre_execution_stop_surface: ABSENT
+  post_facto_stop_surface: HUMAN_VETO
+  recovery_bearer: HUMAN_OPERATOR
+
+doctrine:
+  minimum_necessary_compute: REQUIRED
+  minimum_scope_comparison: REQUIRED
+  resource_cost_disclosure: REQUIRED
+  environment_preflight: REQUIRED
+  disk_headroom_check: REQUIRED
+  explicit_human_consent_checkpoint: REQUIRED
+  rollback_plan: REQUIRED
+  retry_without_diagnosis: DENIED
+  full_clone_in_constrained_shell: DENIED_BY_DEFAULT
+  authority_remains_false: true
+
+enforcement_hook:
+  name: AUTHORITY_GAP_PREFLIGHT_GATE
+  trigger: PROPOSED_SCOPE_EXCEEDS_DECLARED_TASK
+  required_fields:
+    - declared_task
+    - proposed_operation
+    - estimated_file_count
+    - estimated_transfer_bytes
+    - estimated_disk_impact_bytes
+    - minimum_viable_alternative
+    - rollback_plan
+    - human_consent_receipt
+  decision_states:
+    - PASS
+    - HOLD
+    - REDIRECT
+  rules:
+    - when: required_field_missing
+      outcome: HOLD
+    - when: minimum_viable_alternative_not_evaluated
+      outcome: REDIRECT
+    - when: projected_disk_usage_percent_greater_than_or_equal_to_80
+      outcome: HOLD
+    - when: explicit_human_consent_absent
+      outcome: HOLD
+    - when: proposed_operation_is_full_clone_and_task_is_two_file_upload
+      outcome: REDIRECT
+  truth_adjudication: NONE
+  guilt_adjudication: NONE
+  execution_authority: NONE
+
+witness_statement: >-
+  Influence without formal authority still produces consequences.
+  No scope expansion may cross into execution without cost disclosure,
+  resource preflight, a minimum-scope comparison, a rollback plan, and an
+  explicit human consent checkpoint.
+
+promotion_requirements:
+  - human_review
+  - incident_facts_verified
+  - enforcement_hook_reviewed
+  - lineage_binding_confirmed
+  - explicit_merge_authorization
+
+boundaries:
+  no_binary_upload: true
+  no_runtime_execution: true
+  no_merge_authorization: true
+  no_authority_elevation: true
