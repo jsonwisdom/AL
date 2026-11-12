@@ -1,0 +1,23 @@
+{
+  "receipt_type": "EXPIRED_PENDING_UPDATE_RECEIPT_ARCHIVE_V0_1",
+  "subject_name": "jaywisdom.base.eth",
+  "archived_from": "ALMS/ens/receipts/PENDING_UPDATE_jaywisdom.base.eth_REQUIRED_TXT_V0_1.json",
+  "archived_at_utc": "2026-08-28T09:49:52Z",
+  "archive_reason": "Canonical pending receipt expired 2026-07-16T06:20:00Z. Alabama Engine ENS Divergence CI on PR 427 failed RED_EXPIRED because required TXT keys remain missing and no live resolver observation is checked in. This archive preserves the expired receipt bytes; they are not rewritten. A new PENDING_UPDATE_RECEIPT_V0_1 is issued under protocol RED_EXPIRED -> YELLOW (new receipt, different commit SHA, new reason).",
+  "no_fake_green": true,
+  "authority": false,
+  "expired_receipt": {
+    "receipt_type": "PENDING_UPDATE_RECEIPT_V0_1",
+    "subject_name": "jaywisdom.base.eth",
+    "missing_record": "alms.packet.cid,alms.packet.sha256,alms.matrix.hash",
+    "expected_value_hash": "PENDING_RESOLVER_ARTIFACT",
+    "reason": "Engine TXT records missing; divergence is acknowledged and time-bounded under Alabama ALMS Engine policy.",
+    "opened_at_utc": "2026-06-13T22:04:10Z",
+    "renewed_at_utc": "2026-07-09T06:20:00Z",
+    "expires_at_utc": "2026-07-16T06:20:00Z",
+    "controller": "jaywisdom.base.eth",
+    "signature_or_commit_sha": "PR381_DRY_RUN_RENEWAL_PENDING_FINAL_COMMIT_SHA",
+    "renewal_reason": "PR381 dry-run repair: keep Alabama Engine ENS divergence time-bounded while CanonStateAttestationV0_2 dry-run envelope and JOY bootstrap anchor are reviewed. This remains YELLOW and does not claim LOAD_VERIFIED.",
+    "no_fake_green": true
+  }
+}
