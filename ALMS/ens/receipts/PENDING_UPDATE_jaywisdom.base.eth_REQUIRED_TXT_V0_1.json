@@ -5,10 +5,10 @@
   "expected_value_hash": "PENDING_RESOLVER_ARTIFACT",
   "reason": "Engine TXT records missing; divergence is acknowledged and time-bounded under Alabama ALMS Engine policy.",
   "opened_at_utc": "2026-06-13T22:04:10Z",
-  "renewed_at_utc": "2026-07-09T06:20:00Z",
-  "expires_at_utc": "2026-07-16T06:20:00Z",
+  "renewed_at_utc": "2026-08-30T17:29:41Z",
+  "expires_at_utc": "2026-09-02T17:29:41Z",
   "controller": "jaywisdom.base.eth",
-  "signature_or_commit_sha": "PR381_DRY_RUN_RENEWAL_PENDING_FINAL_COMMIT_SHA",
-  "renewal_reason": "PR381 dry-run repair: keep Alabama Engine ENS divergence time-bounded while CanonStateAttestationV0_2 dry-run envelope and JOY bootstrap anchor are reviewed. This remains YELLOW and does not claim LOAD_VERIFIED.",
+  "signature_or_commit_sha": "PR426_CLOUD_AGENT_YELLOW_RENEWAL_2026-08-30",
+  "renewal_reason": "Renewed under ALABAMA_ALMS_ENGINE_DIVERGENCE_POLICY_V0_1 72h correction window to restore the time-bounded YELLOW state. Engine resolver TXT records (alms.packet.cid, alms.packet.sha256, alms.matrix.hash) remain unpublished, RESOLVER_TXT_MATCH is still NOT_PROVEN, and this does not claim GREEN or LOAD_VERIFIED. Real GREEN still requires publishing the TXT records and byte-matching a resolver artifact.",
   "no_fake_green": true
 }

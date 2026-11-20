@@ -1,0 +1,16 @@
+{
+  "name": "AL / ALMS Constitutional Replay",
+  "install": "bash .cursor/install.sh",
+  "terminals": [
+    {
+      "name": "al-witness-server",
+      "command": "PORT=3000 node server.js"
+    }
+  ],
+  "ports": [
+    {
+      "name": "al-witness-server",
+      "port": 3000
+    }
+  ]
+}
