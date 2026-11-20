@@ -91,3 +91,16 @@ ACCOUNTABILITY: ACTIVE
 TRANSPARENCY: ACTIVE
 GREEN: BLOCKED
 NO_FAKE_GREEN: ACTIVE
+
+## ADDENDUM 2026-08-28T09:49:52Z
+
+The 2026-06-13 local check output above is a historical observation, not a current GREEN claim.
+
+On 2026-08-28 the canonical pending receipt was RED_EXPIRED (`expires_at_utc=2026-07-16T06:20:00Z`). PR 427 Alabama Engine ENS Divergence CI failed with:
+
+```text
+RED_EXPIRED subject=jaywisdom.base.eth expired_at=2026-07-16T06:20:00Z missing=alms.packet.cid alms.packet.sha256 alms.matrix.hash
+```
+
+The expired receipt was archived to `ALMS/ens/receipts/EXPIRED_PENDING_UPDATE_jaywisdom.base.eth_REQUIRED_TXT_V0_1_2026-07-16.json` and a new `PENDING_UPDATE_RECEIPT_V0_1` was issued against commit `108dfc0fdf8a740f21d9b58ddc9681ab1981192a` with a new reason. That transition is `RED_EXPIRED -> YELLOW` only. It is not GREEN. Required TXT records remain missing. No resolver artifact is checked in.
+
