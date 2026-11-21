@@ -1,0 +1,157 @@
+id: GB-011
+title: The Enforcement Gap
+status: DRAFT_REPOSITORY_SPEC
+authority: false
+canon_promotion: false
+runtime_initialization: false
+binary_assets_required: false
+
+lineage:
+  previous: GB-010
+  previous_title: The Authority Gap
+  previous_branch: feature/gray-baby-010-authority-gap
+  previous_commit_sha: 16976c6aacac5b6d903069675bdf4bf9e6eb5ccc
+  previous_manifest_sha256: 31a8f65e520083ba486b8a52d8d6b1e5a29663b8a963b88dc422ef3db3ffb79a
+  integration_state: ISOLATED_REVIEW_BRANCH
+
+revealing_question: >-
+  When disproportion is detected between declared intent and projected
+  consequence, which layer is obligated to enforce the stop: the proposing
+  agent, the execution environment, the repository gate, or the ledger?
+
+gap_definition:
+  detection_without_enforcement: true
+  statement: >-
+    A doctrine that can identify disproportion but cannot stop execution
+    leaves the human operator exposed to suggestion momentum, hidden scale,
+    and post-facto recovery costs.
+
+layer_responsibilities:
+  proposing_agent:
+    role: PRIMARY_PREFLIGHT_DUTY
+    obligations:
+      - estimate_scope
+      - disclose_cost
+      - compare_minimum_viable_alternative
+      - provide_rollback_plan
+      - request_explicit_human_consent
+    may_execute: false
+    may_override_hold: false
+
+  execution_environment:
+    role: HARD_STOP_DUTY
+    obligations:
+      - measure_available_resources
+      - evaluate_projected_resource_usage
+      - reject_threshold_breach
+      - surface_dry_run_or_preview
+      - preserve_abort_path
+    may_execute_without_pass_receipt: false
+    may_override_hold: false
+
+  repository_gate:
+    role: TECHNICAL_POLICY_DUTY
+    obligations:
+      - reject_unbounded_checkout_for_bounded_task
+      - require_sparse_or_api_only_alternative
+      - verify_branch_and_path_scope
+      - deny_merge_when_required_receipts_absent
+    may_promote_to_canon: false
+    may_override_hold: false
+
+  ledger:
+    role: WITNESS_AND_LINEAGE_DUTY
+    obligations:
+      - record_proposal
+      - record_preflight
+      - record_human_consent
+      - record_execution_result
+      - record_abort_or_recovery
+      - preserve_dissent_and_failures
+    execution_authority: NONE
+    truth_adjudication: NONE
+    may_override_hold: false
+
+  human_operator:
+    role: FINAL_CONSENT_DUTY
+    obligations:
+      - review_disclosed_scope
+      - accept_or_reject_execution
+      - retain_revocation_right
+    consent_is_valid_only_when:
+      - cost_disclosed
+      - minimum_alternative_disclosed
+      - rollback_plan_disclosed
+      - environment_preflight_passed
+
+enforcement_model:
+  name: MULTI_LAYER_STOP_CHAIN
+  default_state: HOLD
+  required_sequence:
+    - AGENT_PREFLIGHT_PASS
+    - ENVIRONMENT_RESOURCE_PASS
+    - REPOSITORY_SCOPE_PASS
+    - HUMAN_CONSENT_RECEIPT
+    - LEDGER_WITNESS_RECEIPT
+  execution_allowed_only_when_all_present: true
+  missing_receipt_outcome: HOLD
+  contradictory_receipt_outcome: HOLD
+  stale_receipt_outcome: REDIRECT
+  threshold_breach_outcome: HOLD
+  no_layer_may_silently_override: true
+
+routing:
+  states:
+    - PASS
+    - HOLD
+    - REDIRECT
+    - ABORT
+  rules:
+    - when: agent_preflight_missing
+      outcome: HOLD
+    - when: projected_disk_usage_percent_greater_than_or_equal_to_80
+      outcome: HOLD
+    - when: minimum_scope_alternative_available
+      outcome: REDIRECT
+    - when: human_consent_absent
+      outcome: HOLD
+    - when: environment_reports_enospc_risk
+      outcome: ABORT
+    - when: any_layer_attempts_silent_override
+      outcome: ABORT
+
+enforcement_hook:
+  name: ENFORCEMENT_GAP_STOP_GATE
+  trigger: DISPROPORTION_DETECTED
+  required_receipts:
+    - agent_preflight_receipt
+    - environment_resource_receipt
+    - repository_scope_receipt
+    - human_consent_receipt
+    - ledger_witness_receipt
+  fail_closed: true
+  autonomous_override: denied
+  human_override:
+    allowed: false
+    reason: >-
+      Human consent cannot cure undisclosed cost, missing preflight, or an
+      environment-reported hard resource risk.
+
+witness_statement: >-
+  Detection is not protection. The proposing agent must disclose, the
+  environment must stop, the repository must constrain, the ledger must
+  witness, and the human must consent. Execution requires the full chain.
+
+promotion_requirements:
+  - human_review
+  - lineage_binding_confirmed
+  - enforcement_model_reviewed
+  - negative_test_matrix_present
+  - explicit_merge_authorization
+
+boundaries:
+  no_binary_upload: true
+  no_runtime_execution: true
+  no_merge_authorization: true
+  no_canon_promotion: true
+  no_authority_elevation: true
