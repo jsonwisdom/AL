@@ -1,0 +1,61 @@
+{
+  "schema": "alms_post_merge_failure_matrix_v1",
+  "bedrock_sha": "59448d850d355854956cb5834ebef17f7f14c7dc",
+  "additionalProperties": false,
+  "vectors": [
+    {
+      "failure_id": "F001",
+      "name": "heartbeat_drift",
+      "injection": "Advance or delay the runtime heartbeat beyond the accepted drift window while preserving the replay root.",
+      "expected_state": "ALARM",
+      "recovery_action": "Quarantine the drifting runtime, resynchronize against the replay root, and require a fresh signed heartbeat before recovery.",
+      "blast_radius": "Single runtime node; no global shutdown unless quorum loss is independently observed."
+    },
+    {
+      "failure_id": "F002",
+      "name": "oracle_partition",
+      "injection": "Partition the runtime from the digest oracle and withhold root confirmations.",
+      "expected_state": "DEGRADED",
+      "recovery_action": "Enter read-only degraded mode, restore oracle connectivity, verify root continuity, and replay missed confirmations.",
+      "blast_radius": "Partitioned oracle path and dependent node set; unaffected nodes continue under verified roots."
+    },
+    {
+      "failure_id": "F003",
+      "name": "malformed_attestation",
+      "injection": "Submit an attestation with invalid structure, signature material, or lineage binding.",
+      "expected_state": "CRITICAL",
+      "recovery_action": "Reject the attestation, preserve the last valid root, record the malformed payload hash, and require valid re-attestation.",
+      "blast_radius": "Attestation consumer path only; no inheritance into canonical state."
+    },
+    {
+      "failure_id": "F004",
+      "name": "production_collision",
+      "injection": "Present conflicting runtime outputs for the same replay root and sequence position.",
+      "expected_state": "CRITICAL",
+      "recovery_action": "Freeze promotion, isolate conflicting producers, compare signed receipts, and restore from the last uncontested state.",
+      "blast_radius": "Conflicting producer set and downstream promotion gate; canonical history remains unchanged."
+    },
+    {
+      "failure_id": "F005",
+      "name": "replay_attack",
+      "injection": "Replay a previously accepted receipt or state transition against a newer monotonic counter.",
+      "expected_state": "CRITICAL_FAIL_CLOSED",
+      "recovery_action": "Reject immediately without debounce, revoke the replayed transition context, and preserve counter monotonicity.",
+      "blast_radius": "Submitting actor and replay channel; no rollback of accepted canonical counters."
+    },
+    {
+      "failure_id": "F006",
+      "name": "state_flapping_attempt",
+      "injection": "Alternate valid and failure events faster than the hysteresis and debounce thresholds.",
+      "expected_state": "STABLE_PREVIOUS_STATE",
+      "recovery_action": "Block sub-threshold transitions, retain the previous state, and require sustained evidence before accepting a change.",
+      "blast_radius": "Local transition candidate buffer; canonical state and monotonic counters remain intact."
+    }
+  ],
+  "pass_condition": {
+    "all_vectors_pass": true,
+    "monotonic_counters_required": true,
+    "signature_chain_required": true,
+    "red_on_any_failure": true
+  }
+}
