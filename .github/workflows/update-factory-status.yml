@@ -1,6 +1,9 @@
 name: Factory Console Status Evidence (Read Only)
 on:
   workflow_dispatch:
+  pull_request:
+    paths:
+      - '.github/workflows/update-factory-status.yml'
   push:
     branches: [master]
     paths:
