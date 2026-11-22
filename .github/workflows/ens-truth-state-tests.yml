@@ -1,0 +1,29 @@
+name: ENS Truth-State Unit Tests
+on:
+  pull_request:
+    paths:
+      - 'scripts/ens_truth_state.mjs'
+      - 'scripts/ens_txt_byte_checker.mjs'
+      - 'tests/ens_truth_state.test.mjs'
+      - '.github/workflows/ens-truth-state-tests.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ens-truth-state-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  truth-state-unit-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax check
+        run: |
+          node --check scripts/ens_truth_state.mjs
+          node --check tests/ens_truth_state.test.mjs
+      - name: Run offline fail-closed tests
+        run: node --test tests/ens_truth_state.test.mjs
