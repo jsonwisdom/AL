@@ -1,0 +1,101 @@
+name: ZTVS Replay Loop (Contained)
+
+# Contained repair v0.1
+# - Does not modify the original ztvs-replay.yml
+# - contents: read only
+# - no git push
+# - incomplete evidence fails the job (no misleading green)
+# - expected artifacts must be present or the job fails
+# - pull_request trigger allows branch-safe CI without registering on master
+# - evidence card records source_head_sha and executed_checkout_sha separately
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [master]
+
+permissions:
+  contents: read
+
+jobs:
+  verify_baseline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fetch (HOLD if source missing)
+        id: fetch
+        continue-on-error: true
+        run: bash scripts/1_fetch_target.sh configs/MN_001.json registry/MN_001
+
+      - name: Normalize (HOLD if raw missing or unimplemented)
+        id: normalize
+        continue-on-error: true
+        run: bash scripts/2_normalize_chunks.sh registry/MN_001/raw.pdf registry/MN_001
+
+      - name: Evidence card (always HOLD until proof exists)
+        id: evidence
+        continue-on-error: true
+        run: |
+          bash scripts/3_generate_evidence_card.sh \
+            --target_id MN_001 \
+            --state HOLD \
+            --commit "${{ github.sha }}" \
+            --source_head_sha "${{ github.event.pull_request.head.sha || github.sha }}" \
+            --executed_checkout_sha "${{ github.sha }}" \
+            --run_id "${{ github.run_id }}" \
+            --job_id "${{ github.job }}" \
+            --receipt_hash null
+
+      - name: Require expected artifacts
+        if: always()
+        run: |
+          set -euo pipefail
+          missing=0
+          for f in \
+            registry/MN_001/fetch_receipt.json \
+            registry/MN_001/normalize_receipt.json \
+            registry/MN_001/evidence_card.json
+          do
+            if [ ! -f "$f" ]; then
+              echo "MISSING_ARTIFACT: $f"
+              missing=1
+            else
+              echo "PRESENT: $f"
+            fi
+          done
+          if [ "$missing" -ne 0 ]; then
+            echo "EXPECTED_ARTIFACTS_MISSING"
+            exit 1
+          fi
+
+      - name: Fail if evidence is incomplete
+        if: always()
+        run: |
+          set -euo pipefail
+          CARD=registry/MN_001/evidence_card.json
+          STATUS=$(jq -r '.status // empty' "$CARD")
+          VERIFIED=$(jq -r '.verified // empty' "$CARD")
+          echo "evidence_status=$STATUS"
+          echo "evidence_verified=$VERIFIED"
+          if [ "$STATUS" != "HOLD" ] && [ "$STATUS" != "VERIFIED" ]; then
+            echo "INVALID_STATUS: $STATUS"
+            exit 1
+          fi
+          if [ "$STATUS" = "HOLD" ] || [ "$VERIFIED" != "true" ]; then
+            echo "HOLD: evidence incomplete. Job fails so GitHub does not show green."
+            exit 1
+          fi
+          echo "VERIFIED with proof."
+
+      - name: Upload receipts and evidence card
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ztvs-contained-receipts
+          path: |
+            registry/MN_001/fetch_receipt.json
+            registry/MN_001/normalize_receipt.json
+            registry/MN_001/evidence_card.json
+          if-no-files-found: error
