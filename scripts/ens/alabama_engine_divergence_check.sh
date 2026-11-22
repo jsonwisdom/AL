@@ -38,7 +38,7 @@ if ! jq -e '
  and (.checker_output|type=="string")
  and (.txt_records|type=="object")
  and (.txt_records_sha256|type=="string" and test("^[a-fA-F0-9]{64}$"))
- and ([ "alms.packet.cid", "alms.packet.sha256", "alms.matrix.hash" ] | all(. as $k | (. != null)))
+ and (.txt_records as $records | [ "alms.packet.cid", "alms.packet.sha256", "alms.matrix.hash" ] | all(. as $k | ($records[$k] | type == "string")))
 ' "$OBSERVED" >/dev/null 2>&1; then
   echo "RED_INVALID_RESOLVER_ARTIFACT subject=jaywisdom.base.eth"; exit 1
 fi
@@ -50,8 +50,8 @@ if [[ "$actual" != "$claimed" ]]; then
  echo "RED_RESOLVER_HASH_MISMATCH subject=jaywisdom.base.eth"; exit 1
 fi
 if ! jq -e '(.expected_txt_values|type=="object") and
-  ([ "alms.packet.cid", "alms.packet.sha256", "alms.matrix.hash" ] |
-    all(. as $k | (. != null)))' "$EXPECTED" >/dev/null 2>&1; then
+  (.expected_txt_values as $values | [ "alms.packet.cid", "alms.packet.sha256", "alms.matrix.hash" ] |
+    all(. as $k | ($values[$k] | type == "string" and length > 0)))' "$EXPECTED" >/dev/null 2>&1; then
  echo "RED_EXPECTED_VALUES_UNBOUND subject=jaywisdom.base.eth"; exit 1
 fi
 if ! jq -e --slurpfile expected "$EXPECTED" '
