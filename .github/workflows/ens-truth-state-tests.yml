@@ -40,7 +40,7 @@ jobs:
           WORKFLOW_REF: ${{ github.workflow_ref }}
         run: |
           mkdir -p artifacts/ens-ci
-          jq -n --arg checkout "$CHECKOUT_SHA" --arg head "$TESTED_HEAD_SHA" --arg run "$RUN_ID" --arg attempt "$RUN_ATTEMPT" --arg workflow "$WORKFLOW_REF" \\
+          jq -n --arg checkout "$CHECKOUT_SHA" --arg head "$TESTED_HEAD_SHA" --arg run "$RUN_ID" --arg attempt "$RUN_ATTEMPT" --arg workflow "$WORKFLOW_REF" \
             '{schema:"CW_ENS_CI_RECEIPT_V1",checkout_sha:$checkout,tested_head_sha:$head,run_id:$run,run_attempt:$attempt,workflow_ref:$workflow}' > artifacts/ens-ci/receipt.json
           (cd artifacts/ens-ci && sha256sum *.tap *.json > SHA256SUMS)
       - uses: actions/upload-artifact@v4
