@@ -22,13 +22,18 @@ jobs:
       - uses: actions/checkout@v4
       - name: Write evidence-only HOLD report
         env:
-          COMMIT_SHA: ${{ github.sha }}
+          CHECKOUT_SHA: ${{ github.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha || '' }}
           EVENT_NAME: ${{ github.event_name }}
           RUN_ID: ${{ github.run_id }}
+          RUN_ATTEMPT: ${{ github.run_attempt }}
+          WORKFLOW_REF: ${{ github.workflow_ref }}
         run: |
           mkdir -p artifacts/factory-console
-          jq -n --arg sha "$COMMIT_SHA" --arg event "$EVENT_NAME" --arg run "$RUN_ID" \
-            '{schema:"CW_FACTORY_STATUS_EVIDENCE_V1",commit_sha:$sha,event:$event,run_id:$run,CI_STATE:"HOLD_UNVERIFIED",REMOTE_STATE:"HOLD_UNVERIFIED",GENERATOR_STATE:"HOLD_UNVERIFIED",NO_FAKE_GREEN:"SATISFIED_BY_HOLD",reason:"No independent verification inputs supplied"}' > artifacts/factory-console/status-evidence.json
+          jq -n --arg checkout "$CHECKOUT_SHA" --arg head "$HEAD_SHA" --arg base "$BASE_SHA" \
+            --arg event "$EVENT_NAME" --arg run "$RUN_ID" --arg attempt "$RUN_ATTEMPT" --arg workflow "$WORKFLOW_REF" \
+            '{schema:"CW_FACTORY_STATUS_EVIDENCE_V2",checkout_sha:$checkout,tested_head_sha:$head,base_sha:$base,event:$event,run_id:$run,run_attempt:$attempt,workflow_ref:$workflow,CI_STATE:"HOLD_UNVERIFIED",REMOTE_STATE:"HOLD_UNVERIFIED",GENERATOR_STATE:"HOLD_UNVERIFIED",NO_FAKE_GREEN:"SATISFIED_BY_HOLD",reason:"No independent verification inputs supplied"}' > artifacts/factory-console/status-evidence.json
           sha256sum artifacts/factory-console/status-evidence.json > artifacts/factory-console/SHA256SUMS
       - uses: actions/upload-artifact@v4
         with:
