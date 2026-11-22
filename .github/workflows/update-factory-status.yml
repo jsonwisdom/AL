@@ -24,7 +24,7 @@ jobs:
           RUN_ID: ${{ github.run_id }}
         run: |
           mkdir -p artifacts/factory-console
-          jq -n --arg sha "$COMMIT_SHA" --arg event "$EVENT_NAME" --arg run "$RUN_ID" \\
+          jq -n --arg sha "$COMMIT_SHA" --arg event "$EVENT_NAME" --arg run "$RUN_ID" \
             '{schema:"CW_FACTORY_STATUS_EVIDENCE_V1",commit_sha:$sha,event:$event,run_id:$run,CI_STATE:"HOLD_UNVERIFIED",REMOTE_STATE:"HOLD_UNVERIFIED",GENERATOR_STATE:"HOLD_UNVERIFIED",NO_FAKE_GREEN:"SATISFIED_BY_HOLD",reason:"No independent verification inputs supplied"}' > artifacts/factory-console/status-evidence.json
           sha256sum artifacts/factory-console/status-evidence.json > artifacts/factory-console/SHA256SUMS
       - uses: actions/upload-artifact@v4
