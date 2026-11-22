@@ -98,6 +98,8 @@ async function main() {
     provenance_level: 'TWO_RPC_OBSERVATION_NOT_MERKLE_STATE_PROOF',
     no_fake_green: true
   });
+  // Fail the GitHub job on any missing required TXT record; keep the artifact.
+  if (missing.length) process.exitCode = 1;
 }
 if (process.argv.includes('--self-test')) {
   const node = ethers.namehash(NAME);
