@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import crypto from 'node:crypto';
 import { ethers } from 'ethers';
+import { classifyEnsTruthState } from './ens_truth_state.mjs';
 
 const BASELINE_PATH = process.env.ENS_TXT_BASELINE || 'projects/zora-jay-agent/config/ens_txt_byte_baseline_v0_1.json';
 const REPORT_PATH = process.env.ENS_TXT_REPORT || 'artifacts/ens_txt_byte_check_report.json';
@@ -155,11 +156,11 @@ async function main() {
   const failures = results.filter((result) => result.required && result.status !== 'OK_BYTE_MATCH');
   const report = {
     generated_at: new Date().toISOString(),
-    checker: 'ENS_TXT_BYTE_CHECKER_V0_2',
+    checker: 'ENS_TXT_BYTE_CHECKER_V0_3_DRAFT',
     baseline_path: BASELINE_PATH,
     eth_block_number: ethBlock,
     base_block_number_observed: baseBlock,
-    truth_state: failures.length === 0 && baseline.status !== 'BASELINE_DRAFT' ? 'GREEN_BYTE_MATCH' : 'HOLD_VERIFICATION_REQUIRED',
+    truth_state: classifyEnsTruthState({ baselineStatus: baseline.status, failures: failures.length, resolutionPathVerified: false }),
     baseline_status: baseline.status || 'UNKNOWN',
     resolution_path_verified: false,
     no_fake_green: true,
