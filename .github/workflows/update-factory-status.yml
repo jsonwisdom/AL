@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - '.github/workflows/update-factory-status.yml'
+      - 'site/factory-console/status.json'
   push:
     branches: [master]
     paths:
@@ -20,6 +21,9 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
+      - name: Reject unsupported dashboard GREEN
+        run: |
+          jq -e '.schema == "CW_FACTORY_STATUS_V3" and .evidence_verified == false and (.states | .CI_STATE == "HOLD_UNVERIFIED" and .REMOTE_STATE == "HOLD_UNVERIFIED" and .GENERATOR_STATE == "HOLD_UNVERIFIED" and .NO_FAKE_GREEN == "SATISFIED_BY_HOLD")' site/factory-console/status.json
       - name: Write evidence-only HOLD report
         env:
           CHECKOUT_SHA: ${{ github.sha }}
