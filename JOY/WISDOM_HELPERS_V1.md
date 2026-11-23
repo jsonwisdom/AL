@@ -17,9 +17,9 @@ JOY welcomes people into voluntary, age-appropriate learning and creative experi
 | JOY front door | https://github.com/jsonwisdom/JOY/blob/main/JOY_REPO.md | Cultural welcome; evidence verified elsewhere | Not a truth source |
 | JOY OODA | https://github.com/jsonwisdom/JOY/blob/main/SCHOOL_OF_WISDOM_GRAND_OODA_LOOP_2026-11-07.md | Human/student agency first, design loop | Workflow execution UNKNOWN |
 | Epistemic receipt schema | https://github.com/jsonwisdom/JOY/blob/main/schemas/joy/epistemic_receipt_v0_1.schema.json | JSON Schema authority=false, classification and safety moves | Receipt does not authorize an action |
-| Google Drive receipt mirror | JoySpace Epistemic Receipt — Machine-Readable Schema v0.1, Drive ID 1NOUVlPKC4y6VpNh78VqSo3sliEw4UZlGLZwWCdK24Jg | Mirror read through connected Drive | Do not treat mirror as canonical |
-| Google Drive OODA | Family OODA Loop Arena — Jay's Family + More v0.1, Drive ID 1I6UCNP9uxroD8mX5c7bOcY8I2PYKDudK49f2DjGKYW0 | Symbolic privacy and family OODA roles | No participation or identity grant |
-| Google Drive operator gate | JOY PR #90 — Cloudflare Operator Gate Receipt, Drive ID 1KJ7vTfd6bIv4QKi7_WpO8KNjYBTbOEGqo2Adw86Cxa8 | Documentation on human operator requirement | Not deployment approval |
+| Google Drive receipt mirror | JoySpace Epistemic Receipt — Machine-Readable Schema v0.1, non-public locator withheld | Mirror read through connected Drive | Do not treat mirror as canonical |
+| Google Drive OODA | Family OODA Loop Arena — Jay's Family + More v0.1, non-public locator withheld | Symbolic privacy and family OODA roles | No participation or identity grant |
+| Google Drive operator gate | JOY PR #90 — Cloudflare Operator Gate Receipt, non-public locator withheld | Documentation on human operator requirement | Not deployment approval |
 
 ## First deliverables and owners
 1. HEIDI_WORKER_001 (AI label): assemble the above index, identify missing receipts, draft voice examples and document consent boundaries.
