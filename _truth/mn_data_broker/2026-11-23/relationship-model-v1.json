@@ -1,0 +1,146 @@
+{
+  "schema_version": "1.1",
+  "receipt_id": "MN-DATA-BROKER-2026-11-23",
+  "disposition": "STATEWIDE_SCOPE_HOLD",
+  "description": "Relationship model only; no procurement evidence inferred. All transaction tables empty until original documents are verified.",
+  "foreign_keys": {
+    "agencies": [
+      "county_id -> counties.jurisdiction_id (nullable for statewide)"
+    ],
+    "vendors": [],
+    "contracts": [
+      "agency_id -> agencies.agency_id",
+      "vendor_id -> vendors.vendor_id",
+      "source_document_id -> source_documents.document_id"
+    ],
+    "contract_agencies": [
+      "contract_id -> contracts.contract_id",
+      "agency_id -> agencies.agency_id"
+    ],
+    "purchase_orders": [
+      "contract_id -> contracts.contract_id (nullable)",
+      "agency_id -> agencies.agency_id",
+      "vendor_id -> vendors.vendor_id",
+      "source_document_id -> source_documents.document_id"
+    ],
+    "invoices": [
+      "purchase_order_id -> purchase_orders.purchase_order_id (nullable)",
+      "vendor_id -> vendors.vendor_id",
+      "source_document_id -> source_documents.document_id"
+    ],
+    "payments": [
+      "invoice_id -> invoices.invoice_id (nullable)",
+      "agency_id -> agencies.agency_id",
+      "vendor_id -> vendors.vendor_id",
+      "source_document_id -> source_documents.document_id"
+    ],
+    "datasets": [
+      "agency_id -> agencies.agency_id",
+      "vendor_id -> vendors.vendor_id",
+      "source_document_id -> source_documents.document_id"
+    ],
+    "authorizations": [
+      "agency_id -> agencies.agency_id",
+      "source_document_id -> source_documents.document_id"
+    ],
+    "source_documents": [],
+    "court_application_reporting": []
+  },
+  "tables": {
+    "agencies": [],
+    "vendors": [],
+    "contracts": [],
+    "contract_agencies": [],
+    "purchase_orders": [],
+    "invoices": [],
+    "payments": [],
+    "datasets": [],
+    "authorizations": [],
+    "source_documents": [],
+    "court_application_reporting": []
+  },
+  "required_fields": {
+    "agencies": [
+      "agency_id",
+      "agency_name",
+      "jurisdiction_level",
+      "verification_status"
+    ],
+    "vendors": [
+      "vendor_id",
+      "vendor_name",
+      "verification_status"
+    ],
+    "contracts": [
+      "contract_id",
+      "agency_id",
+      "vendor_id",
+      "source_document_id",
+      "verification_status"
+    ],
+    "contract_agencies": [
+      "contract_id",
+      "agency_id"
+    ],
+    "purchase_orders": [
+      "purchase_order_id",
+      "agency_id",
+      "vendor_id",
+      "source_document_id",
+      "verification_status"
+    ],
+    "invoices": [
+      "invoice_id",
+      "vendor_id",
+      "source_document_id",
+      "verification_status"
+    ],
+    "payments": [
+      "payment_id",
+      "agency_id",
+      "vendor_id",
+      "source_document_id",
+      "verification_status"
+    ],
+    "datasets": [
+      "dataset_id",
+      "agency_id",
+      "vendor_id",
+      "source_document_id",
+      "verification_status"
+    ],
+    "authorizations": [
+      "authorization_id",
+      "agency_id",
+      "source_document_id",
+      "verification_status"
+    ],
+    "source_documents": [
+      "document_id",
+      "agency_id",
+      "source_url_or_identifier",
+      "verified_at_utc",
+      "sha256_original",
+      "source_type",
+      "verification_status"
+    ],
+    "court_application_reporting": [
+      "report_id",
+      "period",
+      "source_document_id",
+      "verification_status"
+    ]
+  },
+  "controls": {
+    "no_inference": true,
+    "unknown_is_not_zero": true,
+    "transmission_authorized": false,
+    "dps_bca": "HOLD_NOT_SENT",
+    "doc": "HOLD_NOT_SENT",
+    "production_merge_authorized": false,
+    "cloudflare_deploy_authorized": false,
+    "sha256_original_required_for_verified_receipt": true,
+    "shared_contracts_deduplicated_by_contract_id": true,
+    "public_git_must_exclude_personal_or_investigative_data": true
+  }
+}
