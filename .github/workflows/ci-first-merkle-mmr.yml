@@ -15,4 +15,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Python standard-library Merkle/MMR gate
-        run: python3 research/ci-first/mmr/offline_gate.py
+        run: |
+          python3 research/ci-first/mmr/offline_gate.py
+          python3 research/ci-first/mmr/ooda_collision_gate.py
