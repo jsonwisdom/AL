@@ -1,0 +1,56 @@
+{
+  "receipt": "MN-DATA-BROKER-2026-11-23",
+  "phase": "OODA_v1.3_fuzz",
+  "disposition": "STATEWIDE_SCOPE_HOLD",
+  "run_mode": "LOCAL_ONLY_SOURCE_IDENTICAL_GIT_BLOBS",
+  "repo": "jsonwisdom/AL",
+  "branch": "ci-first-mn-87county-registry-hold-20261123",
+  "source_github_blob_sha": {
+    "registry": "a38b4d63a53837ac09be0509676259e005d0a460",
+    "model": "aa0b65d72ba5b4ebb85249fd7bc75f4c1e068ea8",
+    "validator_v1": "135597a613c41152ee2d4106b8a2ff4e5466bb00",
+    "tests_v1": "83c56cf005a7a3790d4697e83cdd8114b60f93f4"
+  },
+  "results": {
+    "original_9_suite": {
+      "pass": 8,
+      "fail": 1,
+      "known_fixture_error": true
+    },
+    "corrected_9_suite": {
+      "pass": 9,
+      "fail": 0
+    },
+    "adversarial_v2": {
+      "pass": 8,
+      "fail": 0
+    },
+    "seeded_fuzz": {
+      "seed": 20261123,
+      "pass": 280,
+      "fail": 0,
+      "mutation_families": 7
+    }
+  },
+  "hashes_sha256": {
+    "mutated_input_corpus": "6f621036697a7442dbdfa09f803abf1813303398f4d2e7562c1452e9b5906c93",
+    "fuzz_results_json": "a5989868b5b367aacd0dff2914659f266b14e49f6d3a65e93786bf119b81debd",
+    "local_full_manifest": "67878910e9e1e4919ae0554c148a9d395f09ef7c1e2d97ec347e1772f8c53663",
+    "local_archive_zip": "fec2e6110a7e407d33a34e5e1902633fdf9e5a7dff16a7e4fa5958078d659a4f",
+    "validator_v2": "926a195b5b03c13438e8"
+  },
+  "boundaries": {
+    "source_datasets_empty": true,
+    "no_procurement_evidence": true,
+    "requests_transmitted": false,
+    "cloudflare_deployed": false,
+    "merged": false
+  },
+  "limitations": [
+    "Original 9-suite has one defective synthetic fixture; the corrected fixture suite passes.",
+    "No proof of actual commercial procurement is established.",
+    "Full patched validator and detailed fuzz logs are in a local ZIP artifact, not merged or deployed.",
+    "Structural PASS does not authenticate external evidence."
+  ],
+  "publish_state": "DRAFT_COORDINATION_SUMMARY_ONLY"
+}
