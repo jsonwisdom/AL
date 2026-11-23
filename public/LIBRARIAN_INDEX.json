@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-11-22T06:39:05Z",
+  "generated_at": "2026-11-23T07:27:54Z",
   "cards": [
     {
-      "target_id": "MANKATO_001",
+      "target_id": "MINNEAPOLIS_001",
       "document": "city_council_minutes",
       "state": "VERIFIED",
-      "anchor": "commit:06dc24d54ea6786d810f247d253a692af0b3cc5c",
+      "anchor": "commit:ea4707518e765aab28106320c3c0075124b9d135",
       "verdict": "VERIFIED",
-      "raw_sha256": "eced455c4b9524bd9e5703618dff12ae8ea126f2da89ad3dbf712d6521d8d2d9",
+      "raw_sha256": "e9444c1b5c8486c6be9e075d8e55d790893fd341d5c836e678dfe829e0855dbb",
       "review_receipt_hash": null,
-      "captured_at": "2026-11-22T06:37:46Z",
+      "captured_at": "2026-11-23T07:26:33Z",
       "schema_version": "1.1.0",
       "payload": {
         "drift_analysis": {
@@ -21,14 +21,14 @@
       }
     },
     {
-      "target_id": "MINNEAPOLIS_001",
+      "target_id": "ROCHESTER_001",
       "document": "city_council_minutes",
       "state": "VERIFIED",
-      "anchor": "commit:06dc24d54ea6786d810f247d253a692af0b3cc5c",
+      "anchor": "commit:ea4707518e765aab28106320c3c0075124b9d135",
       "verdict": "VERIFIED",
-      "raw_sha256": "7de7654ff4ec87f7e77a97a76fb00f698ef2e75f2b5f7c6fd75fb2ca3ed6a69d",
+      "raw_sha256": "2b25ad3b884f5a8ee37992130236832a13c3688dbcd482e49e283235a6134956",
       "review_receipt_hash": null,
-      "captured_at": "2026-11-22T06:37:47Z",
+      "captured_at": "2026-11-23T07:27:10Z",
       "schema_version": "1.1.0",
       "payload": {
         "drift_analysis": {
@@ -43,11 +43,30 @@
       "target_id": "DULUTH_001",
       "document": "city_council_minutes",
       "state": "VERIFIED",
-      "anchor": "commit:06dc24d54ea6786d810f247d253a692af0b3cc5c",
+      "anchor": "commit:ea4707518e765aab28106320c3c0075124b9d135",
       "verdict": "VERIFIED",
-      "raw_sha256": "257b440618c9a8789df04e96756e248fd67436624730bd254da7650a9082f60d",
+      "raw_sha256": "fb002d6e9ed5120574329be7838be423a29627f06c36b46969ed7e16bd1c7979",
       "review_receipt_hash": null,
-      "captured_at": "2026-11-22T06:38:24Z",
+      "captured_at": "2026-11-23T07:27:12Z",
+      "schema_version": "1.1.0",
+      "payload": {
+        "drift_analysis": {
+          "has_drift": false,
+          "schema_version": "1.1.0",
+          "validator_version": "1.1.0",
+          "diff_segments": []
+        }
+      }
+    },
+    {
+      "target_id": "MANKATO_001",
+      "document": "city_council_minutes",
+      "state": "VERIFIED",
+      "anchor": "commit:ea4707518e765aab28106320c3c0075124b9d135",
+      "verdict": "VERIFIED",
+      "raw_sha256": "5d404fd1716f2b64e4b4abae281a42a23e72335c0e3f17d4d0d3c3a17c4c9248",
+      "review_receipt_hash": null,
+      "captured_at": "2026-11-23T07:26:33Z",
       "schema_version": "1.1.0",
       "payload": {
         "drift_analysis": {
@@ -62,11 +81,11 @@
       "target_id": "ST_CLOUD_001",
       "document": "city_council_minutes",
       "state": "VERIFIED",
-      "anchor": "commit:06dc24d54ea6786d810f247d253a692af0b3cc5c",
+      "anchor": "commit:ea4707518e765aab28106320c3c0075124b9d135",
       "verdict": "VERIFIED",
-      "raw_sha256": "0efa1cfaa06a6a1033b66fcef063e440aa71277f934a1f9a5af791327b5cf877",
+      "raw_sha256": "c229fdfc0c74ae8e876856869e00d4e6cdbabf1a9da02e81e001ff4b7edb3c17",
       "review_receipt_hash": null,
-      "captured_at": "2026-11-22T06:37:47Z",
+      "captured_at": "2026-11-23T07:26:38Z",
       "schema_version": "1.1.0",
       "payload": {
         "drift_analysis": {
@@ -86,25 +105,6 @@
             "triggered_scope_count": 0,
             "max_criticality_weight": 0
           },
-          "diff_segments": []
-        }
-      }
-    },
-    {
-      "target_id": "ROCHESTER_001",
-      "document": "city_council_minutes",
-      "state": "VERIFIED",
-      "anchor": "commit:06dc24d54ea6786d810f247d253a692af0b3cc5c",
-      "verdict": "VERIFIED",
-      "raw_sha256": "10f759a62065597ea8cf6b1bc7a9cc9493535010ab8beea82a1f20271bff8db5",
-      "review_receipt_hash": null,
-      "captured_at": "2026-11-22T06:38:27Z",
-      "schema_version": "1.1.0",
-      "payload": {
-        "drift_analysis": {
-          "has_drift": false,
-          "schema_version": "1.1.0",
-          "validator_version": "1.1.0",
           "diff_segments": []
         }
       }
