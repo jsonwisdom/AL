@@ -30,6 +30,46 @@ jobs:
           persist-credentials: false
           fetch-depth: 1
 
+      - name: Verify isolated branch, 16 workflow hashes, and disabled ALMS publishing
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import os, subprocess
+          from pathlib import Path
+          branch = "ci-first-mn-87county-registry-hold-20261123"
+          assert os.environ["GITHUB_EVENT_NAME"] == "push", "UNAUTHORIZED_EVENT"
+          assert os.environ["GITHUB_REF"] == "refs/heads/" + branch, "UNAUTHORIZED_BRANCH"
+          root = Path(os.environ["GITHUB_WORKSPACE"])
+          pinned = {
+              "alms-auto-replay-and-bump.yml": "e86d56346a56dd232e1ef4169bcc33a3c05cdcd2",
+              "replay-matrix.yaml": "ac2656cd39c1525145ff0f11c3870efd7ddd2f0c",
+              "replay.yml": "ecdbeda0a01f071b723cc073eed939f7332c48fe",
+              "integrity_audit.yml": "63b368dbe40ad1245fe5f540339babbb42944722",
+              "membrane_integrity.yml": "b4643c93d096d0189b491dc869198b4ea225c0d5",
+              "alabama-engine-expiry-enforcer.yml": "8f80257272568fe73e520735e0898f1db8bc64d5",
+              "builder-boundary-sentinel.yml": "74225d0671818985d817a43c7bb7a85abb17af92",
+              "alabama-engine-ens-divergence.yml": "ab1ccd447ed8cf8de18805f210aa605b5b3b3fc1",
+              "treasury-verifier-v0-2.yml": "ef3d530ebe60b85af3e60484c6c29eff9c889eb6",
+              "jay-repo-safety.yml": "20eec296e7dc33a186ca317d6670800918054bf7",
+              "exposure-audit.yml": "8acd7862b86864fae99270f2c9a2c7c4cdebfd1c",
+              "alms-verify.yml": "af28de7d1fdef8f7fa7f75121389c16db9ac72ce",
+              "zero-trust-audit.yml": "aacc0401999f06b7b9ed58a84f10df5c83a78f7f",
+              "verify.yml": "68b7f2b7b1808209cabf797a05a1d2cd1a6c1bcc",
+              "brenda-gate.yml": "6f557b79c279b0fbabe2236e24d26c6c157852c0",
+              "merkle-verify.yml": "35ebafd28c2b166ebe2dbe5993c02224034b548d",
+          }
+          for filename, sha in pinned.items():
+              path = root / ".github" / "workflows" / filename
+              actual = subprocess.check_output(["git", "hash-object", str(path)], text=True).strip()
+              assert actual == sha, "ISOLATION_FILE_DRIFT:" + filename
+          alms = (root / ".github/workflows/alms-auto-replay-and-bump.yml").read_text()
+          assert "permissions:\\n  contents: read" in alms.replace("\\r", ""), "ALMS_PERMISSIONS"
+          assert "    branches:\\n      - master" in alms, "ALMS_BRANCH_GATE"
+          assert not any(line.lstrip().startswith("git push") for line in alms.splitlines()), "ALMS_REMOTE_PUSH"
+          print("ISOLATION_GUARD_PASS: 16/16 blobs, ALMS read only, remote push disabled")
+          PY
+
       - name: Verify hashes, HOLD gates, 17 tests, 280 fuzz cases
         shell: bash
         run: |
