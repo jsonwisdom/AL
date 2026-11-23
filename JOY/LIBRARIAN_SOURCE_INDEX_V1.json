@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.0.0",
+  "receipt": "JOY-HEIDI-HELPERS-2026-11-23",
+  "authority": false,
+  "scope": "public_safe_git_sources_only",
+  "visibility_note": "Connected Google Drive sources inspected separately; private Drive IDs and links intentionally not included.",
+  "observed_date": "2026-11-23",
+  "source_count": 7,
+  "sources": [
+    {
+      "id": "AL-HEIDI-CHARTER",
+      "uri": "https://github.com/jsonwisdom/AL/blob/ci-first-mn-87county-registry-hold-20261123/JOY/HEIDI_WORKER_001.md",
+      "domain": "helper_charter",
+      "claim": "AI helper is a read-only charter, distinct from real Heidee",
+      "evidence": "github_file",
+      "state": "PASS_DOCS_ONLY",
+      "runtime": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "AL-FAMILY-COORDINATION",
+      "uri": "https://github.com/jsonwisdom/AL/blob/master/WISDOM_FAMILY_JOYSPACE_COORDINATION_2026-11-07.md",
+      "domain": "family_boundaries",
+      "claim": "HEIDEE autonomous; JOY patterns; COMPUTERWISDOM coordinates",
+      "evidence": "github_file",
+      "state": "PASS_DOCS_ONLY",
+      "runtime": "UNKNOWN"
+    },
+    {
+      "id": "HEIDEE-README",
+      "uri": "https://github.com/jsonwisdom/HEIDEE/blob/master/README.md",
+      "domain": "joyspace_implementation",
+      "claim": "HEIDEE hosts public-safe JoySpace code",
+      "evidence": "github_file",
+      "state": "PASS_DOCS_ONLY",
+      "runtime": "NOT_VERIFIED"
+    },
+    {
+      "id": "JOY-WELCOME",
+      "uri": "https://github.com/jsonwisdom/JOY/blob/main/JOY_REPO.md",
+      "domain": "purpose",
+      "claim": "JOY cultural front door is not evidence authority",
+      "evidence": "github_file",
+      "state": "PASS_DOCS_ONLY",
+      "runtime": "NOT_APPLICABLE"
+    },
+    {
+      "id": "JOY-OODA",
+      "uri": "https://github.com/jsonwisdom/JOY/blob/main/SCHOOL_OF_WISDOM_GRAND_OODA_LOOP_2026-11-07.md",
+      "domain": "learning_loop",
+      "claim": "OODA promotes student agency; designed not executing",
+      "evidence": "github_file",
+      "state": "PASS_DOCS_ONLY",
+      "runtime": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "JOY-EPISTEMIC-SCHEMA",
+      "uri": "https://github.com/jsonwisdom/JOY/blob/main/schemas/joy/epistemic_receipt_v0_1.schema.json",
+      "domain": "receipt_schema",
+      "claim": "Schema sets authority=false and supports HOLD and dissent",
+      "evidence": "github_file",
+      "state": "PASS_DOCS_ONLY",
+      "runtime": "NOT_TESTED"
+    },
+    {
+      "id": "AL-COMPUTER-WISDOM",
+      "uri": "https://github.com/jsonwisdom/AL/blob/master/COMPUTER_WISDOM.md",
+      "domain": "replay_purpose",
+      "claim": "Computer Wisdom is replay-first infrastructure",
+      "evidence": "github_file",
+      "state": "PASS_DOCS_ONLY",
+      "runtime": "UNKNOWN"
+    }
+  ],
+  "cloudflare": {
+    "observation_class": "authenticated_account_metadata_only",
+    "observed_script_examples": [
+      "joyspace-evidence-index-v1",
+      "joyspace-click-only-evidence-v6",
+      "computer-wisdom-rubric-v132"
+    ],
+    "script_reachability": "NOT_VERIFIED",
+    "heidi_voice_route": "NOT_ESTABLISHED"
+  },
+  "gates": {
+    "source_inventory": "PASS_DOCS_ONLY",
+    "voice_contract": "PASS_DOCS_ONLY",
+    "librarian_runtime": "HOLD",
+    "human_permission": "NOT_INFERRED",
+    "minnesota_procurement": "HOLD"
+  },
+  "replay": {
+    "join_rule": "Only compare receipts with matching IDs and source version; missing evidence must remain UNKNOWN.",
+    "loop": "OBSERVE>ORIENT>DECIDE>ACT_WITH_APPROVAL>REPLAY",
+    "expected_output": "source-indexed report, not grant of authority"
+  }
+}
