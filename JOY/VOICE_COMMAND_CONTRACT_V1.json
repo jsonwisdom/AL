@@ -1,0 +1,129 @@
+{
+  "schema_version": "1.0.0",
+  "receipt": "JOY-HEIDI-HELPERS-2026-11-23",
+  "status": "DESIGN_ONLY",
+  "authority": false,
+  "interface": {
+    "modes": [
+      "text",
+      "user_initiated_voice"
+    ],
+    "always_listening": false,
+    "default_retention": "none",
+    "default_transcript_logging": false,
+    "child_voice_capture": false,
+    "synthetic_person_impersonation": false
+  },
+  "commands": [
+    {
+      "utterance": "help",
+      "intent": "HELP",
+      "scope": "local",
+      "effect": "read_only",
+      "response": "Explain controls and what is not connected"
+    },
+    {
+      "utterance": "find source about {topic}",
+      "intent": "FIND",
+      "scope": "public_safe_sources",
+      "effect": "read_only",
+      "response": "List matching public sources and observed dates"
+    },
+    {
+      "utterance": "explain {topic}",
+      "intent": "EXPLAIN",
+      "scope": "verified_retrieved_sources",
+      "effect": "read_only",
+      "response": "Explain with provenance and uncertainty"
+    },
+    {
+      "utterance": "replay receipt {id}",
+      "intent": "REPLAY",
+      "scope": "public_safe_receipt",
+      "effect": "read_only",
+      "response": "Show source, hash, test and differences; do not promote HOLD"
+    },
+    {
+      "utterance": "status of {project}",
+      "intent": "STATUS",
+      "scope": "approved_project_status",
+      "effect": "read_only",
+      "response": "Return PASS/FAIL/HOLD with timestamp and evidence scope"
+    },
+    {
+      "utterance": "stop",
+      "intent": "STOP",
+      "scope": "current_session",
+      "effect": "local_only",
+      "response": "Stop current optional voice interaction"
+    }
+  ],
+  "unknown_command": "REFUSE_WITH_HELP",
+  "requires_human_approval": [
+    "publish",
+    "message_person",
+    "deploy",
+    "merge",
+    "spend",
+    "sign",
+    "write_cloudflare",
+    "modify_wallet",
+    "upload_personal_data",
+    "start_recording",
+    "change_permissions"
+  ],
+  "prohibited": [
+    "background_listen",
+    "collect_minor_identifier",
+    "impersonate_Heidee",
+    "auto_approve",
+    "exfiltrate_source",
+    "read_secret"
+  ],
+  "identity": {
+    "bot_label": "HEIDI_WORKER_001",
+    "is_human": false,
+    "acts_for_Heidee": false
+  },
+  "result_states": [
+    "PASS_DOCS_ONLY",
+    "PASS_RUNTIME",
+    "FAIL",
+    "HOLD",
+    "UNKNOWN"
+  ],
+  "test_vectors": [
+    {
+      "utterance": "find source about JoySpace",
+      "expected_intent": "FIND",
+      "expected_effect": "read_only"
+    },
+    {
+      "utterance": "replay receipt JOY-001",
+      "expected_intent": "REPLAY",
+      "expected_effect": "read_only"
+    },
+    {
+      "utterance": "send Heidee a message",
+      "expected_intent": "REFUSE_WITH_HELP",
+      "expected_effect": "none"
+    },
+    {
+      "utterance": "deploy Worker",
+      "expected_intent": "REFUSE_WITH_HELP",
+      "expected_effect": "none"
+    },
+    {
+      "utterance": "record this child",
+      "expected_intent": "REFUSE_WITH_HELP",
+      "expected_effect": "none"
+    }
+  ],
+  "verification": {
+    "contract_json": "CREATED",
+    "voice_runtime": "NOT_TESTED",
+    "cloudflare_binding": "NOT_ESTABLISHED",
+    "human_consent": "NOT_INFERRED"
+  },
+  "source": "JOY/WISDOM_HELPERS_V1.md"
+}
