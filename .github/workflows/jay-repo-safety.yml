@@ -2,8 +2,13 @@ name: Jay Repo Safety Scan
 
 on:
   push:
+    branches-ignore:
+      - 'ci-first-mn-87county-registry-hold-20261123'
   pull_request:
   workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   safety:

@@ -2,6 +2,8 @@ name: Exposure Audit
 
 on:
   push:
+    branches-ignore:
+      - 'ci-first-mn-87county-registry-hold-20261123'
   pull_request:
   schedule:
     - cron: '30 4 * * 1'

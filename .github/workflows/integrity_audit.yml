@@ -2,7 +2,12 @@ name: ALMS Global Integrity Audit
 
 on:
   push:
+    branches-ignore:
+      - 'ci-first-mn-87county-registry-hold-20261123'
   pull_request:
+
+permissions:
+  contents: read
 
 jobs:
   verify_article_i:

@@ -2,15 +2,18 @@ name: ALMS Auto Replay + Auto Bump
 
 on:
   push:
+    branches:
+      - master
     paths:
       - "corpus/**"
       - "_truth/**"
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   replay-and-bump:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -82,10 +85,6 @@ EOF
       - name: Merkle root gate (publish global root)
         run: python scripts/alms_merkle_root_gate.py
 
-      - name: Commit registry updates + root
+      - name: Remote registry write disabled pending separate authorization
         run: |
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
-          git add alms/version_registry.json alms/version_receipts/ alms/merkle/
-          git commit -m "ALMS AUTO REPLAY BUMP + ROOT" || echo "NO_CHANGES"
-          git push
+          echo "HOLD_NOT_AUTHORIZED: automated registry publication disabled"

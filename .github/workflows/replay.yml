@@ -1,7 +1,12 @@
 name: Replay Verification
 on:
   push:
+    branches-ignore:
+      - 'ci-first-mn-87county-registry-hold-20261123'
   pull_request:
+permissions:
+  contents: read
+
 jobs:
   replay:
     runs-on: ubuntu-latest

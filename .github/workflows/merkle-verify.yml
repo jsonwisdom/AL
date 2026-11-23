@@ -17,6 +17,9 @@ on:
       - "_truth/**"
       - ".github/**"
 
+permissions:
+  contents: read
+
 jobs:
   verify-note:
     runs-on: ubuntu-latest

@@ -3,6 +3,8 @@ name: Builder Boundary Sentinel
 on:
   workflow_dispatch:
   push:
+    branches-ignore:
+      - 'ci-first-mn-87county-registry-hold-20261123'
   schedule:
     - cron: "17 */6 * * *"
 
