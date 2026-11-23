@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0",
+  "receipt": "MN-DATA-BROKER-2026-11-23",
+  "disposition": "STATEWIDE_SCOPE_HOLD",
+  "scope_branch": "ci-first-mn-87county-registry-hold-20261123",
+  "cd_stages": [
+    {
+      "id": "draft_build",
+      "purpose": "Package tested validator and empty schema metadata as GitHub Actions artifact only",
+      "authorization": "ALLOWED_DRAFT",
+      "automatic": true,
+      "environment": "github_actions_runner"
+    },
+    {
+      "id": "schema_snapshot",
+      "purpose": "Hash-pin all 87 county placeholders and 11 empty relationship tables",
+      "authorization": "ALLOWED_DRAFT",
+      "automatic": true,
+      "environment": "github_actions_runner"
+    },
+    {
+      "id": "staging_candidate",
+      "purpose": "Create nonproduction candidate eligible for human review",
+      "authorization": "HOLD_NOT_AUTHORIZED",
+      "automatic": false,
+      "environment": null
+    },
+    {
+      "id": "promotion_review",
+      "purpose": "Compare candidate to baseline, requiring explicit operator receipt and issue comment",
+      "authorization": "HOLD_NOT_AUTHORIZED",
+      "automatic": false,
+      "environment": null
+    },
+    {
+      "id": "cloudflare_nonprod_deploy",
+      "purpose": "Apply D1 or R2 to nonproduction",
+      "authorization": "HOLD_NOT_AUTHORIZED",
+      "automatic": false,
+      "environment": null
+    },
+    {
+      "id": "post_deploy_verification",
+      "purpose": "Independent deployment state verification",
+      "authorization": "HOLD_NOT_AUTHORIZED",
+      "automatic": false,
+      "environment": null
+    },
+    {
+      "id": "production_promotion",
+      "purpose": "Production deployment or branch merge",
+      "authorization": "FALSE_DISABLED",
+      "automatic": false,
+      "environment": null
+    }
+  ],
+  "hard_gates": {
+    "government_contact": false,
+    "mgdpa_transmission": false,
+    "merge_to_master": false,
+    "cloudflare_deployment": false,
+    "synthetic_data_as_evidence": false,
+    "credentials_required": false,
+    "production_approval": false
+  },
+  "independent_denominators": [
+    "judicial_applications",
+    "procurement_contracts",
+    "payments",
+    "datasets"
+  ],
+  "meaning_of_green": "SOFTWARE_STRUCTURAL_CHECKS_ONLY",
+  "evidence_assertion": "NO_GOVERNMENT_PURCHASE_ESTABLISHED"
+}
