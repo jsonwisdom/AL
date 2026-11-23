@@ -64,8 +64,8 @@ jobs:
               actual = subprocess.check_output(["git", "hash-object", str(path)], text=True).strip()
               assert actual == sha, "ISOLATION_FILE_DRIFT:" + filename
           alms = (root / ".github/workflows/alms-auto-replay-and-bump.yml").read_text()
-          assert "permissions:\\n  contents: read" in alms.replace("\\r", ""), "ALMS_PERMISSIONS"
-          assert "    branches:\\n      - master" in alms, "ALMS_BRANCH_GATE"
+          assert "permissions:\n  contents: read" in alms.replace("\r", ""), "ALMS_PERMISSIONS"
+          assert "    branches:\n      - master" in alms, "ALMS_BRANCH_GATE"
           assert not any(line.lstrip().startswith("git push") for line in alms.splitlines()), "ALMS_REMOTE_PUSH"
           print("ISOLATION_GUARD_PASS: 16/16 blobs, ALMS read only, remote push disabled")
           PY
