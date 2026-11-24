@@ -1,0 +1,19 @@
+name: CW Micro-Unit Receipt CI
+on:
+  pull_request:
+    paths:
+      - 'docs/finance/CW_ROUNDING_RECEIPT_V0_1.md'
+      - 'scripts/finance/cw_rounding_receipt_v0_1.cjs'
+      - '.github/workflows/cw-rounding-receipt-ci.yml'
+  workflow_dispatch:
+jobs:
+  exact-arithmetic:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Exact micro-unit replay and negative tests
+        run: node scripts/finance/cw_rounding_receipt_v0_1.cjs
+      - name: Receipt source SHA-256
+        run: sha256sum docs/finance/CW_ROUNDING_RECEIPT_V0_1.md scripts/finance/cw_rounding_receipt_v0_1.cjs
