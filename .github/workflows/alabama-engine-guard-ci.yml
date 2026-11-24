@@ -1,0 +1,44 @@
+name: Alabama Engine Fail-Closed Guard
+on:
+  pull_request:
+    paths:
+      - 'scripts/ens/alabama_engine_divergence_check.sh'
+      - '.github/workflows/alabama-engine-guard-ci.yml'
+  workflow_dispatch:
+jobs:
+  fail-closed:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Bash syntax
+        run: bash -n scripts/ens/alabama_engine_divergence_check.sh
+      - name: Verify current expired divergence cannot become GREEN
+        shell: bash
+        run: |
+          set -euo pipefail
+          set +e
+          output="$(bash scripts/ens/alabama_engine_divergence_check.sh 2>&1)"
+          rc=$?
+          set -e
+          echo "$output"
+          test "$rc" -ne 0
+          grep -q 'RED_EXPIRED' <<< "$output"
+          if grep -q 'GREEN' <<< "$output"; then exit 1; fi
+      - name: Reject forged nonempty resolver artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          temp="$(mktemp -d)"
+          trap 'rm -rf "$temp"' EXIT
+          printf '%s\n' '{"artifact_type":"ALABAMA_ENGINE_RESOLVER_ARTIFACT_V0_1","subject_name":"jaywisdom.base.eth","chain_id":8453,"resolver_address_or_endpoint":"self-declared","observed_at_utc":"2026-11-22T00:00:00Z","block_number_or_resolution_epoch":1,"workflow_run_id":1,"checker_output":"GREEN","no_fake_green":true,"txt_records":{"alms.packet.cid":"fake","alms.packet.sha256":"fake","alms.matrix.hash":"fake"},"txt_records_sha256":"0000000000000000000000000000000000000000000000000000000000000000"}' > "$temp/observed.json"
+          set +e
+          output="$(ALMS_OBSERVED="$temp/observed.json" bash scripts/ens/alabama_engine_divergence_check.sh 2>&1)"
+          rc=$?
+          set -e
+          echo "$output"
+          test "$rc" -ne 0
+          grep -Eq 'RED_INVALID_RESOLVER_ARTIFACT|RED_RESOLVER_HASH_MISMATCH' <<< "$output"
+      - name: SHA-256 source
+        run: sha256sum scripts/ens/alabama_engine_divergence_check.sh
