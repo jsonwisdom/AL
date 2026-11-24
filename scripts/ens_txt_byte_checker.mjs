@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import crypto from 'node:crypto';
 import { ethers } from 'ethers';
+import { classifyEnsTruthState } from './ens_truth_state.mjs';
 
 const BASELINE_PATH = process.env.ENS_TXT_BASELINE || 'projects/zora-jay-agent/config/ens_txt_byte_baseline_v0_1.json';
 const REPORT_PATH = process.env.ENS_TXT_REPORT || 'artifacts/ens_txt_byte_check_report.json';
@@ -135,7 +136,14 @@ async function main() {
 
   for (const nameConfig of baseline.names || []) {
     for (const record of nameConfig.text_records || []) {
+      // ENS names may resolve via wildcard/CCIP Read. An L1 provider is not
+      // proof that a Base-backed resolver was reached. Preserve failures and
+      // mark this resolution path unverified until independently attested.
       const read = await readTextRecord(provider, nameConfig.name, record.key_candidates || [record.canonical_key]);
+      if (nameConfig.read_via?.includes('ccip') && !read.found) {
+        read.status = 'RESOLUTION_PATH_UNVERIFIED';
+        read.error = 'L2 CCIP/wildcard resolution was not independently verified; do not classify as an absent onchain TXT record';
+      }
       results.push(evaluateBytes({
         name: nameConfig.name,
         role: nameConfig.role,
@@ -148,11 +156,13 @@ async function main() {
   const failures = results.filter((result) => result.required && result.status !== 'OK_BYTE_MATCH');
   const report = {
     generated_at: new Date().toISOString(),
-    checker: 'ENS_TXT_BYTE_CHECKER_V0_2',
+    checker: 'ENS_TXT_BYTE_CHECKER_V0_3_DRAFT',
     baseline_path: BASELINE_PATH,
     eth_block_number: ethBlock,
     base_block_number_observed: baseBlock,
-    truth_state: failures.length === 0 ? 'GREEN_BYTE_MATCH' : 'RED_OR_YELLOW_CHECK_FAILED',
+    truth_state: classifyEnsTruthState({ baselineStatus: baseline.status, failures: failures.length, resolutionPathVerified: false }),
+    baseline_status: baseline.status || 'UNKNOWN',
+    resolution_path_verified: false,
     no_fake_green: true,
     failure_count: failures.length,
     results
@@ -185,7 +195,7 @@ async function main() {
     fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, summary);
   }
 
-  if (failures.length > 0) {
+  if (failures.length > 0 || report.truth_state !== 'GREEN_BYTE_MATCH') {
     console.error('ENS TXT byte checker failed. This is intentional NO_FAKE_GREEN behavior. See report artifact.');
     process.exit(1);
   }
