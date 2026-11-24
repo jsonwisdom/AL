@@ -1,43 +1,47 @@
-name: Update Factory Console Status
-
+name: Factory Console Status Evidence (Read Only)
 on:
   workflow_dispatch:
+  pull_request:
+    paths:
+      - '.github/workflows/update-factory-status.yml'
+      - 'site/factory-console/status.json'
   push:
     branches: [master]
     paths:
       - 'site/factory-console/**'
       - '.github/workflows/update-factory-status.yml'
-
 permissions:
-  contents: write
-
+  contents: read
+concurrency:
+  group: factory-console-status-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
-  update-factory-status:
+  factory-status-evidence:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
-      - name: Write status.json
+      - name: Reject unsupported dashboard GREEN
         run: |
-          mkdir -p site/factory-console
-          cat > site/factory-console/status.json << EOF
-          {
-            "branch": "master",
-            "head": "$(git rev-parse HEAD)",
-            "states": {
-              "MERGE_STATE": "CLEAN",
-              "CI_STATE": "GREEN",
-              "REMOTE_STATE": "GREEN",
-              "GENERATOR_STATE": "VERIFIED",
-              "NO_FAKE_GREEN": "SATISFIED"
-            },
-            "updated_at": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
-            "last_event": "${GITHUB_EVENT_NAME}"
-          }
-          EOF
-      - name: Commit status
+          jq -e '.schema == "CW_FACTORY_STATUS_V3" and .evidence_verified == false and (.states | .CI_STATE == "HOLD_UNVERIFIED" and .REMOTE_STATE == "HOLD_UNVERIFIED" and .GENERATOR_STATE == "HOLD_UNVERIFIED" and .NO_FAKE_GREEN == "SATISFIED_BY_HOLD")' site/factory-console/status.json
+      - name: Write evidence-only HOLD report
+        env:
+          CHECKOUT_SHA: ${{ github.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha || '' }}
+          EVENT_NAME: ${{ github.event_name }}
+          RUN_ID: ${{ github.run_id }}
+          RUN_ATTEMPT: ${{ github.run_attempt }}
+          WORKFLOW_REF: ${{ github.workflow_ref }}
         run: |
-          git config user.name "ALMS Factory Bot"
-          git config user.email "factory@alms.goblins"
-          git add site/factory-console/status.json
-          git diff --cached --quiet || git commit -m "chore(factory): update status.json [skip ci]"
-          git push
+          mkdir -p artifacts/factory-console
+          jq -n --arg checkout "$CHECKOUT_SHA" --arg head "$HEAD_SHA" --arg base "$BASE_SHA" \
+            --arg event "$EVENT_NAME" --arg run "$RUN_ID" --arg attempt "$RUN_ATTEMPT" --arg workflow "$WORKFLOW_REF" \
+            '{schema:"CW_FACTORY_STATUS_EVIDENCE_V2",checkout_sha:$checkout,tested_head_sha:$head,base_sha:$base,event:$event,run_id:$run,run_attempt:$attempt,workflow_ref:$workflow,CI_STATE:"HOLD_UNVERIFIED",REMOTE_STATE:"HOLD_UNVERIFIED",GENERATOR_STATE:"HOLD_UNVERIFIED",NO_FAKE_GREEN:"SATISFIED_BY_HOLD",reason:"No independent verification inputs supplied"}' > artifacts/factory-console/status-evidence.json
+          sha256sum artifacts/factory-console/status-evidence.json > artifacts/factory-console/SHA256SUMS
+      - uses: actions/upload-artifact@v4
+        with:
+          name: factory-console-status-evidence
+          path: artifacts/factory-console/
+          if-no-files-found: error
+          retention-days: 30

@@ -11,8 +11,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout pinned Foundry dependencies
         uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Verify submodule dependency files
+        run: |
+          git submodule status --recursive
+          test -f lib/openzeppelin-contracts/contracts/access/Ownable.sol
+          test -f lib/openzeppelin-contracts/contracts/token/ERC721/ERC721.sol
+          test -f lib/forge-std/src/Test.sol
+          test -f lib/eas-contracts/contracts/IEAS.sol
 
       - name: Install Foundry
         uses: foundry-rs/foundry-toolchain@v1
