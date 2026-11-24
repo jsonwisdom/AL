@@ -1,0 +1,20 @@
+name: CI-FIRST synthetic Merkle + MMR
+on:
+  push:
+    branches: [ci-first-merkle-mmr-gate-20261122]
+  pull_request:
+    paths:
+      - "research/ci-first/mmr/**"
+      - ".github/workflows/ci-first-merkle-mmr.yml"
+permissions:
+  contents: read
+jobs:
+  local-crypto-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Python standard-library Merkle/MMR gate
+        run: |
+          python3 research/ci-first/mmr/offline_gate.py
+          python3 research/ci-first/mmr/ooda_collision_gate.py
